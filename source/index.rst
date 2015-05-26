@@ -71,6 +71,13 @@ Contents:
     apps.rst
     templates.rst
     forms.rst
+    object_model_and_self.rst
+    groups.rst
+    money.rst
+    treatments.rst
+    trying_your_app.rst
+    bots.rst
+    admin.rst
 
 
 
