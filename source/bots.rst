@@ -71,7 +71,7 @@ variable on the treatment. For example, here is how you would play if
 one treatment group sees a "threshold" page but the other treatment
 group should see an "accept" page:
 
-.. code:: python
+.. code-block:: python
 
     if self.group.threshold:
         self.submit(views.Threshold, {'offer_accept_threshold': 30})

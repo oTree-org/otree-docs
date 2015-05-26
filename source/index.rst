@@ -78,6 +78,10 @@ Contents:
     trying_your_app.rst
     bots.rst
     admin.rst
+    server.rst
+    mturk.rst
+    django.rst
+    upgrading.rst
 
 
 

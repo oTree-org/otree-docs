@@ -135,7 +135,7 @@ general, Kiosk mode is rather user-friendly so one can easily search
 online how to use it on specific platforms.
 
 iOS (iPhone/iPad)
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 1. Go to Setting – Accessibility – Guided Access
 2. Turn on Guided Access and set a passcode for your Kiosk mode
@@ -144,7 +144,7 @@ iOS (iPhone/iPad)
 5. Circle areas on the screen to disable (e.g. URL bar) and activate
 
 Android
-^^^^^^^
+~~~~~~~
 
 There are several apps for using Kiosk mode on Android, for instance:
 `Kiosk Browser
@@ -287,7 +287,7 @@ general, Kiosk mode is rather user-friendly so one can easily search
 online how to use it on specific platforms.
 
 iOS (iPhone/iPad)
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 1. Go to Setting – Accessibility – Guided Access
 2. Turn on Guided Access and set a passcode for your Kiosk mode
@@ -296,13 +296,13 @@ iOS (iPhone/iPad)
 5. Circle areas on the screen to disable (e.g. URL bar) and activate
 
 Android
-^^^^^^^
+~~~~~~~
 
 There are several apps for using Kiosk mode on Android, for instance:
 `Kiosk Browser
 Lockdown <https://play.google.com/store/apps/details?id=com.procoit.kioskbrowser&hl=en>`__.
 
-.. figure:: http://i.imgur.com/VJ72fKv.png
+.. figure:: _static/admin//VJ72fKv.png
    :alt:
 
 For iOS and Android tablets, Kiosk mode will continue to function after
@@ -310,7 +310,7 @@ normal restart. However, if subjects enter Android safe mode, the app
 can be disabled.
 
 Chrome on PC
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 1. Go to Setting – Users – Add new user
 2. Create a new user with a desktop shortcut
@@ -323,12 +323,12 @@ Chrome on PC
 6. Open the shortcut to activate Kiosk mode
 
 IE on PC
-^^^^^^^^
+~~~~~~~~
 
 IE on PC See `here <http://support2.microsoft.com/kb/154780>`__
 
 Mac
-^^^
+~~~
 
 There are several apps for using Kiosk mode on Mac, for instance:
 `eCrisper <http://ecrisper.com/>`__. Mac keyboard shortcuts should be
@@ -340,7 +340,7 @@ Payment PDF
 At the end of your session, you can open and print a page that lists all
 the participants and how much they should be paid.
 
-.. figure:: http://i.imgur.com/nSMlWcY.png
+.. figure:: _static/admin/nSMlWcY.png
    :alt:
 
 Export Data
@@ -367,7 +367,7 @@ alphanumeric codes uniquely identifying the session and participant. The
 ID in group identifes the role of the player (e.g., in a principal-agent
 game, principals might have the ID in group 1, while agents have 2).
 
-.. figure:: http://i.imgur.com/DZsyhQf.png
+.. figure:: _static/admin/DZsyhQf.png
    :alt:
 
 Progress-Monitor
@@ -382,7 +382,7 @@ cells that change are highlighted in yellow. Because the progress
 monitor is web-based, **multiple collaborators can simultaneously open
 it on several devices on premises or at remote locations**.
 
-.. figure:: http://i.imgur.com/0nYKnDp.png
+.. figure:: _static/admin/0nYKnDp.png
    :alt:
 
 Session Interface
@@ -395,19 +395,18 @@ experiment**. The session interface can instruct an experimenter on what
 to do next and show text to be read aloud. The session interface can
 also request input from the experimenter at a specific point in the
 session. For example, in an Ellsberg experiment, the experimenter might
-roll an opaque urn prior to the session; the session interface will
+roll an opaque urn prior to the session; the session interface will
 remind the experimenter to show the urn to the participants, tell the
 experimenter when all participants have selected their bets, and
 instruct her to draw a ball from the urn. It will then ask the drawn
-color, so that oTree can calculate participants' payoffs.
-   :alt:
+color, so that oTree can calculate participants' payoff's.
 
 For iOS and Android tablets, Kiosk mode will continue to function after
 normal restart. However, if subjects enter Android safe mode, the app
 can be disabled.
 
 Chrome on PC
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 1. Go to Setting – Users – Add new user
 2. Create a new user with a desktop shortcut
@@ -420,12 +419,12 @@ Chrome on PC
 6. Open the shortcut to activate Kiosk mode
 
 IE on PC
-^^^^^^^^
+~~~~~~~~
 
 IE on PC See `here <http://support2.microsoft.com/kb/154780>`__
 
 Mac
-^^^
+~~~
 
 There are several apps for using Kiosk mode on Mac, for instance:
 `eCrisper <http://ecrisper.com/>`__. Mac keyboard shortcuts should be
@@ -437,7 +436,7 @@ Payment PDF
 At the end of your session, you can open and print a page that lists all
 the participants and how much they should be paid.
 
-.. figure:: http://i.imgur.com/nSMlWcY.png
+.. figure:: _static/admin/nSMlWcY.png
    :alt:
 
 Export Data
@@ -464,7 +463,7 @@ alphanumeric codes uniquely identifying the session and participant. The
 ID in group identifes the role of the player (e.g., in a principal-agent
 game, principals might have the ID in group 1, while agents have 2).
 
-.. figure:: http://i.imgur.com/DZsyhQf.png
+.. figure:: _static/admin/DZsyhQf.png
    :alt:
 
 Progress-Monitor
@@ -479,7 +478,7 @@ cells that change are highlighted in yellow. Because the progress
 monitor is web-based, **multiple collaborators can simultaneously open
 it on several devices on premises or at remote locations**.
 
-.. figure:: http://i.imgur.com/0nYKnDp.png
+.. figure:: _static/admin/0nYKnDp.png
    :alt:
 
 Session Interface

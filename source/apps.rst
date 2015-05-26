@@ -13,9 +13,9 @@ From the oTree launcher, click the "Terminal" button. (If the button is
 disabled, make sure you have stopped the server.) When the console
 window appears, type this:
 
-.. code:: bash
+.. code-block:: bash
 
-    python otree startapp your_app_name
+    $ python otree startapp your_app_name
 
 This will create a new app folder based on a oTree template, with most
 of the structure already set up for you.
@@ -76,7 +76,7 @@ rows will get added to the tables.
 
 Here is how to define the above table structure:
 
-.. code:: python
+.. code-block:: python
 
     class Group(otree.models.BaseGroup):
         ...
@@ -117,14 +117,14 @@ At the bottom of your ``views.py``, you must have a ``page_sequence``
 variable that specifies the order in which players are routed through
 your pages. For example:
 
-.. code:: python
+.. code-block:: python
 
     page_sequence=[Start, Offer, Accept, Results]
 
 Each ``Page`` class has these methods and attributes:
 
 ``def vars_for_template(self)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 oTree automatically passes group, player, subsession, and Constants
 objects to the template, so you can access them from your template in
@@ -134,34 +134,34 @@ method ``vars_for_template`` that returns these variables in a
 dictionary.
 
 ``def is_displayed(self)``
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Should return True if the page should be shown, and False if the page
 should be skipped. Default behavior is to show the page.
 
 For example, if you only want a page to be shown to P2 in each group:
 
-.. code:: python
+.. code-block:: python
 
     def is_displayed(self):
         return self.player.id_in_group == 2
 
 ``template_name``
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 The name of the HTML template to display. This can be omitted if the
 template has the same name as the Page class.
 
 Example:
 
-.. code:: python
+.. code-block:: python
 
     # This will look inside your app under the 'templates' directory,
     # to '/app_name/MyView.html'
     template_name = 'app_name/MyView.html'
 
 ``timeout_seconds``
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Set to an integer that specifies how many seconds the user has to
 complete the page. After the time runs out, the page auto-submits.
@@ -169,7 +169,7 @@ complete the page. After the time runs out, the page auto-submits.
 Example: ``timeout_seconds = 20``
 
 ``auto_submit_values``
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Lets you specify what values should be auto-submitted if
 ``timeout_seconds`` is exceeded, or if the experimenter moves the
