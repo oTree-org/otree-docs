@@ -25,8 +25,20 @@ import shlex
 try:
     import otree
 except ImportError:
-    msg = "Please install 'oTree' from https://github.com/oTree-org/oTree"
-    raise ImportError(msg)
+    print("-" * 80)
+    print("oTree not found!!!")
+    print("Please install 'oTree' from https://github.com/oTree-org/oTree")
+    print("-" * 80)
+    sys.exit(1)
+
+
+# on_rtd is whether we are on readthedocs.org
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+
+# modules to mock in readthedocs
+MOCK_MODULES = []
+
 
 # -- General configuration ------------------------------------------------
 
@@ -123,7 +135,18 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+if not on_rtd:  # only import and set the theme if we're building docs locally
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+else:
+    from mock import Mock as MagicMock
+    class Mock(MagicMock):
+        @classmethod
+        def __getattr__(cls, name):
+                return Mock()
+    sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
