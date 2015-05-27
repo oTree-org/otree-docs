@@ -4,5 +4,6 @@ This repository contains all the tutorial and documentation of
 [oTree](http://otree.org). For build it you need to install the development
 version of oTree.
 
-https://readthedocs.org/projects/otree/badge/?version=latest
+![RTD Badge](https://readthedocs.org/projects/otree/badge/?version=latest)
+
 

@@ -26,7 +26,6 @@ import otree
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('.'))
 
-import otree_ver
 
 # on_rtd is whether we are on readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
@@ -78,7 +77,7 @@ author = u'oTree Team'
 # built documents.
 #
 # The short X.Y version.
-version = otree_ver.get_version()
+version = ''
 # The full version, including alpha/beta/rc tags.
 release = version
 
