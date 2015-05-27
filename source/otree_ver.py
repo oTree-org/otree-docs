@@ -24,6 +24,7 @@ def call(cmd):
 
 
 def get_version():
+    print call("pip show otree-core")
     out = [
         elem for elem in call("pip show otree-core").splitlines()
         if elem.startswith("Version")][0]
