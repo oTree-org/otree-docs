@@ -65,7 +65,7 @@ Contents:
 .. toctree::
     :maxdepth: 2
 
-    manual.rst
+    tutorial/intro.rst
     setup.rst
     conceptual_overview.rst
     apps.rst
