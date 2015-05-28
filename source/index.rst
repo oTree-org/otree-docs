@@ -39,10 +39,11 @@ experience in web app development.
 Repositories
 ------------
 
--   `Games <https://github.com/oTree-org/oTree/>`_
--   `Core Libraries <https://github.com/oTree-org/otree-core>`_
--   `Launcher <https://github.com/oTree-org/otree-launcher>`_ (OS independent)
--   `Documentation <https://github.com/oTree-org/otree-docs>`_
+-   |github_icon| `Games <https://github.com/oTree-org/oTree/>`_
+-   |github_icon| `Core Libraries <https://github.com/oTree-org/otree-core>`_
+-   |github_icon| `Launcher <https://github.com/oTree-org/otree-launcher>`_
+    (*OS independent*)
+-   |github_icon| `Documentation <https://github.com/oTree-org/otree-docs>`_
 
 
 Contact
@@ -59,11 +60,11 @@ Contributors
 ------------
 
 -   Gregor Muellegger
-    (http://gremu.net/, https://github.com/gregmuellegger)
+    (http://gremu.net/, |github_icon| https://github.com/gregmuellegger)
 -   Juan B. Cabral
-    (http://jbcabral.org, https://github.com/leliel12)
+    (http://jbcabral.org, |github_icon| https://github.com/leliel12)
 -   Alexander Schepanovski
-    (https://github.com/Suor)
+    (|github_icon| https://github.com/Suor)
 -   Alexander Sandukovskiy
 -   Som Datye
 
