@@ -59,7 +59,7 @@ Contributors
 ------------
 
 -   Gregor Muellegger (http://gremu.net/,
-    (http://gremu.net/,`GitHub <https://github.com/gregmuellegger>`_)
+    (http://gremu.net/, `GitHub <https://github.com/gregmuellegger>`_)
 -   Juan B. Cabral
     (http://jbcabral.org, `GitHub <https://github.com/leliel12>`_)
 -   Alexander Schepanovski
