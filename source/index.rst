@@ -58,12 +58,15 @@ unclear).**
 Contributors
 ------------
 
--  Gregor Muellegger (http://gremu.net/,
-   https://github.com/gregmuellegger)
--  Juan B. Cabral
--  Alexander Schepanovski (https://github.com/Suor/)
--  Alexander Sandukovskiy
--  Som Datye
+-   Gregor Muellegger (http://gremu.net/,
+    (http://gremu.net/,
+    `github: @gregmuellegger <https://github.com/gregmuellegger>`_)
+-   Juan B. Cabral
+    (http://jbcabral.org, `github: @leliel12 <https://github.com/leliel12>`_)
+-   Alexander Schepanovski
+    (`github: @Suor <https://github.com/Suor>`_)
+-   Alexander Sandukovskiy
+-   Som Datye
 
 
 Mailing list
