@@ -35,8 +35,14 @@ abstracted away, meaning that the code is focused on the logic of the
 game. oTree programming is accessible to programmers without advanced
 experience in web app development.
 
-This repository contains the games; the oTree core libraries are
-`here <https://github.com/oTree-org/otree-core>`__.
+
+Repositories
+------------
+
+-   `Games <https://github.com/oTree-org/oTree/>`_
+-   `Core Libraries <https://github.com/oTree-org/otree-core>`_
+-   `Launcher <https://github.com/oTree-org/otree-launcher>`_ (OS independent)
+-   `Documentation <https://github.com/oTree-org/otree-docs>`_
 
 
 Contact
