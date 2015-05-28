@@ -168,7 +168,7 @@ complete the page. After the time runs out, the page auto-submits.
 
 Example: ``timeout_seconds = 20``
 
-``auto_submit_values``
+``timeout_submission``
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Lets you specify what values should be auto-submitted if

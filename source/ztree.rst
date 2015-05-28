@@ -61,7 +61,7 @@ Timeout
 ~~~~~~~
 
 In oTree, define a ``timeout_seconds`` on your ``Page``. You can also
-optionally define ``auto_submit_values``.
+optionally define ``timeout_submission``.
 
 Questionnaires
 ~~~~~~~~~~~~~~
