@@ -298,7 +298,8 @@ ResultsWaitPage
 ~~~~~~~~~~~~~~~
 
 Before a player proceeds to the next
-round\ ``s``\ Choice\ ``page,  they need to wait for the other player to complete the``\ Choice\ ``page as well.  So, as usual, we use a``\ WaitPage\ ``.  Also, once both players have arrived at the wait page, we call the``\ set\_payoffs\`
+round's ``Choice`` page,  they need to wait for the other player to complete the ``Choice`` page as well.  So, as usual, we use a ``WaitPage``.
+Also, once both players have arrived at the wait page, we call the ``set_payoffs``
 method we defined earlier.
 
 ::
