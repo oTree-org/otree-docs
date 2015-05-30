@@ -1,7 +1,7 @@
 Applications
 ============
 
-In oTree, an app is a folder containing Python and HTML code. When you
+In oTree (and Django), an app is a folder containing Python and HTML code. When you
 create your oTree project, it comes pre-loaded with various apps such as
 ``public_goods`` and ``dictator``. A session is basically a sequence of
 apps that are played one after the other.
@@ -37,11 +37,12 @@ Model hierarchy
 
 Every oTree app needs the following 3 models:
 
--  Player
--  Group
 -  Subsession
+-  Group
+-  Player
 
 A player is part of a group, which is part of a subsession.
+
 
 Models and database tables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,18 +91,21 @@ Database").
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.7/ref/models/fields/#field-types>`__.
 
+Additionally, oTree has ``CurrencyField``; see :ref:`money`.
+
 Constants
 ~~~~~~~~~
 
 The ``Constants`` class is the recommended place to put your app's
-parameters and other constants (i.e. things that do not vary from player
-to player)
+parameters and constants that do not vary from player
+to player.
 
 Here are the required constants:
 
--  ``name_in_url`` is an attribute that defines the name this app has in
-   the URLs, which players may see.
--  ``players_per_group`` (described elsewhere in the documentation)
+-  ``name_in_url`` specifies the name used to identify your app in the participant's URL.
+For example, if you set it to ``public_goods``, a participant's URL might look like this:
+``http://otree-demo.herokuapp.com/p/zuzepona/public_goods/Introduction/1/``
+-  ``players_per_group`` (described in :ref:`groups`)
 -  ``num_rounds`` (described elsewhere in the documentation)
 
 views.py
@@ -126,12 +130,10 @@ Each ``Page`` class has these methods and attributes:
 ``def vars_for_template(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-oTree automatically passes group, player, subsession, and Constants
-objects to the template, so you can access them from your template in
-the following format: ``{{Constants.payoff_if_rejected}}``. If you need
-to pass any additional variables to the template, you can define a
-method ``vars_for_template`` that returns these variables in a
-dictionary.
+A dictionary of variable names and their values, which is passed to the template.
+
+Note: oTree automatically passes group, player, subsession, and Constants
+objects to the template, which you can access in the template, e.g.: ``{{Constants.payoff_if_rejected}}``.
 
 ``def is_displayed(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +165,7 @@ Example:
 ``timeout_seconds``
 ~~~~~~~~~~~~~~~~~~~
 
-Set to an integer that specifies how many seconds the user has to
+The number of seconds the user has to
 complete the page. After the time runs out, the page auto-submits.
 
 Example: ``timeout_seconds = 20``
@@ -171,26 +173,23 @@ Example: ``timeout_seconds = 20``
 ``timeout_submission``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Lets you specify what values should be auto-submitted if
-``timeout_seconds`` is exceeded, or if the experimenter moves the
-participant forward. If this is omitted, then oTree will default to
+A dictionary where the keys are the elements of
+``form_fields``, and the values are the values that should be
+submitted in case of a timeout, or if the experimenter moves the
+participant forward.
+
+If omitted, then oTree will default to
 ``0`` for numeric fields, ``False`` for boolean fields, and the empty
 string for text/character fields.
 
-This should be a dictionary where the keys are the elements of
-``form_fields``, and the values are the values that should be
-auto-submitted.
 
 ``def before_next_page(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After the player clicks the "Next" button, oTree makes sure that any
-form fields validate (and re-displays to the player with errors
-otherwise).
+Here you define any code that should be executed
+after form validation,
+before the player proceeds to the next page.
 
-Here you can put anything additional that should happen after form
-validation. If you don't need anything to be done, it's OK to leave this
-method blank, or to leave it out entirely.
 
 ``def vars_for_all_templates(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

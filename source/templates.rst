@@ -45,15 +45,17 @@ the file ``templates/global/Base.html``.
 Images, videos, CSS, JavaScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To include images, CSS, or JavaScript in your pages, put the following
-line in your template below the ``extends`` block:
+To include images, CSS, or JavaScript in your pages, make sure your template has loaded ``staticfiles``.
 
-.. code-block:: django
+Then create a `static/` folder in your app (next to ``templates/``).
+Like ``templates/``, it should also have a subfolder with your app's name.
 
-    {% load staticfiles %}
+Put your files in that subfolder. You can then reference them in a template like this:
 
-And follow the
-`instructions here <https://docs.djangoproject.com/en/dev/howto/static-files/>`_.
+.. code:: HTML
+
+    <img src="{% static "my_app/my_image.png" %}"/>
+
 
 Plugins
 ~~~~~~~

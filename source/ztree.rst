@@ -352,10 +352,10 @@ described in the reference with the example about
 ``get_year_in_school_display``.
 
 Miscellaneous code examples
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Get the other player's choice in a 2-person game
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 z-Tree:
 
@@ -371,7 +371,7 @@ oTree:
 
 
 Check if a list is sorted smallest to largest
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 z-Tree (source: z-Tree mailing list):
 
@@ -386,7 +386,7 @@ oTree:
     values == sorted(values) 
 
 Randomly shuffle a list
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 z-Tree (source: z-Tree mailing list):
 
@@ -409,7 +409,7 @@ oTree:
 
 
 Choose 3 random periods for payment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 z-Tree: see
 `here <https://files.nyu.edu/awb257/public/slides/RandomRoundPayoffsTreatmentOrder.pdf>`__:

@@ -1,10 +1,9 @@
+.. _groups:
+
 Groups and multiplayer games
 ============================
 
-In oTree, you can define multiplayer interactive games through the use
-of groups
-
-To do this, go to your app's models.py and set
+To create a multiplayer game, go to your app's models.py and set
 ``Constants.players_per_group``. For example, in a 2-player game like an
 ultimatum game or prisoner's dilemma, you would set this to 2. If your
 app does not involve dividing the players into multiple groups, then set
@@ -15,11 +14,10 @@ you need your groups to have uneven sizes (for example, 2 vs 3), you can
 do this: ``players_per_group=[2,3]``; in this case, if you have a
 session with 15 players, the group sizes would be ``[2,3,2,3,2,3]``.
 
-Each player has a numeric field ``id_in_group``. This is useful in
-multiplayer games where players have different roles, so that you can
-determine if the player is player 1, player 2, or so on.
+Each player has an attribute ``id_in_group``, which is an integer,
+ which will tell you if it is player 1, player 2, etc.
 
-Groups have the following methods:
+Group objects have the following methods:
 
 -  ``get_players()``: returns a list of the players in the group.
 -  ``get_player_by_id(n)``: Retrieves the player in the group with a

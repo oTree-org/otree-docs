@@ -31,9 +31,10 @@ it in the first round:
             for p in self.get_players():
                 p.participant.vars['color'] = random.choice(['blue', 'red'])
 
-Then, in the view code, you can access the participant's color with
+Then elsewhere in your code, you can access the participant's color with
 ``self.player.participant.vars['color']``.
 
+For more on vars, see ref:`vars`.
 
 Choosing which treatment to play
 --------------------------------

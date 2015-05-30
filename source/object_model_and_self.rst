@@ -1,8 +1,8 @@
 Object model and *self*
 =======================
 
-In oTree code, you will see the variable ``self`` all throughout the
-code. In Python, ``self`` refers to the object whose class you are
+In oTree code, you will see the variable ``self`` in many places.
+In Python, ``self`` refers to the object whose class you are
 currently in.
 
 For example, in this example, ``self`` refers to a ``Player`` object:
@@ -39,12 +39,12 @@ diagram.
 
 Player, group, subsession, and session are in a simple hierarchy,
 'session' being at the top and 'player' being at the bottom. Then, the
-'page' has an arrow to all 4 of these objects.
+'page' has an pointer to all 4 of these objects.
 
 For example, if you are in a method on the ``Player`` class, you can
 access the player's payoff with ``self.payoff`` (because ``self`` is the
 player). But if you are inside a ``Page`` class in ``views.py``, the
-equivalent expression you instead need to do ``self.player.payoff``,
+equivalent expression is ``self.player.payoff``,
 which traverses the pointer from 'page' to 'player'.
 
 Here are some code examples to illustrate:

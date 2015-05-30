@@ -93,6 +93,7 @@ Contents:
     money.rst
     treatments.rst
     trying_your_app.rst
+    rounds.rst
     bots.rst
     admin.rst
     server.rst

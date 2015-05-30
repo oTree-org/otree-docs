@@ -1,17 +1,17 @@
+.. _money:
+
 Money and Points
 ================
 
-In many experiments, participants play for currency: either virtual
-points, or real money. oTree supports both scenarios. Participants can
-be awarded a fixed base pay (i.e. participation fee). In addition, in
-each subsession, they can be awarded an additional payoff.
+In many experiments, participants play for currency:
+either virtual points, or real money. oTree supports both scenarios.
 
 You can specify the payment currency in ``settings.py``, by setting
 ``REAL_WORLD_CURRENCY_CODE`` to "USD", "EUR", "GBP", and so on. This
 means that all currency amounts the participants see will be
 automatically formatted in that currency, and at the end of the session
 when you print out the payments page, amounts will be displayed in that
-currency.
+currency. The session's ``participation_fee`` is also displayed in this currency code.
 
 In oTree apps, currency values have their own data type. You can define
 a currency value with the ``c()`` function, e.g. ``c(10)`` or ``c(0)``.
@@ -42,8 +42,9 @@ Assigning payoffs
 Each player has a ``payoff`` field, which is a ``CurrencyField``. If
 your player makes money, you should store it in this field.
 ``player.participant.payoff`` is the sum of the payoffs a participant
-made in each subsession. At the end of the experiment, a participant's
-total profit is calculated by adding the fixed base pay to the
+made in each subsession (either in points or real money).
+At the end of the experiment, a participant's
+total profit is calculated by adding the participation fee to the
 ``payoff`` that participant earned as a player in each subsession.
 
 
@@ -54,7 +55,7 @@ Sometimes it is preferable for players to play games for points or
 "experimental currency units", which are converted to real money at the
 end of the session. You can set ``USE_POINTS = True`` in
 ``settings.py``, and then in-game currency amounts will be expressed in
-points rather than real money.
+points rather than dollars or euros, etc.
 
 For example, ``c(10)`` is displayed as ``10 points``. You can specify
 the conversion rate to real money in ``settings.py`` by providing a
@@ -63,13 +64,12 @@ For example, if you pay the user 2 cents per point, you would set
 ``real_world_currency_per_point = 0.02``.
 
 You can convert a point amount to money using the
-``to_real_world_currency()`` method, which takes as an argument the
-current session (this is necessary because different sessions can have
-different conversion rates).
+``to_real_world_currency()`` method. In the above example, that would be:
 
-Let's say ``real_world_currency_per_point = 0.02``
+.. code::
 
-.. code:: python
+    >>> c(10).to_real_world_currency(self.session)
+    $0.20
 
-    c(10) # evaluates to Currency(10 points)
-    c(10).to_real_world_currency(self.session) # evaluates to $0.20
+This method requires that ``self.session`` be passed as an argument, because
+different sessions can have different conversion rates).

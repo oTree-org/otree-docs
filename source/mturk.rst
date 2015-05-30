@@ -4,45 +4,32 @@ Amazon Mechanical Turk
 Overview
 --------
 
-oTree provides integration with Amazon Mechanical Turk (AMT).
+oTree provides integration with Amazon Mechanical Turk (MTurk).
 
-You can publish your game to Amazon mechanical Turk directly from
+You can publish your game to MTurk directly from
 oTree's admin interface. Then, workers on mechanical Turk can accept and
 play your app as an MTurk HIT and get paid a participation fee as well
 as bonuses they earned by playing your game.
 
-Server requirements
--------------------
-
-Amazon MTurk requires the support of SSL by the server on which you
-deploy oTree. That is you should be able to access your server with the
-following link ``https://www.myserver.com``.
-
-There are two Out of the Box solutions that oTree supports:
-
--  running your experiment on oTree local SSL server with the following
-   command ``python otree runsslserver``. This SSL server is fully
-   compatible with oTree and can be used interchangeably with regular
-   server ``python otree runserver``.
--  deploying oTree on Heroku. Heroku by default support SSL. Deploying
-   to heroku is explained `here <#heroku>`__.
-
 AWS credentials
 ---------------
 
-Researchers must have an employer account with AMT, which currently
+To publish to MTurk, you must have an employer account with MTurk, which currently
 requires a U.S. address and bank account.
 
-To make payments to participants you need to generate
-``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``
-`here <https://console.aws.amazon.com/iam/home?#security_credential>`__:
+oTree requires that you set the following env vars:
+
+- ``AWS_ACCESS_KEY_ID``
+- ``AWS_SECRET_ACCESS_KEY``
+
+You can obtain these credentials `here <https://console.aws.amazon.com/iam/home?#security_credential>`__:
 
 .. figure:: _static/mturk/dNhkOiA.png
    :alt: AWS key
 
    AWS key
 
-On heroku add generated values to your environment variables:
+On Heroku you would set these env vars like this:
 
 .. code-block:: bash
 
@@ -81,15 +68,14 @@ Testing your hit in sandbox
 ---------------------------
 
 The Mechanical Turk Developer Sandbox is a simulated environment that
-lets you test Human Intelligence Tasks (HITs) prior to publication in
+lets you test your app prior to publication in
 the marketplace. This environment is available for both
 `worker <https://workersandbox.mturk.com/mturk/welcome>`__ and
 `requester <https://requester.mturk.com/developer/sandbox>`__.
 
 After publishing the HIT you can test it both as a worker and as a
 requester using the links provided on "MTurk" Tab of your session admin
-panel. These links will work only locally given that you created your
-HIT being on local server(\ ``python otree runsslserver``).
+panel.
 
 Multiplayer games
 -----------------
@@ -114,3 +100,4 @@ An upcoming feature in oTree that has not yet been implemented is the
 ability to auto-submit pages if the participant drops out or does not
 complete the page in time. This should enable the gameplay to proceed
 even if there is attrition.
+

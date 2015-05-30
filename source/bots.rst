@@ -1,8 +1,7 @@
 Test Bots
 =========
 
-Automated tests are an essential part of building a oTree app. You can
-easily program a bot that simulates multiple players simultaneously
+Your app's ``tests.py`` lets you define "bots" that simulate multiple players simultaneously
 playing your app.
 
 Tests with dozens of bots complete with in seconds, and afterward
@@ -43,8 +42,7 @@ Writing tests
 ~~~~~~~~~~~~~
 
 Tests are contained in your app's ``tests.py``. Fill out the
-``play_round()`` method of your ``PlayerBot`` (and ``ExperimenterBot``
-if you have experimenter pages). It should simulate each page
+``play_round()`` method of your ``PlayerBot``. It should simulate each page
 submission. For example:
 
 .. code-block:: python
@@ -54,20 +52,14 @@ submission. For example:
 
 Here, we first submit the ``Start`` page, which does not contain a form.
 The next page is ``Offer``, which contains a form whose field is called
-``offer_amount``, which we set to ``50``. This is a way of automating
-the task of
+``offer_amount``, which we set to ``50``.
 
-Your test bot must simulate playing the game correctly. The bot in the
-above example would raise an error if the page after ``Start`` was
-called ``Instructions`` rather than ``Offer``, or if the field
-``offer_amount`` was actually called something else. Your test bot is a
-specification of how you expect your app to work, so when it raises an
-error, it will alert you that your app is not behaving as intended.
+The test system will raise an error if the bot submits invalid input for a page,
+or if it submits pages in the wrong order.
 
 Rather than programming many separate bots, you program one bot that can
-play any variation of the game. For example, if you have different
-treatment groups that play different pages, you can branch by checking a
-variable on the treatment. For example, here is how you would play if
+play any variation of the game, using conditional logic.
+For example, here is how you would play if
 one treatment group sees a "threshold" page but the other treatment
 group should see an "accept" page:
 
@@ -78,16 +70,6 @@ group should see an "accept" page:
     else:
         self.submit(views.Accept, {'offer_accepted': True})
 
-If player 1 in a group sees different pages from player 2, you can
-define separate methods ``play_p1()`` and ``play_p2()`` and branch like
-this:
-
-.. code-block:: python
-
-    if self.player.id_in_group == 0:
-        self.play_p1()
-    else:
-        self.play_p2()
 
 To get the maximal benefit, your bot should thoroughly test all parts of
 your code. Here are some ways you can test your app:
@@ -119,6 +101,3 @@ Bots can either be programmed to simulate playing the game according to
 an ordinary strategy, or to test "boundary conditions" (e.g. by entering
 invalid input to see if the application correctly rejects it). Or yet
 the bot can enter random input on each page.
-
-If your app has [[Experimenter Pages]], you can also implement the
-``play`` method on the ``ExperimenterBot``.

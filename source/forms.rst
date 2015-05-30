@@ -4,7 +4,7 @@ Forms
 Each page in oTree can contain a form, which the player should fill out
 and submit by clicking the "Next" button. To create a form, first you
 should go to models.py and define fields on your Player or Group. Then,
-in your Page class, you can define ``form_models`` to specify he model
+in your Page class, you can define ``form_models`` to specify the model
 that this form modifies (either ``models.Player`` or ``models.Group``),
 and ``form_fields``, which is list of the fields from that model.
 
@@ -40,32 +40,31 @@ they need to correct.
     :scale: 100 %
 
 
-oTree automatically validates all input submitted by the user.t For
+oTree automatically validates all input submitted by the user. For
 example, if you have a form containing a ``PositiveIntegerField``, oTree
 will not let the user submit values that are not positive integers, like
 ``-1``, ``1.5``, or ``hello``.
 
-Additionally, you can customize validation by passing extra arguments to
-your model field definition. For example, if you want to require a
-number to be between 12 and 24, you can specify it like this:
+You can specify additional validation. For example, here is how you would require integer to be between
+12 and 24:
 
 .. code:: python
 
     offer = models.PositiveIntegerField(min=12, max=24)
 
-If you specify a ``choices`` argument, the default form widget will be a
-select box with these choices instead of the standard text field.
+You can constrain the user to a predefined list of choices by using ``choices``:
 
 .. code:: python
 
     year_in_school = models.CharField(choices=['Freshman', 'Sophomore', 'Junior', 'Senior'])
 
+The user will then be presented a dropdown menu instead of free text input.
+
 If you would like a specially formatted value displayed to the user that
-is different from the values stored internally, you can return a list
-consisting itself of tuples of two items to use as choices for this
-field. The first element in each tuple is the actual value to be set on
-the model, and the second element is the human-readable name. For
-example:
+is different from the values stored internally, ``choices`` can be a list
+consisting itself of tuples of two items.
+The first element in each tuple is the value and the second element is the human-readable label.
+For example:
 
 .. code:: python
 
@@ -81,7 +80,7 @@ example:
 After the field has been set, you can access the human-readable name
 using
 `get\_FOO\_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
-method, like this:
+, like this:
 ``self.get_year_in_school_display() # returns e.g. 'Sophomore'``
 
 If a field is optional, you can do:
@@ -154,7 +153,10 @@ Widgets
 The full list of form input widgets offered by Django is
 `here <https://docs.djangoproject.com/en/1.7/ref/forms/widgets/#built-in-widgets>`__.
 
-oTree additionally offers ``RadioSelectHorizontal`` and ``SliderInput``.
+oTree additionally offers
+- ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal layout, as you would see with a Likert scale)
+- ``SliderInput`` (you can specify the step size like this: ``SliderInput(attrs={'step': '0.01'})``)
+
 
 Custom widgets and hidden fields
 --------------------------------
@@ -178,7 +180,7 @@ do this:
 
 
 Then you can use JavaScript to set the value of that input, by selecting
-the element by id "id\_my\_hidden\_input".
+the element by id ``id_my_hidden_input``.
 
 For simple widgets you can use jQuery; for more complex or custom form
 interfaces, you can use a front-end framework with databinding, like
