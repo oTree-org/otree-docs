@@ -173,8 +173,12 @@ Example: ``timeout_seconds = 20``
 ``timeout_submission``
 ~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    Prior to May 26, 2015, this was called ``auto_submit_values``.
+
 A dictionary where the keys are the elements of
-``form_fields``, and the values are the values that should be
+``form_fields``, with the values to be
 submitted in case of a timeout, or if the experimenter moves the
 participant forward.
 

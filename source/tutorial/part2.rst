@@ -1,15 +1,14 @@
 Part 2: Trust game
 ==================
 
-Now let's create a Trust game, which is a different type of game, to
-allow us to highlight some different features of oTree.
+Now let's create a Trust game, and learn some
+more features of oTree.
 
 This is a trust game with 2 players.
-
 To start, Player 1 receives 10 points; Player 2 receives nothing. Player
-1 can send some or all of his points to Player 2. Before B receives
-these points they will be tripled. Once B receives the tripled points he
-can decide to send some or all of his points to A.
+1 can send some or all of his points to Player 2. Before P2 receives
+these points they will be tripled. Once P2 receives the tripled points he
+can decide to send some or all of his points to P1.
 
 The completed app is
 `here <https://github.com/oTree-org/oTree/tree/master/trust_simple>`__.
@@ -79,7 +78,7 @@ sense because each group has exactly 1 ``sent_amount`` and exactly 1
 Even though it may not seem that important at this point, modeling our
 data correctly will make the rest of our work easier.
 
-Now we add more details: Let's let P1 choose from a dropdown menu how
+Let's let P1 choose from a dropdown menu how
 much to donate, rather than entering free text. To do this, we use the
 ``choices=`` argument, as well as the ``currency_range`` function:
 
@@ -131,7 +130,10 @@ Instructions.html
 ~~~~~~~~~~~~~~~~~
 
 This template uses Django's template inheritance with the
-``{% extends %}`` command. For basic apps you don't need to know the
+``{% extends %}`` command. The file it inherits from is located at
+ ``_templates/global/Instructions.html``.
+
+For basic apps you don't need to know the
 details of how template inheritance works.
 
 .. code-block:: django
@@ -197,9 +199,6 @@ and ``form_fields`` in the view.
 
 Also, we use ``is_displayed`` to only show this to P1; P2 skips the
 page.
-
-Note that we write ``self.player.id_in_group``, because this is in
-``views.py``.
 
 SendBack
 ~~~~~~~~
