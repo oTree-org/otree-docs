@@ -39,6 +39,7 @@ Plain install
     python otree resetdb
     python otree runserver
 
+
 Launcher install
 ----------------
 
@@ -101,3 +102,21 @@ because:
 If you are a student, teacher, or professor, PyCharm Professional is
 `free <https://www.jetbrains.com/student/>`__. Note: we recommend
 PyCharm Professional rather than PyCharm Community Edition.
+
+Explanation: oTree & Django
+---------------------------
+
+oTree is built on top of Django.
+
+The ``oTree`` folder is a Django project, as explained `here <https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-a-project>`__.
+
+It comes pre-configured with all the files,
+settings and dependencies so that it works right away.
+You should create your apps inside this folder.
+
+If you want, you can delete all the existing example games (like ``asset_market``, ``bargaining``, etc).
+Just delete the folders and the corresponding entries in ``SESSION_TYPES``.
+Just keep the directories ``_static`` and ``_templates``.
+
+When you install oTree (either using the launcher or running ``pip install -r requirements_base.txt``),
+``otree-core`` gets automatically installed as a dependency.
