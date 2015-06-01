@@ -60,7 +60,7 @@ Here are some specific issues along with their solutions.
 * Problem: You get this message:
 
 
-.. code-block::
+.. code-block:: bash
 
     'python' is not recognized as an internal or external command, operable program or batch file.
 
@@ -68,7 +68,7 @@ Here are some specific issues along with their solutions.
 * Solution: make sure Python is installed and add it to your ``Path`` as described above.
 * Problem: You get this message:
 
-.. code-block::
+.. code-block:: bash
 
     Traceback (most recent call last):
       File "<string>", line 1, in <module>
