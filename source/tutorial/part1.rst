@@ -7,7 +7,10 @@ We will now create a simple public goods game. The completed app is
 Create the app
 --------------
 
-Create the public goods app with this command:
+If you are running the oTree launcher, click the "terminal" button which will open your command window.
+Otherwise, open the ``oTree`` folder you downloaded, the one that contains ``requirements_base.txt``.
+
+In this directory, create the public goods app with this shell command:
 
 .. code-block:: bash
 
