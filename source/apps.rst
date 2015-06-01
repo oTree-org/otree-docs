@@ -106,7 +106,7 @@ Here are the required constants:
 For example, if you set it to ``public_goods``, a participant's URL might look like this:
 ``http://otree-demo.herokuapp.com/p/zuzepona/public_goods/Introduction/1/``
 -  ``players_per_group`` (described in :ref:`groups`)
--  ``num_rounds`` (described elsewhere in the documentation)
+-  ``num_rounds`` (described in :ref:`rounds`)
 
 views.py
 --------
@@ -185,6 +185,8 @@ participant forward.
 If omitted, then oTree will default to
 ``0`` for numeric fields, ``False`` for boolean fields, and the empty
 string for text/character fields.
+
+Example: ``timeout_submission = {'accept': True}``
 
 
 ``def before_next_page(self)``
