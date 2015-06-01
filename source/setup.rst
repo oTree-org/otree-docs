@@ -27,7 +27,8 @@ Plain install
 -------------
 
 * From your command line, run the command ``pip`` to check if Pip is installed. If not, you can download it `here <https://pip.pypa.io/en/latest/installing.html>`__.
-* Download `oTree <https://github.com/oTree-org/oTree/archive/master.zip>`__ and unzip it to a convenient location (such as your "Documents" folder). (Or better yet, use Git to clone [this repo](https://github.com/oTree-org/otree))
+* Download `oTree <https://github.com/oTree-org/oTree/archive/master.zip>`__ and unzip it to a convenient location (such as your "Documents" folder).
+(Or better yet, use Git to clone `this repo <https://github.com/oTree-org/otree>`__.)
 * In your command line, go to the root directory of the unzipped folder where ``requirements_base.txt`` is
   * Note: if you cannot find ``requirements_base.txt`` make sure you have downloaded ``oTree-master.zip``, not ``otree-launcher-master.zip``, which is a different download.
 * Run these commands (you may need administrator permissions):
@@ -41,7 +42,7 @@ Plain install
 Launcher install
 ----------------
 
-- Download the `launcher <https://github.com/oTree-org/otree-launcher/archive/master.zip](https://github.com/oTree-org/otree-launcher/archive/master.zip>`__.
+- Download the `launcher <https://github.com/oTree-org/otree-launcher/archive/master.zip>`__.
 - Unzip it to an easy-to-access location, like your "Documents" folder.
 - On Windows: Run otree.bat (double click, or right-click and select "Run as administrator"). If it doesn't work, you can run otree.exe.
 - On Mac OSX: Open the terminal and run ``bash otree.sh``
