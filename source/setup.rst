@@ -33,11 +33,11 @@ Plain install
   * Note: if you cannot find ``requirements_base.txt`` make sure you have downloaded ``oTree-master.zip``, not ``otree-launcher-master.zip``, which is a different download.
 * Run these commands (you may need administrator permissions):
 
-    ``````
+.. code-block:: bash
+
     pip install -r requirements_base.txt
     python otree resetdb
     python otree runserver
-    ``````
 
 Launcher install
 ----------------
@@ -59,9 +59,11 @@ Here are some specific issues along with their solutions.
 
 * Problem: You get this message:
 
+
 .. code-block::
 
     'python' is not recognized as an internal or external command, operable program or batch file.
+
 
 * Solution: make sure Python is installed and add it to your ``Path`` as described above.
 * Problem: You get this message:
