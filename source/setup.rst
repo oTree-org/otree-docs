@@ -103,6 +103,21 @@ If you are a student, teacher, or professor, PyCharm Professional is
 `free <https://www.jetbrains.com/student/>`__. Note: we recommend
 PyCharm Professional rather than PyCharm Community Edition.
 
+PyCharm configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+If PyCharm gives you messages like ``ImportError: No module named otree.models``,
+Go to ``File > Settings > Project Interpreter``.
+And add a new local interpreter. Navigate to the location of your python executable.
+
+If you are using the launcher, click the button "show hidden files" and go to:
+
+* (Windows) ``C:\Users\USERNAME\AppData\Roaming\otree-launcher\oTree\Scripts\python.exe.``
+* (Mac) ``~/.otree-launcher/oTree/bin/python``
+
+
+ImportError: No module named otree.models
+
 Explanation: oTree & Django
 ---------------------------
 

@@ -8,7 +8,7 @@ There are several alternatives for upgrading or reinstalling oTree.
 From-scratch reinstallation
 ---------------------------
 
--  On Windows: Browse to \`\ ``%APPDATA%`` and delete the folder
+-  On Windows: Browse to ``%APPDATA%`` and delete the folder
    ``otree-launcher``
 -  On Mac/Linux: Delete the folder ``~/.otree-launcher``
 -  Re-download the launcher according to the instructions on

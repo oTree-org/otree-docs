@@ -18,6 +18,8 @@ follows:
 ``player.color`` to some CSS code in the template, but that part is
 omitted here.)
 
+You can also assign treatments at the group level (change the above code to use ``get_groups()`` and ``group.color``).
+
 If your game has multiple rounds, note that the above code gets executed
 for each round. So if you want to ensure that participants are assigned
 to the same treatment group each round, you should set the property at
@@ -35,6 +37,12 @@ Then elsewhere in your code, you can access the participant's color with
 ``self.player.participant.vars['color']``.
 
 For more on vars, see ref:`vars`.
+
+
+.. The above code makes a random drawing independently for each player,
+so you may end up with an imbalance between "blue" and "red".
+ Another strategy is to
+
 
 Choosing which treatment to play
 --------------------------------
