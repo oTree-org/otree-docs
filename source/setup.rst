@@ -85,39 +85,6 @@ Here are some specific issues along with their solutions.
 * Solution: this occurs sometimes when the path contains non-Latin characters like ``好`` or ``д``. Move the launcher to a file path without these characters.
 
 
-PyCharm
--------
-
-To ease the learning curve of oTree, we recommend using
-`PyCharm Professional <http://www.jetbrains.com/pycharm/>`__, even
-though there are many other good editors for Python code. This is
-because:
-
--  PyCharm has features that make oTree/Django development easier
--  oTree has special integration with PyCharm's code completion
-   functionality
--  This documentation gives instructions assuming you are using PyCharm
--  oTree has been thoroughly tested with PyCharm
-
-If you are a student, teacher, or professor, PyCharm Professional is
-`free <https://www.jetbrains.com/student/>`__. Note: we recommend
-PyCharm Professional rather than PyCharm Community Edition.
-
-PyCharm configuration
-~~~~~~~~~~~~~~~~~~~~~
-
-If PyCharm gives you messages like ``ImportError: No module named otree.models``,
-Go to ``File > Settings > Project Interpreter``.
-And add a new local interpreter. Navigate to the location of your python executable.
-
-If you are using the launcher, click the button "show hidden files" and go to:
-
-* (Windows) ``C:\Users\USERNAME\AppData\Roaming\otree-launcher\oTree\Scripts\python.exe.``
-* (Mac) ``~/.otree-launcher/oTree/bin/python``
-
-
-ImportError: No module named otree.models
-
 Explanation: oTree & Django
 ---------------------------
 
