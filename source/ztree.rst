@@ -288,10 +288,10 @@ z-Tree's "Leave stage" command.
 Money and currency
 ~~~~~~~~~~~~~~~~~~
 
--  ShowUpFee: session\_type['participation\_fee']
--  Profit: player.payoff
--  FinalProfit: participant.payoff
--  MoneyToPay: participant.money\_to\_pay()
+-  ShowUpFee: ``session_type['participation_fee']``
+-  Profit: ``player.payoff``
+-  FinalProfit: ``participant.payoff``
+-  MoneyToPay: ``participant.money_to_pay()``
 
 Experimental currency units (ECU)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

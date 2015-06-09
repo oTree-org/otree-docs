@@ -105,7 +105,9 @@ Here are the required constants:
 -  ``name_in_url`` specifies the name used to identify your app in the participant's URL.
 For example, if you set it to ``public_goods``, a participant's URL might look like this:
 ``http://otree-demo.herokuapp.com/p/zuzepona/public_goods/Introduction/1/``
+
 -  ``players_per_group`` (described in :ref:`groups`)
+
 -  ``num_rounds`` (described in :ref:`rounds`)
 
 views.py

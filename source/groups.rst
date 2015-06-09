@@ -15,7 +15,7 @@ do this: ``players_per_group=[2,3]``; in this case, if you have a
 session with 15 players, the group sizes would be ``[2,3,2,3,2,3]``.
 
 Each player has an attribute ``id_in_group``, which is an integer,
- which will tell you if it is player 1, player 2, etc.
+which will tell you if it is player 1, player 2, etc.
 
 Group objects have the following methods:
 

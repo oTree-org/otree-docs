@@ -36,12 +36,20 @@ it in the first round:
 Then elsewhere in your code, you can access the participant's color with
 ``self.player.participant.vars['color']``.
 
-For more on vars, see ref:`vars`.
+For more on vars, see :ref:`vars`.
 
 
 .. The above code makes a random drawing independently for each player,
-so you may end up with an imbalance between "blue" and "red".
- Another strategy is to
+   so you may end up with an imbalance between "blue" and "red".
+   Another strategy is to
+
+import itertools
+
+def before_session_starts(self):
+    treatments = itertools.cycle([True, False])
+    for g in self.get_groups():
+        g.treatment = treatments.next()
+
 
 
 Choosing which treatment to play

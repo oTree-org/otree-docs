@@ -195,9 +195,11 @@ definition can be empty (with the ``pass`` keyword).
 We are almost done, but one more page is needed. After a player makes a
 contribution, they cannot see the results page right away; they first
 need to wait for the other players to contribute. You therefore need to
-add a ``WaitPage``.
+add a ``WaitPage``. When a player arrives at a wait page,
+they must wait until all other players in the group have arrived.
+Then everyone can proceed to the next page.
 
-There should be some logic in this wait page. When all players have
+When all players have
 completed the ``Contribute`` page, the players' payoffs can be
 calculated. You can trigger this calculation inside the the
 ``after_all_players_arrive`` method on the ``WaitPage``, which
