@@ -8,7 +8,7 @@ This tutorial will cover the creation of 3 games:
 -  Matching pennies
 
 Before proceeding through this tutorial, install oTree according to the
-instructions at http://www.otree.org/download/
+instructions in :ref:`setup`.
 
 .. toctree::
     :maxdepth: 2
