@@ -161,7 +161,7 @@ oTree passes a variable ``form`` to each template, which you can loop through li
 It is a Django form object, which is an iterable whose elements are Django form field objects.
 ``formfield`` can take as an argument a Django field object,
 or it can be an expression like ``{% formfield player.foo %}`` and ``{% formfield group.foo %}``,
-but `player.foo` must be written as a literal rather than assigning ``somevar = player.foo``
+but ``player.foo`` must be written as a literal rather than assigning ``somevar = player.foo``
 and then doing ``{% formfield somevar %}``.
 
 If you use this technique and want a custom label on each field, you can add a ``verbose_name`` to the model field,
