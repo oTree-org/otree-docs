@@ -59,7 +59,7 @@ For more on vars, see :ref:`vars`.
 
 The above code makes a random drawing independently for each player,
 so you may end up with an imbalance between "blue" and "red".
-To solve this, you can rotate treatments, using ``itertools.cycle``:
+To solve this, you can alternate treatments, using ``itertools.cycle``:
 
 .. code:: python
 
