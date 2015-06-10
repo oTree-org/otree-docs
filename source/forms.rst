@@ -180,7 +180,9 @@ The full list of form input widgets offered by Django is
 
 oTree additionally offers
 - ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal layout, as you would see with a Likert scale)
-- ``SliderInput`` (you can specify the step size like this: ``SliderInput(attrs={'step': '0.01'})``)
+- ``SliderInput``
+  - To specify the step size, do: ``SliderInput(attrs={'step': '0.01'})``
+  - To disable the current value from being displayed, do: ``SliderInput(show_value=False)``
 
 
 Custom widgets and hidden fields
