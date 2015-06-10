@@ -36,19 +36,41 @@ it in the first round:
 Then elsewhere in your code, you can access the participant's color with
 ``self.player.participant.vars['color']``.
 
+There is no direct equivalent for ``participant.vars`` for groups,
+because groups can be re-shuffled across rounds.
+You should instead store the variable on one of the participants in the group:
+
+.. code:: python
+
+    def before_session_starts(self):
+        if self.round_number == 1:
+            for g in self.get_groups():
+                p1 = g.get_player_by_id(1)
+                p1.participant.vars['color'] = random.choice(['blue', 'red'])
+
+Then, when you need to access a group's color, you would look it up like this:
+
+.. code:: python
+
+    p1 = self.group.get_player_by_id(1)
+    color = p1.participant.vars['color']
+
 For more on vars, see :ref:`vars`.
 
+The above code makes a random drawing independently for each player,
+so you may end up with an imbalance between "blue" and "red".
+To solve this, you can rotate treatments, using ``itertools.cycle``:
 
-.. The above code makes a random drawing independently for each player,
-   so you may end up with an imbalance between "blue" and "red".
-   Another strategy is to
+.. code:: python
 
-import itertools
+    import itertools
 
-def before_session_starts(self):
-    treatments = itertools.cycle([True, False])
-    for g in self.get_groups():
-        g.treatment = treatments.next()
+    class Subsession(otree.models.BaseSubsession):
+
+        def before_session_starts(self):
+            treatments = itertools.cycle([True, False])
+            for g in self.get_groups():
+                g.treatment = treatments.next()
 
 
 
