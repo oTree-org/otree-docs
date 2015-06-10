@@ -145,8 +145,8 @@ Determining the list of form fields dynamically
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that
-returns the list. But if you do this, you must make sure your template only displays
- these exact ``formfield`` elements.
+returns the list. But if you do this, you must make sure your template
+also contains conditional logic so that the right ``formfield`` elements are included.
 
  You can do this by looping through each field in the form.
   oTree passes a variable ``form`` to each template, which you can loop through like this:
