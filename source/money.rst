@@ -44,8 +44,9 @@ your player makes money, you should store it in this field.
 ``player.participant.payoff`` is the sum of the payoffs a participant
 made in each subsession (either in points or real money).
 At the end of the experiment, a participant's
-total profit is calculated by adding the participation fee to the
-``payoff`` that participant earned as a player in each subsession.
+total profit can be accessed by ``participant.money_to_pay()``; it is calculated
+by converting ``participant.payoff`` to real-world currency
+(if ``USE_POINTS`` is ``True``), and then adding ``session_type['participation_fee']``.
 
 
 Points (i.e. "experimental currency")

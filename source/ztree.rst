@@ -297,7 +297,7 @@ Experimental currency units (ECU)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The oTree equivalent of ECU is points, and the exchange rate is defined
-by ``money_per_point``.
+by ``real_world_currency_per_point``.
 
 In oTree you also have the option to not use ECU and to instead play the
 game in real money.
