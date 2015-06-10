@@ -145,7 +145,32 @@ Determining the list of form fields dynamically
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that
-returns the list.
+returns the list. But if you do this, you must make sure your template only displays
+ these exact ``formfield`` elements.
+
+ You can do this by looping through each field in the form.
+  oTree passes a variable ``form`` to each template, which you can loop through like this:
+
+.. code::
+
+    {% for field in form %}
+        {% formfield field %}
+    {% endfor %}
+
+``form`` is a special variable.
+It is a Django form object, which is an iterable whose elements are Django form field objects.
+``formfield`` can take as an argument a Django field object,
+or it can be an expression like ``{% formfield player.foo %}`` and ``{% formfield group.foo %}``,
+but `player.foo` must be written as a literal rather than assigning ``somevar = player.foo``
+and then doing ``{% formfield somevar %}``.
+
+If you use this technique and want a custom label on each field, you can add a ``verbose_name`` to the model field,
+as described in the Django documentation, e.g.:
+
+.. code:: python
+
+    contribution = models.CurrencyField(verbose_name="How much will you contribute?")
+
 
 Widgets
 -------
