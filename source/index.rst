@@ -99,8 +99,8 @@ Contents:
     server.rst
     mturk.rst
     django.rst
-    upgrading.rst
     ztree.rst
+    localization.rst
 
 
 
