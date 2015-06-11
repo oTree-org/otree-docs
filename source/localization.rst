@@ -7,6 +7,11 @@ oTree's participant interface is has been translated to the following languages:
 - French
 - Russian
 
+.. note::
+
+    If you downloaded oTree prior to June 11, 2015, you need to upgrade ``otree-core``
+    to get this language support.
+
 This means that all built-in text that gets displayed to participants is available in these languages.
 This includes things like:
 
@@ -16,7 +21,7 @@ This includes things like:
 
 So, as long as you write your app's text in one of these languages,
 all text that participants will see will be in that language.
-For more information, see
+For more information, see the `Django documentation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__.
 
 However, oTree's admin/experimenter interface is currently only available in English,
 and the existing sample games have not been translated to any other languages.
