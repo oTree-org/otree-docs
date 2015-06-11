@@ -84,16 +84,17 @@ For example, the following HTML will create a "Success" alert:
 
         <div class="alert alert-success">Great job!</div>
 
-HighCharts
-^^^^^^^^^^
+Graphs and charts with HighCharts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-oTree comes pre-loaded with
-`HighCharts <http://www.highcharts.com/demo>`__. You can find examples
-in the library of how to use it.
+oTree comes pre-loaded with `HighCharts <http://www.highcharts.com/demo>`__,
+which you can use to draw pie charts, line graphs, bar charts, time series, and other types of plots.
+
+You can find examples in the library of how to use it.
 
 To pass data like a list of values from Python to HighCharts, you should
 first pass it through the ``otree.common.safe_json()`` function. This
-converts to the correct JSON syntax and also uses "mark\_safe" for the
+converts to the correct JSON syntax and also uses ``mark_safe`` for the
 template.
 
 Example:
