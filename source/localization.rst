@@ -10,7 +10,7 @@ oTree's participant interface is has been translated to the following languages:
 .. note::
 
     If you downloaded oTree prior to June 11, 2015, you need to upgrade ``otree-core``
-    to get this language support.
+    to get this language support. See :ref:`upgrade-otree-core`.
 
 This means that all built-in text that gets displayed to participants is available in these languages.
 This includes things like:

@@ -135,6 +135,9 @@ Then type:
 
 Note: you may get merge conflicts if you have modified many files.
 
+
+.. _upgrade-otree-core:
+
 Upgrade oTree core libraries (minimal option)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
