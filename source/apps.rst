@@ -140,7 +140,7 @@ objects to the template, which you can access in the template, e.g.: ``{{Constan
 ``def is_displayed(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Should return True if the page should be shown, and False if the page
+Should return ``True`` if the page should be shown, and False if the page
 should be skipped. Default behavior is to show the page.
 
 For example, if you only want a page to be shown to P2 in each group:
