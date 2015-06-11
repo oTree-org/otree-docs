@@ -127,7 +127,7 @@ In-place upgrade
 Start the launcher and click the "terminal" button to get your console.
 Then type:
 
-.. code-block:: bash
+.. code-block::
 
     $ git pull https://github.com/oTree-org/oTree.git master
     $ pip install -r requirements_base.txt
