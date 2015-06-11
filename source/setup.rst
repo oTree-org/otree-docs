@@ -141,9 +141,6 @@ Note: you may get merge conflicts if you have modified many files.
 Upgrade oTree core libraries (minimal option)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start the launcher and click the "terminal" button to get your console.
-Then type:
-
 Modify ``otree-core`` version number in ``requirements_base.txt`` (the
 latest version is
 `here <https://github.com/oTree-org/oTree/blob/master/requirements_base.txt>`__),
