@@ -92,6 +92,7 @@ Contents:
     groups.rst
     money.rst
     treatments.rst
+    localization.rst
     trying_your_app.rst
     rounds.rst
     bots.rst
@@ -100,7 +101,6 @@ Contents:
     mturk.rst
     django.rst
     ztree.rst
-    localization.rst
 
 
 
