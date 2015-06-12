@@ -40,7 +40,7 @@ You define 2 blocks:
 
 You may want to customize the appearance or functionality of all pages
 in your app (e.g. by adding custom CSS or JavaScript). To do this, edit
-the file ``templates/global/Base.html``.
+the file ``_templates/global/Base.html``.
 
 Images, videos, CSS, JavaScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
