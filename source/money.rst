@@ -25,6 +25,7 @@ formatted as currency. For example, if you set
 formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
 
+
 Note: instead of using Python's built-in ``range`` function, you should
 use oTree's ``currency_range`` with currency values. It takes 3
 arguments (start, stop, step), just like range. However, note that it is
@@ -34,6 +35,11 @@ an inclusive range. For example,
 .. code:: python
 
     [Money($0.00), Money($0.02), Money($0.04), Money($0.06), Money($0.08), Money($0.10)]
+
+
+In templates, instead of using the ``c()`` function, you should use the ``|c`` filter.
+For example, ``{{ 20|c }}`` displays as ``20 points``.
+
 
 
 Assigning payoffs
