@@ -130,7 +130,18 @@ If you have been developing your project on your local PC, you should
 push your oTree folder to your webserver, e.g. with Git. Then, you
 should make sure your webserver has Python installed (possibly in a
 ``virtualenv``), and do ``pip install -r requirements.txt`` to install
-all the dependencies. When you are ready to launch the experiment, you
+all the dependencies.
+
+.. note::
+
+    When you install to a server, you should install ``requirements.txt``,
+    as opposed to the usual ``requirements_base.txt``,
+    which is only intended for local development.
+    ``requirements.txt`` contains a few additional dependencies
+    that are necessary for running oTree on a production server.
+
+
+When you are ready to launch the experiment, you
 should set ``OTREE_PRODUCTION`` to ``1``, to turn off ``DEBUG`` mode.
 
 You also need to run Django's ``collectstatic`` command for static files to work.
@@ -149,4 +160,6 @@ Then, you should set the following environment variable, so that it can
 be read by ``dj_database_url``:
 
 ``DATABASE_URL=postgres://postgres@localhost/django_db``
+
+
 

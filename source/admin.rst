@@ -44,6 +44,8 @@ While your session is ongoing, you can monitor the live progress in the
 admin interface. The admin tables update live, highlighting changes as
 they occur.
 
+.. _AUTH_LEVEL:
+
 Authenticaton
 -------------
 
