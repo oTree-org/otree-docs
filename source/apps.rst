@@ -172,6 +172,14 @@ complete the page. After the time runs out, the page auto-submits.
 
 Example: ``timeout_seconds = 20``
 
+When there are 60 seconds left, the page displays a timer warning the participant.
+
+.. note::
+
+    For the auto-submit to work, the user's browser window must remain open.
+    We are working on making the page always submit, even if the user
+    closes their browser window.
+
 ``timeout_submission``
 ~~~~~~~~~~~~~~~~~~~~~~
 

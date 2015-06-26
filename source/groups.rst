@@ -34,12 +34,12 @@ in the group and subsession, respectively.
 Wait pages
 ----------
 
-Wait pages are necessary when one or more players need to wait for
-another player to take some action before they can proceed. For example,
+Wait pages are necessary when one player needs to wait for
+others to take some action before they can proceed. For example,
 in an ultimatum game, player 2 cannot accept or reject before they have
 seen player 1's offer.
 
-Wait pages are defined in views.py. If you have a wait page in your
+Wait pages are defined in views.py. If you have a ``WaitPage`` in your
 sequence of pages, then oTree waits until all players in the group have
 arrived at that point in the sequence, and then all players are allowed
 to proceed.
@@ -64,6 +64,8 @@ The text in the title of the wait page.
 -  ``def body_text(self)``
 
 The text in the body of the wait page
+
+
 
 Group re-matching between rounds
 --------------------------------

@@ -16,8 +16,8 @@ currency. The session's ``participation_fee`` is also displayed in this currency
 In oTree apps, currency values have their own data type. You can define
 a currency value with the ``c()`` function, e.g. ``c(10)`` or ``c(0)``.
 Correspondingly, there is a special model field for currency values:
-``CurrencyField``. For example, each player has a ``payoff`` field,
-which is a ``CurrencyField``. Currency values work just like numbers
+``CurrencyField``. Each player has a ``payoff`` field,
+which is a ``CurrencyField`` (whose inital value is ``None``). Currency values work just like numbers
 (you can do mathematical operations like addition, multiplication, etc),
 but when you pass them to an HTML template, they are automatically
 formatted as currency. For example, if you set

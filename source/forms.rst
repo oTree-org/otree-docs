@@ -45,12 +45,13 @@ example, if you have a form containing a ``PositiveIntegerField``, oTree
 will not let the user submit values that are not positive integers, like
 ``-1``, ``1.5``, or ``hello``.
 
-You can specify additional validation. For example, here is how you would require integer to be between
+You can specify additional validation. For example, here is how you would require an integer to be between
 12 and 24:
 
 .. code:: python
 
     offer = models.PositiveIntegerField(min=12, max=24)
+
 
 You can constrain the user to a predefined list of choices by using ``choices``:
 
