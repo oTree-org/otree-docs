@@ -47,3 +47,24 @@ line by line.
 
 More on the PyCharm debugger
 `here <http://www.jetbrains.com/pycharm/webhelp/debugging.html>`__.
+
+Debugging in the command shell
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To test your app from an interactive Python shell, you can run this command:
+
+.. code:: shell
+
+   $ python otree shell
+
+Then you can run code that inspects objects already in your database.
+For example, if you already ran a "public goods game" session in your browser,
+you can access the database objects in Python like this:
+
+.. code:: python
+
+   >>> from public_goods.models import Player
+   >>> players = Player.objects.all()
+   >>> ...
+
+
