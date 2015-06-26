@@ -1,5 +1,5 @@
-Deploying to a server
-=====================
+Server deployment
+=================
 
 oTree can be deployed to a cloud service like
 Heroku, or to your own on-premises server.
