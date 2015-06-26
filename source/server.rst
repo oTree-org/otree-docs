@@ -126,28 +126,8 @@ The most typical setup will be a Linux server with Apache. The
 instructions for this setup are
 `here <https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/modwsgi/>`__.
 
-If you have been developing your project on your local PC, you should
-push your oTree folder to your webserver, e.g. with Git. Then, you
-should make sure your webserver has Python installed (possibly in a
-``virtualenv``), and do ``pip install -r requirements.txt`` to install
-all the dependencies.
-
-.. note::
-
-    When you install to a server, you should install ``requirements.txt``,
-    as opposed to the usual ``requirements_base.txt``,
-    which is only intended for local development.
-    ``requirements.txt`` contains a few additional dependencies
-    that are necessary for running oTree on a production server.
-
-
-When you are ready to launch the experiment, you
-should set ``OTREE_PRODUCTION`` to ``1``, to turn off ``DEBUG`` mode.
-
-You also need to run Django's ``collectstatic`` command for static files to work.
-
-Database setup
-~~~~~~~~~~~~~~
+Database
+~~~~~~~~
 
 oTree is most frequently used with PostgreSQL as the production
 database, although you can also use MySQL, MariaDB, or any other database supported by Django.
@@ -161,5 +141,26 @@ be read by ``dj_database_url``:
 
 ``DATABASE_URL=postgres://postgres@localhost/django_db``
 
+Then, instead of installing ``requirements_base.txt``, install ``requirements.txt``.
+This will install ``psycopg2``, which is necessary for using Postgres.
 
+You may get an error when you try installing ``psycopg2``,
+as described `here <http://initd.org/psycopg/docs/faq.html#problems-compiling-and-deploying-psycopg2>`__.
 
+The fix is to install the ``libpq-dev`` and ``python-dev`` packages.
+On Ubuntu/Debian, do:
+
+.. code-block:: bash
+
+    sudo apt-get install libpq-dev python-dev
+
+The command ``python otree resetdb`` only works on SQLite.
+On Postgres, you should drop the database and then run ``python otree migrate``.
+
+Running the server
+~~~~~~~~~~~~~~~~~~
+
+When you are ready to launch the experiment, you
+should set ``OTREE_PRODUCTION`` to ``1``, to turn off ``DEBUG`` mode.
+
+You also need to run Django's ``collectstatic`` command for static files to work.
