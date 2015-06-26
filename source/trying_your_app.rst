@@ -1,5 +1,5 @@
-Trying your app
-===============
+Manual testing
+==============
 
 You can launch your app on your local development machine to test it,
 and then when you are satisfied, you can deploy it to a server.
