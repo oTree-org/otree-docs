@@ -51,13 +51,13 @@ More on the PyCharm debugger
 Debugging in the command shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To test your app from an interactive Python shell, you can run this command:
+To test your app from an interactive Python shell, do:
 
 .. code:: shell
 
    $ python otree shell
 
-Then you can run code that inspects objects already in your database.
+Then you can interactively run Python commands that inspect objects in your database.
 For example, if you already ran a "public goods game" session in your browser,
 you can access the database objects in Python like this:
 
