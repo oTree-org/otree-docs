@@ -24,6 +24,7 @@ $(document).ready(function(){
     var $dynamicLinkDiv = $("#otree-launcher-dynamic-link");
 
     if(!!$dynamicLinkDiv.length){
+        alert("JE");
         $.getJSON(LAUNCHER_VERSION_URL, function(data){
             var version = ".".join(data.version);
             var download = "oTree-Launcher-" + version + ".zip";
