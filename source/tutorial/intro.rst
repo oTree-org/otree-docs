@@ -1,5 +1,5 @@
-oTree tutorial
-==============
+Tutorial
+========
 
 This tutorial will cover the creation of 3 games:
 
