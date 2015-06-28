@@ -1,5 +1,5 @@
-views.py
-========
+Views
+=====
 
 Each page that your players see is defined by a ``Page`` class in
 ``views.py``. (You can think of "views" as a synonym for "pages".)

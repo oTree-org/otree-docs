@@ -1,5 +1,5 @@
-models.py
----------
+Models
+------
 
 This is where you store your data models.
 
