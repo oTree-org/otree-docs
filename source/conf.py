@@ -325,3 +325,7 @@ rst_epilog = """
 .. |github_icon| image:: /_static/assets/github-icon.png
 
 """.strip()
+
+
+def setup(app):
+    app.add_javascript('otree-docs.js')
