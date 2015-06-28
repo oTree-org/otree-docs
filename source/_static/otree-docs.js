@@ -26,7 +26,7 @@ $(document).ready(function(){
     if(!!$dynamicLinkDiv.length){
         $.getJSON(LAUNCHER_VERSION_URL, function(data){
             var version = ".".join(data.version);
-            var download = "oTree_launcher-" + version + ".zip";
+            var download = "oTree-Launcher-" + version + ".zip";
 
             var parts = [
                 "<a href='" + LAUNCHER_HREF + "' ",
