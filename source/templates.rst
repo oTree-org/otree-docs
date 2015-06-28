@@ -52,7 +52,7 @@ Like ``templates/``, it should also have a subfolder with your app's name.
 
 Put your files in that subfolder. You can then reference them in a template like this:
 
-.. code:: HTML
+.. code-block:: HTML
 
     <img src="{% static "my_app/my_image.png" %}"/>
 
@@ -80,7 +80,7 @@ element.
 
 For example, the following HTML will create a "Success" alert:
 
-.. code:: HTML
+.. code-block:: HTML
 
         <div class="alert alert-success">Great job!</div>
 
@@ -88,7 +88,8 @@ Graphs and charts with HighCharts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 oTree comes pre-loaded with `HighCharts <http://www.highcharts.com/demo>`__,
-which you can use to draw pie charts, line graphs, bar charts, time series, and other types of plots.
+which you can use to draw pie charts, line graphs, bar charts, time series,
+and other types of plots.
 
 You can find examples in the library of how to use it.
 

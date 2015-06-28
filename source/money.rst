@@ -11,7 +11,8 @@ You can specify the payment currency in ``settings.py``, by setting
 means that all currency amounts the participants see will be
 automatically formatted in that currency, and at the end of the session
 when you print out the payments page, amounts will be displayed in that
-currency. The session's ``participation_fee`` is also displayed in this currency code.
+currency. The session's ``participation_fee`` is also displayed in this
+currency code.
 
 In oTree apps, currency values have their own data type. You can define
 a currency value with the ``c()`` function, e.g. ``c(10)`` or ``c(0)``.
@@ -20,7 +21,8 @@ Correspondingly, there is a special model field for currency values:
 
 Each player has a ``payoff`` field,
 which is a ``CurrencyField``. Its initial value is ``None``.
-If you want to initialize it to 0, you should do so in ``before_session_starts``, e.g.:
+If you want to initialize it to 0, you should do so in
+``before_session_starts``, e.g.:
 
 .. code-block:: python
 
@@ -43,14 +45,15 @@ arguments (start, stop, step), just like range. However, note that it is
 an inclusive range. For example,
 ``currency_range(c(0), c(0.10), c(0.02))`` returns something like:
 
-.. code:: python
+.. code-block:: python
 
-    [Money($0.00), Money($0.02), Money($0.04), Money($0.06), Money($0.08), Money($0.10)]
+    [Money($0.00), Money($0.02), Money($0.04),
+     Money($0.06), Money($0.08), Money($0.10)]
 
 
-In templates, instead of using the ``c()`` function, you should use the ``|c`` filter.
+In templates, instead of using the ``c()`` function, you should use the
+``|c`` filter.
 For example, ``{{ 20|c }}`` displays as ``20 points``.
-
 
 
 Assigning payoffs
@@ -61,9 +64,10 @@ your player makes money, you should store it in this field.
 ``player.participant.payoff`` is the sum of the payoffs a participant
 made in each subsession (either in points or real money).
 At the end of the experiment, a participant's
-total profit can be accessed by ``participant.money_to_pay()``; it is calculated
-by converting ``participant.payoff`` to real-world currency
-(if ``USE_POINTS`` is ``True``), and then adding ``session_type['participation_fee']``.
+total profit can be accessed by ``participant.money_to_pay()``; it is
+calculated by converting ``participant.payoff`` to real-world currency
+(if ``USE_POINTS`` is ``True``), and then adding
+``session_type['participation_fee']``.
 
 
 Points (i.e. "experimental currency")
@@ -84,7 +88,7 @@ For example, if you pay the user 2 cents per point, you would set
 You can convert a point amount to money using the
 ``to_real_world_currency()`` method. In the above example, that would be:
 
-.. code::
+.. code-block:: python
 
     >>> c(10).to_real_world_currency(self.session)
     $0.20

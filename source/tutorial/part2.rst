@@ -131,7 +131,7 @@ Instructions.html
 
 This template uses Django's template inheritance with the
 ``{% extends %}`` command. The file it inherits from is located at
- ``_templates/global/Instructions.html``.
+``_templates/global/Instructions.html``.
 
 For basic apps you don't need to know the
 details of how template inheritance works.
@@ -147,9 +147,10 @@ details of how template inheritance works.
     <p>
         To start, participant A receives {{ Constants.endowment }};
         participant B receives nothing.
-        Participant A can send some or all of his {{ Constants.endowment }} to participant B.
-        Before B receives these points they will be tripled.
-        Once B receives the tripled points he can decide to send some or all of his points to A.
+        Participant A can send some or all of his {{ Constants.endowment }}
+        to participant B. Before B receives these points they will be tripled.
+        Once B receives the tripled points he can decide to send some or all
+        of his points to A.
     </p>
     {% endblock %}
 

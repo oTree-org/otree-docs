@@ -7,17 +7,19 @@ Sessions
 In oTree, a session is an event during which participants take part in oTree
 experiments. An example of a session would be:
 
-"A number of participants will come to the lab and will play trust games (in groups of 2),
-followed by 2 rounds of ultimatum games, followed by a questionnaire.
-Participants get paid EUR 10.00 for showing up, plus their earnings from the games."
+"A number of participants will come to the lab and will play trust games
+(in groups of 2), followed by 2 rounds of ultimatum games, followed by a
+questionnaire.
+Participants get paid EUR 10.00 for showing up, plus their earnings from the
+games."
 
 To configure a session like this, you would go to ``settings.py`` and
 define a "session type", which is a reusable configuration.
- This lets you create multiple sessions, all with the same properties.
+This lets you create multiple sessions, all with the same properties.
 
  Add an entry to ``SESSION_TYPES`` like this:
 
-.. code:: python
+.. code-block:: python
 
     {
         'name': 'my_session_type',
@@ -32,14 +34,16 @@ This session type is composed of 3 apps:
 -  Ultimatum game
 -  Questionnaire
 
-Note that you can reuse apps (such as the ``questionnaire`` app) in multiple session types.
+Note that you can reuse apps (such as the ``questionnaire`` app) in multiple
+session types.
 
 Once you have defined a session type, you can run the server,
 open your browser to the admin interface, and create a new session.
 You would select "My Session Type" as the type for the session,
 and then enter "30" for the number of participants.
- An instance of a session would be created, and you would get the start links
- to distribute to your participants.
+
+An instance of a session would be created, and you would get the start links to
+distribute to your participants.
 
 In this example, the session would contain 4 "subsessions":
 
