@@ -86,15 +86,17 @@ Contents:
     setup.rst
     conceptual_overview.rst
     apps.rst
+    models.rst
+    views.rst
     templates.rst
     forms.rst
     object_model_and_self.rst
     groups.rst
     money.rst
     treatments.rst
-    localization.rst
-    trying_your_app.rst
     rounds.rst
+    localization.rst
+    manual_testing.rst
     bots.rst
     admin.rst
     server.rst

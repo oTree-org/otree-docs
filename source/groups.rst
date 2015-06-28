@@ -31,41 +31,6 @@ Player objects have methods ``get_others_in_group()`` and
 ``get_others_in_subsession()`` that return a list of the other players
 in the group and subsession, respectively.
 
-Wait pages
-----------
-
-Wait pages are necessary when one player needs to wait for
-others to take some action before they can proceed. For example,
-in an ultimatum game, player 2 cannot accept or reject before they have
-seen player 1's offer.
-
-Wait pages are defined in views.py. If you have a ``WaitPage`` in your
-sequence of pages, then oTree waits until all players in the group have
-arrived at that point in the sequence, and then all players are allowed
-to proceed.
-
-If your subsession has multiple groups playing simultaneously, and you
-would like a wait page that waits for all groups (i.e. all players in
-the subsession), you can set the attribute
-``wait_for_all_groups = True`` on the wait page.
-
-Wait pages can define the following methods:
-
--  ``def after_all_players_arrive(self)``
-
-This code will be executed once all players have arrived at the wait
-page. For example, this method can determine the winner of an auction
-and set each player's payoff.
-
--  ``def title_text(self)``
-
-The text in the title of the wait page.
-
--  ``def body_text(self)``
-
-The text in the body of the wait page
-
-
 
 Group re-matching between rounds
 --------------------------------
