@@ -52,6 +52,10 @@ Launcher install
                 <img src="_static/loading.gif">
             </div>
 
+    .. only:: not html
+
+        `oTree_launcher-stable.zip <https://github.com/oTree-org/otree-launcher/archive/master.zip>`_
+
 -   Unzip it to an easy-to-access location, like your "Documents" folder.
 -   On Windows: Run otree.bat (double click, or right-click and select
     "Run as administrator"). If it doesn't work, you can run otree.exe.
