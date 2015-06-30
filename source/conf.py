@@ -322,6 +322,10 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 
 rst_epilog = """
-.. |github_icon| image:: _static/assets/github-icon.png
+.. |github_icon| image:: /_static/assets/github-icon.png
 
 """.strip()
+
+
+def setup(app):
+    app.add_javascript('otree-docs.js')

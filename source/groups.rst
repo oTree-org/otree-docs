@@ -48,7 +48,7 @@ to be reassigned to the same groups but to have roles randomly shuffled
 around within their groups (e.g. so player 1 will either become player 2
 or remain player 1), you would do this:
 
-.. code:: python
+.. code-block:: python
 
     def before_session_starts(self):
         for group in self.get_groups():

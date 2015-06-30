@@ -7,7 +7,7 @@ For example, if you want some participants to have a blue background to
 their screen and some to have a red background, you would randomize as
 follows:
 
-.. code:: python
+.. code-block:: python
 
     def before_session_starts(self):
         # randomize to treatments
@@ -18,7 +18,8 @@ follows:
 ``player.color`` to some CSS code in the template, but that part is
 omitted here.)
 
-You can also assign treatments at the group level (change the above code to use ``get_groups()`` and ``group.color``).
+You can also assign treatments at the group level (change the above code to use
+``get_groups()`` and ``group.color``).
 
 If your game has multiple rounds, note that the above code gets executed
 for each round. So if you want to ensure that participants are assigned
@@ -26,7 +27,7 @@ to the same treatment group each round, you should set the property at
 the participant level, which persists across subsessions, and only set
 it in the first round:
 
-.. code:: python
+.. code-block:: python
 
     def before_session_starts(self):
         if self.round_number == 1:
@@ -40,7 +41,7 @@ There is no direct equivalent for ``participant.vars`` for groups,
 because groups can be re-shuffled across rounds.
 You should instead store the variable on one of the participants in the group:
 
-.. code:: python
+.. code-block:: python
 
     def before_session_starts(self):
         if self.round_number == 1:
@@ -50,7 +51,7 @@ You should instead store the variable on one of the participants in the group:
 
 Then, when you need to access a group's color, you would look it up like this:
 
-.. code:: python
+.. code-block:: python
 
     p1 = self.group.get_player_by_id(1)
     color = p1.participant.vars['color']
@@ -61,7 +62,7 @@ The above code makes a random drawing independently for each player,
 so you may end up with an imbalance between "blue" and "red".
 To solve this, you can alternate treatments, using ``itertools.cycle``:
 
-.. code:: python
+.. code-block:: python
 
     import itertools
 
@@ -85,7 +86,7 @@ colleagues both treatments (red and blue). You can create 2 session
 types in settings.py that have the same keys to session type dictionary
 , except the ``treatment`` key:
 
-.. code:: python
+.. code-block:: python
 
     SESSION_TYPES = [
         {
@@ -105,7 +106,7 @@ types in settings.py that have the same keys to session type dictionary
 Then in the ``before_session_starts`` method, you can check which of the
 2 session types it is:
 
-.. code:: python
+.. code-block:: python
 
     def before_session_starts(self):
         for p in self.get_players():
