@@ -121,8 +121,7 @@ From-scratch reinstallation
 -  On Windows: Browse to ``%APPDATA%`` and delete the folder
    ``otree-launcher``
 -  On Mac/Linux: Delete the folder ``~/.otree-launcher``
--  Re-download the launcher according to the instructions on
-   http://www.otree.org/download/
+-  Re-download the launcher
 
 In-place upgrade
 ~~~~~~~~~~~~~~~~
