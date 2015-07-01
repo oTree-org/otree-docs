@@ -121,10 +121,7 @@ you may prefer to run oTree on your own server. Reasons may include:
 oTree runs on top of Django, so oTree setup is the same as Django setup.
 Django runs on a wide variety of servers, except getting it to run on
 a Windows server like IIS may require extra work; you can find info about Django + IIS online.
-
-The most typical setup will be a Linux server with Apache. The
-instructions for this setup are
-`here <https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/modwsgi/>`__.
+Below, instructions are given for using Unix and Gunicorn.
 
 Database
 ~~~~~~~~
@@ -160,7 +157,13 @@ On Postgres, you should drop the database and then run ``python otree migrate``.
 Running the server
 ~~~~~~~~~~~~~~~~~~
 
-When you are ready to launch the experiment, you
-should set ``OTREE_PRODUCTION`` to ``1``, to turn off ``DEBUG`` mode.
+To run the production server,
+you should use a process control system like Supervisord,
+and have it launch otree with the command ``python otree runprodserver``.
+(``runserver`` is only used during development.)
 
-You also need to run Django's ``collectstatic`` command for static files to work.
+This will run the ``collectstatic`` command, and then
+launch the server as specified in your project's ``Procfile``.
+The default ``Procfile`` launches the Gunicorn server.
+If you want to use another server like Nginx; you need to modify the ``Procfile``.
+(If you instead want to use Apache, consult the Django docs.)
