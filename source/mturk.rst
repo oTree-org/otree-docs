@@ -101,3 +101,10 @@ ability to auto-submit pages if the participant drops out or does not
 complete the page in time. This should enable the gameplay to proceed
 even if there is attrition.
 
+.. note::
+
+    If you downloaded oTree prior to July 3, 2015, you should upgrade your MTurk settings
+    in ``settings.py`` to the new format `here <https://github.com/oTree-org/oTree/blob/master/settings.py>`__.
+    See the variable ``mturk_hit_settings``, which is included in ``SESSION_TYPE_DEFAULTS``.
+    Then upgrade to the latest version of ``otree-core``.
+
