@@ -150,3 +150,7 @@ If this returns ``False`` then the player skips the wait page.
 If all players in the group skip the wait page,
 then ``after_all_players_arrive()`` will not be run.
 
+.. note::
+
+    ``is_displayed`` on wait pages was added in otree-core 0.3.7
+
