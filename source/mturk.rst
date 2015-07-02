@@ -77,6 +77,29 @@ After publishing the HIT you can test it both as a worker and as a
 requester using the links provided on "MTurk" Tab of your session admin
 panel.
 
+Preventing retakes (repeat workers)
+-----------------------------------
+
+To prevent a worker from participating in your study twice,
+you can grant a Qualification to each worker who participates in your study,
+and then prevent people who already have this qualification from participating in your studies.
+
+This technique is described `here <http://turkrequesters.blogspot.kr/2014/08/how-to-block-past-workers-from-doing.html?spref=tw>`__.
+
+First, login to your MTurk requester account and create a qualification.
+Then, go to settings.py and paste the qualification's ID into ``grant_qualification_id``.
+Finally, add an entry to ``qualification_requirements``:
+
+.. code-block:: python
+
+    'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',
+    'qualification_requirements': [
+        qualification.LocaleRequirement("EqualTo", "US"),
+        ...
+        qualification.Requirement('YOUR_QUALIFICATION_ID_HERE', 'DoesNotExist')
+    ]
+
+
 Multiplayer games
 -----------------
 
@@ -103,7 +126,7 @@ even if there is attrition.
 
 .. note::
 
-    If you downloaded oTree prior to July 3, 2015, you need to update your oTree project.
+    If you downloaded oTree prior to July 2, 2015, you need to update your oTree project.
     You should upgrade your MTurk settings
     in ``settings.py`` to the new format `here <https://github.com/oTree-org/oTree/blob/master/settings.py>`__.
     See the variable ``mturk_hit_settings``, which is included in ``SESSION_TYPE_DEFAULTS``.
