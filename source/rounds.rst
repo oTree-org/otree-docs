@@ -21,10 +21,14 @@ current round number, starting from 1.
 Accessing data from previous rounds
 -----------------------------------
 
-Player objects have methods ``in_previous_rounds()`` and ``in_all_rounds()``
-that each return a list of players representing the same participant in
+You can use the methods ``in_previous_rounds()`` and ``in_all_rounds()``
+on player, group, and subsession objects.
+
+``player.in_previous_rounds()`` and ``player.in_all_rounds()``
+each return a list of players representing the same participant in
 previous rounds of the same app. The difference is that ``in_all_rounds()``
 includes the current round's player.
+
 For example, if you wanted to calculate a participant's payoff for all previous
 rounds of a game, plus the current one:
 
@@ -34,6 +38,9 @@ rounds of a game, plus the current one:
 
 Similarly, subsession objects have methods ``in_previous_rounds()`` and
 ``in_all_rounds()`` that work the same way.
+
+Group objects also have these methods, but note that if you re-shuffle groups between rounds,
+then these methods may not return anything meaningful (their behavior in this situation is unspecified).
 
 .. _vars:
 
