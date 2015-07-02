@@ -39,8 +39,12 @@ rounds of a game, plus the current one:
 Similarly, subsession objects have methods ``in_previous_rounds()`` and
 ``in_all_rounds()`` that work the same way.
 
-Group objects also have these methods, but note that if you re-shuffle groups between rounds,
+Group objects also have ``in_previous_rounds()`` and ``in_all_rounds()`` methods, but note that if you re-shuffle groups between rounds,
 then these methods may not return anything meaningful (their behavior in this situation is unspecified).
+
+.. note::
+
+    ``Group.in_all_rounds()`` and ``Group.in_previous_rounds()`` were added in otree-core 0.3.8
 
 .. _vars:
 
