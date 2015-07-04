@@ -24,8 +24,9 @@ cents), and another player either rejects or accepts the offer. When you
 analyze your data, you will want your "Group" table to look something
 like this:
 
-.. csv-table:: <TITLE>
+.. csv-table::
     :header-rows: 1
+    
     Group ID,Amount offered,Offer accepted
     1,50,TRUE
     2,25,FALSE
