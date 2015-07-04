@@ -24,22 +24,16 @@ cents), and another player either rejects or accepts the offer. When you
 analyze your data, you will want your "Group" table to look something
 like this:
 
-::
-
-    +----------+----------------+----------------+
-    | Group ID | Amount offered | Offer accepted |
-    +==========+================+================+
-    | 1        | 50             | TRUE           |
-    +----------+----------------+----------------+
-    | 2        | 25             | FALSE          |
-    +----------+----------------+----------------+
-    | 3        | 50             | TRUE           |
-    +----------+----------------+----------------+
-    | 4        | 0              | FALSE          |
-    +----------+----------------+----------------+
-    | 5        | 60             | TRUE           |
-    +----------+----------------+----------------+
-
+.. csv-table:: <TITLE>
+    :header-rows: 1
+    Group ID,Amount offered,Offer accepted
+    1,50,TRUE
+    2,25,FALSE
+    3,50,TRUE
+    4,0,FALSE
+    5,60,TRUE
+    
+    
 You need to define a Python class that defines the structure of this
 database table. You define what fields (columns) are in the table, what
 their data types are, and so on. When you run your experiment, the SQL
