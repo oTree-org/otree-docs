@@ -165,9 +165,10 @@ and have it launch otree with the command ``python otree runprodserver``.
 This will run the ``collectstatic`` command, and then
 launch the server as specified in your project's ``Procfile``.
 The default ``Procfile`` launches the Gunicorn server.
-If you want to use another server like Nginx; you need to modify the ``Procfile``.
-(If you instead want to use Apache, consult the Django docs.)
+If you want to use another server like Nginx; you need to modify the
+``Procfile``. (If you instead want to use Apache, consult the Django docs.)
 
-.. note::
 
-    ``runprodserver`` was added in otree-core 0.3.8
+.. versionadded:: 0.3.8
+   ``runprodserver``
+

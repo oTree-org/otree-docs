@@ -102,6 +102,7 @@ Contents:
     server.rst
     mturk.rst
     django.rst
+    deprecate.rst
     ztree.rst
 
 
