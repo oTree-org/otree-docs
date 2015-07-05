@@ -120,11 +120,12 @@ LaTeX
 oTree comes pre-loaded with `KaTeX <http://khan.github.io/KaTeX/>`__; you
 can insert LaTeX equations like this:
 
-.. code-block:: html+latex
+.. code-block:: html
 
     <span class="latex">
         1 + i = (1 + r)(1 + \pi)
     </span>
+
 
 oTree on mobile devices
 ~~~~~~~~~~~~~~~~~~~~~~~

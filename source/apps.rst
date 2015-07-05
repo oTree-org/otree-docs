@@ -26,3 +26,4 @@ import any 3rd-party modules.
 
 Then go to ``settings.py`` and create an entry for your app in
 ``SESSION_TYPES`` that looks like the other entries.
+

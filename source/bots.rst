@@ -101,3 +101,4 @@ Bots can either be programmed to simulate playing the game according to
 an ordinary strategy, or to test "boundary conditions" (e.g. by entering
 invalid input to see if the application correctly rejects it). Or yet
 the bot can enter random input on each page.
+
