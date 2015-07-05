@@ -52,7 +52,7 @@ Like ``templates/``, it should also have a subfolder with your app's name.
 
 Put your files in that subfolder. You can then reference them in a template like this:
 
-.. code-block:: HTML
+.. code-block:: HTML+django
 
     <img src="{% static "my_app/my_image.png" %}"/>
 
@@ -120,7 +120,7 @@ LaTeX
 oTree comes pre-loaded with `KaTeX <http://khan.github.io/KaTeX/>`__; you
 can insert LaTeX equations like this:
 
-.. code-block:: html
+.. code-block:: html+latex
 
     <span class="latex">
         1 + i = (1 + r)(1 + \pi)

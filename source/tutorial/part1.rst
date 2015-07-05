@@ -118,7 +118,7 @@ The first is ``Contribute.html``, which contains a brief explanation of
 the game, and a form field where the player can enter their
 contribution.
 
-.. code-block:: django
+.. code-block:: html+django
 
     {% extends "global/Base.html" %} {% load staticfiles otree_tags %}
 
@@ -143,7 +143,7 @@ contribution.
 
 The second template will be called ``Results.html``.
 
-.. code-block:: django
+.. code-block:: html+django
 
     {% extends "global/Base.html" %} {% load staticfiles otree_tags %}
 
@@ -152,7 +152,8 @@ The second template will be called ``Results.html``.
     {% block content %}
 
     <p>
-        You started with an endowment of {{ Constants.endowment }}, of which you contributed {{ player.contribution }}.
+        You started with an endowment of {{ Constants.endowment }},
+        of which you contributed {{ player.contribution }}.
         Your group contributed {{ group.total_contribution }},
         resulting in an individual share of {{ group.individual_share }}.
         Your profit is therefore {{ player.payoff }}.

@@ -247,7 +247,7 @@ templates we have previously created, but note the ``{% for %}`` loop
 that creates all rows in the history table. ``{% for %}`` is part of the
 Django template language.
 
-.. code-block:: django
+.. code-block:: html+django
 
     {% extends "global/Base.html" %}
     {% load staticfiles otree_tags %}
@@ -279,7 +279,10 @@ Django template language.
             {% for p in player_in_previous_rounds %}
                 <tr>
                     <td>{{ p.subsession.round_number }}</td>
-                    <td>You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>
+                    <td>
+                        You were the {{ p.role }} and {% if p.is_winner %}
+                        won {% else %} lost {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         </table>
@@ -314,7 +317,7 @@ ResultsSummary
 
 Let's create ``ResultsSummary.html``:
 
-.. code-block:: django
+.. code-block:: html+django
 
     {% extends "global/Base.html" %}
     {% load staticfiles otree_tags %}
@@ -333,7 +336,10 @@ Let's create ``ResultsSummary.html``:
             {% for p in player_in_all_rounds %}
                 <tr>
                     <td>{{ p.subsession.round_number }}</td>
-                    <td>You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>
+                    <td>
+                        You were the {{ p.role }} and {% if p.is_winner %} won
+                        {% else %} lost {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         </table>
@@ -417,6 +423,7 @@ is skipped in every round except the last, because of how we set
 -  Choice [Round 4]
 -  ResultsWaitPage [Round 4]
 -  ResultsSummary [Round 4]
+
 
 Add an entry to ``SESSION_TYPES`` in ``settings.py``
 ----------------------------------------------------

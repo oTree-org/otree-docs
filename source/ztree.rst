@@ -5,7 +5,7 @@ For those familiar with z-Tree, here are some notes on the equivalents
 of various z-Tree concepts in oTree. This document just gives the names
 of the oTree feature; for full explanations of each concept, see the
 `reference
-documentation <https://github.com/oTree-org/oTree/blob/master/README.md>`__.
+documentation <http://otree.readthedocs.org>`__.
 
 This list will expand over time. If you would like to request an item
 added to this list, or if you have a correction to make, please email
@@ -249,7 +249,7 @@ History box
 You can program a history box to your liking using ``in_all_rounds``.
 For example:
 
-.. code-block:: html
+.. code-block:: html+django
 
         <table class="table">
             <tr>

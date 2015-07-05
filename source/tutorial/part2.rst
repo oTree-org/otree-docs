@@ -136,7 +136,7 @@ This template uses Django's template inheritance with the
 For basic apps you don't need to know the
 details of how template inheritance works.
 
-.. code-block:: django
+.. code-block:: html+django
 
     {% extends "global/Instructions.html" %}
 
@@ -206,7 +206,7 @@ SendBack
 
 This is the page that P2 sees to send money back. Here is the template:
 
-.. code-block:: django
+.. code-block:: html+django
 
     {% extends "global/Base.html" %}
     {% load staticfiles otree_tags %}
@@ -219,9 +219,10 @@ This is the page that P2 sees to send money back. Here is the template:
 
         {% include 'trust_simple/Instructions.html' %}
 
-    <p>
-    You are Participant B. Participant A sent you {{group.sent_amount}} and you received {{tripled_amount}}.
-    </p>
+        <p>
+            You are Participant B. Participant A sent you {{group.sent_amount}}
+            and you received {{tripled_amount}}.
+        </p>
 
         {% formfield group.sent_back_amount with label="How much do you want to send back?" %}
 
@@ -271,7 +272,7 @@ use the ``{% if %}`` statement (part of `Django's template
 language <https://docs.djangoproject.com/en/1.7/topics/templates/>`__)
 to condition on the current player's ``id_in_group``.
 
-.. code-block:: django
+.. code-block:: html+django
 
     {% extends "global/Base.html" %}
     {% load staticfiles otree_tags %}
