@@ -51,12 +51,13 @@ Example:
 
 .. code-block:: python
 
-    # This will look inside your app under the 'templates' directory,
-    # to '/app_name/MyView.html'
+    # This will look inside:
+    # 'app_name/templates/app_name/MyView.html'
+    # (Note that app_name is repeated)
     template_name = 'app_name/MyView.html'
 
-``timeout_seconds``
-~~~~~~~~~~~~~~~~~~~
+``timeout_seconds`` (Remaining time)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The number of seconds the user has to
 complete the page. After the time runs out, the page auto-submits.

@@ -27,7 +27,7 @@ Periods
 ~~~~~~~
 
 In oTree, these are called "rounds". You can set ``num_rounds``, and get
-the current round number with self.subsession.round\_number.
+the current round number with self.subsession.round_number.
 
 Stages
 ~~~~~~

@@ -85,7 +85,7 @@ For example:
 
 After the field has been set, you can access the human-readable name
 using
-`get\_FOO\_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
+`get_FOO_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
 , like this:
 ``self.get_year_in_school_display() # returns e.g. 'Sophomore'``
 
