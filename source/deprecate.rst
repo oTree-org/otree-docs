@@ -16,7 +16,7 @@ into compliance with the new standard. [WDPR]_
 Deprecation Policy in oTree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In some cases when you call some function in oTree a message like:
+Occasionally, when you execute your oTree code you may get a message like this:
 
 .. code-block:: python
 
@@ -24,24 +24,24 @@ In some cases when you call some function in oTree a message like:
         OTreeDeprecationWarning: Call to deprecated function 'otree.foo'.
         Instead please use 'otree.modern_foo'
 
-In this case you can see:
+Here is a breakdown of the information contained:
 
 - ``[WARNING|2015-07-05 22:28:26,358] py.warning``: information about when the
-  deprecated code is call.
-- ``file.py:1`` show from where and in what line the deprecated code is called.
+  deprecated code is called.
+- ``file.py:1`` File and line number containing the deprecated code.
 - ``OTreeDeprecationWarning``: This is the class that oTree use for manage
   his deprecated code.
-- The next part is the deprecation message that inform the function 'otree.foo'
+- The next part is the deprecation message that informs the function 'otree.foo'
   is deprecated and suggest to you to use 'otree.modern_foo' instead.
 
 When you get a message like this take in account that the function
-``otree.foo`` will be removed from futures versions of oTree.
+``otree.foo`` will be removed from future versions of oTree.
 
 
 ``OTreeDeprecationWarning`` Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can change how ``OTreeDeprecationWarning`` inform about a deprecated
+You can change how ``OTreeDeprecationWarning`` informs about a deprecated
 function.
 
 In the file ``settings.py`` you can add a configuration with the name
@@ -78,11 +78,11 @@ Using oTree Deprecation facility from your app
 
     This is an advanced feature mostly used internally in oTree.
 
-If you develop an experiment in several steps along month, and in some
+If you develop an experiment in several steps over the months, and in some
 intermediate step you want to remove some functionality, is a good idea to
 first deprecate your old code before the real deletion.
 
-oTree bring a module for integrate your deprecation ciclye inside oTree policy.
+oTree brings a module for integrating your deprecation cycle inside oTree policy.
 
 **First Case: Deprecate a function or method.**
 
@@ -101,7 +101,7 @@ like *my_custom_function* used in ``before_session_starts``
 
 
 and you want to rename it *my_custom_method* and you are not sure
-if this method is called from another file. oTree help you with this decorator
+if this method is called from another file. oTree helps you with this decorator
 
 .. code-block:: python
 
@@ -121,9 +121,9 @@ if this method is called from another file. oTree help you with this decorator
 
 
 As you can see all the logic is now in *my_custom_method* and the old code only
-call it.
+calls it.
 
-**Second Case: Deprecate a an entire module or some part of a arbitrary code.**
+**Second Case: Deprecate a an entire module or some part of an arbitrary code.**
 
 For this case you can show a warning with a function ``deprecate.dwarning``.
 *dwarning* accept as parameter a single message to be show.
