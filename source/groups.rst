@@ -66,3 +66,42 @@ before players begin playing. Therefore you cannot use this method to
 shuffle players depending on the results of previous rounds (there is a
 separate technique for doing this which will be added to the
 documentation in the future).
+
+More complex grouping logic
+---------------------------
+
+If you need something more flexible or complex than what is allowed by ``players_per_group``,
+you can specify the grouping logic yourself in ``before_session_starts``.
+
+For example, let's say you always want 8 groups,
+regardless of the number of players in the session.
+So, if there are 16 players, you will have 2 players per group,
+and if there are 32 players, you will have 4 players per group.
+
+
+You can accomplish this as follows:
+
+.. code-block::python
+
+    class Constants:
+        players_per_group = None
+        ... # etc
+
+    class Subsession(otree.models.BaseSubsession):
+
+        def before_session_starts(self):
+            if self.round_number == 1:
+                num_players = len(self.get_players())
+                num_groups = 8
+                players_per_group = int(num_players/num_groups)
+                list_of_lists = []
+                start_index = 0
+                players = self.get_players()
+                for g_num in range(num_groups):
+                    next_group = players[start_index:start_index+players_per_group]
+                    start_index += players_per_group
+                    list_of_lists.append(next_group)
+                self.set_groups(list_of_lists)
+
+
+
