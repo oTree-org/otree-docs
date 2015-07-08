@@ -92,6 +92,7 @@ You can accomplish this as follows:
 
     class Constants:
         players_per_group = None
+        groups = 8
         ... # etc
 
     class Subsession(otree.models.BaseSubsession):
