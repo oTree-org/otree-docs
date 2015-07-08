@@ -20,6 +20,9 @@ window appears, type this:
 This will create a new app folder based on a oTree template, with most
 of the structure already set up for you.
 
+The key files are ``models.py``, ``views.py``, and the HTML files
+under the ``templates/`` directory.
+
 Think of this as a skeleton to which you can add as much as you want.
 You can add your own classes, functions, methods, and attributes, or
 import any 3rd-party modules.

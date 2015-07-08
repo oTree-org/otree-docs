@@ -39,7 +39,8 @@ For the first round, the players are split into groups of
 ``Constants.players_per_group``. This matching is random, unless you
 have set ``group_by_arrival_time`` set in your session type in
 settings.py, in which case players are grouped in the order they start
-the first round.
+the first round, or if you specify more complex logic as described in
+:ref:`complex_grouping_logic`.
 
 In subsequent rounds, by default, the groups chosen are kept the same.
 If you would like to change this, you can define the grouping logic in
@@ -66,6 +67,8 @@ before players begin playing. Therefore you cannot use this method to
 shuffle players depending on the results of previous rounds (there is a
 separate technique for doing this which will be added to the
 documentation in the future).
+
+.. _complex_grouping_logic:
 
 More complex grouping logic
 ---------------------------

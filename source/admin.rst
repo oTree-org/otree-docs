@@ -166,7 +166,8 @@ file, which can be downloaded through the data export page in the admin.
 Debug Info
 ----------
 
-Any application can be run so that that debug information is displayed
+When oTree runs in ``DEBUG`` mode (i.e. when the environment variable
+ ``OTREE_PRODUCTION`` is not set), debug information is displayed
 on the bottom of all screens. The debug information consists of the ID
 in group, the group, the player, the participant label, and the session
 code. The session code and participant label are two randomly generated
