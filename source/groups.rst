@@ -74,7 +74,11 @@ More complex grouping logic
 ---------------------------
 
 If you need something more flexible or complex than what is allowed by ``players_per_group``,
-you can specify the grouping logic yourself in ``before_session_starts``.
+you can specify the grouping logic yourself in ``before_session_starts``,
+using the ``get_players()`` and ``set_groups()`` methods described above.
+
+Fixed number of groups
+~~~~~~~~~~~~~~~~~~~~~~
 
 For example, let's say you always want 8 groups,
 regardless of the number of players in the session.
@@ -84,7 +88,7 @@ and if there are 32 players, you will have 4 players per group.
 
 You can accomplish this as follows:
 
-.. code-block::python
+.. code-block:: python
 
     class Constants:
         players_per_group = None
@@ -92,19 +96,29 @@ You can accomplish this as follows:
 
     class Subsession(otree.models.BaseSubsession):
 
-        def before_session_starts(self):
+           def before_session_starts(self):
             if self.round_number == 1:
+
+                # create the base for number of groups
                 num_players = len(self.get_players())
-                num_groups = 8
-                players_per_group = int(num_players/num_groups)
+                num_groups = len(Constants.groups)
+                players_per_group = [int(num_players/num_groups)] * num_groups
+
+                # verify if all players are assigned
+                idxg = 0
+                while sum(players_per_group) < num_players:
+                    players_per_group[idxg] += 1
+                    idxg += 1
+
+                # reassignment of groups
                 list_of_lists = []
                 start_index = 0
                 players = self.get_players()
-                for g_num in range(num_groups):
-                    next_group = players[start_index:start_index+players_per_group]
-                    start_index += players_per_group
-                    list_of_lists.append(next_group)
+                for g_idx, g_size in enumerate(players_per_group):
+                    offset = 0 if g_idx == 0 else sum(players_per_group[:g_idx])
+                    limit = offset + g_size
+                    group_players = players[offset:limit]
+                    list_of_lists.append(group_players)
                 self.set_groups(list_of_lists)
-
 
 
