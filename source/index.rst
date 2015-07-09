@@ -14,6 +14,9 @@
         :scale: 100 %
 
 
+**Doc Build:** |build_date|
+
+
 Live demo
 ---------
 
