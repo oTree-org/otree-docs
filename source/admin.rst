@@ -81,11 +81,13 @@ players who arrive around the same time play with each other.
 Kiosk Mode
 ----------
 
-On your lab's devices, you can enable "kiosk mode", a setting available in most web browsers,
- to prevent participants from doing things like accessing the browser's address bar, hitting the "back" button,
- or closing the browser window.
+On your lab's devices, you can enable "kiosk mode", a setting available in
+most web browsers, to prevent participants from doing things like accessing
+the browser's address bar, hitting the "back" button, or closing the browser
+window.
 
- Below are some guidelines on how to enable Kiosk mode.
+Below are some guidelines on how to enable Kiosk mode.
+
 
 iOS (iPhone/iPad)
 ~~~~~~~~~~~~~~~~~
@@ -167,7 +169,7 @@ Debug Info
 ----------
 
 When oTree runs in ``DEBUG`` mode (i.e. when the environment variable
- ``OTREE_PRODUCTION`` is not set), debug information is displayed
+``OTREE_PRODUCTION`` is not set), debug information is displayed
 on the bottom of all screens. The debug information consists of the ID
 in group, the group, the player, the participant label, and the session
 code. The session code and participant label are two randomly generated
