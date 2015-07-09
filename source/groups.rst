@@ -77,14 +77,12 @@ If you need something more flexible or complex than what is allowed by ``players
 you can specify the grouping logic yourself in ``before_session_starts``,
 using the ``get_players()`` and ``set_groups()`` methods described above.
 
-Fixed number of groups
-~~~~~~~~~~~~~~~~~~~~~~
+**Fixed number of groups with a divisible number of players**
 
-For example, let's say you always want 8 groups,
-regardless of the number of players in the session.
-So, if there are 16 players, you will have 2 players per group,
-and if there are 32 players, you will have 4 players per group.
-
+For example, let's say you always want 8 groups, regardless of the number of
+players in the session.
+So, if there are *16 players*, you will have *2 players per group*,
+and if there are *32 players*, you will have *4 players per group*.
 
 You can accomplish this as follows:
 
@@ -113,7 +111,6 @@ You can accomplish this as follows:
 
                 # reassignment of groups
                 list_of_lists = []
-                start_index = 0
                 players = self.get_players()
                 for g_idx, g_size in enumerate(players_per_group):
                     offset = 0 if g_idx == 0 else sum(players_per_group[:g_idx])
@@ -122,4 +119,65 @@ You can accomplish this as follows:
                     list_of_lists.append(group_players)
                 self.set_groups(list_of_lists)
 
+
+**Fixed number of groups with a no divisible number of players**
+
+Lets make a more complex example based on the previous one. Let's say we need
+to divide 20 players into 8 groups randomly. The problem is that
+``20/8 = 2.5``.
+
+So the more easy solution is to make the first *4 groups* with *3 players*, and
+the last *4 groups* with only *2 players*.
+
+.. code-block:: python
+
+    class Constants:
+        players_per_group = None
+        groups = 8
+        ... # etc
+
+    class Subsession(otree.models.BaseSubsession):
+
+        def before_session_starts(self):
+
+            # if you whant to change the
+            if self.round_number == 1:
+
+                # extract and mix the players
+                players = self.get_players()
+                random.shuffle(players)
+
+                # create the base for number of groups
+                num_players = len(players)
+                num_groups = len(Constants.groups)
+
+                # create a list of how many players must be in every group
+                # the result of this will be [2, 2, 2, 2, 2, 2, 2, 2]
+                # obviously 2 * 8 = 16
+                players_per_group = [int(num_players/num_groups)] * num_groups
+
+                # add one player in order per group until the sum of size of
+                # every group is equal to total of players
+                idxg = 0
+                while sum(players_per_group) < num_players:
+                    players_per_group[idxg] += 1
+                    idxg += 1
+                    if idxg >= len(players_per_group):
+                        idxg = 0
+
+                # reassignment of groups
+                list_of_lists = []
+                for g_idx, g_size in enumerate(players_per_group):
+                    # it is the first group the offset is 0 otherwise we start
+                    # after all the players already exausted
+                    offset = 0 if g_idx == 0 else sum(players_per_group[:g_idx])
+
+                    # the asignation of this group end when we asign the total
+                    # size of the group
+                    limit = offset + g_size
+
+                    # we select the player to add
+                    group_players = players[offset:limit]
+                    list_of_lists.append(group_players)
+                self.set_groups(list_of_lists)
 
