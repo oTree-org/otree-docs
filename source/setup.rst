@@ -193,10 +193,10 @@ Note: you may get merge conflicts if you have modified many files.
 Upgrade oTree core libraries (minimal option)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Modify ``otree-core`` version number in ``requirements_base.txt`` (the
-latest version is
-`here <https://github.com/oTree-org/oTree/blob/master/requirements_base.txt>`__),
-then run:
+In the launcher, click "Version select" and select the most recent version in the menu.
+
+This automatically changes the ``otree-core`` version number in ``requirements_base.txt``
+and then runs:
 
 .. code-block:: bash
 

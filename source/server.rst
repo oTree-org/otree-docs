@@ -157,18 +157,25 @@ On Postgres, you should drop the database and then run ``python otree migrate``.
 Running the server
 ~~~~~~~~~~~~~~~~~~
 
-To run the production server,
-you should use a process control system like Supervisord,
+If you are just testing your app locally, you can use the usual ``runserver`` command.
+
+However, when you want to use oTree in production, you need to run the production server,
+which can handle more traffic. You should use a process control system like Supervisord,
 and have it launch otree with the command ``python otree runprodserver``.
-(``runserver`` is only used during development.)
 
 This will run the ``collectstatic`` command, and then
-launch the server as specified in your project's ``Procfile``.
+launch the server as specified in the ``Procfile`` in your project's root directory.
 The default ``Procfile`` launches the Gunicorn server.
 If you want to use another server like Nginx; you need to modify the
 ``Procfile``. (If you instead want to use Apache, consult the Django docs.)
 
-
 .. versionadded:: 0.3.8
    ``runprodserver``
+
+
+.. warning::
+
+    Gunicorn doesn't work on Windows, so if you are trying to run oTree on a Windows server
+    or use ``runprodserver`` locally on your Windows PC, you will need to specify a different
+    server in your ``Procfile``.
 
