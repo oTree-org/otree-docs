@@ -163,31 +163,6 @@ There are several alternatives for upgrading or reinstalling oTree.
 
 (TODO: when to use which)
 
-From-scratch reinstallation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  On Windows: Browse to ``%APPDATA%`` and delete the folder
-   ``otree-launcher``
--  On Mac/Linux: Delete the folder ``~/.otree-launcher``
--  Re-download the launcher
-
-
-In-place upgrade
-~~~~~~~~~~~~~~~~
-
-Start the launcher and click the "terminal" button to get your console.
-Then type:
-
-.. code-block:: bash
-
-    $ git pull https://github.com/oTree-org/oTree.git master
-    $ pip install -r requirements_base.txt
-    $ python otree resetdb
-
-
-Note: you may get merge conflicts if you have modified many files.
-
-
 .. _upgrade-otree-core:
 
 Upgrade oTree core libraries (minimal option)
@@ -201,3 +176,15 @@ and then runs:
 .. code-block:: bash
 
     $ pip install -r requirements_base.txt
+
+
+From-scratch reinstallation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  On Windows: Browse to ``%APPDATA%`` and delete the folder
+   ``otree-launcher``
+-  On Mac/Linux: Delete the folder ``~/.otree-launcher``
+-  Re-download the launcher
+
+
+
