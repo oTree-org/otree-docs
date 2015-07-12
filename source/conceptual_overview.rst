@@ -33,7 +33,7 @@ This lets you create multiple sessions, all with the same properties.
 
     Prior to oTree-core 0.3.11, "session config" was known as "session type".
     After you upgrade, you can rename ``SESSION_TYPES`` to ``SESSION_CONFIGS``,
-    and so on.
+    and ``SESSION_TYPE_DEFAULTS`` to ``SESSION_CONFIG_DEFAULTS``.
 
 This session config is composed of 3 apps:
 
