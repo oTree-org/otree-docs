@@ -165,8 +165,8 @@ There are several alternatives for upgrading or reinstalling oTree.
 
 .. _upgrade-otree-core:
 
-Upgrade oTree core libraries (minimal option)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrade oTree core libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the launcher, click "Version select" and select the most recent version in the menu.
 
