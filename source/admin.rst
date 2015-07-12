@@ -73,7 +73,7 @@ email or a website.
 
 If participants will play in groups but may start at different times,
 you may want to set ``group_by_arrival_time``
-in the session type dictionary to ``True``. This will group players in the
+in the session config dictionary to ``True``. This will group players in the
 order in which they arrive to your site, rather than randomly, so that
 players who arrive around the same time play with each other.
 

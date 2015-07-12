@@ -28,5 +28,5 @@ You can add your own classes, functions, methods, and attributes, or
 import any 3rd-party modules.
 
 Then go to ``settings.py`` and create an entry for your app in
-``SESSION_TYPES`` that looks like the other entries.
+``SESSION_CONFIGS`` that looks like the other entries.
 

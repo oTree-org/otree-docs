@@ -83,12 +83,12 @@ useful in a live experiment, but when you are testing your game, it is
 often useful to choose explicitly which treatment to play. Let's say you
 are developing the game from the above example and want to show your
 colleagues both treatments (red and blue). You can create 2 session
-types in settings.py that have the same keys to session type dictionary
+configs in settings.py that have the same keys to session config dictionary
 , except the ``treatment`` key:
 
 .. code-block:: python
 
-    SESSION_TYPES = [
+    SESSION_CONFIGS = [
         {
             'name':'my_game_blue',
             # other arguments...
@@ -104,15 +104,15 @@ types in settings.py that have the same keys to session type dictionary
     ]
 
 Then in the ``before_session_starts`` method, you can check which of the
-2 session types it is:
+2 session configs it is:
 
 .. code-block:: python
 
     def before_session_starts(self):
         for p in self.get_players():
-            if 'treatment' in self.session.session_type:
+            if 'treatment' in self.session.config:
                 # demo mode
-                p.color = self.session.session_type['treatment']
+                p.color = self.session.config['treatment']
             else:
                 # live experiment mode
                 p.color = random.choice(['blue', 'red'])

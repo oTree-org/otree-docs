@@ -14,32 +14,39 @@ Participants get paid EUR 10.00 for showing up, plus their earnings from the
 games."
 
 To configure a session like this, you would go to ``settings.py`` and
-define a "session type", which is a reusable configuration.
+define a "session config", which is a reusable configuration.
 This lets you create multiple sessions, all with the same properties.
 
- Add an entry to ``SESSION_TYPES`` like this:
+ Add an entry to ``SESSION_CONFIGS`` like this:
 
 .. code-block:: python
 
     {
-        'name': 'my_session_type',
-        'display_name': 'My Session Type',
+        'name': 'my_session_config',
+        'display_name': 'My Session Config',
         'participation_fee': 10.00,
         'app_sequence':['trust', 'ultimatum', 'questionnaire'],
     }
 
-This session type is composed of 3 apps:
+
+.. note::
+
+    Prior to oTree-core 0.3.11, "session config" was known as "session type".
+    After you upgrade, you can rename ``SESSION_TYPES`` to ``SESSION_CONFIGS``,
+    and so on.
+
+This session config is composed of 3 apps:
 
 -  Trust game
 -  Ultimatum game
 -  Questionnaire
 
 Note that you can reuse apps (such as the ``questionnaire`` app) in multiple
-session types.
+session configs.
 
-Once you have defined a session type, you can run the server,
+Once you have defined a session config, you can run the server,
 open your browser to the admin interface, and create a new session.
-You would select "My Session Type" as the type for the session,
+You would select "My Session Config" as the configuration to use,
 and then enter "30" for the number of participants.
 
 An instance of a session would be created, and you would get the start links to

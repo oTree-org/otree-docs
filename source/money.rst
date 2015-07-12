@@ -67,7 +67,7 @@ At the end of the experiment, a participant's
 total profit can be accessed by ``participant.money_to_pay()``; it is
 calculated by converting ``participant.payoff`` to real-world currency
 (if ``USE_POINTS`` is ``True``), and then adding
-``session_type['participation_fee']``.
+``config['participation_fee']``.
 
 
 Points (i.e. "experimental currency")
@@ -81,7 +81,7 @@ points rather than dollars or euros, etc.
 
 For example, ``c(10)`` is displayed as ``10 points``. You can specify
 the conversion rate to real money in ``settings.py`` by providing a
-``real_world_currency_per_point`` key in the session type dictionary.
+``real_world_currency_per_point`` key in the session config dictionary.
 For example, if you pay the user 2 cents per point, you would set
 ``real_world_currency_per_point = 0.02``.
 

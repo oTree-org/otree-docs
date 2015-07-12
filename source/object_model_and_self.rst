@@ -58,7 +58,7 @@ Here are some code examples to illustrate:
             self
 
             # parent objects
-            self.session_type
+            self.config
 
             # child objects
             self.get_subsessions()
@@ -126,7 +126,7 @@ in your ``models.py``
             self.group
             self.participant
 
-            self.session.session_type
+            self.session.config
 
             # accessing previous player objects
             self.in_previous_rounds()
@@ -150,9 +150,15 @@ in your ``views.py``
 
             # example of chaining lookups
             self.player.participant
-            self.session.session_type
+            self.session.config
 
 You can follow pointers in a transitive manner. For example, if you are
 in the Page class, you can access the participant as
 ``self.player.participant``. If you are in the Player class, you can
-access the session type as ``self.session.session_type``.
+access the session config as ``self.session.config``.
+
+.. note::
+
+    Prior to oTree-core 0.3.11, ``self.session.config`` was known as ``self.session.session_type``.
+
+

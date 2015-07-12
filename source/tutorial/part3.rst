@@ -425,8 +425,8 @@ is skipped in every round except the last, because of how we set
 -  ResultsSummary [Round 4]
 
 
-Add an entry to ``SESSION_TYPES`` in ``settings.py``
-----------------------------------------------------
+Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
+------------------------------------------------------
 
 When we run a real experiment in the lab, we will want multiple groups,
 but to test the demo we just set ``num_demo_participants`` to 2, meaning

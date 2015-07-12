@@ -288,7 +288,7 @@ z-Tree's "Leave stage" command.
 Money and currency
 ~~~~~~~~~~~~~~~~~~
 
--  ShowUpFee: ``session_type['participation_fee']``
+-  ShowUpFee: ``session.config['participation_fee']``
 -  Profit: ``player.payoff``
 -  FinalProfit: ``participant.payoff``
 -  MoneyToPay: ``participant.money_to_pay()``

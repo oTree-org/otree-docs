@@ -351,7 +351,7 @@ Then we define the page sequence:
         Results,
     ]
 
-Add an entry to ``SESSION_TYPES`` in ``settings.py``
+Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
 ----------------------------------------------------
 
 .. code-block:: python

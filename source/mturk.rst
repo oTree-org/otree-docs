@@ -42,8 +42,8 @@ Making your session work on MTurk
 You should look in ``settings.py`` for all settings related to
 Mechanical Turk (do a search for "mturk"). You can edit the properties
 of the HIT such as the title and keywords, as well as the qualifications
-required to participate. The monetary reward paid to workers is the
-``participation_fee`` for your ``session_type``.
+required to participate. The monetary reward paid to workers is
+``self.session.config['participation_fee']``.
 
 When you publish your HIT to MTurk, it will be visible to workers. When
 a worker clicks on the link to take part in the HIT, they will see the
@@ -129,7 +129,7 @@ even if there is attrition.
     If you downloaded oTree prior to July 2, 2015, you need to update your oTree project.
     You should upgrade your MTurk settings
     in ``settings.py`` to the new format `here <https://github.com/oTree-org/oTree/blob/master/settings.py>`__.
-    See the variable ``mturk_hit_settings``, which is included in ``SESSION_TYPE_DEFAULTS``.
+    See the variable ``mturk_hit_settings``, which is included in ``SESSION_CONFIG_DEFAULTS``.
     Then upgrade to the latest version of ``otree-core``.
 
     Also, copy the ``Procfile`` over the version you have locally.

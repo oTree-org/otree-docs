@@ -149,7 +149,7 @@ You should create your apps inside this folder.
 
 If you want, you can delete all the existing example games
 (like ``asset_market``, ``bargaining``, etc).
-Just delete the folders and the corresponding entries in ``SESSION_TYPES``.
+Just delete the folders and the corresponding entries in ``SESSION_CONFIGS``.
 Just keep the directories ``_static`` and ``_templates``.
 
 When you install oTree (either using the launcher or running
