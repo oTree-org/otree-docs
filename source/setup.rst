@@ -115,24 +115,6 @@ Here are some specific issues along with their solutions.
 
 *   Solution: make sure Python is installed and add it to your ``Path`` as
     described above.
-*   Problem: You get this message:
-
-.. code-block:: bash
-
-    Traceback (most recent call last):
-      File "<string>", line 1, in <module>
-      File "otree_launcher\gui.py", line 34, in <module>
-        from . import cons, core, res
-      File "otree_launcher\cons.py", line 66, in <module>
-        with open(res.get("version.json")) as fp:
-      File "otree_launcher\res\__init__.py", line 51, in get
-        raise IOError("Resource '{}' not exists".format(fpath))
-    IOError: Resource 'version.json' not exists
-    Press any key to continue . . .
-
-* Solution: this occurs sometimes when the path contains non-Latin characters
-  like ``好`` or ``д``. Move the launcher to a file path without these
-  characters.
 
 
 Explanation: oTree & Django
