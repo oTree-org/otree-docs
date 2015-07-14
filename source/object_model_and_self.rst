@@ -1,4 +1,4 @@
-Object model and *self*
+*Self* and object model
 =======================
 
 In oTree code, you will see the variable ``self`` in many places.
