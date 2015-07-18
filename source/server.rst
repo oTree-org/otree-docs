@@ -1,7 +1,9 @@
 Server deployment
 =================
 
-oTree can be deployed to a cloud service like
+You can develop and test your app locally on your personal computer.
+However, when you want to share your app with an audience,
+you must deploy to a web server. oTree can be deployed to a cloud service like
 Heroku, or to your own on-premises server.
 
 Heroku
@@ -118,6 +120,11 @@ To add an existing remote:
 
 Deploying to an on-premises server
 ----------------------------------
+
+.. note::
+
+    If you are just testing your app locally, you can use the ``resetdb`` and ``runserver`` commands,
+    which are simpler than the below steps.
 
 Although Heroku deployment may be the easiest option,
 you may prefer to run oTree on your own server. Reasons may include:

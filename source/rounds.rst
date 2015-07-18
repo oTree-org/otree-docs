@@ -74,3 +74,10 @@ Global variables
 For session-wide globals, you can use ``self.session.vars``.
 
 This is a dictionary just like ``participant.vars``.
+
+Variable number of rounds
+-------------------------
+
+If you want a variable number of rounds, consider setting ``num_rounds``
+to some high number, and then in your app, conditionally hide the ``{% next_button %}``
+element, so that the user cannot proceed to the next page.
