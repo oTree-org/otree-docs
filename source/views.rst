@@ -68,9 +68,11 @@ When there are 60 seconds left, the page displays a timer warning the participan
 
 .. note::
 
-    For the auto-submit to work, the user's browser window must remain open.
-    We are working on making the page always submit, even if the user
-    closes their browser window.
+    If you are running the production server (``runprodserver``),
+    the page will always submit, even if the user closes their browser window.
+    However, this does not occur if you are running the test server (``runserver``).
+
+
 
 ``timeout_submission``
 ~~~~~~~~~~~~~~~~~~~~~~

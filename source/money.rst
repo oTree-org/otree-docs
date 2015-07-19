@@ -4,7 +4,9 @@ Money and Points
 ================
 
 In many experiments, participants play for currency:
-either virtual points, or real money. oTree supports both scenarios.
+either virtual points, or real money. oTree supports both scenarios;
+you can switch from points to real money by setting ``USE_POINTS = False``
+in ``settings.py``.
 
 You can specify the payment currency in ``settings.py``, by setting
 ``REAL_WORLD_CURRENCY_CODE`` to "USD", "EUR", "GBP", and so on. This
@@ -67,7 +69,7 @@ At the end of the experiment, a participant's
 total profit can be accessed by ``participant.money_to_pay()``; it is
 calculated by converting ``participant.payoff`` to real-world currency
 (if ``USE_POINTS`` is ``True``), and then adding
-``config['participation_fee']``.
+``self.session.config['participation_fee']``.
 
 
 Points (i.e. "experimental currency")

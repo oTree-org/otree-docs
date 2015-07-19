@@ -18,11 +18,13 @@ This includes things like:
 
 - Form validation messages
 - Wait page messages
-- Dates, times and numbers (e.g. "1,234.56" vs "1.234,56" vs "1'234.56")
+- Dates, times and numbers (e.g. "1.5" vs "1,5")
 
 So, as long as you write your app's text in one of these languages,
 all text that participants will see will be in that language.
-For more information, see the `Django documentation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__.
+For more information, see the Django documentation on `translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__
+and `format localization <https://docs.djangoproject.com/en/1.8/topics/i18n/formatting/>`__.
+
 
 However, oTree's admin/experimenter interface is currently only available in English,
 and the existing sample games have not been translated to any other languages.
