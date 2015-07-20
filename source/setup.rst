@@ -81,7 +81,8 @@ This is an alternative to the "launcher install".
     and unzip it to a convenient location (such as your "Documents" folder).
     (Or better yet, use Git to clone
     `this repo <https://github.com/oTree-org/otree>`__.)
-*   In your command line, go to the root directory of the unzipped folder where ``requirements_base.txt`` is
+*   In your command line, go to the root directory of the unzipped folder
+    where ``requirements_base.txt`` is
 
     .. note::
 
@@ -116,11 +117,13 @@ Here are some specific issues along with their solutions.
 
 *   Problem: You get this error:
 
-.. code-block::
+.. code-block:: python
 
-    TemplateEncodingError: Templates can only be constructed from unicode or UTF-8 strings.
+    TemplateEncodingError: Templates can only be constructed from unicode or
+    UTF-8 strings.
 
-* Solution: configure your text editor to always save files as UTF-8. Then open the file and save it again.
+*   Solution: configure your text editor to always save files as UTF-8. Then
+    open the file and save it again.
 
 Explanation: oTree & Django
 ---------------------------
@@ -155,10 +158,11 @@ There are several alternatives for upgrading or reinstalling oTree.
 Upgrade oTree core libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the launcher, click "Version select" and select the most recent version in the menu.
+In the launcher, click "Version select" and select the most recent version in
+the menu.
 
-This automatically changes the ``otree-core`` version number in ``requirements_base.txt``
-and then runs:
+This automatically changes the ``otree-core`` version number in
+``requirements_base.txt`` and then runs:
 
 .. code-block:: bash
 
@@ -172,6 +176,3 @@ From-scratch reinstallation
    ``otree-launcher``
 -  On Mac/Linux: Delete the folder ``~/.otree-launcher``
 -  Re-download the launcher
-
-
-

@@ -15,19 +15,19 @@
 
 
 Live demo
----------
+^^^^^^^^^
 
 http://demo.otree.org/
 
 
 Homepage
---------
+^^^^^^^^
 
 http://www.otree.org/
 
 
 About
------
+^^^^^
 
 oTree is a Django-based framework for implementing multiplayer decision
 strategy games. Many of the details of writing a web application are
@@ -37,7 +37,7 @@ experience in web app development.
 
 
 Repositories
-------------
+^^^^^^^^^^^^
 
 -   |github_icon| `Games <https://github.com/oTree-org/oTree/>`_
 -   |github_icon| `Core Libraries <https://github.com/oTree-org/otree-core>`_
@@ -47,7 +47,7 @@ Repositories
 
 
 Contact
--------
+^^^^^^^
 
 chris@otree.org (you can also add me on Skype by searching this email
 address; please mention oTree in your contact request)
@@ -57,7 +57,7 @@ unclear).**
 
 
 Contributors
-------------
+^^^^^^^^^^^^
 
 -   Gregor Muellegger
     (http://gremu.net/, |github_icon| https://github.com/gregmuellegger)
@@ -70,14 +70,14 @@ Contributors
 
 
 Mailing list
-------------
+^^^^^^^^^^^^
 
 Sign up to be notified about updates to oTree
 `here <https://docs.google.com/forms/d/1jD4tocuX07DFYN2jDY2tcNXpkOCSqLhSOMboOgaVGtw/viewform>`__
 
 
 Contents:
----------
+^^^^^^^^^
 
 .. toctree::
     :maxdepth: 2
