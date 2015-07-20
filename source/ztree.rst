@@ -260,7 +260,10 @@ For example:
             {% for p in player.in_all_rounds %}
                 <tr>
                     <td>{{ p.subsession.round_number }}</td>
-                    <td>You were {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>
+                    <td>
+                        You were {{ p.role }} and
+                        {% if p.is_winner %} won {% else %} lost {% endif %}
+                    </td>
                     <td>{{ p.payoff }}</td>
                 </tr>
             {% endfor %}

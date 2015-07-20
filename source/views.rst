@@ -23,10 +23,12 @@ Each ``Page`` class has these methods and attributes:
 ``def vars_for_template(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A dictionary of variable names and their values, which is passed to the template.
+A dictionary of variable names and their values, which is passed to the
+template.
 
 Note: oTree automatically passes group, player, subsession, and Constants
-objects to the template, which you can access in the template, e.g.: ``{{Constants.payoff_if_rejected}}``.
+objects to the template, which you can access in the template, e.g.:
+``{{Constants.payoff_if_rejected}}``.
 
 ``def is_displayed(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +72,8 @@ When there are 60 seconds left, the page displays a timer warning the participan
 
     If you are running the production server (``runprodserver``),
     the page will always submit, even if the user closes their browser window.
-    However, this does not occur if you are running the test server (``runserver``).
+    However, this does not occur if you are running the test server
+    (``runserver``).
 
 
 

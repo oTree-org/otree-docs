@@ -130,7 +130,9 @@ in your ``models.py``
 
             # accessing previous player objects
             self.in_previous_rounds()
-            self.in_all_rounds() # equivalent to self.in_previous_rounds() + [self]
+
+            # equivalent to self.in_previous_rounds() + [self]
+            self.in_all_rounds()
 
 in your ``views.py``
 
@@ -159,6 +161,7 @@ access the session config as ``self.session.config``.
 
 .. note::
 
-    Prior to oTree-core 0.3.11, ``self.session.config`` was known as ``self.session.session_type``.
+    Prior to oTree-core 0.3.11, ``self.session.config`` was known as
+    ``self.session.session_type``.
 
 

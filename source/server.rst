@@ -162,8 +162,8 @@ be read by ``dj_database_url``:
 Then, instead of installing ``requirements_base.txt``, install ``requirements.txt``.
 This will install ``psycopg2``, which is necessary for using Postgres.
 
-You may get an error when you try installing ``psycopg2``,
-as described `here <http://initd.org/psycopg/docs/faq.html#problems-compiling-and-deploying-psycopg2>`__.
+You may get an error when you try installing ``psycopg2``, as described
+`here <http://initd.org/psycopg/docs/faq.html#problems-compiling-and-deploying-psycopg2>`__.
 
 The fix is to install the ``libpq-dev`` and ``python-dev`` packages.
 On Ubuntu/Debian, do:
@@ -178,15 +178,17 @@ On Postgres, you should drop the database and then run ``python otree migrate``.
 Running the server
 ~~~~~~~~~~~~~~~~~~
 
-If you are just testing your app locally, you can use the usual ``runserver`` command.
+If you are just testing your app locally, you can use the usual ``runserver``
+command.
 
-However, when you want to use oTree in production, you need to run the production server,
-which can handle more traffic. You should use a process control system like Supervisord,
-and have it launch otree with the command ``python otree runprodserver``.
+However, when you want to use oTree in production, you need to run the
+production server, which can handle more traffic. You should use a process
+control system like Supervisord, and have it launch otree with the command
+``python otree runprodserver``.
 
 This will run the ``collectstatic`` command, and then
-launch the server as specified in the ``Procfile`` in your project's root directory.
-The default ``Procfile`` launches the Gunicorn server.
+launch the server as specified in the ``Procfile`` in your project's root
+directory. The default ``Procfile`` launches the Gunicorn server.
 If you want to use another server like Nginx; you need to modify the
 ``Procfile``. (If you instead want to use Apache, consult the Django docs.)
 
@@ -195,7 +197,7 @@ If you want to use another server like Nginx; you need to modify the
 
 .. warning::
 
-    Gunicorn doesn't work on Windows, so if you are trying to run oTree on a Windows server
-    or use ``runprodserver`` locally on your Windows PC, you will need to specify a different
-    server in your ``Procfile``.
+    Gunicorn doesn't work on Windows, so if you are trying to run oTree on a
+    Windows server or use ``runprodserver`` locally on your Windows PC, you
+    will need to specify a different server in your ``Procfile``.
 

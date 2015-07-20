@@ -7,8 +7,9 @@ We will now create a simple public goods game. The completed app is
 Create the app
 --------------
 
-If you are running the oTree launcher, click the "terminal" button which will open your command window.
-Otherwise, open the ``oTree`` folder you downloaded, the one that contains ``requirements_base.txt``.
+If you are running the oTree launcher, click the "terminal" button which will
+open your command window. Otherwise, open the ``oTree`` folder you downloaded,
+the one that contains ``requirements_base.txt``.
 
 In this directory, create the public goods app with this shell command:
 
@@ -134,7 +135,8 @@ contribution.
     </p>
 
 
-    {% formfield player.contribution with label="How much will you contribute?" %}
+    {% formfield player.contribution with
+       label="How much will you contribute?" %}
 
     {% next_button %}
 
