@@ -97,8 +97,6 @@ This is an alternative to the "launcher install".
     $ python otree resetdb
     $ python otree runserver
 
-
-
 Troubleshooting
 ---------------
 
@@ -116,6 +114,13 @@ Here are some specific issues along with their solutions.
 *   Solution: make sure Python is installed and add it to your ``Path`` as
     described above.
 
+*   Problem: You get this error:
+
+.. code-block::
+
+    TemplateEncodingError: Templates can only be constructed from unicode or UTF-8 strings.
+
+* Solution: configure your text editor to always save files as UTF-8. Then open the file and save it again.
 
 Explanation: oTree & Django
 ---------------------------
