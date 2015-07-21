@@ -1,10 +1,10 @@
 Models
-------
+======
 
 This is where you store your data models.
 
 Model hierarchy
-~~~~~~~~~~~~~~~
+---------------
 
 Every oTree app needs the following 3 models:
 
@@ -79,3 +79,19 @@ Here are the required constants:
 -  ``players_per_group`` (described in :ref:`groups`)
 
 -  ``num_rounds`` (described in :ref:`rounds`)
+
+Subsession
+~~~~~~~~~~
+
+.. _before_session_starts:
+
+``def before_session_starts(self)``
+-------------------------
+
+This method is executed at the moment when the session is created, meaning it finishes running before the session begins.
+(Hence the name.)
+
+It is executed once per subsession (i.e. once per round).
+
+For example, if your app has 10 rounds, this method will get called 10 times, once for each ``Subsession`` instance,
+and will be

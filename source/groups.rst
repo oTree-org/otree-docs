@@ -44,7 +44,9 @@ the first round, or if you specify more complex logic as described in
 
 In subsequent rounds, by default, the groups chosen are kept the same.
 If you would like to change this, you can define the grouping logic in
-``Subsession.before_session_starts``. For example, if you want players
+``Subsession.before_session_starts`` (for more info see :ref:`before_session_starts`).
+
+For example, if you want players
 to be reassigned to the same groups but to have roles randomly shuffled
 around within their groups (e.g. so player 1 will either become player 2
 or remain player 1), you would do this:
@@ -64,9 +66,10 @@ of lists, with each sublist representing a group. You can use this to
 rearrange groups between rounds, but note that the
 ``before_session_starts`` method is run when the session is created,
 before players begin playing. Therefore you cannot use this method to
-shuffle players depending on the results of previous rounds (there is a
-separate technique for doing this which will be added to the
-documentation in the future).
+shuffle players depending on the results of previous rounds.
+If you want to do that, you should make a ``WaitPage`` with ``wait_for_all_groups=True``
+and put the shuffling code in ``after_all_players_arrive``.
+
 
 .. _complex_grouping_logic:
 

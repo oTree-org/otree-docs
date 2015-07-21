@@ -2,7 +2,8 @@ Treatments
 ==========
 
 If you want to assign participants to different treatment groups, you
-can put the code in the subsession's ``before_session_starts`` method.
+can put the code in the subsession's ``before_session_starts`` method
+(for more info see :ref:`before_session_starts`).
 For example, if you want some participants to have a blue background to
 their screen and some to have a red background, you would randomize as
 follows:
