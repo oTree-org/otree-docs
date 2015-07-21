@@ -39,8 +39,10 @@ rounds of a game, plus the current one:
 Similarly, subsession objects have methods ``in_previous_rounds()`` and
 ``in_all_rounds()`` that work the same way.
 
-Group objects also have ``in_previous_rounds()`` and ``in_all_rounds()`` methods, but note that if you re-shuffle groups between rounds,
-then these methods may not return anything meaningful (their behavior in this situation is unspecified).
+Group objects also have ``in_previous_rounds()`` and ``in_all_rounds()``
+methods, but note that if you re-shuffle groups between rounds,
+then these methods may not return anything meaningful (their behavior in this
+situation is unspecified).
 
 .. note::
 
@@ -79,5 +81,6 @@ Variable number of rounds
 -------------------------
 
 If you want a variable number of rounds, consider setting ``num_rounds``
-to some high number, and then in your app, conditionally hide the ``{% next_button %}``
-element, so that the user cannot proceed to the next page.
+to some high number, and then in your app, conditionally hide the
+``{% next_button %}`` element, so that the user cannot proceed to the next
+page.

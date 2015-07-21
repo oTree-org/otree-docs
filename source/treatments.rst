@@ -83,8 +83,8 @@ useful in a live experiment, but when you are testing your game, it is
 often useful to choose explicitly which treatment to play. Let's say you
 are developing the game from the above example and want to show your
 colleagues both treatments (red and blue). You can create 2 session
-configs in settings.py that have the same keys to session config dictionary
-, except the ``treatment`` key:
+configs in settings.py that have the same keys to session config dictionary,
+except the ``treatment`` key:
 
 .. code-block:: python
 

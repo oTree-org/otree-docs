@@ -10,19 +10,20 @@ oTree's participant interface is has been translated to the following languages:
 
 .. note::
 
-    If you downloaded oTree prior to June 20, 2015, you need to upgrade ``otree-core``
-    to get this language support. See :ref:`upgrade-otree-core`.
+    If you downloaded oTree prior to June 20, 2015, you need to upgrade
+    ``otree-core`` to get this language support. See :ref:`upgrade-otree-core`.
 
-This means that all built-in text that gets displayed to participants is available in these languages.
-This includes things like:
+This means that all built-in text that gets displayed to participants is
+available in these languages. This includes things like:
 
-- Form validation messages
-- Wait page messages
-- Dates, times and numbers (e.g. "1.5" vs "1,5")
+-   Form validation messages
+-   Wait page messages
+-   Dates, times and numbers (e.g. "1.5" vs "1,5")
 
 So, as long as you write your app's text in one of these languages,
 all text that participants will see will be in that language.
-For more information, see the Django documentation on `translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__
+For more information, see the Django documentation on
+`translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__
 and `format localization <https://docs.djangoproject.com/en/1.8/topics/i18n/formatting/>`__.
 
 
@@ -40,7 +41,8 @@ Writing your app in multiple languages
 You may want your own app to work in multiple languages.
 For example, let's say you want to run the same experiment with English and Chinese participants.
 
-For this, you can use Django's `translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__ system.
+For this, you can use Django's `translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__
+system.
 
 A quick summary:
 

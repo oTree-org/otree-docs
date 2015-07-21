@@ -14,8 +14,8 @@ as bonuses they earned by playing your game.
 AWS credentials
 ---------------
 
-To publish to MTurk, you must have an employer account with MTurk, which currently
-requires a U.S. address and bank account.
+To publish to MTurk, you must have an employer account with MTurk, which
+currently requires a U.S. address and bank account.
 
 oTree requires that you set the following env vars:
 
@@ -84,7 +84,8 @@ To prevent a worker from participating in your study twice,
 you can grant a Qualification to each worker who participates in your study,
 and then prevent people who already have this qualification from participating in your studies.
 
-This technique is described `here <http://turkrequesters.blogspot.kr/2014/08/how-to-block-past-workers-from-doing.html?spref=tw>`__.
+This technique is described
+`here <http://turkrequesters.blogspot.kr/2014/08/how-to-block-past-workers-from-doing.html?spref=tw>`__.
 
 First, login to your MTurk requester account and create a qualification.
 Then, go to settings.py and paste the qualification's ID into ``grant_qualification_id``.
@@ -112,9 +113,9 @@ to groups in the order in which they arrive, to minimize unnecessary
 waiting time.
 
 Next, you should set ``timeout_seconds`` on each page,
-so that the page will be auto-submitted if the participant drops out or does not
-complete the page in time. This way, players will not get stuck waiting for someone
-who dropped out.
+so that the page will be auto-submitted if the participant drops out or does
+not complete the page in time. This way, players will not get stuck waiting for
+someone who dropped out.
 
 Finally, you can consider a "lock-in" task. In other words,
 before your multiplayer game, you can have a subsession that is a
@@ -125,12 +126,17 @@ participants to finish the lock in task will be assigned to the same
 group in the next subsession, which is the multiplayer game.
 
 
-.. note::
+.. warning::
 
-    If you downloaded oTree prior to July 2, 2015, you need to update your oTree project.
+    If you downloaded oTree prior to July 2, 2015,
+    you need to update your oTree project.
+
     You should upgrade your MTurk settings
-    in ``settings.py`` to the new format `here <https://github.com/oTree-org/oTree/blob/master/settings.py>`__.
-    See the variable ``mturk_hit_settings``, which is included in ``SESSION_CONFIG_DEFAULTS``.
+    in ``settings.py`` to the new format
+    `here <https://github.com/oTree-org/oTree/blob/master/settings.py>`__.
+
+    See the variable ``mturk_hit_settings``, which is included in
+    ``SESSION_CONFIG_DEFAULTS``.
     Then upgrade to the latest version of ``otree-core``.
 
     Also, copy the ``Procfile`` over the version you have locally.

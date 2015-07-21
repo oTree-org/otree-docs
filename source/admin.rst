@@ -29,12 +29,13 @@ Then open the link on each PC.
 Participant labels
 ^^^^^^^^^^^^^^^^^^
 
-You can append a ``participant_label`` parameter to each participant's start URL to identify them, e.g.
-by name, ID number, or computer workstation.
+You can append a ``participant_label`` parameter to each participant's start
+URL to identify them, e.g. by name, ID number, or computer workstation.
 
-Each time a start URL is accessed, oTree checks for the presence of a ``participant_label`` parameter
-and records it for that participant. This label will be displayed in places where participants are listed,
-like the oTree admin interface or the payments page.
+Each time a start URL is accessed, oTree checks for the presence of a
+``participant_label`` parameter and records it for that participant. This
+label will be displayed in places where participants are listed, like the
+oTree admin interface or the payments page.
 
 
 Monitor sessions

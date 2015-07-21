@@ -73,9 +73,10 @@ documentation in the future).
 More complex grouping logic
 ---------------------------
 
-If you need something more flexible or complex than what is allowed by ``players_per_group``,
-you can specify the grouping logic yourself in ``before_session_starts``,
-using the ``get_players()`` and ``set_groups()`` methods described above.
+If you need something more flexible or complex than what is allowed by
+``players_per_group``, you can specify the grouping logic yourself in
+``before_session_starts``, using the ``get_players()`` and ``set_groups()``
+methods described above.
 
 **Fixed number of groups with a divisible number of players**
 
