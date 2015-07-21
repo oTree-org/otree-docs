@@ -86,7 +86,8 @@ Then do:
 
 Go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
 click on your app, click to edit the dynos, and make sure the "worker"
-dyno is turned on:
+dyno is turned on. (This will ensure that the page timeouts defined by ``timeout_seconds``
+still work even if a user closes their browser.)
 
     .. image:: _static/heroku-worker-dyno.JPG
 

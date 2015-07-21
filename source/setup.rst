@@ -157,8 +157,8 @@ Upgrade oTree core libraries
 
 In the launcher, click "Version select" and select the most recent version in the menu.
 
-This automatically changes the ``otree-core`` version number in ``requirements_base.txt``
-and then runs:
+If you are using the "plain install", change the ``otree-core`` version number in ``requirements_base.txt``
+and then run:
 
 .. code-block:: bash
 
