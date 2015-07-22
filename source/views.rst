@@ -118,6 +118,7 @@ It can be accessed in ``before_next_page``:
 This variable is undefined in other methods like ``vars_for_template``,
 because the timeout countdown only starts after the page is rendered.
 
+.. versionadded:: 0.3.18
 
 ``def before_next_page(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
