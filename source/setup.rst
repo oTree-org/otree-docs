@@ -5,10 +5,12 @@ Setup
 
 There are two ways to install oTree that you can choose from:
 
-* The "plain install" lets you run oTree from the command line.
-* The "launcher install" provides a graphical interface for running the oTree server.
+*   The "plain install" lets you run oTree from the command line.
+*   The "launcher install" provides a graphical interface for running the oTree
+    server.
 
-If you encounter any error during installation, please email chris@otree.org with the error message.
+If you encounter any error during installation, please email chris@otree.org
+with the error message.
 
 Prerequisite: Python 2.7
 ------------------------
@@ -161,8 +163,8 @@ Upgrade oTree core libraries
 In the launcher, click "Version select" and select the most recent version in
 the menu.
 
-If you are using the "plain install", change the ``otree-core`` version number in
-``requirements_base.txt`` and then run:
+If you are using the "plain install", change the ``otree-core`` version number
+in ``requirements_base.txt`` and then run:
 
 .. code-block:: bash
 

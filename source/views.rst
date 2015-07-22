@@ -26,9 +26,11 @@ Each ``Page`` class has these methods and attributes:
 A dictionary of variable names and their values, which is passed to the
 template.
 
-Note: oTree automatically passes group, player, subsession, and Constants
-objects to the template, which you can access in the template, e.g.:
-``{{Constants.payoff_if_rejected}}``.
+.. note::
+
+    oTree automatically passes group, player, subsession, and Constants
+    objects to the template, which you can access in the template, e.g.:
+    ``{{Constants.payoff_if_rejected}}``.
 
 ``def is_displayed(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
