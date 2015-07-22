@@ -90,7 +90,7 @@ Subsession
 
 You can define this method like this:
 
-.. code-block::python
+.. code-block:: python
 
     def before_session_starts(self):
         ...
