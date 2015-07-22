@@ -29,7 +29,13 @@ Group objects have the following methods:
 
 Player objects have methods ``get_others_in_group()`` and
 ``get_others_in_subsession()`` that return a list of the other players
-in the group and subsession, respectively.
+in the group and subsession. For example, with 2-player groups you can
+get the partner of a player, with this method on the ``Player``:
+
+.. code-block::python
+
+    def get_partner(self):
+        return self.get_others_in_group()[0]
 
 
 Group re-matching between rounds
