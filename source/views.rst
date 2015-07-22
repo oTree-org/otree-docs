@@ -97,6 +97,27 @@ string for text/character fields.
 
 Example: ``timeout_submission = {'accept': True}``
 
+If the values submitted ``timeout_submission`` need to be computed dynamically,
+you can check :ref:`timeout_happened` and set the values in ``before_next_page``.
+
+.. _timeout_happened:
+
+``timeout_happened``
+~~~~~~~~~~~~~~~~~~~~
+
+This boolean attribute is ``True`` if the page was submitted by timeout.
+It can be accessed in ``before_next_page``:
+
+.. code-block:: python
+
+    def before_next_page(self):
+        if self.timeout_happened:
+            self.player.my_random_variable = random.random()
+
+
+This variable is undefined in other methods like ``vars_for_template``,
+because the timeout countdown only starts after the page is rendered.
+
 
 ``def before_next_page(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
