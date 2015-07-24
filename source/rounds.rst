@@ -9,6 +9,7 @@ So, a session that consists of a prisoner's dilemma iterated 3 times, followed
 by an exit questionnaire, has 4 subsessions, which consists of 3 rounds of the
 prisoner's dilemma, and 1 round of the questionnaire.
 
+
 Round numbers
 -------------
 
@@ -21,7 +22,13 @@ current round number, starting from 1.
 Accessing data from previous rounds
 -----------------------------------
 
-You can use the methods ``in_previous_rounds()`` and ``in_all_rounds()``
+Each round has separate ``Subsession``, ``Group``, and ``Player`` objects.
+For example, let's say you set ``self.player.my_field = True`` in round 1.
+In round 2, if you try to access ``self.player.my_field``, you will find its value is ``None``
+(assuming that is the default value of the field). This is because the ``Player`` objects
+in round 1 are separate from ``Player`` objects in round 2.
+
+To access data from a previous round, you can use the methods ``in_previous_rounds()`` and ``in_all_rounds()``
 on player, group, and subsession objects.
 
 ``player.in_previous_rounds()`` and ``player.in_all_rounds()``
@@ -64,11 +71,11 @@ dictionary that can store any data about the player. For example, if you ask
 the participant's name in one subsession and you need to access it later, you
 would store it like this:
 
-``self.player.participant.vars['first name'] = 'Chris'``
+``self.player.participant.vars['first name'] = 'John'``
 
 Then in a future subsession, you would retrieve this value like this:
 
-``self.player.participant.vars['first name']`` # returns 'Chris'
+``self.player.participant.vars['first name']`` # returns 'John'
 
 Global variables
 ----------------
