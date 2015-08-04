@@ -110,6 +110,9 @@ you should modify the template ``_templates/global/Base.html``.
 You should put any scripts in the ``global_scripts`` block,
 and any styles in the ``global_styles`` block.
 
+You can also modify ``_static/global/custom.js`` and ``_static/global/custom.js``,
+which as you can see are loaded by ``_templates/global/Base.html``.
+
 .. note::
 
     The file ``_templates/global/Base.html`` was updated recently.
