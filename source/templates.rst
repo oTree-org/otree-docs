@@ -99,6 +99,55 @@ The reasons for putting scripts and styles in separate blocks are:
 - It keeps your code organized
 - jQuery is only loaded at the bottom of the page, so if you reference the jQuery ``$`` variable in the ``content`` block, it will be undefined.
 
+Customizing the base template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For all apps
+^^^^^^^^^^^^
+
+If you want to apply a style or script to all pages in all games,
+you should modify the template ``_templates/global/Base.html``.
+You should put any scripts in the ``global_scripts`` block,
+and any styles in the ``global_styles`` block.
+
+.. note::
+
+    The file ``_templates/global/Base.html`` was updated recently.
+    In case you downloaded oTree prior to August 2015, you should update it to the latest version
+    `here <https://github.com/oTree-org/oTree/blob/master/_templates/global/Base.html>`__.
+
+For one app
+^^^^^^^^^^^
+
+If you want to apply a style or script to all pages in one app,
+you should create a base template for all templates in your app,
+and put blocks called ``app_styles`` or ``app_scripts`` in this base template.
+
+For example, if your app's name is ``public_goods``,
+then you would create a file called ``public_goods/templates/public_goods/Base.html``,
+and put this inside it:
+
+.. code-block:: html+django
+
+    {% extends "global/Base.html" %}
+    {% load staticfiles otree_tags %}
+
+    {% block app_styles %}
+
+        <style type="text/css">
+            /* custom styles go here */
+        </style>
+
+    {% endblock %}
+
+
+Then each ``public_goods`` template would inherit from this template:
+
+ .. code-block:: html+django
+
+     {% extends "public_goods/Base.html" %}
+     {% load staticfiles otree_tags %}
+     ...
 
 
 Static content (images, videos, CSS, JavaScript)
