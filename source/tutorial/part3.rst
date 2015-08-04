@@ -122,9 +122,10 @@ Now, let's also define the code to swap roles halfway through. This kind
 of group-shuffling code should also go in ``before_session_starts``. We
 put it after our existing code.
 
-In oTree, groups are randomly determined in the first round, and in each
-round, the groups are kept the same as the previous round, unless you
-shuffle them. So, at the beginning of round 3, we should do the shuffle.
+In oTree, groups are assigned automatically in the first round,
+and in each round, the groups are kept the same as the previous round, unless you
+shuffle them in ``before_session_starts``.
+So, at the beginning of round 3, we should do the shuffle.
 (So that the groups will be in opposite order during rounds 3 and 4.)
 
 We use ``group.get_players()`` to get the ordered list of players in
