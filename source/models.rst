@@ -51,7 +51,7 @@ Here is how to define the above table structure:
         offer_accepted = models.BooleanField()
 
 Every time you add, remove, or change a field in ``models.py``, you need
-to run ``python otree resetdb`` (or, in the launcher, click "Clear
+to run ``otree resetdb`` (or, in the launcher, click "Clear
 Database").
 
 The full list of available fields is in the Django documentation
@@ -79,6 +79,12 @@ Here are the required constants:
 -  ``players_per_group`` (described in :ref:`groups`)
 
 -  ``num_rounds`` (described in :ref:`rounds`)
+
+You should only use ``Constants`` to store actual constants -- things that never change.
+You should never something like ``Constants.foo = True`` outside the ``Constants`` class itself,
+because this will modify the value of ``foo`` across all sessions until the server is restarted.
+If you want a "global" variable, you should set a field on the subsession, or use :ref:`session_vars`.
+
 
 Subsession
 ~~~~~~~~~~

@@ -97,8 +97,8 @@ This is an alternative to the "launcher install".
 .. code-block:: bash
 
     $ pip install -r requirements_base.txt
-    $ python otree resetdb
-    $ python otree runserver
+    $ otree resetdb
+    $ otree runserver
 
 Troubleshooting
 ---------------

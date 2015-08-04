@@ -18,7 +18,7 @@ Create the app
 
 .. code-block:: bash
 
-    $ python otree startapp trust_simple
+    $ otree startapp trust_simple
 
 
 Define models.py
@@ -372,8 +372,8 @@ If you are on the command line, enter:
 
 .. code-block:: bash
 
-    $ python otree resetdb
-    $ python otree runserver
+    $ otree resetdb
+    $ otree runserver
 
 If you are using the launcher, click the button equivalents to these
 commands.

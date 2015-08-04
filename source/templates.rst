@@ -42,8 +42,67 @@ You may want to customize the appearance or functionality of all pages
 in your app (e.g. by adding custom CSS or JavaScript). To do this, edit
 the file ``_templates/global/Base.html``.
 
-Images, videos, CSS, JavaScript
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JavaScript and CSS
+~~~~~~~~~~~~~~~~~~
+
+If you have JavaScript and/or CSS in your page, you should put them in blocks called ``scripts``
+and ``styles``, respectively. They should be located outside the ``content`` block, like this:
+
+.. code-block:: HTML+django
+
+    {% block content %}
+        <p>This is some HTML.</p>
+    {% endblock %}
+
+    {% block styles %}
+
+        <!-- define a style -->
+        <style type="text/css">
+            .bid-slider {
+                margin: 1.5em auto;
+                width: 70%;
+            }
+        </style>
+
+        <!-- or reference a static file -->
+        <link href="{% static "my_app/style.css" %}" rel="stylesheet">
+
+    {% endblock %}
+
+    {% block scripts %}
+
+        <!-- define a script -->
+
+        <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            var PRIVATE_VALUE = {{ player.private_value.to_number|escapejs }};
+
+            var input = $('#id_bid_amount');
+
+            $('.bid-slider').slider({
+                min: 0,
+                max: 100,
+                slide: function (event, ui) {
+                    input.val(ui.value);
+                    updateBidValue();
+                },
+            });
+        </script>
+
+        <!-- or reference a static file -->
+        <script type="text/javascript" src="{% static "my_app/script.js" %}"></script>
+    {% endblock %}
+
+
+The reasons for putting scripts and styles in separate blocks are:
+
+- It keeps your code organized
+- jQuery is only loaded at the bottom of the page, so if you reference the jQuery ``$`` variable in the ``content`` block, it will be undefined.
+
+
+
+Static content (images, videos, CSS, JavaScript)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To include images, CSS, or JavaScript in your pages, make sure your template
 has loaded ``staticfiles``.
@@ -109,12 +168,6 @@ Example:
     '[0, 1, 2, 3, 4, null]'
 
 
-jQuery
-^^^^^^
-
-oTree comes pre-loaded with `jQuery <http://jquery.com/>`__, a
-JavaScript library that lets you make your pages dynamic. You can
-include a script and reference the standard ``$`` variable.
 
 LaTeX
 ^^^^^

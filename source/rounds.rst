@@ -77,6 +77,8 @@ Then in a future subsession, you would retrieve this value like this:
 
 ``self.player.participant.vars['first name']`` # returns 'John'
 
+.. _session_vars:
+
 Global variables
 ----------------
 

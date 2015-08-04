@@ -34,7 +34,7 @@ Create the app
 
 .. code-block:: bash
 
-    $ python otree startapp matching_pennies_tutorial
+    $ otree startapp matching_pennies_tutorial
 
 
 Define models.py
@@ -448,5 +448,5 @@ Reset the database and run
 
 .. code-block:: bash
 
-    $ python otree resetdb
-    $ python otree runserver
+    $ otree resetdb
+    $ otree runserver

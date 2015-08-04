@@ -15,7 +15,7 @@ window appears, type this:
 
 .. code-block:: bash
 
-    $ python otree startapp your_app_name
+    $ otree startapp your_app_name
 
 This will create a new app folder based on a oTree template, with most
 of the structure already set up for you.

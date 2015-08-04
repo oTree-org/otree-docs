@@ -55,7 +55,7 @@ To test your app from an interactive Python shell, do:
 
 .. code-block:: shell
 
-   $ python otree shell
+   $ otree shell
 
 Then you can debug your code and inspect objects in your database.
 For example, if you already ran a "public goods game" session in your browser,

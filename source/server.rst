@@ -1,7 +1,9 @@
 Server deployment
 =================
 
-You can develop and test your app locally on your personal computer.
+You can develop and test your app locally on your personal computer,
+using the ordinary ``runserver`` command.
+
 However, when you want to share your app with an audience,
 you must deploy to a web server. oTree can be deployed to a cloud service like
 Heroku, or to your own on-premises server.
@@ -82,7 +84,7 @@ Then do:
 .. code-block:: bash
 
     $ git push heroku master
-    $ python otree-heroku resetdb myherokuapp
+    $ otree-heroku resetdb myherokuapp
 
 Go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
 click on your app, click to edit the dynos, and make sure the "worker"
@@ -173,8 +175,8 @@ On Ubuntu/Debian, do:
 
     sudo apt-get install libpq-dev python-dev
 
-The command ``python otree resetdb`` only works on SQLite.
-On Postgres, you should drop the database and then run ``python otree migrate``.
+The command ``otree resetdb`` only works on SQLite.
+On Postgres, you should drop the database and then run ``otree migrate``.
 
 Running the server
 ~~~~~~~~~~~~~~~~~~
@@ -185,7 +187,7 @@ command.
 However, when you want to use oTree in production, you need to run the
 production server, which can handle more traffic. You should use a process
 control system like Supervisord, and have it launch otree with the command
-``python otree runprodserver``.
+``otree runprodserver``.
 
 This will run the ``collectstatic`` command, and then
 launch the server as specified in the ``Procfile`` in your project's root

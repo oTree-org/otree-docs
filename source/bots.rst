@@ -24,7 +24,7 @@ launcher run the following command from your project's root directory:
 
 .. code-block:: bash
 
-    $ python otree test ultimatum_game
+    $ otree test ultimatum_game
 
 This command will test the session, with the number of participants
 specified in ``settings.py``. For example, ``num_bots`` is 30, then when
@@ -35,7 +35,7 @@ To run tests for all sessions in ``settings.py``, run:
 
 .. code-block:: bash
 
-    $ python otree test
+    $ otree test
 
 
 Writing tests

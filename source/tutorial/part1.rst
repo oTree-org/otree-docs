@@ -15,7 +15,7 @@ In this directory, create the public goods app with this shell command:
 
 .. code-block:: bash
 
-    $ python otree startapp public_goods_simple
+    $ otree startapp public_goods_simple
 
 Then go to the folder ``public_goods_simple`` that was created.
 
@@ -269,7 +269,7 @@ Reset the database and run
 
 Before you run the server, you need to reset the database. In the
 launcher, click the button "clear the database". Or, on the command
-line, run ``python otree resetdb``.
+line, run ``otree resetdb``.
 
 Every time you add, change, or remove a field in ``models.py`` This is
 because we have defined new fields in ``models.py``, and the SQL
