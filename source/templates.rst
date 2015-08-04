@@ -115,8 +115,7 @@ which as you can see are loaded by ``_templates/global/Base.html``.
 
 .. note::
 
-    The file ``_templates/global/Base.html`` was updated recently.
-    In case you downloaded oTree prior to August 2015, you should update it to the latest version
+    If you downloaded oTree prior to August 2015, you should update ``_templates/global/Base.html`` to the latest version
     `here <https://github.com/oTree-org/oTree/blob/master/_templates/global/Base.html>`__.
 
 For one app
