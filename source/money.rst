@@ -87,6 +87,17 @@ the conversion rate to real money in ``settings.py`` by providing a
 For example, if you pay the user 2 cents per point, you would set
 ``real_world_currency_per_point = 0.02``.
 
+Points are integers by default. You can change this by setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``
+in ``settings.py``.
+(e.g. set it to 2 if you want 2 decimal places, so you can get amounts like ``3.14 points``).
+
+You can change the name "points" to something else like "tokens" or "credits", by setting ``POINTS_CUSTOM_NAME``.
+(However, if you switch your language setting to one of oTree's supported languages, the name "points" is automatically translated,
+e.g. "puntos" in Spanish.)
+
+Converting points to real world currency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 You can convert a point amount to money using the
 ``to_real_world_currency()`` method. In the above example, that would be:
 
