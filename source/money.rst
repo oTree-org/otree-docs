@@ -95,6 +95,8 @@ You can change the name "points" to something else like "tokens" or "credits", b
 (However, if you switch your language setting to one of oTree's supported languages, the name "points" is automatically translated,
 e.g. "puntos" in Spanish.)
 
+.. versionadded:: 0.3.30
+
 Converting points to real world currency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
