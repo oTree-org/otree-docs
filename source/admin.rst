@@ -8,43 +8,6 @@ sessions.
 Open your browser to the root url of your web application. If you're
 developing locally, this will be *http://127.0.0.1:8000/*.
 
-
-Lab Experiments
----------------
-
-Creating sessions
-~~~~~~~~~~~~~~~~~
-
-
-Unique URLs
-^^^^^^^^^^^
-
-If you are running your experiment in a lab, you should deploy the links
-to the target workstations using whatever means is available to you. If
-you have a tool that can push distinct URLs to each PC in the lab, you
-can use that. Or you can set up a unique email account for each
-workstation, and then send the unique links to PCs using a mail merge.
-Then open the link on each PC.
-
-Participant labels
-^^^^^^^^^^^^^^^^^^
-
-You can append a ``participant_label`` parameter to each participant's start
-URL to identify them, e.g. by name, ID number, or computer workstation.
-
-Each time a start URL is accessed, oTree checks for the presence of a
-``participant_label`` parameter and records it for that participant. This
-label will be displayed in places where participants are listed, like the
-oTree admin interface or the payments page.
-
-
-Monitor sessions
-~~~~~~~~~~~~~~~~
-
-While your session is ongoing, you can monitor the live progress in the
-admin interface. The admin tables update live, highlighting changes as
-they occur.
-
 .. _AUTH_LEVEL:
 
 Authenticaton
@@ -64,6 +27,64 @@ anybody can play a demo version of your game, set ``OTREE_AUTH_LEVEL``
 to ``DEMO``. This will allow people to play in demo mode, but not access
 the full admin interface.
 
+Start links
+-----------
+
+There are multiple types of start links you can use.
+The optimal one depends on how you are distributing the links to your users.
+
+.. _single_use_links:
+
+Single-use links
+~~~~~~~~~~~~~~~~
+
+When you create a session, oTree creates 1 start link per participant,
+each of which contains a unique code for the participant.
+
+
+Session-wide link
+~~~~~~~~~~~~~~~~~
+
+If it is impractical to distribute distinct URLs to each participant,
+you can provide the same start link to all participants in the session.
+Note: this may result in the same participant playing twice, unless you use the
+``participant_label`` parameter in the URL (see :ref:`participant_label`).
+
+Server-wide (persistent) link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can create persistent links that will stay constant for new sessions, even if the database is recreated.
+
+This is useful in the following situations:
+
+* You are running multiple lab sessions, and cannot easily distribute new links to the workstations each time you create a session.
+* You are running multiple sessions online with the same group of participants, and want each participant to use the same link each time they participate in one of your sessions.
+
+To obtain these persistent links, set a session as the default session, or visit the "Persistent URLs" page in the admin.
+
+
+.. _participant_label:
+
+Participant labels
+------------------
+
+You can append a ``participant_label`` parameter to each participant's start
+URL to identify them, e.g. by name, ID number, or computer workstation.
+
+Each time a start URL is accessed, oTree checks for the presence of a
+``participant_label`` parameter and records it for that participant. This
+label will be displayed in places where participants are listed, like the
+oTree admin interface or the payments page.
+
+Grouping and randomization
+--------------------------
+
+If participants are not using single-use links (see :ref:`single_use_links`),
+oTree will assign the first arriving participant to be P1, the second to be P2, etc.
+If you would instead like participant selection to be random, you can set ``'random_start_order': True,``
+in the session config dictionary.
+
+
 Online experiments
 ------------------
 
@@ -71,13 +92,6 @@ Experiments can be launched to participants playing over the internet,
 in a similar way to how experiments are launched the lab. Login to the
 admin, create a session, then distribute the links to participants via
 email or a website.
-
-If participants will play in groups but may start at different times,
-you may want to set ``group_by_arrival_time``
-in the session config dictionary to ``True``. This will group players in the
-order in which they arrive to your site, rather than randomly, so that
-players who arrive around the same time play with each other.
-
 
 Kiosk Mode
 ----------
@@ -142,6 +156,14 @@ Mac
 There are several apps for using Kiosk mode on Mac, for instance:
 `eCrisper <http://ecrisper.com/>`__. Mac keyboard shortcuts should be
 disabled.
+
+Monitor sessions
+----------------
+
+While your session is ongoing, you can monitor the live progress in the
+admin interface. The admin tables update live, highlighting changes as
+they occur.
+
 
 Payment PDF
 -----------
