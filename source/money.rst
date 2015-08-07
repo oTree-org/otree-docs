@@ -40,6 +40,8 @@ formatted as currency. For example, if you set
 formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
 
+Money amounts are expressed with 2 decimal places by default;
+you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
 
 Note: instead of using Python's built-in ``range`` function, you should
 use oTree's ``currency_range`` with currency values. It takes 3
@@ -87,7 +89,7 @@ the conversion rate to real money in ``settings.py`` by providing a
 For example, if you pay the user 2 cents per point, you would set
 ``real_world_currency_per_point = 0.02``.
 
-Points are integers by default. You can change this by setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``
+Points are integers by default. You can change this by setting ``POINTS_DECIMAL_PLACES``
 in ``settings.py``.
 (e.g. set it to 2 if you want 2 decimal places, so you can get amounts like ``3.14 points``).
 
