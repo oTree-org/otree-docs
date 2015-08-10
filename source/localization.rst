@@ -70,7 +70,7 @@ We are especially looking for volunteers to translate the following files to the
 - `Japanese <https://github.com/oTree-org/otree-core/raw/master/otree/locale/ja/LC_MESSAGES/django.po>`__
 - `Italian <https://github.com/oTree-org/otree-core/raw/master/otree/locale/it/LC_MESSAGES/django.po>`__
 
-You can download the file and edit it directly in your text editor, or use `Poedit <https://poedit.net/>`__.
+You can download the file (using "Save As") and edit it directly in your text editor, or use `Poedit <https://poedit.net/>`__.
 
 Please contact chris@otree.org.
 
