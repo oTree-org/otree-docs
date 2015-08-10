@@ -60,5 +60,17 @@ You are invited to contribute support for your own language in oTree.
 
 It's a simple task; you provide translations of about 20 English phrases.
 
-Please email chris@otree.org for more details.
+`Here <https://github.com/oTree-org/otree-core/blob/master/otree/locale/fr/LC_MESSAGES/django.po>`__
+is an example of an already completed translation to French.
+
+We are especially looking for volunteers to translate the following files to their respective languages:
+
+- `Chinese <https://github.com/oTree-org/otree-core/blob/master/otree/locale/zh_CN/LC_MESSAGES/django.po>`__
+- `Korean <https://github.com/oTree-org/otree-core/blob/master/otree/locale/ko/LC_MESSAGES/django.po>`__
+- `Japanese <https://github.com/oTree-org/otree-core/blob/master/otree/locale/ja/LC_MESSAGES/django.po>`__
+- `Italian <https://github.com/oTree-org/otree-core/blob/master/otree/locale/it/LC_MESSAGES/django.po>`__
+
+You can download the file and edit it directly in your text editor, or use `Poedit <https://poedit.net/>`__.
+
+Please contact chris@otree.org.
 

@@ -76,13 +76,15 @@ Each time a start URL is accessed, oTree checks for the presence of a
 label will be displayed in places where participants are listed, like the
 oTree admin interface or the payments page.
 
+
+
 Grouping and randomization
 --------------------------
 
 If participants are not using single-use links (see :ref:`single_use_links`),
 oTree will assign the first arriving participant to be P1, the second to be P2, etc.
 If you would instead like participant selection to be random, you can set ``'random_start_order': True,``
-in the session config dictionary.
+in the session config dictionary (or ``SESSION_CONFIG_DEFAULTS``).
 
 
 Online experiments
