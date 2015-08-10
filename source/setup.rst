@@ -124,8 +124,7 @@ Here are some specific issues along with their solutions.
     TemplateEncodingError: Templates can only be constructed from unicode or
     UTF-8 strings.
 
-*   Solution: configure your text editor to always save files as UTF-8. Then
-    open the file and save it again.
+*   Solution: this is an oTree bug; upgrade your version of otree-core (see :ref:`upgrade-otree-core`)
 
 Explanation: oTree & Django
 ---------------------------
