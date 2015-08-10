@@ -3,14 +3,15 @@ Localization
 
 oTree's participant interface is has been translated to the following languages:
 
-- German
-- Spanish
 - French
+- German
+- Italian
 - Russian
+- Spanish
 
 .. note::
 
-    If you downloaded oTree prior to June 20, 2015, you need to upgrade
+    You should upgrade to the latest version of
     ``otree-core`` to get this language support. See :ref:`upgrade-otree-core`.
 
 This means that all built-in text that gets displayed to participants is
@@ -59,6 +60,8 @@ Volunteering to localize oTree
 You are invited to contribute support for your own language in oTree.
 
 It's a simple task; you provide translations of about 20 English phrases.
+Currently we are only translating the participant interface,
+although we plan to translate the admin interface and launcher later.
 
 `Here <https://github.com/oTree-org/otree-core/blob/master/otree/locale/fr/LC_MESSAGES/django.po>`__
 is an example of an already completed translation to French.
@@ -68,7 +71,6 @@ We are especially looking for volunteers to translate the following files to the
 - `Chinese <https://github.com/oTree-org/otree-core/raw/master/otree/locale/zh_CN/LC_MESSAGES/django.po>`__
 - `Korean <https://github.com/oTree-org/otree-core/raw/master/otree/locale/ko/LC_MESSAGES/django.po>`__
 - `Japanese <https://github.com/oTree-org/otree-core/raw/master/otree/locale/ja/LC_MESSAGES/django.po>`__
-- `Italian <https://github.com/oTree-org/otree-core/raw/master/otree/locale/it/LC_MESSAGES/django.po>`__
 
 You can download the file (using "Save As") and edit it directly in your text editor, or use `Poedit <https://poedit.net/>`__.
 
