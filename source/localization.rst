@@ -65,10 +65,10 @@ is an example of an already completed translation to French.
 
 We are especially looking for volunteers to translate the following files to their respective languages:
 
-- `Chinese <https://github.com/oTree-org/otree-core/blob/master/otree/locale/zh_CN/LC_MESSAGES/django.po>`__
-- `Korean <https://github.com/oTree-org/otree-core/blob/master/otree/locale/ko/LC_MESSAGES/django.po>`__
-- `Japanese <https://github.com/oTree-org/otree-core/blob/master/otree/locale/ja/LC_MESSAGES/django.po>`__
-- `Italian <https://github.com/oTree-org/otree-core/blob/master/otree/locale/it/LC_MESSAGES/django.po>`__
+- `Chinese <https://github.com/oTree-org/otree-core/raw/master/otree/locale/zh_CN/LC_MESSAGES/django.po>`__
+- `Korean <https://github.com/oTree-org/otree-core/raw/master/otree/locale/ko/LC_MESSAGES/django.po>`__
+- `Japanese <https://github.com/oTree-org/otree-core/raw/master/otree/locale/ja/LC_MESSAGES/django.po>`__
+- `Italian <https://github.com/oTree-org/otree-core/raw/master/otree/locale/it/LC_MESSAGES/django.po>`__
 
 You can download the file and edit it directly in your text editor, or use `Poedit <https://poedit.net/>`__.
 
