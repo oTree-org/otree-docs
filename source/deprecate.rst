@@ -31,8 +31,8 @@ Here is a breakdown of the information contained:
 - ``file.py:1`` File and line number containing the deprecated code.
 - ``OTreeDeprecationWarning``: This is the class that oTree use for manage
   his deprecated code.
-- The next part is the deprecation message that informs the function 'otree.foo'
-  is deprecated and suggest to you to use 'otree.modern_foo' instead.
+- The next part is the deprecation message that informs the function ``otree.foo``
+  is deprecated and suggest to you to use ``otree.modern_foo`` instead.
 
 When you get a message like this take in account that the function
 ``otree.foo`` will be removed from future versions of oTree.
@@ -45,7 +45,7 @@ You can change how ``OTreeDeprecationWarning`` informs about a deprecated
 function.
 
 In the file ``settings.py`` you can add a configuration with the name
-**OTREE_DEPRECATION_WARNING**. This key can accept all the values from
+``OTREE_DEPRECATION_WARNING``. This key can accept all the values from
 `Python warning filter`_
 
 
