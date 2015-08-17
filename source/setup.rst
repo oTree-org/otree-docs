@@ -105,6 +105,8 @@ Troubleshooting
 
 Here are some specific issues along with their solutions.
 
+Note: If you get an antivirus warning, please send an email to chris@otree.org.
+
 *   Problem: You get this message:
 
 
@@ -125,6 +127,10 @@ Here are some specific issues along with their solutions.
     UTF-8 strings.
 
 *   Solution: this is an oTree bug; upgrade your version of otree-core (see :ref:`upgrade-otree-core`)
+
+* Problem: ``otree: command not found``
+
+* Solution: upgrade your version of otree-core (see :ref:`upgrade-otree-core`)
 
 Explanation: oTree & Django
 ---------------------------
