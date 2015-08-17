@@ -16,7 +16,7 @@ A player is part of a group, which is part of a subsession.
 
 
 Models and database tables
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 For example, let's say you are programming an ultimatum game, where in
 each two-person group, one player makes a monetary offer (say, 0-100
@@ -60,7 +60,7 @@ The full list of available fields is in the Django documentation
 Additionally, oTree has ``CurrencyField``; see :ref:`money`.
 
 Constants
-~~~~~~~~~
+---------
 
 The ``Constants`` class is the recommended place to put your app's
 parameters and constants that do not vary from player
@@ -85,12 +85,12 @@ If you want a "global" variable, you should set a field on the subsession, or us
 
 
 Subsession
-~~~~~~~~~~
+----------
 
 .. _before_session_starts:
 
-``before_session_starts``
--------------------------
+The ``before_session_starts`` Method
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can define this method like this:
 
