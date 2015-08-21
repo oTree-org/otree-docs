@@ -101,16 +101,8 @@ Also, let's define the payoff function on the group:
         def set_payoffs(self):
             p1 = self.get_player_by_id(1)
             p2 = self.get_player_by_id(2)
-            p1.payoff = (
-                Constants.endowment -
-                self.sent_amount +
-                self.sent_back_amount
-            )
-            p2.payoff = (
-                self.sent_amount *
-                Constants.multiplication_factor -
-                self.sent_back_amount
-            )
+            p1.payoff = Constants.endowment - self.sent_amount + self.sent_back_amount
+            p2.payoff = self.sent_amount * Constants.multiplication_factor - self.sent_back_amount
 
 
 Define the templates and views
@@ -255,8 +247,7 @@ Here is the code from views.py. Notes:
 
         def vars_for_template(self):
             return {
-                'tripled_amount': self.group.sent_amount *
-                                  Constants.multiplication_factor
+                'tripled_amount': self.group.sent_amount * Constants.multiplication_factor
             }
 
         def sent_back_amount_choices(self):
@@ -314,8 +305,7 @@ Here is the Python code for this page in views.py:
 
         def vars_for_template(self):
             return {
-                'tripled_amount': self.group.sent_amount *
-                                  Constants.multiplication_factor
+                'tripled_amount': self.group.sent_amount * Constants.multiplication_factor
             }
 
 Wait pages and page sequence
