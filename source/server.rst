@@ -105,8 +105,8 @@ shortcut, you can open the website as follows:
 
     $ heroku open
 
-To set environment variables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If it's a production website, you should set the environment variables
 (e.g. ``OTREE_PRODUCTION`` and ``OTREE_AUTH_LEVEL``), like this:
@@ -122,6 +122,11 @@ To add an existing remote:
 .. code-block:: bash
 
     $ heroku git:remote -a [myherokuapp]
+
+Running ``otree`` commands on Heroku
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
 Deploying to an on-premises server
 ----------------------------------

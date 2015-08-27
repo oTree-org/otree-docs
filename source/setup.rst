@@ -1,7 +1,7 @@
 .. _setup:
 
-Setup
-=====
+Download & Setup
+================
 
 There are two ways to install oTree that you can choose from:
 
