@@ -59,14 +59,14 @@ Launcher install
         `oTree_launcher-stable.zip <https://github.com/oTree-org/otree-launcher/archive/master.zip>`_
 
 -   Unzip it to an easy-to-access location, like your "Documents" folder.
--   Run ``otree.py``
+-   Run ``otree.py`` (or, in older versions, ``otree.sh`` (Mac) or ``otree.bat`` (Windows)).
 -   Initial setup may take 5-10 minutes.
 -   When the app window launches, click the buttons to create a new deploy and
     choose a location to store your project files.
 -   Click the "run server" button
 -   Note: the oTree launcher is not installed as an app in your Windows start
     menu or Mac Applications. To reopen the launcher, simply double click
-    oTree.bat again.
+    otree.py again.
 
 
 Plain install
