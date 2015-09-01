@@ -128,7 +128,8 @@ Note: If you get an antivirus warning, please send an email to chris@otree.org.
 
 * Problem: ``otree: command not found``
 
-* Solution: upgrade your version of otree-core (see :ref:`upgrade-otree-core`)
+* Solution: If you are using the launcher, click the "Terminal" button. This will ensure your terminal opens with the correct programs loaded.
+Also, if you are using a version of ``otree-core`` older than 0.3.20, you need to upgrade (see :ref:`upgrade-otree-core`).
 
 Explanation: oTree & Django
 ---------------------------

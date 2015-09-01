@@ -66,7 +66,7 @@ app, or you can pass a parameter to specify your own app name.
 Deploy your code
 ~~~~~~~~~~~~~~~~
 
-``cd`` to the root directory of your oTree project.
+Open the oTree shell (if using the launcher, click the "Terminal" button).
 
 Make sure you have committed any changes as follows:
 
@@ -84,7 +84,7 @@ Then do:
 .. code-block:: bash
 
     $ git push heroku master
-    $ otree-heroku resetdb myherokuapp
+    $ otree-heroku resetdb [your heroku app name]
 
 Go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
 click on your app, click to edit the dynos, and make sure the "worker"
