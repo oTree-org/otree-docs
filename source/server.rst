@@ -84,7 +84,16 @@ Then do:
 .. code-block:: bash
 
     $ git push heroku master
-    $ otree-heroku resetdb [your heroku app name]
+    $ heroku run otree resetdb
+
+(If you have multiple Heroku apps, you need to specify the ``--app``,
+e.g. ``heroku run otree resetdb --app=lit-bastion-5032``)
+
+.. note::
+
+    If you are using a version of otree-core prior to 0.3.37, you should upgrade.
+    Otherwise, ``heroku run otree resetdb`` will not work. Previous versions of oTree relied on the
+    ``otree-heroku`` script, which has been deprecated.
 
 Go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
 click on your app, click to edit the dynos, and make sure the "worker"
@@ -126,7 +135,16 @@ To add an existing remote:
 Running ``otree`` commands on Heroku
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+To execute any command on Heroku, just do ``heroku run`` followed by the command. e.g. to run oTree bots on Heroku:
 
+.. code-block:: bash
+
+    $ heroku run otree test
+
+(If you have multiple Heroku apps, you need to specify the ``--app``,
+e.g. ``heroku run otree test --app=lit-bastion-5032``)
+
+It is not necessary to use ``otree runserver`` on Heroku, since Heroku starts the server automatically.
 
 Deploying to an on-premises server
 ----------------------------------
