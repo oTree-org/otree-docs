@@ -115,7 +115,7 @@ which as you can see are loaded by ``_templates/global/Base.html``.
 
 .. note::
 
-    If you downloaded oTree prior to September 7, 2015, you should update ``_templates/global/Base.html`` to the latest version
+    If you downloaded oTree prior to September 7, 2015, you need to update ``_templates/global/Base.html`` to the latest version
     `here <https://github.com/oTree-org/oTree/blob/master/_templates/global/Base.html>`__.
 
     Old versions have a bug where ``custom.js`` was not being loaded. See `here <https://github.com/oTree-org/oTree/pull/48>`__
