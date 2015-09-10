@@ -18,7 +18,7 @@ Create the app
 
 .. code-block:: bash
 
-    $ otree startapp trust_simple
+    $ otree startapp my_trust
 
 
 Define models.py
@@ -31,7 +31,7 @@ donation gets tripled.
 .. code-block:: python
 
     class Constants:
-        name_in_url = 'trust_simple'
+        name_in_url = 'my_trust'
         players_per_group = 2
         num_rounds = 1
 
@@ -163,7 +163,7 @@ This page looks like the templates we have seen so far. Note the use of
 
     {% block content %}
 
-        {% include 'trust_simple/Instructions.html' %}
+        {% include 'my_trust/Instructions.html' %}
 
         <p>
         You are Participant A. Now you have {{Constants.endowment}}.
@@ -210,7 +210,7 @@ This is the page that P2 sees to send money back. Here is the template:
 
     {% block content %}
 
-        {% include 'trust_simple/Instructions.html' %}
+        {% include 'my_trust/Instructions.html' %}
 
         <p>
             You are Participant B. Participant A sent you {{group.sent_amount}}
@@ -293,7 +293,7 @@ to condition on the current player's ``id_in_group``.
         Therefore, your total payoff is {{player.payoff}}.
         </p>
 
-        {% include 'trust_simple/Instructions.html' %}
+        {% include 'my_trust/Instructions.html' %}
 
     {% endblock %}
 
@@ -349,10 +349,10 @@ Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
 .. code-block:: python
 
     {
-        'name': 'trust_simple',
-        'display_name': "Trust Game (simple version from tutorial)",
+        'name': 'my_trust',
+        'display_name': "My Trust Game (simple version from tutorial)",
         'num_demo_participants': 2,
-        'app_sequence': ['trust_simple'],
+        'app_sequence': ['my_trust'],
     },
 
 Reset the database and run

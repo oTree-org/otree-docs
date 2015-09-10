@@ -34,7 +34,7 @@ Create the app
 
 .. code-block:: bash
 
-    $ otree startapp matching_pennies_tutorial
+    $ otree startapp my_matching_pennies
 
 
 Define models.py
@@ -46,7 +46,7 @@ We define our constants as we have previously. Matching pennies is a
 .. code-block:: python
 
     class Constants:
-        name_in_url = 'matching_pennies_tutorial'
+        name_in_url = 'my_matching_pennies'
         players_per_group = 2
         num_rounds = 4
         stakes = c(100)
@@ -436,11 +436,11 @@ there will be 1 group.
 .. code-block:: python
 
     {
-        'name': 'matching_pennies_tutorial',
-        'display_name': "Matching Pennies (tutorial version)",
+        'name': 'my_matching_pennies',
+        'display_name': "My Matching Pennies (tutorial version)",
         'num_demo_participants': 2,
         'app_sequence': [
-            'matching_pennies_tutorial',
+            'my_matching_pennies',
         ],
     },
 

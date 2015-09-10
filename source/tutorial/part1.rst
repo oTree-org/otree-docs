@@ -15,9 +15,9 @@ In this directory, create the public goods app with this shell command:
 
 .. code-block:: bash
 
-    $ otree startapp public_goods_simple
+    $ otree startapp my_public_goods
 
-Then go to the folder ``public_goods_simple`` that was created.
+Then go to the folder ``my_public_goods`` that was created.
 
 Define models.py
 ----------------
@@ -40,7 +40,7 @@ Now we have:
 .. code-block:: Python
 
     class Constants:
-        name_in_url = 'public_goods_simple'
+        name_in_url = 'my_public_goods'
         players_per_group = 3
         num_rounds = 1
 
@@ -104,7 +104,7 @@ This game will have 2 pages.
 -  Page 1: players decide how much to contribute
 -  Page 2: players are told the results
 
-So, let's make 2 HTML files under ``templates/public_goods_simple/``.
+So, let's make 2 HTML files under ``templates/my_public_goods/``.
 
 The first is ``Contribute.html``, which contains a brief explanation of
 the game, and a form field where the player can enter their
@@ -244,10 +244,10 @@ existing "exit survey" and "payment info" apps to ``app_sequence``.
 
     SESSION_CONFIGS = [
         {
-            'name': 'public_goods_simple',
-            'display_name': "Public Goods (Simple Version)",
+            'name': 'my_public_goods',
+            'display_name': "My Public Goods (Simple Version)",
             'num_demo_participants': 3,
-            'app_sequence': ['public_goods_simple', 'survey', 'payment_info'],
+            'app_sequence': ['my_public_goods', 'survey', 'payment_info'],
         },
         # ...
 
