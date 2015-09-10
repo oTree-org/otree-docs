@@ -98,38 +98,6 @@ This is an alternative to the "launcher install".
     $ otree resetdb
     $ otree runserver
 
-Troubleshooting
----------------
-
-Here are some specific issues along with their solutions.
-
-Note: If you get an antivirus warning, please send an email to chris@otree.org.
-
-*   Problem: You get this message:
-
-
-.. code-block:: bash
-
-    'python' is not recognized as an internal or external command, operable
-    program or batch file.
-
-
-*   Solution: make sure Python is installed and add it to your ``Path`` as
-    described above.
-
-*   Problem: You get this error:
-
-.. code-block:: python
-
-    TemplateEncodingError: Templates can only be constructed from unicode or
-    UTF-8 strings.
-
-*   Solution: this is an oTree bug; upgrade your version of otree-core (see :ref:`upgrade-otree-core`)
-
-* Problem: ``otree: command not found``
-
-* Solution: If you are using the launcher, click the "Terminal" button. This will ensure your terminal opens with the correct programs loaded.
-Also, if you are using a version of ``otree-core`` older than 0.3.20, you need to upgrade (see :ref:`upgrade-otree-core`).
 
 Explanation: oTree & Django
 ---------------------------
