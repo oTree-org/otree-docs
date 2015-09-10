@@ -100,6 +100,7 @@ Contents:
     bots.rst
     admin.rst
     server.rst
+    troubleshooting.rst
     mturk.rst
     django.rst
     deprecate.rst
