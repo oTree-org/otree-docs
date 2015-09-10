@@ -26,8 +26,8 @@ If you get this error:
 
 This is an old oTree bug; upgrade your version of otree-core (see :ref:`upgrade-otree-core`).
 
-``otree: command not found``
-----------------------------
+otree: command not found
+------------------------
 
 If you are using the launcher, click the "Terminal" button. This will ensure your terminal opens with the correct programs loaded.
 Also, if you are using a version of ``otree-core`` older than 0.3.20, you need to upgrade (see :ref:`upgrade-otree-core`).
