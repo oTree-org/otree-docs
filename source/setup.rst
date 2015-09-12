@@ -96,6 +96,15 @@ This is an alternative to the "launcher install".
 .. code-block:: bash
 
     $ pip install -r requirements_base.txt
+
+On Mac, you may need to use ``sudo``:
+
+.. code-block:: bash
+
+    $ sudo pip install -r requirements_base.txt
+
+Then run:
+
     $ otree resetdb
     $ otree runserver
 
