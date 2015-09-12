@@ -12,11 +12,12 @@ There are two ways to install oTree that you can choose from:
 If you encounter any error during installation, please email chris@otree.org
 with the error message.
 
-Prerequisite: Python 2.7
-------------------------
+Prerequisite: Python 2.7 (not 3.x)
+----------------------------------
 
 *   On Windows: download and install
-    `Python 2.7 <https://www.python.org/downloads/>`__). Then add Python to
+    `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
+    Then add Python to
     your ``Path`` environment variable:
 
     *   Open the Windows Start menu
