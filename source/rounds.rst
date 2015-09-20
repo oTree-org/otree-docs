@@ -19,8 +19,8 @@ You can specify how many rounds a game should be played in models.py, in
 Subsession objects have an attribute ``round_number``, which contains the
 current round number, starting from 1.
 
-Accessing data from previous rounds
------------------------------------
+Accessing data from previous rounds: technique 1
+------------------------------------------------
 
 Each round has separate ``Subsession``, ``Group``, and ``Player`` objects.
 For example, let's say you set ``self.player.my_field = True`` in round 1.
@@ -57,8 +57,8 @@ situation is unspecified).
 
 .. _vars:
 
-Accessing data from previous subsessions in different apps
-----------------------------------------------------------
+Accessing data from previous rounds: technique 2
+------------------------------------------------
 
 ``in_all_rounds()`` only is useful when you need to access data from a previous
 round of the same app.

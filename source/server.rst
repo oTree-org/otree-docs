@@ -123,10 +123,19 @@ To add an existing remote:
 
     $ heroku git:remote -a [myherokuapp]
 
+Scaling up the server
+~~~~~~~~~~~~~~~~~~~~~
+
+The Heroku free plan is sufficient for small-scale testing of your app, but once you are ready to go live,
+we recommend you upgrade your Postgres database to a paid tier (because the row limit of the free version is very low),
+and scale up your dynos to at least the cheapest paid plan. Note: after you finish your experiment,
+you can scale your dynos and database back down,
+so then you don't have to pay the full monthly cost.
+
 Running ``otree`` commands on Heroku
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+(TODO)
 
 Deploying to an on-premises server
 ----------------------------------
