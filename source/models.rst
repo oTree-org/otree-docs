@@ -96,15 +96,16 @@ You can define this method like this:
 
 .. code-block:: python
 
-    def before_session_starts(self):
-        ...
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            ...
 
 This method is executed at the moment when the session is created, meaning it
 finishes running before the session begins (Hence the name).
 It is executed once per subsession (i.e. once per round).
 For example, if your app has 10 rounds, this method will get called 10 times,
 once for each ``Subsession`` instance.
-
 
 It has many uses, such as initializing fields, assigning players to treatments,
 or shuffling groups.

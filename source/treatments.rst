@@ -5,21 +5,34 @@ If you want to assign participants to different treatment groups, you
 can put the code in the subsession's ``before_session_starts`` method
 (for more info see :ref:`before_session_starts`).
 For example, if you want some participants to have a blue background to
-their screen and some to have a red background, you would randomize as
-follows:
+their screen and some to have a red background, you would first define
+a ``color`` field on the ``Player`` model:
 
 .. code-block:: python
 
-    def before_session_starts(self):
-        # randomize to treatments
-        for player in self.get_players():
-            player.color = random.choice(['blue', 'red'])
+    class Player(BasePlayer):
+        # ...
+
+        color = models.CharField()
+
+
+Then you can assign to this field randomly:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            # randomize to treatments
+            for player in self.get_players():
+                player.color = random.choice(['blue', 'red'])
 
 (To actually set the screen color you would need to pass
 ``player.color`` to some CSS code in the template, but that part is
 omitted here.)
 
-You can also assign treatments at the group level (change the above code to use
+You can also assign treatments at the group level (put the ``CharField``
+in the ``Group`` class and change the above code to use
 ``get_groups()`` and ``group.color``).
 
 If your game has multiple rounds, note that the above code gets executed
@@ -30,10 +43,12 @@ it in the first round:
 
 .. code-block:: python
 
-    def before_session_starts(self):
-        if self.round_number == 1:
-            for p in self.get_players():
-                p.participant.vars['color'] = random.choice(['blue', 'red'])
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            if self.round_number == 1:
+                for p in self.get_players():
+                    p.participant.vars['color'] = random.choice(['blue', 'red'])
 
 Then elsewhere in your code, you can access the participant's color with
 ``self.player.participant.vars['color']``.
