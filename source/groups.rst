@@ -42,13 +42,7 @@ Group re-matching between rounds
 --------------------------------
 
 For the first round, the players are split into groups of
-``Constants.players_per_group``. This matching is random, unless you
-have set ``group_by_arrival_time`` set in your session config in
-settings.py, in which case players are grouped in the order they start
-the first round, or if you specify more complex logic as described in
-:ref:`complex_grouping_logic`.
-
-In subsequent rounds, by default, the groups chosen are kept the same.
+``Constants.players_per_group``. In subsequent rounds, by default, the groups chosen are kept the same.
 If you would like to change this, you can define the grouping logic in
 ``Subsession.before_session_starts`` (for more info see :ref:`before_session_starts`).
 
