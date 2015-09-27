@@ -46,6 +46,11 @@ For the first round, the players are split into groups of
 If you would like to change this, you can define the grouping logic in
 ``Subsession.before_session_starts`` (for more info see :ref:`before_session_starts`).
 
+A group has a method ``set_players`` that takes as an argument a list of
+the players to assign to that group, in order. Alternatively, a
+subsession has a method ``set_groups`` that takes as an argument a list
+of lists, with each sublist representing a group.
+
 For example, if you want players
 to be reassigned to the same groups but to have roles randomly shuffled
 around within their groups (e.g. so player 1 will either become player 2
@@ -59,16 +64,67 @@ or remain player 1), you would do this:
             players.reverse()
             group.set_players(players)
 
-A group has a method ``set_players`` that takes as an argument a list of
-the players to assign to that group, in order. Alternatively, a
-subsession has a method ``set_groups`` that takes as an argument a list
-of lists, with each sublist representing a group. You can use this to
-rearrange groups between rounds, but note that the
-``before_session_starts`` method is run when the session is created,
-before players begin playing. Therefore you cannot use this method to
-shuffle players depending on the results of previous rounds.
-If you want to do that, you should make a ``WaitPage`` with ``wait_for_all_groups=True``
-and put the shuffling code in ``after_all_players_arrive``.
+
+Re-matching based on results of previous rounds
+-----------------------------------------------
+
+Your experimental design may involve re-matching players based on the results
+of a previous subsession. For example, you may want the highest-ranked players
+in round 1 to play against each other in round 2.
+
+You cannot accomplish this using ``before_session_starts``, because this method is run when the session is created,
+before players begin playing.
+
+Instead, you should make a ``WaitPage`` with ``wait_for_all_groups=True``
+and put the shuffling code in ``after_all_players_arrive``. For example:
+
+.. code-block:: python
+
+    class ShuffleWaitPage(WaitPage):
+        wait_for_all_groups = True
+
+        def after_all_players_arrive(self):
+
+            group_matrix = [g.get_players() for g in self.subsession.get_groups()]
+
+            # ... some code to permute this matrix
+
+            self.subsession.set_groups(group_matrix)
+
+After this wait page, the players will be reassigned to their new groups.
+
+Example: re-matching by rank
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For example, let's say that in one subsession, players get a numeric score for some task,
+and in the next round, you want players to be matched with players who have a similar score.
+In the first subsession, you should assign the score to ``participant.vars`` so that it can be easily
+accessed in other rounds, e.g. ``self.player.participant.vars['score'] = 10``.
+
+Then, before the first page of the next round, you would have a wait page like this:
+
+.. code-block:: python
+
+    class ShuffleWaitPage(WaitPage):
+        wait_for_all_groups = True
+
+        def after_all_players_arrive(self):
+
+            # see python docs on sorted() function
+            sorted_players = sorted(
+                self.subsession.get_players(),
+                cmp=lambda player: player.participant.vars['score']
+            )
+
+
+            # chunk players into groups of
+            group_matrix = []
+            ppg = Constants.players_per_group
+            for i in xrange(0, len(sorted_players), ppg):
+                group_matrix.append(sorted_players[i:i+ppg])
+
+            # set new groups
+            self.subsession.set_groups(group_matrix)
 
 
 .. _complex_grouping_logic:
