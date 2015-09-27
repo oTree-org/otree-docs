@@ -110,17 +110,17 @@ Then, before the first page of the next round, you would have a wait page like t
 
         def after_all_players_arrive(self):
 
+            # sort players by 'score'
             # see python docs on sorted() function
             sorted_players = sorted(
                 self.subsession.get_players(),
                 cmp=lambda player: player.participant.vars['score']
             )
 
-
-            # chunk players into groups of
+            # chunk players into groups
             group_matrix = []
             ppg = Constants.players_per_group
-            for i in xrange(0, len(sorted_players), ppg):
+            for i in range(0, len(sorted_players), ppg):
                 group_matrix.append(sorted_players[i:i+ppg])
 
             # set new groups
