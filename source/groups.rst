@@ -96,17 +96,24 @@ After this wait page, the players will be reassigned to their new groups.
 Example: re-matching by rank
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For example, let's say that in one subsession, players get a numeric score for some task,
-and in the next round, you want players to be matched with players who have a similar score.
-In the first subsession, you should assign the score to ``participant.vars`` so that it can be easily
+For example, let's say that in each round of an app, players get a numeric score for some task.
+In the first round, players are matched randomly, but in the subsequent rounds,
+you want players to be matched with players who got a similar score in the previous round.
+
+First of all, at the end of each round, you should assign each player's score to ``participant.vars`` so that it can be easily
 accessed in other rounds, e.g. ``self.player.participant.vars['score'] = 10``.
 
-Then, before the first page of the next round, you would have a wait page like this:
+Then, you would define the following page and put it at the beginning of ``page_sequence``:
 
 .. code-block:: python
 
     class ShuffleWaitPage(WaitPage):
         wait_for_all_groups = True
+
+        # we can't shuffle at the beginning of round 1,
+        # because the score has not been determined yet
+        def is_displayed(self):
+            return self.subsession.round_number > 1
 
         def after_all_players_arrive(self):
 
