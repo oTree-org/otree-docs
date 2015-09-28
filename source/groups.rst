@@ -121,7 +121,7 @@ Then, you would define the following page and put it at the beginning of ``page_
             # see python docs on sorted() function
             sorted_players = sorted(
                 self.subsession.get_players(),
-                cmp=lambda player: player.participant.vars['score']
+                key=lambda player: player.participant.vars['score']
             )
 
             # chunk players into groups
