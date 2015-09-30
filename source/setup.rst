@@ -105,6 +105,8 @@ On Mac, you may need to use ``sudo``:
 
 Then run:
 
+.. code-block:: bash
+
     $ otree resetdb
     $ otree runserver
 
