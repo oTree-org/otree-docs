@@ -5,9 +5,9 @@ Download & Setup
 
 There are two ways to install oTree that you can choose from:
 
-*   The "plain install" lets you run oTree from the command line.
 *   The "launcher install" provides a graphical interface for running the oTree
-    server.
+    server. It also provides a command line interface.
+*   The "plain install" only lets you run oTree from the command line.
 
 If you encounter any error during installation, please email chris@otree.org
 with the error message.
@@ -60,7 +60,7 @@ Launcher install
         `oTree_launcher-stable.zip <https://github.com/oTree-org/otree-launcher/archive/master.zip>`_
 
 -   Unzip it to an easy-to-access location, like your "Documents" folder.
--   Run ``otree.py`` (or, in older versions, ``otree.sh`` (Mac) or ``otree.bat`` (Windows)).
+-   Run ``otree.py``.
 -   Initial setup may take 5-10 minutes.
 -   When the app window launches, click the buttons to create a new deploy and
     choose a location to store your project files.
@@ -68,6 +68,11 @@ Launcher install
 -   Note: the oTree launcher is not installed as an app in your Windows start
     menu or Mac Applications. To reopen the launcher, simply double click
     otree.py again.
+
+.. note::
+
+    ``otree.py`` cannot be executed inside a ``virtualenv``. You should execute it with a regular non-virtualenv
+    python. When it is first executed, it will create a new virtualenv and install all its dependencies there.
 
 
 Plain install

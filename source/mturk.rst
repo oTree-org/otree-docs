@@ -107,12 +107,7 @@ Multiplayer games
 Games that involve synchronous interaction between participants (i.e.
 wait pages) can be tricky on mechanical Turk.
 
-First, you should set
-``group_by_arrival_time`` to ``True`` so that participants are assigned
-to groups in the order in which they arrive, to minimize unnecessary
-waiting time.
-
-Next, you should set ``timeout_seconds`` on each page,
+You should set ``timeout_seconds`` on each page,
 so that the page will be auto-submitted if the participant drops out or does
 not complete the page in time. This way, players will not get stuck waiting for
 someone who dropped out.
