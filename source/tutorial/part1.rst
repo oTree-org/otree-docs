@@ -56,7 +56,7 @@ main thing is how much they contributed. So, we define a field
 
 .. code-block:: python
 
-        class Player(otree.models.BasePlayer):
+    class Player(otree.models.BasePlayer):
 
         # ...
 
@@ -70,15 +70,15 @@ fields:
 
 .. code-block:: python
 
-        class Group(otree.models.BaseGroup):
+    class Group(otree.models.BaseGroup):
 
         # ...
 
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
 
-We also need to define the logic for how these fields get calculated.
-Let's define a method on the group called ``set_payoffs``:
+Now let's define a method that calculates the payoff (and other fields like ``total_contribution`` and ``individual_share``).
+Let's call it ``set_payoffs``:
 
 
 .. code-block:: python
@@ -126,8 +126,7 @@ contribution.
     </p>
 
 
-    {% formfield player.contribution with
-       label="How much will you contribute?" %}
+    {% formfield player.contribution with label="How much will you contribute?" %}
 
     {% next_button %}
 

@@ -71,7 +71,8 @@ Launcher install
 
 .. note::
 
-    ``otree.py`` cannot be executed inside a ``virtualenv``. You should execute it with a regular non-virtualenv
+    For ``virtualenv`` users: ``otree.py`` cannot be executed inside a ``virtualenv``.
+    You should execute it with a regular non-virtualenv
     python. When it is first executed, it will create a new virtualenv and install all its dependencies there.
 
 
