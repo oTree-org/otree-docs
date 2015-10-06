@@ -17,7 +17,7 @@ To configure a session like this, you would go to ``settings.py`` and
 define a "session config", which is a reusable configuration.
 This lets you create multiple sessions, all with the same properties.
 
- Add an entry to ``SESSION_CONFIGS`` like this:
+Add an entry to ``SESSION_CONFIGS`` like this:
 
 .. code-block:: python
 
@@ -25,8 +25,8 @@ This lets you create multiple sessions, all with the same properties.
         'name': 'my_session_config',
         'display_name': 'My Session Config',
         'participation_fee': 10.00,
-        'app_sequence':['trust', 'ultimatum', 'questionnaire'],
-    }
+        'app_sequence':['trust', 'ultimatum', 'survey'],
+    },
 
 
 .. note::
