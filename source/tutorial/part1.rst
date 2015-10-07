@@ -1,7 +1,7 @@
 Part 1: Public goods game
 =========================
 
-We will now create a simple public goods game. The completed app is
+We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__. The completed app is
 `here <https://github.com/oTree-org/oTree/tree/master/public_goods_simple>`__.
 
 Create the app
@@ -251,7 +251,8 @@ existing "exit survey" and "payment info" apps to ``app_sequence``.
         # ...
 
 However, we must also remember to add a ``{% next_button %}`` element to
-the ``Results.html``, so the user can click a button taking them to the
+the ``Results.html`` (somewhere inside the ``{% content %}`` block,
+so the user can click a button taking them to the
 next app in the sequence.
 
 Reset the database and run
