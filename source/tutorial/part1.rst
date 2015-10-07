@@ -259,12 +259,11 @@ Reset the database and run
 --------------------------
 
 Before you run the server, you need to reset the database. In the
-launcher, click the button "clear the database". Or, on the command
-line, run ``otree resetdb``.
-
-Every time you add, change, or remove a field in ``models.py`` This is
-because we have defined new fields in ``models.py``, and the SQL
-database needs to be re-generated to create these tables and columns.
+launcher, click the button "reset database". Or, on the command
+line, run ``otree resetdb``. (You need to run ``resetdb`` every time you
+create a new app, or when you add/change/remove a field in ``models.py``. This is
+because you have new fields in ``models.py``, and the SQL
+database needs to be re-generated to create these tables and columns.)
 
 Then, run the server and open your browser to http://127.0.0.1:8000 to
 play the game.

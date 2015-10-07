@@ -51,8 +51,9 @@ Here is how to define the above table structure:
         offer_accepted = models.BooleanField()
 
 Every time you add, remove, or change a field in ``models.py``, you need
-to run ``otree resetdb`` (or, in the launcher, click "Clear
-Database").
+to run ``otree resetdb``, or, in the launcher, click "Reset DB".
+(However, you don't need to run ``resetdb`` if you only make a change that
+doesn't affect your database schema, like modifying ``views.py`` or an HTML template, etc.)
 
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.7/ref/models/fields/#field-types>`__.

@@ -109,6 +109,8 @@ On Mac, you may need to use ``sudo``:
 
     $ sudo pip install -r requirements_base.txt
 
+(Or you can use a ``virtualenv`` if you are familiar with that.)
+
 Then run:
 
 .. code-block:: bash
