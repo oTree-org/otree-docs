@@ -146,8 +146,8 @@ details of how template inheritance works.
     </p>
     {% endblock %}
 
-Send
-~~~~
+Send.html
+~~~~~~~~~
 
 This page looks like the templates we have seen so far. Note the use of
 ``{% include %}`` to automatically insert another template.
@@ -193,8 +193,8 @@ and ``form_fields`` in the view.
 Also, we use ``is_displayed`` to only show this to P1; P2 skips the
 page.
 
-SendBack
-~~~~~~~~
+SendBack.html
+~~~~~~~~~~~~~
 
 This is the page that P2 sees to send money back. Here is the template:
 
@@ -279,7 +279,7 @@ to condition on the current player's ``id_in_group``.
             You sent Participant B {{ group.sent_amount }}.
             Participant B returned {{group.sent_back_amount}}.
         </p>
-        {% else %}
+    {% else %}
         <p>
             Participant A sent you {{ group.sent_amount }}.
             You returned {{group.sent_back_amount}}.
@@ -356,14 +356,13 @@ Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
 Reset the database and run
 --------------------------
 
+If you are using the launcher, click the "Reset DB" and "Run server" buttons.
+
 If you are on the command line, enter:
 
 .. code-block:: bash
 
     $ otree resetdb
     $ otree runserver
-
-If you are using the launcher, click the button equivalents to these
-commands.
 
 Then open your browser to ``http://127.0.0.1:8000`` to play the game.
