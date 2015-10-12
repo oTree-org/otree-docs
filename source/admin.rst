@@ -86,7 +86,7 @@ oTree will assign the first person who arrives to be P1, the second to be P2, et
 If you would instead like participant selection to be random, you can set ``'random_start_order': True,``
 in the session config dictionary (or ``SESSION_CONFIG_DEFAULTS``).
 
-Note that if you use single-use links, then ``'random_start_order': True,`` will have no effect, because each
+Note that if you use single-use links, then ``random_start_order`` will have no effect, because each
 single-use link is tied to a specific participant (the URL contains the participant's unique code).
 
 
