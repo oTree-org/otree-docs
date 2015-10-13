@@ -17,7 +17,7 @@ Don't modify values in ``Constants``
 As its name implies, ``Constants`` is for values that don't change -- they are the same for all participants
 across all sessions. So, you shouldn't do something like this:
 
-.. code-block::python
+.. code-block:: python
 
     def my_method(self):
         Constants.my_list.append(1)
@@ -29,7 +29,7 @@ you should set a field on the subsession, or use :ref:`session_vars`.
 For the same reason, you shouldn't assign to class attributes on your models.
 For example, don't do this:
 
-.. code-block::python
+.. code-block:: python
 
     class Player(BasePlayer):
 
