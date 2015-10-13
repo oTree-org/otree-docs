@@ -101,6 +101,7 @@ Contents:
     admin.rst
     server.rst
     troubleshooting.rst
+    tips_and_tricks.rst
     mturk.rst
     django.rst
     ztree.rst
