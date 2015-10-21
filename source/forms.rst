@@ -146,8 +146,8 @@ Let's say you have 3 integer fields in your form whose names are
         if values["int1"] + values["int2"] + values["int3"] != 100:
             return 'The numbers must add up to 100'
 
-Determining the list of form fields dynamically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Determining form fields dynamically
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that
@@ -182,6 +182,21 @@ as described in the Django documentation, e.g.:
     contribution = models.CurrencyField(
         verbose_name="How much will you contribute?")
 
+Forms with a dynamic vector of fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let's say you want a form with a vector of n fields like this:
+
+contribution[1], contribution[2], ..., contribution[n]
+
+Where each field above is identical, except for some numerical index.
+Furthermore, suppose n is variable (can range from 1 to N).
+
+Currently in oTree, you can only define a fixed number of fields in a model.
+So, you should define in ``models.py`` N fields (contribution_1...contribution_N...),
+and then use ``get_form_fields`` as described above to dynamically return a list with the desired subset of these fields.
+
+For an example, see the oTree sample `ultimatum game <https://github.com/oTree-org/oTree/blob/master/ultimatum/models.py>`__.
 
 Widgets
 -------
@@ -233,3 +248,4 @@ If you want your custom widget's style to look like the rest of the
 oTree widgets, you should look at the generated HTML from the
 ``{% formfield %}`` tag. You can copy and paste the markup into the template
 and use that as a starting point for modifications.
+

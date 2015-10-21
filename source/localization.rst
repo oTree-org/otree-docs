@@ -8,11 +8,7 @@ oTree's participant interface is has been translated to the following languages:
 - Italian
 - Russian
 - Spanish
-
-.. note::
-
-    You should upgrade to the latest version of
-    ``otree-core`` to get this language support. See :ref:`upgrade-otree-core`.
+- Hungarian
 
 This means that all built-in text that gets displayed to participants is
 available in these languages. This includes things like:
