@@ -185,11 +185,12 @@ as described in the Django documentation, e.g.:
 Forms with a dynamic vector of fields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's say you want a form with a vector of n fields like this:
+Let's say you want a form with a vector of n fields that are identical, except for some numerical index, e.g.:
 
-contribution[1], contribution[2], ..., contribution[n]
+.. code-block::
 
-Where each field above is identical, except for some numerical index.
+    contribution[1], contribution[2], ..., contribution[n]
+
 Furthermore, suppose n is variable (can range from 1 to N).
 
 Currently in oTree, you can only define a fixed number of fields in a model.
