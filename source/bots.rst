@@ -54,6 +54,13 @@ Here, we first submit the ``Start`` page, which does not contain a form.
 The next page is ``Offer``, which contains a form whose field is called
 ``offer_amount``, which we set to ``50``.
 
+If a page contains several submissions, the synthax looks like
+
+.. code-block:: python
+
+    self.submit(views.Offer, {'first_offer_amount': 50, 'second_offer_amount': 150, 'third_offer_amount': 150})
+
+
 The test system will raise an error if the bot submits invalid input for a page,
 or if it submits pages in the wrong order.
 
