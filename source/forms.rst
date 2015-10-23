@@ -197,7 +197,6 @@ Currently in oTree, you can only define a fixed number of fields in a model.
 So, you should define in ``models.py`` N fields (contribution_1...contribution_N...),
 and then use ``get_form_fields`` as described above to dynamically return a list with the desired subset of these fields.
 
-For an example, see the oTree sample `ultimatum game <https://github.com/oTree-org/oTree/blob/master/ultimatum/models.py>`__.
 
 Widgets
 -------
