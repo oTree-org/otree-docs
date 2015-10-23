@@ -6,7 +6,7 @@ and submit by clicking the "Next" button. To create a form, first you
 should go to models.py and define fields on your Player or Group. Then,
 in your Page class, you can define ``form_models`` to specify the model
 that this form modifies (either ``models.Player`` or ``models.Group``),
-and ``form_fields``, which is list of the fields from that model.
+and ``form_fields``, which is a list of the fields from that model.
 
 When the user submits the form, the submitted data is automatically
 saved back to the field in your model.
