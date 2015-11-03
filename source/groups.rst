@@ -11,8 +11,8 @@ it to ``None``. e.g. it is a single-player game or a game where
 everybody in the subsession interacts together as 1 group. In this case,
 ``self.group.get_players()`` will return everybody in the subsession. If
 you need your groups to have uneven sizes (for example, 2 vs 3), you can
-do this: ``players_per_group=[2,3]``; in this case, if you have a
-session with 15 players, the group sizes would be ``[2,3,2,3,2,3]``.
+do this: ``players_per_group=[2,3]``; then, if you create a
+session with 15 players, the group sizes will be ``2,3,2,3,2,3``.
 
 Each player has an attribute ``id_in_group``, which is an integer,
 which will tell you if it is player 1, player 2, etc.
@@ -124,7 +124,7 @@ After this wait page, the players will be reassigned to their new groups.
 
 Note: if you shuffle during the session,
 the result of your shuffling logic is not "carried forward" to the next round,
-as it is with before_session_starts.
+as it is with ``before_session_starts``.
 
 
 Example: re-matching by rank
