@@ -80,7 +80,7 @@ in your ``models.py``
 
 .. code-block:: python
 
-    class Subsession(otree.models.Subsession):
+    class Subsession(BaseSubsession):
         def example(self):
 
             # current subsession object
@@ -97,7 +97,7 @@ in your ``models.py``
             self.in_previous_rounds()
             self.in_all_rounds()
 
-    class Group(otree.models.Group):
+    class Group(BaseGroup):
         def example(self):
 
             # current group object
@@ -110,7 +110,7 @@ in your ``models.py``
             # child objects
             self.get_players()
 
-    class Player(otree.models.Player):
+    class Player(BasePlayer):
 
         def example(self):
 

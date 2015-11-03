@@ -56,7 +56,7 @@ main thing is how much they contributed. So, we define a field
 
 .. code-block:: python
 
-    class Player(otree.models.BasePlayer):
+    class Player(BasePlayer):
 
         # ...
 
@@ -70,7 +70,7 @@ fields:
 
 .. code-block:: python
 
-    class Group(otree.models.BaseGroup):
+    class Group(BaseGroup):
 
         # ...
 
@@ -83,7 +83,7 @@ Let's call it ``set_payoffs``:
 
 .. code-block:: python
 
-    class Group(otree.models.BaseGroup):
+    class Group(BaseGroup):
 
         # ...
 

@@ -86,7 +86,7 @@ To solve this, you can alternate treatments, using ``itertools.cycle``:
 
     import itertools
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
         def before_session_starts(self):
             treatments = itertools.cycle([True, False])

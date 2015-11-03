@@ -91,7 +91,7 @@ like *my_custom_function* used in ``before_session_starts``
 
 .. code-block:: python
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
         def my_custom_function(self):
             some logic here
@@ -107,7 +107,7 @@ if this method is called from another file. oTree helps you with this decorator
 
     from otree import deprecate
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
         @deprecate.deprecated("my_custom_method")
         def my_custom_function(self):

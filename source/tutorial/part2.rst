@@ -46,7 +46,7 @@ Your first instinct may be to define the fields on the Player like this:
 
 .. code-block:: python
 
-    class Player(otree.models.BasePlayer):
+    class Player(BasePlayer):
 
         # <built-in>
         ...
@@ -66,7 +66,7 @@ sense because each group has exactly 1 ``sent_amount`` and exactly 1
 
 .. code-block:: python
 
-    class Group(otree.models.BaseGroup):
+    class Group(BaseGroup):
 
         # <built-in>
         ...

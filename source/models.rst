@@ -45,7 +45,7 @@ Here is how to define the above table structure:
 
 .. code-block:: python
 
-    class Group(otree.models.BaseGroup):
+    class Group(BaseGroup):
         ...
         amount_offered = models.CurrencyField()
         offer_accepted = models.BooleanField()

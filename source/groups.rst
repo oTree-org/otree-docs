@@ -198,7 +198,7 @@ You can accomplish this as follows:
         groups = 8
         ... # etc
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
            def before_session_starts(self):
             if self.round_number == 1:
@@ -241,7 +241,7 @@ the last *4 groups* with only *2 players*.
         groups = 8
         ... # etc
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
         def before_session_starts(self):
 

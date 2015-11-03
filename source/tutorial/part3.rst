@@ -64,7 +64,7 @@ So we have:
 
 .. code-block:: python
 
-    class Player(otree.models.BasePlayer):
+    class Player(BasePlayer):
 
         # <built-in>
         # ...
@@ -97,7 +97,7 @@ integer between 1 and 4, and then assigns it into ``session.vars``:
 
 .. code-block:: python
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
         def before_session_starts(self):
             paying_round = random.randint(1, Constants.num_rounds)
@@ -111,7 +111,7 @@ run once (on the first round):
 
 .. code-block:: python
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
         def before_session_starts(self):
             if self.round_number == 1:
@@ -135,7 +135,7 @@ new group order:
 
 .. code-block:: python
 
-    class Subsession(otree.models.BaseSubsession):
+    class Subsession(BaseSubsession):
 
         def before_session_starts(self):
             if self.round_number == 1:
@@ -157,7 +157,7 @@ So, we start with this:
 
 .. code-block:: python
 
-    class Group(otree.models.BaseGroup):
+    class Group(BaseGroup):
 
         # <built-in>
         ...
@@ -185,7 +185,7 @@ check for both of them.
 
 .. code-block:: python
 
-    class Group(otree.models.BaseGroup):
+    class Group(BaseGroup):
 
         # <built-in>
         subsession = models.ForeignKey(Subsession)
