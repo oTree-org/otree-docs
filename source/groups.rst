@@ -97,6 +97,10 @@ or remain player 1), you would do this:
             group.set_players(players)
 
 
+To check if your group shuffling worked correctly,
+open your browser to the "Results" tab of your session,
+and look at the ``group`` and ``id_in_group`` columns in each round.
+
 Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
