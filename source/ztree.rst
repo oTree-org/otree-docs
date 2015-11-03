@@ -160,7 +160,7 @@ find()
 Use ``group.get_players()`` to get all players in the same group, and
 ``subsession.get_players()`` to get all players in the same subsession.
 
-If you want to filter the list of players for all that meet a certain
+To filter the list of players for all that meet a certain
 condition, e.g. all players in the subsession whose ``payoff`` is zero,
 you would do:
 

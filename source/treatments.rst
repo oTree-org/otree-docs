@@ -3,7 +3,7 @@
 Treatments
 ==========
 
-If you want to assign participants to different treatment groups, you
+To assign participants to different treatment groups, you
 can put the code in the subsession's ``before_session_starts`` method
 (for more info see :ref:`before_session_starts`).
 For example, if you want some participants to have a blue background to
