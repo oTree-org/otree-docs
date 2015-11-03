@@ -57,7 +57,7 @@ For the first round, the players are split into groups of ``Constants.players_pe
 They are grouped sequentially -- for example, if there are 2 players per group,
 then P1 and P2 would be grouped together, and so would P3 and P4, and so on.
 ``id_in_group`` is also assigned sequentially within each group.
-(Note: if you want to randomize participants to groups or roles, see see :ref:`randomization`.)
+(Note: if you want to randomize participants to groups or roles, see :ref:`randomization`.)
 
 In subsequent rounds, the group structure is kept the same,
 unless you shuffle groups in ``before_session_starts``.
