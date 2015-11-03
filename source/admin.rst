@@ -77,9 +77,10 @@ label will be displayed in places where participants are listed, like the
 oTree admin interface or the payments page.
 
 
+.. _randomization:
 
-Grouping and randomization
---------------------------
+Randomization
+-------------
 
 If participants are not using single-use links (see :ref:`single_use_links`),
 oTree will assign the first person who arrives to be P1, the second to be P2, etc.

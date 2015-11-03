@@ -38,13 +38,45 @@ get the partner of a player, with this method on the ``Player``:
         return self.get_others_in_group()[0]
 
 
-Group re-matching between rounds
---------------------------------
+Shuffling groups
+----------------
 
-For the first round, the players are split into groups of
-``Constants.players_per_group``. In subsequent rounds, by default, the groups chosen are kept the same.
-If you would like to change this, you can define the grouping logic in
-``Subsession.before_session_starts`` (for more info see :ref:`before_session_starts`).
+In oTree, there are 2 ways to shuffle groups:
+
+- before the session starts
+- during the session
+
+Shuffling before the session starts is generally recommended,
+but if your grouping logic depends on the results of gameplay,
+you need to shuffle during the session.
+
+Shuffling before the session starts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For the first round, the players are split into groups of ``Constants.players_per_group``.
+They are grouped sequentially -- for example, if there are 2 players per group,
+then P1 and P2 would be grouped together, and so would P3 and P4, and so on.
+``id_in_group`` is also assigned sequentially within each group.
+(Note: if you want to randomize participants to groups or roles, see see :ref:`randomization`.)
+
+In subsequent rounds, the group structure is kept the same,
+unless you shuffle groups in ``before_session_starts``.
+
+In more detail: in each round (i.e. subsession),
+you can shuffle the groups in ``before_session_starts`` (see :ref:`before_session_starts`) .
+Then, the resulting group structure is carried forward to the next round.
+If you want to shuffle groups only in certain rounds, you should do like this:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            if self.round_number == 3:
+                # shuffling code here
+
+In this case, the group structure in rounds 1 and 2 will be the same.
+Round 3 has a different group structure, which is copied to rounds 4 and above.
 
 A group has a method ``set_players`` that takes as an argument a list of
 the players to assign to that group, in order. Alternatively, a
@@ -65,8 +97,8 @@ or remain player 1), you would do this:
             group.set_players(players)
 
 
-Re-matching based on results of previous rounds
------------------------------------------------
+Shuffling during the session
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your experimental design may involve re-matching players based on the results
 of a previous subsession. For example, you may want the highest-ranked players
@@ -84,14 +116,16 @@ and put the shuffling code in ``after_all_players_arrive``. For example:
         wait_for_all_groups = True
 
         def after_all_players_arrive(self):
-
             group_matrix = [g.get_players() for g in self.subsession.get_groups()]
-
             # ... some code to permute this matrix
-
             self.subsession.set_groups(group_matrix)
 
 After this wait page, the players will be reassigned to their new groups.
+
+Note: if you shuffle during the session,
+the result of your shuffling logic is not "carried forward" to the next round,
+as it is with before_session_starts.
+
 
 Example: re-matching by rank
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
