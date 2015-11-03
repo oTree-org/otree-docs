@@ -5,10 +5,12 @@ oTree's participant interface is has been translated to the following languages:
 
 - French
 - German
+- Hungarian
 - Italian
+- Japanese
 - Russian
 - Spanish
-- Hungarian
+
 
 This means that all built-in text that gets displayed to participants is
 available in these languages. This includes things like:
@@ -66,9 +68,8 @@ We are especially looking for volunteers to translate the following files to the
 
 - `Chinese <https://github.com/oTree-org/otree-core/raw/master/otree/locale/zh_CN/LC_MESSAGES/django.po>`__
 - `Korean <https://github.com/oTree-org/otree-core/raw/master/otree/locale/ko/LC_MESSAGES/django.po>`__
-- `Japanese <https://github.com/oTree-org/otree-core/raw/master/otree/locale/ja/LC_MESSAGES/django.po>`__
 
-You can download the file (using "Save As") and edit it directly in your text editor, or use `Poedit <https://poedit.net/>`__.
+You can download the file (using "Save As") and edit it with `Poedit <https://poedit.net/>`__.
 
 Please contact chris@otree.org.
 

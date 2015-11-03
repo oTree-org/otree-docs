@@ -82,10 +82,6 @@ When there are 60 seconds left, the page displays a timer warning the participan
 ``timeout_submission``
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    Prior to May 26, 2015, this was called ``auto_submit_values``.
-
 A dictionary where the keys are the elements of
 ``form_fields``, with the values to be
 submitted in case of a timeout, or if the experimenter moves the
@@ -118,7 +114,18 @@ It can be accessed in ``before_next_page``:
 This variable is undefined in other methods like ``vars_for_template``,
 because the timeout countdown only starts after the page is rendered.
 
-.. versionadded:: 0.3.18
+The fields that were filled out at the moment the page was submitted are contained
+in ``self.request.POST``, which you can access like this:
+
+def before_next_page(self):
+    if self.timeout_happened:
+        post_dict = self.request.POST
+        # do something with post_dict ...
+
+Note: the contents of ``self.request.POST`` have not been validated.
+For example, if the form contains an integer field, there is no guarantee that this field has been filled out,
+or that it contains an integer, or that the integer is between your field's ``max`` and ``min``.
+
 
 ``def before_next_page(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

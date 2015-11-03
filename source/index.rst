@@ -58,11 +58,10 @@ unclear).**
 
 Contributors
 ^^^^^^^^^^^^
-
--   Gregor Muellegger
-    (http://gremu.net/, |github_icon| https://github.com/gregmuellegger)
 -   Juan B. Cabral
     (http://jbcabral.org, |github_icon| https://github.com/leliel12)
+-   Gregor Muellegger
+    (http://gremu.net/, |github_icon| https://github.com/gregmuellegger)
 -   Alexander Schepanovski
     (|github_icon| https://github.com/Suor)
 -   Alexander Sandukovskiy
