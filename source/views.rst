@@ -117,10 +117,12 @@ because the timeout countdown only starts after the page is rendered.
 The fields that were filled out at the moment the page was submitted are contained
 in ``self.request.POST``, which you can access like this:
 
-def before_next_page(self):
-    if self.timeout_happened:
-        post_dict = self.request.POST
-        # do something with post_dict ...
+.. code-block:: python
+
+    def before_next_page(self):
+        if self.timeout_happened:
+            post_dict = self.request.POST
+            # do something with post_dict ...
 
 Note: the contents of ``self.request.POST`` have not been validated.
 For example, if the form contains an integer field, there is no guarantee that this field has been filled out,
