@@ -229,12 +229,6 @@ Define the session config in settings.py
 
 Now we go to ``settings.py`` and add an entry to ``SESSION_CONFIGS``.
 
-.. note::
-
-    Prior to oTree-core 0.3.11, "session config" was known as "session type".
-    After you upgrade, you can rename ``SESSION_TYPES`` to ``SESSION_CONFIGS``,
-    and ``SESSION_TYPE_DEFAULTS`` to ``SESSION_CONFIG_DEFAULTS``.
-
 In lab experiments, it's typical for users to fill out an exit survey, and
 then see how much money they made. So let's do this by adding the
 existing "exit survey" and "payment info" apps to ``app_sequence``.

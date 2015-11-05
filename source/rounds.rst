@@ -51,10 +51,6 @@ methods, but note that if you re-shuffle groups between rounds,
 then these methods may not return anything meaningful (their behavior in this
 situation is unspecified).
 
-.. note::
-
-    ``Group.in_all_rounds()`` and ``Group.in_previous_rounds()`` were added in otree-core 0.3.8
-
 .. _vars:
 
 Accessing data from previous rounds: technique 2

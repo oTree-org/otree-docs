@@ -13,21 +13,6 @@ features:
 The completed app is
 `here <https://github.com/oTree-org/oTree/tree/master/matching_pennies_tutorial>`__.
 
-Update otree-core
------------------
-
-For this game to work, you need otree-core >= 0.3.3, which contains
-important bugfixes.
-
-If you installed oTree prior to 2015-05-25, you need to update your
-``requirements_base.txt`` to the latest version
-`here <https://github.com/oTree-org/oTree/blob/master/requirements_base.txt>`__
-and then do:
-
-.. code-block:: bash
-
-    $ pip install -r requirements_base.txt
-
 
 Create the app
 --------------

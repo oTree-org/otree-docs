@@ -159,9 +159,4 @@ in the Page class, you can access the participant as
 ``self.player.participant``. If you are in the Player class, you can
 access the session config as ``self.session.config``.
 
-.. note::
-
-    Prior to oTree-core 0.3.11, ``self.session.config`` was known as
-    ``self.session.session_type``.
-
 

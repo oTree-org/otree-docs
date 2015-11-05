@@ -209,9 +209,6 @@ directory. The default ``Procfile`` launches the Gunicorn server.
 If you want to use another server like Nginx, you need to modify the
 ``Procfile``. (If you instead want to use Apache, consult the Django docs.)
 
-.. versionadded:: 0.3.8
-   ``runprodserver``
-
 .. warning::
 
     Gunicorn doesn't work on Windows, so if you are trying to run oTree on a
