@@ -215,3 +215,20 @@ If you want to use another server like Nginx, you need to modify the
     Windows server or use ``runprodserver`` locally on your Windows PC, you
     will need to specify a different server in your ``Procfile``.
 
+
+Sentry
+------
+
+Once you turn on ``OTREE_PRODUCTION``, you will no longer see Django's yellow error pages.
+When a crash occurs, you or your users will just see generic "500 server error" pages.
+So, we recommend you use our free Sentry service,
+which you can use to log all errors on your server.
+It will automatically email you anytime there is an error on your server,
+with the details of the error.
+
+You can sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__.
+Then, we will send you a registration link you need to click.
+You will be provided with a special URL called a "Sentry DSN".
+In your ``settings.py``, you should set ``SENTRY_DSN`` to this URL,
+which makes your server send crash info to our Sentry server.
+Once that is done, you will automatically get notified with any exceptions when debug mode is turned off.
