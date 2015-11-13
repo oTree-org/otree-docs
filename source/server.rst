@@ -105,16 +105,6 @@ shortcut, you can open the website as follows:
 
     $ heroku open
 
-Set environment variables
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If it's a production website, you should set the environment variables
-(e.g. ``OTREE_PRODUCTION`` and ``OTREE_AUTH_LEVEL``), like this:
-
-.. code-block:: bash
-
-    $ heroku config:set OTREE_PRODUCTION=1
-    $ heroku config:set OTREE_AUTH_LEVEL=DEMO
 
 To add an existing remote:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,10 +122,19 @@ and scale up your dynos to at least the cheapest paid plan. Note: after you fini
 you can scale your dynos and database back down,
 so then you don't have to pay the full monthly cost.
 
-Running ``otree`` commands on Heroku
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(TODO)
+If it's a production website, you should set the environment variables
+(e.g. ``OTREE_PRODUCTION`` and ``OTREE_AUTH_LEVEL``), like this:
+
+.. code-block:: bash
+
+    $ heroku config:set OTREE_PRODUCTION=1
+    $ heroku config:set OTREE_AUTH_LEVEL=DEMO
+
+Once you do this, you should also set up :ref:`sentry`.
+
 
 Deploying to an on-premises server
 ----------------------------------
@@ -216,12 +215,14 @@ If you want to use another server like Nginx, you need to modify the
     will need to specify a different server in your ``Procfile``.
 
 
+.. _sentry:
+
 Sentry
 ------
 
 Once you turn on ``OTREE_PRODUCTION``, you will no longer see Django's yellow error pages.
 When a crash occurs, you or your users will just see generic "500 server error" pages.
-So, we recommend you use our free Sentry service,
+So, we recommend you use the free Sentry service,
 which you can use to log all errors on your server.
 It will automatically email you anytime there is an error on your server,
 with the details of the error.
