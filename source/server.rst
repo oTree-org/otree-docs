@@ -220,15 +220,17 @@ If you want to use another server like Nginx, you need to modify the
 Sentry
 ------
 
-Once you turn on ``OTREE_PRODUCTION``, you will no longer see Django's yellow error pages.
+We recommend you use our free Sentry service, which
+can log all errors on your server and send you email notifications.
+
+A service like Sentry is necessary because once you have turned on ``OTREE_PRODUCTION``,
+you will no longer see Django's yellow error pages.
 When a crash occurs, you or your users will just see generic "500 server error" pages.
-So, we recommend you use the free Sentry service,
-which you can use to log all errors on your server.
-It will automatically email you anytime there is an error on your server,
-with the details of the error.
+See general info on Sentry `here <https://getsentry.com/welcome/>`__.
 
 You can sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__.
-Then, we will send you a registration link you need to click.
+
+Once you have signed up, we will send you a registration link you need to click.
 You will be provided with a special URL called a "Sentry DSN".
 In your ``settings.py``, you should set ``SENTRY_DSN`` to this URL,
 which makes your server send crash info to our Sentry server.
