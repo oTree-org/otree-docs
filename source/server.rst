@@ -237,7 +237,7 @@ Make sure you have a recent version of oTree-core (0.4.11 or newer).
 Then, in your ``settings.py``, you should set ``SENTRY_DSN`` to your DSN URL,
 which makes your server send crash info to our Sentry server.
 Once that is done, you will automatically get notified with any exceptions when debug mode is turned off.
-You can also view the errors through the web interface at sentry.otree.org.
+You can also view the errors through the `web interface <http://sentry.otree.org/auth/login/sentry/>`__.
 
 If you later want other collaborators on your team to receive emails as well, or if you need to manage multiple projects,
 send an email to chris@otree.org.
