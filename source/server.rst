@@ -222,11 +222,11 @@ Sentry
 
 We recommend you use our free Sentry service, which
 can log all errors on your server and send you email notifications.
+(See general info on Sentry `here <https://getsentry.com/welcome/>`__.)
 
 A service like Sentry is necessary because once you have turned on ``OTREE_PRODUCTION``,
-you will no longer see Django's yellow error pages.
-When a crash occurs, you or your users will just see generic "500 server error" pages.
-See general info on Sentry `here <https://getsentry.com/welcome/>`__.
+you will no longer see Django's yellow error pages; you or your users will just see generic "500 server error" pages.
+Sentry can send you the details of each error by email.
 
 You can sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__.
 
