@@ -228,7 +228,7 @@ A service like Sentry is necessary because once you have turned on ``OTREE_PRODU
 you will no longer see Django's yellow error pages; you or your users will just see generic "500 server error" pages.
 Sentry can send you the details of each error by email.
 
-You can sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__.
+**Sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__.**
 
 Once you have signed up, we will send you a registration link you need to click.
 You will also be provided with a special URL called a "Sentry DSN".
