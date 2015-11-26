@@ -30,7 +30,7 @@ We define our constants as we have previously. Matching pennies is a
 
 .. code-block:: python
 
-    class Constants:
+    class Constants(BaseConstants):
         name_in_url = 'my_matching_pennies'
         players_per_group = 2
         num_rounds = 4

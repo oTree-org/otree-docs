@@ -193,7 +193,7 @@ You can accomplish this as follows:
 
 .. code-block:: python
 
-    class Constants:
+    class Constants(BaseConstants):
         players_per_group = None
         groups = 8
         ... # etc
@@ -236,7 +236,7 @@ the last *4 groups* with only *2 players*.
 
 .. code-block:: python
 
-    class Constants:
+    class Constants(BaseConstants):
         players_per_group = None
         groups = 8
         ... # etc

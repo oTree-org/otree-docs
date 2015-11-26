@@ -30,7 +30,7 @@ donation gets tripled.
 
 .. code-block:: python
 
-    class Constants:
+    class Constants(BaseConstants):
         name_in_url = 'my_trust'
         players_per_group = 2
         num_rounds = 1

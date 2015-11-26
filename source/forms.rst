@@ -187,14 +187,14 @@ Forms with a dynamic vector of fields
 
 Let's say you want a form with a vector of n fields that are identical, except for some numerical index, e.g.:
 
-.. code-block::
+.. code-block:: python
 
     contribution[1], contribution[2], ..., contribution[n]
 
 Furthermore, suppose n is variable (can range from 1 to N).
 
 Currently in oTree, you can only define a fixed number of fields in a model.
-So, you should define in ``models.py`` N fields (contribution_1...contribution_N...),
+So, you should define in ``models.py`` N fields (``contribution_1...contribution_N...``),
 and then use ``get_form_fields`` as described above to dynamically return a list with the desired subset of these fields.
 
 
@@ -249,3 +249,5 @@ oTree widgets, you should look at the generated HTML from the
 ``{% formfield %}`` tag. You can copy and paste the markup into the template
 and use that as a starting point for modifications.
 
+If you have a ``<button>`` widget on your page,
+clicking it will submit the form, unless you specify ``type="button"``.

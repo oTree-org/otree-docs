@@ -140,6 +140,8 @@ When you install oTree (either using the launcher or running
 ``pip install -r requirements_base.txt``),
 ``otree-core`` gets automatically installed as a dependency.
 
+.. _upgrade:
+
 Upgrading/reinstalling oTree
 ----------------------------
 
