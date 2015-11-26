@@ -147,7 +147,7 @@ Let's say you have 3 integer fields in your form whose names are
             return 'The numbers must add up to 100'
 
 Determining form fields dynamically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that
@@ -183,7 +183,7 @@ as described in the Django documentation, e.g.:
         verbose_name="How much will you contribute?")
 
 Forms with a dynamic vector of fields
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 Let's say you want a form with a vector of n fields that are identical, except for some numerical index, e.g.:
 
