@@ -6,7 +6,7 @@ Your app's ``templates/`` directory will contain the templates for the
 HTML that gets displayed to the player.
 
 oTree uses `Django's template system
-<https://docs.djangoproject.com/en/dev/topics/templates/>`_.
+<https://docs.djangoproject.com/en/1.8/ref/templates/language/>`_.
 
 
 Template blocks
@@ -249,3 +249,13 @@ effort on your part since Bootstrap does it automatically, but if you
 plan to deploy your app to participants on mobile devices, you should
 test it out on a mobile device during development, since some HTML code
 doesn't look good on mobile devices.
+
+Custom template filters
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the filters available with Django's template language,
+oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
+For example, ``{{ 20|c }}`` displays as ``20 points``.
+
+Also, the ``|abs`` filter lets you take the absolute value.
+So, doing ``{{ -20|abs }}`` would output ``20``.
