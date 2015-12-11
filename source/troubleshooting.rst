@@ -14,17 +14,6 @@ Python not installed
 
 Solution: make sure Python 2.7 is installed and add it to your ``Path``.
 
-TemplateEncodingError
----------------------
-
-If you get this error:
-
-.. code-block:: bash
-
-    TemplateEncodingError: Templates can only be constructed from unicode or
-    UTF-8 strings.
-
-This is an old oTree bug; upgrade your version of otree-core (see :ref:`upgrade-otree-core`).
 
 otree: command not found
 ------------------------
@@ -51,3 +40,9 @@ You should remove the space around the ``=`` like this:
 .. code-block:: html+django
 
     {% formfield player.contribution with label="How much will you contribute?" %}
+
+
+TypeError: can only concatenate list (not "tuple") to list
+----------------------------------------------------------
+
+You can fix this problem by upgrading otree-core to the latest version (see :ref:`upgrade-otree-core`)
