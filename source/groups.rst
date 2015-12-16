@@ -65,11 +65,13 @@ or remain player 1), you would do this:
 
 .. code-block:: python
 
-    def before_session_starts(self):
-        for group in self.get_groups():
-            players = group.get_players()
-            players.reverse()
-            group.set_players(players)
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            for group in self.get_groups():
+                players = group.get_players()
+                players.reverse()
+                group.set_players(players)
 
 
 If you shuffle the groups in one round

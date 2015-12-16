@@ -107,11 +107,8 @@ Now, let's also define the code to swap roles halfway through. This kind
 of group-shuffling code should also go in ``before_session_starts``. We
 put it after our existing code.
 
-In oTree, groups are assigned automatically in the first round,
-and in each round, the groups are kept the same as the previous round, unless you
-shuffle them in ``before_session_starts``.
-So, at the beginning of round 3, we should do the shuffle.
-(So that the groups will be in opposite order during rounds 3 and 4.)
+So, in round 3, we should do the shuffle,
+and then in round 4, use ``group_like_round(3)`` to copy the group structure from round 3.
 
 We use ``group.get_players()`` to get the ordered list of players in
 each group, and then reverse it (e.g. the list ``[P1, P2]`` becomes
@@ -131,6 +128,10 @@ new group order:
                     players = group.get_players()
                     players.reverse()
                     group.set_players(players)
+            if self.round_number > 3:
+                self.group_like_round(3)
+
+(You can learn more about group shuffling in :ref:`shuffling`.)
 
 Now we define our ``Group`` class. We define the payoff method. We use
 ``get_player_by_role`` to fetch each of the 2 players in the group. We
