@@ -154,8 +154,11 @@ There are several alternatives for upgrading or reinstalling oTree.
 Upgrade oTree core libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the launcher, click "Version select" and select the most recent version in
-the menu.
+In the launcher, click "Upgrade otree-core" (or "Version select"):
+
+.. image:: _static/setup/upgrade_otree_core.png
+
+Then select the most recent version in the menu.
 
 If you are using the "plain install", change the ``otree-core`` version number
 in ``requirements_base.txt`` and then run:
@@ -168,7 +171,7 @@ in ``requirements_base.txt`` and then run:
 From-scratch reinstallation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  On Windows: Browse to ``%APPDATA%`` and delete the folder
-   ``otree-launcher``
+-  On Windows: In Windows Explorer's address bar, type ``%APPDATA%`` and hit enter.
+   Then delete the folder ``otree-launcher``
 -  On Mac/Linux: Delete the folder ``~/.config/.otree-launcher``
 -  Re-download the launcher

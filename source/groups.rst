@@ -38,45 +38,20 @@ get the partner of a player, with this method on the ``Player``:
         return self.get_others_in_group()[0]
 
 
+.. _shuffling:
+
 Shuffling groups
 ----------------
 
-In oTree, there are 2 ways to shuffle groups:
-
-- before the session starts
-- during the session
-
-Shuffling before the session starts is generally recommended,
-but if your grouping logic depends on the results of gameplay,
-you need to shuffle during the session.
-
-Shuffling before the session starts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For the first round, the players are split into groups of ``Constants.players_per_group``.
+By default, in each round, players are split into groups of ``Constants.players_per_group``.
 They are grouped sequentially -- for example, if there are 2 players per group,
 then P1 and P2 would be grouped together, and so would P3 and P4, and so on.
 ``id_in_group`` is also assigned sequentially within each group.
+
+This means that by default, the groups are the same in each round,
+and even between apps that have the same ``players_per_group``.
+
 (Note: to randomize participants to groups or roles, see :ref:`randomization`.)
-
-In subsequent rounds, the group structure is kept the same,
-unless you shuffle groups in ``before_session_starts``.
-
-In more detail: in each round (i.e. subsession),
-you can shuffle the groups in ``before_session_starts`` (see :ref:`before_session_starts`) .
-Then, the resulting group structure is carried forward to the next round.
-To shuffle groups only in certain rounds, you should do like this:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def before_session_starts(self):
-            if self.round_number == 3:
-                # shuffling code here
-
-In this case, the group structure in rounds 1 and 2 will be the same.
-Round 3 has a different group structure, which is copied to rounds 4 and above.
 
 A group has a method ``set_players`` that takes as an argument a list of
 the players to assign to that group, in order. Alternatively, a
@@ -97,9 +72,37 @@ or remain player 1), you would do this:
             group.set_players(players)
 
 
+If you shuffle the groups in one round
+and would like the new group structure to be applied to another round,
+you can use the ``group_like_round(n)`` method.
+The argument to this method is the round number
+whose group structure should be copied.
+
+.. note::
+
+    ``group_like_round()`` was introduced in oTree-core 0.4.15.
+    In older versions, the group structure was automatically carried forward to future rounds.
+    This behavior will soon be removed;
+    instead you should use ``group_like_round`` to apply the grouping explicitly.
+
+In the below example, the group structure in rounds 1 and 2 will be the default.
+Round 3 has a different group structure, which is copied to rounds 4 and above.
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            if self.round_number == 3:
+                # <some shuffling code here>
+            if self.round_number > 3:
+                self.group_like_round(3)
+
+
 To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
 and look at the ``group`` and ``id_in_group`` columns in each round.
+
 
 Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,9 +129,26 @@ and put the shuffling code in ``after_all_players_arrive``. For example:
 
 After this wait page, the players will be reassigned to their new groups.
 
-Note: if you shuffle during the session,
-the result of your shuffling logic is not "carried forward" to the next round,
-as it is with ``before_session_starts``.
+Let's say you have a game with multiple rounds,
+and in a wait page at the beginning you want to shuffle the groups,
+and apply this new group structure to all rounds.
+
+You can use ``group_like_round()`` in conjunction with the method ``in_rounds()``.
+You should also use ``is_displayed()`` so that this method only executes once.
+For example:
+
+.. code-block:: python
+
+    class ShuffleWaitPage(WaitPage):
+        wait_for_all_groups = True
+
+        def after_all_players_arrive(self):
+            [...shuffle groups for round 1]
+            for subsession in self.subsession.in_rounds(2, Constants.num_rounds):
+                subsession.group_like_round(1)
+
+        def is_displayed(self):
+            return self.subsession.round_number == 1
 
 
 Example: re-matching by rank
