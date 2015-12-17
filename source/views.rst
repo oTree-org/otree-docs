@@ -199,7 +199,21 @@ by setting the ``title_text`` and ``body_text`` attributes, e.g.:
 
 To customize further, such as adding HTML content,
 you can set the ``template_name`` attribute to reference an HTML file
-that extends `otree/WaitPage.html <https://github.com/oTree-org/otree-core/blob/master/otree/templates/otree/WaitPage.html>`__.
+that extends ``otree/WaitPage.html``.
+
+For example:
+
+.. code-block:: html+django
+
+    {% extends 'otree/WaitPage.html' %}
+    {% load staticfiles %}
+    {% block title %}{{ title_text }}{% endblock %}
+    {% block content %}
+        {{ body_text }}
+        <p>My custom content here</p>
+    {% endblock %}
+
+
 Then you can use ``vars_for_template`` in the usual way.
 Actually, the ``body_text`` and ``title_text`` attributes are just shorthand for setting ``vars_for_template``;
 the following 2 code snippets are equivalent:
