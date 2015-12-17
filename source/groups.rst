@@ -74,6 +74,8 @@ or remain player 1), you would do this:
                 group.set_players(players)
 
 
+.. _group_like_round:
+
 If you shuffle the groups in one round
 and would like the new group structure to be applied to another round,
 you can use the ``group_like_round(n)`` method.
