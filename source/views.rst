@@ -174,14 +174,6 @@ This code will be executed once all players have arrived at the wait
 page. For example, this method can determine the winner of an auction
 and set each player's payoff.
 
--  ``def title_text(self)``
-
-The text in the title of the wait page.
-
--  ``def body_text(self)``
-
-The text in the body of the wait page
-
 - ``def is_displayed(self)``
 
 If this returns ``False`` then the player skips the wait page.
@@ -189,4 +181,38 @@ If this returns ``False`` then the player skips the wait page.
 If all players in the group skip the wait page,
 then ``after_all_players_arrive()`` will not be run.
 
+Customizing the wait page's appearance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    The features in this section require otree-core 0.4.20 or higher.
+
+You can customize the text that appears on a wait page
+by setting the ``title_text`` and ``body_text`` attributes, e.g.:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        title_text = "Custom title text"
+        body_text = "Custom body text"
+
+To customize further, such as adding HTML content,
+you can set the ``template_name`` attribute to reference an HTML file
+that extends `otree/WaitPage.html <https://github.com/oTree-org/otree-core/blob/master/otree/templates/otree/WaitPage.html>`__.
+Then you can use ``vars_for_template`` in the usual way.
+Actually, the ``body_text`` and ``title_text`` attributes are just shorthand for setting ``vars_for_template``;
+the following 2 code snippets are equivalent:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        body_text = "foo"
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        def vars_for_template(self):
+            return {'body_text': "foo"}
+
+To apply your custom wait page template globally, save it to ``_templates/global/WaitPage.html``.
