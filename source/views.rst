@@ -181,6 +181,8 @@ If this returns ``False`` then the player skips the wait page.
 If all players in the group skip the wait page,
 then ``after_all_players_arrive()`` will not be run.
 
+.. _customize_wait_page:
+
 Customizing the wait page's appearance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -206,7 +208,7 @@ For example:
 .. code-block:: html+django
 
     {% extends 'otree/WaitPage.html' %}
-    {% load staticfiles %}
+    {% load staticfiles otree_tags %}
     {% block title %}{{ title_text }}{% endblock %}
     {% block content %}
         {{ body_text }}
