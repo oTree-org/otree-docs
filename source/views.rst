@@ -1,4 +1,4 @@
-.. views:
+.. _views:
 
 Views
 =====

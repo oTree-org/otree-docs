@@ -60,7 +60,7 @@ The full list of available fields is in the Django documentation
 
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
 
-.. constants:
+.. _constants:
 
 Constants
 ---------
