@@ -1,4 +1,4 @@
-.. _money:
+.. _currency:
 
 Money and Points
 ================

@@ -26,7 +26,8 @@ Define models.py
 ----------------
 
 We define our constants as we have previously. Matching pennies is a
-2-person game, and the payoff for winning a paying round is 100 points.
+2-person game and the payoff for winning a paying round is 100 points.
+In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`).
 
 .. code-block:: python
 
@@ -43,7 +44,7 @@ Now let's define our ``Player`` class:
 -  We also have a boolean field ``is_winner`` that records if this
    player won this round.
 -  We define the ``role`` method to define which player is the "Matcher"
-   and which is the "Mismatcher".
+   and which is the "Mismatcher" (see :ref:`groups`).
 
 So we have:
 
@@ -71,11 +72,11 @@ So we have:
 Now let's define the code to randomly choose a round for payment. Let's
 define the code in ``Subsession.before_session_starts``, which is the
 place to put global code that initializes the state of the game, before
-gameplay starts.
+gameplay starts. (See :ref:`before_session_starts`.)
 
 The value of the chosen round is "global" rather than different for each
 participant, so the logical place to store it is as a "global" variable
-in ``self.session.vars``.
+in ``self.session.vars`` (see :ref:`session_vars`).
 
 So, we start by writing something like this, which chooses a random
 integer between 1 and 4, and then assigns it into ``session.vars``:
@@ -92,7 +93,7 @@ There is a slight mistake, however. Because there are 4 rounds (i.e.
 subsessions), this code will get executed 4 times, each time overwriting
 the previous value of ``session.vars['paying_round']``, which is
 superfluous. We can fix this with an ``if`` statement that makes it only
-run once (on the first round):
+run once (if ``round_number`` is 1; see :ref:`rounds`):
 
 .. code-block:: python
 
@@ -109,6 +110,7 @@ put it after our existing code.
 
 So, in round 3, we should do the shuffle,
 and then in round 4, use ``group_like_round(3)`` to copy the group structure from round 3.
+(See :ref:`group_like_round <group_like_round>`)
 
 We use ``group.get_players()`` to get the ordered list of players in
 each group, and then reverse it (e.g. the list ``[P1, P2]`` becomes
@@ -216,7 +218,7 @@ Also, on this page we would like to display a "history box" table that
 shows the result of all previous rounds. So, we can use
 ``player.in_previous_rounds()``, which returns a list referring to the
 same participant in rounds 1, 2, 3, etc. (For more on the distinction
-between "player" and "participant", see the reference docs.)
+between "player" and "participant", see :ref:`participants_and_players`.)
 
 .. code-block:: python
 

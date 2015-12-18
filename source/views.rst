@@ -1,3 +1,5 @@
+.. views:
+
 Views
 =====
 
@@ -20,6 +22,8 @@ Pages
 
 Each ``Page`` class has these methods and attributes:
 
+.. _vars_for_template:
+
 ``def vars_for_template(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -31,6 +35,8 @@ template.
     oTree automatically passes group, player, subsession, and Constants
     objects to the template, which you can access in the template, e.g.:
     ``{{Constants.payoff_if_rejected}}``.
+
+.. _is_displayed:
 
 ``def is_displayed(self)``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -145,6 +151,8 @@ in views.py. It is useful when you need certain variables to be passed
 to multiple pages in your app. Instead of repeating the same values in
 each ``vars_for_template``, you can define it in this function.
 
+
+.. _wait_pages:
 
 Wait pages
 ----------

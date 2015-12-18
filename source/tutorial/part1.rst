@@ -26,12 +26,13 @@ Let's define our data model in ``models.py``.
 
 First, let's modify the ``Constants`` class to define our constants and
 parameters -- things that are the same for all players in all games.
+(For more info, see :ref:`constants`.)
 
 -  There are 3 players per group. So, let's change ``players_per_group``
    to 3. oTree will then automatically divide players into groups of 3.
 -  The endowment to each player is 100 points. So, let's define
    ``endowment`` and set it to ``c(100)``. (``c()`` means it is a
-   currency amount; see the docs for more info).
+   currency amount; see :ref:`currency`).
 -  Each contribution is multiplied by 1.8. So let's define
    ``efficiency_factor`` and set it to 1.8:
 
@@ -52,13 +53,15 @@ Group.
 
 What data points are we interested in recording about each player? The
 main thing is how much they contributed. So, we define a field
-``contribution``:
+``contribution``, which is a currency (see :ref:`currency`):
 
 .. code-block:: python
 
     class Player(BasePlayer):
 
-        # ...
+        # <built-in>
+        ...
+        # </built-in>
 
         contribution = models.CurrencyField(min=0, max=Constants.endowment)
 
@@ -72,7 +75,9 @@ fields:
 
     class Group(BaseGroup):
 
-        # ...
+        # <built-in>
+        ...
+        # </built-in>
 
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
@@ -85,7 +90,9 @@ Let's call it ``set_payoffs``:
 
     class Group(BaseGroup):
 
-        # ...
+        # <built-in>
+        ...
+        # </built-in>
 
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
@@ -133,6 +140,8 @@ contribution.
     {% endblock %}
 
 
+(For more info on how to write a template, see :ref:`templates`.)
+
 The second template will be called ``Results.html``.
 
 .. code-block:: html+django
@@ -159,15 +168,16 @@ Define views.py
 ---------------
 
 Now we define our views, which decide the logic for how to display the
-HTML templates.
+HTML templates. (For more info, see :ref:`views`.)
 
 Since we have 2 templates, we need 2 ``Page`` classes in ``views.py``.
 The names should match those of the templates (``Contribute`` and
 ``Results``).
 
-First let's define ``Contribute``. We need to define ``form_model`` and
-``form_fields`` to specify that this page contains a form letting you
-set ``Player.contribution``:
+First let's define ``Contribute``. This page contains a form, so
+we need to define ``form_model`` and ``form_fields``.
+Specifically, this form should let you set the ``contribution``
+field on the player. (For more info, see :ref:`forms`.)
 
 .. code-block:: python
 
@@ -190,7 +200,7 @@ contribution, they cannot see the results page right away; they first
 need to wait for the other players to contribute. You therefore need to
 add a ``WaitPage``. When a player arrives at a wait page,
 they must wait until all other players in the group have arrived.
-Then everyone can proceed to the next page.
+Then everyone can proceed to the next page. (For more info, see :ref:`wait_pages`).
 
 When all players have
 completed the ``Contribute`` page, the players' payoffs can be
@@ -242,7 +252,8 @@ existing "exit survey" and "payment info" apps to ``app_sequence``.
             'num_demo_participants': 3,
             'app_sequence': ['my_public_goods', 'survey', 'payment_info'],
         },
-        # ...
+        # other session configs ...
+    ]
 
 However, we must also remember to add a ``{% next_button %}`` element to
 the ``Results.html`` (somewhere inside the ``{% content %}`` block,

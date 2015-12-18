@@ -1,3 +1,4 @@
+.. _templates:
 
 Templates
 =========

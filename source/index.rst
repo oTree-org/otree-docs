@@ -91,7 +91,7 @@ Contents:
     forms.rst
     object_model_and_self.rst
     groups.rst
-    money.rst
+    currency.rst
     treatments.rst
     rounds.rst
     localization.rst

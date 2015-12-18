@@ -1,3 +1,5 @@
+.. _forms:
+
 Forms
 =====
 
@@ -54,6 +56,8 @@ require an integer to be between 12 and 24:
     offer = models.PositiveIntegerField(min=12, max=24)
 
 
+.. _choices:
+
 You can constrain the user to a predefined list of choices by using
 ``choices``:
 
@@ -94,6 +98,8 @@ If a field is optional, you can do:
 .. code-block:: python
 
     offer = models.PositiveIntegerField(blank=True)
+
+.. _dynamic_validation:
 
 Dynamic validation
 ~~~~~~~~~~~~~~~~~~

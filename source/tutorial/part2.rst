@@ -80,7 +80,7 @@ data correctly will make the rest of our work easier.
 
 Let's let P1 choose from a dropdown menu how
 much to donate, rather than entering free text. To do this, we use the
-``choices=`` argument, as well as the ``currency_range`` function:
+:ref:`choices <choices>` argument, as well as the :ref:`currency_range <currency>` function:
 
 .. code-block:: python
 
@@ -190,8 +190,8 @@ We also define the view in views.py:
 The ``{% formfield %}`` in the template must match the ``form_model``
 and ``form_fields`` in the view.
 
-Also, we use ``is_displayed`` to only show this to P1; P2 skips the
-page.
+Also, we use :ref:```is_displayed`` <is_displayed>` to only show this to P1; P2 skips the
+page. For more info on ``id_in_group``, see :ref:`groups`.
 
 SendBack.html
 ~~~~~~~~~~~~~
@@ -224,14 +224,13 @@ This is the page that P2 sees to send money back. Here is the template:
 
 Here is the code from views.py. Notes:
 
--  We use ``vars_for_template`` to pass the variable ``tripled_amount``
+-  We use :ref:`vars_for_template` to pass the variable ``tripled_amount``
    to the template. Django does not let you do calculations directly in
    a template, so this number needs to be calculated in Python code and
    passed to the template.
 -  We define a method ``sent_back_amount_choices`` to populate the
    dropdown menu dynamically. This is the feature called
-   ``{field_name}_choices``, which is explained in the reference
-   documentation.
+   ``{field_name}_choices``, which is explained here: :ref:`dynamic_validation`.
 
 .. code-block:: python
 

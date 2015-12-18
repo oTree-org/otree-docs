@@ -58,7 +58,9 @@ doesn't affect your database schema, like modifying ``views.py`` or an HTML temp
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.7/ref/models/fields/#field-types>`__.
 
-Additionally, oTree has ``CurrencyField``; see :ref:`money`.
+Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
+
+.. constants:
 
 Constants
 ---------

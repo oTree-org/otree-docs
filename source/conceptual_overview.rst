@@ -59,6 +59,8 @@ Each subsession can be further divided into groups of players;
 for example, the trust game subsession would have 15 groups of 2 players each.
 (Note: groups can be shuffled between subsessions.)
 
+.. _participants_and_players:
+
 Participants and players
 ------------------------
 
