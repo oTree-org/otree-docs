@@ -190,7 +190,7 @@ We also define the view in views.py:
 The ``{% formfield %}`` in the template must match the ``form_model``
 and ``form_fields`` in the view.
 
-Also, we use :ref:```is_displayed`` <is_displayed>` to only show this to P1; P2 skips the
+Also, we use :ref:`is_displayed` to only show this to P1; P2 skips the
 page. For more info on ``id_in_group``, see :ref:`groups`.
 
 SendBack.html

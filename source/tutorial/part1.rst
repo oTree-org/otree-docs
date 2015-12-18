@@ -160,6 +160,8 @@ The second template will be called ``Results.html``.
         Your profit is therefore {{ player.payoff }}.
     </p>
 
+    {% next_button %}
+
     {% endblock %}
 
 
@@ -255,10 +257,6 @@ existing "exit survey" and "payment info" apps to ``app_sequence``.
         # other session configs ...
     ]
 
-However, we must also remember to add a ``{% next_button %}`` element to
-the ``Results.html`` (somewhere inside the ``{% content %}`` block,
-so the user can click a button taking them to the
-next app in the sequence.
 
 Reset the database and run
 --------------------------

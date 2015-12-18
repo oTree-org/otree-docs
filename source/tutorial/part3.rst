@@ -43,8 +43,8 @@ Now let's define our ``Player`` class:
    field ``penny_side``, which will be displayed as a radio button.
 -  We also have a boolean field ``is_winner`` that records if this
    player won this round.
--  We define the ``role`` method to define which player is the "Matcher"
-   and which is the "Mismatcher" (see :ref:`groups`).
+-  We define the ``role`` method (see :ref:`groups`) to define which player is the "Matcher"
+   and which is the "Mismatcher".
 
 So we have:
 
