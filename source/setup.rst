@@ -149,8 +149,8 @@ The oTree software has three components:
 
 -  oTree-core: The engine that makes your apps run
 -  oTree Launcher: the graphical user interface for installing oTree and running the server
--  oTree library: the folder of sample games and other files
-(e.g. settings.py) that you download from [here](https://github.com/oTree-org/oTree) and customize to build your own project.
+-  oTree library: the folder of sample games and other files (e.g. settings.py)
+    that you download from `here <https://github.com/oTree-org/oTree>`__ and customize to build your own project.
 
 You can either upgrade these components individually,
 or do a complete reinstallation to upgrade all of them at once.
@@ -163,14 +163,15 @@ to get all the latest features and bug fixes.
 Upgrade oTree core libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+We recommend you do this on a weekly basis,
+so that you can get the latest bug fixes and features.
+This will also ensure that you are using a version that is consistent with the current documentation.
+
 In the launcher, click "Upgrade otree-core" (or "Version select"):
 
 .. image:: _static/setup/upgrade_otree_core.png
 
 Then select the most recent version in the menu.
-We recommend you do this on a weekly basis,
-so that you can get the latest bug fixes and features.
-This will also ensure that you are using a version that is consistent with the current documentation.
 
 If you are using the "plain install", change the ``otree-core`` version number
 in ``requirements_base.txt`` and then run:
@@ -187,4 +188,4 @@ Complete reinstallation
    Then delete the folder ``otree-launcher``
 -  On Mac/Linux: Delete the folder ``~/.config/.otree-launcher``
 -  Re-download and install the launcher
--  When installation is complete, select an empty folder for your new project.
+-  When installation is complete, select an empty folder where the latest version of the oTree sample games can be downloaded.
