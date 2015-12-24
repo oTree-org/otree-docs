@@ -153,7 +153,12 @@ The oTree software has three components:
 
 You can either upgrade these components individually,
 or do a complete reinstallation to upgrade all of them at once.
-If you originally installed oTree over 2 months ago,
+
+All of these components are being updated regularly,
+but oTree-core is updated the most frequently, and contains the most important bugfixes.
+So, we recommend updating it the most frequently.
+
+However, if you originally installed oTree over 2 months ago,
 we recommend a complete reinstallation,
 to get all the latest features and bug fixes.
 
