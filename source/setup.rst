@@ -184,6 +184,10 @@ in ``requirements_base.txt`` and then run:
 Complete reinstallation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+If you originally installed oTree over 2 months ago,
+we recommend a complete reinstallation,
+to get all the latest features and bug fixes.
+
 -  On Windows: In Windows Explorer's address bar, type ``%APPDATA%`` and hit enter.
    Then delete the folder ``otree-launcher``
 -  On Mac/Linux: Delete the folder ``~/.config/.otree-launcher``
