@@ -149,8 +149,7 @@ The oTree software has three components:
 
 -  oTree-core: The engine that makes your apps run
 -  oTree Launcher: the graphical user interface for installing oTree and running the server
--  oTree library: the folder of sample games and other files (e.g. settings.py)
-    that you download from `here <https://github.com/oTree-org/oTree>`__ and customize to build your own project.
+-  oTree library: the folder of sample games and other files (e.g. settings.py) that you download from `here <https://github.com/oTree-org/oTree>`__ and customize to build your own project.
 
 You can either upgrade these components individually,
 or do a complete reinstallation to upgrade all of them at once.
