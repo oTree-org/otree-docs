@@ -145,9 +145,18 @@ When you install oTree (either using the launcher or running
 Upgrading/reinstalling oTree
 ----------------------------
 
-There are several alternatives for upgrading or reinstalling oTree.
+The oTree software has three components:
 
-(TODO: when to use which)
+-  oTree-core: The engine that makes your apps run
+-  oTree Launcher: the graphical user interface for installing oTree and running the server
+-  oTree library: the folder of sample games and other files
+(e.g. settings.py) that you download from [here](https://github.com/oTree-org/oTree) and customize to build your own project.
+
+You can either upgrade these components individually,
+or do a complete reinstallation to upgrade all of them at once.
+If you originally installed oTree over 2 months ago,
+we recommend a complete reinstallation,
+to get all the latest features and bug fixes.
 
 .. _upgrade-otree-core:
 
@@ -171,10 +180,11 @@ in ``requirements_base.txt`` and then run:
     $ pip install -r requirements_base.txt
 
 
-From-scratch reinstallation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Complete reinstallation
+~~~~~~~~~~~~~~~~~~~~~~~
 
 -  On Windows: In Windows Explorer's address bar, type ``%APPDATA%`` and hit enter.
    Then delete the folder ``otree-launcher``
 -  On Mac/Linux: Delete the folder ``~/.config/.otree-launcher``
--  Re-download the launcher
+-  Re-download and install the launcher
+-  When installation is complete, select an empty folder for your new project.
