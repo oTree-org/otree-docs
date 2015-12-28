@@ -43,7 +43,7 @@ There are two options for installing oTree, depending on your personal preferenc
 .. image:: _static/setup/launcher.JPG
 
 *   The "plain install" lets you run oTree from the command line.
-    Instead of clicking buttons, you enter commands like ``otree resetdb`` and ``otree runserver``.
+    Instead of clicking buttons, you enter commands like ``otree resetdb`` and ``otree runserver``:
 
 .. image:: _static/setup/cli.JPG
 
@@ -107,19 +107,17 @@ This is an alternative to the "launcher install".
         make sure you have downloaded ``oTree-master.zip``, not
         ``otree-launcher-master.zip``, which is a different download.
 
-*   Run these commands (you may need administrator permissions):
+*   Run this:
 
 .. code-block:: bash
 
     $ pip install -r requirements_base.txt
 
-On Mac, you may need to use ``sudo``:
+If you get a permissions error, you can add the ``--user`` flag to install inside your home directory:
 
 .. code-block:: bash
 
-    $ sudo pip install -r requirements_base.txt
-
-(Or you can use a ``virtualenv`` if you are familiar with that.)
+    $ pip install -r requirements_base.txt --user
 
 Then run:
 
