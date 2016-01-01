@@ -96,7 +96,7 @@ This is an alternative to the "launcher install".
     `here <https://pip.pypa.io/en/latest/installing.html>`__.
 *   Download `oTree <https://github.com/oTree-org/oTree/archive/master.zip>`__
     and unzip it to a convenient location (such as your "Documents" folder).
-    (Or better yet, use Git to clone
+    (Or use Git to clone
     `this repo <https://github.com/oTree-org/otree>`__.)
 *   In your command line, go to the root directory of the unzipped folder
     where ``requirements_base.txt`` is

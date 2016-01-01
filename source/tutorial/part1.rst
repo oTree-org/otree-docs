@@ -1,7 +1,13 @@
 Part 1: Public goods game
 =========================
 
-We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__. The completed app is
+We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__.
+
+This is a three player game where each player is initially endowed with 100 points.
+Each player individually makes a decision about how many of their points they want to contribute to the group.
+The combined contributions are multiplied by 1.8, and then divided evenly three ways and redistributed back to the players.
+
+The full code for the app we will write is
 `here <https://github.com/oTree-org/oTree/tree/master/public_goods_simple>`__.
 
 Create the app
@@ -22,7 +28,8 @@ Then go to the folder ``my_public_goods`` that was created.
 Define models.py
 ----------------
 
-Let's define our data model in ``models.py``.
+Open ``models.py``. This file contains definitions of the game's data models (player, group, subsession),
+as well as the constants used for configuration of the game.
 
 First, let's modify the ``Constants`` class to define our constants and
 parameters -- things that are the same for all players in all games.
@@ -106,10 +113,12 @@ Let's call it ``set_payoffs``:
 Define the template
 -------------------
 
-This game will have 2 pages.
+This game consists of a sequence of 2 pages:
 
 -  Page 1: players decide how much to contribute
 -  Page 2: players are told the results
+
+In this section we will define the HTML templates to display the game.
 
 So, let's make 2 HTML files under ``templates/my_public_goods/``.
 
@@ -169,7 +178,7 @@ The second template will be called ``Results.html``.
 Define views.py
 ---------------
 
-Now we define our views, which decide the logic for how to display the
+Now we define our views, which contain the logic for how to display the
 HTML templates. (For more info, see :ref:`views`.)
 
 Since we have 2 templates, we need 2 ``Page`` classes in ``views.py``.
@@ -239,7 +248,7 @@ are shown:
 Define the session config in settings.py
 ----------------------------------------
 
-Now we go to ``settings.py`` and add an entry to ``SESSION_CONFIGS``.
+Now we go to ``settings.py`` in the project's root directory and add an entry to ``SESSION_CONFIGS``.
 
 In lab experiments, it's typical for users to fill out an exit survey, and
 then see how much money they made. So let's do this by adding the
