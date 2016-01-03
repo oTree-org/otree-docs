@@ -12,15 +12,18 @@ Heroku
 ------
 
 If you are not experienced with web server administration, Heroku may be
-the simplest option for you. Instructions on how to deploy oTree to Heroku are
-`here <#heroku>`__.
+the simplest option for you.
+
+The Heroku free plan is sufficient for small-scale testing of your app,
+but once you are ready to go live, you should upgrade to a paid server,
+which can handle more traffic.
 
 Here are the steps for deploying to Heroku.
 
 Create an account
 ~~~~~~~~~~~~~~~~~
 
-Create a free account on `Heroku <https://www.heroku.com/>`__. You can
+Create an account on `Heroku <https://www.heroku.com/>`__. You can
 skip the "Getting Started With Python" guide.
 
 Install the Heroku Toolbelt
