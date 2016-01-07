@@ -36,6 +36,12 @@ On Heroku you would set these env vars like this:
     $ heroku config:set AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY_ID
     $ heroku config:set AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS_KEY
 
+.. warning::
+
+    When testing with oTree, don't keep too much money in your MTurk account,
+    in case there is a bug in your app's payment logic (or in oTree itself).
+
+
 Making your session work on MTurk
 ---------------------------------
 
@@ -119,22 +125,5 @@ participant takes the effort to complete this initial task, they are
 less likely to drop out after that point. Then, the first few
 participants to finish the lock in task will be assigned to the same
 group in the next subsession, which is the multiplayer game.
-
-
-.. warning::
-
-    If you downloaded oTree prior to July 2, 2015,
-    you need to update your oTree project.
-
-    You should upgrade your MTurk settings
-    in ``settings.py`` to the new format
-    `here <https://github.com/oTree-org/oTree/blob/master/settings.py>`__.
-
-    See the variable ``mturk_hit_settings``, which is included in
-    ``SESSION_CONFIG_DEFAULTS``.
-    Then upgrade to the latest version of ``otree-core``.
-
-    Also, copy the ``Procfile`` over the version you have locally.
-
 
 

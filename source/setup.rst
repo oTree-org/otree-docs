@@ -32,64 +32,30 @@ Prerequisite: Python 2.7 (not 3.x)
     **Windows/Mac:** Verify that it worked by opening your command prompt and
     entering ``python``. You should see the "``>>>``" prompt.
 
-Installation options: launcher vs. plain install
+Installation options: plain install vs. launcher
 ------------------------------------------------
 
 There are two options for installing oTree, depending on your personal preference:
+
+*   The "plain install" lets you run oTree from the command line.
+    You enter commands like ``otree resetdb`` and ``otree runserver``:
+
+.. image:: _static/setup/cli.JPG
+
 
 *   The "launcher install" provides a graphical interface for running the oTree
     server. There are buttons to reset the database, run the server, etc:
 
 .. image:: _static/setup/launcher.JPG
 
-*   The "plain install" lets you run oTree from the command line.
-    Instead of clicking buttons, you enter commands like ``otree resetdb`` and ``otree runserver``:
-
-.. image:: _static/setup/cli.JPG
-
 Other than that, both options have the same functionality.
-If you have a problem installing the launcher, you can try the plain install,
+If you have a problem with the plain install, you can try the launcher,
 and vice versa. (And if you encounter any error during installation, please email chris@otree.org
 with the error message.)
-
-Launcher install
-~~~~~~~~~~~~~~~~
-
--   Download the launcher from this link:
-
-    .. only:: html
-
-        .. raw:: html
-
-            <div id="otree-launcher-dynamic-link">
-                <img src="_static/loading.gif">
-            </div>
-
-    .. only:: not html
-
-        `oTree_launcher-stable.zip <https://github.com/oTree-org/otree-launcher/archive/master.zip>`_
-
--   Unzip it to an easy-to-access location, like your "Documents" folder.
--   Run ``otree.py``.
--   Initial setup may take 5-10 minutes.
--   When the app window launches, click the buttons to create a new deploy and
-    choose a location to store your project files.
--   Click the "run server" button
--   Note: the oTree launcher is not installed as an app in your Windows start
-    menu or Mac Applications. To reopen the launcher, simply double click
-    otree.py again.
-
-.. note::
-
-    For ``virtualenv`` users: ``otree.py`` cannot be executed inside a ``virtualenv``.
-    You should execute it with a regular non-virtualenv
-    python. When it is first executed, it will create a new virtualenv and install all its dependencies there.
 
 
 Plain install
 ~~~~~~~~~~~~~
-
-This is an alternative to the "launcher install".
 
 *   From your command line, run the command ``pip`` to check if Pip is installed.
     If not, you can download it
@@ -125,6 +91,43 @@ Then run:
 
     $ otree resetdb
     $ otree runserver
+
+
+Launcher install
+~~~~~~~~~~~~~~~~
+
+This is an alternative to the "plain install".
+
+
+-   Download the launcher from this link:
+
+    .. only:: html
+
+        .. raw:: html
+
+            <div id="otree-launcher-dynamic-link">
+                <img src="_static/loading.gif">
+            </div>
+
+    .. only:: not html
+
+        `oTree_launcher-stable.zip <https://github.com/oTree-org/otree-launcher/archive/master.zip>`_
+
+-   Unzip it to an easy-to-access location, like your "Documents" folder.
+-   Run ``otree.py``.
+-   Initial setup may take 5-10 minutes.
+-   When the app window launches, click the buttons to create a new deploy and
+    choose a location to store your project files.
+-   Click the "run server" button
+-   Note: the oTree launcher is not installed as an app in your Windows start
+    menu or Mac Applications. To reopen the launcher, simply double click
+    otree.py again.
+
+.. note::
+
+    For ``virtualenv`` users: ``otree.py`` cannot be executed inside a ``virtualenv``.
+    You should execute it with a regular non-virtualenv
+    python. When it is first executed, it will create a new virtualenv and install all its dependencies there.
 
 
 Explanation: oTree & Django
