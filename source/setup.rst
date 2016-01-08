@@ -31,6 +31,9 @@ entering ``python``. You should see the "``>>>``" prompt.
 Mac OSX
 ~~~~~~~
 
+These instructions are for installing Python through Homebrew, which is our recommended method.
+(Other ways are possible also.)
+
 Open your Terminal and run:
 
 .. code-block:: bash
@@ -60,31 +63,9 @@ Linux/UNIX
 
 If Python is not already installed, use your system's package manager to install Python and pip.
 
-Installation options: plain install vs. launcher
-------------------------------------------------
 
-There are two options for installing oTree, depending on your personal preference:
-
-*   The "plain install" lets you run oTree from the command line.
-    You enter commands like ``otree resetdb`` and ``otree runserver``:
-
-.. image:: _static/setup/cli.JPG
-
-
-*   The "launcher install" provides a graphical interface for running the oTree
-    server. There are buttons to reset the database, run the server, etc:
-
-.. image:: _static/setup/launcher.JPG
-
-Other than that, both options have the same functionality.
-Some people prefer the launcher, but note that it has installation issues on some systems.
-If you have a problem with the plain install, you can try the launcher,
-and vice versa. (And if you encounter any error during installation, please email chris@otree.org
-with the error message.)
-
-
-Plain install
-~~~~~~~~~~~~~
+oTree installation
+~~~~~~~~~~~~~~~~~~
 
 *   Download `oTree <https://github.com/oTree-org/oTree/archive/master.zip>`__
     and unzip it to a convenient location (such as your "Documents" folder).
@@ -118,42 +99,6 @@ Then run:
 
 Then open your browser to ``http://127.0.0.1:8000/``.
 
-Launcher install
-~~~~~~~~~~~~~~~~
-
-This is an alternative to the "plain install".
-
-
--   Download the launcher from this link:
-
-    .. only:: html
-
-        .. raw:: html
-
-            <div id="otree-launcher-dynamic-link">
-                <img src="_static/loading.gif">
-            </div>
-
-    .. only:: not html
-
-        `oTree_launcher-stable.zip <https://github.com/oTree-org/otree-launcher/archive/master.zip>`_
-
--   Unzip it to an easy-to-access location, like your "Documents" folder.
--   Run ``otree.py``.
--   Initial setup may take 5-10 minutes.
--   When the app window launches, click the buttons to create a new deploy and
-    choose a location to store your project files.
--   Click the "run server" button
--   Note: the oTree launcher is not installed as an app in your Windows start
-    menu or Mac Applications. To reopen the launcher, simply double click
-    otree.py again.
-
-.. note::
-
-    For ``virtualenv`` users: ``otree.py`` cannot be executed inside a ``virtualenv``.
-    You should execute it with a regular non-virtualenv
-    python. When it is first executed, it will create a new virtualenv and install all its dependencies there.
-
 
 Explanation: oTree & Django
 ---------------------------
@@ -181,16 +126,15 @@ When you install oTree (either using the launcher or running
 Upgrading/reinstalling oTree
 ----------------------------
 
-The oTree software has three components:
+The oTree software has two components:
 
 -  oTree-core: The engine that makes your apps run
--  oTree Launcher: the graphical user interface for installing oTree and running the server
 -  oTree library: the folder of sample games and other files (e.g. settings.py) that you download from `here <https://github.com/oTree-org/oTree>`__ and customize to build your own project.
 
 You can either upgrade these components individually,
 or do a complete reinstallation to upgrade all of them at once.
 
-All of these components are being updated regularly,
+These components are being updated regularly,
 but oTree-core is updated the most frequently, and contains the most important bugfixes.
 So, we recommend updating it the most frequently.
 
@@ -221,15 +165,3 @@ in ``requirements_base.txt`` and then run:
     $ pip install -r requirements_base.txt
 
 
-Complete reinstallation
-~~~~~~~~~~~~~~~~~~~~~~~
-
-If you originally installed oTree over 2 months ago,
-we recommend a complete reinstallation,
-to get all the latest features and bug fixes.
-
--  On Windows: In Windows Explorer's address bar, type ``%APPDATA%`` and hit enter.
-   Then delete the folder ``otree-launcher``
--  On Mac/Linux: Delete the folder ``~/.config/.otree-launcher``
--  Re-download and install the launcher
--  When installation is complete, select an empty folder where the latest version of the oTree sample games can be downloaded.
