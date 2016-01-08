@@ -6,6 +6,9 @@ Download & Setup
 Prerequisite: Python 2.7 (not 3.x)
 ----------------------------------
 
+Windows
+~~~~~~~
+
 *   On Windows: download and install
     `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
     Then add Python to
@@ -21,16 +24,41 @@ Prerequisite: Python 2.7 (not 3.x)
         ``C:\Windows;C:\Windows\System32;C:\Python27;C:\Python27\Scripts``
     *   (This assumes that Python was installed to ``C:\Python27``.)
 
-*   On Mac/Unix, it is very likely that Python is already installed. You can
-    check by opening the Terminal and writing ``python`` and hit Enter.
+Verify that it worked by opening your command prompt and
+entering ``python``. You should see the "``>>>``" prompt.
 
-    If you get something like ``-bash: python: command not found`` you
-    will have to install it yourself.
 
-.. note::
+Mac OSX
+~~~~~~~
 
-    **Windows/Mac:** Verify that it worked by opening your command prompt and
-    entering ``python``. You should see the "``>>>``" prompt.
+Open your Terminal and run:
+
+.. code-block:: bash
+
+    xcode-select --install
+
+You will then be asked whether you want to install "Xcode" or the "command line developer tools".
+Select just "command line developer tools".
+
+Then install Homebrew:
+
+.. code-block:: bash
+
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Then use Homebrew to install Python:
+
+.. code-block:: bash
+
+    brew install python
+
+Verify that it worked by opening your command prompt and
+entering ``python``. You should see the "``>>>``" prompt.
+
+Linux/UNIX
+~~~~~~~~~~
+
+If Python is not already installed, use your system's package manager to install Python and pip.
 
 Installation options: plain install vs. launcher
 ------------------------------------------------
@@ -49,6 +77,7 @@ There are two options for installing oTree, depending on your personal preferenc
 .. image:: _static/setup/launcher.JPG
 
 Other than that, both options have the same functionality.
+Some people prefer the launcher, but note that it has installation issues on some systems.
 If you have a problem with the plain install, you can try the launcher,
 and vice versa. (And if you encounter any error during installation, please email chris@otree.org
 with the error message.)
@@ -57,13 +86,8 @@ with the error message.)
 Plain install
 ~~~~~~~~~~~~~
 
-*   From your command line, run the command ``pip`` to check if Pip is installed.
-    If not, you can download it
-    `here <https://pip.pypa.io/en/latest/installing.html>`__.
 *   Download `oTree <https://github.com/oTree-org/oTree/archive/master.zip>`__
     and unzip it to a convenient location (such as your "Documents" folder).
-    (Or use Git to clone
-    `this repo <https://github.com/oTree-org/otree>`__.)
 *   In your command line, go to the root directory of the unzipped folder
     where ``requirements_base.txt`` is
 
@@ -92,6 +116,7 @@ Then run:
     $ otree resetdb
     $ otree runserver
 
+Then open your browser to ``http://127.0.0.1:8000/``.
 
 Launcher install
 ~~~~~~~~~~~~~~~~
