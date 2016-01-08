@@ -14,7 +14,7 @@ Create the app
 --------------
 
 If you are running the oTree launcher, click the "terminal" button which will
-open your command window. Otherwise, open the ``oTree`` folder you downloaded,
+open your command window. Otherwise, use your command line to go to the ``oTree`` folder you downloaded,
 the one that contains ``requirements_base.txt``.
 
 In this directory, create the public goods app with this shell command:
@@ -270,12 +270,13 @@ existing "exit survey" and "payment info" apps to ``app_sequence``.
 Reset the database and run
 --------------------------
 
-Before you run the server, you need to reset the database. In the
-launcher, click the button "reset database". Or, on the command
-line, run ``otree resetdb``. (You need to run ``resetdb`` every time you
-create a new app, or when you add/change/remove a field in ``models.py``. This is
-because you have new fields in ``models.py``, and the SQL
-database needs to be re-generated to create these tables and columns.)
+If you are using the launcher, click the "Reset DB" and "Run server" buttons.
 
-Then, run the server and open your browser to http://127.0.0.1:8000 to
-play the game.
+If you are on the command line, enter:
+
+.. code-block:: bash
+
+    $ otree resetdb
+    $ otree runserver
+
+Then open your browser to ``http://127.0.0.1:8000`` to play the game.

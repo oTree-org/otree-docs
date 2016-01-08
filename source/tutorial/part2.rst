@@ -365,3 +365,8 @@ If you are on the command line, enter:
     $ otree runserver
 
 Then open your browser to ``http://127.0.0.1:8000`` to play the game.
+
+Note: You need to run ``resetdb`` every time you
+create a new app, or when you add/change/remove a field in ``models.py``. This is
+because you have new fields in ``models.py``, and the SQL
+database needs to be re-generated to create these tables and columns.

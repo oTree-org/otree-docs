@@ -9,7 +9,7 @@ Testing locally
 
 You will be testing your app frequently during development, so that you
 can see how the app looks and feels and discover bugs during
-development. To test your app, run the server in the oTree launcher. You
+development. To test your app, run the server. You
 may need to reset the database first.
 
 Click on a session name and you will get a start link for the

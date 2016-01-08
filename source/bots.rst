@@ -19,8 +19,8 @@ This is to make sure the entire session runs, just as participants will
 play it in the lab.
 
 Let's say you want to test the session named ``ultimatum`` in
-``settings.py``. To test, click the "Terminal" button in the oTree
-launcher run the following command from your project's root directory:
+``settings.py``. To test, open your terminal (if using the launcher, click the "Terminal" button)
+and run the following command from your project's root directory:
 
 .. code-block:: bash
 
