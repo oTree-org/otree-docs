@@ -73,8 +73,9 @@ Make sure you have committed any changes as follows:
 
 .. code-block:: bash
 
-    $ git add .
-    $ git commit -am '[commit message]'
+    pip freeze > requirements_base.txt
+    git add .
+    git commit -am '[commit message]'
 
 (If you get the message
 ``fatal: Not a git repository (or any of the parent directories): .git``
@@ -196,6 +197,35 @@ On Ubuntu/Debian, do:
 
 The command ``otree resetdb`` only works on SQLite.
 On Postgres, you should drop the database and then run ``otree migrate``.
+
+Deploy your code
+~~~~~~~~~~~~~~~~
+
+If you are using a remote webserver, you need to push your code there,
+typically using Git.
+
+Open your shell (if using the launcher, click the "Terminal" button).
+
+Make sure you have committed any changes as follows:
+
+.. code-block:: bash
+
+    pip freeze > requirements_base.txt
+    git add .
+    git commit -am '[commit message]'
+
+(If you get the message
+``fatal: Not a git repository (or any of the parent directories): .git``
+then you first need to initialize the git repo.)
+
+Then do:
+
+.. code-block:: bash
+
+    $ git push [remote name] master
+
+Where [remote name] is the name of your server's git remote.
+
 
 Running the server
 ~~~~~~~~~~~~~~~~~~

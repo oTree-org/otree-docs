@@ -151,17 +151,13 @@ We recommend you do this on a weekly basis,
 so that you can get the latest bug fixes and features.
 This will also ensure that you are using a version that is consistent with the current documentation.
 
-In the launcher, click "Upgrade otree-core" (or "Version select"):
-
-.. image:: _static/setup/upgrade_otree_core.png
-
-Then select the most recent version in the menu.
-
-If you are using the "plain install", change the ``otree-core`` version number
+Change the ``otree-core`` version number
 in ``requirements_base.txt`` and then run:
 
 .. code-block:: bash
 
     $ pip install -r requirements_base.txt
 
+If you are using the launcher, click "Upgrade otree-core" (or "Version select").
+Then select the most recent version in the menu.
 
