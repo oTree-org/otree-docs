@@ -13,7 +13,7 @@ The full code for the app we will write is
 Upgrade oTree
 -------------
 
-Open your command window and run:
+To ensure you are using the latest version of oTree, open your command window and run:
 
 .. code-block:: bash
 
