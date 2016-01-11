@@ -10,6 +10,16 @@ The combined contributions are multiplied by 1.8, and then divided evenly three 
 The full code for the app we will write is
 `here <https://github.com/oTree-org/oTree/tree/master/public_goods_simple>`__.
 
+Upgrade oTree
+-------------
+
+Open your command window and run:
+
+.. code-block:: bash
+
+    $ pip install --upgrade otree-core
+
+
 Create the app
 --------------
 

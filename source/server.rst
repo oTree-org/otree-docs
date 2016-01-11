@@ -64,6 +64,15 @@ code:
 Heroku generates a random name (in this case lit-bastion-5032) for your
 app, or you can pass a parameter to specify your own app name.
 
+Upgrade oTree
+~~~~~~~~~~~~~
+
+To ensure you are using the latest version of oTree, run:
+
+.. code-block:: bash
+
+    $ pip install --upgrade otree-core
+
 Deploy your code
 ~~~~~~~~~~~~~~~~
 
@@ -132,7 +141,8 @@ so then you don't have to pay the full monthly cost.
 Setting environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If it's a production website, you should set the environment variables
+When you are ready to launch your site to your audience,
+you should set the environment variables
 (e.g. ``OTREE_PRODUCTION`` and ``OTREE_AUTH_LEVEL``), like this:
 
 .. code-block:: bash

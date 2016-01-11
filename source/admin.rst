@@ -20,7 +20,7 @@ participants cannot access sensitive data.
 
 If you are launching an experiment and want visitors to only be able to
 play your app if you provided them with a start link, set the
-environment variable ``OTREE_AUTH_LEVEL`` to ``EXPERIMENT``.
+environment variable ``OTREE_AUTH_LEVEL`` to ``STUDY``.
 
 If you would like to put your site online in public demo mode where
 anybody can play a demo version of your game, set ``OTREE_AUTH_LEVEL``
