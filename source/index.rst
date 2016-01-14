@@ -94,11 +94,11 @@ Contents:
     currency.rst
     treatments.rst
     rounds.rst
+    server.rst
     localization.rst
     manual_testing.rst
     bots.rst
     admin.rst
-    server.rst
     troubleshooting.rst
     tips_and_tricks.rst
     mturk.rst
