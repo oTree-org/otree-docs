@@ -159,20 +159,24 @@ and scale up your dynos to at least the cheapest paid plan. Note: after you fini
 you can scale your dynos and database back down,
 so then you don't have to pay the full monthly cost.
 
-Setting environment variables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting environment variables (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you are ready to launch your site to your audience,
-you should set the environment variables
-(e.g. ``OTREE_PRODUCTION`` and ``OTREE_AUTH_LEVEL``), like this:
+If you would like to turn off debug mode, you should set the ``OTREE_PRODUCTION``
+environment variable, like this:
 
 .. code-block:: bash
 
     $ heroku config:set OTREE_PRODUCTION=1
+
+However, this will hide error pages, so you should set up :ref:`sentry`.
+
+To password protect parts of the admin interface,
+you should set ``OTREE_AUTH_LEVEL``):
+
     $ heroku config:set OTREE_AUTH_LEVEL=DEMO
 
-Once you do this, you should also set up :ref:`sentry`.
-
+More info at :ref:`AUTH_LEVEL`.
 
 Deploying to an on-premises server
 ----------------------------------
