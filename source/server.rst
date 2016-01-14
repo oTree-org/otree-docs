@@ -183,6 +183,8 @@ However, this will hide error pages, so you should set up :ref:`sentry`.
 To password protect parts of the admin interface,
 you should set ``OTREE_AUTH_LEVEL``):
 
+.. code-block:: bash
+
     $ heroku config:set OTREE_AUTH_LEVEL=DEMO
 
 More info at :ref:`AUTH_LEVEL`.
