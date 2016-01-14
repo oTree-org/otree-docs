@@ -37,9 +37,6 @@ This provides you access to the Heroku Command Line utility.
 Once installed, you can use the ``heroku`` command from your command
 prompt. (If using the oTree launcher, click the "terminal" button.)
 
-Enter ``heroku help`` to get general help, and ``heroku help TOPIC``
-for documentation on a specific subcommand, like ``heroku help apps``.
-
 Log in using the email address and password you used when
 creating your Heroku account:
 
@@ -68,7 +65,9 @@ code:
     When you create an app, a git remote (called heroku) is also created and associated with your local git repository.
 
 Heroku generates a random name (in this case lit-bastion-5032) for your
-app, or you can pass a parameter to specify your own app name.
+app. Or you can specify your own name; see ``heroku help create`` for more info.
+(And see ``heroku help`` for general help.)
+
 
 Upgrade oTree
 ~~~~~~~~~~~~~
