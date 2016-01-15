@@ -50,12 +50,7 @@ Then in the template, set the label to this variable:
 
     ``{% formfield player.contribution with label=contribution_label %}``
 
-If you use this technique, you may also want to use the ``_max`` method explained in :ref:`dynamic_validation`
-
-.. code-block:: python
-
-        def contribution_max(self):
-            return self.player.endowment
+If you use this technique, you may also want to use :ref:`dynamic_validation`.
 
 
 User Input Validation
