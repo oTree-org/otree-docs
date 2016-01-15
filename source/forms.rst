@@ -31,7 +31,7 @@ You can set the label on a form field like this:
     ``{% formfield player.contribution with label="How much do you want to contribute?" %}``
 
 
-If the label should contain a variable, you can construct the string in views.py:
+If the label should contain a variable, you can construct the string in ``views.py``:
 
 .. code-block:: python
 
