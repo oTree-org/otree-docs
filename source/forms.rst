@@ -21,6 +21,43 @@ You should include form fields by using a ``{% formfield %}`` element.
 You generally do not need to write raw HTML for forms (e.g.
 ``<input type="text" id="...">``).
 
+Form field labels
+~~~~~~~~~~~~~~~~~
+
+You can set the label on a form field like this:
+
+.. code-block:: html+django
+
+    ``{% formfield player.contribution with label="How much do you want to contribute?" %}``
+
+
+If the label should contain a variable, you can construct the string in views.py:
+
+.. code-block:: python
+
+    class Contribute(Page):
+        form_model = models.Player
+        form_fields = ['contribution']
+
+        def vars_for_template(self):
+            return {
+                'contribution_label': 'How much of your {} do you want to contribute?'.format(self.player.endowment)
+            }
+
+Then in the template, set the label to this variable:
+
+.. code-block:: html+django
+
+    ``{% formfield player.contribution with label=contribution_label %}``
+
+If you use this technique, you may also want to use the ``_max`` method explained in :ref:`dynamic_validation`
+
+.. code-block:: python
+
+        def contribution_max(self):
+            return self.player.endowment
+
+
 User Input Validation
 ---------------------
 
