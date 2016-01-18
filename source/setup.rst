@@ -100,27 +100,6 @@ Then run:
 Then open your browser to ``http://127.0.0.1:8000/``.
 
 
-Explanation: oTree & Django
----------------------------
-
-oTree is built on top of Django.
-
-The ``oTree`` folder is a Django project, as explained
-`here <https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-a-project>`__.
-
-It comes pre-configured with all the files,
-settings and dependencies so that it works right away.
-You should create your apps inside this folder.
-
-If you want, you can delete all the existing example games
-(like ``asset_market``, ``bargaining``, etc).
-Just delete the folders and the corresponding entries in ``SESSION_CONFIGS``.
-Just keep the directories ``_static`` and ``_templates``.
-
-When you install oTree (either using the launcher or running
-``pip install -r requirements_base.txt``),
-``otree-core`` gets automatically installed as a dependency.
-
 .. _upgrade:
 
 Upgrading/reinstalling oTree
