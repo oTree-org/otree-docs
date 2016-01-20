@@ -55,8 +55,6 @@ Then use Homebrew to install Python:
 
     brew install python
 
-Verify that it worked by opening your command prompt and
-entering ``python``. You should see the "``>>>``" prompt.
 
 Linux/UNIX
 ~~~~~~~~~~
