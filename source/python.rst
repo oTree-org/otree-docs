@@ -3,15 +3,18 @@ Python tutorial
 
 Below is a tutorial file that demonstrates the necessary Python syntax for using oTree.
 
-There are also many good python tutorials online (such as Codecademy or Learn Python the Hard Way),
+First you should install Python according to the instructions in :ref:`setup`.
+
+Then you can download this file and run it in your Python shell or in IDLE (which is often bundled in the Python installation).
+You can insert print statements throughout the file and test different modifications make sure that you understand.
+
+There are many other good python tutorials online (such as Codecademy or Learn Python the Hard Way),
 but note that some of the material covered in those tutorials is not necessary for oTree programming specifically.
 
 Tutorial file
 -------------
 
-A downloadable version is :download:`here <_static/otree_python.py>`;
-you can download then run it in IDLE (which is installed with Python).
-You can insert print statements throughout the file and test different modifications make sure that you understand.
+A downloadable version is :download:`here <_static/otree_python.py>`.
 
 .. literalinclude:: _static/otree_python.py
 
