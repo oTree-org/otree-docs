@@ -21,11 +21,6 @@
 # Enforce precedence with parentheses
 (1 + 3) * 2  # => 8
 
-# incrementing by 1
-x = 0
-x += 1  # Shorthand for x = x + 1
-x -= 2  # Shorthand for x = x - 2
-
 # Boolean Operators
 # Note "and" and "or" are case-sensitive
 True and False #=> False
@@ -91,6 +86,11 @@ print "I'm Python. Nice to meet you!" # => I'm Python. Nice to meet you!
 some_var = 5    # Convention is to use lower_case_with_underscores
 some_var  # => 5
 
+# incrementing and decrementing a variable
+x = 0
+x += 1  # Shorthand for x = x + 1
+x -= 2  # Shorthand for x = x - 2
+
 
 # Lists store sequences
 li = []
@@ -100,7 +100,7 @@ other_li = [4, 5, 6]
 # Add stuff to the end of a list with append
 li.append(1)    # li is now [1]
 li.append(2)    # li is now [1, 2]
-li.append(3)    # li is now [1, 2, 4, 3]
+li.append(3)    # li is now [1, 2, 3]
 
 # Access a list like you would any array
 li[0]  # => 1
@@ -247,7 +247,7 @@ class Mammal(object):
     # Methods are basically functions that belong to a class.
     # All methods take "self" as the first argument
     def set_age(self):
-        self.age = random.randint(0, 20)
+        self.age = 0
             
     # method that returns True or False
     def older_than_10(self):
@@ -271,8 +271,8 @@ Mammal.classification
 lassie = Dog()
 lassie.classification # => "Canis lupus"
 lassie.set_age()
-lassie.older_than_10() # => maybe True, maybe False
-lassie.age = 9
 lassie.older_than_10() # => False
+lassie.age = 11
+lassie.older_than_10() # => True
 lassie.bark() # => "woof!"
 
