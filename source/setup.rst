@@ -97,6 +97,18 @@ Then run:
 
 Then open your browser to ``http://127.0.0.1:8000/``.
 
+.. _pycharm:
+
+Installing a Python editor (PyCharm)
+------------------------------------
+
+You should install a text editor for writing your Python code.
+
+We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
+PyCharm Professional is better than PyCharm Community Edition because it has Django support.
+If you are a student, teacher, or professor, PyCharm Professional is free.
+
+If you prefer another editor like Notepad++, TextMate, or Sublime Text, you can use that instead.
 
 .. _upgrade:
 
