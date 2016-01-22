@@ -247,7 +247,8 @@ You can accomplish this as follows:
                     group_players = players[offset:limit]
                     list_of_lists.append(group_players)
                 self.set_groups(list_of_lists)
-
+            else:
+                self.group_like_round(1)
 
 **Fixed number of groups with a no divisible number of players**
 
@@ -309,4 +310,6 @@ the last *4 groups* with only *2 players*.
                     group_players = players[offset:limit]
                     list_of_lists.append(group_players)
                 self.set_groups(list_of_lists)
+            else:
+                self.group_like_round(1)
 

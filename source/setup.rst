@@ -65,28 +65,15 @@ If Python is not already installed, use your system's package manager to install
 oTree installation
 ~~~~~~~~~~~~~~~~~~
 
-*   Download `oTree <https://github.com/oTree-org/oTree/archive/master.zip>`__
-    and unzip it to a convenient location (such as your "Documents" folder).
-*   In your command line, go to the root directory of the unzipped folder
-    where ``requirements_base.txt`` is
-
-    .. note::
-
-        if you cannot find ``requirements_base.txt``
-        make sure you have downloaded ``oTree-master.zip``, not
-        ``otree-launcher-master.zip``, which is a different download.
-
+*   In your command line, go to the directory where you want to store your oTree code (such as your "Documents" folder).
 *   Run this:
 
 .. code-block:: bash
 
-    $ pip install -r requirements_base.txt
+    $ pip install --upgrade otree-core
+    $ otree startproject oTree
 
-If you get a permissions error, you can add the ``--user`` flag to install inside your home directory:
-
-.. code-block:: bash
-
-    $ pip install -r requirements_base.txt --user
+(If it's your first time, we recommend choosing the option to include the sample games.)
 
 Then run:
 
@@ -95,7 +82,7 @@ Then run:
     $ otree resetdb
     $ otree runserver
 
-Then open your browser to ``http://127.0.0.1:8000/``.
+Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 
 .. _pycharm:
 
@@ -108,7 +95,7 @@ We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
 PyCharm Professional is better than PyCharm Community Edition because it has Django support.
 If you are a student, teacher, or professor, PyCharm Professional is free.
 
-If you prefer another editor like Notepad++, TextMate, or Sublime Text, you can use that instead.
+If you prefer another editor like Notepad++, TextWrangler, or Sublime Text, you can use that instead.
 
 .. _upgrade:
 
