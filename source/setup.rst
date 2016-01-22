@@ -50,8 +50,7 @@ Select just "command line developer tools".
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 * Update your ``PATH`` variable to state that homebrew packages should be
-  used before system packages (Change ``.bashrc`` to ``.zshrc`` accordantly
-  if you're using `zsh`_ as default shell)::
+  used before system packages::
 
     echo "export PATH=/usr/local/bin:/usr/local/sbin:$PATH" >> ~/.bashrc
 
