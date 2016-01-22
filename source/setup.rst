@@ -9,23 +9,23 @@ Prerequisite: Python 2.7 (not 3.x)
 Windows
 ~~~~~~~
 
-*   On Windows: download and install
-    `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
-    Then add Python to
-    your ``Path`` environment variable:
+* Download and install `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
 
-    *   Open the Windows Start menu
-    *   Search for "Edit the system environment variables", and then click it.
-    *   Click ``Environment Variables``
-    *   Select ``Path`` in the ``System variables`` section
-    *   Click ``Edit``
-    *   Add ``;C:\Python27;C:\Python27\Scripts`` to the end of the list
-        (the paths are separated by semicolons). For example:
-        ``C:\Windows;C:\Windows\System32;C:\Python27;C:\Python27\Scripts``
-    *   (This assumes that Python was installed to ``C:\Python27``.)
+  You need to adjust ``PATH`` environment variable to include paths to
+  the Python executable and additional scripts. The following paths need to be
+  added to ``PATH``::
 
-Verify that it worked by opening your command prompt and
-entering ``python``. You should see the "``>>>``" prompt.
+      C:\Python27\;C:\Python27\Scripts\;
+
+  To update the ``PATH`` open a Command prompt and run::
+
+      c:\python27\python.exe c:\python27\tools\scripts\win_add2path.py
+
+  Close the command prompt window and reopen it so changes take effect, run the
+  following command and check it shows the expected Python version::
+
+      python --version
+
 
 
 Mac OSX
@@ -34,7 +34,7 @@ Mac OSX
 These instructions are for installing Python through Homebrew, which is our recommended method.
 (Other ways are possible also.)
 
-Open your Terminal and run:
+* Open your Terminal and run:
 
 .. code-block:: bash
 
@@ -43,17 +43,25 @@ Open your Terminal and run:
 You will then be asked whether you want to install "Xcode" or the "command line developer tools".
 Select just "command line developer tools".
 
-Then install Homebrew:
+* Then install `Homebrew <http://brew.sh/>`__:
 
 .. code-block:: bash
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Then use Homebrew to install Python:
+  * Update your ``PATH`` variable to state that homebrew packages should be
+    used before system packages (Change ``.bashrc`` to ``.zshrc`` accordantly
+    if you're using `zsh`_ as default shell)::
 
-.. code-block:: bash
+      echo "export PATH=/usr/local/bin:/usr/local/sbin:$PATH" >> ~/.bashrc
 
-    brew install python
+  * Reload ``.bashrc`` to ensure the changes have taken place::
+
+      source ~/.bashrc
+
+  * Install python::
+
+      brew install python
 
 
 Linux/UNIX

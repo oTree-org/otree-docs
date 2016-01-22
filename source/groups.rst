@@ -219,7 +219,7 @@ You can accomplish this as follows:
 
     class Constants(BaseConstants):
         players_per_group = None
-        groups = 8
+        num_groups = 8
         ... # etc
 
     class Subsession(BaseSubsession):
@@ -229,8 +229,7 @@ You can accomplish this as follows:
 
                 # create the base for number of groups
                 num_players = len(self.get_players())
-                num_groups = len(Constants.groups)
-                players_per_group = [int(num_players/num_groups)] * num_groups
+                players_per_group = [int(num_players/Constants.num_groups)] * Constants.num_groups
 
                 # verify if all players are assigned
                 idxg = 0
@@ -263,7 +262,7 @@ the last *4 groups* with only *2 players*.
 
     class Constants(BaseConstants):
         players_per_group = None
-        groups = 8
+        num_groups = 8
         ... # etc
 
     class Subsession(BaseSubsession):
@@ -279,12 +278,11 @@ the last *4 groups* with only *2 players*.
 
                 # create the base for number of groups
                 num_players = len(players)
-                num_groups = len(Constants.groups)
 
                 # create a list of how many players must be in every group
                 # the result of this will be [2, 2, 2, 2, 2, 2, 2, 2]
                 # obviously 2 * 8 = 16
-                players_per_group = [int(num_players/num_groups)] * num_groups
+                players_per_group = [int(num_players/Constants.num_groups)] * Constants.num_groups
 
                 # add one player in order per group until the sum of size of
                 # every group is equal to total of players
