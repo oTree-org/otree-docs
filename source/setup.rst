@@ -49,19 +49,19 @@ Select just "command line developer tools".
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  * Update your ``PATH`` variable to state that homebrew packages should be
-    used before system packages (Change ``.bashrc`` to ``.zshrc`` accordantly
-    if you're using `zsh`_ as default shell)::
+* Update your ``PATH`` variable to state that homebrew packages should be
+  used before system packages (Change ``.bashrc`` to ``.zshrc`` accordantly
+  if you're using `zsh`_ as default shell)::
 
-      echo "export PATH=/usr/local/bin:/usr/local/sbin:$PATH" >> ~/.bashrc
+    echo "export PATH=/usr/local/bin:/usr/local/sbin:$PATH" >> ~/.bashrc
 
-  * Reload ``.bashrc`` to ensure the changes have taken place::
+* Reload ``.bashrc`` to ensure the changes have taken place::
 
-      source ~/.bashrc
+    source ~/.bashrc
 
-  * Install python::
+* Install python::
 
-      brew install python
+    brew install python
 
 
 Linux/UNIX
