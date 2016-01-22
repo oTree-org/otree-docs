@@ -92,8 +92,8 @@ Installing a Python editor (PyCharm)
 You should install a text editor for writing your Python code.
 
 We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
-PyCharm Professional is better than PyCharm Community Edition because it has Django support.
-If you are a student, teacher, or professor, PyCharm Professional is free.
+Professional Editon is better than Community Edition because it has Django support.
+PyCharm Professional is free if you are a student, teacher, or professor.
 
 If you prefer another editor like Notepad++, TextWrangler, or Sublime Text, you can use that instead.
 
