@@ -71,8 +71,7 @@ Contributors
 Mailing list
 ^^^^^^^^^^^^
 
-Sign up to be notified about updates to oTree
-`here <https://docs.google.com/forms/d/1jD4tocuX07DFYN2jDY2tcNXpkOCSqLhSOMboOgaVGtw/viewform>`__
+Our Google Groups mailing list is `here <https://groups.google.com/forum/#!forum/otree>`__.
 
 
 Contents:
