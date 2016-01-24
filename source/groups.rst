@@ -154,6 +154,24 @@ For example:
         def is_displayed(self):
             return self.subsession.round_number == 1
 
+Example: random shuffling (stranger)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            players = self.get_players()
+            random.shuffle(self.get_players())
+
+            group_matrix = []
+
+            # chunk into groups of Constants.players_per_group
+            for i in range(0, len(players), Constants.players_per_group):
+                group_matrix.append(players[i:i+Constants.players_per_group])
+            self.set_groups(group_matrix)
+
 
 Example: re-matching by rank
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
