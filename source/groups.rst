@@ -163,7 +163,7 @@ Example: random shuffling (stranger)
 
         def before_session_starts(self):
             players = self.get_players()
-            random.shuffle(self.get_players())
+            random.shuffle(players)
 
             group_matrix = []
 
