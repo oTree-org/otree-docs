@@ -31,8 +31,8 @@ Windows
 Mac OSX
 ~~~~~~~
 
-These instructions are for installing Python through Homebrew, which is our recommended method.
-(Other ways are possible also.)
+Although Mac OSX comes pre-installed with Python, we recommend not using the pre-installed Python,
+and instead installing Python through Homebrew.
 
 * Open your Terminal and run:
 
@@ -40,8 +40,7 @@ These instructions are for installing Python through Homebrew, which is our reco
 
     xcode-select --install
 
-You will then be asked whether you want to install "Xcode" or the "command line developer tools".
-Select just "command line developer tools".
+When prompted, select to install the "command line developer tools".
 
 * Then install `Homebrew <http://brew.sh/>`__:
 
@@ -81,6 +80,10 @@ oTree installation
     $ otree startproject oTree
 
 (If it's your first time, we recommend choosing the option to include the sample games.)
+
+.. note::
+
+    If you get a message like ``pip: command not found``, you need to download and run `get-pip.py <https://bootstrap.pypa.io/get-pip.py>`__.
 
 Then run:
 

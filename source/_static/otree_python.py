@@ -111,6 +111,14 @@ li[0] = 1  # Note: setting it back to the original value
 # Look at the last element
 li[-1]  # => 3
 
+# You can look at ranges with slice syntax.
+# (It's a closed/open range.)
+other_li[1:3]  # => [5, 6]
+# Omit the beginning
+other_li[1:]  # => [5, 6]
+# Omit the end
+other_li[:2]  # => [4, 5]
+
 # You can add lists
 li + other_li   # => [1, 2, 3, 4, 5, 6]
 # Note: values for li and for other_li are not modified.
@@ -120,6 +128,7 @@ li + other_li   # => [1, 2, 3, 4, 5, 6]
 
 # Examine the length with "len()"
 len(li)   # => 6
+
 
 
 # Dictionaries store mappings
