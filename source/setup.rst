@@ -85,6 +85,12 @@ oTree installation
 
     If you get a message like ``pip: command not found``, you need to download and run `get-pip.py <https://bootstrap.pypa.io/get-pip.py>`__.
 
+Then change to the directory you just created:
+
+.. code-block:: bash
+
+    $ cd oTree
+
 Then run:
 
 .. code-block:: bash
