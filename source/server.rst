@@ -34,8 +34,7 @@ Install the `Heroku Toolbelt <https://toolbelt.heroku.com/>`__.
 
 This provides you access to the Heroku Command Line utility.
 
-Once installed, you can use the ``heroku`` command from your command
-prompt. (If using the oTree launcher, click the "terminal" button.)
+Once installed, you can use the ``heroku`` command from PowerShell (Windows) or Terminal (Mac). (If using the oTree launcher, click the "terminal" button.)
 
 Log in using the email address and password you used when
 creating your Heroku account:

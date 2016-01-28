@@ -6,25 +6,28 @@ Download & Setup
 Prerequisite: Python 2.7 (not 3.x)
 ----------------------------------
 
-Windows
-~~~~~~~
+Install Python (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Download and install `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
 
   You need to adjust ``PATH`` environment variable to include paths to
-  the Python executable and additional scripts. Open a Command prompt and run::
+  the Python executable and additional scripts. Open a PowerShell and run this command (right-click to paste it)::
 
       c:\python27\python.exe c:\python27\tools\scripts\win_add2path.py
 
   Close the command prompt window and reopen it so changes take effect, run the
-  following command and check it shows the expected Python version::
+  following command::
 
-      python --version
+      pip
+
+It should list the available commands, like ``install`` and ``uninstall``.
+If you instead get an error "command not found",
+you should restart your computer and retry.
 
 
-
-Mac OSX
-~~~~~~~
+Install Python (Mac OSX)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although Mac OSX comes pre-installed with Python, we recommend not using the pre-installed Python,
 and instead installing Python through Homebrew.
@@ -55,6 +58,12 @@ When prompted, select to install the "command line developer tools".
 * Install python::
 
     brew install python
+
+* Then test that it worked::
+
+    pip
+
+* It should list the available commands, like ``install`` and ``uninstall``.
 
 
 Linux/UNIX
