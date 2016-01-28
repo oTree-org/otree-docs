@@ -12,12 +12,7 @@ Windows
 * Download and install `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
 
   You need to adjust ``PATH`` environment variable to include paths to
-  the Python executable and additional scripts. The following paths need to be
-  added to ``PATH``::
-
-      C:\Python27\;C:\Python27\Scripts\;
-
-  To update the ``PATH`` open a Command prompt and run::
+  the Python executable and additional scripts. Open a Command prompt and run::
 
       c:\python27\python.exe c:\python27\tools\scripts\win_add2path.py
 
