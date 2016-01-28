@@ -12,7 +12,7 @@ Install Python (Windows)
 * Download and install `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
 
   You need to adjust ``PATH`` environment variable to include paths to
-  the Python executable and additional scripts. Open a PowerShell and run this command (right-click to paste it)::
+  the Python executable and additional scripts. Open PowerShell and run this command (right-click to paste it)::
 
       c:\python27\python.exe c:\python27\tools\scripts\win_add2path.py
 
@@ -75,7 +75,7 @@ If Python is not already installed, use your system's package manager to install
 oTree installation
 ~~~~~~~~~~~~~~~~~~
 
-*   In your command line, go to the directory where you want to store your oTree code (such as your "Documents" folder).
+*   Open PowerShell (on Windows) or Terminal (on Mac OS X), and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
 *   Run this:
 
 .. code-block:: bash
