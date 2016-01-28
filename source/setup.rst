@@ -13,7 +13,12 @@ Sometimes, we write a command prefixed with a ``$`` like this::
     $ otree resetdb
 
 The ``$`` is not part of the command. You should copy the command (in this example, ``otree resetdb``),
-and then paste it at your command line. (In PowerShell, you can right-click to paste.)
+and then paste it at your command line. (In PowerShell, you should right-click to paste.)
+
+A few tips:
+
+* You can retrieve the previous command you entered by pressing your keyboard's "up" arrow
+* If you get stuck running a command, you can press ``Control + C``.
 
 Prerequisite: Python 2.7 (not 3.x)
 ----------------------------------
