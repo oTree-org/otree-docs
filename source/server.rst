@@ -42,11 +42,6 @@ creating your Heroku account:
 .. code-block:: bash
 
     $ heroku login
-    Enter your Heroku credentials.
-    Email: python@example.com
-    Password:
-    Authentication successful.
-    Authenticating is required to allow both the heroku and git commands to operate.
 
 
 Create the Heroku app

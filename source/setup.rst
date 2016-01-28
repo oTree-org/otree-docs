@@ -3,6 +3,18 @@
 Download & Setup
 ================
 
+Command line basics
+-------------------
+
+To use oTree, you need to use PowerShell (Windows) or Terminal (Mac).
+In this documentation, we refer to these programs as your "command prompt" or "command line".
+Sometimes, we write a command prefixed with a ``$`` like this::
+
+    $ otree resetdb
+
+The ``$`` is not part of the command. You should copy the command (in this example, ``otree resetdb``),
+and then paste it at your command line. (In PowerShell, you can right-click to paste.)
+
 Prerequisite: Python 2.7 (not 3.x)
 ----------------------------------
 
@@ -80,8 +92,8 @@ oTree installation
 
 .. code-block:: bash
 
-    $ pip install --upgrade otree-core
-    $ otree startproject oTree
+    pip install --upgrade otree-core
+    otree startproject oTree
 
 (If it's your first time, we recommend choosing the option to include the sample games.)
 
@@ -93,14 +105,14 @@ Then change to the directory you just created:
 
 .. code-block:: bash
 
-    $ cd oTree
+    cd oTree
 
 Then run:
 
 .. code-block:: bash
 
-    $ otree resetdb
-    $ otree runserver
+    otree resetdb
+    otree runserver
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 
