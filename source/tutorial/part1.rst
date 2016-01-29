@@ -323,7 +323,7 @@ Specifically, find the file and line number of the last entry.
 In the above example, it's ``"C:\oTree\lyon\public_goods_simple\models.py", line 40``.
 Open that file and go to that line number to see if there is a problem there.
 Specifically, look for the problem mentioned at the last line of the traceback.
-In this example, it is ``IndentationError: expected an indented block``,
-which indicates that the problem has to do with code indentation.
-If you are using a Python editor like PyCharm, it might underline the error in red to make it easier to find.
+In this example, it is ``IndentationError: expected an indented block``
+(which indicates that the problem has to do with code indentation).
+Python editors like PyCharm usually underline errors in red to make them easier to find.
 Try to fix the error then run the command again.
