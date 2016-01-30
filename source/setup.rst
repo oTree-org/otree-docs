@@ -68,9 +68,9 @@ When prompted, select to install the "command line developer tools".
 
     echo "export PATH=/usr/local/bin:/usr/local/sbin:\$PATH" >> ~/.bash_profile
 
-* Reload ``.bashrc`` to ensure the changes have taken place::
+* Reload ``.bash_profile`` to ensure the changes have taken place::
 
-    source ~/.bashrc
+    source ~/.bash_profile
 
 * Install python::
 
