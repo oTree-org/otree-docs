@@ -157,7 +157,7 @@ filled_dict["four"] = 4  # now, filled_dict["four"] => 4
 # Let's just make a variable
 some_var = 5
 
-# Here is an if statement. Indentation is significant in python!
+# Here is an if statement.
 # prints "some_var is smaller than 10"
 if some_var > 10:
     print "some_var is totally bigger than 10."
@@ -165,6 +165,27 @@ elif some_var < 10:    # This elif clause is optional.
     print "some_var is smaller than 10."
 else:           # This is optional too.
     print "some_var is indeed 10."
+
+"""
+SPECIAL NOTE ABOUT INDENTING
+In Python, you must indent your code correctly, or it will not work.
+(Python is different from some other languages in this regard)
+All lines in a block of code must be aligned along the left edge
+When starting a code block (e.g. "if", "for", "def"; see below), you should indent by 4 spaces.
+When ending a code block, you should unindent by 4 spaces.
+
+Examples of improperly indented code:
+
+if some_var > 10:
+print "bigger than 10." # error, this line needs to be indented by 4 spaces
+
+
+if some_var > 10:
+    print "bigger than 10."
+ else: # error, this line needs to be unindented by 1 space
+    print "less than 10"
+
+"""
 
 
 """
