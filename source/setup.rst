@@ -66,7 +66,7 @@ When prompted, select to install the "command line developer tools".
 * Update your ``PATH`` variable to state that homebrew packages should be
   used before system packages::
 
-    echo "export PATH=/usr/local/bin:/usr/local/sbin:$PATH" >> ~/.bashrc
+    echo "export PATH=/usr/local/bin:/usr/local/sbin:\$PATH" >> ~/.bash_profile
 
 * Reload ``.bashrc`` to ensure the changes have taken place::
 
