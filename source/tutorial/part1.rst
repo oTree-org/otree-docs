@@ -76,10 +76,6 @@ main thing is how much they contributed. So, we define a field
 
     class Player(BasePlayer):
 
-        # <built-in>
-        ...
-        # </built-in>
-
         contribution = models.CurrencyField(min=0, max=Constants.endowment)
 
 
@@ -92,10 +88,6 @@ fields:
 
     class Group(BaseGroup):
 
-        # <built-in>
-        ...
-        # </built-in>
-
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
 
@@ -106,10 +98,6 @@ Let's call it ``set_payoffs``:
 .. code-block:: python
 
     class Group(BaseGroup):
-
-        # <built-in>
-        ...
-        # </built-in>
 
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()

@@ -52,10 +52,6 @@ So we have:
 
     class Player(BasePlayer):
 
-        # <built-in>
-        # ...
-        # </built-in>
-
         penny_side = models.CharField(
             choices=['Heads', 'Tails'],
             widget=widgets.RadioSelect()
@@ -147,11 +143,6 @@ So, we start with this:
 
     class Group(BaseGroup):
 
-        # <built-in>
-        ...
-        # </built-in>
-
-
         def set_payoffs(self):
             matcher = self.get_player_by_role('Matcher')
             mismatcher = self.get_player_by_role('Mismatcher')
@@ -174,11 +165,6 @@ check for both of them.
 .. code-block:: python
 
     class Group(BaseGroup):
-
-        # <built-in>
-        subsession = models.ForeignKey(Subsession)
-        # </built-in>
-
 
         def set_payoffs(self):
             matcher = self.get_player_by_role('Matcher')

@@ -48,10 +48,6 @@ Your first instinct may be to define the fields on the Player like this:
 
     class Player(BasePlayer):
 
-        # <built-in>
-        ...
-        # </built-in>
-
         sent_amount = models.CurrencyField()
         sent_back_amount = models.CurrencyField()
 
@@ -67,10 +63,6 @@ sense because each group has exactly 1 ``sent_amount`` and exactly 1
 .. code-block:: python
 
     class Group(BaseGroup):
-
-        # <built-in>
-        ...
-        # </built-in>
 
         sent_amount = models.CurrencyField()
         sent_back_amount = models.CurrencyField()
