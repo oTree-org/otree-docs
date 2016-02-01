@@ -26,7 +26,7 @@ Prerequisite: Python 2.7 (not 3.x)
 Install Python (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Download and install `Python 2.7 <https://www.python.org/downloads/>`__. (oTree does not work with Python 3.)
+* Download and install `Python 2.7 <https://www.python.org/downloads/release/python-2711/>`__. (oTree does not work with Python 3.)
 
   You need to adjust ``PATH`` environment variable to include paths to
   the Python executable and additional scripts. Open PowerShell and run this command (right-click to paste it)::
