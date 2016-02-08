@@ -41,8 +41,6 @@ Repositories
 
 -   |github_icon| `Games <https://github.com/oTree-org/oTree/>`_
 -   |github_icon| `Core Libraries <https://github.com/oTree-org/otree-core>`_
--   |github_icon| `Launcher <https://github.com/oTree-org/otree-launcher>`_
-    (*OS independent*)
 -   |github_icon| `Documentation <https://github.com/oTree-org/otree-docs>`_
 
 
