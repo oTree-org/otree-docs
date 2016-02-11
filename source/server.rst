@@ -43,6 +43,15 @@ creating your Heroku account:
 
     $ heroku login
 
+Initialize your Git repo
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you haven't already initialized a git repository, run:
+
+.. code-block:: bash
+
+    git init
+
 
 Create the Heroku app
 ~~~~~~~~~~~~~~~~~~~~~
@@ -75,14 +84,6 @@ Run:
 
 Deploy your code
 ~~~~~~~~~~~~~~~~
-
-Open the oTree shell (if using the launcher, click the "Terminal" button).
-
-If you haven't already initialized a git repository, run:
-
-.. code-block:: bash
-
-    git init
 
 Commit your changes:
 

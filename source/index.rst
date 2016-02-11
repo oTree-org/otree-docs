@@ -46,16 +46,6 @@ Repositories
 -   |github_icon| `Documentation <https://github.com/oTree-org/otree-docs>`_
 
 
-Contact
-^^^^^^^
-
-chris@otree.org (you can also add me on Skype by searching this email
-address; please mention oTree in your contact request)
-
-**Please contact me if any part of oTree does not work for you (or is
-unclear).**
-
-
 Contributors
 ^^^^^^^^^^^^
 -   Juan B. Cabral
@@ -68,10 +58,16 @@ Contributors
 -   Som Datye
 
 
-Mailing list
-^^^^^^^^^^^^
+Help & discussion mailing list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Our Google Groups mailing list is `here <https://groups.google.com/forum/#!forum/otree>`__.
+
+
+Contact
+^^^^^^^
+
+chris@otree.org (if you have a support question, try the mailing list first)
 
 
 Contents:
@@ -83,13 +79,11 @@ Contents:
     setup.rst
     python.rst
     tutorial/intro.rst
-    conceptual_overview.rst
     apps.rst
     models.rst
     views.rst
     templates.rst
     forms.rst
-    object_model_and_self.rst
     groups.rst
     currency.rst
     treatments.rst
