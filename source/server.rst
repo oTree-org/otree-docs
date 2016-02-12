@@ -85,11 +85,19 @@ Run:
 Deploy your code
 ~~~~~~~~~~~~~~~~
 
+Save your pip requirements. If using Windows PowerShell, enter::
+
+    pip freeze | out-file -enc ascii requirements_base.txt
+
+Otherwise, enter::
+
+    pip freeze > requirements_base.txt
+
+
 Commit your changes:
 
 .. code-block:: bash
 
-    pip freeze > requirements_base.txt
     git add .
     git commit -am "[commit message]"
 
