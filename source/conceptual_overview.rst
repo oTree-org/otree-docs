@@ -19,7 +19,7 @@ subsessions are the "sections" or "modules" that constitute a session.
 For example, if a session consists of a public goods game followed by a questionnaire,
 the public goods game would be subsession 1, and the questionnaire would be subsession 2.
 In turn, each subsession is a sequence of pages the user must navigate through.
-For example, To illustrate, if you had a 4-page public goods game followed by a 2-page questionnaire:
+For example, if you had a 4-page public goods game followed by a 2-page questionnaire:
 
 .. figure:: _static/diagrams/session_subsession.png
     :align: center
@@ -28,7 +28,7 @@ Groups
 ------
 
 Each subsession can be further divided into groups of players;
-for example, the trust game subsession would have 15 groups of 2 players each.
+for example, you could have a subsession with 30 players, divided into 15 groups of 2 players each.
 (Note: groups can be shuffled between subsessions.)
 
 
