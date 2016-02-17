@@ -77,6 +77,7 @@ Contents:
     setup.rst
     python.rst
     tutorial/intro.rst
+    conceptual_overview.rst
     apps.rst
     models.rst
     views.rst

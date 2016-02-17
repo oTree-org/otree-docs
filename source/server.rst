@@ -46,12 +46,12 @@ creating your Heroku account:
 Initialize your Git repo
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you haven't already initialized a git repository, run:
+If you haven't already initialized a git repository
+run this command from your project's root directory:
 
 .. code-block:: bash
 
     git init
-
 
 Create the Heroku app
 ~~~~~~~~~~~~~~~~~~~~~

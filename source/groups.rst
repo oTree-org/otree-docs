@@ -168,8 +168,9 @@ Example: random shuffling (stranger)
             group_matrix = []
 
             # chunk into groups of Constants.players_per_group
-            for i in range(0, len(players), Constants.players_per_group):
-                group_matrix.append(players[i:i+Constants.players_per_group])
+            ppg = Constants.players_per_group
+            for i in range(0, len(players), ppg):
+                group_matrix.append(players[i:i+ppg])
             self.set_groups(group_matrix)
 
 
