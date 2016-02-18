@@ -53,6 +53,10 @@ A quick summary:
 - Run ``django-admin compilemessages``
 - Go to ``settings.py``, change ``LANGUAGE_CODE``, and restart the server.
 
+If you localize the files under ``_templates``,
+you need to create a directory ``locale`` in the root of the project.
+and make sure that directory is in ``settings.LOCALE_DIRS``.
+
 Volunteering to localize oTree
 ------------------------------
 

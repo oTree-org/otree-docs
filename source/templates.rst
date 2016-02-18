@@ -182,7 +182,7 @@ oTree comes pre-loaded with the following plugins and libraries.
 Bootstrap
 ^^^^^^^^^
 
-oTree comes with `Bootstrap <http://getbootstrap.com/>`__, a
+oTree comes with `Bootstrap <http://getbootstrap.com/components/>`__, a
 popular library for customizing a website's user interface.
 
 You can use it if you want a `custom style <http://getbootstrap.com/css/>`_, or

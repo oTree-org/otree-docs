@@ -1,4 +1,4 @@
-Automated testing (bots)
+Bots & automated testing
 ========================
 
 Your app's ``tests.py`` lets you define "bots" that simulate multiple players simultaneously

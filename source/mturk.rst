@@ -1,5 +1,5 @@
-Amazon Mechanical Turk
-======================
+Mechanical Turk
+===============
 
 Overview
 --------
