@@ -24,7 +24,9 @@ Here are the steps for deploying to Heroku.
 Create an account
 ~~~~~~~~~~~~~~~~~
 
-Create an account on `Heroku <https://www.heroku.com/>`__. You can
+Create an account on `Heroku <https://www.heroku.com/>`__.
+Select Python as your main language. However,
+you can
 skip the "Getting Started With Python" guide.
 
 Install the Heroku Toolbelt
@@ -34,7 +36,8 @@ Install the `Heroku Toolbelt <https://toolbelt.heroku.com/>`__.
 
 This provides you access to the Heroku Command Line utility.
 
-Once installed, you can use the ``heroku`` command from PowerShell (Windows) or Terminal (Mac). (If using the oTree launcher, click the "terminal" button.)
+Once installed open PowerShell (Windows) or Terminal (Mac),
+and go to your project folder.
 
 Log in using the email address and password you used when
 creating your Heroku account:
@@ -42,6 +45,9 @@ creating your Heroku account:
 .. code-block:: bash
 
     $ heroku login
+
+If the ``heroku`` command is not found,
+close and reopen your command prompt.
 
 Initialize your Git repo
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,12 +100,12 @@ Otherwise, enter::
     pip freeze > requirements_base.txt
 
 
-Commit your changes:
+Commit your changes (note the dot in ``git add .``):
 
 .. code-block:: bash
 
     git add .
-    git commit -am "[commit message]"
+    git commit -am "your commit message"
 
 Transfer (push) the local repository to Heroku:
 
@@ -107,11 +113,19 @@ Transfer (push) the local repository to Heroku:
 
     $ git push heroku master
 
+.. note::
+
+    If you get a message ``push rejected``
+    and the error message says ``could not satisfy requirement``,
+    open ``requirements_base.txt`` and delete every line except
+    ``otree-core==x.x.xx`` (where ``x.x.xx`` is the version number)
+
 Reset the oTree database on Heroku.
+You can get your app's name by typing ``heroku apps``.
 
 .. code-block:: bash
 
-    $ otree-heroku resetdb [your heroku app name]
+    $ otree-heroku resetdb your-heroku-app
 
 .. note::
 
@@ -161,6 +175,17 @@ to that app, use this command:
 .. code-block:: bash
 
     $ heroku git:remote -a [myherokuapp]
+
+Making updates and modifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you make modifications to your app and want to push the updates
+to Heroku, enter::
+
+    git add .
+    git commit -am "my commit message"
+    git push heroku master
+    otree-heroku resetdb my-app-name
 
 Scaling up the server
 ~~~~~~~~~~~~~~~~~~~~~
@@ -253,9 +278,7 @@ Deploy your code
 If you are using a remote webserver, you need to push your code there,
 typically using Git.
 
-Open your shell (if using the launcher, click the "Terminal" button).
-
-Make sure you have committed any changes as follows:
+Open your shell, and make sure you have committed any changes as follows:
 
 .. code-block:: bash
 
@@ -324,3 +347,12 @@ You can also view the errors through the `web interface <http://sentry.otree.org
 
 If you later want other collaborators on your team to receive emails as well, or if you need to manage multiple projects,
 send an email to chris@otree.org.
+
+Database backups
+~~~~~~~~~~~~~~~~
+
+When running studies, it is essential that you back up your database.
+
+In Heroku, you can set backups for your Postgres database. Go to your `Heroku Dashboard <https://dashboard.heroku.com/apps/>`__,
+click on the "Heroku Postgres" tab, and then click "PG Backups".
+More information is available `here <https://devcenter.heroku.com/articles/heroku-postgres-backups>`__.

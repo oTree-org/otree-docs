@@ -208,7 +208,12 @@ oTree comes pre-loaded with `HighCharts <http://www.highcharts.com/demo>`__,
 which you can use to draw pie charts, line graphs, bar charts, time series,
 and other types of plots.
 
-You can find examples in the library of how to use it.
+Some of oTree's sample games use HighCharts.
+
+To make a chart, first go to the HighCharts `demo site <http://www.highcharts.com/demo>`__
+and find the chart type that you want to make.
+Then click "edit in JSFiddle" to edit it to your liking.
+
 
 To pass data like a list of values from Python to HighCharts, you should
 first pass it through the ``otree.common.safe_json()`` function. This
