@@ -188,10 +188,10 @@ Define the templates and views
 
 This game has 2 main pages:
 
-- A ``Choice`` page that gets repeated for each round. The user is asked to choose heads/tails, and they are
-also shown a "history box" showing the results of previous rounds.
-- A ``ResultsSummary`` page that only gets displayed once at the end, and
-tells the user their final payoff.
+-  A ``Choice`` page that gets repeated for each round. The user is asked to choose heads/tails, and they are
+   also shown a "history box" showing the results of previous rounds.
+-  A ``ResultsSummary`` page that only gets displayed once at the end, and
+   tells the user their final payoff.
 
 Choice
 ~~~~~~
