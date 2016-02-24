@@ -133,6 +133,9 @@ We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
 Professional Editon is better than Community Edition because it has Django support.
 PyCharm Professional is free if you are a student, teacher, or professor.
 
+Once your oTree project folder is open in PyCharm, click on File –> Settings and navigate to Languages & Frameworks -> Django,
+check "Enable Django Support" and set your oTree folder as the Django project root.
+
 If you prefer another editor like Notepad++, TextWrangler, or Sublime Text, you can use that instead.
 
 .. _upgrade:

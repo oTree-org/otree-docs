@@ -79,8 +79,11 @@ the marketplace. This environment is available for both
 `worker <https://workersandbox.mturk.com/mturk/welcome>`__ and
 `requester <https://requester.mturk.com/developer/sandbox>`__.
 
+From the oTree admin interface, click on "Sessions" and then, on the split button "Create New Session",
+select "For MTurk". Once you have created the session, you will see an "MTurk" tab in the session's admin page.
+
 After publishing the HIT you can test it both as a worker and as a
-requester using the links provided on "MTurk" Tab of your session admin
+requester using the links provided on the "MTurk" Tab of your session admin
 panel.
 
 Preventing retakes (repeat workers)
