@@ -29,10 +29,10 @@ Python 3.5 vs 2.7
 oTree works on both Python 3.5 and 2.7.
 Here are some considerations:
 
-- If you are collaborating with others on your oTree project,
-you should make sure you are all using the same version of Python.
-- Python 3.5 is the latest and greatest version, but many people still use Python 2.7.
-So, when you search for Python documentation/resources online, make sure it pertains to Python 3.
+-   If you are collaborating with others on your oTree project,
+    you should make sure you are all using the same version of Python.
+-   Python 3.5 is the latest and greatest version, but many people still use Python 2.7.
+    So, when you search for Python documentation/resources online, make sure it pertains to Python 3.
 
 If you already have Python 3.5 or 2.7 installed
 (check by entering ``pip -V`` at your command prompt),
@@ -48,7 +48,7 @@ Check the box to add Python to PATH:
 
 Once setup is done, enter::
 
-    ``pip -V``
+    pip -V
 
 It will output a line that gives the version of Python at the end;
 this should match the version of Python you just installed.
