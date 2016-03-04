@@ -34,27 +34,29 @@ Here are some considerations:
 -   Python 3.5 is the latest and greatest version, but many people still use Python 2.7.
     So, when you search for Python documentation/resources online, make sure it pertains to Python 3.
 
+If you want to use Python 2, see :ref:`python2`.
+
 If you already have Python 3.5 or 2.7 installed
 (check by entering ``pip -V`` at your command prompt),
 you can skip this section.
 
-Install Python (Windows)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Install Python 3.5 (Windows)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download and install `Python 3.5 <https://www.python.org/downloads/release/python-351/>`__ (or Python 2.7).
+Download and install `Python 3.5 <https://www.python.org/downloads/release/python-351/>`__.
 Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png
 
-Once setup is done, enter::
+Once setup is done, open PowerShell and enter::
 
     pip -V
 
 It will output a line that gives the version of Python at the end;
 this should match the version of Python you just installed.
 
-Install Python (Mac OSX)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Install Python 3.5 (Mac OSX)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although Mac OSX comes pre-installed with Python, we recommend not using the pre-installed Python,
 and instead installing Python through Homebrew.
@@ -95,7 +97,7 @@ When prompted, select to install the "command line developer tools".
 It will output a line that gives the version of Python at the end;
 this should match the version of Python you just installed.
 
-.. _note:
+.. note::
 
     If using Python 3 on a Mac, you should use ``pip3`` instead, wherever ``pip``
     is mentioned in the oTree documentation.
