@@ -12,7 +12,7 @@ Sometimes, we write a command prefixed with a ``$`` like this::
 
     $ otree resetdb
 
-The ``$`` is not part of the command. You should copy the command (in this example, ``otree resetdb``),
+The ``$`` is not part of the command. You can copy the command (in this example, ``otree resetdb``),
 and then paste it at your command line. (In PowerShell, you should right-click to paste.)
 
 A few tips:
@@ -20,35 +20,46 @@ A few tips:
 * You can retrieve the previous command you entered by pressing your keyboard's "up" arrow
 * If you get stuck running a command, you can press ``Control + C``.
 
-Prerequisite: Python 2.7 (not 3.x)
-----------------------------------
+Install Python
+--------------
 
+Python 3.5 vs 2.7
+~~~~~~~~~~~~~~~~~
+
+oTree works on both Python 3.5 and 2.7.
+Here are some considerations:
+
+- If you are collaborating with others on your oTree project,
+you should make sure you are all using the same version of Python.
+- Python 3.5 is the latest and greatest version, but many people still use Python 2.7.
+So, when you search for Python documentation/resources online, make sure it pertains to Python 3.
+
+If you already have Python 3.5 or 2.7 installed
+(check by entering ``pip -V`` at your command prompt),
+you can skip this section.
 
 Install Python (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Download and install `Python 2.7 <https://www.python.org/downloads/release/python-2711/>`__. (oTree does not work with Python 3.)
+Download and install `Python 3.5 <https://www.python.org/downloads/release/python-351/>`__ (or Python 2.7).
+Check the box to add Python to PATH:
 
-  You need to adjust ``PATH`` environment variable to include paths to
-  the Python executable and additional scripts. Open PowerShell and run this command (right-click to paste it)::
+.. figure:: _static/setup/py-win-installer.png
 
-      c:\python27\python.exe c:\python27\tools\scripts\win_add2path.py
+Once setup is done, enter::
 
-  Close the command prompt window and reopen it so changes take effect, run the
-  following command::
+    ``pip -V``
 
-      pip
-
-It should list the available commands, like ``install`` and ``uninstall``.
-If you instead get an error "command not found",
-you should restart your computer and retry.
-
+It will output a line that gives the version of Python at the end;
+this should match the version of Python you just installed.
 
 Install Python (Mac OSX)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although Mac OSX comes pre-installed with Python, we recommend not using the pre-installed Python,
 and instead installing Python through Homebrew.
+However, if you already have Python 3.5 or 2.7 installed through Conda, that should be OK.
+To install Python 3 via Homebrew:
 
 * Open your Terminal and run:
 
@@ -75,23 +86,29 @@ When prompted, select to install the "command line developer tools".
 
 * Install python::
 
-    brew install python
+    brew install python3
 
 * Then test that it worked::
 
-    pip
+    pip3 -V
 
-* It should list the available commands, like ``install`` and ``uninstall``.
+It will output a line that gives the version of Python at the end;
+this should match the version of Python you just installed.
+
+.. _note:
+
+    If using Python 3 on a Mac, you should use ``pip3`` instead, wherever ``pip``
+    is mentioned in the oTree documentation.
 
 
-Linux/UNIX
-~~~~~~~~~~
+Install Python Linux/UNIX
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If Python is not already installed, use your system's package manager to install Python and pip.
 
 
-oTree installation
-~~~~~~~~~~~~~~~~~~
+Install oTree
+~~~~~~~~~~~~~
 
 *   Open PowerShell (on Windows) or Terminal (on Mac OS X), and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
 *   Run this:
@@ -99,13 +116,14 @@ oTree installation
 .. code-block:: bash
 
     pip install --upgrade otree-core
+
+(If using Python 3 on Mac, you should use ``pip3`` instead of ``pip``.)
+
+Then::
+
     otree startproject oTree
 
-(If it's your first time, we recommend choosing the option to include the sample games.)
-
-.. note::
-
-    If you get a message like ``pip: command not found``, you need to download and run `get-pip.py <https://bootstrap.pypa.io/get-pip.py>`__.
+If it's your first time, we recommend choosing the option to include the sample games.
 
 Then change to the directory you just created:
 
@@ -133,10 +151,17 @@ We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
 Professional Editon is better than Community Edition because it has Django support.
 PyCharm Professional is free if you are a student, teacher, or professor.
 
-Once your oTree project folder is open in PyCharm, click on File –> Settings and navigate to Languages & Frameworks -> Django,
+(If you prefer another editor like Notepad++, TextWrangler, or Sublime Text, you can use that instead.)
+
+Launch PyCharm, go to "File -> Open..." and select the folder you created with ``otree startproject``.
+
+Then click on File –> Settings and navigate to Languages & Frameworks -> Django,
 check "Enable Django Support" and set your oTree folder as the Django project root.
 
-If you prefer another editor like Notepad++, TextWrangler, or Sublime Text, you can use that instead.
+If PyCharm displays this warning, select "Ignore requirements":
+
+.. figure:: _static/setup/pycharm-psycopg2-warning.png
+
 
 .. _upgrade:
 
@@ -162,9 +187,6 @@ Run:
 .. code-block:: bash
 
     pip install --upgrade otree-core
-
-If you are using the launcher, click "Upgrade otree-core" (or "Version select").
-Then select the most recent version in the menu.
 
 Upgrade oTree library
 ~~~~~~~~~~~~~~~~~~~~~

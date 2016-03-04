@@ -9,11 +9,7 @@ apps that are played one after the other.
 Creating an app
 ---------------
 
-From the oTree launcher, click the "Terminal" button. (If the button is
-disabled, make sure you have stopped the server.) When the console
-window appears, type this:
-
-.. code-block:: bash
+Enter::
 
     $ otree startapp your_app_name
 

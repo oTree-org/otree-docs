@@ -29,6 +29,10 @@ You can obtain these credentials `here <https://console.aws.amazon.com/iam/home?
 
    AWS key
 
+If you set these env vars locally, the oTree server will be launched in HTTPS mode,
+so you need to open your browser to `https://127.0.0.1:8000/ <https://127.0.0.1:8000/>`__
+instead of `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
+
 On Heroku you would set these env vars like this:
 
 .. code-block:: bash

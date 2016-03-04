@@ -28,7 +28,16 @@ Each ``Page`` class has these methods and attributes:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A dictionary of variable names and their values, which is passed to the
-template.
+template. Example:
+
+.. code-block:: python
+
+    def vars_for_template(self):
+        return {'a': 1 + 1, 'b': self.player.foo * 10}
+
+.. code-block:: html+django
+
+    Variables {{ a }} and {{ b }} ...
 
 .. note::
 

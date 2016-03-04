@@ -64,7 +64,7 @@ You are invited to contribute support for your own language in oTree.
 
 It's a simple task; you provide translations of about 20 English phrases.
 Currently we are only translating the participant interface,
-although we plan to translate the admin interface and launcher later.
+although we plan to translate the admin interface later.
 
 `Here <https://github.com/oTree-org/otree-core/blob/master/otree/locale/fr/LC_MESSAGES/django.po>`__
 is an example of an already completed translation to French. These files can be edited in `Poedit <https://poedit.net/>`__.

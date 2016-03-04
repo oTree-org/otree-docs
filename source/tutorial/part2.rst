@@ -347,11 +347,7 @@ Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
 Reset the database and run
 --------------------------
 
-If you are using the launcher, click the "Reset DB" and "Run server" buttons.
-
-If you are on the command line, enter:
-
-.. code-block:: bash
+Enter::
 
     $ otree resetdb
     $ otree runserver

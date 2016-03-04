@@ -23,8 +23,7 @@ To ensure you are using the latest version of oTree, open your command window an
 Create the app
 --------------
 
-If you are running the oTree launcher, click the "terminal" button which will
-open your command window. Otherwise, use your command line to go to the ``oTree`` folder you downloaded,
+Use your command line to ``cd`` to the oTree project folder you created,
 the one that contains ``requirements_base.txt``.
 
 In this directory, create the public goods app with this shell command:
@@ -268,9 +267,7 @@ existing "exit survey" and "payment info" apps to ``app_sequence``.
 Reset the database and run
 --------------------------
 
-If you are using the launcher, click the "Reset DB" and "Run server" buttons.
-
-If you are on the command line, enter:
+Enter:
 
 .. code-block:: bash
 

@@ -80,7 +80,7 @@ bool("")  # => False
 ####################################################
 
 # Python has a print statement
-print "I'm Python. Nice to meet you!" # => I'm Python. Nice to meet you!
+print("I'm Python. Nice to meet you!") # => I'm Python. Nice to meet you!
 
 # No need to declare variables before assigning to them.
 some_var = 5    # Convention is to use lower_case_with_underscores
@@ -160,11 +160,11 @@ some_var = 5
 # Here is an if statement.
 # prints "some_var is smaller than 10"
 if some_var > 10:
-    print "some_var is totally bigger than 10."
+    print("some_var is totally bigger than 10.")
 elif some_var < 10:    # This elif clause is optional.
-    print "some_var is smaller than 10."
+    print("some_var is smaller than 10.")
 else:           # This is optional too.
-    print "some_var is indeed 10."
+    print("some_var is indeed 10.")
 
 """
 SPECIAL NOTE ABOUT INDENTING
@@ -177,13 +177,13 @@ When ending a code block, you should unindent by 4 spaces.
 Examples of improperly indented code:
 
 if some_var > 10:
-print "bigger than 10." # error, this line needs to be indented by 4 spaces
+print("bigger than 10." # error, this line needs to be indented by 4 spaces
 
 
 if some_var > 10:
-    print "bigger than 10."
+    print("bigger than 10.")
  else: # error, this line needs to be unindented by 1 space
-    print "less than 10"
+    print("less than 10")
 
 """
 
@@ -197,7 +197,7 @@ prints:
 """
 for animal in ["dog", "cat", "mouse"]:
     # You can use {} to interpolate formatted strings. (See above.)
-    print "{} is a mammal".format(animal)
+    print("{} is a mammal".format(animal))
 
 """
 "range(number)" returns a list of numbers
@@ -209,7 +209,7 @@ prints:
     3
 """
 for i in range(4):
-    print i
+    print(i)
 
 """
 "range(lower, upper)" returns a list of numbers
@@ -221,7 +221,7 @@ prints:
     7
 """
 for i in range(4, 8):
-    print i
+    print(i)
 
 
 ####################################################
@@ -230,7 +230,7 @@ for i in range(4, 8):
 
 # Use "def" to create new functions
 def add(x, y):
-    print "x is {} and y is {}".format(x, y)
+    print("x is {} and y is {}".format(x, y))
     return x + y    # Return values with a return statement
 
 # Calling functions with parameters
@@ -251,12 +251,12 @@ add(y=6, x=5)   # Keyword arguments can arrive in any order.
 # You can import modules
 import random
 import math
-print math.sqrt(16)  # => 4
+print(math.sqrt(16))  # => 4
 
 # You can get specific functions from a module
 from math import ceil, floor
-print ceil(3.7)  # => 4.0
-print floor(3.7)   # => 3.0
+print(ceil(3.7))  # => 4.0
+print(floor(3.7))   # => 3.0
 
 # Python modules are just ordinary python files. You
 # can write your own, and import them. The name of the

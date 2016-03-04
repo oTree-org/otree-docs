@@ -14,14 +14,6 @@ Python not installed
 
 Solution: make sure Python 2.7 is installed and add it to your ``Path``.
 
-
-otree: command not found
-------------------------
-
-If you are using the launcher, click the "Terminal" button. This will ensure your terminal opens with the correct programs loaded.
-Also, if you are using a version of ``otree-core`` older than 0.3.20, you need to upgrade (see :ref:`upgrade-otree-core`).
-
-
 'with' in formfield tag needs at least one keyword argument
 -----------------------------------------------------------
 
