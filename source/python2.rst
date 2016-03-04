@@ -11,7 +11,7 @@ Python 2.7 on Windows
 Download and install `Python 2.7 <https://www.python.org/downloads/release/python-2711/>`__.
 During installation, choose to customize and select to add python.exe to Path:
 
-.. figure:: _static/setup/py-win-installer.png
+.. figure:: _static/setup/py2-win-installer.png
 
 Once setup is done, open PowerShell and enter::
 
