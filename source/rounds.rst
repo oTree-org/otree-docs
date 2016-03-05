@@ -43,11 +43,14 @@ rounds of a game, plus the current one:
 
     cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
 
-Similarly, subsession objects have methods ``in_previous_rounds()`` and
-``in_all_rounds()`` that work the same way.
+``player.in_rounds(m, n)`` returns a list of players representing the same participant from rounds ``m`` to ``n``.
+``player.in_round(m)`` returns just the player in round ``m``.
 
-Group objects also have ``in_previous_rounds()`` and ``in_all_rounds()``
-methods, but note that if you re-shuffle groups between rounds,
+Similarly, subsession objects have methods ``in_previous_rounds()``,
+``in_all_rounds()``, ``in_rounds(m,n)`` and ``in_round(m)`` that work the same way.
+
+Group objects also have methods ``in_previous_rounds()``, ``in_all_rounds()``, ``in_rounds(m,n)`` and ``in_round(m)``,
+but note that if you re-shuffle groups between rounds,
 then these methods may not return anything meaningful (their behavior in this
 situation is unspecified).
 
