@@ -226,7 +226,6 @@ In the Heroku dashboard, click on your app's "Resources" tab,
 and in the "dynos" section, select "Upgrade to Hobby".
 Then select either "Hobby" or "Professional".
 
-
 Setting environment variables (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
