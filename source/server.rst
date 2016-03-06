@@ -198,7 +198,7 @@ you can scale your dynos and database back down,
 so then you don't have to pay the full monthly cost.
 
 Postgres
-........
+++++++++
 
 we recommend you upgrade your Postgres database to a paid tier
 (at least the cheapest paid plan).
@@ -220,7 +220,7 @@ More info on the database plans `here <https://elements.heroku.com/addons/heroku
 and more technical documentation `here <https://devcenter.heroku.com/articles/heroku-postgresql>`__.
 
 Upgrade dynos
-.............
++++++++++++++
 
 In the Heroku dashboard, click on your app's "Resources" tab,
 and in the "dynos" section, select "Upgrade to Hobby".
