@@ -149,8 +149,10 @@ or that it contains an integer, or that the integer is between your field's ``ma
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here you define any code that should be executed
-after form validation,
-before the player proceeds to the next page.
+after form validation, before the player proceeds to the next page.
+
+If the page is skipped with ``is_displayed``,
+then ``before_next_page`` will be skipped as well.
 
 
 ``def vars_for_all_templates(self)``
