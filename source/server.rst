@@ -414,3 +414,4 @@ This will create the database.
 You can then modify your app. When you want to update the database structure without losing data,
 run ``python manage.py makemigrations`` and then ``python manage.py migrate``.
 
+More info `here <https://docs.djangoproject.com/en/1.9/topics/migrations/#workflow>`__
