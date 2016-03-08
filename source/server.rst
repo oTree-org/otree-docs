@@ -295,6 +295,8 @@ be read by ``dj_database_url``:
 
 ``DATABASE_URL=postgres://postgres@localhost/django_db``
 
+(To learn what an "environment variable" is, see `here <http://superuser.com/a/284351>`__.)
+
 Then, instead of installing ``requirements_base.txt``, install ``requirements.txt``.
 This will install ``psycopg2``, which is necessary for using Postgres.
 
@@ -371,7 +373,7 @@ We recommend you use our free Sentry service (sign up `here <https://docs.google
 which can log all errors on your server and send you email notifications.
 (`General info on Sentry <https://getsentry.com/welcome/>`__.)
 
-A service like Sentry is necessary because once you have turned on ``OTREE_PRODUCTION``,
+A service like Sentry is necessary because once you have set the ``OTREE_PRODUCTION`` `environment variable <http://superuser.com/a/284351>`__.),
 you will no longer see Django's yellow error pages; you or your users will just see generic "500 server error" pages.
 Sentry can send you the details of each error by email.
 

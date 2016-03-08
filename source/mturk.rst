@@ -17,10 +17,12 @@ AWS credentials
 To publish to MTurk, you must have an employer account with MTurk, which
 currently requires a U.S. address and bank account.
 
-oTree requires that you set the following env vars:
+oTree requires that you set the following environment variables:
 
 - ``AWS_ACCESS_KEY_ID``
 - ``AWS_SECRET_ACCESS_KEY``
+
+(To learn what an "environment variable" is, see `here <http://superuser.com/a/284351>`__.)
 
 You can obtain these credentials `here <https://console.aws.amazon.com/iam/home?#security_credential>`__:
 
