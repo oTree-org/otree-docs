@@ -143,6 +143,7 @@ Then run:
     otree runserver
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
+To stop the server, enter ``Control + C`` at your command prompt.
 
 .. _pycharm:
 
@@ -159,7 +160,7 @@ PyCharm Professional is free if you are a student, teacher, or professor.
 
 Launch PyCharm, go to "File -> Open..." and select the folder you created with ``otree startproject``.
 
-Then click on File –> Settings and navigate to Languages & Frameworks -> Django,
+Then click on ``File –> Settings`` (or ``Default Settings``) and navigate to ``Languages & Frameworks -> Django``,
 check "Enable Django Support" and set your oTree folder as the Django project root.
 
 If PyCharm displays this warning, select "Ignore requirements":
