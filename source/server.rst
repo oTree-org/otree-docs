@@ -390,10 +390,27 @@ If you later want other collaborators on your team to receive emails as well, or
 send an email to chris@otree.org.
 
 Database backups
-~~~~~~~~~~~~~~~~
+----------------
 
 When running studies, it is essential that you back up your database.
 
 In Heroku, you can set backups for your Postgres database. Go to your `Heroku Dashboard <https://dashboard.heroku.com/apps/>`__,
 click on the "Heroku Postgres" tab, and then click "PG Backups".
 More information is available `here <https://devcenter.heroku.com/articles/heroku-postgres-backups>`__.
+
+Modifying an existing database
+------------------------------
+
+If your database already contains data and you want to update the structure
+without running ``resetdb`` (which will delete existing data), you can use Django's migrations feature.
+Below is a quick summary; for full info see the Django docs `here <https://docs.djangoproject.com/en/1.9/topics/migrations/#workflow>`__.
+
+The first step is to run ``python manage.py makemigrations my_app_name`` (substituting your app's name),
+for each app you are working on.
+
+Then, instead of using ``otree resetdb``, run ``python manage.py migrate`` (or ``otree migrate``).
+This will create the database.
+
+You can then modify your app. When you want to update the database structure without losing data,
+run ``python manage.py makemigrations`` and then ``python manage.py migrate``.
+
