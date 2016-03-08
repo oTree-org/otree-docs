@@ -143,7 +143,9 @@ Then run:
     otree runserver
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
-To stop the server, enter ``Control + C`` at your command prompt.
+To stop the server, enter ``Control + C`` at your command line.
+To restart the server from the command line, pressing your keyboard's "up" arrow (this will retrieve the last command you entered),
+and hit Enter.
 
 .. _pycharm:
 
