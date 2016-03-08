@@ -38,7 +38,9 @@ If you want to use Python 2, see :ref:`python2`.
 
 If you already have Python 3.5 or 2.7 installed
 (check by entering ``pip -V`` at your command prompt),
-you can skip this section.
+you can skip the below section. Or, uninstall your existing version of Python,
+ and proceed with the below steps.
+
 
 Install Python 3.5 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
