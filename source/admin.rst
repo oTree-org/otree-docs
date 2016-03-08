@@ -75,6 +75,7 @@ Each time a start URL is accessed, oTree checks for the presence of a
 ``participant_label`` parameter and records it for that participant. This
 label will be displayed in places where participants are listed, like the
 oTree admin interface or the payments page.
+You can also access it from your code as ``participant.label``.
 
 
 .. _randomization:
