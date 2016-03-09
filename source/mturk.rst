@@ -126,13 +126,3 @@ You should set ``timeout_seconds`` on each page,
 so that the page will be auto-submitted if the participant drops out or does
 not complete the page in time. This way, players will not get stuck waiting for
 someone who dropped out.
-
-Finally, you can consider a "lock-in" task. In other words,
-before your multiplayer game, you can have a subsession that is a
-single-player app and takes some effort to complete. The idea is that a
-participant takes the effort to complete this initial task, they are
-less likely to drop out after that point. Then, the first few
-participants to finish the lock in task will be assigned to the same
-group in the next subsession, which is the multiplayer game.
-
-
