@@ -81,13 +81,12 @@ app. Or you can specify your own name; see ``heroku help create`` for more info.
 Upgrade oTree
 ~~~~~~~~~~~~~
 
-We recommend you use the latest version of oTree and pip, to get the latest bugfixes.
+We recommend you use the latest version of oTree, to get the latest bugfixes.
 Run:
 
 .. code-block:: bash
 
     $ pip install --upgrade otree-core
-    $ pip install --upgrade pip
 
 Deploy your code
 ~~~~~~~~~~~~~~~~
