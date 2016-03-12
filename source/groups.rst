@@ -82,13 +82,6 @@ you can use the ``group_like_round(n)`` method.
 The argument to this method is the round number
 whose group structure should be copied.
 
-.. note::
-
-    ``group_like_round()`` was introduced in oTree-core 0.4.15.
-    In older versions, the group structure was automatically carried forward to future rounds.
-    This behavior will soon be removed;
-    instead you should use ``group_like_round`` to apply the grouping explicitly.
-
 In the below example, the group structure in rounds 1 and 2 will be the default.
 Round 3 has a different group structure, which is copied to rounds 4 and above.
 

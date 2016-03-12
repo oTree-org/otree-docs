@@ -165,6 +165,10 @@ Launch PyCharm, go to "File -> Open..." and select the folder you created with `
 Then click on ``File –> Settings`` (or ``Default Settings``) and navigate to ``Languages & Frameworks -> Django``,
 check "Enable Django Support" and set your oTree folder as the Django project root.
 
+Open a file, right-click on the left margin, and select "Show line numbers":
+
+.. figure:: _static/setup/pycharm-line-numbers.png
+
 If PyCharm displays this warning, select "Ignore requirements":
 
 .. figure:: _static/setup/pycharm-psycopg2-warning.png

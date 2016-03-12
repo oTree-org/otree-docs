@@ -97,18 +97,16 @@ You can change the name "points" to something else like "tokens" or "credits", b
 (However, if you switch your language setting to one of oTree's supported languages, the name "points" is automatically translated,
 e.g. "puntos" in Spanish.)
 
-.. versionadded:: 0.3.30
-
 Converting points to real world currency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can convert a point amount to money using the
-``to_real_world_currency()`` method. In the above example, that would be:
+You can convert a point amount to money using the method
+``.to_real_world_currency(self.session)``. In the above example, that would be:
 
 .. code-block:: python
 
     >>> c(10).to_real_world_currency(self.session)
     $0.20
 
-This method requires that ``self.session`` be passed as an argument, because
+It requires ``self.session`` to be passed, because
 different sessions can have different conversion rates).
