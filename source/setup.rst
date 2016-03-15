@@ -35,6 +35,8 @@ Here are some considerations:
     So, when you search for Python documentation/resources online, make sure it pertains to Python 3.
 
 If you want to use Python 2, see :ref:`python2`.
+If you already created an oTree project with Python 2 and would like to switch to Python 3,
+follow the instructions `here <py3-migration>`.
 
 If you already have Python 3.5 or 2.7 installed
 (check by entering ``pip -V`` at your command prompt),
