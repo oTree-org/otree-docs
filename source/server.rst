@@ -125,12 +125,12 @@ You can get your app's name by typing ``heroku apps``.
 
 .. code-block:: bash
 
-    $ otree-heroku resetdb your-heroku-app
+    $ heroku run otree resetdb
 
 .. note::
 
-    If you get the error ``TypeError: can only concatenate list (not "tuple") to list``,
-    you should upgrade otree-core to the latest version (see :ref:`upgrade-otree-core`)
+    In older versions of oTree (before March 2016), you need to instead run
+    ``otree-heroku resetdb your-heroku-app``
 
 Open the site in your browser:
 
@@ -185,7 +185,13 @@ to Heroku, enter::
     git add .
     git commit -am "my commit message"
     git push heroku master
-    otree-heroku resetdb my-app-name
+    heroku run otree resetdb
+
+.. note::
+
+    In older versions of oTree (before March 2016), you need to instead run
+    ``otree-heroku resetdb your-heroku-app``
+
 
 Scaling up the server
 ~~~~~~~~~~~~~~~~~~~~~
