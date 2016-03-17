@@ -20,6 +20,13 @@ You should change it to::
         for offer in offer_choices:
         keep_give_amounts.append((offer, endowment - offer))
 
+When you try running ``otree resetdb``, you might get an error because
+your code's syntax is invalid in Python 3.
+For example, in Python 3, ``print`` is a function, so you should do ``print('hello')``,
+instead of ``print 'hello'``.
+You should read about the differences between Python 2 and Python 3 syntax,
+and fix errors until your code runs properly.
+
 Fixing for Heroku
 -----------------
 

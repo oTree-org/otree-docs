@@ -286,22 +286,35 @@ Django + IIS online. Below, instructions are given for using Unix and Gunicorn.
 Database
 ~~~~~~~~
 
-oTree is most frequently used with PostgreSQL as the production
-database, although you can also use MySQL, MariaDB, or any other database
+oTree's default database is SQLite, which is fine for local development,
+but insufficient for production.
+We recommend PostgreSQL, although you can also use MySQL, MariaDB, or any other database
 supported by Django.
 
-You can create your database with a command like this:
-
-.. code-block:: bash
+To use Postgres, first create your database::
 
     $ psql -c 'create database django_db;' -U postgres
 
-Then, you should set the following environment variable, so that it can
-be read by ``dj_database_url``:
+Now you should tell oTree to use Postgres instead of SQLite.
+The default database configuration in ``settings.py`` is::
 
-``DATABASE_URL=postgres://postgres@localhost/django_db``
+    DATABASES = {
+        'default': dj_database_url.config(
+            default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+        )
+    }
+
+However, instead of modifying the above line directly,
+it's better to set the ``DATABASE_URL`` environment variable on your server::
+
+    DATABASE_URL=postgres://postgres@localhost/django_db
 
 (To learn what an "environment variable" is, see `here <http://superuser.com/a/284351>`__.)
+
+Once ``DATABASE_URL`` is defined, oTree use it instead of the default SQLite.
+(This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
+Setting the database through an environment variable
+allows you to continue to use SQLite locally (which is easier and more convenient).
 
 Then, instead of installing ``requirements_base.txt``, install ``requirements.txt``.
 This will install ``psycopg2``, which is necessary for using Postgres.
@@ -398,7 +411,7 @@ send an email to chris@otree.org.
 Database backups
 ----------------
 
-When running studies, it is essential that you back up your database.
+When running studies, it is your responsibility to back up your database.
 
 In Heroku, you can set backups for your Postgres database. Go to your `Heroku Dashboard <https://dashboard.heroku.com/apps/>`__,
 click on the "Heroku Postgres" tab, and then click "PG Backups".
