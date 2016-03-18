@@ -91,7 +91,7 @@ To solve this, you can alternate treatments, using ``itertools.cycle``:
         def before_session_starts(self):
             treatments = itertools.cycle([True, False])
             for g in self.get_groups():
-                g.treatment = treatments.next()
+                g.treatment = next(treatments)
 
 
 
