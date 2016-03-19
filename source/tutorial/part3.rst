@@ -177,8 +177,7 @@ check for both of them.
                 matcher.is_winner = False
                 mismatcher.is_winner = True
             for player in [mismatcher, matcher]:
-                if (self.subsession.round_number ==
-                    self.session.vars['paying_round'] and player.is_winner):
+                if (self.subsession.round_number == self.session.vars['paying_round'] and player.is_winner):
                         player.payoff = Constants.stakes
                 else:
                     player.payoff = c(0)
