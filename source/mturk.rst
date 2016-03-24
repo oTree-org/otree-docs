@@ -11,6 +11,12 @@ oTree's admin interface. Then, workers on mechanical Turk can accept and
 play your app as an MTurk HIT and get paid a participation fee as well
 as bonuses they earned by playing your game.
 
+.. warning::
+
+    oTree's MTurk integration may not work on Python 3.
+    If you need to use MTurk, we recommend installing oTree on Python 2.7.
+
+
 AWS credentials
 ---------------
 
