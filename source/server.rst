@@ -291,7 +291,10 @@ but insufficient for production.
 We recommend PostgreSQL, although you can also use MySQL, MariaDB, or any other database
 supported by Django.
 
-To use Postgres, first create your database::
+To use Postgres, first install Postgres and create a user (called ``postgres`` below).
+The instructions for doing this depend on what OS you are using.
+
+Once that is done, you can create your database::
 
     $ psql -c 'create database django_db;' -U postgres
 
@@ -311,7 +314,7 @@ it's better to set the ``DATABASE_URL`` environment variable on your server::
 
 (To learn what an "environment variable" is, see `here <http://superuser.com/a/284351>`__.)
 
-Once ``DATABASE_URL`` is defined, oTree use it instead of the default SQLite.
+Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 (This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
 Setting the database through an environment variable
 allows you to continue to use SQLite locally (which is easier and more convenient).
