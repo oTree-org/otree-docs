@@ -193,6 +193,12 @@ Let's say you have 3 integer fields in your form whose names are
         if values["int1"] + values["int2"] + values["int3"] != 100:
             return 'The numbers must add up to 100'
 
+Timeouts
+--------
+
+To control what happens if there is a timeout on the page,
+see :ref:`timeout_submission` and :ref:`timeout_happened`.
+
 Determining form fields dynamically
 -----------------------------------
 

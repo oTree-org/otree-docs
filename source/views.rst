@@ -93,6 +93,7 @@ When there are 60 seconds left, the page displays a timer warning the participan
     (``runserver``).
 
 
+.. _timeout_submission:
 
 ``timeout_submission``
 ~~~~~~~~~~~~~~~~~~~~~~
