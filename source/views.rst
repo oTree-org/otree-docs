@@ -147,7 +147,7 @@ contains an integer, that the integer is between your field's ``max`` and ``min`
 or that this field exists at all, which is why we need to use ``post_dict.get('my_field')`` method
 rather than ``post_dict['my_field']``. (Python's dict ``.get()`` method also lets you provide a second argument like
 ``post_dict.get('my_field', 10)``, which will return the entry ``'my_field'`` if it exists in the dict;
- if that entry is missing, it will return the default of 10.)
+if that entry is missing, it will return the default of 10.)
 
 
 ``def before_next_page(self)``
