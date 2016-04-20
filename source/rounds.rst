@@ -70,11 +70,11 @@ dictionary that can store any data about the player. For example, if you ask
 the participant's name in one subsession and you need to access it later, you
 would store it like this:
 
-``self.player.participant.vars['first name'] = 'John'``
+``self.participant.vars['first name'] = 'John'``
 
 Then in a future subsession, you would retrieve this value like this:
 
-``self.player.participant.vars['first name']`` # returns 'John'
+``self.participant.vars['first name']`` # returns 'John'
 
 .. _session_vars:
 

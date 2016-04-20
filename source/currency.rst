@@ -65,7 +65,7 @@ Assigning payoffs
 
 Each player has a ``payoff`` field, which is a ``CurrencyField``. If
 your player makes money, you should store it in this field.
-``player.participant.payoff`` is the sum of the payoffs a participant
+``participant.payoff`` is the sum of the payoffs a participant
 made in each subsession (either in points or real money).
 At the end of the experiment, a participant's
 total profit can be accessed by ``participant.money_to_pay()``; it is

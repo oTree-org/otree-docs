@@ -215,14 +215,8 @@ in your ``views.py``
             self.subsession
             self.group
             self.player
-
-            # example of chaining lookups
-            self.player.participant
+            self.participant
             self.session.config
 
-You can follow pointers in a transitive manner. For example, if you are
-in the Page class, you can access the participant as
-``self.player.participant``. If you are in the Player class, you can
-access the session config as ``self.session.config``.
 
 

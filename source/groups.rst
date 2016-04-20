@@ -175,7 +175,7 @@ In the first round, players are matched randomly, but in the subsequent rounds,
 you want players to be matched with players who got a similar score in the previous round.
 
 First of all, at the end of each round, you should assign each player's score to ``participant.vars`` so that it can be easily
-accessed in other rounds, e.g. ``self.player.participant.vars['score'] = 10``.
+accessed in other rounds, e.g. ``self.participant.vars['score'] = 10``.
 
 Then, you would define the following page and put it at the beginning of ``page_sequence``:
 

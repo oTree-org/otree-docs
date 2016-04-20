@@ -41,7 +41,7 @@ template. Example:
 
 .. note::
 
-    oTree automatically passes group, player, subsession, and Constants
+    oTree automatically passes group, player, subsession, participant, session, and Constants
     objects to the template, which you can access in the template, e.g.:
     ``{{Constants.payoff_if_rejected}}``.
 
@@ -137,12 +137,16 @@ in a dict called ``self.request.POST``, which you can access like this:
     def before_next_page(self):
         if self.timeout_happened:
             post_dict = self.request.POST
-            my_value = post_dict['my_field']
+            my_value = post_dict.get('my_field')
             # do something with my_value...
 
 Note: the contents of ``self.request.POST`` have not been validated.
-For example, if the form contains an integer field, there is no guarantee that this field has been filled out,
-or that it contains an integer, or that the integer is between your field's ``max`` and ``min``.
+For example, suppose ``my_field`` is an ``IntegerField``. There is no guarantee that ``self.request.POST['my_field']``
+contains an integer, that the integer is between your field's ``max`` and ``min``,
+or that this field exists at all, which is why we need to use ``post_dict.get('my_field')`` method
+rather than ``post_dict['my_field']``. (Python's dict ``.get()`` method also lets you provide a second argument like
+``post_dict.get('my_field', 10)``, which will return the entry ``'my_field'`` if it exists in the dict;
+ if that entry is missing, it will return the default of 10.)
 
 
 ``def before_next_page(self)``

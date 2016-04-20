@@ -55,7 +55,7 @@ it in the first round:
                     p.participant.vars['color'] = random.choice(['blue', 'red'])
 
 Then elsewhere in your code, you can access the participant's color with
-``self.player.participant.vars['color']``.
+``self.participant.vars['color']``.
 
 There is no direct equivalent for ``participant.vars`` for groups,
 because groups can be re-shuffled across rounds.
