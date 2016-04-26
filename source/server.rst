@@ -291,8 +291,8 @@ but insufficient for production.
 We recommend PostgreSQL, although you can also use MySQL, MariaDB, or any other database
 supported by Django.
 
-To use Postgres, first install Postgres and create a user (called ``postgres`` below).
-The instructions for doing this depend on what OS you are using.
+To use Postgres, first install Postgres, create a user (called ``postgres`` below),
+and start your Postgres server. The instructions for doing the above depend on your OS.
 
 Once that is done, you can create your database::
 
