@@ -77,3 +77,11 @@ whether we start the workers as threads vs processes,
 and how many dynos we should use.
 
 Note, you can also specify the number of threads that ``runchannelsworker`` uses, e.g. ``otree runchannelsworker --num-threads=4``.
+
+Downgrading back to oTree stable release
+----------------------------------------
+
+.. code-block::
+
+    pip uninstall otree-core
+    pip install otree-core
