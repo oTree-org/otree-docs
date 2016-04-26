@@ -25,8 +25,16 @@ To install, run ``pip install --upgrade --pre otree-core`` (Note the --pre flag)
 
 You also need to install Redis server and run it on its default port (6379).
 
-- Windows: `download here <https://github.com/MSOpenTech/redis/releases>`__.
-- Mac: if using Homebrew, do ``brew install redis``, then launch Redis server. More info `here <http://richardsumilang.com/server/redis/install-redis-on-os-x/>`__.
+- Windows: download and run the `MSI <https://github.com/MSOpenTech/redis/releases>`__.
+- Mac: if using Homebrew, you can follow the instructions here: `here <http://richardsumilang.com/server/redis/install-redis-on-os-x/>`__.
+
+You can test if Redis is running as follows:
+
+.. code-block::
+
+    >>> import redis
+    >>> r = redis.Redis()
+    >>> r.ping()
 
 Deploying to Heroku
 -------------------
