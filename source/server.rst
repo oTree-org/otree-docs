@@ -332,9 +332,6 @@ On Ubuntu/Debian, do:
 
     sudo apt-get install libpq-dev python-dev
 
-The command ``otree resetdb`` only works on SQLite.
-On Postgres, you should drop the database and then run ``otree migrate``.
-
 Deploy your code
 ~~~~~~~~~~~~~~~~
 
