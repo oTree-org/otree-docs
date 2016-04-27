@@ -30,7 +30,7 @@ You also need to install Redis server and run it on its default port (6379).
 
 You can test if Redis is running as follows:
 
-.. code-block::
+.. code-block:: python
 
     >>> import redis
     >>> r = redis.Redis()
@@ -43,7 +43,7 @@ You need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/h
 
 You need to change your ``Procfile`` to the following:
 
-.. code-block::
+.. code-block:: bash
 
     web: daphne otree.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
     worker: python manage.py runworker
@@ -89,7 +89,7 @@ Note, you can also specify the number of threads that ``runchannelsworker`` uses
 Downgrading back to oTree stable release
 ----------------------------------------
 
-.. code-block::
+.. code-block:: bash
 
     pip uninstall otree-core
     pip install otree-core
