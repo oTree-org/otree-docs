@@ -201,6 +201,7 @@ Run:
 .. code-block:: bash
 
     pip install --upgrade otree-core
+    otree resetdb
 
 Upgrade oTree library
 ~~~~~~~~~~~~~~~~~~~~~

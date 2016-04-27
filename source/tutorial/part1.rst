@@ -18,6 +18,7 @@ To ensure you are using the latest version of oTree, open your command window an
 .. code-block:: bash
 
     $ pip install --upgrade otree-core
+    $ otree resetdb
 
 
 Create the app

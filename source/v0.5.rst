@@ -21,7 +21,10 @@ but that is still under development and not ready yet.
 Installation
 ------------
 
-To install, run ``pip install --upgrade --pre otree-core`` (Note the --pre flag).
+To install, run::
+
+    pip install --upgrade --pre otree-core
+    otree resetdb
 
 You also need to install Redis server and run it on its default port (6379).
 
