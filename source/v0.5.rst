@@ -21,7 +21,7 @@ but that is still under development and not ready yet.
 Installation
 ------------
 
-To install, run::
+To install, run this (note the ``--pre`` in the command)::
 
     pip install --upgrade --pre otree-core
     otree resetdb
