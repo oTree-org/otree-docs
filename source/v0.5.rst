@@ -1,6 +1,13 @@
 Version 0.5 pre-release
 =======================
 
+.. note::
+
+    This is the info for the pre-release (new and maybe unstable)
+    version of oTree.
+
+    For the stable release, see the main setup page.
+
 If you want you can try the pre-release version of oTree 0.5.
 You could try it if you are curious to see the latest development,
 or if you are having problems using oTree 0.4.
@@ -56,7 +63,6 @@ You need to change your ``Procfile`` to the following:
     web: daphne otree.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
     worker: python manage.py runworkers
 
-You can also experiment with changing your ``Procfile`` based on the below info.
 
 Downgrading back to oTree stable release
 ----------------------------------------
