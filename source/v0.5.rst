@@ -39,6 +39,11 @@ You can test if Redis is running as follows:
     >>> r = redis.Redis()
     >>> r.ping()
 
+Running locally
+---------------
+
+If running locally, you can just use ``otree runserver`` as before.
+
 Deploying to Heroku
 -------------------
 
@@ -49,45 +54,9 @@ You need to change your ``Procfile`` to the following:
 .. code-block:: bash
 
     web: daphne otree.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
-    worker: python manage.py runworker
+    worker: python manage.py runworkers
 
 You can also experiment with changing your ``Procfile`` based on the below info.
-
-How to run
-----------
-
-If running locally, you can just use ``otree runserver`` as before.
-
-We are still investigating how to optimize performance of this new version, through multiprocessing/threading/dynos.
-You are encouraged to test it out and send your feedback/findings to chris@otree.org.
-
-oTree 0.5 has 3 server components:
-
-- The web server (``otree runserver --noworker``, or ``daphne otree.asgi:channel_layer --port $PORT --bind 0.0.0.0``).
-- The channels worker (``otree runchannelsworker``).
-- The celery worker (``otree runceleryworker``). Celery is optional; it is used for enforcing timeouts even if the user closes their browser window.
-
-(By comparison, oTree 0.4 had 2 server components: the web server, and celery).
-
-There are different ways to run these 3 components.
-The reason there are so many variations is that we are experimenting to find the optimal one.
-
--   ``otree runserver`` runs the web server and 4 channels workers, all in 1 process. This is useful for quick local testing.
-    It doesn't run celery because that is not essential for local development.
-    If you use the ``--noworker`` flag, it will not run the 4 channels threads.
-    One difference between ``otree runserver --noworker`` and the ``daphne`` command listed above
-    is that ``runserver`` will auto-reload your code if it is changed on disk.
--   ``otree runworker`` launches the channels worker and celery worker, in separate processes.
-    It is like running ``otree runchannelsworker`` + ``otree runceleryworker``.
-    The purpose of combining these into 1 command is if you are using Heroku, you can run them both on the same dyno.
--   ``otree develop`` starts 3 processes. It is like running each of the 3 components listed above in separate processes.
--   ``otree runprodserver`` will use ``honcho`` to execute whatever is in your ``Procfile`` (as it did previously).
-
-We are still determining what the optimal number of threads is,
-whether we start the workers as threads vs processes,
-and how many dynos we should use.
-
-Note, you can also specify the number of threads that ``runchannelsworker`` uses, e.g. ``otree runchannelsworker --num-threads=4``.
 
 Downgrading back to oTree stable release
 ----------------------------------------
