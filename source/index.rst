@@ -98,6 +98,7 @@ Contents:
     django.rst
     ztree.rst
     v0.5.rst
+    rooms.rst
 
 
 
