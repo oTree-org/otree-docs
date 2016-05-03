@@ -122,7 +122,7 @@ If you want to try the newest beta release of oTree, see :ref:`v0.5`.
 It should run much faster than the stable release below,
 but has not been tested as heavily.
 
-Otherwise, follow the below instructions.s
+Otherwise, follow the below instructions.
 
 
 Install oTree (stable release)

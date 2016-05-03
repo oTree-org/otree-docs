@@ -35,10 +35,14 @@ To install, run this (note the ``--pre`` in the command)::
     pip install --upgrade --pre otree-core
     otree resetdb
 
+Install Redis
+~~~~~~~~~~~~~
+
 You also need to install Redis server and run it on its default port (6379).
 
 - Windows: download and run the `MSI <https://github.com/MSOpenTech/redis/releases>`__.
 - Mac: if using Homebrew, you can follow the instructions here: `here <http://richardsumilang.com/server/redis/install-redis-on-os-x/>`__.
+- Ubuntu: download `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
 
 You can test if Redis is running as follows:
 
@@ -65,6 +69,13 @@ You need to change your ``Procfile`` to the following:
     web: daphne otree.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
     worker: python manage.py runworkers
 
+Limitations
+-----------
+
+v0.5 does not yet have the ability to auto-submit pages upon timeout if a user closes their browser.
+This means that if a multi-player game is under way and a user closes their browser window,
+you would need to manually click the "advance slowest participants" button to ensure that other users
+ don't get stuck waiting for that player.
 
 Downgrading back to oTree stable release
 ----------------------------------------
