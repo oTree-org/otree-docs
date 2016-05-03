@@ -91,7 +91,13 @@ Run:
 Deploy your code
 ~~~~~~~~~~~~~~~~
 
-Save your pip requirements. If using Windows PowerShell, enter::
+Use ``pip`` to write a list of all the Python modules you have installed
+(including ``otree-core``),
+to a file called ``requirements_base.txt``.
+
+Heroku will read this file and install the same version of each library on your server.
+
+If using Windows PowerShell, enter::
 
     pip freeze | out-file -enc ascii requirements_base.txt
 
@@ -118,7 +124,7 @@ Transfer (push) the local repository to Heroku:
     If you get a message ``push rejected``
     and the error message says ``could not satisfy requirement``,
     open ``requirements_base.txt`` and delete every line except
-    ``otree-core==x.x.xx`` (where ``x.x.xx`` is the version number)
+    the ones for ``Django`` and ``otree-core``.
 
 Reset the oTree database on Heroku.
 You can get your app's name by typing ``heroku apps``.
@@ -131,6 +137,7 @@ You can get your app's name by typing ``heroku apps``.
 
     In older versions of oTree (before March 2016), you need to instead run
     ``otree-heroku resetdb your-heroku-app``
+    (but it's probably better to update oTree anyway.)
 
 Open the site in your browser:
 
