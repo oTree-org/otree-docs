@@ -112,3 +112,6 @@ once for each ``Subsession`` instance.
 
 It has many uses, such as initializing fields, assigning players to treatments,
 or shuffling groups.
+
+Warning about class attributes
+------------------------------

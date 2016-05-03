@@ -55,26 +55,3 @@ you can send it to the oTree `mailing list <https://groups.google.com/forum/#!fo
 It's best to use to "copy and paste view" to get the raw traceback,
 which is more useful than sending a screenshot of the yellow page.
 
-Common errors
-~~~~~~~~~~~~~
-
-'with' in formfield tag needs at least one keyword argument
------------------------------------------------------------
-
-.. code-block:: bash
-
-    django.template.base.TemplateSyntaxError: 'with' in formfield tag needs at least one keyword argument.
-
-This is usually caused by a `formfield` tag with a space after `label`, e.g.:
-
-.. code-block:: html+django
-
-    {% formfield player.contribution with label = "How much will you contribute?" %}
-
-You should remove the space around the ``=`` like this:
-
-.. code-block:: html+django
-
-    {% formfield player.contribution with label="How much will you contribute?" %}
-
-
