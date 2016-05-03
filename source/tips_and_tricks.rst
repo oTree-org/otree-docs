@@ -33,7 +33,7 @@ For the same reason as with Constants above,
 you shouldn't assign to class attributes on your models.
 For example, don't do this:
 
-.. code-block:: python
+.. code-block::python
 
     class Player(BasePlayer):
 
@@ -45,7 +45,7 @@ For example, don't do this:
 
 Or this:
 
-.. code-block:: python
+.. code-block::python
 
     class Player(BasePlayer):
 
@@ -57,7 +57,7 @@ Or this:
 The problem with the above is that the current value of ``my_int`` will be shared by all player instances.
 Instead you should do this:
 
-.. code-block:: python
+.. code-block::python
 
     class Player(BasePlayer):
 
@@ -72,7 +72,7 @@ Only generate random values inside methods
 If you want a field whose initial value is random,
 you might initially try this incorrect approach:
 
-.. code-block:: python
+.. code-block::python
 
     class Player(BasePlayer):
 
@@ -87,7 +87,7 @@ Instead, you should generate the random variables in :ref:`before_session_starts
 
 For the same reason, this will not work either:
 
-.. code-block:: python
+.. code-block::python
 
     class Constants(BaseConstants):
         factor = random.random() # wrong
