@@ -72,7 +72,7 @@ Only generate random values inside methods
 If you want a field whose initial value is random,
 you might initially try this incorrect approach:
 
-.. code-block::python
+.. code-block:: python
 
     class Player(BasePlayer):
 
@@ -87,7 +87,7 @@ Instead, you should generate the random variables in :ref:`before_session_starts
 
 For the same reason, this will not work either:
 
-.. code-block::python
+.. code-block:: python
 
     class Constants(BaseConstants):
         factor = random.random() # wrong
