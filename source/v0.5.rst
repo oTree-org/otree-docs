@@ -5,7 +5,7 @@ Version 0.5 pre-release
 
 .. note::
 
-    This is the info for the pre-release (new and maybe unstable)
+    This is the info for the pre-release (beta)
     version of oTree.
 
     For the stable release, see the main setup page.
@@ -14,7 +14,6 @@ If you want you can try the pre-release version of oTree 0.5.
 You could try it if you are curious to see the latest development,
 or if you are having problems using oTree 0.4.
 
-Note: it's brand new and relatively untested.
 
 What's new
 ----------
