@@ -406,8 +406,7 @@ Sentry can send you the details of each error by email.
 Once you have signed up, we will send you a registration link you need to click.
 You will also be provided with a special URL called a "Sentry DSN".
 
-Make sure you have oTree-core 0.4.11 or newer.
-Then, in your ``settings.py``, you should set ``SENTRY_DSN`` to your DSN URL,
+In your ``settings.py``, you should set ``SENTRY_DSN`` to your DSN URL,
 which makes your server send crash info to our Sentry server.
 Once that is done, you will automatically get notified with any exceptions when debug mode is turned off.
 You can also view the errors through the `web interface <http://sentry.otree.org/auth/login/sentry/>`__.

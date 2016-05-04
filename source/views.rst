@@ -211,10 +211,6 @@ then ``after_all_players_arrive()`` will not be run.
 Customizing the wait page's appearance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    The features in this section require otree-core 0.4.20 or higher.
-
 You can customize the text that appears on a wait page
 by setting the ``title_text`` and ``body_text`` attributes, e.g.:
 
