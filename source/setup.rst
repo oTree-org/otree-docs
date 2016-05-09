@@ -128,7 +128,6 @@ Otherwise, follow the below instructions.
 Install oTree (v0.4)
 ~~~~~~~~~~~~~~~~~~~~
 
-*   Open PowerShell (on Windows) or Terminal (on Mac OS X), and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
 *   Run this:
 
 .. code-block:: bash
@@ -139,6 +138,8 @@ Install oTree (v0.4)
 
 Running oTree
 ~~~~~~~~~~~~~
+
+Open PowerShell (on Windows) or Terminal (on Mac OS X), and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
 
 Run::
 
