@@ -137,7 +137,10 @@ Install oTree (v0.4)
 
 (If using Python 3 on Mac, you should use ``pip3`` instead of ``pip``.)
 
-Then::
+Running oTree
+~~~~~~~~~~~~~
+
+Run::
 
     otree startproject oTree
 
