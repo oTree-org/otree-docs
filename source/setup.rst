@@ -114,19 +114,19 @@ Install Python Linux/UNIX
 If Python is not already installed, use your system's package manager to install Python and pip.
 
 
-oTree v0.5 beta release
-~~~~~~~~~~~~~~~~~~~~~~~
+Install oTree (v0.5 beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to try the newest beta release of oTree, see :ref:`v0.5`.
+If you want to try the beta release of oTree, see :ref:`v0.5`.
 
-It should run much faster than the stable release below,
+It should run faster and work better than v0.4 below,
 but has not been tested as heavily.
 
 Otherwise, follow the below instructions.
 
 
-Install oTree (stable release)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install oTree (v0.4)
+~~~~~~~~~~~~~~~~~~~~
 
 *   Open PowerShell (on Windows) or Terminal (on Mac OS X), and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
 *   Run this:
