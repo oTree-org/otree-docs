@@ -203,8 +203,8 @@ and set each player's payoff.
 
 If this returns ``False`` then the player skips the wait page.
 
-If all players in the group skip the wait page,
-then ``after_all_players_arrive()`` will not be run.
+If some or all players in the group skip the wait page,
+then ``after_all_players_arrive()`` may not be run.
 
 .. _customize_wait_page:
 

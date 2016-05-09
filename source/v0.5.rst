@@ -34,6 +34,10 @@ To install, run this (note the ``--pre`` in the command)::
     pip install --upgrade --pre otree-core
     otree resetdb
 
+A new pre-release is published frequently,
+so it's good to run the above commands every few days,
+to get the latest bugfixes.
+
 Install Redis
 ~~~~~~~~~~~~~
 
