@@ -65,6 +65,10 @@ Deploying to Heroku
 
 You need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__.
 
+Then update your ``requirements_base.txt`` so it contains the right version of ``otree-core``.
+This will tell Heroku which version of oTree to install.
+(The currently installed version of ``otree-core`` is listed in the output of ``pip freeze``).
+
 You need to change your ``Procfile`` to the following:
 
 .. code-block:: bash
