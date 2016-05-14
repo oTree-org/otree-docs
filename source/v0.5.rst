@@ -73,7 +73,7 @@ You need to change your ``Procfile`` to the following:
 
 .. code-block:: bash
 
-    web: daphne otree.asgi:channel_layer --port $PORT --bind 0.0.0.0 -v2
+    web: python manage.py runweb
     worker: python manage.py runworkers
 
 Limitations

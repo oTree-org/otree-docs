@@ -332,19 +332,6 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 
 # =============================================================================
-# EPILOG
-# =============================================================================
-
-# epilog entries
-epilog_substitutions = {
-    "github_icon": "image:: /_static/assets/github-icon.png",
-}
-
-rst_epilog = "\n".join(
-    ".. |{}| {}".format(k, v) for k, v in epilog_substitutions.items())
-
-
-# =============================================================================
 # MORE JAVASCRIPT
 # =============================================================================
 

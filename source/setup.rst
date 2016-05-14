@@ -181,7 +181,8 @@ PyCharm Professional is free if you are a student, teacher, or professor.
 Launch PyCharm, go to "File -> Open..." and select the folder you created with ``otree startproject``.
 
 Then click on ``File –> Settings`` (or ``Default Settings``) and navigate to ``Languages & Frameworks -> Django``,
-check "Enable Django Support" and set your oTree folder as the Django project root.
+check "Enable Django Support" and set your oTree folder as the Django project root,
+with your ``manage.py` and ``settings.py``.
 
 Open a file, right-click on the left margin, and select "Show line numbers":
 
