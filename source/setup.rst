@@ -190,6 +190,7 @@ If PyCharm displays this warning, select "Ignore requirements":
 
 .. figure:: _static/setup/pycharm-psycopg2-warning.png
 
+A guide on how to properly setup PyCharm to work with oTree on Windows written by Jan Vávra can be found `here <http://janvavra.github.io/>`__. 
 
 .. _upgrade:
 
