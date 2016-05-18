@@ -33,7 +33,6 @@ Here are some considerations:
     you should make sure you are all using the same version of Python.
 -   Python 3.5 is the latest and greatest version, but many people still use Python 2.7.
     So, when you search for Python documentation/resources online, make sure it pertains to Python 3.
--   If you want to use oTree with Mechanical Turk, you should use Python 2.7.
 
 If you want to use Python 2, see :ref:`python2`.
 If you already created an oTree project with Python 2 and would like to switch to Python 3,
@@ -108,8 +107,8 @@ this should match the version of Python you just installed.
     is mentioned in the oTree documentation.
 
 
-Install Python Linux/UNIX
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Install Python (Linux/UNIX)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If Python is not already installed, use your system's package manager to install Python and pip.
 
@@ -119,11 +118,10 @@ Install oTree (v0.5 beta)
 
 If you want to try the beta release of oTree, see :ref:`v0.5`.
 
-It should run faster and work better than v0.4 below,
-but has not been tested as heavily.
-
-Otherwise, follow the below instructions.
-
+Although it's still officially in beta,
+I believe it runs more reliably than v0.4 below,
+because it fixes a number of bugs from v0.4.
+It is also much faster.
 
 Install oTree (v0.4)
 ~~~~~~~~~~~~~~~~~~~~

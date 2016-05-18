@@ -1,19 +1,8 @@
 .. _v0.5
 
-Version 0.5 pre-release
-=======================
 
-.. note::
-
-    This is the info for the pre-release (beta)
-    version of oTree.
-
-    For the stable release, see the main setup page.
-
-If you want you can try the pre-release version of oTree 0.5.
-You could try it if you are curious to see the latest development,
-or if you are having problems using oTree 0.4.
-
+Version 0.5
+===========
 
 What's new
 ----------
@@ -55,11 +44,6 @@ You can test if Redis is running as follows:
     >>> r = redis.Redis()
     >>> r.ping()
 
-Running locally
----------------
-
-If running locally, you can just use ``otree runserver`` as before.
-
 Deploying to Heroku
 -------------------
 
@@ -69,23 +53,17 @@ Then update your ``requirements_base.txt`` so it contains the right version of `
 This will tell Heroku which version of oTree to install.
 (The currently installed version of ``otree-core`` is listed in the output of ``pip freeze``).
 
-You need to change your ``Procfile`` to the following:
+In your project's root directory, find the file ``Procfile``
+change its contents to the following, and turn on both dynos:
 
 .. code-block:: bash
 
-    web: python manage.py runweb
-    worker: python manage.py runworkers
+    web: otree webandworkers
+    timeoutworker: otree timeoutworker
 
-Limitations
------------
 
-v0.5 does not yet have the ability to auto-submit pages upon timeout if a user closes their browser.
-This means that if a multi-player game is under way and a user closes their browser window,
-you would need to manually click the "advance slowest participants" button to ensure that other users
- don't get stuck waiting for that player.
-
-Downgrading back to oTree stable release
-----------------------------------------
+Downgrading back to oTree 0.4
+-----------------------------
 
 .. code-block:: bash
 

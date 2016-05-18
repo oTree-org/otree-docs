@@ -233,8 +233,21 @@ Example:
 LaTeX
 ^^^^^
 
-oTree comes pre-loaded with `KaTeX <http://khan.github.io/KaTeX/>`__; you
-can insert LaTeX equations like this:
+If you want to put LaTeX formulas in your app (with `KaTeX <http://khan.github.io/KaTeX/>`__),
+put this in your ``{% scripts %}`` block:
+
+.. code-block:: html
+
+    <script src="{% static 'otree/katex/katex.min.js' %}"></script>
+    <script src="{% static 'otree/js/init_katex.js' %}"></script>
+
+And put this in your ``{% scripts %}`` block:
+
+.. code-block:: html
+
+    <link rel="stylesheet" href="{% static 'otree/katex/katex.min.css' %}">
+
+You can then insert LaTeX as follows:
 
 .. code-block:: html
 
