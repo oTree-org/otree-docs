@@ -3,7 +3,7 @@ Rooms
 
 .. note::
 
-    This is an upcoming feature in oTree 0.5. It is not ready for official use yet.
+    This is an upcoming feature. It is not ready for official use yet.
 
 To create a room, add to your ``settings.py``
 a setting ``ROOMS`` (and, optionally, ``ROOM_DEFAULTS``).

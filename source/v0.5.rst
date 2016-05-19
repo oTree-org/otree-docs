@@ -7,7 +7,9 @@ Version 0.5
 What's new
 ----------
 
-oTree 0.5 has a different architecture based on push and WebSockets,
+oTree 0.5 is now released.
+
+It has a different architecture based on WebSockets,
 through use of `Django Channels <https://github.com/andrewgodwin/channels>`__.
 
 It should run faster and support more concurrent players.
@@ -18,9 +20,9 @@ but that is still under development and not ready yet.
 Installation
 ------------
 
-To install, run this (note the ``--pre`` in the command)::
+Upgrade as usual::
 
-    pip install --upgrade --pre otree-core
+    pip install --upgrade otree-core
     otree resetdb
 
 A new pre-release is published frequently,

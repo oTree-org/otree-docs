@@ -130,20 +130,8 @@ You can test if Redis is running as follows:
     >>> r.ping()
 
 
-Install oTree (v0.5)
-~~~~~~~~~~~~~~~~~~~~
-
-If you want to try the beta release of oTree, see :ref:`v0.5`.
-
-Although it's still officially in beta,
-I believe it runs more reliably than v0.4 below,
-because it fixes a number of bugs from v0.4.
-It is also much faster.
-
-Install oTree (v0.4)
-~~~~~~~~~~~~~~~~~~~~
-
-*   Run this:
+Install oTree
+~~~~~~~~~~~~~
 
 .. code-block:: bash
 
