@@ -60,21 +60,10 @@ change its contents to the following, and if using Heroku, turn on both dynos:
 
 .. note::
 
-    oTree 0.5 is under development,
-    and the names of these commands are still being tweaked.
-    If the below commands don't work,
-    make sure you are on the latest 0.5 release by running the ``pip`` command above.
+    The below commands are new as at May 18, 2016.
+    If you installed oTree 0.5 beta before that, make sure to update to the below.
 
 .. code-block:: bash
 
     web: otree webandworkers
     timeoutworker: otree timeoutworker
-
-
-Downgrading back to oTree 0.4
------------------------------
-
-.. code-block:: bash
-
-    pip uninstall otree-core
-    pip install otree-core
