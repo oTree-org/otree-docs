@@ -13,7 +13,7 @@ each dictionary defines the configuration of a room.
 
 For example:
 
-.. code-block::python
+.. code-block:: python
 
     ROOM_DEFAULTS = {
         'use_secure_urls': True,

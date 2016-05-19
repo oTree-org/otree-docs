@@ -147,6 +147,12 @@ You can get your app's name by typing ``heroku apps``.
 
 .. note::
 
+    Some users have reported ``django.db.utils.ProgrammingError: table "APP_subsession" does not exist``
+    If this happens to you, please contact chris@otree.org so I can investigate.
+
+
+.. note::
+
     In older versions of oTree (before March 2016), you need to instead run
     ``otree-heroku resetdb your-heroku-app``
     (but it's probably better to update oTree anyway.)
@@ -160,29 +166,25 @@ Open the site in your browser:
 (This command must be executed from the directory that contains your project.)
 
 
-Turn on worker Dyno
-~~~~~~~~~~~~~~~~~~~
+Turn on timeout worker Dyno (new for v0.5)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable full functionality, you should go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
-click on your app, click to edit the dynos, and turn on the "worker"
+click on your app, click to edit the dynos, and turn on the ``timeoutworker``
 dyno.
 
-.. image:: _static/heroku-worker-dyno.JPG
-    :align: center
-    :scale: 100 %
+Turning on the second dyno is free, but you may need to register a credit card with Heroku.
 
-You may need to upgrade from Heroku's "free" to "hobby" tier to turn on the
-worker dyno.
-
-If you are just testing your app, oTree will still function without the "worker" dyno,
+If you are just testing your app, oTree will still function without the ``timeoutworker`` dyno,
 but if you are running a study with real participants, we recommend turning it on.
 This will ensure that the page timeouts defined by ``timeout_seconds``
 still work even if a user closes their browser.
 
-.. note::
+If you do not see a ``timeoutworker`` entry, make sure your ``Procfile``
+looks like this::
 
-    If you do not see a "worker" entry, make sure your ``Procfile``
-    looks like `this <https://github.com/oTree-org/oTree/blob/master/Procfile>`__.
+    web: otree webandworkers
+    timeoutworker: otree timeoutworker
 
 
 To add an existing remote:
