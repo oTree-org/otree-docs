@@ -353,6 +353,27 @@ On Ubuntu/Debian, do:
 
     sudo apt-get install libpq-dev python-dev
 
+Redis
+~~~~~
+
+Install Redis
+~~~~~~~~~~~~~
+
+You need to install Redis server and run it on its default port (6379).
+
+- Windows: download and run the `MSI <https://github.com/MSOpenTech/redis/releases>`__.
+- Mac: if using Homebrew, you can follow the instructions here: `here <http://richardsumilang.com/server/redis/install-redis-on-os-x/>`__.
+- Ubuntu: download `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
+
+You can test if Redis is running as follows:
+
+.. code-block:: python
+
+    >>> import redis
+    >>> r = redis.Redis()
+    >>> r.ping()
+
+
 Deploy your code
 ~~~~~~~~~~~~~~~~
 

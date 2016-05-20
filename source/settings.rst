@@ -1,4 +1,4 @@
-Session configs
+SESSION_CONFIGS
 ---------------
 
 To configure a session, you would go to ``settings.py`` and
@@ -27,3 +27,12 @@ and then enter "30" for the number of participants.
 
 An instance of a session would be created, and you would get the start links to
 distribute to your participants.
+
+DEBUG
+-----
+
+You can turn off debug mode by setting the environment variable ``OTREE_PRODUCTION``,
+or by directly modifying ``DEBUG`` in settings.py.
+
+If you turn off ``DEBUG`` mode, you need to manually run ``otree collectstatic`` before starting your server.
+Also, you should set up `Sentry <sentry>` to receive email notifications of errors.

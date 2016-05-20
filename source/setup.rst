@@ -27,12 +27,7 @@ Python 3.5 vs 2.7
 ~~~~~~~~~~~~~~~~~
 
 oTree works on both Python 3 (i.e. 3.5) and 2 (i.e. 2.7).
-Here are some considerations:
-
--   If you are collaborating with others on your oTree project,
-    you should make sure you are all using the same version of Python.
--   Python 3.5 is the latest and greatest version, but many people still use Python 2.7.
-    So, when you search for Python documentation/resources online, make sure it pertains to Python 3.
+If you are unsure which version to use, we recommend Python 3.5.
 
 If you want to use Python 2, see :ref:`python2`.
 If you already created an oTree project with Python 2 and would like to switch to Python 3,
