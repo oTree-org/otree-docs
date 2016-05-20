@@ -107,23 +107,6 @@ Install Python (Linux/UNIX)
 
 If Python is not already installed, use your system's package manager to install Python and pip.
 
-Install Redis
-~~~~~~~~~~~~~
-
-Starting with oTree 0.5 (May 2016), you need to install Redis server and run it on its default port.
-
-- Windows: download and run the `MSI <https://github.com/MSOpenTech/redis/releases>`__.
-- Mac: if using Homebrew, you can follow the instructions here: `here <http://richardsumilang.com/server/redis/install-redis-on-os-x/>`__.
-- Ubuntu: download `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
-
-You can test if Redis is running as follows:
-
-.. code-block:: python
-
-    >>> import redis
-    >>> r = redis.Redis()
-    >>> r.ping()
-
 
 Install oTree
 ~~~~~~~~~~~~~
