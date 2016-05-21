@@ -147,15 +147,8 @@ You can get your app's name by typing ``heroku apps``.
 
 .. note::
 
-    Some users have reported ``django.db.utils.ProgrammingError: table "APP_subsession" does not exist``
-    If this happens to you, please contact chris@otree.org so I can investigate.
-
-
-.. note::
-
-    In older versions of oTree (before March 2016), you need to instead run
-    ``otree-heroku resetdb your-heroku-app``
-    (but it's probably better to update oTree anyway.)
+    Some users have reported ``django.db.utils.ProgrammingError: table "APP_subsession" does not exist``.
+    If this happens to you, please upgrade ``otree-core`` (and remember to update it in your ``requirements_base.txt``).
 
 Open the site in your browser:
 

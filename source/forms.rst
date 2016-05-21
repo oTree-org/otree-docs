@@ -316,5 +316,11 @@ For simple widgets you can use jQuery; for more complex or custom form
 interfaces, you can use a front-end framework with databinding, like
 React or Polymer.
 
+Somewhere next to your widget, you should put ``{{ form.foo.errors }}``, where ``foo`` is the name of your field.
+This ensures that if an invalid value is submitted and oTree re-displays the form with an error message,
+then the error message will be displayed next to the field, so the user knows what to fix.
+If you forget to do this, the page will just say "please fix the errors in the form",
+but no specific error will be highlighted.
+
 If you have a ``<button>`` widget on your page,
 clicking it will submit the form, unless you specify ``type="button"``.

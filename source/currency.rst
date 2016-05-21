@@ -87,7 +87,7 @@ For example, ``c(10)`` is displayed as ``10 points``. You can specify
 the conversion rate to real money in ``settings.py`` by providing a
 ``real_world_currency_per_point`` key in the session config dictionary.
 For example, if you pay the user 2 cents per point, you would set
-``real_world_currency_per_point = 0.02``.
+``'real_world_currency_per_point': 0.02``.
 
 Points are integers by default. You can change this by setting ``POINTS_DECIMAL_PLACES``
 in ``settings.py``.
