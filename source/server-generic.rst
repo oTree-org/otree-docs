@@ -145,4 +145,4 @@ If you want to use another server like Nginx, you need to modify the
 Next steps
 ~~~~~~~~~~
 
-Set up :ref:`Sentry <_sentry>`.
+Set up :ref:`Sentry <sentry>`.
