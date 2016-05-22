@@ -5,10 +5,10 @@ Server setup (advanced)
 
 .. note::
 
-    If you are just testing your app locally, you can use the ``resetdb`` and
-    ``runserver`` commands, which are simpler than the below steps.
+    If you are just testing your app locally, you can use
+    ``otree runserver``, which is simpler than the below steps.
 
-We typically recommend oTree users to deploy to Heroku (see instructions `here <heroku>`),
+We typically recommend oTree users to deploy to Heroku (see instructions `here <_heroku>`),
 because that is the simplest for people who are not experienced with web server administration.
 
 However, you may prefer to run oTree on your own server. Reasons may include:
@@ -21,7 +21,7 @@ However, you may prefer to run oTree on your own server. Reasons may include:
 oTree runs on top of Django, so oTree setup is the same as Django setup.
 Django runs on a wide variety of servers, except getting it to run on
 a Windows server like IIS may require extra work; you can find info about
-Django + IIS online. Below, instructions are given for using Unix and Gunicorn.
+Django + IIS online. Below, instructions are given for using Unix.
 
 Database
 ~~~~~~~~
@@ -145,4 +145,4 @@ If you want to use another server like Nginx, you need to modify the
 Next steps
 ~~~~~~~~~~
 
-Set up `Sentry <sentry>`.
+Set up `Sentry <_sentry>`.

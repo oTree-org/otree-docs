@@ -1,7 +1,7 @@
 .. _heroku:
 
-Server setup (basic)
-====================
+Server setup (basic/Heroku)
+===========================
 
 You can develop and test your app locally on your personal computer,
 using the ordinary ``runserver`` command.
@@ -13,7 +13,7 @@ Heroku, or to your own on-premises server.
 This document explains how to deploy to Heroku,
 because that is the simplest and most common option.
 
-If you prefer to deploy to a non-Heroku server, see `here <server-generic>`.
+If you prefer to deploy to a non-Heroku server, see `here <_server-generic>`.
 
 About Heroku
 ------------
@@ -25,8 +25,6 @@ the simplest option for you.
 The Heroku free plan is sufficient for small-scale testing of your app,
 but once you are ready to launch a study, you should upgrade to a paid server,
 which can handle more traffic.
-
-Here are the steps for deploying to Heroku.
 
 Basic Heroku setup
 ------------------
@@ -181,6 +179,7 @@ to Heroku, enter::
     git add .
     git commit -am "my commit message"
     git push heroku master
+    # next command only required if you added/removed a field in models.py
     heroku run otree resetdb
 
 
@@ -189,6 +188,13 @@ Further steps with Heroku
 
 Below are the steps you should take before launching a real study,
 or to further configure your server's behavior.
+
+Look at your server check
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is new in oTree 0.5. In the oTree admin interface, click "Server Check" in the header bar.
+It will tell you what steps below you need to take.
+
 
 Turn on timeout worker Dyno (new for v0.5)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
