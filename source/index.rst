@@ -88,6 +88,7 @@ Contents:
     treatments.rst
     rounds.rst
     server.rst
+    server-generic.rst
     localization.rst
     manual_testing.rst
     bots.rst

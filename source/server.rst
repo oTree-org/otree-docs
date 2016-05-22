@@ -1,5 +1,7 @@
-Server deployment
-=================
+.. _heroku:
+
+Server setup (basic)
+====================
 
 You can develop and test your app locally on your personal computer,
 using the ordinary ``runserver`` command.
@@ -8,18 +10,26 @@ However, when you want to share your app with an audience,
 you must deploy to a web server. oTree can be deployed to a cloud service like
 Heroku, or to your own on-premises server.
 
-Heroku
-------
+This document explains how to deploy to Heroku,
+because that is the simplest and most common option.
+
+If you prefer to deploy to a non-Heroku server, see `here <server-generic>`.
+
+About Heroku
+------------
 
 `Heroku <https://www.heroku.com/>`__ is a commercial cloud hosting provider.
 If you are not experienced with web server administration, Heroku may be
 the simplest option for you.
 
 The Heroku free plan is sufficient for small-scale testing of your app,
-but once you are ready to go live, you should upgrade to a paid server,
+but once you are ready to launch a study, you should upgrade to a paid server,
 which can handle more traffic.
 
 Here are the steps for deploying to Heroku.
+
+Basic Heroku setup
+------------------
 
 Create an account
 ~~~~~~~~~~~~~~~~~
@@ -117,6 +127,8 @@ Otherwise, enter::
 
     pip freeze > requirements_base.txt
 
+(Open the file ``requirements_base.txt`` and have a look.
+These are the packages that will be installed on your Heroku server.)
 
 Commit your changes (note the dot in ``git add .``):
 
@@ -158,6 +170,25 @@ Open the site in your browser:
 
 (This command must be executed from the directory that contains your project.)
 
+That's it! You should be able to play your app online.
+
+Making updates and modifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you make modifications to your app and want to push the updates
+to Heroku, enter::
+
+    git add .
+    git commit -am "my commit message"
+    git push heroku master
+    heroku run otree resetdb
+
+
+Further steps with Heroku
+-------------------------
+
+Below are the steps you should take before launching a real study,
+or to further configure your server's behavior.
 
 Turn on timeout worker Dyno (new for v0.5)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,22 +221,6 @@ to that app, use this command:
 
     $ heroku git:remote -a [myherokuapp]
 
-Making updates and modifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you make modifications to your app and want to push the updates
-to Heroku, enter::
-
-    git add .
-    git commit -am "my commit message"
-    git push heroku master
-    heroku run otree resetdb
-
-.. note::
-
-    In older versions of oTree (before March 2016), you need to instead run
-    ``otree-heroku resetdb your-heroku-app``
-
 
 Scaling up the server
 ~~~~~~~~~~~~~~~~~~~~~
@@ -223,10 +238,10 @@ Postgres
 we recommend you upgrade your Postgres database to a paid tier
 (at least the cheapest paid plan).
 
-To provision the $50/month "Standard 0" database::
+To provision the "Hobby Basic" database::
 
-    $ heroku addons:create heroku-postgresql:standard-0
-    Adding heroku-postgresql:standard-0 to sushi... done, v69
+    $ heroku addons:create heroku-postgresql:hobby-basic
+    Adding heroku-postgresql:hobby-basic to sushi... done, v69
     Attached as HEROKU_POSTGRESQL_RED
     Database has been created and is available
 
@@ -246,8 +261,8 @@ In the Heroku dashboard, click on your app's "Resources" tab,
 and in the "dynos" section, select "Upgrade to Hobby".
 Then select either "Hobby" or "Professional".
 
-Setting environment variables (optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you would like to turn off debug mode, you should set the ``OTREE_PRODUCTION``
 environment variable, like this:
@@ -267,163 +282,16 @@ you should set ``OTREE_AUTH_LEVEL``):
 
 More info at :ref:`AUTH_LEVEL`.
 
-Logging with Sentry & Papertrail
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before launching a study, you should set up :ref:`sentry`.
-
-In addition to Sentry, we recommend installing the free "Papertrail" logging add-on::
-
-    heroku addons:create papertrail:choklad
-
-Deploying to an on-premises server
-----------------------------------
-
-.. note::
-
-    If you are just testing your app locally, you can use the ``resetdb`` and
-    ``runserver`` commands, which are simpler than the below steps.
-
-Although Heroku deployment may be the easiest option,
-you may prefer to run oTree on your own server. Reasons may include:
-
--  You do not want your server to be accessed from the internet
--  You will be launching your experiment in a setting where internet
-   access is unavailable
--  You want full control over how your server is configured
-
-oTree runs on top of Django, so oTree setup is the same as Django setup.
-Django runs on a wide variety of servers, except getting it to run on
-a Windows server like IIS may require extra work; you can find info about
-Django + IIS online. Below, instructions are given for using Unix and Gunicorn.
-
-Database
-~~~~~~~~
-
-oTree's default database is SQLite, which is fine for local development,
-but insufficient for production.
-We recommend PostgreSQL, although you can also use MySQL, MariaDB, or any other database
-supported by Django.
-
-To use Postgres, first install Postgres, create a user (called ``postgres`` below),
-and start your Postgres server. The instructions for doing the above depend on your OS.
-
-Once that is done, you can create your database::
-
-    $ psql -c 'create database django_db;' -U postgres
-
-Now you should tell oTree to use Postgres instead of SQLite.
-The default database configuration in ``settings.py`` is::
-
-    DATABASES = {
-        'default': dj_database_url.config(
-            default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-        )
-    }
-
-However, instead of modifying the above line directly,
-it's better to set the ``DATABASE_URL`` environment variable on your server::
-
-    DATABASE_URL=postgres://postgres@localhost/django_db
-
-(To learn what an "environment variable" is, see `here <http://superuser.com/a/284351>`__.)
-
-Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
-(This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
-Setting the database through an environment variable
-allows you to continue to use SQLite locally (which is easier and more convenient).
-
-Then, instead of installing ``requirements_base.txt``, install ``requirements.txt``.
-This will install ``psycopg2``, which is necessary for using Postgres.
-
-You may get an error when you try installing ``psycopg2``, as described
-`here <http://initd.org/psycopg/docs/faq.html#problems-compiling-and-deploying-psycopg2>`__.
-
-The fix is to install the ``libpq-dev`` and ``python-dev`` packages.
-On Ubuntu/Debian, do:
-
-.. code-block:: bash
-
-    sudo apt-get install libpq-dev python-dev
-
-Redis
-~~~~~
-
-Install Redis
-~~~~~~~~~~~~~
-
-You need to install Redis server and run it on its default port (6379).
-
-- Windows: download and run the `MSI <https://github.com/MSOpenTech/redis/releases>`__.
-- Mac: if using Homebrew, you can follow the instructions here: `here <http://richardsumilang.com/server/redis/install-redis-on-os-x/>`__.
-- Ubuntu: download `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
-
-You can test if Redis is running as follows:
-
-.. code-block:: python
-
-    >>> import redis
-    >>> r = redis.Redis()
-    >>> r.ping()
-
-
-Deploy your code
-~~~~~~~~~~~~~~~~
-
-If you are using a remote webserver, you need to push your code there,
-typically using Git.
-
-Open your shell, and make sure you have committed any changes as follows:
-
-.. code-block:: bash
-
-    pip freeze > requirements_base.txt
-    git add .
-    git commit -am '[commit message]'
-
-(If you get the message
-``fatal: Not a git repository (or any of the parent directories): .git``
-then you first need to initialize the git repo.)
-
-Then do:
-
-.. code-block:: bash
-
-    $ git push [remote name] master
-
-Where [remote name] is the name of your server's git remote.
-
-
-Running the server
-~~~~~~~~~~~~~~~~~~
-
-If you are just testing your app locally, you can use the usual ``runserver``
-command.
-
-However, when you want to use oTree in production, you need to run the
-production server, which can handle more traffic. You should use a process
-control system like Supervisord, and have it launch otree with the command
-``otree runprodserver``.
-
-This will run the ``collectstatic`` command, and then
-launch the server as specified in the ``Procfile`` in your project's root
-directory. The default ``Procfile`` launches the Gunicorn server.
-If you want to use another server like Nginx, you need to modify the
-``Procfile``. (If you instead want to use Apache, consult the Django docs.)
-
-.. warning::
-
-    Gunicorn doesn't work on Windows, so if you are trying to run oTree on a
-    Windows server or use ``runprodserver`` locally on your Windows PC, you
-    will need to specify a different server in your ``Procfile``.
-
+Before launching a study, you should set up Sentry.
 
 .. _sentry:
 
-Sentry
-------
+Logging with Sentry
+-------------------
 
-We recommend you use our free Sentry service (sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__),
+Whether or not you use Heroku,
+we recommend you use our free Sentry service (sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__),
 which can log all errors on your server and send you email notifications.
 (`General info on Sentry <https://getsentry.com/welcome/>`__.)
 
@@ -441,6 +309,15 @@ You can also view the errors through the `web interface <http://sentry.otree.org
 
 If you later want other collaborators on your team to receive emails as well, or if you need to manage multiple projects,
 send an email to chris@otree.org.
+
+Logging with Papertrail
+-----------------------
+
+If using Heroku, we recommend installing the free "Papertrail" logging add-on::
+
+    heroku addons:create papertrail:choklad
+
+(This is useful even if you are already using Sentry.)
 
 Database backups
 ----------------
