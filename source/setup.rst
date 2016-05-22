@@ -23,11 +23,8 @@ A few tips:
 Install Python
 --------------
 
-Python 3.5 vs 2.7
-~~~~~~~~~~~~~~~~~
-
 We recommend installing Python 3.5,
-although oTree works on Python 2.7 (see :ref:`python2`).
+although oTree also works on Python 2.7 (see :ref:`python2`).
 
 If you already created an oTree project with Python 2 and would like to switch to Python 3,
 follow the instructions :ref:`here <py3-migration>`.
@@ -35,7 +32,7 @@ follow the instructions :ref:`here <py3-migration>`.
 If you already have Python 3.5 or 2.7 installed
 (check by entering ``pip -V`` at your command prompt),
 you can skip the below section. Or, uninstall your existing version of Python,
- and proceed with the below steps.
+and proceed with the below steps.
 
 
 Install Python 3.5 (Windows)
@@ -97,8 +94,8 @@ this should match the version of Python you just installed.
 
 .. note::
 
-    If using Python 3 on a Mac, you should use ``pip3`` instead, wherever ``pip``
-    is mentioned in the oTree documentation.
+    If using Python 3 on a Mac, you should use ``pip3`` instead of ``pip``,
+    wherever it is mentioned in the oTree documentation.
 
 
 Install Python (Linux/UNIX)
@@ -141,6 +138,8 @@ Then run:
     otree runserver
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
+You should see the oTree demo site.
+
 To stop the server, enter ``Control + C`` at your command line.
 To restart the server from the command line, pressing your keyboard's "up" arrow (this will retrieve the last command you entered),
 and hit Enter.
@@ -206,6 +205,6 @@ Upgrade oTree library
 Run ``otree startproject [folder name]``. This will create a folder with the specified name and
 download the latest version of the library there.
 
-If you originally installed oTree over 2 months ago,
+If you originally installed oTree over 5 months ago,
 we recommend you run the above command and move your existing apps into the new project folder,
 to ensure you have the latest ``settings.py``, etc.
