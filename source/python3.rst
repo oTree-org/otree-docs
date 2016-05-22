@@ -1,4 +1,4 @@
-.. _py3-migration
+.. _py3-migration:
 
 Migrating an existing project to Python 3
 =========================================
