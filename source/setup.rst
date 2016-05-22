@@ -30,7 +30,7 @@ We recommend installing Python 3.5,
 although oTree works on Python 2.7 (see :ref:`python2`).
 
 If you already created an oTree project with Python 2 and would like to switch to Python 3,
-follow the instructions `here <_py3-migration>`.
+follow the instructions :ref:`here <_py3-migration>`.
 
 If you already have Python 3.5 or 2.7 installed
 (check by entering ``pip -V`` at your command prompt),

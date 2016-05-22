@@ -35,4 +35,4 @@ You can turn off debug mode by setting the environment variable ``OTREE_PRODUCTI
 or by directly modifying ``DEBUG`` in settings.py.
 
 If you turn off ``DEBUG`` mode, you need to manually run ``otree collectstatic`` before starting your server.
-Also, you should set up `Sentry <sentry>` to receive email notifications of errors.
+Also, you should set up :ref:`Sentry <sentry>` to receive email notifications of errors.

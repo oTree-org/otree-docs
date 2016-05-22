@@ -8,7 +8,7 @@ Server setup (advanced)
     If you are just testing your app locally, you can use
     ``otree runserver``, which is simpler than the below steps.
 
-We typically recommend oTree users to deploy to Heroku (see instructions `here <_heroku>`),
+We typically recommend oTree users to deploy to Heroku (see instructions :ref:`here <_heroku>`),
 because that is the simplest for people who are not experienced with web server administration.
 
 However, you may prefer to run oTree on your own server. Reasons may include:
@@ -145,4 +145,4 @@ If you want to use another server like Nginx, you need to modify the
 Next steps
 ~~~~~~~~~~
 
-Set up `Sentry <_sentry>`.
+Set up :ref:`Sentry <_sentry>`.
