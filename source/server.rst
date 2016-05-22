@@ -13,7 +13,7 @@ Heroku, or to your own on-premises server.
 This document explains how to deploy to Heroku,
 because that is the simplest and most common option.
 
-If you prefer to deploy to a non-Heroku server, see :ref:`here <_server-generic>`.
+If you prefer to deploy to a non-Heroku server, see :ref:`here <server-generic>`.
 
 About Heroku
 ------------
