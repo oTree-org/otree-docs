@@ -37,7 +37,7 @@ the error and how to fix it.
 Debugging with PyCharm
 ^^^^^^^^^^^^^^^^^^^^^^
 
-PyCharm has an excellent debugger that you should be using continuously.
+PyCharm has an excellent debugger that you might want to try using.
 You can insert a breakpoint into your code by clicking in the left-hand
 margin on a line of code. You will see a little red dot. Then reload the
 page and the debugger will pause when it hits your line of code. At this

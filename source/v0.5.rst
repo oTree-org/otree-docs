@@ -9,13 +9,11 @@ What's new
 
 oTree 0.5 is now released.
 
-It has a different architecture based on WebSockets,
-through use of `Django Channels <https://github.com/andrewgodwin/channels>`__.
+It has a different architecture based on WebSockets.
+It runs faster and supports more concurrent players.
 
-It should run faster and support more concurrent players.
-
-There is also a feature called "Rooms" that aims to replace the "Default session" feature,
-but that is still under development and not ready yet.
+It also has a "Server Check" feature in the admin interface
+that checks if your server is set up properly.
 
 Installation
 ------------
@@ -50,3 +48,9 @@ change its contents to the following, and if using Heroku, turn on both dynos:
 
     These commands are new as at May 18, 2016.
     If you installed oTree 0.5 beta before that, make sure to update to the below.
+
+Other notes
+-----------
+
+There is also a feature called "Rooms" that aims to replace the "Default session" feature,
+but that is still under development and not ready yet.
