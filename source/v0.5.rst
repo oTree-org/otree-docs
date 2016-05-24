@@ -30,13 +30,14 @@ to get the latest bugfixes.
 Deploying to Heroku
 -------------------
 
-If using Heroku, you need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__.
+If using Heroku, you need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__,
+then run ``heroku restart``.
 
 Then update your ``requirements_base.txt`` so it contains the right version of ``otree-core``.
 This will tell Heroku which version of oTree to install.
 (The currently installed version of ``otree-core`` is listed in the output of ``pip freeze``).
 
-In your project's root directory, find the file ``Procfile``
+In your project's root directory, find the file ``Procfile``,
 change its contents to the following, and if using Heroku, turn on both dynos:
 
 .. code-block:: bash
@@ -52,5 +53,5 @@ change its contents to the following, and if using Heroku, turn on both dynos:
 Other notes
 -----------
 
-There is also a feature called "Rooms" that aims to replace the "Default session" feature,
+There is also a feature called "Rooms" that will replace the "Default session" feature,
 but that is still under development and not ready yet.

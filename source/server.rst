@@ -79,7 +79,8 @@ code:
     Creating lit-bastion-5032 in organization heroku... done, stack is cedar-14
     http://lit-bastion-5032.herokuapp.com/ | https://git.heroku.com/lit-bastion-5032.git
     Git remote heroku added
-    When you create an app, a git remote (called heroku) is also created and associated with your local git repository.
+
+When you create an app, a git remote (called heroku) is also created and associated with your local git repository.
 
 Heroku generates a random name (in this case lit-bastion-5032) for your
 app. Or you can specify your own name; see ``heroku help create`` for more info.
@@ -147,6 +148,7 @@ Transfer (push) the local repository to Heroku:
     and the error message says ``could not satisfy requirement``,
     open ``requirements_base.txt`` and delete every line except
     the ones for ``Django`` and ``otree-core``.
+    The line for Django should say ``Django==1.8.8``.
 
 Reset the oTree database on Heroku.
 You can get your app's name by typing ``heroku apps``.
@@ -238,11 +240,12 @@ After you finish your experiment,
 you can scale your dynos and database back down,
 so then you don't have to pay the full monthly cost.
 
-Postgres
-++++++++
+Postgres (upgrade required)
++++++++++++++++++++++++++++
 
-we recommend you upgrade your Postgres database to a paid tier
-(at least the cheapest paid plan).
+You need to upgrade your Postgres database to a paid tier
+(at least the cheapest paid plan),
+because the free version can only store a small amount of data.
 
 To provision the "Hobby Basic" database::
 
