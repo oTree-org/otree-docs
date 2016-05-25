@@ -60,8 +60,7 @@ This is useful in the following situations:
 * You are running multiple lab sessions, and cannot easily distribute new links to the workstations each time you create a session.
 * You are running multiple sessions online with the same group of participants, and want each participant to use the same link each time they participate in one of your sessions.
 
-To obtain these persistent links, set a session as the default session, or visit the "Persistent URLs" page in the admin.
-
+See :ref:`rooms`.
 
 .. _participant_label:
 

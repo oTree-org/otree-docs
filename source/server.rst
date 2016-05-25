@@ -98,6 +98,9 @@ If you don't do it, you will see an "Application Error":
     :align: center
     :scale: 100 %
 
+If Redis is not set up, you may also see messages in your logs saying "Connection refused",
+or an error mentioning port 6379.
+
 
 Upgrade oTree
 ~~~~~~~~~~~~~

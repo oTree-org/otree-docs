@@ -27,10 +27,11 @@ A new pre-release is published frequently,
 so it's good to run the above commands every few days,
 to get the latest bugfixes.
 
-Deploying to Heroku
--------------------
+Server deployment
+-----------------
 
-If using Heroku, you need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__,
+Redis needs to be installed on your server.
+If using Heroku, you should install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__,
 then run ``heroku restart``.
 
 Then update your ``requirements_base.txt`` so it contains the right version of ``otree-core``.
@@ -45,10 +46,6 @@ change its contents to the following, and if using Heroku, turn on both dynos:
     web: otree webandworkers
     timeoutworker: otree timeoutworker
 
-.. note::
-
-    These commands are new as at May 18, 2016.
-    If you installed oTree 0.5 beta before that, make sure to update to the below.
 
 Other notes
 -----------
