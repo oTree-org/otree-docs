@@ -24,7 +24,7 @@ a Windows server like IIS may require extra work; you can find info about
 Django + IIS online. Below, instructions are given for using Unix.
 
 Database
-~~~~~~~~
+--------
 
 oTree's default database is SQLite, which is fine for local development,
 but insufficient for production.
@@ -72,11 +72,9 @@ On Ubuntu/Debian, do:
 
     sudo apt-get install libpq-dev python-dev
 
-Redis
-~~~~~
 
 Install Redis
-~~~~~~~~~~~~~
+-------------
 
 You need to install Redis server and run it on its default port (6379).
 
@@ -94,7 +92,7 @@ You can test if Redis is running as follows:
 
 
 Deploy your code
-~~~~~~~~~~~~~~~~
+----------------
 
 If you are using a remote webserver, you need to push your code there,
 typically using Git.
@@ -121,7 +119,7 @@ Where [remote name] is the name of your server's git remote.
 
 
 Running the server
-~~~~~~~~~~~~~~~~~~
+------------------
 
 If you are just testing your app locally, you can use the usual ``runserver``
 command.
@@ -143,6 +141,132 @@ If you want to use another server like Nginx, you need to modify the
     oTree 0.5 and later uses the ``daphne`` server.
 
 Next steps
-~~~~~~~~~~
+----------
 
 Set up :ref:`Sentry <sentry>`.
+
+Apache and MySQL on Windows (v0.4 only)
+---------------------------------------
+
+.. note::
+
+    This section only applies to oTree 0.4.
+    It has not been updated yet for the latest 0.5 release,
+    which does not use WSGI.
+
+In general windows is not recommended as a platform for deployment but there
+exists an easy solution based on WAMP Stack.
+
+WAMP
+~~~~
+
+`WAMP <http://www.wampserver.com/>`__ is web stack that includes Apache, MySQL and PHP.
+For this walkthrough we will use 32-bits version of WampServer 3.
+We will use default path for WAMP: ``C:\wamp``.
+Keep in mind that both installation and Wamp manager files should be executed as Administrator.
+If installation is successfull you should be able to launch Wamp manager and navigate to localhost.
+
+Installing dependencies using a virtualenv
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Install virtualenv: ``pip install virtualenv``
+- Navigate to folder with your apps ``cd C:\wamp\www\oTree``
+- Create virtual environment: ``virtualenv venv``
+- Activate virtual environment: ``venv\Scripts\activate.bat``
+- Install modules required for oTree: ``pip install -r requirements_base.txt``
+- Install compiled version of ``mod_wsgi`` module from `here <http://www.lfd.uci.edu/~gohlke/pythonlibs/#mod_wsgi>`__:
+  ``pip``: ``pip install mod_wsgi-4.4.23+ap24vc9-cp27-cp27m-win32.whl``. Copy file ``venv\mod_wsgi.so`` into apache
+  folder ``C:\wamp\bin\apache\apache2.4.17\modules``
+
+.. note::
+
+    You should install version of ``mod_wsgi`` that is compatible with version of your ``python``.
+    Therefore choose correspondingly x86 or amd64 and Python2.* or Python 3.*
+    when you download precompiled version of ``mod_wsgi``.
+
+- Install compiled version of ``mysql-python`` module from `here <http://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python>`__:
+  ``pip install MySQL_python-1.2.5-cp27-none-win32.whl``
+
+Update Apache conf
+~~~~~~~~~~~~~~~~~~
+
+- Add following line to ``C:\wamp\bin\apache\apache2.4.17\conf\httpd.conf`` after all ``LoadModule ...`` statements:
+
+.. code-block:: apacheconf
+
+    WSGIPythonHome C:\Python27
+    WSGIPythonPath C:\wamp\www\oTree\venv\Lib\site-packages;C:\wamp\www\oTree
+    LoadModule wsgi_module modules/mod_wsgi.so
+
+- Add following lines to very end of file ``C:\wamp\bin\apache\apache2.4.17\conf\httpd.conf``:
+
+.. code-block:: apacheconf
+
+    <VirtualHost *>
+        Alias /static/ C:/wamp/www/oTree/_static_root/
+
+        <Directory C:/wamp/www/oTree/static>
+        Require all granted
+        </Directory>
+
+        WSGIScriptAlias / C:/wamp/www/oTree/wsgi.py
+
+        <Directory C:/wamp/www/oTree>
+        <Files wsgi.py>
+        Require all granted
+        </Files>
+        </Directory>
+    </VirtualHost>
+
+Setup oTree
+~~~~~~~~~~~
+
+- create entering point script for oTree apps ``C:\wamp\www\oTree\wsgi.py``:
+
+.. code-block:: python
+
+    import os
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+
+    from django.core.wsgi import get_wsgi_application
+    from whitenoise.django import DjangoWhiteNoise
+
+    application = get_wsgi_application()
+    application = DjangoWhiteNoise(application)
+
+- create database ``otree`` through `phpMyAdmin <http://localhost/phpmyadmin>`__ (login is root and password is blank)
+- update database in ``settings.py``:
+
+.. code-block:: python
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'otree',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
+
+- collect static files in one folder: ``python manage.py collectstatic``
+- reset database: ``otree resetdb``
+
+Set enviromental variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- to prepare oTree for real session you need to update the script ``C:\wamp\www\oTree\wsgi.py``:
+
+.. code-block:: python
+
+    import os
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
+    os.environ['OTREE_PRODUCTION'] = "1"
+    os.environ['OTREE_AUTH_LEVEL'] = "STUDY"
+
+    from django.core.wsgi import get_wsgi_application
+    from whitenoise.django import DjangoWhiteNoise
+
+    application = get_wsgi_application()
+    application = DjangoWhiteNoise(application)
