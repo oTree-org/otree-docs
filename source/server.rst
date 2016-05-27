@@ -112,12 +112,19 @@ Run:
 
     $ pip install --upgrade otree-core
 
-Deploy your code
-~~~~~~~~~~~~~~~~
+.. note::
 
-Use ``pip`` to write a list of all the Python modules you have installed
-(including ``otree-core``),
-to a file called ``requirements_base.txt``.
+.. _requirements_base.txt:
+
+Save to requirements_base.txt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The above command will just upgrade ``otree-core`` locally.
+It will not affect what version is installed on your server.
+
+You need to create a list of all the Python modules you have installed
+(including ``otree-core``), and save it to the file in your project's root directory
+called ``requirements_base.txt``.
 
 Heroku will read this file and install the same version of each library on your server.
 
@@ -129,8 +136,12 @@ Otherwise, enter::
 
     pip freeze > requirements_base.txt
 
-(Open the file ``requirements_base.txt`` and have a look.
-These are the packages that will be installed on your Heroku server.)
+(Open the file ``requirements_base.txt`` and have a look,
+especially for the line that says ``otree-core=x.x.x``
+This is the version that will be installed on your server.)
+
+Push your code to Heroku
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Commit your changes (note the dot in ``git add .``):
 
@@ -178,7 +189,7 @@ That's it! You should be able to play your app online.
 Making updates and modifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you make modifications to your app and want to push the updates
+When you make modifications to your app and want to push the updates
 to Heroku, enter::
 
     git add .
@@ -187,6 +198,7 @@ to Heroku, enter::
     # next command only required if you added/removed a field in models.py
     heroku run otree resetdb
 
+You should also regularly update your :ref:`requirements_base.txt <requirements_base.txt>`.
 
 Further steps with Heroku
 -------------------------
@@ -342,6 +354,10 @@ More information is available `here <https://devcenter.heroku.com/articles/herok
 
 Modifying an existing database
 ------------------------------
+
+.. note::
+
+    This section is more advanced and is for people who are comfortable with troubleshooting.
 
 If your database already contains data and you want to update the structure
 without running ``resetdb`` (which will delete existing data), you can use Django's migrations feature.
