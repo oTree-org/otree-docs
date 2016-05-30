@@ -86,6 +86,8 @@ Heroku generates a random name (in this case lit-bastion-5032) for your
 app. Or you can specify your own name; see ``heroku help create`` for more info.
 (And see ``heroku help`` for general help.)
 
+.. _redis:
+
 Install Redis add-on (new for v0.5)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -124,9 +126,8 @@ It will not affect what version is installed on your server.
 
 You need to create a list of all the Python modules you have installed
 (including ``otree-core``), and save it to the file in your project's root directory
-called ``requirements_base.txt``.
-
-Heroku will read this file and install the same version of each library on your server.
+called ``requirements_base.txt``. Heroku will read this file and install the
+same version of each library on your server.
 
 If using Windows PowerShell, enter::
 
@@ -185,6 +186,16 @@ Open the site in your browser:
 (This command must be executed from the directory that contains your project.)
 
 That's it! You should be able to play your app online.
+If not, see the next section.
+
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+If your app fails to load, e.g. "application error", try the following:
+
+-   Use the command ``heroku logs`` to check the server logs for any error messages
+-   Make sure you remembered to enable the Heroku Redis add-on (see :ref:`here <redis>`).
+-   Run ``heroku run otree --version`` to check that you are using the latest version of otree-core on Heroku.
 
 Making updates and modifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

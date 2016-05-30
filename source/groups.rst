@@ -19,7 +19,7 @@ which will tell you if it is player 1, player 2, etc.
 
 Group objects have the following methods:
 
--  ``get_players()``: returns a list of the players in the group.
+-  ``get_players()``: returns a list of the players in the group (ordered by ``id_in_group``).
 -  ``get_player_by_id(n)``: Retrieves the player in the group with a
    specific ``id_in_group``.
 -  ``get_player_by_role(r)``. The argument to this method is a string
