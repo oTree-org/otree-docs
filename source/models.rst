@@ -90,6 +90,11 @@ If you want a "global" variable, you should set a field on the subsession, or us
 Subsession
 ----------
 
+Here is a list of attributes and methods for subsession objects.
+
+session
+~~~~~~~
+
 The session this subsession belongs to.
 See :ref:`object_model`.
 
@@ -169,6 +174,8 @@ or shuffling groups.
 Group
 -----
 
+Here is a list of attributes and methods for group objects.
+
 session/subsession
 ~~~~~~~~~~~~~~~~~~
 
@@ -218,6 +225,8 @@ See :ref:`in_rounds`.
 
 Player
 ------
+
+Here is a list of attributes and methods for player objects.
 
 id_in_group
 ~~~~~~~~~~~
