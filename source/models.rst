@@ -90,10 +90,62 @@ If you want a "global" variable, you should set a field on the subsession, or us
 Subsession
 ----------
 
+The session this subsession belongs to.
+See :ref:`object_model`.
+
+round_number
+~~~~~~~~~~~~
+If this subsession is repeated (i.e. has multiple rounds), this
+field stores the position (index) of this subsession, among subsessions
+in the same app.
+
+For example, if a session consists of the subsessions:
+
+    [app1, app2, app1, app1, app3]
+
+Then the round numbers of these subsessions would be:
+
+    [1, 1, 2, 3, 1]
+
+set_groups()
+~~~~~~~~~~~~
+
+See :ref:`shuffling`.
+
+get_groups()
+~~~~~~~~~~~~
+
+Returns a list of all the groups in the subsession.
+
+get_players()
+~~~~~~~~~~~~~
+
+Returns a list of all the players in the subsession.
+
+in_previous_rounds()
+~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_all_rounds()
+~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_round(round_number)
+~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_rounds(self, first, last)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
 .. _before_session_starts:
 
-The ``before_session_starts`` Method
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+before_session_starts
+~~~~~~~~~~~~~~~~~~~~~
 
 You can define this method like this:
 
@@ -113,5 +165,121 @@ once for each ``Subsession`` instance.
 It has many uses, such as initializing fields, assigning players to treatments,
 or shuffling groups.
 
-Warning about class attributes
-------------------------------
+
+Group
+-----
+
+session/subsession
+~~~~~~~~~~~~~~~~~~
+
+The session/subsession this group belongs to.
+See :ref:`object_model`.
+
+
+get_players()
+~~~~~~~~~~~~~
+
+See :ref:`groups`.
+
+get_player_by_role(role)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`groups`.
+
+get_player_by_id(id_in_group)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`groups`.
+
+set_players(players_list)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`shuffling`.
+
+in_previous_rounds()
+~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_all_rounds()
+~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_round(round_number)
+~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_rounds(self, first, last)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+Player
+------
+
+id_in_group
+~~~~~~~~~~~
+Index starting from 1. In multiplayer games,
+indicates whether this is player 1, player 2, etc.
+
+payoff
+~~~~~~
+The player's payoff in this round. See :ref:`payoff`.
+
+session/subsession/group/participant
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The session/subsession/group/participant this player belongs to.
+See :ref:`object_model`.
+
+
+get_others_in_group()
+~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`groups`.
+
+get_others_in_subsession()
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`groups`.
+
+role()
+~~~~~~
+You can define this method to return a string label of the player's role,
+usually depending on the player's ``id_in_group``.
+
+For example::
+
+    def role(self):
+        if self.id_in_group == 1:
+            return 'buyer'
+        if self.id_in_group == 2:
+            return 'seller'
+
+Then you can use ``get_player_by_role('seller')`` to get player 2.
+See :ref:`groups`.
+
+Also, the player's role will be displayed in the oTree admin interface,
+in the "results" tab.
+
+in_previous_rounds()
+~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_all_rounds()
+~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_round(round_number)
+~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.
+
+in_rounds(self, first, last)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`in_rounds`.

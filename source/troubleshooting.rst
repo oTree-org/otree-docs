@@ -55,3 +55,8 @@ you can send it to the oTree `mailing list <https://groups.google.com/forum/#!fo
 It's best to use to "copy and paste view" to get the raw traceback,
 which is more useful than sending a screenshot of the yellow page.
 
+Heroku
+------
+
+If you are running on Heroku and are trying to troubleshoot an error,
+see :ref:`here <heroku-troubleshooting>`.

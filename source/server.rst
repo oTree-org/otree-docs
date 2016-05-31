@@ -188,12 +188,15 @@ Open the site in your browser:
 That's it! You should be able to play your app online.
 If not, see the next section.
 
+.. _heroku-troubleshooting:
+
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
 If your app fails to load, e.g. "application error", try the following:
 
 -   Use the command ``heroku logs`` to check the server logs for any error messages
+    (or, better yet, enable :ref:`Papertrail <papertrail>`, which provides a nice UI for browsing logs).
 -   Make sure you remembered to enable the Heroku Redis add-on (see :ref:`here <redis>`).
 -   Run ``heroku run otree --version`` to check that you are using the latest version of otree-core on Heroku.
 
@@ -344,6 +347,8 @@ You can also view the errors through the `web interface <http://sentry.otree.org
 
 If you later want other collaborators on your team to receive emails as well, or if you need to manage multiple projects,
 send an email to chris@otree.org.
+
+.. _papertrail:
 
 Logging with Papertrail
 -----------------------

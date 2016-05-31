@@ -19,6 +19,8 @@ You can specify how many rounds a game should be played in models.py, in
 Subsession objects have an attribute ``round_number``, which contains the
 current round number, starting from 1.
 
+.. _in_rounds:
+
 Accessing data from previous rounds: technique 1
 ------------------------------------------------
 

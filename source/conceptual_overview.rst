@@ -67,6 +67,7 @@ A participant can be player 2 in the first subsession, player 1 in the
 next subsession, and so on. Following on the above example,
 the participant would be represented as 2 different players:
 
+.. _object_model:
 
 What is "self"?
 ---------------
