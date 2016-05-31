@@ -60,6 +60,7 @@ In templates, instead of using the ``c()`` function, you should use the
 For example, ``{{ 20|c }}`` displays as ``20 points``.
 
 .. _payoff:
+
 Assigning payoffs
 -----------------
 
