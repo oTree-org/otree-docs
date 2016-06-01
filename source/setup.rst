@@ -113,6 +113,18 @@ Install oTree
 
 (If using Python 3 on Mac, you should use ``pip3`` instead of ``pip``.)
 
+
+Windows issue: vcvarsall.bat and Visual C++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On Windows you might see an error like this about Twisted and ``vcvarsall.bat``::
+
+    error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
+
+If using Python 3.5 you should download the Visual C++ tool `here <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
+(If using Python 2.7 you should download the tool `here <http://aka.ms/vcpython27>`__.)
+
+
 Running oTree
 ~~~~~~~~~~~~~
 

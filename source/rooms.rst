@@ -18,7 +18,7 @@ For example:
 .. code-block:: python
 
     ROOM_DEFAULTS = {
-        'use_secure_urls': True,
+        'use_secure_urls': False,
     }
 
     ROOMS = [
@@ -37,10 +37,11 @@ For example:
 
 Here are the available keys:
 
--   ``name``: (required) internal name</li>
--   ``display_name``: (required) display name</li>
+-   ``name``: (required) internal name
+-   ``display_name``: (required) display name
 -   ``participant_label_file``: a path to a text file with the "guest list"
     for this room. Should have one participant label per line.
+    Path can be either absolute or relative to the project's root directory.
 -   ``use_secure_urls``: whether oTree should add unique secret keys to URLs,
     so that even if someone can guess another participant's ``participant_label``,
     they can't guess that person's start URL.
