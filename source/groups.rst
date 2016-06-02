@@ -55,8 +55,9 @@ and even between apps that have the same ``players_per_group``.
 
 A group has a method ``set_players`` that takes as an argument a list of
 the players to assign to that group, in order. Alternatively, a
-subsession has a method ``set_groups`` that takes as an argument a list
-of lists, with each sublist representing a group.
+subsession has a method ``set_groups()`` that takes as an argument a list
+of lists, with each sublist being the players in a group.
+Each player in the subsession must be in exactly one sublist.
 
 For example, if you want players
 to be reassigned to the same groups but to have roles randomly shuffled
