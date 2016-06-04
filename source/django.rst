@@ -1,5 +1,9 @@
+.. _django:
+
 oTree & Django
 --------------
+
+Here are things for Django developers to know about oTree.
 
 ``otree`` command
 ~~~~~~~~~~~~~~~~~
@@ -14,6 +18,14 @@ oTree defines a few extra ones like ``resetdb``, ``create_session``, and ``runpr
 For the list of available commands, enter ``otree help``.
 For information about a specific command, enter ``otree help [command]``, e.g. ``otree help test``.
 
+Migrations and "resetdb"
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are using oTree, you generally shouldn't use ``makemigrations`` and ``migrate``.
+We are not fully compatible with migrations yet.
+Instead, run ``otree resetdb``, which will reset and sync the database.
+
+
 Project folder
 ~~~~~~~~~~~~~~
 
@@ -24,12 +36,21 @@ It comes pre-configured with all the files,
 settings and dependencies so that it works right away.
 You should create your apps inside this folder.
 
-Differences between oTree and Django
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Server
+~~~~~~
+
+oTree doesn't work with Gunicorn, mod_wsgi, or any other typical WSGI server.
+Because it uses `Django Channels <http://channels.readthedocs.io/en/latest/>`__
+for WebSocket support, it should be run with ``otree runprodserver``,
+which internally starts the Daphne server, several channels workers, and a task queue.
+More info :ref:`here <server-generic>`.
 
 Models
-^^^^^^
+~~~~~~
 
+-  If you are using oTree in a typical way (with models.py and views.py),
+   You don't need to explicitly call ``.save()`` on your models;
+   oTree will do it automatically.
 -  Field labels should go in the template formfield, rather than the
    model field's ``verbose_name``.
 -  ``null=True`` and ``default=None`` are not necessary in your model
