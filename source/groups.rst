@@ -167,6 +167,46 @@ Example: random shuffling (stranger)
                 group_matrix.append(players[i:i+ppg])
             self.set_groups(group_matrix)
 
+Example: fixed roles (typed stranger)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example shows how to make groups of 3 players, with one player of type A,
+and 2 of type B. The example assumes that you already set ``p.participant.vars['type']``
+on each player (e.g. in round 1 or in a previous app),
+and that there are twice as many B players as A players.
+
+.. code-block:: python
+
+
+    class Subsession(BaseSubsession):
+        def before_session_starts(self):
+
+            if self.round_number == 1:
+                # assign p.participant.vars['type'] to A/B...
+                ...
+
+            players = self.get_players()
+
+            # if you want players to play against new partners,
+            # uncomment this line
+            # random.shuffle(players)
+
+            A_players = [p for p in players if p.participant.vars['type'] == 'A']
+            B_players = [p for p in players if p.participant.vars['type'] == 'B']
+
+            group_matrix = []
+
+            # pop elements from A_players until it's empty
+            while A_players:
+                new_group = [
+                    A_players.pop(),
+                    B_players.pop(),
+                    B_players.pop(),
+                ]
+                group_matrix.append(new_group)
+
+            self.set_groups(group_matrix)
+
 
 Example: re-matching by rank
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

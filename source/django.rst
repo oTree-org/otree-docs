@@ -1,7 +1,7 @@
 .. _django:
 
-oTree & Django
---------------
+Django
+------
 
 Here are things for Django developers to know about oTree.
 
