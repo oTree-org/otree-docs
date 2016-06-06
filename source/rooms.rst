@@ -16,6 +16,8 @@ oTree lets you configure "rooms", which provide:
     Also, you can see a listing of who specifically is waiting, and who has not joined yet.
 -   Short links that are easy for participants to type, good for quick live demos.
 
+This feature replaces the "default session" from oTree 0.4.
+
 oTree lets you define multiple rooms. For example, you can have several rooms for different classes you teach,
 or multiple labs.
 
