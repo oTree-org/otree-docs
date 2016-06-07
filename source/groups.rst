@@ -92,6 +92,7 @@ The below example uses the command line to create a public goods game with 12 pl
 and then does interactive group shuffling in ``otree shell``.
 Assume that ``players_per_group = 3``, so that a 12-player game would have 4 groups::
 
+    C:\oTree> otree resetdb
     C:\oTree> otree create_session public_goods 12
     C:\oTree> otree shell
     Python 3.5.1 (v3.5.1:37a07cee5969, Dec  6 2015, 01:38:48) [MSC v.1900 32 bit (Intel)]
