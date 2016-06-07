@@ -9,10 +9,7 @@ ultimatum game or prisoner's dilemma, you would set this to 2. If your
 app does not involve dividing the players into multiple groups, then set
 it to ``None``. e.g. it is a single-player game or a game where
 everybody in the subsession interacts together as 1 group. In this case,
-``self.group.get_players()`` will return everybody in the subsession. If
-you need your groups to have uneven sizes (for example, 2 vs 3), you can
-do this: ``players_per_group=[2,3]``; then, if you create a
-session with 15 players, the group sizes will be ``2,3,2,3,2,3``.
+``self.group.get_players()`` will return everybody in the subsession.
 
 Each player has an attribute ``id_in_group``, which is an integer,
 which will tell you if it is player 1, player 2, etc.
@@ -40,8 +37,13 @@ get the partner of a player, with this method on the ``Player``:
 
 .. _shuffling:
 
-Shuffling groups
-----------------
+Group matching
+--------------
+
+.. _fixed_matching:
+
+Fixed matching
+~~~~~~~~~~~~~~
 
 By default, in each round, players are split into groups of ``Constants.players_per_group``.
 They are grouped sequentially -- for example, if there are 2 players per group,
@@ -53,11 +55,144 @@ and even between apps that have the same ``players_per_group``.
 
 (Note: to randomize participants to groups or roles, see :ref:`randomization`.)
 
-A group has a method ``set_players`` that takes as an argument a list of
-the players to assign to that group, in order. Alternatively, a
-subsession has a method ``set_groups()`` that takes as an argument a list
-of lists, with each sublist being the players in a group.
-Each player in the subsession must be in exactly one sublist.
+
+get_group_matrix()
+~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
+
+You can retrieve the structure of the groups as a matrix.
+Subsessions have a method called ``get_group_matrix()`` that returns a list of lists,
+with each sublist being the players in a group, in order.
+It's equivalent to:
+
+.. code-block::python
+
+    [group.get_players() for group in self.subsession.get_groups()]
+
+group_randomly()
+~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
+
+Subsessions have a method ``group_randomly()`` that shuffles players randomly,
+so they can end up in any group, and any position within the group.
+
+If you would like to shuffle players between groups but keep players in fixed roles,
+use ``group_randomly(fixed_id_in_group=True)``.
+
+In the below example, I have a public goods game with ``players_per_group = 3``.
+I create a session with 12 players (therefore 4 groups),
+and use ``otree shell`` to do some interactive group shuffling::
+
+    C:\oTree> otree create_session public_goods 12
+    C:\oTree> otree shell
+    Python 3.5.1 (v3.5.1:37a07cee5969, Dec  6 2015, 01:38:48) [MSC v.1900 32 bit (Intel)]
+
+    >>> from public_goods.models import Subsession # this code is only necessary if using otree shell
+
+    >>> s=Subsession.objects.first() # this code is only necessary if using otree shell
+
+    >>> s.get_group_matrix() # by default, oTree groups players sequentially
+
+    [[<Player  1>, <Player  2>, <Player  3>],
+     [<Player  4>, <Player  5>, <Player  6>],
+     [<Player  7>, <Player  8>, <Player  9>],
+     [<Player 10>, <Player 11>, <Player 12>]]
+
+    >>> s.group_randomly(fixed_id_in_group=True)
+
+    >>> s.get_group_matrix()
+
+    [[<Player  1>, <Player  8>, <Player 12>],
+     [<Player 10>, <Player  5>, <Player  3>],
+     [<Player  4>, <Player  2>, <Player  6>],
+     [<Player  7>, <Player 11>, <Player  9>]]
+
+    >>> s.group_randomly()
+
+    >>> s.get_group_matrix()
+
+    [[<Player  8>, <Player 10>, <Player  3>],
+     [<Player  4>, <Player 11>, <Player  2>],
+     [<Player  9>, <Player  1>, <Player  6>],
+     [<Player 12>, <Player  5>, <Player  7>]]
+
+Note that in each round,
+groups are assigned sequentially as described in :ref:`fixed_matching`,
+even if you did some shuffling in a previous round.
+To counteract this, you can use :ref:`group_like_round`.
+
+set_group_matrix()
+~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
+
+``set_group_matrix()`` lets you modify the group structure in any way you want.
+You can call modify the list of lists returned by ``get_group_matrix()``,
+using regular Python list operations like
+``.extend()``, ``.append()``, ``.pop()``, ``.reverse()``,
+and list indexing and slicing (e.g. ``[0]``, ``[2:4]``).
+Then pass this modified matrix to ``set_group_matrix()``::
+
+    >>> matrix = s.get_group_matrix()
+
+    >>> matrix
+
+    [[<Player  8>, <Player 10>, <Player  3>],
+     [<Player  4>, <Player 11>, <Player  2>],
+     [<Player  9>, <Player  1>, <Player  6>],
+     [<Player 12>, <Player  5>, <Player  7>]]
+
+    >>> for group in matrix:
+       ....:     group.reverse()
+       ....:
+
+    >>> matrix
+
+    [[<Player  3>, <Player 10>, <Player  8>],
+     [<Player  2>, <Player 11>, <Player  4>],
+     [<Player  6>, <Player  1>, <Player  9>],
+     [<Player  7>, <Player  5>, <Player 12>]]
+
+    >>> s.set_group_matrix(matrix)
+
+    >>> s.get_group_matrix()
+
+    [[<Player  3>, <Player 10>, <Player  8>],
+     [<Player  2>, <Player 11>, <Player  4>],
+     [<Player  6>, <Player  1>, <Player  9>],
+     [<Player  7>, <Player  5>, <Player 12>]]
+
+You can also pass a matrix of integers to ``set_group_matrix``.
+It must contain all integers from 1 to the number of players
+in the subsession. Each integer represents the player who has that ``id_in_subsession``.
+For example::
+
+    >>> new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
+
+    >>> s.set_group_matrix(new_structure)
+
+    >>> s.get_group_matrix()
+
+    [[<Player  1>, <Player  3>, <Player  5>],
+     [<Player  7>, <Player  9>, <Player 11>],
+     [<Player  2>, <Player  4>, <Player  6>],
+     [<Player  8>, <Player 10>, <Player 12>]]
+
+
+group.set_players()
+~~~~~~~~~~~~~~~~~~~
+
+If you just want to rearrange players within a group, you can use
+the method on ``group.set_players()`` that takes as an argument a list of
+the players to assign to that group, in order.
 
 For example, if you want players
 to be reassigned to the same groups but to have roles randomly shuffled
@@ -76,6 +211,9 @@ or remain player 1), you would do this:
 
 
 .. _group_like_round:
+
+group_like_round()
+~~~~~~~~~~~~~~~~~~
 
 If you shuffle the groups in one round
 and would like the new group structure to be applied to another round,
@@ -106,8 +244,8 @@ Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your experimental design may involve re-matching players based on the results
-of a previous subsession. For example, you may want the highest-ranked players
-in round 1 to play against each other in round 2.
+of a previous subsession. For example,
+you may want to randomize groups only if a certain result happened in the previous game.
 
 You cannot accomplish this using ``before_session_starts``, because this method is run when the session is created,
 before players begin playing.
@@ -121,16 +259,14 @@ and put the shuffling code in ``after_all_players_arrive``. For example:
         wait_for_all_groups = True
 
         def after_all_players_arrive(self):
-            group_matrix = [g.get_players() for g in self.subsession.get_groups()]
-            # ... some code to permute this matrix
-            self.subsession.set_groups(group_matrix)
+            if some_condition:
+                self.subsession.group_randomly()
 
 After this wait page, the players will be reassigned to their new groups.
 
 Let's say you have a game with multiple rounds,
 and in a wait page at the beginning you want to shuffle the groups,
 and apply this new group structure to all rounds.
-
 You can use ``group_like_round()`` in conjunction with the method ``in_rounds()``.
 You should also use ``is_displayed()`` so that this method only executes once.
 For example:
@@ -148,32 +284,17 @@ For example:
         def is_displayed(self):
             return self.subsession.round_number == 1
 
-Example: random shuffling (stranger)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: python
+Example: assigning players to roles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    class Subsession(BaseSubsession):
+Let's say you want to assign players to roles based on some external criterion,
+like their gender.
 
-        def before_session_starts(self):
-            players = self.get_players()
-            random.shuffle(players)
-
-            group_matrix = []
-
-            # chunk into groups of Constants.players_per_group
-            ppg = Constants.players_per_group
-            for i in range(0, len(players), ppg):
-                group_matrix.append(players[i:i+ppg])
-            self.set_groups(group_matrix)
-
-Example: fixed roles (typed stranger)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This example shows how to make groups of 3 players, with one player of type A,
-and 2 of type B. The example assumes that you already set ``p.participant.vars['type']``
-on each player (e.g. in round 1 or in a previous app),
-and that there are twice as many B players as A players.
+This example shows how to make groups of 3 players, where player 1 is male, and players 2 & 3 are female.
+and 2 female players. The example assumes that you already set ``participant.vars['gender']``
+on each participant (e.g. in a previous app),
+and that there are twice as many female players as male players.
 
 .. code-block:: python
 
@@ -182,31 +303,27 @@ and that there are twice as many B players as A players.
         def before_session_starts(self):
 
             if self.round_number == 1:
-                # assign p.participant.vars['type'] to A/B...
-                ...
+                players = self.get_players()
 
-            players = self.get_players()
+                M_players = [p for p in players if p.participant.vars['gender'] == 'M']
+                F_players = [p for p in players if p.participant.vars['gender'] == 'F']
 
-            # if you want players to play against new partners,
-            # uncomment this line
-            # random.shuffle(players)
+                group_matrix = []
 
-            A_players = [p for p in players if p.participant.vars['type'] == 'A']
-            B_players = [p for p in players if p.participant.vars['type'] == 'B']
+                # pop elements from A_players until it's empty
+                while M_players:
+                    new_group = [
+                        M_players.pop(),
+                        F_players.pop(),
+                        F_players.pop(),
+                    ]
+                    group_matrix.append(new_group)
 
-            group_matrix = []
-
-            # pop elements from A_players until it's empty
-            while A_players:
-                new_group = [
-                    A_players.pop(),
-                    B_players.pop(),
-                    B_players.pop(),
-                ]
-                group_matrix.append(new_group)
-
-            self.set_groups(group_matrix)
-
+                self.set_groups(group_matrix)
+            else:
+                self.group_like_round(1)
+                # uncomment this line if you want to shuffle groups but keep roles fixed
+                # self.group_randomly(fixed_id_in_group=True)
 
 Example: re-matching by rank
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

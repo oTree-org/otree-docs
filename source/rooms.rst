@@ -73,7 +73,8 @@ Here are the available keys:
 
 -   ``use_secure_urls``: whether oTree should add unique secret keys to URLs,
     so that even if someone can guess another participant's ``participant_label``,
-    they can't guess that person's start URL.
+    they can't guess that person's start URL. If you use this option, then you must
+    have a ``participant_label_file``, and you cannot use the room-wide link.
 
 ``ROOM_DEFAULTS`` is
 a dict that defines settings to be inherited by all rooms unless
