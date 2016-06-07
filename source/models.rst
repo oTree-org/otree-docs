@@ -112,8 +112,8 @@ Then the round numbers of these subsessions would be:
 
     [1, 1, 2, 3, 1]
 
-set_groups()
-~~~~~~~~~~~~
+set_group_matrix()
+~~~~~~~~~~~~~~~~~~
 
 See :ref:`shuffling`.
 

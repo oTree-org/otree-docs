@@ -132,6 +132,8 @@ players are initially grouped sequentially as described in :ref:`fixed_matching`
 even if you did some shuffling in a previous round.
 To counteract this, you can use :ref:`group_like_round`.
 
+.. _set_group_matrix:
+
 set_group_matrix()
 ~~~~~~~~~~~~~~~~~~
 
@@ -275,7 +277,7 @@ and that there are twice as many female players as male players.
                     ]
                     group_matrix.append(new_group)
 
-                self.set_groups(group_matrix)
+                self.set_group_matrix(group_matrix)
             else:
                 self.group_like_round(1)
                 # uncomment this line if you want to shuffle groups, while keeping M/F roles fixed
@@ -363,7 +365,7 @@ Then, you would define the following page and put it at the beginning of ``page_
                 group_matrix.append(sorted_players[i:i+ppg])
 
             # set new groups
-            self.subsession.set_groups(group_matrix)
+            self.subsession.set_group_matrix(group_matrix)
 
 
 .. _complex_grouping_logic:
@@ -373,7 +375,7 @@ More complex grouping logic
 
 If you need something more flexible or complex than what is allowed by
 ``players_per_group``, you can specify the grouping logic yourself in
-``before_session_starts``, using the ``get_players()`` and ``set_groups()``
+``before_session_starts``, using the ``get_players()`` and ``set_group_matrix()``
 methods described above.
 
 **Fixed number of groups with a divisible number of players**
@@ -415,7 +417,7 @@ You can accomplish this as follows:
                     end_index = start_index + ppg
                     group_players = players[start_index:end_index]
                     list_of_lists.append(group_players)
-                self.set_groups(list_of_lists)
+                self.set_group_matrix(list_of_lists)
             else:
                 self.group_like_round(1)
 
@@ -478,7 +480,7 @@ the last *4 groups* with only *2 players*.
                     # we select the player to add
                     group_players = players[start_index:end_index]
                     list_of_lists.append(group_players)
-                self.set_groups(list_of_lists)
+                self.set_group_matrix(list_of_lists)
             else:
                 self.group_like_round(1)
 
