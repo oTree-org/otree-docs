@@ -410,7 +410,7 @@ You can accomplish this as follows:
                 list_of_lists = []
                 players = self.get_players()
                 for j, ppg in enumerate(ppg_list):
-                    offset = 0 if j == 0 else sum(ppg_list[:j])
+                    start_index = 0 if j == 0 else sum(ppg_list[:j])
                     end_index = start_index + ppg
                     group_players = players[start_index:end_index]
                     list_of_lists.append(group_players)
