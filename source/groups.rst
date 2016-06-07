@@ -137,7 +137,8 @@ set_group_matrix()
 .. note::
 
     This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
-    In previous releases, the roughly equivalent method was called ``set_groups``.
+    In previous releases, the roughly equivalent method was called ``set_groups``
+    (``set_groups`` will still work, for compatibility).
 
 ``set_group_matrix()`` lets you modify the group structure in any way you want.
 You can call modify the list of lists returned by ``get_group_matrix()``,
@@ -397,21 +398,21 @@ You can accomplish this as follows:
 
                 # create the base for number of groups
                 num_players = len(self.get_players())
-                players_per_group = [int(num_players/Constants.num_groups)] * Constants.num_groups
+                ppg_list = [num_players//Constants.num_groups] * Constants.num_groups
 
                 # verify if all players are assigned
-                idxg = 0
-                while sum(players_per_group) < num_players:
-                    players_per_group[idxg] += 1
-                    idxg += 1
+                i = 0
+                while sum(ppg_list) < num_players:
+                    ppg_list[i] += 1
+                    i += 1
 
                 # reassignment of groups
                 list_of_lists = []
                 players = self.get_players()
-                for g_idx, g_size in enumerate(players_per_group):
-                    offset = 0 if g_idx == 0 else sum(players_per_group[:g_idx])
-                    limit = offset + g_size
-                    group_players = players[offset:limit]
+                for j, ppg in enumerate(ppg_list):
+                    offset = 0 if j == 0 else sum(ppg_list[:j])
+                    end_index = start_index + ppg
+                    group_players = players[start_index:end_index]
                     list_of_lists.append(group_players)
                 self.set_groups(list_of_lists)
             else:
@@ -450,30 +451,31 @@ the last *4 groups* with only *2 players*.
                 # create a list of how many players must be in every group
                 # the result of this will be [2, 2, 2, 2, 2, 2, 2, 2]
                 # obviously 2 * 8 = 16
-                players_per_group = [int(num_players/Constants.num_groups)] * Constants.num_groups
+                # ppg = 'players per group'
+                ppg_list = [num_players//Constants.num_groups] * Constants.num_groups
 
                 # add one player in order per group until the sum of size of
                 # every group is equal to total of players
-                idxg = 0
-                while sum(players_per_group) < num_players:
-                    players_per_group[idxg] += 1
-                    idxg += 1
-                    if idxg >= len(players_per_group):
-                        idxg = 0
+                i = 0
+                while sum(ppg_list) < num_players:
+                    ppg_list[i] += 1
+                    i += 1
+                    if i >= len(ppg_list):
+                        i = 0
 
                 # reassignment of groups
                 list_of_lists = []
-                for g_idx, g_size in enumerate(players_per_group):
-                    # it is the first group the offset is 0 otherwise we start
+                for j, ppg in enumerate(ppg_list):
+                    # it is the first group the start_index is 0 otherwise we start
                     # after all the players already exausted
-                    offset = 0 if g_idx == 0 else sum(players_per_group[:g_idx])
+                    start_index = 0 if j == 0 else sum(ppg_list[:j])
 
                     # the asignation of this group end when we asign the total
                     # size of the group
-                    limit = offset + g_size
+                    end_index = start_index + ppg
 
                     # we select the player to add
-                    group_players = players[offset:limit]
+                    group_players = players[start_index:end_index]
                     list_of_lists.append(group_players)
                 self.set_groups(list_of_lists)
             else:
