@@ -73,7 +73,7 @@ The following lines are equivalent.
 .. code-block:: python
 
     matrix = self.get_group_matrix()
-    matrix = [group.get_players() for group in self.subsession.get_groups()]
+    matrix = [group.get_players() for group in self.get_groups()]
 
 group_randomly()
 ~~~~~~~~~~~~~~~~
@@ -185,6 +185,8 @@ For example::
      [<Player  2>, <Player  4>, <Player  6>],
      [<Player  8>, <Player 10>, <Player 12>]]
 
+Groups don't have to have the same sizes.
+You can use ``set_group_matrix`` to make groups of uneven sizes.
 
 group.set_players()
 ~~~~~~~~~~~~~~~~~~~
