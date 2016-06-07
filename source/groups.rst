@@ -172,7 +172,7 @@ Then pass this modified matrix to ``set_group_matrix()``::
      [<Player  6>, <Player  1>, <Player  9>],
      [<Player  7>, <Player  5>, <Player 12>]]
 
-You can also pass a matrix of integers to ``set_group_matrix``.
+You can also pass a matrix of integers.
 It must contain all integers from 1 to the number of players
 in the subsession. Each integer represents the player who has that ``id_in_subsession``.
 For example::
@@ -186,8 +186,11 @@ For example::
      [<Player  2>, <Player  4>, <Player  6>],
      [<Player  8>, <Player 10>, <Player 12>]]
 
-Groups don't have to have the same sizes.
-You can use ``set_group_matrix`` to make groups of uneven sizes.
+You can even use ``set_group_matrix`` to make groups of uneven sizes.
+
+To check if your group shuffling worked correctly,
+open your browser to the "Results" tab of your session,
+and look at the ``group`` and ``id_in_group`` columns in each round.
 
 group.set_players()
 ~~~~~~~~~~~~~~~~~~~
@@ -236,11 +239,6 @@ Round 3 has a different group structure, which is copied to rounds 4 and above.
             if self.round_number > 3:
                 self.group_like_round(3)
 
-
-To check if your group shuffling worked correctly,
-open your browser to the "Results" tab of your session,
-and look at the ``group`` and ``id_in_group`` columns in each round.
-
 Example: assigning players to roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -266,7 +264,7 @@ and that there are twice as many female players as male players.
 
                 group_matrix = []
 
-                # pop elements from A_players until it's empty
+                # pop elements from M_players until it's empty
                 while M_players:
                     new_group = [
                         M_players.pop(),
