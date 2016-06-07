@@ -137,6 +137,7 @@ set_group_matrix()
 .. note::
 
     This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
+    In previous releases, the roughly equivalent method was called ``set_groups``.
 
 ``set_group_matrix()`` lets you modify the group structure in any way you want.
 You can call modify the list of lists returned by ``get_group_matrix()``,
