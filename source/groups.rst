@@ -66,12 +66,14 @@ get_group_matrix()
 
 You can retrieve the structure of the groups as a matrix.
 Subsessions have a method called ``get_group_matrix()`` that returns a list of lists,
-with each sublist being the players in a group, in order.
-It's equivalent to:
+with each sublist being the players in a group, ordered by ``id_in_group``.
+
+The following lines are equivalent.
 
 .. code-block:: python
 
-    [group.get_players() for group in self.subsession.get_groups()]
+    matrix = self.get_group_matrix()
+    matrix = [group.get_players() for group in self.subsession.get_groups()]
 
 group_randomly()
 ~~~~~~~~~~~~~~~~
