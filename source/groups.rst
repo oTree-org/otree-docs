@@ -68,7 +68,7 @@ Subsessions have a method called ``get_group_matrix()`` that returns a list of l
 with each sublist being the players in a group, in order.
 It's equivalent to:
 
-.. code-block::python
+.. code-block:: python
 
     [group.get_players() for group in self.subsession.get_groups()]
 
