@@ -100,26 +100,26 @@ Assume that ``players_per_group = 3``, so that a 12-player game would have 4 gro
     >>> from public_goods.models import Subsession
 
     # this line is only necessary if using otree shell
-    >>> s=Subsession.objects.first()
+    >>> self=Subsession.objects.first()
 
     # by default, oTree groups players sequentially
-    >>> s.get_group_matrix()
+    >>> self.get_group_matrix()
 
     [[<Player  1>, <Player  2>, <Player  3>],
      [<Player  4>, <Player  5>, <Player  6>],
      [<Player  7>, <Player  8>, <Player  9>],
      [<Player 10>, <Player 11>, <Player 12>]]
 
-    >>> s.group_randomly(fixed_id_in_group=True)
-    >>> s.get_group_matrix()
+    >>> self.group_randomly(fixed_id_in_group=True)
+    >>> self.get_group_matrix()
 
     [[<Player  1>, <Player  8>, <Player 12>],
      [<Player 10>, <Player  5>, <Player  3>],
      [<Player  4>, <Player  2>, <Player  6>],
      [<Player  7>, <Player 11>, <Player  9>]]
 
-    >>> s.group_randomly()
-    >>> s.get_group_matrix()
+    >>> self.group_randomly()
+    >>> self.get_group_matrix()
 
     [[<Player  8>, <Player 10>, <Player  3>],
      [<Player  4>, <Player 11>, <Player  2>],
@@ -165,8 +165,8 @@ Then pass this modified matrix to ``set_group_matrix()``::
      [<Player  6>, <Player  1>, <Player  9>],
      [<Player  7>, <Player  5>, <Player 12>]]
 
-    >>> s.set_group_matrix(matrix)
-    >>> s.get_group_matrix()
+    >>> self.set_group_matrix(matrix)
+    >>> self.get_group_matrix()
 
     [[<Player  3>, <Player 10>, <Player  8>],
      [<Player  2>, <Player 11>, <Player  4>],
@@ -179,8 +179,8 @@ in the subsession. Each integer represents the player who has that ``id_in_subse
 For example::
 
     >>> new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
-    >>> s.set_group_matrix(new_structure)
-    >>> s.get_group_matrix()
+    >>> self.set_group_matrix(new_structure)
+    >>> self.get_group_matrix()
 
     [[<Player  1>, <Player  3>, <Player  5>],
      [<Player  7>, <Player  9>, <Player 11>],
