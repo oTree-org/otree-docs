@@ -112,10 +112,28 @@ Then the round numbers of these subsessions would be:
 
     [1, 1, 2, 3, 1]
 
+See :ref:`shuffling`.
+
+group_randomly()
+~~~~~~~~~~~~~~~~
+
+See :ref:`shuffling`.
+
+group_like_round()
+~~~~~~~~~~~~~~~~~~
+
+See :ref:`shuffling`.
+
+get_group_matrix()
+~~~~~~~~~~~~~~~~~~
+
+See :ref:`shuffling`.
+
 set_group_matrix()
 ~~~~~~~~~~~~~~~~~~
 
 See :ref:`shuffling`.
+
 
 get_groups()
 ~~~~~~~~~~~~

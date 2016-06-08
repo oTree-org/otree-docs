@@ -87,6 +87,7 @@ Contents:
     currency.rst
     treatments.rst
     rounds.rst
+    settings.rst
     server.rst
     server-generic.rst
     localization.rst

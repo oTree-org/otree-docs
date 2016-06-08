@@ -74,6 +74,7 @@ calculated by converting ``participant.payoff`` to real-world currency
 (if ``USE_POINTS`` is ``True``), and then adding
 ``self.session.config['participation_fee']``.
 
+.. _points:
 
 Points (i.e. "experimental currency")
 -------------------------------------
