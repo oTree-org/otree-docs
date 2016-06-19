@@ -1,7 +1,5 @@
-.. _heroku:
-
-Server setup (basic/Heroku)
-===========================
+Server setup
+============
 
 If you are just testing your app on your personal computer, you can use
 ``otree runserver``. You don't need a full server setup.
