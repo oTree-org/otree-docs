@@ -101,8 +101,13 @@ this should match the version of Python you just installed.
 Install Python (Linux/UNIX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If Python is not already installed, use your system's package manager to install Python and pip.
+We recommmend installing using your system's package manager to install Python 3.5.
+If you use the default system Python 2.7 installation,
+we recommend running ``pip install --upgrade pip``,
+because the default system Python can have an outdated version of Pip.
+If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
 
+More information in the :ref:`Linux server setup <server-ubuntu>` section.
 
 Install oTree
 ~~~~~~~~~~~~~
