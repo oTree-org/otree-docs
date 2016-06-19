@@ -87,6 +87,7 @@ Contents:
     currency.rst
     treatments.rst
     rounds.rst
+    rooms.rst
     settings.rst
     server/intro.rst
     server.rst
@@ -101,7 +102,7 @@ Contents:
     django.rst
     ztree.rst
     v0.5.rst
-    rooms.rst
+
 
 
 

@@ -35,27 +35,44 @@ Changing the language setting
 
 Go to ``settings.py``, change ``LANGUAGE_CODE``, and restart the server.
 
+For example::
+
+    LANGUAGE_CODE = 'fr' # French
+    LANGUAGE_CODE = 'zh-hans' # Chinese (simplified)
+
 Writing your app in multiple languages
 --------------------------------------
 
 You may want your own app to work in multiple languages.
-For example, let's say you want to run the same experiment with English and Chinese participants.
+For example, let's say you want to run the same experiment with English, French, and Chinese participants.
 
 For this, you can use Django's `translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__
 system.
 
 A quick summary:
 
-- In templates, use ``{% blocktrans trimmed %}...{% endblocktrans %}``
-- In Python code, use ``ugettext``.
-- Run ``django-admin makemessages`` to create the ``.po`` files
-- Edit the ``.po`` file in `Poedit <http://poedit.net/>`__
-- Run ``django-admin compilemessages``
-- Go to ``settings.py``, change ``LANGUAGE_CODE``, and restart the server.
+-   Go to ``settings.py``, change ``LANGUAGE_CODE``, and restart the server.
+    Examples::
 
-If you localize the files under ``_templates``,
+        LANGUAGE_CODE = 'fr'
+        LANGUAGE_CODE = 'zh-hans'
+-   Create a folder ``locale`` in each app you are translating, e.g. ``public_goods/locale``.
+-   At the top of your templates, add ``{% load i18n %}``. Then use ``{% blocktrans trimmed %}...{% endblocktrans %}``.
+    There are some things you can't use inside a ``blocktrans``,
+    such as variables containing dots (e.g. ``{{ Constants.foo }}``),
+    or tags (e.g. ``{% if %}``). More info on :ref:`here <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/#std:templatetag-blocktrans>`.
+-   In Python code, use ``ugettext``
+-   Run ``django-admin makemessages`` to create the ``.po`` files in your app's ``locale`` directory.
+    Examples::
+
+        django-admin makemessages -l fr
+        django-admin makemessages -l zh_hans
+
+-   Edit the ``.po`` file in `Poedit <http://poedit.net/>`__
+-   Run ``django-admin compilemessages``
+
+If you localize the files under ``_templates/global``,
 you need to create a directory ``locale`` in the root of the project.
-and make sure that directory is in ``settings.LOCALE_DIRS``.
 
 Volunteering to localize oTree
 ------------------------------

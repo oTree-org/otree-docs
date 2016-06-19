@@ -43,7 +43,6 @@ For example:
         {
             'name': 'econ_lab',
             'display_name': 'Experimental Economics Lab',
-            'participant_label_file': 'econ102.txt',
         },
     ]
 
