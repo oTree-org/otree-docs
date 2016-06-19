@@ -71,17 +71,66 @@ or if it submits pages in the wrong order.
 
 Rather than programming many separate bots, you program one bot that can
 play any variation of the game, using conditional logic.
-For example, here is how you would play if
-one treatment group sees a "threshold" page but the other treatment
-group should see an "accept" page:
+For example, here is how you can make a bot that can play either as player 1 or player 2.
 
 .. code-block:: python
 
-    if self.group.threshold:
-        self.submit(views.Threshold, {'offer_accept_threshold': 30})
+    if self.player.id_in_group == 1:
+        self.submit(views.Offer, {'offer': 30})
     else:
         self.submit(views.Accept, {'offer_accepted': True})
 
+You can condition on ``self.player``, ``self.group``, ``self.subsession``, etc.
+
+.. _bot-caching::
+
+Bot limitations
+---------------
+
+Bots cannot see any updates to the player/group/subsession/etc. that occur
+during the game.
+
+For example, let's say you have a ``views.py`` like this:
+
+.. code-block:: python
+
+    class Bid(Page):
+        form_model = models.Player
+        form_fields = ['bid']
+
+    class Confirm(Page):
+        def is_displayed(self):
+            return self.player.bid > 10
+
+At first you might think to write a bot like this:
+
+.. code-block:: python
+
+    self.submit(views.Bid, {'bid': random.randint(0, 20)})
+    if self.player.bid > 10: # ERROR - self.player.bid is None
+        self.submit(views.Confirm)
+
+However, the check for ``self.player.bid > 10`` will not work,
+because ``self.player.bid`` will be ``None``,
+even though you may assume it was set on the previous line when you submitted the bid.
+This is due to a limitation of the bot system. ``self.player`` does not update live;
+rather it is cached (i.e. frozen) at the beginning of the session, after ``before_session_starts``,
+so its fields will remain in the same state as after ``before_session_starts`` is run.
+
+You can fix the above problem by rewriting the code so it uses a local variable,
+rather than depending on an update to a field on ``self.player``, like this:
+
+.. code-block:: python
+
+    bid = random.randint(0, 20)
+    self.submit(views.Bid, {'bid': bid})
+    if bid > 10: # ERROR - self.player.bid is None
+        self.submit(views.Confirm)
+
+
+
+Bots tips & tricks
+------------------
 
 To get the maximal benefit, your bot should thoroughly test all parts of
 your code. Here are some ways you can test your app:

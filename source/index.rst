@@ -88,8 +88,9 @@ Contents:
     treatments.rst
     rounds.rst
     settings.rst
+    server/intro.rst
     server.rst
-    server-generic.rst
+    server-ubuntu.rst
     localization.rst
     manual_testing.rst
     bots.rst

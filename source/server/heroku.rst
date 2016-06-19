@@ -1,22 +1,7 @@
 .. _heroku:
 
-Server setup (basic/Heroku)
-===========================
-
-You can develop and test your app locally on your personal computer,
-using the ordinary ``runserver`` command.
-
-However, when you want to share your app with an audience,
-you must deploy to a web server. oTree can be deployed to a cloud service like
-Heroku, or to your own on-premises server.
-
-This document explains how to deploy to Heroku,
-because that is the simplest and most common option.
-
-If you prefer to deploy to a non-Heroku server, see :ref:`here <server-generic>`.
-
-About Heroku
-------------
+Running oTree on Heroku
+=======================
 
 `Heroku <https://www.heroku.com/>`__ is a commercial cloud hosting provider.
 If you are not experienced with web server administration, Heroku may be
@@ -329,24 +314,15 @@ Logging with Sentry
 -------------------
 
 Whether or not you use Heroku,
-we recommend you use our free Sentry service (sign up `here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__),
+you should fill (`this form <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__)
+to sign up for our free Sentry service
 which can log all errors on your server and send you email notifications.
-(`General info on Sentry <https://getsentry.com/welcome/>`__.)
+(`Sentry <https://getsentry.com/welcome/>`__.)
 
-A service like Sentry is necessary because once you have set the ``OTREE_PRODUCTION`` `environment variable <http://superuser.com/a/284351>`__.),
-you will no longer see Django's yellow error pages; you or your users will just see generic "500 server error" pages.
-Sentry can send you the details of each error by email.
+Sentry is necessary because many errors are not visible in the UI after you turn off debug mode.
+You will no longer see Django's yellow error pages; you or your users will just see generic "500 server error" pages.
 
-Once you have signed up, we will send you a registration link you need to click.
-You will also be provided with a special URL called a "Sentry DSN".
-
-In your ``settings.py``, you should set ``SENTRY_DSN`` to your DSN URL,
-which makes your server send crash info to our Sentry server.
-Once that is done, you will automatically get notified with any exceptions when debug mode is turned off.
-You can also view the errors through the `web interface <http://sentry.otree.org/auth/login/sentry/>`__.
-
-If you later want other collaborators on your team to receive emails as well, or if you need to manage multiple projects,
-send an email to chris@otree.org.
+After you fill out the form, you will receive an email with a SENTRY_DSN, which is a URL you paste into your settings.py.
 
 .. _papertrail:
 
@@ -357,7 +333,10 @@ If using Heroku, we recommend installing the free "Papertrail" logging add-on::
 
     heroku addons:create papertrail:choklad
 
-(This is useful even if you are already using Sentry.)
+Papertrail gives you an easy-to-use interface for exploring the Heroku server logs.
+It is much easier to use than running ``heroku logs``.
+
+(This is useful even if you are already using Sentry, because it shows different types of errors.)
 
 Database backups
 ----------------

@@ -69,14 +69,11 @@ See :ref:`Sentry <sentry>`.
 
 AUTH_LEVEL
 ----------
-If you are launching a study and want visitors to only be able to
-play your app if you provided them with a start link, set the
-environment variable ``OTREE_AUTH_LEVEL`` to ``STUDY``,
-which will in turn set the setting ``AUTH_LEVEL``.
-If you would like to put your site online in public demo mode where
-anybody can play a demo version of your game, set ``OTREE_AUTH_LEVEL``
-to ``DEMO``. This will allow people to play in demo mode, but not access
-the full admin interface.
+
+See ``AUTH_LEVEL``.
+
+It's somewhat preferable to set the environment variable ``OTREE_AUTH_LEVEL``
+rather than setting ``OTREE_AUTH_LEVEL`` directly.
 
 ROOMS
 -----

@@ -43,7 +43,7 @@ oTree doesn't work with Gunicorn, mod_wsgi, or any other typical WSGI server.
 Because it uses `Django Channels <http://channels.readthedocs.io/en/latest/>`__
 for WebSocket support, it should be run with ``otree runprodserver``,
 which internally starts the Daphne server, several channels workers, and a task queue.
-More info :ref:`here <server-generic>`.
+More info :ref:`here <server-ubuntu>`.
 
 Models
 ~~~~~~
