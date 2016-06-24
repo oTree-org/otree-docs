@@ -81,7 +81,7 @@ You need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/h
 This step is required, starting with oTree 0.5.
 If you don't do it, you will see an "Application Error":
 
-.. image:: _static/heroku-application-error.png
+.. image:: ../_static/heroku-application-error.png
     :align: center
     :scale: 100 %
 
