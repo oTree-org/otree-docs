@@ -1,7 +1,7 @@
 .. _heroku:
 
-Running oTree on Heroku
-=======================
+Basic Server Setup (Heroku)
+===========================
 
 `Heroku <https://www.heroku.com/>`__ is a commercial cloud hosting provider.
 If you are not experienced with web server administration, Heroku may be
