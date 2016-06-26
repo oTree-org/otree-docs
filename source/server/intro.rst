@@ -7,7 +7,7 @@ If you are just testing your app on your personal computer, you can use
 However, when you want to share your app with an audience,
 you must deploy to a web server.
 
-Heroku is the simplest option, and we recommend it for most people.
+:ref:`Heroku <heroku>` is the simplest option, and we recommend it for most people.
 
 However, because oTree is based on Django,
 you can use any server or database supported by Django.

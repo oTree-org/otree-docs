@@ -15,39 +15,10 @@ A new pre-release is published frequently,
 so it's good to run the above commands every few days,
 to get the latest bugfixes.
 
-Here are the new features:
+Here are some changes:
 
-Browser bots
-~~~~~~~~~~~~
-
-Version 0.6 allows you to run your bots not only on the command line,
-but in your browser as well.
-
-Running bots in the browser gives a more realistic measurement of your app's performance.
-Also, it can surface bugs that would not be detected with command-line bot testing,
-such as problems with JavaScript or wait page redirects.
-
-Previously, some people did browser testing by setting a low ``timeout_seconds``
-on each page, but browser bots (1) are faster, (2) don't require you to mix debug/test code in with your production code,
-and (3) let you reuse your ``tests.py`` bots.
-
-How to use browser bots
-```````````````````````
-
-First, make sure you have defined bots for each of your app.
-See :ref:`here <bots>`.
-
-Then, in ``settings.py``, set ``USE_BROWSER_BOTS = True``.
-
-Then, when you create a new session and open the links,
-the page will auto-play according to the bots you defined in your ``tests.py``.
-
-Rooms
-~~~~~
-
-The :ref:`rooms <rooms>` feature is more fully developed and functional.
-
-Misc admin improvements
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Version 0.6 also makes various improvements, e.g. to the admin interface.
+-   The :ref:`rooms <rooms>` feature is more fully developed and functional.
+-   Various improvements to the admin interface
+-   If you update a template you don't have to reload the server
+-   Chinese now uses the proper ``zh-hans`` language code
+-   ``runprodserver`` now defaults to port 8000 (before was 5000)
