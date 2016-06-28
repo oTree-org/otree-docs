@@ -3,10 +3,6 @@
 Rooms
 =====
 
-.. note::
-
-    This is an upcoming feature. It is not ready for official use yet.
-
 oTree lets you configure "rooms", which provide:
 
 -   Persistent links that you can assign to participants or workstations,
@@ -31,8 +27,7 @@ For example:
 
 .. code-block:: python
 
-    ROOM_DEFAULTS = {
-    }
+    ROOM_DEFAULTS = {}
 
     ROOMS = [
         {

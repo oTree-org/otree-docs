@@ -147,11 +147,14 @@ Then change to the directory you just created:
 
     cd oTree
 
-Then run:
-
-.. code-block:: bash
+Reset the database::
 
     otree resetdb
+
+(You might see a message about migrations; you can ignore that.)
+
+Then run the server::
+
     otree runserver
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.

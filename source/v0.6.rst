@@ -1,17 +1,16 @@
 .. _v0.6
 
 
-Version 0.6 beta
-================
+Version 0.6
+===========
 
-Version 0.6 is in beta.
-You can install it like this::
+Version 0.6 is available.
+You can install it as usual::
 
-    pip install --upgrade --pre otree-core
+    pip install --upgrade otree-core
     otree resetdb
 
-Note the ``--pre`` flag, which is necessary since oTree 0.6 is a pre-release.
-A new pre-release is published frequently,
+A new release is published frequently,
 so it's good to run the above commands every few days,
 to get the latest bugfixes.
 
