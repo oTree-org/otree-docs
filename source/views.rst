@@ -24,8 +24,8 @@ Each ``Page`` class has these methods and attributes:
 
 .. _vars_for_template:
 
-``def vars_for_template(self)``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+vars_for_template()
+~~~~~~~~~~~~~~~~~~~
 
 A dictionary of variable names and their values, which is passed to the
 template. Example:
@@ -39,16 +39,22 @@ template. Example:
 
     Variables {{ a }} and {{ b }} ...
 
+oTree automatically passes the following objects to the template: ``player``, ``group``, ``subsession``, ``participant``, ``session``, and ``Constants``.
+You can access them in the template like this: ``{{Constants.blah}}``
+
 .. note::
 
-    oTree automatically passes group, player, subsession, participant, session, and Constants
-    objects to the template, which you can access in the template, e.g.:
-    ``{{Constants.payoff_if_rejected}}``.
+    It's generally recommended not to calculate random values in ``vars_for_template``,
+    because if the user refreshes their page, ``vars_for_template`` will be executed again,
+    and the random calculation might return a different value.
+    Instead, you should calculate random values in either ``before_session_starts``,
+    ``before_next_page``, or ``after_all_players_arrive``, each of which
+    only executes once.
 
 .. _is_displayed:
 
-``def is_displayed(self)``
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+is_displayed()
+~~~~~~~~~~~~~~
 
 Should return ``True`` if the page should be shown, and False if the page
 should be skipped. If omitted, the page will be shown.
@@ -150,14 +156,19 @@ rather than ``post_dict['my_field']``. (Python's dict ``.get()`` method also let
 if that entry is missing, it will return the default of 10.)
 
 
-``def before_next_page(self)``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+before_next_page()
+~~~~~~~~~~~~~~~~~~
 
 Here you define any code that should be executed
 after form validation, before the player proceeds to the next page.
 
 If the page is skipped with ``is_displayed``,
 then ``before_next_page`` will be skipped as well.
+
+Example::
+
+    def before_next_page(self):
+        self.player.tripled_payoff = self.player.bonus * 3
 
 
 ``def vars_for_all_templates(self)``

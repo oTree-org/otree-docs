@@ -101,8 +101,7 @@ Contents:
     mturk.rst
     django.rst
     ztree.rst
-    v0.6.rst
-    v0.5.rst
+    version_history.rst
 
 
 
