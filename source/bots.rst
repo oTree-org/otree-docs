@@ -93,6 +93,8 @@ Browser bots (beta)
 Starting with oTree 0.7, bots can run in the browser.
 oTree will open multiple browser windows, and the pages will auto-play.
 
+To use it, you need to install oTree 0.7 as described :ref:`here <v0.7>`.
+
 Browser bots run the same way as command-line bots,
 by executing the submits in your ``tests.py``.
 
@@ -113,7 +115,7 @@ First steps
         }
 
 -   Make sure Google Chrome is installed
--   Disable most/all Chrome add-ons, especially ad-blockers.
+-   To make the bots run more quickly, disable most/all Chrome add-ons, especially ad-blockers.
     Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/142059?hl=en>`__
     that you use just for browser testing. When oTree launches Chrome,
     it should use the last profile you had open.
@@ -142,6 +144,7 @@ Testing locally
 ~~~~~~~~~~~~~~~
 
 You can also test a server running on your own machine.
+This is faster than using a remote server.
 However, this command generates very heavy server traffic
 that the typical ``runserver``/SQLite development setup
 is not designed to handle. So, you should use a different server setup:

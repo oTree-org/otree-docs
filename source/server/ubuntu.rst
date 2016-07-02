@@ -18,6 +18,12 @@ However, you may prefer to run oTree on your own server. Reasons may include:
    access is unavailable
 -  You want full control over how your server is configured
 
+.. note::
+
+    Prof. Gregory Huber at Yale has created a VirtualBox Fedora image with oTree server configured.
+    You can download it `here <https://yale.app.box.com/v/VirtualBoxFedoraOtreeServer>`__,
+    or follow the below instructions to configure your own server.
+
 Python & Pip
 ------------
 
