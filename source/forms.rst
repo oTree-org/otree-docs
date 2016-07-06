@@ -53,6 +53,7 @@ Then in the template, set the label to this variable:
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.
 
+.. _form-validation:
 
 User Input Validation
 ---------------------
@@ -86,23 +87,26 @@ require an integer to be between 12 and 24:
 
 .. code-block:: python
 
+    # in models.py
     offer = models.PositiveIntegerField(min=12, max=24)
 
 
 .. _choices:
 
 You can constrain the user to a predefined list of choices by using
-``choices``:
+``choices=``:
 
 .. code-block:: python
 
-    year_in_school = models.CharField(
-        choices=['Freshman', 'Sophomore', 'Junior', 'Senior'])
+    # in models.py
+    level = models.PositiveIntegerField(
+        choices=[1, 2, 3],
+    )
 
 The user will then be presented a dropdown menu instead of free text input.
 
 If you would like a specially formatted value displayed to the user that
-is different from the values stored internally, ``choices`` can be a list
+is different from the values stored internally, ``choices=`` can be a list
 consisting itself of tuples of two items.
 The first element in each tuple is the value and the second element is the
 human-readable label.
@@ -111,19 +115,19 @@ For example:
 
 .. code-block:: python
 
-    year_in_school = models.CharField(
+    # in models.py
+    level = models.PositiveIntegerField(
         choices=[
-            ('FR', 'Freshman'),
-            ('SO', 'Sophomore'),
-            ('JR', 'Junior'),
-            ('SR', 'Senior'),
+            [1, 'Low'],
+            [2, 'Medium'],
+            [3, 'High'],
         ]
     )
 
 .. note::
 
     If one of your choices contains unicode characters, e.g., "höchster",
-    you should prefix the string with
+    and you are using Python 2 (not 3), you should prefix the string with
     ``u`` to mark it as a unicode string, e.g. ``u"höchster"``.
     (You should do this anywhere in your Python code where unicode literals are used.)
     See `here <https://docs.python.org/2/howto/unicode.html>`__ for more info.
@@ -132,12 +136,13 @@ After the field has been set, you can access the human-readable name
 using
 `get_FOO_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
 , like this:
-``self.get_year_in_school_display() # returns e.g. 'Sophomore'``
+``self.get_level_display() # returns e.g. 'Medium'``
 
 If a field is optional, you can do:
 
 .. code-block:: python
 
+    # in models.py
     offer = models.PositiveIntegerField(blank=True)
 
 .. _dynamic_validation:
@@ -149,24 +154,48 @@ If you need a form's choices or validation logic to depend on some
 dynamic calculation, then you can instead define one of the below
 methods in your ``Page`` class in ``views.py``.
 
--  ``def {field_name}_choices(self)``
+{field_name}_choices()
+''''''''''''''''''''''
+
+Like setting ``choices=`` in models.py, this will set the choices for the form field
+(e.g. the dropdown menu or radio buttons).
 
 Example:
 
 .. code-block:: python
 
-    def offer_choices(self):
-        return currency_range(0, self.player.endowment, 1)
+    class MyPage(Page):
 
--  ``def {field_name}_min(self)``
+        form_model = models.Player
+        form_fields = ['offer']
 
-The dynamic alternative to ``min``.
+        def offer_choices(self):
+            return currency_range(0, self.player.endowment, 1)
 
--  ``def {field_name}_max(self)``
 
-The dynamic alternative to ``max``.
+{field_name}_max()
+''''''''''''''''''
 
--  ``def {field_name}_error_message(self, value)``
+The dynamic alternative to setting ``max=`` in models.py. For example:
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        form_model = models.Player
+        form_fields = ['offer']
+
+        def offer_max(self):
+            return self.player.endowment
+
+
+{field_name}_min()
+''''''''''''''''''
+
+The dynamic alternative to setting ``min`` in models.py.
+
+{field_name}_error_message()
+''''''''''''''''''''''''''''
 
 This is the most flexible method for validating a field.
 
@@ -176,22 +205,32 @@ as follows:
 
 .. code-block:: python
 
-    def odd_negative_error_message(self, value):
-        if not (value < 0 and value % 2):
-            return 'Must be odd and negative'
+    class MyPage(Page):
+
+        form_model = models.Player
+        form_fields = ['odd_negative']
+
+        def odd_negative_error_message(self, value):
+            if not (value < 0 and value % 2):
+                return 'Must be odd and negative'
 
 Validating multiple fields together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say you have 3 integer fields in your form whose names are
 ``int1``, ``int2``, and ``int3``, and the values submitted must sum to
-100. You would define the ``error_message`` method in your Page class:
+100. You can enforce this with the ``error_message`` method:
 
 .. code-block:: python
 
-    def error_message(self, values):
-        if values["int1"] + values["int2"] + values["int3"] != 100:
-            return 'The numbers must add up to 100'
+    class MyPage(Page):
+
+        form_model = models.Player
+        form_fields = ['int1', 'int2', 'int3']
+
+        def error_message(self, values):
+            if values["int1"] + values["int2"] + values["int3"] != 100:
+                return 'The numbers must add up to 100'
 
 Timeouts
 --------
@@ -214,6 +253,7 @@ like this:
 
 .. code-block:: django
 
+    <!-- in your HTML template -->
     {% for field in form %}
         {% formfield field %}
     {% endfor %}
@@ -232,6 +272,7 @@ as described in the Django documentation, e.g.:
 
 .. code-block:: python
 
+    # in models.py
     contribution = models.CurrencyField(
         verbose_name="How much will you contribute?")
 
@@ -250,6 +291,17 @@ Currently in oTree, you can only define a fixed number of fields in a model.
 So, you should define in ``models.py`` N fields (``contribution_1...contribution_N...``),
 and then use ``get_form_fields`` as described above to dynamically return a list with the desired subset of these fields.
 
+For example, let's say the above variable ``n`` is actually an ``IntegerField`` on the player,
+which gets set dynamically at some point in the game. You can use ``get_form_fields``
+like this:
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        form_model = models.Player
+        def get_form_fields(self):
+            return ['contribution_{}'.format(i) for i in range(1, self.player.n + 1)]
 
 Widgets
 -------

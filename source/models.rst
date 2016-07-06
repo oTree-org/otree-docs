@@ -60,6 +60,12 @@ The full list of available fields is in the Django documentation
 
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
 
+min, max, choices
+-----------------
+
+For info on how to set a field's ``min``, ``max``, or ``choices``,
+see :ref:`form-validation`.
+
 .. _constants:
 
 Constants

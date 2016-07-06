@@ -62,7 +62,7 @@ get_group_matrix()
 
 .. note::
 
-    This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
+    This method is only available in otree-core >=0.5.11 (released after June 7, 2016).
 
 You can retrieve the structure of the groups as a matrix.
 Subsessions have a method called ``get_group_matrix()`` that returns a list of lists,
@@ -80,7 +80,7 @@ group_randomly()
 
 .. note::
 
-    This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
+    This method is only available in otree-core >=0.5.11 (released after June 7, 2016).
 
 Subsessions have a method ``group_randomly()`` that shuffles players randomly,
 so they can end up in any group, and any position within the group.
@@ -139,7 +139,7 @@ set_group_matrix()
 
 .. note::
 
-    This method is only available in the latest otree-core (>=0.5.11), released after June 7, 2016.
+    This method is only available in otree-core >=0.5.11 (released after June 7, 2016).
     In previous releases, the roughly equivalent method was called ``set_groups``
     (``set_groups`` will still work, for compatibility).
 

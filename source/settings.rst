@@ -84,3 +84,12 @@ ROOM_DEFAULTS
 -------------
 
 See :ref:`rooms`.
+
+ADMIN_PASSWORD
+--------------
+
+For security reasons, it's recommended to put your admin password in an environment variable,
+then read it in ``settings.py`` like this::
+
+    ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
+

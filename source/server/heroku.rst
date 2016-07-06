@@ -73,8 +73,8 @@ app. Or you can specify your own name; see ``heroku help create`` for more info.
 
 .. _redis:
 
-Install Redis add-on (new for v0.5)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install Redis add-on (new for v0.5+)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__.
 
@@ -212,8 +212,8 @@ This is new in oTree 0.5. In the oTree admin interface, click "Server Check" in 
 It will tell you what steps below you need to take.
 
 
-Turn on timeout worker Dyno (new for v0.5)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Turn on timeout worker Dyno (new for v0.5+)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable full functionality, you should go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
 click on your app, click to edit the dynos, and turn on the ``timeoutworker``

@@ -16,7 +16,7 @@ oTree 0.5 setup
 
 .. note::
 
-    We currently do not have Windows server setup instructions for oTree 0.5.
+    We currently do not have Windows server setup instructions for oTree 0.5+.
     We encourage anybody to contribute instructions.
 
 

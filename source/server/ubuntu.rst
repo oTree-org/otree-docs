@@ -1,7 +1,7 @@
 .. _server-ubuntu:
 
-oTree on Linux (Ubuntu)
-=======================
+oTree on Linux
+==============
 
 .. note::
 
