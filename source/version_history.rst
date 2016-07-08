@@ -12,7 +12,7 @@ Version 0.7 (beta)
 Version 0.7 beta is available. Install it like this (note the ``--pre`` flag,
 since it is a pre-release)::
 
-    pip install --upgrade --pre otree-core
+    pip3 install --upgrade --pre otree-core
     otree resetdb
 
 The main new feature is :ref:`browser bots <browser-bots>`.
@@ -27,7 +27,7 @@ Version 0.6
 Version 0.6 is available.
 You can install it as usual::
 
-    pip install --upgrade otree-core
+    pip3 install --upgrade otree-core
     otree resetdb
 
 Here are some changes:
@@ -64,7 +64,7 @@ then run ``heroku restart``.
 
 Then update your ``requirements_base.txt`` so it contains the right version of ``otree-core``.
 This will tell Heroku which version of oTree to install.
-(The currently installed version of ``otree-core`` is listed in the output of ``pip freeze``).
+(The currently installed version of ``otree-core`` is listed in the output of ``pip3 freeze``).
 
 In your project's root directory, find the file ``Procfile``,
 change its contents to the following, and if using Heroku, turn on both dynos:

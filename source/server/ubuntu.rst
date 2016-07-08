@@ -29,7 +29,7 @@ Python & Pip
 
 We recommmend installing using your system's package manager to install Python 3.5.
 If you use the default system Python 2.7 installation,
-we recommend running ``pip install --upgrade pip``,
+we recommend running ``pip3 install --upgrade pip``,
 because the default system Python can have an outdated version of Pip.
 If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
 
@@ -72,7 +72,7 @@ allows you to continue to use SQLite on your development machine, while using Po
 
 Then run::
 
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
 Note it is ``requirements.txt``, instead of ``requirements_base.txt``.
 This will install some extra packages like ``psycopg2``,
@@ -116,7 +116,7 @@ Open your shell, and make sure you have committed any changes as follows:
 
 .. code-block:: bash
 
-    pip freeze > requirements_base.txt
+    pip3 freeze > requirements_base.txt
     git add .
     git commit -am '[commit message]'
 

@@ -90,6 +90,7 @@ require an integer to be between 12 and 24:
     # in models.py
     offer = models.PositiveIntegerField(min=12, max=24)
 
+If the max/min are not fixed, you should use :ref:`FOO_max`
 
 .. _choices:
 
@@ -104,6 +105,8 @@ You can constrain the user to a predefined list of choices by using
     )
 
 The user will then be presented a dropdown menu instead of free text input.
+
+If the choices are not fixed, you should use :ref:`FOO_choices`
 
 If you would like a specially formatted value displayed to the user that
 is different from the values stored internally, ``choices=`` can be a list
@@ -154,6 +157,8 @@ If you need a form's choices or validation logic to depend on some
 dynamic calculation, then you can instead define one of the below
 methods in your ``Page`` class in ``views.py``.
 
+.. _FOO_choices:
+
 {field_name}_choices()
 ''''''''''''''''''''''
 
@@ -172,6 +177,8 @@ Example:
         def offer_choices(self):
             return currency_range(0, self.player.endowment, 1)
 
+
+.. _FOO_max:
 
 {field_name}_max()
 ''''''''''''''''''
@@ -193,6 +200,8 @@ The dynamic alternative to setting ``max=`` in models.py. For example:
 ''''''''''''''''''
 
 The dynamic alternative to setting ``min`` in models.py.
+
+.. _FOO_error_message:
 
 {field_name}_error_message()
 ''''''''''''''''''''''''''''

@@ -85,6 +85,8 @@ ROOM_DEFAULTS
 
 See :ref:`rooms`.
 
+.. _AUTH_LEVEL:
+
 ADMIN_PASSWORD
 --------------
 
@@ -93,3 +95,7 @@ then read it in ``settings.py`` like this::
 
     ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 
+To set ``OTREE_ADMIN_PASSWORD`` on Heroku, enter this command, substituting your
+own password of course::
+
+    $ heroku config:set OTREE_ADMIN_PASSWORD=blahblah

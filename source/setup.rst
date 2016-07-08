@@ -23,14 +23,15 @@ A few tips:
 Install Python
 --------------
 
-We recommend installing Python 3.5,
-although oTree also works on Python 2.7 (see :ref:`python2`).
+We recommend installing Python 3.5.
 
-If you already created an oTree project with Python 2 and would like to switch to Python 3,
+oTree also works on Python 2.7 (see :ref:`python2`), but we will discontinue
+Python 2 support eventually. If you already created an oTree project
+with Python 2 and would like to switch to Python 3,
 follow the instructions :ref:`here <py3-migration>`.
 
-If you already have Python 3.5 or 2.7 installed
-(check by entering ``pip -V`` at your command prompt),
+If you already have Python 3.5 installed
+(check by entering ``pip3 -V`` at your command prompt),
 you can skip the below section. Or, uninstall your existing version of Python,
 and proceed with the below steps.
 
@@ -45,7 +46,7 @@ Check the box to add Python to PATH:
 
 Once setup is done, open PowerShell and enter::
 
-    pip -V
+    pip3 -V
 
 It will output a line that gives the version of Python at the end;
 this should match the version of Python you just installed.
@@ -92,18 +93,12 @@ When prompted, select to install the "command line developer tools".
 It will output a line that gives the version of Python at the end;
 this should match the version of Python you just installed.
 
-.. note::
-
-    If using Python 3 on a Mac, you should use ``pip3`` instead of ``pip``,
-    wherever it is mentioned in the oTree documentation.
-
-
 Install Python (Linux/UNIX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We recommmend installing using your system's package manager to install Python 3.5.
 If you use the default system Python 2.7 installation,
-we recommend running ``pip install --upgrade pip``,
+we recommend running ``pip3 install --upgrade pip``,
 because the default system Python can have an outdated version of Pip.
 If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
 
@@ -114,10 +109,7 @@ Install oTree
 
 .. code-block:: bash
 
-    pip install --upgrade otree-core
-
-(If using Python 3 on Mac, you should use ``pip3`` instead of ``pip``.)
-
+    pip3 install --upgrade otree-core
 
 Windows issue: vcvarsall.bat and Visual C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -216,7 +208,7 @@ Run:
 
 .. code-block:: bash
 
-    pip install --upgrade otree-core
+    pip3 install --upgrade otree-core
     otree resetdb
 
 Upgrade oTree library

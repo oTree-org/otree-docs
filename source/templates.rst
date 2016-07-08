@@ -233,27 +233,9 @@ Example:
 LaTeX
 ^^^^^
 
-If you want to put LaTeX formulas in your app (with `KaTeX <http://khan.github.io/KaTeX/>`__),
-put this in your ``{% scripts %}`` block:
-
-.. code-block:: html
-
-    <script src="{% static 'otree/katex/katex.min.js' %}"></script>
-    <script src="{% static 'otree/js/init_katex.js' %}"></script>
-
-And put this in your ``{% scripts %}`` block:
-
-.. code-block:: html
-
-    <link rel="stylesheet" href="{% static 'otree/katex/katex.min.css' %}">
-
-You can then insert LaTeX as follows:
-
-.. code-block:: html
-
-    <span class="latex">
-        1 + i = (1 + r)(1 + \pi)
-    </span>
+LaTeX used to be built-in to oTree but has been removed.
+If you want to put LaTeX formulas in your app,
+you can try `KaTeX <http://khan.github.io/KaTeX/>`__.
 
 
 oTree on mobile devices

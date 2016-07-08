@@ -3,7 +3,14 @@
 Python 2.7 installation instructions
 ====================================
 
-Here are the instructions if you prefer to use Python 2.7 rather than 3.5.
+We recommend using oTree with Python 3.5, but
+here are the instructions if you prefer to use Python 2.7.
+
+.. note::
+
+    If you use Python 2, you should use the ``pip`` command instead of ``pip3``,
+    wherever mentioned in the oTree documentation.
+
 
 Python 2.7 on Windows
 ~~~~~~~~~~~~~~~~~~~~~

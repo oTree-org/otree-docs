@@ -97,7 +97,7 @@ Run:
 
 .. code-block:: bash
 
-    $ pip install --upgrade otree-core
+    $ pip3 install --upgrade otree-core
 
 .. note::
 
@@ -116,11 +116,11 @@ same version of each library on your server.
 
 If using Windows PowerShell, enter::
 
-    pip freeze | out-file -enc ascii requirements_base.txt
+    pip3 freeze | out-file -enc ascii requirements_base.txt
 
 Otherwise, enter::
 
-    pip freeze > requirements_base.txt
+    pip3 freeze > requirements_base.txt
 
 (Open the file ``requirements_base.txt`` and have a look,
 especially for the line that says ``otree-core=x.x.x``
