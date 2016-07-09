@@ -18,35 +18,63 @@ However, you may prefer to run oTree on your own server. Reasons may include:
    access is unavailable
 -  You want full control over how your server is configured
 
+The below instructions are for Ubuntu 16.04.
+
 .. note::
 
     Prof. Gregory Huber at Yale has created a VirtualBox Fedora image with oTree server configured.
     You can download it `here <https://yale.app.box.com/v/VirtualBoxFedoraOtreeServer>`__,
     or follow the below instructions to configure your own server.
 
-Python & Pip
-------------
+Install apt-get packages
+------------------------
 
-We recommmend installing using your system's package manager to install Python 3.5.
-If you use the default system Python 2.7 installation,
-we recommend running ``pip3 install --upgrade pip``,
-because the default system Python can have an outdated version of Pip.
-If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
+Run::
 
-Database
---------
+    sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib redis-server
+
+Create a virtualenv
+-------------------
+
+It's a best practice to use a virtualenv::
+
+    python3 -m venv venv_otree
+
+Then in your ``.bashrc`` or ``.bash_profile``, add this command so your venv
+is activated each time you start your shell::
+
+    source ~/path/to/your/venv_otree/bin/activate
+
+
+Database (Postgres)
+-------------------
 
 oTree's default database is SQLite, which is fine for local development,
 but insufficient for production.
 We recommend PostgreSQL, although you can also use MySQL, MariaDB, or any other database
 supported by Django.
 
-To use Postgres, first install Postgres, create a user (called ``postgres`` below),
-and start your Postgres server. The instructions for doing the above depend on your OS.
+Change users to the ``postgres`` user, so that you can execute some commands::
 
-Once that is done, you can create your database::
+    sudo su - postgres
 
-    $ psql -c 'create database django_db;' -U postgres
+Then start the Postgres shell::
+
+    psql
+
+Once you're in the shell, create a database and user::
+
+    CREATE DATABASE django_db;
+    CREATE USER otree_user WITH PASSWORD 'mypassword';
+    GRANT ALL PRIVILEGES ON DATABASE django_db TO otree_user;
+
+Exit the SQL prompt:
+
+    \q
+
+Exit out of the postgres user and return to your regular command prompt::
+
+    exit
 
 Now you should tell oTree to use Postgres instead of SQLite.
 The default database configuration in ``settings.py`` is::
@@ -58,17 +86,17 @@ The default database configuration in ``settings.py`` is::
     }
 
 However, instead of modifying the above line directly,
-it's better to set the ``DATABASE_URL`` environment variable on your server::
+it's better to set the ``DATABASE_URL`` environment variable on your server.
+If you used the values in the example above (username ``otree_user``, password ``mypassword`` and database ``django_db``),
+you would add this line to your ``.bash_profile`` or ``.bashrc``::
 
-    DATABASE_URL=postgres://postgres@localhost/django_db
+    export DATABASE_URL=postgres://otree_user:mypassword@localhost/django_db
 
-(To learn what an "environment variable" is, see `here <http://superuser.com/a/284351>`__.)
-
+Then restart your shell, and confirm the env var is set, with ``echo $DATABASE_URL``.
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 (This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
 Setting the database through an environment variable
 allows you to continue to use SQLite on your development machine, while using Postgres on your production server.
-
 
 Then run::
 
@@ -78,39 +106,21 @@ Note it is ``requirements.txt``, instead of ``requirements_base.txt``.
 This will install some extra packages like ``psycopg2``,
 which is necessary for using Postgres.
 
-You may get an error when you try installing ``psycopg2``, as described
-`here <http://initd.org/psycopg/docs/faq.html#problems-compiling-and-deploying-psycopg2>`__.
-
-The fix is to install the ``libpq-dev`` and ``python-dev`` packages.
-On Ubuntu/Debian, do:
-
-.. code-block:: bash
-
-    sudo apt-get install libpq-dev python-dev
-
-
 Install Redis
 -------------
 
-You need to install Redis server and run it on its default port (6379).
+If you installed ``redis-server`` through ``apt-get`` as instructed earlier,
+Redis should be running on port 6379. You can test with ``redis-cli ping``,
+which should output ``PONG``.
 
-- Mac: if using Homebrew, you can follow the instructions here: `here <http://richardsumilang.com/server/redis/install-redis-on-os-x/>`__.
-- Ubuntu: download `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
-
-You can test if Redis is running as follows:
-
-.. code-block:: python
-
-    >>> import redis
-    >>> r = redis.Redis()
-    >>> r.ping()
-
+If there was an installation problem, you can try installing Redis from an alternate source,
+e.g. `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
 
 Deploy your code
 ----------------
 
-If you are using a remote webserver, you need to push your code there,
-typically using Git.
+If your code is on your personal computer and you are trying to push it to
+this web server, you can use Git.
 
 Open your shell, and make sure you have committed any changes as follows:
 
@@ -140,13 +150,7 @@ If you are just testing your app locally, you can use the usual ``runserver``
 command.
 
 However, when you want to use oTree in production, you need to run the
-production server, which can handle more traffic. You should use a process
-control system like Supervisord, and have it launch otree with the command
-``otree runprodserver``.
-
-This will run the ``collectstatic`` command, and then
-launch all server processes (``daphne`` server, Channels worker processes,
-and the timeout worker).
+production server, which can handle more traffic.
 
 .. warning::
 
@@ -157,6 +161,33 @@ and the timeout worker).
 
     Prior to otree-core 0.5.16, ``runprodserver`` executed the commands in your ``Procfile``.
     It no longer does so.
+
+You should use a process control system like `Circus <https://circus.readthedocs.io/en/latest/>`__ or Supervisord,
+which will restart your processes in case they crash.
+Instructions are given here for Circus,
+because it is compatible with Python 3.
+
+Circus
+~~~~~~
+
+Install circus::
+
+    sudo apt-get install libzmq-dev libevent-dev
+    pip3 install circus circus-web
+
+Create a ``circus.ini`` in your project folder somewhere, with the following content::
+
+    [watcher:webapp]
+    cmd = otree
+    args = runprodserver --no-collectstatic
+    use_sockets = True
+
+The command ``otree runprodserver`` will run
+all server processes (``daphne`` server, Channels worker processes,
+and the timeout worker).
+
+Run ``otree collectstatic`` to collect your static files,
+then run ``circusd --daemon circus.ini``. This should start your server.
 
 Next steps
 ----------
