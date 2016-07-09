@@ -68,7 +68,7 @@ Once you're in the shell, create a database and user::
     CREATE USER otree_user WITH PASSWORD 'mypassword';
     GRANT ALL PRIVILEGES ON DATABASE django_db TO otree_user;
 
-Exit the SQL prompt:
+Exit the SQL prompt::
 
     \q
 
