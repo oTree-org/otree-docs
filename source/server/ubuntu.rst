@@ -1,7 +1,7 @@
 .. _server-ubuntu:
 
-oTree on Linux
-==============
+Linux Server
+============
 
 .. note::
 
@@ -87,6 +87,10 @@ The default database configuration in ``settings.py`` is::
 
 However, instead of modifying the above line directly,
 it's better to set the ``DATABASE_URL`` environment variable on your server.
+Setting the database through an environment variable
+allows you to continue to use SQLite on your development machine,
+while using Postgres on your production server.
+
 If you used the values in the example above (username ``otree_user``, password ``mypassword`` and database ``django_db``),
 you would add this line to your ``.bash_profile`` or ``.bashrc``::
 
@@ -95,16 +99,18 @@ you would add this line to your ``.bash_profile`` or ``.bashrc``::
 Then restart your shell, and confirm the env var is set, with ``echo $DATABASE_URL``.
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 (This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
-Setting the database through an environment variable
-allows you to continue to use SQLite on your development machine, while using Postgres on your production server.
 
 Then run::
 
     pip3 install -r requirements.txt
 
+
+
 Note it is ``requirements.txt``, instead of ``requirements_base.txt``.
 This will install some extra packages like ``psycopg2``,
 which is necessary for using Postgres.
+
+Once it's finished, run ``otree resetdb``.
 
 Install Redis
 -------------
@@ -115,6 +121,8 @@ which should output ``PONG``.
 
 If there was an installation problem, you can try installing Redis from an alternate source,
 e.g. `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
+
+.. _git-generic:
 
 Deploy your code
 ----------------
@@ -142,6 +150,7 @@ Then do:
 
 Where [remote name] is the name of your server's git remote.
 
+.. _runprodserver:
 
 Running the server
 ------------------
@@ -152,7 +161,7 @@ command.
 However, when you want to use oTree in production, you need to run the
 production server, which can handle more traffic.
 
-.. warning::
+.. note::
 
     Prior to v0.5, oTree used ``gunicorn``.
     oTree 0.5 and later uses the ``daphne`` server.
@@ -186,8 +195,11 @@ The command ``otree runprodserver`` will run
 all server processes (``daphne`` server, Channels worker processes,
 and the timeout worker).
 
-Run ``otree collectstatic`` to collect your static files,
-then run ``circusd --daemon circus.ini``. This should start your server.
+Run the following commands::
+
+    otree collectstatic
+    circusd --daemon circus.ini
+
 
 Next steps
 ----------
