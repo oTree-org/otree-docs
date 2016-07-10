@@ -43,7 +43,11 @@ supported by Django.
 Install `Postgres for Windows <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`__,
 using the default options. Note down the password you chose for the root ``postgres`` user.
 
-When the installer finishes, open PowerShell and run ``psql -U postgres``, and enter these commands::
+When the installer finishes, open PowerShell and run ``psql -U postgres``.
+(If the command is not found, make sure your ``PATH`` environment variable contains
+``C:\Program Files\PostgreSQL\9.5\bin``.)
+
+Then enter these commands::
 
     CREATE DATABASE django_db;
     CREATE USER otree_user WITH PASSWORD 'mypassword';

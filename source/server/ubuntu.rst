@@ -195,6 +195,23 @@ Run the following commands::
     otree collectstatic
     circusd --daemon circus.ini
 
+Apache, Nginx, etc.
+~~~~~~~~~~~~~~~~~~~
+
+It's simplest to use oTree without Apache or Nginx.
+oTree comes installed with its own web server `Daphne <https://github.com/andrewgodwin/daphne>`__,
+which is launched automatically when you run ``otree runprodserver``.
+
+oTree does not work with WSGI servers like Gunicorn or mod_wsgi.
+Instead it requires an ASGI server, and currently the best one is Daphne.
+Apache and Nginx do not have ASGI server implementations, so you cannot use
+Apache or Nginx as your primary web server.
+
+You could still use Apache/Nginx as a reverse proxy, for example if you are
+trying to optimize performance. However, for many people ``daphne`` will be sufficient.
+oTree uses `whitenoise <http://whitenoise.evans.io/en/stable/index.html>`__
+to serve static files (e.g. images, JavaScript, CSS). This is reasonably
+efficient, so for many people a reverse proxy will not be necessary.
 
 Next steps
 ----------
