@@ -30,6 +30,8 @@ Then put this in the file::
 
 (Note the dot at the beginning of the line.)
 
+.. _postgres-windows:
+
 Database (Postgres)
 -------------------
 

@@ -46,6 +46,8 @@ is activated each time you start your shell::
     source ~/path/to/your/venv_otree/bin/activate
 
 
+.. _postgres-linux:
+
 Database (Postgres)
 -------------------
 
@@ -102,15 +104,8 @@ Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLit
 
 Then run::
 
-    pip3 install -r requirements.txt
-
-
-
-Note it is ``requirements.txt``, instead of ``requirements_base.txt``.
-This will install some extra packages like ``psycopg2``,
-which is necessary for using Postgres.
-
-Once it's finished, run ``otree resetdb``.
+    pip3 install psycopg2
+    otree resetdb
 
 Install Redis
 -------------

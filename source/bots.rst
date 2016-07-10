@@ -93,8 +93,6 @@ Browser bots (beta)
 Starting with oTree 0.7, bots can run in the browser.
 oTree will open multiple browser windows, and the pages will auto-play.
 
-To use it, you need to install oTree 0.7 as described :ref:`here <v0.7>`.
-
 Browser bots run the same way as command-line bots,
 by executing the submits in your ``tests.py``.
 
@@ -106,6 +104,7 @@ each page and notice if there are visual errors.
 First steps
 ~~~~~~~~~~~
 
+-   Make sure your app has a ``tests.py`` with a bot that plays each page of the game
 -   In ``settings.py`` create a :ref:`room <room>` called ``browser_bots``,
     like this::
 
@@ -152,6 +151,8 @@ is not designed to handle. So, you should use a different server setup:
 -   You should start the server with ``otree webandworkers``
     or ``otree runprodserver``.
 -   If possible, try setting up PostgreSQL or MySQL, instead of SQLite.
+    See instructions for :ref:`Postgres on Windows <postgres-windows>` or
+    :ref:`Postgres on Linux <postgres-linux>`.
     If this is too challenging to configure, you can try with SQLite,
     but it may not work reliably.
 
