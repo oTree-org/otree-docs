@@ -17,14 +17,27 @@ and in the browser.
 Writing tests
 -------------
 
+.. note::
+
+    The syntax for bots has changed as of August 2016. ``self.submit`` has
+    been replaced by ``yield``. So, instead of
+    ``self.submit(views.Start)``, you should enter ``yield (views.Start)``,
+    and instead of ``self.submit(views.Offer, {'offer_amount': 50})``,
+    you should do ``yield (views.Offer, {'offer_amount': 50})``. In your code,
+    you should do a search-and-replace for ``self.submit(`` and replace it with
+    ``yield `` (note the space after the word 'yield').
+
+    Also, the ``validate_play`` method has been removed. You can now put assert
+    statements directly in ``play_round``.
+
 Tests are contained in your app's ``tests.py``. Fill out the
 ``play_round()`` method of your ``PlayerBot``. It should simulate each page
 submission. For example:
 
 .. code-block:: python
 
-    self.submit(views.Start)
-    self.submit(views.Offer, {'offer_amount': 50})
+    yield (views.Start)
+    yield (views.Offer, {'offer_amount': 50})
 
 Here, we first submit the ``Start`` page, which does not contain a form.
 The next page is ``Offer``, which contains a form whose field is called
@@ -34,7 +47,7 @@ If a page contains several submissions, the synthax looks like
 
 .. code-block:: python
 
-    self.submit(views.Offer, {'first_offer_amount': 50, 'second_offer_amount': 150, 'third_offer_amount': 150})
+    yield (views.Offer, {'first_offer_amount': 50, 'second_offer_amount': 150, 'third_offer_amount': 150})
 
 
 The test system will raise an error if the bot submits invalid input for a page,
@@ -47,9 +60,9 @@ For example, here is how you can make a bot that can play either as player 1 or 
 .. code-block:: python
 
     if self.player.id_in_group == 1:
-        self.submit(views.Offer, {'offer': 30})
+        yield (views.Offer, {'offer': 30})
     else:
-        self.submit(views.Accept, {'offer_accepted': True})
+        yield (views.Accept, {'offer_accepted': True})
 
 You can condition on ``self.player``, ``self.group``, ``self.subsession``, etc.
 
@@ -104,20 +117,16 @@ each page and notice if there are visual errors.
 First steps
 ~~~~~~~~~~~
 
--   Make sure your app has a ``tests.py`` with a bot that plays each page of the game
--   In ``settings.py`` create a :ref:`room <room>` called ``browser_bots``,
-    like this::
-
-        {
-            'name': 'browser_bots',
-            'display_name': 'Browser Bots',
-        }
-
--   Make sure Google Chrome is installed
--   To make the bots run more quickly, disable most/all Chrome add-ons, especially ad-blockers.
+-   Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings.py``
+    (more info below).
+-   To make the bots run more quickly, disable most/all add-ons, especially ad-blockers.
     Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/142059?hl=en>`__
     that you use just for browser testing. When oTree launches Chrome,
     it should use the last profile you had open.
+-   If using Heroku, change your ``Procfile`` so that the ``webandworkers``
+    command has a ``--botworker`` flag: ``otree webandworkers --botworker``.
+-   If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
+    to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
 
 Testing a remote server (e.g. Heroku)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,17 +153,17 @@ Testing locally
 
 You can also test a server running on your own machine.
 This is faster than using a remote server.
-However, this command generates very heavy server traffic
-that the typical ``runserver``/SQLite development setup
-is not designed to handle. So, you should use a different server setup:
+However, you cannot use ``runserver``; you need to use ``runprodserver``
+with the special ``--botworker`` arg:
+``otree runprodserver --botworker``.
+(You can also use the ``--no-collectstatic`` flag to skip
+collecting static files each time.)
 
--   You should start the server with ``otree webandworkers``
-    or ``otree runprodserver``.
--   If possible, try setting up PostgreSQL or MySQL, instead of SQLite.
-    See instructions for :ref:`Postgres on Windows <postgres-windows>` or
-    :ref:`Postgres on Linux <postgres-linux>`.
-    If this is too challenging to configure, you can try with SQLite,
-    but it may not work reliably.
+If possible, try setting up PostgreSQL or MySQL, instead of SQLite.
+See instructions for :ref:`Postgres on Windows <postgres-windows>` or
+:ref:`Postgres on Linux <postgres-linux>`.
+If this is too challenging to configure, you can try with SQLite,
+but it may not work reliably.
 
 Close all Chrome windows, then run this command::
 
@@ -171,15 +180,11 @@ Choosing session configs and sizes
 
 You can specify the number of participants::
 
-    otree browser_bots ultimatum -n 6
+    otree browser_bots ultimatum 6
 
 To test all session configs, just run this::
 
     otree browser_bots
-
-To test only ``public_goods`` and ``trust``, run this::
-
-    otree browser_bots public_goods trust
 
 Currently it defaults to ``num_demo_participants`` rather than ``num_bots``
 (for performance reasons), but that may change in the future.
@@ -192,15 +197,14 @@ launch the command from. However, if you will be running your study in a
 computer lab, it may be better to test on the actual lab computers,
 with 1 bot running on each computer.
 
-To do this, first create a :ref:`room <room>`. If you set up the ``browser_bots``
-room as instructed above, you can use that.
+To do this, first create a :ref:`room <room>`.
 
-In ``settings.py``, set ``USE_BROWSER_BOTS = True``.
-Open each computer's browser to the room URL (unique URLs or room-wide URL),
+In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
+This makes every new session
+auto-play with browser bots, once the start links are opened.
+Then, open each computer's browser to the room URL (unique URLs or room-wide URL),
 whichever you prefer, so that all computers are waiting for the session to
 begin. Then, create a session in the room, and all computers will rapidly auto-play.
-This is because setting ``USE_BROWSER_BOTS = True`` makes every new session
-auto-play with browser bots, once the start links are opened.
 (Of course, this setting should be turned off once you are ready to launch a real study.)
 
 Browser bots: misc notes
@@ -211,81 +215,26 @@ in ``settings.py``. Then, oTree will open the browser by doing something like
 ``subprocess.Popen(settings.BROWSER_COMMAND)``.
 
 
-.. _bot-caching::
-
-Bot limitations
----------------
-
-Bots cannot see any updates to the player/group/subsession/etc. that occur
-during the game.
-
-For example, let's say you have a ``views.py`` like this:
-
-.. code-block:: python
-
-    class Bid(Page):
-        form_model = models.Player
-        form_fields = ['bid']
-
-    class Confirm(Page):
-        def is_displayed(self):
-            return self.player.bid > 10
-
-At first you might think to write a bot like this:
-
-.. code-block:: python
-
-    self.submit(views.Bid, {'bid': random.randint(0, 20)})
-    if self.player.bid > 10: # ERROR - self.player.bid is None
-        self.submit(views.Confirm)
-
-However, the check for ``self.player.bid > 10`` will not work,
-because ``self.player.bid`` will be ``None``,
-even though you may assume it was set on the previous line when you submitted the bid.
-This is due to a limitation of the bot system. ``self.player`` does not update live;
-rather it is cached (i.e. frozen) at the beginning of the session, after ``before_session_starts``,
-so its fields will remain in the same state as after ``before_session_starts`` is run.
-
-You can fix the above problem by rewriting the code so it uses a local variable,
-rather than depending on an update to a field on ``self.player``, like this:
-
-.. code-block:: python
-
-    bid = random.randint(0, 20)
-    self.submit(views.Bid, {'bid': bid})
-    if bid > 10: # ERROR - self.player.bid is None
-        self.submit(views.Confirm)
-
-
-
 Bots tips & tricks
 ------------------
 
 To get the maximal benefit, your bot should thoroughly test all parts of
 your code. Here are some ways you can test your app:
 
--  Ensure that it correctly rejects invalid input. For example, if you
-   ask the user to enter a number that is a multiple of 3, you can
-   verify that entering 4 will be rejected by using the
-   ``submit_invalid`` method as follows. This line of code will raise an
-   error if the submission is *accepted*:
-
-   ``self.submit_invalid(views.EnterNumber, {'multiple_of_3': 4})``
-
--  You can put assert statements in the bot's ``validate_play()`` method
+-  You can put ``assert`` statements
    to check that the correct values are being stored in the database.
    For example, if a player's bonus is defined to be 100 minus their
    offer, you can check your program is calculating it correctly as
    follows:
 
-   ``self.submit(views.Offer, {'offer': 30})``
+   ``yield (views.Offer, {'offer': c(30)})``
 
-   ``assert self.player.bonus == 70``
+   ``assert self.player.bonus == c(70)``
 
 -  You can use random amounts to test that your program can handle any
    type of random input:
 
-   ``self.submit(views.Offer, {'offer': random.randint(0,100)})``
+   ``yield (views.Offer, {'offer': random.randint(0,100)})``
 
 Bots can either be programmed to simulate playing the game according to
 an ordinary strategy, or to test "boundary conditions" (e.g. by entering

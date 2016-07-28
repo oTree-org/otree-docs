@@ -73,6 +73,7 @@ The following lines are equivalent.
 .. code-block:: python
 
     matrix = self.get_group_matrix()
+    # === is equivalent to ===
     matrix = [group.get_players() for group in self.get_groups()]
 
 group_randomly()

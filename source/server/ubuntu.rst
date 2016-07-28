@@ -183,7 +183,7 @@ Create a ``circus.ini`` in your project folder somewhere, with the following con
 
     [watcher:webapp]
     cmd = otree
-    args = runprodserver --no-collectstatic
+    args = runprodserver --port=80 --no-collectstatic
     use_sockets = True
 
 The command ``otree runprodserver`` will run
@@ -199,17 +199,18 @@ Apache, Nginx, etc.
 ~~~~~~~~~~~~~~~~~~~
 
 It's simplest to use oTree without Apache or Nginx.
-oTree comes installed with its own web server `Daphne <https://github.com/andrewgodwin/daphne>`__,
+oTree comes installed with the `Daphne <https://github.com/andrewgodwin/daphne>`__ web server,
 which is launched automatically when you run ``otree runprodserver``.
 
 oTree does not work with WSGI servers like Gunicorn or mod_wsgi.
-Instead it requires an ASGI server, and currently the best one is Daphne.
+Instead it requires an ASGI server, and currently the main/best one is Daphne.
 Apache and Nginx do not have ASGI server implementations, so you cannot use
 Apache or Nginx as your primary web server.
 
 You could still use Apache/Nginx as a reverse proxy, for example if you are
-trying to optimize performance. However, for many people ``daphne`` will be sufficient.
-oTree uses `whitenoise <http://whitenoise.evans.io/en/stable/index.html>`__
+trying to optimize performance, or if you need features like SSL or proxy buffering.
+However, in terms of performance, Daphne alone should be sufficient for many people.
+And oTree uses `Whitenoise <http://whitenoise.evans.io/en/stable/index.html>`__
 to serve static files (e.g. images, JavaScript, CSS). This is reasonably
 efficient, so for many people a reverse proxy will not be necessary.
 

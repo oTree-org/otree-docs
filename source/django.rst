@@ -51,8 +51,6 @@ Models
 -  If you are using oTree in a typical way (with models.py and views.py),
    You don't need to explicitly call ``.save()`` on your models;
    oTree will do it automatically.
--  Field labels should go in the template formfield, rather than the
-   model field's ``verbose_name``.
 -  ``null=True`` and ``default=None`` are not necessary in your model
    field declarations; in oTree fields are null by default.
 -  ``initial`` is an alias for ``default`` in a model field's kwargs.

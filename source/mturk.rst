@@ -11,6 +11,11 @@ oTree's admin interface. Then, workers on mechanical Turk can accept and
 play your app as an MTurk HIT and get paid a participation fee as well
 as bonuses they earned by playing your game.
 
+.. warning::
+
+    You should take care when running games on Mechanical Turk with live interaction
+    between participants (i.e. wait pages). See below.
+
 
 AWS credentials
 ---------------
@@ -123,7 +128,13 @@ Multiplayer games
 Games that involve synchronous interaction between participants (i.e.
 wait pages) can be tricky on mechanical Turk.
 
-You should set ``timeout_seconds`` on each page,
+One issue is the risk that some
+players will drop out. To partly remedy this, you should set ``timeout_seconds`` on each page,
 so that the page will be auto-submitted if the participant drops out or does
 not complete the page in time. This way, players will not get stuck waiting for
 someone who dropped out.
+
+Another issue is with group sizes. When you create a session with N participants
+for MTurk, oTree actually creates (N x 2) participants, because spares are needed
+in case some MTurk workers start but then return the assignment. This may conflict
+with some people's grouping code.

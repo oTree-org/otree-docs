@@ -139,7 +139,10 @@ After the field has been set, you can access the human-readable name
 using
 `get_FOO_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
 , like this:
-``self.get_level_display() # returns e.g. 'Medium'``
+``self.get_level_display() # returns e.g. 'Medium'``.
+However, if you define the choices dynamically with :ref:`FOO_choices`,
+in order to use ``get_*_display()`` you need to also define the ``*_choices``
+method in your models.py.
 
 If a field is optional, you can do:
 
@@ -284,6 +287,9 @@ as described in the Django documentation, e.g.:
     # in models.py
     contribution = models.CurrencyField(
         verbose_name="How much will you contribute?")
+
+This is essentially equivalent to setting ``label="How much will you contribute?"``
+in the ``{% formfield %}``.
 
 Forms with a dynamic vector of fields
 -------------------------------------

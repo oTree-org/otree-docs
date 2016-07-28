@@ -7,10 +7,6 @@ If you are just testing your app on your personal computer, you can use
 ``otree runserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
-Before deploying to a Windows server, you should consider
-using :ref:`Heroku <heroku>` or :ref:`Linux <server-ubuntu>`,
-which are more tested.
-
 Create a virtualenv
 -------------------
 
