@@ -127,8 +127,24 @@ way, because they use a real web browser, rather than the simulated command-line
 browser. Also, while it's playing you can briefly see
 each page and notice if there are visual errors.
 
-First steps
+Basic setup
 ~~~~~~~~~~~
+
+-   Make sure you have programmed a bot in your ``tests.py`` as described above
+    (preferably using ``yield`` rather than ``self.submit``).
+-   If using Heroku, change your ``Procfile`` so that the ``webandworkers``
+    command has a ``--botworker`` flag: ``otree webandworkers --botworker``.
+-   If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
+    to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
+-   In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
+    This makes every new session
+    auto-play with browser bots, once the start links are opened.
+
+Advanced setup: command-line launcher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For more automated testing, you can use the ``otree browser_bots`` command,
+which launches browser bots from the command line. First follow these steps:
 
 -   Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings.py``
     (more info below).
@@ -136,10 +152,9 @@ First steps
     Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/142059?hl=en>`__
     that you use just for browser testing. When oTree launches Chrome,
     it should use the last profile you had open.
--   If using Heroku, change your ``Procfile`` so that the ``webandworkers``
-    command has a ``--botworker`` flag: ``otree webandworkers --botworker``.
--   If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
-    to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
+
+Then, follow one of the below sections, depending whether you are using a remote
+or local server.
 
 Testing a remote server (e.g. Heroku)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -201,24 +216,6 @@ To test all session configs, just run this::
 
 Currently it defaults to ``num_demo_participants`` rather than ``num_bots``
 (for performance reasons), but that may change in the future.
-
-Running browser bots on multiple computers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The ``browser_bots`` command opens many windows on the computer you
-launch the command from. However, if you will be running your study in a
-computer lab, it may be better to test on the actual lab computers,
-with 1 bot running on each computer.
-
-To do this, first create a :ref:`room <room>`.
-
-In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
-This makes every new session
-auto-play with browser bots, once the start links are opened.
-Then, open each computer's browser to the room URL (unique URLs or room-wide URL),
-whichever you prefer, so that all computers are waiting for the session to
-begin. Then, create a session in the room, and all computers will rapidly auto-play.
-
 
 Browser bots: misc notes
 ~~~~~~~~~~~~~~~~~~~~~~~~
