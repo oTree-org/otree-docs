@@ -1,3 +1,5 @@
+.. _bots:
+
 Bots & automated testing
 ========================
 
@@ -25,10 +27,13 @@ Writing tests
     and instead of ``self.submit(views.Offer, {'offer_amount': 50})``,
     you should do ``yield (views.Offer, {'offer_amount': 50})``. In your code,
     you should do a search-and-replace for ``self.submit(`` and replace it with
-    ``yield `` (note the space after the word 'yield').
+    ``yield`` followed by a space.
 
-    Also, the ``validate_play`` method has been removed. You can now put assert
-    statements directly in ``play_round``.
+    The reason for this change in syntax is that using the Python ``yield``
+    keyword removes some limitations the bots previously had,
+    and helps the bots run more reliably.
+    For example, the ``validate_play`` method is no longer required;
+    you can now put assert statements directly in ``play_round``.
 
 Tests are contained in your app's ``tests.py``. Fill out the
 ``play_round()`` method of your ``PlayerBot``. It should simulate each page
@@ -43,7 +48,7 @@ Here, we first submit the ``Start`` page, which does not contain a form.
 The next page is ``Offer``, which contains a form whose field is called
 ``offer_amount``, which we set to ``50``.
 
-If a page contains several submissions, the synthax looks like
+If a page contains several fields, use a dictionary with multiple items:
 
 .. code-block:: python
 
@@ -100,8 +105,16 @@ To run tests for all sessions in ``settings.py``, run:
 
 .. _browser-bots:
 
-Browser bots (beta)
--------------------
+Browser bots
+------------
+
+.. note::
+
+    As of 2016-07-28, the configuration of browser bots has changed
+    from when the feature was released a few weeks ago.
+    ``--botworker`` was added; ``USE_BROWSER_BOTS = True`` setting was replaced by
+    ``'use_browser_bots': True`` in session config; and bot syntax changed from
+    ``self.submit()`` to ``yield ()`` as described above.
 
 Starting with oTree 0.7, bots can run in the browser.
 oTree will open multiple browser windows, and the pages will auto-play.
@@ -205,7 +218,7 @@ auto-play with browser bots, once the start links are opened.
 Then, open each computer's browser to the room URL (unique URLs or room-wide URL),
 whichever you prefer, so that all computers are waiting for the session to
 begin. Then, create a session in the room, and all computers will rapidly auto-play.
-(Of course, this setting should be turned off once you are ready to launch a real study.)
+
 
 Browser bots: misc notes
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,26 +231,20 @@ in ``settings.py``. Then, oTree will open the browser by doing something like
 Bots tips & tricks
 ------------------
 
-To get the maximal benefit, your bot should thoroughly test all parts of
-your code. Here are some ways you can test your app:
+You can put ``assert`` statements
+to check that the correct values are being stored in the database.
+For example, if a player's bonus is defined to be 100 minus their
+offer, you can check your program is calculating it correctly as
+follows:
 
--  You can put ``assert`` statements
-   to check that the correct values are being stored in the database.
-   For example, if a player's bonus is defined to be 100 minus their
-   offer, you can check your program is calculating it correctly as
-   follows:
+.. code-block:: python
 
-   ``yield (views.Offer, {'offer': c(30)})``
+    yield (views.Offer, {'offer': c(30)})
+    assert self.player.bonus == c(70)
 
-   ``assert self.player.bonus == c(70)``
-
--  You can use random amounts to test that your program can handle any
-   type of random input:
+You can use random amounts to test that your program can handle any
+type of random input::
 
    ``yield (views.Offer, {'offer': random.randint(0,100)})``
 
-Bots can either be programmed to simulate playing the game according to
-an ordinary strategy, or to test "boundary conditions" (e.g. by entering
-invalid input to see if the application correctly rejects it). Or yet
-the bot can enter random input on each page.
 

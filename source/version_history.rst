@@ -6,14 +6,16 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v0.7
 
-Version 0.7 (beta)
-==================
+Version 0.7
+===========
 
-Version 0.7 beta is available. Install it like this (note the ``--pre`` flag,
-since it is a pre-release)::
+The bot system has been overhauled, and there are some changes to the bot API.
+See the notes :ref:`here <bots>`.
 
-    pip3 install --upgrade --pre otree-core
-    otree resetdb
+Version 0.7 beta
+================
+
+Version 0.7 beta is available.
 
 The main new feature is :ref:`browser bots <browser-bots>`.
 There are also some changes to the admin UI
