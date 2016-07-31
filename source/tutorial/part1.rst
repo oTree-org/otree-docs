@@ -277,8 +277,8 @@ Enter:
 
 Then open your browser to ``http://127.0.0.1:8000`` to play the game.
 
-How to read a traceback
------------------------
+Fix any errors
+--------------
 
 If there is an error in your code, the command line will display a "traceback" (error message) that is formatted something like this::
 
@@ -360,3 +360,4 @@ which is not part of my app, but rather an external package::
 In these situations, look to see if any of your code is contained in the traceback.
 Above we can see that the traceback goes through the file ``/Users/chris/oTree/public_goods/views.py``,
 which is part of my project. The bug is on line 108, as indicated.
+

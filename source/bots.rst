@@ -13,7 +13,7 @@ ensure that payoffs are being calculated correctly).
 This automated test system saves the programmer the effort of having to
 re-test the application every time something is changed.
 
-Starting with oTree 0.7, bots can be run both on the command-line,
+Starting with oTree 0.8, bots can be run both on the command-line,
 and in the browser.
 
 Writing tests
@@ -41,12 +41,18 @@ submission. For example:
 
 .. code-block:: python
 
-    yield (views.Start)
-    yield (views.Offer, {'offer_amount': 50})
+    class PlayerBot(Bot):
+        def play_round(self):
+            yield (views.Start)
+            yield (views.Offer, {'offer_amount': 50})
 
 Here, we first submit the ``Start`` page, which does not contain a form.
 The next page is ``Offer``, which contains a form whose field is called
 ``offer_amount``, which we set to ``50``.
+
+We use ``yield``, because in Python,
+``yield`` means to produce or generate a value.
+You could think of the bot as a machine that yields (i.e. generates) submissions.
 
 If a page contains several fields, use a dictionary with multiple items:
 
@@ -116,10 +122,8 @@ Browser bots
     ``'use_browser_bots': True`` in session config; and bot syntax changed from
     ``self.submit()`` to ``yield ()`` as described above.
 
-Starting with oTree 0.7, bots can run in the browser.
-oTree will open multiple browser windows, and the pages will auto-play.
-
-Browser bots run the same way as command-line bots,
+Starting with oTree 0.8, bots can run in the browser.
+They run the same way as command-line bots,
 by executing the submits in your ``tests.py``.
 
 However, the advantage is that they test the app in a more full and realistic
@@ -127,47 +131,31 @@ way, because they use a real web browser, rather than the simulated command-line
 browser. Also, while it's playing you can briefly see
 each page and notice if there are visual errors.
 
-Basic setup
-~~~~~~~~~~~
+Basic use
+~~~~~~~~~
 
 -   Make sure you have programmed a bot in your ``tests.py`` as described above
     (preferably using ``yield`` rather than ``self.submit``).
+-   In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
 -   If using Heroku, change your ``Procfile`` so that the ``webandworkers``
     command has a ``--botworker`` flag: ``otree webandworkers --botworker``.
--   If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
-    to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
--   In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
-    This makes every new session
-    auto-play with browser bots, once the start links are opened.
+-   Run your server and create a session. The pages will auto-play
+    with browser bots, once the start links are opened.
 
-Advanced setup: command-line launcher
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Command-line browser bots (running locally)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For more automated testing, you can use the ``otree browser_bots`` command,
-which launches browser bots from the command line. First follow these steps:
+which launches browser bots from the command line.
 
 -   Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings.py``
     (more info below).
--   To make the bots run more quickly, disable most/all add-ons, especially ad-blockers.
-    Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/142059?hl=en>`__
-    that you use just for browser testing. When oTree launches Chrome,
-    it should use the last profile you had open.
+-   Run your server (e.g. ``otree runserver``)
+-   Close all Chrome windows.
+-   Run this (substituting the name of your
+    session config)::
 
-Then, follow one of the below sections, depending whether you are using a remote
-or local server.
-
-Testing a remote server (e.g. Heroku)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Let's say you want to test your ``public_goods`` session config on
-a remote server, such as http://lit-bastion-5032.herokuapp.com/.
-It could be Heroku or any other server.
-First, deploy and run your server as usual. Then close all Chrome windows,
-and then run this command::
-
-    otree browser_bots public_goods --server-url=http://lit-bastion-5032.herokuapp.com
-
-(Don't use ``heroku run``, just execute the command as written above.)
+    otree browser_bots public_goods
 
 This should automatically launch several Chrome tabs, which will play the game
 very quickly. When finished, the tabs will close, and you will see a report in
@@ -176,32 +164,46 @@ your terminal window of how long it took.
 If Chrome doesn't close windows properly,
 make sure you closed all Chrome windows prior to launching the command.
 
-Testing locally
-~~~~~~~~~~~~~~~
 
-You can also test a server running on your own machine.
-This is faster than using a remote server.
-However, you cannot use ``runserver``; you need to use ``runprodserver``
-with the special ``--botworker`` arg:
-``otree runprodserver --botworker``.
-(You can also use the ``--no-collectstatic`` flag to skip
-collecting static files each time.)
+Command-line browser bots on a remote server (e.g. Heroku)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If possible, try setting up PostgreSQL or MySQL, instead of SQLite.
-See instructions for :ref:`Postgres on Windows <postgres-windows>` or
-:ref:`Postgres on Linux <postgres-linux>`.
-If this is too challenging to configure, you can try with SQLite,
-but it may not work reliably.
+Let's say you want to test your ``public_goods`` session config on
+a remote server, such as http://lit-bastion-5032.herokuapp.com/.
+It could be Heroku or any other server.
 
-Close all Chrome windows, then run this command::
+First, read the instructions above for running the command-line launcher
+locally.
 
-    otree browser_bots public_goods
+If using Heroku, change your ``Procfile`` so that the ``webandworkers``
+command has a ``--botworker`` flag: ``otree webandworkers --botworker``.
+
+If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
+to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
+
+Deploy your code to the server. Then close all Chrome windows,
+and then run this command::
+
+    otree browser_bots public_goods --server-url=http://lit-bastion-5032.herokuapp.com
+
+(Don't use ``heroku run``, just execute the command as written above.)
+
+
+Command-line browser bots: tips & tricks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 (If the server is running on a host/port other than the usual ``http://127.0.0.1:8000``,
 you need to pass ``--server-url`` as shown above.)
 
+If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
+to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
+
+You will get the best performance if you use PostgreSQL or MySQL rather than
+SQLite, and use ``runprodserver --botworker`` rather than ``runserver``.
+
 On my PC, running the default public_goods session with 3 participants takes about 4-5 seconds,
 and with 9 participants takes about 10 seconds.
+
 
 Choosing session configs and sizes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -224,6 +226,10 @@ You can use a browser other than Chrome by setting ``BROWSER_COMMAND``
 in ``settings.py``. Then, oTree will open the browser by doing something like
 ``subprocess.Popen(settings.BROWSER_COMMAND)``.
 
+(Optional) To make the bots run more quickly, disable most/all add-ons, especially ad-blockers.
+Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/142059?hl=en>`__
+that you use just for browser testing. When oTree launches Chrome,
+it should use the last profile you had open.
 
 Bots tips & tricks
 ------------------

@@ -10,7 +10,15 @@ and then make the following changes to your project files.
 Fixing syntax
 -------------
 
-In ``ultimatum/views.py``, find this line in ``Constants``::
+When you try running ``otree resetdb``, you might get an error because
+your code's syntax is invalid in Python 3.
+For example, in Python 3, ``print`` is a function, so you should do ``print('hello')``,
+instead of ``print 'hello'``.
+You should read about the differences between Python 2 and Python 3 syntax,
+and fix errors until your code runs properly.
+
+If you ran ``startproject`` prior to February 2016, you need to make a fix in
+``ultimatum/views.py``. Find this line in ``Constants``::
 
     keep_give_amounts = [(offer, endowment - offer) for offer in offer_choices]
 
@@ -20,12 +28,6 @@ You should change it to::
         for offer in offer_choices:
         keep_give_amounts.append((offer, endowment - offer))
 
-When you try running ``otree resetdb``, you might get an error because
-your code's syntax is invalid in Python 3.
-For example, in Python 3, ``print`` is a function, so you should do ``print('hello')``,
-instead of ``print 'hello'``.
-You should read about the differences between Python 2 and Python 3 syntax,
-and fix errors until your code runs properly.
 
 Fixing for Heroku
 -----------------

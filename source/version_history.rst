@@ -6,14 +6,16 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v0.7
 
-Version 0.7
+Version 0.8
 ===========
 
 The bot system has been overhauled, and there are some changes to the bot API.
 See the notes :ref:`here <bots>`.
 
-Version 0.7 beta
-================
+Browser bots now work together with ``otree runserver``.
+
+Version 0.7
+===========
 
 Version 0.7 beta is available.
 
