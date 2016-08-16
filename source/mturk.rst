@@ -109,6 +109,8 @@ This technique is described
 `here <http://turkrequesters.blogspot.kr/2014/08/how-to-block-past-workers-from-doing.html?spref=tw>`__.
 
 First, login to your MTurk requester account and create a qualification.
+(If you are testing with the MTurk sandbox, you need to create the qualification
+in the sandbox as well.)
 Then, go to settings.py and paste the qualification's ID into ``grant_qualification_id``.
 Finally, add an entry to ``qualification_requirements``:
 

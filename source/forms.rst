@@ -127,14 +127,6 @@ For example:
         ]
     )
 
-.. note::
-
-    If one of your choices contains unicode characters, e.g., "höchster",
-    and you are using Python 2 (not 3), you should prefix the string with
-    ``u`` to mark it as a unicode string, e.g. ``u"höchster"``.
-    (You should do this anywhere in your Python code where unicode literals are used.)
-    See `here <https://docs.python.org/2/howto/unicode.html>`__ for more info.
-
 After the field has been set, you can access the human-readable name
 using
 `get_FOO_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__

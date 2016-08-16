@@ -277,6 +277,10 @@ Then you need to promote (i.e. "activate") this new database::
 More info on the database plans `here <https://elements.heroku.com/addons/heroku-postgresql>`__,
 and more technical documentation `here <https://devcenter.heroku.com/articles/heroku-postgresql>`__.
 
+After purchasing the upgraded Postgres, it's recommended to delete the hobby-dev
+(free) database, to avoid accidentally using the wrong database.
+
+
 Upgrade dynos
 +++++++++++++
 
@@ -314,7 +318,7 @@ Logging with Sentry
 -------------------
 
 Whether or not you use Heroku,
-you should fill (`this form <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__)
+you should enter your email address (`here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__)
 to sign up for our free Sentry service
 which can log all errors on your server and send you email notifications.
 (`Sentry <https://getsentry.com/welcome/>`__.)
@@ -322,7 +326,8 @@ which can log all errors on your server and send you email notifications.
 Sentry is necessary because many errors are not visible in the UI after you turn off debug mode.
 You will no longer see Django's yellow error pages; you or your users will just see generic "500 server error" pages.
 
-After you fill out the form, you will receive an email with a SENTRY_DSN, which is a URL you paste into your settings.py.
+After you enter your email, you will receive an email with a SENTRY_DSN,
+which is a URL you paste into your settings.py.
 
 .. _papertrail:
 
