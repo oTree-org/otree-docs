@@ -382,6 +382,18 @@ that results are reported correctly:
 
 ``self.html`` is updated with the next page's HTML, after every ``yield`` statement.
 
+Checking form fields in HTML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This feature was released on 2016-08-16. Make sure you are using the latest
+    version of otree-core.
+
+Before the bot submits a page,
+oTree checks that any form fields the bot is trying to submit are actually found
+in the page's HTML.
+
 .. _browser-bots:
 
 Browser bots
