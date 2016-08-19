@@ -66,7 +66,7 @@ A quick summary:
     Examples::
 
         django-admin makemessages -l fr
-        django-admin makemessages -l zh_hans
+        django-admin makemessages -l zh_Hans
 
 -   Edit the ``.po`` file in `Poedit <http://poedit.net/>`__
 -   Run ``django-admin compilemessages``
