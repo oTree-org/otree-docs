@@ -207,7 +207,8 @@ Test cases
     This feature was released on 2016-08-16. Make sure you are using the latest
     version of otree-core.
 
-You can define a global variable ``CASES`` that lists different test cases.
+You can define an attribute ``cases`` on your PlayerBot class
+that lists different test cases.
 For example, in a public goods game, you may want to test 3 scenarios:
 
 -   All players contribute half their endowment
@@ -215,8 +216,8 @@ For example, in a public goods game, you may want to test 3 scenarios:
 -   All players contribute their entire endowment (100 points)
 
 We can call these 3 test cases "basic", "min", and "max", respectively,
-and put them in ``CASES``. Then, oTree will execute the bot 3 times, once for
-each test case. Each time, a different value from ``CASES`` will be assigned to ``self.case``
+and put them in ``cases``. Then, oTree will execute the bot 3 times, once for
+each test case. Each time, a different value from ``cases`` will be assigned to ``self.case``
 in the bot, so you can have conditional logic that plays the game differently.
 
 For example:
@@ -227,10 +228,9 @@ For example:
     from otree.api import Bot, SubmissionMustFail
 
 
-    CASES = ['basic', 'min', 'max']
-
-
     class PlayerBot(Bot):
+
+        cases = ['basic', 'min', 'max']
 
         def play_round(self):
             yield (views.Introduction)
@@ -264,7 +264,7 @@ For example:
                     expected_payoff = 150
                 assert self.player.payoff == expected_payoff
 
-``CASES`` needs to be a list, but it can contain any data type, such as strings,
+``cases`` needs to be a list, but it can contain any data type, such as strings,
 integers, or even dictionaries. Here is a trust game bot that uses dictionaries
 as cases.
 
@@ -274,13 +274,13 @@ as cases.
     from otree.api import Bot, SubmissionMustFail
 
 
-    CASES = [
-        {'offer': 0, 'return': 0, 'p1_payoff': 10, 'p2_payoff': 0},
-        {'offer': 5, 'return': 10, 'p1_payoff': 15, 'p2_payoff': 5},
-        {'offer': 10, 'return': 30, 'p1_payoff': 30, 'p2_payoff': 0}
-    ]
-
     class PlayerBot(Bot):
+
+        cases = [
+            {'offer': 0, 'return': 0, 'p1_payoff': 10, 'p2_payoff': 0},
+            {'offer': 5, 'return': 10, 'p1_payoff': 15, 'p2_payoff': 5},
+            {'offer': 10, 'return': 30, 'p1_payoff': 30, 'p2_payoff': 0}
+        ]
 
         def play_round(self):
             case = self.case
@@ -314,7 +314,11 @@ Checking the HTML
 In the bot, ``self.html`` will be a string
 containing the HTML of the page you are about to submit.
 So, you can do ``assert`` statements to ensure that the HTML does or does not contain
-some specific text. For example, here is a "beauty contest" game bot that ensures
+some specific substring.
+
+Linebreaks and extra spaces are ignored.
+
+For example, here is a "beauty contest" game bot that ensures
 that results are reported correctly:
 
 .. code-block:: python
@@ -322,9 +326,9 @@ that results are reported correctly:
     from . import views
     from otree.api import Bot, SubmissionMustFail
 
-    CASES = ['basic', 'tie']
-
     class PlayerBot(Bot):
+
+        cases = ['basic', 'tie']
 
         def play_round(self):
             case = self.case

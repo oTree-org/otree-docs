@@ -119,13 +119,50 @@ e.g. `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
 
 .. _git-generic:
 
-Deploy your code
-----------------
+Set up Git
+----------
 
 If your code is on your personal computer and you are trying to push it to
 this web server, you can use Git.
 
-Open your shell, and make sure you have committed any changes as follows:
+On the server
+~~~~~~~~~~~~~
+
+On the server, create 2 directories -- one to store your project files,
+and another to serve as the Git remote::
+
+    mkdir oTree
+    mkdir oTree.git
+
+Create a git repo in ``oTree.git``::
+
+    cd oTree.git
+    git init --bare
+
+Using a text editor such as ``nano``, ``emacs``, ``vim``, add the following to
+``oTree.git/hooks/post-receive``::
+
+    emacs hooks/post-receive
+
+Then add the following lines to that file::
+
+    #!/bin/sh
+    GIT_WORK_TREE=/path/to/your/oTree
+    export GIT_WORK_TREE
+    git checkout -f
+
+This means that every time someone pushes to ``oTree.git``, the code will be
+checked out to the other directory ``oTree``. (This technique is further described
+`here <http://toroid.org/git-website-howto>`__.)
+
+Make sure that ``post-receive`` is executable::
+
+    chmod +x hooks/post-receive
+
+On your PC
+~~~~~~~~~~
+
+On your PC, open your shell, and make sure you have committed any changes as follows:
 
 .. code-block:: bash
 
@@ -137,13 +174,30 @@ Open your shell, and make sure you have committed any changes as follows:
 ``fatal: Not a git repository (or any of the parent directories): .git``
 then you first need to initialize the git repo.)
 
-Then do:
+Then add your server as a remote::
 
-.. code-block:: bash
+    git remote add my-server my-username@XXX.XXX.XXX.XXX:oTree.git
 
-    $ git push [remote name] master
+Substitute these values in the above command:
+-   ``my-username`` is the Linux login username
+-   ``XXX.XXX.XXX.XXX`` is the server's IP address or hostname
+-   ``oTree.git`` is the folder with the empty git repo,
+-   ``my-server`` is the name you choose to call your remote (e.g. when doing ``git push``).
 
-Where [remote name] is the name of your server's git remote.
+Then push to this remote::
+
+    $ git push my-server master
+
+
+Reset the database on the server
+--------------------------------
+
+From the directory with your oTree code,
+install the requirements and reset the database::
+
+    pip3 install -r requirements.txt
+    otree resetdb
+
 
 .. _runprodserver:
 
@@ -179,7 +233,8 @@ Install circus::
     sudo apt-get install libzmq-dev libevent-dev
     pip3 install circus circus-web
 
-Create a ``circus.ini`` in your project folder somewhere, with the following content::
+Create a ``circus.ini`` in your project folder,
+with the following content (can do this locally and then git push again)::
 
     [watcher:webapp]
     cmd = otree
@@ -193,6 +248,10 @@ and the timeout worker).
 Run the following commands::
 
     otree collectstatic
+    circusd circus.ini
+
+If this is working properly, you can start it as a daemon::
+
     circusd --daemon circus.ini
 
 Apache, Nginx, etc.
