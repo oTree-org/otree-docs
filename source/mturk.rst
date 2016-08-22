@@ -128,7 +128,15 @@ Multiplayer games
 -----------------
 
 Games that involve synchronous interaction between participants (i.e.
-wait pages) can be tricky on mechanical Turk.
+wait pages) can be difficult on Mechanical Turk. Some oTree users have reported
+problems getting people to interact at the same time because some participants
+drop out, and other participants delay starting the game until some time after
+accepting the assignment.
+
+At this point, live multiplayer games on MTurk should be considered an experimental
+feature. There are currently some discussions on the
+`oTree mailing list <https://groups.google.com/forum/#!forum/otree>`__ on this
+subject.
 
 One issue is the risk that some
 players will drop out. To partly remedy this, you should set ``timeout_seconds`` on each page,

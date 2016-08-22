@@ -26,8 +26,9 @@ Install Python
 We recommend installing Python 3.5, because oTree is primarily developed and
 tested on Python 3.5.
 
-oTree should also work on Python 2.7 (see :ref:`python2`), but we will discontinue
-Python 2 support eventually. If you already created an oTree project
+Starting new oTree projects with Python 2.7 is discouraged.
+If you need to use Python 2, installation instructions are here:
+:ref:`python2`. If you already created an oTree project
 with Python 2 and would like to switch to Python 3,
 follow the instructions :ref:`here <py3-migration>`.
 
