@@ -3,18 +3,16 @@
 Bots & automated testing
 ========================
 
-Your app's ``tests.py`` lets you define "bots" that simulate multiple players simultaneously
-playing your app.
+In ``tests.py`` you can write "bots" that simulate multiple players simultaneously
+playing your app. By doing this, you can ensure 2 things:
 
-Tests with dozens of bots complete with in seconds, and afterward
-automated tests can be run to verify correctness of the app (e.g. to
-ensure that payoffs are being calculated correctly).
+1.  That your app is programmed correctly
+2.  That your server performs well even when there is a lot of traffic
 
-This automated test system saves the programmer the effort of having to
-re-test the application every time something is changed.
+This can prevent a lot of problems from occurring on the day you launch your study
 
-Starting with oTree 0.8, bots can be run both on the command-line,
-and in the browser.
+It also saves you the time of having to re-test the application every time something is changed.
+
 
 Running tests
 -------------
@@ -116,11 +114,13 @@ For example, here is how you can make a bot that can play either as player 1 or 
 You can condition on ``self.player``, ``self.group``, ``self.subsession``, etc.
 
 You should ignore wait pages when writing bots. Just write a ``yield`` for every page
-that is submitted.
+that is submitted. After executing each ``yield`` statement, the bot will pause
+until any wait pages are cleared, then it will execute up to (and including) the
+next ``yield``, and so on.
 
 
-Assert statements
-~~~~~~~~~~~~~~~~~
+Asserts
+~~~~~~~
 
 You can use ``assert`` statements to ensure that your code is working properly.
 
@@ -370,7 +370,6 @@ that results are reported correctly:
                 assert num_winners == expected_winners
                 if num_winners > 1:
                     assert self.group.tie == True
-
 
             yield (views.Results)
 
