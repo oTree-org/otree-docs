@@ -123,8 +123,8 @@ etc.).
 
 .. _session_vars:
 
-Global variables
-----------------
+Global variables (session.vars)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For session-wide globals, you can use ``self.session.vars``.
 
