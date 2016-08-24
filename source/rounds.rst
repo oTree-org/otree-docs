@@ -21,8 +21,8 @@ current round number, starting from 1.
 
 .. _in_rounds:
 
-Accessing data from previous rounds: technique 1
-------------------------------------------------
+Passing data between rounds or apps
+-----------------------------------
 
 Each round has separate ``Subsession``, ``Group``, and ``Player`` objects.
 For example, let's say you set ``self.player.my_field = True`` in round 1.
@@ -30,8 +30,19 @@ In round 2, if you try to access ``self.player.my_field``, you will find its val
 (assuming that is the default value of the field). This is because the ``Player`` objects
 in round 1 are separate from ``Player`` objects in round 2.
 
-To access data from a previous round, you can use the methods ``in_previous_rounds()`` and ``in_all_rounds()``
-on player, group, and subsession objects.
+To access data from a previous round or app,
+you can use one of the techniques described below.
+
+in_rounds, in_previous_rounds, in_round, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Player, group, and subsession objects have the following methods, which work
+similarly:
+
+-   in_previous_rounds()
+-   in_all_rounds()
+-   in_rounds()
+-   in_round()
 
 ``player.in_previous_rounds()`` and ``player.in_all_rounds()``
 each return a list of players representing the same participant in
@@ -58,8 +69,8 @@ situation is unspecified).
 
 .. _vars:
 
-Accessing data from previous rounds: technique 2
-------------------------------------------------
+participant.vars
+----------------
 
 ``in_all_rounds()`` only is useful when you need to access data from a previous
 round of the same app.
@@ -70,13 +81,45 @@ you should store this data in the participant object, which persists across
 subsessions. Each participant has a field called ``vars``, which is a
 dictionary that can store any data about the player. For example, if you ask
 the participant's name in one subsession and you need to access it later, you
-would store it like this:
+would store it like this::
 
-``self.participant.vars['first name'] = 'John'``
+    self.participant.vars['first name'] = 'John'
 
-Then in a future subsession, you would retrieve this value like this:
+Then in a future subsession, you would retrieve this value like this::
 
-``self.participant.vars['first name']`` # returns 'John'
+    self.participant.vars['first name'] # returns 'John'
+
+As described :ref:`here <object_model>`, the ``participant`` object can be
+accessed from a ``Page`` object or ``Player`` object.
+
+This means you can access it from ``views.py``:
+
+.. code-block:: python
+
+    # in views.py
+    class MyPage(Page):
+        def before_next_page(self):
+            self.participant.vars['foo'] = 1
+
+Or in the ``Player`` class in ``models.py``:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        def some_method(self):
+            self.participant.vars['foo'] = 1
+
+You can also access it from ``Group`` or ``Subsession``, as long as you retrieve
+a ``Player`` instance (e.g. using ``get_players()`` or ``get_player_by_role()``,
+etc.).
+
+.. code-block:: python
+
+    class Group(BaseGroup):
+        def some_method(self):
+            for p in self.get_players():
+                p.participant.vars['foo'] = 1
+
 
 .. _session_vars:
 
@@ -86,6 +129,11 @@ Global variables
 For session-wide globals, you can use ``self.session.vars``.
 
 This is a dictionary just like ``participant.vars``.
+
+As described :ref:`here <object_model>`, the ``session`` object can be
+accessed from a ``Page`` object or any of the models (``Player``, ``Group``,
+``Subsession``, etc.).
+
 
 Variable number of rounds
 -------------------------

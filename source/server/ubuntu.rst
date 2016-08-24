@@ -239,7 +239,8 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
     autorestart=true
     environment=PATH="/home/my_username/venv_otree/bin/:%(ENV_PATH)s",DATABASE_URL="postgres://otree_user:otree@localhost/django_db"
 
-``directory`` should be the dir containing your project (i.e. with ``settings.py``).
+``directory`` should be the dir containing your project (i.e. with ``settings.py``),
+and ``DATABASE_URL`` should match what you set earlier.
 
 To start or restart the server (e.g. after making changes), do::
 
