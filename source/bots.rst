@@ -238,9 +238,6 @@ For example:
             if self.case == 'basic':
                 assert self.player.payoff == None
 
-            yield (views.Question, {"question": 15})
-            yield (views.Feedback)
-
             if self.case == 'basic':
                 if self.player.id_in_group == 1:
                     for invalid_contribution in [-1, 101]:
@@ -310,7 +307,6 @@ Checking the HTML
     This feature was released on 2016-08-16. Make sure you are using the latest
     version of otree-core.
 
-
 In the bot, ``self.html`` will be a string
 containing the HTML of the page you are about to submit.
 So, you can do ``assert`` statements to ensure that the HTML does or does not contain
@@ -335,12 +331,6 @@ that results are reported correctly:
 
             # start game
             yield (views.Introduction)
-            yield (views.Question1, {
-                "training_question_1_win_pick": 15,
-                "training_question_1_my_payoff": 15,
-            })
-
-            yield (views.Feedback1)
 
             if case == 'basic':
                 if self.player.id_in_group == 1:
@@ -386,8 +376,8 @@ that results are reported correctly:
 
 ``self.html`` is updated with the next page's HTML, after every ``yield`` statement.
 
-Checking HTML for buttons and form fields
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Automatic HTML checks
+~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -396,10 +386,36 @@ Checking HTML for buttons and form fields
 
 Before the bot submits a page,
 oTree checks that any form fields the bot is trying to submit are actually found
-in the page's HTML.
+in the page's HTML, and that there is a submit button on the page.
+If one of these is not found, the bot will raise an error.
 
-It also checks that there is a button on the page.
+However, these checks may not always work, because they are limited to scanning
+the page's static HTML on the server side, whereas maybe your page uses
+JavaScript to dynamically add a form field or submit the form.
 
+In these cases, you should disable the HTML check by using ``Submission``
+with ``check_html=False``. For example, change this:
+
+.. code-block:: python
+
+    class PlayerBot(Bot)
+        yield (views.MyPage, {'foo': 99})
+
+to this:
+
+.. code-block:: python
+
+    from otree.api import Submission
+
+    class PlayerBot(Bot)
+        yield Submission(views.MyPage, {'foo': 99}, check_html=False)
+
+(If you used ``Submission`` without ``check_html=False``,
+the two code samples would be equivalent.)
+
+If many of your pages incorrectly fail the static HTML checks,
+you can bypass these checks globally by setting ``BOTS_CHECK_HTML = False``
+in ``settings.py``.
 
 .. _browser-bots:
 
