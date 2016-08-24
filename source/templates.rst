@@ -210,10 +210,19 @@ and other types of plots.
 
 Some of oTree's sample games use HighCharts.
 
+First, include the HighCharts JavaScript in your page's ``scripts`` block::
+
+    {% block scripts %}
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+    {% endblock %}
+
+If you will be using HighCharts in many places, you can also put it in
+``app_scripts`` or ``global_scripts``; see above for more info.
+(But note that HighCharts slows down page rendering time somewhat.)
+
 To make a chart, first go to the HighCharts `demo site <http://www.highcharts.com/demo>`__
 and find the chart type that you want to make.
 Then click "edit in JSFiddle" to edit it to your liking.
-
 
 To pass data like a list of values from Python to HighCharts, you should
 first pass it through the ``otree.common.safe_json()`` function. This
@@ -225,6 +234,7 @@ Example:
 .. code-block:: python
 
     >>> a = [0, 1, 2, 3, 4, None]
+    >>> from otree.common import safe_json
     >>> safe_json(a)
     '[0, 1, 2, 3, 4, null]'
 

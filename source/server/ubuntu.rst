@@ -215,49 +215,41 @@ production server, which can handle more traffic.
     Prior to v0.5, oTree used ``gunicorn``.
     oTree 0.5 and later uses the ``daphne`` server.
 
-.. note::
 
-    Prior to otree-core 0.5.16, ``runprodserver`` executed the commands in your ``Procfile``.
-    It no longer does so.
+Supervisor
+~~~~~~~~~~
 
-You should use a process control system like `Circus <https://circus.readthedocs.io/en/latest/>`__ or Supervisord,
-which will restart your processes in case they crash.
-Instructions are given here for Circus,
-because it is compatible with Python 3.
+You should use a process control system like Supervisord that runs oTree as a service.
+This will start oTree when the machine is booted, restart your processes in case they crash,
+keep it running if you log out, etc.
 
-Circus
-~~~~~~
+Install supervisor::
 
-Install circus::
+    sudo apt-get install supervisor
 
-    sudo apt-get install libzmq-dev libevent-dev
-    pip3 install circus circus-web
+In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
+``otree.conf`` with the following content::
 
-Create a ``circus.ini`` in your project folder,
-with the following content (can do this locally and then git push again)::
+    [program:otree]
+    command=/home/my_username/venv_otree/bin/otree runprodserver --port=80 --no-collectstatic
+    directory=/home/my_username/oTree
+    stdout_logfile=/home/my_username/otree-supervisor.log
+    stderr_logfile=/home/my_username/otree-supervisor-errors.log
+    autostart=true
+    autorestart=true
+    environment=PATH="/home/my_username/venv_otree/bin/:%(ENV_PATH)s",DATABASE_URL="postgres://otree_user:otree@localhost/django_db"
 
-    [watcher:webapp]
-    cmd = otree
-    args = runprodserver --port=80 --no-collectstatic
-    use_sockets = True
+``directory`` should be the dir containing your project (i.e. with ``settings.py``).
 
-The command ``otree runprodserver`` will run
-all server processes (``daphne`` server, Channels worker processes,
-and the timeout worker).
+To start or restart the server (e.g. after making changes), do::
 
-Run the following commands::
+    service supervisor restart
 
-    otree collectstatic
-    circusd circus.ini
-
-If this is working properly, you can start it as a daemon::
-
-    circusd --daemon circus.ini
 
 Apache, Nginx, etc.
 ~~~~~~~~~~~~~~~~~~~
 
-It's simplest to use oTree without Apache or Nginx.
+You can use oTree without Apache or Nginx.
 oTree comes installed with the `Daphne <https://github.com/andrewgodwin/daphne>`__ web server,
 which is launched automatically when you run ``otree runprodserver``.
 

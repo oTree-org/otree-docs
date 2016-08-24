@@ -288,6 +288,12 @@ In the Heroku dashboard, click on your app's "Resources" tab,
 and in the "dynos" section, select "Upgrade to Hobby".
 Then select either "Hobby" or "Professional".
 
+Upgrade Redis
++++++++++++++
+
+You should upgrade Redis to one of the premium plans, since some oTree users have gotten
+"memory over limit" errors on the free plan.
+
 Setting environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
