@@ -237,16 +237,29 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
     stderr_logfile=/home/my_username/otree-supervisor-errors.log
     autostart=true
     autorestart=true
-    environment=PATH="/home/my_username/venv_otree/bin/:%(ENV_PATH)s",DATABASE_URL="postgres://otree_user:otree@localhost/django_db"
+    environment=
+        PATH="/home/my_username/venv_otree/bin/:%(ENV_PATH)s",
+        DATABASE_URL="postgres://otree_user:otree@localhost/django_db",
+        OTREE_ADMIN_PASSWORD="my_password",
+        OTREE_PRODUCTION="0", # can set to 1
+        OTREE_AUTH_LEVEL="", # can set to STUDY or DEMO
 
-``directory`` should be the dir containing your project (i.e. with ``settings.py``),
-and ``DATABASE_URL`` should match what you set earlier.
-You should also set any other environment variables in ``environment``,
- such as ``OTREE_PRODUCTION``, ``OTREE_AUTH_LEVEL``, and ``OTREE_ADMIN_PASSWORD``.
+``directory`` should be the dir containing your project (i.e. with ``settings.py``).
+
+``DATABASE_URL`` should match what you set earlier. That is, you need to set
+``DATABASE_URL`` in 2 places:
+
+-   in your ``.bashrc``, so that ``otree resetdb`` works
+-   in your ``otree.conf`` so that ``otree runprodserver`` works.
+
+Because normally supervisor executes ``otree runprodserver`` as the root user,
+but you execute ``otree resetdb`` as regular (non-root) user.
+So the env var needs to be set in both environments.
 
 To start or restart the server (e.g. after making changes), do::
 
-    service supervisor restart
+    otree collectstatic
+    sudo service supervisor restart
 
 
 Apache, Nginx, etc.

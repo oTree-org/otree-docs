@@ -60,6 +60,9 @@ The full list of available fields is in the Django documentation
 
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
 
+If you need to store a list/array/dictionary, you should do so in
+:ref:`participant.vars <vars>`.
+
 min, max, choices
 -----------------
 
@@ -118,7 +121,44 @@ Then the round numbers of these subsessions would be:
 
     [1, 1, 2, 3, 1]
 
-See :ref:`shuffling`.
+.. _before_session_starts:
+
+before_session_starts
+~~~~~~~~~~~~~~~~~~~~~
+
+You can define this method like this:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            # code goes here
+
+This method is executed at the moment when the session is created, meaning it
+finishes running before the session begins (Hence the name).
+It is executed once per subsession (i.e. once per round).
+For example, if your app has 10 rounds, this method will get called 10 times,
+once for each ``Subsession`` instance.
+
+It has many uses, such as initializing fields, assigning players to treatments,
+or shuffling groups.
+
+A typical use of ``before_session_starts`` is to loop over the players and
+set the value of a field on each:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            for p in self.get_players():
+                p.some_field = some_value
+
+More info on the section on :ref:`treatments <treatments>`.
+
+``before_session_starts`` is also used to :ref:`assign players to groups <shuffling>`.
+
 
 group_randomly()
 ~~~~~~~~~~~~~~~~
@@ -171,43 +211,6 @@ in_rounds(self, first, last)
 
 See :ref:`in_rounds`.
 
-.. _before_session_starts:
-
-before_session_starts
-~~~~~~~~~~~~~~~~~~~~~
-
-You can define this method like this:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def before_session_starts(self):
-            # code goes here
-
-This method is executed at the moment when the session is created, meaning it
-finishes running before the session begins (Hence the name).
-It is executed once per subsession (i.e. once per round).
-For example, if your app has 10 rounds, this method will get called 10 times,
-once for each ``Subsession`` instance.
-
-It has many uses, such as initializing fields, assigning players to treatments,
-or shuffling groups.
-
-A typical use of ``before_session_starts`` is to loop over the players and
-set the value of a field on each:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def before_session_starts(self):
-            for p in self.get_players():
-                p.some_field = some_value
-
-More info on the section on :ref:`treatments <treatments>`.
-
-``before_session_starts`` is also used to :ref:`assign players to groups <shuffling>`.
 
 
 Group
