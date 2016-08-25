@@ -183,7 +183,7 @@ You can define this method like this:
     class Subsession(BaseSubsession):
 
         def before_session_starts(self):
-            ...
+            # code goes here
 
 This method is executed at the moment when the session is created, meaning it
 finishes running before the session begins (Hence the name).
@@ -193,6 +193,21 @@ once for each ``Subsession`` instance.
 
 It has many uses, such as initializing fields, assigning players to treatments,
 or shuffling groups.
+
+A typical use of ``before_session_starts`` is to loop over the players and
+set the value of a field on each:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            for p in self.get_players():
+                p.some_field = some_value
+
+More info on the section on :ref:`treatments <treatments>`.
+
+``before_session_starts`` is also used to :ref:`assign players to groups <shuffling>`.
 
 
 Group
