@@ -3,13 +3,13 @@
 Bots & automated testing
 ========================
 
-In ``tests.py`` you can write "bots" that simulate multiple players simultaneously
+You can write "bots" that simulate participants simultaneously
 playing your app. By doing this, you can ensure 2 things:
 
 1.  That your app is programmed correctly
 2.  That your server performs well even when there is a lot of traffic
 
-This can prevent a lot of problems from occurring on the day you launch your study
+This can prevent a lot of problems on the day you launch your study.
 
 It also saves you the time of having to re-test the application every time something is changed.
 

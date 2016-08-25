@@ -92,9 +92,9 @@ Contents:
     server/intro.rst
     server.rst
     server-ubuntu.rst
+    bots.rst
     localization.rst
     manual_testing.rst
-    bots.rst
     admin.rst
     troubleshooting.rst
     tips_and_tricks.rst

@@ -241,6 +241,8 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
 
 ``directory`` should be the dir containing your project (i.e. with ``settings.py``),
 and ``DATABASE_URL`` should match what you set earlier.
+You should also set any other environment variables in ``environment``,
+ such as ``OTREE_PRODUCTION``, ``OTREE_AUTH_LEVEL``, and ``OTREE_ADMIN_PASSWORD``.
 
 To start or restart the server (e.g. after making changes), do::
 
