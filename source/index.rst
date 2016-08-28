@@ -74,7 +74,7 @@ Contents:
 .. toctree::
     :maxdepth: 2
 
-    setup.rst
+    install.rst
     python.rst
     tutorial/intro.rst
     conceptual_overview.rst

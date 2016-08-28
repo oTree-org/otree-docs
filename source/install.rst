@@ -1,6 +1,6 @@
 .. _setup:
 
-Download & Setup
+Installing oTree
 ================
 
 Command line basics
@@ -100,7 +100,7 @@ Install Python (Linux/UNIX)
 
 We recommmend installing using your system's package manager to install Python 3.5.
 If you use the default system Python 2.7 installation,
-we recommend running ``pip install --upgrade pip``,
+we recommend running ``pip install -U pip``,
 because the default system Python can have an outdated version of Pip.
 If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
 
@@ -111,7 +111,7 @@ Install oTree
 
 .. code-block:: bash
 
-    pip3 install --upgrade otree-core
+    pip3 install -U otree-core
 
 Windows issue: vcvarsall.bat and Visual C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -166,7 +166,8 @@ Installing a Python editor (PyCharm)
 You should install a text editor for writing your Python code.
 
 We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
-Professional Editon is better than Community Edition because it has Django support.
+Professional Editon is better than Community Edition because it makes
+Django programming easier.
 PyCharm Professional is free if you are a student, teacher, or professor.
 
 (If you prefer another editor like Notepad++, TextWrangler, or Sublime Text, you can use that instead.)
@@ -175,7 +176,9 @@ Launch PyCharm, go to "File -> Open..." and select the folder you created with `
 
 Then click on ``File –> Settings`` (or ``Default Settings``) and navigate to ``Languages & Frameworks -> Django``,
 check "Enable Django Support" and set your oTree folder as the Django project root,
-with your ``manage.py` and ``settings.py``.
+with your ``manage.py` and ``settings.py``:
+
+.. figure:: _static/setup/pycharm-django.png
 
 Open a file, right-click on the left margin, and select "Show line numbers":
 
@@ -210,7 +213,7 @@ Run:
 
 .. code-block:: bash
 
-    pip3 install --upgrade otree-core
+    pip3 install -U otree-core
     otree resetdb
 
 Upgrade oTree library

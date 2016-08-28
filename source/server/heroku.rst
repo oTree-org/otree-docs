@@ -92,12 +92,12 @@ or an error mentioning port 6379.
 Upgrade oTree
 ~~~~~~~~~~~~~
 
-We recommend you use the latest version of oTree, to get the latest bugfixes.
+We recommend you upgrade to the latest version of oTree, to get the latest bugfixes.
 Run:
 
 .. code-block:: bash
 
-    $ pip3 install --upgrade otree-core
+    $ pip3 install -U otree-core
 
 .. note::
 

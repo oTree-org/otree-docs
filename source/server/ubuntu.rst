@@ -240,7 +240,7 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
     environment=
         PATH="/home/my_username/venv_otree/bin/:%(ENV_PATH)s",
         DATABASE_URL="postgres://otree_user:otree@localhost/django_db",
-        OTREE_ADMIN_PASSWORD="my_password",
+        OTREE_ADMIN_PASSWORD="my_password", # password for oTree web admin
         OTREE_PRODUCTION="0", # can set to 1
         OTREE_AUTH_LEVEL="", # can set to STUDY or DEMO
 

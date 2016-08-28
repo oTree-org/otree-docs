@@ -17,7 +17,7 @@ To ensure you are using the latest version of oTree, open your command window an
 
 .. code-block:: bash
 
-    $ pip3 install --upgrade otree-core
+    $ pip3 install -U otree-core
     $ otree resetdb
 
 

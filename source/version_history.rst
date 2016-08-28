@@ -31,7 +31,7 @@ Version 0.6
 Version 0.6 is available.
 You can install it as usual::
 
-    pip3 install --upgrade otree-core
+    pip3 install -U otree-core
     otree resetdb
 
 Here are some changes:
