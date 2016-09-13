@@ -14,8 +14,8 @@ oTree lets you configure "rooms", which provide:
 
 This feature replaces the "default session" from oTree 0.4.
 
-oTree lets you define multiple rooms. For example, you can have several rooms for different classes you teach,
-or multiple labs.
+You can define multiple rooms -- say, for for different classes you teach,
+or different labs you manage.
 
 To create a room, add to your ``settings.py``
 a setting ``ROOMS`` (and, optionally, ``ROOM_DEFAULTS``).
@@ -64,7 +64,8 @@ Here are the available keys:
         PC_10
 
 
--   ``use_secure_urls`` (optional): whether oTree should add unique secret keys to URLs,
+-   ``use_secure_urls`` (optional): a True/False setting that controls
+    whether oTree should add unique secret keys to URLs,
     so that even if someone can guess another participant's ``participant_label``,
     they can't guess that person's start URL. If you use this option, then you must
     have a ``participant_label_file``, and you cannot use the room-wide link.

@@ -136,12 +136,14 @@ However, if you define the choices dynamically with :ref:`FOO_choices`,
 in order to use ``get_*_display()`` you need to also define the ``*_choices``
 method in your models.py.
 
-If a field is optional, you can do:
+If a field is optional, you can use ``blank=True`` like this:
 
 .. code-block:: python
 
     # in models.py
     offer = models.PositiveIntegerField(blank=True)
+
+Then the HTML field will not have the ``required`` attribute.
 
 .. _dynamic_validation:
 
@@ -358,10 +360,10 @@ do this:
 .. code-block:: python
 
     # models.py
-    my_hidden_input = models.PositiveIntegerField()
+    my_field = models.PositiveIntegerField()
 
     # views.py
-    form_fields = ['my_hidden_input', 'some_other_field']
+    form_fields = ['my_field']
 
     # HTML template
     <input type="hidden" name="my_hidden_input"

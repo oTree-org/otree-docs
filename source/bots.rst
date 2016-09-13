@@ -523,8 +523,7 @@ To test all session configs, just run this::
 
     otree browser_bots
 
-Currently it defaults to ``num_demo_participants`` rather than ``num_bots``
-(for performance reasons), but that may change in the future.
+It defaults to ``num_demo_participants`` (not ``num_bots``).
 
 Browser bots: misc notes
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -537,24 +536,4 @@ in ``settings.py``. Then, oTree will open the browser by doing something like
 Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/142059?hl=en>`__
 that you use just for browser testing. When oTree launches Chrome,
 it should use the last profile you had open.
-
-Bots tips & tricks
-------------------
-
-You can put ``assert`` statements
-to check that the correct values are being stored in the database.
-For example, if a player's bonus is defined to be 100 minus their
-offer, you can check your program is calculating it correctly as
-follows:
-
-.. code-block:: python
-
-    yield (views.Offer, {'offer': c(30)})
-    assert self.player.bonus == c(70)
-
-You can use random amounts to test that your program can handle any
-type of random input::
-
-   ``yield (views.Offer, {'offer': random.randint(0,100)})``
-
 

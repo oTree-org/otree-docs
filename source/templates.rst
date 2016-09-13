@@ -173,6 +173,22 @@ like this:
 
     <img src="{% static "my_app/my_image.png" %}"/>
 
+If the image/video path is variable (like showing a different image each round),
+you can construct it in ``views.py`` and pass it to the template, e.g.:
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        def vars_for_template(self):
+            return {'image_path': 'my_app/{}.png'.format(self.round_number),
+
+Then in the template:
+
+.. code-block:: HTML+django
+
+    <img src="{% static image_path %}"/>
+
 
 Plugins
 ~~~~~~~
@@ -225,7 +241,7 @@ and find the chart type that you want to make.
 Then click "edit in JSFiddle" to edit it to your liking.
 
 To pass data like a list of values from Python to HighCharts, you should
-first pass it through the ``otree.common.safe_json()`` function. This
+first pass it through the ``otree.api.safe_json()`` function. This
 converts to the correct JSON syntax and also uses ``mark_safe`` for the
 template.
 
@@ -234,7 +250,7 @@ Example:
 .. code-block:: python
 
     >>> a = [0, 1, 2, 3, 4, None]
-    >>> from otree.common import safe_json
+    >>> from otree.api import safe_json
     >>> safe_json(a)
     '[0, 1, 2, 3, 4, null]'
 

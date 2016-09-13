@@ -336,4 +336,4 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 # =============================================================================
 
 def setup(app):
-    app.add_javascript('otree-docs.js')
+    pass

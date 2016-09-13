@@ -148,12 +148,14 @@ in a dict called ``self.request.POST``, which you can access like this:
             # do something with my_value...
 
 Note: the contents of ``self.request.POST`` have not been validated.
-For example, suppose ``my_field`` is an ``IntegerField``. There is no guarantee that ``self.request.POST['my_field']``
+For example, supposing ``my_field`` is an ``IntegerField``, there is no guarantee
+that ``self.request.POST.get('my_field')``
 contains an integer, that the integer is between your field's ``max`` and ``min``,
-or that this field exists at all, which is why we need to use ``post_dict.get('my_field')`` method
+or even that that the post dict contains an entry for
+this form field (e.g. it may have been left blank), which is why we need to use ``post_dict.get('my_field')`` method
 rather than ``post_dict['my_field']``. (Python's dict ``.get()`` method also lets you provide a second argument like
-``post_dict.get('my_field', 10)``, which will return the entry ``'my_field'`` if it exists in the dict;
-if that entry is missing, it will return the default of 10.)
+``post_dict.get('my_field', 10)``, which will return 10 as a fallback in case
+``my_field`` is not found if that entry is missing, it will return the default of 10.)
 
 
 before_next_page()
@@ -235,7 +237,7 @@ To customize further, such as adding HTML content,
 you can set the ``template_name`` attribute to reference an HTML file
 that extends ``otree/WaitPage.html``.
 
-For example:
+For example, save this to ``my_app/templates/my_app/MyWaitPage.html``:
 
 .. code-block:: html+django
 
@@ -244,12 +246,21 @@ For example:
     {% block title %}{{ title_text }}{% endblock %}
     {% block content %}
         {{ body_text }}
-        <p>My custom content here</p>
+        <p>
+            My custom content here.
+        </p>
     {% endblock %}
 
+Then tell your wait page to use this template:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        template_name = 'my_app/MyWaitPage.html'
 
 Then you can use ``vars_for_template`` in the usual way.
-Actually, the ``body_text`` and ``title_text`` attributes are just shorthand for setting ``vars_for_template``;
+Actually, the ``body_text`` and ``title_text`` attributes
+are just shorthand for setting ``vars_for_template``;
 the following 2 code snippets are equivalent:
 
 .. code-block:: python
@@ -263,4 +274,6 @@ the following 2 code snippets are equivalent:
         def vars_for_template(self):
             return {'body_text': "foo"}
 
-To apply your custom wait page template globally, save it to ``_templates/global/WaitPage.html``.
+If you want to apply your custom wait page template globally,
+save it to ``_templates/global/WaitPage.html``.
+oTree will then automatically use it everywhere instead of the built-in wait page.

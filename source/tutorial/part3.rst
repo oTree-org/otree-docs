@@ -11,7 +11,7 @@ features:
 -  A random round will be chosen for payment
 
 The completed app is
-`here <https://github.com/oTree-org/oTree/tree/master/matching_pennies_tutorial>`__.
+`here <https://github.com/oTree-org/oTree/tree/master/matching_pennies>`__.
 
 
 Create the app

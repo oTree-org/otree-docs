@@ -50,18 +50,14 @@ Here is how to define the above table structure:
         amount_offered = models.CurrencyField()
         offer_accepted = models.BooleanField()
 
-Every time you add, remove, or change a field in ``models.py``, you need
-to run ``otree resetdb``, or, in the launcher, click "Reset DB".
-(However, you don't need to run ``resetdb`` if you only make a change that
-doesn't affect your database schema, like modifying ``views.py`` or an HTML template, etc.)
+You need to run ``otree resetdb`` if you have added,
+removed, or changed a field in ``models.py`` (but not if you only modified ``views.py``
+or an HTML template).
 
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.7/ref/models/fields/#field-types>`__.
 
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
-
-If you need to store a list/array/dictionary, you should do so in
-:ref:`participant.vars <vars>`.
 
 min, max, choices
 -----------------

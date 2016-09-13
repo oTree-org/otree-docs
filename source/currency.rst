@@ -28,9 +28,11 @@ If you want to initialize it to 0, you should do so in
 
 .. code-block:: python
 
-  def before_session_starts(self):
-      for p in self.get_players():
-          p.payoff = 0
+  class Subsession(BaseSubsession):
+
+      def before_session_starts(self):
+          for p in self.get_players():
+              p.payoff = 0
 
 Currency values work just like numbers
 (you can do mathematical operations like addition, multiplication, etc),
@@ -47,9 +49,7 @@ Note: instead of using Python's built-in ``range`` function, you should
 use oTree's ``currency_range`` with currency values. It takes 3
 arguments (start, stop, step), just like range. However, note that it is
 an inclusive range. For example,
-``currency_range(c(0), c(0.10), c(0.02))`` returns something like:
-
-.. code-block:: python
+``currency_range(c(0), c(0.10), c(0.02))`` returns something like::
 
     [Money($0.00), Money($0.02), Money($0.04),
      Money($0.06), Money($0.08), Money($0.10)]

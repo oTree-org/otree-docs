@@ -13,10 +13,12 @@ because that is the simplest for people who are not experienced with web server 
 
 However, you may prefer to run oTree on your own server. Reasons may include:
 
--  You do not want your server to be accessed from the internet
--  You will be launching your experiment in a setting where internet
-   access is unavailable
--  You want full control over how your server is configured
+-   You will be launching your experiment in a setting where internet
+    connectivity is lacking
+-   You do not want your server to be accessed from the internet
+-   You want full control over how your server is configured
+-   You want better performance (local servers have less latency)
+
 
 The below instructions are for Ubuntu 16.04.
 
@@ -216,8 +218,8 @@ production server, which can handle more traffic.
     oTree 0.5 and later uses the ``daphne`` server.
 
 
-Supervisor
-~~~~~~~~~~
+Process control system (supervisor, circus, etc)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You should use a process control system like Supervisord that runs oTree as a service.
 This will start oTree when the machine is booted, restart your processes in case they crash,
@@ -261,6 +263,8 @@ To start or restart the server (e.g. after making changes), do::
     otree collectstatic
     sudo service supervisor restart
 
+If this doesn't start the server, check the ``stdout_logfile`` you defined above,
+or ``/var/log/supervisor/supervisord.log``.
 
 Apache, Nginx, etc.
 ~~~~~~~~~~~~~~~~~~~
@@ -281,8 +285,18 @@ And oTree uses `Whitenoise <http://whitenoise.evans.io/en/stable/index.html>`__
 to serve static files (e.g. images, JavaScript, CSS). This is reasonably
 efficient, so for many people a reverse proxy will not be necessary.
 
-Next steps
-----------
+Sentry
+------
 
 Set up :ref:`Sentry <sentry>`.
 
+Database backups
+----------------
+
+If you are using Postgres, you can export your database to a file called ``otree.sql``
+with a command like this::
+
+    pg_dump -U otree_user -h localhost django_db > otree-$(date +"%Y-%m-%d-%H-%M").sql
+
+(This assumes your database is set up as described above (with username ``otree_user``
+and database name ``django_db``, and that you are on Unix.)

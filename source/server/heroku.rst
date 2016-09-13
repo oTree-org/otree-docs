@@ -222,9 +222,9 @@ dyno.
 Turning on the second dyno is free, but you may need to register a credit card with Heroku.
 
 If you are just testing your app, oTree will still function without the ``timeoutworker`` dyno,
-but if you are running a study with real participants, we recommend turning it on.
-This will ensure that the page timeouts defined by ``timeout_seconds``
-still work even if a user closes their browser.
+but if you are running a study with real participants and your pages have
+timeouts defined by ``timeout_seconds``, then the ``timeoutworker`` will ensure
+that timeouts are still enforced even if a user closes their browser.
 
 If you do not see a ``timeoutworker`` entry, make sure your ``Procfile``
 looks like this::
@@ -381,7 +381,7 @@ This will update your database tables.
 
 If you get an error ``NameError: name 'Currency' is not defined``,
 you need to find the offending file in your app's ``migrations`` folder,
-and add ``from otree.common import Currency`` at the top of the file.
+and add ``from otree.api import Currency`` at the top of the file.
 
 If you make further modifications to your apps, you can run
 ``python manage.py makemigrations``. You don't need to specify the app names in this command;

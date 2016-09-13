@@ -58,7 +58,7 @@ Install Python 3.5 (Mac OSX)
 
 Although Mac OSX comes pre-installed with Python, we recommend not using the pre-installed Python,
 and instead installing Python through Homebrew.
-However, if you already have Python 3.5 or 2.7 installed through Conda, that should be OK.
+However, if you already have Python 3.5 installed through Conda, that should be OK.
 To install Python 3 via Homebrew:
 
 * Open your Terminal and run:
@@ -99,9 +99,6 @@ Install Python (Linux/UNIX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We recommmend installing using your system's package manager to install Python 3.5.
-If you use the default system Python 2.7 installation,
-we recommend running ``pip install -U pip``,
-because the default system Python can have an outdated version of Pip.
 If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
 
 More information in the :ref:`Linux server setup <server-ubuntu>` section.
@@ -120,8 +117,7 @@ On Windows you might see an error like this about Twisted and ``vcvarsall.bat``:
 
     error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
 
--   Python 3.5: install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
--   Python 2.7: install `this <http://aka.ms/vcpython27>`__.
+On Python 3.5, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
 
 
 Running oTree

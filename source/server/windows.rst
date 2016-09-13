@@ -86,7 +86,8 @@ psycopg2
 ~~~~~~~~
 
 You then need to install psycopg2, the Postgres driver for Python.
-Installing it via pip often doesn't work. Instead, download it `here <http://www.stickpeople.com/projects/python/win-psycopg/>`__.
+Installing it via pip often doesn't work. If that is the case,
+download it `here <http://www.stickpeople.com/projects/python/win-psycopg/>`__.
 If you are using a virtualenv, note the special installation instructions on that page.
 
 If you are using a version of Python prior to 3.5.2,
