@@ -60,10 +60,6 @@ If you want to rearrange groups, you can use the below techniques.
 get_group_matrix()
 ~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This method is only available in otree-core >=0.5.11 (released after June 7, 2016).
-
 You can retrieve the structure of the groups as a matrix.
 Subsessions have a method called ``get_group_matrix()`` that returns a list of lists,
 with each sublist being the players in a group, ordered by ``id_in_group``.
@@ -78,10 +74,6 @@ The following lines are equivalent.
 
 group_randomly()
 ~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This method is only available in otree-core >=0.5.11 (released after June 7, 2016).
 
 Subsessions have a method ``group_randomly()`` that shuffles players randomly,
 so they can end up in any group, and any position within the group.
@@ -137,12 +129,6 @@ To counteract this, you can use :ref:`group_like_round`.
 
 set_group_matrix()
 ~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This method is only available in otree-core >=0.5.11 (released after June 7, 2016).
-    In previous releases, the roughly equivalent method was called ``set_groups``
-    (``set_groups`` will still work, for compatibility).
 
 ``set_group_matrix()`` lets you modify the group structure in any way you want.
 You can call modify the list of lists returned by ``get_group_matrix()``,
@@ -422,7 +408,7 @@ You can accomplish this as follows:
             else:
                 self.group_like_round(1)
 
-**Fixed number of groups with a no divisible number of players**
+**Fixed number of groups with a non-divisible number of players**
 
 Lets make a more complex example based on the previous one. Let's say we need
 to divide 20 players into 8 groups randomly. The problem is that

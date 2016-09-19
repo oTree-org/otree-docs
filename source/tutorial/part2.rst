@@ -107,36 +107,35 @@ We need 3 pages:
 -  "Results" page that both users see.
 
 It would also be good if game instructions appeared on each page so that
-players are clear how the game works. We can define a file
-``Instructions.html`` that gets included on each page.
+players are clear how the game works.
 
 Instructions.html
 ~~~~~~~~~~~~~~~~~
 
-This template uses Django's template inheritance with the
-``{% extends %}`` command. The file it inherits from is located at
-``_templates/global/Instructions.html``.
+To create the instructions, we can define a file
+``Instructions.html`` that gets included on each page.
 
-For basic apps you don't need to know the
-details of how template inheritance works.
 
 .. code-block:: html+django
 
-    {% extends "global/Instructions.html" %}
+    {% load otree_tags staticfiles %}
 
-    {% block instructions %}
+    <div class="instructions well well-lg">
+
+        <h3 class="panel-sub-heading">
+            Instructions
+        </h3>
     <p>
         This is a trust game with 2 players.
     </p>
     <p>
         To start, participant A receives {{ Constants.endowment }};
         participant B receives nothing.
-        Participant A can send some or all of his {{ Constants.endowment }}
-        to participant B. Before B receives these points they will be tripled.
-        Once B receives the tripled points he can decide to send some or all
-        of his points to A.
+        Participant A can send some or all of his {{ Constants.endowment }} to participant B.
+        Before B receives these points they will be tripled.
+        Once B receives the tripled points he can decide to send some or all of his points to A.
     </p>
-    {% endblock %}
+    </div>
 
 Send.html
 ~~~~~~~~~

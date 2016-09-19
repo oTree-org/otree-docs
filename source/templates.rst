@@ -74,7 +74,7 @@ and ``styles``, respectively. They should be located outside the ``content`` blo
 
         <!-- define a script -->
 
-        <script type="text/javascript">
+        <script>
         jQuery(document).ready(function ($) {
             var PRIVATE_VALUE = {{ player.private_value.to_number|escapejs }};
 
@@ -91,7 +91,7 @@ and ``styles``, respectively. They should be located outside the ``content`` blo
         </script>
 
         <!-- or reference a static file -->
-        <script type="text/javascript" src="{% static "my_app/script.js" %}"></script>
+        <script src="{% static "my_app/script.js" %}"></script>
     {% endblock %}
 
 

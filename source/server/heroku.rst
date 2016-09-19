@@ -208,7 +208,7 @@ or to further configure your server's behavior.
 Look at your server check
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is new in oTree 0.5. In the oTree admin interface, click "Server Check" in the header bar.
+In the oTree admin interface, click "Server Check" in the header bar.
 It will tell you what steps below you need to take.
 
 
