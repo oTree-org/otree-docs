@@ -212,8 +212,14 @@ This code will be executed once all players have arrived at the wait
 page. For example, this method can determine the winner of an auction
 and set each player's payoff.
 
+Note, you can't reference ``self.player`` inside ``after_all_players_arrive``,
+because the code is executed once for the entire group,
+not for each individual player.
+(However, you can use ``self.player`` in a wait page's ``is_displayed``.)
+
 - ``def is_displayed(self)``
 
+Works the same way as with regular pages.
 If this returns ``False`` then the player skips the wait page.
 
 If some or all players in the group skip the wait page,

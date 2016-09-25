@@ -11,7 +11,8 @@ playing your app. By doing this, you can ensure 2 things:
 
 This can prevent a lot of problems on the day you launch your study.
 
-It also saves you the time of having to re-test the application every time something is changed.
+It also saves you the time of having to re-test the application
+every time something is changed.
 
 
 Running tests
@@ -64,7 +65,7 @@ Writing tests
 
     The reason for this change in syntax is that using the Python ``yield``
     keyword removes some limitations the bots previously had,
-    and helps the bots run more reliably.
+    and helps the bots run more flexibly.
     For example, the ``validate_play`` method is no longer required;
     you can now put assert statements directly in ``play_round``.
 
@@ -420,14 +421,6 @@ in ``settings.py``.
 
 Browser bots
 ------------
-
-.. note::
-
-    As of 2016-07-28, the configuration of browser bots has changed
-    from when the feature was released a few weeks ago.
-    ``--botworker`` was added; ``USE_BROWSER_BOTS = True`` setting was replaced by
-    ``'use_browser_bots': True`` in session config; and bot syntax changed from
-    ``self.submit()`` to ``yield ()`` as described above.
 
 Starting with oTree 0.8, bots can run in the browser.
 They run the same way as command-line bots,

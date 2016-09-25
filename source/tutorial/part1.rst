@@ -5,7 +5,7 @@ We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Pu
 
 This is a three player game where each player is initially endowed with 100 points.
 Each player individually makes a decision about how many of their points they want to contribute to the group.
-The combined contributions are multiplied by 1.8, and then divided evenly three ways and redistributed back to the players.
+The combined contributions are multiplied by 2, and then divided evenly three ways and redistributed back to the players.
 
 The full code for the app we will write is
 `here <https://github.com/oTree-org/oTree/tree/master/public_goods_simple>`__.
@@ -50,8 +50,8 @@ parameters -- things that are the same for all players in all games.
 -  The endowment to each player is 100 points. So, let's define
    ``endowment`` and set it to ``c(100)``. (``c()`` means it is a
    currency amount; see :ref:`currency`).
--  Each contribution is multiplied by 1.8. So let's define
-   ``efficiency_factor`` and set it to 1.8:
+-  Each contribution is multiplied by 2. So let's define
+   ``efficiency_factor`` and set it to 2:
 
 Now we have:
 
@@ -63,7 +63,7 @@ Now we have:
         num_rounds = 1
 
         endowment = c(100)
-        efficiency_factor = 1.8
+        efficiency_factor = 2
 
 Now let's think about the main entities in this game: the Player and the
 Group.
@@ -361,3 +361,57 @@ In these situations, look to see if any of your code is contained in the traceba
 Above we can see that the traceback goes through the file ``/Users/chris/oTree/public_goods/views.py``,
 which is part of my project. The bug is on line 108, as indicated.
 
+Make changes while the server is running
+----------------------------------------
+
+Once you have the server running, try changing some text in
+``Contribute.html`` or ``Results.html``,
+then save the file and refresh your page. You will see the changes immediately.
+
+Write a bot
+-----------
+
+Let's write a bot that simulates a player playing the game we just programmed.
+Having a bot will save us a lot of work, because it can automatically test
+that the game still works each time we make changes.
+
+Go to ``tests.py``, and add this code in ``PlayerBot``:
+
+.. code-block:: python
+
+    class PlayerBot(Bot):
+
+        def play_round(self):
+            yield (views.Contribute, {'contribution': c(42)})
+            yield (views.Results)
+
+This bot first submits the Contribute page with a contribution of 42,
+then submits the results page (to proceed to the next app).
+
+From your command line, run::
+
+    otree test my_public_goods
+
+You will see the output of the bots in the command line.
+To make the bot play in your web browser, go to ``settings.py``
+and add ``'use_browser_bots': True`` to the session config, like this:
+
+.. code-block:: python
+
+    SESSION_CONFIGS = [
+        {
+            'name': 'my_public_goods',
+            'display_name': "My Public Goods (Simple Version)",
+            'num_demo_participants': 3,
+            'app_sequence': ['my_public_goods', 'survey', 'payment_info'],
+            'use_browser_bots': True
+        },
+        # other session configs ...
+    ]
+
+Now, when you create a new session and open the start links,
+it will play automatically.
+
+Bots can do many more things; to learn more, see the section :ref:`bots`.
+
+Or, proceed to the next part of the tutorial.

@@ -300,3 +300,9 @@ with a command like this::
 
 (This assumes your database is set up as described above (with username ``otree_user``
 and database name ``django_db``, and that you are on Unix.)
+
+Bots
+----
+
+Before launching a study, it's advisable to test your apps with bots,
+especially browser bots. See the section :ref:`bots`.

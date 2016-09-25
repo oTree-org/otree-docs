@@ -320,6 +320,12 @@ More info at :ref:`AUTH_LEVEL`.
 
 Before launching a study, you should set up Sentry.
 
+Testing with browser bots
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before launching a study, it's advisable to test your apps with bots,
+especially browser bots. See the section :ref:`bots`.
+
 .. _sentry:
 
 Logging with Sentry
