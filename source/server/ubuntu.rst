@@ -218,10 +218,28 @@ production server, which can handle more traffic.
     oTree 0.5 and later uses the ``daphne`` server.
 
 
+Testing the production server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From your project folder, run::
+
+    otree runprodserver --port=80
+
+This will run Django's ``collectstatic`` to collect your static files,
+then start the server.
+If it works, you will be able to navigate in your browser to your server's
+IP address or hostname. You don't need to append :80 to the URL,
+because that is the default HTTP port.
+
+Note: unlike ``runserver``, ``runprodserver`` does not restart automatically
+when your files are changed.
+
 Process control system (supervisor, circus, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You should use a process control system like Supervisord that runs oTree as a service.
+Once the server is working as described above,
+it's a good practice to use
+a process control system like Supervisord that runs oTree as a service.
 This will start oTree when the machine is booted, restart your processes in case they crash,
 keep it running if you log out, etc.
 
@@ -263,8 +281,13 @@ To start or restart the server (e.g. after making changes), do::
     otree collectstatic
     sudo service supervisor restart
 
+(Note that ``otree.conf`` above runs the server with ``--no-collectstatic``.
+This skips the ``collectstatic`` step, because you only need to do it once
+manually each time you deploy your experiment.)
+
 If this doesn't start the server, check the ``stdout_logfile`` you defined above,
 or ``/var/log/supervisor/supervisord.log``.
+
 
 Apache, Nginx, etc.
 ~~~~~~~~~~~~~~~~~~~

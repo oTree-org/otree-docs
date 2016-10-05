@@ -73,17 +73,16 @@ app. Or you can specify your own name; see ``heroku help create`` for more info.
 
 .. _redis:
 
-Install Redis add-on (new for v0.5+)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install Redis add-on
+~~~~~~~~~~~~~~~~~~~~
 
 You need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__.
 
-This step is required, starting with oTree 0.5.
 If you don't do it, you will see an "Application Error":
 
 .. image:: ../_static/heroku-application-error.png
     :align: center
-    :scale: 100 %
+    :scale: 80 %
 
 If Redis is not set up, you may also see messages in your logs saying "Connection refused",
 or an error mentioning port 6379.
@@ -212,8 +211,8 @@ In the oTree admin interface, click "Server Check" in the header bar.
 It will tell you what steps below you need to take.
 
 
-Turn on timeout worker Dyno (new for v0.5+)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Turn on timeout worker Dyno
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable full functionality, you should go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
 click on your app, click to edit the dynos, and turn on the ``timeoutworker``
@@ -271,7 +270,7 @@ To provision the "Hobby Basic" database::
 This command will give you the name of your new DB (in the above example, ``HEROKU_POSTGRESQL_RED``).
 Then you need to promote (i.e. "activate") this new database::
 
-    $ heroku pg:promote HEROKU_POSTGRESQL_RED
+    $ heroku pg:promote HEROKU_POSTGRESQL_RED  # substitute your color here
     Promoting HEROKU_POSTGRESQL_RED_URL to DATABASE_URL... done
 
 More info on the database plans `here <https://elements.heroku.com/addons/heroku-postgresql>`__,

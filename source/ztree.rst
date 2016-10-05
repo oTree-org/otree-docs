@@ -294,7 +294,7 @@ Money and currency
 -  ShowUpFee: ``session.config['participation_fee']``
 -  Profit: ``player.payoff``
 -  FinalProfit: ``participant.payoff``
--  MoneyToPay: ``participant.money_to_pay()``
+-  MoneyToPay: ``participant.payoff_plus_participation_fee()``
 
 Experimental currency units (ECU)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

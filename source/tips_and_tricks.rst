@@ -207,34 +207,35 @@ it is simply using Python class inheritance.)
 More complex example
 ````````````````````
 
-Let's change the above example slightly,
-so that ``Page1`` has an extra condition in ``is_displayed``:
+Let's say you've got the following code (note that ``Page1`` passes an extra
+variable ``'d'``):
 
 .. code-block:: python
 
     class Page1(Page):
-        def is_displayed(self):
-            return self.player.foo and self.player.bar
-
-        ...
+        def vars_for_template(self):
+            return {
+                'a': 1,
+                'b': 2,
+                'c': 3,
+                'd': 4
+            }
 
     class Page2(Page):
-        def is_displayed(self):
-            return self.player.foo
-
-        ...
+        def vars_for_template(self):
+            return {
+                'a': 1,
+                'b': 2,
+                'c': 3
+            }
 
     class Page3(Page):
-        def is_displayed(self):
-            return self.player.foo
-
-        ...
-
-    page_sequence = [
-        Page1,
-        Page2,
-        Page3,
-    ]
+        def vars_for_template(self):
+            return {
+                'a': 1,
+                'b': 2,
+                'c': 3
+            }
 
 
 You can refactor this as follows:
@@ -242,15 +243,22 @@ You can refactor this as follows:
 .. code-block:: python
 
     class BasePage(Page):
-        def is_displayed(self):
-            return self.player.foo and self.extra_is_displayed()
+        def vars_for_template(self):
+            v = {
+                'a': 1,
+                'b': 2,
+                'c': 3
+            }
+            v.update(self.extra_vars_for_template())
+            return v
 
-        def extra_is_displayed(self):
-            return True
+        def extra_vars_for_template(self):
+            return {}
+
 
     class Page1(BasePage):
-        def extra_is_displayed(self):
-            return self.player.bar
+        def extra_vars_for_template(self):
+            return {'d': 4}
 
     class Page2(BasePage):
         pass
@@ -258,11 +266,3 @@ You can refactor this as follows:
     class Page3(BasePage):
         pass
 
-    page_sequence = [
-        Page1,
-        Page2,
-        Page3,
-    ]
-
-You can use the same approach with ``vars_for_template``, ``before_next_page``,
-etc.

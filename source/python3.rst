@@ -37,3 +37,4 @@ You need to tell Heroku to use Python 3 instead of Python 2.
 You can do this by creating a file in the project root dir ``runtime.txt`` that contains the following::
 
     python-3.5.1
+

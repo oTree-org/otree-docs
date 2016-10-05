@@ -126,7 +126,8 @@ contribution.
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %} {% load staticfiles otree_tags %}
+    {% extends "global/Base.html" %}
+    {% load staticfiles otree_tags %}
 
     {% block title %} Contribute {% endblock %}
 
@@ -146,6 +147,10 @@ contribution.
 
     {% endblock %}
 
+Side note: if you are using PyCharm, when you type ``{%``,
+PyCharm automatically inserts the closing ``%}`` and then gives auto-suggestions
+for what to type in between. If you are not seeing this, make sure you
+:ref:`enabled Django support <pycharm>`.
 
 (For more info on how to write a template, see :ref:`templates`.)
 
@@ -153,7 +158,8 @@ The second template will be called ``Results.html``.
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %} {% load staticfiles otree_tags %}
+    {% extends "global/Base.html" %}
+    {% load staticfiles otree_tags %}
 
     {% block title %} Results {% endblock %}
 
