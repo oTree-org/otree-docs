@@ -255,7 +255,7 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
 ``otree.conf`` with the following content::
 
     [program:otree]
-    command=/home/my_username/venv_otree/bin/otree runprodserver --port=80 --no-collectstatic
+    command=/home/my_username/venv_otree/bin/otree runprodserver --port=80
     directory=/home/my_username/oTree
     stdout_logfile=/home/my_username/otree-supervisor.log
     stderr_logfile=/home/my_username/otree-supervisor-errors.log
@@ -282,12 +282,8 @@ So the env var needs to be set in both environments.
 
 To start or restart the server (e.g. after making changes), do::
 
-    otree collectstatic
     sudo service supervisor restart
 
-(Note that ``otree.conf`` above runs the server with ``--no-collectstatic``.
-This skips the ``collectstatic`` step, because you only need to do it once
-manually each time you deploy your experiment.)
 
 If this doesn't start the server, check the ``stdout_logfile`` you defined above,
 or ``/var/log/supervisor/supervisord.log``.
@@ -307,7 +303,7 @@ with the following content (can do this locally and then git push again)::
 
     [watcher:webapp]
     cmd = otree
-    args = runprodserver --port=80 --no-collectstatic
+    args = runprodserver --port=80
     use_sockets = True
     copy_env = True
 
@@ -343,7 +339,7 @@ efficient, so for many people a reverse proxy will not be necessary.
 Sentry
 ------
 
-Set up :ref:`Sentry <sentry>`.
+It's highly recommended to set up :ref:`Sentry <sentry>`.
 
 Database backups
 ----------------
@@ -361,3 +357,42 @@ Bots
 
 Before launching a study, it's advisable to test your apps with bots,
 especially browser bots. See the section :ref:`bots`.
+
+Sharing a server with other oTree users
+---------------------------------------
+
+You can share a server with other oTree users;
+you just have to make sure that the code and databases are kept separate,
+so they don't conflict with each other.
+
+On the server you should create a different Unix user for each person
+using oTree. Then each person should follow the same steps described above,
+but in some cases name things differently to avoid clashes:
+
+-   Create a virtualenv in their home directory (can also be named ``venv_otree``)
+-   Create a different Postgres database (e.g. ``postgres://otree_user2:mypassword@localhost/django_db``),
+    as described earlier,
+    and set this in the DATABASE_URL env var.
+-   Each user needs their own Redis database.
+    By default, oTree uses ``redis://localhost:6379/0``;
+    but if another person uses the same server, they need to set the
+    ``REDIS_URL`` env var explicitly, to avoid clashes.
+    You can set it to ``redis://localhost:6379/1``, ``redis://localhost:6379/2``,
+    etc. (which will use databases 1, 2, etc...instead of the default database 0).
+-   Do a ``git init`` in the second user's home directory as described earlier,
+    and then add the remote ``my-username2@XXX.XXX.XXX.XXX:oTree.git``
+    (assuming their username is ``my-username2``).
+
+Once these steps are done, the second user can git push code to the server,
+then run ``otree resetdb``.
+
+If you don't need multiple people to run experiments simultaneously,
+then each user can take turns running the server on port 80 with ``otree runprodserver --port=80``.
+However, if multiple people need to run experiments at the same time,
+then you would need to run the server on different ports, e.g. ``--port=8000``,
+``--port=8001``, etc.
+
+Finally, if you use supervisor (or circus) as described above,
+each user should have their own conf file, with their personal
+parameters like virtualenv path, oTree project path,
+``DATABASE_URL`` and ``REDIS_URL`` env vars, port number, etc.

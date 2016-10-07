@@ -27,6 +27,9 @@ anybody can play a demo version of your game, set ``OTREE_AUTH_LEVEL``
 to ``DEMO``. This will allow people to play in demo mode, but not access
 the full admin interface.
 
+If you don't want any password protection at all, just leave this variable
+blank.
+
 Start links
 -----------
 
