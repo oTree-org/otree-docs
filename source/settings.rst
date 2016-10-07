@@ -67,13 +67,17 @@ SENTRY_DSN
 
 See :ref:`Sentry <sentry>`.
 
+
 AUTH_LEVEL
 ----------
 
 See ``AUTH_LEVEL``.
 
 It's somewhat preferable to set the environment variable ``OTREE_AUTH_LEVEL``
-rather than setting ``OTREE_AUTH_LEVEL`` directly.
+on your server, rather than setting ``AUTH_LEVEL`` directly in settings.py.
+This will allow you to develop locally without having to enter a password
+each time you launch the server, but still get password protection on your
+actual server.
 
 ROOMS
 -----
@@ -85,10 +89,9 @@ ROOM_DEFAULTS
 
 See :ref:`rooms`.
 
-.. _AUTH_LEVEL:
 
-ADMIN_PASSWORD
---------------
+ADMIN_USERNAME, ADMIN_PASSWORD
+------------------------------
 
 For security reasons, it's recommended to put your admin password in an environment variable,
 then read it in ``settings.py`` like this::
@@ -99,3 +102,6 @@ To set ``OTREE_ADMIN_PASSWORD`` on Heroku, enter this command, substituting your
 own password of course::
 
     $ heroku config:set OTREE_ADMIN_PASSWORD=blahblah
+
+If you change ``ADMIN_USERNAME`` or ``ADMIN_PASSWORD``,
+you need to reset the database.

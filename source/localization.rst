@@ -4,11 +4,14 @@ Localization
 oTree's participant interface has been translated to the following languages:
 
 - Chinese (simplified)
+- Dutch
 - French
 - German
 - Hungarian
 - Italian
 - Japanese
+- Korean
+- Norwegian
 - Russian
 - Spanish
 

@@ -212,10 +212,8 @@ command.
 However, when you want to use oTree in production, you need to run the
 production server, which can handle more traffic.
 
-.. note::
-
-    Prior to v0.5, oTree used ``gunicorn``.
-    oTree 0.5 and later uses the ``daphne`` server.
+Note: oTree does not run with typical Django WSGI servers like ``gunicorn``.
+It needs the special ``daphne`` server, which supports WebSockets.
 
 
 Testing the production server
@@ -234,18 +232,24 @@ because that is the default HTTP port.
 Note: unlike ``runserver``, ``runprodserver`` does not restart automatically
 when your files are changed.
 
-Process control system (supervisor, circus, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Process control system
+~~~~~~~~~~~~~~~~~~~~~~
 
 Once the server is working as described above,
 it's a good practice to use
-a process control system like Supervisord that runs oTree as a service.
-This will start oTree when the machine is booted, restart your processes in case they crash,
+a process control system like Supervisord or Circus.
+This will restart your processes in case they crash,
 keep it running if you log out, etc.
+
+Supervisor
+``````````
 
 Install supervisor::
 
     sudo apt-get install supervisor
+
+(If you install supervisor through apt-get, it will be installed as a service,
+and will therefore automatically start when your server boots.)
 
 In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
 ``otree.conf`` with the following content::
@@ -287,6 +291,34 @@ manually each time you deploy your experiment.)
 
 If this doesn't start the server, check the ``stdout_logfile`` you defined above,
 or ``/var/log/supervisor/supervisord.log``.
+
+Alternative: Circus
+```````````````````
+
+An alternative to Supervisor is `Circus <https://circus.readthedocs.io/en/latest/>`__.
+
+To install::
+
+    sudo apt-get install libzmq-dev libevent-dev
+    pip3 install circus circus-web
+
+Create a ``circus.ini`` in your project folder,
+with the following content (can do this locally and then git push again)::
+
+    [watcher:webapp]
+    cmd = otree
+    args = runprodserver --port=80 --no-collectstatic
+    use_sockets = True
+    copy_env = True
+
+Run the following commands::
+
+    otree collectstatic
+    circusd circus.ini
+
+If this is working properly, you can start it as a daemon::
+
+    circusd --daemon circus.ini
 
 
 Apache, Nginx, etc.

@@ -84,9 +84,10 @@ If you don't do it, you will see an "Application Error":
     :align: center
     :scale: 80 %
 
-If Redis is not set up, you may also see messages in your logs saying "Connection refused",
-or an error mentioning port 6379.
-
+If Redis is not set up, you may also see messages in your ``heroku logs``
+saying "Connection refused", or an error mentioning port 6379.
+After adding Redis, if it's still not working,
+you may need to wait for a few minutes, or restart with ``heroku restart``.
 
 Upgrade oTree
 ~~~~~~~~~~~~~
