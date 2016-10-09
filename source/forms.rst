@@ -450,16 +450,51 @@ in oTree like any other form field.
 Buttons
 -------
 
-If you have a ``<button>`` widget on your page,
-clicking it will submit the form, unless you specify ``type="button"``:
+Button that submits the form
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your page only contains 1 decision,
+you could omit the ``{% next_button %}``
+and instead have the user click on "Yes" or "No" buttons
+to go to the next page, like this:
+
+.. image:: _static/forms/yes-no-buttons.png
+    :align: center
+    :scale: 100 %
+
+Here is the code for these buttons
+(the ``btn`` classes are just for Bootstrap styling):
 
 .. code-block:: html+django
 
     {% block content %}
 
-        <button>Clicking this will submit the form</button>
+        <p><b>Do you wish to accept the offer?</b></p>
+        <div>
+            <button name="offer_accepted" value="True" class="btn btn-primary btn-large">Yes</button>
+            <button name="offer_accepted" value="False" class="btn btn-primary btn-large">No</button>
+        </div>
 
-        <button type="button">Clicking this will not submit the form</button>
+    {% endblock %}
+
+
+Button that doesn't submit the form
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the button has some purpose other than submitting the form,
+add ``type="button"`` to the ``<button>``:
+
+.. code-block:: html+django
+
+    {% block content %}
+
+        <button>
+            Clicking this will submit the form
+        </button>
+
+        <button type="button">
+            Clicking this will not submit the form
+        </button>
 
     {% endblock %}
 
