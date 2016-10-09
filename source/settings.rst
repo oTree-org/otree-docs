@@ -5,32 +5,34 @@ Your settings can be found in ``settings.py``.
 Here are explanations of a few oTree-specific settings.
 Full info on all Django's settings can be found `here <https://docs.djangoproject.com/en/1.8/ref/settings/>`__.
 
+.. _SESSION_CONFIGS:
+
 SESSION_CONFIGS
 ---------------
 
-To configure a session, you need to
-define a "session config", which is a reusable configuration.
-This lets you create multiple sessions, all with the same properties.
+To create a session, you first need to
+define a "session config".
 
-Add an entry to ``SESSION_CONFIGS`` like this (assuming you have created apps named ``my_app_1``
-and ``my_app_2``):
+In ``settings.py``, add an entry to ``SESSION_CONFIGS`` like this
+(assuming you have created apps named ``my_app_1`` and ``my_app_2``):
 
 .. code-block:: python
 
     {
         'name': 'my_session_config',
         'display_name': 'My Session Config',
-        'participation_fee': 10.00,
+        'num_demo_participants': 2,
         'app_sequence': ['my_app_1', 'my_app_2'],
     },
 
 
-Once you have defined a session config, you can run ``otree resetdb``, then ``otree runserver``,
+Once you have defined a session config, you can run ``otree resetdb``,
+then ``otree runserver``,
 open your browser to the admin interface, and create a new session.
 You would select "My Session Config" as the configuration to use.
 
-An instance of a session would be created, and you would get the start links to
-distribute to your participants.
+For more info on how to use ``SESSION_CONFIGS``, see :ref:`edit_session_config`
+and :ref:`session_config_treatments`.
 
 SESSION_CONFIG_DEFAULTS
 -----------------------

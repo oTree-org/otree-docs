@@ -95,6 +95,8 @@ To solve this, you can alternate treatments, using ``itertools.cycle``:
 
 
 
+.. _session_config_treatments:
+
 Choosing which treatment to play
 --------------------------------
 

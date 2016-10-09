@@ -10,8 +10,8 @@ developing locally, this will be *http://127.0.0.1:8000/*.
 
 .. _AUTH_LEVEL:
 
-Authenticaton
--------------
+Password protection
+-------------------
 
 When you first install oTree, The entire admin interface is accessible
 without a password. However, when you are ready to launch your oTree
@@ -29,6 +29,73 @@ the full admin interface.
 
 If you don't want any password protection at all, just leave this variable
 blank.
+
+
+.. _edit_session_config:
+
+Configure sessions
+------------------
+
+.. note::
+
+    This feature is only available in the latest otree-core (Oct 2016).
+
+You can make your session configurable,
+so that you can adjust the game's parameters in the admin interface,
+without needing to edit the source code.
+
+For example, let's say you are making a public goods game,
+whose payoff function depends on
+an "efficiency factor" parameter that is a numeric constant,
+like 1.5 or 2. The usual approach would be to define it in ``Constants``,
+e.g. ``Constants.efficiency_factor``
+
+To make this parameter configurable, move it from ``Constants``
+to your config in :ref:`SESSION_CONFIGS`. For example:
+
+.. code-block:: python
+
+    {
+        'name': 'my_session_config',
+        'display_name': 'My Session Config',
+        'num_demo_participants': 2,
+        'app_sequence': ['my_app_1', 'my_app_2'],
+        'efficiency_factor': 1.5,
+    },
+
+Then, when you create a session in the admin interface
+and select this session config, the ``efficiency_factor`` parameter will
+be listed, and you can change it to a number other than 1.5.
+If you want to explain the meaning of the variable to the user,
+you can add a ``'doc'`` parameter to the session config dict, e.g.:
+
+.. code-block:: python
+
+    {
+        'name': 'my_session_config',
+        'display_name': 'My Session Config',
+        'num_demo_participants': 2,
+        'app_sequence': ['my_app_1', 'my_app_2'],
+        'efficiency_factor': 1.5,
+        'doc': """
+        Edit the 'efficiency_factor' parameter to change the factor by which
+        contributions to the group are multiplied.
+        """
+    },
+
+Then in your app's code, you can do ``self.session.config['efficiency_factor`]``
+to retrieve the current session's efficiency factor.
+
+
+
+Notes:
+-   For a field to be configurable, its value must be a simple data type
+    (number, boolean, or string).
+-   On the "Demo" section of the admin, sessions are not configurable.
+    It's only available when creating a session in "Sessions" or "Rooms".
+
+Also see :ref:`session_config_treatments`.
+
 
 Start links
 -----------
@@ -174,8 +241,8 @@ admin interface. The admin tables update live, highlighting changes as
 they occur.
 
 
-Payment PDF
------------
+Payments page
+-------------
 
 At the end of your session, you can open and print a page that lists all
 the participants and how much they should be paid.
