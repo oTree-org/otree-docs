@@ -14,6 +14,7 @@ Here are the main changes in 1.0 beta:
 -   You can configure sessions in the admin interface
     (modifying ``SESSION_CONFIGS`` parameters without changing the source code)
 -   Performance improvements
+-   The default for the ``payoff`` field is now ``0``, not ``None``.
 
 To install, run this (note the ``--pre`` in the command;
 this means "pre-release")::
