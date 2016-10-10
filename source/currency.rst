@@ -22,17 +22,16 @@ Correspondingly, there is a special model field for currency values:
 ``CurrencyField``.
 
 Each player has a ``payoff`` field,
-which is a ``CurrencyField``. Its initial value is ``None``.
-If you want to initialize it to 0, you should do so in
-``before_session_starts``, e.g.:
+which is a ``CurrencyField``.
 
-.. code-block:: python
+.. warning::
 
-  class Subsession(BaseSubsession):
+    Currently, the initial (default) value of ``payoff`` is ``None``,
+    but this might change to ``0`` in an upcoming release of oTree.
+    If you have any code like ``if self.player.payoff is None``
+    that detects whether the payoff has already been set,
+    this may not work properly if you upgrade.
 
-      def before_session_starts(self):
-          for p in self.get_players():
-              p.payoff = 0
 
 Currency values work just like numbers
 (you can do mathematical operations like addition, multiplication, etc),

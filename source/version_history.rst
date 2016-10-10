@@ -4,7 +4,27 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
-.. _v0.7
+.. _v1.0b
+
+Version 1.0 beta
+================
+
+Here are the main changes in 1.0 beta:
+
+-   You can configure sessions in the admin interface
+    (modifying ``SESSION_CONFIGS`` parameters without changing the source code)
+-   Performance improvements
+
+To install, run this (note the ``--pre`` in the command;
+this means "pre-release")::
+
+    pip install -U --pre otree-core
+    otree resetdb
+
+To revert back to the stable version of oTree-core::
+
+    pip uninstall otree-core
+    pip install otree-core
 
 Version 0.8
 ===========
@@ -13,6 +33,8 @@ The bot system has been overhauled, and there are some changes to the bot API.
 See the notes :ref:`here <bots>`.
 
 Browser bots now work together with ``otree runserver``.
+
+.. _v0.7
 
 Version 0.7
 ===========

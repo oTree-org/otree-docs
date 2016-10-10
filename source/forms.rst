@@ -30,28 +30,8 @@ You can set the label on a form field like this:
 
     ``{% formfield player.contribution with label="How much do you want to contribute?" %}``
 
-Note there is no space around the label's ``=``.
+There must not be any space around the label's ``=``.
 
-If the label should contain a variable, you can construct the string in ``views.py``:
-
-.. code-block:: python
-
-    class Contribute(Page):
-        form_model = models.Player
-        form_fields = ['contribution']
-
-        def vars_for_template(self):
-            return {
-                'contribution_label': 'How much of your {} do you want to contribute?'.format(self.player.endowment)
-            }
-
-Then in the template, set the label to this variable:
-
-.. code-block:: html+django
-
-    ``{% formfield player.contribution with label=contribution_label %}``
-
-If you use this technique, you may also want to use :ref:`dynamic_validation`.
 
 .. _form-validation:
 
@@ -249,7 +229,7 @@ Determining form fields dynamically
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that
-returns the list:
+returns the list. For example:
 
 .. code-block:: python
 
@@ -492,8 +472,11 @@ add ``type="button"`` to the ``<button>``:
     {% endblock %}
 
 
-Advanced: Forms with a dynamic vector of fields
------------------------------------------------
+Miscellaneous & advanced
+------------------------
+
+Forms with a dynamic vector of fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say you want a form with a vector of n fields that are identical, except for some numerical index, e.g.:
 
@@ -518,3 +501,28 @@ like this:
         form_model = models.Player
         def get_form_fields(self):
             return ['contribution_{}'.format(i) for i in range(1, self.player.n + 1)]
+
+
+Form fields with dynamic labels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the label should contain a variable, you can construct the string in ``views.py``:
+
+.. code-block:: python
+
+    class Contribute(Page):
+        form_model = models.Player
+        form_fields = ['contribution']
+
+        def vars_for_template(self):
+            return {
+                'contribution_label': 'How much of your {} do you want to contribute?'.format(self.player.endowment)
+            }
+
+Then in the template, set the label to this variable:
+
+.. code-block:: html+django
+
+    ``{% formfield player.contribution with label=contribution_label %}``
+
+If you use this technique, you may also want to use :ref:`dynamic_validation`.

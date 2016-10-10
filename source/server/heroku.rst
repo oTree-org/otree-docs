@@ -122,9 +122,25 @@ Otherwise, enter::
 
     pip3 freeze > requirements_base.txt
 
-(Open the file ``requirements_base.txt`` and have a look,
+Open the file ``requirements_base.txt`` and have a look,
 especially for the line that says ``otree-core=x.x.x``
-This is the version that will be installed on your server.)
+This is the version that will be installed on your server.
+
+.. _extraneous_requirements:
+
+Side note about requirements
+''''''''''''''''''''''''''''
+Technically, ``requirements_base.txt`` only needs to contain
+the lines for ``otree-core`` and ``Django``.
+There are many other packages listed there (e.g. ``asgi-redis``, ``channels``),
+but they are automatically installed if you install ``otree-core``. Still,
+it's generally good to use the output of pip freeze. There should be about
+40-50 items listed when you do ``pip freeze``, and it should look roughly similar
+(but not identical) to the `this file <https://github.com/oTree-org/otree-core/blob/master/requirements.txt>`__.
+If you see far more items in your ``requirements_base.txt``, you might have
+extra unnecessary packages, e.g. for other projects you were doing unrelated
+to oTree. This might happen if you are using Anaconda, which installs many
+scientific and numeric packages that might not install properly on Heroku.
 
 Push your code to Heroku
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -149,6 +165,7 @@ Transfer (push) the local repository to Heroku:
     open ``requirements_base.txt`` and delete every line except
     the ones for ``Django`` and ``otree-core``.
     The line for Django should say ``Django==1.8.8``.
+    See :ref:`this note <extraneous_requirements>` above.
 
 Reset the oTree database on Heroku.
 You can get your app's name by typing ``heroku apps``.
@@ -157,10 +174,6 @@ You can get your app's name by typing ``heroku apps``.
 
     $ heroku run otree resetdb
 
-.. note::
-
-    Some users have reported ``django.db.utils.ProgrammingError: table "APP_subsession" does not exist``.
-    If this happens to you, please upgrade ``otree-core`` (and remember to update it in your ``requirements_base.txt``).
 
 Open the site in your browser:
 
