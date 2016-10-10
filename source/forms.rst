@@ -249,7 +249,20 @@ Determining form fields dynamically
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that
-returns the list. But if you do this, you must make sure your template
+returns the list:
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        form_model = models.Player
+        def get_form_fields(self):
+            if self.player.num_bids == 3:
+                return ['bid_1', 'bid_2', 'bid_3']
+            else:
+                return ['bid_1', 'bid_2']
+
+But if you do this, you must make sure your template
 also contains conditional logic so that the right ``formfield`` elements
 are included.
 
@@ -289,32 +302,6 @@ as described in the Django documentation, e.g.:
 This is essentially equivalent to setting ``label="How much will you contribute?"``
 in the ``{% formfield %}``.
 
-Forms with a dynamic vector of fields
--------------------------------------
-
-Let's say you want a form with a vector of n fields that are identical, except for some numerical index, e.g.:
-
-.. code-block:: python
-
-    contribution[1], contribution[2], ..., contribution[n]
-
-Furthermore, suppose n is variable (can range from 1 to N).
-
-Currently in oTree, you can only define a fixed number of fields in a model.
-So, you should define in ``models.py`` N fields (``contribution_1...contribution_N...``),
-and then use ``get_form_fields`` as described above to dynamically return a list with the desired subset of these fields.
-
-For example, let's say the above variable ``n`` is actually an ``IntegerField`` on the player,
-which gets set dynamically at some point in the game. You can use ``get_form_fields``
-like this:
-
-.. code-block:: python
-
-    class MyPage(Page):
-
-        form_model = models.Player
-        def get_form_fields(self):
-            return ['contribution_{}'.format(i) for i in range(1, self.player.n + 1)]
 
 Widgets
 -------
@@ -455,14 +442,18 @@ Button that submits the form
 
 If your page only contains 1 decision,
 you could omit the ``{% next_button %}``
-and instead have the user click on "Yes" or "No" buttons
-to go to the next page, like this:
+and instead have the user click on one of several buttons
+to go to the next page.
+
+For example, let's say your models.py has ``offer_accepted = models.BooleanField()``,
+and rather than a radio button you'd like to present it as a button like this:
 
 .. image:: _static/forms/yes-no-buttons.png
     :align: center
     :scale: 100 %
 
-Here is the code for these buttons
+First, put ``offer_accepted`` in your Page's ``form_fields`` as usual.
+Then put this code in the template
 (the ``btn`` classes are just for Bootstrap styling):
 
 .. code-block:: html+django
@@ -477,6 +468,8 @@ Here is the code for these buttons
 
     {% endblock %}
 
+You can use this technique for any type of field,
+not just ``BooleanField``.
 
 Button that doesn't submit the form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -498,3 +491,30 @@ add ``type="button"`` to the ``<button>``:
 
     {% endblock %}
 
+
+Advanced: Forms with a dynamic vector of fields
+-----------------------------------------------
+
+Let's say you want a form with a vector of n fields that are identical, except for some numerical index, e.g.:
+
+.. code-block:: python
+
+    contribution[1], contribution[2], ..., contribution[n]
+
+Furthermore, suppose n is variable (can range from 1 to N).
+
+Currently in oTree, you can only define a fixed number of fields in a model.
+So, you should define in ``models.py`` N fields (``contribution_1...contribution_N...``),
+and then use ``get_form_fields`` as described above to dynamically return a list with the desired subset of these fields.
+
+For example, let's say the above variable ``n`` is actually an ``IntegerField`` on the player,
+which gets set dynamically at some point in the game. You can use ``get_form_fields``
+like this:
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        form_model = models.Player
+        def get_form_fields(self):
+            return ['contribution_{}'.format(i) for i in range(1, self.player.n + 1)]
