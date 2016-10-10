@@ -38,7 +38,9 @@ Configure sessions
 
 .. note::
 
-    This feature is only available in the latest otree-core (Oct 2016).
+    This is an experimental feature
+    only available in the otree-core 1.0 beta (Oct 2016).
+    See :ref:`v1.0b`.
 
 You can make your session configurable,
 so that you can adjust the game's parameters in the admin interface,
@@ -50,7 +52,7 @@ an "efficiency factor" parameter that is a numeric constant,
 like 1.5 or 2. The usual approach would be to define it in ``Constants``,
 e.g. ``Constants.efficiency_factor``
 
-To make this parameter configurable, move it from ``Constants``
+However, to make this parameter configurable, move it from ``Constants``
 to your config in :ref:`SESSION_CONFIGS`. For example:
 
 .. code-block:: python
@@ -66,8 +68,8 @@ to your config in :ref:`SESSION_CONFIGS`. For example:
 Then, when you create a session in the admin interface
 and select this session config, the ``efficiency_factor`` parameter will
 be listed, and you can change it to a number other than 1.5.
-If you want to explain the meaning of the variable to the user,
-you can add a ``'doc'`` parameter to the session config dict, e.g.:
+If you want to explain the meaning of the variable to the person creating
+the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
 
 .. code-block:: python
 
@@ -83,10 +85,8 @@ you can add a ``'doc'`` parameter to the session config dict, e.g.:
         """
     },
 
-Then in your app's code, you can do ``self.session.config['efficiency_factor`]``
+Then in your app's code, you can do ``self.session.config['efficiency_factor']``
 to retrieve the current session's efficiency factor.
-
-
 
 Notes:
 -   For a field to be configurable, its value must be a simple data type
