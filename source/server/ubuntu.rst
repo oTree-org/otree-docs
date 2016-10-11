@@ -361,6 +361,11 @@ especially browser bots. See the section :ref:`bots`.
 Sharing a server with other oTree users
 ---------------------------------------
 
+.. note::
+
+    These instructions are preliminary and not fully tested.
+    I welcome feedback/revisions.
+
 You can share a server with other oTree users;
 you just have to make sure that the code and databases are kept separate,
 so they don't conflict with each other.
