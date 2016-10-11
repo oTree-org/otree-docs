@@ -12,7 +12,8 @@ Version 1.0 beta
 Here are the main changes in 1.0 beta:
 
 -   You can configure sessions in the admin interface
-    (modifying ``SESSION_CONFIGS`` parameters without changing the source code)
+    (modifying ``SESSION_CONFIGS`` parameters without changing the source code).
+    See :ref:`edit_config`.
 -   Performance improvements
 -   The default for the ``payoff`` field is now ``0``, not ``None``.
 
@@ -26,6 +27,9 @@ To revert back to the stable version of oTree-core::
 
     pip uninstall otree-core
     pip install otree-core
+
+Please send feedback to chris@otree.org,
+even just to say it works fine.
 
 Version 0.8
 ===========

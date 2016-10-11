@@ -31,7 +31,7 @@ If you don't want any password protection at all, just leave this variable
 blank.
 
 
-.. _edit_session_config:
+.. _edit_config:
 
 Configure sessions
 ------------------
@@ -89,6 +89,7 @@ Then in your app's code, you can do ``self.session.config['efficiency_factor']``
 to retrieve the current session's efficiency factor.
 
 Notes:
+
 -   For a field to be configurable, its value must be a simple data type
     (number, boolean, or string).
 -   On the "Demo" section of the admin, sessions are not configurable.
