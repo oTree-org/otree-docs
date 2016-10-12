@@ -40,7 +40,7 @@ Configure sessions
 
     This is an experimental feature
     only available in the otree-core 1.0 beta (Oct 2016).
-    See :ref:`v1.0b`.
+    See :ref:`v10b`.
 
 You can make your session configurable,
 so that you can adjust the game's parameters in the admin interface,

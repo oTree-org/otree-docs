@@ -4,7 +4,7 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
-.. _v1.0b
+.. _v10b
 
 Version 1.0 beta
 ================
