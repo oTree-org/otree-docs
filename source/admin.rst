@@ -44,7 +44,12 @@ Configure sessions
 
 You can make your session configurable,
 so that you can adjust the game's parameters in the admin interface,
-without needing to edit the source code.
+without needing to edit the source code:
+
+.. image:: _static/admin/edit-config.png
+    :align: center
+    :scale: 100 %
+
 
 For example, let's say you are making a public goods game,
 whose payoff function depends on

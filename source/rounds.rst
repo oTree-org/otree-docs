@@ -58,6 +58,8 @@ rounds of a game, plus the current one:
 
 ``player.in_rounds(m, n)`` returns a list of players representing the same participant from rounds ``m`` to ``n``.
 ``player.in_round(m)`` returns just the player in round ``m``.
+For example, to get the player's payoff in the previous round,
+you would do ``self.player.in_round(self.round_number - 1).payoff``.
 
 Similarly, subsession objects have methods ``in_previous_rounds()``,
 ``in_all_rounds()``, ``in_rounds(m,n)`` and ``in_round(m)`` that work the same way.
