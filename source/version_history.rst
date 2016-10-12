@@ -4,7 +4,7 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
-.. _v10b
+.. _v10b:
 
 Version 1.0 beta
 ================
@@ -39,7 +39,7 @@ See the notes :ref:`here <bots>`.
 
 Browser bots now work together with ``otree runserver``.
 
-.. _v0.7
+.. _v0.7:
 
 Version 0.7
 ===========
