@@ -97,8 +97,10 @@ and ``styles``, respectively. They should be located outside the ``content`` blo
 
 The reasons for putting scripts and styles in separate blocks are:
 
-- It keeps your code organized
-- jQuery is only loaded at the bottom of the page, so if you reference the jQuery ``$`` variable in the ``content`` block, it will be undefined.
+-   It keeps your code organized
+-   jQuery may only be loaded at the bottom of the page,
+    so if you reference the jQuery ``$`` variable in the ``content`` block,
+    it could be undefined.
 
 Customizing the base template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -108,19 +110,8 @@ For all apps
 
 If you want to apply a style or script to all pages in all games,
 you should modify the template ``_templates/global/Base.html``.
-You should put any scripts in the ``global_scripts`` block,
-and any styles in the ``global_styles`` block.
-
-You can also modify ``_static/global/custom.js`` and ``_static/global/custom.js``,
-which as you can see are loaded by ``_templates/global/Base.html``.
-
-.. note::
-
-    If you downloaded oTree prior to September 7, 2015, you need to update ``_templates/global/Base.html`` to the latest version
-    `here <https://github.com/oTree-org/oTree/blob/master/_templates/global/Base.html>`__.
-
-    Old versions have a bug where ``custom.js`` was not being loaded. See `here <https://github.com/oTree-org/oTree/pull/48>`__
-    for more info.
+You should put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
+and any styles inside ``{% block global_styles %}...{% endblock %}``.
 
 
 For one app
@@ -160,11 +151,12 @@ Then each ``public_goods`` template would inherit from this template:
 Static content (images, videos, CSS, JavaScript)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To include images, CSS, or JavaScript in your pages, make sure your template
-has loaded ``staticfiles``.
+To include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages,
+make sure your template has ``{% load staticfiles %}`` at the top.
 
 Then create a ``static/`` folder in your app (next to ``templates/``).
-Like ``templates/``, it should also have a subfolder with your app's name.
+Like ``templates/``, it should also have a subfolder with your app's name,
+e.g. ``static/my_app``.
 
 Put your files in that subfolder. You can then reference them in a template
 like this:
@@ -220,7 +212,7 @@ For example, the following HTML will create a "Success" alert:
 Graphs and charts with HighCharts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-oTree comes pre-loaded with `HighCharts <http://www.highcharts.com/demo>`__,
+You can use `HighCharts <http://www.highcharts.com/demo>`__,
 which you can use to draw pie charts, line graphs, bar charts, time series,
 and other types of plots.
 
@@ -259,7 +251,6 @@ Example:
 LaTeX
 ^^^^^
 
-LaTeX used to be built-in to oTree but has been removed.
 If you want to put LaTeX formulas in your app,
 you can try `KaTeX <http://khan.github.io/KaTeX/>`__.
 

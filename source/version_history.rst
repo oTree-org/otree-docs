@@ -23,6 +23,9 @@ this means "pre-release")::
     pip install -U --pre otree-core
     otree resetdb
 
+To upgrade to a newer beta release (a new beta is published every couple of days),
+run the same command above.
+
 To revert back to the stable version of oTree-core::
 
     pip uninstall otree-core

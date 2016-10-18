@@ -4,7 +4,7 @@ Bots & automated testing
 ========================
 
 You can write "bots" that simulate participants simultaneously
-playing your app. By doing this, you can ensure 2 things:
+playing your app. By doing this, you can ensure:
 
 1.  That your app is programmed correctly
 2.  That your server performs well even when there is a lot of traffic
@@ -102,7 +102,7 @@ The test system will raise an error if the bot submits invalid input for a page,
 or if it submits pages in the wrong order.
 
 Rather than programming many separate bots, you program one bot that can
-play any variation of the game, using conditional logic.
+play any variation of the game, using ``if`` statements.
 For example, here is how you can make a bot that can play either as player 1 or player 2.
 
 .. code-block:: python
@@ -112,7 +112,7 @@ For example, here is how you can make a bot that can play either as player 1 or 
     else:
         yield (views.Accept, {'offer_accepted': True})
 
-You can condition on ``self.player``, ``self.group``, ``self.subsession``, etc.
+Your ``if`` statements can depend on ``self.player``, ``self.group``, ``self.subsession``, etc.
 
 You should ignore wait pages when writing bots. Just write a ``yield`` for every page
 that is submitted. After executing each ``yield`` statement, the bot will pause
@@ -132,24 +132,24 @@ For example:
     class PlayerBot(Bot):
 
         def play_round(self):
-            assert self.player.payoff == None
+            assert self.player.money_left == c(10)
             yield (views.Contribute, {'contribution': c(1)})
-            assert self.player.payoff == 10
+            assert self.player.money_left == c(9)
             yield (views.Results)
 
 In Python, ``assert`` statements are used to check statements that should hold true.
-If the asserted condition is wrong (e.g. ``self.player.payoff`` is not ``None`` initially),
+If the asserted condition is wrong (e.g. ``self.player.money_left`` is ``11`` initially),
 an error will be raised.
 
-In the above example, we expect that initially, ``self.player.payoff`` should be ``None``,
-but after the user submits their contribution, the payoff will be updated to ``10``.
+In the above example, we expect that initially, ``self.player.money_left`` should be ``10``,
+but after the user submits their contribution, money_left will be updated to ``9``.
 
 The ``assert`` statements are executed immediately before submitting the following page.
 For example, let's imagine the ``page_sequence`` for the game in the above example is
 ``[Contribute, ResultsWaitPage, Results]``. The bot submits ``views.Contribution``,
 is redirected to the wait page, and is then redirected to the ``Results`` page.
 At that point, the ``Results`` page is displayed, and then the line
-``assert self.player.payoff == None`` is executed. If the ``assert`` passes,
+``assert self.player.money_left == c(9)`` is executed. If the ``assert`` passes,
 then the user will submit the ``Results`` page.
 
 
@@ -385,9 +385,9 @@ Automatic HTML checks
     version of otree-core.
 
 Before the bot submits a page,
-oTree checks that any form fields the bot is trying to submit are actually found
+oTree ensures that any form fields the bot is trying to submit are actually found
 in the page's HTML, and that there is a submit button on the page.
-If one of these is not found, the bot will raise an error.
+Otherwise, an error will be raised.
 
 However, these checks may not always work, because they are limited to scanning
 the page's static HTML on the server side, whereas maybe your page uses

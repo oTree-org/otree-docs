@@ -9,9 +9,8 @@ Each page that your players see is defined by a ``Page`` class in
 For example, if 1 round of your game involves showing the player a
 sequence of 5 pages, your ``views.py`` should contain 5 page classes.
 
-At the bottom of your ``views.py``, you must have a ``page_sequence``
-variable that specifies the order in which players are routed through
-your pages. For example:
+Your ``views.py`` must have a ``page_sequence``
+variable that gives the order of the pages. For example:
 
 .. code-block:: python
 
@@ -20,31 +19,34 @@ your pages. For example:
 Pages
 -----
 
-Each ``Page`` class has these methods and attributes:
+Each ``Page`` class can have these methods and attributes:
 
 .. _vars_for_template:
 
 vars_for_template()
 ~~~~~~~~~~~~~~~~~~~
 
-A dictionary of variable names and their values, which is passed to the
-template. Example:
+You can use this to return a dictionary of variable names and their values,
+which is passed to the template. Example:
 
 .. code-block:: python
 
     def vars_for_template(self):
         return {'a': 1 + 1, 'b': self.player.foo * 10}
 
+Then in the template you can access ``a`` and ``b`` like this:
+
 .. code-block:: html+django
 
     Variables {{ a }} and {{ b }} ...
 
-oTree automatically passes the following objects to the template: ``player``, ``group``, ``subsession``, ``participant``, ``session``, and ``Constants``.
-You can access them in the template like this: ``{{Constants.blah}}``
+oTree automatically passes the following objects to the template:
+``player``, ``group``, ``subsession``, ``participant``, ``session``, and ``Constants``.
+You can access them in the template like this: ``{{ Constants.blah }}`` or ``{{ player.blah }}``.
 
 .. note::
 
-    It's generally recommended not to calculate random values in ``vars_for_template``,
+    You generally shouldn't generate random values in ``vars_for_template``,
     because if the user refreshes their page, ``vars_for_template`` will be executed again,
     and the random calculation might return a different value.
     Instead, you should calculate random values in either ``before_session_starts``,
@@ -93,11 +95,11 @@ When there are 60 seconds left, the page displays a timer warning the participan
 
 .. note::
 
-    If you are running the production server (``runprodserver``),
+    If you are running the production server (``runprodserver``)
+    or using ``timeoutworker``,
     the page will always submit, even if the user closes their browser window.
     However, this does not occur if you are running the test server
     (``runserver``).
-
 
 .. _timeout_submission:
 
@@ -111,9 +113,18 @@ participant forward.
 
 If omitted, then oTree will default to
 ``0`` for numeric fields, ``False`` for boolean fields, and the empty
-string for text/character fields.
+string ``''`` for text/character fields.
 
-Example: ``timeout_submission = {'accept': True}``
+Example:
+
+.. code-block:: python
+
+    class Page1(Page):
+        form_model = models.Player
+        form_fields = ['accept']
+
+        timeout_seconds = 60
+        timeout_submission = {'accept': True}
 
 If the values submitted ``timeout_submission`` need to be computed dynamically,
 you can check :ref:`timeout_happened` and set the values in ``before_next_page``.
@@ -123,7 +134,8 @@ you can check :ref:`timeout_happened` and set the values in ``before_next_page``
 ``timeout_happened``
 ~~~~~~~~~~~~~~~~~~~~
 
-This boolean attribute is ``True`` if the page was submitted by timeout.
+This boolean attribute is automatically set to ``True``
+if the page was submitted by timeout.
 It can be accessed in ``before_next_page``:
 
 .. code-block:: python
@@ -200,7 +212,15 @@ to proceed.
 If your subsession has multiple groups playing simultaneously, and you
 would like a wait page that waits for all groups (i.e. all players in
 the subsession), you can set the attribute
-``wait_for_all_groups = True`` on the wait page.
+``wait_for_all_groups = True`` on the wait page, e.g.:
+
+.. code-block:: python
+
+    class NormalWaitPage(WaitPage):
+        pass
+
+    class AllGroupsWaitPage(WaitPage):
+        wait_for_all_groups = True
 
 For more information on groups, see :ref:`groups`.
 

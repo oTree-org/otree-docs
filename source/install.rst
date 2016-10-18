@@ -27,8 +27,7 @@ We recommend installing Python 3.5, because oTree is primarily developed and
 tested on Python 3.5.
 
 Starting new oTree projects with Python 2.7 is discouraged.
-If you need to use Python 2, installation instructions are here:
-:ref:`python2`. If you already created an oTree project
+If you already created an oTree project
 with Python 2 and would like to switch to Python 3,
 follow the instructions :ref:`here <py3-migration>`.
 
@@ -176,15 +175,9 @@ with your ``manage.py` and ``settings.py``:
 
 .. figure:: _static/setup/pycharm-django.png
 
-Open a file, right-click on the left margin, and select "Show line numbers":
-
-.. figure:: _static/setup/pycharm-line-numbers.png
-
 If PyCharm displays this warning, select "Ignore requirements":
 
 .. figure:: _static/setup/pycharm-psycopg2-warning.png
-
-A guide on how to properly setup PyCharm to work with oTree on Windows written by Jan Vávra can be found `here <http://janvavra.github.io/>`__. 
 
 .. _upgrade:
 

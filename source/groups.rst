@@ -17,8 +17,8 @@ which will tell you if it is player 1, player 2, etc.
 Group objects have the following methods:
 
 -  ``get_players()``: returns a list of the players in the group (ordered by ``id_in_group``).
--  ``get_player_by_id(n)``: Retrieves the player in the group with a
-   specific ``id_in_group``.
+-  ``get_player_by_id(n)``: Retrieves the player in the group with the given
+   given ``id_in_group``.
 -  ``get_player_by_role(r)``. The argument to this method is a string
    that looks up the player by their role value. (If you use this
    method, you must define the ``role`` method on the player model,
@@ -57,21 +57,6 @@ and even between apps that have the same ``players_per_group``.
 
 If you want to rearrange groups, you can use the below techniques.
 
-get_group_matrix()
-~~~~~~~~~~~~~~~~~~
-
-You can retrieve the structure of the groups as a matrix.
-Subsessions have a method called ``get_group_matrix()`` that returns a list of lists,
-with each sublist being the players in a group, ordered by ``id_in_group``.
-
-The following lines are equivalent.
-
-.. code-block:: python
-
-    matrix = self.get_group_matrix()
-    # === is equivalent to ===
-    matrix = [group.get_players() for group in self.get_groups()]
-
 group_randomly()
 ~~~~~~~~~~~~~~~~
 
@@ -80,6 +65,22 @@ so they can end up in any group, and any position within the group.
 
 If you would like to shuffle players between groups but keep players in fixed roles,
 use ``group_randomly(fixed_id_in_group=True)``.
+
+For example, this will group players randomly each round:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+        def before_session_starts(self):
+            self.group_randomly()
+
+This will group players randomly each round, but keep ``id_in_group`` fixed:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+        def before_session_starts(self):
+            self.group_randomly(fixed_id_in_group=True)
 
 The below example uses the command line to create a public goods game with 12 players,
 and then does interactive group shuffling in ``otree shell``.
@@ -125,6 +126,47 @@ players are initially grouped sequentially as described in :ref:`fixed_matching`
 even if you did some shuffling in a previous round.
 To counteract this, you can use :ref:`group_like_round`.
 
+.. _group_like_round:
+
+group_like_round()
+~~~~~~~~~~~~~~~~~~
+
+If you shuffle the groups in one round
+and would like the new group structure to be applied to another round,
+you can use the ``group_like_round(n)`` method.
+The argument to this method is the round number
+whose group structure should be copied.
+
+In the below example, the groups are shuffled in round 1,
+and then subsequent rounds copy round 1's grouping structure.
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+
+        def before_session_starts(self):
+            if self.round_number == 1:
+                # <some shuffling code here>
+            else:
+                self.group_like_round(1)
+
+
+get_group_matrix()
+~~~~~~~~~~~~~~~~~~
+
+Subsessions have a method called ``get_group_matrix()`` that
+return the structure of groups as a matrix, i.e. a list of lists,
+with each sublist being the players in a group, ordered by ``id_in_group``.
+
+The following lines are equivalent.
+
+.. code-block:: python
+
+    matrix = self.get_group_matrix()
+    # === is equivalent to ===
+    matrix = [group.get_players() for group in self.get_groups()]
+
+
 .. _set_group_matrix:
 
 set_group_matrix()
@@ -163,6 +205,17 @@ Then pass this modified matrix to ``set_group_matrix()``::
      [<Player  6>, <Player  1>, <Player  9>],
      [<Player  7>, <Player  5>, <Player 12>]]
 
+Here is how this would look in ``before_session_starts``:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+        def before_session_starts(self):
+            matrix = self.get_group_matrix()
+            for row in matrix:
+                row.reverse()
+            self.set_group_matrix(matrix)
+
 You can also pass a matrix of integers.
 It must contain all integers from 1 to the number of players
 in the subsession. Each integer represents the player who has that ``id_in_subsession``.
@@ -182,30 +235,6 @@ You can even use ``set_group_matrix`` to make groups of uneven sizes.
 To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
 and look at the ``group`` and ``id_in_group`` columns in each round.
-
-.. _group_like_round:
-
-group_like_round()
-~~~~~~~~~~~~~~~~~~
-
-If you shuffle the groups in one round
-and would like the new group structure to be applied to another round,
-you can use the ``group_like_round(n)`` method.
-The argument to this method is the round number
-whose group structure should be copied.
-
-In the below example, the group structure in rounds 1 and 2 will be the default.
-Round 3 has a different group structure, which is copied to rounds 4 and above.
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def before_session_starts(self):
-            if self.round_number == 3:
-                # <some shuffling code here>
-            if self.round_number > 3:
-                self.group_like_round(3)
 
 group.set_players()
 ~~~~~~~~~~~~~~~~~~~
@@ -273,15 +302,16 @@ and that there are twice as many female players as male players.
 Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Your experimental design may involve re-matching players based on the results
-of a previous subsession. For example,
-you may want to randomize groups only if a certain result happened in the previous game.
+``before_session_starts`` is usually a good place to shuffle groups,
+but remember that ``before_session_starts`` is run when the session is created,
+before players begin playing. So, if your shuffling logic needs to depend on
+something that happens after the session starts, you should do the
+shuffling in a wait page instead.
 
-You cannot accomplish this using ``before_session_starts``, because this method is run when the session is created,
-before players begin playing.
-
-Instead, you should make a ``WaitPage`` with ``wait_for_all_groups=True``
-and put the shuffling code in ``after_all_players_arrive``. For example:
+For example, let's say you want to randomize groups
+only if a certain result happened in the previous game.
+You need to make a ``WaitPage`` with ``wait_for_all_groups=True``
+and put the shuffling code in ``after_all_players_arrive``:
 
 .. code-block:: python
 

@@ -384,6 +384,7 @@ but in some cases name things differently to avoid clashes:
     ``REDIS_URL`` env var explicitly, to avoid clashes.
     You can set it to ``redis://localhost:6379/1``, ``redis://localhost:6379/2``,
     etc. (which will use databases 1, 2, etc...instead of the default database 0).
+    Another option is to run multiple instances of Redis on different ports.
 -   Do a ``git init`` in the second user's home directory as described earlier,
     and then add the remote ``my-username2@XXX.XXX.XXX.XXX:oTree.git``
     (assuming their username is ``my-username2``).

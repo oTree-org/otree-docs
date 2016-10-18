@@ -1,5 +1,5 @@
-Applications
-============
+Apps
+====
 
 In oTree (and Django), an app is a folder containing Python and HTML code. When
 you create your oTree project, it comes pre-loaded with various apps such as

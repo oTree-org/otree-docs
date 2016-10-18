@@ -1,66 +1,65 @@
 Models
 ======
 
-This is where you store your data models.
-
-Model hierarchy
----------------
-
-Every oTree app needs the following 3 models:
+``models.py`` is where you define your app's data models:
 
 -  Subsession
 -  Group
 -  Player
 
 A player is part of a group, which is part of a subsession.
+For more info, see :ref:`conceptual_overview`.
 
+Model fields
+------------
 
-Models and database tables
---------------------------
-
-For example, let's say you are programming an ultimatum game, where in
-each two-person group, one player makes a monetary offer (say, 0-100
-cents), and another player either rejects or accepts the offer. When you
-analyze your data, you will want your "Group" table to look something
-like this:
+The main purpose of ``models.py`` is to define the columns of your
+database tables. Let's say you want your experiment to generate data
+that looks like this:
 
 .. csv-table::
     :header-rows: 1
 
-    Group ID,Amount offered,Offer accepted
-    1,50,TRUE
-    2,25,FALSE
-    3,50,TRUE
-    4,0,FALSE
-    5,60,TRUE
-
-
-You need to define a Python class that defines the structure of this
-database table. You define what fields (columns) are in the table, what
-their data types are, and so on. When you run your experiment, the SQL
-tables will get automatically generated, and each time users visit, new
-rows will get added to the tables.
+    name,age,is_student
+    John,30,False
+    Alice,22,True
+    Bob,35,False
+    ...
 
 Here is how to define the above table structure:
 
 .. code-block:: python
 
-    class Group(BaseGroup):
+    class Player(BasePlayer):
         ...
-        amount_offered = models.CurrencyField()
-        offer_accepted = models.BooleanField()
+        name = models.CharField()
+        age = models.PositiveIntegerField()
+        is_student = models.BooleanField()
 
-You need to run ``otree resetdb`` if you have added,
-removed, or changed a field in ``models.py`` (but not if you only modified ``views.py``
-or an HTML template).
+When you run ``otree resetdb``, it will scan your ``models.py``
+and create your database tables accordingly.
+(Therefore, you need to run ``resetdb`` if you have added,
+removed, or changed a field in ``models.py``.)
 
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.7/ref/models/fields/#field-types>`__.
 
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
 
+Setting a field's initial/default value
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Any field you define will have the initial value of ``None``.
+If you want to give it an initial value, you can use ``initial=``:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        my_payoff = models.BooleanField(initial=0)
+
+
 min, max, choices
------------------
+~~~~~~~~~~~~~~~~~
 
 For info on how to set a field's ``min``, ``max``, or ``choices``,
 see :ref:`form-validation`.
@@ -76,7 +75,7 @@ to player.
 
 Here are the required constants:
 
--   ``name_in_url`` specifies the name used to identify your app in the
+-   ``name_in_url``: the name used to identify your app in the
     participant's URL.
 
     For example, if you set it to ``public_goods``, a participant's URL might
@@ -97,25 +96,27 @@ Subsession
 
 Here is a list of attributes and methods for subsession objects.
 
+
 session
 ~~~~~~~
 
 The session this subsession belongs to.
 See :ref:`object_model`.
 
+
 round_number
 ~~~~~~~~~~~~
-If this subsession is repeated (i.e. has multiple rounds), this
+If the app has multiple rounds (set in ``Constants.num_rounds)``, this
 field stores the position (index) of this subsession, among subsessions
 in the same app.
 
 For example, if a session consists of the subsessions:
 
-    [app1, app2, app1, app1, app3]
+    [app1, app2, app2, app3]
 
 Then the round numbers of these subsessions would be:
 
-    [1, 1, 2, 3, 1]
+    [1, 1, 2, 1]
 
 .. _before_session_starts:
 
@@ -268,7 +269,7 @@ Here is a list of attributes and methods for player objects.
 
 id_in_group
 ~~~~~~~~~~~
-Index starting from 1. In multiplayer games,
+Integer starting from 1. In multiplayer games,
 indicates whether this is player 1, player 2, etc.
 
 payoff

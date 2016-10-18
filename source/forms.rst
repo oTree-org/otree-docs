@@ -4,41 +4,89 @@ Forms
 =====
 
 Each page in oTree can contain a form, which the player should fill out
-and submit by clicking the "Next" button. To create a form, first you
-should go to models.py and define fields on your Player or Group. Then,
-in your Page class, you can define ``form_model`` to specify the model
-that this form modifies (either ``models.Player`` or ``models.Group``),
-and ``form_fields``, which is a list of the fields from that model.
+and submit by clicking the "Next" button. To create a form, first
+go to models.py and define fields on your Player or Group. Then,
+in your Page class, you can choose which of these fields to include in the form.
+You do this by setting ``form_model = models.Player``, or
+``form_model = models.Group``, and then set ``form_fields``
+to the list of fields you want in your form.
 
 When the user submits the form, the submitted data is automatically
-saved back to the field in your model.
+saved to the field in your model.
 
+For example, here is a models.py:
+
+.. code-block:: python
+
+    class Group(BaseGroup):
+        f1 = models.BooleanField()
+        f2 = models.BooleanField()
+
+
+    class Player(BasePlayer):
+        f1 = models.BooleanField()
+        f2 = models.BooleanField()
+
+And a corresponding views.py that defines the form on each page:
+
+.. code-block:: python
+
+    class Page1(Page):
+        form_model = models.Player
+        form_fields = ['f1', 'f2'] # this means player.f1, player.f2
+
+    class Page2(Page):
+        form_model = models.Group
+        form_fields = ['f1', 'f2'] # this means group.f1, group.f2
+
+
+.. _verbose_name:
 
 Forms in templates
 ------------------
 
-You should include form fields by using a ``{% formfield %}`` element.
-You generally do not need to write raw HTML for forms (e.g.
-``<input type="text" id="...">``).
-
-Form field labels
-~~~~~~~~~~~~~~~~~
-
-You can set the label on a form field like this:
+You should include form fields by using a ``{% formfield %}`` element:
 
 .. code-block:: html+django
 
-    ``{% formfield player.contribution with label="How much do you want to contribute?" %}``
+    {% formfield player.contribution with label="How much do you want to contribute?" %}
 
-There must not be any space around the label's ``=``.
+An alternative to using ``label`` is to define ``verbose_name`` on the model field:
 
+.. code-block:: python
+
+    class Player(BasePlayer):
+        contribution = models.CurrencyField(
+            verbose_name="How much do you want to contribute?")
+
+Then you can just put this in your template:
+
+.. code-block:: html+django
+
+    {% formfield player.contribution %}
+
+Or, if you have multiple form fields, you can insert them all at once:
+
+.. code-block:: html+django
+
+    {% for field in form %}
+        {% formfield field %}
+    {% endfor %}
+
+
+Note: If you have written HTML forms before, you may be accustomed to
+writing the ``<input>`` element, e.g. ``<input type="text" name="contribution">``.
+In oTree, it's usually easier to use ``formfield`` instead. It will autogenerate
+the correct ``<input>`` HTML, along with CSS styling, label, and error messages.
+However, if you want more flexibility you are free to write the raw HTML.
+See :ref:`raw_html`.
 
 .. _form-validation:
 
-User Input Validation
----------------------
+Simple form field validation
+----------------------------
 
-The player must submit a valid form before they get routed to the next
+The player must submit a valid form before they go to the next
 page. If the form they submit is invalid (e.g. missing or incorrect
 values), it will be re-displayed to them along with the list of errors
 they need to correct.
@@ -62,7 +110,10 @@ example, if you have a form containing a ``PositiveIntegerField``, oTree
 will not let the user submit values that are not positive integers, like
 ``-1``, ``1.5``, or ``hello``.
 
-You can specify additional validation. For example, here is how you would
+min and max
+~~~~~~~~~~~
+
+For example, is how you would
 require an integer to be between 12 and 24:
 
 .. code-block:: python
@@ -74,8 +125,11 @@ If the max/min are not fixed, you should use :ref:`FOO_max`
 
 .. _choices:
 
-You can constrain the user to a predefined list of choices by using
-``choices=``:
+choices
+~~~~~~~
+
+If you want a field to be a dropdown menu with a list of choices,
+set ``choices=``:
 
 .. code-block:: python
 
@@ -84,17 +138,21 @@ You can constrain the user to a predefined list of choices by using
         choices=[1, 2, 3],
     )
 
-The user will then be presented a dropdown menu instead of free text input.
+To use radio buttons instead of a dropdown menu,
+you should set the ``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal``:
 
-If the choices are not fixed, you should use :ref:`FOO_choices`
+.. code-block:: python
 
-If you would like a specially formatted value displayed to the user that
-is different from the values stored internally, ``choices=`` can be a list
-consisting itself of tuples of two items.
-The first element in each tuple is the value and the second element is the
-human-readable label.
+    # in models.py
+    level = models.PositiveIntegerField(
+        choices=[1, 2, 3],
+        widget=widgets.RadioSelect()
+    )
 
-For example:
+If the list of choices needs to be determined dynamically, use :ref:`FOO_choices`
+
+You can also set display names for each choice
+by making a list of [value, display] pairs:
 
 .. code-block:: python
 
@@ -107,6 +165,9 @@ For example:
         ]
     )
 
+If you do this, users will just see a menu with "Low", "Medium", "High",
+but their responses will be recorded as 1, 2, or 3.
+
 After the field has been set, you can access the human-readable name
 using
 `get_FOO_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
@@ -114,7 +175,10 @@ using
 ``self.get_level_display() # returns e.g. 'Medium'``.
 However, if you define the choices dynamically with :ref:`FOO_choices`,
 in order to use ``get_*_display()`` you need to also define the ``*_choices``
-method in your models.py.
+method on the Player/Group in models.py.
+
+blank (optional) fields
+~~~~~~~~~~~~~~~~~~~~~~~
 
 If a field is optional, you can use ``blank=True`` like this:
 
@@ -127,11 +191,15 @@ Then the HTML field will not have the ``required`` attribute.
 
 .. _dynamic_validation:
 
-Dynamic validation
-~~~~~~~~~~~~~~~~~~
+Dynamic form field validation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need a form's choices or validation logic to depend on some
-dynamic calculation, then you can instead define one of the below
+The ``min``, ``max``, and ``choices`` described above are only
+for fixed (constant) values.
+
+If you want them to be determined dynamically
+(e.g. different from player to player),
+then you can instead define one of the below
 methods in your ``Page`` class in ``views.py``.
 
 .. _FOO_choices:
@@ -139,7 +207,8 @@ methods in your ``Page`` class in ``views.py``.
 {field_name}_choices()
 ''''''''''''''''''''''
 
-Like setting ``choices=`` in models.py, this will set the choices for the form field
+Like setting ``choices=`` in models.py,
+this will set the choices for the form field
 (e.g. the dropdown menu or radio buttons).
 
 Example:
@@ -269,18 +338,8 @@ or it can be an expression like ``{% formfield player.foo %}`` and
 rather than assigning ``somevar = player.foo`` and then doing
 ``{% formfield somevar %}``.
 
-If you use this technique and want a custom label on each field, you can add a
-``verbose_name`` to the model field,
-as described in the Django documentation, e.g.:
-
-.. code-block:: python
-
-    # in models.py
-    contribution = models.CurrencyField(
-        verbose_name="How much will you contribute?")
-
-This is essentially equivalent to setting ``label="How much will you contribute?"``
-in the ``{% formfield %}``.
+If you use this technique, you should consider setting
+``verbose_name`` on your model fields (see :ref:`verbose_name`).
 
 
 Widgets
@@ -289,7 +348,7 @@ Widgets
 The full list of form input widgets offered by Django is
 `here <https://docs.djangoproject.com/en/1.7/ref/forms/widgets/#built-in-widgets>`__.
 
-oTree additionally offers
+oTree additionally offers:
 
 -   ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal
     layout, as you would see with a Likert scale)
@@ -319,13 +378,15 @@ have a look at the HTML generated by a ``{% formfield %}`` element
 (e.g. the structure ``<div>``s and ``class`` attributes).
 
 
+.. _raw_html:
+
 Raw HTML widgets
 ~~~~~~~~~~~~~~~~
 
 For maximum flexibility, you can skip ``{% formfield %}``
 and Django's form widgets, and write the raw HTML for any form input.
 Just ensure that each field in your Page's ``form_fields``
-has a corresponding ``<input>`` element whose ``name`` attribute matches it.
+has a corresponding ``<input>`` element with a matching ``name`` attribute.
 
 .. _radio-table:
 
