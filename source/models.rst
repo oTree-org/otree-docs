@@ -43,7 +43,6 @@ removed, or changed a field in ``models.py``.)
 
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types>`__.
-
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
 
 Setting a field's initial/default value
@@ -292,6 +291,8 @@ get_others_in_subsession()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`groups`.
+
+.. _role:
 
 role()
 ~~~~~~

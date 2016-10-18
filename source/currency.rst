@@ -9,17 +9,57 @@ you can switch from points to real money by setting ``USE_POINTS = False``
 in ``settings.py``.
 
 You can specify the payment currency in ``settings.py``, by setting
-``REAL_WORLD_CURRENCY_CODE`` to "USD", "EUR", "GBP", and so on. This
-means that all currency amounts the participants see will be
-automatically formatted in that currency, and at the end of the session
-when you print out the payments page, amounts will be displayed in that
-currency. The session's ``participation_fee`` is also displayed in this
-currency code.
+``REAL_WORLD_CURRENCY_CODE`` to "USD", "EUR", "GBP", and so on.
+Then all currency amounts will use that currency code.
 
-In oTree apps, currency values have their own data type. You can define
-a currency value with the ``c()`` function, e.g. ``c(10)`` or ``c(0)``.
-Correspondingly, there is a special model field for currency values:
-``CurrencyField``.
+If you have a value that represents an amount of currency
+(either points or dollars, etc),
+you should use the ``c()`` function, e.g. ``c(10)`` or ``c(0)``.
+It will still work just like a number
+(e.g. ``c(1) + c(0.2)`` will result in ``c(1.2)``.
+The advantage is that when it's displayed to users, it will automatically
+formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
+``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
+Money amounts are displayed with 2 decimal places by default;
+you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
+
+If a model field is a currency amount,
+you should define it as a ``CurrencyField``:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        random_bonus = models.CurrencyField()
+
+        def set_random_bonus(self):
+            self.random_bonus = c(random.randint(1, 10))
+
+Note: instead of using Python's built-in ``range`` function,
+you should use oTree's ``currency_range`` with currency values,
+e.g.:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        contribution = models.CurrencyField(
+            choices=currency_range(c(0), c(0.10), c(0.02))
+        )
+
+In this case, choices will be set to the currency values
+[``$0.00``, ``$0.02``, ``$0.04``, ``$0.06``, ``$0.08``, ``$0.10``].
+
+``currency_range`` takes 3 arguments (start, stop, step), just like range.
+However, unlike ``range()``, the returned list includes the ``stop`` value
+as shown above.
+
+In templates, instead of using the ``c()`` function, you should use the
+``|c`` filter.
+For example, ``{{ 20|c }}`` displays as ``20 points``.
+
+.. _payoff:
+
+payoffs
+-------
 
 Each player has a ``payoff`` field,
 which is a ``CurrencyField``.
@@ -32,45 +72,13 @@ which is a ``CurrencyField``.
     that detects whether the payoff has already been set,
     this may not work properly if you upgrade.
 
-
-Currency values work just like numbers
-(you can do mathematical operations like addition, multiplication, etc),
-but when you pass them to an HTML template, they are automatically
-formatted as currency. For example, if you set
-``player.payoff = c(1.20)``, and then pass it to a template, it will be
-formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
-``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
-
-Money amounts are expressed with 2 decimal places by default;
-you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
-
-Note: instead of using Python's built-in ``range`` function, you should
-use oTree's ``currency_range`` with currency values. It takes 3
-arguments (start, stop, step), just like range. However, note that it is
-an inclusive range. For example,
-``currency_range(c(0), c(0.10), c(0.02))`` returns something like::
-
-    [Money($0.00), Money($0.02), Money($0.04),
-     Money($0.06), Money($0.08), Money($0.10)]
-
-
-In templates, instead of using the ``c()`` function, you should use the
-``|c`` filter.
-For example, ``{{ 20|c }}`` displays as ``20 points``.
-
-.. _payoff:
-
-Assigning payoffs
------------------
-
-Each player has a ``payoff`` field, which is a ``CurrencyField``. If
-your player makes money, you should store it in this field.
-``participant.payoff`` is the sum of the payoffs a participant
-made in each subsession (either in points or real money).
+If your player makes money, you should store it in this field.
+``self.participant.payoff`` is the sum of the payoffs a participant
+made in each subsession.
 At the end of the experiment, a participant's
-total profit can be accessed by ``participant.payoff_plus_participation_fee()``
+total profit can be accessed by ``self.participant.payoff_plus_participation_fee()``
 (formerly called ``money_to_pay()``); it is
-calculated by converting ``participant.payoff`` to real-world currency
+calculated by converting ``self.participant.payoff`` to real-world currency
 (if ``USE_POINTS`` is ``True``), and then adding
 ``self.session.config['participation_fee']``.
 

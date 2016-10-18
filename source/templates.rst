@@ -213,7 +213,7 @@ Graphs and charts with HighCharts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can use `HighCharts <http://www.highcharts.com/demo>`__,
-which you can use to draw pie charts, line graphs, bar charts, time series,
+to draw pie charts, line graphs, bar charts, time series,
 and other types of plots.
 
 Some of oTree's sample games use HighCharts.

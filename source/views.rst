@@ -68,8 +68,8 @@ For example, if you only want a page to be shown to P2 in each group:
     def is_displayed(self):
         return self.player.id_in_group == 2
 
-``template_name``
-~~~~~~~~~~~~~~~~~
+template_name
+~~~~~~~~~~~~~
 
 The name of the HTML template to display. This can be omitted if the
 template has the same name as the Page class.
@@ -83,8 +83,8 @@ Example:
     # (Note that app_name is repeated)
     template_name = 'app_name/MyView.html'
 
-``timeout_seconds`` (Remaining time)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+timeout_seconds (Remaining time)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The number of seconds the user has to
 complete the page. After the time runs out, the page auto-submits.
@@ -103,8 +103,8 @@ When there are 60 seconds left, the page displays a timer warning the participan
 
 .. _timeout_submission:
 
-``timeout_submission``
-~~~~~~~~~~~~~~~~~~~~~~
+timeout_submission
+~~~~~~~~~~~~~~~~~~
 
 A dictionary where the keys are the elements of
 ``form_fields``, with the values to be
@@ -131,8 +131,8 @@ you can check :ref:`timeout_happened` and set the values in ``before_next_page``
 
 .. _timeout_happened:
 
-``timeout_happened``
-~~~~~~~~~~~~~~~~~~~~
+timeout_happened
+~~~~~~~~~~~~~~~~
 
 This boolean attribute is automatically set to ``True``
 if the page was submitted by timeout.
@@ -185,8 +185,8 @@ Example::
         self.player.tripled_payoff = self.player.bonus * 3
 
 
-``def vars_for_all_templates(self)``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def vars_for_all_templates(self)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is not a method on the Page class, but rather a top-level function
 in views.py. It is useful when you need certain variables to be passed
@@ -226,7 +226,8 @@ For more information on groups, see :ref:`groups`.
 
 Wait pages can define the following methods:
 
--  ``def after_all_players_arrive(self)``
+after_all_players_arrive()
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This code will be executed once all players have arrived at the wait
 page. For example, this method can determine the winner of an auction
@@ -237,7 +238,8 @@ because the code is executed once for the entire group,
 not for each individual player.
 (However, you can use ``self.player`` in a wait page's ``is_displayed``.)
 
-- ``def is_displayed(self)``
+def is_displayed(self)
+~~~~~~~~~~~~~~~~~~~~~~
 
 Works the same way as with regular pages.
 If this returns ``False`` then the player skips the wait page.

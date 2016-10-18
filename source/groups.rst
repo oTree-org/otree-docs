@@ -14,25 +14,62 @@ everybody in the subsession interacts together as 1 group. In this case,
 Each player has an attribute ``id_in_group``, which is an integer,
 which will tell you if it is player 1, player 2, etc.
 
+Getting players
+---------------
+
 Group objects have the following methods:
 
--  ``get_players()``: returns a list of the players in the group (ordered by ``id_in_group``).
--  ``get_player_by_id(n)``: Retrieves the player in the group with the given
-   given ``id_in_group``.
--  ``get_player_by_role(r)``. The argument to this method is a string
-   that looks up the player by their role value. (If you use this
-   method, you must define the ``role`` method on the player model,
-   which should return a string that depends on ``id_in_group``.)
+get_players()
+~~~~~~~~~~~~~
+
+returns a list of the players in the group (ordered by ``id_in_group``).
+
+
+get_player_by_id(n)
+~~~~~~~~~~~~~~~~~~~
+
+Retrieves the player in the group with the given ``id_in_group``.
+
+get_player_by_role(r)
+~~~~~~~~~~~~~~~~~~~~~
+
+Allows you to look up a player by their role.
+If you use this method, you must define the :ref:`role <role>` method.
+For example:
+
+.. code-block:: python
+
+    class Group(BaseGroup):
+        def set_payoff(self):
+            buyer = self.get_player_by_role('buyer')
+            print(buyer.decision)
+            # etc ...
+
+
+    class Player(BasePlayer):
+        decision = models.BooleanField()
+
+        def role(self):
+            if self.id_in_group == 1:
+                return 'buyer'
+            else:
+                return 'seller'
+
+
+Getting other players
+---------------------
 
 Player objects have methods ``get_others_in_group()`` and
 ``get_others_in_subsession()`` that return a list of the other players
 in the group and subsession. For example, with 2-player groups you can
-get the partner of a player, with this method on the ``Player``:
+get the partner of a player:
 
 .. code-block:: python
 
-    def get_partner(self):
-        return self.get_others_in_group()[0]
+    class Player(BasePlayer):
+
+        def get_partner(self):
+            return self.get_others_in_group()[0]
 
 
 .. _shuffling:
@@ -308,8 +345,8 @@ before players begin playing. So, if your shuffling logic needs to depend on
 something that happens after the session starts, you should do the
 shuffling in a wait page instead.
 
-For example, let's say you want to randomize groups
-only if a certain result happened in the previous game.
+For example, let's say you want to randomize groups in round 2
+only if a certain result happened in round 1.
 You need to make a ``WaitPage`` with ``wait_for_all_groups=True``
 and put the shuffling code in ``after_all_players_arrive``:
 
