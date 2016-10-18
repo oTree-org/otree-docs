@@ -42,7 +42,7 @@ and create your database tables accordingly.
 removed, or changed a field in ``models.py``.)
 
 The full list of available fields is in the Django documentation
-`here <https://docs.djangoproject.com/en/1.7/ref/models/fields/#field-types>`__.
+`here <https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types>`__.
 
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
 
