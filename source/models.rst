@@ -54,7 +54,7 @@ If you want to give it an initial value, you can use ``initial=``:
 .. code-block:: python
 
     class Player(BasePlayer):
-        my_payoff = models.BooleanField(initial=0)
+        some_number = models.IntegerField(initial=0)
 
 
 min, max, choices

@@ -6,7 +6,7 @@ Views
 Each page that your players see is defined by a ``Page`` class in
 ``views.py``. (You can think of "views" as a synonym for "pages".)
 
-For example, if 1 round of your game involves showing the player a
+For example, if each round of your game involves showing the player a
 sequence of 5 pages, your ``views.py`` should contain 5 page classes.
 
 Your ``views.py`` must have a ``page_sequence``

@@ -46,7 +46,7 @@ e.g. ``self.session.config['participation_fee']``
 DEBUG
 -----
 
-You can turn off debug mode by setting the environment variable ``OTREE_PRODUCTION``,
+You can turn off debug mode by setting the environment variable ``OTREE_PRODUCTION`` to ``1``,
 or by directly modifying ``DEBUG`` in settings.py.
 
 If you turn off ``DEBUG`` mode, you need to manually run ``otree collectstatic`` before starting your server,
