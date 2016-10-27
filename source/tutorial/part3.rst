@@ -177,7 +177,7 @@ check for both of them.
                 matcher.is_winner = False
                 mismatcher.is_winner = True
             for player in [mismatcher, matcher]:
-                if (self.subsession.round_number == self.session.vars['paying_round'] and player.is_winner):
+                if (self.round_number == self.session.vars['paying_round'] and player.is_winner):
                         player.payoff = Constants.stakes
                 else:
                     player.payoff = c(0)
@@ -253,7 +253,7 @@ Django template language.
             </tr>
             {% for p in player_in_previous_rounds %}
                 <tr>
-                    <td>{{ p.subsession.round_number }}</td>
+                    <td>{{ p.round_number }}</td>
                     <td>
                         You were the {{ p.role }} and {% if p.is_winner %}
                         won {% else %} lost {% endif %}
@@ -310,7 +310,7 @@ Let's create ``ResultsSummary.html``:
             </tr>
             {% for p in player_in_all_rounds %}
                 <tr>
-                    <td>{{ p.subsession.round_number }}</td>
+                    <td>{{ p.round_number }}</td>
                     <td>
                         You were the {{ p.role }} and {% if p.is_winner %} won
                         {% else %} lost {% endif %}
@@ -346,7 +346,7 @@ the current round.
     class ResultsSummary(Page):
 
         def is_displayed(self):
-            return self.subsession.round_number == Constants.num_rounds
+            return self.round_number == Constants.num_rounds
 
         def vars_for_template(self):
 

@@ -12,9 +12,12 @@ oTree lets you configure "rooms", which provide:
     Also, you can see a listing of who specifically is waiting, and who has not joined yet.
 -   Short links that are easy for participants to type, good for quick live demos.
 
-This feature replaces the "default session" from oTree 0.4.
+Here is a screenshot:
 
-You can define multiple rooms -- say, for for different classes you teach,
+.. figure:: _static/admin/room-combined.png
+    :align: center
+
+You can create multiple rooms -- say, for for different classes you teach,
 or different labs you manage.
 
 To create a room, add to your ``settings.py``
@@ -42,15 +45,14 @@ For example:
     ]
 
 
-Here are the available keys:
+Here are the available properties:
 
 -   ``name``: (required) internal name
 -   ``display_name``: (required) display name
 -   ``participant_label_file`` (optional): a path to a text file with the "guest list"
     for this room.
     Path can be either absolute or relative to the project's root directory.
-    Should have one participant label per line. For example::
-
+    The file should contain one participant label per line. For example::
 
         PC_1
         PC_2

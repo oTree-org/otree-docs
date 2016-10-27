@@ -258,15 +258,11 @@ you can try `KaTeX <http://khan.github.io/KaTeX/>`__.
 oTree on mobile devices
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Since oTree uses Bootstrap for its user interface, your oTree app should
-work on all major browsers (Chrome/Internet Explorer/Firefox/Safari).
-When participants visit on a smartphone or tablet (e.g.
-iOS/Android/etc.), they should see an appropriately scaled down "mobile
-friendly" version of the site. This will generally not require much
-effort on your part since Bootstrap does it automatically, but if you
-plan to deploy your app to participants on mobile devices, you should
-test it out on a mobile device during development, since some HTML code
-doesn't look good on mobile devices.
+oTree's HTML interface is based on `Bootstrap <http://getbootstrap.com/components/>`__,
+which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
+
+Bootstrap also tries to shows a "mobile friendly" version
+when viewed on a smartphone or tablet.
 
 Custom template filters
 ~~~~~~~~~~~~~~~~~~~~~~~

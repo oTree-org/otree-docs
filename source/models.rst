@@ -8,7 +8,7 @@ Models
 -  Player
 
 A player is part of a group, which is part of a subsession.
-For more info, see :ref:`conceptual_overview`.
+See :ref:`conceptual_overview`.
 
 Model fields
 ------------
@@ -43,6 +43,15 @@ removed, or changed a field in ``models.py``.)
 
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types>`__.
+The most commonly used ones are ``CharField`` (for text),
+``FloatField`` (for real numbers),
+``BooleanField`` (for true/false values),
+``IntegerField``, and ``PositiveIntegerField``.
+We recommend using ``FloatField`` instead of ``DecimalField``,
+because it's easier to use;
+you should only use ``DecimalField`` if you understand how it is different
+from ``FloatField`` and have a specific need for it.
+
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
 
 Setting a field's initial/default value
@@ -105,17 +114,12 @@ See :ref:`object_model`.
 
 round_number
 ~~~~~~~~~~~~
-If the app has multiple rounds (set in ``Constants.num_rounds)``, this
-field stores the position (index) of this subsession, among subsessions
-in the same app.
 
-For example, if a session consists of the subsessions:
+Gives the current round number.
+Only relevant if the app has multiple rounds
+(set in ``Constants.num_rounds``).
+See :ref:`rounds`.
 
-    [app1, app2, app2, app3]
-
-Then the round numbers of these subsessions would be:
-
-    [1, 1, 2, 1]
 
 .. _before_session_starts:
 

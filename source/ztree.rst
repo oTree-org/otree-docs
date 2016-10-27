@@ -27,7 +27,7 @@ Periods
 ~~~~~~~
 
 In oTree, these are called "rounds". You can set ``num_rounds``, and get
-the current round number with self.subsession.round_number.
+the current round number with ``self.round_number``.
 
 Stages
 ~~~~~~
@@ -259,7 +259,7 @@ For example:
             </tr>
             {% for p in player.in_all_rounds %}
                 <tr>
-                    <td>{{ p.subsession.round_number }}</td>
+                    <td>{{ p.round_number }}</td>
                     <td>
                         You were {{ p.role }} and
                         {% if p.is_winner %} won {% else %} lost {% endif %}
@@ -421,7 +421,7 @@ oTree:
 
 .. code-block:: python
 
-    if self.subsession.round_number == Constants.num_rounds:
+    if self.round_number == Constants.num_rounds:
         random_players = random.sample(self.in_all_rounds(), 3)
         self.payoff = sum([p.potential_payoff for p in random_players])
 

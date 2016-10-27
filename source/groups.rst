@@ -364,7 +364,7 @@ After this wait page, the players will be reassigned to their new groups.
 Let's say you have a game with multiple rounds,
 and in a wait page at the beginning you want to shuffle the groups,
 and apply this new group structure to all rounds.
-You can use ``group_like_round()`` in conjunction with the method ``in_rounds()``.
+You can use ``group_like_round()`` together with ``in_rounds()``.
 You should also use ``is_displayed()`` so that this method only executes once.
 For example:
 
@@ -379,7 +379,7 @@ For example:
                 subsession.group_like_round(1)
 
         def is_displayed(self):
-            return self.subsession.round_number == 1
+            return self.round_number == 1
 
 Example: re-matching by rank
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -401,7 +401,7 @@ Then, you would define the following page and put it at the beginning of ``page_
         # we can't shuffle at the beginning of round 1,
         # because the score has not been determined yet
         def is_displayed(self):
-            return self.subsession.round_number > 1
+            return self.round_number > 1
 
         def after_all_players_arrive(self):
 
@@ -426,11 +426,6 @@ Then, you would define the following page and put it at the beginning of ``page_
 
 More complex grouping logic
 ---------------------------
-
-If you need something more flexible or complex than what is allowed by
-``players_per_group``, you can specify the grouping logic yourself in
-``before_session_starts``, using the ``get_players()`` and ``set_group_matrix()``
-methods described above.
 
 **Fixed number of groups with a divisible number of players**
 

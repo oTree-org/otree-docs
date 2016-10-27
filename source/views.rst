@@ -106,14 +106,10 @@ When there are 60 seconds left, the page displays a timer warning the participan
 timeout_submission
 ~~~~~~~~~~~~~~~~~~
 
-A dictionary where the keys are the elements of
-``form_fields``, with the values to be
-submitted in case of a timeout, or if the experimenter moves the
+You can use ``timeout_submission`` to define what values
+should be submitted for a page if a timeout occurs,
+or if the experimenter moves the
 participant forward.
-
-If omitted, then oTree will default to
-``0`` for numeric fields, ``False`` for boolean fields, and the empty
-string ``''`` for text/character fields.
 
 Example:
 
@@ -126,6 +122,10 @@ Example:
         timeout_seconds = 60
         timeout_submission = {'accept': True}
 
+If omitted, then oTree will default to
+``0`` for numeric fields, ``False`` for boolean fields, and the empty
+string ``''`` for text/character fields.
+
 If the values submitted ``timeout_submission`` need to be computed dynamically,
 you can check :ref:`timeout_happened` and set the values in ``before_next_page``.
 
@@ -134,15 +134,19 @@ you can check :ref:`timeout_happened` and set the values in ``before_next_page``
 timeout_happened
 ~~~~~~~~~~~~~~~~
 
-This boolean attribute is automatically set to ``True``
+This attribute is automatically set to ``True``
 if the page was submitted by timeout.
-It can be accessed in ``before_next_page``:
+It can be accessed in ``before_next_page``.
+For example:
 
 .. code-block:: python
 
-    def before_next_page(self):
-        if self.timeout_happened:
-            self.player.my_random_variable = random.random()
+    class Page1(Page):
+        timeout_seconds = 60
+
+        def before_next_page(self):
+            if self.timeout_happened:
+                self.player.my_random_variable = random.random()
 
 
 This variable is undefined in other methods like ``vars_for_template``,
@@ -159,7 +163,8 @@ in a dict called ``self.request.POST``, which you can access like this:
             my_value = post_dict.get('my_field')
             # do something with my_value...
 
-Note: the contents of ``self.request.POST`` have not been validated.
+Note: ``self.request.POST`` just contains whatever the user put there,
+whether valid or not.
 For example, supposing ``my_field`` is an ``IntegerField``, there is no guarantee
 that ``self.request.POST.get('my_field')``
 contains an integer, that the integer is between your field's ``max`` and ``min``,
@@ -181,8 +186,9 @@ then ``before_next_page`` will be skipped as well.
 
 Example::
 
-    def before_next_page(self):
-        self.player.tripled_payoff = self.player.bonus * 3
+    class Page1(Page):
+        def before_next_page(self):
+            self.player.tripled_payoff = self.player.bonus * 3
 
 
 def vars_for_all_templates(self)
@@ -229,9 +235,15 @@ Wait pages can define the following methods:
 after_all_players_arrive()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This code will be executed once all players have arrived at the wait
-page. For example, this method can determine the winner of an auction
+Any code you define here will be executed once all players have arrived at the wait
+page. For example, this method can determine the winner
 and set each player's payoff.
+
+.. code-block:: python
+
+    class ResultsWaitPage(WaitPage):
+        def after_all_players_arrive(self):
+            self.group.set_payoffs()
 
 Note, you can't reference ``self.player`` inside ``after_all_players_arrive``,
 because the code is executed once for the entire group,

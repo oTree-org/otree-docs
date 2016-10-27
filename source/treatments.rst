@@ -6,17 +6,14 @@ Treatments
 To assign participants to different treatment groups, you
 can put the code in the subsession's ``before_session_starts`` method
 (for more info see :ref:`before_session_starts`).
-For example, if you want some participants to have a blue background to
-their screen and some to have a red background, you would first define
+For example, if you want some participants to be in a "blue" treatment group
+and others to be in a "red" treatment group, first define
 a ``color`` field on the ``Player`` model:
 
 .. code-block:: python
 
     class Player(BasePlayer):
-        # ...
-
         color = models.CharField()
-
 
 Then you can assign to this field randomly:
 
@@ -29,17 +26,13 @@ Then you can assign to this field randomly:
             for player in self.get_players():
                 player.color = random.choice(['blue', 'red'])
 
-(To actually set the screen color you would need to pass
-``player.color`` to some CSS code in the template, but that part is
-omitted here.)
-
 For more on how oTree does randomization, see :ref:`randomization`.
 
 You can also assign treatments at the group level (put the ``CharField``
 in the ``Group`` class and change the above code to use
 ``get_groups()`` and ``group.color``).
 
-If your game has multiple rounds, note that the above code gets executed
+If your game has multiple rounds, the above code gets executed
 for each round. So if you want to ensure that participants are assigned
 to the same treatment group each round, you should set the property at
 the participant level, which persists across subsessions, and only set
@@ -80,7 +73,7 @@ For more on vars, see :ref:`vars`.
 
 The above code makes a random drawing independently for each player,
 so you may end up with an imbalance between "blue" and "red".
-To solve this, you can alternate treatments, using ``itertools.cycle``:
+To solve this, you can use ``itertools.cycle``, which alternates:
 
 .. code-block:: python
 
@@ -142,3 +135,5 @@ Then in the ``before_session_starts`` method, you can check which of the
 Then, when someone visits your demo page, they will see the "red" and
 "blue" treatment, and choose to play one or the other. If the demo
 argument is not passed, the color is randomized.
+
+Also see :ref:`edit_config`.

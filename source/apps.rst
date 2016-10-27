@@ -26,3 +26,11 @@ import any 3rd-party modules.
 Then go to ``settings.py`` and create an entry for your app in
 ``SESSION_CONFIGS`` that looks like the other entries.
 
+Combining apps
+--------------
+
+In your :ref:`SESSION_CONFIGS <SESSION_CONFIGS>`, you can combine apps
+by setting ``'app_sequence'``.
+
+To pass data between apps,
+use :ref:`participant.vars <vars>` or :ref:`session.vars <session_vars>`.

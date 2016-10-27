@@ -3,21 +3,18 @@
 Rounds
 ======
 
-In oTree, "rounds" and "subsessions" are almost synonymous. The difference is
-that "rounds" refers to a sequence of subsessions that are in the same app.
-So, a session that consists of a prisoner's dilemma iterated 3 times, followed
-by an exit questionnaire, has 4 subsessions, which consists of 3 rounds of the
-prisoner's dilemma, and 1 round of the questionnaire.
+You can make a game run for multiple rounds by setting ``Constants.num_rounds``
+in models.py. For example, if your session config's ``app_sequence`` is ``['app1', 'app2']``,
+where ``app1`` has ``num_rounds = 3`` and ``app2`` has ``num_rounds = 1``,
+then your sessions will contain 4 subsessions.
 
 
 Round numbers
 -------------
 
-You can specify how many rounds a game should be played in models.py, in
-``Constants.num_rounds``.
-
-Subsession objects have an attribute ``round_number``, which contains the
-current round number, starting from 1.
+You can get the current round number with ``self.round_number``
+(this attribute is present on subsession, group, player, and page objects).
+Round numbers start from 1.
 
 .. _in_rounds:
 
@@ -26,8 +23,10 @@ Passing data between rounds or apps
 
 Each round has separate ``Subsession``, ``Group``, and ``Player`` objects.
 For example, let's say you set ``self.player.my_field = True`` in round 1.
-In round 2, if you try to access ``self.player.my_field``, you will find its value is ``None``
-(assuming that is the default value of the field). This is because the ``Player`` objects
+In round 2, if you try to access ``self.player.my_field``,
+you will find its value is ``None``
+(assuming that is the default value of the field).
+This is because the ``Player`` objects
 in round 1 are separate from ``Player`` objects in round 2.
 
 To access data from a previous round or app,
@@ -57,6 +56,7 @@ rounds of a game, plus the current one:
     cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
 
 ``player.in_rounds(m, n)`` returns a list of players representing the same participant from rounds ``m`` to ``n``.
+
 ``player.in_round(m)`` returns just the player in round ``m``.
 For example, to get the player's payoff in the previous round,
 you would do ``self.player.in_round(self.round_number - 1).payoff``.
@@ -66,8 +66,7 @@ Similarly, subsession objects have methods ``in_previous_rounds()``,
 
 Group objects also have methods ``in_previous_rounds()``, ``in_all_rounds()``, ``in_rounds(m,n)`` and ``in_round(m)``,
 but note that if you re-shuffle groups between rounds,
-then these methods may not return anything meaningful (their behavior in this
-situation is unspecified).
+then these methods may not return anything meaningful.
 
 .. _vars:
 
@@ -76,25 +75,22 @@ participant.vars
 
 ``in_all_rounds()`` only is useful when you need to access data from a previous
 round of the same app.
-If you want to pass data between subsessions of different app types (e.g. the
-participant is in the questionnaire and needs to see data from their ultimatum
-game results),
-you should store this data in the participant object, which persists across
-subsessions. Each participant has a field called ``vars``, which is a
-dictionary that can store any data about the player. For example, if you ask
-the participant's name in one subsession and you need to access it later, you
-would store it like this::
+If you want to pass data between different apps,
+you should store this data on the participant,
+which persists across apps (see :ref:`participants_and_players`).
+
+``participant.vars`` is is a dictionary that can store any data.
+For example, you can set an attribute like this:
 
     self.participant.vars['first name'] = 'John'
 
-Then in a future subsession, you would retrieve this value like this::
+Later in the session (e.g. in a separate app),
+you can retrieve it like this::
 
     self.participant.vars['first name'] # returns 'John'
 
-As described :ref:`here <object_model>`, the ``participant`` object can be
-accessed from a ``Page`` object or ``Player`` object.
-
-This means you can access it from ``views.py``:
+As described :ref:`here <object_model>`, the current participant can be
+accessed from a ``Page`` or ``Player``:
 
 .. code-block:: python
 
@@ -103,10 +99,9 @@ This means you can access it from ``views.py``:
         def before_next_page(self):
             self.participant.vars['foo'] = 1
 
-Or in the ``Player`` class in ``models.py``:
-
 .. code-block:: python
 
+    # in models.py
     class Player(BasePlayer):
         def some_method(self):
             self.participant.vars['foo'] = 1

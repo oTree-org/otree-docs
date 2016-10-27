@@ -3,7 +3,7 @@
 Python tutorial
 ===============
 
-Below is a tutorial file that demonstrates the necessary Python syntax for using oTree.
+Below is a tutorial with the basics of Python you need to know to use oTree.
 
 First you should install Python according to the instructions in :ref:`setup`,
 and install a Python editor (see :ref:`pycharm`).

@@ -1,6 +1,8 @@
 Troubleshooting
 ===============
 
+.. _traceback:
+
 How to read a traceback
 -----------------------
 
