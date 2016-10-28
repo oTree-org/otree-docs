@@ -158,16 +158,21 @@ and hit Enter.
 Installing a Python editor (PyCharm)
 ------------------------------------
 
-You should install a text editor for writing your Python code.
+You will need a text editor to write your Python code.
 
 We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
 Professional Editon is better than Community Edition because it makes
 Django programming easier.
 PyCharm Professional is free if you are a student, teacher, or professor.
 
-(If you prefer another editor like Notepad++, TextWrangler, or Sublime Text, you can use that instead.)
+Even if you normally use another text editor,
+we recommend at least trying PyCharm, because PyCharm's autocompletion
+makes learning oTree much easier:
 
-Launch PyCharm, go to "File -> Open..." and select the folder you created with ``otree startproject``.
+.. figure:: _static/setup/pycharm-autocomplete.gif
+
+Once you have installed PyCharm,
+go to "File -> Open..." and select the folder you created with ``otree startproject``.
 
 Then click on ``File –> Settings`` (or ``Default Settings``) and navigate to ``Languages & Frameworks -> Django``,
 check "Enable Django Support" and set your oTree folder as the Django project root,
