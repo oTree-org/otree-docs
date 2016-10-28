@@ -176,7 +176,7 @@ go to "File -> Open..." and select the folder you created with ``otree startproj
 
 Then click on ``File –> Settings`` (or ``Default Settings``) and navigate to ``Languages & Frameworks -> Django``,
 check "Enable Django Support" and set your oTree folder as the Django project root,
-with your ``manage.py` and ``settings.py``:
+with your ``manage.py`` and ``settings.py``:
 
 .. figure:: _static/setup/pycharm-django.png
 
