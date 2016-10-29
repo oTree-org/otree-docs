@@ -23,12 +23,9 @@ A few tips:
 Install Python
 --------------
 
-We recommend installing Python 3.5, because oTree is primarily developed and
-tested on Python 3.5.
-
-Starting new oTree projects with Python 2.7 is discouraged.
-If you already created an oTree project
-with Python 2 and would like to switch to Python 3,
+New versions of oTree require Python 3.4 or higher.
+If you created an old oTree project
+with Python 2 and would like to migrate to Python 3,
 follow the instructions :ref:`here <py3-migration>`.
 
 If you already have Python 3.5 installed
@@ -155,8 +152,8 @@ and hit Enter.
 
 .. _pycharm:
 
-Installing a Python editor (PyCharm)
-------------------------------------
+Install a Python editor (PyCharm)
+---------------------------------
 
 You will need a text editor to write your Python code.
 

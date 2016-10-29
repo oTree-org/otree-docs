@@ -75,3 +75,4 @@ Here are the available properties:
 ``ROOM_DEFAULTS`` is
 a dict that defines settings to be inherited by all rooms unless
 explicitly overridden (works in an analogous way to ``SESSION_CONFIG_DEFAULTS``).
+

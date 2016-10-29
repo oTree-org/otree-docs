@@ -1,9 +1,8 @@
 Admin
 =====
 
-oTree comes with an admin interface, so that experimenters can manage
-sessions, monitor the progress of live sessions, and export data after
-sessions.
+oTree's admin interface lets you create, monitor,
+and export data from sessions.
 
 Open your browser to the root url of your web application. If you're
 developing locally, this will be *http://127.0.0.1:8000/*.
@@ -14,21 +13,85 @@ Password protection
 -------------------
 
 When you first install oTree, The entire admin interface is accessible
-without a password. However, when you are ready to launch your oTree
-app, you should password protect the admin so that visitors and
+without a password. However, when you are ready to deploy to your audience,
+you should password protect the admin so that visitors and
 participants cannot access sensitive data.
 
 If you are launching an experiment and want visitors to only be able to
 play your app if you provided them with a start link, set the
 environment variable ``OTREE_AUTH_LEVEL`` to ``STUDY``.
 
-If you would like to put your site online in public demo mode where
-anybody can play a demo version of your game, set ``OTREE_AUTH_LEVEL``
-to ``DEMO``. This will allow people to play in demo mode, but not access
-the full admin interface.
+To put your site online in public demo mode where
+anybody can play a demo version of your game
+(but not access the full admin interface), set ``OTREE_AUTH_LEVEL``
+to ``DEMO``.
 
-If you don't want any password protection at all, just leave this variable
-blank.
+If you don't want any password protection at all,
+leave this variable unset/blank.
+
+Start links
+-----------
+
+There are multiple types of start links you can use.
+
+Rooms
+~~~~~
+
+In most cases where you are doing a study, the best
+way to set up URLs is to make a :ref:`room <rooms>`.
+
+.. _single_use_links:
+
+Single-use links
+~~~~~~~~~~~~~~~~
+
+If a room is not suited for your needs,
+you can use oTree's single-use links.
+Every time you create a session, you will need to re-distribute URLs
+to each participant.
+
+Session-wide link
+~~~~~~~~~~~~~~~~~
+
+The session-wide link lets you provide
+the same start link to all participants in the session.
+Note: this may result in the same participant playing twice, unless you use the
+``participant_label`` parameter in the URL (see :ref:`participant_label`).
+
+Before using the session-wide link, consider using a
+:ref:`room <rooms>`, because you can also use a room without a
+participant label file to allow everyone to play with the same URL.
+The advantage of using a room is that the URL is simpler to type
+(doesn't contain a randomly generated code),
+and you can reuse it across sessions.
+
+.. _participant_label:
+
+Participant labels
+------------------
+
+Whether or not you're using a :ref:`room <rooms>`,
+you can append a ``participant_label`` parameter to each participant's start
+URL to identify them, e.g. by name, ID number, or computer workstation.
+For example::
+
+    http://127.0.0.1:8000/room/my_room_name/?participant_label=John
+
+oTree will record this participant label. It
+will be used to identify that participant in the
+oTree admin interface and the payments page, etc.
+You can also access it from your code as ``self.participant.label``.
+
+.. _randomization:
+
+Arrival order & Randomization
+-----------------------------
+
+(Note: if using single-use links, this section does not apply.)
+
+oTree will assign the first person who arrives to be P1, the second to be P2, etc.
+If you would instead like participant selection to be random, you can set ``'random_start_order': True,``
+in the session config dictionary (or ``SESSION_CONFIG_DEFAULTS``).
 
 
 .. _edit_config:
@@ -38,8 +101,8 @@ Configure sessions
 
 .. note::
 
-    This is an experimental feature
-    only available in otree-core 1.0 (Oct 2016).
+    This is a new feature
+    only available in otree-core 1.0 or higher (Oct 2016).
 
 You can make your session configurable,
 so that you can adjust the game's parameters in the admin interface,
@@ -102,87 +165,13 @@ Notes:
 Also see :ref:`session_config_treatments`.
 
 
-Start links
------------
-
-There are multiple types of start links you can use.
-The optimal one depends on how you are distributing the links to your users.
-
-.. _single_use_links:
-
-Single-use links
-~~~~~~~~~~~~~~~~
-
-When you create a session, oTree creates 1 start link per participant,
-each of which contains a unique code for the participant.
-
-
-Session-wide link
-~~~~~~~~~~~~~~~~~
-
-If it is impractical to distribute distinct URLs to each participant,
-you can provide the same start link to all participants in the session.
-Note: this may result in the same participant playing twice, unless you use the
-``participant_label`` parameter in the URL (see :ref:`participant_label`).
-
-Server-wide (persistent) link
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can create persistent links that will stay constant for new sessions, even if the database is recreated.
-
-This is useful in the following situations:
-
-* You are running multiple lab sessions, and cannot easily distribute new links to the workstations each time you create a session.
-* You are running multiple sessions online with the same group of participants, and want each participant to use the same link each time they participate in one of your sessions.
-
-See :ref:`rooms`.
-
-.. _participant_label:
-
-Participant labels
-------------------
-
-You can append a ``participant_label`` parameter to each participant's start
-URL to identify them, e.g. by name, ID number, or computer workstation.
-
-Each time a start URL is accessed, oTree checks for the presence of a
-``participant_label`` parameter and records it for that participant. This
-label will be displayed in places where participants are listed, like the
-oTree admin interface or the payments page.
-You can also access it from your code as ``participant.label``.
-
-
-.. _randomization:
-
-Randomization
--------------
-
-If participants are not using single-use links (see :ref:`single_use_links`),
-oTree will assign the first person who arrives to be P1, the second to be P2, etc.
-If you would instead like participant selection to be random, you can set ``'random_start_order': True,``
-in the session config dictionary (or ``SESSION_CONFIG_DEFAULTS``).
-
-Note that if you use single-use links, then ``random_start_order`` will have no effect, because each
-single-use link is tied to a specific participant (the URL contains the participant's unique code).
-
-
-Online experiments
-------------------
-
-Experiments can be launched to participants playing over the internet,
-in a similar way to how experiments are launched the lab. Login to the
-admin, create a session, then distribute the links to participants via
-email or a website.
-
 Kiosk Mode
 ----------
 
-On your lab's devices, you can enable "kiosk mode", a setting available in
-most web browsers, to prevent participants from doing things like accessing
-the browser's address bar, hitting the "back" button, or closing the browser
-window.
-
-Below are some guidelines on how to enable Kiosk mode.
+You can enable "kiosk mode", a setting available in
+most web browsers, to prevent participants from accessing
+the browser's address bar, hitting the "back" button, closing the browser
+window, etc. Here are instructions for different browsers.
 
 
 iOS (iPhone/iPad)
@@ -205,13 +194,6 @@ Lockdown <https://play.google.com/store/apps/details?id=com.procoit.kioskbrowser
     :align: center
     :scale: 100 %
 
-
-oTree comes with an admin interface, so that experimenters can manage
-sessions, monitor the progress of live sessions, and export data after
-sessions.
-
-Open your browser to the root url of your web application. If you're
-developing locally, this will be http://127.0.0.1:8000/.
 
 Chrome on PC
 ~~~~~~~~~~~~
@@ -241,10 +223,7 @@ disabled.
 Monitor sessions
 ----------------
 
-While your session is ongoing, you can monitor the live progress in the
-admin interface. The admin tables update live, highlighting changes as
-they occur.
-
+The admin interface lets you monitor the live progress of your sessions.
 
 Payments page
 -------------
@@ -259,28 +238,26 @@ the participants and how much they should be paid.
 Export Data
 -----------
 
-You can download your raw data in text format (CSV) so that you can view
-and analyze it with a program like Excel, Stata, or R.
+In the admin interface, click on "Data"
+(try http://127.0.0.1:8000/export/)
+to download your data as CSV or Excel.
 
 Autogenerated documentation
 ---------------------------
 
-Each model field you define can also have a ``doc=`` argument. Any
-string you add here will be included in the autogenerated documentation
-file, which can be downloaded through the data export page in the admin.
+If you add a ``doc=`` argument to your model fields like this:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        contribution = models.IntegerField(doc="how much this player contributed")
+
+It will be included in a "documentation"
+file that is available on the "Data Export" page.
 
 Debug Info
 ----------
 
 When oTree runs in ``DEBUG`` mode (i.e. when the environment variable
 ``OTREE_PRODUCTION`` is not set), debug information is displayed
-on the bottom of all screens. The debug information consists of the ID
-in group, the group, the player, the participant label, and the session
-code. The session code and participant label are two randomly generated
-alphanumeric codes uniquely identifying the session and participant. The
-ID in group identifes the role of the player (e.g., in a principal-agent
-game, principals might have the ID in group 1, while agents have 2).
-
-.. figure:: _static/admin/DZsyhQf.png
-   :alt:
-
+on the bottom of all screens.

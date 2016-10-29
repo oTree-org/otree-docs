@@ -4,10 +4,7 @@ Views
 =====
 
 Each page that your players see is defined by a ``Page`` class in
-``views.py``. (You can think of "views" as a synonym for "pages".)
-
-For example, if each round of your game involves showing the player a
-sequence of 5 pages, your ``views.py`` should contain 5 page classes.
+``views.py`` ("views" is basically a synonym for "pages").
 
 Your ``views.py`` must have a ``page_sequence``
 variable that gives the order of the pages. For example:
@@ -16,10 +13,38 @@ variable that gives the order of the pages. For example:
 
     page_sequence=[Start, Offer, Accept, Results]
 
+If your game has multiple rounds, this sequence will be repeated.
+See :ref:`rounds` for more info.
+
 Pages
 -----
 
-Each ``Page`` class can have these methods and attributes:
+A ``Page`` class can have any of the following optional methods and attributes:
+
+.. _is_displayed:
+
+is_displayed()
+~~~~~~~~~~~~~~
+
+You can define this function to return ``True`` if the page should be shown,
+and False if the page should be skipped.
+If omitted, the page will be shown.
+
+For example, to only show the page to P2 in each group:
+
+.. code-block:: python
+
+    class Page1(Page):
+        def is_displayed(self):
+            return self.player.id_in_group == 2
+
+Or only show the page in round 1:
+
+.. code-block:: python
+
+    class Page1(Page):
+        def is_displayed(self):
+            return self.round_number == 1
 
 .. _vars_for_template:
 
@@ -31,8 +56,9 @@ which is passed to the template. Example:
 
 .. code-block:: python
 
-    def vars_for_template(self):
-        return {'a': 1 + 1, 'b': self.player.foo * 10}
+    class Page1(Page):
+        def vars_for_template(self):
+            return {'a': 1 + 1, 'b': self.player.foo * 10}
 
 Then in the template you can access ``a`` and ``b`` like this:
 
@@ -53,35 +79,48 @@ You can access them in the template like this: ``{{ Constants.blah }}`` or ``{{ 
     ``before_next_page``, or ``after_all_players_arrive``, each of which
     only executes once.
 
-.. _is_displayed:
+.. _before_next_page:
 
-is_displayed()
-~~~~~~~~~~~~~~
+before_next_page()
+~~~~~~~~~~~~~~~~~~
 
-Should return ``True`` if the page should be shown, and False if the page
-should be skipped. If omitted, the page will be shown.
+Here you define any code that should be executed
+after form validation, before the player proceeds to the next page.
 
-For example, if you only want a page to be shown to P2 in each group:
-
-.. code-block:: python
-
-    def is_displayed(self):
-        return self.player.id_in_group == 2
-
-template_name
-~~~~~~~~~~~~~
-
-The name of the HTML template to display. This can be omitted if the
-template has the same name as the Page class.
+If the page is skipped with ``is_displayed``,
+then ``before_next_page`` will be skipped as well.
 
 Example:
 
 .. code-block:: python
 
-    # This will look inside:
-    # 'app_name/templates/app_name/MyView.html'
-    # (Note that app_name is repeated)
-    template_name = 'app_name/MyView.html'
+    class Page1(Page):
+        def before_next_page(self):
+            self.player.tripled_payoff = self.player.bonus * 3
+
+template_name
+~~~~~~~~~~~~~
+
+Each Page should have a file in ``templates/`` with the same name.
+For example, if your app has this page in ``my_app/views.py``:
+
+.. code-block:: python
+
+    class Page1(Page):
+        pass
+
+Then you should create a file ``my_app/templates/my_app/Page1.html``,
+(note that app_name is repeated).
+See :ref:`templates` for info on how to write an HTML template.
+
+If the template needs to have a different name from your
+view class (e.g. you are sharing the same template for multiple views),
+set ``template_name``. Example:
+
+.. code-block:: python
+
+    class Page1(Page):
+        template_name = 'app_name/MyView.html'
 
 timeout_seconds (Remaining time)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -149,7 +188,7 @@ For example:
                 self.player.my_random_variable = random.random()
 
 
-This variable is undefined in other methods like ``vars_for_template``,
+``timeout_happened`` is undefined in other methods like ``vars_for_template``,
 because the timeout countdown only starts after the page is rendered.
 
 The fields that were filled out at the moment the page was submitted are contained
@@ -173,22 +212,6 @@ this form field (e.g. it may have been left blank), which is why we need to use 
 rather than ``post_dict['my_field']``. (Python's dict ``.get()`` method also lets you provide a second argument like
 ``post_dict.get('my_field', 10)``, which will return 10 as a fallback in case
 ``my_field`` is not found if that entry is missing, it will return the default of 10.)
-
-
-before_next_page()
-~~~~~~~~~~~~~~~~~~
-
-Here you define any code that should be executed
-after form validation, before the player proceeds to the next page.
-
-If the page is skipped with ``is_displayed``,
-then ``before_next_page`` will be skipped as well.
-
-Example::
-
-    class Page1(Page):
-        def before_next_page(self):
-            self.player.tripled_payoff = self.player.bonus * 3
 
 
 def vars_for_all_templates(self)
