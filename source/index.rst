@@ -29,31 +29,11 @@ http://www.otree.org/
 About
 ^^^^^
 
-oTree is a Django-based framework for implementing multiplayer decision
-strategy games. Many of the details of writing a web application are
-abstracted away, meaning that the code is focused on the logic of the
-game. oTree programming is accessible to programmers without advanced
-experience in web app development.
+oTree is a framework based on Python and Django that lets you build:
 
-
-Repositories
-^^^^^^^^^^^^
-
--   `Games <https://github.com/oTree-org/oTree/>`_
--   `Core Libraries <https://github.com/oTree-org/otree-core>`_
--   `Documentation <https://github.com/oTree-org/otree-docs>`_
-
-
-Contributors
-^^^^^^^^^^^^
--   Juan B. Cabral
-    (http://jbcabral.org, https://github.com/leliel12)
--   Gregor Muellegger
-    (http://gremu.net/, https://github.com/gregmuellegger)
--   Alexander Schepanovski
-    (https://github.com/Suor)
--   Alexander Sandukovskiy
--   Som Datye
+- Multiplayer strategy games, like the prisoner's dilemma, public goods game, and auctions
+- Controlled behavioral experiments in economics, psychology, and related fields
+- Surveys and quizzes
 
 
 Help & discussion mailing list

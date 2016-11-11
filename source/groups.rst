@@ -3,16 +3,35 @@
 Groups and multiplayer games
 ============================
 
-To create a multiplayer game, go to your app's models.py and set
-``Constants.players_per_group``. For example, in a 2-player game like an
-ultimatum game or prisoner's dilemma, you would set this to 2. If your
-app does not involve dividing the players into multiple groups, then set
-it to ``None``. e.g. it is a single-player game or a game where
-everybody in the subsession interacts together as 1 group. In this case,
-``self.group.get_players()`` will return everybody in the subsession.
+oTree's group system lets you divide players into groups
+and have players interact with others in the same group.
+This is often used in multiplayer games.
+(If you just need groups in the sense of "treatment groups",
+where players don't actually interact with each other,
+then see :ref:`treatments`.)
 
-Each player has an attribute ``id_in_group``, which is an integer,
-which will tell you if it is player 1, player 2, etc.
+To set the group size, go to your app's models.py and set
+``Constants.players_per_group``. For example, for a 2-player game:
+
+ .. code-block:: python
+
+    class Constants(BaseConstants):
+        # ...
+        players_per_group = 2
+
+If all players should be in the same group,
+or if it's a single-player game, set it to ``None``:
+
+ .. code-block:: python
+
+    class Constants(BaseConstants):
+        # ...
+        players_per_group = None
+
+In this case, ``self.group.get_players()`` will return everybody in the subsession.
+
+Each player has an attribute ``id_in_group``,
+which will tell you if it is player ``1``, player ``2``, etc.
 
 Getting players
 ---------------
@@ -22,18 +41,17 @@ Group objects have the following methods:
 get_players()
 ~~~~~~~~~~~~~
 
-returns a list of the players in the group (ordered by ``id_in_group``).
-
+Returns a list of the players in the group (ordered by ``id_in_group``).
 
 get_player_by_id(n)
 ~~~~~~~~~~~~~~~~~~~
 
-Retrieves the player in the group with the given ``id_in_group``.
+Returns the player in the group with the given ``id_in_group``.
 
 get_player_by_role(r)
 ~~~~~~~~~~~~~~~~~~~~~
 
-Allows you to look up a player by their role.
+Returns the player with the given role.
 If you use this method, you must define the :ref:`role <role>` method.
 For example:
 
@@ -168,9 +186,8 @@ To counteract this, you can use :ref:`group_like_round`.
 group_like_round()
 ~~~~~~~~~~~~~~~~~~
 
-If you shuffle the groups in one round
-and would like the new group structure to be applied to another round,
-you can use the ``group_like_round(n)`` method.
+To copy the group structure from one round to another round,
+use the ``group_like_round(n)`` method.
 The argument to this method is the round number
 whose group structure should be copied.
 
@@ -210,7 +227,7 @@ set_group_matrix()
 ~~~~~~~~~~~~~~~~~~
 
 ``set_group_matrix()`` lets you modify the group structure in any way you want.
-You can call modify the list of lists returned by ``get_group_matrix()``,
+You can modify the list of lists returned by ``get_group_matrix()``,
 using regular Python list operations like
 ``.extend()``, ``.append()``, ``.pop()``, ``.reverse()``,
 and list indexing and slicing (e.g. ``[0]``, ``[2:4]``).
@@ -490,7 +507,6 @@ the last *4 groups* with only *2 players*.
 
         def before_session_starts(self):
 
-            # if you whant to change the
             if self.round_number == 1:
 
                 # extract and mix the players

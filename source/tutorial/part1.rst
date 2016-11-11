@@ -2,6 +2,7 @@ Part 1: Public goods game
 =========================
 
 We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__.
+The public goods game is a classic game in economics,
 
 This is a three player game where each player is initially endowed with 100 points.
 Each player individually makes a decision about how many of their points they want to contribute to the group.
@@ -27,25 +28,25 @@ Create the app
 Use your command line to ``cd`` to the oTree project folder you created,
 the one that contains ``requirements_base.txt``.
 
-In this directory, create the public goods app with this shell command:
+In this directory, create the public goods app:
 
 .. code-block:: bash
 
     $ otree startapp my_public_goods
 
-Then go to the folder ``my_public_goods`` that was created.
+Then in PyCharm, go to the folder ``my_public_goods`` that was created.
 
 Define models.py
 ----------------
 
-Open ``models.py``. This file contains definitions of the game's data models (player, group, subsession),
-as well as the constants used for configuration of the game.
+Open ``models.py``. This file contains the game's data models (player, group, subsession)
+and constant parameters.
 
 First, let's modify the ``Constants`` class to define our constants and
 parameters -- things that are the same for all players in all games.
 (For more info, see :ref:`constants`.)
 
--  There are 3 players per group. So, let's change ``players_per_group``
+-  There are 3 players per group. So, change ``players_per_group``
    to 3. oTree will then automatically divide players into groups of 3.
 -  The endowment to each player is 100 points. So, let's define
    ``endowment`` and set it to ``c(100)``. (``c()`` means it is a
@@ -65,17 +66,26 @@ Now we have:
         endowment = c(100)
         efficiency_factor = 2
 
+.. note::
+
+    Python is case-sensitive, so pay attention to which letters are capitalized.
+    Also, make sure to indent your code properly.
+    All lines in a block of code must be aligned along the left edge.
+    When you're inside a code block (e.g. "if", "for", "def"; see below),
+    you need to indent by 4 spaces.
+
 Now let's think about the main entities in this game: the Player and the
 Group.
 
-What data points are we interested in recording about each player? The
-main thing is how much they contributed. So, we define a field
-``contribution``, which is a currency (see :ref:`currency`):
+After the game is played,
+what data points will we need about each player?
+It's important to know how much each person contributed.
+So, we define a field ``contribution``,
+which is a currency (see :ref:`currency`):
 
 .. code-block:: python
 
     class Player(BasePlayer):
-
         contribution = models.CurrencyField(min=0, max=Constants.endowment)
 
 
@@ -91,9 +101,9 @@ fields:
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
 
-Now let's define a method that calculates the payoff (and other fields like ``total_contribution`` and ``individual_share``).
+Now let's define a method that calculates the payoff
+(and other fields like ``total_contribution`` and ``individual_share``).
 Let's call it ``set_payoffs``:
-
 
 .. code-block:: python
 
@@ -111,7 +121,7 @@ Let's call it ``set_payoffs``:
 Define the template
 -------------------
 
-This game consists of a sequence of 2 pages:
+This game has 2 pages:
 
 -  Page 1: players decide how much to contribute
 -  Page 2: players are told the results

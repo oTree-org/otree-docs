@@ -336,3 +336,14 @@ in_rounds(self, first, last)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`in_rounds`.
+
+Extra models
+------------
+
+Some complex apps require extra models
+(other than Player, Group, and Subsession).
+You can define these models using Django's API,
+although you will have to write the code to create/update/save
+them yourself, rather than relying on oTree.
+See Markus Konrad's excellent article
+`Using Custom Data Models in oTree <https://datascience.blog.wzb.eu/2016/10/31/using-custom-data-models-in-otree/>`__.

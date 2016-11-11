@@ -1,10 +1,9 @@
 Part 2: Trust game
 ==================
 
-Now let's create a Trust game, and learn some
-more features of oTree.
+Now let's create a 2-player `Trust game <https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,
+and learn some more features of oTree.
 
-This is a trust game with 2 players.
 To start, Player 1 receives 10 points; Player 2 receives nothing. Player
 1 can send some or all of his points to Player 2. Before P2 receives
 these points they will be tripled. Once P2 receives the tripled points he
@@ -38,8 +37,8 @@ donation gets tripled.
         endowment = c(10)
         multiplication_factor = 3
 
-Then we think about how to define fields on the data model. There are 2
-critical data points to capture: the "sent" amount from P1, and the
+Then we add fields to player and group. There are 2
+critical data points to record: the "sent" amount from P1, and the
 "sent back" amount from P2.
 
 Your first instinct may be to define the fields on the Player like this:
@@ -67,9 +66,6 @@ sense because each group has exactly 1 ``sent_amount`` and exactly 1
         sent_amount = models.CurrencyField()
         sent_back_amount = models.CurrencyField()
 
-Even though it may not seem that important at this point, modeling our
-data correctly will make the rest of our work easier.
-
 Let's let P1 choose from a dropdown menu how
 much to donate, rather than entering free text. To do this, we use the
 :ref:`choices <choices>` argument, as well as the :ref:`currency_range <currency>` function:
@@ -86,7 +82,7 @@ back, but we can't specify a fixed list of ``choices``, because P2's
 available choices depend on how much P1 donated. I'll show a bit later
 how we can make this list dynamic.
 
-Also, let's define the payoff function on the group:
+Also, let's define the payoff function in the Group class:
 
 .. code-block:: python
 

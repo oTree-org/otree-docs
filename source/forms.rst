@@ -192,7 +192,7 @@ Then the HTML field will not have the ``required`` attribute.
 .. _dynamic_validation:
 
 Dynamic form field validation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 The ``min``, ``max``, and ``choices`` described above are only
 for fixed (constant) values.
@@ -205,7 +205,7 @@ methods in your ``Page`` class in ``views.py``.
 .. _FOO_choices:
 
 {field_name}_choices()
-''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~
 
 Like setting ``choices=`` in models.py,
 this will set the choices for the form field
@@ -227,7 +227,7 @@ Example:
 .. _FOO_max:
 
 {field_name}_max()
-''''''''''''''''''
+~~~~~~~~~~~~~~~~~~
 
 The dynamic alternative to setting ``max=`` in models.py. For example:
 
@@ -243,14 +243,14 @@ The dynamic alternative to setting ``max=`` in models.py. For example:
 
 
 {field_name}_min()
-''''''''''''''''''
+~~~~~~~~~~~~~~~~~~
 
 The dynamic alternative to setting ``min`` in models.py.
 
 .. _FOO_error_message:
 
 {field_name}_error_message()
-''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the most flexible method for validating a field.
 

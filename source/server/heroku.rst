@@ -351,10 +351,14 @@ which can log all errors on your server and send you email notifications.
 (`Sentry <https://getsentry.com/welcome/>`__.)
 
 Sentry is necessary because many errors are not visible in the UI after you turn off debug mode.
-You will no longer see Django's yellow error pages; you or your users will just see generic "500 server error" pages.
+You will no longer see Django's yellow error pages;
+you or your users will just see generic "500 server error" pages:
 
-After you enter your email, you will receive an email with a SENTRY_DSN,
-which is a URL you paste into your settings.py.
+.. image:: ../_static/500_error.png
+    :align: center
+
+After you enter your email, you will receive an email with information
+on how to activate Sentry in your project.
 
 .. _papertrail:
 

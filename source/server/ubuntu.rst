@@ -232,6 +232,7 @@ because that is the default HTTP port.
 Note: unlike ``runserver``, ``runprodserver`` does not restart automatically
 when your files are changed.
 
+
 Process control system
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -336,10 +337,21 @@ And oTree uses `Whitenoise <http://whitenoise.evans.io/en/stable/index.html>`__
 to serve static files (e.g. images, JavaScript, CSS). This is reasonably
 efficient, so for many people a reverse proxy will not be necessary.
 
+Troubleshooting
+---------------
+
+If you get strange behavior,
+such as random changes each time the page reloads,
+it might be caused by another oTree instance that didn't shut down.
+Try stopping oTree and reload again.
+Also make sure that you are not sharing the same Postgres or Redis
+databases between two oTree instances.
+
+
 Sentry
 ------
-
-It's highly recommended to set up :ref:`Sentry <sentry>`.
+It's highly recommended to set up :ref:`Sentry <sentry>`,
+so that you can monitor errors on the server
 
 Database backups
 ----------------

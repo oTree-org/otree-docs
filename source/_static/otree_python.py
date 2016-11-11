@@ -170,9 +170,9 @@ else:           # This is optional too.
 SPECIAL NOTE ABOUT INDENTING
 In Python, you must indent your code correctly, or it will not work.
 (Python is different from some other languages in this regard)
-All lines in a block of code must be aligned along the left edge
-When starting a code block (e.g. "if", "for", "def"; see below), you should indent by 4 spaces.
-When ending a code block, you should unindent by 4 spaces.
+All lines in a block of code must be aligned along the left edge.
+When you're inside a code block (e.g. "if", "for", "def"; see below),
+you need to indent by 4 spaces.
 
 Examples of improperly indented code:
 

@@ -6,16 +6,17 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v10b:
 
-Version 1.0 beta
-================
+Version 1.0
+===========
 
-Here are the main changes in 1.0 beta:
+Here are the main changes in 1.0:
 
 -   You can configure sessions in the admin interface
     (modifying ``SESSION_CONFIGS`` parameters without changing the source code).
     See :ref:`edit_config`.
 -   Performance improvements
 -   The default for the ``payoff`` field is now ``0``, not ``None``.
+    (Make sure your code doesn't rely on ``payoff`` being ``None``.)
 
 To install, run this (note the ``--pre`` in the command;
 this means "pre-release")::

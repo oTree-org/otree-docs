@@ -192,20 +192,20 @@ For example:
 because the timeout countdown only starts after the page is rendered.
 
 The fields that were filled out at the moment the page was submitted are contained
-in a dict called ``self.request.POST``, which you can access like this:
+in ``self.request.POST``, which you can access like this:
 
 .. code-block:: python
 
     def before_next_page(self):
         if self.timeout_happened:
-            post_dict = self.request.POST
+            post_dict = self.request.POST.dict()
             my_value = post_dict.get('my_field')
             # do something with my_value...
 
 Note: ``self.request.POST`` just contains whatever the user put there,
 whether valid or not.
 For example, supposing ``my_field`` is an ``IntegerField``, there is no guarantee
-that ``self.request.POST.get('my_field')``
+that ``post_dict.get('my_field')``
 contains an integer, that the integer is between your field's ``max`` and ``min``,
 or even that that the post dict contains an entry for
 this form field (e.g. it may have been left blank), which is why we need to use ``post_dict.get('my_field')`` method
