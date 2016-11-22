@@ -357,6 +357,7 @@ oTree additionally offers:
     -   To specify the step size, do: ``SliderInput(attrs={'step': '0.01'})``
     -   To disable the current value from being displayed, do:
         ``SliderInput(show_value=False)``
+    -   To set an initial value on the slider, use the ``value`` attribute. For example the intial value of 0.0, ``SliderInput(attrs={'value': '0.0'})``
 
 
 Alternatives to oTree's ``{% formfield %}``
