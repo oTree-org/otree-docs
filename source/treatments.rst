@@ -73,7 +73,8 @@ For more on vars, see :ref:`vars`.
 
 The above code makes a random drawing independently for each player,
 so you may end up with an imbalance between "blue" and "red".
-To solve this, you can use ``itertools.cycle``, which alternates:
+To solve this, you can use ``itertools.cycle``, which alternates.
+:
 
 .. code-block:: python
 
@@ -82,10 +83,9 @@ To solve this, you can use ``itertools.cycle``, which alternates:
     class Subsession(BaseSubsession):
 
         def before_session_starts(self):
-            treatments = itertools.cycle([True, False])
-            for g in self.get_groups():
-                g.treatment = next(treatments)
-
+            colors = itertools.cycle(['blue', 'red'])
+            for p in self.get_players():
+                p.color = next(colors)
 
 
 .. _session_config_treatments:

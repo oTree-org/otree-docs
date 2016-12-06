@@ -4,7 +4,7 @@ Money and Points
 ================
 
 In many experiments, participants play for currency:
-either virtual points, or real money. oTree supports both scenarios;
+either real money, or points. oTree supports both;
 you can switch from points to real money by setting ``USE_POINTS = False``
 in ``settings.py``.
 
@@ -40,10 +40,10 @@ e.g.:
     class Player(BasePlayer):
         contribution = models.CurrencyField(
             choices=currency_range(c(0), c(0.10), c(0.02))
+            # this gives:
+            # [$0.00, $0.02, $0.04, $0.06, $0.08, $0.10]
         )
 
-In this case, choices will be set to the currency values
-[``$0.00``, ``$0.02``, ``$0.04``, ``$0.06``, ``$0.08``, ``$0.10``].
 
 ``currency_range`` takes 3 arguments (start, stop, step), just like range.
 However, unlike ``range()``, the returned list includes the ``stop`` value
@@ -70,13 +70,10 @@ calculated by converting ``self.participant.payoff`` to real-world currency
 (if ``USE_POINTS`` is ``True``), and then adding
 ``self.session.config['participation_fee']``.
 
-.. warning::
+.. note::
 
-    Currently, the initial (default) value of ``payoff`` is ``None``,
-    but this might change to ``0`` in an upcoming release of oTree.
-    If you have any code like ``if self.player.payoff is None``
-    that detects whether the payoff has already been set,
-    this may not work properly if you upgrade.
+    The initial (default) value of ``payoff`` was changed from ``None`` to ``0``
+    in oTree 1.0.
 
 
 .. _points:

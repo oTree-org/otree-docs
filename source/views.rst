@@ -201,6 +201,7 @@ in ``self.request.POST``, which you can access like this:
             post_dict = self.request.POST.dict()
             my_value = post_dict.get('my_field')
             # do something with my_value...
+            # you can also loop through self.form_fields and self.timeout_submission
 
 Note: ``self.request.POST`` just contains whatever the user put there,
 whether valid or not.
@@ -273,8 +274,57 @@ because the code is executed once for the entire group,
 not for each individual player.
 (However, you can use ``self.player`` in a wait page's ``is_displayed``.)
 
-def is_displayed(self)
-~~~~~~~~~~~~~~~~~~~~~~
+.. _group_by_arrival_time:
+
+group_by_arrival_time
+~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a new feature
+    only available in otree-core 1.1 or higher (Dec 2016).
+
+If you set ``group_by_arrival_time = True`` on a WaitPage,
+players will be grouped in the order they arrive at that wait page:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        group_by_arrival_time = True
+
+For example, if ``players_per_group = 2``, the first 2 players to arrive
+at the wait page will be grouped together, then the next 2 players, and so on.
+
+This is useful in sessions where some participants
+might drop out (e.g. online experiments,
+or experiments with consent pages that let the participant quit early), or
+sessions where some participants take much longer than others.
+
+If a game has multiple rounds,
+you may want to only group by arrival time in round 1:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        group_by_arrival_time = True
+
+        def is_displayed(self):
+            self.round_number == 1
+
+If you do this, then subsequent rounds will keep the same group structure as
+round 1. Otherwise, players will be re-grouped by their arrival time
+in each round.
+(``group_by_arrival_time`` copies the group structure to future rounds.)
+
+Notes:
+-   ``id_in_group`` is not necessarily assigned in the order players arrived at the page.
+-   ``group_by_arrival_time`` can only be used if the wait page is the first page in ``page_sequence``
+-   If you use ``is_displayed`` on a page with ``group_by_arrival_time``,
+    it should only be based on the round number. Don't use ``is_displayed``
+    to show the page to some players but not others.
+
+is_displayed()
+~~~~~~~~~~~~~~
 
 Works the same way as with regular pages.
 If this returns ``False`` then the player skips the wait page.

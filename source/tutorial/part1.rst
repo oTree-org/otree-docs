@@ -377,6 +377,11 @@ In these situations, look to see if any of your code is contained in the traceba
 Above we can see that the traceback goes through the file ``/Users/chris/oTree/public_goods/views.py``,
 which is part of my project. The bug is on line 108, as indicated.
 
+If you can't figure out the cause of the error,
+you can ask a question on the oTree
+`discussion group <https://groups.google.com/forum/#!forum/otree>`__.
+
+
 Make changes while the server is running
 ----------------------------------------
 
@@ -429,5 +434,3 @@ Now, when you create a new session and open the start links,
 it will play automatically.
 
 Bots can do many more things; to learn more, see the section :ref:`bots`.
-
-Or, proceed to the next part of the tutorial.

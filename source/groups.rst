@@ -398,6 +398,11 @@ For example:
         def is_displayed(self):
             return self.round_number == 1
 
+Group by arrival time
+~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`group_by_arrival_time`.
+
 Example: re-matching by rank
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

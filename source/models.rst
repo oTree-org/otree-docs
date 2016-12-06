@@ -47,9 +47,7 @@ The most commonly used ones are ``CharField`` (for text),
 ``FloatField`` (for real numbers),
 ``BooleanField`` (for true/false values),
 ``IntegerField``, and ``PositiveIntegerField``.
-We recommend using ``FloatField`` instead of ``DecimalField``,
-because it's easier to use;
-you should only use ``DecimalField`` if you understand how it is different
+Don't use ``DecimalField`` unless you understand how it is different
 from ``FloatField`` and have a specific need for it.
 
 Additionally, oTree has ``CurrencyField``; see :ref:`currency`.

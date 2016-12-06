@@ -14,8 +14,7 @@ Password protection
 
 When you first install oTree, The entire admin interface is accessible
 without a password. However, when you are ready to deploy to your audience,
-you should password protect the admin so that visitors and
-participants cannot access sensitive data.
+you should password protect the admin.
 
 If you are launching an experiment and want visitors to only be able to
 play your app if you provided them with a start link, set the
@@ -163,6 +162,68 @@ Notes:
     It's only available when creating a session in "Sessions" or "Rooms".
 
 Also see :ref:`session_config_treatments`.
+
+.. _admin_report:
+
+Customizing the admin interface (admin reports)
+-----------------------------------------------
+
+.. note::
+
+    This is a new feature
+    only available in otree-core 1.1 or higher (Dec 2016).
+
+You can add a custom tab to a session's admin page with any content you want;
+for example:
+
+-   A chart/graph with the game's results
+-   A custom payments page that is different from oTree's built-in one
+
+Here is a screenshot:
+
+.. image:: _static/admin/admin-report.png
+    :align: center
+    :scale: 100 %
+
+To use this feature, we must create a template called ``AdminReport.html``,
+and optionally, a method ``Subsession.vars_for_admin_report``.
+
+Here is a trivial example, where we add an admin report that
+displays a sorted list of payoffs for a given round.
+
+First, we define a method ``vars_for_admin_report`` on the Subsession.
+This works the same way as :ref:`vars_for_template`.
+For example:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+        def vars_for_admin_report(self):
+            payoffs = sorted([p.payoff for p in self.get_players()])
+            return {'payoffs': payoffs}
+
+Then we create a template ``AdminReport.html`` in the same folder as the app's regular
+templates, and display whatever variables were passed in ``vars_for_admin_report``:
+
+.. code-block:: html+django
+
+    <p>Here is the sorted list of payoffs in round {{ subsession.round_number }}</p>
+
+    <ul>
+        {% for payoff in payoffs %}
+            <li>{{ payoff }}</li>
+        {% endfor %}
+    </ul>
+
+Notes:
+-   ``subsession``, ``session``, and ``Constants`` are passed to the template
+    automatically.
+-   ``AdminReport.html`` should not use ``{% block %}`` or ``{% extends %}``  etc.,
+    (unlike regular game page templates). The above example is the full file.
+
+If one or more apps in your session have an ``AdminReport.html``,
+your admin page will have a "Reports" tab. Use the menu to select the app
+and the round number, to see the report for that subsession.
 
 
 Kiosk Mode

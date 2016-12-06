@@ -249,8 +249,11 @@ Install supervisor::
 
     sudo apt-get install supervisor
 
-(If you install supervisor through apt-get, it will be installed as a service,
-and will therefore automatically start when your server boots.)
+If you install supervisor through apt-get, it will be installed as a service,
+and will therefore automatically start when your server boots.
+(You can also install supervisor with pip, but unlike oTree it's only compatible
+with Python 2, so you should install it into your system's Python 2
+installation, rather than your Python 3 virtualenv.)
 
 In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
 ``otree.conf`` with the following content::

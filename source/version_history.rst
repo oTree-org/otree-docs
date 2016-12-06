@@ -4,19 +4,16 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
-.. _v10b:
+.. _v11b:
 
-Version 1.0
-===========
+Version 1.1 beta
+================
 
-Here are the main changes in 1.0:
+Here are the changes in oTree-core 1.1:
 
--   You can configure sessions in the admin interface
-    (modifying ``SESSION_CONFIGS`` parameters without changing the source code).
-    See :ref:`edit_config`.
--   Performance improvements
--   The default for the ``payoff`` field is now ``0``, not ``None``.
-    (Make sure your code doesn't rely on ``payoff`` being ``None``.)
+-   :ref:`group_by_arrival_time`
+-   :ref:`admin_report`
+-   ``botworker`` is automatically launched as part of ``timeoutworker`` or ``runprodserver``
 
 To install, run this (note the ``--pre`` in the command;
 this means "pre-release")::
@@ -34,6 +31,20 @@ To revert back to the stable version of oTree-core::
 
 Please send feedback to chris@otree.org,
 even just to say it works fine.
+
+
+Version 1.0
+===========
+
+Here are the main changes in 1.0:
+
+-   You can configure sessions in the admin interface
+    (modifying ``SESSION_CONFIGS`` parameters without changing the source code).
+    See :ref:`edit_config`.
+-   Performance improvements
+-   The default for the ``payoff`` field is now ``0``, not ``None``.
+    (Make sure your code doesn't rely on ``payoff`` being ``None``.)
+
 
 Version 0.8
 ===========
