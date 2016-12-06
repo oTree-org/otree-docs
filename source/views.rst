@@ -317,6 +317,7 @@ in each round.
 (``group_by_arrival_time`` copies the group structure to future rounds.)
 
 Notes:
+
 -   ``id_in_group`` is not necessarily assigned in the order players arrived at the page.
 -   ``group_by_arrival_time`` can only be used if the wait page is the first page in ``page_sequence``
 -   If you use ``is_displayed`` on a page with ``group_by_arrival_time``,
