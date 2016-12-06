@@ -216,6 +216,7 @@ templates, and display whatever variables were passed in ``vars_for_admin_report
     </ul>
 
 Notes:
+
 -   ``subsession``, ``session``, and ``Constants`` are passed to the template
     automatically.
 -   ``AdminReport.html`` should not use ``{% block %}`` or ``{% extends %}``  etc.,
