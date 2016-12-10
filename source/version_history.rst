@@ -6,31 +6,14 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v11b:
 
-Version 1.1 beta
-================
+Version 1.1
+===========
 
 Here are the changes in oTree-core 1.1:
 
 -   :ref:`group_by_arrival_time`
 -   :ref:`admin_report`
 -   ``botworker`` is automatically launched as part of ``timeoutworker`` or ``runprodserver``
-
-To install, run this (note the ``--pre`` in the command;
-this means "pre-release")::
-
-    pip install -U --pre otree-core
-    otree resetdb
-
-To upgrade to a newer beta release (a new beta is published every couple of days),
-run the same command above.
-
-To revert back to the stable version of oTree-core::
-
-    pip uninstall otree-core
-    pip install otree-core
-
-Please send feedback to chris@otree.org,
-even just to say it works fine.
 
 
 Version 1.0

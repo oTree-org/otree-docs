@@ -226,6 +226,17 @@ If one or more apps in your session have an ``AdminReport.html``,
 your admin page will have a "Reports" tab. Use the menu to select the app
 and the round number, to see the report for that subsession.
 
+Tip: if you are displaying the same chart in the admin report and participant pages,
+you can do something like this:
+
+.. code-block:: python
+
+    class Results(Page):
+
+        def vars_for_template(self):
+            return self.subsession.vars_for_admin_report()
+
+Likewise, you can reuse ``AdminReport.html`` in the participant template with an ``{% include %}``.
 
 Kiosk Mode
 ----------
