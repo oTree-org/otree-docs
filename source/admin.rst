@@ -219,8 +219,8 @@ Notes:
 
 -   ``subsession``, ``session``, and ``Constants`` are passed to the template
     automatically.
--   ``AdminReport.html`` should not use ``{% block %}`` or ``{% extends %}``  etc.,
-    (unlike regular game page templates). The above example is the full file.
+-   ``AdminReport.html`` does not need to use ``{% block %}`` or ``{% extends %}``  etc.
+    The above example is valid as the full contents of ``AdminReport.html``.
 
 If one or more apps in your session have an ``AdminReport.html``,
 your admin page will have a "Reports" tab. Use the menu to select the app
