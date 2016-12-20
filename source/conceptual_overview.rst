@@ -74,8 +74,8 @@ the participant would be represented as 2 different players:
 What is "self"?
 ---------------
 
-In Python, ``self`` refers to the object whose class you are
-currently in. If you are ever wondering what ``self`` means in a particular context,
+In Python, ``self`` is an instance of the class you're currently under.
+If you are ever wondering what ``self`` means in a particular context,
 scroll up until you see the name of the class.
 
 In the below example, ``self`` refers to a ``Player`` object:

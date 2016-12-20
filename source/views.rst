@@ -300,6 +300,15 @@ might drop out (e.g. online experiments,
 or experiments with consent pages that let the participant quit early), or
 sessions where some participants take much longer than others.
 
+A typical way to use ``group_by_arrival_time`` is to put it after an app
+that filters out participants. For example, if your session has a consent page
+that gives participants the chance to opt out of the study, you can make a "consent" app
+that just contains the consent pages, and
+then have an ``app_sequence`` like ``['consent', 'my_game']``,
+where ``my_game`` uses ``group_by_arrival_time``.
+This means that if someone opts out in ``consent``,
+they will be excluded from the grouping in ``my_game``.
+
 If a game has multiple rounds,
 you may want to only group by arrival time in round 1:
 
@@ -347,11 +356,9 @@ by setting the ``title_text`` and ``body_text`` attributes, e.g.:
         title_text = "Custom title text"
         body_text = "Custom body text"
 
-To customize further, such as adding HTML content,
-you can set the ``template_name`` attribute to reference an HTML file
-that extends ``otree/WaitPage.html``.
-
-For example, save this to ``my_app/templates/my_app/MyWaitPage.html``:
+You can also make a custom wait page template.
+For example, save this to ``my_app/templates/my_app/MyWaitPage.html``
+(this template must extend 'otree/WaitPage.html'):
 
 .. code-block:: html+django
 

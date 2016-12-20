@@ -18,11 +18,7 @@ every time something is changed.
 Running tests
 -------------
 
-oTree tests entire sessions, rather that individual apps in isolation.
-This is to make sure the entire session runs, just as participants will
-play it in the lab.
-
-Let's say you want to test the session named ``ultimatum`` in
+Let's say you want to test the session config named ``ultimatum`` in
 ``settings.py``. To test, open your terminal
 and run the following command from your project's root directory:
 

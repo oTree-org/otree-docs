@@ -82,12 +82,16 @@ which persists across apps (see :ref:`participants_and_players`).
 ``participant.vars`` is is a dictionary that can store any data.
 For example, you can set an attribute like this:
 
-    self.participant.vars['first name'] = 'John'
+    self.participant.vars['name'] = 'John'
 
 Later in the session (e.g. in a separate app),
 you can retrieve it like this::
 
-    self.participant.vars['first name'] # returns 'John'
+    self.participant.vars['name'] # returns 'John'
+
+Since vars is a Python dict, you can use ``.get()``,
+e.g. ``self.participant.vars.get('my_var', '')``,
+or you can test if ``'my_var'`` exists with ``'my_var' in self.participant.vars``.
 
 As described :ref:`here <object_model>`, the current participant can be
 accessed from a ``Page`` or ``Player``:
