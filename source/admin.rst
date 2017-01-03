@@ -185,13 +185,13 @@ Here is a screenshot:
     :align: center
     :scale: 100 %
 
-To use this feature, we must create a template called ``AdminReport.html``,
+To use this feature, you create a template called ``AdminReport.html``,
 and optionally, a method ``Subsession.vars_for_admin_report``.
 
 Here is a trivial example, where we add an admin report that
 displays a sorted list of payoffs for a given round.
 
-First, we define a method ``vars_for_admin_report`` on the Subsession.
+First, define a method ``vars_for_admin_report`` on the Subsession.
 This works the same way as :ref:`vars_for_template`.
 For example:
 
@@ -202,7 +202,7 @@ For example:
             payoffs = sorted([p.payoff for p in self.get_players()])
             return {'payoffs': payoffs}
 
-Then we create a template ``AdminReport.html`` in the same folder as the app's regular
+Then create a template ``AdminReport.html`` in the same folder as the app's regular
 templates, and display whatever variables were passed in ``vars_for_admin_report``:
 
 .. code-block:: html+django

@@ -28,16 +28,16 @@ If you created an old oTree project
 with Python 2 and would like to migrate to Python 3,
 follow the instructions :ref:`here <py3-migration>`.
 
-If you already have Python 3.5 installed
+If you already have Python 3.6 installed
 (check by entering ``pip3 -V`` at your command prompt),
 you can skip the below section. Or, uninstall your existing version of Python,
 and proceed with the below steps.
 
 
-Install Python 3.5 (Windows)
+Install Python 3.6 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download and install `Python 3.5 <https://www.python.org/downloads/release/python-351/>`__.
+Download and install `Python 3.6 <https://www.python.org/downloads/release/python-360/>`__.
 Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png
@@ -49,12 +49,12 @@ Once setup is done, open PowerShell and enter::
 It will output a line that gives the version of Python at the end;
 this should match the version of Python you just installed.
 
-Install Python 3.5 (Mac OSX)
+Install Python 3.6 (Mac OSX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although Mac OSX comes pre-installed with Python, we recommend not using the pre-installed Python,
 and instead installing Python through Homebrew.
-However, if you already have Python 3.5 installed through Conda, that should be OK.
+However, if you already have Python 3.6 installed through Conda, that should be OK.
 To install Python 3 via Homebrew:
 
 * Open your Terminal and run:
@@ -94,7 +94,7 @@ this should match the version of Python you just installed.
 Install Python (Linux/UNIX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We recommmend installing using your system's package manager to install Python 3.5.
+We recommmend installing using your system's package manager to install Python 3.6.
 If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
 
 More information in the :ref:`Linux server setup <server-ubuntu>` section.
@@ -113,7 +113,7 @@ On Windows you might see an error like this about Twisted and ``vcvarsall.bat``:
 
     error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
 
-On Python 3.5, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
+On Python 3.6, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
 
 
 Running oTree

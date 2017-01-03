@@ -301,6 +301,12 @@ In the Heroku dashboard, click on your app's "Resources" tab,
 and in the "dynos" section, select "Upgrade to Hobby".
 Then select either "Hobby" or "Professional".
 
+You can also increase the number of web dynos,
+but if you do so, you may need to upgrade your Redis plan also,
+because more dynos means more Redis connections.
+
+You should not increase the number of timeoutworker dynos.
+
 Upgrade Redis (optional)
 ++++++++++++++++++++++++
 

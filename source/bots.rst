@@ -59,12 +59,6 @@ Writing tests
     you should do a search-and-replace for ``self.submit(`` and replace it with
     ``yield`` followed by a space.
 
-    The reason for this change in syntax is that using the Python ``yield``
-    keyword removes some limitations the bots previously had,
-    and helps the bots run more flexibly.
-    For example, the ``validate_play`` method is no longer required;
-    you can now put assert statements directly in ``play_round``.
-
 Submitting pages
 ~~~~~~~~~~~~~~~~
 
@@ -433,8 +427,6 @@ Basic use
 -   Make sure you have programmed a bot in your ``tests.py`` as described above
     (preferably using ``yield`` rather than ``self.submit``).
 -   In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
--   If using Heroku, change your ``Procfile`` so that the ``webandworkers``
-    command has a ``--botworker`` flag: ``otree webandworkers --botworker``.
 -   Run your server and create a session. The pages will auto-play
     with browser bots, once the start links are opened.
 
@@ -471,12 +463,6 @@ It could be Heroku or any other server.
 First, read the instructions above for running the command-line launcher
 locally.
 
-If using Heroku, change your ``Procfile`` so that the ``webandworkers``
-command has a ``--botworker`` flag: ``otree webandworkers --botworker``.
-
-If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
-to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
-
 Deploy your code to the server. Then close all Chrome windows,
 and then run this command::
 
@@ -491,11 +477,8 @@ Command-line browser bots: tips & tricks
 (If the server is running on a host/port other than the usual ``http://127.0.0.1:8000``,
 you need to pass ``--server-url`` as shown above.)
 
-If using ``runprodserver`` (e.g. non-Heroku server), add ``--botworker``
-to the ``runprodserver`` command, e.g. ``otree runprodserver --botworker``.
-
 You will get the best performance if you use PostgreSQL or MySQL rather than
-SQLite, and use ``runprodserver --botworker`` rather than ``runserver``.
+SQLite, and use ``runprodserver`` rather than ``runserver``.
 
 On my PC, running the default public_goods session with 3 participants takes about 4-5 seconds,
 and with 9 participants takes about 10 seconds.
