@@ -82,6 +82,7 @@ Contents:
     django.rst
     ztree.rst
     version_history.rst
+    community.rst
 
 
 

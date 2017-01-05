@@ -4,7 +4,7 @@ Migrating an existing project to Python 3
 =========================================
 
 If you already created an oTree project with Python 2 and would like to switch to Python 3,
-you should first install Python 3.5,
+you should first install Python 3.6,
 and then make the following changes to your project files.
 
 Fixing syntax

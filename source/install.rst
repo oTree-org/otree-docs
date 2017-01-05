@@ -38,6 +38,7 @@ Install Python 3.6 (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and install `Python 3.6 <https://www.python.org/downloads/release/python-360/>`__.
+(Python 3.4 and 3.5 are also OK.)
 Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png
@@ -52,9 +53,12 @@ this should match the version of Python you just installed.
 Install Python 3.6 (Mac OSX)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Although Mac OSX comes pre-installed with Python, we recommend not using the pre-installed Python,
-and instead installing Python through Homebrew.
-However, if you already have Python 3.6 installed through Conda, that should be OK.
+You should install Python 3.6
+
+Although Mac OSX comes pre-installed with Python, it is version 2.7,
+which is not supported by oTree.
+You should install Python 3.4 or higher. We recommend installing it with Homebrew.
+(However, if you already have Python 3.6 installed through Conda, that should be OK.)
 To install Python 3 via Homebrew:
 
 * Open your Terminal and run:
