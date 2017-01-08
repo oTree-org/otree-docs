@@ -93,8 +93,36 @@ Here are the required constants:
 
 -  ``num_rounds`` (described in :ref:`rounds`)
 
-You should only use ``Constants`` to store actual constants -- things that never change.
-If you want a "global" variable, you should set a field on the subsession, or use :ref:`session_vars`.
+Don't modify values in ``Constants``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As the name suggests, ``Constants`` is for holding constant values -- i.e.
+values that never change.
+
+For example, let's say your ``Constants`` has an attribute ``my_dict``:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        my_dict = {}
+
+And you try to modify ``my_dict``:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+        def before_session_starts(self):
+            # wrong
+            Constants.my_dict['a'] = 1
+
+As explained in the section :ref:`how_otree_executes_code`,
+``Constants`` is a global variable,
+so when you modify it above,
+you are actually modifying it for all participants in all sessions.
+This can lead to all kinds of unexpected behavior.
+
+Instead, if you want a variable that is the same for all players in your session,
+you should set a field on the subsession, or use :ref:`session_vars`.
 
 
 Subsession
@@ -345,3 +373,48 @@ although you will have to write the code to create/update/save
 them yourself, rather than relying on oTree.
 See Markus Konrad's excellent article
 `Using Custom Data Models in oTree <https://datascience.blog.wzb.eu/2016/10/31/using-custom-data-models-in-otree/>`__.
+
+.. _how_otree_executes_code:
+
+How oTree executes your code
+----------------------------
+
+Any code that is not inside a method
+is basically *global* and *will only be executed once* --
+when the server starts.
+
+Some people write code mistakenly thinking that it will be re-executed for each
+new session. For example, someone who wants to generate a random probability that a coin flip will
+come up "heads" might do this in models.py:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        heads_probability = random.random() # wrong
+
+When the server starts, it loads models.py,
+and executes the ``random.random()`` only once.
+It will evaluate to some random number, for example "0.257291".
+This means you have basically written this:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        heads_probability = 0.257291
+
+Because ``Constants`` is a global variable, that value 0.257291 will now be shared
+by all players in all sessions.
+
+For the same reason, this will not work either:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+
+        heads_probability = models.FloatField(
+            # wrong
+            initial=random.random()
+        )
+
+The solution is to generate the random variables inside a method,
+such as :ref:`before_session_starts`.

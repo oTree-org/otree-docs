@@ -2,7 +2,7 @@ Community resources
 ===================
 
 Here are some oTree related tools and resources that were contributed by oTree users.
-To add items to the list,
+If you know of any others,
 send details to chris@otree.org.
 
 Tools
@@ -18,3 +18,8 @@ Apps
 ----
 
 -   `Bomb Risk Elicitation Task (BRET) <http://www.sciencedirect.com/science/article/pii/S2214635016300120>`__ by Felix Holzmeister
+
+Help & discussion mailing list
+------------------------------
+
+Our Google Groups mailing list is `here <https://groups.google.com/forum/#!forum/otree>`__.

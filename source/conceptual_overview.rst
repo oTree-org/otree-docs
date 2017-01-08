@@ -222,4 +222,3 @@ in your ``views.py``
             self.session.config
 
 
-
