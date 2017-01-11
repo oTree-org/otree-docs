@@ -96,7 +96,7 @@ Here are the required constants:
 Don't modify values in ``Constants``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As the name suggests, ``Constants`` is for holding constant values -- i.e.
+As the name suggests, ``Constants`` is for holding
 values that never change.
 
 For example, let's say your ``Constants`` has an attribute ``my_dict``:

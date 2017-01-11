@@ -11,13 +11,13 @@ you must deploy to a web server.
 
 However, because oTree is based on Django,
 you can use any server or database supported by Django.
-Ubuntu and Windows instructions are available below for more advanced deployments,
+Docker, Ubuntu, and Windows instructions are available below for more advanced deployments,
 or for people who do not wish to use a cloud server.
-
 
 .. toctree::
     :maxdepth: 2
 
     heroku.rst
+    docker.rst
     ubuntu.rst
     windows.rst
