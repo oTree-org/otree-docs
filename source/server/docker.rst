@@ -7,7 +7,7 @@ You can use Docker to run a virtualized oTree
 on your Linux, Windows, or Mac server.
 It's like a virtual machine that already has Postgres, Redis, oTree, and Python
 configured.
-This may be the easiest option for people who want to install oTree on their
+This may be an easy option for people who want to install oTree on their
 own servers.
 
 Below are the steps to use Docker.
@@ -32,7 +32,7 @@ Docker Hub
 ----------
 
 -   Go to `Docker Hub <https://hub.docker.com/>`__ and create an account.
--   Follow `these instructions <https://hub.docker.com/>`__
+-   Follow `these instructions <https://docs.docker.com/docker-hub/builds/>`__
     to create an automated build.
     In summary: in your account settings, go to "Linked Accounts & Services",
     and link your GitHub account.
@@ -67,9 +67,9 @@ Set up Docker on your server
 Docker config files
 ~~~~~~~~~~~~~~~~~~~
 
-In the folder you unzipped in the previous section,
-open ``docker-compose.yaml`` and change the line ``image: otree``
-to your Docker Hub user-name/repository-name, e.g.::
+Find ``docker-compose.yaml`` in the folder you just unzipped
+and change the line with ``image:``
+to use your Docker Hub user-name/repository-name, e.g.::
 
     image: YourDockerUsername/oTree
 
@@ -117,6 +117,11 @@ With Docker, instead of "otree resetdb", you should do::
 
     docker-compose down -v
 
+If you change your ``docker-compose.yaml`` or ``.env``,
+you will need to recreate your container::
+
+    docker-compose up --force-recreate
+
 Sharing a server with other oTree users
 ---------------------------------------
 
@@ -127,7 +132,7 @@ using oTree.
 If users need to run experiments simultaneously,
 then each user should edit their ``.env`` file to set a
 different ``OTREE_PORT``, e.g. 8000, 8001, etc.
-Otherwise, every user can set the ``OTREE_PORT`` to 80.
+
 
 Sentry
 ------
