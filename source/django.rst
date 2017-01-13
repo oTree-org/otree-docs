@@ -82,7 +82,7 @@ In this file, put:
 
     # urls.py
     from django.conf.urls import url
-    from otree.default_urls import urlpatterns
+    from otree.urls import urlpatterns
 
     urlpatterns.append(url(r'^my_view/$', 'my_module.my_view'))
 
@@ -93,3 +93,52 @@ In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you j
 
     # settings.py
     ROOT_URLCONF = 'urls'
+
+Real-time and WebSockets
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+oTree uses `Django channels <https://channels.readthedocs.io/en/stable/>`__
+for real-time (WebSocket) functionality.
+
+If you are comfortable with more advanced programming, you can add your own
+real-time interactions such as chat between players.
+
+First, create a module ``consumers.py`` in one of your apps.
+For each WebSocket,
+you should create a ``connect`` consumer and ``disconnect`` consumer.
+Here we will use a trivial example, taken from the Channels "getting started"
+documentation:
+
+.. code-block:: python
+
+    # In consumers.py
+    from channels import Group
+
+    # Connected to websocket.connect
+    def ws_add(message):
+        message.reply_channel.send({"accept": True})
+        Group("chat").add(message.reply_channel)
+
+    # Connected to websocket.disconnect
+    def ws_disconnect(message):
+        Group("chat").discard(message.reply_channel)
+
+See `otree.channels.consumers <https://github.com/oTree-org/otree-core/blob/master/otree/channels/consumers.py>`__
+for examples of more complex consumers.
+
+Next, create a module ``routing.py`` (either in your project root or in an app)
+and append your routes to oTree's built-in routes:
+
+.. code-block:: python
+
+    from channels.routing import route
+    from myapp.consumers import ws_add, ws_disconnect
+    from otree.channels.routing import channel_routing
+
+    channel_routing += [
+        route("websocket.connect", ws_add, path=r"^/chat"),
+        route("websocket.disconnect", ws_disconnect, path=r"^/chat"),
+    ]
+
+In settings.py, set ``CHANNEL_DEFAULT_ROUTING = 'routing.channel_routes'``
+(this is the dotted path to your ``channel_routes`` variable in ``routing.py``)
