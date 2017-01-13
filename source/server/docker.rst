@@ -51,7 +51,6 @@ into your oTree project directory (next to requirements.txt):
 -   entrypoint.sh
 -   pg_ping.py
 
-
 Then run::
 
     git add .
@@ -71,7 +70,7 @@ Find ``docker-compose.yaml`` in the folder you just unzipped
 and change the line with ``image:``
 to use your Docker Hub user-name/repository-name, e.g.::
 
-    image: YourDockerUsername/oTree
+    image: YourDockerUsername/YourOTreeRepo:latest
 
 Also, open ``.env`` and customize it as you wish.
 You should decide what ``OTREE_PORT`` to use.
@@ -90,12 +89,16 @@ followed by Ctrl+v, Enter, Ctrl+z
 Install Docker Compose on the server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On your server, `install Docker Compose <https://docs.docker.com/compose/install/>`__.
+On your server:
 
-Download your image and start
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Install `Docker Engine <https://docs.docker.com/engine/installation/>`__
+* Install docker-compose: ``pip3 install docker-compose``
 
-From the server command line, login to Docker::
+
+Download and run your image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On your server, login to Docker::
 
     docker login
 

@@ -8,11 +8,12 @@ Command line basics
 
 To use oTree, you need to use PowerShell (Windows) or Terminal (Mac).
 In this documentation, we refer to these programs as your "command prompt" or "command line".
-Sometimes, we write a command prefixed with a ``$`` like this::
+Sometimes, we write a command prefixed with a ``$`` like this example command::
 
-    $ otree resetdb
+    $ echo "hello world"
 
-The ``$`` is not part of the command. You can copy the command (in this example, ``otree resetdb``),
+The ``$`` is not part of the command.
+You can copy the command (in this example, ``echo "hello world"``),
 and then paste it at your command line. (In PowerShell, you should right-click to paste.)
 
 A few tips:
@@ -146,6 +147,15 @@ Reset the database::
 Then run the server::
 
     otree runserver
+
+.. note::
+
+    If Python crashes when you run this command,
+    please send an email to chris@otree.org
+    with your operating system and version of Python.
+    Also, try running ``otree runserver --noreload`` and let me know if that
+    fixes the problem. (The disadvantage of using this command is that you need to
+    manually restart the server each time you make a code change.)
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 You should see the oTree demo site.

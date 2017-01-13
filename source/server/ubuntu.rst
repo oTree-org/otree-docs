@@ -38,7 +38,7 @@ Install apt-get packages
 
 Run::
 
-    sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib redis-server
+    sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib redis-server git
 
 Create a virtualenv
 -------------------
@@ -381,10 +381,10 @@ especially browser bots. See the section :ref:`bots`.
 Sharing a server with other oTree users
 ---------------------------------------
 
-.. note::
-
-    These instructions are preliminary and not fully tested.
-    I welcome feedback/revisions.
+If multiple oTree users need to share an oTree server
+with separate projects, the easiest option might be to use :ref:`Docker <server-docker>`.
+See the section at the bottom of the Docker page about sharing the server.
+Or, you can follow the below instructions
 
 You can share a server with other oTree users;
 you just have to make sure that the code and databases are kept separate,
