@@ -17,16 +17,21 @@ Below are the steps to use Docker.
     These instructions are new, so please send feedback to chris@otree.org.
 
 
-GitHub
-------
+GitHub/BitBucket
+----------------
 
 (Skip this step if you already have a GitHub repo.)
+
+(Note: if you need your repository to be private,
+you should either use BitBucket instead of GitHub,
+or use a GitHub paid plan.)
 
 Create a `GitHub <https://github.com/>`__ account,
 then create a repository for your project.
 Leave the box unchecked for "Initialize this repository with a README".
 After creating the repository, follow the instructions on the next page
 to push your code to GitHub.
+
 
 Docker Hub
 ----------
@@ -41,9 +46,8 @@ Docker Hub
 Add Docker files and push to GitHub
 -----------------------------------
 
-Unzip `this file <https://github.com/oTree-org/otree-docker/archive/master.zip>`__.
-
-Put the following files
+Unzip `this file <https://github.com/oTree-org/otree-docker/archive/master.zip>`__
+and then move the following files
 into your oTree project directory (next to requirements.txt):
 
 -   .dockerignore
@@ -58,7 +62,6 @@ Then run::
     git push origin master
 
 Go to Docker Hub and ensure that the automatic build you set up was triggered.
-
 
 Set up Docker on your server
 ----------------------------
@@ -75,32 +78,49 @@ to use your Docker Hub user-name/repository-name, e.g.::
 Also, open ``.env`` and customize it as you wish.
 You should decide what ``OTREE_PORT`` to use.
 You should use port 80 if you are a superuser,
-and especially if your site needs to be accessed from outside the network
-firewall. Otherwise, you can use a higher port number like 8000, 8001, etc.
+and especially if your site needs to be accessed from the internet.
+Otherwise, you can use a higher port number like 8000, 8001, etc.
 
 Then, login to your server, and create a folder to hold your docker files::
 
     mkdir otree-docker
+    cd otree-docker
 
 Move ``.env`` and ``docker-compose.yaml`` into this folder,
 either by SFTP or by copying the file and doing ``cat >docker-compose.yaml``
-followed by Ctrl+v, Enter, Ctrl+z
+followed by right-click, Enter, Ctrl+z
 
 Install Docker Compose on the server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Note: These instructions assume you are installing Docker on Ubuntu Linux.
+
 On your server:
 
-* Install `Docker Engine <https://docs.docker.com/engine/installation/>`__
-* Install docker-compose: ``pip3 install docker-compose``
+Install `Docker Engine <https://docs.docker.com/engine/installation/>`__.
 
+    sudo apt-get update
+    sudo apt install docker.io
+
+Install docker-compose::
+
+    sudo apt install python3-pip
+    pip3 install docker-compose
+
+Allow docker to be run without ``sudo``::
+
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+
+Then logout for the changes to take effect.
+
+Once you have logged back into your server, login to Docker with your Docker Hub
+credentials::
+
+    docker login
 
 Download and run your image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-On your server, login to Docker::
-
-    docker login
 
 On DockerHub, go to your "Build Details" page,
 and check the status of your build.

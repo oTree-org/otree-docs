@@ -199,7 +199,9 @@ Then push to this remote::
 Reset the database on the server
 --------------------------------
 
-From the directory with your oTree code,
+On the server, ``cd`` to the ``oTree`` directory.
+Do ``ls`` to verify that your files were indeed transferred when you did
+``git push`` in the previous step.
 install the requirements and reset the database::
 
     pip3 install -r requirements.txt
