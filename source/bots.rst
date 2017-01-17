@@ -429,6 +429,7 @@ Basic use
 -   In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
 -   Run your server and create a session. The pages will auto-play
     with browser bots, once the start links are opened.
+-   If using Heroku, make sure the ``timeoutworker`` dyno is enabled.
 
 Command-line browser bots (running locally)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

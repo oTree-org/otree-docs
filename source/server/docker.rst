@@ -46,14 +46,13 @@ Docker Hub
 Add Docker files and push to GitHub
 -----------------------------------
 
-Unzip `this file <https://github.com/oTree-org/otree-docker/archive/master.zip>`__
-and then move the following files
-into your oTree project directory (next to requirements.txt):
+Download these files (right click "save as")
+into your oTree project directory, next to requirements.txt:
 
--   .dockerignore
--   Dockerfile
--   entrypoint.sh
--   pg_ping.py
+-   `Dockerfile <https://raw.githubusercontent.com/oTree-org/otree-docker/master/Dockerfile>`__
+-   `entrypoint.sh <https://raw.githubusercontent.com/oTree-org/otree-docker/master/entrypoint.sh>`__
+-   `pg_ping.py <https://raw.githubusercontent.com/oTree-org/otree-docker/master/pg_ping.py>`__
+-   `.dockerignore <https://raw.githubusercontent.com/oTree-org/otree-docker/master/.dockerignore>`__
 
 Then run::
 
@@ -69,26 +68,26 @@ Set up Docker on your server
 Docker config files
 ~~~~~~~~~~~~~~~~~~~
 
-Find ``docker-compose.yaml`` in the folder you just unzipped
-and change the line with ``image:``
-to use your Docker Hub user-name/repository-name, e.g.::
-
-    image: YourDockerUsername/YourOTreeRepo:latest
-
-Also, open ``.env`` and customize it as you wish.
-You should decide what ``OTREE_PORT`` to use.
-You should use port 80 if you are a superuser,
-and especially if your site needs to be accessed from the internet.
-Otherwise, you can use a higher port number like 8000, 8001, etc.
-
-Then, login to your server, and create a folder to hold your docker files::
+Login to your server, and create a folder::
 
     mkdir otree-docker
     cd otree-docker
 
-Move ``.env`` and ``docker-compose.yaml`` into this folder,
-either by SFTP or by copying the file and doing ``cat >docker-compose.yaml``
-followed by right-click, Enter, Ctrl+z
+Save these files to that folder:
+
+-   `docker-compose.yaml <https://raw.githubusercontent.com/oTree-org/otree-docker/master/docker-compose.yaml>`__
+-   `.env <https://raw.githubusercontent.com/oTree-org/otree-docker/master/.env>`__
+
+Open ``docker-compose.yaml`` and change the line with ``image:``
+to use your Docker Hub user-name/repository-name, e.g.::
+
+    image: YourDockerUsername/YourOTreeRepo:latest
+
+Open ``.env``, and customize it as you wish.
+You should decide what ``OTREE_PORT`` to use.
+You should use port 80 if you are a superuser,
+and especially if your site needs to be accessed from the internet.
+Otherwise, you can use a higher port number like 8000, 8001, etc.
 
 Install Docker Compose on the server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,7 +96,7 @@ Note: These instructions assume you are installing Docker on Ubuntu Linux.
 
 On your server:
 
-Install `Docker Engine <https://docs.docker.com/engine/installation/>`__.
+Install Docker Engine::
 
     sudo apt-get update
     sudo apt install docker.io
