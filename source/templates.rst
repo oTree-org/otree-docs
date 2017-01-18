@@ -278,9 +278,13 @@ and find the chart type that you want to make.
 Then click "edit in JSFiddle" to edit it to your liking,
 using dummy data.
 
-Then, copy-paste the JS into your template,
-and replace the hardcoded data
-hardcoded data like ``series`` and ``categories`` with dynamically generated variables.
+Then, copy-paste the JS and HTML into your template,
+and load the page. If you don't see your chart, it may be because
+your HTML is missing the ``<div>`` that your JS code is trying to insert the chart
+into.
+
+Once your chart is loading properly, you can replace the hardcoded data
+like ``series`` and ``categories`` with dynamically generated variables.
 
 For example, change this::
 
@@ -313,8 +317,8 @@ If you want to put LaTeX formulas in your app,
 you can try `KaTeX <http://khan.github.io/KaTeX/>`__.
 
 
-oTree on mobile devices
-~~~~~~~~~~~~~~~~~~~~~~~
+Mobile devices
+~~~~~~~~~~~~~~
 
 oTree's HTML interface is based on `Bootstrap <http://getbootstrap.com/components/>`__,
 which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
@@ -322,8 +326,8 @@ which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
 Bootstrap also tries to shows a "mobile friendly" version
 when viewed on a smartphone or tablet.
 
-Custom template filters
-~~~~~~~~~~~~~~~~~~~~~~~
+Template filters
+~~~~~~~~~~~~~~~~
 
 In addition to the filters available with Django's template language,
 oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
