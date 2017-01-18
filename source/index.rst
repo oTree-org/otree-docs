@@ -70,8 +70,6 @@ Contents:
     rooms.rst
     settings.rst
     server/intro.rst
-    server.rst
-    server-ubuntu.rst
     bots.rst
     localization.rst
     manual_testing.rst

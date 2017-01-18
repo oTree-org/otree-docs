@@ -31,7 +31,7 @@ then ``otree runserver``,
 open your browser to the admin interface, and create a new session.
 You would select "My Session Config" as the configuration to use.
 
-For more info on how to use ``SESSION_CONFIGS``, see :ref:`edit_session_config`
+For more info on how to use ``SESSION_CONFIGS``, see :ref:`edit_config`
 and :ref:`session_config_treatments`.
 
 SESSION_CONFIG_DEFAULTS

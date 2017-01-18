@@ -135,16 +135,16 @@ If you don't use ``safe_json``,
 the variable might not be valid JavaScript.
 Examples:
 
-=========  ==================================  ==================
-In Python  In template, without ``safe_json``  With ``safe_json``
-=========  ==================================  ==================
-None       None                                null
-3.14       3,14 (depends on LANGUAGE_CODE)     3.14
-c(3.14)    $3.14 or $3,14                      3.14
-True       True                                true
-{'a': 1}   {&#39;a&#39;: 1}                    {"a": 1}
-['a']      [&#39;a&#39;]                       ["a"]
-========== ==================================  ==================
+=============  ===================================  ==================
+In Python      In template, without safe_json       With safe_json
+=============  ===================================  ==================
+``None``       ``None``                             ``null``
+``3.14``       ``3,14`` (depends on LANGUAGE_CODE)  ``3.14``
+``c(3.14)``    ``$3.14`` or ``$3,14``               ``3.14``
+``True``       ``True``                             ``true``
+``{'a': 1}``   ``{&#39;a&#39;: 1}``                 ``{"a": 1}``
+``['a']``      ``[&#39;a&#39;]``                    ``["a"]``
+=============  ===================================  ==================
 
 ``safe_json`` converts to JSON and marks the data as safe (trusted)
 so that Django does not auto-escape it.
