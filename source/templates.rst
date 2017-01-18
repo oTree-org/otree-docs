@@ -46,6 +46,9 @@ the file ``_templates/global/Base.html``.
 JavaScript and CSS
 ~~~~~~~~~~~~~~~~~~
 
+Where to put scripts and CSS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 If you have JavaScript and/or CSS in your page, you should put them in blocks called ``scripts``
 and ``styles``, respectively. They should be located outside the ``content`` block, like this:
 
@@ -75,9 +78,6 @@ and ``styles``, respectively. They should be located outside the ``content`` blo
         <!-- define a script -->
 
         <script>
-        jQuery(document).ready(function ($) {
-            var PRIVATE_VALUE = {{ player.private_value.to_number|escapejs }};
-
             var input = $('#id_bid_amount');
 
             $('.bid-slider').slider({
@@ -101,6 +101,53 @@ The reasons for putting scripts and styles in separate blocks are:
 -   jQuery may only be loaded at the bottom of the page,
     so if you reference the jQuery ``$`` variable in the ``content`` block,
     it could be undefined.
+
+.. _safe_json:
+
+Passing data from Python to JavaScript (safe_json)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you need to generate a variable that will be used in JavaScript code,
+you should first pass it through the ``safe_json()`` function
+to convert the data to JavaScript format (JSON).
+
+For example, if you need to pass the player's payoff to a script:
+
+.. code-block:: HTML+django
+
+    <script>
+        var payoff = {{ payoff }};
+        ...
+    </script>
+
+You should use ``safe_json``:
+
+.. code-block:: python
+
+    from otree.api import safe_json
+
+    class MyPage(Page):
+        def vars_for_template(self):
+            return {'payoff': safe_json(self.player.payoff)}
+
+
+If you don't use ``safe_json``,
+the variable might not be valid JavaScript.
+Examples:
+
+=========  ==================================  ==================
+In Python  In template, without ``safe_json``  With ``safe_json``
+=========  ==================================  ==================
+None       None                                null
+3.14       3,14 (depends on LANGUAGE_CODE)     3.14
+c(3.14)    $3.14 or $3,14                      3.14
+True       True                                true
+{'a': 1}   {&#39;a&#39;: 1}                    {"a": 1}
+['a']      [&#39;a&#39;]                       ["a"]
+========== ==================================  ==================
+
+``safe_json`` converts to JSON and marks the data as safe (trusted)
+so that Django does not auto-escape it.
 
 Customizing the base template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,9 +260,7 @@ Graphs and charts with HighCharts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can use `HighCharts <http://www.highcharts.com/demo>`__,
-to draw pie charts, line graphs, bar charts, time series,
-and other types of plots.
-
+to draw pie charts, line graphs, bar charts, time series, etc.
 Some of oTree's sample games use HighCharts.
 
 First, include the HighCharts JavaScript in your page's ``scripts`` block::
@@ -226,27 +271,40 @@ First, include the HighCharts JavaScript in your page's ``scripts`` block::
 
 If you will be using HighCharts in many places, you can also put it in
 ``app_scripts`` or ``global_scripts``; see above for more info.
-(But note that HighCharts slows down page rendering time somewhat.)
+(But note that HighCharts can make your pages slower.)
 
-To make a chart, first go to the HighCharts `demo site <http://www.highcharts.com/demo>`__
+Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__
 and find the chart type that you want to make.
-Then click "edit in JSFiddle" to edit it to your liking.
+Then click "edit in JSFiddle" to edit it to your liking,
+using dummy data.
 
-To pass data like a list of values from Python to HighCharts, you should
-first pass it through the ``otree.api.safe_json()`` function. This
-converts to the correct JSON syntax and also uses ``mark_safe`` for the
-template.
+Then, copy-paste the JS into your template,
+and replace the hardcoded data
+hardcoded data like ``series`` and ``categories`` with dynamically generated variables.
 
-Example:
+For example, change this::
 
-.. code-block:: python
+    series: [{
+        name: 'Tokyo',
+        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+    }, {
+        name: 'New York',
+        data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+    }]
 
-    >>> a = [0, 1, 2, 3, 4, None]
-    >>> from otree.api import safe_json
-    >>> safe_json(a)
-    '[0, 1, 2, 3, 4, null]'
+To this::
 
+    series: {{ highcharts_series }}
 
+In the page's ``vars_for_template``, generate the nested data structure in Python
+(the above example is a list of dictionaries),
+pass it through :ref:`safe_json <safe_json>` to convert to JavaScript,
+and pass it to the template.
+
+If your chart is not loading, click "View Source" in your browser
+and check if there is something wrong with the data you dynamically generated.
+If it looks all garbled like ``{&#39;a&#39;: 1}``,
+you may have forgotten to use :ref:`safe_json <safe_json>`.
 
 LaTeX
 ^^^^^

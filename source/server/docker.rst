@@ -148,8 +148,8 @@ Sharing a server with other oTree users
 ---------------------------------------
 
 If multiple users need to share a server,
-you should create a different Unix user account for each person
-using oTree.
+you just need to create a separate folder with ``docker-compose.yaml`` and ``.env``
+for each user.
 
 If users need to run experiments simultaneously,
 then each user should edit their ``.env`` file to set a
