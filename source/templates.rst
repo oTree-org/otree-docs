@@ -160,6 +160,12 @@ you should modify the template ``_templates/global/Base.html``.
 You should put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
 and any styles inside ``{% block global_styles %}...{% endblock %}``.
 
+.. note::
+
+    There was a bug in recent versions of otree-core
+    that prevented ``global_scripts`` or ``global_styles``
+    from working properly. You should upgrade to the latest release
+    (bug fixed on 2017-01-19).
 
 For one app
 ^^^^^^^^^^^
