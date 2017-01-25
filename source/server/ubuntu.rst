@@ -340,12 +340,35 @@ Instead it requires an ASGI server, and currently the main/best one is Daphne.
 Apache and Nginx do not have ASGI server implementations, so you cannot use
 Apache or Nginx as your primary web server.
 
-You could still use Apache/Nginx as a reverse proxy, for example if you are
-trying to optimize performance, or if you need features like SSL or proxy buffering.
-However, in terms of performance, Daphne alone should be sufficient for many people.
-And oTree uses `Whitenoise <http://whitenoise.evans.io/en/stable/index.html>`__
-to serve static files (e.g. images, JavaScript, CSS). This is reasonably
-efficient, so for many people a reverse proxy will not be necessary.
+However, you still might want to use Apache/Nginx as a reverse proxy, for the following reasons:
+
+-   You are trying to optimize serving of static files
+    (though oTree uses Whitenoise, which is already fairly efficient)
+-   You need to host other websites on the same server, and can only use port 80
+-   You need features like SSL or proxy buffering
+
+Apache
+``````
+If you want to run oTree on a subdomain of your host so that you can share
+port 80 with other sites hosted on the same machine,
+you can try the below configuration.
+The below example assumes oTree server is running on port 8000.
+For HTTPS, change ``80`` to ``443`` ``ws`` prefix to ``wss``::
+
+    <VirtualHost *:80>
+            ServerName otree.domain.com
+            ProxyRequests Off
+            ProxyPreserveHost On
+            ProxyPass / http://localhost:8080/
+            ProxyPassReverse / http://localhost:8080/
+
+            RewriteEngine On
+            RewriteCond %{HTTP:Connection} Upgrade [NC]
+            RewriteCond %{HTTP:Upgrade} websocket [NC]
+            RewriteRule /(.*) ws://127.0.0.1:8000/$1 [P,L]
+    </VirtualHost>
+
+
 
 Troubleshooting
 ---------------

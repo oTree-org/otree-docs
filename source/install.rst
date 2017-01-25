@@ -114,11 +114,11 @@ Install oTree
 Windows issue: vcvarsall.bat and Visual C++
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-On Windows you might see an error like this about Twisted and ``vcvarsall.bat``::
+If you get this Windows error about Twisted and ``vcvarsall.bat``::
 
     error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
 
-On Python 3.6, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
+To fix this, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
 
 
 Running oTree
@@ -153,9 +153,7 @@ Then run the server::
     If Python crashes when you run this command,
     please send an email to chris@otree.org
     with your operating system and version of Python.
-    Also, try running ``otree runserver --noreload`` and let me know if that
-    fixes the problem. (The disadvantage of using this command is that you need to
-    manually restart the server each time you make a code change.)
+    If you're using PowerShell, try using CMD instead.
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 You should see the oTree demo site.

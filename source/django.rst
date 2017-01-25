@@ -94,6 +94,9 @@ In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you j
     # settings.py
     ROOT_URLCONF = 'urls'
 
+If you need to access oTree's models, you will have to handle querying and saving
+objects yourself.
+
 Real-time and WebSockets
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -124,7 +127,8 @@ documentation:
         Group("chat").discard(message.reply_channel)
 
 See `otree.channels.consumers <https://github.com/oTree-org/otree-core/blob/master/otree/channels/consumers.py>`__
-for examples of more complex consumers.
+for examples of more complex consumers. If you need to access oTree's models in your consumers,
+you will have to handle querying and saving objects yourself.
 
 Next, create a module ``routing.py`` (either in your project root or in an app)
 and append your routes to oTree's built-in routes:
@@ -142,3 +146,4 @@ and append your routes to oTree's built-in routes:
 
 In settings.py, set ``CHANNEL_DEFAULT_ROUTING = 'routing.channel_routes'``
 (this is the dotted path to your ``channel_routes`` variable in ``routing.py``)
+
