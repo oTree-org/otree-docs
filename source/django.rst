@@ -147,3 +147,68 @@ and append your routes to oTree's built-in routes:
 In settings.py, set ``CHANNEL_ROUTING = 'routing.channel_routing'``
 (this is the dotted path to your ``channel_routing`` variable in ``routing.py``)
 
+Chat box
+^^^^^^^^
+
+A number of people have expressed interest in implementing a chat box for oTree.
+Here are some ideas, based on how I would implement it myself.
+
+I would implement a template tag that would be used like this::
+
+    {% chatbox %}
+
+It could take some optional parameters like::
+
+    {% chatbox room=my_group_id nickname=player.role %}
+
+``room`` is an ID for the room.
+A chat room is typically scoped to a group,
+which can be uniquely identified by the group's primary key
+in combination with the app name (or ``Constants.name_in_url).
+If someone wants a different scope (e.g. it should be scoped to the current page
+or to just a few members of the group), they can override the ``room`` arg.
+
+So, your template tag could look like the below
+(see the `Django docs on custom template tags <https://docs.djangoproject.com/en/1.10/howto/custom-template-tags/>`__):
+
+.. code-block:: python
+
+    @register.inclusion_tag('mychatapp/chat.html', takes_context=True)
+    def chatbox(context, *args, **kwargs):
+        player = context['player']
+        group = context['group']
+        Constants = context['Constants']
+
+        context.update(kwargs)
+
+        # in case room and nickname are omitted from kwargs
+        context.setdefault({
+            'room': '{}-{}'.format(Constants.name_in_url, group.id),
+            'nickname': 'Player {}'.format(player.id_in_group),
+        })
+
+        return context
+
+``chat.html`` would contain the HTML/CSS/JS of the chat widget.
+Consider implementing the widget with React or Web Components/Polymer.
+There are many examples of chat rooms built with Django channels,
+for example `this <https://github.com/andrewgodwin/channels-examples/blob/master/multichat/chat/consumers.py>`__.
+
+Each time a message is sent to the server, you should include
+data like ``participant.code``. That way, inside the channels consumer,
+you can create a model instance for the chat message.
+The model schema could look like this:
+
+.. code-block:: python
+
+    from django.db import models
+    from otree.models import Participant, Session
+
+    class ChatMessage(models.Model):
+        session = models.ForeignKey(Session)
+        participant = models.ForeignKey(Participant)
+        timestamp = models.DateTimeField(auto_created=True)
+        room = models.CharField(max_length=100)
+        message = models.TextField()
+        nickname = models.CharField(max_length=100)
+
