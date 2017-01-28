@@ -144,6 +144,6 @@ and append your routes to oTree's built-in routes:
         route("websocket.disconnect", ws_disconnect, path=r"^/chat"),
     ]
 
-In settings.py, set ``CHANNEL_DEFAULT_ROUTING = 'routing.channel_routes'``
-(this is the dotted path to your ``channel_routes`` variable in ``routing.py``)
+In settings.py, set ``CHANNEL_ROUTING = 'routing.channel_routing'``
+(this is the dotted path to your ``channel_routing`` variable in ``routing.py``)
 
