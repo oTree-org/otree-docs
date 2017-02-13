@@ -99,8 +99,6 @@ Run:
 
     $ pip3 install -U otree-core
 
-.. note::
-
 .. _requirements_base.txt:
 
 Save to requirements_base.txt
@@ -268,7 +266,7 @@ you can scale your dynos and database back down,
 so then you don't have to pay the full monthly cost.
 
 Postgres (upgrade required)
-+++++++++++++++++++++++++++
+'''''''''''''''''''''''''''
 
 You need to upgrade your Postgres database to a paid tier
 (at least the cheapest paid plan),
@@ -295,7 +293,7 @@ After purchasing the upgraded Postgres, it's recommended to delete the hobby-dev
 
 
 Upgrade dynos
-+++++++++++++
+'''''''''''''
 
 In the Heroku dashboard, click on your app's "Resources" tab,
 and in the "dynos" section, select "Upgrade to Hobby".
