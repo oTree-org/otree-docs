@@ -200,7 +200,9 @@ in ``self.request.POST``, which you can access like this:
         if self.timeout_happened:
             post_dict = self.request.POST.dict()
             my_value = post_dict.get('my_field')
-            # do something with my_value...
+            # assuming my_value is an int
+            self.player.my_value = int(my_value)
+
             # you can also loop through self.form_fields and self.timeout_submission
 
 Note: ``self.request.POST`` just contains whatever the user put there,

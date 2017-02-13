@@ -224,7 +224,7 @@ Django template language.
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block title %}
@@ -294,7 +294,7 @@ Let's create ``ResultsSummary.html``:
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block title %}

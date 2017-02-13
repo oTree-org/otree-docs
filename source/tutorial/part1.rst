@@ -136,7 +136,7 @@ contribution.
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block title %} Contribute {% endblock %}
@@ -168,7 +168,7 @@ The second template will be called ``Results.html``.
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block title %} Results {% endblock %}

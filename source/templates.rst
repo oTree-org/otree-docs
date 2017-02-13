@@ -41,7 +41,7 @@ You define 2 blocks:
 
 You may want to customize the appearance or functionality of all pages
 in your app (e.g. by adding custom CSS or JavaScript). To do this, edit
-the file ``_templates/global/Base.html``.
+the file ``_templates/global/Page.html``.
 
 JavaScript and CSS
 ~~~~~~~~~~~~~~~~~~
@@ -146,6 +146,9 @@ In Python      In template, without safe_json       With safe_json
 ``['a']``      ``[&#39;a&#39;]``                    ``["a"]``
 =============  ===================================  ==================
 
+The input to ``safe_json`` can be a simple value like ``1``,
+or a nesting of dictionaries and lists like ``{'a': [1,2]}``, etc.
+
 ``safe_json`` converts to JSON and marks the data as safe (trusted)
 so that Django does not auto-escape it.
 
@@ -156,9 +159,17 @@ For all apps
 ^^^^^^^^^^^^
 
 If you want to apply a style or script to all pages in all games,
-you should modify the template ``_templates/global/Base.html``.
+you should modify the template ``_templates/global/Page.html``.
 You should put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
 and any styles inside ``{% block global_styles %}...{% endblock %}``.
+
+.. note::
+
+    ``Page.html`` used to be called ``Base.html``.
+    If your project contains a file ``_templates/global/Base.html``,
+    you should rename it to ``Page.html``.
+    Then, if any templates extend ``global/Base.html``,
+    you should instead make them extend ``global/Page.html``
 
 .. note::
 
@@ -175,12 +186,12 @@ you should create a base template for all templates in your app,
 and put blocks called ``app_styles`` or ``app_scripts`` in this base template.
 
 For example, if your app's name is ``public_goods``,
-then you would create a file called ``public_goods/templates/public_goods/Base.html``,
+then you would create a file called ``public_goods/templates/public_goods/Page.html``,
 and put this inside it:
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block app_styles %}
@@ -196,7 +207,7 @@ Then each ``public_goods`` template would inherit from this template:
 
  .. code-block:: html+django
 
-     {% extends "public_goods/Base.html" %}
+     {% extends "public_goods/Page.html" %}
      {% load staticfiles otree_tags %}
      ...
 

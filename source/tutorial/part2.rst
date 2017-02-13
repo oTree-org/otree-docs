@@ -141,7 +141,7 @@ This page looks like the templates we have seen so far. Note the use of
 
 .. code-block:: django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block title %}
@@ -187,7 +187,7 @@ This is the page that P2 sees to send money back. Here is the template:
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block title %}
@@ -251,7 +251,7 @@ to condition on the current player's ``id_in_group``.
 
 .. code-block:: html+django
 
-    {% extends "global/Base.html" %}
+    {% extends "global/Page.html" %}
     {% load staticfiles otree_tags %}
 
     {% block title %}

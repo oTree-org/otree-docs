@@ -150,6 +150,7 @@ In settings.py, set ``CHANNEL_ROUTING = 'routing.channel_routing'``
 Chat box
 ^^^^^^^^
 
+oTree doesn't have an out-of-the box chat funcito
 A number of people have expressed interest in implementing a chat box for oTree.
 Here are some ideas, based on how I would implement it myself.
 
@@ -164,7 +165,7 @@ It could take some optional parameters like::
 ``room`` is an ID for the room.
 A chat room is typically scoped to a group,
 which can be uniquely identified by the group's primary key
-in combination with the app name (or ``Constants.name_in_url).
+in combination with the app name (or ``Constants.name_in_url``).
 If someone wants a different scope (e.g. it should be scoped to the current page
 or to just a few members of the group), they can override the ``room`` arg.
 
