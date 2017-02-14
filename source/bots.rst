@@ -147,11 +147,6 @@ then the user will submit the ``Results`` page.
 Testing form validation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This feature was released on 2016-08-16. Make sure you are using the latest
-    version of otree-core.
-
 If you use :ref:`form validation <form-validation>`,
 you should test that your app is correctly rejecting invalid input from the user,
 by using ``SubmissionMustFail()``.
@@ -193,11 +188,6 @@ Only the 3rd ``yield`` must succeed.
 
 Test cases
 ~~~~~~~~~~
-
-.. note::
-
-    This feature was released on 2016-08-16. Make sure you are using the latest
-    version of otree-core.
 
 You can define an attribute ``cases`` on your PlayerBot class
 that lists different test cases.
@@ -294,11 +284,6 @@ as cases.
 Checking the HTML
 ~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This feature was released on 2016-08-16. Make sure you are using the latest
-    version of otree-core.
-
 In the bot, ``self.html`` will be a string
 containing the HTML of the page you are about to submit.
 So, you can do ``assert`` statements to ensure that the HTML does or does not contain
@@ -370,11 +355,6 @@ that results are reported correctly:
 Automatic HTML checks
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This feature was released on 2016-08-16. Make sure you are using the latest
-    version of otree-core.
-
 Before the bot submits a page,
 oTree ensures that any form fields the bot is trying to submit are actually found
 in the page's HTML, and that there is a submit button on the page.
@@ -413,7 +393,7 @@ in ``settings.py``.
 Browser bots
 ------------
 
-Starting with oTree 0.8, bots can run in the browser.
+Bots can run in the browser.
 They run the same way as command-line bots,
 by executing the submits in your ``tests.py``.
 

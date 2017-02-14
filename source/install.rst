@@ -3,23 +3,27 @@
 Installing oTree
 ================
 
+Important note
+--------------
+
+If you publish research conducted using oTree,
+you are required by the oTree license to cite
+`this paper <http://dx.doi.org/10.1016/j.jbef.2015.12.001>`__.
+(Citation: Chen, D.L., Schonger, M., Wickens, C., 2016. oTree - An open-source
+platform for laboratory, online and field experiments.
+Journal of Behavioral and Experimental Finance, vol 9: 88-97)
+
 Command line basics
 -------------------
 
 To use oTree, you need to use PowerShell (Windows) or Terminal (Mac).
 In this documentation, we refer to these programs as your "command prompt" or "command line".
-Sometimes, we write a command prefixed with a ``$`` like this example command::
-
-    $ echo "hello world"
-
-The ``$`` is not part of the command.
-You can copy the command (in this example, ``echo "hello world"``),
-and then paste it at your command line. (In PowerShell, you should right-click to paste.)
 
 A few tips:
 
 * You can retrieve the previous command you entered by pressing your keyboard's "up" arrow
 * If you get stuck running a command, you can press ``Control + C``.
+* In PowerShell, you should right-click to paste a command.
 
 Install Python
 --------------
@@ -151,9 +155,7 @@ Then run the server::
 .. note::
 
     If Python crashes when you run this command,
-    please send an email to chris@otree.org
-    with your operating system and version of Python.
-    If you're using PowerShell, try using CMD instead.
+    and you're using PowerShell, try using CMD instead.
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 You should see the oTree demo site.
