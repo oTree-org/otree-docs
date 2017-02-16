@@ -191,6 +191,32 @@ For example:
 ``timeout_happened`` is undefined in other methods like ``vars_for_template``,
 because the timeout countdown only starts after the page is rendered.
 
+Getting data from the incomplete form
+'''''''''''''''''''''''''''''''''''''
+
+.. note::
+
+    In the latest beta of oTree, the behavior described in this section has changed.
+    oTree now will try to save the form. This means you don't have to recover the data
+    from ``self.request.POST`` yourself; oTree will try to do it automatically.
+
+    If a field in the form contains an error (i.e. blank or invalid value),
+    oTree will use that field's entry according to :ref:`timeout_submission`.
+    If the ``error_message()`` method fails, then the whole form might be invalid,
+    so the whole form will be discarded and :ref:`timeout_submission`
+    will be used instead.
+
+    If you want to always discard the auto-submitted form, you can just
+    set the values in ``before_next_page``, which will overwrite the data from the form.
+    Assuming you have defined ``timeout_submission``, you can write this:
+
+    .. code-block:: python
+
+        def before_next_page(self):
+            if self.timeout_happened:
+                for field_name, value in self.timeout_submission:
+                    setattr(self.player, field_name, value)
+
 The fields that were filled out at the moment the page was submitted are contained
 in ``self.request.POST``, which you can access like this:
 
