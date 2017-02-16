@@ -197,8 +197,14 @@ Getting data from the incomplete form
 .. note::
 
     In the latest beta of oTree, the behavior described in this section has changed.
-    oTree now will try to save the form. This means you don't have to recover the data
+    oTree now will try to save the form even if a timeout occurs.
+    This means you don't have to recover the data
     from ``self.request.POST`` yourself; oTree will try to do it automatically.
+
+    You can test it by upgrading to the beta::
+
+        pip install -U --pre otree-core
+        otree resetdb
 
     If a field in the form contains an error (i.e. blank or invalid value),
     oTree will use that field's entry according to :ref:`timeout_submission`.
@@ -206,7 +212,8 @@ Getting data from the incomplete form
     so the whole form will be discarded and :ref:`timeout_submission`
     will be used instead.
 
-    If you want to always discard the auto-submitted form, you can just
+    If you don't want this new behavior and instead want to
+    discard the auto-submitted form (as in previous versions of oTree), you can just
     set the values in ``before_next_page``, which will overwrite the data from the form.
     Assuming you have defined ``timeout_submission``, you can write this:
 
