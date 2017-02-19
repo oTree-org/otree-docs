@@ -310,8 +310,7 @@ Upgrade Redis (optional)
 
 I have not seen any problems yet with the free version of Redis.
 However, if running a study, consider upgrading to the "Premium 0" Redis for $15/month,
-because it features "high availability", which might make your app run more
-reliably.
+because it has a higher connection limit.
 
 Setting environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

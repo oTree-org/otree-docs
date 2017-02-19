@@ -421,8 +421,8 @@ and use Django's `field attributes <https://docs.djangoproject.com/en/1.9/topics
                 {{ field.label_tag }}
                 {{ field.errors }}
             </td>
-            <td><input type="radio" name="{{ field.html_name}}" value="True" required {% if field.value == 'True' %}checked{% endif %}></td>
-            <td><input type="radio" name="{{ field.html_name}}" value="False" required {% if field.value == 'False' %}checked{% endif %}></td>
+            <td><input type="radio" name="{{ field.html_name}}" value="True" required {% if field.value|stringformat:"s" == 'True' %}checked{% endif %}></td>
+            <td><input type="radio" name="{{ field.html_name}}" value="False" required {% if field.value|stringformat:"s" == 'False' %}checked{% endif %}></td>
         </tr>
         {% endfor %}
     </table>
