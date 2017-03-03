@@ -48,7 +48,7 @@ The main new feature is :ref:`browser bots <browser-bots>`.
 There are also some changes to the admin UI
 (e.g. demo full-screen mode is now resizable).
 
-.. _v0.6
+.. _v0.6:
 
 Version 0.6
 ===========
@@ -68,7 +68,7 @@ Here are some changes:
 -   ``runprodserver`` now defaults to port 8000 (before was 5000)
 
 
-.. _v0.5
+.. _v0.5:
 
 Version 0.5
 ===========

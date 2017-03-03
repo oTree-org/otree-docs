@@ -93,14 +93,14 @@ and set ``real_world_currency_per_point`` in the session config.
 For example, if you pay the user 2 cents per point, you would set
 ``'real_world_currency_per_point': 0.02``.
 
-Points are integers by default. You can change this by setting ``POINTS_DECIMAL_PLACES``
-to something other than 0.
+Points are integers by default. You can change this by setting ``POINTS_DECIMAL_PLACES = 2``
+(or whatever number of decimal places you desire).
 
 If you switch your language setting to one of oTree's supported languages,
 the name "points" is automatically translated,
 e.g. "puntos" in Spanish.
 To further customize the name "points" to something else like "tokens" or "credits",
-set ``settings.POINTS_CUSTOM_NAME``.
+set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``.
 
 Converting points to real world currency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

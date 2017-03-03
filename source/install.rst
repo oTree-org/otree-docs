@@ -16,7 +16,8 @@ Journal of Behavioral and Experimental Finance, vol 9: 88-97)
 Command line basics
 -------------------
 
-To use oTree, you need to use PowerShell (Windows) or Terminal (Mac).
+To use oTree, you need to use PowerShell (which is preinstalled with Windows)
+or Terminal (which is preinstalled with macOS).
 In this documentation, we refer to these programs as your "command prompt" or "command line".
 
 A few tips:
@@ -25,22 +26,18 @@ A few tips:
 * If you get stuck running a command, you can press ``Control + C``.
 * In PowerShell, you should right-click to paste a command.
 
-Install Python
---------------
+Step 1: Install Python
+----------------------
 
-New versions of oTree require Python 3.4 or higher.
-If you created an old oTree project
-with Python 2 and would like to migrate to Python 3,
-follow the instructions :ref:`here <py3-migration>`.
+oTree requires Python 3.4 or higher.
 
-If you already have Python 3.6 installed
+If you already have Python 3.x installed
 (check by entering ``pip3 -V`` at your command prompt),
 you can skip the below section. Or, uninstall your existing version of Python,
 and proceed with the below steps.
 
-
-Install Python 3.6 (Windows)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 1: Install Python 3.6 (for Windows users)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and install `Python 3.6 <https://www.python.org/downloads/release/python-360/>`__.
 (Python 3.4 and 3.5 are also OK.)
@@ -48,25 +45,27 @@ Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png
 
-Once setup is done, open PowerShell and enter::
+Once setup is done, search in your Windows Start Menu for the program "PowerShell",
+open PowerShell, and enter ``pip3 -V``:
 
-    pip3 -V
+.. figure:: _static/setup/powershell.png
 
 It will output a line that gives the version of Python at the end;
-this should match the version of Python you just installed.
+this should match the version of Python you just installed:
 
-Install Python 3.6 (Mac OSX)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You should install Python 3.6
+Step 1: Install Python 3.6 (for macOS users)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Although Mac OSX comes pre-installed with Python, it is version 2.7,
-which is not supported by oTree.
-You should install Python 3.4 or higher. We recommend installing it with Homebrew.
+You need to install Python 3.4 or higher. We recommend installing it with Homebrew.
 (However, if you already have Python 3.6 installed through Conda, that should be OK.)
-To install Python 3 via Homebrew:
 
-* Open your Terminal and run:
+* In Finder, search for and open the "Terminal" app:
+
+.. figure:: _static/setup/macos-terminal.png
+
+
+* In the terminal window, type this and hit enter:
 
 .. code-block:: bash
 
@@ -100,35 +99,37 @@ When prompted, select to install the "command line developer tools".
 It will output a line that gives the version of Python at the end;
 this should match the version of Python you just installed.
 
-Install Python (Linux/UNIX)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 1: Install Python 3.6 (for Linux/Unix users)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We recommmend installing using your system's package manager to install Python 3.6.
 If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. through ``apt-get``).
 
 More information in the :ref:`Linux server setup <server-ubuntu>` section.
 
-Install oTree
-~~~~~~~~~~~~~
+Step 2: Install oTree
+~~~~~~~~~~~~~~~~~~~~~
+
+Enter this in PowerShell (Windows) or Terminal (macOS):
 
 .. code-block:: bash
 
     pip3 install -U otree-core
 
-Windows issue: vcvarsall.bat and Visual C++
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
 
-If you get this Windows error about Twisted and ``vcvarsall.bat``::
+    If you get this Windows error about Twisted and ``vcvarsall.bat``::
 
-    error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
+        error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
 
-To fix this, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
+    To fix this, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
 
 
-Running oTree
-~~~~~~~~~~~~~
+Step 3: Run oTree
+~~~~~~~~~~~~~~~~~
 
-Open PowerShell (on Windows) or Terminal (on Mac OS X), and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
+Open PowerShell (on Windows) or Terminal (on Mac OS X),
+and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
 
 Run::
 
@@ -166,8 +167,8 @@ and hit Enter.
 
 .. _pycharm:
 
-Install a Python editor (PyCharm)
----------------------------------
+Step 4: Install a Python editor (PyCharm)
+-----------------------------------------
 
 You will need a text editor to write your Python code.
 

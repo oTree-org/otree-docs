@@ -381,6 +381,25 @@ If you can't figure out the cause of the error,
 you can ask a question on the oTree
 `discussion group <https://groups.google.com/forum/#!forum/otree>`__.
 
+Troubleshoot with print()
+-------------------------
+
+If your code is still not behaving properly,
+you can isolate the problem using ``print()``
+just as you would to debug any Python program.
+For example, you could add some print statements to ``set_payoffs``:
+
+.. code-block:: python
+
+    def set_payoffs(self):
+        self.total_contribution = sum([p.contribution for p in self.get_players()])
+        self.individual_share = self.total_contribution * Constants.efficiency_factor / Constants.players_per_group
+        for p in self.get_players():
+            p.payoff = Constants.endowment - p.contribution + self.individual_share
+            print('*******p.payoff is', p.payoff)
+
+The output will be displayed in the console window where you ran ``otree runserver``
+(not in your web browser).
 
 Make changes while the server is running
 ----------------------------------------

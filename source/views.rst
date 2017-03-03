@@ -191,31 +191,27 @@ For example:
 ``timeout_happened`` is undefined in other methods like ``vars_for_template``,
 because the timeout countdown only starts after the page is rendered.
 
-Getting data from the incomplete form
-'''''''''''''''''''''''''''''''''''''
+Forms submitted by timeout
+''''''''''''''''''''''''''
 
 .. note::
 
-    In the latest beta of oTree, the behavior described in this section has changed.
-    oTree now will try to save the form even if a timeout occurs.
-    This means you don't have to recover the data
-    from ``self.request.POST`` yourself; oTree will try to do it automatically.
+    This behavior is new in otree-core 1.2 (Feb 2017).
+    Previously, oTree discarded forms submitted by timeout,
+    and required you to recover the data from
+    from ``self.request.POST.dict()`` yourself.
 
-    You can test it by upgrading to the beta::
+If a form is auto-submitted because of a timeout,
+oTree will try to save whichever fields were filled out at the time of submission.
+If a field in the form contains an error (i.e. blank or invalid value),
+oTree will use that field's entry according to :ref:`timeout_submission`.
+If the ``error_message()`` method fails, then the whole form might be invalid,
+so the whole form will be discarded and :ref:`timeout_submission`
+will be used instead.
 
-        pip install -U --pre otree-core
-        otree resetdb
-
-    If a field in the form contains an error (i.e. blank or invalid value),
-    oTree will use that field's entry according to :ref:`timeout_submission`.
-    If the ``error_message()`` method fails, then the whole form might be invalid,
-    so the whole form will be discarded and :ref:`timeout_submission`
-    will be used instead.
-
-    If you don't want this new behavior and instead want to
-    discard the auto-submitted form (as in previous versions of oTree), you can just
-    set the values in ``before_next_page``, which will overwrite the data from the form.
-    Assuming you have defined ``timeout_submission``, you can write this:
+If you want to discard the auto-submitted form, you can just
+set the values in ``before_next_page``, which will overwrite the data from the form.
+Assuming you have defined ``timeout_submission``, you can write this:
 
     .. code-block:: python
 
@@ -235,19 +231,6 @@ in ``self.request.POST``, which you can access like this:
             my_value = post_dict.get('my_field')
             # assuming my_value is an int
             self.player.my_value = int(my_value)
-
-            # you can also loop through self.form_fields and self.timeout_submission
-
-Note: ``self.request.POST`` just contains whatever the user put there,
-whether valid or not.
-For example, supposing ``my_field`` is an ``IntegerField``, there is no guarantee
-that ``post_dict.get('my_field')``
-contains an integer, that the integer is between your field's ``max`` and ``min``,
-or even that that the post dict contains an entry for
-this form field (e.g. it may have been left blank), which is why we need to use ``post_dict.get('my_field')`` method
-rather than ``post_dict['my_field']``. (Python's dict ``.get()`` method also lets you provide a second argument like
-``post_dict.get('my_field', 10)``, which will return 10 as a fallback in case
-``my_field`` is not found if that entry is missing, it will return the default of 10.)
 
 
 def vars_for_all_templates(self)
