@@ -90,6 +90,12 @@ get the partner of a player:
             return self.get_others_in_group()[0]
 
 
+Chat between participants
+-------------------------
+
+See the `participant chat add-on <https://github.com/oTree-org/otreechat>`__.
+
+
 .. _shuffling:
 
 Group matching
