@@ -140,33 +140,6 @@ When there are 60 seconds left, the page displays a timer warning the participan
     However, this does not occur if you are running the test server
     (``runserver``).
 
-.. _timeout_submission:
-
-timeout_submission
-~~~~~~~~~~~~~~~~~~
-
-You can use ``timeout_submission`` to define what values
-should be submitted for a page if a timeout occurs,
-or if the experimenter moves the
-participant forward.
-
-Example:
-
-.. code-block:: python
-
-    class Page1(Page):
-        form_model = models.Player
-        form_fields = ['accept']
-
-        timeout_seconds = 60
-        timeout_submission = {'accept': True}
-
-If omitted, then oTree will default to
-``0`` for numeric fields, ``False`` for boolean fields, and the empty
-string ``''`` for text/character fields.
-
-If the values submitted ``timeout_submission`` need to be computed dynamically,
-you can check :ref:`timeout_happened` and set the values in ``before_next_page``.
 
 .. _timeout_happened:
 
@@ -191,47 +164,11 @@ For example:
 ``timeout_happened`` is undefined in other methods like ``vars_for_template``,
 because the timeout countdown only starts after the page is rendered.
 
-Forms submitted by timeout
-''''''''''''''''''''''''''
+Timeouts and forms
+~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This behavior is new in otree-core 1.2 (Feb 2017).
-    Previously, oTree discarded forms submitted by timeout,
-    and required you to recover the data from
-    from ``self.request.POST.dict()`` yourself.
-
-If a form is auto-submitted because of a timeout,
-oTree will try to save whichever fields were filled out at the time of submission.
-If a field in the form contains an error (i.e. blank or invalid value),
-oTree will use that field's entry according to :ref:`timeout_submission`.
-If the ``error_message()`` method fails, then the whole form might be invalid,
-so the whole form will be discarded and :ref:`timeout_submission`
-will be used instead.
-
-If you want to discard the auto-submitted form, you can just
-set the values in ``before_next_page``, which will overwrite the data from the form.
-Assuming you have defined ``timeout_submission``, you can write this:
-
-    .. code-block:: python
-
-        def before_next_page(self):
-            if self.timeout_happened:
-                for field_name, value in self.timeout_submission:
-                    setattr(self.player, field_name, value)
-
-The fields that were filled out at the moment the page was submitted are contained
-in ``self.request.POST``, which you can access like this:
-
-.. code-block:: python
-
-    def before_next_page(self):
-        if self.timeout_happened:
-            post_dict = self.request.POST.dict()
-            my_value = post_dict.get('my_field')
-            # assuming my_value is an int
-            self.player.my_value = int(my_value)
-
+To control what happens with the page's form if a timeout occurs,
+see :ref:`timeout_submission` and :ref:`timeout_happened`.
 
 def vars_for_all_templates(self)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

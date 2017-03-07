@@ -13,19 +13,6 @@ you are required by the oTree license to cite
 platform for laboratory, online and field experiments.
 Journal of Behavioral and Experimental Finance, vol 9: 88-97)
 
-Command line basics
--------------------
-
-To use oTree, you need to use PowerShell (which is preinstalled with Windows)
-or Terminal (which is preinstalled with macOS).
-In this documentation, we refer to these programs as your "command prompt" or "command line".
-
-A few tips:
-
-* You can retrieve the previous command you entered by pressing your keyboard's "up" arrow
-* If you get stuck running a command, you can press ``Control + C``.
-* In PowerShell, you should right-click to paste a command.
-
 Step 1: Install Python
 ----------------------
 
@@ -195,6 +182,17 @@ with your ``manage.py`` and ``settings.py``:
 If PyCharm displays this warning, select "Ignore requirements":
 
 .. figure:: _static/setup/pycharm-psycopg2-warning.png
+
+Command line tips & tricks
+--------------------------
+
+Here are some tips to using PowerShell (for Windows users) or Terminal (for macOS users):
+
+A few tips:
+
+* You can retrieve the previous command you entered by pressing your keyboard's "up" arrow
+* If you get stuck running a command, you can press ``Control + C``.
+* In PowerShell, you should right-click to paste a command.
 
 .. _upgrade:
 

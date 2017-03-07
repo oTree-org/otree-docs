@@ -4,6 +4,17 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
+.. _v12:
+
+Version 1.2
+===========
+
+-   If a page is submitted automatically by a timeout,
+    oTree will attempt to save the incomplete form.
+    See :ref:`timeout_form`
+-   oTree now has a `participant chat app <https://github.com/oTree-org/otreechat>`__
+
+
 .. _v11b:
 
 Version 1.1
