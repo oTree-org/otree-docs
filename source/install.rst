@@ -115,20 +115,31 @@ Enter this in PowerShell (Windows) or Terminal (macOS):
 Step 3: Run oTree
 ~~~~~~~~~~~~~~~~~
 
-Open PowerShell (on Windows) or Terminal (on Mac OS X),
-and ``cd`` to the directory where you want to store your oTree code (such as ``Documents``).
-
-Run::
+Open PowerShell (on Windows) or Terminal (on macOS), and run::
 
     otree startproject oTree
 
 If it's your first time, we recommend choosing the option to include the sample games.
 
-Then change to the directory you just created:
+The above command will create a folder named ``oTree`` in your home directory.
+(If you want, you can move the folder to another location.)
 
-.. code-block:: bash
+Then change to the directory you just created::
 
     cd oTree
+
+.. note::
+
+    If you've never used a command prompt like Terminal or PowerShell,
+    basically all you need to know is it is an alternative
+    to your file explorer (or Finder on Mac). Instead of clicking on files
+    and folders, you type commands to navigate folders and execute programs.
+
+    Here are some useful commands:
+
+    -   ``pwd``: shows what folder you are currently in
+    -   ``ls``: lists the files and subfolders in the current folder
+    -   ``cd``: move to a subfolder. For example, ``cd oTree`` takes you to the subfolder ``oTree``.
 
 Reset the database::
 
