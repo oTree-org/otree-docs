@@ -4,6 +4,9 @@ Part 0: Simple survey
 Let's create a simple survey -- on the first page, we ask the participant
 for their name and age, then on the next page, display this info back to them.
 
+`YouTube version of this tutorial <https://youtu.be/Bzb-D5ZCZPs>`__
+(note: in the video, the app is called ``helloworld``, not ``my_simple_survey``).
+
 Upgrade oTree
 -------------
 
