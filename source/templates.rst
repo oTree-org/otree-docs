@@ -212,6 +212,32 @@ Then each ``public_goods`` template would inherit from this template:
      ...
 
 
+Customizing the theme
+^^^^^^^^^^^^^^^^^^^^^
+
+Let's say you want to change some aspect of oTree's template.
+For example, you may want to change the page width,
+or change a font.
+
+In your browser, right-click the element you want to modify and select
+"Inspect". Then you can navigate to see the different elements and
+try modifying their styles. For example, to remove the thin line below the page title,
+you can click on the title to discover it's wrapped in a ``<div>`` whose
+class is ``page-header`` and which has ``border-bottom: 1px``:
+
+.. figure:: _static/dom-inspector.png
+
+So, you can remove this line by adding the following style to your base template:
+
+.. code-block:: HTML
+
+    <style>
+        .page-header {
+            border-bottom: none;
+        }
+    </style>
+
+
 Static content (images, videos, CSS, JavaScript)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

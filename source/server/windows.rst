@@ -7,6 +7,12 @@ If you are just testing your app on your personal computer, you can use
 ``otree runserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
+.. note::
+
+    There is now a :ref:`Docker-based oTree installation <server-docker>`,
+    which may be easier than the below steps.
+
+
 Create a virtualenv
 -------------------
 
