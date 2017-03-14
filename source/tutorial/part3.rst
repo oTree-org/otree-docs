@@ -119,7 +119,8 @@ new group order:
 
         def before_session_starts(self):
             if self.round_number == 1:
-                ...
+                paying_round = random.randint(1, Constants.num_rounds)
+                self.session.vars['paying_round'] = paying_round
             if self.round_number == 3:
                 # reverse the roles
                 for group in self.get_groups():
@@ -154,10 +155,10 @@ So, we start with this:
                 matcher.is_winner = False
                 mismatcher.is_winner = True
 
-We should expand this code by setting the actual ``payoff`` field.
-However, the player should only receive a payoff if the current round is
-the randomly chosen paying round. Otherwise, the payoff should be 0
-points. So, we check the current round number and compare it against the
+Now let's set payoffs.
+Remember that the player should only receive a payoff if the current round is
+the randomly chosen paying round. Otherwise, the payoff should be 0.
+So, we check the current round number and compare it against the
 value we previously stored in ``session.vars``. We loop through both
 players (``[P1,P2]``, or ``[mismatcher, matcher]``) and do the same
 check for both of them.
@@ -178,9 +179,7 @@ check for both of them.
                 mismatcher.is_winner = True
             for player in [mismatcher, matcher]:
                 if (self.round_number == self.session.vars['paying_round'] and player.is_winner):
-                        player.payoff = Constants.stakes
-                else:
-                    player.payoff = c(0)
+                    player.payoff = Constants.stakes
 
 Define the templates and views
 ------------------------------

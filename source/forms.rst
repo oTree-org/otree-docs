@@ -656,3 +656,9 @@ in ``self.request.POST``, which you can access like this:
             my_value = post_dict.get('my_field')
             # assuming my_value is an int
             self.player.my_value = int(my_value)
+
+Chat between participants
+-------------------------
+
+See the `participant chat add-on <https://github.com/oTree-org/otreechat>`__.
+
