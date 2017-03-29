@@ -3,7 +3,7 @@ Community resources
 
 Here are some oTree related tools and resources that were contributed by oTree users.
 If you know of any others,
-send details to chris@otree.org.
+send details to chris@otree.org, or make a pull request for this page on GitHub.
 
 Tools
 -----
@@ -13,6 +13,9 @@ Tools
     by Markus Konrad
 -   `Using Custom Data Models in oTree <https://datascience.blog.wzb.eu/2016/10/31/using-custom-data-models-in-otree/>`__,
     by Markus Konrad
+-   `oTree Virtual Machine Manager (OVMM) <http://otree-virtual-machine-manager.readthedocs.io/en/latest/>`__,
+    a ready-made oTree server setup to enable multiple experiments running parallel,
+    by Felix Albrecht and Tobias Raabe
 
 Apps
 ----

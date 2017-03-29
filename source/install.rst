@@ -154,7 +154,8 @@ Then run the server::
 .. note::
 
     If Python crashes when you run this command,
-    and you're using PowerShell, try using CMD instead.
+    and you're using PowerShell, try using CMD instead
+    (search your start menu for "Command Prompt")
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 You should see the oTree demo site.

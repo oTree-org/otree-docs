@@ -389,13 +389,18 @@ so that you can monitor errors on the server
 Database backups
 ----------------
 
-If you are using Postgres, you can export your database to a file called ``otree.sql``
+If you are using Postgres, you can export your database to a ``.sql`` file
 with a command like this::
 
     pg_dump -U otree_user -h localhost django_db > otree-$(date +"%Y-%m-%d-%H-%M").sql
 
 (This assumes your database is set up as described above (with username ``otree_user``
 and database name ``django_db``, and that you are on Unix.)
+
+If you need to restore your database to a particular backup, do like this::
+
+    psql django_db < otree-2017-03-22-01-01.sql
+
 
 Bots
 ----

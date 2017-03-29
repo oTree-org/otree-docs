@@ -45,9 +45,9 @@ supported by Django.
 Install `Postgres for Windows <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`__,
 using the default options. Note down the password you chose for the root ``postgres`` user.
 
-When the installer finishes, open PowerShell and run ``psql -U postgres``.
+When the installer finishes, open PowerShell and run ``psql -U postgres -W``.
 (If the command is not found, make sure your ``PATH`` environment variable contains
-``C:\Program Files\PostgreSQL\9.5\bin``.)
+``C:\Program Files\PostgreSQL\9.6\bin``.)
 
 Then enter these commands::
 

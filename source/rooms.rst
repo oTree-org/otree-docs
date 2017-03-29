@@ -17,6 +17,9 @@ Here is a screenshot:
 .. figure:: _static/admin/room-combined.png
     :align: center
 
+Creating rooms
+--------------
+
 You can create multiple rooms -- say, for for different classes you teach,
 or different labs you manage.
 
@@ -44,15 +47,24 @@ For example:
         },
     ]
 
+``ROOM_DEFAULTS`` is
+a dict that defines settings to be inherited by all rooms unless
+explicitly overridden (works in an analogous way to ``SESSION_CONFIG_DEFAULTS``).
 
 Here are the available properties:
 
--   ``name``: (required) internal name
--   ``display_name``: (required) display name
--   ``participant_label_file`` (optional): a path to a text file with the "guest list"
-    for this room.
-    Path can be either absolute or relative to the project's root directory.
-    The file should contain one participant label per line. For example::
+name and display_name (required)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The internal name and display name, respectively.
+
+participant_label_file (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A path to a text file with the "guest list"
+for this room.
+Path can be either absolute or relative to the project's root directory.
+The file should contain one participant label per line. For example::
 
         PC_1
         PC_2
@@ -65,14 +77,101 @@ Here are the available properties:
         PC_9
         PC_10
 
+If you omit ``participant_label_file``, then anyone can join
+as long as they know the room-wide URL. This makes it easier for quick demos,
+like a simple classroom game. However, it also means someone could play twice
+by opening the URL on 2 browsers, so if you are doing a real experiment,
+it's advised to use a ``participant_label_file``.
 
--   ``use_secure_urls`` (optional): a True/False setting that controls
-    whether oTree should add unique secret keys to URLs,
-    so that even if someone can guess another participant's ``participant_label``,
-    they can't guess that person's start URL. If you use this option, then you must
-    have a ``participant_label_file``, and you cannot use the room-wide link.
+``use_secure_urls`` (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``ROOM_DEFAULTS`` is
-a dict that defines settings to be inherited by all rooms unless
-explicitly overridden (works in an analogous way to ``SESSION_CONFIG_DEFAULTS``).
+This setting provides an extra layer of security on top of the ``participant_label_file``.
+For example, if you are not using secure URLs, your start URLs would look something
+like this::
 
+    http://127.0.0.1:8000/room/econ101/?participant_label=Student1
+    http://127.0.0.1:8000/room/econ101/?participant_label=Student2
+
+The issue is that if Student1 is mischievous,
+he might change his URL's participant_label from "Student1" to "Student2",
+so that he can impersonate playing as Student2.
+However, if you set ``'use_secure_urls': True,``
+oTree will add a unique secret key to each participant's URLs,
+like this::
+
+    http://127.0.0.1:8000/room/econ101/?participant_label=Student1&hash=29cd655f
+    http://127.0.0.1:8000/room/econ101/?participant_label=Student1&hash=46d9f31d
+
+So, even if someone can guess another participant's ``participant_label``,
+they won't be able to open that person's start URL without the secret hash code.
+
+
+Using rooms
+-----------
+
+In the admin interface, click "Rooms" in the header bar,
+and click the room you created.
+Scroll down to the section with the participant URLs.
+
+If you have a participant_label_file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Have each participant open the URLs.
+Then, in the room's admin page, check how many people are present,
+and create a session for that number of people.
+
+You can either use the
+room-wide URL, or the participant-specific URLs.
+
+The participant-specific URLs already contain the participant label, so as soon as
+they are clicked, the participant will go straight to the waiting page.
+For example, one participant can open URL ``http://127.0.0.1:8000/room/econ101/?participant_label=Student1``,
+and another participant can open URL ``http://127.0.0.1:8000/room/econ101/?participant_label=Student2``.
+
+Or, you can give both students the room-wide URL, which does not contain ``participant_label``:
+
+    http://127.0.0.1:8000/room/econ101/
+
+When a user clicks the room-wide URL,
+they are prompted to enter their participant label:
+
+.. figure:: _static/admin/room-combined.png
+    :align: center
+
+For example, if a participant enters their label as ``Student1``,
+oTree simply appends the participant label to the room-wide URL, e.g.,
+``http://127.0.0.1:8000/room/econ101/?participant_label=Student1``,
+checks if the label is contained in the participant label file,
+and if so, redirects the participant to the wait page.
+
+If you're doing a lab experiment and the number of participants is very unpredictable,
+you can consider using the room-wide URL, and asking participants to manually enter their
+participant label when they sit down at their computer.
+
+That way, computers will only be counted as "active" if a participant is actually present.
+Computers with no participants will remain on the "Enter participant label" page,
+and will not be counted as present.
+
+Alternatively, you can open each computer's browser to a participant-specific URLs,
+but before creating the session, be sure to close the browsers on unattended computers,
+so they are not included in the session.
+
+
+If you don't have a participant_label_file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting is simple; just have each participant open the room-wide URL.
+Have each participant open the URLs.
+Then, in the room's admin page, check how many people are present,
+and create a session for that number of people.
+
+Reusing for multiple sessions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Room URLs are designed to be reused across sessions.
+In a lab, you can set the room URL (either room-wide or participant-specific)
+as the browser's home page.
+
+In classroom experiments, you can give each student the room-wide URL they can use
+repeatedly during the semester.

@@ -125,7 +125,6 @@ that is submitted. After executing each ``yield`` statement, the bot will pause
 until any wait pages are cleared, then it will execute up to (and including) the
 next ``yield``, and so on.
 
-
 Asserts
 ~~~~~~~
 
