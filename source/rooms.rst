@@ -53,13 +53,13 @@ explicitly overridden (works in an analogous way to ``SESSION_CONFIG_DEFAULTS``)
 
 Here are the available properties:
 
-name and display_name (required)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``name and display_name`` (required)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The internal name and display name, respectively.
 
-participant_label_file (optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``participant_label_file`` (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A path to a text file with the "guest list"
 for this room.
