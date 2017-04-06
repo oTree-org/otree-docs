@@ -102,55 +102,66 @@ The reasons for putting scripts and styles in separate blocks are:
     so if you reference the jQuery ``$`` variable in the ``content`` block,
     it could be undefined.
 
-.. _safe_json:
+.. _json:
 
-Passing data from Python to JavaScript (safe_json)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Passing data from Python to JavaScript (json)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you need to generate a variable that will be used in JavaScript code,
-you should first pass it through the ``safe_json()`` function
-to convert the data to JavaScript format (JSON).
+.. note::
 
-For example, if you need to pass the player's payoff to a script:
+    The ``|json`` template filter is new in otree-core 1.2.2
+    (released March 1, 2017). The old way was to use the ``safe_json``
+    function in your Python code. ``safe_json`` still works,
+    but most people will probably find ``json`` easier to use.
+    Just use one or the other, not both.
+
+If you need to insert a variable into to your JavaScript code,
+write it as ``{{ my_variable|json }}`` rather than just ``{{ my_variable }}``.
+
+For example, if you need to pass the player's payoff to a script,
+write it like this:
 
 .. code-block:: HTML+django
 
     <script>
-        var payoff = {{ payoff }};
+        var payoff = {{ payoff|json }};
         ...
     </script>
 
-You should use ``safe_json``:
 
-.. code-block:: python
-
-    from otree.api import safe_json
-
-    class MyPage(Page):
-        def vars_for_template(self):
-            return {'payoff': safe_json(self.player.payoff)}
-
-
-If you don't use ``safe_json``,
+If you don't use ``|json``,
 the variable might not be valid JavaScript.
 Examples:
 
 =============  ===================================  ==================
-In Python      In template, without safe_json       With safe_json
+In Python      In template, without ``|json``       With ``|json``
 =============  ===================================  ==================
 ``None``       ``None``                             ``null``
 ``3.14``       ``3,14`` (depends on LANGUAGE_CODE)  ``3.14``
 ``c(3.14)``    ``$3.14`` or ``$3,14``               ``3.14``
 ``True``       ``True``                             ``true``
+``"a"``        ``a``                                ``"a"``
 ``{'a': 1}``   ``{&#39;a&#39;: 1}``                 ``{"a": 1}``
 ``['a']``      ``[&#39;a&#39;]``                    ``["a"]``
 =============  ===================================  ==================
 
-The input to ``safe_json`` can be a simple value like ``1``,
+``|json`` can be used on simple values like ``1``,
 or a nesting of dictionaries and lists like ``{'a': [1,2]}``, etc.
 
-``safe_json`` converts to JSON and marks the data as safe (trusted)
+``|json`` converts to JSON and marks the data as safe (trusted)
 so that Django does not auto-escape it.
+
+As shown in the above table, ``|json`` will automatically put
+quotes around strings, so you don't need to add them manually:
+
+.. code-block:: HTML+django
+
+        // correct
+        var my_string = {{ my_string|json }};
+
+        // incorrect
+        var my_string = "{{ my_string|json }}";
+
 
 Customizing the base template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,13 +181,6 @@ and any styles inside ``{% block global_styles %}...{% endblock %}``.
     you should rename it to ``Page.html``.
     Then, if any templates extend ``global/Base.html``,
     you should instead make them extend ``global/Page.html``
-
-.. note::
-
-    There was a bug in recent versions of otree-core
-    that prevented ``global_scripts`` or ``global_styles``
-    from working properly. You should upgrade to the latest release
-    (bug fixed on 2017-01-19).
 
 For one app
 ^^^^^^^^^^^
@@ -341,17 +345,17 @@ For example, change this::
 
 To this::
 
-    series: {{ highcharts_series }}
+    series: {{ highcharts_series|json }}
 
 In the page's ``vars_for_template``, generate the nested data structure in Python
 (the above example is a list of dictionaries),
-pass it through :ref:`safe_json <safe_json>` to convert to JavaScript,
-and pass it to the template.
+pass it to the template, and remember to use the :ref:`|json <json>` filter`` on any variables
+you insert in JavaScript.
 
 If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
 If it looks all garbled like ``{&#39;a&#39;: 1}``,
-you may have forgotten to use :ref:`safe_json <safe_json>`.
+you may have forgotten to use the ``|json`` filter.
 
 LaTeX
 ^^^^^

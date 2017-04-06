@@ -89,8 +89,10 @@ you can retrieve it like this::
 
     self.participant.vars['name'] # returns 'John'
 
-Since vars is a Python dict, you can use ``.get()``,
-e.g. ``self.participant.vars.get('my_var', '')``,
+If your key may or may not exist, you can use the ``.get()`` method.
+For example, ``self.participant.vars.get('my_var')``.
+More `here <https://docs.python.org/3/library/stdtypes.html#dict.get>`__.
+
 or you can test if ``'my_var'`` exists with ``'my_var' in self.participant.vars``.
 
 As described :ref:`here <object_model>`, the current participant can be
