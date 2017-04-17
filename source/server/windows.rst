@@ -91,16 +91,10 @@ Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLit
 psycopg2
 ~~~~~~~~
 
-You then need to install psycopg2, the Postgres driver for Python.
-Installing it via pip often doesn't work. If that is the case,
+To use Postgres, you need to install psycopg2 with ``pip3 install psycopg2``.
+If the pip install doesn't work,
 download it `here <http://www.stickpeople.com/projects/python/win-psycopg/>`__.
-If you are using a virtualenv, note the special installation instructions on that page.
-
-If you are using a version of Python prior to 3.5.2,
-the installer may report that Python was not found in the registry.
-To fix this, upgrade to Python 3.5.2+. If that is not possible,
-there is a trick that involves editing the registry. Open ``regedit.exe``,
-go to ``HKEY_CURRENT_USER\SOFTWARE\Python\PythonCore\``, and rename 3.5.x to 3.5.
+(If you are using a virtualenv, note the special installation instructions on that page.)
 
 resetdb
 ~~~~~~~
