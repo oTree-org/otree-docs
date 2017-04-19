@@ -59,7 +59,7 @@ not False  # => True
 "This is a string"[0]  # => 'T'
 
 # format strings with the format method.
-"{} is a {}".format("This", "placeholder")
+"A triangle has {} sides".format(3)
 
 # None is an object
 None  # => None

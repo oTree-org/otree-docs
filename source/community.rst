@@ -23,9 +23,9 @@ Apps
 -   `Bomb Risk Elicitation Task (BRET) <http://www.sciencedirect.com/science/article/pii/S2214635016300120>`__ by Felix Holzmeister
 
 Code snippets
-----
-- `Making punishment field with binary choice and integer field
-<https://github.com/chapkovski/yes-no-punishment>`__
+-------------
+
+- `Punishment yes/no choice followed by punishment amount <https://github.com/chapkovski/yes-no-punishment>`__
 
 Help & discussion mailing list
 ------------------------------
