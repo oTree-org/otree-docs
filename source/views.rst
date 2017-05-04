@@ -46,6 +46,8 @@ Or only show the page in round 1:
         def is_displayed(self):
             return self.round_number == 1
 
+If you need to repeat the same rule for many pages, see :ref:`here <skip_many>`.
+
 .. _vars_for_template:
 
 vars_for_template()

@@ -308,9 +308,9 @@ You should not increase the number of timeoutworker dynos.
 Upgrade Redis (optional)
 ++++++++++++++++++++++++
 
-I have not seen any problems yet with the free version of Redis.
-However, if running a study, consider upgrading to the "Premium 0" Redis for $15/month,
-because it has a higher connection limit.
+If running a study, consider upgrading to the "Premium 0" Redis for $15/month,
+because it has a higher connection limit, which may be necessary if the server
+gets a lot of simultaneous traffic, or especially if you are using browser bots.
 
 Setting environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -61,31 +61,28 @@ If you can't merge your code into 1 Page as suggested above,
 but your code still has a lot of repetition, you can use
 Python inheritance to define the common code on a base class.
 
+.. _skip_many:
+
 Basic example
 `````````````
 
 For example, let's say that your page classes all
-repeat some of the code, e.g. the ``is_displayed`` condition:
+repeat some of the code. For example, you use ``is_displayed`` to skip
+the rest of the app once a certain participant var is set:
 
 .. code-block:: python
 
     class Page1(Page):
         def is_displayed(self):
-            return self.player.foo
-
-        ...
+            return not self.participant.vars.get('finished')
 
     class Page2(Page):
         def is_displayed(self):
-            return self.player.foo
-
-        ...
+            return not self.participant.vars.get('finished')
 
     class Page3(Page):
         def is_displayed(self):
-            return self.player.foo
-
-        ...
+            return not self.participant.vars.get('finished')
 
     page_sequence = [
         Page1,
@@ -97,17 +94,17 @@ You can eliminate this repetition as follows:
 
 .. code-block:: python
 
-    class BasePage(Page):
+    class SkipIfFinished(Page):
         def is_displayed(self):
-            return self.player.foo
+            return not self.participant.vars.get('finished')
 
-    class Page1(BasePage):
+    class Page1(SkipIfFinished):
         pass
 
-    class Page2(BasePage):
+    class Page2(SkipIfFinished):
         pass
 
-    class Page3(BasePage):
+    class Page3(SkipIfFinished):
         pass
 
     page_sequence = [
@@ -118,6 +115,23 @@ You can eliminate this repetition as follows:
 
 (This is not a special oTree feature;
 it is simply using Python class inheritance.)
+
+Let's say you have a page that has its own special display condition:
+
+.. code-block:: python
+
+    class Player1Page(Page):
+        def is_displayed(self):
+            return self.player.id_in_group == 1
+
+To combine it with ``is_displayed()`` of the base class, use inheritance and Python's ``super()``:
+
+.. code-block:: python
+
+    class Player1Page(SkipIfFinished):
+        def is_displayed(self):
+            return super().is_displayed() and self.player.id_in_group == 1
+
 
 More complex example
 ````````````````````
@@ -157,7 +171,7 @@ You can refactor this as follows:
 
 .. code-block:: python
 
-    class BasePage(Page):
+    class VarsPage(Page):
         def vars_for_template(self):
             v = {
                 'a': 1,
@@ -171,13 +185,14 @@ You can refactor this as follows:
             return {}
 
 
-    class Page1(BasePage):
+    class Page1(VarsPage):
         def extra_vars_for_template(self):
             return {'d': 4}
 
-    class Page2(BasePage):
+    class Page2(VarsPage):
         pass
 
-    class Page3(BasePage):
+    class Page3(VarsPage):
         pass
 
+(Or, if you prefer, use ``super().vars_for_template()``, etc.)

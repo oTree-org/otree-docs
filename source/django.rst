@@ -68,7 +68,7 @@ It can be a function-based view or class-based view.
 
 .. code-block:: python
 
-    # my_module.py
+    # In my_app.views
     from django.http import HttpResponse
 
     def my_view(request):
@@ -84,7 +84,7 @@ In this file, put:
     from django.conf.urls import url
     from otree.urls import urlpatterns
 
-    urlpatterns.append(url(r'^my_view/$', 'my_module.my_view'))
+    urlpatterns.append(url(r'^my_view/$', 'my_app.views.my_view'))
 
 
 In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you just created:

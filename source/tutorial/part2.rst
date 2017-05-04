@@ -133,6 +133,7 @@ To create the instructions, we can define a file
     </p>
     </div>
 
+
 Send.html
 ~~~~~~~~~
 
@@ -274,23 +275,20 @@ to condition on the current player's ``id_in_group``.
     {% endif %}
 
         <p>
-        Therefore, your total payoff is {{player.payoff}}.
+        Therefore, your total payoff is {{ player.payoff }}.
         </p>
 
         {% include 'my_trust/Instructions.html' %}
 
     {% endblock %}
 
-Here is the Python code for this page in views.py:
+In views.py, simply define the page like this:
 
 .. code-block:: python
 
     class Results(Page):
+        pass
 
-        def vars_for_template(self):
-            return {
-                'tripled_amount': self.group.sent_amount * Constants.multiplication_factor
-            }
 
 Wait pages and page sequence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
