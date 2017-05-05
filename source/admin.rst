@@ -118,8 +118,8 @@ an "efficiency factor" parameter that is a numeric constant,
 like 1.5 or 2. The usual approach would be to define it in ``Constants``,
 e.g. ``Constants.efficiency_factor``
 
-However, to make this parameter configurable, move it from ``Constants``
-to your config in :ref:`SESSION_CONFIGS`. For example:
+However, to make your custom parameter configurable, instead of defining it in
+``Constants``, put it in your config in :ref:`SESSION_CONFIGS`. For example:
 
 .. code-block:: python
 
