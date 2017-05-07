@@ -448,9 +448,9 @@ to control exactly which players are assigned together.
 Let's say that in addition to grouping by arrival time, you need each group
 group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
 
-If you define a method called "get_players_for_group",
+If you define a method called ``get_players_for_group``,
 it will get called whenever a new player reaches the wait page.
-It gets passed an argument, which is the list of players who are waiting to be grouped.
+The method's argument is the list of players who are waiting to be grouped.
 If you select some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
