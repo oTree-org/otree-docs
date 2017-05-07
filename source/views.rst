@@ -142,6 +142,7 @@ When there are 60 seconds left, the page displays a timer warning the participan
     However, this does not occur if you are running the test server
     (``runserver``).
 
+If you need the timeout to be dynamically determined, use :ref:`get_timeout_seconds`.
 
 .. _timeout_happened:
 
@@ -171,6 +172,133 @@ Timeouts and forms
 
 To control what happens with the page's form if a timeout occurs,
 see :ref:`timeout_submission` and :ref:`timeout_happened`.
+
+.. _get_timeout_seconds:
+
+get_timeout_seconds
+~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a new feature
+    in otree-core 1.3 beta (May 2017).
+    See :ref:`v13`
+
+This is a dynamic alternative to ``timeout_seconds``,
+so that you can base the timeout on ``self.player``, ``self.session``, etc.:
+
+For example, you can make the timeout for a page configurable by putting it in the
+session config (see :ref:`edit_config`):
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        def get_timeout_seconds(self):
+            return self.session.config['my_page_timeout']
+
+
+Timeouts that span multiple pages
+'''''''''''''''''''''''''''''''''
+
+You can use ``get_timeout_seconds`` to create timeouts that span multiple
+pages, or even the entire session. The trick is to define a fixed "expiration time",
+and then on each page, make ``get_timeout_seconds`` return the number of seconds
+until that expiration time.
+
+First, choose a place to start the timer. This could be a page called
+"Start" that displays text like "Press the button when you're ready to start".
+When the user clicks the "next" button, ``before_next_page`` will be executed
+and the expiry timestamp will be set:
+
+.. code-block:: python
+
+    import time
+
+    class Start(Page):
+
+        def is_displayed(self):
+            return self.round_number == 1
+
+        def before_next_page(self):
+            # user has 5 minutes to complete as many pages as possible
+            self.participant.vars['expiry_timestamp'] = time.time() + 5*60
+
+Then, each page's ``get_timeout_seconds`` should be the number of seconds
+until that expiration time:
+
+.. code-block:: python
+
+    class Page1(Page):
+        def get_timeout_seconds(self):
+            return self.participant.vars['expiry_timestamp'] - time.time()
+
+When time runs out, ``get_timeout_seconds`` will return 0 or a negative value,
+which will result in the page loading and being auto-submitted right away.
+This means all the remaining pages will quickly flash on the participant's screen,
+which is usually undesired. So, you should use
+``is_displayed`` to skip the page if time has run out, or if there's only
+a few seconds remaining (e.g. 3).
+
+.. code-block:: python
+
+    class Page1(Page):
+        def get_timeout_seconds(self):
+            return self.participant.vars['expiry_timestamp'] - time.time()
+
+        def is_displayed(self):
+            return self.participant.vars['expiry_timestamp'] - time.time() > 3
+
+If you have multiple pages in your ``page_sequence`` that need to share
+the timeout, rather than copy-pasting the above code to every page redundantly,
+you can create a base class for all pages:
+
+.. code-block:: python
+
+    class BasePage(Page):
+
+        def get_timeout_seconds(self):
+            return self.participant.vars['expiry_timestamp'] - time.time()
+
+        def is_displayed(self):
+            return self.participant.vars['expiry_timestamp'] - time.time() > 3
+
+
+    class Page1(BasePage):
+        pass
+
+
+    class Page2(BasePage):
+        pass
+
+
+    class Page3(BasePage):
+        pass
+
+
+    page_sequence = [
+        Start,
+        Page1, Page2, Page3,
+    ]
+
+See the section on :ref:`inheritance <inheritance>` for more info.
+
+The default text on the timer says "Time left to complete this page:".
+But if your timeout spans multiple pages, you should word it more accurately,
+by setting ``timer_text``:
+
+.. code-block:: python
+
+    class BasePage(Page):
+
+        timer_text = 'Time left to complete this section:'
+
+        def get_timeout_seconds(self):
+            return self.participant.vars['expiry_timestamp'] - time.time()
+
+        def is_displayed(self):
+            return self.participant.vars['expiry_timestamp'] - time.time() > 3
+
 
 def vars_for_all_templates(self)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,6 +359,16 @@ because the code is executed once for the entire group,
 not for each individual player.
 (However, you can use ``self.player`` in a wait page's ``is_displayed``.)
 
+is_displayed()
+~~~~~~~~~~~~~~
+
+Works the same way as with regular pages.
+If this returns ``False`` then the player skips the wait page.
+
+If some or all players in the group skip the wait page,
+then ``after_all_players_arrive()`` may not be run.
+
+
 .. _group_by_arrival_time:
 
 group_by_arrival_time
@@ -290,14 +428,55 @@ Notes:
     it should only be based on the round number. Don't use ``is_displayed``
     to show the page to some players but not others.
 
-is_displayed()
-~~~~~~~~~~~~~~
+If you need further control on arranging players into groups,
+use :ref:`get_players_for_group`.
 
-Works the same way as with regular pages.
-If this returns ``False`` then the player skips the wait page.
+.. _get_players_for_group:
 
-If some or all players in the group skip the wait page,
-then ``after_all_players_arrive()`` may not be run.
+get_players_for_group()
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a new feature
+    in otree-core 1.3 beta (May 2017). See :ref:`v13`
+
+
+``get_players_for_group()`` can be used in addition to ``group_by_arrival_time``,
+to control exactly which players are assigned together.
+
+Let's say that in addition to grouping by arrival time, you need each group
+group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
+
+If you define a method called "get_players_for_group",
+it will get called whenever a new player reaches the wait page.
+It gets passed an argument, which is the list of players who are waiting to be grouped.
+If you select some of these players and return them as a list,
+those players will be assigned to a group, and move forward.
+If you don't return anything, then no grouping occurs.
+
+Here's an example:
+
+.. code-block:: python
+
+    class GroupingWaitPage(WaitPage):
+        group_by_arrival_time = True
+
+        def get_players_for_group(self, waiting_players):
+            '''Each group should have 2 A players, 2 B players'''
+            a_players = [p for p in waiting_players if p.participant.vars['type'] == 'A']
+            b_players = [p for p in waiting_players if p.participant.vars['type'] == 'B']
+
+            # the [:2] notation is a Python "list slice"
+            # if a_players has 2 or fewer items,
+            # a_players[:2] is the same as a_players
+            new_group = a_players[:2] + b_players[:2]
+            if len(new_group) == 4:
+                return new_group
+
+        def is_displayed(self):
+            return self.round_number == 1
+
 
 .. _customize_wait_page:
 

@@ -384,7 +384,8 @@ with ``check_html=False``. For example, change this:
 .. code-block:: python
 
     class PlayerBot(Bot)
-        yield (views.MyPage, {'foo': 99})
+        def play_round(self):
+            yield (views.MyPage, {'foo': 99})
 
 to this:
 
@@ -393,7 +394,8 @@ to this:
     from otree.api import Submission
 
     class PlayerBot(Bot)
-        yield Submission(views.MyPage, {'foo': 99}, check_html=False)
+        def play_round(self):
+            yield Submission(views.MyPage, {'foo': 99}, check_html=False)
 
 (If you used ``Submission`` without ``check_html=False``,
 the two code samples would be equivalent.)
@@ -401,6 +403,22 @@ the two code samples would be equivalent.)
 If many of your pages incorrectly fail the static HTML checks,
 you can bypass these checks globally by setting ``BOTS_CHECK_HTML = False``
 in ``settings.py``.
+
+.. _bot_timeout:
+
+Testing timeouts
+~~~~~~~~~~~~~~~~
+
+You can simulate a timeout on a page by using ``Submission`` with ``timeout_happened=True``:
+
+.. code-block:: python
+
+    from otree.api import Submission
+
+    class PlayerBot(Bot)
+        def play_round(self):
+            yield Submission(views.MyPage, {'foo': 99}, timeout_happened=True)
+
 
 .. _browser-bots:
 

@@ -73,7 +73,7 @@ See :ref:`Sentry <sentry>`.
 AUTH_LEVEL
 ----------
 
-See ``AUTH_LEVEL``.
+See :ref:`AUTH_LEVEL`.
 
 It's somewhat preferable to set the environment variable ``OTREE_AUTH_LEVEL``
 on your server, rather than setting ``AUTH_LEVEL`` directly in settings.py.
@@ -107,3 +107,15 @@ own password of course::
 
 If you change ``ADMIN_USERNAME`` or ``ADMIN_PASSWORD``,
 you need to reset the database.
+
+.. _DEMO_PAGE_TITLE:
+
+DEMO_PAGE_TITLE
+---------------
+
+The title of the demo page
+
+DEMO_PAGE_INTRO_HTML
+--------------------
+
+The HTML in the sidebar of the demo page (previously called ``DEMO_PAGE_INTRO_TEXT``)

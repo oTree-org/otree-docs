@@ -4,6 +4,36 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
+.. _v13:
+
+Version 1.3 beta
+================
+
+Here are the main changes in 1.3 beta:
+
+-   ``get_timeout_seconds`` lets you set timeouts dynamically,
+    and create timeouts that span multiple pages or rounds. See :ref:`get_timeout_seconds`.
+-   ``get_players_for_group`` lets you control how ``group_by_arrival_time``
+    assigns players to groups. See :ref:`get_players_for_group`
+-   Bots: you can now simulate & test a page timeout. See :ref:`bot_timeout`.
+-   ``DEMO_PAGE_TITLE`` setting added. See :ref:`DEMO_PAGE_TITLE`.
+
+To install, run this (note the ``--pre`` in the command;
+this means "pre-release")::
+
+    pip install -U --pre otree-core
+    otree resetdb
+
+To upgrade to a newer beta release,
+run the same command above.
+
+To revert back to the stable version of oTree-core::
+
+    pip uninstall otree-core
+    pip install otree-core
+
+Please send feedback to chris@otree.org.
+
 .. _v12:
 
 Version 1.2

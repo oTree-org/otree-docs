@@ -98,11 +98,6 @@ in the session config dictionary (or ``SESSION_CONFIG_DEFAULTS``).
 Configure sessions
 ------------------
 
-.. note::
-
-    This is a new feature
-    only available in otree-core 1.0 or higher (Oct 2016).
-
 You can make your session configurable,
 so that you can adjust the game's parameters in the admin interface,
 without needing to edit the source code:
@@ -118,8 +113,8 @@ an "efficiency factor" parameter that is a numeric constant,
 like 1.5 or 2. The usual approach would be to define it in ``Constants``,
 e.g. ``Constants.efficiency_factor``
 
-However, to make your custom parameter configurable, instead of defining it in
-``Constants``, put it in your config in :ref:`SESSION_CONFIGS`. For example:
+However, to make your custom parameter configurable, instead of adding it to
+``Constants``, add it to your config in :ref:`SESSION_CONFIGS`. For example:
 
 .. code-block:: python
 
@@ -171,7 +166,7 @@ Customizing the admin interface (admin reports)
 .. note::
 
     This is a new feature
-    only available in otree-core 1.1 or higher (Dec 2016).
+    in otree-core 1.1 or higher (Dec 2016).
 
 You can add a custom tab to a session's admin page with any content you want;
 for example:

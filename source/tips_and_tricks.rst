@@ -54,6 +54,8 @@ or `real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
 sample games for examples of how to just have 1 page that gets looped over many rounds,
 varying the question that gets displayed with each round.
 
+.. _inheritance:
+
 views.py: prevent code duplication by using inheritance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
