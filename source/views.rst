@@ -224,6 +224,9 @@ and the expiry timestamp will be set:
             # user has 5 minutes to complete as many pages as possible
             self.participant.vars['expiry_timestamp'] = time.time() + 5*60
 
+(You could also start the timer in ``after_all_players_arrive`` or ``before_session_starts``,
+and it could be stored in ``session.vars`` if it's the same for everyone in the session.)
+
 Then, each page's ``get_timeout_seconds`` should be the number of seconds
 until that expiration time:
 
@@ -450,12 +453,13 @@ group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
 
 If you define a method called ``get_players_for_group``,
 it will get called whenever a new player reaches the wait page.
-The method's argument is the list of players who are waiting to be grouped.
+The method's argument is the list of players who are waiting to be grouped,
+ordered by the time they first arrived at the wait page.
 If you select some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
 
-Here's an example:
+Here's an example where each group has 2 A players, 2 B players.
 
 .. code-block:: python
 
@@ -463,19 +467,45 @@ Here's an example:
         group_by_arrival_time = True
 
         def get_players_for_group(self, waiting_players):
-            '''Each group should have 2 A players, 2 B players'''
             a_players = [p for p in waiting_players if p.participant.vars['type'] == 'A']
             b_players = [p for p in waiting_players if p.participant.vars['type'] == 'B']
 
-            # the [:2] notation is a Python "list slice"
-            # if a_players has 2 or fewer items,
-            # a_players[:2] is the same as a_players
-            new_group = a_players[:2] + b_players[:2]
-            if len(new_group) == 4:
-                return new_group
+            if len(a_players) >= 2 and len(b_players) >= 2:
+                # this is a Python "list slice"
+                return a_players[:2] + b_players[:2]
 
         def is_displayed(self):
             return self.round_number == 1
+
+
+Here's an example of a where each player has a field ``treatment``, and 2 players
+can only be assigned to the same 2-player group if they have the same treatment.
+Note that we only need to check for possible groupings with the last player,
+because if any of the other 2 players matched with each other, they would have
+been grouped the previous time ``get_players_for_group`` was run.
+
+.. code-block:: python
+
+    class GroupByTreatment(WaitPage):
+        group_by_arrival_time = True
+
+        def get_players_for_group(self, waiting_players):
+
+            # since the list is ordered by arrival time,
+            # the last element is the newest player who just arrived
+            newest_player = waiting_players[-1]
+
+            # the players who were already waiting
+            # (each of them was newest_player a previous time this method was called)
+            already_waiting = waiting_players[:-1]
+
+            # check if any of the already waiting players have the same treatment
+            # as the newly arrived player
+            possible_partners = [p for p in already_waiting if p.treament == newest_player.treatment]
+
+            # if so, put them in a group together
+            if possible_partners:
+                return [possible_partners[0], newest_player]
 
 
 .. _customize_wait_page:
