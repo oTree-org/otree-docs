@@ -48,9 +48,23 @@ More info :ref:`here <server-ubuntu>`.
 Models
 ~~~~~~
 
--  If you are using oTree in a typical way (with models.py and views.py),
-   You don't need to explicitly call ``.save()`` on your models;
-   oTree will do it automatically.
+.. _auto_save:
+
+Auto-save of models
+'''''''''''''''''''
+
+In oTree, you don't need to explicitly call ``.save()`` on your models;
+oTree will do it automatically (it uses an idmap cache).
+However, this auto-save feature does not apply to custom models or views that don't inherit from oTree's,
+or custom WebSocket/AJAX code. In that case, you have to remember to save your database
+models yourself as you would in a regular Django project.
+
+You will also need to figure out how to query your models using Django's ORM
+and the model's pk/code, etc.
+
+Misc notes on models
+''''''''''''''''''''
+
 -  ``null=True`` and ``default=None`` are not necessary in your model
    field declarations; in oTree fields are null by default.
 -  ``initial`` is an alias for ``default`` in a model field's kwargs.
@@ -97,6 +111,7 @@ In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you j
 If you need to access oTree's models, you will have to handle querying and saving
 objects yourself.
 
+
 Real-time and WebSockets
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -119,7 +134,6 @@ documentation:
 
     # Connected to websocket.connect
     def ws_add(message):
-        message.reply_channel.send({"accept": True})
         Group("chat").add(message.reply_channel)
 
     # Connected to websocket.disconnect
@@ -127,8 +141,14 @@ documentation:
         Group("chat").discard(message.reply_channel)
 
 See `otree.channels.consumers <https://github.com/oTree-org/otree-core/blob/master/otree/channels/consumers.py>`__
-for examples of more complex consumers. If you need to access oTree's models in your consumers,
-you will have to handle querying and saving objects yourself.
+for examples of more complex consumers. Also see :ref:`auto_save`.
+
+.. note::
+
+    oTree is still using channels v 0.17.3,
+    which has some incompatibilities with the latest version.
+    See `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html>`__.
+
 
 Next, create a module ``routing.py`` (either in your project root or in an app)
 and append your routes to oTree's built-in routes:
@@ -146,6 +166,8 @@ and append your routes to oTree's built-in routes:
 
 In settings.py, set ``CHANNEL_ROUTING = 'routing.channel_routing'``
 (this is the dotted path to your ``channel_routing`` variable in ``routing.py``)
+
+
 
 Chat box
 ^^^^^^^^

@@ -416,7 +416,7 @@ you may want to only group by arrival time in round 1:
         group_by_arrival_time = True
 
         def is_displayed(self):
-            self.round_number == 1
+            return self.round_number == 1
 
 If you do this, then subsequent rounds will keep the same group structure as
 round 1. Otherwise, players will be re-grouped by their arrival time

@@ -66,8 +66,7 @@ relationship between session and subsession:
 A player is an instance of a participant in one particular subsession.
 A player is like a temporary "role" played by a participant.
 A participant can be player 2 in the first subsession, player 1 in the
-next subsession, and so on. Following on the above example,
-the participant would be represented as 2 different players:
+next subsession, and so on.
 
 .. _object_model:
 
