@@ -170,7 +170,7 @@ In settings.py, set ``CHANNEL_ROUTING = 'routing.channel_routing'``
 
 
 Chat box
-^^^^^^^^
+~~~~~~~~
 
 I have created a beta oTree chat based on Django channels
 `here <https://github.com/oTree-org/otreechat>`__.
