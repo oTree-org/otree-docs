@@ -187,15 +187,26 @@ get_timeout_seconds
 This is a dynamic alternative to ``timeout_seconds``,
 so that you can base the timeout on ``self.player``, ``self.session``, etc.:
 
-For example, you can make the timeout for a page configurable by putting it in the
-session config (see :ref:`edit_config`):
+For example, you can make the timeout for a page configurable by adding a parameter
+to the session config (see :ref:`edit_config`) and referencing it in your page.
+In ``settings.py`` add this:
 
 .. code-block:: python
+
+    SESSION_CONFIGS = [
+        {
+            'name': 'my_app',
+            'num_demo_participants': 1,
+            'app_sequence': ['my_app'],
+            'my_page_timeout_seconds': 60,
+        },
+        # etc...
+    ]
 
     class MyPage(Page):
 
         def get_timeout_seconds(self):
-            return self.session.config['my_page_timeout']
+            return self.session.config['my_page_timeout_seconds']
 
 
 Timeouts that span multiple pages

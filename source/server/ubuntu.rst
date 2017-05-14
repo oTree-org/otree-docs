@@ -112,7 +112,6 @@ Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLit
 Then run::
 
     pip3 install psycopg2
-    otree resetdb
 
 Install Redis
 -------------
@@ -138,8 +137,7 @@ On the server
 On the server, create 2 directories -- one to store your project files,
 and another to serve as the Git remote::
 
-    mkdir oTree
-    mkdir oTree.git
+    mkdir oTree oTree.git
 
 Create a git repo in ``oTree.git``::
 
@@ -148,10 +146,6 @@ Create a git repo in ``oTree.git``::
 
 Using a text editor such as ``nano``, ``emacs``, ``vim``, add the following to
 ``oTree.git/hooks/post-receive``::
-
-    emacs hooks/post-receive
-
-Then add the following lines to that file::
 
     #!/bin/sh
     GIT_WORK_TREE=/path/to/your/oTree
@@ -219,26 +213,48 @@ command.
 However, when you want to use oTree in production, you need to run the
 production server, which can handle more traffic.
 
-Note: oTree does not run with typical Django WSGI servers like ``gunicorn``.
-It needs the special ``daphne`` server, which supports WebSockets.
-
+Note: oTree does not run with typical Django WSGI servers like ``gunicorn``,
+because it is ASGI based.
 
 Testing the production server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From your project folder, run::
 
-    otree runprodserver --port=80
+    otree runprodserver --port=8000
 
-This will run Django's ``collectstatic`` to collect your static files,
-then start the server.
-If it works, you will be able to navigate in your browser to your server's
-IP address or hostname. You don't need to append :80 to the URL,
-because that is the default HTTP port.
+Then navigate in your browser to your server's
+IP/hostname followed by ``:8000``.
 
-Note: unlike ``runserver``, ``runprodserver`` does not restart automatically
-when your files are changed.
+If you're not using a reverse proxy like Nginx or Apache,
+you probably want to run oTree directly on port 80.
+This requires superuser permission, so let's use sudo,
+but add some extra args to preserve environment variables like ``PATH``,
+``DATABASE_URL``, etc::
 
+    sudo -E env "PATH=$PATH" otree runprodserver --port=80
+
+Try again to open your browser;
+this time, you don't need to append :80 to the URL, because that is the default HTTP port.
+
+Notes:
+
+-   unlike ``runserver``, ``runprodserver`` does not restart automatically
+    when your files are changed.
+-   ``runprodserver`` automatically runs Django's ``collectstatic``
+    to collect your files under ``_static_root/``.
+    If you have already run ``collectstatic``, you can skip it with
+    ``--no-collectstatic``.
+
+Set remaining environment variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add the following to your ``.bash_profile`` or ``.bashrc``
+(substitute your own values)::
+
+    export OTREE_ADMIN_PASSWORD=my_password
+    export OTREE_PRODUCTION=0
+    export OTREE_AUTH_LEVEL=DEMO
 
 Process control system
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -249,10 +265,35 @@ a process control system like Supervisord or Circus.
 This will restart your processes in case they crash,
 keep it running if you log out, etc.
 
+Circus
+``````
+
+To install::
+
+    sudo apt-get install libzmq-dev libevent-dev
+    pip3 install circus circus-web
+
+Create a ``circus.ini`` in your project folder,
+with the following content (can do this locally and then git push again)::
+
+    [watcher:webapp]
+    cmd = otree
+    args = runprodserver --port=80
+    use_sockets = True
+    copy_env = True
+
+Then run::
+
+    sudo -E env "PATH=$PATH" circusd circus.ini
+
+If this is working properly, you can start it as a daemon::
+
+    sudo -E env "PATH=$PATH" circusd --daemon circus.ini
+
+
 Supervisor
 ``````````
-
-Install supervisor::
+As an alternative to Circus, you can install supervisor:
 
     sudo apt-get install supervisor
 
@@ -284,48 +325,18 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
 ``DATABASE_URL`` should match what you set earlier. That is, you need to set
 ``DATABASE_URL`` in 2 places:
 
--   in your ``.bashrc``, so that ``otree resetdb`` works
--   in your ``otree.conf`` so that ``otree runprodserver`` works.
-
-Because normally supervisor executes ``otree runprodserver`` as the root user,
-but you execute ``otree resetdb`` as regular (non-root) user.
-So the env var needs to be set in both environments.
+-   in your ``.bashrc``, so that ``otree resetdb`` works when you execute
+    it as a regular user
+-   in your ``otree.conf`` so that ``otree runprodserver`` works
+    when it is executed by the root user (normally supervisor runs under the
+    root user)
 
 To start or restart the server (e.g. after making changes), do::
 
     sudo service supervisor restart
 
-
 If this doesn't start the server, check the ``stdout_logfile`` you defined above,
 or ``/var/log/supervisor/supervisord.log``.
-
-Alternative: Circus
-```````````````````
-
-An alternative to Supervisor is `Circus <https://circus.readthedocs.io/en/latest/>`__.
-
-To install::
-
-    sudo apt-get install libzmq-dev libevent-dev
-    pip3 install circus circus-web
-
-Create a ``circus.ini`` in your project folder,
-with the following content (can do this locally and then git push again)::
-
-    [watcher:webapp]
-    cmd = otree
-    args = runprodserver --port=80
-    use_sockets = True
-    copy_env = True
-
-Run the following commands::
-
-    otree collectstatic
-    circusd circus.ini
-
-If this is working properly, you can start it as a daemon::
-
-    circusd --daemon circus.ini
 
 
 Apache, Nginx, etc.
@@ -336,7 +347,7 @@ oTree comes installed with the `Daphne <https://github.com/andrewgodwin/daphne>`
 which is launched automatically when you run ``otree runprodserver``.
 
 oTree does not work with WSGI servers like Gunicorn or mod_wsgi.
-Instead it requires an ASGI server, and currently the main/best one is Daphne.
+Instead it requires an ASGI server, and currently the recommended one is Daphne.
 Apache and Nginx do not have ASGI server implementations, so you cannot use
 Apache or Nginx as your primary web server.
 
@@ -344,7 +355,7 @@ However, you still might want to use Apache/Nginx as a reverse proxy, for the fo
 
 -   You are trying to optimize serving of static files
     (though oTree uses Whitenoise, which is already fairly efficient)
--   You need to host other websites on the same server, and can only use port 80
+-   You need to host other websites on the same server
 -   You need features like SSL or proxy buffering
 
 Apache

@@ -26,8 +26,6 @@ Then you can assign to this field randomly:
             for player in self.get_players():
                 player.color = random.choice(['blue', 'red'])
 
-For more on how oTree does randomization, see :ref:`randomization`.
-
 You can also assign treatments at the group level (put the ``CharField``
 in the ``Group`` class and change the above code to use
 ``get_groups()`` and ``group.color``).

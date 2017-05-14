@@ -43,7 +43,7 @@ removed, or changed a field in ``models.py``.)
 
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types>`__.
-The most commonly used ones are ``CharField`` (for text),
+The most commonly used ones are ``CharField``/``TextField`` (for text),
 ``FloatField`` (for real numbers),
 ``BooleanField`` (for true/false values),
 ``IntegerField``, and ``PositiveIntegerField``.

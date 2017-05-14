@@ -53,8 +53,8 @@ explicitly overridden (works in an analogous way to ``SESSION_CONFIG_DEFAULTS``)
 
 Here are the available properties:
 
-``name and display_name`` (required)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``name`` and ``display_name`` (required)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The internal name and display name, respectively.
 

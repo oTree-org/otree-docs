@@ -81,16 +81,12 @@ will be used to identify that participant in the
 oTree admin interface and the payments page, etc.
 You can also access it from your code as ``self.participant.label``.
 
-.. _randomization:
-
-Arrival order & Randomization
------------------------------
+Arrival order
+-------------
 
 (Note: if using single-use links, this section does not apply.)
 
 oTree will assign the first person who arrives to be P1, the second to be P2, etc.
-If you would instead like participant selection to be random, you can set ``'random_start_order': True,``
-in the session config dictionary (or ``SESSION_CONFIG_DEFAULTS``).
 
 
 .. _edit_config:

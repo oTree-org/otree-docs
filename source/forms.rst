@@ -177,8 +177,8 @@ However, if you define the choices dynamically with :ref:`FOO_choices`,
 in order to use ``get_*_display()`` you need to also define the ``*_choices``
 method on the Player/Group in models.py.
 
-blank (optional) fields
-~~~~~~~~~~~~~~~~~~~~~~~
+Optional fields
+~~~~~~~~~~~~~~~
 
 If a field is optional, you can use ``blank=True`` like this:
 

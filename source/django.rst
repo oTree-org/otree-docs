@@ -119,7 +119,7 @@ oTree uses `Django channels <https://channels.readthedocs.io/en/stable/>`__
 for real-time (WebSocket) functionality.
 
 If you are comfortable with more advanced programming, you can add your own
-real-time interactions such as chat between players.
+real-time interactions such as a continuous-time market.
 
 First, create a module ``consumers.py`` in one of your apps.
 For each WebSocket,

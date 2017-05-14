@@ -114,8 +114,6 @@ then P1 and P2 would be grouped together, and so would P3 and P4, and so on.
 This means that by default, the groups are the same in each round,
 and even between apps that have the same ``players_per_group``.
 
-(Note: to randomize participants to groups or roles, see :ref:`randomization`.)
-
 If you want to rearrange groups, you can use the below techniques.
 
 group_randomly()
