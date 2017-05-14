@@ -50,7 +50,9 @@ It's a best practice to use a virtualenv::
 Then in your ``.bashrc`` or ``.bash_profile``, add this command so your venv
 is activated each time you start your shell::
 
-    source ~/path/to/your/venv_otree/bin/activate
+    source ~/venv_otree/bin/activate
+
+(Substitute the correct location of your ``venv_otree/`` dir above.)
 
 
 .. _postgres-linux:
@@ -289,6 +291,13 @@ Then run::
 If this is working properly, you can start it as a daemon::
 
     sudo -E env "PATH=$PATH" circusd --daemon circus.ini
+
+This command will not produce any output, because all output will be logged
+to a file (which file?).
+
+To stop circus, run::
+
+    circusctl quit
 
 
 Supervisor
