@@ -6,10 +6,10 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v13:
 
-Version 1.3 beta
-================
+Version 1.3
+===========
 
-Here are the main changes in 1.3 beta:
+Here are the main changes in 1.3:
 
 -   ``get_timeout_seconds`` lets you set timeouts dynamically,
     and create timeouts that span multiple pages or rounds. See :ref:`get_timeout_seconds`.
@@ -18,19 +18,10 @@ Here are the main changes in 1.3 beta:
 -   Bots: you can now simulate & test a page timeout. See :ref:`bot_timeout`.
 -   ``DEMO_PAGE_TITLE`` setting added. See :ref:`DEMO_PAGE_TITLE`.
 
-To install, run this (note the ``--pre`` in the command;
-this means "pre-release")::
+To install, run this::
 
-    pip3 install -U --pre otree-core
+    pip3 install -U otree-core
     otree resetdb
-
-To upgrade to a newer beta release,
-run the same command above.
-
-To revert back to the stable version of oTree-core::
-
-    pip3 uninstall otree-core
-    pip3 install otree-core
 
 Please send feedback to chris@otree.org.
 

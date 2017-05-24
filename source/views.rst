@@ -184,7 +184,7 @@ get_timeout_seconds
 .. note::
 
     This is a new feature
-    in otree-core 1.3 beta (May 2017).
+    in otree-core 1.3 (May 2017).
     See :ref:`v13`
 
 This is a dynamic alternative to ``timeout_seconds``,
@@ -456,7 +456,7 @@ get_players_for_group()
 .. note::
 
     This is a new feature
-    in otree-core 1.3 beta (May 2017). See :ref:`v13`
+    in otree-core 1.3 (May 2017). See :ref:`v13`
 
 
 ``get_players_for_group()`` can be used in addition to ``group_by_arrival_time``,
