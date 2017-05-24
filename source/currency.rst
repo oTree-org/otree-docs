@@ -114,3 +114,9 @@ You can convert a points amount to money using the method
 
 It requires ``self.session`` to be passed, because
 different sessions can have different conversion rates).
+
+Misc
+~~~~
+
+If you want numbers to be formatted like ``1,000,000`` or ``1 000 000``,
+see `USE_THOUSAND_SEPARATOR <https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-USE_THOUSAND_SEPARATOR>`__.

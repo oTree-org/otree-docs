@@ -13,7 +13,7 @@ as bonuses they earned by playing your game.
 
 .. warning::
 
-    You should take care when running games on Mechanical Turk with live interaction
+    Use caution when running games on Mechanical Turk with live interaction
     between participants (i.e. wait pages). See below.
 
 
@@ -134,10 +134,15 @@ Multiplayer games
 -----------------
 
 Games that involve synchronous interaction between participants (i.e.
-wait pages) can be difficult on Mechanical Turk. Some oTree users have reported
-problems getting people to interact at the same time because some participants
-drop out, and other participants delay starting the game until some time after
-accepting the assignment.
+wait pages) are difficult on Mechanical Turk,
+because some participants
+drop out or delay starting the game until some time after
+accepting the assignment. This causes other participants to be stuck on a wait page,
+which can upset your MTurk workers, who then give you negative reviews.
+
+There are currently some discussions on the
+`oTree mailing list <https://groups.google.com/forum/#!forum/otree>`__ on this
+subject. Below are some partial solutions to the problem.
 
 You should use :ref:`group_by_arrival_time`.
 You should also set ``timeout_seconds`` on each page,

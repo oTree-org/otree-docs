@@ -132,8 +132,8 @@ Technically, ``requirements_base.txt`` only needs to contain
 the lines for ``otree-core`` and ``Django``.
 There are many other packages listed there (e.g. ``asgi-redis``, ``channels``),
 but they are automatically installed if you install ``otree-core``. Still,
-it's generally good to use the output of pip freeze. There should be about
-40-50 items listed when you do ``pip freeze``, and it should look roughly similar
+it's generally good to use the output of pip3 freeze. There should be about
+40-50 items listed when you do ``pip3 freeze``, and it should look roughly similar
 (but not identical) to the `this file <https://github.com/oTree-org/otree-core/blob/master/requirements.txt>`__.
 If you see far more items in your ``requirements_base.txt``, you might have
 extra unnecessary packages, e.g. for other projects you were doing unrelated
@@ -215,12 +215,6 @@ Further steps with Heroku
 
 Below are the steps you should take before launching a real study,
 or to further configure your server's behavior.
-
-Look at your server check
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In the oTree admin interface, click "Server Check" in the header bar.
-It will tell you what steps below you need to take.
 
 
 Turn on timeout worker Dyno
@@ -333,36 +327,6 @@ you should set ``OTREE_AUTH_LEVEL``):
 
 More info at :ref:`AUTH_LEVEL`.
 
-
-Before launching a study, you should set up Sentry.
-
-Testing with browser bots
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Before launching a study, it's advisable to test your apps with bots,
-especially browser bots. See the section :ref:`bots`.
-
-.. _sentry:
-
-Logging with Sentry
--------------------
-
-Whether or not you use Heroku,
-you should enter your email address (`here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__)
-to sign up for our free Sentry service
-which can log all errors on your server and send you email notifications.
-(`Sentry <https://getsentry.com/welcome/>`__.)
-
-Sentry is necessary because many errors are not visible in the UI after you turn off debug mode.
-You will no longer see Django's yellow error pages;
-you or your users will just see generic "500 server error" pages:
-
-.. image:: ../_static/500_error.png
-    :align: center
-
-After you enter your email, you will receive an email with information
-on how to activate Sentry in your project.
-
 .. _papertrail:
 
 Logging with Papertrail
@@ -386,3 +350,7 @@ In Heroku, you can set backups for your Postgres database. Go to your `Heroku Da
 click on the "Heroku Postgres" tab, and then click "PG Backups".
 More information is available `here <https://devcenter.heroku.com/articles/heroku-postgres-backups>`__.
 
+Next steps
+----------
+
+See :ref:`server_final_steps` for steps you should take before launching your study.

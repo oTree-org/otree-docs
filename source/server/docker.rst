@@ -156,13 +156,7 @@ then each user should edit their ``.env`` file to set a
 different ``OTREE_PORT``, e.g. 8000, 8001, etc.
 
 
-Sentry
-------
-It's highly recommended to set up :ref:`Sentry <sentry>`,
-so that you can monitor errors on the server
+Next steps
+----------
 
-Bots
-----
-
-Before launching a study, it's advisable to test your apps with bots,
-especially browser bots. See the section :ref:`bots`.
+See :ref:`server_final_steps` for steps you should take before launching your study.

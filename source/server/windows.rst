@@ -115,4 +115,4 @@ Next steps
 The remaining steps are to deploy your code with Git as described :ref:`here <git-generic>`,
 and run the server as described :ref:`here <runprodserver>` the steps are essentially the same as on Linux.
 
-Then set up :ref:`Sentry <sentry>`.
+See :ref:`server_final_steps` for steps you should take before launching your study.

@@ -21,7 +21,7 @@ Here are the main changes in 1.3 beta:
 To install, run this (note the ``--pre`` in the command;
 this means "pre-release")::
 
-    pip install -U --pre otree-core
+    pip3 install -U --pre otree-core
     otree resetdb
 
 To upgrade to a newer beta release,
@@ -29,8 +29,8 @@ run the same command above.
 
 To revert back to the stable version of oTree-core::
 
-    pip uninstall otree-core
-    pip install otree-core
+    pip3 uninstall otree-core
+    pip3 install otree-core
 
 Please send feedback to chris@otree.org.
 

@@ -48,6 +48,9 @@ Or only show the page in round 1:
 
 If you need to repeat the same rule for many pages, see :ref:`here <skip_many>`.
 
+``is_displayed()`` may be executed more than once, so beware of code that relies
+on it only being executed once, e.g. incrementing a counter.
+
 .. _vars_for_template:
 
 vars_for_template()

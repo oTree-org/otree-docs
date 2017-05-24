@@ -26,6 +26,8 @@ For example, if you had a 4-page public goods game followed by a 2-page question
 .. figure:: _static/diagrams/session_subsession.png
     :align: center
 
+If a game is repeated for multiple rounds, each round is a subsession.
+
 Groups
 ------
 
