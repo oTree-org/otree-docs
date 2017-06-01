@@ -578,3 +578,4 @@ the following 2 code snippets are equivalent:
 If you want to apply your custom wait page template globally,
 save it to ``_templates/global/WaitPage.html``.
 oTree will then automatically use it everywhere instead of the built-in wait page.
+
