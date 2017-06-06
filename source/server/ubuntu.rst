@@ -1,6 +1,5 @@
 .. _server-ubuntu:
 
-
 Linux Server
 ============
 
@@ -12,14 +11,16 @@ Linux Server
 We typically recommend oTree users to deploy to Heroku (see instructions :ref:`here <heroku>`),
 because that is the simplest for people who are not experienced with web server administration.
 
-However, you may prefer to run oTree on your own server. Reasons may include:
+You can also use your own personal Windows computer as a temporary server.
+See :ref:`here <server-windows>`.
+
+However, you may prefer to run oTree on a proper Linux server. Reasons may include:
 
 -   You will be launching your experiment in a setting where internet
     connectivity is lacking
 -   You do not want your server to be accessed from the internet
 -   You want full control over how your server is configured
 -   You want better performance (local servers have less latency)
-
 
 The below instructions are for Ubuntu 16.04.
 
@@ -125,80 +126,21 @@ which should output ``PONG``.
 If there was an installation problem, you can try installing Redis from an alternate source,
 e.g. `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
 
-.. _git-generic:
+Push your code to the server
+----------------------------
 
-Set up Git
-----------
+You can get your code on the server using SCP, SFTP, Dropbox, etc.
+If you are interested in using Git (which is somewhat more advanced),
+see the instructions :ref:`here <git-generic>`.
 
-If your code is on your personal computer and you are trying to push it to
-this web server, you can use Git.
-
-On the server
-~~~~~~~~~~~~~
-
-On the server, create 2 directories -- one to store your project files,
-and another to serve as the Git remote::
-
-    mkdir oTree oTree.git
-
-Create a git repo in ``oTree.git``::
-
-    cd oTree.git
-    git init --bare
-
-Using a text editor such as ``nano``, ``emacs``, ``vim``, add the following to
-``oTree.git/hooks/post-receive``::
-
-    #!/bin/sh
-    GIT_WORK_TREE=/path/to/your/oTree
-    export GIT_WORK_TREE
-    git checkout -f
-
-This means that every time someone pushes to ``oTree.git``, the code will be
-checked out to the other directory ``oTree``. (This technique is further described
-`here <http://toroid.org/git-website-howto>`__.)
-
-Make sure that ``post-receive`` is executable::
-
-    chmod +x hooks/post-receive
-
-On your PC
-~~~~~~~~~~
-
-On your PC, open your shell, and make sure you have committed any changes as follows:
-
-.. code-block:: bash
-
-    pip3 freeze > requirements_base.txt
-    git add .
-    git commit -am '[commit message]'
-
-(If you get the message
-``fatal: Not a git repository (or any of the parent directories): .git``
-then you first need to initialize the git repo.)
-
-Then add your server as a remote::
-
-    git remote add my-server my-username@XXX.XXX.XXX.XXX:oTree.git
-
-Substitute these values in the above command:
--   ``my-username`` is the Linux login username
--   ``XXX.XXX.XXX.XXX`` is the server's IP address or hostname
--   ``oTree.git`` is the folder with the empty git repo,
--   ``my-server`` is the name you choose to call your remote (e.g. when doing ``git push``).
-
-Then push to this remote::
-
-    $ git push my-server master
-
+For this tutorial, we will assume you are storing your files under
+``/home/my_username/oTree``.
 
 Reset the database on the server
 --------------------------------
 
-On the server, ``cd`` to the ``oTree`` directory.
-Do ``ls`` to verify that your files were indeed transferred when you did
-``git push`` in the previous step.
-install the requirements and reset the database::
+On the server, ``cd`` to the directory containing your oTree project.
+Install the requirements and reset the database::
 
     pip3 install -r requirements.txt
     otree resetdb
@@ -348,8 +290,8 @@ If this doesn't start the server, check the ``stdout_logfile`` you defined above
 or ``/var/log/supervisor/supervisord.log``.
 
 
-Apache, Nginx, etc.
-~~~~~~~~~~~~~~~~~~~
+(Optional) Apache, Nginx, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use oTree without Apache or Nginx.
 oTree comes installed with the `Daphne <https://github.com/andrewgodwin/daphne>`__ web server,

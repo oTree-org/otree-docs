@@ -198,3 +198,43 @@ You can refactor this as follows:
         pass
 
 (Or, if you prefer, use ``super().vars_for_template()``, etc.)
+
+Improving code performance
+--------------------------
+
+You should avoid redundant use of ``get_players()``, ``get_player_by_id()``, ``in_*_rounds()``,
+``get_others_in_group()``, or any other methods that return a player or list of players.
+These methods all require a database query,
+which can be slow.
+
+For example, this code has a redundant query because it asks the database
+5 times for the exact same player:
+
+.. code-block:: python
+
+    class MyPage(Page):
+        def vars_for_template(self):
+            return {
+                'a': self.player.in_round(1).a,
+                'b': self.player.in_round(1).b,
+                'c': self.player.in_round(1).c,
+                'd': self.player.in_round(1).d,
+                'e': self.player.in_round(1).e,
+            }
+
+It should be simplified to this:
+
+.. code-block:: python
+
+    class MyPage(Page):
+        def vars_for_template(self):
+            round_1_player = self.player.in_round(1)
+            return {
+                'a': round_1_player.a,
+                'b': round_1_player.b,
+                'c': round_1_player.c,
+                'd': round_1_player.d,
+                'e': round_1_player.e,
+            }
+
+As an added benefit, this usually makes the code more readable.

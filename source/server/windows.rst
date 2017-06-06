@@ -7,30 +7,58 @@ If you are just testing your app on your personal computer, you can use
 ``otree runserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
-.. note::
+Configure your PC to be a server
+--------------------------------
 
-    There is now a :ref:`Docker-based oTree installation <server-docker>`,
-    which may be easier than the below steps.
+Let's say you have developed your app on your personal computer.
+If you only need computers on the same local network to access it
+(e.g. your university department network) and don't need to be on the public internet,
+you can follow the below steps.
 
+Create a firewall rule
+~~~~~~~~~~~~~~~~~~~~~~
 
-Create a virtualenv
--------------------
+You need to allow other computers to connect to oTree through your firewall.
 
-It's a best practice to use a virtualenv (though optional)::
+-   Open the Windows Firewall
+-   Go to "Inbound Rules"
+-   Click "New Rule"
+-   Select "Port" to make a port rule
+-   Under "Specific local ports", enter 80 and 8000
+-   Select "Allow the connection"
+-   Click through the next few screens, keeping the defaults
+-   Choose a name for your rule (e.g. "oTree").
 
-    python3 -m venv venv_otree
+(If you use Skype) fix Skype issue
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can configure PowerShell to always activate this virtualenv.
-Enter::
+Skype sometimes uses port 80, which can conflict with oTree.
+Either quit Skype, or if you need to keep it running,
+go in Skype to Tools > Options > Advanced > Connections
+and unselect "Use port 80 and 443 for additional incoming connections".
 
-    notepad $shell
+Find your IP address
+~~~~~~~~~~~~~~~~~~~~
 
-Then put this in the file::
+Open PowerShell or CMD and enter ``ipconfig``.
+Look for the entry ``IPv4 Address``.
+Maybe it will look something like ``10.0.1.3``, or could also start with 172 or 192.
 
-    cd "C:\path\to\oTree"
-    . "C:\path\to\oTree\venv_otree\Scripts\activate.ps1"
+Run the server
+~~~~~~~~~~~~~~
 
-(Note the dot at the beginning of the line.)
+Start the server with your IP address followed by :80, e.g.
+``otree runserver 10.0.1.3:80``.
+
+Enter this IP address into the browser of another device on the same network and
+you should be able to load the oTree demo page.
+
+If it doesn't work, maybe another app is using port 80 already.
+
+Try starting the server on port 8000 instead of 80.
+and then on the client device's browser, connect to the IP address followed by ``:8000``,
+e.g. ``10.0.1.3:8000``.
+
 
 .. _postgres-windows:
 
@@ -112,7 +140,34 @@ which should output ``PONG``.
 Next steps
 ----------
 
-The remaining steps are to deploy your code with Git as described :ref:`here <git-generic>`,
-and run the server as described :ref:`here <runprodserver>` the steps are essentially the same as on Linux.
+Run the server as described :ref:`here <runprodserver>` the steps are essentially the same as on Linux.
 
 See :ref:`server_final_steps` for steps you should take before launching your study.
+
+Advanced
+--------
+
+(Optional) create a virtualenv
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It's a best practice to use a virtualenv (though optional)::
+
+    python3 -m venv venv_otree
+
+You can configure PowerShell to always activate this virtualenv.
+Enter::
+
+    notepad $shell
+
+Then put this in the file::
+
+    cd "C:\path\to\oTree"
+    . "C:\path\to\oTree\venv_otree\Scripts\activate.ps1"
+
+(Note the dot at the beginning of the line.)
+
+
+(Optional) use git
+~~~~~~~~~~~~~~~~~~
+
+The remaining steps are to deploy your code with Git as described :ref:`here <git-generic>`,
