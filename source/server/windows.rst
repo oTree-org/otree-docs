@@ -13,7 +13,7 @@ Configure your PC to be a server
 Let's say you have developed your app on your personal computer.
 If you only need computers on the same local network to access it
 (e.g. your university department network) and don't need to be on the public internet,
-you can follow the below steps.
+you can follow the below steps to use your own computer as a server.
 
 Create a firewall rule
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -47,8 +47,13 @@ Maybe it will look something like ``10.0.1.3``, or could also start with 172 or 
 Run the server
 ~~~~~~~~~~~~~~
 
-Start the server with your IP address followed by :80, e.g.
+Start the server with your IP address and port 80, e.g.
 ``otree runserver 10.0.1.3:80``.
+
+.. note::
+
+    ``runserver`` is just for testing; once you've got everything running,
+    you should use ``runprodserver`` as described below.
 
 Enter this IP address into the browser of another device on the same network and
 you should be able to load the oTree demo page.
@@ -58,6 +63,9 @@ If it doesn't work, maybe another app is using port 80 already.
 Try starting the server on port 8000 instead of 80.
 and then on the client device's browser, connect to the IP address followed by ``:8000``,
 e.g. ``10.0.1.3:8000``.
+
+If this works, the next step is to install Postgres and Redis, and run the
+production server, so that it can run smoothly when multiple users are playing.
 
 
 .. _postgres-windows:
@@ -87,6 +95,9 @@ Then exit the SQL prompt::
 
     \q
 
+Setting DATABASE_URL (if running the server on your laptop)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Now you should tell oTree to use Postgres instead of SQLite.
 The default database configuration in ``settings.py`` is::
 
@@ -96,8 +107,18 @@ The default database configuration in ``settings.py`` is::
         )
     }
 
-However, instead of modifying the above line directly,
-it's better to set the ``DATABASE_URL`` environment variable on your server.
+If you're using your PC as the server,
+you can add this line before the line with ``DATABASES``,
+to simulate setting the env var ``DATABASE_URL``::
+
+    environ['DATABASE_URL'] = 'postgres://otree_user:mypassword@localhost/django_db'
+
+
+Setting DATABASE_URL (if running on a dedicated server)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On the other hand, if your server is a separate machine from your development PC,
+it's better to instead set the ``DATABASE_URL`` environment variable on your server.
 Setting the database through an environment variable
 allows you to continue to use SQLite on your development machine,
 while using Postgres on your production server.
@@ -115,6 +136,9 @@ Then restart PowerShell so the environment variable gets loaded.
 
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 (This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
+
+While you're editing environment variables, you can also set other environment variables like
+
 
 psycopg2
 ~~~~~~~~
@@ -137,10 +161,35 @@ You should download and run `Redis for Windows <https://github.com/MSOpenTech/re
 Redis should be running on port 6379. You can test with ``redis-cli ping``,
 which should output ``PONG``.
 
+Run the production server
+-------------------------
+
+    otree runprodserver --port=80
+
+See :ref:`here <runprodserver>` for full instructions.
+The steps are essentially the same as on Linux.
+
+Set environment variables
+-------------------------
+
+Now let's set the variables that control security.
+
+If you're using your own PC as a server,
+the simplest way is to just set them in in your ``settings.py``, e.g.:
+
+.. code-block:: python
+
+    ADMIN_PASSWORD = 'my_password'
+    OTREE_PRODUCTION = '0'
+    OTREE_AUTH_LEVEL = 'DEMO'
+
+However, if using a dedicated server, it's best practice to use
+environment variables; you should set ``OTREE_ADMIN_PASSWORD``,
+``OTREE_PRODUCTION``, and ``OTREE_AUTH_LEVEL``.
+
+
 Next steps
 ----------
-
-Run the server as described :ref:`here <runprodserver>` the steps are essentially the same as on Linux.
 
 See :ref:`server_final_steps` for steps you should take before launching your study.
 

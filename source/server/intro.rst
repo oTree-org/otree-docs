@@ -26,3 +26,5 @@ or for people who do not wish to use a cloud server.
     docker.rst
     ubuntu.rst
     windows.rst
+    next_steps.rst
+    git.rst

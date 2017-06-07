@@ -200,8 +200,8 @@ Add the following to your ``.bash_profile`` or ``.bashrc``
     export OTREE_PRODUCTION=0
     export OTREE_AUTH_LEVEL=DEMO
 
-Process control system
-~~~~~~~~~~~~~~~~~~~~~~
+(Optional) Process control system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the server is working as described above,
 it's a good practice to use
