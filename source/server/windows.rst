@@ -53,7 +53,8 @@ Start the server with your IP address and port 80, e.g.
 .. note::
 
     ``runserver`` is just for testing; once you've got everything running,
-    you should use ``runprodserver`` as described below.
+    you should use ``runprodserver`` as described below. That will require
+    installing Redis.
 
 Enter this IP address into the browser of another device on the same network and
 you should be able to load the oTree demo page.
@@ -64,41 +65,38 @@ Try starting the server on port 8000 instead of 80.
 and then on the client device's browser, connect to the IP address followed by ``:8000``,
 e.g. ``10.0.1.3:8000``.
 
-If this works, the next step is to install Postgres and Redis, and run the
-production server, so that it can run smoothly when multiple users are playing.
+Make sure your IP address doesn't change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+In most university networks, your internal IP address will generally stay the same,
+as long as you stay connected to the same network. If it changes unpredictably,
+you can ask your IT department to add a rule on their DHCP server to always
+assign the same IP to your computer.
 
-.. _postgres-windows:
+.. _mariadb:
 
-Database (Postgres)
--------------------
+Database (MariaDB)
+------------------
 
 oTree's default database is SQLite, which is fine for local development,
-but insufficient for production.
-We recommend PostgreSQL, although you can also use MySQL, MariaDB, or any other database
-supported by Django.
+but insufficient for production, because it often locks when it multiple
+clients are accessing it.
 
-Install `Postgres for Windows <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`__,
-using the default options. Note down the password you chose for the root ``postgres`` user.
+You can use PostgreSQL, MariaDB,
+MySQL, or any other database supported by Django.
+Here we give instructions for MariaDB because it's easy to setup on Windows:
 
-When the installer finishes, open PowerShell and run ``psql -U postgres -W``.
-(If the command is not found, make sure your ``PATH`` environment variable contains
-``C:\Program Files\PostgreSQL\9.6\bin``.)
-
-Then enter these commands::
-
-    CREATE DATABASE django_db;
-    CREATE USER otree_user WITH PASSWORD 'mypassword';
-    GRANT ALL PRIVILEGES ON DATABASE django_db TO otree_user;
-
-Then exit the SQL prompt::
-
-    \q
+-   Download the `MariaDB winX64 MSI <https://downloads.mariadb.org/>`__
+-   Install it; keep all the defaults but don't set a root password.
+-   Search your Windows start menu for "MySQL client" or "MariaDB Client"
+-   When you open that program, you should be prompted for a password.
+    Just hit "enter" without a password.
+-   Type ``create database django_db;`` and hit enter. It should respond "Query OK".
 
 Setting DATABASE_URL (if running the server on your laptop)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now you should tell oTree to use Postgres instead of SQLite.
+Now you should tell oTree to use MariaDB instead of SQLite.
 The default database configuration in ``settings.py`` is::
 
     DATABASES = {
@@ -111,7 +109,7 @@ If you're using your PC as the server,
 you can add this line before the line with ``DATABASES``,
 to simulate setting the env var ``DATABASE_URL``::
 
-    environ['DATABASE_URL'] = 'postgres://otree_user:mypassword@localhost/django_db'
+    environ['DATABASE_URL'] = 'mysql://root@localhost/django_db'
 
 
 Setting DATABASE_URL (if running on a dedicated server)
@@ -121,12 +119,12 @@ On the other hand, if your server is a separate machine from your development PC
 it's better to instead set the ``DATABASE_URL`` environment variable on your server.
 Setting the database through an environment variable
 allows you to continue to use SQLite on your development machine,
-while using Postgres on your production server.
+while using MariaDB on your production server.
 
 If you used the values in the example above (username ``otree_user``, password ``mypassword`` and database ``django_db``),
 your ``DATABASE_URL`` would look like this::
 
-    postgres://otree_user:mypassword@localhost/django_db
+    mysql://root@localhost/django_db
 
 To set the environment variable, do a Windows search (or control panel search)
 for "environment variables". This will take you to the dialog with a name like
@@ -140,13 +138,10 @@ Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLit
 While you're editing environment variables, you can also set other environment variables like
 
 
-psycopg2
-~~~~~~~~
+mysqlclient
+~~~~~~~~~~~
 
-To use Postgres, you need to install psycopg2 with ``pip3 install psycopg2``.
-If the pip install doesn't work,
-download it `here <http://www.stickpeople.com/projects/python/win-psycopg/>`__.
-(If you are using a virtualenv, note the special installation instructions on that page.)
+To use MariaDB, you need to install mysqlclient with ``pip3 install mysqlclient``.
 
 resetdb
 ~~~~~~~
@@ -163,6 +158,8 @@ which should output ``PONG``.
 
 Run the production server
 -------------------------
+
+Run::
 
     otree runprodserver --port=80
 

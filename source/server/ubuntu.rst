@@ -48,13 +48,20 @@ It's a best practice to use a virtualenv::
 
     python3 -m venv venv_otree
 
-Then in your ``.bashrc`` or ``.bash_profile``, add this command so your venv
-is activated each time you start your shell::
+To activate this venv every time you start your shell, edit your ``.bashrc``
+file using nano::
+
+    nano ~/.bashrc
+
+And add this line to the end::
 
     source ~/venv_otree/bin/activate
 
-(Substitute the correct location of your ``venv_otree/`` dir above.)
+To save and exit, press ``Ctrl+O``, ``Enter``, and ``Ctrl+X``.
 
+Close and reopen your terminal window. You should see ``(venv_otree)`` at the beginning
+of your prompt. If it's not there, try adding the above lines to ``~/.bash_profile``
+instead of ``~/.bashrc``, because some systems use a different filename.
 
 .. _postgres-linux:
 
@@ -63,7 +70,8 @@ Database (Postgres)
 
 oTree's default database is SQLite, which is fine for local development,
 but insufficient for production.
-We recommend PostgreSQL, although you can also use MySQL, MariaDB, or any other database
+The below instructions are for PostgreSQL,
+although you can also use MySQL, MariaDB, or any other database
 supported by Django.
 
 Change users to the ``postgres`` user, so that you can execute some commands::
@@ -77,7 +85,7 @@ Then start the Postgres shell::
 Once you're in the shell, create a database and user::
 
     CREATE DATABASE django_db;
-    CREATE USER otree_user WITH PASSWORD 'mypassword';
+    CREATE USER otree_user WITH PASSWORD 'mydbpassword';
     GRANT ALL PRIVILEGES ON DATABASE django_db TO otree_user;
 
 Exit the SQL prompt::
@@ -103,17 +111,28 @@ Setting the database through an environment variable
 allows you to continue to use SQLite on your development machine,
 while using Postgres on your production server.
 
-If you used the values in the example above (username ``otree_user``, password ``mypassword`` and database ``django_db``),
-you would add this line to your ``.bash_profile`` or ``.bashrc``::
+If you used the values in the example above
+(username ``otree_user``, password ``mydbpassword`` and database ``django_db``),
 
-    export DATABASE_URL=postgres://otree_user:mypassword@localhost/django_db
+Run::
 
-Then restart your shell, and confirm the env var is set, with ``echo $DATABASE_URL``.
+    nano ~/.bashrc
+
+(Or, ``nano ~/.bash_profile``, whichever file you edited in the previous step.)
+
+Then add this line to the end of the file::
+
+    export DATABASE_URL=postgres://otree_user:mydbpassword@localhost/django_db
+
+To save and exit, press ``Ctrl+O``, ``Enter``, and ``Ctrl+X``.
+Then close and reopen your terminal and confirm with ``echo $DATABASE_URL``
+that it was set properly.
+
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 (This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
 
-If you get an error that says "password authentication failed for user"
-when you run ``otree resetdb`` later,
+When you run ``otree resetdb`` later,
+if you get an error that says "password authentication failed for user",
 you may need to edit your ``hba_auth.conf`` to enable password-based authentication.
 
 Install Redis
@@ -193,12 +212,19 @@ Notes:
 Set remaining environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add the following to your ``.bash_profile`` or ``.bashrc``
-(substitute your own values)::
+Run::
+
+    nano ~/.bashrc
+
+(Or, ``nano ~/.bash_profile``, whichever file you edited previously.)
+
+Then add these lines to the end of the file (substitute your own values)::
 
     export OTREE_ADMIN_PASSWORD=my_password
     export OTREE_PRODUCTION=0
     export OTREE_AUTH_LEVEL=DEMO
+
+To save and exit, press ``Ctrl+O``, ``Enter``, and ``Ctrl+X``.
 
 (Optional) Process control system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -376,7 +402,7 @@ using oTree. Then each person should follow the same steps described above,
 but in some cases name things differently to avoid clashes:
 
 -   Create a virtualenv in their home directory (can also be named ``venv_otree``)
--   Create a different Postgres database (e.g. ``postgres://otree_user2:mypassword@localhost/django_db``),
+-   Create a different Postgres database (e.g. ``postgres://otree_user2:mydbpassword@localhost/django_db``),
     as described earlier,
     and set this in the DATABASE_URL env var.
 -   Each user needs their own Redis database.
