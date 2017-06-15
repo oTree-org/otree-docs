@@ -70,8 +70,8 @@ Database (Postgres)
 
 oTree's default database is SQLite, which is fine for local development,
 but insufficient for production.
-The below instructions are for PostgreSQL,
-although you can also use MySQL, MariaDB, or any other database
+We recommend you use PostgreSQL,
+although in principle you can also use MySQL, MariaDB, or any other database
 supported by Django.
 
 Change users to the ``postgres`` user, so that you can execute some commands::
@@ -133,7 +133,8 @@ Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLit
 
 When you run ``otree resetdb`` later,
 if you get an error that says "password authentication failed for user",
-you may need to edit your ``hba_auth.conf`` to enable password-based authentication.
+find your ``hba_auth.conf`` file, and on the lines for ``IPv4`` and ``IPv6``,
+change the ``METHOD`` from ``md5`` (or whatever it currently is) to ``trust``.
 
 Install Redis
 -------------

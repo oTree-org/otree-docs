@@ -229,7 +229,9 @@ Turning on the second dyno is free, but you may need to register a credit card w
 If you are just testing your app, oTree will still function without the ``timeoutworker`` dyno,
 but if you are running a study with real participants and your pages have
 timeouts defined by ``timeout_seconds``, then the ``timeoutworker`` will ensure
-that timeouts are still enforced even if a user closes their browser.
+that the user will be automatically advanced to the next page
+even if they closes their browser. This can be useful for online experiments
+with groups.
 
 If you do not see a ``timeoutworker`` entry, make sure your ``Procfile``
 looks like this::

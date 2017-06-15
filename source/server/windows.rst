@@ -26,8 +26,7 @@ You need to allow other computers to connect to oTree through your firewall.
 -   Select "Port" to make a port rule
 -   Under "Specific local ports", enter 80 and 8000
 -   Select "Allow the connection"
--   Click through the next few screens, keeping the defaults
--   Choose a name for your rule (e.g. "oTree").
+-   Click "next" then choose a name for your rule (e.g. "oTree").
 
 (If you use Skype) fix Skype issue
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,30 +72,35 @@ as long as you stay connected to the same network. If it changes unpredictably,
 you can ask your IT department to add a rule on their DHCP server to always
 assign the same IP to your computer.
 
-.. _mariadb:
-
-Database (MariaDB)
-------------------
+Database (Postgres)
+-------------------
 
 oTree's default database is SQLite, which is fine for local development,
 but insufficient for production, because it often locks when it multiple
 clients are accessing it.
 
-You can use PostgreSQL, MariaDB,
-MySQL, or any other database supported by Django.
-Here we give instructions for MariaDB because it's easy to setup on Windows:
+We recommend you use PostgreSQL,
+although in principle you can also use MySQL, MariaDB, or any other database
+supported by Django.
 
--   Download the `MariaDB winX64 MSI <https://downloads.mariadb.org/>`__
--   Install it; keep all the defaults but don't set a root password.
--   Search your Windows start menu for "MySQL client" or "MariaDB Client"
--   When you open that program, you should be prompted for a password.
-    Just hit "enter" without a password.
--   Type ``create database django_db;`` and hit enter. It should respond "Query OK".
+Install `Postgres for Windows <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`__,
+using the default options. Note down the password you chose for the root ``postgres`` user.
+
+Launch pgAdmin (you can find it in your Windows Start menu),
+and using the browser, create a new database:
+
+.. figure:: ../_static/pgadmin.png
+
+In the "Database" field, enter the name ``django_db``.
+
+Now, edit your ``pg_hba.conf``, which is usually located in ``C:\Program Files\PostgreSQL\9.6\data``
+or a similarly named folder. On the lines for ``IPv4`` and ``IPv6``, change
+the ``METHOD`` from ``md5`` to ``trust``.
 
 Setting DATABASE_URL (if running the server on your laptop)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now you should tell oTree to use MariaDB instead of SQLite.
+Now you should tell oTree to use Postgres instead of SQLite.
 The default database configuration in ``settings.py`` is::
 
     DATABASES = {
@@ -106,10 +110,10 @@ The default database configuration in ``settings.py`` is::
     }
 
 If you're using your PC as the server,
-you can add this line before the line with ``DATABASES``,
+you can add this line above the line with ``DATABASES``,
 to simulate setting the env var ``DATABASE_URL``::
 
-    environ['DATABASE_URL'] = 'mysql://root@localhost/django_db'
+    environ['DATABASE_URL'] = 'postgres://postgres@localhost/django_db'
 
 
 Setting DATABASE_URL (if running on a dedicated server)
@@ -119,12 +123,11 @@ On the other hand, if your server is a separate machine from your development PC
 it's better to instead set the ``DATABASE_URL`` environment variable on your server.
 Setting the database through an environment variable
 allows you to continue to use SQLite on your development machine,
-while using MariaDB on your production server.
+while using Postgres on your production server.
 
-If you used the values in the example above (username ``otree_user``, password ``mypassword`` and database ``django_db``),
-your ``DATABASE_URL`` would look like this::
+Set your ``DATABASE_URL`` to this::
 
-    mysql://root@localhost/django_db
+    postgres://postgres@localhost/django_db
 
 To set the environment variable, do a Windows search (or control panel search)
 for "environment variables". This will take you to the dialog with a name like
@@ -138,10 +141,13 @@ Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLit
 While you're editing environment variables, you can also set other environment variables like
 
 
-mysqlclient
-~~~~~~~~~~~
+psycopg2
+~~~~~~~~
 
-To use MariaDB, you need to install mysqlclient with ``pip3 install mysqlclient``.
+To use Postgres, you need to install psycopg2 with ``pip3 install psycopg2``.
+If the pip install doesn't work,
+download it `here <http://www.stickpeople.com/projects/python/win-psycopg/>`__.
+(If you are using a virtualenv, note the special installation instructions on that page.)
 
 resetdb
 ~~~~~~~
