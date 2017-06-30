@@ -61,8 +61,10 @@ payoffs
 Each player has a ``payoff`` field,
 which is a ``CurrencyField``.
 If your player makes money, you should store it in this field.
-``self.participant.payoff`` is the sum of the payoffs a participant
-made in each subsession.
+``self.participant.payoff`` automatically stores the sum of payoffs
+from all subsessions. You can modify ``self.participant.payoff`` directly,
+e.g. to round the final payoff to a whole number.
+
 At the end of the experiment, a participant's
 total profit can be accessed by ``self.participant.payoff_plus_participation_fee()``;
 it is calculated by converting ``self.participant.payoff`` to real-world currency
@@ -73,6 +75,7 @@ it is calculated by converting ``self.participant.payoff`` to real-world currenc
 
     The initial (default) value of ``payoff`` was changed from ``None`` to ``0``
     in oTree 1.0.
+
 
 
 .. _points:
