@@ -27,7 +27,6 @@ Step 1: Install Python 3.6 (for Windows users)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and install `Python 3.6 <https://www.python.org/downloads/release/python-360/>`__.
-(Python 3.4 and 3.5 are also OK.)
 Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png
@@ -44,47 +43,20 @@ this should match the version of Python you just installed:
 Step 1: Install Python 3.6 (for macOS users)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You need to install Python 3.4 or higher. We recommend installing it with Homebrew.
-(However, if you already have Python 3.6 installed through Conda, that should be OK.)
+*   Download and install the latest `Python 3 <https://www.python.org/downloads/mac-osx/>`__.
 
-* In Finder, search for and open the "Terminal" app:
+*   In Finder, search for and open the "Terminal" app:
 
 .. figure:: _static/setup/macos-terminal.png
 
+*   Then type ``pip3 -V`` and hit enter.
+    It will output a line that gives the version of Python at the end;
+    this should match the version of Python you just installed.
 
-* In the terminal window, type this and hit enter:
+If the above steps don't work for you, please email chris@otree.org with details.
 
-.. code-block:: bash
-
-    xcode-select --install
-
-When prompted, select to install the "command line developer tools".
-
-* Then install `Homebrew <http://brew.sh/>`__:
-
-.. code-block:: bash
-
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-* Update your ``PATH`` variable to state that homebrew packages should be
-  used before system packages::
-
-    echo "export PATH=/usr/local/bin:/usr/local/sbin:\$PATH" >> ~/.bash_profile
-
-* Reload ``.bash_profile`` to ensure the changes have taken place::
-
-    source ~/.bash_profile
-
-* Install python::
-
-    brew install python3
-
-* Then test that it worked::
-
-    pip3 -V
-
-It will output a line that gives the version of Python at the end;
-this should match the version of Python you just installed.
+(If you are more experienced with the command line,
+you can instead install Python using Homebrew.)
 
 Step 1: Install Python 3.6 (for Linux/Unix users)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

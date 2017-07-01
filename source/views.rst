@@ -16,6 +16,7 @@ variable that gives the order of the pages. For example:
 If your game has multiple rounds, this sequence will be repeated.
 See :ref:`rounds` for more info.
 
+
 Pages
 -----
 
@@ -579,3 +580,8 @@ If you want to apply your custom wait page template globally,
 save it to ``_templates/global/WaitPage.html``.
 oTree will then automatically use it everywhere instead of the built-in wait page.
 
+Randomizing page sequence
+-------------------------
+
+You can randomize the order of pages using rounds.
+An example is `here <https://github.com/oTree-org/random_page_order>`__.
