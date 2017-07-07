@@ -161,17 +161,13 @@ You can define this method like this:
         def before_session_starts(self):
             # code goes here
 
-This method is executed at the moment when the session is created, meaning it
-finishes running before the session begins (Hence the name).
-It is executed once per subsession (i.e. once per round).
-For example, if your app has 10 rounds, this method will get called 10 times,
-once for each ``Subsession`` instance.
+This method is executed when the admin clicks "create session":
 
-It has many uses, such as initializing fields, assigning players to treatments,
-or shuffling groups.
+.. figure:: _static/creating-session.png
 
-A typical use of ``before_session_starts`` is to loop over the players and
-set the value of a field on each:
+``before_session_starts`` allows you to initialize the round,
+by setting initial values on fields on players, groups, participants, or the subsession.
+For example:
 
 .. code-block:: python
 
@@ -181,9 +177,16 @@ set the value of a field on each:
             for p in self.get_players():
                 p.some_field = some_value
 
-More info on the section on :ref:`treatments <treatments>`.
+More info on the section on :ref:`treatments <treatments>` and
+:ref:`group shuffling <shuffling>`.
 
-``before_session_starts`` is also used to :ref:`assign players to groups <shuffling>`.
+If your app has 1 round, ``before_session_starts`` will execute once.
+If your app has N rounds, it will execute N times all at once;
+that is, once on each subsession instance.
+
+.. note::
+    This method does NOT run at the beginning of each round.
+    For that, you should use a wait page with :ref:`after_all_players_arrive`.
 
 
 group_randomly()

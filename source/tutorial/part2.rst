@@ -45,6 +45,7 @@ Your first instinct may be to define the fields on the Player like this:
 
 .. code-block:: python
 
+    # Don't copy paste this...see below
     class Player(BasePlayer):
 
         sent_amount = models.CurrencyField()

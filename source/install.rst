@@ -156,8 +156,12 @@ makes learning oTree much easier:
 
 Once you have installed PyCharm,
 go to "File -> Open..." and select the folder you created with ``otree startproject``.
+Configure a Python interpreter (on Windows,
+it would usually be something like ``C:\Users\<your_username>\AppData\Local\Programs\Python\Python36-32``, and on Mac,
+it would usually be something like ``/Library/Framework/Python.framework/Versions/3.6/bin/python3.6``)
 
-Then click on ``File –> Settings`` (or ``Default Settings``) and navigate to ``Languages & Frameworks -> Django``,
+Then click on ``File –> Settings`` (Windows) or ``PyCharm -> Preferences`` (Mac)
+and navigate to ``Languages & Frameworks -> Django``,
 check "Enable Django Support" and set your oTree folder as the Django project root,
 with your ``manage.py`` and ``settings.py``:
 

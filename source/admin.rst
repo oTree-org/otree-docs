@@ -159,11 +159,6 @@ Also see :ref:`session_config_treatments`.
 Customizing the admin interface (admin reports)
 -----------------------------------------------
 
-.. note::
-
-    This is a new feature
-    in otree-core 1.1 or higher (Dec 2016).
-
 You can add a custom tab to a session's admin page with any content you want;
 for example:
 

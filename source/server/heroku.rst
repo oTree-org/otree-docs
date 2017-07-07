@@ -9,7 +9,11 @@ the simplest option for you.
 
 The Heroku free plan is sufficient for small-scale testing of your app,
 but once you are ready to launch a study, you should upgrade to a paid server,
-which can handle more traffic.
+which can handle more traffic. However, Heroku is quite inexpensive,
+because you only pay for the time you actually use it.
+If you run a study for only 1 day, you can turn off your dynos and addons,
+and then you only pay 1/30 of the monthly cost.
+Often this means you can run a study for just a few dollars.
 
 Basic Heroku setup
 ------------------
@@ -301,10 +305,10 @@ because more dynos means more Redis connections.
 
 You should not increase the number of timeoutworker dynos.
 
-Upgrade Redis (optional)
-++++++++++++++++++++++++
+Upgrade Redis
++++++++++++++
 
-If running a study, consider upgrading to the "Premium 0" Redis for $15/month,
+If running a study, consider upgrading to one of the paid Redis plans,
 because it has a higher connection limit, which may be necessary if the server
 gets a lot of simultaneous traffic, or especially if you are using browser bots.
 

@@ -166,6 +166,8 @@ If you get an "Invalid filter" error, make sure you have ``{% load otree_tags %}
 at the top of your template.
 
 
+.. _base-template:
+
 Customizing the base template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

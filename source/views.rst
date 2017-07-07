@@ -184,9 +184,7 @@ get_timeout_seconds
 
 .. note::
 
-    This is a new feature
-    in otree-core 1.3 (May 2017).
-    See :ref:`v13`
+    This is a new feature in otree-core 1.3 (May 2017).
 
 This is a dynamic alternative to ``timeout_seconds``,
 so that you can base the timeout on ``self.player``, ``self.session``, etc.:
@@ -359,6 +357,8 @@ For more information on groups, see :ref:`groups`.
 
 Wait pages can define the following methods:
 
+.. _after_all_players_arrive:
+
 after_all_players_arrive()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -391,11 +391,6 @@ then ``after_all_players_arrive()`` may not be run.
 
 group_by_arrival_time
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This is a new feature
-    only available in otree-core 1.1 or higher (Dec 2016).
 
 If you set ``group_by_arrival_time = True`` on a WaitPage,
 players will be grouped in the order they arrive at that wait page:
@@ -456,9 +451,7 @@ get_players_for_group()
 
 .. note::
 
-    This is a new feature
-    in otree-core 1.3 (May 2017). See :ref:`v13`
-
+    This is a new feature in otree-core 1.3 (May 2017).
 
 ``get_players_for_group()`` can be used in addition to ``group_by_arrival_time``,
 to control exactly which players are assigned together.

@@ -26,6 +26,18 @@ such as making 2 session configs that have a different
 ``'treatment'`` parameter,
 and then checking for ``self.session.config['treatment']`` in your app's code.
 
+Templates: prevent code duplication by using a base template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are copy-pasting the same JavaScript or CSS to multiple templates,
+you should instead put it in one of the following blocks in a base template:
+
+-   ``{% block global_styles %}``
+-   ``{% block global_scripts %}``
+-   ``{% block app_styles %}``
+-   ``{% block app_scripts %}``
+
+Read more in :ref:`base-template`.
 
 views.py: prevent code duplication by using multiple rounds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
