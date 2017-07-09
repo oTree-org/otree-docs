@@ -46,13 +46,13 @@ Docker Hub
 Add Docker files and push to GitHub
 -----------------------------------
 
-Download these files (right click "save as")
-into your oTree project directory, next to requirements.txt:
+In your command line, go to your project folder and run these commands to download
+the 4 Docker files (should add them to the same folder as ``requirements.txt``)::
 
--   `Dockerfile <https://raw.githubusercontent.com/oTree-org/otree-docker/master/Dockerfile>`__
--   `entrypoint.sh <https://raw.githubusercontent.com/oTree-org/otree-docker/master/entrypoint.sh>`__
--   `pg_ping.py <https://raw.githubusercontent.com/oTree-org/otree-docker/master/pg_ping.py>`__
--   `.dockerignore <https://raw.githubusercontent.com/oTree-org/otree-docker/master/.dockerignore>`__
+    curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/Dockerfile > Dockerfile
+    curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/entrypoint.sh > entrypoint.sh
+    curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/pg_ping.py > pg_ping.py
+    curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/.dockerignore > .dockerignore
 
 Then run::
 
@@ -73,10 +73,10 @@ Login to your server, and create a folder::
     mkdir otree-docker
     cd otree-docker
 
-Save these files to that folder:
+Run these commands to save the following 2 Docker files to that folder::
 
--   `docker-compose.yaml <https://raw.githubusercontent.com/oTree-org/otree-docker/master/docker-compose.yaml>`__
--   `.env <https://raw.githubusercontent.com/oTree-org/otree-docker/master/.env>`__
+    curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/docker-compose.yaml > docker-compose.yaml
+    curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/.env > .env
 
 Open ``docker-compose.yaml`` and change the line with ``image:``
 to use your Docker Hub user-name/repository-name, e.g.::
