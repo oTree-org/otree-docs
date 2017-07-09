@@ -24,16 +24,6 @@ However, you may prefer to run oTree on a proper Linux server. Reasons may inclu
 
 The below instructions are for Ubuntu 16.04.
 
-.. note::
-
-    There is now a :ref:`Docker-based oTree installation <server-docker>`,
-    which may be easier than the below steps.
-
-    Another alternative is to use the VirtualBox Fedora oTree server created by
-    Gregory Huber at Yale. You can download it
-    `here <https://yale.app.box.com/v/VirtualBoxFedoraOtreeServer>`__,
-    or follow the below instructions to configure your own server.
-
 Install apt-get packages
 ------------------------
 

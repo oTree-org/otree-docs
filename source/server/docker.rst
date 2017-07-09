@@ -46,13 +46,23 @@ Docker Hub
 Add Docker files and push to GitHub
 -----------------------------------
 
-In your command line, go to your project folder and run these commands to download
-the 4 Docker files (should add them to the same folder as ``requirements.txt``)::
+On your local computer's command line, go to your project folder and run these commands to download
+the 4 Docker files (should add them to the same folder as ``requirements.txt``).
+
+If developing on Mac/Linux::
 
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/Dockerfile > Dockerfile
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/entrypoint.sh > entrypoint.sh
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/pg_ping.py > pg_ping.py
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/.dockerignore > .dockerignore
+
+If developing on Windows::
+
+    iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/Dockerfile -OutFile Dockerfile
+    iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/entrypoint.sh -OutFile entrypoint.sh
+    iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/pg_ping.py -OutFile pg_ping.py
+    iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/.dockerignore -OutFile .dockerignore
+
 
 Then run::
 
@@ -73,10 +83,18 @@ Login to your server, and create a folder::
     mkdir otree-docker
     cd otree-docker
 
+
 Run these commands to save the following 2 Docker files to that folder::
+
+If your server is Linux/Mac::
 
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/docker-compose.yaml > docker-compose.yaml
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/.env > .env
+
+If your server is Windows::
+
+    iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/docker-compose.yaml -OutFile docker-compose.yaml
+    iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/.env -OutFile .env
 
 Open ``docker-compose.yaml`` and change the line with ``image:``
 to use your Docker Hub user-name/repository-name, e.g.::

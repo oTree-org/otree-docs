@@ -1,3 +1,5 @@
+.. _community:
+
 Community resources
 ===================
 
@@ -16,6 +18,8 @@ Tools
 -   `oTree Virtual Machine Manager (OVMM) <http://otree-virtual-machine-manager.readthedocs.io/en/latest/>`__,
     a ready-made oTree server setup to enable multiple experiments running parallel,
     by Felix Albrecht and Tobias Raabe
+-   `VirtualBox Fedora oTree server <https://yale.app.box.com/v/VirtualBoxFedoraOtreeServer>`__
+    by Gregory Huber
 
 Apps
 ----
