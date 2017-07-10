@@ -14,7 +14,7 @@ You can also use your own Windows/Mac computer as a temporary server,
 as long as you only need the app to be accessed by devices on the local network,
 Instructions for Windows are :ref:`here <server-windows>`.
 
-:ref:`Ubuntu Linux <server-ubuntu> instructions are available for more advanced deployments,
+:ref:`Ubuntu Linux <server-ubuntu>` instructions are available for more advanced deployments,
 or for people who do not wish to use a cloud server.
 
 A readymade :ref:`Docker deployment <server-docker>` is available for Windows/Linux/Mac;

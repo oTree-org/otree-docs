@@ -84,7 +84,7 @@ Login to your server, and create a folder::
     cd otree-docker
 
 
-Run these commands to save the following 2 Docker files to that folder::
+Run these commands to save the following 2 Docker files to that folder.
 
 If your server is Linux/Mac::
 

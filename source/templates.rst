@@ -11,7 +11,7 @@ oTree uses `Django's template system
 
 
 Template blocks
-~~~~~~~~~~~~~~~
+---------------
 
 Instead of writing the full HTML of your page, for example:
 
@@ -43,14 +43,73 @@ You may want to customize the appearance or functionality of all pages
 in your app (e.g. by adding custom CSS or JavaScript). To do this, edit
 the file ``_templates/global/Page.html``.
 
+.. _base-template:
+
 JavaScript and CSS
-~~~~~~~~~~~~~~~~~~
+------------------
 
-Where to put scripts and CSS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Where to put JavaScript/CSS code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have JavaScript and/or CSS in your page, you should put them in blocks called ``scripts``
-and ``styles``, respectively. They should be located outside the ``content`` block, like this:
+It depends whether you want your JS/CSS code to be applied (a) globally,
+(b) in just one app, or (c) in just one page.
+
+Globally
+^^^^^^^^
+
+If you want to apply a style or script to all pages in all games,
+you should modify the template ``_templates/global/Page.html``.
+You should put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
+and any styles inside ``{% block global_styles %}...{% endblock %}``.
+
+.. note::
+
+    ``Page.html`` used to be called ``Base.html``.
+    If your project contains a file ``_templates/global/Base.html``,
+    you should rename it to ``Page.html``.
+    Then, if any templates extend ``global/Base.html``,
+    you should instead make them extend ``global/Page.html``
+
+For one app
+^^^^^^^^^^^
+
+If you want to apply a style or script to all pages in one app,
+you should create a base template for all templates in your app,
+and put blocks called ``app_styles`` or ``app_scripts`` in this base template.
+
+For example, if your app's name is ``public_goods``,
+then you would create a file called ``public_goods/templates/public_goods/Page.html``,
+and put this inside it:
+
+.. code-block:: html+django
+
+    {% extends "global/Page.html" %}
+    {% load staticfiles otree_tags %}
+
+    {% block app_styles %}
+
+        <style type="text/css">
+            /* custom styles go here */
+        </style>
+
+    {% endblock %}
+
+
+Then each ``public_goods`` template would inherit from this template:
+
+ .. code-block:: html+django
+
+    {% extends "public_goods/Page.html" %}
+    {% load staticfiles otree_tags %}
+    ...
+
+Just one page
+^^^^^^^^^^^^^
+
+If you have JavaScript and/or CSS code that just applies to a single page,
+you should put them in blocks called ``scripts``
+and ``styles``.
+They should be located outside the ``content`` block, like this:
 
 .. code-block:: HTML+django
 
@@ -62,10 +121,7 @@ and ``styles``, respectively. They should be located outside the ``content`` blo
 
         <!-- define a style -->
         <style type="text/css">
-            .bid-slider {
-                margin: 1.5em auto;
-                width: 70%;
-            }
+            /* CSS goes here */
         </style>
 
         <!-- or reference a static file -->
@@ -76,18 +132,8 @@ and ``styles``, respectively. They should be located outside the ``content`` blo
     {% block scripts %}
 
         <!-- define a script -->
-
         <script>
-            var input = $('#id_bid_amount');
-
-            $('.bid-slider').slider({
-                min: 0,
-                max: 100,
-                slide: function (event, ui) {
-                    input.val(ui.value);
-                    updateBidValue();
-                },
-            });
+            /* JS goes here */
         </script>
 
         <!-- or reference a static file -->
@@ -102,10 +148,36 @@ The reasons for putting scripts and styles in separate blocks are:
     so if you reference the jQuery ``$`` variable in the ``content`` block,
     it could be undefined.
 
+Customizing the theme
+~~~~~~~~~~~~~~~~~~~~~
+
+Let's say you want to change some aspect of oTree's template.
+For example, you may want to change the page width,
+or change a font.
+
+In your browser, right-click the element you want to modify and select
+"Inspect". Then you can navigate to see the different elements and
+try modifying their styles. For example, to remove the thin line below the page title,
+you can click on the title to discover it's wrapped in a ``<div>`` whose
+class is ``page-header`` and which has ``border-bottom: 1px``:
+
+.. figure:: _static/dom-inspector.png
+
+So, you can remove this line by adding the following style to your base template:
+
+.. code-block:: HTML
+
+    <style>
+        .page-header {
+            border-bottom: none;
+        }
+    </style>
+
+
 .. _json:
 
 Passing data from Python to JavaScript (json)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -166,89 +238,8 @@ If you get an "Invalid filter" error, make sure you have ``{% load otree_tags %}
 at the top of your template.
 
 
-.. _base-template:
-
-Customizing the base template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For all apps
-^^^^^^^^^^^^
-
-If you want to apply a style or script to all pages in all games,
-you should modify the template ``_templates/global/Page.html``.
-You should put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
-and any styles inside ``{% block global_styles %}...{% endblock %}``.
-
-.. note::
-
-    ``Page.html`` used to be called ``Base.html``.
-    If your project contains a file ``_templates/global/Base.html``,
-    you should rename it to ``Page.html``.
-    Then, if any templates extend ``global/Base.html``,
-    you should instead make them extend ``global/Page.html``
-
-For one app
-^^^^^^^^^^^
-
-If you want to apply a style or script to all pages in one app,
-you should create a base template for all templates in your app,
-and put blocks called ``app_styles`` or ``app_scripts`` in this base template.
-
-For example, if your app's name is ``public_goods``,
-then you would create a file called ``public_goods/templates/public_goods/Page.html``,
-and put this inside it:
-
-.. code-block:: html+django
-
-    {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
-
-    {% block app_styles %}
-
-        <style type="text/css">
-            /* custom styles go here */
-        </style>
-
-    {% endblock %}
-
-
-Then each ``public_goods`` template would inherit from this template:
-
- .. code-block:: html+django
-
-     {% extends "public_goods/Page.html" %}
-     {% load staticfiles otree_tags %}
-     ...
-
-
-Customizing the theme
-^^^^^^^^^^^^^^^^^^^^^
-
-Let's say you want to change some aspect of oTree's template.
-For example, you may want to change the page width,
-or change a font.
-
-In your browser, right-click the element you want to modify and select
-"Inspect". Then you can navigate to see the different elements and
-try modifying their styles. For example, to remove the thin line below the page title,
-you can click on the title to discover it's wrapped in a ``<div>`` whose
-class is ``page-header`` and which has ``border-bottom: 1px``:
-
-.. figure:: _static/dom-inspector.png
-
-So, you can remove this line by adding the following style to your base template:
-
-.. code-block:: HTML
-
-    <style>
-        .page-header {
-            border-bottom: none;
-        }
-    </style>
-
-
 Static content (images, videos, CSS, JavaScript)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------
 
 To include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages,
 make sure your template has ``{% load staticfiles %}`` at the top.
@@ -282,12 +273,12 @@ Then in the template:
 
 
 Plugins
-~~~~~~~
+-------
 
 oTree comes pre-loaded with the following plugins and libraries.
 
 Bootstrap
-^^^^^^^^^
+~~~~~~~~~
 
 oTree comes with `Bootstrap <http://getbootstrap.com/components/>`__, a
 popular library for customizing a website's user interface.
@@ -309,7 +300,7 @@ For example, the following HTML will create a "Success" alert:
         <div class="alert alert-success">Great job!</div>
 
 Graphs and charts with HighCharts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use `HighCharts <http://www.highcharts.com/demo>`__,
 to draw pie charts, line graphs, bar charts, time series, etc.
@@ -363,14 +354,14 @@ If it looks all garbled like ``{&#39;a&#39;: 1}``,
 you may have forgotten to use the ``|json`` filter.
 
 LaTeX
-^^^^^
+~~~~~
 
 If you want to put LaTeX formulas in your app,
 you can try `KaTeX <http://khan.github.io/KaTeX/>`__.
 
 
 Mobile devices
-~~~~~~~~~~~~~~
+--------------
 
 oTree's HTML interface is based on `Bootstrap <http://getbootstrap.com/components/>`__,
 which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
@@ -379,7 +370,7 @@ Bootstrap also tries to shows a "mobile friendly" version
 when viewed on a smartphone or tablet.
 
 Template filters
-~~~~~~~~~~~~~~~~
+----------------
 
 In addition to the filters available with Django's template language,
 oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
