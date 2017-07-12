@@ -573,6 +573,20 @@ If you want to apply your custom wait page template globally,
 save it to ``_templates/global/WaitPage.html``.
 oTree will then automatically use it everywhere instead of the built-in wait page.
 
+CSS and JavaScript in Wait Pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Wait pages have the same block structure as regular pages
+(``global_scripts``, ``app_scripts``, ``scripts``, etc...),
+so you can follow the same instructions described in :ref:`base-template`.
+
+For example, to apply CSS to your custom wait page at ``_templates/global/WaitPage.html``,
+put a block ``global_scripts`` in the template.
+
+You can even make other custom wait pages inherit from ``_templates/global/WaitPage.html``,
+just the way regular pages inherit from ``_templates/global/Page.html``,
+and they can define the blocks ``app_scripts`` and ``scripts``, etc.
+
 Randomizing page sequence
 -------------------------
 

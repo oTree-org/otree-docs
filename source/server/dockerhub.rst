@@ -1,4 +1,4 @@
-.. _server-docker:
+.. _dockerhub:
 
 Docker
 ======
@@ -7,15 +7,8 @@ You can use Docker to run a virtualized oTree
 on your Linux, Windows, or Mac server.
 It's like a virtual machine that already has Postgres, Redis, oTree, and Python
 configured.
-This may be an easy option for people who want to install oTree on their
-own servers.
 
 Below are the steps to use Docker.
-
-.. note::
-
-    These instructions are new, so please send feedback to chris@otree.org.
-
 
 GitHub/BitBucket
 ----------------
