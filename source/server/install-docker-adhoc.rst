@@ -3,20 +3,28 @@
 Docker on your own computer
 ===========================
 
-You can use Docker to run a virtualized oTree
-on your Linux, Windows, or Mac server.
-It's like a virtual machine that already has Postgres, Redis, oTree, and Python
-configured.
-This may be an easy option for people who want to install oTree on their
-own servers.
+You can use Docker to run a pre-configured oTree server
+on your Linux, Windows, or Mac computer.
 
-Below are the steps to use Docker.
+Advantages:
 
+-   Easier setup because everything is preconfigured
+
+Disadvantages:
+
+-   Each time you make a change,
+    Docker needs to re-build and re-install everything, which can take a couple minutes.
+-   Requires a lot of RAM
+
+If interested, follow the below steps.
+
+Download Docker configuration files
+-----------------------------------
 
 On your local computer's command line, go to your project folder and run these commands to download
 the 4 Docker files (should add them to the same folder as ``requirements.txt``).
 
-If developing on Windows::
+Windows::
 
     iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/Dockerfile -OutFile Dockerfile
     iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/entrypoint.sh -OutFile entrypoint.sh
@@ -25,7 +33,7 @@ If developing on Windows::
     iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/docker-compose-adhoc.yaml -OutFile docker-compose.yaml
     iwr https://raw.githubusercontent.com/oTree-org/otree-docker/master/.env -OutFile .env
 
-If developing on Mac/Linux::
+Mac/Linux::
 
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/Dockerfile > Dockerfile
     curl https://raw.githubusercontent.com/oTree-org/otree-docker/master/entrypoint.sh > entrypoint.sh
@@ -37,47 +45,55 @@ If developing on Mac/Linux::
 Install Docker
 --------------
 
-- Windows: download & run the `installer <https://download.docker.com/win/stable/InstallDocker.msi>`__.
-- Log out
-- Start docker (make it auto-start as a service?)
-- Change settings, reduce memory to 1024. Go to "Advanced".
-- You may need to close some programs like PyCharm, Firefox, Chrome, to free up RAM.
+Windows
+~~~~~~~
 
+-   Download & run the `installer <https://download.docker.com/win/stable/InstallDocker.msi>`__.
+-   You may need to restart your computer
+-   Start Docker
+-   If you get a "not enough memory" error, open Docker settings,
+    go to the "Advanced" tab, and reduce memory usage to 1024 MB.
+-   To further reduce RAM usage, close programs that use a lot of RAM like PyCharm,
+    Firefox, Chrome.
 
-Build & run image
------------------
-::
+Mac
+~~~
 
-    docker build -t otree .
+-   Download & run the `installer <https://download.docker.com/mac/stable/Docker.dmg>`__.
+-   Start Docker
+
+Run the server
+--------------
 
 Run this command, which will install all dependencies
-(Python, oTree, Postgres, Redis), reset the DB, and run the production server::
+(Python, oTree, Postgres, Redis), and run the production server::
+
+    docker-compose up --build --force-recreate
+
+If you get an error like "'WaitNamedPipe', 'The system cannot find the file specified.'",
+then it's probably because Docker is not running.
+
+To stop the server, press Ctrl+C as usual.
+If you need to restart the server but didn't make any changes,
+enter::
 
     docker-compose up
 
-This command will start the server and collect static files.
-Once it's run,
-
-If you modify your database models and build a new image,
+If you modify your database models,
 you will need to reset the database.
-With Docker, instead of "otree resetdb", you should do::
+With Docker, instead of ``otree resetdb``, you should do::
 
     docker-compose down -v
-
-If you change your ``docker-compose.yaml`` or ``.env``,
-you will need to recreate your container::
-
-    docker-compose up --force-recreate
 
 Allow other computers to connect
 --------------------------------
 
-Instructions for :ref:`Windows <windows-adhoc>` or :ref:`Mac <mac-adhoc>`.
+Instructions :ref:`here <server-adhoc>`.
 
-Set up Docker
--------------
+Configure environment variables
+-------------------------------
 
-Open ``.env``, and customize it as you wish.
+To set environment variables, edit the file ``.env``.
 You should decide what ``OTREE_PORT`` to use.
 You should use port 80 if you are a superuser,
 and especially if your site needs to be accessed from the internet.

@@ -11,8 +11,8 @@ Linux Server
 We typically recommend oTree users to deploy to Heroku (see instructions :ref:`here <heroku>`),
 because that is the simplest for people who are not experienced with web server administration.
 
-You can also use your own personal Windows computer as a temporary server.
-See :ref:`here <server-windows>`.
+You can also use your own personal computer as a temporary server.
+See :ref:`here <server-adhoc>`.
 
 However, you may prefer to run oTree on a proper Linux server. Reasons may include:
 
@@ -380,7 +380,7 @@ Sharing a server with other oTree users
 ---------------------------------------
 
 If multiple oTree users need to share an oTree server
-with separate projects, the easiest option might be to use :ref:`Docker <server-docker>`.
+with separate projects, the easiest option might be to use :ref:`Docker <dockerhub>`.
 See the section at the bottom of the Docker page about sharing the server.
 Or, you can follow the below instructions
 

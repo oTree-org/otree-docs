@@ -23,14 +23,14 @@ using a local server.
 e.g. running a lab study or field study.
 
 -   Install the server using :ref:`Docker <install-docker-adhoc>` **OR** :ref:`conventional installation <install-windows>`
--   Set up your Windows PC as an :ref:`ad-hoc server <windows-adhoc>`
+-   Set up your Windows PC as an :ref:`ad-hoc server <server-adhoc>`
 
 **You want to use your Mac computer as an ad-hoc server on your local network**
 
 e.g. running a lab study or field study.
 
 -   Install the server using :ref:`Docker <install-docker-adhoc>` **OR** :ref:`conventional installation <install-mac>`
--   Set up your Mac as an :ref:`ad-hoc server <windows-adhoc>`
+-   Set up your Mac as an :ref:`ad-hoc server <server-adhoc>`
 
 **You want to set up a dedicated Linux server**
 

@@ -129,7 +129,7 @@ environment variables; you should set ``OTREE_ADMIN_PASSWORD``,
 Allow other computers to connect
 --------------------------------
 
-See instructions :ref:`here <windows-adhoc>`.
+See instructions :ref:`here <server-adhoc>`.
 
 
 Next steps

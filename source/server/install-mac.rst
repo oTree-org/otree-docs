@@ -1,3 +1,3 @@
 .. _install-mac:
 
-(Mac instructions not available yet; I recommend using Docker for now.)
+(Mac server instructions not available yet; I recommend using Docker for now.)
