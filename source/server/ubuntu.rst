@@ -363,8 +363,10 @@ databases between two oTree instances.
 Database backups
 ----------------
 
-If you are using Postgres, you can export your database to a ``.sql`` file
-with a command like this::
+If you just want to download the data from your study,
+open the admin interface in your browser and click "Data".
+But if you want to back up the raw data in your Postgres database,
+you can use the below command::
 
     pg_dump -U otree_user -h localhost django_db > otree-$(date +"%Y-%m-%d-%H-%M").sql
 

@@ -3,9 +3,8 @@
 Configure your computer to be a server
 ======================================
 
-Let's say you have developed your app on your personal computer.
-If you only need computers on the same local network to access it
-(e.g. your university department network) and don't need to be on the public internet,
+If you will be running your study with devices on the local network
+(e.g. your university network) and don't need acesss from the internet,
 you can follow the below steps to use your own computer as a server.
 
 Windows
@@ -57,6 +56,14 @@ Start the server with your IP address and port 8000, e.g.
 On the client device's browser, connect to the IP address followed by ``:8000``,
 e.g. ``10.0.1.3:8000`` and you should be able to load the oTree demo page.
 
+Make sure your IP address doesn't change
+----------------------------------------
+
+In most university networks, your internal IP address will generally stay the same,
+as long as you stay connected to the same network. If it changes unpredictably,
+you can ask your IT department to add a rule on their DHCP server to always
+assign the same IP to your computer.
+
 
 Try using port 80 (optional)
 ----------------------------
@@ -88,10 +95,3 @@ On macOS, you need superuser privelege to use port 80::
 
     sudo otree runserver 0.0.0.0:80
 
-Make sure your IP address doesn't change
-----------------------------------------
-
-In most university networks, your internal IP address will generally stay the same,
-as long as you stay connected to the same network. If it changes unpredictably,
-you can ask your IT department to add a rule on their DHCP server to always
-assign the same IP to your computer.
