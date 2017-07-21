@@ -52,7 +52,7 @@ parameters -- things that are the same for all players in all games.
    ``endowment`` and set it to ``c(100)``. (``c()`` means it is a
    currency amount; see :ref:`currency`).
 -  Each contribution is multiplied by 2. So let's define
-   ``efficiency_factor`` and set it to 2:
+   ``multiplier`` and set it to 2:
 
 Now we have:
 
@@ -64,7 +64,7 @@ Now we have:
         num_rounds = 1
 
         endowment = c(100)
-        efficiency_factor = 2
+        multiplier = 2
 
 .. note::
 
@@ -114,7 +114,7 @@ Let's call it ``set_payoffs``:
 
         def set_payoffs(self):
             self.total_contribution = sum([p.contribution for p in self.get_players()])
-            self.individual_share = self.total_contribution * Constants.efficiency_factor / Constants.players_per_group
+            self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
             for p in self.get_players():
                 p.payoff = Constants.endowment - p.contribution + self.individual_share
 
@@ -147,7 +147,7 @@ contribution.
         This is a public goods game with
         {{ Constants.players_per_group }} players per group,
         an endowment of {{ Constants.endowment }},
-        and an efficiency factor of {{ Constants.efficiency_factor }}.
+        and an efficiency factor of {{ Constants.multiplier }}.
     </p>
 
 
@@ -305,7 +305,7 @@ For example, you could add some print statements to ``set_payoffs``:
 
     def set_payoffs(self):
         self.total_contribution = sum([p.contribution for p in self.get_players()])
-        self.individual_share = self.total_contribution * Constants.efficiency_factor / Constants.players_per_group
+        self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
         for p in self.get_players():
             p.payoff = Constants.endowment - p.contribution + self.individual_share
             print('*******p.payoff is', p.payoff)

@@ -107,7 +107,7 @@ For example, let's say you are making a public goods game,
 whose payoff function depends on
 an "efficiency factor" parameter that is a numeric constant,
 like 1.5 or 2. The usual approach would be to define it in ``Constants``,
-e.g. ``Constants.efficiency_factor``
+e.g. ``Constants.multiplier``
 
 However, to make your custom parameter configurable, instead of adding it to
 ``Constants``, add it to your config in :ref:`SESSION_CONFIGS`. For example:
@@ -119,11 +119,11 @@ However, to make your custom parameter configurable, instead of adding it to
         'display_name': 'My Session Config',
         'num_demo_participants': 2,
         'app_sequence': ['my_app_1', 'my_app_2'],
-        'efficiency_factor': 1.5,
+        'multiplier': 1.5,
     },
 
 Then, when you create a session in the admin interface
-and select this session config, the ``efficiency_factor`` parameter will
+and select this session config, the ``multiplier`` parameter will
 be listed, and you can change it to a number other than 1.5.
 If you want to explain the meaning of the variable to the person creating
 the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
@@ -135,14 +135,14 @@ the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
         'display_name': 'My Session Config',
         'num_demo_participants': 2,
         'app_sequence': ['my_app_1', 'my_app_2'],
-        'efficiency_factor': 1.5,
+        'multiplier': 1.5,
         'doc': """
-        Edit the 'efficiency_factor' parameter to change the factor by which
+        Edit the 'multiplier' parameter to change the factor by which
         contributions to the group are multiplied.
         """
     },
 
-Then in your app's code, you can do ``self.session.config['efficiency_factor']``
+Then in your app's code, you can do ``self.session.config['multiplier']``
 to retrieve the current session's efficiency factor.
 
 Notes:

@@ -16,9 +16,9 @@ Journal of Behavioral and Experimental Finance, vol 9: 88-97)
 Step 1: Install Python
 ----------------------
 
-oTree requires Python 3.4 or higher.
+oTree requires Python 3.6 or higher.
 
-If you already have Python 3.x installed
+If you already have Python 3.6 installed
 (check by entering ``pip3 -V`` at your command prompt),
 you can skip the below section. Or, uninstall your existing version of Python,
 and proceed with the below steps.
@@ -52,6 +52,10 @@ Step 1: Install Python 3.6 (for macOS users)
 *   Then type ``pip3 -V`` and hit enter.
     It will output a line that gives the version of Python at the end;
     this should match the version of Python you just installed.
+
+*   Run this command::
+
+    /Applications/Python\ 3.6/Install\ Certificates.command
 
 If the above steps don't work for you, please email chris@otree.org with details.
 
@@ -123,11 +127,6 @@ Then run the server::
 
     otree runserver
 
-.. note::
-
-    If Python crashes when you run this command,
-    and you're using PowerShell, try using CMD instead
-    (search your start menu for "Command Prompt")
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 You should see the oTree demo site.
