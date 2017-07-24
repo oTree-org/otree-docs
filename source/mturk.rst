@@ -16,6 +16,67 @@ as bonuses they earned by playing your game.
     Use caution when running games on Mechanical Turk with live interaction
     between participants (i.e. wait pages). See below.
 
+.. _v14_mturk:
+
+otree-core 1.4 changes (July 2017)
+----------------------------------
+
+otree-core 1.4 brings stability and usability improvements to MTurk functionality.
+
+Installing otree-core 1.4 beta (MTurk edition)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    pip3 install -U --pre otree[mturk]
+
+
+Running the server locally
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can now try the MTurk sandbox on your own computer.
+However, you need to run oTree in HTTPS mode.
+You can do this by :ref:`installing Redis <redis-windows>` and running::
+
+    otree runprodserver --dev-https
+
+Open your browser to the usual address, but replace `http` with `https`.
+You will see a security warning from your browser but you can bypass that
+(you are just connecting to your own computer with a self-signed certificate).
+
+Qualification requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you upgrade to oTree-core 1.4, you will need to change the format of your qualification requirements,
+because oTree 1.4 upgraded from boto2 to boto3, which uses a different syntax.
+
+Here is how you would exclude workers who have a specific qualification:
+
+.. code-block:: python
+
+    {
+        'QualificationTypeId': "YOUR_QUALIFICATION_ID_HERE",
+        'Comparator': "DoesNotExist",
+    }
+
+Here is how you would require workers from the US.
+(`00000000000000000071` is the code for a location-based qualification.)
+
+.. code-block:: python
+
+    {
+        'QualificationTypeId': "00000000000000000071",
+        'Comparator': "EqualTo",
+        'LocaleValues': [{
+            'Country': "US",
+        }]
+    },
+
+See the reference
+`here <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
+(However, note that the code examples there are in JavaScript, so you would need
+to modify the syntax to make it work in Python, e.g. adding quotes around dictionary keys.)
+
 
 AWS credentials
 ---------------
@@ -34,12 +95,6 @@ You can obtain these credentials `here <https://console.aws.amazon.com/iam/home?
 
 .. figure:: _static/mturk/dNhkOiA.png
    :alt: AWS key
-
-   AWS key
-
-If you set these env vars locally, the oTree server will be launched in HTTPS mode,
-so you need to open your browser to `https://127.0.0.1:8000/ <https://127.0.0.1:8000/>`__
-instead of `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 
 On Heroku you would set these env vars like this:
 
@@ -98,8 +153,6 @@ on the split button "Create New Session", select "For MTurk":
 
 Once you have created the session, you will see an "MTurk" tab in the session's admin page.
 
-
-
 After publishing the HIT you can test it both as a worker and as a
 requester using the links provided on the "MTurk" Tab of your session admin
 panel.
@@ -128,6 +181,7 @@ Finally, add an entry to ``qualification_requirements``:
         ...
         qualification.Requirement('YOUR_QUALIFICATION_ID_HERE', 'DoesNotExist')
     ]
+
 
 
 Multiplayer games

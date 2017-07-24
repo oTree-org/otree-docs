@@ -89,6 +89,8 @@ resetdb
 
 If all the above steps went well, you should be able to run ``otree resetdb``.
 
+.. _redis-windows:
+
 Install Redis
 -------------
 
