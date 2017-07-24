@@ -6,10 +6,10 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v14:
 
-Version 1.4 beta
-================
+Version 1.4 beta (July 2017)
+============================
 
-Here are the main changes in 1.3 beta:
+Here are the main changes in 1.4 beta:
 
 -   MTurk: improved stability, allow local sandbox testing, and upgrade from boto2 to boto3.
     See the :ref:`MTurk page <v14_mturk>` for details.
