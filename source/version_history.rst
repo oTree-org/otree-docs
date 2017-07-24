@@ -13,7 +13,12 @@ Here are the main changes in 1.4 beta:
 
 -   MTurk: improved stability, allow local sandbox testing, and upgrade from boto2 to boto3.
     See the :ref:`MTurk page <v14_mturk>` for details.
--   Upgrade Django-channels version to 1.1.6
+-   Upgrade Django-channels version to 1.1.6.
+    If you are using Django-channels, you will need to modify your consumers
+    to accept the connection,
+    as described `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html#connect-consumers>`__,
+    e.g. ``message.reply_channel.send({"accept": True})``
+
 -   Upgrade timeout JavaScript library (jQuery countdown)
 
 To install, run this (note the ``--pre`` in the command;
