@@ -28,7 +28,7 @@ Installing otree-core 1.4 beta (MTurk edition)
 
 ::
 
-    pip3 install -U --pre otree[mturk]
+    pip3 install -U --pre otree-core[mturk]
 
 
 Running the server locally
