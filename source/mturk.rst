@@ -18,64 +18,19 @@ as bonuses they earned by playing your game.
 
 .. _v14_mturk:
 
-otree-core 1.4 changes (August 2017)
-------------------------------------
+Installation
+------------
 
-otree-core 1.4 brings stability and usability improvements to MTurk functionality.
+otree-core 1.4 (Aug 2017) brings stability and usability improvements to MTurk functionality.
 
-Installing otree-core 1.4 beta (MTurk edition)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you want to use oTree with MTurk,
+starting with oTree-core 1.4, you need to install oTree with a different command,
+which installs some extra packages:
 
 ::
 
-    pip3 install -U --pre otree-core[mturk]
+    pip3 install -U otree-core[mturk]
 
-
-Running the server locally
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can now try the MTurk sandbox on your own computer.
-However, you need to run oTree in HTTPS mode.
-You can do this by :ref:`installing Redis <redis-windows>` and running::
-
-    otree runprodserver --dev-https
-
-Open your browser to the usual address, but replace `http` with `https`.
-You will see a security warning from your browser but you can bypass that
-(you are just connecting to your own computer with a self-signed certificate).
-
-Qualification requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When you upgrade to oTree-core 1.4, you will need to change the format of your qualification requirements,
-because oTree 1.4 upgraded from boto2 to boto3, which uses a different syntax.
-
-Here is how you would exclude workers who have a specific qualification:
-
-.. code-block:: python
-
-    {
-        'QualificationTypeId': "YOUR_QUALIFICATION_ID_HERE",
-        'Comparator': "DoesNotExist",
-    }
-
-Here is how you would require workers from the US.
-(`00000000000000000071` is the code for a location-based qualification.)
-
-.. code-block:: python
-
-    {
-        'QualificationTypeId': "00000000000000000071",
-        'Comparator': "EqualTo",
-        'LocaleValues': [{
-            'Country': "US",
-        }]
-    },
-
-See the reference
-`here <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
-(However, note that the code examples there are in JavaScript, so you would need
-to modify the syntax to make it work in Python, e.g. adding quotes around dictionary keys.)
 
 AWS credentials
 ---------------
@@ -136,6 +91,24 @@ After workers have completed the session, you can click on the
 "payments" Tab for your session. Here, you will be able to approve
 submissions, and also pay the bonuses that workers earned in your game.
 
+Running the server locally
+--------------------------
+
+.. note::
+
+    New in otree-core 1.4 (Aug 2017)
+
+You can now try the MTurk sandbox on your own computer.
+However, you need to run oTree in HTTPS mode.
+You can do this by :ref:`installing Redis <redis-windows>` and running::
+
+    otree runprodserver --dev-https
+
+Open your browser to the usual address, but replace `http` with `https`.
+You will see a security warning from your browser but you can bypass that
+(you are just connecting to your own computer with a self-signed certificate;
+you are not transmitting any data over the network).
+
 Testing your hit in sandbox
 ---------------------------
 
@@ -155,6 +128,33 @@ Once you have created the session, you will see an "MTurk" tab in the session's 
 After publishing the HIT you can test it both as a worker and as a
 requester using the links provided on the "MTurk" Tab of your session admin
 panel.
+
+.. _qualification-requirements:
+
+Qualification requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you upgrade to oTree-core 1.4, you will need to change the format of your qualification requirements,
+because oTree 1.4 upgraded from boto2 to boto3, which uses a different syntax.
+
+Here is how you would require workers from the US.
+(`00000000000000000071` is the code for a location-based qualification.)
+
+.. code-block:: python
+
+    {
+        'QualificationTypeId': "00000000000000000071",
+        'Comparator': "EqualTo",
+        'LocaleValues': [{
+            'Country': "US",
+        }]
+    },
+
+See the reference
+`here <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
+(However, note that the code examples there are in JavaScript, so you would need
+to modify the syntax to make it work in Python, e.g. adding quotes around dictionary keys.)
+
 
 Preventing retakes (repeat workers)
 -----------------------------------
@@ -176,10 +176,16 @@ Finally, add an entry to ``qualification_requirements``:
 
     'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',
     'qualification_requirements': [
-        qualification.LocaleRequirement("EqualTo", "US"),
-        ...
-        qualification.Requirement('YOUR_QUALIFICATION_ID_HERE', 'DoesNotExist')
+        {
+            'QualificationTypeId': "YOUR_QUALIFICATION_ID_HERE",
+            'Comparator': "DoesNotExist",
+        }
     ]
+
+.. note::
+
+    This syntax is new in otree-core 1.4.
+
 
 Multiplayer games
 -----------------

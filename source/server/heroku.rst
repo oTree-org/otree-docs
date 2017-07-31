@@ -308,9 +308,11 @@ You should not increase the number of timeoutworker dynos.
 Upgrade Redis
 +++++++++++++
 
-If running a study, consider upgrading to one of the paid Redis plans,
-because it has a higher connection limit, which may be necessary if the server
-gets a lot of simultaneous traffic, or especially if you are using browser bots.
+If running a study, you should upgrade to one of the paid Redis plans,
+because it allows more connections and gives you more memory, which can prevent the following errors:
+
+-   "ConnectionError: max number of clients reached"
+-   "ResponseError: OOM command not allowed when used memory > 'maxmemory'."
 
 Setting environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

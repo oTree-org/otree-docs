@@ -11,7 +11,7 @@ variable that gives the order of the pages. For example:
 
 .. code-block:: python
 
-    page_sequence=[Start, Offer, Accept, Results]
+    page_sequence = [Start, Offer, Accept, Results]
 
 If your game has multiple rounds, this sequence will be repeated.
 See :ref:`rounds` for more info.

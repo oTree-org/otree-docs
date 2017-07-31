@@ -111,6 +111,7 @@ In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you j
 If you need to access oTree's models, you will have to handle querying and saving
 objects yourself.
 
+.. _channels:
 
 Real-time and WebSockets
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,31 +125,18 @@ real-time interactions such as a continuous-time market.
 First, create a module ``consumers.py`` in one of your apps.
 For each WebSocket,
 you should create a ``connect`` consumer and ``disconnect`` consumer.
-Here we will use a trivial example, taken from the Channels "getting started"
-documentation:
-
-.. code-block:: python
-
-    # In consumers.py
-    from channels import Group
-
-    # Connected to websocket.connect
-    def ws_add(message):
-        Group("chat").add(message.reply_channel)
-
-    # Connected to websocket.disconnect
-    def ws_disconnect(message):
-        Group("chat").discard(message.reply_channel)
 
 See `otree.channels.consumers <https://github.com/oTree-org/otree-core/blob/master/otree/channels/consumers.py>`__
 for examples of more complex consumers. Also see :ref:`auto_save`.
 
 .. note::
 
-    oTree is still using channels v 0.17.3,
+    otree-core 1.4 (August 2017) upgrades Channels from 0.17.3 to 1.1.6,
     which has some incompatibilities with the latest version.
-    See `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html>`__.
-
+    If you were using Django-channels on a previous oTree version,
+    you will need to modify your consumers to accept the connection, as described
+    `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html#connect-consumers>`__,
+    e.g. ``message.reply_channel.send({"accept": True})``
 
 Next, create a module ``routing.py`` (either in your project root or in an app)
 and append your routes to oTree's built-in routes:
@@ -166,8 +154,6 @@ and append your routes to oTree's built-in routes:
 
 In settings.py, set ``CHANNEL_ROUTING = 'routing.channel_routing'``
 (this is the dotted path to your ``channel_routing`` variable in ``routing.py``)
-
-
 
 Chat box
 ~~~~~~~~

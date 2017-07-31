@@ -169,12 +169,14 @@ etc.).
 
 .. _session_vars:
 
-Global variables (session.vars)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+session.vars
+~~~~~~~~~~~~
 
-For session-wide globals, you can use ``self.session.vars``.
-
-This is a dictionary just like ``participant.vars``.
+For global variables that are the same for all participants in the session,
+you can use ``self.session.vars``.
+This is a dictionary just like ``participant.vars``. The difference is that
+if you set a variable in ``self.session.vars``, it will apply
+to all participants in the session, not just one.
 
 As described :ref:`here <object_model>`, the ``session`` object can be
 accessed from a ``Page`` object or any of the models (``Player``, ``Group``,

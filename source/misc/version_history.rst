@@ -6,34 +6,23 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v14:
 
-Version 1.4 beta (July 2017)
-============================
+Version 1.4
+===========
 
-Here are the main changes in 1.4 beta:
+Here are the main changes in 1.4:
 
 -   MTurk: improved stability, allow local sandbox testing, and upgrade from boto2 to boto3.
     See the :ref:`MTurk page <v14_mturk>` for details.
--   Upgrade Django-channels version to 1.1.6.
-    If you are using Django-channels, you will need to modify your consumers
-    to accept the connection,
-    as described `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html#connect-consumers>`__,
-    e.g. ``message.reply_channel.send({"accept": True})``
-
+-   ``group_by_arrival_time`` now filters out participants who have disconnected
+    or dropped out. See :ref:`group_by_arrival_time`.
+-   Upgrade Django-channels version to 1.1.6. If you are using Channels,
+    you need to upgrade your code for it to work. See :ref:`channels`.
 -   Upgrade timeout JavaScript library (jQuery countdown)
 
-To install, run this (note the ``--pre`` in the command;
-this means "pre-release")::
+To install, run this::
 
-    pip install -U --pre otree-core
+    pip install -U otree-core
     otree resetdb
-
-To upgrade to a newer beta release,
-run the same command above.
-
-To revert back to the stable version of oTree-core::
-
-    pip uninstall otree-core
-    pip install otree-core
 
 Please send feedback to chris@otree.org.
 
@@ -110,8 +99,7 @@ Version 0.7
 Version 0.7 beta is available.
 
 The main new feature is :ref:`browser bots <browser-bots>`.
-There are also some changes to the admin UI
-(e.g. demo full-screen mode is now resizable).
+There are also some changes to the admin UI.
 
 .. _v0.6:
 

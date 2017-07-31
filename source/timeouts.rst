@@ -3,6 +3,9 @@
 Timeouts
 ========
 
+Basics
+------
+
 You can configure time limits on your pages by using the below
 attributes on your ``Page`` classes in ``views.py``.
 
@@ -85,11 +88,47 @@ string ``''`` for text/character fields.
 If the values submitted ``timeout_submission`` need to be computed dynamically,
 you can check :ref:`timeout_happened` and set the values in ``before_next_page``.
 
+.. _get_timeout_seconds:
+
+get_timeout_seconds
+~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a new feature in otree-core 1.3 (May 2017).
+
+This is a dynamic alternative to ``timeout_seconds``,
+so that you can base the timeout on ``self.player``, ``self.session``, etc.:
+
+For example, you can make the timeout for a page configurable by adding a parameter
+to the session config (see :ref:`edit_config`) and referencing it in your page.
+In ``settings.py`` add this:
+
+.. code-block:: python
+
+    SESSION_CONFIGS = [
+        {
+            'name': 'my_app',
+            'num_demo_participants': 1,
+            'app_sequence': ['my_app'],
+            'my_page_timeout_seconds': 60,
+        },
+        # etc...
+    ]
+
+    class MyPage(Page):
+
+        def get_timeout_seconds(self):
+            return self.session.config['my_page_timeout_seconds']
+
+
+Advanced techniques
+-------------------
 
 .. _timeout_form:
 
 Forms submitted by timeout
-''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -131,42 +170,8 @@ in ``self.request.POST``, which you can access like this:
 
 
 
-.. _get_timeout_seconds:
-
-get_timeout_seconds
-~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This is a new feature in otree-core 1.3 (May 2017).
-
-This is a dynamic alternative to ``timeout_seconds``,
-so that you can base the timeout on ``self.player``, ``self.session``, etc.:
-
-For example, you can make the timeout for a page configurable by adding a parameter
-to the session config (see :ref:`edit_config`) and referencing it in your page.
-In ``settings.py`` add this:
-
-.. code-block:: python
-
-    SESSION_CONFIGS = [
-        {
-            'name': 'my_app',
-            'num_demo_participants': 1,
-            'app_sequence': ['my_app'],
-            'my_page_timeout_seconds': 60,
-        },
-        # etc...
-    ]
-
-    class MyPage(Page):
-
-        def get_timeout_seconds(self):
-            return self.session.config['my_page_timeout_seconds']
-
-
 Timeouts that span multiple pages
-'''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use ``get_timeout_seconds`` to create timeouts that span multiple
 pages, or even the entire session. The trick is to define a fixed "expiration time",
@@ -268,3 +273,51 @@ by setting ``timer_text``:
 
         def is_displayed(self):
             return self.participant.vars['expiry_timestamp'] - time.time() > 3
+
+
+Customizing the timer
+~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    The info in this section requires otree-core 1.4 (Aug 2017) or higher.
+
+By default, the timer looks like this:
+
+.. figure:: _static/timer.png
+
+Hiding the timer
+^^^^^^^^^^^^^^^^
+
+If you want to hide the timer,
+use this CSS:
+
+.. code-block:: css
+
+    .otree-timer {
+        display: none;
+    }
+
+
+Changing the timer's behavior
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The timer's functionality is provided by
+`jQuery Countdown <http://hilios.github.io/jQuery.countdown/>`__.
+You can change its behavior by attaching and removing event handlers
+with jQuery's ``.on()`` and ``off()``.
+For example, you can hide/show it at a certain interval,
+prevent it from submitting the page, etc.
+
+oTree sets handlers for the events ``update.countdown`` and ``finish.countdown``,
+so if you want to modify those, you can detach them with ``off()``,
+and/or add your own handler with ``on()``.
+
+For example, to prevent it from auto-submitting the page when the timeout
+finishes, use this JavaScript in your ``scripts`` block (or ``global_scripts``).
+
+.. code-block:: javascript
+
+    $(function () {
+        $('.otree-timer__time-left').off('finish.countdown');
+    });
