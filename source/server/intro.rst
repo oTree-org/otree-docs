@@ -7,9 +7,6 @@ If you are just testing your app on your personal computer, you can use
 However, when you want to share your app with an audience,
 you must use a web server.
 
-Options
--------
-
 Choose which option you need:
 
 **You want to launch your app to users on the internet**
@@ -44,7 +41,23 @@ e.g. running a lab study or field study.
 
 See :ref:`community` for some virtual machines created by oTree users.
 
-Next steps
-----------
-
+**Next steps**
 After setting up your server, see :ref:`server_final_steps`.
+
+..  Consider removing the toctree because I think it's better for people to read
+    through the instructions above, rather than jumping into a page they don't
+    understand. Or, add info to the individual pages above, so incoming visitors
+    don't bark up the wrong tree
+
+.. toctree::
+    :maxdepth: 2
+
+    heroku.rst
+    install-docker-adhoc.rst
+    install-windows.rst
+    install-mac.rst
+    adhoc.rst
+    ubuntu.rst
+    dockerhub.rst
+    next_steps.rst
+    git.rst

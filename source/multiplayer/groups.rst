@@ -1,7 +1,7 @@
 .. _groups:
 
-Groups and multiplayer games
-============================
+Groups
+======
 
 oTree's group system lets you divide players into groups
 and have players interact with others in the same group.
@@ -13,7 +13,7 @@ then see :ref:`treatments`.)
 To set the group size, go to your app's models.py and set
 ``Constants.players_per_group``. For example, for a 2-player game:
 
- .. code-block:: python
+.. code-block:: python
 
     class Constants(BaseConstants):
         # ...
@@ -22,7 +22,7 @@ To set the group size, go to your app's models.py and set
 If all players should be in the same group,
 or if it's a single-player game, set it to ``None``:
 
- .. code-block:: python
+.. code-block:: python
 
     class Constants(BaseConstants):
         # ...
@@ -446,115 +446,3 @@ Then, you would define the following page and put it at the beginning of ``page_
 
             # set new groups
             self.subsession.set_group_matrix(group_matrix)
-
-
-.. _complex_grouping_logic:
-
-More complex grouping logic
----------------------------
-
-**Fixed number of groups with a divisible number of players**
-
-For example, let's say you always want 8 groups, regardless of the number of
-players in the session.
-So, if there are *16 players*, you will have *2 players per group*,
-and if there are *32 players*, you will have *4 players per group*.
-
-You can accomplish this as follows:
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        players_per_group = None
-        num_groups = 8
-        ... # etc
-
-    class Subsession(BaseSubsession):
-
-           def before_session_starts(self):
-            if self.round_number == 1:
-
-                # create the base for number of groups
-                num_players = len(self.get_players())
-                ppg_list = [num_players//Constants.num_groups] * Constants.num_groups
-
-                # verify if all players are assigned
-                i = 0
-                while sum(ppg_list) < num_players:
-                    ppg_list[i] += 1
-                    i += 1
-
-                # reassignment of groups
-                list_of_lists = []
-                players = self.get_players()
-                for j, ppg in enumerate(ppg_list):
-                    start_index = 0 if j == 0 else sum(ppg_list[:j])
-                    end_index = start_index + ppg
-                    group_players = players[start_index:end_index]
-                    list_of_lists.append(group_players)
-                self.set_group_matrix(list_of_lists)
-            else:
-                self.group_like_round(1)
-
-**Fixed number of groups with a non-divisible number of players**
-
-Lets make a more complex example based on the previous one. Let's say we need
-to divide 20 players into 8 groups randomly. The problem is that
-``20/8 = 2.5``.
-
-So the more easy solution is to make the first *4 groups* with *3 players*, and
-the last *4 groups* with only *2 players*.
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        players_per_group = None
-        num_groups = 8
-        ... # etc
-
-    class Subsession(BaseSubsession):
-
-        def before_session_starts(self):
-
-            if self.round_number == 1:
-
-                # extract and mix the players
-                players = self.get_players()
-                random.shuffle(players)
-
-                # create the base for number of groups
-                num_players = len(players)
-
-                # create a list of how many players must be in every group
-                # the result of this will be [2, 2, 2, 2, 2, 2, 2, 2]
-                # obviously 2 * 8 = 16
-                # ppg = 'players per group'
-                ppg_list = [num_players//Constants.num_groups] * Constants.num_groups
-
-                # add one player in order per group until the sum of size of
-                # every group is equal to total of players
-                i = 0
-                while sum(ppg_list) < num_players:
-                    ppg_list[i] += 1
-                    i += 1
-                    if i >= len(ppg_list):
-                        i = 0
-
-                # reassignment of groups
-                list_of_lists = []
-                for j, ppg in enumerate(ppg_list):
-                    # it is the first group the start_index is 0 otherwise we start
-                    # after all the players already exausted
-                    start_index = 0 if j == 0 else sum(ppg_list[:j])
-
-                    # the asignation of this group end when we asign the total
-                    # size of the group
-                    end_index = start_index + ppg
-
-                    # we select the player to add
-                    group_players = players[start_index:end_index]
-                    list_of_lists.append(group_players)
-                self.set_group_matrix(list_of_lists)
-            else:
-                self.group_like_round(1)
-

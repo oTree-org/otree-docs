@@ -1,7 +1,7 @@
 .. _bots:
 
-Bots & automated testing
-========================
+Bots
+====
 
 You can write "bots" that simulate participants playing your app,
 so that you can test that it functions properly.

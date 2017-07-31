@@ -78,10 +78,9 @@ The file should contain one participant label per line. For example::
         PC_10
 
 If you omit ``participant_label_file``, then anyone can join
-as long as they know the room-wide URL. This makes it easier for quick demos,
-like a simple classroom game. However, it also means someone could play twice
-by opening the URL on 2 browsers, so if you are doing a real experiment,
-it's advised to use a ``participant_label_file``.
+as long as they know the room-wide URL.
+However, this can cause reliability problems, as described in :ref:`no-participant-labels`,
+so if possible, it's advised to use a ``participant_label_file``.
 
 ``use_secure_urls`` (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,6 +156,7 @@ Alternatively, you can open each computer's browser to a participant-specific UR
 but before creating the session, be sure to close the browsers on unattended computers,
 so they are not included in the session.
 
+.. _no-participant-labels:
 
 If you don't have a participant_label_file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,6 +165,18 @@ Starting is simple; just have each participant open the room-wide URL.
 Have each participant open the URLs.
 Then, in the room's admin page, check how many people are present,
 and create a session for that number of people.
+
+Although this option is simple, it is less reliable than using participant labels:
+
+-   Someone could accidentally open the link 2 or 3 times, which will register
+    multiple participants. So, if 20 people are on the room page,
+    you should consider creating a session for 25-30 people, to account for
+    these duplicate registrations.
+-   For the above reason, this is not recommended for multiplayer games,
+    because it can result in other players in the group getting stuck
+    on a waiting page
+-   Someone could easily play twice by opening the URL in 2 browser tabs
+
 
 Reusing for multiple sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

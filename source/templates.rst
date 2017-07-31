@@ -38,11 +38,6 @@ You define 2 blocks:
     {% endblock %}
 
 
-
-You may want to customize the appearance or functionality of all pages
-in your app (e.g. by adding custom CSS or JavaScript). To do this, edit
-the file ``_templates/global/Page.html``.
-
 .. _base-template:
 
 JavaScript and CSS
@@ -151,28 +146,44 @@ The reasons for putting scripts and styles in separate blocks are:
 Customizing the theme
 ~~~~~~~~~~~~~~~~~~~~~
 
-Let's say you want to change some aspect of oTree's template.
-For example, you may want to change the page width,
-or change a font.
+.. note::
 
-In your browser, right-click the element you want to modify and select
-"Inspect". Then you can navigate to see the different elements and
-try modifying their styles. For example, to remove the thin line below the page title,
-you can click on the title to discover it's wrapped in a ``<div>`` whose
-class is ``page-header`` and which has ``border-bottom: 1px``:
+    These selectors are new in otree-core 1.4 (August 2017).
 
-.. figure:: _static/dom-inspector.png
+If you want to customize the appearance of an oTree element,
+here is the list of CSS selectors:
 
-So, you can remove this line by adding the following style to your base template:
+=========================   ================================================
+Element                     CSS/jQuery selector
+=========================   ================================================
+Page body                   ``.otree-body``
+Page title                  ``.otree-title``
+Wait page (entire dialog)   ``.otree-wait-page``
+Wait page dialog title      ``.otree-wait-page__title``
+Wait page dialg body  .     ``.otree-wait-page__body``
+Timer                       ``.otree-timer``
+Next button                 ``.otree-btn-next``
+=========================   ================================================
+
+For example, to change the page width, put CSS in your base template like this:
 
 .. code-block:: HTML
 
     <style>
-        .page-header {
-            border-bottom: none;
+        .otree-body {
+            max-width:800px
         }
     </style>
 
+To get more info, in your browser, right-click the element you want to modify and select
+"Inspect". Then you can navigate to see the different elements and
+try modifying their styles:
+
+.. figure:: _static/dom-inspector.png
+
+When possible, use one of the official selectors above.
+Don't use any selector that starts with ``_otree`` because those are
+private.
 
 .. _json:
 
@@ -352,13 +363,6 @@ If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
 If it looks all garbled like ``{&#39;a&#39;: 1}``,
 you may have forgotten to use the ``|json`` filter.
-
-LaTeX
-~~~~~
-
-If you want to put LaTeX formulas in your app,
-you can try `KaTeX <http://khan.github.io/KaTeX/>`__.
-
 
 Mobile devices
 --------------

@@ -174,7 +174,7 @@ All lines in a block of code must be aligned along the left edge.
 When you're inside a code block (e.g. "if", "for", "def"; see below),
 you need to indent by 4 spaces.
 
-Examples of improperly indented code:
+Examples of wrong indentation:
 
 if some_var > 10:
 print("bigger than 10." # error, this line needs to be indented by 4 spaces

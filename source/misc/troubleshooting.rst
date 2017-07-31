@@ -93,7 +93,7 @@ Error pages
 If the error occurs when you are loading a page,
 you will instead see the error in a yellow Django error page:
 
-.. figure:: _static/yellow-error-page.png
+.. figure:: ../_static/yellow-error-page.png
 
 The section "Traceback" shows the same type of traceback as described above,
 just with some special formatting; you can troubleshoot it the same way as described above
@@ -126,10 +126,36 @@ For example, you could add some print statements to your payoff function:
 The output will be displayed in the console window where you ran ``otree runserver``
 (not in your web browser).
 
+Debugging with PyCharm
+----------------------
 
+PyCharm has an excellent debugger that you might want to try using.
+You can insert a breakpoint into your code by clicking in the left-hand
+margin on a line of code. You will see a little red dot. Then reload the
+page and the debugger will pause when it hits your line of code. At this
+point you can inspect the state of all the local variables, execute
+print statements in the built-in intepreter, and step through the code
+line by line.
 
-Heroku
-------
+More on the PyCharm debugger
+`here <http://www.jetbrains.com/pycharm/webhelp/debugging.html>`__.
 
-If you are running on Heroku and are trying to troubleshoot an error,
-see :ref:`here <heroku-troubleshooting>`.
+Debugging in the command shell
+------------------------------
+
+To test your app from an interactive Python shell, do:
+
+.. code-block:: shell
+
+   $ otree shell
+
+Then you can debug your code and inspect objects in your database.
+For example, if you already ran a "public goods game" session in your browser,
+you can access the database objects in Python like this:
+
+.. code-block:: python
+
+   >>> from public_goods.models import Player
+   >>> players = Player.objects.all()
+   >>> ...
+

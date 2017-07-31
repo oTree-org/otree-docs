@@ -84,10 +84,8 @@ You can also access it from your code as ``self.participant.label``.
 Arrival order
 -------------
 
-(Note: if using single-use links, this section does not apply.)
-
-oTree will assign the first person who arrives to be P1, the second to be P2, etc.
-
+oTree will assign the first person who arrives to be P1, the second to be P2, etc.,
+unless you are using single-use links.
 
 .. _edit_config:
 
@@ -230,57 +228,17 @@ remember to use the :ref:`|json <json>` filter.
 Kiosk Mode
 ----------
 
-You can enable "kiosk mode", a setting available in
-most web browsers, to prevent participants from accessing
-the browser's address bar, hitting the "back" button, closing the browser
-window, etc. Here are instructions for different browsers.
+During a lab study you may want to restrict participants from doing things like:
 
+-   Closing the browser window
+-   Clicking the "back" button
+-   Viewing the URL in the address bar
 
-iOS (iPhone/iPad)
-~~~~~~~~~~~~~~~~~
+You can restrict these things with "kiosk mode", a setting available in
+most web browsers.
+Consult your web browser's documentation for information on how to enable
+kiosk mode.
 
-1. Go to Setting – Accessibility – Guided Access
-2. Turn on Guided Access and set a passcode for your Kiosk mode
-3. Open your web browser and enter your URL
-4. Triple-click home button to initiate Kiosk mode
-5. Circle areas on the screen to disable (e.g. URL bar) and activate
-
-Android
-~~~~~~~
-
-There are several apps for using Kiosk mode on Android, for instance:
-`Kiosk Browser
-Lockdown <https://play.google.com/store/apps/details?id=com.procoit.kioskbrowser&hl=en>`__.
-
-.. image:: _static/admin/android.png
-    :align: center
-    :scale: 100 %
-
-
-Chrome on PC
-~~~~~~~~~~~~
-
-1. Go to Setting – Users – Add new user
-2. Create a new user with a desktop shortcut
-3. Right-click the shortcut and select “Properties”
-4. In the “Target” filed, add to the end either
-   ``--kiosk "http://www.your-otree-server.com"`` or
-   ``--chrome-frame  --kiosk "http://www.your-otree-server.com"``
-5. Disable hotkeys (see
-   `here <http://superuser.com/questions/727072/what-windows-shortcuts-should-be-blocked-on-a-kiosk-mode-pc>`__)
-6. Open the shortcut to activate Kiosk mode
-
-IE on PC
-~~~~~~~~
-
-IE on PC See `here <http://support2.microsoft.com/kb/154780>`__
-
-Mac
-~~~
-
-There are several apps for using Kiosk mode on Mac, for instance:
-`eCrisper <http://ecrisper.com/>`__. Mac keyboard shortcuts should be
-disabled.
 
 Monitor sessions
 ----------------

@@ -58,29 +58,22 @@ Contents:
     python.rst
     tutorial/intro.rst
     conceptual_overview.rst
-    apps.rst
     models.rst
     views.rst
     templates.rst
     forms.rst
-    groups.rst
-    currency.rst
-    treatments.rst
+    multiplayer/intro.rst
     rounds.rst
-    rooms.rst
-    settings.rst
-    server/intro.rst
     bots.rst
-    localization.rst
-    manual_testing.rst
+    timeouts.rst
+    treatments.rst
+    server/intro.rst
     admin.rst
-    troubleshooting.rst
-    tips_and_tricks.rst
+    rooms.rst
+    currency.rst
     mturk.rst
-    django.rst
-    ztree.rst
-    version_history.rst
-    community.rst
+    settings.rst
+    misc/intro.rst
 
 
 

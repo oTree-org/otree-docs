@@ -18,8 +18,8 @@ as bonuses they earned by playing your game.
 
 .. _v14_mturk:
 
-otree-core 1.4 changes (July 2017)
-----------------------------------
+otree-core 1.4 changes (August 2017)
+------------------------------------
 
 otree-core 1.4 brings stability and usability improvements to MTurk functionality.
 
@@ -76,7 +76,6 @@ See the reference
 `here <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
 (However, note that the code examples there are in JavaScript, so you would need
 to modify the syntax to make it work in Python, e.g. adding quotes around dictionary keys.)
-
 
 AWS credentials
 ---------------
@@ -182,8 +181,6 @@ Finally, add an entry to ``qualification_requirements``:
         qualification.Requirement('YOUR_QUALIFICATION_ID_HERE', 'DoesNotExist')
     ]
 
-
-
 Multiplayer games
 -----------------
 
@@ -194,23 +191,10 @@ drop out or delay starting the game until some time after
 accepting the assignment. This causes other participants to be stuck on a wait page,
 which can upset your MTurk workers, who then give you negative reviews.
 
-There are currently some discussions on the
+To mitigate this, see the recommendations in :ref:`wait-page-stuck`.
+Also, there are some discussions on the
 `oTree mailing list <https://groups.google.com/forum/#!forum/otree>`__ on this
-subject. Below are some partial solutions to the problem.
-
-You should use :ref:`group_by_arrival_time`.
-You should also set ``timeout_seconds`` on each page,
-so that the page will be auto-submitted if the participant drops out or does
-not complete the page in time. This way, players will not get stuck waiting for
-someone who dropped out.
-
-You can consider a "lock-in" task. In other words,
-before your multiplayer game, you can have a
-single-player task. The idea is that a
-participant takes the effort to complete this initial task, they are
-less likely to drop out after that point. Then, if you are using ``group_by_arrival_time``,
-the first few participants to finish the lock in task will be assigned to the same
-group in the multiplayer game.
+subject.
 
 Another issue is with group sizes. When you create a session with N participants
 for MTurk, oTree actually creates (N x 2) participants, because spares are needed
