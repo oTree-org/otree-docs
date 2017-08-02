@@ -3,8 +3,14 @@
 Configure your computer to be a server
 ======================================
 
+.. note::
+
+    This page assumes you have already installed the oTree server,
+    as described on the server setup pages for Windows/Mac/Docker
+    (see :ref:`here <server>`).
+
 If you will be running your study with devices on the local network
-(e.g. your university network) and don't need acesss from the internet,
+(e.g. your university network) and don't need access from the internet,
 you can follow the below steps to use your own computer as a server.
 
 Windows

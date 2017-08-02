@@ -8,11 +8,9 @@ Linux Server
     If you are just testing your app locally, you can use
     ``otree runserver``, which is simpler than the below steps.
 
-We typically recommend oTree users to deploy to Heroku (see instructions :ref:`here <heroku>`),
-because that is the simplest for people who are not experienced with web server administration.
-
-You can also use your own personal computer as a temporary server.
-See :ref:`here <server-adhoc>`.
+We typically recommend newcomers to oTree to deploy to Heroku
+(see instructions :ref:`here <heroku>`),
+or to use their own personal computer as a temporary server (see :ref:`here <server-adhoc>`).
 
 However, you may prefer to run oTree on a proper Linux server. Reasons may include:
 
