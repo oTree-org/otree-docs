@@ -108,41 +108,24 @@ Run:
 Save to requirements_base.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The above command will just upgrade ``otree-core`` locally.
-It will not affect what version is installed on your server.
+Run::
 
-You need to create a list of all the Python modules you have installed
-(including ``otree-core``), and save it to the file in your project's root directory
-called ``requirements_base.txt``. Heroku will read this file and install the
+    otree --version
+
+The version that is output will look something like ``1.X.X``.
+Open the file in your project's root directory
+called ``requirements_base.txt``, and modify the line with ``otree-core>=``
+to that version. The file should look like this (substitute actual version for ``1.X.X``):
+::
+
+    otree-core>=1.X.X
+
+    # Heroku requires Django to be explicitly in requirements file
+    # in order to run collectstatic
+    Django==1.8.8
+
+Heroku will read this file and install the
 same version of each library on your server.
-
-If using Windows PowerShell, enter::
-
-    pip3 freeze | out-file -enc ascii requirements_base.txt
-
-Otherwise, enter::
-
-    pip3 freeze > requirements_base.txt
-
-Open the file ``requirements_base.txt`` and have a look,
-especially for the line that says ``otree-core=x.x.x``
-This is the version that will be installed on your server.
-
-.. _extraneous_requirements:
-
-Side note about requirements
-''''''''''''''''''''''''''''
-Technically, ``requirements_base.txt`` only needs to contain
-the lines for ``otree-core`` and ``Django``.
-There are many other packages listed there (e.g. ``asgi-redis``, ``channels``),
-but they are automatically installed if you install ``otree-core``. Still,
-it's generally good to use the output of pip3 freeze. There should be about
-40-50 items listed when you do ``pip3 freeze``, and it should look roughly similar
-(but not identical) to the `this file <https://github.com/oTree-org/otree-core/blob/master/requirements.txt>`__.
-If you see far more items in your ``requirements_base.txt``, you might have
-extra unnecessary packages, e.g. for other projects you were doing unrelated
-to oTree. This might happen if you are using Anaconda, which installs many
-scientific and numeric packages that might not install properly on Heroku.
 
 Push your code to Heroku
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -159,15 +142,6 @@ Transfer (push) the local repository to Heroku:
 .. code-block:: bash
 
     $ git push heroku master
-
-.. note::
-
-    If you get a message ``push rejected``
-    and the error message says ``could not satisfy requirement``,
-    open ``requirements_base.txt`` and delete every line except
-    the ones for ``Django`` and ``otree-core``.
-    The line for Django should say ``Django==1.8.8``.
-    See :ref:`this note <extraneous_requirements>` above.
 
 Reset the oTree database on Heroku.
 You can get your app's name by typing ``heroku apps``.
