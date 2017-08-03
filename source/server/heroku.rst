@@ -126,6 +126,8 @@ to that version. The file should look like this (substitute actual version for `
 
 Heroku will read this file and install the
 same version of each library on your server.
+If you are depending on any extra Python libraries (e.g. Numpy or Pandas),
+they need to be added to your ``requirements_base.txt`` also.
 
 Push your code to Heroku
 ~~~~~~~~~~~~~~~~~~~~~~~~
