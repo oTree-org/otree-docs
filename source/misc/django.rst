@@ -131,12 +131,17 @@ for examples of more complex consumers. Also see :ref:`auto_save`.
 
 .. note::
 
-    otree-core 1.4 (August 2017) upgrades Channels from 0.17.3 to 1.1.6,
+    oTree is using channels v 0.17.3,
     which has some incompatibilities with the latest version.
-    If you were using Django-channels on a previous oTree version,
-    you will need to modify your consumers to accept the connection, as described
+    Notably, your consumers should not send
+    e.g. ``message.reply_channel.send({"accept": True})``;
+    this is a breaking change in otree-core 1.0+, described
     `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html#connect-consumers>`__,
-    e.g. ``message.reply_channel.send({"accept": True})``
+
+    (oTree is blocked from upgrading to Channels 1.0+ because of
+    `this <https://github.com/django/channels/issues/498>`__ issue,
+    which makes it complicated for oTree to install smoothly cross-platform.)
+
 
 Next, create a module ``routing.py`` (either in your project root or in an app)
 and append your routes to oTree's built-in routes:

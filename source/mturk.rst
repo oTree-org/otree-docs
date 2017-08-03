@@ -91,24 +91,6 @@ After workers have completed the session, you can click on the
 "payments" Tab for your session. Here, you will be able to approve
 submissions, and also pay the bonuses that workers earned in your game.
 
-Running the server locally
---------------------------
-
-.. note::
-
-    New in otree-core 1.4 (Aug 2017)
-
-You can now try the MTurk sandbox on your own computer.
-However, you need to run oTree in HTTPS mode.
-You can do this by :ref:`installing Redis <redis-windows>` and running::
-
-    otree runprodserver --dev-https
-
-Open your browser to the usual address, but replace `http` with `https`.
-You will see a security warning from your browser but you can bypass that
-(you are just connecting to your own computer with a self-signed certificate;
-you are not transmitting any data over the network).
-
 Testing your hit in sandbox
 ---------------------------
 

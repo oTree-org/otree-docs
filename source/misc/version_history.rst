@@ -6,23 +6,30 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v14:
 
-Version 1.4
-===========
+Version 1.4 beta (Aug 2017)
+===========================
 
 Here are the main changes in 1.4:
 
--   MTurk: improved stability, allow local sandbox testing, and upgrade from boto2 to boto3.
+-   MTurk: improved stability, and upgrade from boto2 to boto3.
     See the :ref:`MTurk page <v14_mturk>` for details.
 -   ``group_by_arrival_time`` now filters out participants who have disconnected
     or dropped out. See :ref:`group_by_arrival_time`.
--   Upgrade Django-channels version to 1.1.6. If you are using Channels,
-    you need to upgrade your code for it to work. See :ref:`channels`.
 -   Upgrade timeout JavaScript library (jQuery countdown)
 
-To install, run this::
+To install, run this (note the ``--pre`` in the command;
+this means "pre-release")::
 
-    pip install -U otree-core
+    pip install -U --pre otree-core
     otree resetdb
+
+To upgrade to a newer beta release,
+run the same command above.
+
+To revert back to the stable version of oTree-core::
+
+    pip uninstall otree-core
+    pip install otree-core
 
 Please send feedback to chris@otree.org.
 
