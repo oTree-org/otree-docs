@@ -96,13 +96,13 @@ independently for a given participant when that participant enters and
 exits the page, respectively.
 
 If you want code to be executed for all participants at the same time,
-it should go in ``before_session_starts`` or
+it should go in ``creating_session`` or
 ``after_all_players_arrive``.
 
 Background programs
 ~~~~~~~~~~~~~~~~~~~
 
-The closest equivalent is ``before_session_starts``.
+The closest equivalent is ``creating_session``.
 
 Tables
 ~~~~~~
@@ -276,7 +276,7 @@ Any parameters that are constant within an app should be defined in
 ``Constants`` in ``models.py``. Some parameters are defined in
 ``settings.py``.
 
-Define a method in ``before_session_starts`` that loops through all
+Define a method in ``creating_session`` that loops through all
 players in the subsession and sets values for the fields.
 
 Clients table

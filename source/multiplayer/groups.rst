@@ -130,7 +130,7 @@ For example, this will group players randomly each round:
 .. code-block:: python
 
     class Subsession(BaseSubsession):
-        def before_session_starts(self):
+        def creating_session(self):
             self.group_randomly()
 
 This will group players randomly each round, but keep ``id_in_group`` fixed:
@@ -138,7 +138,7 @@ This will group players randomly each round, but keep ``id_in_group`` fixed:
 .. code-block:: python
 
     class Subsession(BaseSubsession):
-        def before_session_starts(self):
+        def creating_session(self):
             self.group_randomly(fixed_id_in_group=True)
 
 The below example uses the command line to create a public goods game with 12 players,
@@ -202,7 +202,7 @@ and then subsequent rounds copy round 1's grouping structure.
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             if self.round_number == 1:
                 # <some shuffling code here>
             else:
@@ -263,12 +263,12 @@ Then pass this modified matrix to ``set_group_matrix()``::
      [<Player  6>, <Player  1>, <Player  9>],
      [<Player  7>, <Player  5>, <Player 12>]]
 
-Here is how this would look in ``before_session_starts``:
+Here is how this would look in ``creating_session``:
 
 .. code-block:: python
 
     class Subsession(BaseSubsession):
-        def before_session_starts(self):
+        def creating_session(self):
             matrix = self.get_group_matrix()
             for row in matrix:
                 row.reverse()
@@ -310,7 +310,7 @@ or remain player 1), you would do this:
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             for group in self.get_groups():
                 players = group.get_players()
                 players.reverse()
@@ -332,7 +332,7 @@ and that there are twice as many female players as male players.
 
 
     class Subsession(BaseSubsession):
-        def before_session_starts(self):
+        def creating_session(self):
 
             if self.round_number == 1:
                 players = self.get_players()
@@ -360,8 +360,8 @@ and that there are twice as many female players as male players.
 Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``before_session_starts`` is usually a good place to shuffle groups,
-but remember that ``before_session_starts`` is run when the session is created,
+``creating_session`` is usually a good place to shuffle groups,
+but remember that ``creating_session`` is run when the session is created,
 before players begin playing. So, if your shuffling logic needs to depend on
 something that happens after the session starts, you should do the
 shuffling in a wait page instead.

@@ -77,7 +77,7 @@ You can access them in the template like this: ``{{ Constants.blah }}`` or ``{{ 
     You generally shouldn't generate random values in ``vars_for_template``,
     because if the user refreshes their page, ``vars_for_template`` will be executed again,
     and the random calculation might return a different value.
-    Instead, you should calculate random values in either ``before_session_starts``,
+    Instead, you should calculate random values in either ``creating_session``,
     ``before_next_page``, or ``after_all_players_arrive``, each of which
     only executes once.
 

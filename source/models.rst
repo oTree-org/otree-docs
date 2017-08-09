@@ -111,7 +111,7 @@ And you try to modify ``my_dict``:
 .. code-block:: python
 
     class Subsession(BaseSubsession):
-        def before_session_starts(self):
+        def creating_session(self):
             # wrong
             Constants.my_dict['a'] = 1
 
@@ -147,25 +147,23 @@ Only relevant if the app has multiple rounds
 See :ref:`rounds`.
 
 
-.. _before_session_starts:
+.. _creating_session:
 
-before_session_starts
-~~~~~~~~~~~~~~~~~~~~~
+creating_session
+~~~~~~~~~~~~~~~~
 
-You can define this method like this:
+.. note::
 
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def before_session_starts(self):
-            # code goes here
+    Previously this method was called ``before_session_starts``.
+    It was renamed to ``creating_session`` in otree-core 1.3.2 (May 2017).
+    However, new versions of oTree still execute ``before_session_starts``,
+    for backwards compatibility.
 
 This method is executed when the admin clicks "create session":
 
 .. figure:: _static/creating-session.png
 
-``before_session_starts`` allows you to initialize the round,
+``creating_session`` allows you to initialize the round,
 by setting initial values on fields on players, groups, participants, or the subsession.
 For example:
 
@@ -173,15 +171,15 @@ For example:
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             for p in self.get_players():
                 p.some_field = some_value
 
 More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.
 
-If your app has 1 round, ``before_session_starts`` will execute once.
-If your app has N rounds, it will execute N times all at once;
+If your app has 1 round, ``creating_session`` will execute once.
+If your app has N rounds, it will execute N times consecutively;
 that is, once on each subsession instance.
 
 .. note::
@@ -420,4 +418,4 @@ For the same reason, this will not work either:
         )
 
 The solution is to generate the random variables inside a method,
-such as :ref:`before_session_starts`.
+such as :ref:`creating_session`.

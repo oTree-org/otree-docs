@@ -66,9 +66,9 @@ So we have:
                 return 'Matcher'
 
 Now let's define the code to randomly choose a round for payment. Let's
-define the code in ``Subsession.before_session_starts``, which is the
+define the code in ``Subsession.creating_session``, which is the
 place to put global code that initializes the state of the game, before
-gameplay starts. (See :ref:`before_session_starts`.)
+gameplay starts. (See :ref:`creating_session`.)
 
 The value of the chosen round is "global" rather than different for each
 participant, so the logical place to store it is as a "global" variable
@@ -81,7 +81,7 @@ integer between 1 and 4, and then assigns it into ``session.vars``:
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
 
@@ -95,13 +95,13 @@ run once (if ``round_number`` is 1; see :ref:`rounds`):
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             if self.round_number == 1:
                 paying_round = random.randint(1, Constants.num_rounds)
                 self.session.vars['paying_round'] = paying_round
 
 Now, let's also define the code to swap roles halfway through. This kind
-of group-shuffling code should also go in ``before_session_starts``. We
+of group-shuffling code should also go in ``creating_session``. We
 put it after our existing code.
 
 So, in round 3, we should do the shuffle,
@@ -117,7 +117,7 @@ new group order:
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             if self.round_number == 1:
                 paying_round = random.randint(1, Constants.num_rounds)
                 self.session.vars['paying_round'] = paying_round

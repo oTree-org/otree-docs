@@ -4,8 +4,8 @@ Treatments
 ==========
 
 To assign participants to different treatment groups, you
-can put the code in the subsession's ``before_session_starts`` method
-(for more info see :ref:`before_session_starts`).
+can put the code in the subsession's ``creating_session`` method
+(for more info see :ref:`creating_session`).
 For example, if you want some participants to be in a "blue" treatment group
 and others to be in a "red" treatment group, first define
 a ``color`` field on the ``Player`` model:
@@ -21,7 +21,7 @@ Then you can assign to this field randomly:
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             # randomize to treatments
             for player in self.get_players():
                 player.color = random.choice(['blue', 'red'])
@@ -40,7 +40,7 @@ it in the first round:
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             if self.round_number == 1:
                 for p in self.get_players():
                     p.participant.vars['color'] = random.choice(['blue', 'red'])
@@ -54,7 +54,7 @@ You should instead store the variable on one of the participants in the group:
 
 .. code-block:: python
 
-    def before_session_starts(self):
+    def creating_session(self):
         if self.round_number == 1:
             for g in self.get_groups():
                 p1 = g.get_player_by_id(1)
@@ -80,7 +80,7 @@ To solve this, you can use ``itertools.cycle``, which alternates.
 
     class Subsession(BaseSubsession):
 
-        def before_session_starts(self):
+        def creating_session(self):
             colors = itertools.cycle(['blue', 'red'])
             for p in self.get_players():
                 p.color = next(colors)
@@ -116,12 +116,12 @@ except the ``treatment`` key:
         },
     ]
 
-Then in the ``before_session_starts`` method, you can check which of the
+Then in the ``creating_session`` method, you can check which of the
 2 session configs it is:
 
 .. code-block:: python
 
-    def before_session_starts(self):
+    def creating_session(self):
         for p in self.get_players():
             if 'treatment' in self.session.config:
                 # demo mode
