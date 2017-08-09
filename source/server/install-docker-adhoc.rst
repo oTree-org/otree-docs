@@ -18,6 +18,40 @@ Disadvantages:
 
 If interested, follow the below steps.
 
+Upgrade oTree
+~~~~~~~~~~~~~
+
+Upgrade oTree, to get the latest bugfixes:
+
+.. code-block:: bash
+
+    $ pip3 install -U otree-core
+
+Save to requirements_base.txt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run::
+
+    otree --version
+
+The version that is output will look something like ``1.X.X``.
+Open the file in your project's root directory
+called ``requirements_base.txt``, and modify the line with ``otree-core>=``
+to that version. The file should look like this (substitute actual version for ``1.X.X``):
+::
+
+    otree-core>=1.X.X
+
+    # Heroku requires Django to be explicitly in requirements file
+    # in order to run collectstatic
+    Django==1.8.8
+
+Docker will read this file and install the
+same version of each library.
+If you are depending on any extra Python libraries (e.g. Numpy or Pandas),
+they need to be added to your ``requirements_base.txt`` also.
+
+
 Download Docker configuration files
 -----------------------------------
 

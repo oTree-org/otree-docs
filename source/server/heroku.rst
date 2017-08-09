@@ -96,8 +96,7 @@ you may need to wait for a few minutes, or restart with ``heroku restart``.
 Upgrade oTree
 ~~~~~~~~~~~~~
 
-We recommend you upgrade to the latest version of oTree, to get the latest bugfixes.
-Run:
+Upgrade oTree, to get the latest bugfixes:
 
 .. code-block:: bash
 

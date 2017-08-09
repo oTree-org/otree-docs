@@ -7,6 +7,16 @@ If you are just testing your app on your personal computer, you can use
 ``otree runserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
+Upgrade oTree
+~~~~~~~~~~~~~
+
+Upgrade oTree, to get the latest bugfixes:
+
+.. code-block:: bash
+
+    $ pip3 install -U otree-core
+
+
 Database (Postgres)
 -------------------
 
