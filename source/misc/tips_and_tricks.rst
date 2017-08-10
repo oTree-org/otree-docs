@@ -142,8 +142,8 @@ Then in ``views.py``:
 Example 2: vars_for_template
 ````````````````````````````
 
-Let's say you've got the following code (note that ``Page3`` passes an extra
-variable ``'d'``):
+Let's say you've got the following code (note that ``Page3`` passes extra
+variables ``d`` and ``e``):
 
 .. code-block:: python
 
@@ -163,14 +163,23 @@ variable ``'d'``):
                 'c': 3,
             }
 
+
     class Page3(Page):
         def vars_for_template(self):
-            return {
-                'a': 1,
-                'b': 2,
-                'c': 3,
-                'd': 4
-            }
+            if self.player.id_in_group == 1:
+                return {
+                    'a': 1,
+                    'b': 2,
+                    'c': 3,
+                    'd': 4,
+                    'e': 5,
+                }
+            else:
+                return {
+                    'a': 1,
+                    'b': 2,
+                    'c': 3,
+                }
 
 
 You can simplify this by making a method in ``models.py``:
@@ -200,7 +209,8 @@ Then in ``views.py``:
     class Page3(Page):
         def vars_for_template(self):
             context = self.player.vars_for_template()
-            context.update({'d': 4})
+            if self.player.id_in_group == 1:
+                context.update({'d': 4, 'e': 5})
             return context
 
 

@@ -146,18 +146,19 @@ Only relevant if the app has multiple rounds
 (set in ``Constants.num_rounds``).
 See :ref:`rounds`.
 
+before_session_starts
+~~~~~~~~~~~~~~~~~~~~~
+
+``before_session_starts`` has been renamed to :ref:`creating_session`.
+since otree-core 1.3.2 (June 2017).
+However, new versions of oTree still execute ``before_session_starts``,
+for backwards compatibility.
+
 
 .. _creating_session:
 
 creating_session
 ~~~~~~~~~~~~~~~~
-
-.. note::
-
-    Previously this method was called ``before_session_starts``.
-    It was renamed to ``creating_session`` in otree-core 1.3.2 (May 2017).
-    However, new versions of oTree still execute ``before_session_starts``,
-    for backwards compatibility.
 
 This method is executed when the admin clicks "create session":
 

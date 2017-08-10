@@ -190,14 +190,6 @@ private.
 Passing data from Python to JavaScript (json)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    The ``|json`` template filter is new in otree-core 1.2.2
-    (released March 1, 2017). The old way was to use the ``safe_json``
-    function in your Python code. ``safe_json`` still works,
-    but most people will probably find ``json`` easier to use.
-    Just use one or the other, not both.
-
 If you need to insert a variable into to your JavaScript code,
 write it as ``{{ my_variable|json }}`` rather than just ``{{ my_variable }}``.
 
@@ -247,6 +239,17 @@ quotes around strings, so you don't need to add them manually:
 
 If you get an "Invalid filter" error, make sure you have ``{% load otree_tags %}``
 at the top of your template.
+
+safe_json
+~~~~~~~~~
+
+.. note::
+
+    The ``|json`` template filter is new in otree-core 1.2.2
+    (released March 1, 2017). The old way was to use the ``safe_json``
+    function in your Python code. ``safe_json`` still works,
+    but most people will probably find ``json`` easier to use.
+    Just use one or the other, not both.
 
 
 Static content (images, videos, CSS, JavaScript)
