@@ -68,17 +68,16 @@ varying the question that gets displayed with each round.
 
 .. _inheritance:
 
-views.py: prevent code duplication by using inheritance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+views.py: prevent code duplication by moving code to ``models.py``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you can't merge your code into 1 Page as suggested above,
-but your code still has a lot of repetition, you can use
-Python inheritance to define the common code on a base class.
+You should try to move as much code as possible into ``models.py``.
+This will prevent you from repeating the same code on every page.
 
 .. _skip_many:
 
-Basic example
-`````````````
+Example 1: is_displayed
+```````````````````````
 
 For example, let's say that your page classes all
 repeat some of the code. For example, you use ``is_displayed`` to skip
@@ -88,15 +87,18 @@ the rest of the app once a certain participant var is set:
 
     class Page1(Page):
         def is_displayed(self):
-            return not self.participant.vars.get('finished')
+            return self.participant.vars.get('consented') and not self.participant.vars.get('finished')
 
     class Page2(Page):
         def is_displayed(self):
-            return not self.participant.vars.get('finished')
+            return self.participant.vars.get('consented') and not self.participant.vars.get('finished')
 
     class Page3(Page):
         def is_displayed(self):
-            return not self.participant.vars.get('finished')
+            if self.participant.vars.get('consented') and not self.participant.vars.get('finished'):
+                if self.player.id_in_group == 1:
+                    return True
+            return False
 
     page_sequence = [
         Page1,
@@ -104,22 +106,31 @@ the rest of the app once a certain participant var is set:
         Page3,
     ]
 
-You can eliminate this repetition as follows:
+You can eliminate this repetition by moving the ``is_displayed`` code into
+``models.py``:
 
 .. code-block:: python
 
-    class SkipIfFinished(Page):
+    class Player(BasePlayer):
+        def still_playing(self):
+            pvars = self.participant.vars
+            return pvars.get('consented') and not pvars.get('finished')
+
+Then in ``views.py``:
+
+.. code-block:: python
+
+    class Page1(Page):
         def is_displayed(self):
-            return not self.participant.vars.get('finished')
+            return self.player.still_playing()
 
-    class Page1(SkipIfFinished):
-        pass
+    class Page2(Page):
+        def is_displayed(self):
+            return self.player.still_playing()
 
-    class Page2(SkipIfFinished):
-        pass
-
-    class Page3(SkipIfFinished):
-        pass
+    class Page3(Page):
+        def is_displayed(self):
+            return self.player.still_playing() and self.player.id_in_group == 1
 
     page_sequence = [
         Page1,
@@ -127,35 +138,32 @@ You can eliminate this repetition as follows:
         Page3,
     ]
 
-(This is not a special oTree feature;
-it is simply using Python class inheritance.)
 
-Let's say you have a page that has its own special display condition:
+Example 2: vars_for_template
+````````````````````````````
 
-.. code-block:: python
-
-    class Player1Page(Page):
-        def is_displayed(self):
-            return self.player.id_in_group == 1
-
-To combine it with ``is_displayed()`` of the base class, use inheritance and Python's ``super()``:
-
-.. code-block:: python
-
-    class Player1Page(SkipIfFinished):
-        def is_displayed(self):
-            return super().is_displayed() and self.player.id_in_group == 1
-
-
-More complex example
-````````````````````
-
-Let's say you've got the following code (note that ``Page1`` passes an extra
+Let's say you've got the following code (note that ``Page3`` passes an extra
 variable ``'d'``):
 
 .. code-block:: python
 
     class Page1(Page):
+    def vars_for_template(self):
+        return {
+            'a': 1,
+            'b': 2,
+            'c': 3,
+        }
+
+    class Page2(Page):
+        def vars_for_template(self):
+            return {
+                'a': 1,
+                'b': 2,
+                'c': 3,
+            }
+
+    class Page3(Page):
         def vars_for_template(self):
             return {
                 'a': 1,
@@ -164,52 +172,37 @@ variable ``'d'``):
                 'd': 4
             }
 
-    class Page2(Page):
-        def vars_for_template(self):
-            return {
-                'a': 1,
-                'b': 2,
-                'c': 3
-            }
 
-    class Page3(Page):
-        def vars_for_template(self):
-            return {
-                'a': 1,
-                'b': 2,
-                'c': 3
-            }
-
-
-You can refactor this as follows:
+You can simplify this by making a method in ``models.py``:
 
 .. code-block:: python
 
-    class VarsPage(Page):
+    class Player(BasePlayer):
         def vars_for_template(self):
-            v = {
+            return {
                 'a': 1,
                 'b': 2,
-                'c': 3
+                'c': 3,
             }
-            v.update(self.extra_vars_for_template())
-            return v
 
-        def extra_vars_for_template(self):
-            return {}
+Then in ``views.py``:
 
+.. code-block:: python
 
-    class Page1(VarsPage):
-        def extra_vars_for_template(self):
-            return {'d': 4}
+    class Page1(Page):
+        def vars_for_template(self):
+            return self.player.vars_for_template()
 
-    class Page2(VarsPage):
-        pass
+    class Page2(Page):
+        def vars_for_template(self):
+            return self.player.vars_for_template()
 
-    class Page3(VarsPage):
-        pass
+    class Page3(Page):
+        def vars_for_template(self):
+            context = self.player.vars_for_template()
+            context.update({'d': 4})
+            return context
 
-(Or, if you prefer, use ``super().vars_for_template()``, etc.)
 
 Improving code performance
 --------------------------
