@@ -52,6 +52,7 @@ Step 1: Install Python 3.6 (for macOS users)
 *   Then type ``pip3 -V`` and hit enter.
     It will output a line that gives the version of Python at the end;
     this should match the version of Python you just installed.
+    If it doesn't work, try closing and reopening the "Terminal" app.
 
 *   Run this command::
 

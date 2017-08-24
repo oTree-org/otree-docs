@@ -210,7 +210,7 @@ Run::
 Then add these lines to the end of the file (substitute your own values)::
 
     export OTREE_ADMIN_PASSWORD=my_password
-    export OTREE_PRODUCTION=0
+    #export OTREE_PRODUCTION=1 # uncomment this line to enable production mode
     export OTREE_AUTH_LEVEL=DEMO
 
 To save and exit, press ``Ctrl+O``, ``Enter``, and ``Ctrl+X``.
@@ -283,7 +283,7 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
         PATH="/home/my_username/venv_otree/bin/:%(ENV_PATH)s",
         DATABASE_URL="postgres://otree_user:otree@localhost/django_db",
         OTREE_ADMIN_PASSWORD="my_password", # password for oTree web admin
-        OTREE_PRODUCTION="0", # can set to 1
+        OTREE_PRODUCTION="", # can set to 1
         OTREE_AUTH_LEVEL="", # can set to STUDY or DEMO
 
 ``directory`` should be the dir containing your project (i.e. with ``settings.py``).

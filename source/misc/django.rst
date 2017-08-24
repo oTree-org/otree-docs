@@ -143,7 +143,7 @@ for examples of more complex consumers. Also see :ref:`auto_save`.
     which makes it complicated for oTree to install smoothly cross-platform.)
 
 
-Next, create a module ``routing.py`` (either in your project root or in an app)
+Next, create a module ``routing.py`` in your project root
 and append your routes to oTree's built-in routes:
 
 .. code-block:: python

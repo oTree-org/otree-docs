@@ -130,7 +130,7 @@ the simplest way is to just set them in in your ``settings.py``, e.g.:
 .. code-block:: python
 
     ADMIN_PASSWORD = 'my_password'
-    OTREE_PRODUCTION = '0'
+    OTREE_PRODUCTION = ''
     OTREE_AUTH_LEVEL = 'DEMO'
 
 However, if using a dedicated server, it's best practice to use

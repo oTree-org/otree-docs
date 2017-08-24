@@ -112,7 +112,7 @@ You can eliminate this repetition by moving the ``is_displayed`` code into
 .. code-block:: python
 
     class Player(BasePlayer):
-        def still_playing(self):
+        def is_playing(self):
             pvars = self.participant.vars
             return pvars.get('consented') and not pvars.get('finished')
 
@@ -122,15 +122,15 @@ Then in ``views.py``:
 
     class Page1(Page):
         def is_displayed(self):
-            return self.player.still_playing()
+            return self.player.is_playing()
 
     class Page2(Page):
         def is_displayed(self):
-            return self.player.still_playing()
+            return self.player.is_playing()
 
     class Page3(Page):
         def is_displayed(self):
-            return self.player.still_playing() and self.player.id_in_group == 1
+            return self.player.is_playing() and self.player.id_in_group == 1
 
     page_sequence = [
         Page1,

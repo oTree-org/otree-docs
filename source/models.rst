@@ -93,37 +93,6 @@ Here are the required constants:
 
 -  ``num_rounds`` (described in :ref:`rounds`)
 
-Don't modify values in ``Constants``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-As the name suggests, ``Constants`` is for holding
-values that never change.
-
-For example, let's say your ``Constants`` has an attribute ``my_dict``:
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        my_dict = {}
-
-And you try to modify ``my_dict``:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-        def creating_session(self):
-            # wrong
-            Constants.my_dict['a'] = 1
-
-As explained in the section :ref:`how_otree_executes_code`,
-``Constants`` is a global variable,
-so when you modify it above,
-you are actually modifying it for all participants in all sessions.
-This can lead to all kinds of unexpected behavior.
-
-Instead, if you want a variable that is the same for all players in your session,
-you should set a field on the subsession, or use :ref:`session_vars`.
-
 
 Subsession
 ----------
@@ -365,17 +334,6 @@ in_rounds(self, first, last)
 
 See :ref:`in_rounds`.
 
-Extra models
-------------
-
-Some complex apps require extra models
-(other than Player, Group, and Subsession).
-You can define these models using Django's API,
-although you will have to write the code to create/update/save
-them yourself, rather than relying on oTree.
-See Markus Konrad's excellent article
-`Using Custom Data Models in oTree <https://datascience.blog.wzb.eu/2016/10/31/using-custom-data-models-in-otree/>`__.
-
 .. _how_otree_executes_code:
 
 How oTree executes your code
@@ -420,3 +378,62 @@ For the same reason, this will not work either:
 
 The solution is to generate the random variables inside a method,
 such as :ref:`creating_session`.
+
+Be careful with lists and dicts in ``Constants``
+------------------------------------------------
+
+Here is a common error I see.
+Let's say you have a list in ``Constants``, like this:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        foo = [1, 2, 3]
+
+Then somewhere in your code you want to randomly shuffle this list:
+
+.. code-block:: python
+
+    # wrong
+    foo = Constants.foo
+    random.shuffle(foo)
+
+Because you shuffled ``foo``, its value will be different, like ``[3, 1, 2]``.
+But ``Constants.foo`` is still ``[1, 2, 3]``, right? Wrong: it is ``[3, 1, 2]`` also.
+``foo`` and ``Constants.foo`` are references to the same object.
+
+This error often manifests itself when you randomly shuffle the list for each participant
+in the session, but then notice everyone somehow ended up
+with the same "random" value.
+
+The solution is to make a copy of ``Constants.foo``:
+
+.. code-block:: python
+
+    foo = Constants.foo.copy()
+    random.shuffle(foo)
+
+An even safer technique is to store ``foo`` as a tuple
+(use ``()`` instead of ``[]``):
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        foo = (1, 2, 3)
+
+This way, you will not be able to modify ``Constants.foo`` at all until you
+copy it into a new list:
+
+.. code-block:: python
+
+    foo = list(Constants.foo)
+    random.shuffle(foo)
+
+This error can also occur with dictionaries:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        foo = {'a': 1, 'b': 2}
+
+Before modifying this dictionary, you should do ``Constants.foo.copy()``.
