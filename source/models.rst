@@ -115,6 +115,8 @@ Only relevant if the app has multiple rounds
 (set in ``Constants.num_rounds``).
 See :ref:`rounds`.
 
+.. _before_session_starts:
+
 before_session_starts
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -128,6 +130,11 @@ for backwards compatibility.
 
 creating_session
 ~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This method used to be called ``before_session_starts``.
+    See :ref:`before_session_starts`.
 
 This method is executed when the admin clicks "create session":
 
@@ -379,8 +386,8 @@ For the same reason, this will not work either:
 The solution is to generate the random variables inside a method,
 such as :ref:`creating_session`.
 
-Be careful with lists and dicts in ``Constants``
-------------------------------------------------
+Be careful with lists and dicts in Constants
+--------------------------------------------
 
 Here is a common error I see.
 Let's say you have a list in ``Constants``, like this:

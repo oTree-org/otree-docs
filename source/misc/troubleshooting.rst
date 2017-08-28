@@ -116,12 +116,7 @@ For example, you could add some print statements to your payoff function:
 
 .. code-block:: python
 
-    def set_payoffs(self):
-        self.total_contribution = sum([p.contribution for p in self.get_players()])
-        self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
-        for p in self.get_players():
-            p.payoff = Constants.endowment - p.contribution + self.individual_share
-            print('*******p.payoff is', p.payoff)
+      print('*******participant.vars is', self.participant.vars)
 
 The output will be displayed in the console window where you ran ``otree runserver``
 (not in your web browser).

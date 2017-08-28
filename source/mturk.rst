@@ -119,18 +119,41 @@ Qualification requirements
 When you upgrade to oTree-core 1.4, you will need to change the format of your qualification requirements,
 because oTree 1.4 upgraded from boto2 to boto3, which uses a different syntax.
 
+Here is an example with 2 qualification requirements:
+
+.. code-block:: python
+
+    mturk_hit_settings = {
+        'title': 'Title for your experiment',
+        'description': 'Description for your experiment',
+        # other properties omitted for clarity...
+
+        'qualification_requirements': [
+            {
+                'QualificationTypeId': "3AWO4KN9YO3JRSN25G0KTXS4AQW9I6",
+                'Comparator': "DoesNotExist",
+            },
+            {
+                'QualificationTypeId': "4AMO4KN9YO3JRSN25G0KTXS4AQW9I7",
+                'Comparator': "DoesNotExist",
+            },
+        ]
+    }
+
 Here is how you would require workers from the US.
 (`00000000000000000071` is the code for a location-based qualification.)
 
 .. code-block:: python
 
-    {
-        'QualificationTypeId': "00000000000000000071",
-        'Comparator': "EqualTo",
-        'LocaleValues': [{
-            'Country': "US",
-        }]
-    },
+            {
+                'QualificationTypeId': "00000000000000000071",
+                'Comparator': "EqualTo",
+                'LocaleValues': [{
+                    'Country': "US",
+                }]
+            },
+
+.. code-block:: python
 
 See the reference
 `here <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
