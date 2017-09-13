@@ -116,7 +116,7 @@ For example, you could add some print statements to your payoff function:
 
 .. code-block:: python
 
-      print('*******participant.vars is', self.participant.vars)
+      print('@@@@@@participant.vars is', self.participant.vars)
 
 The output will be displayed in the console window where you ran ``otree runserver``
 (not in your web browser).

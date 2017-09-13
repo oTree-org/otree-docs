@@ -226,12 +226,11 @@ a few seconds remaining (e.g. 3).
 
 If you have multiple pages in your ``page_sequence`` that need to share
 the timeout, rather than copy-pasting the above code to every page redundantly,
-you can create a base class for all pages:
+you can define the timeout in ``models.py``:
 
 .. code-block:: python
 
-    class BasePage(Page):
-
+    class Player(BasePlayer):
         def get_timeout_seconds(self):
             return self.participant.vars['expiry_timestamp'] - time.time()
 
@@ -239,24 +238,33 @@ you can create a base class for all pages:
             return self.participant.vars['expiry_timestamp'] - time.time() > 3
 
 
-    class Page1(BasePage):
-        pass
+Then in views.py:
+
+.. code-block:: python
+
+    class Page1(Page):
+        def get_timeout_seconds(self):
+            return self.player.get_timeout_seconds()
+
+        def is_displayed(self):
+            return self.player.is_displayed()
+
+    class Page2(Page):
+        def get_timeout_seconds(self):
+            return self.player.get_timeout_seconds()
+
+        def is_displayed(self):
+            return self.player.is_displayed()
+
+    class Page3(Page):
+        def get_timeout_seconds(self):
+            return self.player.get_timeout_seconds()
+
+        def is_displayed(self):
+            return self.player.is_displayed()
 
 
-    class Page2(BasePage):
-        pass
-
-
-    class Page3(BasePage):
-        pass
-
-
-    page_sequence = [
-        Start,
-        Page1, Page2, Page3,
-    ]
-
-See the section on :ref:`inheritance <inheritance>` for more info.
+See the section on :ref:`composition <composition>` for more info.
 
 The default text on the timer says "Time left to complete this page:".
 But if your timeout spans multiple pages, you should word it more accurately,

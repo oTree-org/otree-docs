@@ -6,8 +6,8 @@ or any minor changes that I considered important to know about when upgrading.
 
 .. _v14:
 
-Version 1.4 beta (Aug 2017)
-===========================
+Version 1.4
+===========
 
 Here are the main changes in 1.4:
 
@@ -17,21 +17,11 @@ Here are the main changes in 1.4:
     or dropped out. See :ref:`group_by_arrival_time`.
 -   Upgrade timeout JavaScript library (jQuery countdown)
 
-To install, run this (note the ``--pre`` in the command;
-this means "pre-release")::
+To install, run this::
 
-    pip install -U --pre otree-core
+    pip install -U otree-core
     otree resetdb
 
-To upgrade to a newer beta release,
-run the same command above.
-
-To revert back to the stable version of oTree-core::
-
-    pip uninstall otree-core
-    pip install otree-core
-
-Please send feedback to chris@otree.org.
 
 .. _v13:
 

@@ -199,7 +199,7 @@ write it like this:
 .. code-block:: HTML+django
 
     <script>
-        var payoff = {{ payoff|json }};
+        var payoff = {{ player.payoff|json }};
         ...
     </script>
 

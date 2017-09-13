@@ -1,14 +1,14 @@
 .. _dockerhub:
 
-Docker
-======
+Docker Hub
+==========
 
-You can use Docker to run a virtualized oTree
+You can use Docker Hub to deploy a virtualized oTree
 on your Linux, Windows, or Mac server.
 It's like a virtual machine that already has Postgres, Redis, oTree, and Python
 configured.
 
-Below are the steps to use Docker.
+Below are the steps to use Docker Hub.
 
 GitHub/BitBucket
 ----------------

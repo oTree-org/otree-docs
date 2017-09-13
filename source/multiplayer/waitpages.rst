@@ -135,7 +135,8 @@ group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
 
 If you define a method called ``get_players_for_group``,
 it will get called whenever a new player reaches the wait page.
-The method's argument is the list of players who are waiting to be grouped (in no particular order).
+The method's argument is the list of players who are waiting to be grouped
+(in no particular order).
 If you select some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
@@ -153,7 +154,7 @@ Here's an example where each group has 2 A players, 2 B players.
 
             if len(a_players) >= 2 and len(b_players) >= 2:
                 # this is a Python "list slice"
-                return a_players[:2] + b_players[:2]
+                return [a_players[0], a_players[1], b_players[0], b_players[1]]
 
         def is_displayed(self):
             return self.round_number == 1
@@ -213,7 +214,7 @@ then add some code like this to the ``scripts`` block:
     <script>
     SECOND = 1000 // milliseconds
     window.setTimeout(function(){
-        window.location.href = "https://www.google.com";
+        window.location.href = "https://www.some_other_website.com";
     }, 5 * 60 * SECOND); // 5 minutes
     </script>
 

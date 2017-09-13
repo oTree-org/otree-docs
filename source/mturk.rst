@@ -148,15 +148,13 @@ Here is how you would require workers from the US.
             {
                 'QualificationTypeId': "00000000000000000071",
                 'Comparator': "EqualTo",
-                'LocaleValues': [{
-                    'Country': "US",
-                }]
+                'LocaleValues': [{'Country': "US"}]
             },
 
 .. code-block:: python
 
-See the reference
-`here <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
+See the
+`MTurk API reference <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
 (However, note that the code examples there are in JavaScript, so you would need
 to modify the syntax to make it work in Python, e.g. adding quotes around dictionary keys.)
 

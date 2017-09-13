@@ -308,7 +308,7 @@ For example, you could add some print statements to ``set_payoffs``:
         self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
         for p in self.get_players():
             p.payoff = Constants.endowment - p.contribution + self.individual_share
-            print('*******p.payoff is', p.payoff)
+            print('@@@@@@p.payoff is', p.payoff)
 
 The output will be displayed in the console window where you ran ``otree runserver``
 (not in your web browser).

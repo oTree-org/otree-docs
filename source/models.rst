@@ -125,7 +125,6 @@ since otree-core 1.3.2 (June 2017).
 However, new versions of oTree still execute ``before_session_starts``,
 for backwards compatibility.
 
-
 .. _creating_session:
 
 creating_session
