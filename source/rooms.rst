@@ -79,8 +79,7 @@ The file should contain one participant label per line. For example::
 
 If you omit ``participant_label_file``, then anyone can join
 as long as they know the room-wide URL.
-However, this can cause reliability problems, as described in :ref:`no-participant-labels`,
-so if possible, it's advised to use a ``participant_label_file``.
+See :ref:`no-participant-labels`.
 
 ``use_secure_urls`` (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -166,16 +165,14 @@ Have each participant open the URLs.
 Then, in the room's admin page, check how many people are present,
 and create a session for that number of people.
 
-Although this option is simple, it is less reliable than using participant labels:
+Although this option is simple, it is less reliable than using participant labels,
+because someone could easily play twice by opening the URL in 2 browser tabs.
 
--   Someone could accidentally open the link 2 or 3 times, which will register
-    multiple participants. So, if 20 people are on the room page,
-    you should consider creating a session for 25-30 people, to account for
-    these duplicate registrations.
--   For the above reason, this is not recommended for multiplayer games,
-    because it can result in other players in the group getting stuck
-    on a waiting page
--   Someone could easily play twice by opening the URL in 2 browser tabs
+.. note::
+
+    Starting with otree-core 1.4.13 (September 2017), the room-wide URL uses
+    cookies, so that if someone visits twice with the same browser, they will
+    be assigned back to the same participant.
 
 
 Reusing for multiple sessions
