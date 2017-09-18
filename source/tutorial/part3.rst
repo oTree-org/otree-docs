@@ -67,8 +67,15 @@ So we have:
 
 Now let's define the code to randomly choose a round for payment. Let's
 define the code in ``Subsession.creating_session``, which is the
-place to put global code that initializes the state of the game, before
-gameplay starts. (See :ref:`creating_session`.)
+place to put code that initializes the state of the game.
+(See :ref:`creating_session`.)
+
+First, put this line at the top of the file, so we can use Python's built-in
+``random`` module:
+
+.. code-block:: python
+
+    import random
 
 The value of the chosen round is "global" rather than different for each
 participant, so the logical place to store it is as a "global" variable
@@ -78,6 +85,7 @@ So, we start by writing something like this, which chooses a random
 integer between 1 and 4, and then assigns it into ``session.vars``:
 
 .. code-block:: python
+
 
     class Subsession(BaseSubsession):
 
@@ -178,7 +186,7 @@ check for both of them.
                 matcher.is_winner = False
                 mismatcher.is_winner = True
             for player in [mismatcher, matcher]:
-                if (self.round_number == self.session.vars['paying_round'] and player.is_winner):
+                if self.round_number == self.session.vars['paying_round'] and player.is_winner:
                     player.payoff = Constants.stakes
 
 Define the templates and views
@@ -350,8 +358,7 @@ the current round.
         def vars_for_template(self):
 
             return {
-                'total_payoff': sum([p.payoff
-                                     for p in self.player.in_all_rounds()]),
+                'total_payoff': sum([p.payoff for p in self.player.in_all_rounds()]),
                 'paying_round': self.session.vars['paying_round'],
                 'player_in_all_rounds': self.player.in_all_rounds(),
             }

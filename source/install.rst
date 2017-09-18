@@ -36,9 +36,6 @@ open PowerShell, and enter ``pip3 -V``:
 
 .. figure:: _static/setup/powershell.png
 
-It will output a line that gives the version of Python at the end;
-this should match the version of Python you just installed:
-
 
 Step 1: Install Python 3.6 (for macOS users)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,10 +46,11 @@ Step 1: Install Python 3.6 (for macOS users)
 
 .. figure:: _static/setup/macos-terminal.png
 
-*   Then type ``pip3 -V`` and hit enter.
-    It will output a line that gives the version of Python at the end;
-    this should match the version of Python you just installed.
-    If it doesn't work, try closing and reopening the "Terminal" app.
+*   Then type ``pip3 -V`` and hit enter. This should output something like::
+
+        pip N.N.N from /Library/Frameworks/Python.framework/[...] (python 3.6)
+
+    If not, try closing and reopening the "Terminal" app.
 
 *   Run this command::
 

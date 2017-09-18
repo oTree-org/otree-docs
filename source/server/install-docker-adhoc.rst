@@ -14,7 +14,7 @@ Disadvantages:
 
 -   Each time you make a change,
     Docker needs to re-build and re-install everything, which can take a couple minutes.
--   Requires a lot of RAM
+-   Uses at least 1 GB of RAM, usually more.
 
 If interested, follow the below steps.
 

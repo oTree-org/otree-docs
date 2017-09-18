@@ -15,8 +15,22 @@ If you run a study for only 1 day, you can turn off your dynos and addons,
 and then you only pay 1/30 of the monthly cost.
 Often this means you can run a study for just a few dollars.
 
-Basic Heroku setup
-------------------
+Heroku setup (quick version)
+----------------------------
+
+Assuming Heroku is already installed & logged in::
+
+    git init
+    git add .
+    git commit -am "my commit message"
+    heroku create
+    heroku addons:create heroku-redis:premium-0
+    git push heroku master
+    heroku run otree resetdb
+
+
+Heroku setup (detailed version)
+-------------------------------
 
 Create an account
 ~~~~~~~~~~~~~~~~~

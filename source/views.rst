@@ -72,9 +72,12 @@ oTree automatically passes the following objects to the template:
 ``player``, ``group``, ``subsession``, ``participant``, ``session``, and ``Constants``.
 You can access them in the template like this: ``{{ Constants.blah }}`` or ``{{ player.blah }}``.
 
+If you need to pass the same variables to many pages,
+see :ref:`here <vars_for_many_templates>`.
+
 .. note::
 
-    You generally shouldn't generate random values in ``vars_for_template``,
+    You shouldn't generate random values in ``vars_for_template``,
     because if the user refreshes their page, ``vars_for_template`` will be executed again,
     and the random calculation might return a different value.
     Instead, you should calculate random values in either ``creating_session``,
@@ -128,15 +131,6 @@ timeout_seconds, timeout_submission, etc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`timeouts`
-
-
-def vars_for_all_templates(self)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This is not a method on the Page class, but rather a top-level function
-in views.py. It is useful when you need certain variables to be passed
-to multiple pages in your app. Instead of repeating the same values in
-each ``vars_for_template``, you can define it in this function.
 
 
 Randomizing page sequence

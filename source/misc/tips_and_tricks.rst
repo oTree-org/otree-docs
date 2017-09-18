@@ -139,6 +139,8 @@ Then in ``views.py``:
     ]
 
 
+.. _vars_for_many_templates:
+
 Example 2: vars_for_template
 ````````````````````````````
 
