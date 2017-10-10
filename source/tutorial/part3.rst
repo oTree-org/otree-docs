@@ -54,7 +54,7 @@ So we have:
 
         penny_side = models.CharField(
             choices=['Heads', 'Tails'],
-            widget=widgets.RadioSelect()
+            widget=widgets.RadioSelect
         )
 
         is_winner = models.BooleanField()

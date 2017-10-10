@@ -123,7 +123,7 @@ you should store this data on the participant,
 which persists across apps (see :ref:`participants_and_players`).
 
 ``participant.vars`` is is a dictionary that can store any data.
-For example, you can set an attribute like this:
+For example, you can set an attribute like this::
 
     self.participant.vars['name'] = 'John'
 

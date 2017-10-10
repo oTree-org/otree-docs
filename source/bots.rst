@@ -65,15 +65,6 @@ To specify the folder name, do::
 Writing tests
 -------------
 
-.. note::
-
-    The syntax for bots has changed as of August 2016. ``self.submit`` has
-    been replaced by ``yield``. So, instead of
-    ``self.submit(views.Start)``, you should enter ``yield (views.Start)``,
-    and instead of ``self.submit(views.Offer, {'offer_amount': 50})``,
-    you should do ``yield (views.Offer, {'offer_amount': 50})``. In your code,
-    you should do a search-and-replace for ``self.submit(`` and replace it with
-    ``yield`` followed by a space.
 
 Submitting pages
 ~~~~~~~~~~~~~~~~

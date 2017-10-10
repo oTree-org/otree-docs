@@ -130,13 +130,6 @@ Advanced techniques
 Forms submitted by timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This behavior is new in otree-core 1.2 (Feb 2017).
-    Previously, oTree discarded forms submitted by timeout,
-    and required you to recover the data from
-    from ``self.request.POST.dict()`` yourself.
-
 If a form is auto-submitted because of a timeout,
 oTree will try to save whichever fields were filled out at the time of submission.
 If a field in the form contains an error (i.e. blank or invalid value),
@@ -155,19 +148,6 @@ Assuming you have defined ``timeout_submission``, you can write this:
             if self.timeout_happened:
                 for field_name, value in self.timeout_submission:
                     setattr(self.player, field_name, value)
-
-The fields that were filled out at the moment the page was submitted are contained
-in ``self.request.POST``, which you can access like this:
-
-.. code-block:: python
-
-    def before_next_page(self):
-        if self.timeout_happened:
-            post_dict = self.request.POST.dict()
-            my_value = post_dict.get('my_field')
-            # assuming my_value is an int
-            self.player.my_value = int(my_value)
-
 
 
 Timeouts that span multiple pages

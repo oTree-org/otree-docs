@@ -142,8 +142,8 @@ Step 4: Install a Python editor (PyCharm)
 You will need a text editor to write your Python code.
 
 We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
-Professional Editon is better than Community Edition because it makes
-Django programming easier.
+Professional Editon is better than Community Edition because it has
+Django support.
 PyCharm Professional is free if you are a student, teacher, or professor.
 
 Even if you normally use another text editor,
@@ -154,12 +154,16 @@ makes learning oTree much easier:
 
 Once you have installed PyCharm,
 go to "File -> Open..." and select the folder you created with ``otree startproject``.
-Configure a Python interpreter (on Windows,
-it would usually be something like ``C:\Users\<your_username>\AppData\Local\Programs\Python\Python36-32``, and on Mac,
-it would usually be something like ``/Library/Framework/Python.framework/Versions/3.6/bin/python3.6``)
 
-Then click on ``File –> Settings`` (Windows) or ``PyCharm -> Preferences`` (Mac)
-and navigate to ``Languages & Frameworks -> Django``,
+Then click on ``File –> Settings`` (Windows) or ``PyCharm -> Preferences`` (Mac).
+
+First, go to "Project interpreter" and set it to the location of your Python executable.
+on Windows, it would usually be something like
+``C:\Users\<your_username>\AppData\Local\Programs\Python\Python36-32``,
+and on Mac, it would usually be something like
+``/Library/Framework/Python.framework/Versions/3.6/bin/python3.6``)
+
+Then, also in settings, navigate to ``Languages & Frameworks -> Django``,
 check "Enable Django Support" and set your oTree folder as the Django project root,
 with your ``manage.py`` and ``settings.py``:
 

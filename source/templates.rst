@@ -57,13 +57,6 @@ you should modify the template ``_templates/global/Page.html``.
 You should put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
 and any styles inside ``{% block global_styles %}...{% endblock %}``.
 
-.. note::
-
-    ``Page.html`` used to be called ``Base.html``.
-    If your project contains a file ``_templates/global/Base.html``,
-    you should rename it to ``Page.html``.
-    Then, if any templates extend ``global/Base.html``,
-    you should instead make them extend ``global/Page.html``
 
 For one app
 ^^^^^^^^^^^
@@ -142,6 +135,8 @@ The reasons for putting scripts and styles in separate blocks are:
 -   jQuery may only be loaded at the bottom of the page,
     so if you reference the jQuery ``$`` variable in the ``content`` block,
     it could be undefined.
+
+.. _selectors:
 
 Customizing the theme
 ~~~~~~~~~~~~~~~~~~~~~

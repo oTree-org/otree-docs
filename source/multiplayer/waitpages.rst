@@ -153,7 +153,6 @@ Here's an example where each group has 2 A players, 2 B players.
             b_players = [p for p in waiting_players if p.participant.vars['type'] == 'B']
 
             if len(a_players) >= 2 and len(b_players) >= 2:
-                # this is a Python "list slice"
                 return [a_players[0], a_players[1], b_players[0], b_players[1]]
 
         def is_displayed(self):
@@ -286,7 +285,8 @@ CSS and JavaScript in Wait Pages
 
 Wait pages have the same block structure as regular pages
 (``global_scripts``, ``app_scripts``, ``scripts``, etc...),
-so you can follow the same instructions described in :ref:`base-template`.
+so you can follow the same instructions described in :ref:`base-template`
+and :ref:`selectors`.
 
 For example, to apply CSS to your custom wait page at ``_templates/global/WaitPage.html``,
 put a block ``global_scripts`` in the template.

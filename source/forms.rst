@@ -22,7 +22,6 @@ For example, here is a models.py:
         f1 = models.BooleanField()
         f2 = models.BooleanField()
 
-
     class Player(BasePlayer):
         f1 = models.BooleanField()
         f2 = models.BooleanField()
@@ -146,7 +145,7 @@ you should set the ``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal``:
     # in models.py
     level = models.PositiveIntegerField(
         choices=[1, 2, 3],
-        widget=widgets.RadioSelect()
+        widget=widgets.RadioSelect
     )
 
 If the list of choices needs to be determined dynamically, use :ref:`FOO_choices`

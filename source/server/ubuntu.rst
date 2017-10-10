@@ -3,24 +3,24 @@
 Linux Server
 ============
 
-.. note::
-
-    If you are just testing your app locally, you can use
-    ``otree runserver``, which is simpler than the below steps.
-
 We typically recommend newcomers to oTree to deploy to Heroku
 (see instructions :ref:`here <heroku>`),
 or to use their own personal computer as a temporary server (see :ref:`here <server-adhoc>`).
 
 However, you may prefer to run oTree on a proper Linux server. Reasons may include:
 
--   You will be launching your experiment in a setting where internet
-    connectivity is lacking
--   You do not want your server to be accessed from the internet
--   You want full control over how your server is configured
+-   Your lab doesn't have internet
+-   You want full control over server configuration
 -   You want better performance (local servers have less latency)
 
-The below instructions are for Ubuntu 16.04.
+If you are experienced in Django server setup, you just need to know that
+setting up an oTree server is the same as any Django project, except:
+
+-   You need Redis
+-   You start the server with ``otree runprodserver``, rather than a WSGI server.
+
+For those who want full details on the setup, read the below sections,
+which are for Ubuntu 16.04.
 
 Install apt-get packages
 ------------------------
@@ -173,7 +173,7 @@ Testing the production server
 
 From your project folder, run::
 
-    otree runprodserver --port=8000
+    otree runprodserver 8000
 
 Then navigate in your browser to your server's
 IP/hostname followed by ``:8000``.
@@ -184,7 +184,7 @@ This requires superuser permission, so let's use sudo,
 but add some extra args to preserve environment variables like ``PATH``,
 ``DATABASE_URL``, etc::
 
-    sudo -E env "PATH=$PATH" otree runprodserver --port=80
+    sudo -E env "PATH=$PATH" otree runprodserver 80
 
 Try again to open your browser;
 this time, you don't need to append :80 to the URL, because that is the default HTTP port.
@@ -237,7 +237,7 @@ with the following content (can do this locally and then git push again)::
 
     [watcher:webapp]
     cmd = otree
-    args = runprodserver --port=80
+    args = runprodserver 80
     use_sockets = True
     copy_env = True
 
@@ -273,7 +273,7 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
 ``otree.conf`` with the following content::
 
     [program:otree]
-    command=/home/my_username/venv_otree/bin/otree runprodserver --port=80
+    command=/home/my_username/venv_otree/bin/otree runprodserver 80
     directory=/home/my_username/oTree
     stdout_logfile=/home/my_username/otree-supervisor.log
     stderr_logfile=/home/my_username/otree-supervisor-errors.log
@@ -411,10 +411,10 @@ Once these steps are done, the second user can git push code to the server,
 then run ``otree resetdb``.
 
 If you don't need multiple people to run experiments simultaneously,
-then each user can take turns running the server on port 80 with ``otree runprodserver --port=80``.
+then each user can take turns running the server on port 80 with ``otree runprodserver 80``.
 However, if multiple people need to run experiments at the same time,
-then you would need to run the server on different ports, e.g. ``--port=8000``,
-``--port=8001``, etc.
+then you would need to run the server on different ports, e.g. ``8000``,
+``8001``, etc.
 
 Finally, if you use supervisor (or circus) as described above,
 each user should have their own conf file, with their personal

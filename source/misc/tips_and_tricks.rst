@@ -72,7 +72,7 @@ views.py: prevent code duplication by moving code to ``models.py``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You should try to move as much code as possible into ``models.py``.
-This will prevent you from repeating the same code on every page.
+In Django, it's generally recommended to have "thick models" and "thin views".
 
 .. _skip_many:
 

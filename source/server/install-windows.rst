@@ -114,7 +114,7 @@ Run the production server
 
 Run::
 
-    otree runprodserver --port=80
+    otree runprodserver 80
 
 See :ref:`here <runprodserver>` for full instructions.
 The steps are essentially the same as on Linux.

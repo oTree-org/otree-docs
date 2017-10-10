@@ -115,7 +115,7 @@ For example, if your app has this page in ``my_app/views.py``:
         pass
 
 Then you should create a file ``my_app/templates/my_app/Page1.html``,
-(note that app_name is repeated).
+(note that my_app is repeated).
 See :ref:`templates` for info on how to write an HTML template.
 
 If the template needs to have a different name from your
