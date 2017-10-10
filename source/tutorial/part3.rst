@@ -232,7 +232,7 @@ Django template language.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %}
         Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
@@ -273,7 +273,7 @@ Django template language.
             In this round, you are the {{ player.role }}.
         </p>
 
-        {% formfield player.penny_side with label="I choose:" %}
+        {% formfield player.penny_side label="I choose:" %}
 
         {% next_button %}
 
@@ -302,7 +302,7 @@ Let's create ``ResultsSummary.html``:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %}
         Final results

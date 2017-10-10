@@ -115,7 +115,7 @@ To create the instructions, we can define a file
 
 .. code-block:: html+django
 
-    {% load otree_tags staticfiles %}
+    {% load otree staticfiles %}
 
     <div class="instructions well well-lg">
 
@@ -144,7 +144,7 @@ This page looks like the templates we have seen so far. Note the use of
 .. code-block:: django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %}
         Trust Game: Your Choice
@@ -158,7 +158,7 @@ This page looks like the templates we have seen so far. Note the use of
         You are Participant A. Now you have {{Constants.endowment}}.
         </p>
 
-        {% formfield group.sent_amount with label="How much do you want to send to participant B?" %}
+        {% formfield group.sent_amount label="How much do you want to send to participant B?" %}
 
         {% next_button %}
 
@@ -190,7 +190,7 @@ This is the page that P2 sees to send money back. Here is the template:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %}
         Trust Game: Your Choice
@@ -205,7 +205,7 @@ This is the page that P2 sees to send money back. Here is the template:
             and you received {{tripled_amount}}.
         </p>
 
-        {% formfield group.sent_back_amount with label="How much do you want to send back?" %}
+        {% formfield group.sent_back_amount label="How much do you want to send back?" %}
 
         {% next_button %}
 
@@ -254,7 +254,7 @@ to condition on the current player's ``id_in_group``.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %}
         Results

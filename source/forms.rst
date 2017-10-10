@@ -48,7 +48,7 @@ You should include form fields by using a ``{% formfield %}`` element:
 
 .. code-block:: html+django
 
-    {% formfield player.contribution with label="How much do you want to contribute?" %}
+    {% formfield player.contribution label="How much do you want to contribute?" %}
 
 An alternative to using ``label`` is to define ``verbose_name`` on the model field:
 
@@ -581,7 +581,7 @@ Then in the template, set the label to this variable:
 
 .. code-block:: html+django
 
-    ``{% formfield player.contribution with label=contribution_label %}``
+    ``{% formfield player.contribution label=contribution_label %}``
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.
 

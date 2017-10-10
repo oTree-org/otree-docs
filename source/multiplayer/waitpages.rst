@@ -244,7 +244,7 @@ For example, save this to ``my_app/templates/my_app/MyWaitPage.html``
 .. code-block:: html+django
 
     {% extends 'otree/WaitPage.html' %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
     {% block title %}{{ title_text }}{% endblock %}
     {% block content %}
         {{ body_text }}

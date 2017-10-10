@@ -137,7 +137,7 @@ contribution.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %} Contribute {% endblock %}
 
@@ -151,7 +151,7 @@ contribution.
     </p>
 
 
-    {% formfield player.contribution with label="How much will you contribute?" %}
+    {% formfield player.contribution label="How much will you contribute?" %}
 
     {% next_button %}
 
@@ -169,7 +169,7 @@ The second template will be called ``Results.html``.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %} Results {% endblock %}
 

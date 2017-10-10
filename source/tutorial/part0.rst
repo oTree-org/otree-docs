@@ -64,7 +64,7 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %}
         Enter your information
@@ -72,9 +72,9 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 
     {% block content %}
 
-        {% formfield player.name with label="Enter your name" %}
+        {% formfield player.name label="Enter your name" %}
 
-        {% formfield player.age with label="Enter your age" %}
+        {% formfield player.age label="Enter your age" %}
 
         {% next_button %}
 
@@ -85,7 +85,7 @@ The second template will be called ``Results.html``.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block title %}
         Results

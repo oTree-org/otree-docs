@@ -32,7 +32,7 @@ You define 2 blocks:
     {% block content %}
         Body HTML goes here.
 
-        {% formfield player.contribution with label="What is your contribution?" %}
+        {% formfield player.contribution label="What is your contribution?" %}
 
         {% next_button %}
     {% endblock %}
@@ -72,7 +72,7 @@ and put this inside it:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
 
     {% block app_styles %}
 
@@ -88,7 +88,7 @@ Then each ``public_goods`` template would inherit from this template:
  .. code-block:: html+django
 
     {% extends "public_goods/Page.html" %}
-    {% load staticfiles otree_tags %}
+    {% load staticfiles otree %}
     ...
 
 Just one page
@@ -232,7 +232,7 @@ quotes around strings, so you don't need to add them manually:
         // incorrect
         var my_string = "{{ my_string|json }}";
 
-If you get an "Invalid filter" error, make sure you have ``{% load otree_tags %}``
+If you get an "Invalid filter" error, make sure you have ``{% load otree %}``
 at the top of your template.
 
 safe_json
@@ -382,5 +382,5 @@ Also, the ``|abs`` filter lets you take the absolute value.
 So, doing ``{{ -20|abs }}`` would output ``20``.
 
 If you get an "Invalid filter" error,
-make sure you have ``{% load otree_tags %}``
+make sure you have ``{% load otree %}``
 at the top of your template.
