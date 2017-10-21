@@ -56,7 +56,7 @@ Download Docker configuration files
 -----------------------------------
 
 On your local computer's command line, go to your project folder and run these commands to download
-the 4 Docker files (should add them to the same folder as ``requirements.txt``).
+the Docker files (should add them to the same folder as ``requirements.txt``).
 
 Windows::
 

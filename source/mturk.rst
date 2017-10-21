@@ -91,6 +91,7 @@ After workers have completed the session, you can click on the
 "payments" Tab for your session. Here, you will be able to approve
 submissions, and also pay the bonuses that workers earned in your game.
 
+
 Testing your hit in sandbox
 ---------------------------
 

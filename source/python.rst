@@ -22,8 +22,6 @@ A downloadable version is :download:`here <_static/otree_python.py>`.
 
 .. literalinclude:: _static/otree_python.py
 
-Credits
--------
 
-This page's tutorial is adapted from `Learn Python in Y Minutes <https://learnxinyminutes.com/docs/python/>`__,
+**Credits**: This page's tutorial is adapted from `Learn Python in Y Minutes <https://learnxinyminutes.com/docs/python/>`__,
 and is released under the same `license <https://creativecommons.org/licenses/by-sa/3.0/deed.en_US>`__.

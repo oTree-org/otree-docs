@@ -13,15 +13,17 @@ then oTree waits until all players in the group have
 arrived at that point in the sequence, and then all players are allowed
 to proceed.
 
+.. code-block:: python
+
+    class NormalWaitPage(WaitPage):
+        pass
+
 If your subsession has multiple groups playing simultaneously, and you
 would like a wait page that waits for all groups (i.e. all players in
 the subsession), you can set the attribute
 ``wait_for_all_groups = True`` on the wait page, e.g.:
 
 .. code-block:: python
-
-    class NormalWaitPage(WaitPage):
-        pass
 
     class AllGroupsWaitPage(WaitPage):
         wait_for_all_groups = True

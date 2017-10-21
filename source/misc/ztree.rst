@@ -144,7 +144,7 @@ calculations over the whole table, you should do so explicitly.
 
 For example, in z-Tree:
 
-.. code-block:: cpp
+.. code-block::
 
     S = sum(C)
 
@@ -166,8 +166,7 @@ you would do:
 
 .. code-block:: python
 
-    zero_payoff_players = [
-        p for p in self.subsession.get_players() if p.payoff == 0]
+    zero_payoff_players = [p for p in self.subsession.get_players() if p.payoff == 0]
 
 Another way of writing this is:
 
@@ -195,7 +194,7 @@ For example:
 
 z-Tree:
 
-.. code-block:: cpp
+.. code-block::
 
     sum( same( Group ), Contribution );
 
@@ -210,7 +209,7 @@ Player types
 
 In z-Tree you set variables like:
 
-.. code-block:: cpp
+.. code-block::
 
     PROPOSERTYPE  = 1;
     RESPONDERTYPE = 2;
@@ -329,7 +328,7 @@ Layout: !text
 
 In z-Tree you would do this:
 
-.. code-block:: cpp
+.. code-block::
 
     <>Your income is < Profit | !text: 0="small"; 80 = "large";>.
 
@@ -362,7 +361,7 @@ Get the other player's choice in a 2-person game
 
 z-Tree:
 
-.. code-block:: cpp
+.. code-block::
 
     OthersChoice = find( same( Group ) & not( same( Subject ) ), Choice );
 
@@ -371,57 +370,3 @@ oTree:
 .. code-block:: python
 
     others_choice = self.get_others_in_group()[0].choice
-
-
-Check if a list is sorted smallest to largest
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-z-Tree (source: z-Tree mailing list):
-
-.. code-block:: cpp
-
-    iterator(i, 10).sum( iterator(j, 10).count( :i<j & ::values[ :i ] > ::values[ j ] )) == 0 
-
-oTree:
-
-.. code-block:: python
-
-    values == sorted(values) 
-
-Randomly shuffle a list
-^^^^^^^^^^^^^^^^^^^^^^^
-
-z-Tree (source: z-Tree mailing list):
-
-.. code-block:: cpp
-
-    iterator(i, size_array - 1).do {
-        address = roundup( random() * (:size_array + 1 - i), 1);
-        if (address != :size_array + 1 - i) {
-        temp = :random_sequence[:size_array + 1 - i];
-        :random_sequence[:size_array + 1 - i] = :random_sequence[address];
-        :random_sequence[address] = temp;
-        }
-    }
-
-oTree:
-
-.. code-block:: python
-
-    random.shuffle(random_sequence)
-
-
-Choose 3 random periods for payment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-z-Tree: see
-`here <https://files.nyu.edu/awb257/public/slides/RandomRoundPayoffsTreatmentOrder.pdf>`__:
-
-oTree:
-
-.. code-block:: python
-
-    if self.round_number == Constants.num_rounds:
-        random_players = random.sample(self.in_all_rounds(), 3)
-        self.payoff = sum([p.potential_payoff for p in random_players])
-

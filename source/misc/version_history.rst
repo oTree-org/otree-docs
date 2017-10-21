@@ -4,38 +4,6 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
-.. _v15:
-
-Version 1.5 beta
-================
-
-Here are the main changes in 1.4 beta:
-
--   MTurk: allow local sandbox testing,
-    See the :ref:`MTurk page <v14_mturk>` for details.
--   Upgrade Django-channels to latest release.
-    If you are using Django-channels, you will need to modify your consumers
-    to accept the connection,
-    as described `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html#connect-consumers>`__,
-    e.g. ``message.reply_channel.send({"accept": True})``
--
-
-To install, run this (note the ``--pre`` in the command;
-this means "pre-release")::
-
-    pip install -U --pre otree-core
-    otree resetdb
-
-To upgrade to a newer beta release,
-run the same command above.
-
-To revert back to the stable version of oTree-core::
-
-    pip uninstall otree-core
-    pip install otree-core
-
-Please send feedback to chris@otree.org.
-
 .. _v14:
 
 Version 1.4
