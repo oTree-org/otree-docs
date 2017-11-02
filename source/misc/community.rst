@@ -24,13 +24,18 @@ Tools
 Apps
 ----
 
--   `Bomb Risk Elicitation Task (BRET) <http://www.sciencedirect.com/science/article/pii/S2214635016300120>`__ by Felix Holzmeister
+-   `Bomb Risk Elicitation Task (BRET) <http://www.sciencedirect.com/science/article/pii/S2214635016300120>`__
+    by Felix Holzmeister
+-   `oTree Real Effort Tasks <https://github.com/EconomiCurtis/otree_rets>`__
+    by Curtis Kephart
 
 Code snippets
 -------------
 
-- `Punishment yes/no choice followed by punishment amount <https://github.com/chapkovski/yes-no-punishment>`__
-- `Example of channels use to transfer data without submitting a form  <https://github.com/chapkovski/miniebay>`__
+-   `Punishment yes/no choice followed by punishment amount <https://github.com/chapkovski/yes-no-punishment>`__
+-   `Example of channels use to transfer data without submitting a form  <https://github.com/chapkovski/miniebay>`__
+-   `Misc snippets <https://github.com/oTree-org/otree-snippets>`__
+    like radio button switching point, random page order, show/hide a field
 
 
 Help & discussion mailing list

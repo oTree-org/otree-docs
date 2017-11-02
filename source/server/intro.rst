@@ -41,7 +41,9 @@ e.g. running a lab study or field study.
 
 **You want to see other options**
 
-See :ref:`community` for some virtual machines created by oTree users.
+See :ref:`community` for some virtual machines created by oTree users,
+such as the
+`oTree Virtual Machine Manager <otree-virtual-machine-manager.readthedocs.io/>`__.
 
 **Next steps**
 After setting up your server, see :ref:`server_final_steps`.
