@@ -104,9 +104,6 @@ Run this command, which will install all dependencies
 
     docker-compose up --build --force-recreate
 
-If you get an error like "'WaitNamedPipe', 'The system cannot find the file specified.'",
-then it's probably because Docker is not running.
-
 To stop the server, press Ctrl+C as usual.
 If you need to restart the server but didn't make any changes,
 enter::
@@ -118,6 +115,15 @@ you will need to reset the database.
 With Docker, instead of ``otree resetdb``, you should do::
 
     docker-compose down -v
+
+Handling errors
+~~~~~~~~~~~~~~~
+
+-   If you get an error like "'WaitNamedPipe', 'The system cannot find the file specified.'",
+    then it's probably because Docker is not running.
+-   If you get an error like "role XXXX does not exist",
+    enter ``docker-compose down -v`` and try again.
+
 
 Allow other computers to connect
 --------------------------------

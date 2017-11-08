@@ -298,7 +298,8 @@ Upgrade Redis
 +++++++++++++
 
 If running a study, you should upgrade to one of the paid Redis plans,
-because it allows more connections and gives you more memory, which can prevent the following errors:
+because it allows more connections and gives you more memory,
+which can prevent the following errors:
 
 -   "ConnectionError: max number of clients reached"
 -   "ResponseError: OOM command not allowed when used memory > 'maxmemory'."

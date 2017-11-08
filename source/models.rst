@@ -340,6 +340,55 @@ in_rounds(self, first, last)
 
 See :ref:`in_rounds`.
 
+Session
+-------
+
+num_participants
+~~~~~~~~~~~~~~~~
+
+The number of participants in the session.
+
+config
+~~~~~~
+
+See :ref:`edit_config`
+and :ref:`session_config_treatments`.
+
+vars
+~~~~
+
+See :ref:`session_vars`.
+
+Participant
+-----------
+
+vars
+~~~~
+
+See :ref:`vars`.
+
+label
+~~~~~
+
+See :ref:`participant_label`.
+
+id_in_session
+~~~~~~~~~~~~~
+
+The participant's ID in the session. This is the same as the player's
+``id_in_subsession``.
+
+payoff
+~~~~~~
+
+See :ref:`payoff`.
+
+payoff_plus_participation_fee
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`payoff`.
+
+
 .. _how_otree_executes_code:
 
 How oTree executes your code
@@ -384,62 +433,3 @@ For the same reason, this will not work either:
 
 The solution is to generate the random variables inside a method,
 such as :ref:`creating_session`.
-
-Be careful with lists and dicts in Constants
---------------------------------------------
-
-Here is a common error I see.
-Let's say you have a list in ``Constants``, like this:
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        foo = [1, 2, 3]
-
-Then somewhere in your code you want to randomly shuffle this list:
-
-.. code-block:: python
-
-    # wrong
-    foo = Constants.foo
-    random.shuffle(foo)
-
-Because you shuffled ``foo``, its value will be different, like ``[3, 1, 2]``.
-But ``Constants.foo`` is still ``[1, 2, 3]``, right? Wrong: it is ``[3, 1, 2]`` also.
-``foo`` and ``Constants.foo`` are references to the same object.
-
-This error often manifests itself when you randomly shuffle the list for each participant
-in the session, but then notice everyone somehow ended up
-with the same "random" value.
-
-The solution is to make a copy of ``Constants.foo``:
-
-.. code-block:: python
-
-    foo = Constants.foo.copy()
-    random.shuffle(foo)
-
-An even safer technique is to store ``foo`` as a tuple
-(use ``()`` instead of ``[]``):
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        foo = (1, 2, 3)
-
-This way, you will not be able to modify ``Constants.foo`` at all until you
-copy it into a new list:
-
-.. code-block:: python
-
-    foo = list(Constants.foo)
-    random.shuffle(foo)
-
-This error can also occur with dictionaries:
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        foo = {'a': 1, 'b': 2}
-
-Before modifying this dictionary, you should do ``Constants.foo.copy()``.

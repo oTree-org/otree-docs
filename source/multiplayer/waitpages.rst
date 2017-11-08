@@ -210,7 +210,7 @@ so they will skip the game and complete the assignment.
 Create a custom wait page as described in :ref:`customize_wait_page`,
 then add some code like this to the ``scripts`` block:
 
-.. code-block:: javascript
+.. code-block:: html
 
     <script>
     SECOND = 1000 // milliseconds

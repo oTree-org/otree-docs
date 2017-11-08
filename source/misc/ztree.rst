@@ -142,9 +142,7 @@ Table functions
 oTree does not have table functions. If you want to carry out
 calculations over the whole table, you should do so explicitly.
 
-For example, in z-Tree:
-
-.. code-block::
+For example, in z-Tree::
 
     S = sum(C)
 
@@ -192,9 +190,7 @@ Calculations on the group
 
 For example:
 
-z-Tree:
-
-.. code-block::
+z-Tree::
 
     sum( same( Group ), Contribution );
 
@@ -207,9 +203,7 @@ oTree:
 Player types
 ^^^^^^^^^^^^
 
-In z-Tree you set variables like:
-
-.. code-block::
+In z-Tree you set variables like::
 
     PROPOSERTYPE  = 1;
     RESPONDERTYPE = 2;
@@ -326,9 +320,7 @@ If you need the player to input their contribution, you do it like this:
 Layout: !text
 ^^^^^^^^^^^^^
 
-In z-Tree you would do this:
-
-.. code-block::
+In z-Tree you would do this::
 
     <>Your income is < Profit | !text: 0="small"; 80 = "large";>.
 
@@ -359,9 +351,7 @@ Miscellaneous code examples
 Get the other player's choice in a 2-person game
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-z-Tree:
-
-.. code-block::
+z-Tree::
 
     OthersChoice = find( same( Group ) & not( same( Subject ) ), Choice );
 
