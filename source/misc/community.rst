@@ -20,6 +20,8 @@ Tools
     by Felix Albrecht and Tobias Raabe
 -   `VirtualBox Fedora oTree server <https://yale.app.box.com/v/VirtualBoxFedoraOtreeServer>`__
     by Gregory Huber
+-   `Scikit-oTree <https://github.com/leliel12/scikit-otree>`__
+    which allows analysis of oTree data with the Python scientific stack
 
 Apps
 ----

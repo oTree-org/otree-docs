@@ -6,3 +6,4 @@ Multiplayer games
 
     groups.rst
     waitpages.rst
+    chat.rst

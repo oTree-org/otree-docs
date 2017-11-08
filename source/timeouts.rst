@@ -291,21 +291,24 @@ Changing the timer's behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The timer's functionality is provided by
-`jQuery Countdown <http://hilios.github.io/jQuery.countdown/>`__.
+`jQuery Countdown <http://hilios.github.io/jQuery.countdown/documentation.html/>`__.
 You can change its behavior by attaching and removing event handlers
 with jQuery's ``.on()`` and ``off()``.
-For example, you can hide/show it at a certain interval,
-prevent it from submitting the page, etc.
+For example, you can hide/show it at a certain interval.
 
 oTree sets handlers for the events ``update.countdown`` and ``finish.countdown``,
 so if you want to modify those, you can detach them with ``off()``,
 and/or add your own handler with ``on()``.
-
-For example, to prevent it from auto-submitting the page when the timeout
-finishes, use this JavaScript in your ``scripts`` block (or ``global_scripts``).
+Put some JavaScript like this in your ``scripts`` block (or ``global_scripts``):
 
 .. code-block:: javascript
 
     $(function () {
-        $('.otree-timer__time-left').off('finish.countdown');
+        $('.otree-timer__time-left').on('update.countdown', function(event) {
+            // your code goes here
+        });
     });
+
+Note: even if you turn off the ``finish.countdown`` event handler from submitting
+the page, if you are running the timeoutworker, the page will be submitted on the server
+side.
