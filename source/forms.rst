@@ -265,9 +265,9 @@ as follows:
         form_fields = ['odd_negative']
 
         def odd_negative_error_message(self, value):
-            odd = value % 2 == 1
-            negative = value < 0
-            if not (odd and negative):
+            is_odd = (value % 2 == 1)
+            is_negative = (value < 0)
+            if not (is_odd and is_negative):
                 return 'Must be odd and negative'
 
 Validating multiple fields together

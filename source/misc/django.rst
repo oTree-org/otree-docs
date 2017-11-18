@@ -135,7 +135,7 @@ for examples of more complex consumers. Also see :ref:`auto_save`.
     which has some incompatibilities with the latest version.
     Notably, your consumers should not send
     e.g. ``message.reply_channel.send({"accept": True})``;
-    this is a breaking change in otree-core 1.0+, described
+    this is a breaking change in channels 1.0+, described
     `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html#connect-consumers>`__,
 
     (oTree is blocked from upgrading to Channels 1.0+ because of

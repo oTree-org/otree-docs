@@ -293,6 +293,10 @@ Enter:
 
 Then open your browser to ``http://127.0.0.1:8000`` to play the game.
 
+(You can also run ``otree resetdb --noinput``, which skips the prompt
+about whether you want to delete your database.)
+
+
 Troubleshoot with print()
 -------------------------
 

@@ -214,24 +214,17 @@ Turn on timeout worker Dyno
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable full functionality, you should go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
-click on your app, click to edit the dynos, and turn on the ``timeoutworker``
-dyno.
+click on your app, click to edit the dynos, and turn on the second dyno
+(named ``worker`` or ``timeoutworker``).
 
 Turning on the second dyno is free, but you may need to register a credit card with Heroku.
 
-If you are just testing your app, oTree will still function without the ``timeoutworker`` dyno,
+If you are just testing your app, oTree will still function without the timeoutworker,
 but if you are running a study with real participants and your pages have
-timeouts defined by ``timeout_seconds``, then the ``timeoutworker`` will ensure
+timeouts defined by ``timeout_seconds``, then the timeoutworker will ensure
 that the user will be automatically advanced to the next page
 even if they closes their browser. This can be useful for online experiments
 with groups.
-
-If you do not see a ``timeoutworker`` entry, make sure your ``Procfile``
-looks like this::
-
-    web: otree webandworkers
-    timeoutworker: otree timeoutworker
-
 
 To add an existing remote:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

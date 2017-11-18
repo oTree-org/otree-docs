@@ -70,7 +70,7 @@ If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g. throug
 More information in the :ref:`Linux server setup <server-ubuntu>` section.
 
 Step 2: Install oTree
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Enter this in PowerShell (Windows) or Terminal (macOS):
 
@@ -88,7 +88,7 @@ Enter this in PowerShell (Windows) or Terminal (macOS):
 
 
 Step 3: Run oTree
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Open PowerShell (on Windows) or Terminal (on macOS), and run::
 
@@ -129,6 +129,13 @@ Then run the server::
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 You should see the oTree demo site.
+
+.. note::
+
+    If Python crashes when you run this command,
+    please send an email to chris@otree.org
+    with your operating system and version of Python.
+    If you're using PowerShell, try using CMD instead.
 
 To stop the server, enter ``Control + C`` at your command line.
 To restart the server from the command line, pressing your keyboard's "up" arrow (this will retrieve the last command you entered),
@@ -185,19 +192,10 @@ A few tips:
 * In PowerShell, you should right-click to paste a command.
 
 .. _upgrade:
+.. _upgrade-otree-core:
 
 Upgrading/reinstalling oTree
 ----------------------------
-
-The oTree software has two components:
-
--  oTree-core: The engine that makes your apps run
--  oTree library: the folder of sample games and other files (e.g. settings.py) that you download from `here <https://github.com/oTree-org/oTree>`__ and customize to build your own project.
-
-.. _upgrade-otree-core:
-
-Upgrade oTree core
-~~~~~~~~~~~~~~~~~~
 
 We recommend you do this on a weekly basis,
 so that you can get the latest bug fixes and features.
@@ -209,13 +207,3 @@ Run:
 
     pip3 install -U otree-core
     otree resetdb
-
-Upgrade oTree library
-~~~~~~~~~~~~~~~~~~~~~
-
-Run ``otree startproject [folder name]``. This will create a folder with the specified name and
-download the latest version of the library there.
-
-If you originally installed oTree over 5 months ago,
-we recommend you run the above command and move your existing apps into the new project folder,
-to ensure you have the latest ``settings.py``, etc.

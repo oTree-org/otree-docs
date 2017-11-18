@@ -26,8 +26,11 @@ Tools
 Apps
 ----
 
--   `Bomb Risk Elicitation Task (BRET) <http://www.sciencedirect.com/science/article/pii/S2214635016300120>`__
-    by Felix Holzmeister
+-   `Bomb Risk Elicitation Task (BRET) <http://bret-demo.herokuapp.com/demo/>`__
+    by Felix Holzmeister (downloadable `here <http://www.holzmeister.biz/>`__).
+    http://www.sciencedirect.com/science/article/pii/S2214635016300120
+-   `Choice list risk elicitation <http://cl-demo.herokuapp.com/demo/>`__
+    by Felix Holzmeister (downloadable `here <http://www.holzmeister.biz/>`__).
 -   `oTree Real Effort Tasks <https://github.com/EconomiCurtis/otree_rets>`__
     by Curtis Kephart
 

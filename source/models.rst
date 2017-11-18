@@ -33,7 +33,7 @@ Here is how to define the above table structure:
     class Player(BasePlayer):
         ...
         name = models.CharField()
-        age = models.PositiveIntegerField()
+        age = models.IntegerField()
         is_student = models.BooleanField()
 
 When you run ``otree resetdb``, it will scan your ``models.py``

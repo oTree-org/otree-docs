@@ -343,7 +343,7 @@ Reset the database and run
 
 Enter::
 
-    $ otree resetdb
+    $ otree resetdb --noinput
     $ otree runserver
 
 Then open your browser to ``http://127.0.0.1:8000`` to play the game.

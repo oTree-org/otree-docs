@@ -235,17 +235,9 @@ quotes around strings, so you don't need to add them manually:
 If you get an "Invalid filter" error, make sure you have ``{% load otree %}``
 at the top of your template.
 
-safe_json
-~~~~~~~~~
-
-.. note::
-
-    The ``|json`` template filter is new in otree-core 1.2.2
-    (released March 1, 2017). The old way was to use the ``safe_json``
-    function in your Python code. ``safe_json`` still works,
-    but most people will probably find ``json`` easier to use.
-    Just use one or the other, not both.
-
+Note: The ``|json`` template filter replaces the old ``safe_json``
+function. However, ``safe_json`` still works.
+Just use one or the other, not both.
 
 Static content (images, videos, CSS, JavaScript)
 ------------------------------------------------
@@ -263,6 +255,13 @@ like this:
 .. code-block:: HTML+django
 
     <img src="{% static "my_app/my_image.png" %}"/>
+
+If the file is used in multiple apps, you can put it in ``_static/global/``,
+then do:
+
+.. code-block:: HTML+django
+
+    <img src="{% static "global/my_image.png" %}"/>
 
 If the image/video path is variable (like showing a different image each round),
 you can construct it in ``views.py`` and pass it to the template, e.g.:
