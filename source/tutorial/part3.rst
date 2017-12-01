@@ -115,12 +115,7 @@ put it after our existing code.
 
 So, in round 3, we should do the shuffle,
 and then in round 4, use ``group_like_round(3)`` to copy the group structure from round 3.
-(See :ref:`group_like_round <group_like_round>`)
-
-We use ``group.get_players()`` to get the ordered list of players in
-each group, and then reverse it (e.g. the list ``[P1, P2]`` becomes
-``[P2, P1]``). Then we use ``group.set_players()`` to set this as the
-new group order:
+(See :ref:`group_like_round <group_like_round>`):
 
 .. code-block:: python
 
@@ -132,10 +127,10 @@ new group order:
                 self.session.vars['paying_round'] = paying_round
             if self.round_number == 3:
                 # reverse the roles
-                for group in self.get_groups():
-                    players = group.get_players()
-                    players.reverse()
-                    group.set_players(players)
+                matrix = self.get_group_matrix()
+                for row in matrix:
+                    row.reverse()
+                self.set_group_matrix(matrix)
             if self.round_number > 3:
                 self.group_like_round(3)
 
