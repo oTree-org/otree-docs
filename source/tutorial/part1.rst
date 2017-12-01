@@ -266,10 +266,6 @@ Define the session config in settings.py
 
 Now we go to ``settings.py`` in the project's root directory and add an entry to ``SESSION_CONFIGS``.
 
-In lab experiments, it's typical for users to fill out an exit survey, and
-then see how much money they made. So let's do this by adding the
-existing "exit survey" and "payment info" apps to ``app_sequence``.
-
 .. code-block:: python
 
     SESSION_CONFIGS = [
@@ -277,7 +273,7 @@ existing "exit survey" and "payment info" apps to ``app_sequence``.
             'name': 'my_public_goods',
             'display_name': "My Public Goods (Simple Version)",
             'num_demo_participants': 3,
-            'app_sequence': ['my_public_goods', 'survey', 'payment_info'],
+            'app_sequence': ['my_public_goods'],
         },
         # other session configs ...
     ]
@@ -363,7 +359,7 @@ and add ``'use_browser_bots': True`` to the session config, like this:
             'name': 'my_public_goods',
             'display_name': "My Public Goods (Simple Version)",
             'num_demo_participants': 3,
-            'app_sequence': ['my_public_goods', 'survey', 'payment_info'],
+            'app_sequence': ['my_public_goods'],
             'use_browser_bots': True
         },
         # other session configs ...
