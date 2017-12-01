@@ -255,3 +255,53 @@ It should be simplified to this:
             }
 
 As an added benefit, this usually makes the code more readable.
+
+
+Use BooleanField instead of CharField, where possible
+-----------------------------------------------------
+
+Many CharFields should be broken down into BooleanFields, especially
+if they can only have less than 5 distinct values.
+
+Suppose you have a field called ``treatment``:
+
+.. code-block:: python
+
+    treatment = models.CharField()
+
+And let's say ``treatment`` it can only have 4 different values:
+
+-   ``high_income_high_tax``
+-   ``high_income_low_tax``
+-   ``low_income_high_tax``
+-   ``low_income_low_tax``
+
+In ``views.py``, you might use it like this:
+
+.. code-block:: python
+
+    class HighIncome(Page):
+        def is_displayed(self):
+            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'high_income_low_tax'
+
+    class HighTax(Page):
+        def is_displayed(self):
+            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'low_income_high_tax'
+
+
+It would be much better to break this to 2 separate BooleanFields::
+
+    high_income = models.BooleanField()
+    high_tax = models.BooleanField()
+
+Then your views could be simplified to:
+
+.. code-block:: python
+
+    class HighIncome(Page):
+        def is_displayed(self):
+            return self.player.high_income
+
+    class HighTax(Page):
+        def is_displayed(self):
+            return self.player.high_tax

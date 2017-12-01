@@ -291,23 +291,42 @@ Changing the timer's behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The timer's functionality is provided by
-`jQuery Countdown <http://hilios.github.io/jQuery.countdown/documentation.html/>`__.
+`jQuery Countdown <http://hilios.github.io/jQuery.countdown/documentation.html>`__.
 You can change its behavior by attaching and removing event handlers
 with jQuery's ``.on()`` and ``off()``.
-For example, you can hide/show it at a certain interval.
 
 oTree sets handlers for the events ``update.countdown`` and ``finish.countdown``,
 so if you want to modify those, you can detach them with ``off()``,
 and/or add your own handler with ``on()``.
-Put some JavaScript like this in your ``scripts`` block (or ``global_scripts``):
+The countdown element is ``.otree-timer__time-left``.
 
-.. code-block:: javascript
+For example, to hide the timer until there is only 10 seconds left,
 
-    $(function () {
-        $('.otree-timer__time-left').on('update.countdown', function(event) {
-            // your code goes here
-        });
-    });
+.. code-block:: html+django
+
+    {% block styles %}
+        <style>
+            .otree-timer {
+                display: none;
+            }
+        </style>
+    {% endblock %}
+
+    {% block scripts %}
+        <script>
+            $(function () {
+                $('.otree-timer__time-left').on('update.countdown', function (event) {
+                    if (event.offset.totalSeconds === 10) {
+                        $('.otree-timer').show();
+                    }
+                });
+            });
+        </script>
+    {% endblock %}
+
+(To apply this to all pages, go to ``_templates/global/Page.html`` and modify
+``{% global_styles %}`` and ``{% global_scripts %}``.
+See :ref:`base_template`.
 
 Note: even if you turn off the ``finish.countdown`` event handler from submitting
 the page, if you are running the timeoutworker, the page will be submitted on the server

@@ -158,6 +158,7 @@ Wait page dialog title      ``.otree-wait-page__title``
 Wait page dialg body  .     ``.otree-wait-page__body``
 Timer                       ``.otree-timer``
 Next button                 ``.otree-btn-next``
+Form errors alert           ``.otree-form-errors``
 =========================   ================================================
 
 For example, to change the page width, put CSS in your base template like this:
