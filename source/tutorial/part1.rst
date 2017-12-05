@@ -101,9 +101,32 @@ fields:
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
 
-Now let's define a method that calculates the payoff
-(and other fields like ``total_contribution`` and ``individual_share``).
-Let's call it ``set_payoffs``:
+Now let's define our payoff function.
+The argument to the function should be a group whose payoffs should be
+calculated.
+
+.. code-block:: python
+
+    class Group(BaseGroup):
+
+        total_contribution = models.CurrencyField()
+        individual_share = models.CurrencyField()
+
+        def set_payoffs(group):
+            players = group.get_players()
+            contributions = [p.contribution for p in players]
+            group.total_contribution = sum(contributions)
+            group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
+            for p in group.get_players():
+                p.payoff = Constants.endowment - p.contribution + group.individual_share
+
+Now, we will change one small thing. We will rename the argument
+``group`` to ``self``, because in Python, a method's first argument
+should always be named ``self`` (however, ``self`` still represents a group).
+For more explanation, see :ref:`object_model`.
+
+Anyway, rename ``group`` in the argument,
+as well as the 6 usages inside the function.
 
 .. code-block:: python
 

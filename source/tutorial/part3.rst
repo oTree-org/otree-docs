@@ -39,8 +39,8 @@ In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`
 
 Now let's define our ``Player`` class:
 
--  In each round, each player decides "Heads" or "Tails", so we define a
-   field ``heads``, which will be displayed as a radio button.
+-  In each round, each player decides "tails" or "Tails", so we define a
+   field ``tails``, which will be displayed as a radio button.
 -  We also have a boolean field ``is_winner`` that records if this
    player won this round.
 -  We define the ``role`` method (see :ref:`groups`) to define which player is the "Matcher"
@@ -52,10 +52,10 @@ So we have:
 
     class Player(BasePlayer):
 
-        heads = models.BooleanField(
+        tails = models.BooleanField(
             choices=[
-                [True, 'Heads'],
-                [False, 'Tails'],
+                [True, 'Tails'],
+                [False, 'Heads'],
             ],
         )
         is_winner = models.BooleanField()
@@ -152,7 +152,7 @@ So, we start with this:
             matcher = self.get_player_by_role('Matcher')
             mismatcher = self.get_player_by_role('Mismatcher')
 
-            if matcher.heads == mismatcher.heads:
+            if matcher.tails == mismatcher.tails:
                 matcher.is_winner = True
                 mismatcher.is_winner = False
             else:
@@ -175,7 +175,7 @@ check for both of them.
             matcher = self.get_player_by_role('Matcher')
             mismatcher = self.get_player_by_role('Mismatcher')
 
-            if matcher.heads == mismatcher.heads:
+            if matcher.tails == mismatcher.tails:
                 matcher.is_winner = True
                 mismatcher.is_winner = False
             else:
@@ -199,7 +199,7 @@ Choice
 ~~~~~~
 
 In ``views.py``, we define the ``Choice`` page. This page should contain
-a form field that sets ``player.heads``, so we set ``form_model``
+a form field that sets ``player.tails``, so we set ``form_model``
 and ``form_fields``.
 
 Also, on this page we would like to display a "history box" table that
@@ -213,7 +213,7 @@ between "player" and "participant", see :ref:`participants_and_players`.)
     class Choice(Page):
 
         form_model = models.Player
-        form_fields = ['heads']
+        form_fields = ['tails']
 
         def vars_for_template(self):
             return {
@@ -269,7 +269,7 @@ Django template language.
             In this round, you are the {{ player.role }}.
         </p>
 
-        {% formfield player.heads label="I choose:" %}
+        {% formfield player.tails label="I choose:" %}
 
         {% next_button %}
 

@@ -433,3 +433,24 @@ For the same reason, this will not work either:
 
 The solution is to generate the random variables inside a method,
 such as :ref:`creating_session`.
+
+What's the difference between "Player" and "player"?
+----------------------------------------------------
+
+We use uppercase (e.g. ``Player``) when we are referring to the whole table
+of players, and lowercase (``player``) when referring to a particular player,
+i.e. a row in the table. In Python, ``Player`` is a class, and ``player``
+is an instance.
+
+The same applies for ``Group`` vs. ``group``, etc.
+
+For example, in a template, to display a player's payoff,
+we must use ``{{ Player.payoff }}``, not ``{{ Player.payoff }}``.
+.
+``Player`` is the whole table of players in the database, so ``Player.payoff``
+would be the whole ``payoff`` column for all players. But you just want to
+show one player's payoff, so you should do ``{{ Player.payoff }}``.
+
+However, for ``Constants``, we always use uppercase.
+That's because ``Constants`` is not a database table with instances/rows,
+because the constants are the same for all players.

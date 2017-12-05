@@ -34,7 +34,7 @@ Define models.py
 ----------------
 
 Open ``models.py`` and scroll to the line that says ``class Player(BasePlayer):``.
-Here we can define what fields will be stored in the database for each player.
+Here we define the columns for the Player table in the database.
 Let's add 2 fields:
 
 -   ``name`` (which is a ``CharField``, meaning text characters)
