@@ -326,7 +326,7 @@ For example, to hide the timer until there is only 10 seconds left,
 
 (To apply this to all pages, go to ``_templates/global/Page.html`` and modify
 ``{% global_styles %}`` and ``{% global_scripts %}``.
-See :ref:`base_template`.
+See :ref:`base-template`.
 
 Note: even if you turn off the ``finish.countdown`` event handler from submitting
 the page, if you are running the timeoutworker, the page will be submitted on the server
