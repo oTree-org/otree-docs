@@ -105,7 +105,7 @@ they need to correct.
 
 
 oTree automatically validates all input submitted by the user. For
-example, if you have a form containing a ``PositiveIntegerField``, oTree
+example, if you have a form containing a ``IntegerField``, oTree
 will not let the user submit values that are not positive integers, like
 ``-1``, ``1.5``, or ``hello``.
 
@@ -118,7 +118,7 @@ require an integer to be between 12 and 24:
 .. code-block:: python
 
     # in models.py
-    offer = models.PositiveIntegerField(min=12, max=24)
+    offer = models.IntegerField(min=12, max=24)
 
 If the max/min are not fixed, you should use :ref:`FOO_max`
 
@@ -133,7 +133,7 @@ set ``choices=``:
 .. code-block:: python
 
     # in models.py
-    level = models.PositiveIntegerField(
+    level = models.IntegerField(
         choices=[1, 2, 3],
     )
 
@@ -143,7 +143,7 @@ you should set the ``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal``:
 .. code-block:: python
 
     # in models.py
-    level = models.PositiveIntegerField(
+    level = models.IntegerField(
         choices=[1, 2, 3],
         widget=widgets.RadioSelect
     )
@@ -156,7 +156,7 @@ by making a list of [value, display] pairs:
 .. code-block:: python
 
     # in models.py
-    level = models.PositiveIntegerField(
+    level = models.IntegerField(
         choices=[
             [1, 'Low'],
             [2, 'Medium'],
@@ -184,7 +184,7 @@ If a field is optional, you can use ``blank=True`` like this:
 .. code-block:: python
 
     # in models.py
-    offer = models.PositiveIntegerField(blank=True)
+    offer = models.IntegerField(blank=True)
 
 Then the HTML field will not have the ``required`` attribute.
 
@@ -459,7 +459,7 @@ hidden form field. For example:
 .. code-block:: python
 
     # models.py
-    my_hidden_input = models.PositiveIntegerField()
+    my_hidden_input = models.IntegerField()
 
     # views.py
     form_fields = ['my_hidden_input']
