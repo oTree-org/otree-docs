@@ -19,7 +19,7 @@ Create the app
 --------------
 
 Use your command line to ``cd`` to the oTree project folder you created,
-the one that contains ``requirements_base.txt``. If the folder is called ``oTree``,
+which contains ``requirements_base.txt``. Assuming you named the folder ``oTree``,
 you would do::
 
     cd oTree
