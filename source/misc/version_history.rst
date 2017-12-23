@@ -20,6 +20,9 @@ Here are the changes in 1.5 beta:
 -   You can arrange radio buttons in a table (e.g. a likert scale)
     by looping through the formfield. See :ref:`subwidgets`.
 
+If you're using Heroku, you need to remove the line from your ``requirements_base.txt``
+that says ``Django==1.8.8``.
+
 To install, run this (note the ``--pre`` in the command;
 this means "pre-release")::
 
