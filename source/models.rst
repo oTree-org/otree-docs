@@ -46,7 +46,7 @@ The full list of available fields is in the Django documentation
 The most commonly used ones are ``CharField``/``TextField`` (for text),
 ``FloatField`` (for real numbers),
 ``BooleanField`` (for true/false values),
-``IntegerField``, and ``PositiveIntegerField``.
+and ``IntegerField``.
 Don't use ``DecimalField`` unless you understand how it is different
 from ``FloatField`` and have a specific need for it.
 
@@ -115,27 +115,12 @@ Only relevant if the app has multiple rounds
 (set in ``Constants.num_rounds``).
 See :ref:`rounds`.
 
-.. _before_session_starts:
-
-before_session_starts
-~~~~~~~~~~~~~~~~~~~~~
-
-``before_session_starts`` has been renamed to :ref:`creating_session`.
-since otree-core 1.3.2 (June 2017).
-However, new versions of oTree still execute ``before_session_starts``,
-for backwards compatibility.
-
 .. _creating_session:
 
 creating_session
 ~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This method used to be called ``before_session_starts``.
-    See :ref:`before_session_starts`.
-
-This method is executed when the admin clicks "create session":
+This method is executed when the session is created:
 
 .. figure:: _static/creating-session.png
 
@@ -162,6 +147,15 @@ that is, once on each subsession instance.
     This method does NOT run at the beginning of each round.
     For that, you should use a wait page with :ref:`after_all_players_arrive`.
 
+.. _before_session_starts:
+
+before_session_starts
+~~~~~~~~~~~~~~~~~~~~~
+
+``before_session_starts`` has been renamed to :ref:`creating_session`.
+since otree-core 1.3.2 (June 2017).
+However, new versions of oTree still execute ``before_session_starts``,
+for backwards compatibility.
 
 group_randomly()
 ~~~~~~~~~~~~~~~~
@@ -383,8 +377,8 @@ payoff
 
 See :ref:`payoff`.
 
-payoff_plus_participation_fee
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+payoff_plus_participation_fee()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`payoff`.
 
@@ -440,12 +434,12 @@ What's the difference between "Player" and "player"?
 We use uppercase (e.g. ``Player``) when we are referring to the whole table
 of players, and lowercase (``player``) when referring to a particular player,
 i.e. a row in the table. In Python, ``Player`` is a class, and ``player``
-is an instance.
+is an instance of that class.
 
-The same applies for ``Group`` vs. ``group``, etc.
+The same applies for ``Group`` vs. ``group`` and ``Subsession`` vs ``subsession``.
 
 For example, in a template, to display a player's payoff,
-we must use ``{{ Player.payoff }}``, not ``{{ Player.payoff }}``.
+we must use ``{{ player.payoff }}``, not ``{{ Player.payoff }}``.
 .
 ``Player`` is the whole table of players in the database, so ``Player.payoff``
 would be the whole ``payoff`` column for all players. But you just want to
@@ -454,3 +448,99 @@ show one player's payoff, so you should do ``{{ Player.payoff }}``.
 However, for ``Constants``, we always use uppercase.
 That's because ``Constants`` is not a database table with instances/rows,
 because the constants are the same for all players.
+
+How to make many fields
+-----------------------
+
+Let's say your app has many fields that are almost the same, such as:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+
+        f1 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f2 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f3 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f4 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f5 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f6 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f7 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f8 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f9 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f10 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+
+        # etc...
+
+This is quite complex; you should look for a way to simplify.
+
+Are the fields all displayed on separate pages? If so, consider converting
+this to a 10-round game with just one field. See the
+`real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
+sample game for an example of how to just have 1 page that gets looped over many rounds,
+varying the question that gets displayed with each round.
+
+If that's not possible, then put the repeated arguments into a dict in ``Constants``:
+
+.. code-block:: python
+
+
+    class Constants(BaseConstants):
+        ...
+
+        field_args = dict(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect, blank=True, initial=0
+        )
+
+Then use these arguments using dict unpacking (``**``):
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+
+        f1 = models.IntegerField(**Constants.field_args)
+        f2 = models.IntegerField(**Constants.field_args)
+        f3 = models.IntegerField(**Constants.field_args)
+        # etc...
+        f10 = models.IntegerField(**Constants.field_args)
+
+You can also pass unique arguments in addition to the shared ones:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+
+        f1 = models.IntegerField(verbose_name='What will you choose for 1?', **Constants.field_args)
+        f2 = models.IntegerField(verbose_name='What will you choose for 2?', **Constants.field_args)
+        f3 = models.IntegerField(verbose_name='What will you choose for 3?', **Constants.field_args)
+        # etc...
+        f10 = models.IntegerField(verbose_name='What will you choose for 10?', **Constants.field_args)

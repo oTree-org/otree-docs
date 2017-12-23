@@ -125,10 +125,6 @@ use :ref:`get_players_for_group`.
 get_players_for_group()
 -----------------------
 
-.. note::
-
-    This is a new feature in otree-core 1.3 (May 2017).
-
 If you're using ``group_by_arrival_time`` and want more control over
 which players are assigned together, you can use ``get_players_for_group()``.
 
@@ -138,7 +134,7 @@ group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
 If you define a method called ``get_players_for_group``,
 it will get called whenever a new player reaches the wait page.
 The method's argument is the list of players who are waiting to be grouped
-(in no particular order).
+(not people who have disconnected or closed their browser).
 If you select some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
@@ -159,13 +155,6 @@ Here's an example where each group has 2 A players, 2 B players.
 
         def is_displayed(self):
             return self.round_number == 1
-
-.. note::
-
-    In otree-core 1.3, ``waiting_players`` is ordered by the time they arrived in the page.
-    In otree-core 1.4 and above, ``waiting_players`` is in no particular order,
-    and contains only the players who are currently active on the wait page
-    (not people who have disconnected or closed their browser).
 
 .. _wait-page-stuck:
 

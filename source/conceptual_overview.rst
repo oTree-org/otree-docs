@@ -142,7 +142,7 @@ not just ``set_bonus``. So, if we have a player object, we can do this:
 
 .. code-block:: python
 
-    ``Player.set_bonus(some_player)``
+    Player.set_bonus(some_player)
 
 In Python, this can also be written in the shorter form:
 

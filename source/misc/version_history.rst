@@ -4,6 +4,39 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
+.. _v15:
+
+Version 1.5 beta
+================
+
+Here are the changes in 1.5 beta:
+
+-   Instead of ``otree runserver``, you can now use ``otree devserver``,
+    which means you no longer need to use ``otree resetdb`` when developing
+    locally. Any changes to your models will be handled automatically.
+    Before using this command for the first time,
+    delete the file ``db.sqlite3`` in your project folder.
+-   oTree now uses Django 1.11 (major upgrade from Django 1.8)
+-   You can arrange radio buttons in a table (e.g. a likert scale)
+    by looping through the formfield. See :ref:`subwidgets`.
+
+To install, run this (note the ``--pre`` in the command;
+this means "pre-release")::
+
+    pip install -U --pre otree-core
+    otree resetdb
+
+To upgrade to a newer beta release,
+run the same command above.
+
+To revert back to the stable version of oTree-core::
+
+    pip uninstall otree-core
+    pip install otree-core
+
+Please send feedback to chris@otree.org.
+
+
 .. _v14:
 
 Version 1.4

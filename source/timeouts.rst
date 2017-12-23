@@ -93,10 +93,6 @@ you can check :ref:`timeout_happened` and set the values in ``before_next_page``
 get_timeout_seconds
 ~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This is a new feature in otree-core 1.3 (May 2017).
-
 This is a dynamic alternative to ``timeout_seconds``,
 so that you can base the timeout on ``self.player``, ``self.session``, etc.:
 
@@ -174,7 +170,7 @@ and the expiry timestamp will be set:
 
         def before_next_page(self):
             # user has 5 minutes to complete as many pages as possible
-            self.participant.vars['expiry_timestamp'] = time.time() + 5*60
+            self.participant.vars['expiry'] = time.time() + 5*60
 
 (You could also start the timer in ``after_all_players_arrive`` or ``creating_session``,
 and it could be stored in ``session.vars`` if it's the same for everyone in the session.)
@@ -186,7 +182,7 @@ until that expiration time:
 
     class Page1(Page):
         def get_timeout_seconds(self):
-            return self.participant.vars['expiry_timestamp'] - time.time()
+            return self.participant.vars['expiry'] - time.time()
 
 When time runs out, ``get_timeout_seconds`` will return 0 or a negative value,
 which will result in the page loading and being auto-submitted right away.
@@ -199,10 +195,10 @@ a few seconds remaining (e.g. 3).
 
     class Page1(Page):
         def get_timeout_seconds(self):
-            return self.participant.vars['expiry_timestamp'] - time.time()
+            return self.participant.vars['expiry'] - time.time()
 
         def is_displayed(self):
-            return self.participant.vars['expiry_timestamp'] - time.time() > 3
+            return self.participant.vars['expiry'] - time.time() > 3
 
 If you have multiple pages in your ``page_sequence`` that need to share
 the timeout, rather than copy-pasting the above code to every page redundantly,
@@ -212,10 +208,10 @@ you can define the timeout in ``models.py``:
 
     class Player(BasePlayer):
         def get_timeout_seconds(self):
-            return self.participant.vars['expiry_timestamp'] - time.time()
+            return self.participant.vars['expiry'] - time.time()
 
         def is_displayed(self):
-            return self.participant.vars['expiry_timestamp'] - time.time() > 3
+            return self.participant.vars['expiry'] - time.time() > 3
 
 
 Then in views.py:
@@ -257,10 +253,10 @@ by setting ``timer_text``:
         timer_text = 'Time left to complete this section:'
 
         def get_timeout_seconds(self):
-            return self.participant.vars['expiry_timestamp'] - time.time()
+            return self.participant.vars['expiry'] - time.time()
 
         def is_displayed(self):
-            return self.participant.vars['expiry_timestamp'] - time.time() > 3
+            return self.participant.vars['expiry'] - time.time() > 3
 
 
 Customizing the timer

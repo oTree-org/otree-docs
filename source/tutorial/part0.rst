@@ -44,7 +44,7 @@ Let's add 2 fields:
 
     class Player(BasePlayer):
         name = models.CharField()
-        age = models.PositiveIntegerField()
+        age = models.IntegerField()
 
 
 Define the template

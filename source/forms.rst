@@ -90,19 +90,9 @@ page. If the form they submit is invalid (e.g. missing or incorrect
 values), it will be re-displayed to them along with the list of errors
 they need to correct.
 
-*Example 1:*
-
 .. image:: _static/forms/Sz34h7d.png
     :align: center
     :scale: 100 %
-
-
-*Example 2:*
-
-.. image:: _static/forms/BtG8ZHX.png
-    :align: center
-    :scale: 100 %
-
 
 oTree automatically validates all input submitted by the user. For
 example, if you have a form containing a ``IntegerField``, oTree
@@ -440,6 +430,47 @@ Finally, in ``views.py``, set ``form_fields`` and ``vars_for_template`` as follo
             return {'offer_numbers': range(1, 6)}
 
 
+.. _subwidgets:
+
+New in otree-core beta: looping through choices
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+In the latest otree-core beta, there is an easier way to make radio button
+tables and likert scales.
+
+If you're using ``RadioSelect`` or ``RadioSelectHorizontal``,
+you can simply loop over the field. For example:
+
+.. code-block:: html+django
+
+    <tr>
+    {% for choice in form.my_field %}
+        <td>{{ choice }}</td>
+    {% endfor %}
+    </tr>
+
+(Note that you have to do ``form.my_field``,
+rather than the usual ``player.my_field``.)
+
+If you have many fields with the same number of choices,
+you can arrange them in a table:
+
+.. code-block:: html+django
+
+    <table class="table">
+        {% for field in form %}
+            <tr>
+            {% for choice in field %}
+                <td>{{ choice }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+You can also get choices individually by using their 0-based index,
+e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
+For more granular control, as described `here <https://docs.djangoproject.com/en/1.11/ref/forms/widgets/#radioselect>`__,
+you can use the ``choice_label`` and ``tag`` attributes on a field choice.
 
 Raw HTML example: custom user interface with JavaScript
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -586,9 +617,3 @@ Then in the template, set the label to this variable:
     ``{% formfield player.contribution label=contribution_label %}``
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.
-
-Chat between participants
--------------------------
-
-See the `participant chat add-on <https://github.com/oTree-org/otreechat>`__.
-

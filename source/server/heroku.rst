@@ -125,21 +125,19 @@ Run::
 
     otree --version
 
-The version that is output will look something like ``1.X.X``.
-Open the file in your project's root directory
-called ``requirements_base.txt``, and modify the line with ``otree-core>=``
-to that version. The file should look like this (substitute actual version for ``1.X.X``):
-::
+The version that is output will look something like ``X.X.X``.
+Open ``requirements_base.txt`` in your project's root directory
+and replace whatever is in that file with this single line::
 
-    otree-core>=1.X.X
+    otree-core>=X.X.X
 
-    # Heroku requires Django to be explicitly in requirements file
-    # in order to run collectstatic
-    Django==1.8.8
+This tells Heroku which version of otree-core to use.
 
-Heroku will read this file and install the
-same version of each library on your server.
-If you are depending on any extra Python libraries (e.g. Numpy or Pandas),
+.. note::
+    Change as of December 2017: if your ``requirements_base.txt`` contains
+    ``Django==1.8.8``, you should delete that line.
+
+If your code uses any extra Python packages (e.g. Numpy or Pandas),
 they need to be added to your ``requirements_base.txt`` also.
 
 Push your code to Heroku
