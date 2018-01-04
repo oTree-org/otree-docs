@@ -443,7 +443,7 @@ we must use ``{{ player.payoff }}``, not ``{{ Player.payoff }}``.
 .
 ``Player`` is the whole table of players in the database, so ``Player.payoff``
 would be the whole ``payoff`` column for all players. But you just want to
-show one player's payoff, so you should do ``{{ Player.payoff }}``.
+show one player's payoff, so you should do ``{{ player.payoff }}``.
 
 However, for ``Constants``, we always use uppercase.
 That's because ``Constants`` is not a database table with instances/rows,
