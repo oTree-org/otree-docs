@@ -299,7 +299,7 @@ elements like `popovers <http://getbootstrap.com/javascript/#popovers>`__,
 `modals <http://getbootstrap.com/javascript/#modals>`_, and
 `collapsible text <http://getbootstrap.com/javascript/#collapse>`_.
 
-To use Bootstrap, usually you add a ``class=`` attributes to your HTML
+To use Bootstrap, usually you add a ``class=`` attribute to your HTML
 element.
 
 For example, the following HTML will create a "Success" alert:
@@ -368,7 +368,7 @@ Mobile devices
 oTree's HTML interface is based on `Bootstrap <http://getbootstrap.com/components/>`__,
 which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
 
-Bootstrap also tries to shows a "mobile friendly" version
+Bootstrap also tries to show a "mobile friendly" version
 when viewed on a smartphone or tablet.
 
 Template filters
