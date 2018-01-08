@@ -47,8 +47,8 @@ Install the `Heroku Toolbelt <https://toolbelt.heroku.com/>`__.
 
 This provides you access to the Heroku Command Line utility.
 
-Once installed open PowerShell (Windows) or Terminal (Mac),
-and go to your project folder.
+Once installed open your command prompt/terminal,
+and ``cd`` to your project folder.
 
 Log in using the email address and password you used when
 creating your Heroku account:

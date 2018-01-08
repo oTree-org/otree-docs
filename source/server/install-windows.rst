@@ -78,7 +78,7 @@ To set the environment variable, do a Windows search (or control panel search)
 for "environment variables". This will take you to the dialog with a name like
 "Edit system environment variables". Add a new system entry for ``DATABASE_URL`` with the above URL.
 
-Then restart PowerShell so the environment variable gets loaded.
+Then restart your Command Prompt so the environment variable gets loaded.
 
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 (This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)

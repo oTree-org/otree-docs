@@ -31,10 +31,10 @@ Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png
 
-Once setup is done, search in your Windows Start Menu for the program "PowerShell",
-open PowerShell, and enter ``pip3 -V``:
+Once setup is done, search in your Windows Start Menu for the program "Command Prompt",
+open Command Prompt, and enter ``pip3 -V``:
 
-.. figure:: _static/setup/powershell.png
+.. figure:: _static/setup/cmd.png
 
 
 Step 1: Install Python 3.6 (for macOS users)
@@ -72,7 +72,7 @@ More information in the :ref:`Linux server setup <server-ubuntu>` section.
 Step 2: Install oTree
 ---------------------
 
-Enter this in PowerShell (Windows) or Terminal (macOS):
+Enter this in Command Prompt (Windows) or Terminal (macOS):
 
 .. code-block:: bash
 
@@ -90,7 +90,7 @@ Enter this in PowerShell (Windows) or Terminal (macOS):
 Step 3: Run oTree
 -----------------
 
-Open PowerShell (on Windows) or Terminal (on macOS), and run::
+Open PowerShell/Command Prompt (on Windows) or Terminal (on macOS), and run::
 
     otree startproject oTree
 
@@ -105,7 +105,7 @@ Then change to the directory you just created::
 
 .. note::
 
-    If you've never used a command prompt like Terminal or PowerShell,
+    If you've never used a command prompt like Terminal, Command Prompt, or PowerShell,
     basically all you need to know is it is an alternative
     to your file explorer (or Finder on Mac). Instead of clicking on files
     and folders, you type commands to navigate folders and execute programs.
@@ -113,7 +113,8 @@ Then change to the directory you just created::
     Here are some useful commands:
 
     -   ``pwd``: shows what folder you are currently in
-    -   ``ls``: lists the files and subfolders in the current folder
+    -   ``dir`` (Windows): lists the files and subfolders in the current folder
+    -   ``ls`` (Mac/Linux): lists the files and subfolders in the current folder
     -   ``cd``: move to a subfolder. For example, ``cd oTree`` takes you to the subfolder ``oTree``.
 
 Reset the database::
@@ -129,13 +130,6 @@ Then run the server::
 
 Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
 You should see the oTree demo site.
-
-.. note::
-
-    If Python crashes when you run this command,
-    please send an email to chris@otree.org
-    with your operating system and version of Python.
-    If you're using PowerShell, try using CMD instead.
 
 To stop the server, enter ``Control + C`` at your command line.
 To restart the server from the command line, pressing your keyboard's "up" arrow (this will retrieve the last command you entered),
@@ -183,13 +177,13 @@ If PyCharm displays this warning, select "Ignore requirements":
 Command line tips & tricks
 --------------------------
 
-Here are some tips to using PowerShell (for Windows users) or Terminal (for macOS users):
+Here are some tips to using Command Prompt/PowerShell (for Windows users) or Terminal (for macOS users):
 
 A few tips:
 
 * You can retrieve the previous command you entered by pressing your keyboard's "up" arrow
 * If you get stuck running a command, you can press ``Control + C``.
-* In PowerShell, you should right-click to paste a command.
+* In Command Prompt & PowerShell, you should right-click to paste a command.
 
 .. _upgrade:
 .. _upgrade-otree-core:

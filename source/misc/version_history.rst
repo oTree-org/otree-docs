@@ -23,7 +23,9 @@ Here are the changes in 1.5 beta:
 To install:
 
 -   Run this (note the ``--pre`` in the command;
-this means "pre-release")::
+    this means "pre-release")
+
+.. code-block:: bash
 
     pip3 install -U --pre otree-core
     otree resetdb

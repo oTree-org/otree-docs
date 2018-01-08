@@ -32,7 +32,7 @@ You need to allow other computers to connect to oTree through your firewall.
 Find your IP address (Windows)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open PowerShell or CMD and enter ``ipconfig``.
+Open PowerShell or Command Prompt and enter ``ipconfig``.
 Look for the entry ``IPv4 Address``.
 Maybe it will look something like ``10.0.1.3``, or could also start with 172 or 192.
 
