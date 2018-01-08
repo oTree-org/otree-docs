@@ -45,16 +45,15 @@ Or only show the page in round 1:
 
 If you need to repeat the same rule for many pages, see :ref:`here <skip_many>`.
 
-``is_displayed()`` may be executed more than once, so beware of code that relies
-on it only being executed once, e.g. incrementing a counter.
+The code you put in ``is_displayed()`` should just return ``True`` or ``False``;
+it should not have any side effects, such as modifying a model field.
 
 .. _vars_for_template:
 
 vars_for_template()
 ~~~~~~~~~~~~~~~~~~~
 
-You can use this to return a dictionary of variable names and their values,
-which is passed to the template. Example:
+Use this to pass variables to the template. Example:
 
 .. code-block:: python
 

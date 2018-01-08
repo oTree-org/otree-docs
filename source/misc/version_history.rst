@@ -20,22 +20,25 @@ Here are the changes in 1.5 beta:
 -   You can arrange radio buttons in a table (e.g. a likert scale)
     by looping through the formfield. See :ref:`subwidgets`.
 
-If you're using Heroku, you need to remove the line from your ``requirements_base.txt``
-that says ``Django==1.8.8``.
+To install:
 
-To install, run this (note the ``--pre`` in the command;
+-   Run this (note the ``--pre`` in the command;
 this means "pre-release")::
 
-    pip install -U --pre otree-core
+    pip3 install -U --pre otree-core
     otree resetdb
 
+-   If you're using Heroku, you need to remove the line from your ``requirements_base.txt``
+    that says ``Django==1.8.8``.
+-   If using git, add ``__temp*`` to your ``.gitignore`` file.
+
 To upgrade to a newer beta release,
-run the same command above.
+run the same pip command above.
 
 To revert back to the stable version of oTree-core::
 
-    pip uninstall otree-core
-    pip install otree-core
+    pip3 uninstall otree-core
+    pip3 install otree-core
 
 Please send feedback to chris@otree.org.
 
@@ -55,7 +58,7 @@ Here are the main changes in 1.4:
 
 To install, run this::
 
-    pip install -U otree-core
+    pip3 install -U otree-core
     otree resetdb
 
 

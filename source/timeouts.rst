@@ -142,7 +142,8 @@ Assuming you have defined ``timeout_submission``, you can write this:
 
         def before_next_page(self):
             if self.timeout_happened:
-                for field_name, value in self.timeout_submission:
+                for field_name in self.timeout_submission:
+                    value = self.timeout_submission[field_name]
                     setattr(self.player, field_name, value)
 
 
