@@ -142,7 +142,7 @@ but after the user submits their contribution, money_left will be updated to ``9
 
 The ``assert`` statements are executed immediately before submitting the following page.
 For example, let's imagine the ``page_sequence`` for the game in the above example is
-``[Contribute, ResultsWaitPage, Results]``. The bot submits ``views.Contribution``,
+``[Contribute, ResultsWaitPage, Results]``. The bot submits ``views.Contribute``,
 is redirected to the wait page, and is then redirected to the ``Results`` page.
 At that point, the ``Results`` page is displayed, and then the line
 ``assert self.player.money_left == c(9)`` is executed. If the ``assert`` passes,
