@@ -14,7 +14,7 @@ Upgrade oTree, to get the latest bugfixes:
 
 .. code-block:: bash
 
-    $ pip3 install -U otree-core
+    $ pip3 install -U otree
 
 
 Database (Postgres)

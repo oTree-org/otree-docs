@@ -12,8 +12,7 @@ Upgrade oTree
 
 To ensure you are using the latest version of oTree, open your command window and run::
 
-    pip3 install -U otree-core
-    otree resetdb
+    pip3 install -U otree
 
 Create the app
 --------------

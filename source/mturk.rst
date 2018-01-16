@@ -21,15 +21,13 @@ as bonuses they earned by playing your game.
 Installation
 ------------
 
-otree-core 1.4 (Aug 2017) brings stability and usability improvements to MTurk functionality.
-
 If you want to use oTree with MTurk,
-starting with oTree-core 1.4, you need to install oTree with a different command,
+you need to install oTree with a different command,
 which installs some extra packages:
 
 ::
 
-    pip3 install -U otree-core[mturk]
+    pip3 install -U otree[mturk]
 
 
 AWS credentials
@@ -117,8 +115,7 @@ panel.
 Qualification requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you upgrade to oTree-core 1.4, you will need to change the format of your qualification requirements,
-because oTree 1.4 upgraded from boto2 to boto3, which uses a different syntax.
+Since oTree 1.4 (summer 2017), oTree uses boto3 syntax for qualification requirements.
 
 Here is an example with 2 qualification requirements:
 
@@ -185,10 +182,6 @@ Finally, add an entry to ``qualification_requirements``:
             'Comparator': "DoesNotExist",
         }
     ]
-
-.. note::
-
-    This syntax is new in otree-core 1.4.
 
 
 Multiplayer games

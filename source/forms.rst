@@ -432,10 +432,10 @@ Finally, in ``views.py``, set ``form_fields`` and ``vars_for_template`` as follo
 
 .. _subwidgets:
 
-New in otree-core beta: looping through choices
-'''''''''''''''''''''''''''''''''''''''''''''''
+New in otree 2.0: looping through choices
+'''''''''''''''''''''''''''''''''''''''''
 
-In the latest otree-core beta (December 2017), there is an easier way to make radio button
+In the latest otree (January 2018), there is an easier way to make radio button
 tables and likert scales.
 
 If you're using ``RadioSelect`` or ``RadioSelectHorizontal``,

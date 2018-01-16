@@ -11,7 +11,7 @@ You can add a chat room to your page so that participants can communicate with e
 
     Note for people who previously used the ``otreechat`` add-on:
 
-    As of November 2017, the ``otreechat`` add-on has been merged into otree-core.
+    In November 2017, the ``otreechat`` add-on was merged into otree.
     Now, you no longer need to install ``otreechat`` separately,
     and you don't need ``{% load otreechat}`` in your templates.
 

@@ -114,7 +114,7 @@ Upgrade oTree, to get the latest bugfixes:
 
 .. code-block:: bash
 
-    $ pip3 install -U otree-core
+    $ pip3 install -U otree
 
 .. _requirements_base.txt:
 
@@ -129,13 +129,16 @@ The version that is output will look something like ``X.X.X``.
 Open ``requirements_base.txt`` in your project's root folder
 and replace whatever is in that file with this single line::
 
-    otree-core>=X.X.X
+    otree>=X.X.X
 
-This tells Heroku which version of otree-core to use.
+This tells Heroku which version of otree to use.
 
 .. note::
     Change as of December 2017: if your ``requirements_base.txt`` contains
     ``Django==1.8.8``, you should delete that line.
+
+    Also, otree-core has been renamed to otree, as described in :ref:`v20`,
+    so you should replace ``otree-core`` by ``otree``.
 
 If your code uses any extra Python packages (e.g. Numpy or Pandas),
 they need to be added to your ``requirements_base.txt`` also.
@@ -185,7 +188,7 @@ If your app fails to load, e.g. "application error", try the following:
 -   Use the command ``heroku logs`` to check the server logs for any error messages
     (or, better yet, enable :ref:`Papertrail <papertrail>`, which provides a nice UI for browsing logs).
 -   Make sure you remembered to enable the Heroku Redis add-on (see :ref:`here <redis>`).
--   Run ``heroku run otree --version`` to check that you are using the latest version of otree-core on Heroku.
+-   Run ``heroku run otree --version`` to check that you are using the latest version of otree on Heroku.
 
 Making updates and modifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

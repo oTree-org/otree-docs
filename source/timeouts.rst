@@ -265,7 +265,7 @@ Customizing the timer
 
 .. note::
 
-    The info in this section requires otree-core 1.4 (Aug 2017) or higher.
+    The info in this section requires otree 1.4 (Aug 2017) or higher.
 
 By default, the timer looks like this:
 

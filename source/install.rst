@@ -76,7 +76,7 @@ Enter this in Command Prompt (Windows) or Terminal (macOS):
 
 .. code-block:: bash
 
-    pip3 install -U otree-core
+    pip3 install -U otree
 
 .. note::
 
@@ -199,5 +199,5 @@ Run:
 
 .. code-block:: bash
 
-    pip3 install -U otree-core
+    pip3 install -U otree
     otree resetdb

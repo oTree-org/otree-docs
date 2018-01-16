@@ -170,7 +170,7 @@ because someone could easily play twice by opening the URL in 2 browser tabs.
 
 .. note::
 
-    Starting with otree-core 1.4.13 (September 2017), the room-wide URL uses
+    Starting with otree 1.4.13 (September 2017), the room-wide URL uses
     cookies, so that if someone visits twice with the same browser, they will
     be assigned back to the same participant.
 
