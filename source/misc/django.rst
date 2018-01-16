@@ -68,7 +68,7 @@ Misc notes on models
 -  ``null=True`` and ``default=None`` are not necessary in your model
    field declarations; in oTree fields are null by default.
 -  ``initial`` is an alias for ``default`` in a model field's kwargs.
--  On ``CharField``\ s, ``max_length`` is not required.
+-  ``label`` is an alias for ``verbose_name`` in a model field's kwargs.
 
 Adding custom views & URLs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

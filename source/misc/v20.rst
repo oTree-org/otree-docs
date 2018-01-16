@@ -75,6 +75,9 @@ Here are the main changes that will be applied when you use ``otree update_my_co
 |``Django==1.8.8`` in           | Django should generally be omitted  |                                                                                |
 |requirements file              | from requirements file              |                                                                                |
 +-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``otree-core`` in              | replace ``otree-core``              |                                                                                |
+|requirements file              | by ``otree``                        |                                                                                |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
 
 Fix your Bootstrap
 ~~~~~~~~~~~~~~~~~~
@@ -87,6 +90,14 @@ Otherwise, some of your styling might be broken.
 Follow the guide here `here <https://getbootstrap.com/docs/4.0/migration/>`__.
 Although it's a long list, most people will just have to change the few things
 that apply to them.
+
+django_countries
+~~~~~~~~~~~~~~~~
+
+If you are using ``CountryField``, you need to upgrade ``django-countries``::
+
+    pip install -U django-countries
+
 
 Extensions
 ~~~~~~~~~~
