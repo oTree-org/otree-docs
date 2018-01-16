@@ -34,7 +34,7 @@ Running tests
 
 Let's say you want to test the session config named ``ultimatum`` in
 ``settings.py``. To test, open your terminal
-and run the following command from your project's root directory:
+and run the following command from your project's root folder:
 
 .. code-block:: bash
 

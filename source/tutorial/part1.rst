@@ -28,7 +28,7 @@ Create the app
 Use your command line to ``cd`` to the oTree project folder you created,
 the one that contains ``requirements_base.txt``.
 
-In this directory, create the public goods app:
+In this folder, create the public goods app:
 
 .. code-block:: bash
 
@@ -287,7 +287,7 @@ are shown:
 Define the session config in settings.py
 ----------------------------------------
 
-Now we go to ``settings.py`` in the project's root directory and add an entry to ``SESSION_CONFIGS``.
+Now we go to ``settings.py`` in the project's root folder and add an entry to ``SESSION_CONFIGS``.
 
 .. code-block:: python
 

@@ -1,0 +1,135 @@
+.. _v20:
+
+Upgrading to oTree 2.0
+======================
+
+Here is some information about oTree 2.0, which is a major upgrade.
+Please send feedback to chris@otree.org.
+
+Upgrading
+---------
+
+``otree-core`` has been renamed to simply ``otree``.
+
+So, run this:
+
+.. code-block:: bash
+
+    pip3 install -U otree
+    otree resetdb
+
+To upgrade to a newer beta release,
+run the same pip command above.
+
+To revert back to oTree-core 1.x::
+
+    pip3 uninstall otree
+    pip3 install otree-core
+
+.. _update_my_code:
+
+Updating your code
+------------------
+
+Run ``otree update_my_code``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In oTree 2.0, some classes and properties are renamed. However, the old names still work,
+and the new names work not just on oTree 2.0 but on recent releases of oTree 1.4.
+
+To automatically update your code to this new format,
+back up your code (save a copy of your project), then run::
+
+    otree update_my_code
+
+The tool will first show you the changes it proposes to make, then you can confirm.
+
+Summary of code format changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here are the main changes that will be applied when you use ``otree update_my_code``:
+
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|Old                            | New                                 |    Comment/Reason=                                                             |
++===============================+=====================================+================================================================================+
+|``views.py``                   | ``pages.py``                        |    "Views" is technical jargon from Django;                                    |
+|                               |                                     |    it's not relevant to most oTree users.                                      |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``CharField``                  | ``StringField``                     |    oTree uses                                                                  |
+|                               |                                     |    ``str`` (Python data type), ``CharField``, and ``TextField``.               |
+|                               |                                     |    To a beginner, it may be confusing that Django has 3 terms for              |
+|                               |                                     |    basically the same concept, and unclear what is the difference between      |
+|                               |                                     |    "string", "char", and "text".                                               |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``TextField``                  | ``LongStringField``                 |    See above.                                                                  |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``verbose_name``               | ``label``                           |    To be more consistent with ``{% formfield player.foo label="blah" %}``      |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``form_model = models.Player`` | ``form_model = 'player'``           |    Simplify syntax and reduce confusion about when to use lowercase ``player`` |
+|                               |                                     |    vs uppercase ``Player``.                                                    |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``form_model = models.Group``  | ``form_model = 'group'``            |    See above.                                                                  |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``widgets.SliderInput``        | ``widgets.Slider``                  |    ``Input`` is unnecessary/redundant.                                         |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+|``Django==1.8.8`` in           | Django should generally be omitted  |                                                                                |
+|requirements file              | from requirements file              |                                                                                |
++-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
+
+Fix your Bootstrap
+~~~~~~~~~~~~~~~~~~
+
+If you use Bootstrap classes for styling your HTML pages,
+then when you upgrade to oTree 2.0,
+you need to adjust your tags to the Bootstrap 4 format.
+Otherwise, some of your styling might be broken.
+
+Follow the guide here `here <https://getbootstrap.com/docs/4.0/migration/>`__.
+Although it's a long list, most people will just have to change the few things
+that apply to them.
+
+Extensions
+~~~~~~~~~~
+
+If you are using oTree "extensions" (which is an unofficial/experimental API),
+then you need to define ``EXTENSION_APPS`` in ``settings.py``,
+and list those apps there, e.g. ``EXTENSION_APPS = ['my_extension_app']``,
+rather than in ``INSTALLED_APPS``.
+
+Use new features
+----------------
+
+otree ``devserver``
+~~~~~~~~~~~~~~~~~~~
+
+Instead of ``otree runserver``, you can now use ``otree devserver``,
+which means you no longer need to use ``otree resetdb`` when developing
+locally. Any changes to your models will be handled automatically.
+Before using this command for the first time,
+delete the file ``db.sqlite3`` in your project folder.
+
+``otree runserver`` still works as before.
+
+On Heroku etc, you still need to use ``otree resetdb``.
+
+Looping through radio buttons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can arrange radio buttons in a table (e.g. a likert scale)
+by looping through the formfield. See :ref:`subwidgets`.
+
+Performance
+~~~~~~~~~~~
+
+oTree 2.0 has a number of performance improvements.
+
+Usability
+~~~~~~~~~
+
+oTree 2.0 has ease-of-use improvements, such as error tracebacks that are
+easier to understand.
+
+Updated dependencies
+~~~~~~~~~~~~~~~~~~~~
+
+oTree 2.0 upgrades from Django 1.8 to 1.11, Bootstrap 3 to 4, and jQuery 3.0.2 to 3.2.1.

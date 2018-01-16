@@ -63,7 +63,7 @@ The internal name and display name, respectively.
 
 A path to a text file with the "guest list"
 for this room.
-Path can be either absolute or relative to the project's root directory.
+Path can be either absolute or relative to the project's root folder.
 The file should contain one participant label per line. For example::
 
         PC_1

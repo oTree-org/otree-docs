@@ -147,7 +147,7 @@ For this tutorial, we will assume you are storing your files under
 Reset the database on the server
 --------------------------------
 
-On the server, ``cd`` to the directory containing your oTree project.
+On the server, ``cd`` to the folder containing your oTree project.
 Install the requirements and reset the database::
 
     pip3 install -r requirements.txt

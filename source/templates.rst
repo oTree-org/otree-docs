@@ -3,7 +3,7 @@
 Templates
 =========
 
-Your app's ``templates/`` directory will contain the templates for the
+Your app's ``templates/`` folder will contain the templates for the
 HTML that gets displayed to the player.
 
 oTree uses `Django's template system

@@ -64,7 +64,7 @@ Initialize your Git repo
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you haven't already initialized a git repository
-run this command from your project's root directory:
+run this command from your project's root folder:
 
 .. code-block:: bash
 
@@ -126,7 +126,7 @@ Run::
     otree --version
 
 The version that is output will look something like ``X.X.X``.
-Open ``requirements_base.txt`` in your project's root directory
+Open ``requirements_base.txt`` in your project's root folder
 and replace whatever is in that file with this single line::
 
     otree-core>=X.X.X
@@ -170,7 +170,7 @@ Open the site in your browser:
 
     $ heroku open
 
-(This command must be executed from the directory that contains your project.)
+(This command must be executed from the folder that contains your project.)
 
 That's it! You should be able to play your app online.
 If not, see the next section.

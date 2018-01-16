@@ -90,16 +90,16 @@ Enter this in Command Prompt (Windows) or Terminal (macOS):
 Step 3: Run oTree
 -----------------
 
-Open PowerShell/Command Prompt (on Windows) or Terminal (on macOS), and run::
+Open Command Prompt or PowerShell (on Windows) or Terminal (on macOS), and run::
 
     otree startproject oTree
 
 If it's your first time, we recommend choosing the option to include the sample games.
 
-The above command will create a folder named ``oTree`` in your home directory.
+The above command will create a folder named ``oTree`` in your home folder.
 (If you want, you can move the folder to another location.)
 
-Then change to the directory you just created::
+Then change to the folder you just created::
 
     cd oTree
 

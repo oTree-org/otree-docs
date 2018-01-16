@@ -28,7 +28,7 @@ Using a text editor such as ``nano``, ``emacs``, ``vim``, add the following to
     git checkout -f
 
 This means that every time someone pushes to ``oTree.git``, the code will be
-checked out to the other directory ``oTree``. (This technique is further described
+checked out to the other folder ``oTree``. (This technique is further described
 `here <http://toroid.org/git-website-howto>`__.)
 
 Make sure that ``post-receive`` is executable::

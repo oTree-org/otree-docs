@@ -24,7 +24,7 @@ you would do::
 
     cd oTree
 
-In this directory, create the public goods app::
+In this folder, create the public goods app::
 
     otree startapp my_simple_survey
 
@@ -160,7 +160,7 @@ So, all in all, ``views.py`` should contain this:
 Define the session config in settings.py
 ----------------------------------------
 
-Now we go to ``settings.py`` in the project's root directory and add an entry to ``SESSION_CONFIGS``.
+Now we go to ``settings.py`` in the project's root folder and add an entry to ``SESSION_CONFIGS``.
 
 .. code-block:: python
 

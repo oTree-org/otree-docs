@@ -35,7 +35,7 @@ Run::
     otree --version
 
 The version that is output will look something like ``1.X.X``.
-Open the file in your project's root directory
+Open the file in your project's root folder
 called ``requirements_base.txt``, and modify the line with ``otree-core>=``
 to that version. The file should look like this (substitute actual version for ``1.X.X``):
 ::
