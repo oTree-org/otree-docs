@@ -94,7 +94,7 @@ Also, let's define the payoff function in the Group class:
             p2.payoff = self.sent_amount * Constants.multiplication_factor - self.sent_back_amount
 
 
-Define the templates and views
+Define the templates and pages
 ------------------------------
 
 We need 3 pages:
@@ -164,20 +164,20 @@ This page looks like the templates we have seen so far. Note the use of
 
     {% endblock %}
 
-We also define the view in views.py:
+We also define the page in pages.py:
 
 .. code-block:: python
 
     class Send(Page):
 
-        form_model = models.Group
+        form_model = 'group'
         form_fields = ['sent_amount']
 
         def is_displayed(self):
             return self.player.id_in_group == 1
 
 The ``{% formfield %}`` in the template must match the ``form_model``
-and ``form_fields`` in the view.
+and ``form_fields`` in the page.
 
 Also, we use :ref:`is_displayed` to only show this to P1; P2 skips the
 page. For more info on ``id_in_group``, see :ref:`groups`.
@@ -211,7 +211,7 @@ This is the page that P2 sees to send money back. Here is the template:
 
     {% endblock %}
 
-Here is the code from views.py. Notes:
+Here is the code from pages.py. Notes:
 
 -  We use :ref:`vars_for_template` to pass the variable ``tripled_amount``
    to the template. Django does not let you do calculations directly in
@@ -225,7 +225,7 @@ Here is the code from views.py. Notes:
 
     class SendBack(Page):
 
-        form_model = models.Group
+        form_model = 'group'
         form_fields = ['sent_back_amount']
 
         def is_displayed(self):
@@ -283,7 +283,7 @@ to condition on the current player's ``id_in_group``.
 
     {% endblock %}
 
-In views.py, simply define the page like this:
+In pages.py, simply define the page like this:
 
 .. code-block:: python
 

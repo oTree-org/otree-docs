@@ -55,7 +55,7 @@ Auto-save of models
 
 In oTree, you don't need to explicitly call ``.save()`` on your models;
 oTree will do it automatically (it uses an idmap cache).
-However, this auto-save feature does not apply to custom models or views that don't inherit from oTree's,
+However, this auto-save feature does not apply to custom models or pages that don't inherit from oTree's,
 or custom WebSocket/AJAX code. In that case, you have to remember to save your database
 models yourself as you would in a regular Django project.
 
@@ -68,21 +68,21 @@ Misc notes on models
 -  ``null=True`` and ``default=None`` are not necessary in your model
    field declarations; in oTree fields are null by default.
 -  ``initial`` is an alias for ``default`` in a model field's kwargs.
--  ``label`` is an alias for ``verbose_name`` in a model field's kwargs.
+-  ``label`` is an alias for ``label`` in a model field's kwargs.
 
-Adding custom views & URLs
+Adding custom pages & URLs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can create URLs and views that are independent of oTree,
+You can create URLs and pages that are independent of oTree,
 using Django's `URL dispatcher <https://docs.djangoproject.com/en/1.9/topics/http/urls/>`__
-and `views <https://docs.djangoproject.com/en/1.9/topics/http/views/>`__.
+and `pages <https://docs.djangoproject.com/en/1.9/topics/http/pages/>`__.
 
 First, define the view function in one of your project modules.
 It can be a function-based view or class-based view.
 
 .. code-block:: python
 
-    # In my_app.views
+    # In my_app.pages
     from django.http import HttpResponse
 
     def my_view(request):
@@ -98,7 +98,7 @@ In this file, put:
     from django.conf.urls import url
     from otree.urls import urlpatterns
 
-    urlpatterns.append(url(r'^my_view/$', 'my_app.views.my_view'))
+    urlpatterns.append(url(r'^my_view/$', 'my_app.pages.my_view'))
 
 
 In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you just created:

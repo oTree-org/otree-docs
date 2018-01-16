@@ -212,13 +212,13 @@ The second template will be called ``Results.html``.
 
 
 
-Define views.py
+Define pages.py
 ---------------
 
-Now we define our views, which contain the logic for how to display the
-HTML templates. (For more info, see :ref:`views`.)
+Now we define our pages, which contain the logic for how to display the
+HTML templates. (For more info, see :ref:`pages`.)
 
-Since we have 2 templates, we need 2 ``Page`` classes in ``views.py``.
+Since we have 2 templates, we need 2 ``Page`` classes in ``pages.py``.
 The names should match those of the templates (``Contribute`` and
 ``Results``).
 
@@ -231,7 +231,7 @@ field on the player. (For more info, see :ref:`forms`.)
 
     class Contribute(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['contribution']
 
 Now we define ``Results``. This page doesn't have a form so our class
@@ -359,8 +359,8 @@ Go to ``tests.py``, and add this code in ``PlayerBot``:
     class PlayerBot(Bot):
 
         def play_round(self):
-            yield (views.Contribute, {'contribution': c(42)})
-            yield (views.Results)
+            yield (pages.Contribute, {'contribution': c(42)})
+            yield (pages.Results)
 
 This bot first submits the Contribute page with a contribution of 42,
 then submits the results page (to proceed to the next app).

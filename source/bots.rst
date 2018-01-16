@@ -18,8 +18,8 @@ like this:
     class PlayerBot(Bot):
 
         def play_round(self):
-            yield (views.Contribute, {'contribution': 10})
-            yield (views.Results)
+            yield (pages.Contribute, {'contribution': 10})
+            yield (pages.Results)
 
 Then, each time you make a change to your app,
 you can run bots automatically, rather than repetitively clicking through.
@@ -77,8 +77,8 @@ submission. For example:
 
     class PlayerBot(Bot):
         def play_round(self):
-            yield (views.Start)
-            yield (views.Offer, {'offer_amount': 50})
+            yield (pages.Start)
+            yield (pages.Offer, {'offer_amount': 50})
 
 Here, we first submit the ``Start`` page, which does not contain a form.
 The next page is ``Offer``, which contains a form whose field is called
@@ -92,7 +92,7 @@ If a page contains several fields, use a dictionary with multiple items:
 
 .. code-block:: python
 
-    yield (views.Offer, {'first_offer_amount': 50, 'second_offer_amount': 150, 'third_offer_amount': 150})
+    yield (pages.Offer, {'first_offer_amount': 50, 'second_offer_amount': 150, 'third_offer_amount': 150})
 
 
 The test system will raise an error if the bot submits invalid input for a page,
@@ -105,9 +105,9 @@ For example, here is how you can make a bot that can play either as player 1 or 
 .. code-block:: python
 
     if self.player.id_in_group == 1:
-        yield (views.Offer, {'offer': 30})
+        yield (pages.Offer, {'offer': 30})
     else:
-        yield (views.Accept, {'offer_accepted': True})
+        yield (pages.Accept, {'offer_accepted': True})
 
 Your ``if`` statements can depend on ``self.player``, ``self.group``, ``self.subsession``, etc.
 
@@ -129,9 +129,9 @@ For example:
 
         def play_round(self):
             assert self.player.money_left == c(10)
-            yield (views.Contribute, {'contribution': c(1)})
+            yield (pages.Contribute, {'contribution': c(1)})
             assert self.player.money_left == c(9)
-            yield (views.Results)
+            yield (pages.Results)
 
 In Python, ``assert`` statements are used to check statements that should hold true.
 If the asserted condition is wrong (e.g. ``self.player.money_left`` is ``11`` initially),
@@ -142,7 +142,7 @@ but after the user submits their contribution, money_left will be updated to ``9
 
 The ``assert`` statements are executed immediately before submitting the following page.
 For example, let's imagine the ``page_sequence`` for the game in the above example is
-``[Contribute, ResultsWaitPage, Results]``. The bot submits ``views.Contribute``,
+``[Contribute, ResultsWaitPage, Results]``. The bot submits ``pages.Contribute``,
 is redirected to the wait page, and is then redirected to the ``Results`` page.
 At that point, the ``Results`` page is displayed, and then the line
 ``assert self.player.money_left == c(9)`` is executed. If the ``assert`` passes,
@@ -162,7 +162,7 @@ For example, let's say you have this page:
 
     class MyPage(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['int1', 'int2', 'int3']
 
         def error_message(self, values):
@@ -174,15 +174,15 @@ You can test that it is working properly with a bot that does this:
 .. code-block:: python
 
 
-    from . import views
+    from . import pages
     from otree.api import Bot, SubmissionMustFail
 
     class PlayerBot(Bot):
 
         def play_round(self):
-            yield SubmissionMustFail(views.MyPage, {'int1': 0, 'int2': 0, 'int3': 0})
-            yield SubmissionMustFail(views.MyPage, {'int1': 101, 'int2': 0, 'int3': 0})
-            yield (views.MyPage, {'int1': 99, 'int2': 1, 'int3': 0})
+            yield SubmissionMustFail(pages.MyPage, {'int1': 0, 'int2': 0, 'int3': 0})
+            yield SubmissionMustFail(pages.MyPage, {'int1': 101, 'int2': 0, 'int3': 0})
+            yield (pages.MyPage, {'int1': 99, 'int2': 1, 'int3': 0})
             ...
 
 The bot will submit ``MyPage`` 3 times. If one of the first 2 submissions passes
@@ -211,7 +211,7 @@ For example:
 
 .. code-block:: python
 
-    from . import views
+    from . import pages
     from otree.api import Bot, SubmissionMustFail
 
 
@@ -220,7 +220,7 @@ For example:
         cases = ['basic', 'min', 'max']
 
         def play_round(self):
-            yield (views.Introduction)
+            yield (pages.Introduction)
 
             if self.case == 'basic':
                 assert self.player.payoff == None
@@ -228,15 +228,15 @@ For example:
             if self.case == 'basic':
                 if self.player.id_in_group == 1:
                     for invalid_contribution in [-1, 101]:
-                        yield SubmissionMustFail(views.Contribute, {'contribution': invalid_contribution})
+                        yield SubmissionMustFail(pages.Contribute, {'contribution': invalid_contribution})
             contribution = {
                 'min': 0,
                 'max': 100,
                 'basic': 50,
             }[self.case]
 
-            yield (views.Contribute, {"contribution": contribution})
-            yield (views.Results)
+            yield (pages.Contribute, {"contribution": contribution})
+            yield (pages.Results)
 
             if self.player.id_in_group == 1:
 
@@ -254,7 +254,7 @@ as cases.
 
 .. code-block:: python
 
-    from . import views
+    from . import pages
     from otree.api import Bot, SubmissionMustFail
 
 
@@ -269,14 +269,14 @@ as cases.
         def play_round(self):
             case = self.case
             if self.player.id_in_group == 1:
-                yield (views.Send, {"sent_amount": case['offer']})
+                yield (pages.Send, {"sent_amount": case['offer']})
 
             else:
                 for invalid_return in [-1, case['offer'] * Constants.multiplication_factor + 1]:
-                    yield SubmissionMustFail(views.SendBack, {'sent_back_amount': invalid_return})
-                yield (views.SendBack, {'sent_back_amount': case['return']})
+                    yield SubmissionMustFail(pages.SendBack, {'sent_back_amount': invalid_return})
+                yield (pages.SendBack, {'sent_back_amount': case['return']})
 
-            yield (views.Results)
+            yield (pages.Results)
 
 
             if self.player.id_in_group == 1:
@@ -301,7 +301,7 @@ that results are reported correctly:
 
 .. code-block:: python
 
-    from . import views
+    from . import pages
     from otree.api import Bot, SubmissionMustFail
 
     class PlayerBot(Bot):
@@ -312,12 +312,12 @@ that results are reported correctly:
             case = self.case
 
             # start game
-            yield (views.Introduction)
+            yield (pages.Introduction)
 
             if case == 'basic':
                 if self.player.id_in_group == 1:
                     for invalid_guess in [-1, 101]:
-                        yield SubmissionMustFail(views.Guess, {"guess_value": invalid_guess})
+                        yield SubmissionMustFail(pages.Guess, {"guess_value": invalid_guess})
                 if self.player.id_in_group == 2:
                     guess_value = 9
                 else:
@@ -328,7 +328,7 @@ that results are reported correctly:
                 else:
                     guess_value = 10
 
-            yield (views.Guess, {"guess_value": guess_value})
+            yield (pages.Guess, {"guess_value": guess_value})
 
             if case == 'basic':
                 if self.player.id_in_group == 2:
@@ -353,7 +353,7 @@ that results are reported correctly:
                 if num_winners > 1:
                     assert self.group.tie == True
 
-            yield (views.Results)
+            yield (pages.Results)
 
 ``self.html`` is updated with the next page's HTML, after every ``yield`` statement.
 
@@ -376,7 +376,7 @@ with ``check_html=False``. For example, change this:
 
     class PlayerBot(Bot)
         def play_round(self):
-            yield (views.MyPage, {'foo': 99})
+            yield (pages.MyPage, {'foo': 99})
 
 to this:
 
@@ -386,7 +386,7 @@ to this:
 
     class PlayerBot(Bot)
         def play_round(self):
-            yield Submission(views.MyPage, {'foo': 99}, check_html=False)
+            yield Submission(pages.MyPage, {'foo': 99}, check_html=False)
 
 (If you used ``Submission`` without ``check_html=False``,
 the two code samples would be equivalent.)
@@ -408,7 +408,7 @@ You can simulate a timeout on a page by using ``Submission`` with ``timeout_happ
 
     class PlayerBot(Bot)
         def play_round(self):
-            yield Submission(views.MyPage, {'foo': 99}, timeout_happened=True)
+            yield Submission(pages.MyPage, {'foo': 99}, timeout_happened=True)
 
 
 .. _browser-bots:

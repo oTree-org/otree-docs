@@ -4,9 +4,6 @@ Part 0: Simple survey
 Let's create a simple survey -- on the first page, we ask the participant
 for their name and age, then on the next page, display this info back to them.
 
-`YouTube version of this tutorial <https://youtu.be/Bzb-D5ZCZPs>`__
-(note: in the video, the app is called ``helloworld``, not ``my_simple_survey``).
-
 Upgrade oTree
 -------------
 
@@ -36,13 +33,13 @@ Open ``models.py`` and scroll to the line that says ``class Player(BasePlayer):`
 Here we define the columns for the Player table in the database.
 Let's add 2 fields:
 
--   ``name`` (which is a ``CharField``, meaning text characters)
+-   ``name`` (which is a ``StringField``, meaning text characters)
 -   ``age`` (which is a positive integer field)
 
 .. code-block:: python
 
     class Player(BasePlayer):
-        name = models.CharField()
+        name = models.StringField()
         age = models.IntegerField()
 
 
@@ -98,13 +95,13 @@ The second template will be called ``Results.html``.
     {% endblock %}
 
 
-Define views.py
+Define pages.py
 ---------------
 
-Now we define our views, which contain the logic for how to display the
+Now we define our pages, which contain the logic for how to display the
 HTML templates.
 
-Since we have 2 templates, we need 2 ``Page`` classes in ``views.py``.
+Since we have 2 templates, we need 2 ``Page`` classes in ``pages.py``.
 The names should match those of the templates (``MyPage`` and
 ``Results``).
 
@@ -116,7 +113,7 @@ on the player.
 .. code-block:: python
 
     class MyPage(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['name', 'age']
 
 Now we define ``Results``. This page doesn't have a form so our class
@@ -127,11 +124,11 @@ definition can just say ``pass``.
     class Results(Page):
         pass
 
-If ``views.py`` already has a ``WaitPage``, you can delete that,
+If ``pages.py`` already has a ``WaitPage``, you can delete that,
 because WaitPages are only necessary for multi-player games and more complex games.
 
 Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``.
-So, all in all, ``views.py`` should contain this:
+So, all in all, ``pages.py`` should contain this:
 
 .. code-block:: python
 
@@ -142,7 +139,7 @@ So, all in all, ``views.py`` should contain this:
 
 
     class MyPage(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['name', 'age']
 
 
@@ -229,33 +226,33 @@ which is not part of my app, but rather an external package::
     Traceback:
     File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py" in get_response
       132.                     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/views/generic/base.py" in view
+    File "/usr/local/lib/python3.5/site-packages/django/pages/generic/base.py" in view
       71.             return self.dispatch(request, *args, **kwargs)
     File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in _wrapper
       34.             return bound_func(*args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/views/decorators/cache.py" in _wrapped_view_func
+    File "/usr/local/lib/python3.5/site-packages/django/pages/decorators/cache.py" in _wrapped_view_func
       57.         response = view_func(request, *args, **kwargs)
     File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in bound_func
       30.                 return func.__get__(self, type(self))(*args2, **kwargs2)
     File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in _wrapper
       34.             return bound_func(*args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/views/decorators/cache.py" in _cache_controlled
+    File "/usr/local/lib/python3.5/site-packages/django/pages/decorators/cache.py" in _cache_controlled
       43.             response = viewfunc(request, *args, **kw)
     File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in bound_func
       30.                 return func.__get__(self, type(self))(*args2, **kwargs2)
-    File "/usr/local/lib/python3.5/site-packages/otree/views/abstract.py" in dispatch
+    File "/usr/local/lib/python3.5/site-packages/otree/pages/abstract.py" in dispatch
       315.                 request, *args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/views/generic/base.py" in dispatch
+    File "/usr/local/lib/python3.5/site-packages/django/pages/generic/base.py" in dispatch
       89.         return handler(request, *args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/otree/views/abstract.py" in get
+    File "/usr/local/lib/python3.5/site-packages/otree/pages/abstract.py" in get
       814.         return super(FormPageMixin, self).get(request, *args, **kwargs)
     File "/usr/local/lib/python3.5/site-packages/vanilla/model_views.py" in get
       294.         context = self.get_context_data(form=form)
-    File "/usr/local/lib/python3.5/site-packages/otree/views/abstract.py" in get_context_data
+    File "/usr/local/lib/python3.5/site-packages/otree/pages/abstract.py" in get_context_data
       193.         vars_for_template = self.resolve_vars_for_template()
-    File "/usr/local/lib/python3.5/site-packages/otree/views/abstract.py" in resolve_vars_for_template
+    File "/usr/local/lib/python3.5/site-packages/otree/pages/abstract.py" in resolve_vars_for_template
       212.         context.update(self.vars_for_template() or {})
-    File "/Users/chris/oTree/public_goods/views.py" in vars_for_template
+    File "/Users/chris/oTree/public_goods/pages.py" in vars_for_template
       108.             'total_payoff': self.player.payoff + Constants.fixed_pay}
     File "/usr/local/lib/python3.5/site-packages/easymoney.py" in <lambda>
       36.     return lambda self, other, context=None: self.__class__(method(self, _to_decimal(other)))
@@ -266,7 +263,7 @@ which is not part of my app, but rather an external package::
     Exception Value: conversion from NoneType to Decimal is not supported
 
 In these situations, look to see if any of your code is contained in the traceback.
-Above we can see that the traceback goes through the file ``/Users/chris/oTree/public_goods/views.py``,
+Above we can see that the traceback goes through the file ``/Users/chris/oTree/public_goods/pages.py``,
 which is part of my project. The bug is on line 108, as indicated.
 
 If you can't figure out the cause of the error,

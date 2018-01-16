@@ -7,7 +7,7 @@ Basics
 ------
 
 You can configure time limits on your pages by using the below
-attributes on your ``Page`` classes in ``views.py``.
+attributes on your ``Page`` classes in ``pages.py``.
 
 .. _timeout_seconds:
 
@@ -75,7 +75,7 @@ Example:
 .. code-block:: python
 
     class Page1(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['accept']
 
         timeout_seconds = 60
@@ -215,7 +215,7 @@ you can define the timeout in ``models.py``:
             return self.participant.vars['expiry'] - time.time() > 3
 
 
-Then in views.py:
+Then in pages.py:
 
 .. code-block:: python
 

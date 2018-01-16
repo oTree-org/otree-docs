@@ -39,10 +39,10 @@ you should instead put it in one of the following blocks in a base template:
 
 Read more in :ref:`base-template`.
 
-views.py: prevent code duplication by using multiple rounds
+pages.py: prevent code duplication by using multiple rounds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If your ``views.py`` has many pages that are almost the same,
+If your ``pages.py`` has many pages that are almost the same,
 consider just having 1 page and looping it for multiple rounds.
 One sign that your code can be simplified is if it looks
 something like this:
@@ -52,11 +52,11 @@ something like this:
     # [pages 1 through 7....]
 
     class Decision8(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['decision8']
 
     class Decision9(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['decision9']
 
     # etc...
@@ -68,11 +68,11 @@ varying the question that gets displayed with each round.
 
 .. _composition:
 
-views.py: prevent code duplication by moving code to ``models.py``
+pages.py: prevent code duplication by moving code to ``models.py``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You should try to move as much code as possible into ``models.py``.
-In Django, it's generally recommended to have "thick models" and "thin views".
+In Django, it's generally recommended to have "thick models" and "thin pages".
 
 .. _skip_many:
 
@@ -116,7 +116,7 @@ You can eliminate this repetition by moving the ``is_displayed`` code into
             pvars = self.participant.vars
             return pvars.get('consented') and not pvars.get('finished')
 
-Then in ``views.py``:
+Then in ``pages.py``:
 
 .. code-block:: python
 
@@ -196,7 +196,7 @@ You can simplify this by making a method in ``models.py``:
                 'c': 3,
             }
 
-Then in ``views.py``:
+Then in ``pages.py``:
 
 .. code-block:: python
 
@@ -257,8 +257,8 @@ It should be simplified to this:
 As an added benefit, this usually makes the code more readable.
 
 
-Use BooleanField instead of CharField, where possible
------------------------------------------------------
+Use BooleanField instead of StringField, where possible
+-------------------------------------------------------
 
 Many CharFields should be broken down into BooleanFields, especially
 if they can only have less than 5 distinct values.
@@ -267,7 +267,7 @@ Suppose you have a field called ``treatment``:
 
 .. code-block:: python
 
-    treatment = models.CharField()
+    treatment = models.StringField()
 
 And let's say ``treatment`` it can only have 4 different values:
 
@@ -276,7 +276,7 @@ And let's say ``treatment`` it can only have 4 different values:
 -   ``low_income_high_tax``
 -   ``low_income_low_tax``
 
-In ``views.py``, you might use it like this:
+In ``pages.py``, you might use it like this:
 
 .. code-block:: python
 
@@ -294,7 +294,7 @@ It would be much better to break this to 2 separate BooleanFields::
     high_income = models.BooleanField()
     high_tax = models.BooleanField()
 
-Then your views could be simplified to:
+Then your pages could be simplified to:
 
 .. code-block:: python
 

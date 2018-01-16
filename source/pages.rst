@@ -1,12 +1,12 @@
-.. _views:
+.. _pages:
 
-Views
+Pages
 =====
 
 Each page that your players see is defined by a ``Page`` class in
-``views.py`` ("views" is basically a synonym for "pages").
+``pages.py`` ("pages" is basically a synonym for "pages").
 
-Your ``views.py`` must have a ``page_sequence``
+Your ``pages.py`` must have a ``page_sequence``
 variable that gives the order of the pages. For example:
 
 .. code-block:: python
@@ -106,7 +106,7 @@ template_name
 ~~~~~~~~~~~~~
 
 Each Page should have a file in ``templates/`` with the same name.
-For example, if your app has this page in ``my_app/views.py``:
+For example, if your app has this page in ``my_app/pages.py``:
 
 .. code-block:: python
 
@@ -118,7 +118,7 @@ Then you should create a file ``my_app/templates/my_app/Page1.html``,
 See :ref:`templates` for info on how to write an HTML template.
 
 If the template needs to have a different name from your
-view class (e.g. you are sharing the same template for multiple views),
+view class (e.g. you are sharing the same template for multiple pages),
 set ``template_name``. Example:
 
 .. code-block:: python

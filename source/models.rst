@@ -32,7 +32,7 @@ Here is how to define the above table structure:
 
     class Player(BasePlayer):
         ...
-        name = models.CharField()
+        name = models.StringField()
         age = models.IntegerField()
         is_student = models.BooleanField()
 
@@ -43,7 +43,7 @@ removed, or changed a field in ``models.py``.)
 
 The full list of available fields is in the Django documentation
 `here <https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types>`__.
-The most commonly used ones are ``CharField``/``TextField`` (for text),
+The most commonly used ones are ``StringField``/``StringField`` (for text),
 ``FloatField`` (for real numbers),
 ``BooleanField`` (for true/false values),
 and ``IntegerField``.
@@ -539,8 +539,8 @@ You can also pass unique arguments in addition to the shared ones:
 
     class Player(BasePlayer):
 
-        f1 = models.IntegerField(verbose_name='What will you choose for 1?', **Constants.field_args)
-        f2 = models.IntegerField(verbose_name='What will you choose for 2?', **Constants.field_args)
-        f3 = models.IntegerField(verbose_name='What will you choose for 3?', **Constants.field_args)
+        f1 = models.IntegerField(label='What will you choose for 1?', **Constants.field_args)
+        f2 = models.IntegerField(label='What will you choose for 2?', **Constants.field_args)
+        f3 = models.IntegerField(label='What will you choose for 3?', **Constants.field_args)
         # etc...
-        f10 = models.IntegerField(verbose_name='What will you choose for 10?', **Constants.field_args)
+        f10 = models.IntegerField(label='What will you choose for 10?', **Constants.field_args)

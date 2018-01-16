@@ -265,7 +265,7 @@ then do:
     <img src="{% static "global/my_image.png" %}"/>
 
 If the image/video path is variable (like showing a different image each round),
-you can construct it in ``views.py`` and pass it to the template, e.g.:
+you can construct it in ``pages.py`` and pass it to the template, e.g.:
 
 .. code-block:: python
 

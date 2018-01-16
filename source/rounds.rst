@@ -19,7 +19,7 @@ Enter::
 This will create a new app folder based on a oTree template, with most
 of the structure already set up for you.
 
-The key files are ``models.py``, ``views.py``, and the HTML files
+The key files are ``models.py``, ``pages.py``, and the HTML files
 under the ``templates/`` folder.
 
 Think of this as a skeleton to which you can add as much as you want.
@@ -143,7 +143,7 @@ accessed from a ``Page`` or ``Player``:
 
 .. code-block:: python
 
-    # in views.py
+    # in pages.py
     class MyPage(Page):
         def before_next_page(self):
             self.participant.vars['foo'] = 1

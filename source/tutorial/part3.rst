@@ -185,7 +185,7 @@ check for both of them.
                 if self.round_number == self.session.vars['paying_round'] and player.is_winner:
                     player.payoff = Constants.stakes
 
-Define the templates and views
+Define the templates and pages
 ------------------------------
 
 This game has 2 main pages:
@@ -198,7 +198,7 @@ This game has 2 main pages:
 Choice
 ~~~~~~
 
-In ``views.py``, we define the ``Choice`` page. This page should contain
+In ``pages.py``, we define the ``Choice`` page. This page should contain
 a form field that sets ``player.tails``, so we set ``form_model``
 and ``form_fields``.
 
@@ -212,7 +212,7 @@ between "player" and "participant", see :ref:`participants_and_players`.)
 
     class Choice(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['tails']
 
         def vars_for_template(self):
@@ -330,7 +330,7 @@ Let's create ``ResultsSummary.html``:
 
     {% endblock %}
 
-Now we define the corresponding class in views.py.
+Now we define the corresponding class in pages.py.
 
 -  It only gets shown in the last round, so we set ``is_displayed``
    accordingly.

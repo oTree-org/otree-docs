@@ -32,7 +32,7 @@ the current round number with ``self.round_number``.
 Stages
 ~~~~~~
 
-oTree calls these "pages", and they are defined in ``views.py``.
+oTree calls these "pages", and they are defined in ``pages.py``.
 
 Waiting screens
 ~~~~~~~~~~~~~~~

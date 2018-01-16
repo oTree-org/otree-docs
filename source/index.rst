@@ -59,7 +59,7 @@ Contents:
     tutorial/intro.rst
     conceptual_overview.rst
     models.rst
-    views.rst
+    pages.rst
     templates.rst
     forms.rst
     multiplayer/intro.rst

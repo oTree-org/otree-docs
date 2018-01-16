@@ -13,7 +13,7 @@ a ``color`` field on the ``Player`` model:
 .. code-block:: python
 
     class Player(BasePlayer):
-        color = models.CharField()
+        color = models.StringField()
 
 Then you can assign to this field randomly:
 
@@ -26,7 +26,7 @@ Then you can assign to this field randomly:
             for player in self.get_players():
                 player.color = random.choice(['blue', 'red'])
 
-You can also assign treatments at the group level (put the ``CharField``
+You can also assign treatments at the group level (put the ``StringField``
 in the ``Group`` class and change the above code to use
 ``get_groups()`` and ``group.color``).
 

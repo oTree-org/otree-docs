@@ -7,8 +7,8 @@ Each page in oTree can contain a form, which the player should fill out
 and submit by clicking the "Next" button. To create a form, first
 go to models.py and define fields on your Player or Group. Then,
 in your Page class, you can choose which of these fields to include in the form.
-You do this by setting ``form_model = models.Player``, or
-``form_model = models.Group``, and then set ``form_fields``
+You do this by setting ``form_model = 'player'``, or
+``form_model = 'group'``, and then set ``form_fields``
 to the list of fields you want in your form.
 
 When the user submits the form, the submitted data is automatically
@@ -26,20 +26,20 @@ For example, here is a models.py:
         f1 = models.BooleanField()
         f2 = models.BooleanField()
 
-And a corresponding views.py that defines the form on each page:
+And a corresponding pages.py that defines the form on each page:
 
 .. code-block:: python
 
     class Page1(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['f1', 'f2'] # this means player.f1, player.f2
 
     class Page2(Page):
-        form_model = models.Group
+        form_model = 'group'
         form_fields = ['f1', 'f2'] # this means group.f1, group.f2
 
 
-.. _verbose_name:
+.. _label:
 
 Forms in templates
 ------------------
@@ -50,13 +50,13 @@ You should include form fields by using a ``{% formfield %}`` element:
 
     {% formfield player.contribution label="How much do you want to contribute?" %}
 
-An alternative to using ``label`` is to define ``verbose_name`` on the model field:
+An alternative to using ``label`` is to define ``label`` on the model field:
 
 .. code-block:: python
 
     class Player(BasePlayer):
         contribution = models.CurrencyField(
-            verbose_name="How much do you want to contribute?")
+            label="How much do you want to contribute?")
 
 Then you can just put this in your template:
 
@@ -189,7 +189,7 @@ for fixed (constant) values.
 If you want them to be determined dynamically
 (e.g. different from player to player),
 then you can instead define one of the below
-methods in your ``Page`` class in ``views.py``.
+methods in your ``Page`` class in ``pages.py``.
 
 .. _FOO_choices:
 
@@ -206,7 +206,7 @@ Example:
 
     class MyPage(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['offer']
 
         def offer_choices(self):
@@ -224,7 +224,7 @@ The dynamic alternative to setting ``max=`` in models.py. For example:
 
     class MyPage(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['offer']
 
         def offer_max(self):
@@ -251,7 +251,7 @@ as follows:
 
     class MyPage(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['odd_negative']
 
         def odd_negative_error_message(self, value):
@@ -271,7 +271,7 @@ Let's say you have 3 integer fields in your form whose names are
 
     class MyPage(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['int1', 'int2', 'int3']
 
         def error_message(self, values):
@@ -290,7 +290,7 @@ returns the list. For example:
 
     class MyPage(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         def get_form_fields(self):
             if self.player.num_bids == 3:
                 return ['bid_1', 'bid_2', 'bid_3']
@@ -325,7 +325,7 @@ rather than assigning ``somevar = player.foo`` and then doing
 ``{% formfield somevar %}``.
 
 If you use this technique, you should consider setting
-``verbose_name`` on your model fields (see :ref:`verbose_name`).
+``label`` on your model fields (see :ref:`label`).
 
 
 Widgets
@@ -338,11 +338,11 @@ oTree additionally offers:
 
 -   ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal
     layout, as you would see with a Likert scale)
--   ``SliderInput``
+-   ``Slider``
 
-    -   To specify the step size, do: ``SliderInput(attrs={'step': '0.01'})``
+    -   To specify the step size, do: ``Slider(attrs={'step': '0.01'})``
     -   To disable the current value from being displayed, do:
-        ``SliderInput(show_value=False)``
+        ``Slider(show_value=False)``
 
 
 Alternatives to oTree's ``{% formfield %}``
@@ -418,12 +418,12 @@ and write the raw HTML in your template:
         {% endfor %}
     </table>
 
-Finally, in ``views.py``, set ``form_fields`` and ``vars_for_template`` as follows:
+Finally, in ``pages.py``, set ``form_fields`` and ``vars_for_template`` as follows:
 
 .. code-block:: python
 
     class MyPage(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['offer_{}'.format(i) for i in range(1, 6)]
 
         def vars_for_template(self):
@@ -492,7 +492,7 @@ hidden form field. For example:
     # models.py
     my_hidden_input = models.IntegerField()
 
-    # views.py
+    # pages.py
     form_fields = ['my_hidden_input']
 
     # HTML template
@@ -589,7 +589,7 @@ like this:
 
     class MyPage(Page):
 
-        form_model = models.Player
+        form_model = 'player'
         def get_form_fields(self):
             return ['contribution_{}'.format(i) for i in range(1, self.player.n + 1)]
 
@@ -597,12 +597,12 @@ like this:
 Form fields with dynamic labels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the label should contain a variable, you can construct the string in ``views.py``:
+If the label should contain a variable, you can construct the string in ``pages.py``:
 
 .. code-block:: python
 
     class Contribute(Page):
-        form_model = models.Player
+        form_model = 'player'
         form_fields = ['contribution']
 
         def vars_for_template(self):
