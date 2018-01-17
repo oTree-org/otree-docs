@@ -41,16 +41,17 @@ and create your database tables accordingly.
 (Therefore, you need to run ``resetdb`` if you have added,
 removed, or changed a field in ``models.py``.)
 
-The full list of available fields is in the Django documentation
-`here <https://docs.djangoproject.com/en/1.8/ref/models/fields/#field-types>`__.
-The most commonly used ones are ``StringField``/``StringField`` (for text),
-``FloatField`` (for real numbers),
-``BooleanField`` (for true/false values),
-and ``IntegerField``.
-Don't use ``DecimalField`` unless you understand how it is different
-from ``FloatField`` and have a specific need for it.
+Here are the main fields:
 
-Additionally, oTree has ``CurrencyField``; see :ref:`currency`.
+-   ``BooleanField`` (for true/false and yes/no values)
+-   ``CurrencyField`` for currency amounts; see :ref:`currency`.
+-   ``IntegerField``
+-   ``FloatField`` (for real numbers)
+-   ``StringField`` (for text strings)
+-   ``LongStringField`` (for long text strings)
+
+(``StringField`` corresponds to Django's ``CharField`` and
+``LongStringField`` corresponds to Django's ``TextField``.)
 
 Setting a field's initial/default value
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

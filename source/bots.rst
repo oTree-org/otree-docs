@@ -21,6 +21,11 @@ like this:
             yield (pages.Contribute, {'contribution': 10})
             yield (pages.Results)
 
+.. note::
+
+    Prior to January 2018, ``pages`` was called ``views``.
+    See :ref:`v20` for more information.
+
 Then, each time you make a change to your app,
 you can run bots automatically, rather than repetitively clicking through.
 This will save you much more time than it initially took to write the bot.

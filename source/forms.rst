@@ -11,6 +11,11 @@ You do this by setting ``form_model = 'player'``, or
 ``form_model = 'group'``, and then set ``form_fields``
 to the list of fields you want in your form.
 
+.. note::
+
+    In January 2018, the syntax changed from ``form_model = models.Player``
+    to ``form_model = 'player'``. See :ref:`v20` for more information.
+
 When the user submits the form, the submitted data is automatically
 saved to the field in your model.
 
@@ -57,6 +62,11 @@ An alternative to using ``label`` is to define ``label`` on the model field:
     class Player(BasePlayer):
         contribution = models.CurrencyField(
             label="How much do you want to contribute?")
+
+.. note::
+
+    Prior to January 2018, ``label`` was called ``verbose_name``.
+    See :ref:`v20` for more information.
 
 Then you can just put this in your template:
 

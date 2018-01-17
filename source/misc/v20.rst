@@ -34,8 +34,7 @@ Updating your code
 Run ``otree update_my_code``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In oTree 2.0, some classes and properties are renamed. However, the old names still work,
-and the new names work not just on oTree 2.0 but on recent releases of oTree 1.4.
+In oTree 2.0, some classes and properties are renamed.
 
 To automatically update your code to this new format,
 back up your code (save a copy of your project), then run::
@@ -47,7 +46,13 @@ The tool will first show you the changes it proposes to make, then you can confi
 Summary of code format changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here are the main changes that will be applied when you use ``otree update_my_code``:
+Here are the main changes that will be applied when you use ``otree update_my_code``.
+
+Note:
+
+-   The old names still work in oTree 2.0
+-   The new names work in recent releases of oTree 1.4,
+    so you can use the new format even before you upgrade to 2.0.
 
 +-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
 |Old                            | New                                 |    Comment/Reason=                                                             |

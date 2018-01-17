@@ -6,6 +6,11 @@ Pages
 Each page that your players see is defined by a ``Page`` class in
 ``pages.py`` ("pages" is basically a synonym for "pages").
 
+.. note::
+
+    Prior to January 2018, ``pages.py`` was called ``views.py``.
+    See :ref:`v20` for more information.
+
 Your ``pages.py`` must have a ``page_sequence``
 variable that gives the order of the pages. For example:
 
