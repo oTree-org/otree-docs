@@ -484,7 +484,7 @@ and then run this command::
 Command-line browser bots: tips & tricks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(If the server is running on a host/port other than the usual ``http://127.0.0.1:8000``,
+(If the server is running on a host/port other than the usual ``http://localhost:8000``,
 you need to pass ``--server-url`` as shown above.)
 
 You will get the best performance if you use PostgreSQL or MySQL rather than

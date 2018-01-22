@@ -369,38 +369,23 @@ If the field rendered by the ``{% formfield %}`` tag is not to your liking,
 you can use Django's manual field rendering,
 described `here <https://docs.djangoproject.com/en/1.9/topics/forms/#rendering-fields-manually>`__.
 
-
-.. _raw_html:
-
-Raw HTML widgets
-~~~~~~~~~~~~~~~~
-
-For maximum flexibility, you can skip ``{% formfield %}``
-and Django's form widgets, and write the raw HTML for any form input.
-Just ensure that each field in your Page's ``form_fields``
-has a corresponding ``<input>`` element with a matching ``name`` attribute.
-
-..  This is simpler than doing it with Django forms, field.html_name, etc.
-    It's more flexible also, because you can have more than one label (e.g. a left/right label)
-    The downside is that you don't get validation and errors, but for radio buttons,
-    the browser does that anyway.
-    Also, easier to build it in JSFiddle, etc
-
 .. _radio-table:
+.. _subwidgets:
 
-Raw HTML example: table of radio buttons
-''''''''''''''''''''''''''''''''''''''''
+Radio buttons in tables and other custom layouts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Let's say you have a set of ``BooleanField`` in your model:
 
 .. code-block:: python
 
     class Player(BasePlayer):
 
-        offer_1 = models.BooleanField()
-        offer_2 = models.BooleanField()
-        offer_3 = models.BooleanField()
-        offer_4 = models.BooleanField()
-        offer_5 = models.BooleanField()
+        offer_1 = models.BooleanField(widget=widgets.RadioSelect)
+        offer_2 = models.BooleanField(widget=widgets.RadioSelect)
+        offer_3 = models.BooleanField(widget=widgets.RadioSelect)
+        offer_4 = models.BooleanField(widget=widgets.RadioSelect)
+        offer_5 = models.BooleanField(widget=widgets.RadioSelect)
 
 And you'd like to present them as a table of yes/no radio buttons like this:
 
@@ -410,8 +395,50 @@ And you'd like to present them as a table of yes/no radio buttons like this:
 
 Because the yes/no options must be in separate table cells,
 the ordinary ``RadioSelectHorizontal`` widget will not work here.
-So, you can skip using ``{% formfield %}`` entirely,
-and write the raw HTML in your template:
+
+Instead, you should simply loop over the choices in the field as follows:
+
+.. code-block:: html+django
+
+    <tr>
+    {% for choice in form.offer_1 %}
+        <td>{{ choice }}</td>
+    {% endfor %}
+    </tr>
+
+.. note::
+
+    This feature is only available in oTree 2.0 and higher.
+
+(Note that you have to do ``form.my_field``,
+rather than the usual ``player.my_field``.)
+
+If you have many fields with the same number of choices,
+you can arrange them in a table:
+
+.. code-block:: html+django
+
+    <table class="table">
+        {% for field in form %}
+            <tr>
+            {% for choice in field %}
+                <td>{{ choice }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+You can also get choices individually by using their 0-based index,
+e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
+For more granular control, as described `here <https://docs.djangoproject.com/en/1.11/ref/forms/widgets/#radioselect>`__,
+you can use the ``choice_label`` and ``tag`` attributes on a field choice.
+
+In older oTree releases
+'''''''''''''''''''''''
+
+The above technique only works in oTree 2.0 and higher.
+If you're on an older oTree release,
+you should write the raw HTML in your template:
 
 .. code-block:: html+django
 
@@ -440,47 +467,16 @@ Finally, in ``pages.py``, set ``form_fields`` and ``vars_for_template`` as follo
             return {'offer_numbers': range(1, 6)}
 
 
-.. _subwidgets:
+.. _raw_html:
 
-New in otree 2.0: looping through choices
-'''''''''''''''''''''''''''''''''''''''''
+Raw HTML widgets
+~~~~~~~~~~~~~~~~
 
-In the latest otree (January 2018), there is an easier way to make radio button
-tables and likert scales.
+For maximum flexibility, you can skip ``{% formfield %}``
+and Django's form widgets, and write the raw HTML for any form input.
+Just ensure that each field in your Page's ``form_fields``
+has a corresponding ``<input>`` element with a matching ``name`` attribute.
 
-If you're using ``RadioSelect`` or ``RadioSelectHorizontal``,
-you can simply loop over the field. For example:
-
-.. code-block:: html+django
-
-    <tr>
-    {% for choice in form.my_field %}
-        <td>{{ choice }}</td>
-    {% endfor %}
-    </tr>
-
-(Note that you have to do ``form.my_field``,
-rather than the usual ``player.my_field``.)
-
-If you have many fields with the same number of choices,
-you can arrange them in a table:
-
-.. code-block:: html+django
-
-    <table class="table">
-        {% for field in form %}
-            <tr>
-            {% for choice in field %}
-                <td>{{ choice }}</td>
-            {% endfor %}
-            </tr>
-        {% endfor %}
-    </table>
-
-You can also get choices individually by using their 0-based index,
-e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
-For more granular control, as described `here <https://docs.djangoproject.com/en/1.11/ref/forms/widgets/#radioselect>`__,
-you can use the ``choice_label`` and ``tag`` attributes on a field choice.
 
 Raw HTML example: custom user interface with JavaScript
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''

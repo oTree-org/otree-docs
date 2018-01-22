@@ -88,8 +88,8 @@ This setting provides an extra layer of security on top of the ``participant_lab
 For example, if you are not using secure URLs, your start URLs would look something
 like this::
 
-    http://127.0.0.1:8000/room/econ101/?participant_label=Student1
-    http://127.0.0.1:8000/room/econ101/?participant_label=Student2
+    http://localhost:8000/room/econ101/?participant_label=Student1
+    http://localhost:8000/room/econ101/?participant_label=Student2
 
 The issue is that if Student1 is mischievous,
 he might change his URL's participant_label from "Student1" to "Student2",
@@ -98,8 +98,8 @@ However, if you set ``'use_secure_urls': True,``
 oTree will add a unique secret key to each participant's URLs,
 like this::
 
-    http://127.0.0.1:8000/room/econ101/?participant_label=Student1&hash=29cd655f
-    http://127.0.0.1:8000/room/econ101/?participant_label=Student1&hash=46d9f31d
+    http://localhost:8000/room/econ101/?participant_label=Student1&hash=29cd655f
+    http://localhost:8000/room/econ101/?participant_label=Student1&hash=46d9f31d
 
 So, even if someone can guess another participant's ``participant_label``,
 they won't be able to open that person's start URL without the secret hash code.
@@ -124,12 +124,12 @@ room-wide URL, or the participant-specific URLs.
 
 The participant-specific URLs already contain the participant label, so as soon as
 they are clicked, the participant will go straight to the waiting page.
-For example, one participant can open URL ``http://127.0.0.1:8000/room/econ101/?participant_label=Student1``,
-and another participant can open URL ``http://127.0.0.1:8000/room/econ101/?participant_label=Student2``.
+For example, one participant can open URL ``http://localhost:8000/room/econ101/?participant_label=Student1``,
+and another participant can open URL ``http://localhost:8000/room/econ101/?participant_label=Student2``.
 
 Or, you can give both students the room-wide URL, which does not contain ``participant_label``:
 
-    http://127.0.0.1:8000/room/econ101/
+    http://localhost:8000/room/econ101/
 
 When a user clicks the room-wide URL,
 they are prompted to enter their participant label:
@@ -139,7 +139,7 @@ they are prompted to enter their participant label:
 
 For example, if a participant enters their label as ``Student1``,
 oTree simply appends the participant label to the room-wide URL, e.g.,
-``http://127.0.0.1:8000/room/econ101/?participant_label=Student1``,
+``http://localhost:8000/room/econ101/?participant_label=Student1``,
 checks if the label is contained in the participant label file,
 and if so, redirects the participant to the wait page.
 

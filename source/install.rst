@@ -31,7 +31,7 @@ Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png
 
-Once setup is done, search in your Windows Start Menu for the program "Command Prompt",
+Once setup is done, search in your Windows Start Menu for the program "cmd",
 open Command Prompt, and enter ``pip3 -V``:
 
 .. figure:: _static/setup/cmd.png
@@ -80,7 +80,7 @@ Enter this in Command Prompt (Windows) or Terminal (macOS):
 
 .. note::
 
-    If you get this Windows error about Twisted and ``vcvarsall.bat``::
+    If you get a Windows error like this::
 
         error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27
 
@@ -99,7 +99,7 @@ If it's your first time, we recommend choosing the option to include the sample 
 The above command will create a folder named ``oTree`` in your home folder.
 (If you want, you can move the folder to another location.)
 
-Then change to the folder you just created::
+Then move into the folder you just created::
 
     cd oTree
 
@@ -121,14 +121,12 @@ Reset the database::
 
     otree resetdb
 
-(You might see a message about migrations; you can ignore that.)
-
 Then run the server::
 
     otree runserver
 
 
-Then open your browser to `http://127.0.0.1:8000/ <http://127.0.0.1:8000/>`__.
+Then open your browser to `http://localhost:8000/ <http://localhost:8000/>`__.
 You should see the oTree demo site.
 
 To stop the server, enter ``Control + C`` at your command line.
@@ -143,9 +141,6 @@ Step 4: Install a Python editor (PyCharm)
 You will need a text editor to write your Python code.
 
 We recommend using `PyCharm <https://www.jetbrains.com/pycharm/download/>`__.
-Professional Editon is better than Community Edition because it has
-Django support.
-PyCharm Professional is free if you are a student, teacher, or professor.
 
 Even if you normally use another text editor,
 we recommend at least trying PyCharm, because PyCharm's autocompletion
@@ -164,15 +159,24 @@ on Windows, it would usually be something like
 and on Mac, it would usually be something like
 ``/Library/Framework/Python.framework/Versions/3.6/bin/python3.6``)
 
-Then, also in settings, navigate to ``Languages & Frameworks -> Django``,
-check "Enable Django Support" and set your oTree folder as the Django project root,
-with your ``manage.py`` and ``settings.py``:
-
-.. figure:: _static/setup/pycharm-django.png
-
 If PyCharm displays this warning, select "Ignore requirements":
 
 .. figure:: _static/setup/pycharm-psycopg2-warning.png
+
+PyCharm Professional (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PyCharm Community Edition is good enough to start,
+but you can consider installing PyCharm Professional Edition
+because it provides syntax highlighting of Django templates
+and JavaScript.
+
+PyCharm Professional is free if you are a student, teacher, or professor.
+
+Once you've installed Professional Edition, in settings,
+navigate to ``Languages & Frameworks -> Django``,
+check "Enable Django Support" and set your oTree folder as the Django project root,
+with your ``manage.py`` and ``settings.py``.
 
 Command line tips & tricks
 --------------------------

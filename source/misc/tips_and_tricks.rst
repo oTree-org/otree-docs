@@ -61,7 +61,7 @@ something like this:
 
     # etc...
 
-See the `quiz <https://github.com/oTree-org/otree-snippets/tree/master/quiz>`__
+See the `quiz <https://github.com/oTree-org/oTree/tree/master/quiz>`__
 or `real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
 sample games for examples of how to just have 1 page that gets looped over many rounds,
 varying the question that gets displayed with each round.

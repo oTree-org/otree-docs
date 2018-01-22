@@ -342,7 +342,7 @@ For HTTPS, change ``80`` to ``443`` ``ws`` prefix to ``wss``::
             RewriteEngine On
             RewriteCond %{HTTP:Connection} Upgrade [NC]
             RewriteCond %{HTTP:Upgrade} websocket [NC]
-            RewriteRule /(.*) ws://127.0.0.1:8000/$1 [P,L]
+            RewriteRule /(.*) ws://localhost:8000/$1 [P,L]
     </VirtualHost>
 
 

@@ -310,7 +310,7 @@ Enter:
     $ otree resetdb
     $ otree runserver
 
-Then open your browser to ``http://127.0.0.1:8000`` to play the game.
+Then open your browser to ``http://localhost:8000`` to play the game.
 
 (You can also run ``otree resetdb --noinput``, which skips the prompt
 about whether you want to delete your database.)

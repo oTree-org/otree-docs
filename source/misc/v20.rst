@@ -1,7 +1,7 @@
 .. _v20:
 
-Upgrading to oTree 2.0
-======================
+oTree 2.0
+=========
 
 Here is some information about oTree 2.0, which is a major upgrade.
 Please send feedback to chris@otree.org.

@@ -289,15 +289,20 @@ oTree comes pre-loaded with the following plugins and libraries.
 Bootstrap
 ~~~~~~~~~
 
-oTree comes with `Bootstrap <http://getbootstrap.com/components/>`__, a
+oTree comes with `Bootstrap <https://getbootstrap.com/docs/4.0/components/alerts/>`__, a
 popular library for customizing a website's user interface.
 
-You can use it if you want a `custom style <http://getbootstrap.com/css/>`_, or
-a `specific component <http://getbootstrap.com/components/>`_ like a table,
+.. note::
+
+    As of oTree 2.0 (January 2018), oTree upgraded from Bootstrap 3 to
+    Bootstrap 4. See :ref:`v20` for more info.
+
+You can use it if you want a `custom style <http://getbootstrap.com/css/>`__, or
+a `specific component <http://getbootstrap.com/components/>`__ like a table,
 alert, progress bar, label, etc. You can even make your page dynamic with
-elements like `popovers <http://getbootstrap.com/javascript/#popovers>`__,
-`modals <http://getbootstrap.com/javascript/#modals>`_, and
-`collapsible text <http://getbootstrap.com/javascript/#collapse>`_.
+elements like `popovers <https://getbootstrap.com/docs/4.0/components/popovers/>`__,
+`modals <https://getbootstrap.com/docs/4.0/components/modal/>`__, and
+`collapsible text <https://getbootstrap.com/docs/4.0/components/collapse/>`__.
 
 To use Bootstrap, usually you add a ``class=`` attribute to your HTML
 element.

@@ -133,7 +133,6 @@ So, all in all, ``pages.py`` should contain this:
 .. code-block:: python
 
     from otree.api import Currency as c, currency_range
-    from . import models
     from ._builtin import Page, WaitPage
     from .models import Constants
 
@@ -179,7 +178,7 @@ Enter::
     otree resetdb
     otree runserver
 
-Then open your browser to ``http://127.0.0.1:8000`` to try out the survey.
+Then open your browser to ``http://localhost:8000`` to try out the survey.
 
 
 Fix any errors

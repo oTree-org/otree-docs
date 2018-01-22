@@ -10,8 +10,8 @@ Models
 A player is part of a group, which is part of a subsession.
 See :ref:`conceptual_overview`.
 
-Model fields
-------------
+Model fields: an example
+------------------------
 
 The main purpose of ``models.py`` is to define the columns of your
 database tables. Let's say you want your experiment to generate data
@@ -41,7 +41,10 @@ and create your database tables accordingly.
 (Therefore, you need to run ``resetdb`` if you have added,
 removed, or changed a field in ``models.py``.)
 
-Here are the main fields:
+Model fields
+~~~~~~~~~~~~
+
+Here are the main field types:
 
 -   ``BooleanField`` (for true/false and yes/no values)
 -   ``CurrencyField`` for currency amounts; see :ref:`currency`.
@@ -50,8 +53,8 @@ Here are the main fields:
 -   ``StringField`` (for text strings)
 -   ``LongStringField`` (for long text strings)
 
-(``StringField`` corresponds to Django's ``CharField`` and
-``LongStringField`` corresponds to Django's ``TextField``.)
+``StringField`` and ``LongStringField`` are new (added January 2018).
+See :ref:`v20` for more information.
 
 Setting a field's initial/default value
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +157,6 @@ before_session_starts
 ~~~~~~~~~~~~~~~~~~~~~
 
 ``before_session_starts`` has been renamed to :ref:`creating_session`.
-since otree-core 1.3.2 (June 2017).
 However, new versions of oTree still execute ``before_session_starts``,
 for backwards compatibility.
 
@@ -432,19 +434,17 @@ such as :ref:`creating_session`.
 What's the difference between "Player" and "player"?
 ----------------------------------------------------
 
+In your code, you should always use lower-case ``player``,
+``group``, and ``subsession``. The only exception is defining the classes
+in models.py, where you use ``class Player(BasePlayer)`` etc.
+
 We use uppercase (e.g. ``Player``) when we are referring to the whole table
 of players, and lowercase (``player``) when referring to a particular player,
 i.e. a row in the table. In Python, ``Player`` is a class, and ``player``
 is an instance of that class.
 
-The same applies for ``Group`` vs. ``group`` and ``Subsession`` vs ``subsession``.
-
 For example, in a template, to display a player's payoff,
 we must use ``{{ player.payoff }}``, not ``{{ Player.payoff }}``.
-.
-``Player`` is the whole table of players in the database, so ``Player.payoff``
-would be the whole ``payoff`` column for all players. But you just want to
-show one player's payoff, so you should do ``{{ player.payoff }}``.
 
 However, for ``Constants``, we always use uppercase.
 That's because ``Constants`` is not a database table with instances/rows,
