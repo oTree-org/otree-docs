@@ -117,4 +117,4 @@ Misc
 ~~~~
 
 If you want numbers to be formatted like ``1,000,000`` or ``1 000 000``,
-see `USE_THOUSAND_SEPARATOR <https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-USE_THOUSAND_SEPARATOR>`__.
+see `USE_THOUSAND_SEPARATOR <https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-USE_THOUSAND_SEPARATOR>`__.

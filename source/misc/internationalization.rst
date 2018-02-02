@@ -26,8 +26,8 @@ available in these languages. This includes things like:
 So, as long as you write your app's text in one of these languages,
 all text that participants will see will be in that language.
 For more information, see the Django documentation on
-`translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__
-and `format localization <https://docs.djangoproject.com/en/1.8/topics/i18n/formatting/>`__.
+`translation <https://docs.djangoproject.com/en/1.11/topics/i18n/translation/>`__
+and `format localization <https://docs.djangoproject.com/en/1.11/topics/i18n/formatting/>`__.
 
 
 However, oTree's admin/experimenter interface is currently only available in English,
@@ -49,7 +49,7 @@ Writing your app in multiple languages
 You may want your own app to work in multiple languages.
 For example, let's say you want to run the same experiment with English, French, and Chinese participants.
 
-For this, you can use Django's `translation <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/>`__
+For this, you can use Django's `translation <https://docs.djangoproject.com/en/1.11/topics/i18n/translation/>`__
 system.
 
 A quick summary:
@@ -64,7 +64,7 @@ A quick summary:
 -   At the top of your templates, add ``{% load i18n %}``. Then use ``{% blocktrans trimmed %}...{% endblocktrans %}``.
     There are some things you can't use inside a ``blocktrans``,
     such as variables containing dots (e.g. ``{{ Constants.foo }}``),
-    or tags (e.g. ``{% if %}``). More info `here <https://docs.djangoproject.com/en/1.8/topics/i18n/translation/#std:templatetag-blocktrans>`__.
+    or tags (e.g. ``{% if %}``). More info `here <https://docs.djangoproject.com/en/1.11/topics/i18n/translation/#std:templatetag-blocktrans>`__.
 -   If you have localizable strings in your Python code, use ``ugettext``.
 -   Use ``makemessages`` to create the ``.po`` files in your app's ``locale`` folder.
     Examples::

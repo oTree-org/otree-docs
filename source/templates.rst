@@ -6,9 +6,99 @@ Templates
 Your app's ``templates/`` folder will contain the templates for the
 HTML that gets displayed to the player.
 
-oTree uses `Django's template system
-<https://docs.djangoproject.com/en/1.8/ref/templates/language/>`_.
+Template syntax
+---------------
+oTree templates are HTML combined with the Django template language.
+Parts of the Django template language look similar to Python code,
+but it is not Python: it is much simpler and more restricted.
 
+Variables
+~~~~~~~~~
+
+You can display a variable like this:
+
+.. code-block:: django
+
+     Your payoff is {{ player.payoff }}.
+
+If you passed ``payoff`` using :ref:`vars_for_template`, you can do:
+
+.. code-block:: django
+
+     Your payoff is {{ payoff }}.
+
+
+Conditions ("if")
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: django
+
+    {% if player.is_winner %} you won! {% endif %}
+
+With an 'else' clause:
+
+.. code-block:: django
+
+    {% if some_number >= 0 %}
+        positive
+    {% else %}
+        negative
+    {% endif %}
+
+Loops ("for")
+~~~~~~~~~~~~~
+
+.. code-block:: django
+
+    {% for item in some_list %}
+        {{ item }}
+    {% endfor %}
+
+
+Method calls
+~~~~~~~~~~~~
+
+To call a method from one of your models, make sure to omit the parentheses
+(unlike regular Python code).
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        def doubled_payoff(self):
+            return self.payoff * 2
+
+.. code-block:: django
+
+    Your doubled payoff is {{ player.doubled_payoff }}.
+
+Accessing items in a list or dict
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Whereas in Python code you do ``my_list[0]`` and ``my_dict['foo']``,
+in a template you would do ``{{ my_list.0 }}`` and ``{{ my_dict.foo }}``.
+
+Template filters
+~~~~~~~~~~~~~~~~
+
+In addition to the filters available with Django's template language,
+oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
+For example, ``{{ 20|c }}`` displays as ``20 points``.
+
+Also, the ``|abs`` filter lets you take the absolute value.
+So, doing ``{{ -20|abs }}`` would output ``20``.
+
+If you get an "Invalid filter" error,
+make sure you have ``{% load otree %}``
+at the top of your template.
+
+Things you can't do
+~~~~~~~~~~~~~~~~~~~
+
+The template language is designed for simply displaying and looping over values.
+Most other things are not supported; for example,
+you can't do math (``+``, ``*``, ``/``, ``-``)
+or otherwise modify numbers, lists, strings, etc.
+If you need to do that, you should do so in :ref:`vars_for_template`.
 
 Template blocks
 ---------------
@@ -376,16 +466,4 @@ which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
 Bootstrap also tries to show a "mobile friendly" version
 when viewed on a smartphone or tablet.
 
-Template filters
-----------------
 
-In addition to the filters available with Django's template language,
-oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
-For example, ``{{ 20|c }}`` displays as ``20 points``.
-
-Also, the ``|abs`` filter lets you take the absolute value.
-So, doing ``{{ -20|abs }}`` would output ``20``.
-
-If you get an "Invalid filter" error,
-make sure you have ``{% load otree %}``
-at the top of your template.

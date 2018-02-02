@@ -30,7 +30,7 @@ Project folder
 ~~~~~~~~~~~~~~
 
 The folder containing your games is a Django project, as explained
-`here <https://docs.djangoproject.com/en/1.8/intro/tutorial01/#creating-a-project>`__.
+`here <https://docs.djangoproject.com/en/1.11/intro/tutorial01/#creating-a-project>`__.
 
 It comes pre-configured with all the files,
 settings and dependencies so that it works right away.

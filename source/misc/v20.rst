@@ -103,6 +103,10 @@ If you are using ``CountryField``, you need to upgrade ``django-countries``::
 
     pip install -U django-countries
 
+If you're using Heroku, you need to add ``django-countries`` to your
+``requirements_base.txt``, e.g.::
+
+    django-countries==5.1.1
 
 Extensions
 ~~~~~~~~~~

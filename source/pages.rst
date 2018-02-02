@@ -123,7 +123,7 @@ Then you should create a file ``my_app/templates/my_app/Page1.html``,
 See :ref:`templates` for info on how to write an HTML template.
 
 If the template needs to have a different name from your
-view class (e.g. you are sharing the same template for multiple pages),
+page class (e.g. you are sharing the same template for multiple pages),
 set ``template_name``. Example:
 
 .. code-block:: python

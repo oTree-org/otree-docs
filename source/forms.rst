@@ -169,7 +169,7 @@ but their responses will be recorded as 1, 2, or 3.
 
 After the field has been set, you can access the human-readable name
 using
-`get_FOO_display <https://docs.djangoproject.com/en/1.8/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
+`get_FOO_display <https://docs.djangoproject.com/en/1.11/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
 , like this:
 ``self.get_level_display() # returns e.g. 'Medium'``.
 However, if you define the choices dynamically with :ref:`FOO_choices`,
@@ -288,6 +288,8 @@ Let's say you have 3 integer fields in your form whose names are
             if values["int1"] + values["int2"] + values["int3"] != 100:
                 return 'The numbers must add up to 100'
 
+If a field was left blank, it will not be in the ``values`` dictionary.
+You can test whether the field was filled with ``'my_field' in values``.
 
 Determining form fields dynamically
 -----------------------------------

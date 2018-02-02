@@ -3,7 +3,7 @@ Settings
 
 Your settings can be found in ``settings.py``.
 Here are explanations of a few oTree-specific settings.
-Full info on all Django's settings can be found `here <https://docs.djangoproject.com/en/1.8/ref/settings/>`__.
+Full info on all Django's settings can be found `here <https://docs.djangoproject.com/en/1.11/ref/settings/>`__.
 
 .. _SESSION_CONFIGS:
 
