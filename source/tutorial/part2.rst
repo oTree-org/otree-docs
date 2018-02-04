@@ -338,17 +338,11 @@ Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
         'app_sequence': ['my_trust'],
     },
 
-Reset the database and run
---------------------------
+Run the server
+--------------
 
 Enter::
 
-    $ otree resetdb --noinput
-    $ otree runserver
+    otree devserver
 
 Then open your browser to ``http://localhost:8000`` to play the game.
-
-Note: You need to run ``resetdb`` every time you
-create a new app, or when you add/change/remove a field in ``models.py``. This is
-because you have new fields in ``models.py``, and the SQL
-database needs to be re-generated to create these tables and columns.

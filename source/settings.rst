@@ -26,8 +26,7 @@ In ``settings.py``, add an entry to ``SESSION_CONFIGS`` like this
     },
 
 
-Once you have defined a session config, you can run ``otree resetdb``,
-then ``otree runserver``,
+Once you have defined a session config, you can run ``otree devserver``,
 open your browser to the admin interface, and create a new session.
 You would select "My Session Config" as the configuration to use.
 

@@ -170,13 +170,12 @@ Now we go to ``settings.py`` in the project's root folder and add an entry to ``
     ]
 
 
-Reset the database and run
---------------------------
+Start the server
+----------------
 
 Enter::
 
-    otree resetdb
-    otree runserver
+    otree devserver
 
 Then open your browser to ``http://localhost:8000`` to try out the survey.
 

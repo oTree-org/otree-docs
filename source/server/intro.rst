@@ -4,7 +4,7 @@ Server setup
 ============
 
 If you are just testing your app on your personal computer, you can use
-``otree runserver``. You don't need a full server setup.
+``otree devserver``. You don't need a full server setup.
 
 However, when you want to share your app with an audience,
 you must use a web server.

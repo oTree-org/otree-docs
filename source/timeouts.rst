@@ -32,8 +32,8 @@ When there are 60 seconds left, the page displays a timer warning the participan
     If you are running the production server (``runprodserver``)
     or using ``timeoutworker``,
     the page will always submit, even if the user closes their browser window.
-    However, this does not occur if you are running the test server
-    (``runserver``).
+    However, this does not occur if you are running the development server
+    (``devserver`` or ``runserver``).
 
 If you need the timeout to be dynamically determined, use :ref:`get_timeout_seconds`.
 

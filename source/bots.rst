@@ -448,7 +448,7 @@ which launches browser bots from the command line.
 
 -   Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings.py``
     (more info below).
--   Run your server (e.g. ``otree runserver``)
+-   Run your server (e.g. ``otree devserver``)
 -   Close all Chrome windows.
 -   Run this (substituting the name of your
     session config)::
@@ -488,7 +488,7 @@ Command-line browser bots: tips & tricks
 you need to pass ``--server-url`` as shown above.)
 
 You will get the best performance if you use PostgreSQL or MySQL rather than
-SQLite, and use ``runprodserver`` rather than ``runserver``.
+SQLite, and use ``runprodserver`` rather than ``runserver`` or ``devserver``.
 
 On my PC, running the default public_goods session with 3 participants takes about 4-5 seconds,
 and with 9 participants takes about 10 seconds.

@@ -420,12 +420,11 @@ there will be 1 group.
         ],
     },
 
-Reset the database and run
---------------------------
+Start the server
+----------------
 
 .. code-block:: bash
 
-    $ otree resetdb
-    $ otree runserver
+    otree devserver
 
 

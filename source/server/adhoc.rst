@@ -51,11 +51,11 @@ Run the server
 --------------
 
 Start the server with your IP address and port 8000, e.g.
-``otree runserver 10.0.1.3:8000``.
+``otree devserver 10.0.1.3:8000``.
 
 .. note::
 
-    We are just using ``runserver`` as a temporary step.
+    We are just using ``devserver`` as a temporary step.
     Once you have these steps working, you should switch to using the
     production server ``otree runprodserver`` or ``docker-compose up``.
 
@@ -95,9 +95,9 @@ automatically start your server on whatever your computer's IP address is.
 
 On Windows::
 
-    otree runserver 0.0.0.0:80
+    otree devserver 0.0.0.0:80
 
 On macOS, you need superuser privelege to use port 80::
 
-    sudo otree runserver 0.0.0.0:80
+    sudo otree devserver 0.0.0.0:80
 

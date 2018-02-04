@@ -118,7 +118,7 @@ For example, you could add some print statements to your payoff function:
 
       print('@@@@@@participant.vars is', self.participant.vars)
 
-The output will be displayed in the console window where you ran ``otree runserver``
+The output will be displayed in the console window where you ran ``otree devserver``
 (not in your web browser).
 
 Debugging with PyCharm

@@ -300,20 +300,16 @@ Now we go to ``settings.py`` in the project's root folder and add an entry to ``
     ]
 
 
-Reset the database and run
---------------------------
+Sync the database and run
+-------------------------
 
 Enter:
 
 .. code-block:: bash
 
-    $ otree resetdb
-    $ otree runserver
+    $ otree devserver
 
 Then open your browser to ``http://localhost:8000`` to play the game.
-
-(You can also run ``otree resetdb --noinput``, which skips the prompt
-about whether you want to delete your database.)
 
 
 Troubleshoot with print()
@@ -335,7 +331,7 @@ For example, you could add some print statements to ``set_payoffs``:
             p.payoff = Constants.endowment - p.contribution + self.individual_share
             print('@@@@@@p.payoff is', p.payoff)
 
-The output will be displayed in the console window where you ran ``otree runserver``
+The output will be displayed in the console window where you ran ``otree devserver``
 (not in your web browser).
 
 Make changes while the server is running

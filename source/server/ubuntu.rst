@@ -159,7 +159,7 @@ Install the requirements and reset the database::
 Running the server
 ------------------
 
-If you are just testing your app locally, you can use the usual ``runserver``
+If you are just testing your app locally, you can use the usual ``devserver``
 command.
 
 However, when you want to use oTree in production, you need to run the
@@ -191,7 +191,7 @@ this time, you don't need to append :80 to the URL, because that is the default 
 
 Notes:
 
--   unlike ``runserver``, ``runprodserver`` does not restart automatically
+-   unlike ``devserver``, ``runprodserver`` does not restart automatically
     when your files are changed.
 -   ``runprodserver`` automatically runs Django's ``collectstatic``
     to collect your files under ``_static_root/``.

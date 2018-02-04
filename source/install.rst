@@ -117,14 +117,9 @@ Then move into the folder you just created::
     -   ``ls`` (Mac/Linux): lists the files and subfolders in the current folder
     -   ``cd``: move to a subfolder. For example, ``cd oTree`` takes you to the subfolder ``oTree``.
 
-Reset the database::
-
-    otree resetdb
-
 Then run the server::
 
-    otree runserver
-
+    otree devserver
 
 Then open your browser to `http://localhost:8000/ <http://localhost:8000/>`__.
 You should see the oTree demo site.
