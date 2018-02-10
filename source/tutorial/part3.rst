@@ -39,7 +39,7 @@ In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`
 
 Now let's define our ``Player`` class:
 
--  In each round, each player decides "tails" or "Tails", so we define a
+-  In each round, each player decides "Heads" or "Tails", so we define a
    field ``tails``, which will be displayed as a radio button.
 -  We also have a boolean field ``is_winner`` that records if this
    player won this round.
