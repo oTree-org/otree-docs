@@ -18,7 +18,6 @@ formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
 Money amounts are displayed with 2 decimal places by default;
 you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
-(If you change the number of decimal places, you must ``resetdb``.)
 
 If a model field is a currency amount,
 you should define it as a ``CurrencyField``.
@@ -91,7 +90,6 @@ For example, if you pay the user 2 cents per point, you would set
 
 Points are integers by default. You can change this by setting ``POINTS_DECIMAL_PLACES = 2``,
 or whatever number of decimal places you desire.
-(If you change the number of decimal places, you must ``resetdb``.)
 
 If you switch your language setting to one of oTree's supported languages,
 the name "points" is automatically translated,

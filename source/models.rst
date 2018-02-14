@@ -36,10 +36,6 @@ Here is how to define the above table structure:
         age = models.IntegerField()
         is_student = models.BooleanField()
 
-When you run ``otree resetdb``, it will scan your ``models.py``
-and create your database tables accordingly.
-(Therefore, you need to run ``resetdb`` if you have added,
-removed, or changed a field in ``models.py``.)
 
 Model fields
 ~~~~~~~~~~~~

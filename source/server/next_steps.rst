@@ -83,10 +83,6 @@ Instead of using ``otree resetdb`` on the server, run ``python manage.py migrate
 If using Heroku, you would do ``heroku run otree migrate``.
 This will update your database tables.
 
-If you get an error ``NameError: name 'Currency' is not defined``,
-you need to find the offending file in your app's ``migrations`` folder,
-and add ``from otree.api import Currency`` at the top of the file.
-
 If you make further modifications to your apps or upgrade otree, you can run
 ``python manage.py makemigrations``. You don't need to specify the app names in this command;
 migrations will be updated for every app that has a ``migrations`` folder.

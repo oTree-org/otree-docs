@@ -185,7 +185,7 @@ Fix any errors
 
 If there is an error in your code, the command line will display a "traceback" (error message) that is formatted something like this::
 
-    C:\oTree\chris> otree resetdb
+    C:\oTree\chris> otree devserver
     Traceback (most recent call last):
       File "C:\oTree\chris\manage.py", line 10, in <module>
         execute_from_command_line(sys.argv, script_file=__file__)

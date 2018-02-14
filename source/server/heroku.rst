@@ -157,21 +157,21 @@ Transfer (push) the local repository to Heroku:
 
 .. code-block:: bash
 
-    $ git push heroku master
+    git push heroku master
 
 Reset the oTree database on Heroku.
 You can get your app's name by typing ``heroku apps``.
 
 .. code-block:: bash
 
-    $ heroku run otree resetdb
+    heroku run otree resetdb
 
 
 Open the site in your browser:
 
 .. code-block:: bash
 
-    $ heroku open
+    heroku open
 
 (This command must be executed from the folder that contains your project.)
 

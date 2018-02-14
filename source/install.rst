@@ -199,4 +199,3 @@ Run:
 .. code-block:: bash
 
     pip3 install -U otree
-    otree resetdb
