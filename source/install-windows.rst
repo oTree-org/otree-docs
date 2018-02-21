@@ -108,3 +108,4 @@ The command to upgrade is the same as the command to install:
 .. code-block:: bash
 
     pip3 install -U otree
+
