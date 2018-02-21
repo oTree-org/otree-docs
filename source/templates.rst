@@ -526,10 +526,23 @@ you may have forgotten to use the ``|json`` filter.
 Mobile devices
 --------------
 
-oTree's HTML interface is based on `Bootstrap <http://getbootstrap.com/components/>`__,
+oTree's HTML interface is based on `Bootstrap v4 <https://getbootstrap.com/docs/4.0/components/buttons/>`__,
 which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
 
 Bootstrap also tries to show a "mobile friendly" version
 when viewed on a smartphone or tablet.
 
+Note about PyCharm Professional
+-------------------------------
 
+If you are using the regular edition of PyCharm
+(Community Edition), consider upgrading to PyCharm Professional Edition,
+because it provides syntax highlighting of Django templates
+and JavaScript.
+
+PyCharm Professional is free if you are a student, teacher, or professor.
+
+Once you've installed Professional Edition, in settings,
+navigate to ``Languages & Frameworks -> Django``,
+check "Enable Django Support" and set your oTree folder as the Django project root,
+with your ``manage.py`` and ``settings.py``.

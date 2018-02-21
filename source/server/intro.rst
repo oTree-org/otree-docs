@@ -21,14 +21,14 @@ using a local server.
 
 e.g. running a lab study or field study.
 
--   Install the server using :ref:`Docker <install-docker-adhoc>` **OR** :ref:`conventional installation <install-windows>`
+-   Install the server using :ref:`Docker <server-docker-adhoc>` **OR** :ref:`conventional installation <server-windows>`
 -   Set up your Windows PC as an :ref:`ad-hoc server <server-adhoc>`
 
 **You want to use your Mac computer as an ad-hoc server on your local network**
 
 e.g. running a lab study or field study.
 
--   Install the server using :ref:`Docker <install-docker-adhoc>` **OR** :ref:`conventional installation <install-mac>`
+-   Install the server using :ref:`Docker <server-docker-adhoc>` **OR** :ref:`conventional installation <server-mac>`
 -   Set up your Mac as an :ref:`ad-hoc server <server-adhoc>`
 
 **You want to set up a dedicated Linux server**
@@ -57,9 +57,9 @@ After setting up your server, see :ref:`server_final_steps`.
     :maxdepth: 2
 
     heroku.rst
-    install-docker-adhoc.rst
-    install-windows.rst
-    install-mac.rst
+    server-docker-adhoc.rst
+    server-windows.rst
+    server-mac.rst
     adhoc.rst
     ubuntu.rst
     dockerhub.rst

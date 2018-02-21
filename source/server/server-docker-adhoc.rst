@@ -1,4 +1,4 @@
-.. _install-docker-adhoc:
+.. _server-docker-adhoc:
 
 Docker on your own computer
 ===========================

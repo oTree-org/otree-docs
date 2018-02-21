@@ -1,4 +1,4 @@
-.. _install-windows:
+.. _server-windows:
 
 Windows Server
 ==============
