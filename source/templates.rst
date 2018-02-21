@@ -301,10 +301,6 @@ The reasons for putting scripts and styles in separate blocks are:
 Customizing the theme
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    These selectors were introduced in otree 1.4 (August 2017).
-
 If you want to customize the appearance of an oTree element,
 here is the list of CSS selectors:
 

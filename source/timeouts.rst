@@ -263,10 +263,6 @@ by setting ``timer_text``:
 Customizing the timer
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    The info in this section requires otree 1.4 (Aug 2017) or higher.
-
 By default, the timer looks like this:
 
 .. figure:: _static/timer.png

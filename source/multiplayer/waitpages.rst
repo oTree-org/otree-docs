@@ -208,11 +208,6 @@ then add some code like this to the ``scripts`` block:
     }, 5 * 60 * SECOND); // 5 minutes
     </script>
 
-.. note::
-
-    This technique will only work in otree v1.4 or higher
-    (August 2017), because in v1.4, ``group_by_arrival_time`` filters out
-    players who have left the wait page or disconnected.
 
 .. _customize_wait_page:
 

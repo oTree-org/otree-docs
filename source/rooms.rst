@@ -166,7 +166,7 @@ Then, in the room's admin page, check how many people are present,
 and create a session for that number of people.
 
 Although this option is simple, it is less reliable than using participant labels,
-because someone could easily play twice by opening the URL in 2 browser tabs.
+because someone could play twice by opening the URL in 2 different browsers.
 
 .. note::
 

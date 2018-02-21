@@ -121,6 +121,9 @@ For example, you could add some print statements to your payoff function:
 The output will be displayed in the console window where you ran ``otree devserver``
 (not in your web browser).
 
+If there is no output, that means your code is not getting executed.
+Maybe you put it in a function but you don't call that function from anywhere.
+
 Debugging with PyCharm
 ----------------------
 
