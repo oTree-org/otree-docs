@@ -2,7 +2,7 @@ Part 1: Public goods game
 =========================
 
 We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__.
-The public goods game is a classic game in economics,
+The public goods game is a classic game in economics.
 
 This is a three player game where each player is initially endowed with 100 points.
 Each player individually makes a decision about how many of their points they want to contribute to the group.
@@ -77,7 +77,7 @@ Group.
 
 After the game is played,
 what data points will we need about each player?
-It's important to know how much each person contributed.
+It's important to record how much each person contributed.
 So, we define a field ``contribution``,
 which is a currency (see :ref:`currency`):
 
@@ -86,6 +86,9 @@ which is a currency (see :ref:`currency`):
     class Player(BasePlayer):
         contribution = models.CurrencyField(min=0, max=Constants.endowment)
 
+We also need to record the payoff the user makes at the end of the game,
+but we don't need to explicitly define a ``payoff`` field, because it's automatically
+added to every ``Player`` model.
 
 What data points are we interested in recording about each group? We
 might be interested in knowing the total contributions to the group, and
@@ -99,47 +102,6 @@ fields:
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
 
-Now let's define our payoff function.
-The argument to the function should be a group whose payoffs should be
-calculated.
-
-.. code-block:: python
-
-    class Group(BaseGroup):
-
-        total_contribution = models.CurrencyField()
-        individual_share = models.CurrencyField()
-
-        def set_payoffs(group):
-            players = group.get_players()
-            contributions = [p.contribution for p in players]
-            group.total_contribution = sum(contributions)
-            group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
-            for p in group.get_players():
-                p.payoff = Constants.endowment - p.contribution + group.individual_share
-
-Now, we will change one small thing. We will rename the argument
-``group`` to ``self``, because in Python, a method's first argument
-should always be named ``self`` (however, ``self`` still represents a group).
-For more explanation, see :ref:`object_model`.
-
-Anyway, rename ``group`` in the argument,
-as well as the 6 usages inside the function.
-
-.. code-block:: python
-
-    class Group(BaseGroup):
-
-        total_contribution = models.CurrencyField()
-        individual_share = models.CurrencyField()
-
-        def set_payoffs(self):
-            players = self.get_players()
-            contributions = [p.contribution for p in players]
-            self.total_contribution = sum(contributions)
-            self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
-            for p in self.get_players():
-                p.payoff = Constants.endowment - p.contribution + self.individual_share
 
 Define the template
 -------------------
@@ -170,7 +132,7 @@ contribution.
         This is a public goods game with
         {{ Constants.players_per_group }} players per group,
         an endowment of {{ Constants.endowment }},
-        and an efficiency factor of {{ Constants.multiplier }}.
+        and an multiplier of {{ Constants.multiplier }}.
     </p>
 
 
@@ -180,14 +142,14 @@ contribution.
 
     {% endblock %}
 
-Side note: if you are using PyCharm, when you type ``{%``,
-PyCharm automatically inserts the closing ``%}`` and then gives auto-suggestions
-for what to type in between. If you are not seeing this, make sure you
-:ref:`enabled Django support <pycharm>`.
 
 (For more info on how to write a template, see :ref:`templates`.)
 
 The second template will be called ``Results.html``.
+This page will be shown after the game finished,
+after we have determined the user's payoff.
+(later in this tutorial, we will define this payoff function).
+
 
 .. code-block:: html+django
 
@@ -250,25 +212,27 @@ add a ``WaitPage``. When a player arrives at a wait page,
 they must wait until all other players in the group have arrived.
 Then everyone can proceed to the next page. (For more info, see :ref:`wait_pages`).
 
-When all players have
-completed the ``Contribute`` page, the players' payoffs can be
-calculated. You can trigger this calculation inside the the
+When all players have completed the ``Contribute`` page,
+the players' payoffs can be calculated.
+You can trigger this calculation inside the the
 ``after_all_players_arrive`` method on the ``WaitPage``, which
 automatically gets called when all players have arrived at the wait
-page. Another advantage of putting the code here is that it only gets
-executed once, rather than being executed separately for each
-participant, which is redundant.
-
-We write ``self.group.set_payoffs()`` because earlier we decided to name
-the payoff calculation method ``set_payoffs``, and it's a method under
-the ``Group`` class. That's why we prefix it with ``self.group``.
+page. We can access the current group with ``self.group`` (for more info about
+``self``, see :ref:`conceptual_overview`).
 
 .. code-block:: python
 
     class ResultsWaitPage(WaitPage):
 
         def after_all_players_arrive(self):
-            self.group.set_payoffs()
+            group = self.group
+            players = group.get_players()
+            contributions = [p.contribution for p in players]
+            group.total_contribution = sum(contributions)
+            group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
+            for p in players:
+                p.payoff = Constants.endowment - p.contribution + group.individual_share
+
 
 Now we define ``page_sequence`` to specify the order in which the pages
 are shown:
@@ -311,28 +275,58 @@ Enter:
 
 Then open your browser to ``http://localhost:8000`` to play the game.
 
+.. _print_debugging:
 
 Troubleshoot with print()
 -------------------------
 
-If your code is still not behaving properly,
-you can isolate the problem using ``print()``
-just as you would to debug any Python program.
-For example, you could add some print statements to ``set_payoffs``:
+I often read messages from newbie programmers
+programmers write things like, "My program is not working. I can't find the mistake,
+even though I have spent hours looking at my code".
+
+When an experienced programmer encounters an error in their program, they don't
+just re-read the code until they find an error; they interactively **test**
+their program.
+
+The simplest way is using ``print()`` statements.
+If you don't learn this technique, you won't be able to program games effectively.
+
+You just need to insert a line in your code like this:
 
 .. code-block:: python
 
-    def set_payoffs(self):
-        players = self.get_players()
-        contributions = [p.contribution for p in players]
-        self.total_contribution = sum(contributions)
-        self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
-        for p in self.get_players():
-            p.payoff = Constants.endowment - p.contribution + self.individual_share
-            print('@@@@@@p.payoff is', p.payoff)
+    print('group.total_contribution is', self.group.total_contribution)
 
-The output will be displayed in the console window where you ran ``otree devserver``
+Put this line in the part of your code that's not working,
+such as the payoff function defined above.
+When you play the game in your browser and that code gets executed,
+your print statement will be displayed in your command prompt window
 (not in your web browser).
+
+You can sprinkle lots of prints in your code
+(I like to print extra characters like ``@@@``, to make it easier to
+find the print statements in my server output):
+
+.. code-block:: python
+
+    print('@@@@ in payoff function')
+    contributions = [p.contribution for p in players]
+    print('@@@@ contributions:', contributions)
+    group.total_contribution = sum(contributions)
+    group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
+    print('@@@ individual share', group.individual_share)
+    for p in players:
+        print('@@@ payoff before', p.payoff)
+        p.payoff = Constants.endowment - p.contribution + group.individual_share
+        print('@@@ payoff after', p.payoff)
+
+
+If you don't see the output in your console window,
+that means your code is not getting executed! (Which is why it isn't working.)
+
+Maybe it's because your code is inside an "if" statement that is always ``False``.
+Or maybe your code is in a function that never gets called (executed).
+
 
 Make changes while the server is running
 ----------------------------------------
@@ -385,4 +379,3 @@ and add ``'use_browser_bots': True`` to the session config, like this:
 Now, when you create a new session and open the start links,
 it will play automatically.
 
-Bots can do many more things; to learn more, see the section :ref:`bots`.

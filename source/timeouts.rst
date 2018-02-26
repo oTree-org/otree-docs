@@ -136,15 +136,8 @@ will be used instead.
 
 If you want to discard the auto-submitted form, you can just
 set the values in ``before_next_page``, which will overwrite the data from the form.
-Assuming you have defined ``timeout_submission``, you can write this:
-
-    .. code-block:: python
-
-        def before_next_page(self):
-            if self.timeout_happened:
-                for field_name in self.timeout_submission:
-                    value = self.timeout_submission[field_name]
-                    setattr(self.player, field_name, value)
+You can loop through the items in ``self.timeout_submission``
+and use ``setattr()`` to set those fields on the player.
 
 
 Timeouts that span multiple pages

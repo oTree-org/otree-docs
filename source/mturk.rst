@@ -22,26 +22,21 @@ Installation
 ------------
 
 If you want to use oTree with MTurk,
-you need to install oTree with a different command,
-which installs some extra packages:
+you need to install ``otree[mturk]`` instead of just ``otree``.
 
-::
-
-    pip3 install -U otree[mturk]
-
+Your ``requirements_base.txt`` should also have ``otree[mturk]``.
 
 AWS credentials
 ---------------
 
-To publish to MTurk, you must have an employer account with MTurk, which
-currently requires a U.S. address and bank account.
+To publish to MTurk, you must have an employer account with MTurk.
 
-oTree requires that you set the following environment variables:
+Add the following lines to your ``settings.py`` (if they are not there already)::
 
-- ``AWS_ACCESS_KEY_ID``
-- ``AWS_SECRET_ACCESS_KEY``
+    AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
-(To learn what an "environment variable" is, see `here <http://superuser.com/a/284351>`__.)
+Then set those two environment variables.
 
 You can obtain these credentials `here <https://console.aws.amazon.com/iam/home?#security_credential>`__:
 
@@ -55,19 +50,43 @@ On Heroku you would set these env vars like this:
     $ heroku config:set AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY_ID
     $ heroku config:set AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS_KEY
 
+(For servers not on Heroku, to learn what an "environment variable" is,
+see `here <http://superuser.com/a/284351>`__.)
+
 .. warning::
 
     When testing with oTree, don't keep too much money in your MTurk account,
     in case there is a bug in your app's payment logic (or in oTree itself).
 
+Session config
+--------------
+
+Add this to your settings.py (if not there already) and edit as necessary:
+
+.. code-block:: python
+
+    mturk_hit_settings = {
+        'keywords': ['bonus', 'study'],
+        'title': 'Title for your experiment',
+        'description': 'Description for your experiment',
+        'frame_height': 500,
+        'preview_template': 'global/MTurkPreview.html',
+        'minutes_allotted_per_assignment': 60,
+        'expiration_hours': 7*24, # 7 days
+        #'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',# to prevent retakes
+        'qualification_requirements': []
+    }
+
+Then in ``SESSION_CONFIG_DEFAULTS``, add the entry:
+
+.. code-block:: python
+
+    'mturk_hit_settings': mturk_hit_settings,
 
 Making your session work on MTurk
 ---------------------------------
 
-You should look in ``settings.py`` for all settings related to
-Mechanical Turk (do a search for "mturk"). You can edit the properties
-of the HIT such as the title and keywords, as well as the qualifications
-required to participate. The monetary reward paid to workers is
+The monetary reward paid to workers is
 ``self.session.config['participation_fee']``.
 
 When you publish your HIT to MTurk, it will be visible to workers. When

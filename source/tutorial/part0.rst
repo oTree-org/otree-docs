@@ -183,7 +183,8 @@ Then open your browser to ``http://localhost:8000`` to try out the survey.
 Fix any errors
 --------------
 
-If there is an error in your code, the command line will display a "traceback" (error message) that is formatted something like this::
+If there is an error in your code, the command line will display a "traceback"
+(error message) that is formatted something like this::
 
     C:\oTree\chris> otree devserver
     Traceback (most recent call last):
@@ -206,15 +207,14 @@ If there is an error in your code, the command line will display a "traceback" (
            ^
     IndentationError: expected an indented block
 
-
-Your first step should be to look at the last lines of the message.
+It's called a "traceback" because it traces the error down through the chain
+of code. Your first step should be to look at the last lines of the message.
 Specifically, find the file and line number of the last entry.
 In the above example, it's ``"C:\oTree\chris\public_goods_simple\models.py", line 40``.
-Open that file and go to that line number to see if there is a problem there.
+So, go to that file & line number.
 Specifically, look for the problem mentioned at the last line of the traceback.
 In this example, it is ``IndentationError: expected an indented block``
 (which indicates that the problem has to do with code indentation).
-Python editors like PyCharm usually underline errors in red to make them easier to find.
 Try to fix the error then run the command again.
 
 Sometimes the last line of the traceback refers to a file that is not part of your code.

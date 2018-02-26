@@ -102,7 +102,7 @@ without needing to edit the source code:
 
 For example, let's say you are making a public goods game,
 whose payoff function depends on
-an "efficiency factor" parameter that is a numeric constant,
+an "multiplier" parameter that is a numeric constant,
 like 1.5 or 2. The usual approach would be to define it in ``Constants``,
 e.g. ``Constants.multiplier``
 
@@ -140,7 +140,7 @@ the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
     },
 
 Then in your app's code, you can do ``self.session.config['multiplier']``
-to retrieve the current session's efficiency factor.
+to retrieve the current session's multiplier.
 
 Notes:
 

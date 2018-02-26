@@ -1,6 +1,13 @@
 Troubleshooting
 ===============
 
+Debugging with print statements
+-------------------------------
+
+The most versatile way of debugging your code is to use
+print statements. See :ref:`print_debugging`
+
+
 .. _traceback:
 
 How to read a traceback
@@ -104,25 +111,6 @@ you can send it to the oTree `mailing list <https://groups.google.com/forum/#!fo
 It's best to use to "copy and paste view" to get the raw traceback,
 which is more useful than sending a screenshot of the yellow page.
 
-.. _print_debugging:
-
-Debugging with print statements
--------------------------------
-
-If your code is not behaving properly,
-you can isolate the problem using ``print()``
-just as you would to debug any Python program.
-For example, you could add some print statements to your payoff function:
-
-.. code-block:: python
-
-      print('@@@@@@participant.vars is', self.participant.vars)
-
-The output will be displayed in the console window where you ran ``otree devserver``
-(not in your web browser).
-
-If there is no output, that means your code is not getting executed.
-Maybe you put it in a function but you don't call that function from anywhere.
 
 Debugging with PyCharm
 ----------------------

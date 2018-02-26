@@ -78,22 +78,6 @@ much to donate, rather than entering free text. To do this, we use the
     )
 
 
-We'd also like P2 to use a dropdown menu to choose how much to send
-back, but we can't specify a fixed list of ``choices``, because P2's
-available choices depend on how much P1 donated. I'll show a bit later
-how we can make this list dynamic.
-
-Also, let's define the payoff function in the Group class:
-
-.. code-block:: python
-
-        def set_payoffs(self):
-            p1 = self.get_player_by_id(1)
-            p2 = self.get_player_by_id(2)
-            p1.payoff = Constants.endowment - self.sent_amount + self.sent_back_amount
-            p2.payoff = self.sent_amount * Constants.multiplication_factor - self.sent_back_amount
-
-
 Define the templates and pages
 ------------------------------
 
@@ -312,7 +296,41 @@ So, we define these pages:
     class ResultsWaitPage(WaitPage):
 
         def after_all_players_arrive(self):
+            group = self.group
+            p1 = group.get_player_by_id(1)
+            p2 = group.get_player_by_id(2)
+            p1.payoff = Constants.endowment - group.sent_amount + group.sent_back_amount
+            p2.payoff = group.sent_amount * Constants.multiplication_factor - group.sent_back_amount
+
+.. note::
+
+    An equivalent way would be to define
+    the payoff function in ``models.py`` like this
+    (note that the group is called ``self`` in this context):
+
+    .. code-block:: python
+
+        class Group(BaseGroup):
+
+            def set_payoffs(self):
+                p1 = self.get_player_by_id(1)
+                p2 = self.get_player_by_id(2)
+                p1.payoff = Constants.endowment - self.sent_amount + self.sent_back_amount
+                p2.payoff = self.sent_amount * Constants.multiplication_factor - self.sent_back_amount
+
+    Then, we could call it ("trigger it")
+    in ``after_all_players_arrive`` like this:
+
+    .. code-block:: python
+
+        def after_all_players_arrive(self):
             self.group.set_payoffs()
+
+    This is actually the technique that's used more in the sample games.
+    Although it looks a bit more complex, you will see over time that putting your
+    game's logic in ``models.py`` helps with organization.
+
+    (Also note that the name ``set_payoffs`` is arbitrary.)
 
 Then we define the page sequence:
 
