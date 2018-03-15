@@ -10,7 +10,7 @@ Here are things for Django developers to know about oTree.
 
 The ``otree`` command is a customized version of Django's ``manage.py``.
 
-For example, ``otree runserver`` is basically equivalent to ``python manage.py runserver``.
+For example, ``otree runserver`` is equivalent to ``python manage.py runserver``.
 
 In addition to the built-in `Django management commands <https://docs.djangoproject.com/en/1.9/ref/django-admin/>`__ like ``runserver`` and ``startapp``,
 oTree defines a few extra ones like ``resetdb``, ``create_session``, and ``runprodserver``.
@@ -133,15 +133,13 @@ for examples of more complex consumers. Also see :ref:`auto_save`.
 .. note::
 
     oTree is using channels v 0.17.3,
-    which has some incompatibilities with the latest version.
-    Notably, your consumers should not send
-    e.g. ``message.reply_channel.send({"accept": True})``;
-    this is a breaking change in channels 1.0+, described
-    `here <http://channels.readthedocs.io/en/stable/releases/1.0.0.html#connect-consumers>`__,
+    which is incompatible with the current version of channels, 2.x.
 
-    (oTree is blocked from upgrading to Channels 1.0+ because of
+    oTree is currently blocked from upgrading Channels to 2.x because of
     `this <https://github.com/django/channels/issues/498>`__ issue,
-    which makes it complicated for oTree to install smoothly cross-platform.)
+    which makes it complicated for oTree to install smoothly cross-platform.
+
+    When that issue is resolved, oTree will upgrade.
 
 
 Next, create a module ``routing.py`` in your project root

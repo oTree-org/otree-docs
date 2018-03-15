@@ -37,19 +37,6 @@ you or your users will just see generic "500 server error" pages:
 After you enter your email, you will receive an email with information
 on how to activate Sentry in your project.
 
-Contact us!
------------
-
-We are very interested to learn what experiments people are running with oTree.
-Having "case studies" is very important for things like getting
-funding so we can continue developing oTree.
-
-Also, hearing from oTree users motivates us to continue oTree development,
-and helps us understand better how people use oTree,
-
-Send an email to chris@otree.org to let us know about your study,
-and any information like what challenges you faced, etc.
-We might also mention your study on `otree.org <http://www.otree.org/>`__.
 
 Modifying an existing database
 ------------------------------

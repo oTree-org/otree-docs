@@ -95,27 +95,29 @@ Instructions.html
 
 To create the instructions, we can define a file
 ``Instructions.html`` that gets included on each page.
-
+(The ``class=`` attributes are based on Bootstrap.)
 
 .. code-block:: html+django
 
     {% load otree staticfiles %}
 
-    <div class="instructions well well-lg">
+    <div class="card bg-light">
+        <div class="card-body">
 
-        <h3 class="panel-sub-heading">
+        <h3>
             Instructions
         </h3>
-    <p>
-        This is a trust game with 2 players.
-    </p>
-    <p>
-        To start, participant A receives {{ Constants.endowment }};
-        participant B receives nothing.
-        Participant A can send some or all of his {{ Constants.endowment }} to participant B.
-        Before B receives these points they will be tripled.
-        Once B receives the tripled points he can decide to send some or all of his points to A.
-    </p>
+        <p>
+            This is a trust game with 2 players.
+        </p>
+        <p>
+            To start, participant A receives {{ Constants.endowment }};
+            participant B receives nothing.
+            Participant A can send some or all of his {{ Constants.endowment }} to participant B.
+            Before B receives this amount it will be tripled.
+            Once B receives the tripled amount he can decide to send some or all of it back to A.
+        </p>
+        </div>
     </div>
 
 

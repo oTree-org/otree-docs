@@ -116,6 +116,9 @@ Notes:
 -   If you use ``is_displayed`` on a page with ``group_by_arrival_time``,
     it should only be based on the round number. Don't use ``is_displayed``
     to show the page to some players but not others.
+-   If ``group_by_arrival_time = True``, then in ``creating_session``,
+    all players will initially be in the same group. Groups are only created
+    "on the fly" as players arrive at the wait page.
 
 If you need further control on arranging players into groups,
 use :ref:`get_players_for_group`.
@@ -184,29 +187,6 @@ Use page timeouts
 Use :ref:`timeout_seconds` on each page, so that if a player is slow or inactive,
 their page will automatically advance. Or, you can manually force a timeout by clicking
 the "Advance slowest participants" button in the admin interface.
-
-
-Implement a timeout on your wait pages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Let's say you're using ``group_by_arrival_time``, and a player is on the wait page
-waiting to be grouped, but nobody else arrives in a reasonable amount of time.
-You can use some JavaScript to implement a timer that after a few minutes
-redirects the user to some other URL, taking them out of the game.
-If you're using MTurk, this URL could be the assignment submission URL,
-so they will skip the game and complete the assignment.
-
-Create a custom wait page as described in :ref:`customize_wait_page`,
-then add some code like this to the ``scripts`` block:
-
-.. code-block:: html
-
-    <script>
-    SECOND = 1000 // milliseconds
-    window.setTimeout(function(){
-        window.location.href = "https://www.some_other_website.com";
-    }, 5 * 60 * SECOND); // 5 minutes
-    </script>
 
 
 .. _customize_wait_page:

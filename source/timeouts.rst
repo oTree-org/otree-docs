@@ -112,6 +112,10 @@ In ``settings.py`` add this:
         # etc...
     ]
 
+Then in ``pages.py``:
+
+.. code-block:: python
+
     class MyPage(Page):
 
         def get_timeout_seconds(self):

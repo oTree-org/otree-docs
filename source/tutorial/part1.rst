@@ -280,8 +280,8 @@ Then open your browser to ``http://localhost:8000`` to play the game.
 Troubleshoot with print()
 -------------------------
 
-I often read messages from newbie programmers
-programmers write things like, "My program is not working. I can't find the mistake,
+I often read messages on programming forums like,
+"My program is not working. I can't find the mistake,
 even though I have spent hours looking at my code".
 
 When an experienced programmer encounters an error in their program, they don't

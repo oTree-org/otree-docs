@@ -210,17 +210,23 @@ Like setting ``choices=`` in models.py,
 this will set the choices for the form field
 (e.g. the dropdown menu or radio buttons).
 
+Here is an example where we randomly shuffle the choices:
+
 Example:
 
 .. code-block:: python
 
+    import random
+
     class MyPage(Page):
 
         form_model = 'player'
-        form_fields = ['offer']
+        form_fields = ['fruit']
 
-        def offer_choices(self):
-            return currency_range(0, self.player.endowment, 1)
+        def fruit_choices(self):
+            choices = ['apple', 'kiwi', 'mango']
+            random.shuffle(choices)
+            return choices
 
 
 .. _FOO_max:
@@ -377,25 +383,22 @@ described `here <https://docs.djangoproject.com/en/1.9/topics/forms/#rendering-f
 Radio buttons in tables and other custom layouts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's say you have a set of ``BooleanField`` in your model:
+Let's say you have a set of ``IntegerField`` in your model:
 
 .. code-block:: python
 
     class Player(BasePlayer):
 
-        offer_1 = models.BooleanField(widget=widgets.RadioSelect)
-        offer_2 = models.BooleanField(widget=widgets.RadioSelect)
-        offer_3 = models.BooleanField(widget=widgets.RadioSelect)
-        offer_4 = models.BooleanField(widget=widgets.RadioSelect)
-        offer_5 = models.BooleanField(widget=widgets.RadioSelect)
+        offer_1 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
+        offer_2 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
+        offer_3 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
+        offer_4 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
+        offer_5 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
 
-And you'd like to present them as a table of yes/no radio buttons like this:
+And you'd like to present them as a likert scale, where each option is
+in a separate column.
 
-.. image:: _static/forms/radio-table.png
-    :align: center
-    :scale: 100 %
-
-Because the yes/no options must be in separate table cells,
+Because the options must be in separate table cells,
 the ordinary ``RadioSelectHorizontal`` widget will not work here.
 
 Instead, you should simply loop over the choices in the field as follows:
@@ -434,39 +437,6 @@ You can also get choices individually by using their 0-based index,
 e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
 For more granular control, as described `here <https://docs.djangoproject.com/en/1.11/ref/forms/widgets/#radioselect>`__,
 you can use the ``choice_label`` and ``tag`` attributes on a field choice.
-
-In older oTree releases
-'''''''''''''''''''''''
-
-The above technique only works in oTree 2.0 and higher.
-If you're on an older oTree release,
-you should write the raw HTML in your template:
-
-.. code-block:: html+django
-
-    <table class="table">
-        <tr>
-            <th>Offer</th><th>Accept</th><th>Reject</th>
-        </tr>
-        {% for number in offer_numbers %}
-        <tr>
-            <td>{{ number }}</td>
-            <td><input type="radio" name="offer_{{ number }}" value="True" required></td>
-            <td><input type="radio" name="offer_{{ number }}" value="False" required></td>
-        </tr>
-        {% endfor %}
-    </table>
-
-Finally, in ``pages.py``, set ``form_fields`` and ``vars_for_template`` as follows:
-
-.. code-block:: python
-
-    class MyPage(Page):
-        form_model = 'player'
-        form_fields = ['offer_{}'.format(i) for i in range(1, 6)]
-
-        def vars_for_template(self):
-            return {'offer_numbers': range(1, 6)}
 
 
 .. _raw_html:

@@ -40,7 +40,7 @@ In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`
 Now let's define our ``Player`` class:
 
 -  In each round, each player decides "Heads" or "Tails", so we define a
-   field ``tails``, which will be displayed as a radio button.
+   field ``penny_side``, which will be displayed as a radio button.
 -  We also have a boolean field ``is_winner`` that records if this
    player won this round.
 -  We define the ``role`` method (see :ref:`groups`) to define which player is the "Matcher"
@@ -51,13 +51,11 @@ So we have:
 .. code-block:: python
 
     class Player(BasePlayer):
-
-        tails = models.BooleanField(
-            choices=[
-                [True, 'Tails'],
-                [False, 'Heads'],
-            ],
+        penny_side = models.StringField(
+            choices=['Heads', 'Tails'],
+            widget=widgets.RadioSelect
         )
+
         is_winner = models.BooleanField()
 
         def role(self):
@@ -65,6 +63,7 @@ So we have:
                 return 'Mismatcher'
             if self.id_in_group == 2:
                 return 'Matcher'
+
 
 Now let's define the code to randomly choose a round for payment. Let's
 define the code in ``Subsession.creating_session``, which is the
@@ -147,12 +146,11 @@ So, we start with this:
 .. code-block:: python
 
     class Group(BaseGroup):
-
         def set_payoffs(self):
             matcher = self.get_player_by_role('Matcher')
             mismatcher = self.get_player_by_role('Mismatcher')
 
-            if matcher.tails == mismatcher.tails:
+            if matcher.penny_side == mismatcher.penny_side:
                 matcher.is_winner = True
                 mismatcher.is_winner = False
             else:
@@ -170,20 +168,21 @@ check for both of them.
 .. code-block:: python
 
     class Group(BaseGroup):
-
         def set_payoffs(self):
             matcher = self.get_player_by_role('Matcher')
             mismatcher = self.get_player_by_role('Mismatcher')
 
-            if matcher.tails == mismatcher.tails:
+            if matcher.penny_side == mismatcher.penny_side:
                 matcher.is_winner = True
                 mismatcher.is_winner = False
             else:
                 matcher.is_winner = False
                 mismatcher.is_winner = True
             for player in [mismatcher, matcher]:
-                if self.round_number == self.session.vars['paying_round'] and player.is_winner:
+                if self.subsession.round_number == self.session.vars['paying_round'] and player.is_winner:
                     player.payoff = Constants.stakes
+                else:
+                    player.payoff = c(0)
 
 Define the templates and pages
 ------------------------------
@@ -199,7 +198,7 @@ Choice
 ~~~~~~
 
 In ``pages.py``, we define the ``Choice`` page. This page should contain
-a form field that sets ``player.tails``, so we set ``form_model``
+a form field that sets ``player.penny_side``, so we set ``form_model``
 and ``form_fields``.
 
 Also, on this page we would like to display a "history box" table that
@@ -211,9 +210,8 @@ between "player" and "participant", see :ref:`participants_and_players`.)
 .. code-block:: python
 
     class Choice(Page):
-
         form_model = 'player'
-        form_fields = ['tails']
+        form_fields = ['penny_side']
 
         def vars_for_template(self):
             return {
@@ -248,6 +246,8 @@ Django template language.
             At the end, a random round will be chosen for payment.
         </p>
 
+        <p>
+
         <h4>Round history</h4>
         <table class="table">
             <tr>
@@ -257,10 +257,7 @@ Django template language.
             {% for p in player_in_previous_rounds %}
                 <tr>
                     <td>{{ p.round_number }}</td>
-                    <td>
-                        You were the {{ p.role }} and {% if p.is_winner %}
-                        won {% else %} lost {% endif %}
-                    </td>
+                    <td>You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>
                 </tr>
             {% endfor %}
         </table>
@@ -269,7 +266,7 @@ Django template language.
             In this round, you are the {{ player.role }}.
         </p>
 
-        {% formfield player.tails label="I choose:" %}
+        {% formfield player.penny_side label="I choose:" %}
 
         {% next_button %}
 
@@ -359,20 +356,6 @@ the current round.
                 'player_in_all_rounds': self.player.in_all_rounds(),
             }
 
-The payoff is calculated in a Python "list comprehension". These are
-frequently used in the oTree sample games, so if you are curious you can
-read online about how list comprehensions work. The same code could be
-written as:
-
-.. code-block:: python
-
-    total_payoff = 0
-    for p in self.player.in_all_rounds():
-       total_payoff += p.payoff
-
-    return {
-        'total_payoff': total_payoff,
-        ...
 
 Page sequence
 ~~~~~~~~~~~~~
