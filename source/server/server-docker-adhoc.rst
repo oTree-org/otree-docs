@@ -18,6 +18,11 @@ Disadvantages:
 
 If interested, follow the below steps.
 
+Why do I need to install server software?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`why-server`.
+
 Upgrade oTree
 ~~~~~~~~~~~~~
 

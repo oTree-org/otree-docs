@@ -294,8 +294,7 @@ Let's say you have 3 integer fields in your form whose names are
             if values["int1"] + values["int2"] + values["int3"] != 100:
                 return 'The numbers must add up to 100'
 
-If a field was left blank, it will not be in the ``values`` dictionary.
-You can test whether the field was filled with ``'my_field' in values``.
+If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
 
 Determining form fields dynamically
 -----------------------------------

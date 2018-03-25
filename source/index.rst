@@ -29,23 +29,17 @@ http://www.otree.org/
 About
 ^^^^^
 
-oTree is a framework based on Python and Django that lets you build:
+oTree is a framework based on Python that lets you build:
 
 - Multiplayer strategy games, like the prisoner's dilemma, public goods game, and auctions
 - Controlled behavioral experiments in economics, psychology, and related fields
 - Surveys and quizzes
 
 
-Help & discussion mailing list
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Our Google Groups mailing list is `here <https://groups.google.com/forum/#!forum/otree>`__.
-
-
-Contact
+Support
 ^^^^^^^
 
-chris@otree.org (if you have a support question, try the mailing list first)
+For help, post to our Google Groups `forum <https://groups.google.com/forum/#!forum/otree>`__.
 
 
 Contents:

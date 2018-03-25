@@ -231,8 +231,9 @@ set_group_matrix()
 ~~~~~~~~~~~~~~~~~~
 
 ``set_group_matrix()`` lets you modify the group structure in any way you want.
-You can modify the list of lists returned by ``get_group_matrix()``,
-using regular Python list operations like
+First, get the list of players with ``get_players()``, or the pre-existing
+group matrix with ``get_group_matrix()``.
+Construct your matrix using Python list operations like
 ``.extend()``, ``.append()``, ``.pop()``, ``.reverse()``,
 and list indexing and slicing (e.g. ``[0]``, ``[2:4]``).
 Then pass this modified matrix to ``set_group_matrix()``::
@@ -366,8 +367,9 @@ before players begin playing. So, if your shuffling logic needs to depend on
 something that happens after the session starts, you should do the
 shuffling in a wait page instead.
 
-For example, let's say you want to randomize groups in round 2
-only if a certain result happened in round 1.
+Let's say you have defined a method on the ``Subsession`` class
+called ``do_my_shuffle()`` that uses ``set_group_matrix``, etc.
+
 You need to make a ``WaitPage`` with ``wait_for_all_groups=True``
 and put the shuffling code in ``after_all_players_arrive``:
 
@@ -377,8 +379,7 @@ and put the shuffling code in ``after_all_players_arrive``:
         wait_for_all_groups = True
 
         def after_all_players_arrive(self):
-            if some_condition:
-                self.subsession.group_randomly()
+            self.subsession.do_my_shuffle()
 
 After this wait page, the players will be reassigned to their new groups.
 
@@ -407,42 +408,24 @@ Group by arrival time
 
 See :ref:`group_by_arrival_time`.
 
-Example: re-matching by rank
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example: configurable group size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For example, let's say that in each round of an app, players get a numeric score for some task.
-In the first round, players are matched randomly, but in the subsequent rounds,
-you want players to be matched with players who got a similar score in the previous round.
+Let's say you want to be able to configure the number of players per group
+each time you create a session. (Setting ``Constants.players_per_group = None``
+kind of does this, but only if all players are in the same group.)
 
-First of all, at the end of each round, you should assign each player's score to ``participant.vars`` so that it can be easily
-accessed in other rounds, e.g. ``self.participant.vars['score'] = 10``.
-
-Then, you would define the following page and put it at the beginning of ``page_sequence``:
+As described in :ref:`edit_config`, create a key in your session config
+(you can call it ``players_per_group``), then use this code to chunk the players
+into groups of that size:
 
 .. code-block:: python
 
-    class ShuffleWaitPage(WaitPage):
-        wait_for_all_groups = True
-
-        # we can't shuffle at the beginning of round 1,
-        # because the score has not been determined yet
-        def is_displayed(self):
-            return self.round_number > 1
-
-        def after_all_players_arrive(self):
-
-            # sort players by 'score'
-            # see python docs on sorted() function
-            sorted_players = sorted(
-                self.subsession.get_players(),
-                key=lambda player: player.participant.vars['score']
-            )
-
-            # chunk players into groups
+    class Subsession(BaseSubsession):
+        def creating_session(self):
             group_matrix = []
-            ppg = Constants.players_per_group
-            for i in range(0, len(sorted_players), ppg):
-                group_matrix.append(sorted_players[i:i+ppg])
-
-            # set new groups
-            self.subsession.set_group_matrix(group_matrix)
+            players = self.get_players()
+            ppg = self.session.config['players_per_group']
+            for i in range(0, len(players), ppg):
+                group_matrix.append(players[i:i+ppg])
+            self.set_group_matrix(group_matrix)

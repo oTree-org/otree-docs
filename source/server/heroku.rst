@@ -166,6 +166,8 @@ You can get your app's name by typing ``heroku apps``.
 
     heroku run otree resetdb
 
+(You can run ``heroku run otree resetdb --noinput`` if you want to skip
+the prompt.)
 
 Open the site in your browser:
 

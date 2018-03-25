@@ -17,14 +17,14 @@ Use :ref:`Heroku <heroku>`.
 Heroku can also be used for lab/field studies, if you prefer cloud hosting over
 using a local server.
 
-**You want to use your Windows computer as an ad-hoc server on your local network**
+**You want to use your own Windows computer as a server on your local network**
 
 e.g. running a lab study or field study.
 
 -   Install the server using :ref:`Docker <server-docker-adhoc>` **OR** :ref:`conventional installation <server-windows>`
 -   Set up your Windows PC as an :ref:`ad-hoc server <server-adhoc>`
 
-**You want to use your Mac computer as an ad-hoc server on your local network**
+**You want to use your own Mac computer as a server on your local network**
 
 e.g. running a lab study or field study.
 

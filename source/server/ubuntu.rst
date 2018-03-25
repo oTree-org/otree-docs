@@ -85,18 +85,8 @@ Exit out of the postgres user and return to your regular command prompt::
     exit
 
 Now you should tell oTree to use Postgres instead of SQLite.
-The default database configuration in ``settings.py`` is::
-
-    DATABASES = {
-        'default': dj_database_url.config(
-            default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-        )
-    }
-
-However, instead of modifying the above line directly,
-it's better to set the ``DATABASE_URL`` environment variable on your server.
-Setting the database through an environment variable
-allows you to continue to use SQLite on your development machine,
+Set the ``DATABASE_URL`` environment variable on your server.
+This allows you to continue to use SQLite on your development machine,
 while using Postgres on your production server.
 
 If you used the values in the example above

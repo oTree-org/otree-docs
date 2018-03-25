@@ -428,7 +428,9 @@ you can construct it in ``pages.py`` and pass it to the template, e.g.:
     class MyPage(Page):
 
         def vars_for_template(self):
-            return {'image_path': 'my_app/{}.png'.format(self.round_number),
+            return {
+                'image_path': 'my_app/{}.png'.format(self.round_number)
+            }
 
 Then in the template:
 

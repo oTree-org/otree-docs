@@ -64,14 +64,6 @@ Now we have:
         endowment = c(100)
         multiplier = 2
 
-.. note::
-
-    Python is case-sensitive, so pay attention to which letters are capitalized.
-    Also, make sure to indent your code properly.
-    All lines in a block of code must be aligned along the left edge.
-    When you're inside a code block (e.g. "if", "for", "def"; see below),
-    you need to indent by 4 spaces.
-
 Now let's think about the main entities in this game: the Player and the
 Group.
 
@@ -98,7 +90,6 @@ fields:
 .. code-block:: python
 
     class Group(BaseGroup):
-
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
 
@@ -128,17 +119,17 @@ contribution.
 
     {% block content %}
 
-    <p>
-        This is a public goods game with
-        {{ Constants.players_per_group }} players per group,
-        an endowment of {{ Constants.endowment }},
-        and an multiplier of {{ Constants.multiplier }}.
-    </p>
+        <p>
+            This is a public goods game with
+            {{ Constants.players_per_group }} players per group,
+            an endowment of {{ Constants.endowment }},
+            and a multiplier of {{ Constants.multiplier }}.
+        </p>
 
 
-    {% formfield player.contribution label="How much will you contribute?" %}
+        {% formfield player.contribution label="How much will you contribute?" %}
 
-    {% next_button %}
+        {% next_button %}
 
     {% endblock %}
 
@@ -160,15 +151,15 @@ after we have determined the user's payoff.
 
     {% block content %}
 
-    <p>
-        You started with an endowment of {{ Constants.endowment }},
-        of which you contributed {{ player.contribution }}.
-        Your group contributed {{ group.total_contribution }},
-        resulting in an individual share of {{ group.individual_share }}.
-        Your profit is therefore {{ player.payoff }}.
-    </p>
+        <p>
+            You started with an endowment of {{ Constants.endowment }},
+            of which you contributed {{ player.contribution }}.
+            Your group contributed {{ group.total_contribution }},
+            resulting in an individual share of {{ group.individual_share }}.
+            Your profit is therefore {{ player.payoff }}.
+        </p>
 
-    {% next_button %}
+        {% next_button %}
 
     {% endblock %}
 
@@ -234,8 +225,7 @@ page. We can access the current group with ``self.group`` (for more info about
                 p.payoff = Constants.endowment - p.contribution + group.individual_share
 
 
-Now we define ``page_sequence`` to specify the order in which the pages
-are shown:
+Now we specify the order in which the pages are shown:
 
 .. code-block:: python
 
@@ -249,7 +239,7 @@ are shown:
 Define the session config in settings.py
 ----------------------------------------
 
-Now we go to ``settings.py`` in the project's root folder and add an entry to ``SESSION_CONFIGS``.
+Go to ``settings.py`` in the project's root folder and add an entry to ``SESSION_CONFIGS``.
 
 .. code-block:: python
 
@@ -360,6 +350,7 @@ From your command line, run::
     otree test my_public_goods
 
 You will see the output of the bots in the command line.
+
 To make the bot play in your web browser, go to ``settings.py``
 and add ``'use_browser_bots': True`` to the session config, like this:
 

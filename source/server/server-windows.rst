@@ -7,6 +7,24 @@ If you are just testing your app on your personal computer, you can use
 ``otree devserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
+.. _why-server:
+
+Why do I need to install server software?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+oTree's development setup (using ``devserver`` with a SQLite database)
+is not designed for running actual studies. One known risk is that
+if you don't install Postgres, your SQLite database
+might lock when multiple users are accessing it simultaneously.
+
+For a short, small study, you might be able to get away with just using
+``devserver``,
+as long as you set up your IP address as described in :ref:`server-adhoc`
+and run ``otree collectstatic``.
+
+However, for reliable results, you should follow the steps below.
+
+
 Upgrade oTree
 ~~~~~~~~~~~~~
 
@@ -46,13 +64,6 @@ Setting DATABASE_URL (if running the server on your laptop)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now you should tell oTree to use Postgres instead of SQLite.
-The default database configuration in ``settings.py`` is::
-
-    DATABASES = {
-        'default': dj_database_url.config(
-            default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-        )
-    }
 
 If you're using your PC as the server,
 you can add this line above the line with ``DATABASES``,

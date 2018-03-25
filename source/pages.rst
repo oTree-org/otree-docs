@@ -136,6 +136,10 @@ timeout_seconds, timeout_submission, etc
 
 See :ref:`timeouts`
 
+Wait pages
+~~~~~~~~~~
+
+See :ref:`wait_pages`
 
 Randomizing page sequence
 ~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -20,7 +20,7 @@ A session is a series of subsessions;
 subsessions are the "sections" or "modules" that constitute a session.
 For example, if a session consists of a public goods game followed by a questionnaire,
 the public goods game would be subsession 1, and the questionnaire would be subsession 2.
-In turn, each subsession is a sequence of pages the user must navigate through.
+In turn, each subsession is a sequence of pages.
 For example, if you had a 4-page public goods game followed by a 2-page questionnaire:
 
 .. figure:: _static/diagrams/session_subsession.png
@@ -68,7 +68,7 @@ relationship between session and subsession:
 A player is an instance of a participant in one particular subsession.
 A player is like a temporary "role" played by a participant.
 A participant can be player 2 in the first subsession, player 1 in the
-next subsession, and so on.
+next subsession, etc.
 
 .. _object_model:
 
@@ -228,32 +228,6 @@ Self: extended examples
 -----------------------
 
 Here are some code examples to illustrate:
-
-.. code-block:: python
-
-    class Session(...) # this class is defined in oTree-core
-        def example(self):
-
-            # current session object
-            self
-
-            self.config
-
-            # child objects
-            self.get_subsessions()
-            self.get_participants()
-
-    class Participant(...) # this class is defined in oTree-core
-        def example(self):
-
-            # current participant object
-            self
-
-            # parent objects
-            self.session
-
-            # child objects
-            self.get_players()
 
 in your ``models.py``
 

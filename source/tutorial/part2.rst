@@ -200,8 +200,8 @@ This is the page that P2 sees to send money back. Here is the template:
 Here is the code from pages.py. Notes:
 
 -  We use :ref:`vars_for_template` to pass the variable ``tripled_amount``
-   to the template. Django does not let you do calculations directly in
-   a template, so this number needs to be calculated in Python code and
+   to the template. You cannot do calculations directly in the HTML code,
+   so this number needs to be calculated in Python code and
    passed to the template.
 -  We define a method ``sent_back_amount_choices`` to populate the
    dropdown menu dynamically. This is the feature called
@@ -248,18 +248,18 @@ to condition on the current player's ``id_in_group``.
 
     {% block content %}
 
-    {% if player.id_in_group == 1 %}
-        <p>
-            You sent Participant B {{ group.sent_amount }}.
-            Participant B returned {{group.sent_back_amount}}.
-        </p>
-    {% else %}
-        <p>
-            Participant A sent you {{ group.sent_amount }}.
-            You returned {{group.sent_back_amount}}.
-        </p>
+        {% if player.id_in_group == 1 %}
+            <p>
+                You sent Participant B {{ group.sent_amount }}.
+                Participant B returned {{ group.sent_back_amount }}.
+            </p>
+        {% else %}
+            <p>
+                Participant A sent you {{ group.sent_amount }}.
+                You returned {{ group.sent_back_amount }}.
+            </p>
 
-    {% endif %}
+        {% endif %}
 
         <p>
         Therefore, your total payoff is {{ player.payoff }}.

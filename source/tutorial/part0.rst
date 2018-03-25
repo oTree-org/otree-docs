@@ -42,6 +42,14 @@ Let's add 2 fields:
         name = models.StringField()
         age = models.IntegerField()
 
+.. note::
+
+    Python is case-sensitive, so pay attention to which letters are capitalized.
+    Also, make sure to indent your code properly.
+    All lines in a block of code must be aligned along the left edge.
+    When you're inside a code block (e.g. "if", "for", "def"; see below),
+    you need to indent by 4 spaces.
+
 
 Define the template
 -------------------
@@ -107,8 +115,6 @@ The names should match those of the templates (``MyPage`` and
 
 First let's define ``MyPage``. This page contains a form, so
 we need to define ``form_model`` and ``form_fields``.
-Specifically, this form should let you set the ``name`` and ``age`` fields
-on the player.
 
 .. code-block:: python
 
@@ -116,8 +122,8 @@ on the player.
         form_model = 'player'
         form_fields = ['name', 'age']
 
-Now we define ``Results``. This page doesn't have a form so our class
-definition can just say ``pass``.
+Now we define ``Results``. This page doesn't have a form or any other
+special attributes, so we just write "pass".
 
 .. code-block:: python
 
@@ -155,7 +161,7 @@ So, all in all, ``pages.py`` should contain this:
 Define the session config in settings.py
 ----------------------------------------
 
-Now we go to ``settings.py`` in the project's root folder and add an entry to ``SESSION_CONFIGS``.
+Now we go to ``settings.py`` in the project's top folder and add an entry to ``SESSION_CONFIGS``.
 
 .. code-block:: python
 
