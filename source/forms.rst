@@ -276,6 +276,8 @@ as follows:
             if not (is_odd and is_negative):
                 return 'Must be odd and negative'
 
+.. _error_message:
+
 Validating multiple fields together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
