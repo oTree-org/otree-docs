@@ -195,47 +195,6 @@ The bot will submit ``MyPage`` 3 times. If one of the first 2 submissions passes
 containing invalid input.
 Only the 3rd ``yield`` must succeed.
 
-error_fields
-''''''''''''
-
-When using ``SubmissionMustFail`` on forms with multiple fields, you can
-verify that all fields are rejecting invalid input, using ``error_fields``.
-
-For example, let's say we a submit a valid ``age``, but
-an invalid ``weight`` and ``height``:
-
-.. code-block:: python
-
-        yield SubmissionMustFail(
-            pages.Survey,
-            {
-                'age': 20,
-                'weight': -1,
-                'height': -1,
-            }
-        )
-
-What's missing is that the bot system doesn't tell us exactly *why*
-the submission fails. Is it an invalid ``weight``, ``height``, or both?
-To be sure that both fields are rejecting invalid inputs, add ``error_fields``:
-
-.. code-block:: python
-
-        yield SubmissionMustFail(
-            pages.Survey,
-            {
-                'age': 20,
-                'weight': -1,
-                'height': -1,
-            },
-            error_fields=['weight', 'height']
-        )
-
-This will verify that ``weight`` and ``height`` contained errors,
-but ``age`` did not.
-
-If :ref:`error_message <error_message>` returns an error,
-then ``error_fields`` will be ``['__all__']``.
 
 Test cases
 ~~~~~~~~~~
