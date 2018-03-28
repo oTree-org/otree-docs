@@ -237,7 +237,7 @@ and put this inside it:
     {% block app_styles %}
 
         <style type="text/css">
-            /* custom styles go here */
+            ...
         </style>
 
     {% endblock %}
@@ -269,7 +269,7 @@ They should be located outside the ``content`` block, like this:
 
         <!-- define a style -->
         <style type="text/css">
-            /* CSS goes here */
+            ...
         </style>
 
         <!-- or reference a static file -->
@@ -281,7 +281,7 @@ They should be located outside the ``content`` block, like this:
 
         <!-- define a script -->
         <script>
-            /* JS goes here */
+            ...
         </script>
 
         <!-- or reference a static file -->
