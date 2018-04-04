@@ -47,7 +47,7 @@ Here are the main field types:
 -   ``IntegerField``
 -   ``FloatField`` (for real numbers)
 -   ``StringField`` (for text strings)
--   ``LongStringField`` (for long text strings)
+-   ``LongStringField`` (for long text strings; its form widget is a multi-line textarea)
 
 ``StringField`` and ``LongStringField`` are new (added January 2018).
 See :ref:`v20` for more information.

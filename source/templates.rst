@@ -212,17 +212,17 @@ It depends whether you want your JS/CSS code to be applied (a) globally,
 Globally
 ^^^^^^^^
 
-If you want to apply a style or script to all pages in all games,
-you should modify the template ``_templates/global/Page.html``.
-You should put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
+To apply a style or script to all pages in all games,
+modify the template ``_templates/global/Page.html``.
+Put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
 and any styles inside ``{% block global_styles %}...{% endblock %}``.
 
 
 For one app
 ^^^^^^^^^^^
 
-If you want to apply a style or script to all pages in one app,
-you should create a base template for all templates in your app,
+To apply a style or script to all pages in one app,
+create a base template for all templates in your app,
 and put blocks called ``app_styles`` or ``app_scripts`` in this base template.
 
 For example, if your app's name is ``public_goods``,
@@ -311,7 +311,7 @@ Page body                   ``.otree-body``
 Page title                  ``.otree-title``
 Wait page (entire dialog)   ``.otree-wait-page``
 Wait page dialog title      ``.otree-wait-page__title``
-Wait page dialg body  .     ``.otree-wait-page__body``
+Wait page dialog body       ``.otree-wait-page__body``
 Timer                       ``.otree-timer``
 Next button                 ``.otree-btn-next``
 Form errors alert           ``.otree-form-errors``
@@ -439,13 +439,8 @@ Then in the template:
     <img src="{% static image_path %}"/>
 
 
-Plugins
--------
-
-oTree comes pre-loaded with the following plugins and libraries.
-
 Bootstrap
-~~~~~~~~~
+---------
 
 oTree comes with `Bootstrap <https://getbootstrap.com/docs/4.0/components/alerts/>`__, a
 popular library for customizing a website's user interface.
@@ -471,10 +466,19 @@ For example, the following HTML will create a "Success" alert:
 
         <div class="alert alert-success">Great job!</div>
 
-Graphs and charts with HighCharts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mobile devices
+~~~~~~~~~~~~~~
 
-You can use `HighCharts <http://www.highcharts.com/demo>`__,
+Bootstrap tries to show a "mobile friendly" version
+when viewed on a smartphone or tablet.
+
+
+Charts
+------
+
+You can use any HTML/JavaScript library for adding charts to your app.
+
+We particularly recommend `HighCharts <http://www.highcharts.com/demo>`__,
 to draw pie charts, line graphs, bar charts, time series, etc.
 Some of oTree's sample games use HighCharts.
 
@@ -491,7 +495,7 @@ If you will be using HighCharts in many places, you can also put it in
 Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__
 and find the chart type that you want to make.
 Then click "edit in JSFiddle" to edit it to your liking,
-using dummy data.
+using hardcoded data.
 
 Then, copy-paste the JS and HTML into your template,
 and load the page. If you don't see your chart, it may be because
@@ -525,14 +529,6 @@ and check if there is something wrong with the data you dynamically generated.
 If it looks all garbled like ``{&#39;a&#39;: 1}``,
 you may have forgotten to use the ``|json`` filter.
 
-Mobile devices
---------------
-
-oTree's HTML interface is based on `Bootstrap v4 <https://getbootstrap.com/docs/4.0/components/buttons/>`__,
-which works on any modern browser (Chrome/Internet Explorer/Firefox/Safari).
-
-Bootstrap also tries to show a "mobile friendly" version
-when viewed on a smartphone or tablet.
 
 Note about PyCharm Professional
 -------------------------------
