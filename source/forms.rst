@@ -593,6 +593,6 @@ Then in the template, set the label to this variable:
 
 .. code-block:: html+django
 
-    ``{% formfield player.contribution label=contribution_label %}``
+    {% formfield player.contribution label=contribution_label %}
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.

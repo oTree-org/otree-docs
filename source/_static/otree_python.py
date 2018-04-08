@@ -1,9 +1,4 @@
-# Single line comments start with a number symbol.
-
-""" Multiline strings can be written
-    using three "s, and are often used
-    as comments
-"""
+# Comments start with a # symbol.
 
 ####################################################
 ## 1. Primitive Datatypes and Operators
@@ -61,7 +56,7 @@ not False  # => True
 # format strings with the format method.
 "A triangle has {} sides".format(3)
 
-# None is an object
+# None means an empty/nonexistent value
 None  # => None
 
 # Any object can be used in a Boolean context.
@@ -82,8 +77,8 @@ bool("")  # => False
 # Python has a print statement
 print("I'm Python. Nice to meet you!") # => I'm Python. Nice to meet you!
 
-# No need to declare variables before assigning to them.
-some_var = 5    # Convention is to use lower_case_with_underscores
+# Variables
+some_var = 5
 some_var  # => 5
 
 # incrementing and decrementing a variable
@@ -169,7 +164,6 @@ else:           # This is optional too.
 """
 SPECIAL NOTE ABOUT INDENTING
 In Python, you must indent your code correctly, or it will not work.
-(Python is different from some other languages in this regard)
 All lines in a block of code must be aligned along the left edge.
 When you're inside a code block (e.g. "if", "for", "def"; see below),
 you need to indent by 4 spaces.
@@ -201,8 +195,9 @@ for animal in ["dog", "cat", "mouse"]:
 
 """
 "range(number)" returns a list of numbers
-from zero to the given number
-prints:
+from zero to the given number MINUS ONE
+
+the following code prints:
     0
     1
     2
@@ -213,8 +208,9 @@ for i in range(4):
 
 """
 "range(lower, upper)" returns a list of numbers
-from the lower number to the upper number
-prints:
+from the lower number to the upper number MINUS ONE
+
+the following code prints:
     4
     5
     6

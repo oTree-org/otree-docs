@@ -6,81 +6,8 @@ Templates
 Your app's ``templates/`` folder will contain the templates for the
 HTML that gets displayed to the player.
 
-How templates work: an example
-------------------------------
-
-oTree templates are a mix of 2 languages:
-
--   *HTML* (which uses angle brackets like ``<this>`` and ``</this>``.
--   *Django template tags*
-    (which use curly braces like ``{% this %}`` and ``{{ this }}``
-
-Here is an example of how the two languages work together.
-In this example, let's say your template looks like this:
-
-.. code-block:: html+django
-
-    <p>Your payoff this round was {{ player.payoff }}.</p>
-
-    {% if subsession.round_number > 1 %}
-        <p>
-            Your payoff in the previous round was {{ last_round_payoff }}.
-        </p>
-    {% endif %}
-
-    {% next_button %}
-
-
-Step 1: oTree scans Django tags, produces HTML (a.k.a. "server side")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-oTree uses the current values of the variables
-(provided by :ref:`vars_for_template`) to convert the above Django code to
-plain HTML, like this:
-
-.. code-block:: html+django
-
-    <p>Your payoff this round was $10.</p>
-
-        <p>
-            Your payoff in the previous round was $5.
-        </p>
-
-    <button class="otree-btn-next btn btn-primary">Next</button>
-
-
-Step 2: Browser scans HTML tags, produces a webpage (a.k.a. "client side")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The oTree server then sends this HTML to the user's computer,
-where their web browser can read the code and display it
-as a formatted web page:
-
-.. figure:: _static/template-example.png
-
-Note that the browser never sees the Django tags.
-
-The key point
-~~~~~~~~~~~~~
-
-The key insight you can take from this example is
-that if one of your pages doesn't look the way you want,
-you can isolate which of the above steps went wrong.
-In your browser, right-click and "view source". You can then see the pure
-HTML that was generated (along with any JavaScript or CSS).
-
--   If the HTML code doesn't look the way you expect, then something
-    went wrong on the server side. Look for mistakes in your ``vars_for_template``
-    or your Django template tags.
--   If there was no error in generating the HTML code,
-    then it is probably an issue with how you are using
-    HTML (or JavaScript) syntax.
-    Try pasting the problematic part of the HTML back into a template,
-    without the Django tags, and edit it until it produces the right output.
-    Then put the Django tags back in, to make it dynamic again.
-
-Django template syntax
-----------------------
+Template syntax
+---------------
 
 Variables
 ~~~~~~~~~
@@ -169,6 +96,81 @@ Most other things are not supported; for example,
 you can't do math (``+``, ``*``, ``/``, ``-``)
 or otherwise modify numbers, lists, strings, etc.
 If you need to do that, you should do so in :ref:`vars_for_template`.
+
+How templates work: an example
+------------------------------
+
+oTree templates are a mix of 2 languages:
+
+-   *HTML* (which uses angle brackets like ``<this>`` and ``</this>``.
+-   *Django template tags*
+    (which use curly braces like ``{% this %}`` and ``{{ this }}``
+
+Here is an example of how the two languages work together.
+In this example, let's say your template looks like this:
+
+.. code-block:: html+django
+
+    <p>Your payoff this round was {{ player.payoff }}.</p>
+
+    {% if subsession.round_number > 1 %}
+        <p>
+            Your payoff in the previous round was {{ last_round_payoff }}.
+        </p>
+    {% endif %}
+
+    {% next_button %}
+
+
+Step 1: oTree scans Django tags, produces HTML (a.k.a. "server side")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+oTree uses the current values of the variables
+(provided by :ref:`vars_for_template`) to convert the above Django code to
+plain HTML, like this:
+
+.. code-block:: html+django
+
+    <p>Your payoff this round was $10.</p>
+
+        <p>
+            Your payoff in the previous round was $5.
+        </p>
+
+    <button class="otree-btn-next btn btn-primary">Next</button>
+
+
+Step 2: Browser scans HTML tags, produces a webpage (a.k.a. "client side")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The oTree server then sends this HTML to the user's computer,
+where their web browser can read the code and display it
+as a formatted web page:
+
+.. figure:: _static/template-example.png
+
+Note that the browser never sees the Django tags.
+
+The key point
+~~~~~~~~~~~~~
+
+The key insight you can take from this example is
+that if one of your pages doesn't look the way you want,
+you can isolate which of the above steps went wrong.
+In your browser, right-click and "view source". You can then see the pure
+HTML that was generated (along with any JavaScript or CSS).
+
+-   If the HTML code doesn't look the way you expect, then something
+    went wrong on the server side. Look for mistakes in your ``vars_for_template``
+    or your Django template tags.
+-   If there was no error in generating the HTML code,
+    then it is probably an issue with how you are using
+    HTML (or JavaScript) syntax.
+    Try pasting the problematic part of the HTML back into a template,
+    without the Django tags, and edit it until it produces the right output.
+    Then put the Django tags back in, to make it dynamic again.
+
+
 
 Template blocks
 ---------------
