@@ -116,11 +116,12 @@ then these methods may not return anything meaningful.
 participant.vars
 ----------------
 
-``in_all_rounds()`` only is useful when you need to access data from a previous
-round of the same app.
 If you want to pass data between different apps,
 you should store this data on the participant,
 which persists across apps (see :ref:`participants_and_players`).
+(``in_all_rounds()`` only is useful when you need to access data from a previous
+round of the same app.)
+
 
 ``participant.vars`` is is a dictionary that can store any data.
 For example, you can set an attribute like this::
