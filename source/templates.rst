@@ -234,7 +234,7 @@ and put this inside it:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block app_styles %}
 
@@ -250,7 +250,7 @@ Then each ``public_goods`` template would inherit from this template:
  .. code-block:: html+django
 
     {% extends "public_goods/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
     ...
 
 Just one page
@@ -402,7 +402,7 @@ Static content (images, videos, CSS, JavaScript)
 ------------------------------------------------
 
 To include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages,
-make sure your template has ``{% load staticfiles %}`` at the top.
+make sure your template has ``{% load static %}`` at the top.
 
 Then create a ``static/`` folder in your app (next to ``templates/``).
 Like ``templates/``, it should also have a subfolder with your app's name,

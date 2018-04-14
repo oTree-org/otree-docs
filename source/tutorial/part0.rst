@@ -68,7 +68,7 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block title %}
         Enter your information
@@ -89,7 +89,7 @@ The second template will be called ``Results.html``.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block title %}
         Results

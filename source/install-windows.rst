@@ -109,3 +109,7 @@ The command to upgrade is the same as the command to install:
 
     pip3 install -U otree
 
+If there is a problem with the upgrade, uninstall then reinstall:
+
+    pip3 uninstall otree
+    pip3 install -U otree

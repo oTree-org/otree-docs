@@ -99,7 +99,7 @@ To create the instructions, we can define a file
 
 .. code-block:: html+django
 
-    {% load otree staticfiles %}
+    {% load otree static %}
 
     <div class="card bg-light">
         <div class="card-body">
@@ -130,7 +130,7 @@ This page looks like the templates we have seen so far. Note the use of
 .. code-block:: django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block title %}
         Trust Game: Your Choice
@@ -176,7 +176,7 @@ This is the page that P2 sees to send money back. Here is the template:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block title %}
         Trust Game: Your Choice
@@ -240,7 +240,7 @@ to condition on the current player's ``id_in_group``.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block title %}
         Results

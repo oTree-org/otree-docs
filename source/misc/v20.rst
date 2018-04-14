@@ -16,15 +16,11 @@ So, run this:
 .. code-block:: bash
 
     pip3 install -U otree
-    otree resetdb
 
-To upgrade to a newer beta release,
-run the same pip command above.
-
-To revert back to oTree-core 1.x::
+If there is a problem with the upgrade, uninstall then reinstall:
 
     pip3 uninstall otree
-    pip3 install otree-core
+    pip3 install -U otree
 
 .. _update_my_code:
 

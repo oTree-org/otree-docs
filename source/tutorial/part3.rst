@@ -226,7 +226,7 @@ Django template language.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block title %}
         Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
@@ -295,7 +295,7 @@ Let's create ``ResultsSummary.html``:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load staticfiles otree %}
+    {% load static otree %}
 
     {% block title %}
         Final results

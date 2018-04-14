@@ -85,8 +85,9 @@ If omitted, then oTree will default to
 ``0`` for numeric fields, ``False`` for boolean fields, and the empty
 string ``''`` for text/character fields.
 
-If the values submitted ``timeout_submission`` need to be computed dynamically,
-you can check :ref:`timeout_happened` and set the values in ``before_next_page``.
+If the values submitted need to be computed dynamically,
+don't use ``timeout_submission``; just
+check :ref:`timeout_happened` in ``before_next_page``.
 
 .. _get_timeout_seconds:
 
