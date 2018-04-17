@@ -74,15 +74,14 @@ After installing, open PyCharm, go to "File -> Open..." and select your project 
 
 Then click on ``PyCharm -> Preferences``, go to "Project -> Project interpreter",
 and set it to the location of your Python executable, something like
-``/Library/Framework/Python.framework/Versions/3.6/bin/python3.6``)
+``/Library/Framework/Python.framework/Versions/3.6/bin/python3.6``).
+You can verify the location of your Python executable with the Terminal command ``which python3``.
 
 If PyCharm displays this warning, select "Ignore requirements":
 
 .. figure:: _static/setup/pycharm-psycopg2-warning.png
 
-Even if you normally use another text editor,
-we recommend at least trying PyCharm, because PyCharm's autocompletion
-makes learning oTree much easier:
+PyCharm's autocompletion makes learning oTree much easier:
 
 .. figure:: _static/setup/pycharm-autocomplete.gif
 
@@ -98,4 +97,9 @@ The command to upgrade is the same as the command to install:
 
 .. code-block:: bash
 
+    pip3 install -U otree
+
+If there is a problem with the upgrade, uninstall then reinstall:
+
+    pip3 uninstall otree
     pip3 install -U otree

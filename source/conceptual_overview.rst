@@ -70,148 +70,86 @@ A player is like a temporary "role" played by a participant.
 A participant can be player 2 in the first subsession, player 1 in the
 next subsession, etc.
 
+
+
 .. _object_model:
 
 What is "self"?
 ---------------
 
-Short answer
-~~~~~~~~~~~~
-
 In Python, ``self`` is an instance of the class you're currently under.
 If you are ever wondering what ``self`` means in a particular context,
 scroll up until you see the name of the class.
 
-For example, in this code, ``self`` is a group
-(an instance of the ``Group`` class).
-
-.. code-block:: python
-
-    class Group(BaseGroup):
-
-        def set_bonus(self):
-            self.bonus = 100
-
-
-Long answer
-~~~~~~~~~~~
-
-Here is an example that explains what ``self`` does.
-
-Let's say you want to write a function that sets a player's payoff.
-The argument to the function is a player object:
-
-.. code-block:: python
-
-    def set_bonus(player):
-        player.bonus = 100
-
-If you have not done object-oriented programming before, your first instinct
-may be to define it as a function somewhere in your module:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-        ...
-
-    class Group(BaseGroup):
-        ...
-
-    class Player(BasePlayer):
-        ...
-
-    def set_bonus(player):
-        player.bonus = 100
-
-However, in object-oriented programming, it's recommended to keep your code
-organized by putting functions inside the class that they are related to.
-So, we should do this:
+For example, in this code, ``self`` is a player
+(an instance of the ``Player`` class).
 
 .. code-block:: python
 
     class Player(BasePlayer):
 
-        def set_bonus(player):
-            player.bonus = 100
+        def set_payoff(self):
+            self.payoff = 100
 
-(Once we move it inside a class, we usually call it a "method" rather than a
-"function", but the distinction is not that important.)
-
-Now that it's under ``Player``, we should refer to it as ``Player.set_bonus``,
-not just ``set_bonus``. So, if we have a player object, we can do this:
-
-.. code-block:: python
-
-    Player.set_bonus(some_player)
-
-In Python, this can also be written in the shorter form:
-
-    ``some_player.set_bonus()``
-
-A little bit of magic takes place, and the ``some_player`` on the left
-of the dot is automatically passed as the argument to ``set_bonus``,
-so it can be omitted from the parentheses.
-
-In fact, every method defined under ``Player`` must take an argument
-which is a ``player`` object:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        def set_bonus(player):
-            player.bonus = 100
-
-        def do_stuff(player):
-            ...
-
-        def do_stuff2(player):
-            ...
-
-However, there is one problem with this code.
-If I decide to rename my class from ``Player`` to ``Contestant``,
-that means I would have to rename lots of variables everywhere in my class:
-
-.. code-block:: python
-
-    class Contestant(BaseContestant):
-
-        def set_bonus(contestant):
-            contestant.bonus = 100
-
-        def do_stuff(contestant):
-            ...
-
-        def do_stuff2(contestant):
-            ...
-
-To avoid this inconvenience, in Python it's recommended to always name
-a method's first argument ``self``, with the understanding that ``self``
-is an instance of whatever class you are in:
-
-So, this:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        def set_bonus(player):
-            player.bonus = 100
-
-Becomes this:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        def set_bonus(self):
-            self.bonus = 100
-
-We know ``self`` is a player, because we are in the ``Player``
-class. The name ``self`` is just shorter and more convenient than ``player``.
+The name ``self`` is just shorter and more convenient than ``player``.
 
 This is similar to how people don't use their own names when they talk about themselves; they just
 use pronouns like "me", "myself", and "I". So, ``self`` is basically a pronoun.
+
+Functions vs. attributes
+------------------------
+
+Classes have **attributes** and **functions**.
+
+Here is an example of a page with an attribute:
+
+.. code-block:: python
+
+    class Results(Page):
+        # this is an attribute
+        timeout_seconds = 60
+
+This means that this page has a time limit of 60 seconds.
+
+But what if you want the time limit to be dynamic? Maybe it should depend
+on the current round number, or on the player's performance so far.
+
+To solve this, we need to make it a *function* of the current page,
+like this:
+
+.. code-block:: python
+
+    class Results(Page):
+        # this is a function
+        def get_timeout_seconds(self):
+            if self.round_number == 1:
+                return 60
+            else:
+                return 30
+
+First, let's look at the line ``def get_timeout_seconds(self):``.
+The ``def`` means we are defining a function called ``get_timeout_seconds``.
+It is a function, so it has input and output.
+The input (i.e. the argument) is called ``self``, which is the current
+*instance* of the page. What do we mean by "instance"?
+Although the ``Results`` page will be viewed many times
+by many players, ``self`` has specific properties about the current page view.
+For example, ``self.round_number`` gives us the current round number,
+``self.player`` gives us the player currently viewing the page,
+and ``self.session`` gives us the session that is currently taking place.
+
+In conclusion, if you define an *attribute*, then it will be same for all players.
+If you want something to be different from player to player, you need to use
+a *function* that takes a parameter ``self``.
+Sometimes, oTree gives both options.
+For example, oTree provides both the ``timeout_seconds`` attribute
+(for simple pages with fixed time limits), and the ``get_timeout_seconds``
+function (for complex pages with dynamic time limits).
+
+Self: extended examples
+-----------------------
+
+What properties can you access through ``self``?
 
 Here is a diagram of how you can refer to objects in the hierarchy within your code:
 
@@ -223,9 +161,6 @@ access the player's payoff with ``self.payoff`` (because ``self`` is the
 player). But if you are inside a ``Page`` class in ``pages.py``, the
 equivalent expression is ``self.player.payoff``,
 which traverses the pointer from 'page' to 'player'.
-
-Self: extended examples
------------------------
 
 Here are some code examples to illustrate:
 
@@ -304,6 +239,5 @@ in your ``pages.py``
             self.player
             self.participant
             self.session.config
-
 
 
