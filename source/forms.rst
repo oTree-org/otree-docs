@@ -407,6 +407,7 @@ Instead, you should simply loop over the choices in the field as follows:
 .. code-block:: html+django
 
     <tr>
+        <td>{{ form.offer_1.label }}</td>
     {% for choice in form.offer_1 %}
         <td>{{ choice }}</td>
     {% endfor %}
@@ -427,9 +428,10 @@ you can arrange them in a table:
     <table class="table">
         {% for field in form %}
             <tr>
-            {% for choice in field %}
-                <td>{{ choice }}</td>
-            {% endfor %}
+                <th>{{ field.label }}</th>
+                {% for choice in field %}
+                    <td>{{ choice }}</td>
+                {% endfor %}
             </tr>
         {% endfor %}
     </table>
