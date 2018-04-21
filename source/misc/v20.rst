@@ -4,7 +4,8 @@ oTree 2.0
 =========
 
 Here is some information about oTree 2.0, which is a major upgrade.
-Please send feedback to chris@otree.org.
+If you rely on Bootstrap, you may need to change your code.
+See below.
 
 Upgrading
 ---------
@@ -27,10 +28,24 @@ If there is a problem with the upgrade, uninstall then reinstall:
 Updating your code
 ------------------
 
+Fix your Bootstrap
+~~~~~~~~~~~~~~~~~~
+
+If you use Bootstrap classes for styling your HTML pages,
+then when you upgrade to oTree 2.0,
+you need to adjust your tags to the Bootstrap 4 format.
+Otherwise, some of your styling might be broken.
+
+Follow the guide here `here <https://getbootstrap.com/docs/4.0/migration/>`__.
+Although it's a long list, most people will just have to change the few things
+that apply to them.
+Most notably, ``panel`` has been replaced by ``card``.
+
 Run ``otree update_my_code``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In oTree 2.0, some classes and properties are renamed.
+The old names still work, but we encourage upgrading to the new names.
 
 To automatically update your code to this new format,
 back up your code (save a copy of your project), then run::
@@ -80,17 +95,6 @@ Note:
 |requirements file              | by ``otree``                        |                                                                                |
 +-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
 
-Fix your Bootstrap
-~~~~~~~~~~~~~~~~~~
-
-If you use Bootstrap classes for styling your HTML pages,
-then when you upgrade to oTree 2.0,
-you need to adjust your tags to the Bootstrap 4 format.
-Otherwise, some of your styling might be broken.
-
-Follow the guide here `here <https://getbootstrap.com/docs/4.0/migration/>`__.
-Although it's a long list, most people will just have to change the few things
-that apply to them.
 
 django_countries
 ~~~~~~~~~~~~~~~~
