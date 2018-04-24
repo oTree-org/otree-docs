@@ -31,7 +31,6 @@ Here is how to define the above table structure:
 .. code-block:: python
 
     class Player(BasePlayer):
-        ...
         name = models.StringField()
         age = models.IntegerField()
         is_student = models.BooleanField()
@@ -124,7 +123,7 @@ This method is executed when the session is created:
 
 .. figure:: _static/creating-session.png
 
-``creating_session`` allows you to initialize the round,
+``creating_session`` allows you to initialize the subsession,
 by setting initial values on fields on players, groups, participants, or the subsession.
 For example:
 
@@ -134,14 +133,33 @@ For example:
 
         def creating_session(self):
             for p in self.get_players():
-                p.some_field = some_value
+                p.payoff = c(10)
 
 More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.
 
-If your app has 1 round, ``creating_session`` will execute once.
-If your app has N rounds, it will execute N times consecutively;
-that is, once on each subsession instance.
+If your app has multiple rounds, ``creating_session`` gets run multiple
+times consecutively:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        name_in_url = 'print_statements'
+        players_per_group = None
+        num_rounds = 5
+
+
+    class Subsession(BaseSubsession):
+        def creating_session(self):
+            print('in creating_session', self.round_number)
+
+Will output::
+
+    in creating_session 1
+    in creating_session 2
+    in creating_session 3
+    in creating_session 4
+    in creating_session 5
 
 .. note::
     This method does NOT run at the beginning of each round.
@@ -398,20 +416,16 @@ come up "heads" might do this in models.py:
 .. code-block:: python
 
     class Constants(BaseConstants):
-        heads_probability = random.random() # wrong
+        p = random.random() # wrong
+        print('p is', p)
 
-When the server starts, it loads models.py,
-and executes the ``random.random()`` only once.
-It will evaluate to some random number, for example "0.257291".
-This means you have basically written this:
+As you can see from the the print output, ``p`` is only
+calculated once: when the server starts::
 
-.. code-block:: python
+    C:\oTree> otree devserver
+    p is 0.9627848454010105
 
-    class Constants(BaseConstants):
-        heads_probability = 0.257291
-
-Because ``Constants`` is a global variable, that value 0.257291 will now be shared
-by all players in all sessions.
+That means it will be the same for all participants in all sessions.
 
 For the same reason, this will not work either:
 
@@ -419,7 +433,7 @@ For the same reason, this will not work either:
 
     class Player(BasePlayer):
 
-        heads_probability = models.FloatField(
+        p = models.FloatField(
             # wrong
             initial=random.random()
         )
@@ -445,6 +459,8 @@ we must use ``{{ player.payoff }}``, not ``{{ Player.payoff }}``.
 However, for ``Constants``, we always use uppercase.
 That's because ``Constants`` is not a database table with instances/rows,
 because the constants are the same for all players.
+
+.. _many-fields:
 
 How to make many fields
 -----------------------
@@ -506,38 +522,22 @@ this to a 10-round game with just one field. See the
 sample game for an example of how to just have 1 page that gets looped over many rounds,
 varying the question that gets displayed with each round.
 
-If that's not possible, then put the repeated arguments into a dict in ``Constants``:
+If that's not possible, then you can reduce the amount of repeated code
+by defining a function that returns a field
+(``make_field`` is just an example name; you can call it anything).
 
 .. code-block:: python
 
-
-    class Constants(BaseConstants):
-        ...
-
-        field_args = dict(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect, blank=True, initial=0
+    def make_field(label):
+        return models.IntegerField(
+            choices=[1,2,3,4,5],
+            label=label,
+            widget=widgets.RadioSelect,
         )
 
-Then use these arguments using dict unpacking (``**``):
-
-.. code-block:: python
-
     class Player(BasePlayer):
 
-        f1 = models.IntegerField(**Constants.field_args)
-        f2 = models.IntegerField(**Constants.field_args)
-        f3 = models.IntegerField(**Constants.field_args)
-        # etc...
-        f10 = models.IntegerField(**Constants.field_args)
-
-You can also pass unique arguments in addition to the shared ones:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        f1 = models.IntegerField(label='What will you choose for 1?', **Constants.field_args)
-        f2 = models.IntegerField(label='What will you choose for 2?', **Constants.field_args)
-        f3 = models.IntegerField(label='What will you choose for 3?', **Constants.field_args)
-        # etc...
-        f10 = models.IntegerField(label='What will you choose for 10?', **Constants.field_args)
+        q1 = make_field('I am quick to understand things.')
+        q2 = make_field('I use difficult words.')
+        q3 = make_field('I am full of ideas.')
+        q4 = make_field('I have excellent ideas.')

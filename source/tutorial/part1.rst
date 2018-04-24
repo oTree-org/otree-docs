@@ -92,6 +92,7 @@ fields:
     class Group(BaseGroup):
         total_contribution = models.CurrencyField()
         individual_share = models.CurrencyField()
+        print('defined fields on the Group')
 
 
 Define the template

@@ -92,11 +92,19 @@ integer between 1 and 4, and then assigns it into ``session.vars``:
         def creating_session(self):
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
+            print('set the paying round to', paying_round)
 
 There is a slight mistake, however. Because there are 4 rounds (i.e.
-subsessions), this code will get executed 4 times, each time overwriting
-the previous value of ``session.vars['paying_round']``, which is
-superfluous. We can fix this with an ``if`` statement that makes it only
+subsessions), this code will get executed 4 times, e.g.::
+
+    set the paying round to 2
+    set the paying round to 4
+    set the paying round to 3
+    set the paying round to 1
+
+Each time, it will overwrite the previous value of
+``session.vars['paying_round']``, which is superfluous.
+We can fix this with an ``if`` statement that makes it only
 run once (if ``round_number`` is 1; see :ref:`rounds`):
 
 .. code-block:: python
@@ -104,9 +112,11 @@ run once (if ``round_number`` is 1; see :ref:`rounds`):
     class Subsession(BaseSubsession):
 
         def creating_session(self):
+            print('in creating_session')
             if self.round_number == 1:
                 paying_round = random.randint(1, Constants.num_rounds)
                 self.session.vars['paying_round'] = paying_round
+                print('set the paying round to', paying_round)
 
 Now, let's also define the code to swap roles halfway through. This kind
 of group-shuffling code should also go in ``creating_session``. We
@@ -121,9 +131,11 @@ and then in round 4, use ``group_like_round(3)`` to copy the group structure fro
     class Subsession(BaseSubsession):
 
         def creating_session(self):
+            print('in creating_session')
             if self.round_number == 1:
                 paying_round = random.randint(1, Constants.num_rounds)
                 self.session.vars['paying_round'] = paying_round
+                print('set the paying round to', paying_round)
             if self.round_number == 3:
                 # reverse the roles
                 matrix = self.get_group_matrix()
@@ -147,6 +159,7 @@ So, we start with this:
 
     class Group(BaseGroup):
         def set_payoffs(self):
+            print('in set_payoffs')
             matcher = self.get_player_by_role('Matcher')
             mismatcher = self.get_player_by_role('Mismatcher')
 
@@ -169,6 +182,7 @@ check for both of them.
 
     class Group(BaseGroup):
         def set_payoffs(self):
+            print('in set_payoffs')
             matcher = self.get_player_by_role('Matcher')
             mismatcher = self.get_player_by_role('Mismatcher')
 

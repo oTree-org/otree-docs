@@ -25,6 +25,7 @@ Then you can assign to this field randomly:
             # randomize to treatments
             for player in self.get_players():
                 player.color = random.choice(['blue', 'red'])
+                print('set player.color to', player.color)
 
 You can also assign treatments at the group level (put the ``StringField``
 in the ``Group`` class and change the above code to use

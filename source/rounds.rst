@@ -132,6 +132,8 @@ Later in the session (e.g. in a separate app),
 you can retrieve it like this::
 
     self.participant.vars['name'] # returns 'John'
+    # or try printing:
+    print('vars is', self.participant.vars)
 
 If your key may or may not exist, you can use the ``.get()`` method.
 For example, ``self.participant.vars.get('my_var', DEFAULT_VALUE)``.

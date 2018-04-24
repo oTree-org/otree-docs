@@ -271,6 +271,7 @@ as follows:
         form_fields = ['odd_negative']
 
         def odd_negative_error_message(self, value):
+            print('value is', value)
             is_odd = (value % 2 == 1)
             is_negative = (value < 0)
             if not (is_odd and is_negative):
@@ -293,6 +294,7 @@ Let's say you have 3 integer fields in your form whose names are
         form_fields = ['int1', 'int2', 'int3']
 
         def error_message(self, values):
+            print('values is', values)
             if values["int1"] + values["int2"] + values["int3"] != 100:
                 return 'The numbers must add up to 100'
 
@@ -398,6 +400,9 @@ Let's say you have a set of ``IntegerField`` in your model:
 
 And you'd like to present them as a likert scale, where each option is
 in a separate column.
+
+(First, try to reduce the code duplication in models.py by following
+the instructions in :ref:`many-fields`.)
 
 Because the options must be in separate table cells,
 the ordinary ``RadioSelectHorizontal`` widget will not work here.

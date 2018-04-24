@@ -38,14 +38,16 @@ after_all_players_arrive()
 --------------------------
 
 Any code you define here will be executed once all players have arrived at the wait
-page. For example, this method can determine the winner
-and set each player's payoff.
+page. For example, this is a good place to set the players' payoffs
+or determine the winner.
 
 .. code-block:: python
 
     class ResultsWaitPage(WaitPage):
         def after_all_players_arrive(self):
-            self.group.set_payoffs()
+            print('in after_all_players_arrive')
+            for player in self.group.get_players():
+                player.payoff = c(100)
 
 Note, you can't reference ``self.player`` inside ``after_all_players_arrive``,
 because the code is executed once for the entire group,
@@ -150,11 +152,14 @@ Here's an example where each group has 2 A players, 2 B players.
         group_by_arrival_time = True
 
         def get_players_for_group(self, waiting_players):
+            print('in get_players_for_group')
             a_players = [p for p in waiting_players if p.participant.vars['type'] == 'A']
             b_players = [p for p in waiting_players if p.participant.vars['type'] == 'B']
 
             if len(a_players) >= 2 and len(b_players) >= 2:
+                print('about to create a group')
                 return [a_players[0], a_players[1], b_players[0], b_players[1]]
+            print('not enough players to create a group')
 
         def is_displayed(self):
             return self.round_number == 1
