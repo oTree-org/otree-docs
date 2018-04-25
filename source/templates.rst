@@ -28,11 +28,6 @@ The following variables are available in templates:
 -   ``Constants``: global constants
 -   Any variables you passed with :ref:`vars_for_template`.
 
-.. code-block:: django
-
-     Your payoff is {{ payoff }}.
-
-
 Conditions ("if")
 ~~~~~~~~~~~~~~~~~
 
