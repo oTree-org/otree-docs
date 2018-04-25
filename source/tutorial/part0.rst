@@ -59,8 +59,6 @@ This survey has 2 pages:
 -  Page 1: players enter their name and age
 -  Page 2: players see the data they entered on the previous page
 
-In this section we will define the HTML templates that users see.
-
 So, let's make 2 HTML files under ``templates/my_simple_survey/``.
 
 Let's name the first page ``MyPage.html``, and put these contents inside:
@@ -131,7 +129,7 @@ special attributes, so we just write "pass".
         pass
 
 If ``pages.py`` already has a ``WaitPage``, you can delete that,
-because WaitPages are only necessary for multi-player games and more complex games.
+because WaitPages are only necessary for multi-player games.
 
 Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``.
 So, all in all, ``pages.py`` should contain this:

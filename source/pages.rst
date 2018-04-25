@@ -21,7 +21,7 @@ variable that gives the order of the pages. For example:
 If your game has multiple rounds, this sequence will be repeated.
 See :ref:`rounds` for more info.
 
-A ``Page`` class can have any of the following optional methods and attributes:
+A ``Page`` class can have any of the following optional methods and attributes.
 
 .. _is_displayed:
 

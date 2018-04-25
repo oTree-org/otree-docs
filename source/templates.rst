@@ -18,7 +18,15 @@ You can display a variable like this:
 
      Your payoff is {{ player.payoff }}.
 
-If you passed ``payoff`` using :ref:`vars_for_template`, you can do:
+The following variables are available in templates:
+
+-   ``player``: the player currently viewing the page
+-   ``group``: the group the current player belongs to
+-   ``subsession``: the subsession the current player belongs to
+-   ``participant``: the participant the current player belongs to
+-   ``session``: the current session
+-   ``Constants``: global constants
+-   Any variables you passed with :ref:`vars_for_template`.
 
 .. code-block:: django
 

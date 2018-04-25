@@ -1,5 +1,5 @@
 Models
-======
+++++++
 
 ``models.py`` is where you define your app's data models:
 
@@ -9,9 +9,6 @@ Models
 
 A player is part of a group, which is part of a subsession.
 See :ref:`conceptual_overview`.
-
-Model fields: an example
-------------------------
 
 The main purpose of ``models.py`` is to define the columns of your
 database tables. Let's say you want your experiment to generate data
@@ -35,9 +32,11 @@ Here is how to define the above table structure:
         age = models.IntegerField()
         is_student = models.BooleanField()
 
+Defining a column
+=================
 
-Model fields
-~~~~~~~~~~~~
+Field types
+-----------
 
 Here are the main field types:
 
@@ -51,11 +50,10 @@ Here are the main field types:
 ``StringField`` and ``LongStringField`` are new (added January 2018).
 See :ref:`v20` for more information.
 
-Setting a field's initial/default value
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initial/default value
+---------------------
 
-Any field you define will have the initial value of ``None``.
-If you want to give it an initial value, you can use ``initial=``:
+Your field's initial value will be ``None``, unless you set ``initial=``:
 
 .. code-block:: python
 
@@ -64,40 +62,26 @@ If you want to give it an initial value, you can use ``initial=``:
 
 
 min, max, choices
-~~~~~~~~~~~~~~~~~
+-----------------
 
 For info on how to set a field's ``min``, ``max``, or ``choices``,
 see :ref:`form-validation`.
 
-.. _constants:
+Built-in fields and methods
+===========================
 
-Constants
----------
+Since your models inherit from oTree's base classes
+(``BaseSubsession``, ``BaseGroup``, and ``BasePlayer``),
+the tables already have certain pre-defined fields and methods.
+For example, the ``Player`` table has columns called ``payoff``
+and ``id_in_group``, as well as methods like
+``in_all_rounds()`` and ``get_others_in_group()``.
 
-The ``Constants`` class is the recommended place to put your app's
-parameters and constants that do not vary from player
-to player.
-
-Here are the required constants:
-
--   ``name_in_url``: the name used to identify your app in the
-    participant's URL.
-
-    For example, if you set it to ``public_goods``, a participant's URL might
-    look like this:
-
-    ``http://otree-demo.herokuapp.com/p/zuzepona/public_goods/Introduction/1/``
-
--  ``players_per_group`` (described in :ref:`groups`)
-
--  ``num_rounds`` (described in :ref:`rounds`)
+These built-in fields and methods are listed below.
 
 
 Subsession
 ----------
-
-Here is a list of attributes and methods for subsession objects.
-
 
 session
 ~~~~~~~
@@ -116,10 +100,12 @@ See :ref:`rounds`.
 
 .. _creating_session:
 
-creating_session
-~~~~~~~~~~~~~~~~
+creating_session()
+~~~~~~~~~~~~~~~~~~
 
-This method is executed when the session is created:
+Unlike most other built-in subsession methods,
+this method is one you must define yourself.
+Any code you put here is executed when the session is created:
 
 .. figure:: _static/creating-session.png
 
@@ -137,6 +123,11 @@ For example:
 
 More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.
+
+Note that ``self`` here is a subsession object,
+because we are inside the ``Subsession`` class.
+So, you cannot do ``self.player``, because there is more than 1 player
+in the subsession. Instead, use ``self.get_players()`` to get all of them.
 
 If your app has multiple rounds, ``creating_session`` gets run multiple
 times consecutively:
@@ -230,8 +221,6 @@ See :ref:`in_rounds`.
 Group
 -----
 
-Here is a list of attributes and methods for group objects.
-
 session/subsession
 ~~~~~~~~~~~~~~~~~~
 
@@ -282,11 +271,9 @@ See :ref:`in_rounds`.
 Player
 ------
 
-Here is a list of attributes and methods for player objects.
-
 id_in_group
 ~~~~~~~~~~~
-Integer starting from 1. In multiplayer games,
+Automatically assigned integer starting from 1. In multiplayer games,
 indicates whether this is player 1, player 2, etc.
 
 payoff
@@ -314,8 +301,11 @@ See :ref:`groups`.
 
 role()
 ~~~~~~
-You can define this method to return a string label of the player's role,
-usually depending on the player's ``id_in_group``.
+
+Unlike most other built-in player methods, this is one you define yourself.
+
+This function should return a label with the player's role,
+usually depending on ``id_in_group``.
 
 For example::
 
@@ -399,6 +389,58 @@ payoff_plus_participation_fee()
 
 See :ref:`payoff`.
 
+.. _constants:
+
+Constants
+---------
+
+The ``Constants`` class is the recommended place to put your app's
+parameters and constants that do not vary from player
+to player.
+
+Here are the required constants:
+
+-   ``name_in_url``: the name used to identify your app in the
+    participant's URL.
+
+    For example, if you set it to ``public_goods``, a participant's URL might
+    look like this:
+
+    ``http://otree-demo.herokuapp.com/p/zuzepona/public_goods/Introduction/1/``
+
+-  ``players_per_group`` (described in :ref:`groups`)
+
+-  ``num_rounds`` (described in :ref:`rounds`)
+
+
+Miscellaneous topics
+====================
+
+Defining your own methods
+-------------------------
+
+You can define your own methods on models.
+This helps you keep your code organized as it gets more complex.
+For example, you can define a function to set players' payoffs:
+
+.. code-block:: python
+
+    class Group(BaseGroup):
+        def set_payoffs(self):
+            for p in self.get_players():
+                p.payoff = c(10)
+
+Just remember to call this function from somewhere, such as your page:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        def after_all_players_arrive(self):
+            self.group.set_payoffs()
+
+Because it will not be executed automatically, unlike built-in functions
+like ``creating_session()``, ``after_all_players_arrive()``, etc.
+
 
 .. _how_otree_executes_code:
 
@@ -459,6 +501,7 @@ we must use ``{{ player.payoff }}``, not ``{{ Player.payoff }}``.
 However, for ``Constants``, we always use uppercase.
 That's because ``Constants`` is not a database table with instances/rows,
 because the constants are the same for all players.
+
 
 .. _many-fields:
 
@@ -541,3 +584,5 @@ by defining a function that returns a field
         q2 = make_field('I use difficult words.')
         q3 = make_field('I am full of ideas.')
         q4 = make_field('I have excellent ideas.')
+
+

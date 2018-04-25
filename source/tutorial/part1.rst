@@ -70,8 +70,7 @@ Group.
 After the game is played,
 what data points will we need about each player?
 It's important to record how much each person contributed.
-So, we define a field ``contribution``,
-which is a currency (see :ref:`currency`):
+So, we define a ``contribution`` column:
 
 .. code-block:: python
 
@@ -79,8 +78,8 @@ which is a currency (see :ref:`currency`):
         contribution = models.CurrencyField(min=0, max=Constants.endowment)
 
 We also need to record the payoff the user makes at the end of the game,
-but we don't need to explicitly define a ``payoff`` field, because it's automatically
-added to every ``Player`` model.
+but we don't need to explicitly define a ``payoff`` field,
+because ``BasePlayer`` already contains a ``payoff`` column.
 
 What data points are we interested in recording about each group? We
 might be interested in knowing the total contributions to the group, and

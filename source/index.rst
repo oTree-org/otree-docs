@@ -52,7 +52,6 @@ Contents:
     python.rst
     tutorial/intro.rst
     conceptual_overview.rst
-    technical_overview.rst
     models.rst
     pages.rst
     templates.rst
