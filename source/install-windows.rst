@@ -77,10 +77,19 @@ which you will use for editing your Python files.
 After installing, open PyCharm, go to "File -> Open..." and select your project folder
 (It's usually ``C:\Users\<your_username>\oTree``).
 
-Then click on ``File –> Settings``, go to "Project -> Project interpreter",
-and set it to the location of your Python executable,
-maybe ``C:\Program Files\Python36\python.exe`` or
-``C:\Users\<your_username>\AppData\Local\Programs\Python\Python36-32\python.exe``.
+Then click ``File –> Settings``
+and click through the following steps:
+
+-   "Project -> Project interpreter"
+-   Add...
+-   System Interpreter
+
+And set it to the location of your Python executable,
+which you can get in your command prompt by entering ``powershell -command "get-command python"``.
+Usually it is
+``C:\Program Files\Python36-64\python.exe``
+or
+``C:\Users\<your_username>\AppData\Local\Programs\Python\Python36-64\python.exe``.
 
 If PyCharm displays this warning, select "Ignore requirements":
 

@@ -4,22 +4,25 @@
 ## 1. Primitive Datatypes and Operators
 ####################################################
 
-# You have numbers
-3  # => 3
+# integer
+3
+
+# float (floating-point number)
+3.14
 
 # Math is what you would expect
 1 + 1  # => 2
 8 - 1  # => 7
 10 * 2  # => 20
-35 / 5  # => 7
+35 / 5  # => 7.0
 
 # Enforce precedence with parentheses
 (1 + 3) * 2  # => 8
 
 # Boolean Operators
-# Note "and" and "or" are case-sensitive
-True and False #=> False
-False or True #=> True
+# Note they are
+True and False # => False
+False or True # => True
 
 # negate with not
 not True  # => False
@@ -43,54 +46,30 @@ not False  # => True
 1 < 2 < 3  # => True
 2 < 3 < 2  # => False
 
-# Strings are created with " or '
+# A string (text) is created with " or '
 "This is a string."
 'This is also a string.'
 
 # Strings can be added too!
 "Hello " + "world!"  # => "Hello world!"
 
-# A string can be treated like a list of characters
-"This is a string"[0]  # => 'T'
-
-# format strings with the format method.
-"A triangle has {} sides".format(3)
-
 # None means an empty/nonexistent value
 None  # => None
 
-# Any object can be used in a Boolean context.
-# The following values are considered falsey:
-#    - None
-#    - zero of any numeric type (e.g., 0, 0L, 0.0, 0j)
-#    - empty sequences (e.g., '', [])
-#    - empty containers (e.g., {})
-# All other values are truthy (using the bool() function on them returns True).
-bool(0)  # => False
-bool("")  # => False
-
 
 ####################################################
-## 2. Variables and Collections
+## 2. Variables, lists, and dicts
 ####################################################
 
-# Python has a print statement
+# print() displays the value in your command prompt window
 print("I'm Python. Nice to meet you!") # => I'm Python. Nice to meet you!
 
 # Variables
 some_var = 5
 some_var  # => 5
 
-# incrementing and decrementing a variable
-x = 0
-x += 1  # Shorthand for x = x + 1
-x -= 2  # Shorthand for x = x - 2
-
-
 # Lists store sequences
 li = []
-# You can start with a prefilled list
-other_li = [4, 5, 6]
 
 # Add stuff to the end of a list with append
 li.append(1)    # li is now [1]
@@ -101,48 +80,34 @@ li.append(3)    # li is now [1, 2, 3]
 li[0]  # => 1
 # Assign new values to indexes that have already been initialized with =
 li[0] = 42
-li[0]  # => 42
-li[0] = 1  # Note: setting it back to the original value
-# Look at the last element
-li[-1]  # => 3
+li # => [42, 2, 4]
 
-# You can look at ranges with slice syntax.
-# (It's a closed/open range.)
-other_li[1:3]  # => [5, 6]
-# Omit the beginning
-other_li[1:]  # => [5, 6]
-# Omit the end
-other_li[:2]  # => [4, 5]
 
 # You can add lists
-li + other_li   # => [1, 2, 3, 4, 5, 6]
-# Note: values for li and for other_li are not modified.
+other_li = [4, 5, 6]
+li + other_li   # => [42, 2, 3, 4, 5, 6]
 
-# Check for existence in a list with "in"
-1 in li   # => True
-
-# Examine the length with "len()"
+# Get the length with "len()"
 len(li)   # => 6
-
-
 
 # Dictionaries store mappings
 empty_dict = {}
 # Here is a prefilled dictionary
-filled_dict = {"one": 1, "two": 2, "three": 3}
+filled_dict = {
+    'name': 'Lancelot',
+    'quest': "To find the holy grail",
+    'favorite_color': "Blue"
+}
 
 # Look up values with []
-filled_dict["one"]   # => 1
+filled_dict['name']   # => 'Lancelot'
 
 # Check for existence of keys in a dictionary with "in"
-"one" in filled_dict   # => True
-1 in filled_dict   # => False
-
-# Looking up a non-existing key is a KeyError
-# filled_dict["four"]   # raises KeyError!
+'name' in filled_dict   # => True
+'age' in filled_dict   # => False
 
 # set the value of a key with a syntax similar to lists
-filled_dict["four"] = 4  # now, filled_dict["four"] => 4
+filled_dict["age"] = 30  # now, filled_dict["age"] => 30
 
 
 ####################################################
@@ -185,13 +150,12 @@ if some_var > 10:
 """
 For loops iterate over lists
 prints:
-    dog is a mammal
-    cat is a mammal
-    mouse is a mammal
+    1
+    4
+    9
 """
-for animal in ["dog", "cat", "mouse"]:
-    # You can use {} to interpolate formatted strings. (See above.)
-    print("{} is a mammal".format(animal))
+for x in [1, 2, 3]:
+    print(x*x)
 
 """
 "range(number)" returns a list of numbers
@@ -206,19 +170,6 @@ the following code prints:
 for i in range(4):
     print(i)
 
-"""
-"range(lower, upper)" returns a list of numbers
-from the lower number to the upper number MINUS ONE
-
-the following code prints:
-    4
-    5
-    6
-    7
-"""
-for i in range(4, 8):
-    print(i)
-
 
 ####################################################
 ## 4. Functions
@@ -226,79 +177,30 @@ for i in range(4, 8):
 
 # Use "def" to create new functions
 def add(x, y):
-    print("x is {} and y is {}".format(x, y))
-    return x + y    # Return values with a return statement
+    print('x is', x)
+    print('y is', y)
+    return x + y
 
 # Calling functions with parameters
 add(5, 6)   # => prints out "x is 5 and y is 6" and returns 11
 
-# Another way to call functions is with keyword arguments
-add(y=6, x=5)   # Keyword arguments can arrive in any order.
-
-
-# We can use list comprehensions to loop or filter
-[add(i, 10) for i in [1, 2, 3]]  # => [11, 12, 13]
-[x for x in [3, 4, 5, 6, 7] if x > 5]   # => [6, 7]
 
 ####################################################
-## 5. Modules
+## 5. List comprehensions
+####################################################
+
+# We can use list comprehensions to loop or filter
+numbers = [3,4,5,6,7]
+[x*x for x in numbers]  # => [9, 16, 25, 36, 49]
+
+numbers = [3, 4, 5, 6, 7]
+[x for x in numbers if x > 5]   # => [6, 7]
+
+####################################################
+## 6. Modules
 ####################################################
 
 # You can import modules
 import random
-import math
-print(math.sqrt(16))  # => 4
-
-# You can get specific functions from a module
-from math import ceil, floor
-print(ceil(3.7))  # => 4.0
-print(floor(3.7))   # => 3.0
-
-# Python modules are just ordinary python files. You
-# can write your own, and import them. The name of the
-# module is the same as the name of the file.
-
-####################################################
-## 6. Classes
-####################################################
-
-# classes let you model complex real-world entities
-
-class Mammal(object):
-
-    # A class attribute. It is shared by all instances of this class
-    classification = "Mammalia"
-    
-    # A method called "set_age" that sets the age of an individual mammal
-    # Methods are basically functions that belong to a class.
-    # All methods take "self" as the first argument
-    def set_age(self):
-        self.age = 0
-            
-    # method that returns True or False
-    def older_than_10(self):
-        return self.age > 10
-
-    # method with argument
-    def predict_age(self, years):
-        return 'In {} years I will be {}'.format(years, self.age + years)
-
-        
-class Dog(Mammal):
-    classification = "Canis lupus"
-    
-    def bark(self):
-        return "woof!"
-    
-
-Mammal.classification
-
-# Instantiate a class
-lassie = Dog()
-lassie.classification # => "Canis lupus"
-lassie.set_age()
-lassie.older_than_10() # => False
-lassie.age = 11
-lassie.older_than_10() # => True
-lassie.bark() # => "woof!"
+print(random.random()) # random real between 0 and 1
 

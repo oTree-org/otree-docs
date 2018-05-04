@@ -25,7 +25,7 @@ The following variables are available in templates:
 -   ``subsession``: the subsession the current player belongs to
 -   ``participant``: the participant the current player belongs to
 -   ``session``: the current session
--   ``Constants``: global constants
+-   ``Constants``: constants you defined in ``models.py``
 -   Any variables you passed with :ref:`vars_for_template`.
 
 Conditions ("if")
@@ -76,6 +76,19 @@ Accessing items in a list or dict
 
 Whereas in Python code you do ``my_list[0]`` and ``my_dict['foo']``,
 in a template you would do ``{{ my_list.0 }}`` and ``{{ my_dict.foo }}``.
+
+Comments
+~~~~~~~~
+
+.. code-block:: django
+
+    {# this is a single-line comment #}
+
+    {% comment %}
+    This is a
+    multi-line comment
+    {% endcomment %}
+
 
 Template filters
 ~~~~~~~~~~~~~~~~
@@ -160,7 +173,10 @@ The key point
 The key insight you can take from this example is
 that if one of your pages doesn't look the way you want,
 you can isolate which of the above steps went wrong.
-In your browser, right-click and "view source". You can then see the pure
+In your browser, right-click and "view source".
+(Note: "view source" may not work in split-screen mode.)
+
+You can then see the pure
 HTML that was generated (along with any JavaScript or CSS).
 
 -   If the HTML code doesn't look the way you expect, then something
@@ -172,7 +188,6 @@ HTML that was generated (along with any JavaScript or CSS).
     Try pasting the problematic part of the HTML back into a template,
     without the Django tags, and edit it until it produces the right output.
     Then put the Django tags back in, to make it dynamic again.
-
 
 
 Template blocks

@@ -66,7 +66,7 @@ Setting DATABASE_URL (if running the server on your laptop)
 Now you should tell oTree to use Postgres instead of SQLite.
 
 If you're using your PC as the server,
-you can add this line above the line with ``DATABASES``,
+you can add this line in ``settings.py``,
 to simulate setting the env var ``DATABASE_URL``::
 
     environ['DATABASE_URL'] = 'postgres://postgres@localhost/django_db'

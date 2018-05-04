@@ -72,10 +72,16 @@ which you will use for editing your Python files.
 
 After installing, open PyCharm, go to "File -> Open..." and select your project folder.
 
-Then click on ``PyCharm -> Preferences``, go to "Project -> Project interpreter",
-and set it to the location of your Python executable, something like
-``/Library/Framework/Python.framework/Versions/3.6/bin/python3.6``).
-You can verify the location of your Python executable with the Terminal command ``which python3``.
+Then click on ``PyCharm -> Preferences``,
+and click through the following steps:
+
+-   "Project -> Project interpreter"
+-   Add...
+-   System Interpreter
+
+And set it to the location of your Python executable,
+something like:
+``/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6``).
 
 If PyCharm displays this warning, select "Ignore requirements":
 

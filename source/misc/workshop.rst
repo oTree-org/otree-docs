@@ -1,7 +1,8 @@
 Workshop
 ========
 
-[This page is for participants in oTree workshops]
+Instructions for oTree workshop participants
+++++++++++++++++++++++++++++++++++++++++++++
 
 To make sure we make the best use of our limited time at the upcoming
 oTree workshop, please ensure you have adequately prepared by checking the
@@ -124,3 +125,21 @@ Using the same structure from above,
 Write a function ``sum_age_by_gender()`` that adds up the ages of each gender
 and returns a dictionary with those sums.
 For example, ``sum_age_by_gender(people)`` should return ``{'M': 50, 'F': 40}``.
+
+Information for workshop organizers
++++++++++++++++++++++++++++++++++++
+
+Workshops can be of any duration.
+I suggest at least 2 days.
+However, oTree is a huge software and I can easily fill 4-5 days of material.
+
+My recommended schedule is usually 10am-5pm or similar,
+with a lunch break in the middle,
+and short breaks every hour or so.
+
+The workshops start with a 30-minute slide presentation introducing oTree.
+Then, I do a brief refresher on Python syntax.
+Then the rest of the time is spent hands-on programming of oTree games.
+It's a combination of instruction and small assignments that
+participants do either alone or working with the person next to them.
+
