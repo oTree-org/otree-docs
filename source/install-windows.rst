@@ -81,6 +81,7 @@ Then click ``File –> Settings``
 and click through the following steps:
 
 -   "Project -> Project interpreter"
+-   Click the "gear" icon
 -   Add...
 -   System Interpreter
 
@@ -90,10 +91,18 @@ Usually it is
 ``C:\Program Files\Python36-64\python.exe``
 or
 ``C:\Users\<your_username>\AppData\Local\Programs\Python\Python36-64\python.exe``.
+Once it's configured, the imports at the top of an app's ``models.py`` should look
+like
+`this <_static/setup/pycharm-correct.png>`__
+, not
+`this <_static/setup/pycharm-incorrect.png>`__.
+
 
 If PyCharm displays this warning, select "Ignore requirements":
 
 .. figure:: _static/setup/pycharm-psycopg2-warning.png
+
+
 
 Note: Even if you normally use another text editor,
 we recommend at least trying PyCharm, because PyCharm's autocompletion

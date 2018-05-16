@@ -26,7 +26,7 @@ Assuming Heroku is already installed & logged in::
     heroku create
     heroku addons:create heroku-redis:premium-0
     git push heroku master
-    heroku run otree resetdb
+    heroku run "otree resetdb"
 
 
 Heroku setup (detailed version)
@@ -164,9 +164,9 @@ You can get your app's name by typing ``heroku apps``.
 
 .. code-block:: bash
 
-    heroku run otree resetdb
+    heroku run "otree resetdb"
 
-(You can run ``heroku run otree resetdb --noinput`` if you want to skip
+(You can run ``heroku run "otree resetdb --noinput"`` if you want to skip
 the prompt.)
 
 Open the site in your browser:
@@ -190,7 +190,7 @@ If your app fails to load, e.g. "application error", try the following:
 -   Use the command ``heroku logs`` to check the server logs for any error messages
     (or, better yet, enable :ref:`Papertrail <papertrail>`, which provides a nice UI for browsing logs).
 -   Make sure you remembered to enable the Heroku Redis add-on (see :ref:`here <redis>`).
--   Run ``heroku run otree --version`` to check that you are using the latest version of otree on Heroku.
+-   Run ``heroku run "otree --version"`` to check that you are using the latest version of otree on Heroku.
 
 Making updates and modifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,7 +202,7 @@ to Heroku, enter::
     git commit -am "my commit message"
     git push heroku master
     # next command only required if you added/removed a field in models.py
-    heroku run otree resetdb
+    heroku run "otree resetdb"
 
 You should also regularly update your :ref:`requirements_base.txt <requirements_base.txt>`.
 

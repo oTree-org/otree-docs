@@ -76,12 +76,19 @@ Then click on ``PyCharm -> Preferences``,
 and click through the following steps:
 
 -   "Project -> Project interpreter"
+-   Click the "gear" icon
 -   Add...
 -   System Interpreter
 
 And set it to the location of your Python executable,
 something like:
 ``/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6``).
+Once it's configured, the imports at the top of an app's ``models.py`` should look
+like
+`this <_static/setup/pycharm-correct.png>`__
+, not
+`this <_static/setup/pycharm-incorrect.png>`__.
+
 
 If PyCharm displays this warning, select "Ignore requirements":
 
