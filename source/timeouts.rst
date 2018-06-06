@@ -321,4 +321,21 @@ See :ref:`base-template`.
 
 Note: even if you turn off the ``finish.countdown`` event handler from submitting
 the page, if you are running the timeoutworker, the page will be submitted on the server
-side.
+side. So, instead you should use the technique described in :ref:`soft-timeout`.
+
+.. _soft-timeout:
+
+Timeout that doesn't submit the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you just want a soft timeout, you don't need to use the built-in
+timer at all. Instead, make your own with JavaScript, for example::
+
+.. code-block:: javascript
+
+    setTimeout(
+        function () {
+            alert("Time has run out. Please make your decision.");
+        },
+        60*1000 // 60 seconds
+    );

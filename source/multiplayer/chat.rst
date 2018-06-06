@@ -49,7 +49,7 @@ A typical usage would be ``{% chat nickname=player.role %}``.
 Channel
 '''''''
 
-``channel`` is the chat room's ID, meaning that if 2 players
+``channel`` is the chat room's name, meaning that if 2 players
 have the same ``channel``, they can chat with each other.
 ``channel`` is not displayed in the user interface; it's just used internally.
 Its default value is ``group.id``, meaning all players in the group can chat together.

@@ -74,9 +74,11 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 
     {% block content %}
 
-        {% formfield player.name label="Enter your name" %}
+        Please enter the following information.
 
-        {% formfield player.age label="Enter your age" %}
+        {% formfield player.name %}
+
+        {% formfield player.age %}
 
         {% next_button %}
 
@@ -166,7 +168,6 @@ Now we go to ``settings.py`` in the project's top folder and add an entry to ``S
     SESSION_CONFIGS = [
         {
             'name': 'my_simple_survey',
-            'display_name': "My Simple Survey",
             'num_demo_participants': 3,
             'app_sequence': ['my_simple_survey'],
         },
