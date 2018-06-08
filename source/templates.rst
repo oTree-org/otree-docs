@@ -218,6 +218,62 @@ You define 2 blocks:
     {% endblock %}
 
 
+Images, videos, CSS, JavaScript, etc. (static files)
+----------------------------------------------------
+
+Here is how to include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages.
+
+There is a ``_static/`` folder in your project folder.
+Create a subfolder with any name you want (or use the existing ``global/`` subfolder),
+and put your files there.
+
+Let's say you have an image in ``_static/my_app/my_image.png``.
+To display it, you need to use an ``<img>`` tag whose ``src`` is set to that image's URL,
+which you can retrieve with the ``{% static %}`` tag:
+
+.. code-block:: HTML+django
+
+    <img src="{% static "my_app/my_image.png" %}"/>
+
+
+If the file is in ``_static/global/my_image.png``, you would do:
+
+.. code-block:: HTML+django
+
+    <img src="{% static "global/my_image.png" %}"/>
+
+(If you prefer, you can also put static files inside your app folder,
+in a subfolder called ``static/your_app_name``.)
+
+Notes:
+-   If you get an error "invalid block tag: static", then make sure you have ``{% load static %}``
+    at the top of your template.
+-   If a static file is not updating even after you changed it,
+    this is because your browser cached the file. Do a full page reload
+    (usually Ctrl+F5)
+
+Dynamic images
+~~~~~~~~~~~~~~
+
+If the image/video path is variable (like showing a different image each round),
+you can construct it in ``pages.py`` and pass it to the template, e.g.:
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        def vars_for_template(self):
+            return {
+                'image_path': 'my_app/{}.png'.format(self.round_number)
+            }
+
+Then in the template:
+
+.. code-block:: HTML+django
+
+    <img src="{% static image_path %}"/>
+
+
 .. _base-template:
 
 JavaScript and CSS
@@ -415,48 +471,6 @@ at the top of your template.
 Note: The ``|json`` template filter replaces the old ``safe_json``
 function. However, ``safe_json`` still works.
 Just use one or the other, not both.
-
-Static content (images, videos, CSS, JavaScript)
-------------------------------------------------
-
-To include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages,
-make sure your template has ``{% load static %}`` at the top.
-
-Then create a ``static/`` folder in your app (next to ``templates/``).
-Like ``templates/``, it should also have a subfolder with your app's name,
-e.g. ``static/my_app``.
-
-Put your files in that subfolder. You can then reference them in a template
-like this:
-
-.. code-block:: HTML+django
-
-    <img src="{% static "my_app/my_image.png" %}"/>
-
-If the file is used in multiple apps, you can put it in ``_static/global/``,
-then do:
-
-.. code-block:: HTML+django
-
-    <img src="{% static "global/my_image.png" %}"/>
-
-If the image/video path is variable (like showing a different image each round),
-you can construct it in ``pages.py`` and pass it to the template, e.g.:
-
-.. code-block:: python
-
-    class MyPage(Page):
-
-        def vars_for_template(self):
-            return {
-                'image_path': 'my_app/{}.png'.format(self.round_number)
-            }
-
-Then in the template:
-
-.. code-block:: HTML+django
-
-    <img src="{% static image_path %}"/>
 
 
 Bootstrap
