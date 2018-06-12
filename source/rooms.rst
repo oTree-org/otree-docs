@@ -155,6 +155,12 @@ Alternatively, you can open each computer's browser to a participant-specific UR
 but before creating the session, be sure to close the browsers on unattended computers,
 so they are not included in the session.
 
+.. note::
+
+    Some language translations are currently missing, in which case it will
+    be shown in English. You can fix that by contributing a translation
+    `here <https://github.com/oTree-org/otree-internationalization>`__.
+
 .. _no-participant-labels:
 
 If you don't have a participant_label_file

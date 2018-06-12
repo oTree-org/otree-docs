@@ -4,6 +4,26 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
+.. _v21:
+
+Version 2.1
+===========
+
+-   oTree now raises an error if you use an undefined variable in your template.
+    This will help catch typos like
+    ``{{ Player.payoff }}`` or ``{% if player.id_in_gruop %}``.
+    This means that apps that previously worked may now get a template error
+    (previously, it failed silently).
+    If you can't remove the offending variable,
+    you can apply the ``|default`` filter, like: ``{{ my_undefined_variable|default:None }}``
+-   oTree now warns you if you use an invalid attribute on a Page/WaitPage.
+    You can disable this by setting ``_allow_custom_attributes=True`` on the page class.
+    See `here <https://groups.google.com/forum/#!topic/otree/_yzlaTMfJKs>`__
+    for more details.
+-   CSV/Excel data export is done asynchronously, which will fix
+    timeout issues for large files on Heroku.
+-   Better performance, especially for "Monitor" and "Data" tab in admin interface
+
 
 Version 2.0
 ===========

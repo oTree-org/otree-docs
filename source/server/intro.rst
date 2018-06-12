@@ -20,16 +20,18 @@ using a local server.
 **You want to use your own Windows computer as a server on your local network**
 
 e.g. running a lab study or field study.
+Follow these steps:
 
--   Install the server using :ref:`Docker <server-docker-adhoc>` **OR** :ref:`conventional installation <server-windows>`
--   Set up your Windows PC as an :ref:`ad-hoc server <server-adhoc>`
+1.   :ref:`Conventional installation <server-windows>` **OR** Install the server using :ref:`Docker <server-docker-adhoc>`
+2.   Set up your Windows PC as an :ref:`ad-hoc server <server-adhoc>`
 
 **You want to use your own Mac computer as a server on your local network**
 
 e.g. running a lab study or field study.
+Follow these steps:
 
--   Install the server using :ref:`Docker <server-docker-adhoc>` **OR** :ref:`conventional installation <server-mac>`
--   Set up your Mac as an :ref:`ad-hoc server <server-adhoc>`
+1.   :ref:`Conventional installation <server-mac>` **OR** Install the server using :ref:`Docker <server-docker-adhoc>`
+2.   Set up your Mac as an :ref:`ad-hoc server <server-adhoc>`
 
 **You want to set up a dedicated Linux server**
 
