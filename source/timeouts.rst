@@ -329,7 +329,7 @@ Timeout that doesn't submit the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you just want a soft timeout, you don't need to use the built-in
-timer at all. Instead, make your own with JavaScript, for example::
+timer at all. Instead, make your own with JavaScript, for example:
 
 .. code-block:: javascript
 
@@ -339,3 +339,11 @@ timer at all. Instead, make your own with JavaScript, for example::
         },
         60*1000 // 60 seconds
     );
+
+Require minimum time on page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you want to require the user to spend *at least* a certain amount of time
+on a page, you can use some simple JavaScript: hide the next button
+(use the ``.otree-btn-next`` selector),
+then use ``setTimeout`` to re-display it after a certain amount of time.

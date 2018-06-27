@@ -276,7 +276,7 @@ In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
         OTREE_PRODUCTION="", # can set to 1
         OTREE_AUTH_LEVEL="", # can set to STUDY or DEMO
 
-``directory`` should be the dir containing your project (i.e. with ``settings.py``).
+Set ``directory`` to the dir containing your project (i.e. with ``settings.py``).
 
 ``DATABASE_URL`` should match what you set earlier. That is, you need to set
 ``DATABASE_URL`` in 2 places:

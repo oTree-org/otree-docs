@@ -70,6 +70,9 @@ run this command from your project's root folder:
 
     git init
 
+If you're on Windows, you may need to install Git manually from
+`here <https://git-scm.com/download/win>`__.
+
 Create the Heroku app
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -94,7 +97,9 @@ app. Or you can specify your own name; see ``heroku help create`` for more info.
 Install Redis add-on
 ~~~~~~~~~~~~~~~~~~~~
 
-You need to install Heroku's `Redis add-on <https://elements.heroku.com/addons/heroku-redis>`__.
+Use this command to install Redis::
+
+    heroku addons:create heroku-redis:hobby-dev
 
 If you don't do it, you will see an "Application Error":
 
@@ -160,7 +165,6 @@ Transfer (push) the local repository to Heroku:
     git push heroku master
 
 Reset the oTree database on Heroku.
-You can get your app's name by typing ``heroku apps``.
 
 .. code-block:: bash
 
@@ -238,6 +242,8 @@ to that app, use this command:
 .. code-block:: bash
 
     $ heroku git:remote -a [myherokuapp]
+
+You can get your app's name by typing ``heroku apps``.
 
 
 Scaling up the server

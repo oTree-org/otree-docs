@@ -37,10 +37,10 @@ Apps
 Code snippets
 -------------
 
+-   `otree-snippets <https://github.com/oTree-org/otree-snippets>`__
+    like radio button switching point, random page order, show/hide a field, read groups from CSV file
 -   `Punishment yes/no choice followed by punishment amount <https://github.com/chapkovski/yes-no-punishment>`__
 -   `Example of channels use to transfer data without submitting a form  <https://github.com/chapkovski/miniebay>`__
--   `Misc snippets <https://github.com/oTree-org/otree-snippets>`__
-    like radio button switching point, random page order, show/hide a field
 
 
 Help & discussion mailing list

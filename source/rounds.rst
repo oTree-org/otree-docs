@@ -170,6 +170,17 @@ etc.).
                 p.participant.vars['foo'] = 1
 
 
+Note: ``participant.vars`` is not included in the Excel/CSV data export,
+or in the "Data" tab in the session admin. If you want that, you can create a
+``StringField`` on your player (for example, called ``participant_vars_dump``)
+and then at the end of your session, assign:
+
+.. code-block:: python
+
+    self.player.participant_vars_dump = str(self.participant.vars)
+
+(The same concept applies for ``session.vars`` below.)
+
 .. _session_vars:
 
 session.vars

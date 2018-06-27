@@ -327,7 +327,10 @@ and that there are twice as many female players as male players.
 
 
     class Subsession(BaseSubsession):
-        def creating_session(self):
+        def do_my_shuffle(self):
+            # note: to use this function
+            # you would need to call self.subsession.make_groups()
+            # from somewhere, such as after_all_players_arrive
 
             if self.round_number == 1:
                 players = self.get_players()

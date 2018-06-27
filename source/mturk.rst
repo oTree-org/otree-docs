@@ -24,7 +24,7 @@ Installation
 If you want to use oTree with MTurk,
 you need to install ``otree[mturk]`` instead of just ``otree``.
 
-Your ``requirements_base.txt`` should also have ``otree[mturk]``.
+In your ``requirements_base.txt``, you should also change ``otree`` to ``otree[mturk]``.
 
 AWS credentials
 ---------------
@@ -62,7 +62,7 @@ by adding the following lines to your ``settings.py``::
 Session config
 --------------
 
-Add this to your settings.py (if not there already) and edit as necessary:
+Add this to your settings.py and edit as necessary:
 
 .. code-block:: python
 

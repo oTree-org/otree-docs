@@ -82,7 +82,6 @@ Comments
 
 .. code-block:: django
 
-    {# this is a single-line comment #}
 
     {% comment %}
     This is a
@@ -246,6 +245,7 @@ If the file is in ``_static/global/my_image.png``, you would do:
 in a subfolder called ``static/your_app_name``.)
 
 Notes:
+
 -   If you get an error "invalid block tag: static", then make sure you have ``{% load static %}``
     at the top of your template.
 -   If a static file is not updating even after you changed it,
@@ -331,8 +331,8 @@ Just one page
 ^^^^^^^^^^^^^
 
 If you have JavaScript and/or CSS code that just applies to a single page,
-you should put them in blocks called ``scripts``
-and ``styles``.
+you can put it directly in the ``content`` block, or for better organization,
+put it in blocks called ``scripts`` and ``styles``.
 They should be located outside the ``content`` block, like this:
 
 .. code-block:: HTML+django
@@ -365,12 +365,11 @@ They should be located outside the ``content`` block, like this:
     {% endblock %}
 
 
-The reasons for putting scripts and styles in separate blocks are:
+It's not mandatory to do this, but:
 
 -   It keeps your code organized
--   jQuery may only be loaded at the bottom of the page,
-    so if you reference the jQuery ``$`` variable in the ``content`` block,
-    it could be undefined.
+-   It ensures that things are loaded in the correct order
+    (CSS, then your page content, then JavaScript).
 
 .. _selectors:
 
@@ -516,11 +515,9 @@ We particularly recommend `HighCharts <http://www.highcharts.com/demo>`__,
 to draw pie charts, line graphs, bar charts, time series, etc.
 Some of oTree's sample games use HighCharts.
 
-First, include the HighCharts JavaScript in your page's ``scripts`` block::
+First, include the HighCharts JavaScript::
 
-    {% block scripts %}
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-    {% endblock %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 
 If you will be using HighCharts in many places, you can also put it in
 ``app_scripts`` or ``global_scripts``; see above for more info.

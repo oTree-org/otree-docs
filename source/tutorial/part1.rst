@@ -172,7 +172,7 @@ Now we define our pages, which contain the logic for how to display the
 HTML templates. (For more info, see :ref:`pages`.)
 
 Since we have 2 templates, we need 2 ``Page`` classes in ``pages.py``.
-The names should match those of the templates (``Contribute`` and
+The names must match those of the templates (``Contribute`` and
 ``Results``).
 
 First let's define ``Contribute``. This page contains a form, so

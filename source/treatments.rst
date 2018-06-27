@@ -31,6 +31,9 @@ You can also assign treatments at the group level (put the ``StringField``
 in the ``Group`` class and change the above code to use
 ``get_groups()`` and ``group.color``).
 
+Treatment groups & multiple rounds
+----------------------------------
+
 If your game has multiple rounds, the above code gets executed
 for each round. So if you want to ensure that participants are assigned
 to the same treatment group each round, you should set the property at
@@ -70,10 +73,12 @@ Then, when you need to access a group's color, you would look it up like this:
 
 For more on vars, see :ref:`vars`.
 
+Balanced treatment groups
+-------------------------
+
 The above code makes a random drawing independently for each player,
 so you may end up with an imbalance between "blue" and "red".
-To solve this, you can use ``itertools.cycle``, which alternates.
-:
+To solve this, you can use ``itertools.cycle``, which alternates:
 
 .. code-block:: python
 

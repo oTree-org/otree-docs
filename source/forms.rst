@@ -210,8 +210,6 @@ Like setting ``choices=`` in models.py,
 this will set the choices for the form field
 (e.g. the dropdown menu or radio buttons).
 
-Here is an example where we randomly shuffle the choices:
-
 Example:
 
 .. code-block:: python
@@ -298,7 +296,10 @@ Let's say you have 3 integer fields in your form whose names are
             if values["int1"] + values["int2"] + values["int3"] != 100:
                 return 'The numbers must add up to 100'
 
-If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
+Notes:
+-   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
+-   This function is only executed if there are no other errors in the form.
+
 
 Determining form fields dynamically
 -----------------------------------
@@ -365,26 +366,31 @@ oTree additionally offers:
     -   To disable the current value from being displayed, do:
         ``Slider(show_value=False)``
 
+.. _django-forms:
 
-Alternatives to oTree's ``{% formfield %}``
--------------------------------------------
+Customizing a field's appearance
+--------------------------------
 
-It's not mandatory to use oTree's ``{% formfield %}`` element.
-If you want to customize the appearance or behavior of your widgets,
-you can use one of the approaches below.
+``{% formfield %}`` is easy to use because it automatically outputs
+all necessary parts of a form field (the input, the label, and any error messages),
+with Bootstrap styling.
 
-Django fields
-~~~~~~~~~~~~~
+However, if you want more control over the appearance and layout,
+you can use Django's manual field rendering. Instead of ``{% formfield player.my_field %}``,
+do ``{{ form.my_field }}``, to get just the input,
+and then position it as you want.
 
-If the field rendered by the ``{% formfield %}`` tag is not to your liking,
-you can use Django's manual field rendering,
-described `here <https://docs.djangoproject.com/en/1.9/topics/forms/#rendering-fields-manually>`__.
+Just remember to also include ``{{ form.my_field.errors }}``,
+so that if there is an error in the form,
+the participant will see the error message.
+
+More info `here <https://docs.djangoproject.com/en/1.9/topics/forms/#rendering-fields-manually>`__.
 
 .. _radio-table:
 .. _subwidgets:
 
-Radio buttons in tables and other custom layouts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example: Radio buttons in tables and other custom layouts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say you have a set of ``IntegerField`` in your model:
 
@@ -413,17 +419,14 @@ Instead, you should simply loop over the choices in the field as follows:
 
     <tr>
         <td>{{ form.offer_1.label }}</td>
-    {% for choice in form.offer_1 %}
-        <td>{{ choice }}</td>
-    {% endfor %}
+        {% for choice in form.offer_1 %}
+            <td>{{ choice }}</td>
+        {% endfor %}
     </tr>
 
 .. note::
 
     This feature is only available in oTree 2.0 and higher.
-
-(Note that you have to do ``form.my_field``,
-rather than the usual ``player.my_field``.)
 
 If you have many fields with the same number of choices,
 you can arrange them in a table:
@@ -449,17 +452,27 @@ you can use the ``choice_label`` and ``tag`` attributes on a field choice.
 
 .. _raw_html:
 
-Raw HTML widgets
-~~~~~~~~~~~~~~~~
+Advanced: Raw HTML widgets
+--------------------------
 
-For maximum flexibility, you can skip ``{% formfield %}``
-and Django's form widgets, and write the raw HTML for any form input.
-Just ensure that each field in your Page's ``form_fields``
+If ``{% formfield %}`` and :ref:`manual field rendering <django-forms>`
+are still not flexible enough for you,
+you can write the raw HTML for your form input.
+However, you will lose the convenient features handled
+automatically by oTree. For example, if the form has an error and the page
+re-loads, all entries by the user may be wiped out.
+
+To use raw HTML, just ensure that each field in your Page's ``form_fields``
 has a corresponding ``<input>`` element with a matching ``name`` attribute.
+
+Remember that for any field ``my_field``,
+you should include ``{{ form.my_field.errors }}``,
+so that if there is an error in the form,
+the participant will see the error message.
 
 
 Raw HTML example: custom user interface with JavaScript
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say you don't want users to fill out form fields,
 but instead interact with some sort of visual app, like a clicking on a chart
