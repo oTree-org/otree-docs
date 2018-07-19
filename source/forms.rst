@@ -115,7 +115,7 @@ they need to correct.
 
 .. image:: _static/forms/Sz34h7d.png
     :align: center
-    :scale: 100 %
+
 
 oTree automatically validates input. For
 example, if you have a form containing a ``IntegerField``, oTree
