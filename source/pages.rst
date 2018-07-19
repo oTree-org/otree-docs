@@ -4,7 +4,7 @@ Pages
 =====
 
 Each page that your players see is defined by a ``Page`` class in
-``pages.py`` ("pages" is basically a synonym for "pages").
+``pages.py``.
 
 .. note::
 

@@ -427,8 +427,8 @@ For example, you can define a function to set players' payoffs:
 
     class Group(BaseGroup):
         def set_payoffs(self):
-            for p in self.get_players():
-                p.payoff = c(10)
+            print('in set_payoffs')
+            # etc ...
 
 Just remember to call this function from somewhere, such as your page:
 

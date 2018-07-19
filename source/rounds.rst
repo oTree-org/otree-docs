@@ -122,7 +122,6 @@ which persists across apps (see :ref:`participants_and_players`).
 (``in_all_rounds()`` only is useful when you need to access data from a previous
 round of the same app.)
 
-
 ``participant.vars`` is is a dictionary that can store any data.
 For example, you can set an attribute like this::
 
@@ -134,12 +133,6 @@ you can retrieve it like this::
     self.participant.vars['name'] # returns 'John'
     # or try printing:
     print('vars is', self.participant.vars)
-
-If your key may or may not exist, you can use the ``.get()`` method.
-For example, ``self.participant.vars.get('my_var', DEFAULT_VALUE)``.
-More `here <https://docs.python.org/3/library/stdtypes.html#dict.get>`__.
-
-or you can test if ``'my_var'`` exists with ``'my_var' in self.participant.vars``.
 
 As described :ref:`here <object_model>`, the current participant can be
 accessed from a ``Page`` or ``Player``:
@@ -169,6 +162,11 @@ etc.).
             for p in self.get_players():
                 p.participant.vars['foo'] = 1
 
+If your key may or may not exist, you can use the ``.get()`` method.
+For example, ``self.participant.vars.get('my_var', DEFAULT_VALUE)``.
+More `here <https://docs.python.org/3/library/stdtypes.html#dict.get>`__.
+
+or you can test if ``'my_var'`` exists with ``'my_var' in self.participant.vars``.
 
 Note: ``participant.vars`` is not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you can create a

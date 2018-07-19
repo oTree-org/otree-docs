@@ -247,7 +247,7 @@ by setting ``timer_text``:
 
 .. code-block:: python
 
-    class BasePage(Page):
+    class Page1(Page):
 
         timer_text = 'Time left to complete this section:'
 

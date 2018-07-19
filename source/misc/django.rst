@@ -158,9 +158,3 @@ and append your routes to oTree's built-in routes:
 
 In settings.py, set ``CHANNEL_ROUTING = 'routing.channel_routing'``
 (this is the dotted path to your ``channel_routing`` variable in ``routing.py``)
-
-Chat box
-~~~~~~~~
-
-I have created a beta oTree chat based on Django channels
-`here <https://github.com/oTree-org/otreechat>`__.

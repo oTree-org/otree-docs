@@ -158,6 +158,9 @@ Commit your changes (note the dot in ``git add .``):
     git add .
     git commit -am "your commit message"
 
+(If it's your first time with Git,
+you may be prompted to run some git config commands before you can commit.)
+
 Transfer (push) the local repository to Heroku:
 
 .. code-block:: bash

@@ -79,7 +79,6 @@ Version 1.2
 -   If a page is submitted automatically by a timeout,
     oTree will attempt to save the incomplete form.
     See :ref:`timeout_form`
--   oTree now has a `participant chat app <https://github.com/oTree-org/otreechat>`__
 -   The :ref:`|json <json>` filter was added, as an alternative to ``safe_json``.
 
 .. _v11b:

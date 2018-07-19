@@ -5,43 +5,35 @@ Forms
 
 Each page in oTree can contain a form, which the player should fill out
 and submit by clicking the "Next" button. To create a form, first
-go to models.py and define fields on your Player or Group. Then,
-in your Page class, you can choose which of these fields to include in the form.
-You do this by setting ``form_model = 'player'``, or
-``form_model = 'group'``, and then set ``form_fields``
-to the list of fields you want in your form.
-
-.. note::
-
-    In January 2018, the syntax changed from ``form_model = models.Player``
-    to ``form_model = 'player'``. See :ref:`v20` for more information.
-
-When the user submits the form, the submitted data is automatically
-saved to the field in your model.
+you need fields on the ``Player`` class in models.py. Then,
+in your Page class, set ``form_model`` and ``form_fields``.
 
 For example, here is a models.py:
 
 .. code-block:: python
 
-    class Group(BaseGroup):
-        f1 = models.BooleanField()
-        f2 = models.BooleanField()
-
     class Player(BasePlayer):
-        f1 = models.BooleanField()
-        f2 = models.BooleanField()
+        name = models.StringField(label="Your name:")
+        age = models.IntegerField(label="Your age:")
 
-And a corresponding pages.py that defines the form on each page:
+And pages.py:
 
 .. code-block:: python
 
     class Page1(Page):
         form_model = 'player'
-        form_fields = ['f1', 'f2'] # this means player.f1, player.f2
+        form_fields = ['name', 'age'] # this means player.name, player.age
 
-    class Page2(Page):
-        form_model = 'group'
-        form_fields = ['f1', 'f2'] # this means group.f1, group.f2
+When the user submits the form, the submitted data is automatically
+saved to the corresponding fields on the player model.
+
+(You can also set ``form_model = 'group'`` instead of ``player``;
+see :ref:`form-model-group`.)
+
+.. note::
+
+    In January 2018, the syntax changed from ``form_model = models.Player``
+    to ``form_model = 'player'``. See :ref:`v20` for more information.
 
 
 .. _label:
@@ -49,39 +41,31 @@ And a corresponding pages.py that defines the form on each page:
 Forms in templates
 ------------------
 
-You should include form fields by using a ``{% formfield %}`` element:
-
-.. code-block:: html+django
-
-    {% formfield player.contribution label="How much do you want to contribute?" %}
-
-An alternative to using ``label`` is to define ``label`` on the model field:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-        contribution = models.CurrencyField(
-            label="How much do you want to contribute?")
+In your template, you can display the form with ``{% formfields %}``.
 
 .. note::
 
-    Prior to January 2018, ``label`` was called ``verbose_name``.
-    See :ref:`v20` for more information.
+    ``{% formfields %}`` was introduced in June 2018. It's equivalent to:
 
-Then you can just put this in your template:
+    .. code-block:: html+django
+
+        {% for field in form %}
+            {% formfield field %}
+        {% endfor %}
+
+
+If you want to position the fields individually,
+you can instead use ``{% formfield %}``:
 
 .. code-block:: html+django
 
     {% formfield player.contribution %}
 
-Or, if you have multiple form fields, you can insert them all at once:
+You can also put the ``label`` in directly in the template:
 
 .. code-block:: html+django
 
-    {% for field in form %}
-        {% formfield field %}
-    {% endfor %}
-
+    {% formfield player.contribution label="How much do you want to contribute?" %}
 
 Note: If you have written HTML forms before, you may be accustomed to
 writing the ``<input>`` element, e.g. ``<input type="text" name="contribution">``.
@@ -89,6 +73,35 @@ In oTree, it's usually easier to use ``formfield`` instead. It will autogenerate
 the correct ``<input>`` HTML, along with CSS styling, label, and error messages.
 However, if you want more flexibility you are free to write the raw HTML.
 See :ref:`raw_html`.
+
+.. _form-model-group:
+
+form_model = 'group'
+--------------------
+
+If you set ``form_model = 'group'``.
+the values submitted by the user will be stored
+onto the group model, rather than the player.
+This is often useful in games where some players make decisions on behalf of the group.
+For example, in an ultimatum game, player 1 makes an offer and player 2 accepts or rejects.
+Since there is only 1 offer made per group, you would define the ``offer`` field on the group:
+
+.. code-block:: python
+
+    class Group(Group):
+        offer = models.CurrencyField()
+
+Your page would look like this:
+
+.. code-block:: python
+
+    class Offer(Page):
+        form_model = 'group'
+        form_fields = ['offer'] # this means it will be stored in group.offer
+
+And in your template, you would have::
+
+    {% formfield group.offer %}
 
 .. _form-validation:
 
@@ -104,15 +117,14 @@ they need to correct.
     :align: center
     :scale: 100 %
 
-oTree automatically validates all input submitted by the user. For
+oTree automatically validates input. For
 example, if you have a form containing a ``IntegerField``, oTree
-will not let the user submit values that are not positive integers, like
-``-1``, ``1.5``, or ``hello``.
+will reject inputs like ``1.5`` or ``hello``.
 
 min and max
 ~~~~~~~~~~~
 
-For example, is how you would
+For example, this is how you would
 require an integer to be between 12 and 24:
 
 .. code-block:: python
@@ -319,35 +331,9 @@ returns the list. For example:
             else:
                 return ['bid_1', 'bid_2']
 
-But if you do this, you must make sure your template
-also contains conditional logic so that the right ``formfield`` elements
-are included.
-
-You can do this by looping through each field in the form.
-oTree passes a variable ``form`` to each template, which you can loop through
-like this:
-
-.. code-block:: django
-
-    <!-- in your HTML template -->
-    {% for field in form %}
-        {% formfield field %}
-    {% endfor %}
-
-(If you need more complex looping logic than this,
-then consider not using ``{% formfield %}`` and instead writing the
-raw HTML for the ``<input>`` elements; see :ref:`radio-table`.)
-
-``form`` is a special variable.
-It is a Django form object, which is an iterable whose elements are Django form
-field objects. ``formfield`` can take as an argument a Django field object,
-or it can be an expression like ``{% formfield player.foo %}`` and
-``{% formfield group.foo %}``, but ``player.foo`` must be written explicitly
-rather than assigning ``somevar = player.foo`` and then doing
-``{% formfield somevar %}``.
-
-If you use this technique, you should consider setting
-``label`` on your model fields (see :ref:`label`).
+But if you do this, you have to be sure to also include the same
+``{% formfield %}`` elements in your template. The easiest way is to use
+``{% formfields %}``.
 
 
 Widgets
@@ -371,7 +357,7 @@ oTree additionally offers:
 Customizing a field's appearance
 --------------------------------
 
-``{% formfield %}`` is easy to use because it automatically outputs
+``{% formfields %}`` and ``{% formfield %}`` are easy to use because they automatically output
 all necessary parts of a form field (the input, the label, and any error messages),
 with Bootstrap styling.
 

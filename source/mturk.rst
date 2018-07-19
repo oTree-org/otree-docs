@@ -59,6 +59,40 @@ by adding the following lines to your ``settings.py``::
     When testing with oTree, don't keep too much money in your MTurk account,
     in case something goes wrong.
 
+Preview template
+----------------
+
+Save the following to ``_templates/global/MTurkPreview.html``.
+This is the "preview" workers will see before they accept the HIT.
+You can modify the text as you wish:
+
+.. code-block:: html
+
+    {% extends "otree/MTurkPreview.html" %}
+    {% load otree %}
+
+    {% block title %}Please read this before clicking "Accept"{% endblock %}
+
+    {% block content %}
+        <p>
+            This HIT is an academic experiment on decision making.
+        </p>
+
+        <p>
+            It will require you to interact with other workers in real time.
+            Some other workers may be waiting until you have completed a given task,
+            before they can proceed.
+            So, please be mindful of other participants and complete all tasks in a timely fashion.
+            Please only accept ths HIT only if you can commit to completing it.
+        </p>
+
+        <p>
+            After completing this HIT, you will receive your reward plus a bonus payment
+            that is based on how you play the experiment.
+        </p>
+    {% endblock %}
+
+
 Session config
 --------------
 
