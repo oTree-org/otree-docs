@@ -105,7 +105,6 @@ If you don't do it, you will see an "Application Error":
 
 .. image:: ../_static/heroku-application-error.png
     :align: center
-    :scale: 80 %
 
 If Redis is not set up, you may also see messages in your ``heroku logs``
 saying "Connection refused", or an error mentioning port 6379.

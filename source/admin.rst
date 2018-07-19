@@ -97,7 +97,6 @@ without needing to edit the source code:
 
 .. image:: _static/admin/edit-config.png
     :align: center
-    :scale: 100 %
 
 
 For example, let's say you are making a public goods game,
@@ -166,7 +165,6 @@ Here is a screenshot:
 
 .. image:: _static/admin/admin-report.png
     :align: center
-    :scale: 100 %
 
 To use this feature, you create a template called ``AdminReport.html``,
 and optionally, a method ``Subsession.vars_for_admin_report``.

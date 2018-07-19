@@ -11,7 +11,6 @@
 
     .. image:: _static/splash.png
         :align: center
-        :scale: 100 %
 
 
 Live demo

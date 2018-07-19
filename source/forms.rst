@@ -506,7 +506,6 @@ and rather than a radio button you'd like to present it as a button like this:
 
 .. image:: _static/forms/yes-no-buttons.png
     :align: center
-    :scale: 100 %
 
 First, put ``offer_accepted`` in your Page's ``form_fields`` as usual.
 Then put this code in the template
