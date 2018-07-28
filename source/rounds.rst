@@ -125,12 +125,13 @@ round of the same app.)
 ``participant.vars`` is is a dictionary that can store any data.
 For example, you can set an attribute like this::
 
-    self.participant.vars['name'] = 'John'
+    self.participant.vars['blah'] = [1, 2, 3]
 
 Later in the session (e.g. in a separate app),
 you can retrieve it like this::
 
-    self.participant.vars['name'] # returns 'John'
+    # the below line returns [1, 2, 3]
+    self.participant.vars['blah']
     # or try printing:
     print('vars is', self.participant.vars)
 

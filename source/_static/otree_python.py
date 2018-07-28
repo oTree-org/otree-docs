@@ -77,10 +77,11 @@ li.append(2)    # li is now [1, 2]
 li.append(3)    # li is now [1, 2, 3]
 
 # Access a list like you would any array
+# in Python, the first list index is 0, not 1.
 li[0]  # => 1
 # Assign new values to indexes that have already been initialized with =
 li[0] = 42
-li # => [42, 2, 4]
+li # => [42, 2, 3]
 
 
 # You can add lists

@@ -269,23 +269,21 @@ The dynamic alternative to setting ``min`` in models.py.
 
 This is the most flexible method for validating a field.
 
-For example, let's say your form has an integer field called
-``odd_negative``, which must be odd and negative: You would enforce this
-as follows:
+For example, let's say that the player has to make a purchase but
+this purchase cannot exceed the player's budget.
+Assuming your fields are called ``purchase`` and ``budget``:
 
 .. code-block:: python
 
     class MyPage(Page):
 
         form_model = 'player'
-        form_fields = ['odd_negative']
+        form_fields = ['purchase']
 
-        def odd_negative_error_message(self, value):
+        def purchase_error_message(self, value):
             print('value is', value)
-            is_odd = (value % 2 == 1)
-            is_negative = (value < 0)
-            if not (is_odd and is_negative):
-                return 'Must be odd and negative'
+            if value > self.player.budget:
+                return 'Purchase is over budget'
 
 .. _error_message:
 
@@ -481,8 +479,7 @@ hidden form field. For example:
     form_fields = ['my_hidden_input']
 
     # HTML template
-    <input type="hidden" name="my_hidden_input"
-        value="5" id="id_my_hidden_input"/>
+    <input type="hidden" name="my_hidden_input" id="id_my_hidden_input"/>
 
 Then you can use JavaScript to set the value of that input, by selecting
 the element by id ``id_my_hidden_input``, and setting its ``value`` attribute.

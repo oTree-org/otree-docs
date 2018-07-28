@@ -502,6 +502,11 @@ However, for ``Constants``, we always use uppercase.
 That's because ``Constants`` is not a database table with instances/rows,
 because the constants are the same for all players.
 
+What's the difference between IntegerField and Integer?
+-------------------------------------------------------
+
+An ``IntegerField`` is a column in the database table.
+An integer is one value in that table.
 
 .. _many-fields:
 

@@ -89,7 +89,7 @@ For example, in this code, ``self`` is a player
     class Player(BasePlayer):
 
         def set_payoff(self):
-            print('in set_payoff, self is:', self)
+            print('self is:', self)
             self.payoff = 100
 
 The name ``self`` is just shorter and more convenient than ``player``.
