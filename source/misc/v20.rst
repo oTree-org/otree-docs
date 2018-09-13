@@ -95,6 +95,19 @@ Note:
 |requirements file              | by ``otree``                        |                                                                                |
 +-------------------------------+-------------------------------------+--------------------------------------------------------------------------------+
 
+If oTree fails to start after upgrading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you upgrade and then oTree crashes, especially if it gives a
+``ModuleNotFoundError`` related to Django, try running ``pip check``
+to see if you have any wrong package versions installed.
+
+You can often fix with::
+
+	pip3 uninstall otree
+	pip3 install otree
+
+And then save your ``pip3 freeze`` output to ``requirements_base.txt``.
 
 django_countries
 ~~~~~~~~~~~~~~~~

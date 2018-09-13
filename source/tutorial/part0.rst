@@ -76,9 +76,7 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 
         Please enter the following information.
 
-        {% formfield player.name %}
-
-        {% formfield player.age %}
+        {% formfields %}
 
         {% next_button %}
 
@@ -217,7 +215,7 @@ of code. Your first step should be to look at the last lines of the message.
 Specifically, find the file and line number of the last entry.
 In the above example, it's ``"C:\oTree\chris\public_goods_simple\models.py", line 40``.
 So, go to that file & line number.
-Specifically, look for the problem mentioned at the last line of the traceback.
+Look for the problem mentioned at the last line of the traceback.
 In this example, it is ``IndentationError: expected an indented block``
 (which indicates that the problem has to do with code indentation).
 Try to fix the error then run the command again.

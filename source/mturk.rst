@@ -8,8 +8,8 @@ oTree provides integration with Amazon Mechanical Turk (MTurk).
 
 You can publish your game to MTurk directly from
 oTree's admin interface. Then, workers on mechanical Turk can accept and
-play your app as an MTurk HIT and get paid a participation fee as well
-as bonuses they earned by playing your game.
+play your app as an MTurk HIT. Then oTree can send each participant
+their participation fee as well as bonuses they earned by playing the game.
 
 .. warning::
 

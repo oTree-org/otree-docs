@@ -24,7 +24,7 @@ Step 2: Make sure PyCharm is properly installed
 In PyCharm, go to ``public_goods/models.py``.
 The top of the file should look like this:
 
-.. figure:: ../_static/workshop/pycharm-correct.png
+.. figure:: ../_static/setup/pycharm-correct.png
 
 It should NOT be underlined in red like this
 (this means PyCharm cannot find the correct Python installation):
