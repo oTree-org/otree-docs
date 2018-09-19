@@ -40,7 +40,6 @@ Enter this:
 
     pip3 install -U otree
 
-
 Step 3: Run oTree
 -----------------
 

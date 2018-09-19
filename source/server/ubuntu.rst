@@ -387,7 +387,7 @@ but in some cases name things differently to avoid clashes:
     as described earlier,
     and set this in the DATABASE_URL env var.
 -   Each user needs their own Redis database.
-    By default, oTree uses ``redis://localhost:6379/0``;
+    By default, oTree uses ``redis://localhost:6379``;
     but if another person uses the same server, they need to set the
     ``REDIS_URL`` env var explicitly, to avoid clashes.
     You can set it to ``redis://localhost:6379/1``, ``redis://localhost:6379/2``,

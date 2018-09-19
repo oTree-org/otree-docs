@@ -408,9 +408,6 @@ Instead, you should simply loop over the choices in the field as follows:
         {% endfor %}
     </tr>
 
-.. note::
-
-    This feature is only available in oTree 2.0 and higher.
 
 If you have many fields with the same number of choices,
 you can arrange them in a table:

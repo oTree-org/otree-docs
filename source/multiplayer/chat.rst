@@ -4,8 +4,6 @@ Chat
 ====
 
 You can add a chat room to your page so that participants can communicate with each other.
-`Live demo here <http://otree-demo.herokuapp.com/demo/prisoner_chat/>`__
-(open the start links and click through to the "Your Choice" page).
 
 .. note::
 
