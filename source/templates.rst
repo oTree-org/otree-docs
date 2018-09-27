@@ -226,14 +226,12 @@ There is a ``_static/`` folder in your project folder.
 Create a subfolder with any name you want (or use the existing ``global/`` subfolder),
 and put your files there.
 
-Let's say you have an image in ``_static/my_app/my_image.png``.
-To display it, you need to use an ``<img>`` tag whose ``src`` is set to that image's URL,
-which you can retrieve with the ``{% static %}`` tag:
+Then in your template, to display ``_static/my_app/my_image.png``,
+use this:
 
 .. code-block:: HTML+django
 
     <img src="{% static "my_app/my_image.png" %}"/>
-
 
 If the file is in ``_static/global/my_image.png``, you would do:
 
@@ -244,13 +242,9 @@ If the file is in ``_static/global/my_image.png``, you would do:
 (If you prefer, you can also put static files inside your app folder,
 in a subfolder called ``static/your_app_name``.)
 
-Notes:
-
--   If you get an error "invalid block tag: static", then make sure you have ``{% load static %}``
-    at the top of your template.
--   If a static file is not updating even after you changed it,
-    this is because your browser cached the file. Do a full page reload
-    (usually Ctrl+F5)
+If a static file is not updating even after you changed it,
+this is because your browser cached the file. Do a full page reload
+(usually Ctrl+F5)
 
 Dynamic images
 ~~~~~~~~~~~~~~
@@ -308,7 +302,7 @@ and put this inside it:
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load static otree %}
+    {% load otree %}
 
     {% block app_styles %}
 
@@ -324,7 +318,7 @@ Then each ``public_goods`` template would inherit from this template:
  .. code-block:: html+django
 
     {% extends "public_goods/Page.html" %}
-    {% load static otree %}
+    {% load otree %}
     ...
 
 Just one page

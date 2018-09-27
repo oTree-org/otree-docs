@@ -188,6 +188,8 @@ templates, and display whatever variables were passed in ``vars_for_admin_report
 
 .. code-block:: html+django
 
+    {% load otree %}
+
     <p>Here is the sorted list of payoffs in round {{ subsession.round_number }}</p>
 
     <ul>
@@ -221,6 +223,8 @@ Likewise, you can reuse ``AdminReport.html`` in the participant template with an
 
 If you're generating a chart with JavaScript,
 remember to use the :ref:`|json <json>` filter.
+
+
 
 Kiosk Mode
 ----------

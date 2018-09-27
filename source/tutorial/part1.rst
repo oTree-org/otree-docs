@@ -113,7 +113,7 @@ contribution.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load static otree %}
+    {% load otree %}
 
     {% block title %} Contribute {% endblock %}
 
@@ -145,7 +145,7 @@ after we have determined the user's payoff.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load static otree %}
+    {% load otree %}
 
     {% block title %} Results {% endblock %}
 

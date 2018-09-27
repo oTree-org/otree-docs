@@ -59,14 +59,17 @@ This survey has 2 pages:
 -  Page 1: players enter their name and age
 -  Page 2: players see the data they entered on the previous page
 
-So, let's make 2 HTML files under ``templates/my_simple_survey/``.
+So, let's make 2 HTML template files.
+Next to your ``models.py`` you will find a folder called ``templates/``,
+which in turn has another subfolder called ``my_simple_survey``.
+Put your templates there.
 
 Let's name the first page ``MyPage.html``, and put these contents inside:
 
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load static otree %}
+    {% load otree %}
 
     {% block title %}
         Enter your information
@@ -87,7 +90,7 @@ The second template will be called ``Results.html``.
 .. code-block:: html+django
 
     {% extends "global/Page.html" %}
-    {% load static otree %}
+    {% load otree %}
 
     {% block title %}
         Results
