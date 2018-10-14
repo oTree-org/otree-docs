@@ -30,7 +30,7 @@ In this folder, create the public goods app:
 
 .. code-block:: bash
 
-    $ otree startapp my_public_goods
+    otree startapp my_public_goods
 
 Then in PyCharm, go to the folder ``my_public_goods`` that was created.
 
@@ -261,7 +261,7 @@ Enter:
 
 .. code-block:: bash
 
-    $ otree devserver
+    otree devserver
 
 Then open your browser to ``http://localhost:8000`` to play the game.
 

@@ -19,7 +19,7 @@ Create the app
 
 .. code-block:: bash
 
-    $ otree startapp my_matching_pennies
+    otree startapp my_matching_pennies
 
 
 Define models.py

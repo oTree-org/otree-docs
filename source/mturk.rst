@@ -261,14 +261,12 @@ with some people's grouping code.
 Managing your HITs
 ------------------
 
-oTree provides the ability to approve/reject assignments and send bonuses.
-If you want to do anything beyond this (e.g. change expiration date, interact with workers,
+oTree provides the ability to approve/reject assignments,
+send bonuses, and expire HITs early.
+If you want to do anything beyond this
+(e.g. extend expiration date, interact with workers,
 send custom bonuses, etc), you will need to install the
-`MTurk command-line tools <https://aws.amazon.com/cli/>`__.
-Once you have installed it, the list of MTurk commands is
-`here <https://docs.aws.amazon.com/cli/latest/reference/mturk/index.html>`__.
-
-(Philipp Chapkovski's
-`otree-export-utils <https://github.com/chapkovski/otree_export_utils>`__ add-in
-allows you to manage your MTurk HITs.
-However, I cannot confirm whether it is compatible with the current version of oTree.)
+`MTurk command-line tools <https://aws.amazon.com/cli/>`__
+or use the 3rd party
+`Manage HITs Individually <https://manage-hits-individually.s3.amazonaws.com/v4.0/index.html#/credentials>`__
+tool.

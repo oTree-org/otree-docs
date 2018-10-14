@@ -222,7 +222,7 @@ Images, videos, CSS, JavaScript, etc. (static files)
 
 Here is how to include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages.
 
-There is a ``_static/`` folder in your project folder.
+At the root of your oTree project, there is a ``_static/`` folder.
 Create a subfolder with any name you want (or use the existing ``global/`` subfolder),
 and put your files there.
 
@@ -282,8 +282,10 @@ It depends whether you want your JS/CSS code to be applied (a) globally,
 Globally
 ^^^^^^^^
 
+At the root of your oTree project, there is a ``_templates/`` folder
+(not to be confused with the ``templates/`` folder inside each app).
 To apply a style or script to all pages in all games,
-modify the template ``_templates/global/Page.html``.
+modify ``_templates/global/Page.html``.
 Put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
 and any styles inside ``{% block global_styles %}...{% endblock %}``.
 
@@ -373,18 +375,18 @@ Customizing the theme
 If you want to customize the appearance of an oTree element,
 here is the list of CSS selectors:
 
-=========================   ================================================
+=========================   =====================================================
 Element                     CSS/jQuery selector
-=========================   ================================================
+=========================   =====================================================
 Page body                   ``.otree-body``
 Page title                  ``.otree-title``
 Wait page (entire dialog)   ``.otree-wait-page``
-Wait page dialog title      ``.otree-wait-page__title``
+Wait page dialog title      ``.otree-wait-page__title`` (note: ``__``, not ``_``)
 Wait page dialog body       ``.otree-wait-page__body``
 Timer                       ``.otree-timer``
 Next button                 ``.otree-btn-next``
 Form errors alert           ``.otree-form-errors``
-=========================   ================================================
+=========================   =====================================================
 
 For example, to change the page width, put CSS in your base template like this:
 
@@ -405,6 +407,8 @@ try modifying their styles:
 When possible, use one of the official selectors above.
 Don't use any selector that starts with ``_otree``, and don't select based on Bootstrap classes like
 ``btn-primary`` or ``card``, because those are unstable.
+
+2 underscores (``__``, not ``_``).
 
 .. _json:
 

@@ -296,7 +296,7 @@ You can also increase the number of web dynos,
 but if you do so, you may need to upgrade your Redis plan also,
 because more dynos means more Redis connections.
 
-You should not increase the number of timeoutworker dynos.
+You should not increase the number of worker dynos.
 
 Upgrade Redis
 +++++++++++++
@@ -347,10 +347,8 @@ Database backups
 ----------------
 
 When running studies, it is your responsibility to back up your database.
-
-In Heroku, you can set backups for your Postgres database. Go to your `Heroku Dashboard <https://dashboard.heroku.com/apps/>`__,
-click on the "Heroku Postgres" tab, and then click "PG Backups".
-More information is available `here <https://devcenter.heroku.com/articles/heroku-postgres-backups>`__.
+In Heroku, you can set backups for your Postgres database
+through the Heroku dashboard.
 
 Next steps
 ----------

@@ -183,7 +183,7 @@ After the field has been set, you can access the human-readable name
 using
 `get_FOO_display <https://docs.djangoproject.com/en/1.11/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
 , like this:
-``self.get_level_display() # returns e.g. 'Medium'``.
+``player.get_level_display() # returns e.g. 'Medium'``.
 However, if you define the choices dynamically with :ref:`FOO_choices`,
 in order to use ``get_*_display()`` you need to also define the ``*_choices``
 method on the Player/Group in models.py.

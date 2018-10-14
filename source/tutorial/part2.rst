@@ -17,7 +17,7 @@ Create the app
 
 .. code-block:: bash
 
-    $ otree startapp my_trust
+    otree startapp my_trust
 
 
 Define models.py

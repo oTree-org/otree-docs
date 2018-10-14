@@ -108,11 +108,6 @@ If you want everyone in the session to freely chat with each other, just do:
 Styling
 ~~~~~~~
 
-.. note::
-
-    The CSS classes for the elements changed in August 2017.
-    They were renamed to a more consistent BEM style.
-
 To customize the style, just include some CSS after the ``{% chat %}`` element,
 e.g.:
 
@@ -129,6 +124,8 @@ e.g.:
             font-weight: bold;
         }
     </style>
+
+Note that there are 2 underscores (``__``, not ``_``).
 
 You can also customize the appearance by putting it inside a ``<div>``
 and styling that parent ``<div>``. For example, to set the width:
