@@ -63,53 +63,31 @@ close and reopen your command prompt.
 Initialize your Git repo
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you haven't already initialized a git repository
-run this command from your project's root folder:
+Run this command from your project's root folder:
 
 .. code-block:: bash
 
     git init
 
-If you're on Windows, you may need to install Git manually from
+If you're on Windows, you may need to install Git from
 `here <https://git-scm.com/download/win>`__.
 
 Create the Heroku app
 ~~~~~~~~~~~~~~~~~~~~~
 
-Create an app on Heroku, which prepares Heroku to receive your source
-code:
-
 .. code-block:: bash
 
-    $ heroku create
-    Creating lit-bastion-5032 in organization heroku... done, stack is cedar-14
-    http://lit-bastion-5032.herokuapp.com/ | https://git.heroku.com/lit-bastion-5032.git
-    Git remote heroku added
+    $ heroku create my-app-name
 
-When you create an app, a git remote (called heroku) is also created and associated with your local git repository.
-
-Heroku generates a random name (in this case lit-bastion-5032) for your
-app. Or you can specify your own name; see ``heroku help create`` for more info.
-(And see ``heroku help`` for general help.)
+This will create your website ``my-app-name.herokuapp.com``.
 
 .. _redis:
 
 Install Redis add-on
 ~~~~~~~~~~~~~~~~~~~~
 
-Use this command to install Redis::
+    heroku addons:create heroku-redis:premium-0
 
-    heroku addons:create heroku-redis:hobby-dev
-
-If you don't do it, you will see an "Application Error":
-
-.. image:: ../_static/heroku-application-error.png
-    :align: center
-
-If Redis is not set up, you may also see messages in your ``heroku logs``
-saying "Connection refused", or an error mentioning port 6379.
-After adding Redis, if it's still not working,
-you may need to wait for a few minutes, or restart with ``heroku restart``.
 
 Upgrade oTree
 ~~~~~~~~~~~~~
@@ -183,9 +161,6 @@ Open the site in your browser:
 
 (This command must be executed from the folder that contains your project.)
 
-That's it! You should be able to play your app online.
-If not, see the next section.
-
 .. _heroku-troubleshooting:
 
 Troubleshooting
@@ -225,8 +200,6 @@ Turn on timeout worker Dyno
 To enable full functionality, you should go to the `Heroku Dashboard <https://dashboard.heroku.com/apps>`__,
 click on your app, click to edit the dynos, and turn on the second dyno
 (named ``worker`` or ``timeoutworker``).
-
-Turning on the second dyno is free, but you may need to register a credit card with Heroku.
 
 If you are just testing your app, oTree will still function without the timeoutworker,
 but if you are running a study with real participants and your pages have
@@ -277,9 +250,6 @@ Then you need to promote (i.e. "activate") this new database::
 
     $ heroku pg:promote HEROKU_POSTGRESQL_RED  # substitute your color here
     Promoting HEROKU_POSTGRESQL_RED_URL to DATABASE_URL... done
-
-More info on the database plans `here <https://elements.heroku.com/addons/heroku-postgresql>`__,
-and more technical documentation `here <https://devcenter.heroku.com/articles/heroku-postgresql>`__.
 
 After purchasing the upgraded Postgres, it's recommended to delete the hobby-dev
 (free) database, to avoid accidentally using the wrong database.

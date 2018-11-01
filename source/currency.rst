@@ -76,25 +76,20 @@ it is calculated by converting ``self.participant.payoff`` to real-world currenc
 Points (i.e. "experimental currency")
 -------------------------------------
 
-Sometimes it is preferable for players to play games for points or
-"experimental currency units", which are converted to real money at the
-end of the session. You can set ``USE_POINTS = True`` in
-``settings.py``, and then in-game currency amounts will be expressed in
-points rather than dollars or euros, etc.
+If you set ``USE_POINTS = True``, then currency amounts will be points instead of dollars/euros/etc.
+For example, ``c(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
 
-For example, ``c(10)`` is displayed as ``10 points``.
-To change the exchange rate to real money, go to ``settings.py``
-and set ``real_world_currency_per_point`` in the session config.
-For example, if you pay the user 2 cents per point, you would set
-``'real_world_currency_per_point': 0.02``.
+The oTree's admin's payment tab will automatically convert points to money
+using your ``real_world_currency_per_point`` in the session config in ``settings.py``.
 
-Points are integers by default. You can change this by setting ``POINTS_DECIMAL_PLACES = 2``,
-or whatever number of decimal places you desire.
+Points are integers. This means amounts will get rounded to whole numbers,
+like ``10`` divided by ``3`` is ``3``.
+So, we recommend using point magnitudes high enough that you don't care about rounding error.
+For example, set the endowment of a game to 1000 points, rather than 100.
+However, if you really want decimal places in your points, you can set
+``POINTS_DECIMAL_PLACES = 2``, etc.
 
-If you switch your language setting to one of oTree's supported languages,
-the name "points" is automatically translated,
-e.g. "puntos" in Spanish.
-To further customize the name "points" to something else like "tokens" or "credits",
+To customize the name "points" to something else like "tokens" or "credits",
 set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``.
 
 Converting points to real world currency
@@ -108,7 +103,7 @@ You can convert a points amount to money using the method
     >>> c(10).to_real_world_currency(self.session)
     $0.20
 
-It requires ``self.session`` to be passed, because
+It requires ``self.session``, because
 different sessions can have different conversion rates).
 
 Misc

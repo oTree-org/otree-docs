@@ -20,7 +20,7 @@ you would do::
 
     cd oTree
 
-In this folder, create the public goods app::
+Then, create the app::
 
     otree startapp my_simple_survey
 

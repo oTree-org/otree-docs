@@ -26,7 +26,7 @@ Define models.py
 ----------------
 
 We define our constants as we have previously. Matching pennies is a
-2-person game and the payoff for winning a paying round is 100 points.
+2-person game and the payoff for winning a paying round is 1000 points.
 In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`).
 
 .. code-block:: python
@@ -35,7 +35,7 @@ In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`
         name_in_url = 'my_matching_pennies'
         players_per_group = 2
         num_rounds = 4
-        stakes = c(100)
+        stakes = c(1000)
 
 Now let's define our ``Player`` class:
 

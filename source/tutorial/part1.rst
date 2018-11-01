@@ -26,7 +26,7 @@ Create the app
 Use your command line to ``cd`` to the oTree project folder you created,
 the one that contains ``requirements_base.txt``.
 
-In this folder, create the public goods app:
+Then, create the app::
 
 .. code-block:: bash
 
@@ -46,8 +46,8 @@ parameters -- things that are the same for all players in all games.
 
 -  There are 3 players per group. So, change ``players_per_group``
    to 3. oTree will then automatically divide players into groups of 3.
--  The endowment to each player is 100 points. So, let's define
-   ``endowment`` and set it to ``c(100)``. (``c()`` means it is a
+-  The endowment to each player is 1000 points. So, let's define
+   ``endowment`` and set it to ``c(1000)``. (``c()`` means it is a
    currency amount; see :ref:`currency`).
 -  Each contribution is multiplied by 2. So let's define
    ``multiplier`` and set it to 2:
@@ -61,7 +61,7 @@ Now we have:
         players_per_group = 3
         num_rounds = 1
 
-        endowment = c(100)
+        endowment = c(1000)
         multiplier = 2
 
 Now let's think about the main entities in this game: the Player and the
@@ -294,21 +294,19 @@ your print statement will be displayed in your command prompt window
 (not in your web browser).
 
 You can sprinkle lots of prints in your code
-(I like to print extra characters like ``@@@``, to make it easier to
-find the print statements in my server output):
 
 .. code-block:: python
 
-    print('@@@@ in payoff function')
+    print('in payoff function')
     contributions = [p.contribution for p in players]
-    print('@@@@ contributions:', contributions)
+    print('contributions:', contributions)
     group.total_contribution = sum(contributions)
     group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
-    print('@@@ individual share', group.individual_share)
+    print('individual share', group.individual_share)
     for p in players:
-        print('@@@ payoff before', p.payoff)
+        print('payoff before', p.payoff)
         p.payoff = Constants.endowment - p.contribution + group.individual_share
-        print('@@@ payoff after', p.payoff)
+        print('payoff after', p.payoff)
 
 
 If you don't see the output in your console window,
