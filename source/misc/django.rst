@@ -116,6 +116,22 @@ objects yourself.
 Real-time and WebSockets
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. warning::
+
+    The information in this section is for advanced programmers
+    who want to use oTree's unstable features.
+
+    oTree is using channels v 0.17.3,
+    which is incompatible with the current version of channels, 2.x.
+
+    When oTree upgrades to channels 2.x, any existing oTree apps that depend on
+    the old version of Channels will likely break and may need significant fixes
+    (upgrading your code to the channels 2.x format is a non-trivial task).
+
+    So, if you opt to use Channels, you should account for this in your long-term
+    plans.
+
+
 oTree uses `Django channels <https://channels.readthedocs.io/en/stable/>`__
 for real-time (WebSocket) functionality.
 
@@ -130,16 +146,6 @@ you should create a ``connect`` consumer and ``disconnect`` consumer.
 See `otree.channels.consumers <https://github.com/oTree-org/otree-core/blob/master/otree/channels/consumers.py>`__
 for examples of more complex consumers. Also see :ref:`auto_save`.
 
-.. note::
-
-    oTree is using channels v 0.17.3,
-    which is incompatible with the current version of channels, 2.x.
-
-    oTree is currently blocked from upgrading Channels to 2.x because of
-    `this <https://github.com/django/channels/issues/498>`__ issue,
-    which makes it complicated for oTree to install smoothly cross-platform.
-
-    When that issue is resolved, oTree will upgrade.
 
 
 Next, create a module ``routing.py`` in your project root

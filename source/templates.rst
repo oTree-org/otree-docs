@@ -223,24 +223,29 @@ Images, videos, CSS, JavaScript, etc. (static files)
 Here is how to include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages.
 
 At the root of your oTree project, there is a ``_static/`` folder.
-Create a subfolder with any name you want (or use the existing ``global/`` subfolder),
-and put your files there.
+Put a file there, for example ``puppy.jpg``.
+Then, in your template, you can get the URL to that file with
+``{% static 'puppy.jpg' %}``.
 
-Then in your template, to display ``_static/my_app/my_image.png``,
-use this:
-
-.. code-block:: HTML+django
-
-    <img src="{% static "my_app/my_image.png" %}"/>
-
-If the file is in ``_static/global/my_image.png``, you would do:
+To display an image, use the ``<img>`` tag, like this:
 
 .. code-block:: HTML+django
 
-    <img src="{% static "global/my_image.png" %}"/>
+    <img src="{% static "puppy.jpg" %}"/>
 
-(If you prefer, you can also put static files inside your app folder,
-in a subfolder called ``static/your_app_name``.)
+Above we saved our image in ``_static/puppy.jpg``,
+But actually it's better to make a subfolder with the name of your app,
+and save it as ``_static/your_app_name/puppy.jpg``, to keep files organized
+and prevent name conflicts.
+
+Then your HTML code becomes:
+
+.. code-block:: HTML+django
+
+    <img src="{% static "your_app_name/puppy.jpg" %}"/>
+
+If you prefer, you can also put static files inside your app folder,
+in a subfolder called ``static/your_app_name``.
 
 If a static file is not updating even after you changed it,
 this is because your browser cached the file. Do a full page reload
@@ -286,19 +291,18 @@ At the root of your oTree project, there is a ``_templates/`` folder
 (not to be confused with the ``templates/`` folder inside each app).
 To apply a style or script to all pages in all games,
 modify ``_templates/global/Page.html``.
-Put any scripts inside ``{% block global_scripts %}...{% endblock %}``,
-and any styles inside ``{% block global_styles %}...{% endblock %}``.
+Put any scripts inside ``{% block global_scripts %}``,
+and any styles inside ``{% block global_styles %}``.
 
 
 For one app
 ^^^^^^^^^^^
 
-To apply a style or script to all pages in one app,
-create a base template for all templates in your app,
-and put blocks called ``app_styles`` or ``app_scripts`` in this base template.
+To apply a style or script to all pages in one app, create a base template
+and put the style/script in ``{% block app_styles %}`` or ``{% block app_scripts %}``.
 
 For example, if your app's name is ``public_goods``,
-then you would create a file called ``public_goods/templates/public_goods/Page.html``,
+then create ``public_goods/templates/public_goods/Page.html``,
 and put this inside it:
 
 .. code-block:: html+django
@@ -308,8 +312,8 @@ and put this inside it:
 
     {% block app_styles %}
 
-        <style type="text/css">
-            ...
+        <style>
+            CSS goes here...
         </style>
 
     {% endblock %}
@@ -337,26 +341,12 @@ They should be located outside the ``content`` block, like this:
         <p>This is some HTML.</p>
     {% endblock %}
 
-    {% block styles %}
-
-        <!-- define a style -->
-        <style type="text/css">
-            ...
-        </style>
-
-        <!-- or reference a static file -->
-        <link href="{% static "my_app/style.css" %}" rel="stylesheet">
-
-    {% endblock %}
-
     {% block scripts %}
 
-        <!-- define a script -->
         <script>
-            ...
+            alert('hello world');
         </script>
 
-        <!-- or reference a static file -->
         <script src="{% static "my_app/script.js" %}"></script>
     {% endblock %}
 
