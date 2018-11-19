@@ -43,8 +43,10 @@ skip the "Getting Started With Python" guide.
 .. note::
 
     (November 2018) I have recently built an easy web dashboard
+    called `oTree Hub <https://www.otreehub.com/>`__
     that automates your Heroku setup and allows you to skip all the below steps.
-    If you'd like to beta test it, send an email to chris@otree.org.
+    Feel free to try it out and send me your feedback.
+
 
 Install the Heroku Toolbelt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
