@@ -38,12 +38,8 @@ You can obtain these credentials `here <https://console.aws.amazon.com/iam/home?
    :alt: AWS key
 
 For security, it's best to put these keys in an environment variable.
-On Heroku you would set these env vars like this:
-
-.. code-block:: bash
-
-    heroku config:set AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY_ID
-    heroku config:set AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS_KEY
+If using Heroku, go to your App Dashboard's "settings",
+and set ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``.
 
 (For servers not on Heroku, to learn what an "environment variable" is,
 see `here <http://superuser.com/a/284351>`__.)

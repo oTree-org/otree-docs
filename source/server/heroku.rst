@@ -319,7 +319,6 @@ If using Heroku, we recommend installing the free "Papertrail" logging add-on::
 Papertrail gives you an easy-to-use interface for exploring the Heroku server logs.
 It is much easier to use than running ``heroku logs``.
 
-(This is useful even if you are already using Sentry, because it shows different types of errors.)
 
 Database backups
 ----------------

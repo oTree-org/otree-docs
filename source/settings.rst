@@ -42,17 +42,6 @@ the session config can be accessed from methods in your apps as ``self.session.c
 e.g. ``self.session.config['participation_fee']``
 
 
-DEBUG
------
-
-You can turn off debug mode by setting the environment variable ``OTREE_PRODUCTION`` to ``1``,
-or by directly modifying ``DEBUG`` in settings.py.
-
-If you turn off ``DEBUG`` mode, you need to manually run ``otree collectstatic`` before starting your server,
-or else CSS/JS and other static files will fail to load and your site will look broken.
-Also, you should set up :ref:`Sentry <sentry>` to receive email notifications of errors.
-
-
 REAL_WORLD_CURRENCY_CODE
 ------------------------
 
@@ -62,11 +51,6 @@ USE_POINTS
 ----------
 
 See :ref:`points`.
-
-SENTRY_DSN
-----------
-
-See :ref:`Sentry <sentry>`.
 
 
 AUTH_LEVEL
@@ -99,10 +83,8 @@ then read it in ``settings.py`` like this::
 
     ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 
-To set ``OTREE_ADMIN_PASSWORD`` on Heroku, enter this command, substituting your
-own password of course::
-
-    $ heroku config:set OTREE_ADMIN_PASSWORD=blahblah
+To set ``OTREE_ADMIN_PASSWORD`` on Heroku, log into your Heroku dashboard's
+settings, and set the config var ``OTREE_ADMIN_PASSWORD`` to your password.
 
 If you change ``ADMIN_USERNAME`` or ``ADMIN_PASSWORD``,
 you need to reset the database.

@@ -18,24 +18,13 @@ especially browser bots. See the section :ref:`bots`.
 
 .. _sentry:
 
-Logging with Sentry
--------------------
+Sentry service
+--------------
 
-Whether or not you use Heroku,
-you should enter your email address (`here <https://docs.google.com/forms/d/1aro9cL4smi1jbyFM--CqsJpr2oRHjNCE-UVHZEYHQcE/viewform>`__)
-to sign up for our free Sentry service
-which can log all errors on your server and send you email notifications.
-(`Sentry <https://getsentry.com/welcome/>`__.)
-
-Sentry is necessary because many errors are not visible in the UI after you turn off debug mode.
-You will no longer see Django's yellow error pages;
-you or your users will just see generic "500 server error" pages:
-
-.. image:: ../_static/500_error.png
-    :align: center
-
-After you enter your email, you will receive an email with information
-on how to activate Sentry in your project.
+As of 2018-11-20,
+our Sentry service has been replaced by the much more comprehensive
+`oTree Hub <https://www.otreehub.com/>`__, which includes automatic Sentry
+setup. Currently, oTree Hub is for Heroku only.
 
 
 Modifying an existing database
