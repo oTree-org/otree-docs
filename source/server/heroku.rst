@@ -15,22 +15,17 @@ If you run a study for only 1 day, you can turn off your dynos and addons,
 and then you only pay 1/30 of the monthly cost.
 Often this means you can run a study for just a few dollars.
 
-Heroku setup (quick version)
-----------------------------
+Heroku setup (new version)
+--------------------------
 
-Assuming Heroku is already installed & logged in::
-
-    git init
-    git add .
-    git commit -am "my commit message"
-    heroku create
-    heroku addons:create heroku-redis:premium-0
-    git push heroku master
-    heroku run "otree resetdb"
+New as of November 2018: I have built an easy web dashboard
+called `oTree Hub <https://www.otreehub.com/>`__
+that automates your Heroku setup and allows you to skip all the below steps.
+Create an account there and it will guide you through the setup process.
 
 
-Heroku setup (detailed version)
--------------------------------
+Heroku setup (old version)
+--------------------------
 
 Create an account
 ~~~~~~~~~~~~~~~~~
@@ -39,14 +34,6 @@ Create an account on `Heroku <https://www.heroku.com/>`__.
 Select Python as your main language. However,
 you can
 skip the "Getting Started With Python" guide.
-
-.. note::
-
-    (November 2018) I have recently built an easy web dashboard
-    called `oTree Hub <https://www.otreehub.com/>`__
-    that automates your Heroku setup and allows you to skip all the below steps.
-    Feel free to try it out and send me your feedback.
-
 
 Install the Heroku Toolbelt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
