@@ -7,6 +7,10 @@ If you are just testing your app on your personal computer, you can use
 ``otree devserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
+This section is for people who are experienced with setting up web servers.
+If you would like an easier and quicker way, we recommend using
+:ref:`Heroku <heroku>`.
+
 .. _why-server:
 
 Why do I need to install server software?
@@ -42,10 +46,7 @@ oTree's default database is SQLite, which is fine for local development,
 but insufficient for production, because it often locks when it multiple
 clients are accessing it.
 
-We recommend you use PostgreSQL,
-although in principle you can also use MySQL, MariaDB, or any other database
-supported by Django.
-
+We recommend you use PostgreSQL.
 Install `Postgres for Windows <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`__,
 using the default options. Note down the password you chose for the root ``postgres`` user.
 
@@ -60,28 +61,7 @@ Now, edit your ``pg_hba.conf``, which is usually located in ``C:\Program Files\P
 or a similarly named folder. On the lines for ``IPv4`` and ``IPv6``, change
 the ``METHOD`` from ``md5`` to ``trust``.
 
-Setting DATABASE_URL (if running the server on your laptop)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Now you should tell oTree to use Postgres instead of SQLite.
-
-If you're using your PC as the server,
-you can add this line in ``settings.py``,
-to simulate setting the env var ``DATABASE_URL``::
-
-    environ['DATABASE_URL'] = 'postgres://postgres@localhost/django_db'
-
-
-Setting DATABASE_URL (if running on a dedicated server)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-On the other hand, if your server is a separate machine from your development PC,
-it's better to instead set the ``DATABASE_URL`` environment variable on your server.
-Setting the database through an environment variable
-allows you to continue to use SQLite on your development machine,
-while using Postgres on your production server.
-
-Set your ``DATABASE_URL`` to this::
+Now, set your ``DATABASE_URL`` environment variable to this::
 
     postgres://postgres@localhost/django_db
 
@@ -93,9 +73,6 @@ Then restart your Command Prompt so the environment variable gets loaded.
 
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 (This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
-
-While you're editing environment variables, you can also set other environment variables like
-
 
 psycopg2
 ~~~~~~~~
@@ -134,19 +111,7 @@ Set environment variables
 -------------------------
 
 Now let's set the variables that control security.
-
-If you're using your own PC as a server,
-the simplest way is to just set them in in your ``settings.py``, e.g.:
-
-.. code-block:: python
-
-    ADMIN_PASSWORD = 'my_password'
-    DEBUG = False
-    AUTH_LEVEL = 'DEMO'
-
-However, if using a dedicated server, it's best practice to use
-environment variables; you should set ``OTREE_ADMIN_PASSWORD``,
-``OTREE_PRODUCTION``, and ``OTREE_AUTH_LEVEL``.
+You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and ``OTREE_AUTH_LEVEL``.
 
 
 Allow other computers to connect

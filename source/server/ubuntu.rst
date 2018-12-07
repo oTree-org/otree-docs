@@ -369,11 +369,6 @@ If you need to restore your database to a particular backup, do like this::
 Sharing a server with other oTree users
 ---------------------------------------
 
-If multiple oTree users need to share an oTree server
-with separate projects, the easiest option might be to use :ref:`Docker <dockerhub>`.
-See the section at the bottom of the Docker page about sharing the server.
-Or, you can follow the below instructions
-
 You can share a server with other oTree users;
 you just have to make sure that the code and databases are kept separate,
 so they don't conflict with each other.
@@ -393,17 +388,14 @@ but in some cases name things differently to avoid clashes:
     You can set it to ``redis://localhost:6379/1``, ``redis://localhost:6379/2``,
     etc. (which will use databases 1, 2, etc...instead of the default database 0).
     Another option is to run multiple instances of Redis on different ports.
--   Do a ``git init`` in the second user's home directory as described earlier,
-    and then add the remote ``my-username2@XXX.XXX.XXX.XXX:oTree.git``
-    (assuming their username is ``my-username2``).
 
-Once these steps are done, the second user can git push code to the server,
+Once these steps are done, the second user can push code to the server,
 then run ``otree resetdb``.
 
 If you don't need multiple people to run experiments simultaneously,
 then each user can take turns running the server on port 80 with ``otree runprodserver 80``.
 However, if multiple people need to run experiments at the same time,
-then you would need to run the server on different ports, e.g. ``8000``,
+then you would need to run the server on multiple ports, e.g. ``8000``,
 ``8001``, etc.
 
 Finally, if you use supervisor (or circus) as described above,

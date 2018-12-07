@@ -15,16 +15,17 @@ If you run a study for only 1 day, you can turn off your dynos and addons,
 and then you only pay 1/30 of the monthly cost.
 Often this means you can run a study for just a few dollars.
 
-Heroku setup (new version)
+Heroku setup (Option 1)
 --------------------------
 
-New as of November 2018: I have built an easy web dashboard
+New as of November 2018: I have built a web dashboard
 called `oTree Hub <https://www.otreehub.com/>`__
 that automates your Heroku setup and allows you to skip all the below steps.
-Create an account there and it will guide you through the setup process.
 
+Note: although it is easier than the manual steps below,
+oTree Hub is a beta service and may end or change at some point.
 
-Heroku setup (old version)
+Heroku setup (Option 2)
 --------------------------
 
 Create an account
@@ -292,7 +293,6 @@ you should set ``OTREE_AUTH_LEVEL``):
 
     $ heroku config:set OTREE_AUTH_LEVEL=DEMO
 
-More info at :ref:`AUTH_LEVEL`.
 
 .. _papertrail:
 

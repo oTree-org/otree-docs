@@ -6,7 +6,7 @@ Configure your computer to be a server
 .. note::
 
     This page assumes you have already installed the oTree server,
-    as described on the server setup pages for Windows/Mac/Docker
+    as described on the server setup pages for Windows/Mac
     (see :ref:`here <server>`).
 
 If you will be running your study with devices on the local network
@@ -57,7 +57,7 @@ Start the server with your IP address and port 8000, e.g.
 
     We are just using ``devserver`` as a temporary step.
     Once you have these steps working, you should switch to using the
-    production server ``otree runprodserver`` or ``docker-compose up``.
+    production server ``otree runprodserver``.
 
 On the client device's browser, connect to the IP address followed by ``:8000``,
 e.g. ``10.0.1.3:8000`` and you should be able to load the oTree demo page.

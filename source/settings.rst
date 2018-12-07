@@ -53,17 +53,6 @@ USE_POINTS
 See :ref:`points`.
 
 
-AUTH_LEVEL
-----------
-
-See :ref:`AUTH_LEVEL`.
-
-It's somewhat preferable to set the environment variable ``OTREE_AUTH_LEVEL``
-on your server, rather than setting ``AUTH_LEVEL`` directly in settings.py.
-This will allow you to develop locally without having to enter a password
-each time you launch the server, but still get password protection on your
-actual server.
-
 ROOMS
 -----
 

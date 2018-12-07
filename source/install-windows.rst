@@ -28,8 +28,12 @@ Check the box to add Python to PATH:
 Step 2: Install oTree
 ---------------------
 
-In your Start Menu, search for the program "cmd",
-open Command Prompt, and enter:
+Go to the folder where you want to create your oTree project.
+Then click the "File" menu and open PowerShell:
+
+.. figure:: _static/setup/open-powershell.png
+
+Enter this command at the prompt:
 
 .. code-block:: bash
 
@@ -51,7 +55,7 @@ Create your project folder::
 
     otree startproject oTree
 
-When it asks you "Include sample games?" choose yes.
+When it asks you "Include sample games?" choose no.
 
 Move into the folder you just created::
 

@@ -97,55 +97,6 @@ The name ``self`` is just shorter and more convenient than ``player``.
 This is similar to how people don't use their own names when they talk about themselves; they just
 use pronouns like "me", "myself", and "I". So, ``self`` is basically a pronoun.
 
-Functions vs. attributes
-------------------------
-
-Classes have **attributes** and **functions**.
-
-Here is an example of a page with an attribute:
-
-.. code-block:: python
-
-    class Results(Page):
-        # this is an attribute
-        timeout_seconds = 60
-
-This means that this page has a time limit of 60 seconds.
-
-But what if you want the time limit to be dynamic? Maybe it should depend
-on the current round number, or on the player's performance so far.
-
-To solve this, we need to make it a *function* of the current page,
-like this:
-
-.. code-block:: python
-
-    class Results(Page):
-        # this is a function
-        def get_timeout_seconds(self):
-            if self.round_number == 1:
-                return 60
-            else:
-                return 30
-
-First, let's look at the line ``def get_timeout_seconds(self):``.
-The ``def`` means we are defining a function called ``get_timeout_seconds``.
-It is a function, so it has input and output.
-The input (i.e. the argument) is called ``self``, which is the current
-*instance* of the page. What do we mean by "instance"?
-Although the ``Results`` page will be viewed many times
-by many players, ``self`` has specific properties about the current page view.
-For example, ``self.round_number`` gives us the current round number,
-``self.player`` gives us the player currently viewing the page,
-and ``self.session`` gives us the session that is currently taking place.
-
-In conclusion, if you define an *attribute*, then it will be same for all players.
-If you want something to be different from player to player, you need to use
-a *function* that takes a parameter ``self``.
-Sometimes, oTree gives both options.
-For example, oTree provides both the ``timeout_seconds`` attribute
-(for simple pages with fixed time limits), and the ``get_timeout_seconds``
-function (for complex pages with dynamic time limits).
 
 Self: extended examples
 -----------------------

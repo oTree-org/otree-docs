@@ -32,12 +32,6 @@ Follow these steps:
 
 :ref:`Ubuntu Linux <server-ubuntu>` instructions.
 
-**You want to see other options**
-
-See :ref:`community` for some virtual machines created by oTree users,
-such as the
-`oTree Virtual Machine Manager <otree-virtual-machine-manager.readthedocs.io/>`__.
-
 **Next steps**
 After setting up your server, see :ref:`server_final_steps`.
 
@@ -53,6 +47,5 @@ After setting up your server, see :ref:`server_final_steps`.
     server-windows.rst
     adhoc.rst
     ubuntu.rst
-    dockerhub.rst
     next_steps.rst
     git.rst
