@@ -26,7 +26,7 @@ Create the app
 Use your command line to ``cd`` to the oTree project folder you created,
 the one that contains ``requirements_base.txt``.
 
-Then, create the app::
+Then, create the app:
 
 .. code-block:: bash
 
