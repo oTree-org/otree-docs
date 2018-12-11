@@ -260,8 +260,6 @@ Django template language.
             At the end, a random round will be chosen for payment.
         </p>
 
-        <p>
-
         <h4>Round history</h4>
         <table class="table">
             <tr>
