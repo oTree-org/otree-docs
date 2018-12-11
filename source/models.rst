@@ -444,8 +444,8 @@ like ``creating_session()``, ``after_all_players_arrive()``, etc.
 
 .. _how_otree_executes_code:
 
-How oTree executes your code
-----------------------------
+Don't put random values in Constants
+------------------------------------
 
 Any code that is not inside a method
 is basically *global* and *will only be executed once* --
@@ -462,12 +462,13 @@ come up "heads" might do this in models.py:
         print('p is', p)
 
 As you can see from the the print output, ``p`` is only
-calculated once: when the server starts::
+calculated when the server starts::
 
     C:\oTree> otree devserver
     p is 0.9627848454010105
 
-That means it will be the same for all participants in all sessions.
+That means it will be the same for all participants in all sessions
+(or may have some other mysterious behavior).
 
 For the same reason, this will not work either:
 

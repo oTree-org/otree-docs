@@ -47,7 +47,7 @@ Create your project folder::
 
     otree startproject oTree
 
-When it asks you "Include sample games?" choose no.
+When it asks you "Include sample games?" choose yes.
 
 Move into the folder you just created::
 
