@@ -75,7 +75,10 @@ So, we define a ``contribution`` column:
 .. code-block:: python
 
     class Player(BasePlayer):
-        contribution = models.CurrencyField(min=0, max=Constants.endowment)
+        contribution = models.CurrencyField(
+            min=0, max=Constants.endowment,
+            label="How much will you contribute?"
+        )
 
 We also need to record the payoff the user makes at the end of the game,
 but we don't need to explicitly define a ``payoff`` field,
@@ -126,8 +129,7 @@ contribution.
             and a multiplier of {{ Constants.multiplier }}.
         </p>
 
-
-        {% formfield player.contribution label="How much will you contribute?" %}
+        {% formfields %}
 
         {% next_button %}
 
@@ -274,9 +276,8 @@ I often read messages on programming forums like,
 "My program is not working. I can't find the mistake,
 even though I have spent hours looking at my code".
 
-When an experienced programmer encounters an error in their program, they don't
-just re-read the code until they find an error; they interactively **test**
-their program.
+The solution is not to re-read the code until you find an error;
+it's to interactively **test** your program.
 
 The simplest way is using ``print()`` statements.
 If you don't learn this technique, you won't be able to program games effectively.

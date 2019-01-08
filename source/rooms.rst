@@ -53,13 +53,13 @@ explicitly overridden (works in an analogous way to ``SESSION_CONFIG_DEFAULTS``)
 
 Here are the available properties:
 
-``name`` and ``display_name`` (required)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+name and display_name (required)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The internal name and display name, respectively.
 
-``participant_label_file`` (optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+participant_label_file (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A path to a text file with the "guest list"
 for this room.
@@ -81,8 +81,8 @@ If you omit ``participant_label_file``, then anyone can join
 as long as they know the room-wide URL.
 See :ref:`no-participant-labels`.
 
-``use_secure_urls`` (optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+use_secure_urls (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting provides an extra layer of security on top of the ``participant_label_file``.
 For example, if you are not using secure URLs, your start URLs would look something
@@ -143,17 +143,6 @@ oTree simply appends the participant label to the room-wide URL, e.g.,
 checks if the label is contained in the participant label file,
 and if so, redirects the participant to the wait page.
 
-If you're doing a lab experiment and the number of participants is very unpredictable,
-you can consider using the room-wide URL, and asking participants to manually enter their
-participant label when they sit down at their computer.
-
-That way, computers will only be counted as "active" if a participant is actually present.
-Computers with no participants will remain on the "Enter participant label" page,
-and will not be counted as present.
-
-Alternatively, you can open each computer's browser to a participant-specific URLs,
-but before creating the session, be sure to close the browsers on unattended computers,
-so they are not included in the session.
 
 .. note::
 
@@ -190,3 +179,18 @@ as the browser's home page.
 
 In classroom experiments, you can give each student the room-wide URL they can use
 repeatedly during the semester.
+
+What if not all participants show up?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you're doing a lab experiment and the number of participants is unpredictable,
+you can consider using the room-wide URL, and asking participants to manually enter their
+participant label when they sit down at their computer.
+
+That way, computers will only be counted as "active" if a participant is actually present.
+Computers with no participants will remain on the "Enter participant label" page,
+and will not be counted as present.
+
+Alternatively, you can open each computer's browser to a participant-specific URLs,
+but before creating the session, be sure to close the browsers on unattended computers,
+so they are not included in the session.

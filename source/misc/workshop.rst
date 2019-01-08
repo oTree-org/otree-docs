@@ -14,9 +14,7 @@ Step 1: Make sure oTree is properly installed
 Follow the instructions on :ref:`install` to install oTree and PyCharm.
 
 When you run the server, you should be able to go to ``http://localhost:8000``
-and see this:
-
-.. figure:: ../_static/workshop/otree-correct.png
+and see the demo page.
 
 Step 2: Make sure PyCharm is properly installed
 -----------------------------------------------
@@ -26,10 +24,8 @@ The top of the file should look like this:
 
 .. figure:: ../_static/setup/pycharm-correct.png
 
-It should NOT be underlined in red like this
+It should NOT be underlined in red.
 (this means PyCharm cannot find the correct Python installation):
-
-.. figure:: ../_static/workshop/pycharm-incorrect.png
 
 
 Step 3: Make sure you understand Python

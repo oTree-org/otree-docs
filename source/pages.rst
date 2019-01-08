@@ -49,6 +49,7 @@ Or only show the page in round 1:
             return self.round_number == 1
 
 If you need to repeat the same rule for many pages, see :ref:`here <skip_many>`.
+Or try out :ref:`app_after_this_page`.
 
 The code you put in ``is_displayed()`` should just return ``True`` or ``False``;
 it should not have any side effects, such as modifying a model field.
@@ -146,3 +147,39 @@ Randomizing page sequence
 
 You can randomize the order of pages using rounds.
 An example is `here <https://github.com/oTree-org/otree-snippets/tree/master/random_page_order>`__.
+
+.. _app_after_this_page:
+
+app_after_this_page
+~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is an experimental feature in the oTree 2.2 beta,
+    which you can install with ``pip3 install -U --pre otree``.
+
+To skip entire apps, you can define ``app_after_this_page``.
+For example, to skip to the next app, you would do:
+
+.. code-block:: python
+
+    class MyPage(Page):
+        def app_after_this_page(self, upcoming_apps):
+            if self.player.whatever:
+                return upcoming_apps[0]
+
+``upcoming_apps`` is the remainder of the ``app_sequence`` (a list of strings).
+Therefore, to skip to the last app, you would return ``upcoming_apps[-1]``.
+Or you could just return a hardcoded string
+(as long as that string is in ``upcoming_apps``):
+
+.. code-block:: python
+
+    class MyPage(Page):
+        def app_after_this_page(self, upcoming_apps):
+            print('upcoming_apps is', upcoming_apps)
+            if self.player.whatever:
+                return "public_goods"
+
+If this function doesn't return anything,
+the player proceeds to the next page as usual.

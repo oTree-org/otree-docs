@@ -5,14 +5,6 @@ Chat
 
 You can add a chat room to your page so that participants can communicate with each other.
 
-.. note::
-
-    Note for people who previously used the ``otreechat`` add-on:
-
-    In November 2017, the ``otreechat`` add-on was merged into otree.
-    Now, you no longer need to install ``otreechat`` separately,
-    and you don't need ``{% load otreechat}`` in your templates.
-
 Usage
 -----
 
@@ -105,10 +97,29 @@ If you want everyone in the session to freely chat with each other, just do:
 
 (The number 1 is not significant; all that matters is that it's the same for everyone.)
 
-Styling
-~~~~~~~
+Advanced customization
+~~~~~~~~~~~~~~~~~~~~~~
 
-To customize the style, just include some CSS after the ``{% chat %}`` element,
+If you look at the chat widget in your browser's inspector,
+you will see the following selectors are available:
+
+===========================     =====================================================
+Element                         CSS/jQuery selector
+===========================     =====================================================
+Entire chat widget              ``.otree-chat``
+Textbox to type a message       ``.otree-chat__input`` (note: ``__``, not ``_``)
+Button to submit a message      ``.otree-chat__btn-send``
+Div with all messages           ``.otree-chat__messages``
+Message                         ``.otree-chat__msg``
+Message's nickname              ``.otree-chat__nickname``
+Message's body text             ``.otree-chat__body``
+===========================     =====================================================
+
+You can use CSS or JS to change the appearance or behavior of these elements
+(or hide them entirely).
+
+For example, to customize the style,
+just include some CSS after the ``{% chat %}`` element,
 e.g.:
 
 .. code-block:: html+django
