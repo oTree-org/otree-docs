@@ -145,7 +145,7 @@ and if so, redirects the participant to the wait page.
 
 
 .. note::
-
+otr
     Some language translations are currently missing, in which case it will
     be shown in English. You can fix that by contributing a translation
     `here <https://github.com/oTree-org/otree-internationalization>`__.

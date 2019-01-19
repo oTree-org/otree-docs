@@ -27,9 +27,6 @@ And pages.py:
 When the user submits the form, the submitted data is automatically
 saved to the corresponding fields on the player model.
 
-(You can also set ``form_model = 'group'`` instead of ``player``;
-see :ref:`form-model-group`.)
-
 .. note::
 
     In January 2018, the syntax changed from ``form_model = models.Player``
@@ -41,18 +38,11 @@ see :ref:`form-model-group`.)
 Forms in templates
 ------------------
 
-In your template, you can display the form with ``{% formfields %}``.
+In your template, you can display the form simply with:
 
-.. note::
+.. code-block:: html+django
 
-    ``{% formfields %}`` was introduced in June 2018. It's equivalent to:
-
-    .. code-block:: html+django
-
-        {% for field in form %}
-            {% formfield field %}
-        {% endfor %}
-
+    {% formfields %}
 
 If you want to position the fields individually,
 you can instead use ``{% formfield %}``:
@@ -67,19 +57,12 @@ You can also put the ``label`` in directly in the template:
 
     {% formfield player.contribution label="How much do you want to contribute?" %}
 
-Note: If you have written HTML forms before, you may be accustomed to
-writing the ``<input>`` element, e.g. ``<input type="text" name="contribution">``.
-In oTree, it's usually easier to use ``formfield`` instead. It will autogenerate
-the correct ``<input>`` HTML, along with CSS styling, label, and error messages.
-However, if you want more flexibility you are free to write the raw HTML.
-See :ref:`raw_html`.
-
 .. _form-model-group:
 
 form_model = 'group'
 --------------------
 
-If you set ``form_model = 'group'``.
+If you set ``form_model = 'group'``,
 the values submitted by the user will be stored
 onto the group model, rather than the player.
 This is often useful in games where some players make decisions on behalf of the group.
@@ -115,7 +98,6 @@ they need to correct.
 
 .. image:: _static/forms/Sz34h7d.png
     :align: center
-
 
 oTree automatically validates input. For
 example, if you have a form containing a ``IntegerField``, oTree
