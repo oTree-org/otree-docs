@@ -90,11 +90,11 @@ We need 3 pages:
 It would also be good if game instructions appeared on each page so that
 players are clear how the game works.
 
-Instructions.html
+instructions.html
 ~~~~~~~~~~~~~~~~~
 
 To create the instructions, we can define a file
-``Instructions.html`` that gets included on each page.
+``instructions.html`` that gets included on each page.
 (The ``class=`` attributes are based on Bootstrap.)
 
 .. code-block:: html+django
@@ -138,7 +138,7 @@ This page looks like the templates we have seen so far. Note the use of
 
     {% block content %}
 
-        {% include 'my_trust/Instructions.html' %}
+        {% include 'my_trust/instructions.html' %}
 
         <p>
         You are Participant A. Now you have {{Constants.endowment}}.
@@ -184,7 +184,7 @@ This is the page that P2 sees to send money back. Here is the template:
 
     {% block content %}
 
-        {% include 'my_trust/Instructions.html' %}
+        {% include 'my_trust/instructions.html' %}
 
         <p>
             You are Participant B. Participant A sent you {{group.sent_amount}}
@@ -265,7 +265,7 @@ to condition on the current player's ``id_in_group``.
         Therefore, your total payoff is {{ player.payoff }}.
         </p>
 
-        {% include 'my_trust/Instructions.html' %}
+        {% include 'my_trust/instructions.html' %}
 
     {% endblock %}
 

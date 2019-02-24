@@ -92,7 +92,7 @@ You can modify the text as you wish:
 Session config
 --------------
 
-Add this to your settings.py and edit as necessary:
+Put this at the top of your settings.py:
 
 .. code-block:: python
 

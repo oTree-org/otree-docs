@@ -51,8 +51,6 @@ Or only show the page in round 1:
 If you need to repeat the same rule for many pages, see :ref:`here <skip_many>`.
 Or try out :ref:`app_after_this_page`.
 
-The code you put in ``is_displayed()`` should just return ``True`` or ``False``;
-it should not have any side effects, such as modifying a model field.
 
 .. _vars_for_template:
 

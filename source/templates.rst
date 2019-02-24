@@ -189,34 +189,6 @@ HTML that was generated (along with any JavaScript or CSS).
     Then put the Django tags back in, to make it dynamic again.
 
 
-Template blocks
----------------
-
-Instead of writing the full HTML of your page, for example:
-
-.. code-block:: html
-
-    <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <!-- and so on... -->
-
-
-You define 2 blocks:
-
-.. code-block:: django
-
-    {% block title %} Title goes here {% endblock %}
-
-    {% block content %}
-        Body HTML goes here.
-
-        {% formfield player.contribution label="What is your contribution?" %}
-
-        {% next_button %}
-    {% endblock %}
-
-
 Images, videos, CSS, JavaScript, etc. (static files)
 ----------------------------------------------------
 

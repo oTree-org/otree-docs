@@ -10,7 +10,7 @@ Models
 A player is part of a group, which is part of a subsession.
 See :ref:`conceptual_overview`.
 
-The main purpose of ``models.py`` is to define the columns of your
+The purpose of ``models.py`` is to define the columns of your
 database tables. Let's say you want your experiment to generate data
 that looks like this:
 
@@ -47,8 +47,6 @@ Here are the main field types:
 -   ``StringField`` (for text strings)
 -   ``LongStringField`` (for long text strings; its form widget is a multi-line textarea)
 
-``StringField`` and ``LongStringField`` are new (added January 2018).
-See :ref:`v20` for more information.
 
 Initial/default value
 ---------------------
@@ -105,12 +103,10 @@ creating_session()
 
 Unlike most other built-in subsession methods,
 this method is one you must define yourself.
-Any code you put here is executed when the session is created:
+Any code you put here is executed when you create the session.
 
-.. figure:: _static/creating-session.png
-
-``creating_session`` allows you to initialize the subsession,
-by setting initial values on fields on players, groups, participants, or the subsession.
+``creating_session`` allows you to set initial values on fields on
+players, groups, participants, or the subsession.
 For example:
 
 .. code-block:: python
@@ -152,9 +148,6 @@ Will output::
     in creating_session 4
     in creating_session 5
 
-.. note::
-    This method does NOT run at the beginning of each round.
-    For that, you should use a wait page with :ref:`after_all_players_arrive`.
 
 .. _before_session_starts:
 
@@ -507,7 +500,7 @@ What's the difference between IntegerField and Integer?
 -------------------------------------------------------
 
 An ``IntegerField`` is a column in the database table.
-An integer is one value in that table.
+An integer is one value in that column.
 
 .. _many-fields:
 

@@ -52,7 +52,7 @@ or determine the winner.
 Note, you can't reference ``self.player`` inside ``after_all_players_arrive``,
 because the code is executed once for the entire group,
 not for each individual player.
-(However, you can use ``self.player`` in a wait page's ``is_displayed``.)
+
 
 is_displayed()
 --------------
