@@ -10,8 +10,8 @@ This is often used in multiplayer games.
 where players don't actually interact with each other,
 then see :ref:`treatments`.)
 
-To set the group size, go to your app's models.py and set
-``Constants.players_per_group``. For example, for a 2-player game:
+To set the group size, go to your app's Constants and set
+``players_per_group``. For example, for a 2-player game:
 
 .. code-block:: python
 

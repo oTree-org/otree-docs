@@ -1,7 +1,7 @@
 # Comments start with a # symbol.
 
 ####################################################
-## 1. Primitive Datatypes and Operators
+## 1. Basics
 ####################################################
 
 # integer

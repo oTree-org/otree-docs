@@ -15,13 +15,12 @@ The completed app is
 Create the app
 --------------
 
-.. code-block:: bash
+Just as in the previous part of the tutorial, create another app, called ``my_trust``.
 
-    otree startapp my_trust
+Constants
+---------
 
-
-Define models.py
-----------------
+Go to your app's Constants.
 
 First we define our app's constants. The endowment is 10 points and the
 donation gets tripled.
@@ -37,6 +36,9 @@ donation gets tripled.
         endowment = c(10)
         multiplication_factor = 3
 
+Models
+------
+
 Then we add fields to player and group. There are 2
 critical data points to record: the "sent" amount from P1, and the
 "sent back" amount from P2.
@@ -45,7 +47,7 @@ Your first instinct may be to define the fields on the Player like this:
 
 .. code-block:: python
 
-    # Don't copy paste this...see below
+    # Don't copy paste this
     class Player(BasePlayer):
 
         sent_amount = models.CurrencyField()
@@ -64,19 +66,12 @@ sense because each group has exactly 1 ``sent_amount`` and exactly 1
 
     class Group(BaseGroup):
 
-        sent_amount = models.CurrencyField()
-        sent_back_amount = models.CurrencyField()
-
-Let's let P1 choose from a dropdown menu how
-much to donate, rather than entering free text. To do this, we use the
-:ref:`choices <choices>` argument, as well as the :ref:`currency_range <currency>` function:
-
-.. code-block:: python
-
-    sent_amount = models.CurrencyField(
-        choices=currency_range(0, Constants.endowment, c(1)),
-    )
-
+        sent_amount = models.CurrencyField(
+            label="How much do you want to send to participant B?"
+        )
+        sent_back_amount = models.CurrencyField(
+            label="How much do you want to send back?"
+        )
 
 Define the templates and pages
 ------------------------------
@@ -121,36 +116,8 @@ To create the instructions, we can define a file
     </div>
 
 
-Send.html
+Send page
 ~~~~~~~~~
-
-This page looks like the templates we have seen so far. Note the use of
-``{% include %}`` to automatically insert another template.
-
-.. code-block:: django
-
-    {% extends "global/Page.html" %}
-    {% load otree %}
-
-    {% block title %}
-        Trust Game: Your Choice
-    {% endblock %}
-
-    {% block content %}
-
-        {% include 'my_trust/instructions.html' %}
-
-        <p>
-        You are Participant A. Now you have {{Constants.endowment}}.
-        </p>
-
-        {% formfield group.sent_amount label="How much do you want to send to participant B?" %}
-
-        {% next_button %}
-
-    {% endblock %}
-
-We also define the page in pages.py:
 
 .. code-block:: python
 
@@ -162,40 +129,45 @@ We also define the page in pages.py:
         def is_displayed(self):
             return self.player.id_in_group == 1
 
-The ``{% formfield %}`` in the template must match the ``form_model``
-and ``form_fields`` in the page.
-
 Also, we use :ref:`is_displayed` to only show this to P1; P2 skips the
 page. For more info on ``id_in_group``, see :ref:`groups`.
+
+For the template, set the ``title`` block to ``Trust Game: Your Choice``, 
+and the ``content`` block to:
+
+.. code-block:: django
+
+    {% include 'my_trust/instructions.html' %}
+
+    <p>
+    You are Participant A. Now you have {{Constants.endowment}}.
+    </p>
+
+    {% formfields %}
+
+    {% next_button %}
+
 
 SendBack.html
 ~~~~~~~~~~~~~
 
-This is the page that P2 sees to send money back. Here is the template:
+This is the page that P2 sees to send money back.
+Set the ``title`` block to ``Trust Game: Your Choice``, 
+and the ``content`` block to:
 
 .. code-block:: html+django
 
-    {% extends "global/Page.html" %}
-    {% load otree %}
+    {% include 'my_trust/instructions.html' %}
 
-    {% block title %}
-        Trust Game: Your Choice
-    {% endblock %}
+    <p>
+        You are Participant B. Participant A sent you {{group.sent_amount}}
+        and you received {{tripled_amount}}.
+    </p>
 
-    {% block content %}
+    {% formfield group.sent_back_amount %}
 
-        {% include 'my_trust/instructions.html' %}
+    {% next_button %}
 
-        <p>
-            You are Participant B. Participant A sent you {{group.sent_amount}}
-            and you received {{tripled_amount}}.
-        </p>
-
-        {% formfield group.sent_back_amount label="How much do you want to send back?" %}
-
-        {% next_button %}
-
-    {% endblock %}
 
 Here is the code from pages.py. Notes:
 
@@ -233,43 +205,32 @@ Results
 ~~~~~~~
 
 The results page needs to look slightly different for P1 vs. P2. So, we
-use the ``{% if %}`` statement (part of `Django's template
-language <https://docs.djangoproject.com/en/1.7/topics/templates/>`__)
+use the ``{% if %}`` statement
 to condition on the current player's ``id_in_group``.
+Set the ``title`` block to ``Results``, and the content block to:
 
 .. code-block:: html+django
 
-    {% extends "global/Page.html" %}
-    {% load otree %}
-
-    {% block title %}
-        Results
-    {% endblock %}
-
-    {% block content %}
-
-        {% if player.id_in_group == 1 %}
-            <p>
-                You sent Participant B {{ group.sent_amount }}.
-                Participant B returned {{ group.sent_back_amount }}.
-            </p>
-        {% else %}
-            <p>
-                Participant A sent you {{ group.sent_amount }}.
-                You returned {{ group.sent_back_amount }}.
-            </p>
-
-        {% endif %}
-
+    {% if player.id_in_group == 1 %}
         <p>
-        Therefore, your total payoff is {{ player.payoff }}.
+            You sent Participant B {{ group.sent_amount }}.
+            Participant B returned {{ group.sent_back_amount }}.
+        </p>
+    {% else %}
+        <p>
+            Participant A sent you {{ group.sent_amount }}.
+            You returned {{ group.sent_back_amount }}.
         </p>
 
-        {% include 'my_trust/instructions.html' %}
+    {% endif %}
 
-    {% endblock %}
+    <p>
+    Therefore, your total payoff is {{ player.payoff }}.
+    </p>
 
-In pages.py, simply define the page like this:
+    {% include 'my_trust/instructions.html' %}
+
+
 
 .. code-block:: python
 
@@ -332,7 +293,7 @@ So, we define these pages:
     Although it looks a bit more complex, you will see over time that putting your
     game's logic in ``models.py`` helps with organization.
 
-    (Also note that the name ``set_payoffs`` is arbitrary.)
+    (The name ``set_payoffs`` is arbitrary.)
 
 Then we define the page sequence:
 
@@ -346,23 +307,15 @@ Then we define the page sequence:
         Results,
     ]
 
-Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
-------------------------------------------------------
+Add an entry to your ``SESSION_CONFIGS``
+----------------------------------------
 
-.. code-block:: python
-
-    {
-        'name': 'my_trust',
-        'display_name': "My Trust Game (simple version from tutorial)",
-        'num_demo_participants': 2,
-        'app_sequence': ['my_trust'],
-    },
+-   name: my_trust
+-   display_name: My Trust Game (Simple Version)
+-   num_demo_participants: 2
+-   app_sequence: ['my_trust']
 
 Run the server
 --------------
 
-Enter::
-
-    otree devserver
-
-Then open your browser to ``http://localhost:8000`` to play the game.
+Run your server and open your browser to ``http://localhost:8000`` to play the game.

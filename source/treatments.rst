@@ -102,7 +102,7 @@ useful in a live experiment, but when you are testing your game, it is
 often useful to choose explicitly which treatment to play. Let's say you
 are developing the game from the above example and want to show your
 colleagues both treatments (red and blue). You can create 2 session
-configs in settings.py that have the same keys to session config dictionary,
+configs that have the same keys in the session config dictionary,
 except the ``treatment`` key:
 
 .. code-block:: python
@@ -161,7 +161,7 @@ And let's say ``treatment`` it can only have 4 different values:
 -   ``low_income_high_tax``
 -   ``low_income_low_tax``
 
-In ``pages.py``, you might use it like this:
+In your pages, you might use it like this:
 
 .. code-block:: python
 

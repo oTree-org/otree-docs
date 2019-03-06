@@ -7,7 +7,7 @@ Basics
 ------
 
 You can configure time limits on your pages by using the below
-attributes on your ``Page`` classes in ``pages.py``.
+attributes on your ``Page``.
 
 .. _timeout_seconds:
 
@@ -113,7 +113,7 @@ In ``settings.py`` add this:
         # etc...
     ]
 
-Then in ``pages.py``:
+Then in your Page:
 
 .. code-block:: python
 
@@ -201,7 +201,7 @@ a few seconds remaining (e.g. 3).
 
 If you have multiple pages in your ``page_sequence`` that need to share
 the timeout, rather than copy-pasting the above code to every page redundantly,
-you can define the timeout in ``models.py``:
+you can define the timeout in on the Player model:
 
 .. code-block:: python
 
@@ -213,7 +213,7 @@ you can define the timeout in ``models.py``:
             return self.participant.vars['expiry'] - time.time() > 3
 
 
-Then in pages.py:
+Then in your Pages:
 
 .. code-block:: python
 

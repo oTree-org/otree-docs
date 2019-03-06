@@ -17,13 +17,11 @@ The completed app is
 Create the app
 --------------
 
-.. code-block:: bash
-
-    otree startapp my_matching_pennies
+Create an app called ``my_matching_pennies``.
 
 
-Define models.py
-----------------
+Constants
+---------
 
 We define our constants as we have previously. Matching pennies is a
 2-person game and the payoff for winning a paying round is 1000 points.
@@ -36,6 +34,9 @@ In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`
         players_per_group = 2
         num_rounds = 4
         stakes = c(1000)
+
+Player
+------
 
 Now let's define our ``Player`` class:
 
@@ -64,11 +65,10 @@ So we have:
             if self.id_in_group == 2:
                 return 'Matcher'
 
+Subsession
+----------
 
-Now let's define the code to randomly choose a round for payment. Let's
-define the code in ``Subsession.creating_session``, which is the
-place to put code that initializes the state of the game.
-(See :ref:`creating_session`.)
+Now let's define the code to randomly choose a round for payment.
 
 First, put this line at the top of the file, so we can use Python's built-in
 ``random`` module:
@@ -77,15 +77,15 @@ First, put this line at the top of the file, so we can use Python's built-in
 
     import random
 
-The value of the chosen round is "global" rather than different for each
-participant, so the logical place to store it is as a "global" variable
-in ``self.session.vars`` (see :ref:`session_vars`).
+(If you're using oTree Studio, random is automatically imported.)
 
-So, we start by writing something like this, which chooses a random
+Create a method on the Subsession called ``creating_session``
+(see :ref:`creating_session`).
+
+We start by writing something like this, which chooses a random
 integer between 1 and 4, and then assigns it into ``session.vars``:
 
 .. code-block:: python
-
 
     class Subsession(BaseSubsession):
 
@@ -103,7 +103,7 @@ subsessions), this code will get executed 4 times, e.g.::
     set the paying round to 1
 
 Each time, it will overwrite the previous value of
-``session.vars['paying_round']``, which is superfluous.
+``session.vars['paying_round']``, which is unnecessary.
 We can fix this with an ``if`` statement that makes it only
 run once (if ``round_number`` is 1; see :ref:`rounds`):
 
@@ -147,8 +147,12 @@ and then in round 4, use ``group_like_round(3)`` to copy the group structure fro
 
 (You can learn more about group shuffling in :ref:`shuffling`.)
 
-Now we define our ``Group`` class. We define the payoff method. We use
-``get_player_by_role`` to fetch each of the 2 players in the group. We
+Group
+-----
+
+Now we define our ``Group`` class. Add a method called ``set_payoffs``
+(you can choose another name).
+Below we use ``get_player_by_role`` to fetch each of the 2 players in the group. We
 could also use ``get_player_by_id``, but I find it easier to identify
 the players by their roles as matcher/mismatcher. Then, depending on
 whether the penny sides match, we either make P1 or P2 the winner.
@@ -208,18 +212,10 @@ This game has 2 main pages:
 -  A ``ResultsSummary`` page that only gets displayed once at the end, and
    tells the user their final payoff.
 
-Choice
-~~~~~~
+Choice page
+~~~~~~~~~~~
 
-In ``pages.py``, we define the ``Choice`` page. This page should contain
-a form field that sets ``player.penny_side``, so we set ``form_model``
-and ``form_fields``.
-
-Also, on this page we would like to display a "history box" table that
-shows the result of all previous rounds. So, we can use
-``player.in_previous_rounds()``, which returns a list referring to the
-same participant in rounds 1, 2, 3, etc. (For more on the distinction
-between "player" and "participant", see :ref:`participants_and_players`.)
+Create a ``Choice`` page: 
 
 .. code-block:: python
 
@@ -232,57 +228,60 @@ between "player" and "participant", see :ref:`participants_and_players`.)
                 'player_in_previous_rounds': self.player.in_previous_rounds(),
             }
 
-We then create a template ``Choice.html`` below. This is similar to the
-templates we have previously created, but note the ``{% for %}`` loop
-that creates all rows in the history table. ``{% for %}`` is part of the
-Django template language.
+Also, on this page we would like to display a "history box" table that
+shows the result of all previous rounds. So, we can use
+``player.in_previous_rounds()``, which returns a list referring to the
+same participant in rounds 1, 2, 3, etc. (For more on the distinction
+between "player" and "participant", see :ref:`participants_and_players`.)
+
+Next, create the HTML template as before:
+
+In the ``title`` block:
 
 .. code-block:: html+django
 
-    {% extends "global/Page.html" %}
-    {% load otree %}
+    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
 
-    {% block title %}
-        Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
-    {% endblock %}
+In the ``content`` block:
 
-    {% block content %}
+.. code-block:: html+django
 
-        <h4>Instructions</h4>
-        <p>
-            This is a matching pennies game.
-            Player 1 is the 'Mismatcher' and wins if the choices mismatch;
-            Player 2 is the 'Matcher' and wins if they match.
+    <h4>Instructions</h4>
+    <p>
+        This is a matching pennies game.
+        Player 1 is the 'Mismatcher' and wins if the choices mismatch;
+        Player 2 is the 'Matcher' and wins if they match.
 
-        </p>
+    </p>
 
-        <p>
-            At the end, a random round will be chosen for payment.
-        </p>
+    <p>
+        At the end, a random round will be chosen for payment.
+    </p>
 
-        <h4>Round history</h4>
-        <table class="table">
+    <h4>Round history</h4>
+    <table class="table">
+        <tr>
+            <th>Round</th>
+            <th>Player and outcome</th>
+        </tr>
+        {% for p in player_in_previous_rounds %}
             <tr>
-                <th>Round</th>
-                <th>Player and outcome</th>
+                <td>{{ p.round_number }}</td>
+                <td>You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>
             </tr>
-            {% for p in player_in_previous_rounds %}
-                <tr>
-                    <td>{{ p.round_number }}</td>
-                    <td>You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>
-                </tr>
-            {% endfor %}
-        </table>
+        {% endfor %}
+    </table>
 
-        <p>
-            In this round, you are the {{ player.role }}.
-        </p>
+    <p>
+        In this round, you are the {{ player.role }}.
+    </p>
 
-        {% formfield player.penny_side label="I choose:" %}
+    {% formfield player.penny_side label="I choose:" %}
 
-        {% next_button %}
+    {% next_button %}
 
-    {% endblock %}
+Note that the ``{% for %}`` is looping over the variable ``player_in_previous_rounds`` that we defined
+in ``vars_for_template``.
 
 ResultsWaitPage
 ~~~~~~~~~~~~~~~
@@ -302,45 +301,9 @@ method we defined earlier.
 ResultsSummary
 ~~~~~~~~~~~~~~
 
-Let's create ``ResultsSummary.html``:
+Create a page called "ResultsSummary".
 
-.. code-block:: html+django
-
-    {% extends "global/Page.html" %}
-    {% load otree %}
-
-    {% block title %}
-        Final results
-    {% endblock %}
-
-    {% block content %}
-
-        <table class="table">
-            <tr>
-                <th>Round</th>
-                <th>Player and outcome</th>
-            </tr>
-            {% for p in player_in_all_rounds %}
-                <tr>
-                    <td>{{ p.round_number }}</td>
-                    <td>
-                        You were the {{ p.role }} and {% if p.is_winner %} won
-                        {% else %} lost {% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-
-        <p>
-            The paying round was {{ paying_round }}.
-            Your total payoff is therefore {{ total_payoff }}.
-        </p>
-
-
-    {% endblock %}
-
-Now we define the corresponding class in pages.py.
-
+Notes:
 -  It only gets shown in the last round, so we set ``is_displayed``
    accordingly.
 -  We retrieve the value of ``paying_round`` from ``session.vars``
@@ -368,11 +331,37 @@ the current round.
                 'player_in_all_rounds': self.player.in_all_rounds(),
             }
 
+Now let's create the HTML template.
+Set the ``title`` block to "Final results", and the ``content`` block to:
+
+.. code-block:: html+django
+
+    <table class="table">
+        <tr>
+            <th>Round</th>
+            <th>Player and outcome</th>
+        </tr>
+        {% for p in player_in_all_rounds %}
+            <tr>
+                <td>{{ p.round_number }}</td>
+                <td>
+                    You were the {{ p.role }} and {% if p.is_winner %} won
+                    {% else %} lost {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        The paying round was {{ paying_round }}.
+        Your total payoff is therefore {{ total_payoff }}.
+    </p>
+
 
 Page sequence
 ~~~~~~~~~~~~~
 
-Now we define the ``page_sequence``:
+Your ``page_sequence`` should look like this:
 
 .. code-block:: python
 
@@ -397,29 +386,14 @@ is skipped in every round except the last, because of how we set
 -  ResultsSummary [Round 4]
 
 
-Add an entry to ``SESSION_CONFIGS`` in ``settings.py``
-------------------------------------------------------
+Add an entry to your ``SESSION_CONFIGS``
+----------------------------------------
 
 When we run a real experiment in the lab, we will want multiple groups,
 but to test the demo we just set ``num_demo_participants`` to 2, meaning
 there will be 1 group.
 
-.. code-block:: python
-
-    {
-        'name': 'my_matching_pennies',
-        'display_name': "My Matching Pennies (tutorial version)",
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'my_matching_pennies',
-        ],
-    },
-
-Start the server
-----------------
-
-.. code-block:: bash
-
-    otree devserver
-
-
+-   name: my_matching_pennies
+-   display_name: My Matching Pennies (tutorial version)
+-   num_demo_participants: 2
+-   app_sequence: ['my_matching_pennies']

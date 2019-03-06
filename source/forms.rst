@@ -5,10 +5,10 @@ Forms
 
 Each page in oTree can contain a form, which the player should fill out
 and submit by clicking the "Next" button. To create a form, first
-you need fields on the ``Player`` class in models.py. Then,
+you need fields on the ``Player`` model. Then,
 in your Page class, set ``form_model`` and ``form_fields``.
 
-For example, here is a models.py:
+For example, here is a Player model:
 
 .. code-block:: python
 
@@ -16,7 +16,7 @@ For example, here is a models.py:
         name = models.StringField(label="Your name:")
         age = models.IntegerField(label="Your age:")
 
-And pages.py:
+And page:
 
 .. code-block:: python
 
@@ -26,12 +26,6 @@ And pages.py:
 
 When the user submits the form, the submitted data is automatically
 saved to the corresponding fields on the player model.
-
-.. note::
-
-    In January 2018, the syntax changed from ``form_model = models.Player``
-    to ``form_model = 'player'``. See :ref:`v20` for more information.
-
 
 .. _label:
 
@@ -111,7 +105,6 @@ require an integer to be between 12 and 24:
 
 .. code-block:: python
 
-    # in models.py
     offer = models.IntegerField(min=12, max=24)
 
 If the max/min are not fixed, you should use :ref:`FOO_max`
@@ -126,7 +119,6 @@ set ``choices=``:
 
 .. code-block:: python
 
-    # in models.py
     level = models.IntegerField(
         choices=[1, 2, 3],
     )
@@ -136,7 +128,6 @@ you should set the ``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal``:
 
 .. code-block:: python
 
-    # in models.py
     level = models.IntegerField(
         choices=[1, 2, 3],
         widget=widgets.RadioSelect
@@ -149,7 +140,6 @@ by making a list of [value, display] pairs:
 
 .. code-block:: python
 
-    # in models.py
     level = models.IntegerField(
         choices=[
             [1, 'Low'],
@@ -177,7 +167,6 @@ If a field is optional, you can use ``blank=True`` like this:
 
 .. code-block:: python
 
-    # in models.py
     offer = models.IntegerField(blank=True)
 
 Then the HTML field will not have the ``required`` attribute.
@@ -193,7 +182,7 @@ for fixed (constant) values.
 If you want them to be determined dynamically
 (e.g. different from player to player),
 then you can instead define one of the below
-methods in your ``Page`` class in ``pages.py``.
+methods on your Page.
 
 .. _FOO_choices:
 
@@ -208,8 +197,6 @@ Example:
 
 .. code-block:: python
 
-    import random
-
     class MyPage(Page):
 
         form_model = 'player'
@@ -220,13 +207,14 @@ Example:
             random.shuffle(choices)
             return choices
 
+(If you're not using oTree Studio, then you need to have ``import random`` at the top of your file.)
 
 .. _FOO_max:
 
 {field_name}_max()
 ~~~~~~~~~~~~~~~~~~
 
-The dynamic alternative to setting ``max=`` in models.py. For example:
+The dynamic alternative to setting ``max=`` in the model field. For example:
 
 .. code-block:: python
 
@@ -242,7 +230,7 @@ The dynamic alternative to setting ``max=`` in models.py. For example:
 {field_name}_min()
 ~~~~~~~~~~~~~~~~~~
 
-The dynamic alternative to setting ``min`` in models.py.
+The dynamic alternative to setting ``min=`` on the model field.
 
 .. _FOO_error_message:
 
@@ -477,7 +465,7 @@ you could omit the ``{% next_button %}``
 and instead have the user click on one of several buttons
 to go to the next page.
 
-For example, let's say your models.py has ``offer_accepted = models.BooleanField()``,
+For example, let's say your Player model has ``offer_accepted = models.BooleanField()``,
 and rather than a radio button you'd like to present it as a button like this:
 
 .. image:: _static/forms/yes-no-buttons.png
@@ -489,15 +477,11 @@ Then put this code in the template
 
 .. code-block:: html+django
 
-    {% block content %}
-
-        <p><b>Do you wish to accept the offer?</b></p>
-        <div>
-            <button name="offer_accepted" value="True" class="btn btn-primary btn-large">Yes</button>
-            <button name="offer_accepted" value="False" class="btn btn-primary btn-large">No</button>
-        </div>
-
-    {% endblock %}
+    <p><b>Do you wish to accept the offer?</b></p>
+    <div>
+        <button name="offer_accepted" value="True" class="btn btn-primary btn-large">Yes</button>
+        <button name="offer_accepted" value="False" class="btn btn-primary btn-large">No</button>
+    </div>
 
 You can use this technique for any type of field,
 not just ``BooleanField``.
@@ -510,17 +494,13 @@ add ``type="button"`` to the ``<button>``:
 
 .. code-block:: html+django
 
-    {% block content %}
+    <button>
+        Clicking this will submit the form
+    </button>
 
-        <button>
-            Clicking this will submit the form
-        </button>
-
-        <button type="button">
-            Clicking this will not submit the form
-        </button>
-
-    {% endblock %}
+    <button type="button">
+        Clicking this will not submit the form
+    </button>
 
 
 Miscellaneous & advanced

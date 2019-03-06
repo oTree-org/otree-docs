@@ -39,10 +39,10 @@ you should instead put it in one of the following blocks in a base template:
 
 Read more in :ref:`base-template`.
 
-pages.py: prevent code duplication by using multiple rounds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Prevent duplicate pages by using multiple rounds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If your ``pages.py`` has many pages that are almost the same,
+If you have many many pages that are almost the same,
 consider just having 1 page and looping it for multiple rounds.
 One sign that your code can be simplified is if it looks
 something like this:
@@ -68,10 +68,10 @@ varying the question that gets displayed with each round.
 
 .. _composition:
 
-pages.py: prevent code duplication by moving code to ``models.py``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pages.py: prevent code duplication by moving code to your models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You should try to move as much code as possible into ``models.py``.
+You should try to move as much code as possible into your Player/Group/Subsession.
 In Django, it's generally recommended to have "thick models" and "thin pages".
 
 .. _skip_many:
@@ -107,7 +107,7 @@ the rest of the app once a certain participant var is set:
     ]
 
 You can eliminate this repetition by moving the ``is_displayed`` code into
-``models.py``:
+the Player model:
 
 .. code-block:: python
 
@@ -116,7 +116,7 @@ You can eliminate this repetition by moving the ``is_displayed`` code into
             pvars = self.participant.vars
             return pvars.get('consented') and not pvars.get('finished')
 
-Then in ``pages.py``:
+Then in your pages:
 
 .. code-block:: python
 
@@ -184,7 +184,7 @@ variables ``d`` and ``e``):
                 }
 
 
-You can simplify this by making a method in ``models.py``:
+You can simplify this by making a method on your Player model:
 
 .. code-block:: python
 
@@ -196,7 +196,7 @@ You can simplify this by making a method in ``models.py``:
                 'c': 3,
             }
 
-Then in ``pages.py``:
+Then in your pages:
 
 .. code-block:: python
 

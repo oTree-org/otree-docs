@@ -110,7 +110,7 @@ Here is a diagram of how you can refer to objects in the hierarchy within your c
 
 For example, if you are in a method on the ``Player`` class, you can
 access the player's payoff with ``self.payoff`` (because ``self`` is the
-player). But if you are inside a ``Page`` class in ``pages.py``, the
+player). But if you are inside a ``Page`` method, the
 equivalent expression is ``self.player.payoff``,
 which traverses the pointer from 'page' to 'player'.
 
@@ -174,7 +174,7 @@ in your ``models.py``
             # equivalent to self.in_previous_rounds() + [self]
             self.in_all_rounds()
 
-in your ``pages.py``
+In a page:
 
 .. code-block:: python
 

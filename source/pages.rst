@@ -3,16 +3,9 @@
 Pages
 =====
 
-Each page that your players see is defined by a ``Page`` class in
-``pages.py``.
+Each page that your players see is defined by a ``Page`` class.
 
-.. note::
-
-    Prior to January 2018, ``pages.py`` was called ``views.py``.
-    See :ref:`v20` for more information.
-
-Your ``pages.py`` must have a ``page_sequence``
-variable that gives the order of the pages. For example:
+Your ``page_sequence``variable that gives the order of the pages. For example:
 
 .. code-block:: python
 
@@ -21,7 +14,7 @@ variable that gives the order of the pages. For example:
 If your game has multiple rounds, this sequence will be repeated.
 See :ref:`rounds` for more info.
 
-A ``Page`` class can have any of the following optional methods and attributes.
+A ``Page`` can have any of the following optional methods and attributes.
 
 .. _is_displayed:
 

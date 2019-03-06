@@ -32,7 +32,7 @@ the current round number with ``self.round_number``.
 Stages
 ~~~~~~
 
-oTree calls these "pages", and they are defined in ``pages.py``.
+oTree calls these "pages".
 
 Waiting screens
 ~~~~~~~~~~~~~~~
@@ -112,9 +112,9 @@ Subjects table
 
 In z-Tree you define variables that go in the subjects table.
 
-In oTree, you define the structure of your table by defining "fields" in
-``models.py``. Each field defines a column in the table, and has an
-associated data type (number, text, etc).
+In oTree, you define the structure of your table by defining "fields" on
+your Player/Group/Subsession models. Each field defines a column in the table, and has a
+data type (number, text, etc).
 
 You can access all players like this:
 
@@ -122,14 +122,10 @@ You can access all players like this:
 
     self.subsession.get_players()
 
-This returns a list of all players in the subsession. Each player has
-the same set of fields, so this structure is conceptually similar to a
-table.
+This returns a list of all players in the subsession.
 
-oTree also has a "Group" object (essentially a "groups" table), where
-you can store data at the group level, if it is not specific to any one
-player but rather the same for all players in the group, like the total
-contribution by the group (e.g. ``self.group.total_contribution``).
+oTree also has a "Group" model. Here you can store data that is shared by all members
+of a group.
 
 Globals table
 ^^^^^^^^^^^^^
@@ -150,7 +146,7 @@ In oTree you would do:
 
 .. code-block:: python
 
-    S = sum([p for p in self.subsession.get_players()])
+    S = sum([p.C for p in self.subsession.get_players()])
 
 find()
 ''''''
@@ -266,7 +262,7 @@ Parameters table
 ~~~~~~~~~~~~~~~~
 
 Any parameters that are constant within an app should be defined in
-``Constants`` in ``models.py``. Some parameters are defined in
+your ``Constants`` class. Some parameters are defined in
 ``settings.py``.
 
 Define a method in ``creating_session`` that loops through all

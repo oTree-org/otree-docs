@@ -46,8 +46,8 @@ See :ref:`participant.vars <vars>` and :ref:`session.vars <session_vars>`.
 Rounds
 ======
 
-You can make a game run for multiple rounds by setting ``Constants.num_rounds``
-in models.py. For example, if your session config's ``app_sequence`` is ``['app1', 'app2']``,
+You can make a game run for multiple rounds by setting ``Constants.num_rounds``.
+For example, if your session config's ``app_sequence`` is ``['app1', 'app2']``,
 where ``app1`` has ``num_rounds = 3`` and ``app2`` has ``num_rounds = 1``,
 then your sessions will contain 4 subsessions.
 
@@ -140,14 +140,12 @@ accessed from a ``Page`` or ``Player``:
 
 .. code-block:: python
 
-    # in pages.py
     class MyPage(Page):
         def before_next_page(self):
             self.participant.vars['foo'] = 1
 
 .. code-block:: python
 
-    # in models.py
     class Player(BasePlayer):
         def some_method(self):
             self.participant.vars['foo'] = 1

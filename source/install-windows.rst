@@ -107,7 +107,6 @@ If PyCharm displays this warning, select "Ignore requirements":
 .. figure:: _static/setup/pycharm-psycopg2-warning.png
 
 
-
 Note: Even if you normally use another text editor,
 we recommend at least trying PyCharm, because PyCharm's autocompletion
 makes learning oTree much easier:
@@ -131,7 +130,7 @@ The command to upgrade is the same as the command to install:
 
     pip3 install -U otree
 
-If there is a problem with the upgrade, uninstall then reinstall:
+If there is a problem with the upgrade, uninstall then reinstall::
 
     pip3 uninstall otree
     pip3 install -U otree

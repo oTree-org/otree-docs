@@ -30,6 +30,8 @@ Step 1: Install Python
 
     /Applications/Python\ 3.6/Install\ Certificates.command
 
+    (if you are using Python 3.7, you should change the 3.6 to 3.7.)    
+
 
 Step 2: Install oTree
 ---------------------
@@ -111,7 +113,7 @@ The command to upgrade is the same as the command to install:
 
     pip3 install -U otree
 
-If there is a problem with the upgrade, uninstall then reinstall:
+If there is a problem with the upgrade, uninstall then reinstall::
 
     pip3 uninstall otree
     pip3 install -U otree

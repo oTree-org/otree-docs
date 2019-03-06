@@ -25,7 +25,7 @@ The following variables are available in templates:
 -   ``subsession``: the subsession the current player belongs to
 -   ``participant``: the participant the current player belongs to
 -   ``session``: the current session
--   ``Constants``: constants you defined in ``models.py``
+-   ``Constants``: your Constants class
 -   Any variables you passed with :ref:`vars_for_template`.
 
 Conditions ("if")
@@ -203,7 +203,7 @@ To display an image, use the ``<img>`` tag, like this:
 
 .. code-block:: HTML+django
 
-    <img src="{% static "puppy.jpg" %}"/>
+    <img src="{% static 'puppy.jpg' %}"/>
 
 Above we saved our image in ``_static/puppy.jpg``,
 But actually it's better to make a subfolder with the name of your app,
@@ -216,8 +216,8 @@ Then your HTML code becomes:
 
     <img src="{% static "your_app_name/puppy.jpg" %}"/>
 
-If you prefer, you can also put static files inside your app folder,
-in a subfolder called ``static/your_app_name``.
+(If you prefer, you can also put static files inside your app folder,
+in a subfolder called ``static/your_app_name``.)
 
 If a static file is not updating even after you changed it,
 this is because your browser cached the file. Do a full page reload
@@ -227,7 +227,7 @@ Dynamic images
 ~~~~~~~~~~~~~~
 
 If the image/video path is variable (like showing a different image each round),
-you can construct it in ``pages.py`` and pass it to the template, e.g.:
+you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
 .. code-block:: python
 
