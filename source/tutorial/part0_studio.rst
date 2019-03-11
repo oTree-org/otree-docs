@@ -1,6 +1,10 @@
 Part 0: Simple survey (for oTree Studio users)
 ==============================================
 
+.. note::
+
+    This page is specifically for people using oTree Studio.
+
 Let's create a simple survey -- on the first page, we ask the participant
 for their name and age, then on the next page, display this info back to them.
 
@@ -47,7 +51,7 @@ Page 2
 
 Now we define ``Results``.
 
-Set the template's title to something like ``Results`` and set the content to:
+Set the template's ``title`` block to ``Results`` and set the ``content`` block to:
 
 .. code-block:: html+django
 
@@ -69,16 +73,8 @@ In the sidebar, go to "Session Configs" and set the following properties:
 Download and run
 ----------------
 
-Download the *.otreezip file.
-Open your command line (see :ref:`install` for more info).
-Make sure you have your command line to the same folder where you downloaded the
-*.otreezip file.
-
-Then enter:
-
-    otree runzip
-
-Then open your browser to ``http://localhost:8000`` to try out the survey.
+Download the otreezip file and follow the instructions on how to install
+oTree and run the otreezip file.
 
 If there are any problems,
 you can ask a question on the oTree

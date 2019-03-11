@@ -1,9 +1,15 @@
 :orphan:
 
+
 .. _install-windows:
 
 Installing oTree on Windows
 ===========================
+
+.. note::
+
+    If you are using oTree Studio, you can skip this page and follow the
+    simplified installation instructions on the oTree Studio download page.
 
 Important note
 --------------

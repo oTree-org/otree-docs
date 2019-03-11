@@ -110,6 +110,7 @@ Set the ``title`` block to ``Contribute``,
 and the ``content`` block to:
 
 .. code-block:: html+django
+
     <p>
         This is a public goods game with
         {{ Constants.players_per_group }} players per group,

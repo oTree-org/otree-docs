@@ -82,40 +82,6 @@ We need 3 pages:
 -  P2's "Send back" page
 -  "Results" page that both users see.
 
-It would also be good if game instructions appeared on each page so that
-players are clear how the game works.
-
-instructions.html
-~~~~~~~~~~~~~~~~~
-
-To create the instructions, we can define a file
-``instructions.html`` that gets included on each page.
-(The ``class=`` attributes are based on Bootstrap.)
-
-.. code-block:: html+django
-
-    {% load otree %}
-
-    <div class="card bg-light">
-        <div class="card-body">
-
-        <h3>
-            Instructions
-        </h3>
-        <p>
-            This is a trust game with 2 players.
-        </p>
-        <p>
-            To start, participant A receives {{ Constants.endowment }};
-            participant B receives nothing.
-            Participant A can send some or all of his {{ Constants.endowment }} to participant B.
-            Before B receives this amount it will be tripled.
-            Once B receives the tripled amount he can decide to send some or all of it back to A.
-        </p>
-        </div>
-    </div>
-
-
 Send page
 ~~~~~~~~~
 
@@ -137,8 +103,6 @@ and the ``content`` block to:
 
 .. code-block:: django
 
-    {% include 'my_trust/instructions.html' %}
-
     <p>
     You are Participant A. Now you have {{Constants.endowment}}.
     </p>
@@ -156,8 +120,6 @@ Set the ``title`` block to ``Trust Game: Your Choice``,
 and the ``content`` block to:
 
 .. code-block:: html+django
-
-    {% include 'my_trust/instructions.html' %}
 
     <p>
         You are Participant B. Participant A sent you {{group.sent_amount}}
@@ -227,10 +189,6 @@ Set the ``title`` block to ``Results``, and the content block to:
     <p>
     Therefore, your total payoff is {{ player.payoff }}.
     </p>
-
-    {% include 'my_trust/instructions.html' %}
-
-
 
 .. code-block:: python
 

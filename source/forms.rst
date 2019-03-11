@@ -169,8 +169,6 @@ If a field is optional, you can use ``blank=True`` like this:
 
     offer = models.IntegerField(blank=True)
 
-Then the HTML field will not have the ``required`` attribute.
-
 .. _dynamic_validation:
 
 Dynamic form field validation
@@ -178,7 +176,7 @@ Dynamic form field validation
 
 The ``min``, ``max``, and ``choices`` described above are only
 for fixed (constant) values.
-
+ 
 If you want them to be determined dynamically
 (e.g. different from player to player),
 then you can instead define one of the below

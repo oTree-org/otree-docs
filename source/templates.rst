@@ -244,6 +244,50 @@ Then in the template:
 
     <img src="{% static image_path %}"/>
 
+Including other templates
+-------------------------
+
+If you are copy-pasting the same content across many templates, it's better to use
+``{% include %}``. This lets you define content once and insert it in many places.
+
+For example, if your game has instructions that need to be repeated on every page,
+make a template called ``instructions.html``, and put the instructions there,
+for example:
+
+.. code-block:: HTML+django
+
+    {% load otree %}
+
+    <div class="card bg-light">
+        <div class="card-body">
+
+        <h3>
+            Instructions
+        </h3>
+        <p>
+            This is a trust game with 2 players.
+        </p>
+        <p>
+            To start, participant A receives an endowment;
+            participant B receives nothing.
+            Participant A can send some or all of his endowment to participant B.
+            Before B receives this amount it will be tripled.
+            Once B receives the tripled amount he can decide to send some or all of it back to A.
+        </p>
+        </div>
+    </div>
+
+Then, add this to your app's Constants (in oTree Studio the constant will be added automatically):
+
+.. code-block:: python
+
+    ``instructions_template = 'my_trust_game/instructions.html'``
+
+Now, in any of your page templates, you can insert it anywhere with:
+
+.. code-block:: HTML+django
+
+    ``{% include Constants.instructions_template %}``.
 
 .. _base-template:
 

@@ -5,6 +5,11 @@
 Installing oTree on macOS
 =========================
 
+.. note::
+
+    If you are using oTree Studio, you can skip this page and follow the
+    simplified installation instructions on the oTree Studio download page.
+
 Important note
 --------------
 
