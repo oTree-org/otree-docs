@@ -5,11 +5,7 @@ Python tutorial
 
 Below is a tutorial with the basics of Python you need to know to use oTree.
 
-First you should install Python according to the instructions in :ref:`setup`,
-and install a Python editor like PyCharm.
-
-Then you can download this file and run it in your Python shell, PyCharm, or IDLE (which is often bundled in the Python installation).
-You can insert print statements throughout the file and test different modifications make sure that you understand.
+The easiest way to run this file is in IDLE (which is usually bundled in the Python installation).
 
 There are many other good python tutorials online,
 but note that some of the material covered in those tutorials

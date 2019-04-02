@@ -103,42 +103,31 @@ often useful to choose explicitly which treatment to play. Let's say you
 are developing the game from the above example and want to show your
 colleagues both treatments (red and blue). You can create 2 session
 configs that have the same keys in the session config dictionary,
-except the ``treatment`` key:
+except the ``color`` key:
 
 .. code-block:: python
 
     SESSION_CONFIGS = [
         {
             'name':'my_game_blue',
-            # other arguments...
-
-            'treatment':'blue',
+            'app_sequence': ['my_game'],
+            'num_demo_participants': 1,
+            'color':'blue',
 
         },
         {
             'name':'my_game_red',
-            # other arguments...
-            'treatment':'red',
+            'app_sequence': ['my_game'],
+            'num_demo_participants': 1,
+            'color':'red',
         },
     ]
 
-Then in the ``creating_session`` method, you can check which of the
-2 session configs it is:
+Then in your code you can get the current session's color with ``self.session.config['color'].
 
-.. code-block:: python
-
-    def creating_session(self):
-        for p in self.get_players():
-            if 'treatment' in self.session.config:
-                # demo mode
-                p.color = self.session.config['treatment']
-            else:
-                # live experiment mode
-                p.color = random.choice(['blue', 'red'])
-
-Then, when someone visits your demo page, they will see the "red" and
-"blue" treatment, and choose to play one or the other. If the demo
-argument is not passed, the color is randomized.
+You can even combine this with the randomization approach. You can check
+``if 'color' in self.session.config:``; if yes, then use that color; if no,
+then choose it randomly.
 
 Also see :ref:`edit_config`.
 

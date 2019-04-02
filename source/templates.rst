@@ -281,13 +281,13 @@ Then, add this to your app's Constants (in oTree Studio the constant will be add
 
 .. code-block:: python
 
-    ``instructions_template = 'my_trust_game/instructions.html'``
+    instructions_template = 'my_trust_game/instructions.html'
 
 Now, in any of your page templates, you can insert it anywhere with:
 
 .. code-block:: HTML+django
 
-    ``{% include Constants.instructions_template %}``.
+    {% include Constants.instructions_template %}
 
 .. _base-template:
 
