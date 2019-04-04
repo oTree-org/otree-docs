@@ -99,7 +99,7 @@ oTree will add a unique secret key to each participant's URLs,
 like this::
 
     http://localhost:8000/room/econ101/?participant_label=Student1&hash=29cd655f
-    http://localhost:8000/room/econ101/?participant_label=Student1&hash=46d9f31d
+    http://localhost:8000/room/econ101/?participant_label=Student2&hash=46d9f31d
 
 So, even if someone can guess another participant's ``participant_label``,
 they won't be able to open that person's start URL without the secret hash code.
