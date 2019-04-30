@@ -80,7 +80,8 @@ If you set ``USE_POINTS = True``, then currency amounts will be points instead o
 For example, ``c(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
 
 The oTree's admin's payment tab will automatically convert points to money
-using your ``real_world_currency_per_point`` in the session config in ``settings.py``.
+using your session config's ``real_world_currency_per_point``
+(you can add a ``real_world_currency_per_point`` entry to each session config).
 
 Points are integers. This means amounts will get rounded to whole numbers,
 like ``10`` divided by ``3`` is ``3``.

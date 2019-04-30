@@ -3,7 +3,7 @@ Part 0: Simple survey (for oTree Studio users)
 
 .. note::
 
-    This page is specifically for people using oTree Studio.
+    This page is specifically for people using :ref:`oTree Studio <studio>`.
 
 Let's create a simple survey -- on the first page, we ask the participant
 for their name and age, then on the next page, display this info back to them.

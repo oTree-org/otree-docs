@@ -151,6 +151,19 @@ by making a list of [value, display] pairs:
 If you do this, users will just see a menu with "Low", "Medium", "High",
 but their responses will be recorded as 1, 2, or 3.
 
+
+You can do this for ``BooleanField``, ``StringField``, etc.:
+
+.. code-block:: python
+
+    cooperated = models.BooleanField(
+        choices=[
+            [False, 'Defect'],
+            [True, 'Cooperate'],
+        ]
+    )
+
+
 After the field has been set, you can access the human-readable name
 using
 `get_FOO_display <https://docs.djangoproject.com/en/1.11/ref/models/instances/#django.db.models.Model.get_FOO_display>`__

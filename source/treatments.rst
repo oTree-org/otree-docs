@@ -123,7 +123,7 @@ except the ``color`` key:
         },
     ]
 
-Then in your code you can get the current session's color with ``self.session.config['color'].
+Then in your code you can get the current session's color with ``self.session.config['color'].``
 
 You can even combine this with the randomization approach. You can check
 ``if 'color' in self.session.config:``; if yes, then use that color; if no,
