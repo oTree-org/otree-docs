@@ -106,11 +106,10 @@ at the top of your template.
 Things you can't do
 ~~~~~~~~~~~~~~~~~~~
 
-The template language is designed for simply displaying and looping over values.
-Most other things are not supported; for example,
-you can't do math (``+``, ``*``, ``/``, ``-``)
+The template language is just for displaying values.
+You can't do math (``+``, ``*``, ``/``, ``-``)
 or otherwise modify numbers, lists, strings, etc.
-If you need to do that, you should do so in :ref:`vars_for_template`.
+For that, you should use :ref:`vars_for_template`.
 
 How templates work: an example
 ------------------------------
@@ -222,6 +221,11 @@ in a subfolder called ``static/your_app_name``.)
 If a static file is not updating even after you changed it,
 this is because your browser cached the file. Do a full page reload
 (usually Ctrl+F5)
+
+If you have videos or high-resolution images,
+it's preferable to store them somewhere online and reference them by URL
+because the large file size can make uploading your
+.otreezip file much slower.
 
 Dynamic images
 ~~~~~~~~~~~~~~

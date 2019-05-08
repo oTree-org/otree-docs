@@ -165,8 +165,7 @@ panel.
 Qualification requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since oTree 1.4 (summer 2017), oTree uses boto3 syntax for qualification requirements.
-
+oTree uses boto3 syntax for qualification requirements.
 Here is an example with 2 qualification requirements:
 
 .. code-block:: python

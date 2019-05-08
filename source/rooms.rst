@@ -163,12 +163,6 @@ and create a session for that number of people.
 Although this option is simple, it is less reliable than using participant labels,
 because someone could play twice by opening the URL in 2 different browsers.
 
-.. note::
-
-    Starting with otree 1.4.13 (September 2017), the room-wide URL uses
-    cookies, so that if someone visits twice with the same browser, they will
-    be assigned back to the same participant.
-
 
 Reusing for multiple sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

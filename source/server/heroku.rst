@@ -18,7 +18,7 @@ Often this means you can run a study for just a few dollars.
 Heroku setup
 ------------
 
-New as of January 2019: the recommended way to deploy to Heroku is to use
+The recommended way to deploy to Heroku is to use
 `oTree Hub <https://www.otreehub.com/>`__,
 which automates your Heroku setup and allows you to deploy
 through a point-and-click interface.

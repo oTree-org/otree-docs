@@ -3,8 +3,14 @@
 
 .. _install-windows:
 
-Installing oTree on Windows
-===========================
+Installing oTree on Windows (code-based version)
+================================================
+
+.. note::
+
+    These instructions are for the code-based version of oTree.
+    To use oTree Studio, which is a simplified graphical interface
+    for creating oTree apps, see `here <studio>`.
 
 Important note
 --------------

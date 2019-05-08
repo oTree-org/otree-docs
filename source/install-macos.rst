@@ -2,15 +2,14 @@
 
 .. _install-macos:
 
-Installing oTree on macOS
-=========================
+Installing oTree on macOS (code-based version)
+==============================================
 
 .. note::
 
-    If you want to try the beta of oTree Studio, which is a simplified graphical interface
-    for creating oTree apps, sign up on `oTree Hub <https://www.otreehub.com/>`__
-    and click the link "Studio" in the upper right corner of the page.
-    (Heroku sign up is not necessary.)
+    These instructions are for the code-based version of oTree.
+    To use oTree Studio, which is a simplified graphical interface
+    for creating oTree apps, see `here <studio>`.
 
 Important note
 --------------

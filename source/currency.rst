@@ -16,8 +16,6 @@ It will still work just like a number
 The advantage is that when it's displayed to users, it will automatically
 formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
-Money amounts are displayed with 2 decimal places by default;
-you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
 
 If a model field is a currency amount,
 you should define it as a ``CurrencyField``.
@@ -83,13 +81,6 @@ The oTree's admin's payment tab will automatically convert points to money
 using your session config's ``real_world_currency_per_point``
 (you can add a ``real_world_currency_per_point`` entry to each session config).
 
-Points are integers. This means amounts will get rounded to whole numbers,
-like ``10`` divided by ``3`` is ``3``.
-So, we recommend using point magnitudes high enough that you don't care about rounding error.
-For example, set the endowment of a game to 1000 points, rather than 100.
-However, if you really want decimal places in your points, you can set
-``POINTS_DECIMAL_PLACES = 2``, etc.
-
 To customize the name "points" to something else like "tokens" or "credits",
 set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``.
 
@@ -107,8 +98,29 @@ You can convert a points amount to money using the method
 It requires ``self.session``, because
 different sessions can have different conversion rates).
 
+
+Decimal places
+--------------
+
+Money amounts are displayed with 2 decimal places;
+you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
+If the extra decimal places show up but are always 0,
+then you need to run resetdb.
+
+On the other hand, points are integers.
+This means amounts will get rounded to whole numbers,
+like ``10`` divided by ``3`` is ``3``.
+So, we recommend using point magnitudes high enough that you don't care about rounding error.
+For example, set the endowment of a game to 1000 points, rather than 100.
+If you really want decimal places in your points, you can set
+``POINTS_DECIMAL_PLACES = 2``, etc.
+(But in our experience, it's simpler to just keep points as integers,
+because with decimal places there are more complications about formatting and rounding.)
+Anyway, if the extra decimal places show up but are always 0,
+then you need to run resetdb.
+
 Misc
-~~~~
+----
 
 If you want numbers to be formatted like ``1,000,000`` or ``1 000 000``,
 see `USE_THOUSAND_SEPARATOR <https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-USE_THOUSAND_SEPARATOR>`__.
