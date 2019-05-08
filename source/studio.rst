@@ -33,7 +33,7 @@ How to test your app
 
 1.  Install Python and oTree, according to the simplified instructions in
     `oTree Studio <https://www.otreehub.com/studio/>`__'s download page.
-    (Don't follow the instrIt skips some steps from the conventional installation,
+    (It skips some steps from the conventional installation,
     such as running "otree startproject".)
 2.  Open your command prompt and run ``otree runzip``. This will start your server.
 3.  In oTree Studio, click the button to download your .otreezip file.
