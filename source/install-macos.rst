@@ -9,7 +9,7 @@ Installing oTree on macOS (code-based version)
 
     These instructions are for the code-based version of oTree.
     To use oTree Studio, which is a simplified graphical interface
-    for creating oTree apps, see `here <studio>`.
+    for creating oTree apps, see :ref:`here <studio>`.
 
 Important note
 --------------

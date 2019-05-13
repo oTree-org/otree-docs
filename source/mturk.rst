@@ -44,8 +44,11 @@ and set ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``.
 (For servers not on Heroku, to learn what an "environment variable" is,
 see `here <http://superuser.com/a/284351>`__.)
 
-Next, allow oTree to read these keys from the environment variables,
-by adding the following lines to your ``settings.py``::
+Next, copy the following lines (exactly as is) to your ``settings.py``.
+``environ.get('AWS_ACCESS_KEY_ID')`` means that it will look up the value of the key
+``AWS_ACCESS_KEY_ID`` that you set above.
+
+.. code-block:: python
 
     AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
@@ -205,6 +208,11 @@ See the
 (However, note that the code examples there are in JavaScript, so you would need
 to modify the syntax to make it work in Python, e.g. adding quotes around dictionary keys.)
 
+Multiple MTurk settings
+-----------------------
+
+If you are running different MTurk studies that need to have different settings,
+just make a different variable to hold those settings, and call ``mturk_hit_settings2``,
 
 Preventing retakes (repeat workers)
 -----------------------------------

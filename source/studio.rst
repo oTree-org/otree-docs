@@ -24,7 +24,7 @@ How does oTree Studio work?
 How to build your app in oTree Studio
 -------------------------------------
 
-`Here <tutorial-studio>` is a tutorial showing how to make a simple app in oTree Studio.
+:ref:`Here <tutorial-studio>` is a tutorial showing how to make a simple app in oTree Studio.
 The oTree documentation is written so it applies both to oTree Studio and the code-based
 version.
 

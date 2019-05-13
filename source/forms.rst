@@ -195,12 +195,56 @@ If you want them to be determined dynamically
 then you can instead define one of the below
 methods on your Page.
 
+.. note::
+
+    As of May 2019 (oTree 2.1.35), it is recommended to define the following methods on the Player
+    (or Group) model, not the Page:
+
+    -   FIELD_min
+    -   FIELD_max
+    -   FIELD_choices
+    -   FIELD_error_message
+
+    For example, here is the old format:
+
+    .. code-block:: python
+
+        class MyPage(Page):
+
+            form_model = 'player'
+            form_fields = ['offer']
+
+            def offer_max(self):
+                return self.player.endowment
+
+    To change this to the new format, you move ``offer_max`` into the Player model:
+
+    .. code-block:: python
+
+        class Player(BasePlayer):
+
+            offer = models.CurrencyField()
+
+            def offer_max(self):
+                return self.endowment
+
+    Note that we change ``return self.player.endowment`` to just ``self.endowment``,
+    because ``self`` *is* the player.
+
+    The old format will continue to work, so it is not urgent for you to make this change.
+
+
 .. _FOO_choices:
 
 {field_name}_choices()
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Like setting ``choices=`` in models.py,
+.. note::
+
+    It is now recommended to define this method on the Player
+    (or Group) model, not the Page. See the note above.
+
+Like setting ``choices=``,
 this will set the choices for the form field
 (e.g. the dropdown menu or radio buttons).
 
@@ -208,10 +252,9 @@ Example:
 
 .. code-block:: python
 
-    class MyPage(Page):
+    class Player(BasePlayer):
 
-        form_model = 'player'
-        form_fields = ['fruit']
+        fruit = models.StringField()
 
         def fruit_choices(self):
             choices = ['apple', 'kiwi', 'mango']
@@ -225,21 +268,31 @@ Example:
 {field_name}_max()
 ~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    It is now recommended to define this method on the Player
+    (or Group) model, not the Page. See the note above.
+
 The dynamic alternative to setting ``max=`` in the model field. For example:
 
 .. code-block:: python
 
-    class MyPage(Page):
+    class Player(BasePlayer):
 
-        form_model = 'player'
-        form_fields = ['offer']
+        offer = models.CurrencyField()
 
         def offer_max(self):
-            return self.player.endowment
+            return self.budget
+
+        budget = models.CurrencyField()
 
 
 {field_name}_min()
 ~~~~~~~~~~~~~~~~~~
+.. note::
+
+    It is now recommended to define this method on the Player
+    (or Group) model, not the Page. See the note above.
 
 The dynamic alternative to setting ``min=`` on the model field.
 
@@ -248,23 +301,26 @@ The dynamic alternative to setting ``min=`` on the model field.
 {field_name}_error_message()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the most flexible method for validating a field.
+.. note::
 
-For example, let's say that the player has to make a purchase but
-this purchase cannot exceed the player's budget.
-Assuming your fields are called ``purchase`` and ``budget``:
+    It is now recommended to define this method on the Player
+    (or Group) model, not the Page. See the note above.
+
+This is the most flexible method for validating a field.
 
 .. code-block:: python
 
-    class MyPage(Page):
+    class Player(BasePlayer):
 
-        form_model = 'player'
-        form_fields = ['purchase']
+        offer = models.CurrencyField()
 
-        def purchase_error_message(self, value):
+        def offer_error_message(self, value):
             print('value is', value)
-            if value > self.player.budget:
-                return 'Purchase is over budget'
+            if value > self.budget / 2:
+                return 'Cannot offer more than half your remaining budget'
+
+        budget = models.CurrencyField()
+
 
 .. _error_message:
 
