@@ -23,6 +23,15 @@ Creating rooms
 You can create multiple rooms -- say, for for different classes you teach,
 or different labs you manage.
 
+In oTree Studio
+~~~~~~~~~~~~~~~
+
+In the sidebar, go to "Settings" and then add a room at the bottom.
+
+
+In code-based oTree
+~~~~~~~~~~~~~~~~~~~
+
 To create a room, add to your ``settings.py``
 a setting ``ROOMS`` (and, optionally, ``ROOM_DEFAULTS``).
 
@@ -40,6 +49,7 @@ For example:
             'name': 'econ101',
             'display_name': 'Econ 101 class',
             'participant_label_file': '_rooms/econ101.txt',
+            'use_secure_urls': True,
         },
         {
             'name': 'econ_lab',
@@ -51,20 +61,18 @@ For example:
 a dict that defines settings to be inherited by all rooms unless
 explicitly overridden (works in an analogous way to ``SESSION_CONFIG_DEFAULTS``).
 
-Here are the available properties:
+If you are using participant labels (see below),
+you need a ``participant_label_file`` which is a relative (or absolute) path to a
+text file with the participant labels.
 
-name and display_name (required)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuring a room
+------------------
 
-The internal name and display name, respectively.
+Participant labels
+~~~~~~~~~~~~~~~~~~
 
-participant_label_file (optional)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A path to a text file with the "guest list"
-for this room.
-Path can be either absolute or relative to the project's root folder.
-The file should contain one participant label per line. For example::
+This is the "guest list" for the room.
+It should contain one participant label per line. For example::
 
         PC_1
         PC_2
@@ -77,7 +85,7 @@ The file should contain one participant label per line. For example::
         PC_9
         PC_10
 
-If you omit ``participant_label_file``, then anyone can join
+If you don't specify participant labels, then anyone can join
 as long as they know the room-wide URL.
 See :ref:`no-participant-labels`.
 
@@ -94,7 +102,7 @@ like this::
 The issue is that if Student1 is mischievous,
 he might change his URL's participant_label from "Student1" to "Student2",
 so that he can impersonate playing as Student2.
-However, if you set ``'use_secure_urls': True,``
+However, if you use ``use_secure_urls``,
 oTree will add a unique secret key to each participant's URLs,
 like this::
 

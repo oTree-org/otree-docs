@@ -5,7 +5,7 @@ Pages
 
 Each page that your players see is defined by a ``Page`` class.
 
-Your ``page_sequence``variable that gives the order of the pages. For example:
+Your ``page_sequence`` variable that gives the order of the pages. For example:
 
 .. code-block:: python
 
@@ -104,6 +104,10 @@ Example:
 
 template_name
 ~~~~~~~~~~~~~
+
+.. note::
+
+    This feature is not supported in oTree Studio.
 
 Each Page should have a file in ``templates/`` with the same name.
 For example, if your app has this page in ``my_app/pages.py``:

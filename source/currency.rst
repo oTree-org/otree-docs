@@ -77,9 +77,8 @@ Points (i.e. "experimental currency")
 If you set ``USE_POINTS = True``, then currency amounts will be points instead of dollars/euros/etc.
 For example, ``c(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
 
-The oTree's admin's payment tab will automatically convert points to money
-using your session config's ``real_world_currency_per_point``
-(you can add a ``real_world_currency_per_point`` entry to each session config).
+You can decide the conversion rate to real money
+by adding a ``real_world_currency_per_point`` entry to your session config.
 
 To customize the name "points" to something else like "tokens" or "credits",
 set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``.

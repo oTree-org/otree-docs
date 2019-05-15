@@ -103,7 +103,7 @@ often useful to choose explicitly which treatment to play. Let's say you
 are developing the game from the above example and want to show your
 colleagues both treatments (red and blue). You can create 2 session
 configs that have the same keys in the session config dictionary,
-except the ``color`` key:
+except for the ``color`` key (in oTree Studio, add a "custom entry"):
 
 .. code-block:: python
 

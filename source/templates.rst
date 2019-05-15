@@ -191,6 +191,12 @@ HTML that was generated (along with any JavaScript or CSS).
 Images, videos, CSS, JavaScript, etc. (static files)
 ----------------------------------------------------
 
+.. note::
+
+    oTree Studio has a simplified interface for adding images.
+    oTree Studio does not yet support other static file types such as videos or audio.
+    If you have custom JavaScript or CSS, you should paste it in the template directly.
+
 Here is how to include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages.
 
 At the root of your oTree project, there is a ``_static/`` folder.
@@ -281,17 +287,9 @@ for example:
         </div>
     </div>
 
-Then, add this to your app's Constants (in oTree Studio the constant will be added automatically):
-
-.. code-block:: python
-
-    instructions_template = 'my_trust_game/instructions.html'
-
-Now, in any of your page templates, you can insert it anywhere with:
-
-.. code-block:: HTML+django
-
-    {% include Constants.instructions_template %}
+If you are using oTree Studio, click the button to include a template.
+Otherwise, create the file in your ``templates`` folder,
+and see the sample games for examples of how to include the template (e.g. ``instructions_template``).
 
 .. _base-template:
 
@@ -300,6 +298,12 @@ JavaScript and CSS
 
 Where to put JavaScript/CSS code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    oTree Studio does not yet support editing base templates.
+    If you have custom JS/CSS, paste it into the ``{% block content %}``
+    of every template that needs it.
 
 It depends whether you want your JS/CSS code to be applied (a) globally,
 (b) in just one app, or (c) in just one page.
@@ -567,19 +571,3 @@ If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
 If it looks all garbled like ``{&#39;a&#39;: 1}``,
 you may have forgotten to use the ``|json`` filter.
-
-
-Note about PyCharm Professional
--------------------------------
-
-If you are using the regular edition of PyCharm
-(Community Edition), consider upgrading to PyCharm Professional Edition,
-because it provides syntax highlighting of Django templates
-and JavaScript.
-
-PyCharm Professional is free if you are a student, teacher, or professor.
-
-Once you've installed Professional Edition, in settings,
-navigate to ``Languages & Frameworks -> Django``,
-check "Enable Django Support" and set your oTree folder as the Django project root,
-with your ``manage.py`` and ``settings.py``.

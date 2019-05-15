@@ -94,6 +94,10 @@ check :ref:`timeout_happened` in ``before_next_page``.
 get_timeout_seconds
 ~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    This feature is not yet supported in oTree Studio.
+
 This is a dynamic alternative to ``timeout_seconds``,
 so that you can base the timeout on ``self.player``, ``self.session``, etc.:
 

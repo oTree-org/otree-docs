@@ -3,6 +3,10 @@
 Bots
 ====
 
+.. note::
+
+    Bots are not yet supported in oTree Studio.
+
 You can write "bots" that simulate participants playing your app,
 so that you can test that it functions properly.
 

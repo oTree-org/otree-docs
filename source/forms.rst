@@ -51,34 +51,6 @@ You can also put the ``label`` in directly in the template:
 
     {% formfield player.contribution label="How much do you want to contribute?" %}
 
-.. _form-model-group:
-
-form_model = 'group'
---------------------
-
-If you set ``form_model = 'group'``,
-the values submitted by the user will be stored
-onto the group model, rather than the player.
-This is often useful in games where some players make decisions on behalf of the group.
-For example, in an ultimatum game, player 1 makes an offer and player 2 accepts or rejects.
-Since there is only 1 offer made per group, you would define the ``offer`` field on the group:
-
-.. code-block:: python
-
-    class Group(Group):
-        offer = models.CurrencyField()
-
-Your page would look like this:
-
-.. code-block:: python
-
-    class Offer(Page):
-        form_model = 'group'
-        form_fields = ['offer'] # this means it will be stored in group.offer
-
-And in your template, you would have::
-
-    {% formfield group.offer %}
 
 .. _form-validation:
 
@@ -347,9 +319,42 @@ Notes:
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
 -   This function is only executed if there are no other errors in the form.
 
+.. _form-model-group:
+
+form_model = 'group'
+--------------------
+
+If you set ``form_model = 'group'``,
+the values submitted by the user will be stored
+onto the group model, rather than the player.
+This is often useful in games where some players make decisions on behalf of the group.
+For example, in an ultimatum game, player 1 makes an offer and player 2 accepts or rejects.
+Since there is only 1 offer made per group, you would define the ``offer`` field on the group:
+
+.. code-block:: python
+
+    class Group(Group):
+        offer = models.CurrencyField()
+
+Your page would look like this:
+
+.. code-block:: python
+
+    class Offer(Page):
+        form_model = 'group'
+        form_fields = ['offer'] # this means it will be stored in group.offer
+
+And in your template, you would have::
+
+    {% formfield group.offer %}
+
 
 Determining form fields dynamically
 -----------------------------------
+
+.. note::
+
+    This feature is not yet supported in oTree Studio.
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that
@@ -383,6 +388,7 @@ oTree additionally offers:
     layout, as you would see with a Likert scale)
 -   ``Slider``
 
+    -   Slider is not yet supported in oTre Studio
     -   To specify the step size, do: ``Slider(attrs={'step': '0.01'})``
     -   To disable the current value from being displayed, do:
         ``Slider(show_value=False)``

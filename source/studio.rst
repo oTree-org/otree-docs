@@ -8,7 +8,8 @@ is a new point-and-click interface for creating oTree projects.
 
 If you are new to oTree,
 you should consider using oTree Studio, because you can get started building
-oTree apps without knowing Python.
+oTree apps without knowing Python. (If you use oTree Studio, you don't need to
+set up PyCharm.)
 
 We have some `YouTube videos <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__
 on how to use oTree Studio.
