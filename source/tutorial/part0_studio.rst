@@ -3,13 +3,13 @@
 Part 0: Simple survey (for oTree Studio users)
 ==============================================
 
-.. note::
+Here are YouTube videos for this tutorial:
 
-    This page is specifically for people using :ref:`oTree Studio <studio>`.
+-   `Writing the app <https://www.youtube.com/watch?v=q0KSxVizGSs&feature=youtu.be>`__
+-   `Testing the app on your PC <https://www.youtube.com/watch?v=1gu7CK9W5dc&feature=youtu.be>`__
 
 Let's create a simple survey -- on the first page, we ask the participant
 for their name and age, then on the next page, display this info back to them.
-
 
 Player model
 ------------

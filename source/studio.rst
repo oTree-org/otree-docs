@@ -10,6 +10,9 @@ If you are new to oTree,
 you should consider using oTree Studio, because you can get started building
 oTree apps without knowing Python.
 
+We have some `YouTube videos <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__
+on how to use oTree Studio.
+
 How does oTree Studio work?
 ---------------------------
 

@@ -201,7 +201,6 @@ Here is how you would require workers from the US.
                 'LocaleValues': [{'Country': "US"}]
             },
 
-.. code-block:: python
 
 See the
 `MTurk API reference <http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle.html>`__.
@@ -212,7 +211,18 @@ Multiple MTurk settings
 -----------------------
 
 If you are running different MTurk studies that need to have different settings,
-just make a different variable to hold those settings, and call ``mturk_hit_settings2``,
+just make a different variable to hold those settings (you can call it
+something like ``mturk_hit_settings2``), and then in the session config,
+put:
+
+.. code-block:: python
+
+    {
+        'name': 'my_session_config',
+        'app_sequence': ['my_app'],
+        'num_demo_participants': 1,
+        'mturk_hit_settings': mturk_hit_settings2,
+    }
 
 Preventing retakes (repeat workers)
 -----------------------------------
