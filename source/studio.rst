@@ -17,12 +17,12 @@ on how to use oTree Studio.
 How does oTree Studio work?
 ---------------------------
 
-1.  Make an account on `oTree Hub <https://www.otreehub.com/studio>`__.
+#.  Make an account on `oTree Hub <https://www.otreehub.com/studio>`__.
     oTree Studio is part of oTree Hub
     (the other part of oTree Hub is for Heroku server deployment)
-1.  Build your app in oTree Studio's point-and-click interface.
+#.  Build your app in oTree Studio's point-and-click interface.
     You can either create a new app or use one of the sample games.
-2.  When you want to test your app, download your .otreezip file and run it
+#.  When you want to test your app, download your .otreezip file and run it
     on your computer or on Heroku.
 
 How to build your app in oTree Studio

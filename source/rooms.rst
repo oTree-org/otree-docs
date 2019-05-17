@@ -151,13 +151,6 @@ oTree simply appends the participant label to the room-wide URL, e.g.,
 checks if the label is contained in the participant label file,
 and if so, redirects the participant to the wait page.
 
-
-.. note::
-otr
-    Some language translations are currently missing, in which case it will
-    be shown in English. You can fix that by contributing a translation
-    `here <https://github.com/oTree-org/otree-internationalization>`__.
-
 .. _no-participant-labels:
 
 If you don't have a participant_label_file

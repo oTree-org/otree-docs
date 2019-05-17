@@ -304,6 +304,7 @@ ResultsSummary
 Create a page called "ResultsSummary".
 
 Notes:
+
 -  It only gets shown in the last round, so we set ``is_displayed``
    accordingly.
 -  We retrieve the value of ``paying_round`` from ``session.vars``

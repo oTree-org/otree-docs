@@ -39,7 +39,6 @@ Version 1.4
 Here are the main changes in 1.4:
 
 -   MTurk: improved stability, and upgrade from boto2 to boto3.
-    See the :ref:`MTurk page <v14_mturk>` for details.
 -   ``group_by_arrival_time`` now filters out participants who have disconnected
     or dropped out. See :ref:`group_by_arrival_time`.
 -   Upgrade timeout JavaScript library (jQuery countdown)
