@@ -20,7 +20,7 @@ Extra steps for non-Studio users
 --------------------------------
 
 If you are not using oTree Studio, you need to additionally follow the steps
-ref:`here <mturk_nostudio>`.
+:ref:`here <mturknostudio>`.
 
 AWS credentials
 ---------------

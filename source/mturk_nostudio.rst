@@ -1,4 +1,4 @@
-.. _mturk_nostudio:
+.. _mturknostudio:
 
 MTurk Studio setup (without Studio)
 ===================================
