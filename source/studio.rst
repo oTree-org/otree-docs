@@ -48,7 +48,7 @@ How to test your app
     The oTree server on your computer will automatically detect the updated .otreezip
     file, and run it.
 
-.. _studio-otreezip
+.. _studio-otreezip:
 
 About .otreezip files
 ---------------------
@@ -68,8 +68,8 @@ In other words, you are not "locked in" to oTree Studio.
 Are all oTree features supported?
 ---------------------------------
 
-Certain oTree features are currently omitted from oTree Studio,
-especially less frequently used ones.
+oTree Studio does not support all oTree features. They are noted throughout
+the documentation.
 Those features will be added over time, as oTree Studio becomes more widely used.
 If at any point you need to use one of these features, you are not stuck;
 you can just download the code of your project and switch to using the Python-based
