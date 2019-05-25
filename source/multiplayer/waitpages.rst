@@ -208,6 +208,13 @@ by setting the ``title_text`` and ``body_text`` attributes, e.g.:
         title_text = "Custom title text"
         body_text = "Custom body text"
 
+Custom wait page template
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This feature is not supported in oTree Studio.
+
 You can also make a custom wait page template.
 For example, save this to ``my_app/templates/my_app/MyWaitPage.html``
 (this template must extend 'otree/WaitPage.html'):
@@ -252,7 +259,11 @@ save it to ``_templates/global/WaitPage.html``.
 oTree will then automatically use it everywhere instead of the built-in wait page.
 
 CSS and JavaScript in Wait Pages
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This feature is not supported in oTree Studio.
 
 Wait pages have the same block structure as regular pages
 (``global_scripts``, ``app_scripts``, ``scripts``, etc...),

@@ -501,6 +501,8 @@ If that's not possible, then you can reduce the amount of repeated code
 by defining a function that returns a field
 (``make_field`` is just an example name; you can call it anything).
 
+(Note, this is not supported in oTree Studio.)
+
 .. code-block:: python
 
     def make_field(label):
@@ -516,5 +518,4 @@ by defining a function that returns a field
         q2 = make_field('I use difficult words.')
         q3 = make_field('I am full of ideas.')
         q4 = make_field('I have excellent ideas.')
-
 

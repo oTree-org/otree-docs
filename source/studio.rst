@@ -35,10 +35,7 @@ version.
 How to test your app
 --------------------
 
-1.  Install Python and oTree, according to the simplified instructions in
-    `oTree Studio <https://www.otreehub.com/studio/>`__'s download page.
-    (It skips some steps from the conventional installation.
-    For example it is not necessary to install PyCharm, or to run "startproject" or "devserver")
+1.  Install Python and oTree.
 2.  Open your command prompt and run ``otree runzip``. This will start your server.
 3.  In oTree Studio, click the button to download your .otreezip file.
 4.  The oTree server will automatically detect that the .otreezip file was downloaded,

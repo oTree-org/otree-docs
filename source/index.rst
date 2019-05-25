@@ -49,7 +49,6 @@ Contents:
 
     install.rst
     python.rst
-    studio.rst
     tutorial/intro.rst
     conceptual_overview.rst
     models.rst
@@ -66,6 +65,7 @@ Contents:
     rooms.rst
     currency.rst
     mturk.rst
+    studio.rst
     settings.rst
     misc/intro.rst
 

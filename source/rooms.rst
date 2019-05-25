@@ -164,8 +164,6 @@ and create a session for that number of people.
 Although this option is simple, it is less reliable than using participant labels,
 because someone could play twice by opening the URL in 2 different browsers.
 
-.. _mturknostudiofake:
-
 Reusing for multiple sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

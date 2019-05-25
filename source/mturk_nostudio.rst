@@ -1,3 +1,5 @@
+:orphan:
+
 .. _mturknostudio:
 
 MTurk Studio setup (without Studio)

@@ -1,5 +1,5 @@
-Part 0: Simple survey (conventional installation)
-=================================================
+Part 0: Simple survey (for PyCharm users)
+=========================================
 
 Let's create a simple survey -- on the first page, we ask the participant
 for their name and age, then on the next page, display this info back to them.

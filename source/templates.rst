@@ -188,8 +188,8 @@ HTML that was generated (along with any JavaScript or CSS).
     Then put the Django tags back in, to make it dynamic again.
 
 
-Images, videos, CSS, JavaScript, etc. (static files)
-----------------------------------------------------
+Images (static files)
+---------------------
 
 .. note::
 
@@ -197,7 +197,7 @@ Images, videos, CSS, JavaScript, etc. (static files)
     oTree Studio does not yet support other static file types such as videos or audio.
     If you have custom JavaScript or CSS, you should paste it in the template directly.
 
-Here is how to include static files (.png, .jpg, .mp4, .css, .js, etc.) in your pages.
+Here is how to include images (or any other static file like .css, .js, etc.) in your pages.
 
 At the root of your oTree project, there is a ``_static/`` folder.
 Put a file there, for example ``puppy.jpg``.
@@ -236,7 +236,8 @@ because the large file size can make uploading your
 Dynamic images
 ~~~~~~~~~~~~~~
 
-If the image/video path is variable (like showing a different image each round),
+If you need to show different images depending on the context
+(like showing a different image each round),
 you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
 .. code-block:: python
@@ -253,6 +254,14 @@ Then in the template:
 .. code-block:: HTML+django
 
     <img src="{% static image_path %}"/>
+
+
+Videos
+------
+
+You can follow the above technique for including video in your project,
+but it's better to embed them from YouTube or Dropbox, etc. Including videos in your project
+can make uploads/downloads slow.
 
 Including other templates
 -------------------------
