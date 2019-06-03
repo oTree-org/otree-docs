@@ -5,7 +5,7 @@ Part 0: Simple survey (for oTree Studio users)
 
 Here are YouTube videos for this tutorial:
 
--   `Writing the app <https://www.youtube.com/watch?v=q0KSxVizGSs&feature=youtu.be>`__
+-   `Writing the app <https://youtu.be/76GApGL2Ylc>`__
 -   `Testing the app on your PC <https://www.youtube.com/watch?v=1gu7CK9W5dc&feature=youtu.be>`__
 
 Let's create a simple survey -- on the first page, we ask the participant
