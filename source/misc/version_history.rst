@@ -4,6 +4,23 @@ Version history
 For each version below, this page lists that version's most important changes,
 or any minor changes that I considered important to know about when upgrading.
 
+Version 2.2
+===========
+
+-   support for the ``otreezip`` format
+    (``otree zip``, ``otree unzip``, ``otree runzip``)
+-   MTurk: in sandbox mode, don't grant qualifications
+    or check qualification requirements
+-   MTurk: before paying participants, check if there is adequate
+    account balance.
+-   "next button" is disabled after clicking, to prevent congesting the server
+    with duplicate page loads.
+-   Upgrade to the latest version of Sentry
+-   Form validation methods should go on the model, not the page.
+    See :ref:`dynamic_validation`
+-   :ref:`app_after_this_page`
+-   Various performance and stability improvements
+
 .. _v21:
 
 Version 2.1

@@ -130,6 +130,8 @@ See the
 (However, note that the code examples there are in JavaScript, so you would need
 to modify the syntax to make it work in Python, e.g. adding quotes around dictionary keys.)
 
+Note: when you are in sandbox mode, oTree does not apply qualification requirements,
+in order to make testing easier.
 
 Preventing retakes (repeat workers)
 -----------------------------------
