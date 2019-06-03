@@ -1,7 +1,9 @@
 Part 1: Public goods game
 =========================
 
-(`YouTube video <https://youtu.be/GpLZ2WJj7pU>`__ for this section using oTree Studio)
+(A video of this tutorial is on
+`YouTube <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__
+)
 
 We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__.
 The public goods game is a classic game in economics.
