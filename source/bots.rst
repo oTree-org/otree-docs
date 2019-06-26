@@ -3,10 +3,6 @@
 Bots
 ====
 
-.. note::
-
-    Bots are not yet supported in oTree Studio.
-
 You can write "bots" that simulate participants playing your app,
 so that you can test that it functions properly.
 
@@ -24,11 +20,6 @@ like this:
         def play_round(self):
             yield (pages.Contribute, {'contribution': 10})
             yield (pages.Results)
-
-.. note::
-
-    Prior to January 2018, ``pages`` was called ``views``.
-    See :ref:`v20` for more information.
 
 Then, each time you make a change to your app,
 you can run bots automatically, rather than repetitively clicking through.
@@ -535,7 +526,7 @@ Command-line browser bots: tips & tricks
 you need to pass ``--server-url`` as shown above.)
 
 You will get the best performance if you use PostgreSQL or MySQL rather than
-SQLite, and use ``runprodserver`` rather than ``runserver`` or ``devserver``.
+SQLite, and use ``runprodserver`` rather than ``devserver``.
 
 On my PC, running the default public_goods session with 3 participants takes about 4-5 seconds,
 and with 9 participants takes about 10 seconds.

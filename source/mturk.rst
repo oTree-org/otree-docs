@@ -6,9 +6,9 @@ Overview
 
 oTree provides integration with Amazon Mechanical Turk (MTurk):
 
--   From oTree's admin interface, you publish your game to MTurk.
--   Workers on Mechanical Turk play your app as an MTurk HIT.
--   From oTree's admin interface, you send each participant their participation fee
+#.  From oTree's admin interface, you publish your game to MTurk.
+#.  Workers on Mechanical Turk play your app as an MTurk HIT.
+#.  From oTree's admin interface, you send each participant their participation fee
     and bonus (payoff).
 
 .. warning::
@@ -44,48 +44,28 @@ and set ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``.
 Making your session work on MTurk
 ---------------------------------
 
-The monetary reward paid to workers is
-``self.session.config['participation_fee']``.
+When an oTree experiment is published on MTurk, it is embedded inside a rectangular
+frame within the mturk.com interface. The first page participants see is your
+``preview_template``. They will then click MTurk's "accept" button to proceed.
 
-When you publish your HIT to MTurk, it will be visible to workers. When
-a worker clicks on the link to take part in the HIT, they will see the
-MTurk interface, with your app loaded inside a frame (as an
-``ExternalQuestion``). Initially, they will be in preview mode, and will
-see the ``preview_template`` you specify in ``settings.py``. After they
-accept the HIT, they will see the first page of your session, and be
-able to play your session while it is embedded inside a frame in the
-MTurk worker interface.
+Unlike non-MTurk experiments, you need a ``{% next_button %}`` even on the final page that your
+participants see. Clicking this button will submit the HIT and take the user back to MTurk.
 
-The only modification you should make to your app for it to work on AMT
-is to add a ``{% next_button %}`` to the final page that your
-participants see. When the participant clicks this button, they will be
-directed back to the mechanical Turk website and their work will be
-submitted.
+In the admin interface for the session, the "Payments" tab lets you accept submitted assignments
+and pay workers.
 
-After workers have completed the session, you can click on the
-"payments" Tab for your session. Here, you will be able to approve
-submissions, and also pay the bonuses that workers earned in your game.
-
-
-Testing your hit in sandbox
----------------------------
-
-The Mechanical Turk Developer Sandbox is a simulated environment that
-lets you test your app prior to publication in
-the marketplace. This environment is available for both
-`worker <https://workersandbox.mturk.com/mturk/welcome>`__ and
-`requester <https://requester.mturk.com/developer/sandbox>`__.
+Publishing a HIT
+----------------
 
 From the oTree admin interface, click on "Sessions" and then,
-on the split button "Create New Session", select "For MTurk":
+on the button that says "Create New Session", select "For MTurk":
 
 .. figure:: _static/mturk/create-mturk-session.png
 
-Once you have created the session, you will see an "MTurk" tab in the session's admin page.
-
-After publishing the HIT you can test it both as a worker and as a
-requester using the links provided on the "MTurk" Tab of your session admin
-panel.
+The session's admin page will have an "MTurk" tab.
+This is where you publish the HIT.
+You can choose to first publish the HIT in the sandbox,
+which lets you see how it will appear to workers.
 
 .. _qualification-requirements:
 
@@ -136,17 +116,15 @@ in order to make testing easier.
 Preventing retakes (repeat workers)
 -----------------------------------
 
-To prevent a worker from participating in your study twice,
-you can grant a Qualification to each worker who participates in your study,
-and then prevent people who already have this qualification from participating in your studies.
+To prevent a worker from participating twice,
+you can grant a Qualification to each worker in your study,
+and then block people who already have this Qualification.
 
 This technique is described
 `here <http://turkrequesters.blogspot.kr/2014/08/how-to-block-past-workers-from-doing.html?spref=tw>`__.
 
-First, login to your MTurk requester account and create a qualification.
-(If you are testing with the MTurk sandbox, you need to create the qualification
-in the sandbox as well.)
-Then, paste the qualification's ID into ``grant_qualification_id``.
+Login to your MTurk requester account and create a qualification.
+Go to your oTree MTurk settings and paste that qualification ID into ``grant_qualification_id``.
 Then, add an entry to ``qualification_requirements``:
 
 .. code-block:: python
@@ -160,8 +138,7 @@ Then, add an entry to ``qualification_requirements``:
 Multiplayer games
 -----------------
 
-Games that involve synchronous interaction between participants (i.e.
-wait pages) are difficult on Mechanical Turk,
+Games that involve wait pages are difficult on Mechanical Turk,
 because some participants
 drop out or delay starting the game until some time after
 accepting the assignment. This causes other participants to be stuck on a wait page,

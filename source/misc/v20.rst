@@ -47,8 +47,8 @@ Run ``otree update_my_code``
 In oTree 2.0, some classes and properties are renamed.
 The old names still work, but we encourage upgrading to the new names.
 
-To automatically update your code to this new format,
-back up your code (save a copy of your project), then run::
+To update your code,
+first back it up (save a copy of your project folder), then run::
 
     otree update_my_code
 

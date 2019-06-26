@@ -1,7 +1,6 @@
 Settings
 ========
 
-Your settings can be found in ``settings.py``.
 Here are explanations of a few oTree-specific settings.
 Full info on all Django's settings can be found `here <https://docs.djangoproject.com/en/1.11/ref/settings/>`__.
 
@@ -13,7 +12,8 @@ SESSION_CONFIGS
 To create a session, you first need to
 define a "session config".
 
-In ``settings.py``, add an entry to ``SESSION_CONFIGS`` like this
+If you are using oTree Studio, click "Session Configs" in the sidebar.
+If you are using PyCharm, go to ``settings.py`` and add an entry to ``SESSION_CONFIGS`` like this
 (assuming you have created apps named ``my_app_1`` and ``my_app_2``):
 
 .. code-block:: python
@@ -24,11 +24,6 @@ In ``settings.py``, add an entry to ``SESSION_CONFIGS`` like this
         'num_demo_participants': 2,
         'app_sequence': ['my_app_1', 'my_app_2'],
     },
-
-
-Once you have defined a session config, you can run ``otree devserver``,
-open your browser to the admin interface, and create a new session.
-You would select "My Session Config" as the configuration to use.
 
 For more info on how to use ``SESSION_CONFIGS``, see :ref:`edit_config`
 and :ref:`session_config_treatments`.
@@ -83,9 +78,9 @@ you need to reset the database.
 DEMO_PAGE_TITLE
 ---------------
 
-The title of the demo page
+The title of the demo page.
 
 DEMO_PAGE_INTRO_HTML
 --------------------
 
-The HTML in the sidebar of the demo page (previously called ``DEMO_PAGE_INTRO_TEXT``)
+The HTML in the sidebar of the demo page.

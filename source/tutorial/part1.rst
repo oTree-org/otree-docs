@@ -26,8 +26,6 @@ Constants
 ---------
 
 Go to your app's Constants.
-Let's define the values that
-are the same for all players in all games.
 (For more info, see :ref:`constants`.)
 
 -  There are 3 players per group. So, change ``players_per_group``
@@ -50,8 +48,7 @@ Now we have:
         endowment = c(1000)
         multiplier = 2
 
-Now let's think about the main entities in this game: the Player and the
-Group.
+Now let's define Player and Group.
 
 After the game is played,
 what data points will we need about each player?

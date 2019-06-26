@@ -10,21 +10,17 @@ Here are things for Django developers to know about oTree.
 
 The ``otree`` command is a customized version of Django's ``manage.py``.
 
-For example, ``otree runserver`` is equivalent to ``python manage.py runserver``.
-
-In addition to the built-in `Django management commands <https://docs.djangoproject.com/en/1.9/ref/django-admin/>`__ like ``runserver`` and ``startapp``,
+In addition to the built-in
+`Django management commands <https://docs.djangoproject.com/en/1.9/ref/django-admin/>`__ like ``startapp``,
 oTree defines a few extra ones like ``resetdb``, ``create_session``, and ``runprodserver``.
-
-For the list of available commands, enter ``otree help``.
-For information about a specific command, enter ``otree help [command]``, e.g. ``otree help test``.
 
 Migrations and "resetdb"
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are using oTree, you generally shouldn't use ``makemigrations`` and ``migrate``.
-We are not fully compatible with migrations yet.
 Instead, run ``otree resetdb``, which will reset and sync the database.
-
+If you need to preserve the database between updates, you can try the strategy
+mentioned in :ref:`migrations`.
 
 Project folder
 ~~~~~~~~~~~~~~
@@ -145,8 +141,6 @@ you should create a ``connect`` consumer and ``disconnect`` consumer.
 
 See `otree.channels.consumers <https://github.com/oTree-org/otree-core/blob/master/otree/channels/consumers.py>`__
 for examples of more complex consumers. Also see :ref:`auto_save`.
-
-
 
 Next, create a module ``routing.py`` in your project root
 and append your routes to oTree's built-in routes:

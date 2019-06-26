@@ -8,26 +8,21 @@ either real money, or points. oTree supports both;
 you can switch from points to real money by setting ``USE_POINTS = False``
 in ``settings.py``.
 
-If you have a value that represents an amount of currency
-(either points or dollars, etc),
-you should mark it with ``c()``, e.g. ``c(10)`` or ``c(0)``.
+In your Python code, you can indicate a currency amount
+with ``c()``, e.g. ``c(10)`` or ``c(0)``.
 It will still work just like a number
 (e.g. ``c(1) + c(0.2) == c(1.2)``).
 The advantage is that when it's displayed to users, it will automatically
-formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
+be formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
 
-If a model field is a currency amount,
-you should define it as a ``CurrencyField``.
+Use ``CurrencyField`` to store currencies in the database.
 For example:
 
 .. code-block:: python
 
     class Player(BasePlayer):
         random_bonus = models.CurrencyField()
-
-        def some_method(self):
-            self.random_bonus = c(random.randint(1, 10))
 
 Note: instead of using Python's built-in ``range`` function,
 you should use oTree's ``currency_range`` with currency values,
@@ -43,9 +38,7 @@ e.g.:
         )
 
 
-``currency_range`` takes 3 arguments (start, stop, step), just like range.
-However, unlike ``range()``, the returned list includes the ``stop`` value
-as shown above.
+``currency_range`` takes 3 arguments (start, stop, step), similar to range.
 
 In templates, instead of using the ``c()`` function, you should use the
 ``|c`` filter.
@@ -56,8 +49,7 @@ For example, ``{{ 20|c }}`` displays as ``20 points``.
 payoffs
 -------
 
-Each player has a ``payoff`` field,
-which is a ``CurrencyField``.
+Each player has a ``payoff`` field.
 If your player makes money, you should store it in this field.
 ``self.participant.payoff`` automatically stores the sum of payoffs
 from all subsessions. You can modify ``self.participant.payoff`` directly,
@@ -87,14 +79,13 @@ Converting points to real world currency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can convert a points amount to money using the method
-``.to_real_world_currency(self.session)``. In the above example, that would be:
+``.to_real_world_currency(self.session)``. For example:
 
 .. code-block:: python
 
-    >>> c(10).to_real_world_currency(self.session)
-    $0.20
+    c(10).to_real_world_currency(self.session)
 
-It requires ``self.session``, because
+(The ``self.session`` is necessary because
 different sessions can have different conversion rates).
 
 
@@ -104,7 +95,7 @@ Decimal places
 Money amounts are displayed with 2 decimal places;
 you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
 If the extra decimal places show up but are always 0,
-then you need to run resetdb.
+then you should reset the database.
 
 On the other hand, points are integers.
 This means amounts will get rounded to whole numbers,
@@ -116,7 +107,7 @@ If you really want decimal places in your points, you can set
 (But in our experience, it's simpler to just keep points as integers,
 because with decimal places there are more complications about formatting and rounding.)
 Anyway, if the extra decimal places show up but are always 0,
-then you need to run resetdb.
+then you should reset the database.
 
 Misc
 ----

@@ -5,7 +5,7 @@ Rooms
 
 oTree lets you configure "rooms", which provide:
 
--   Persistent links that you can assign to participants or workstations,
+-   Persistent links that you can assign to participants or lab computers,
     which stay constant across sessions
 -   A "waiting room" that lets you see how many people are waiting to start a session,
     so that you can create a session with the right number of people.

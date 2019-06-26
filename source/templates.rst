@@ -499,11 +499,6 @@ Bootstrap
 oTree comes with `Bootstrap <https://getbootstrap.com/docs/4.0/components/alerts/>`__, a
 popular library for customizing a website's user interface.
 
-.. note::
-
-    As of oTree 2.0 (January 2018), oTree upgraded from Bootstrap 3 to
-    Bootstrap 4. See :ref:`v20` for more info.
-
 You can use it if you want a `custom style <http://getbootstrap.com/css/>`__, or
 a `specific component <http://getbootstrap.com/components/>`__ like a table,
 alert, progress bar, label, etc. You can even make your page dynamic with

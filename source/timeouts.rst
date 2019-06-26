@@ -29,11 +29,10 @@ When there are 60 seconds left, the page displays a timer warning the participan
 
 .. note::
 
-    If you are running the production server (``runprodserver``)
-    or using ``timeoutworker``,
+    If you are running the production server (``runprodserver``),
     the page will always submit, even if the user closes their browser window.
     However, this does not occur if you are running the development server
-    (``devserver`` or ``runserver``).
+    (``devserver`` or ``runzip``).
 
 If you need the timeout to be dynamically determined, use :ref:`get_timeout_seconds`.
 
@@ -54,49 +53,15 @@ For example:
 
         def before_next_page(self):
             if self.timeout_happened:
-                self.player.my_random_variable = random.random()
+                self.player.xyz = True
 
 
-``timeout_happened`` is undefined in other methods like ``vars_for_template``,
-because the timeout countdown only starts after the page is rendered.
-
-.. _timeout_submission:
-
-timeout_submission
-~~~~~~~~~~~~~~~~~~
-
-You can use ``timeout_submission`` to define what values
-should be submitted for a page if a timeout occurs,
-or if the experimenter moves the
-participant forward.
-
-Example:
-
-.. code-block:: python
-
-    class Page1(Page):
-        form_model = 'player'
-        form_fields = ['accept']
-
-        timeout_seconds = 60
-        timeout_submission = {'accept': True}
-
-If omitted, then oTree will default to
-``0`` for numeric fields, ``False`` for boolean fields, and the empty
-string ``''`` for text/character fields.
-
-If the values submitted need to be computed dynamically,
-don't use ``timeout_submission``; just
-check :ref:`timeout_happened` in ``before_next_page``.
+``timeout_happened`` only exists in ``before_next_page``.
 
 .. _get_timeout_seconds:
 
 get_timeout_seconds
 ~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This feature is not yet supported in oTree Studio.
 
 This is a dynamic alternative to ``timeout_seconds``,
 so that you can base the timeout on ``self.player``, ``self.session``, etc.:
@@ -126,6 +91,35 @@ Then in your Page:
         def get_timeout_seconds(self):
             return self.session.config['my_page_timeout_seconds']
 
+
+.. _timeout_submission:
+
+timeout_submission
+~~~~~~~~~~~~~~~~~~
+
+You can use ``timeout_submission`` to define what values
+should be submitted for a page if a timeout occurs,
+or if the experimenter moves the
+participant forward.
+
+Example:
+
+.. code-block:: python
+
+    class Page1(Page):
+        form_model = 'player'
+        form_fields = ['accept']
+
+        timeout_seconds = 60
+        timeout_submission = {'accept': True}
+
+If omitted, then oTree will default to
+``0`` for numeric fields, ``False`` for boolean fields, and the empty
+string ``''`` for text/character fields.
+
+If the values submitted need to be computed dynamically,
+don't use ``timeout_submission``; just
+check :ref:`timeout_happened` in ``before_next_page``.
 
 Advanced techniques
 -------------------

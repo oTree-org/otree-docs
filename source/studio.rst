@@ -14,6 +14,8 @@ set up PyCharm.)
 We have some `YouTube videos <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__
 on how to use oTree Studio.
 
+oTree Studio will generate Python & HTML code as if you had written it by hand.
+
 How does oTree Studio work?
 ---------------------------
 
@@ -72,11 +74,6 @@ If at any point you need to use one of these features, you are not stuck;
 you can just download the code of your project and switch to using the Python-based
 version of oTree. (But you cannot upload those changes back into oTree Studio.)
 
-Can I upload my existing oTree apps into oTree Studio?
-------------------------------------------------------
-
-That is not currently supported,
-as it is quite complicated to parse Python code.
 
 Is oTree Studio stable?
 -----------------------

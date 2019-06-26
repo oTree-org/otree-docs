@@ -3,7 +3,7 @@
 Pages
 =====
 
-Each page that your players see is defined by a ``Page`` class.
+Each page that your participants see is defined by a ``Page`` class.
 
 Your ``page_sequence`` variable that gives the order of the pages. For example:
 
@@ -11,10 +11,9 @@ Your ``page_sequence`` variable that gives the order of the pages. For example:
 
     page_sequence = [Start, Offer, Accept, Results]
 
-If your game has multiple rounds, this sequence will be repeated.
-See :ref:`rounds` for more info.
+If your game has multiple rounds, this sequence will be repeated (see :ref:`rounds`).
 
-A ``Page`` can have any of the following optional methods and attributes.
+A ``Page`` can have any of the following methods and attributes.
 
 .. _is_displayed:
 
@@ -58,7 +57,7 @@ Use this to pass variables to the template. Example:
         def vars_for_template(self):
             return {
                 'a': 1 + 1,
-                'b': self.player.foo * 10
+                'b': self.player.num_apples * 10
             }
 
 Then in the template you can access ``a`` and ``b`` like this:
@@ -100,14 +99,10 @@ Example:
 
     class Page1(Page):
         def before_next_page(self):
-            self.player.tripled_payoff = self.player.bonus * 3
+            self.player.tripled_apples = self.player.num_apples * 3
 
 template_name
 ~~~~~~~~~~~~~
-
-.. note::
-
-    This feature is not supported in oTree Studio.
 
 Each Page should have a file in ``templates/`` with the same name.
 For example, if your app has this page in ``my_app/pages.py``:
@@ -128,7 +123,7 @@ set ``template_name``. Example:
 .. code-block:: python
 
     class Page1(Page):
-        template_name = 'app_name/MyView.html'
+        template_name = 'app_name/MyPage.html'
 
 timeout_seconds, timeout_submission, etc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

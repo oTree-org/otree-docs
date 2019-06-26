@@ -4,30 +4,16 @@ Apps & rounds
 Apps
 ====
 
-In oTree (and Django), an app is a folder containing Python and HTML code. When
-you create your oTree project, it comes pre-loaded with various apps such as
-``public_goods`` and ``dictator``. A session is basically a sequence of
-apps that are played one after the other.
+An oTree app is a folder containing Python and HTML code.
+A project contains multiple apps.
+A session is basically a sequence of apps that are played one after the other.
 
 Creating an app
 ---------------
 
-Enter::
-
-    $ otree startapp your_app_name
-
-This will create a new app folder based on a oTree template, with most
-of the structure already set up for you.
-
-The key files are ``models.py``, ``pages.py``, and the HTML files
-under the ``templates/`` folder.
-
-Think of this as a skeleton to which you can add as much as you want.
-You can add your own classes, functions, methods, and attributes, or
-import any 3rd-party modules.
-
-Then go to ``settings.py`` and create an entry for your app in
-``SESSION_CONFIGS`` that looks like the other entries.
+If you're using oTree Studio, click "Apps".
+If you're using PyCharm, enter ``otree startapp your_app_name``
+at the command line.
 
 Combining apps
 --------------
@@ -67,8 +53,7 @@ Passing data between rounds or apps
 Each round has separate ``Subsession``, ``Group``, and ``Player`` objects.
 For example, let's say you set ``self.player.my_field = True`` in round 1.
 In round 2, if you try to access ``self.player.my_field``,
-you will find its value is ``None``
-(assuming that is the default value of the field).
+you will find its value is ``None``.
 This is because the ``Player`` objects
 in round 1 are separate from ``Player`` objects in round 2.
 
@@ -86,17 +71,12 @@ similarly:
 -   in_rounds()
 -   in_round()
 
-``player.in_previous_rounds()`` and ``player.in_all_rounds()``
-each return a list of players representing the same participant in
-previous rounds of the same app. The difference is that ``in_all_rounds()``
-includes the current round's player.
+For example, if you are in the last round of a 10-round game,
+``player.in_previous_rounds()`` will return a list with 9 player objects,
+which represent the current participant in all previous rounds.
 
-For example, if you wanted to calculate a participant's payoff for all previous
-rounds of a game, plus the current one:
-
-.. code-block:: python
-
-    cumulative_payoff = sum([p.payoff for p in self.player.in_all_rounds()])
+``player.in_all_rounds()`` is almost the same but the list will have 10 objects,
+because it includes the current round's player.
 
 ``player.in_rounds(m, n)`` returns a list of players representing the same participant from rounds ``m`` to ``n``.
 
@@ -116,13 +96,12 @@ then these methods may not return anything meaningful.
 participant.vars
 ----------------
 
-If you want to pass data between different apps,
-you should store this data on the participant,
+If you want to access a participant's data from a previous app,
+you should store this data on the participant object,
 which persists across apps (see :ref:`participants_and_players`).
 (``in_all_rounds()`` only is useful when you need to access data from a previous
 round of the same app.)
-
-``participant.vars`` is is a dictionary that can store any data.
+Put it in ``participant.vars``, which is a dictionary that can store any data.
 For example, you can set an attribute like this::
 
     self.participant.vars['blah'] = [1, 2, 3]
@@ -130,7 +109,7 @@ For example, you can set an attribute like this::
 Later in the session (e.g. in a separate app),
 you can retrieve it like this::
 
-    # the below line returns [1, 2, 3]
+    # the below line gives [1, 2, 3]
     self.participant.vars['blah']
     # or try printing:
     print('vars is', self.participant.vars)
@@ -156,8 +135,8 @@ etc.).
 
 .. code-block:: python
 
-    class Group(BaseGroup):
-        def some_method(self):
+    class Subsession(BaseSubsession):
+        def creating_session(self):
             for p in self.get_players():
                 p.participant.vars['foo'] = 1
 
@@ -200,4 +179,4 @@ Variable number of rounds
 If you want a variable number of rounds, consider setting ``num_rounds``
 to some high number, and then in your app, conditionally hide the
 ``{% next_button %}`` element, so that the user cannot proceed to the next
-page.
+page, or use :ref:`app_after_this_page`.

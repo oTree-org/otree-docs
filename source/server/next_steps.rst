@@ -7,7 +7,6 @@ Look at your server check
 -------------------------
 
 In the oTree admin interface, click "Server Check" in the header bar.
-It will tell you what steps below you need to take.
 
 
 Testing with browser bots
@@ -26,6 +25,8 @@ our Sentry service has been replaced by the much more comprehensive
 `oTree Hub <https://www.otreehub.com/>`__, which includes automatic Sentry
 setup. Currently, oTree Hub is for Heroku only.
 
+
+.. _migrations:
 
 Modifying an existing database
 ------------------------------

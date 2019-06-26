@@ -1,47 +1,18 @@
 Localization
 ============
 
-oTree's participant interface has been translated to the following languages:
-
-- Chinese (simplified)
-- Dutch
-- French
-- German
-- Hungarian
-- Italian
-- Japanese
-- Korean
-- Norwegian
-- Russian
-- Spanish
-
-
-This means that all built-in text that gets displayed to participants is
-available in these languages. This includes things like:
-
--   Form validation messages
--   Wait page messages
--   Dates, times and numbers (e.g. "1.5" vs "1,5")
-
-So, as long as you write your app's text in one of these languages,
-all text that participants will see will be in that language.
-For more information, see the Django documentation on
-`translation <https://docs.djangoproject.com/en/1.11/topics/i18n/translation/>`__
-and `format localization <https://docs.djangoproject.com/en/1.11/topics/i18n/formatting/>`__.
-
-
-However, oTree's admin/experimenter interface is currently only available in English,
-and the existing sample games have not been translated to any other languages.
-
 Changing the language setting
 -----------------------------
 
-Go to ``settings.py``, change ``LANGUAGE_CODE``, and restart the server.
+Go to your settings and change ``LANGUAGE_CODE``:.
 
 For example::
 
     LANGUAGE_CODE = 'fr' # French
     LANGUAGE_CODE = 'zh-hans' # Chinese (simplified)
+
+This will customize certain things such validation messages and formatting of numbers.
+For more information, see the Django documentation on translation and localization.
 
 Writing your app in multiple languages
 --------------------------------------
@@ -79,18 +50,3 @@ A quick summary:
 
 If you localize the files under ``_templates/global``,
 you need to create a folder ``locale`` in the root of the project.
-
-Volunteering to localize oTree
-------------------------------
-
-You are invited to contribute support for your own language in oTree.
-
-It's a simple task; you provide translations of about 20 English phrases.
-Currently we are only translating the participant interface,
-although we plan to translate the admin interface later.
-
-`Here <https://github.com/oTree-org/otree-core/blob/master/otree/locale/fr/LC_MESSAGES/django.po>`__
-is an example of an already completed translation to French. These files can be edited in `Poedit <https://poedit.net/>`__.
-
-Please contact chris@otree.org for more details.
-

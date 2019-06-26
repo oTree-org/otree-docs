@@ -57,22 +57,10 @@ You can also put the ``label`` in directly in the template:
 Simple form field validation
 ----------------------------
 
-The player must submit a valid form before they go to the next
-page. If the form they submit is invalid (e.g. missing or incorrect
-values), it will be re-displayed to them along with the list of errors
-they need to correct.
-
-.. image:: _static/forms/Sz34h7d.png
-    :align: center
-
-oTree automatically validates input. For
-example, if you have a form containing a ``IntegerField``, oTree
-will reject inputs like ``1.5`` or ``hello``.
-
 min and max
 ~~~~~~~~~~~
 
-For example, this is how you would
+Here is how you would
 require an integer to be between 12 and 24:
 
 .. code-block:: python
@@ -351,10 +339,6 @@ And in your template, you would have::
 
 Determining form fields dynamically
 -----------------------------------
-
-.. note::
-
-    This feature is not yet supported in oTree Studio.
 
 If you need the list of form fields to be dynamic, instead of
 ``form_fields`` you can define a method ``get_form_fields(self)`` that

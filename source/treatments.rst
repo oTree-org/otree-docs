@@ -4,7 +4,7 @@ Treatments
 ==========
 
 To assign participants to different treatment groups, you
-can put the code in the subsession's ``creating_session`` method
+can use ``creating_session``
 (for more info see :ref:`creating_session`).
 For example, if you want some participants to be in a "blue" treatment group
 and others to be in a "red" treatment group, first define
@@ -52,7 +52,7 @@ it in the first round:
 Then elsewhere in your code, you can access the participant's color with
 ``self.participant.vars['color']``.
 
-There is no direct equivalent for ``participant.vars`` for groups,
+Groups do not have any ``vars`` field,
 because groups can be re-shuffled across rounds.
 You should instead store the variable on one of the participants in the group:
 
@@ -62,14 +62,14 @@ You should instead store the variable on one of the participants in the group:
         if self.round_number == 1:
             for g in self.get_groups():
                 p1 = g.get_player_by_id(1)
-                p1.participant.vars['color'] = random.choice(['blue', 'red'])
+                p1.participant.vars['group_color'] = random.choice(['blue', 'red'])
 
 Then, when you need to access a group's color, you would look it up like this:
 
 .. code-block:: python
 
     p1 = self.group.get_player_by_id(1)
-    color = p1.participant.vars['color']
+    color = p1.participant.vars['group_color']
 
 For more on vars, see :ref:`vars`.
 
@@ -97,13 +97,12 @@ To solve this, you can use ``itertools.cycle``, which alternates:
 Choosing which treatment to play
 --------------------------------
 
-In the above example, players got randomized to treatments. This is
-useful in a live experiment, but when you are testing your game, it is
-often useful to choose explicitly which treatment to play. Let's say you
-are developing the game from the above example and want to show your
+In a live experiment, you often want to give a player a random treatment.
+But when you are testing your game, it is often useful to choose explicitly which treatment to play.
+Let's say you are developing the game from the above example and want to show your
 colleagues both treatments (red and blue). You can create 2 session
-configs that have the same keys in the session config dictionary,
-except for the ``color`` key (in oTree Studio, add a "custom entry"):
+configs that are the same,
+except for ``color`` (in oTree Studio, add a "custom entry"):
 
 .. code-block:: python
 
@@ -135,7 +134,7 @@ Use BooleanField instead of StringField, where possible
 -------------------------------------------------------
 
 Many ``StringFields`` should be broken down into ``BooleanFields``, especially
-if they can only have less than 5 distinct values.
+if they only have 2 distinct values.
 
 Suppose you have a field called ``treatment``:
 

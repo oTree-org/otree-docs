@@ -8,8 +8,8 @@ Installing oTree on Windows
 Important note
 --------------
 
-If you publish research conducted using oTree,
-you are required by the oTree license to cite
+If you publish research done with oTree,
+you are required to cite
 `this paper <http://dx.doi.org/10.1016/j.jbef.2015.12.001>`__.
 (Citation: Chen, D.L., Schonger, M., Wickens, C., 2016. oTree - An open-source
 platform for laboratory, online and field experiments.

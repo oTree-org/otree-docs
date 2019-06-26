@@ -1,7 +1,7 @@
 Models
 ++++++
 
-``models.py`` is where you define your app's data models:
+An oTree app must define 3 data models:
 
 -  Subsession
 -  Group
@@ -10,8 +10,7 @@ Models
 A player is part of a group, which is part of a subsession.
 See :ref:`conceptual_overview`.
 
-The purpose of ``models.py`` is to define the columns of your
-database tables. Let's say you want your experiment to generate data
+Let's say you want your experiment to generate data
 that looks like this:
 
 .. csv-table::
@@ -32,13 +31,14 @@ Here is how to define the above table structure:
         age = models.IntegerField()
         is_student = models.BooleanField()
 
-Defining a column
-=================
+So, a **model** is essentially a database table.
+And a **field** is a column in a table.
+
+Fields
+======
 
 Field types
 -----------
-
-Here are the main field types:
 
 -   ``BooleanField`` (for true/false and yes/no values)
 -   ``CurrencyField`` for currency amounts; see :ref:`currency`.
@@ -68,10 +68,8 @@ see :ref:`form-validation`.
 Built-in fields and methods
 ===========================
 
-Since your models inherit from oTree's base classes
-(``BaseSubsession``, ``BaseGroup``, and ``BasePlayer``),
-the tables already have certain pre-defined fields and methods.
-For example, the ``Player`` table has columns called ``payoff``
+Player, group, and subsession already have some predefined fields.
+For example, ``Player`` has fields called ``payoff``
 and ``id_in_group``, as well as methods like
 ``in_all_rounds()`` and ``get_others_in_group()``.
 
@@ -148,15 +146,6 @@ Will output::
     in creating_session 4
     in creating_session 5
 
-
-.. _before_session_starts:
-
-before_session_starts
-~~~~~~~~~~~~~~~~~~~~~
-
-``before_session_starts`` has been renamed to :ref:`creating_session`.
-However, new versions of oTree still execute ``before_session_starts``,
-for backwards compatibility.
 
 group_randomly()
 ~~~~~~~~~~~~~~~~
@@ -434,6 +423,38 @@ Just remember to call this function from somewhere, such as your page:
 Because it will not be executed automatically, unlike built-in functions
 like ``creating_session()``, ``after_all_players_arrive()``, etc.
 
+.. _how_otree_executes_code:
+
+Don't put random values in Constants
+------------------------------------
+
+Never generate random values outside of a function.
+For example, don't do this:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        p = random.random() # wrong
+
+If it changes randomly, it isn't a constant.
+
+Or this:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+
+        p = models.FloatField(
+            # wrong
+            initial=random.random()
+        )
+
+These won't work because they will change every time
+the server launches a new process.
+It may appear to work during testing but will eventually break.
+Instead, you should generate the random variables inside a method,
+such as :ref:`creating_session`.
+
 
 .. _many-fields:
 
@@ -500,8 +521,6 @@ varying the question that gets displayed with each round.
 If that's not possible, then you can reduce the amount of repeated code
 by defining a function that returns a field
 (``make_field`` is just an example name; you can call it anything).
-
-(Note, this is not supported in oTree Studio.)
 
 .. code-block:: python
 

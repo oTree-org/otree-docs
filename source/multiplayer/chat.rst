@@ -3,12 +3,12 @@
 Chat
 ====
 
-You can add a chat room to your page so that participants can communicate with each other.
+You can add a chat room to a page so that participants can communicate with each other.
 
 Basic usage
 ~~~~~~~~~~~
 
-Wherever you want a chatbox in your template, use:
+In your template HTML, put:
 
 .. code-block:: html+django
 
@@ -21,7 +21,7 @@ where each player's nickname is displayed as
 Customizing the nickname and chat room members
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can pass optional parameters ``channel`` and/or ``nickname`` like this:
+You can specify a ``channel`` and/or ``nickname`` like this:
 
 .. code-block:: html+django
 
@@ -42,7 +42,7 @@ have the same ``channel``, they can chat with each other.
 Its default value is ``group.id``, meaning all players in the group can chat together.
 You can use ``channel`` to instead scope the chat to the current page
 or sub-division of a group, etc. (see examples below).
-Regardless of the value of the ``channel`` argument,
+Regardless of the value of ``channel``,
 the chat will at least be scoped to players in the same session and the same app.
 
 Example: chat by role
@@ -97,7 +97,7 @@ If you want everyone in the session to freely chat with each other, just do:
 Advanced customization
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If you look at the chat widget in your browser's inspector,
+If you look at the page source code in your browser's inspector,
 you will see the following selectors are available:
 
 ===========================     =====================================================

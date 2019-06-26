@@ -13,11 +13,6 @@ then oTree waits until all players in the group have
 arrived at that point in the sequence, and then all players are allowed
 to proceed.
 
-.. code-block:: python
-
-    class NormalWaitPage(WaitPage):
-        pass
-
 If your subsession has multiple groups playing simultaneously, and you
 would like a wait page that waits for all groups (i.e. all players in
 the subsession), you can set the attribute
@@ -49,7 +44,7 @@ or determine the winner.
             for player in self.group.get_players():
                 player.payoff = c(100)
 
-Note, you can't reference ``self.player`` inside ``after_all_players_arrive``,
+Note, you can't use ``self.player`` inside ``after_all_players_arrive``,
 because the code is executed once for the entire group,
 not for each individual player.
 
@@ -58,9 +53,8 @@ is_displayed()
 --------------
 
 Works the same way as with regular pages.
-If this returns ``False`` then the player skips the wait page.
 
-If some or all players in the group skip the wait page,
+If some players in the group skip the wait page,
 then ``after_all_players_arrive()`` may not be run.
 
 
@@ -93,7 +87,6 @@ then have an ``app_sequence`` like ``['consent', 'my_game']``,
 where ``my_game`` uses ``group_by_arrival_time``.
 This means that if someone opts out in ``consent``,
 they will be excluded from the grouping in ``my_game``.
-
 
 If a game has multiple rounds,
 you may want to only group by arrival time in round 1:
@@ -139,7 +132,7 @@ group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
 If you define a method called ``get_players_for_group``,
 it will get called whenever a new player reaches the wait page.
 The method's argument is the list of players who are waiting to be grouped
-(not people who have disconnected or closed their browser).
+(minus those who have disconnected or closed the page).
 If you select some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
@@ -211,13 +204,8 @@ by setting the ``title_text`` and ``body_text`` attributes, e.g.:
 Custom wait page template
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This feature is not supported in oTree Studio.
-
 You can also make a custom wait page template.
-For example, save this to ``my_app/templates/my_app/MyWaitPage.html``
-(this template must extend 'otree/WaitPage.html'):
+For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.html``:
 
 .. code-block:: html+django
 
@@ -236,7 +224,7 @@ Then tell your wait page to use this template:
 .. code-block:: python
 
     class MyWaitPage(WaitPage):
-        template_name = 'my_app/MyWaitPage.html'
+        template_name = 'your_app_name/MyWaitPage.html'
 
 Then you can use ``vars_for_template`` in the usual way.
 Actually, the ``body_text`` and ``title_text`` attributes
@@ -260,10 +248,6 @@ oTree will then automatically use it everywhere instead of the built-in wait pag
 
 CSS and JavaScript in Wait Pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This feature is not supported in oTree Studio.
 
 Wait pages have the same block structure as regular pages
 (``global_scripts``, ``app_scripts``, ``scripts``, etc...),

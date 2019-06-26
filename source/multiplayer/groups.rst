@@ -3,32 +3,17 @@
 Groups
 ======
 
-oTree's group system lets you divide players into groups
-and have players interact with others in the same group.
-This is often used in multiplayer games.
+You can divide players into groups for multiplayer games.
 (If you just need groups in the sense of "treatment groups",
 where players don't actually interact with each other,
 then see :ref:`treatments`.)
 
 To set the group size, go to your app's Constants and set
-``players_per_group``. For example, for a 2-player game:
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        # ...
-        players_per_group = 2
+``players_per_group``. For example, for a 2-player game,
+set ``players_per_group = 2``.
 
 If all players should be in the same group,
 or if it's a single-player game, set it to ``None``:
-
-.. code-block:: python
-
-    class Constants(BaseConstants):
-        # ...
-        players_per_group = None
-
-In this case, ``self.group.get_players()`` will return everybody in the subsession.
 
 Each player has an attribute ``id_in_group``,
 which will tell you if it is player ``1``, player ``2``, etc.
@@ -78,17 +63,8 @@ Getting other players
 ---------------------
 
 Player objects have methods ``get_others_in_group()`` and
-``get_others_in_subsession()`` that return a list of the other players
-in the group and subsession. For example, with 2-player groups you can
-get the partner of a player:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        def get_partner(self):
-            return self.get_others_in_group()[0]
-
+``get_others_in_subsession()`` that return a list of the *other* players
+in the group and subsession.
 
 .. _shuffling:
 
@@ -135,49 +111,31 @@ This will group players randomly each round, but keep ``id_in_group`` fixed:
         def creating_session(self):
             self.group_randomly(fixed_id_in_group=True)
 
-The below example uses the command line to create a public goods game with 12 players,
-and then does interactive group shuffling in ``otree shell``.
-Assume that ``players_per_group = 3``, so that a 12-player game would have 4 groups::
+For the following example, assume that ``players_per_group = 3``, and that there are 12 participants in the session::
 
-    C:\oTree> otree resetdb --noinput
-    C:\oTree> otree create_session public_goods 12
-    C:\oTree> otree shell
-    Python 3.5.1 (v3.5.1:37a07cee5969, Dec  6 2015, 01:38:48) [MSC v.1900 32 bit (Intel)]
+.. code-block:: python
 
-    # this line is only necessary if using otree shell
-    >>> from public_goods.models import Subsession
+    class Subsession(BaseSubsession):
+        def creating_session(self):
+            print(self.get_group_matrix()) # outputs the following:
+            # [[<Player  1>, <Player  2>, <Player  3>],
+            #  [<Player  4>, <Player  5>, <Player  6>],
+            #  [<Player  7>, <Player  8>, <Player  9>],
+            #  [<Player 10>, <Player 11>, <Player 12>]]
 
-    # this line is only necessary if using otree shell
-    >>> self=Subsession.objects.first()
+            self.group_randomly(fixed_id_in_group=True)
+            print(self.get_group_matrix()) # outputs the following:
+            # [[<Player  1>, <Player  8>, <Player 12>],
+            #  [<Player 10>, <Player  5>, <Player  3>],
+            #  [<Player  4>, <Player  2>, <Player  6>],
+            #  [<Player  7>, <Player 11>, <Player  9>]]
 
-    # by default, oTree groups players sequentially
-    >>> self.get_group_matrix()
-
-    [[<Player  1>, <Player  2>, <Player  3>],
-     [<Player  4>, <Player  5>, <Player  6>],
-     [<Player  7>, <Player  8>, <Player  9>],
-     [<Player 10>, <Player 11>, <Player 12>]]
-
-    >>> self.group_randomly(fixed_id_in_group=True)
-    >>> self.get_group_matrix()
-
-    [[<Player  1>, <Player  8>, <Player 12>],
-     [<Player 10>, <Player  5>, <Player  3>],
-     [<Player  4>, <Player  2>, <Player  6>],
-     [<Player  7>, <Player 11>, <Player  9>]]
-
-    >>> self.group_randomly()
-    >>> self.get_group_matrix()
-
-    [[<Player  8>, <Player 10>, <Player  3>],
-     [<Player  4>, <Player 11>, <Player  2>],
-     [<Player  9>, <Player  1>, <Player  6>],
-     [<Player 12>, <Player  5>, <Player  7>]]
-
-Note that in each round,
-players are initially grouped sequentially as described in :ref:`fixed_matching`,
-even if you did some shuffling in a previous round.
-To counteract this, you can use :ref:`group_like_round`.
+            self.group_randomly()
+            print(self.get_group_matrix()) # outputs the following:
+            # [[<Player  8>, <Player 10>, <Player  3>],
+            #  [<Player  4>, <Player 11>, <Player  2>],
+            #  [<Player  9>, <Player  1>, <Player  6>],
+            #  [<Player 12>, <Player  5>, <Player  7>]]
 
 .. _group_like_round:
 
@@ -232,41 +190,23 @@ Construct your matrix using Python list operations like
 and list indexing and slicing (e.g. ``[0]``, ``[2:4]``).
 Then pass this modified matrix to ``set_group_matrix()``::
 
-    >>> matrix = s.get_group_matrix()
-    >>> matrix
-
-    [[<Player  8>, <Player 10>, <Player  3>],
-     [<Player  4>, <Player 11>, <Player  2>],
-     [<Player  9>, <Player  1>, <Player  6>],
-     [<Player 12>, <Player  5>, <Player  7>]]
-
-    >>> for group in matrix:
-       ....:     group.reverse()
-       ....:
-    >>> matrix
-
-    [[<Player  3>, <Player 10>, <Player  8>],
-     [<Player  2>, <Player 11>, <Player  4>],
-     [<Player  6>, <Player  1>, <Player  9>],
-     [<Player  7>, <Player  5>, <Player 12>]]
-
-    >>> self.set_group_matrix(matrix)
-    >>> self.get_group_matrix()
-
-    [[<Player  3>, <Player 10>, <Player  8>],
-     [<Player  2>, <Player 11>, <Player  4>],
-     [<Player  6>, <Player  1>, <Player  9>],
-     [<Player  7>, <Player  5>, <Player 12>]]
-
-Here is how this would look in ``creating_session``:
-
 .. code-block:: python
 
     class Subsession(BaseSubsession):
         def creating_session(self):
-            matrix = self.get_group_matrix()
+            matrix = s.get_group_matrix()
+
             for row in matrix:
                 row.reverse()
+
+            # now the 'matrix' variable looks like this,
+            # but it hasn't been saved yet!
+            # [[<Player  3>, <Player  2>, <Player  1>],
+            #  [<Player  6>, <Player  5>, <Player  4>],
+            #  [<Player  9>, <Player  8>, <Player  7>],
+            #  [<Player 12>, <Player 11>, <Player 10>]]
+
+            # save it
             self.set_group_matrix(matrix)
 
 You can also pass a matrix of integers.
@@ -274,14 +214,19 @@ It must contain all integers from 1 to the number of players
 in the subsession. Each integer represents the player who has that ``id_in_subsession``.
 For example::
 
-    >>> new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
-    >>> self.set_group_matrix(new_structure)
-    >>> self.get_group_matrix()
+    class Subsession(BaseSubsession):
+        def creating_session(self):
+            matrix = s.get_group_matrix()
 
-    [[<Player  1>, <Player  3>, <Player  5>],
-     [<Player  7>, <Player  9>, <Player 11>],
-     [<Player  2>, <Player  4>, <Player  6>],
-     [<Player  8>, <Player 10>, <Player 12>]]
+            new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
+            self.set_group_matrix(new_structure)
+
+            print(self.get_group_matrix()) # will output this:
+
+            # [[<Player  1>, <Player  3>, <Player  5>],
+            #  [<Player  7>, <Player  9>, <Player 11>],
+            #  [<Player  2>, <Player  4>, <Player  6>],
+            #  [<Player  8>, <Player 10>, <Player 12>]]
 
 You can even use ``set_group_matrix`` to make groups of uneven sizes.
 
@@ -308,7 +253,7 @@ or remain player 1), you would do this:
         def creating_session(self):
             for group in self.get_groups():
                 players = group.get_players()
-                players.reverse()
+                random.shuffle(players)
                 group.set_players(players)
 
 
@@ -329,7 +274,7 @@ and that there are twice as many female players as male players.
     class Subsession(BaseSubsession):
         def do_my_shuffle(self):
             # note: to use this function
-            # you would need to call self.subsession.make_groups()
+            # you would need to call self.subsession.do_my_shuffle()
             # from somewhere, such as after_all_players_arrive
 
             if self.round_number == 1:
@@ -352,8 +297,6 @@ and that there are twice as many female players as male players.
                 self.set_group_matrix(group_matrix)
             else:
                 self.group_like_round(1)
-                # uncomment this line if you want to shuffle groups, while keeping M/F roles fixed
-                # self.group_randomly(fixed_id_in_group=True)
 
 Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -409,8 +352,7 @@ Example: configurable group size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say you want to be able to configure the number of players per group
-each time you create a session. (Setting ``Constants.players_per_group = None``
-kind of does this, but only if all players are in the same group.)
+each time you create a session.
 
 As described in :ref:`edit_config`, create a key in your session config
 (you can call it ``players_per_group``), then use this code to chunk the players
