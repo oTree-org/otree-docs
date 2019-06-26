@@ -372,7 +372,7 @@ oTree additionally offers:
     layout, as you would see with a Likert scale)
 -   ``Slider``
 
-    -   Slider is not yet supported in oTre Studio
+    -   Slider is not yet supported in oTree Studio
     -   To specify the step size, do: ``Slider(attrs={'step': '0.01'})``
     -   To disable the current value from being displayed, do:
         ``Slider(show_value=False)``
