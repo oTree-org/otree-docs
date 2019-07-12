@@ -4,7 +4,7 @@ Set up Git
 ----------
 
 If your code is on your personal computer and you are trying to push it to
-this web server, you can use Git.
+your self-hosted web server, you can use Git.
 
 On the server
 ~~~~~~~~~~~~~
@@ -19,7 +19,7 @@ Create a git repo in ``oTree.git``::
     cd oTree.git
     git init --bare
 
-Using a text editor such as ``nano``, ``emacs``, ``vim``, add the following to
+Using a text editor such as ``nano``, add the following to
 ``oTree.git/hooks/post-receive``::
 
     #!/bin/sh

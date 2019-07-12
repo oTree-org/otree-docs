@@ -401,9 +401,10 @@ Miscellaneous topics
 Defining your own methods
 -------------------------
 
-You can define your own methods on models.
+You can define your own custom model methods,
+and name them whatever you like.
 This helps you keep your code organized as it gets more complex.
-For example, you can define a function to set players' payoffs:
+For example:
 
 .. code-block:: python
 
@@ -412,7 +413,8 @@ For example, you can define a function to set players' payoffs:
             print('in set_payoffs')
             # etc ...
 
-Just remember to call this function from somewhere, such as your page:
+``def`` just *defines* a function, so
+you need to actually *use* it ("call" it) somewhere, such as your page:
 
 .. code-block:: python
 
@@ -420,7 +422,7 @@ Just remember to call this function from somewhere, such as your page:
         def after_all_players_arrive(self):
             self.group.set_payoffs()
 
-Because it will not be executed automatically, unlike built-in functions
+It will not be executed automatically, unlike built-in functions
 like ``creating_session()``, ``after_all_players_arrive()``, etc.
 
 .. _how_otree_executes_code:
@@ -519,8 +521,7 @@ sample game for an example of how to just have 1 page that gets looped over many
 varying the question that gets displayed with each round.
 
 If that's not possible, then you can reduce the amount of repeated code
-by defining a function that returns a field
-(``make_field`` is just an example name; you can call it anything).
+by defining a function that returns a field:
 
 .. code-block:: python
 

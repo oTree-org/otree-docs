@@ -58,9 +58,7 @@ Database (Postgres)
 
 oTree's default database is SQLite, which is fine for local development,
 but insufficient for production.
-We recommend you use PostgreSQL,
-although in principle you can also use MySQL, MariaDB, or any other database
-supported by Django.
+We recommend you use PostgreSQL.
 
 Change users to the ``postgres`` user, so that you can execute some commands::
 
@@ -217,13 +215,8 @@ keep it running if you log out, etc.
 Circus
 ``````
 
-To install::
-
-    sudo apt-get install libzmq-dev libevent-dev
-    pip3 install circus circus-web
-
-Create a ``circus.ini`` in your project folder,
-with the following content (can do this locally and then git push again)::
+Install Circus, then create a ``circus.ini`` in your project folder,
+with the following content::
 
     [watcher:webapp]
     cmd = otree
@@ -237,14 +230,12 @@ Then run::
 
 If this is working properly, you can start it as a daemon::
 
-    sudo -E env "PATH=$PATH" circusd --daemon circus.ini
+    sudo -E env "PATH=$PATH" circusd --daemon circus.ini --log-output=circus-logs.txt
 
-This command will not produce any output, because all output will be logged
-to a file (which file?).
 
 To stop circus, run::
 
-    circusctl quit
+    circusctl stop
 
 
 Supervisor
@@ -298,15 +289,8 @@ or ``/var/log/supervisor/supervisord.log``.
 (Optional) Apache, Nginx, etc.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use oTree without Apache or Nginx.
-oTree comes installed with the `Daphne <https://github.com/andrewgodwin/daphne>`__ web server,
-which is launched automatically when you run ``otree runprodserver``.
-
-oTree does not work with WSGI servers like Gunicorn or mod_wsgi.
-Instead it requires an ASGI server, and currently the recommended one is Daphne.
-Apache and Nginx do not have ASGI server implementations, so you cannot use
-Apache or Nginx as your primary web server.
-
+You cannot use Apache or Nginx as your primary web server,
+because oTree must be run with an ASGI server.
 However, you still might want to use Apache/Nginx as a reverse proxy, for the following reasons:
 
 -   You are trying to optimize serving of static files

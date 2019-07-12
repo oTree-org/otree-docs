@@ -3,9 +3,6 @@
 Templates
 =========
 
-Your app's ``templates/`` folder will contain the templates for the
-HTML that gets displayed to the player.
-
 Template syntax
 ---------------
 
@@ -35,7 +32,7 @@ Conditions ("if")
 
     {% if player.is_winner %} you won! {% endif %}
 
-With an 'else' clause:
+With an 'else':
 
 .. code-block:: django
 
@@ -58,7 +55,7 @@ Loops ("for")
 Method calls
 ~~~~~~~~~~~~
 
-To call a method from one of your models, make sure to omit the parentheses
+To call a method from one of your models, omit the parentheses
 (unlike regular Python code).
 
 .. code-block:: python
@@ -168,8 +165,7 @@ Note that the browser never sees the Django tags.
 The key point
 ~~~~~~~~~~~~~
 
-The key insight you can take from this example is
-that if one of your pages doesn't look the way you want,
+If one of your pages doesn't look the way you want,
 you can isolate which of the above steps went wrong.
 In your browser, right-click and "view source".
 (Note: "view source" may not work in split-screen mode.)
@@ -193,9 +189,7 @@ Images (static files)
 
 .. note::
 
-    oTree Studio has a simplified interface for adding images.
-    oTree Studio does not yet support other static file types such as videos or audio.
-    If you have custom JavaScript or CSS, you should paste it in the template directly.
+    If you're using oTree Studio, you can skip this section.
 
 Here is how to include images (or any other static file like .css, .js, etc.) in your pages.
 
@@ -573,5 +567,3 @@ you insert in JavaScript.
 
 If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
-If it looks all garbled like ``{&#39;a&#39;: 1}``,
-you may have forgotten to use the ``|json`` filter.

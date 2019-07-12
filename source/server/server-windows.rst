@@ -1,10 +1,10 @@
 .. _server-windows:
 
-Windows Server
-==============
+Windows Server (advanced)
+=========================
 
 If you are just testing your app on your personal computer, you can use
-``otree devserver``. You don't need a full server setup as described below,
+``otree runzip`` or ``otree devserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
 This section is for people who are experienced with setting up web servers.
@@ -27,17 +27,6 @@ as long as you set up your IP address as described in :ref:`server-adhoc`
 and run ``otree collectstatic``.
 
 However, for reliable results, you should follow the steps below.
-
-
-Upgrade oTree
-~~~~~~~~~~~~~
-
-Upgrade oTree, to get the latest bugfixes:
-
-.. code-block:: bash
-
-    $ pip3 install -U otree
-
 
 Database (Postgres)
 -------------------

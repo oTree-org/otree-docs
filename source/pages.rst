@@ -146,11 +146,6 @@ An example is `here <https://github.com/oTree-org/otree-snippets/tree/master/ran
 app_after_this_page
 ~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    This is an experimental feature in the oTree 2.2 beta,
-    which you can install with ``pip3 install -U --pre otree``.
-
 To skip entire apps, you can define ``app_after_this_page``.
 For example, to skip to the next app, you would do:
 

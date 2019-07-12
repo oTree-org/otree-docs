@@ -388,14 +388,10 @@ with Bootstrap styling.
 
 However, if you want more control over the appearance and layout,
 you can use Django's manual field rendering. Instead of ``{% formfield player.my_field %}``,
-do ``{{ form.my_field }}``, to get just the input,
-and then position it as you want.
+do ``{{ form.my_field }}``, to get just the input element.
+Just remember to also include ``{{ form.my_field.errors }}``.
 
-Just remember to also include ``{{ form.my_field.errors }}``,
-so that if there is an error in the form,
-the participant will see the error message.
-
-More info `here <https://docs.djangoproject.com/en/1.9/topics/forms/#rendering-fields-manually>`__.
+More info `here <https://docs.djangoproject.com/en/1.11/topics/forms/#rendering-fields-manually>`__.
 
 .. _radio-table:
 .. _subwidgets:

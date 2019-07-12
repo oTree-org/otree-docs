@@ -1,7 +1,7 @@
 .. _server-adhoc:
 
-Configure your computer to be a server
-======================================
+Configure your computer to be a server (advanced)
+=================================================
 
 .. note::
 
@@ -97,7 +97,7 @@ On Windows::
 
     otree devserver 0.0.0.0:80
 
-On macOS, you need superuser privelege to use port 80::
+On macOS, you need superuser privilege to use port 80::
 
     sudo otree devserver 0.0.0.0:80
 

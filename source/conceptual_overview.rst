@@ -77,7 +77,6 @@ next subsession, etc.
 What is "self"?
 ---------------
 
-In Python, ``self`` is an instance of the class you're currently under.
 If you are ever wondering what ``self`` means in a particular context,
 scroll up until you see the name of the class.
 
@@ -103,16 +102,14 @@ Self: extended examples
 
 What properties can you access through ``self``?
 
-Here is a diagram of how you can refer to objects in the hierarchy within your code:
+Here is a diagram:
 
 .. figure:: _static/diagrams/object_model_self.png
     :align: center
 
 For example, if you are in a method on the ``Player`` class, you can
 access the player's payoff with ``self.payoff`` (because ``self`` is the
-player). But if you are inside a ``Page`` method, the
-equivalent expression is ``self.player.payoff``,
-which traverses the pointer from 'page' to 'player'.
+player). But if you are inside a ``Page`` method, you need to do ``self.player.payoff``.
 
 Here are some code examples to illustrate:
 
