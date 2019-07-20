@@ -238,53 +238,6 @@ To stop circus, run::
     circusctl stop
 
 
-Supervisor
-``````````
-As an alternative to Circus, you can install supervisor::
-
-    sudo apt-get install supervisor
-
-If you install supervisor through apt-get, it will be installed as a service,
-and will therefore automatically start when your server boots.
-(You can also install supervisor with pip, but unlike oTree it's only compatible
-with Python 2, so you should install it into your system's Python 2
-installation, rather than your Python 3 virtualenv.)
-
-In the supervisor config dir ``/etc/supervisor/conf.d/``, create a file
-``otree.conf`` with the following content::
-
-    [program:otree]
-    command=/home/my_username/venv_otree/bin/otree runprodserver 80
-    directory=/home/my_username/oTree
-    stdout_logfile=/home/my_username/otree-supervisor.log
-    stderr_logfile=/home/my_username/otree-supervisor-errors.log
-    autostart=true
-    autorestart=true
-    environment=
-        PATH="/home/my_username/venv_otree/bin/:%(ENV_PATH)s",
-        DATABASE_URL="postgres://otree_user:otree@localhost/django_db",
-        OTREE_ADMIN_PASSWORD="my_password", # password for oTree web admin
-        OTREE_PRODUCTION="", # can set to 1
-        OTREE_AUTH_LEVEL="", # can set to STUDY or DEMO
-
-Set ``directory`` to the dir containing your project (i.e. with ``settings.py``).
-
-``DATABASE_URL`` should match what you set earlier. That is, you need to set
-``DATABASE_URL`` in 2 places:
-
--   in your ``.bashrc``, so that ``otree resetdb`` works when you execute
-    it as a regular user
--   in your ``otree.conf`` so that ``otree runprodserver`` works
-    when it is executed by the root user (normally supervisor runs under the
-    root user)
-
-To start or restart the server (e.g. after making changes), do::
-
-    sudo service supervisor restart
-
-If this doesn't start the server, check the ``stdout_logfile`` you defined above,
-or ``/var/log/supervisor/supervisord.log``.
-
 
 (Optional) Apache, Nginx, etc.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -330,24 +283,6 @@ it might be caused by another oTree instance that didn't shut down.
 Try stopping oTree and reload again.
 Also make sure that you are not sharing the same Postgres or Redis
 databases between two oTree instances.
-
-
-Database backups
-----------------
-
-If you just want to download the data from your study,
-open the admin interface in your browser and click "Data".
-But if you want to back up the raw data in your Postgres database,
-you can use the below command::
-
-    pg_dump -U otree_user -h localhost django_db > otree-$(date +"%Y-%m-%d-%H-%M").sql
-
-(This assumes your database is set up as described above (with username ``otree_user``
-and database name ``django_db``, and that you are on Unix.)
-
-If you need to restore your database to a particular backup, do like this::
-
-    psql django_db < otree-2017-03-22-01-01.sql
 
 
 Sharing a server with other oTree users

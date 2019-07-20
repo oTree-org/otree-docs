@@ -156,3 +156,7 @@ Then in ``settings.py``, set ``EXTENSION_APPS = ['your_app']``.
 
 Once you have installed the beta, see ``otree.channels.consumers``
 to see how oTree queries and saves models inside consumers.
+
+If you're on Windows you will need to pip install ``pypiwin32``.
+Otherwise you will get ``ImportError: No module named win32api``.
+(This will be unnecessary when the next version of Twisted is released.)
