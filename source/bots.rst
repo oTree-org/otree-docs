@@ -30,19 +30,19 @@ Let's say you have this session config:
 .. code-block:: python
 
     dict(
-        name='your_session_config',
+        name='mysession',
         app_sequence=['ultimatum', 'survey'],
         num_demo_participants=1,
     ),
 
 If each app in the ``app_sequence`` has bots, you can run them with::
 
-    otree test your_session_config
+    otree test mysession
 
 To test with a specific number of participants
 (otherwise it will default to ``num_demo_participants``)::
 
-    otree test your_session_config 6
+    otree test mysession 6
 
 To run tests for all session configs::
 
@@ -53,11 +53,11 @@ Exporting data
 
 Use the ``--export`` flag to export the results to a CSV file::
 
-    otree test your_session_config --export
+    otree test mysession --export
 
 To specify the folder where the data is saved, do::
 
-    otree test your_session_config --export=myfolder
+    otree test mysession --export=myfolder
 
 
 Writing tests
@@ -449,7 +449,7 @@ You can launch browser bots from the command line, using ``otree browser_bots``.
 -   Close all Chrome windows.
 -   Run this::
 
-        otree browser_bots your_session_config
+        otree browser_bots mysession
 
 This will launch several Chrome tabs and run the bots.
 When finished, the tabs will close, and you will see a report in
@@ -465,7 +465,7 @@ If the server is running on a host/port other than the usual ``http://localhost:
 you need to pass ``--server-url``.
 For example, if it's on Heroku, you would do like this::
 
-    otree browser_bots your_session_config --server-url=https://YOUR-SITE.herokuapp.com
+    otree browser_bots mysession --server-url=https://YOUR-SITE.herokuapp.com
 
 
 Command-line browser bots: tips & tricks
@@ -482,7 +482,7 @@ Choosing session configs and sizes
 
 You can specify the number of participants::
 
-    otree browser_bots your_session_config 6
+    otree browser_bots mysession 6
 
 To test all session configs, just run this::
 
