@@ -18,12 +18,12 @@ If you are using PyCharm, go to ``settings.py`` and add an entry to ``SESSION_CO
 
 .. code-block:: python
 
-    {
-        'name': 'my_session_config',
-        'display_name': 'My Session Config',
-        'num_demo_participants': 2,
-        'app_sequence': ['my_app_1', 'my_app_2'],
-    },
+    dict(
+        name='my_session_config',
+        display_name='My Session Config',
+        num_demo_participants=2,
+        app_sequence=['my_app_1', 'my_app_2']
+    ),
 
 For more info on how to use ``SESSION_CONFIGS``, see :ref:`edit_config`
 and :ref:`session_config_treatments`.

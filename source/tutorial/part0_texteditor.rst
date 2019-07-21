@@ -167,12 +167,11 @@ Now we go to ``settings.py`` in the project's top folder and add an entry to ``S
 .. code-block:: python
 
     SESSION_CONFIGS = [
-        {
-            'name': 'my_simple_survey',
-            'num_demo_participants': 3,
-            'app_sequence': ['my_simple_survey'],
-        },
-        # other session configs go here ...
+        dict(
+            name='my_simple_survey',
+            num_demo_participants=3,
+            app_sequence=['my_simple_survey']
+        ),
     ]
 
 

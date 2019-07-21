@@ -91,14 +91,8 @@ li + other_li   # => [42, 2, 3, 4, 5, 6]
 # Get the length with "len()"
 len(li)   # => 6
 
-# Dictionaries store mappings
-empty_dict = {}
 # Here is a prefilled dictionary
-filled_dict = {
-    'name': 'Lancelot',
-    'quest': "To find the holy grail",
-    'favorite_color': "Blue"
-}
+filled_dict = dict(name='Lancelot', quest="To find the holy grail", favorite_color="Blue")
 
 # Look up values with []
 filled_dict['name']   # => 'Lancelot'
@@ -109,7 +103,6 @@ filled_dict['name']   # => 'Lancelot'
 
 # set the value of a key with a syntax similar to lists
 filled_dict["age"] = 30  # now, filled_dict["age"] => 30
-
 
 ####################################################
 ## 3. Control Flow

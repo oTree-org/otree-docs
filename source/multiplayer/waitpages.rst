@@ -240,7 +240,7 @@ the following 2 code snippets are equivalent:
 
     class MyWaitPage(WaitPage):
         def vars_for_template(self):
-            return {'body_text': "foo"}
+            return dict(body_text="foo")
 
 If you want to apply your custom wait page template globally,
 save it to ``_templates/global/WaitPage.html``.

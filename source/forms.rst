@@ -599,9 +599,9 @@ If the label should contain a variable, you can construct the string in ``pages.
         form_fields = ['contribution']
 
         def vars_for_template(self):
-            return {
-                'contribution_label': 'How much of your {} do you want to contribute?'.format(self.player.endowment)
-            }
+            return dict(
+                contribution_label='How much of your {} do you want to contribute?'.format(self.player.endowment)
+            )
 
 Then in the template, set the label to this variable:
 

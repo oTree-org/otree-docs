@@ -73,12 +73,12 @@ In ``settings.py`` add this:
 .. code-block:: python
 
     SESSION_CONFIGS = [
-        {
-            'name': 'my_app',
-            'num_demo_participants': 1,
-            'app_sequence': ['my_app'],
-            'my_page_timeout_seconds': 60,
-        },
+        dict(
+            name='my_app',
+            num_demo_participants=1,
+            app_sequence=['my_app'],
+            my_page_timeout_seconds=60
+        ),
         # etc...
     ]
 
@@ -111,7 +111,7 @@ Example:
         form_fields = ['accept']
 
         timeout_seconds = 60
-        timeout_submission = {'accept': True}
+        timeout_submission = dict(accept=True)
 
 If omitted, then oTree will default to
 ``0`` for numeric fields, ``False`` for boolean fields, and the empty

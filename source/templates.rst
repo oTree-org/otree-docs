@@ -239,9 +239,9 @@ you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
     class MyPage(Page):
 
         def vars_for_template(self):
-            return {
-                'image_path': 'my_app/{}.png'.format(self.round_number)
-            }
+            return dict(
+                image_path='my_app/{}.png'.format(self.round_number)
+            )
 
 Then in the template:
 

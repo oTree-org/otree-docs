@@ -152,9 +152,9 @@ Here is the code from pages.py. Notes:
             return self.player.id_in_group == 2
 
         def vars_for_template(self):
-            return {
-                'tripled_amount': self.group.sent_amount * Constants.multiplication_factor
-            }
+            return dict(
+                tripled_amount=self.group.sent_amount * Constants.multiplication_factor
+            )
 
         def sent_back_amount_choices(self):
             return currency_range(

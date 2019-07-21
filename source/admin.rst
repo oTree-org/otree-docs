@@ -110,13 +110,13 @@ However, to make your custom parameter configurable, instead of adding it to
 
 .. code-block:: python
 
-    {
-        'name': 'my_session_config',
-        'display_name': 'My Session Config',
-        'num_demo_participants': 2,
-        'app_sequence': ['my_app_1', 'my_app_2'],
-        'multiplier': 1.5,
-    },
+    dict(
+        name='my_session_config',
+        display_name='My Session Config',
+        num_demo_participants=2,
+        app_sequence=['my_app_1', 'my_app_2'],
+        multiplier=1.5
+    ),
 
 Then, when you create a session in the admin interface
 and select this session config, the ``multiplier`` parameter will
@@ -126,17 +126,17 @@ the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
 
 .. code-block:: python
 
-    {
-        'name': 'my_session_config',
-        'display_name': 'My Session Config',
-        'num_demo_participants': 2,
-        'app_sequence': ['my_app_1', 'my_app_2'],
-        'multiplier': 1.5,
-        'doc': """
+    dict(
+        name='my_session_config',
+        display_name='My Session Config',
+        num_demo_participants=2,
+        app_sequence=['my_app_1', 'my_app_2'],
+        multiplier=1.5,
+        doc="""
         Edit the 'multiplier' parameter to change the factor by which
         contributions to the group are multiplied.
         """
-    },
+    ),
 
 Then in your app's code, you can do ``self.session.config['multiplier']``
 to retrieve the current session's multiplier.
@@ -178,7 +178,7 @@ For example:
     class Subsession(BaseSubsession):
         def vars_for_admin_report(self):
             payoffs = sorted([p.payoff for p in self.get_players()])
-            return {'payoffs': payoffs}
+            return dict(payoffs=payoffs)
 
 Then create an includable template ``AdminReport.html`` (or ``admin_report.html``)
 in your app, and display whatever variables were passed in ``vars_for_admin_report``:
