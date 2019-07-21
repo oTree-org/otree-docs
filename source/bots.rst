@@ -25,7 +25,17 @@ you can just re-run this test. It's a great time saver.
 Running tests
 -------------
 
-To test a session config::
+Let's say you have this session config:
+
+.. code-block:: python
+
+    dict(
+        name='your_session_config',
+        app_sequence=['ultimatum', 'survey'],
+        num_demo_participants=1,
+    ),
+
+If each app in the ``app_sequence`` has bots, you can run them with::
 
     otree test your_session_config
 
@@ -43,11 +53,11 @@ Exporting data
 
 Use the ``--export`` flag to export the results to a CSV file::
 
-    otree test ultimatum --export
+    otree test your_session_config --export
 
 To specify the folder where the data is saved, do::
 
-    otree test ultimatum --export=myfolder
+    otree test your_session_config --export=myfolder
 
 
 Writing tests
@@ -472,7 +482,7 @@ Choosing session configs and sizes
 
 You can specify the number of participants::
 
-    otree browser_bots ultimatum 6
+    otree browser_bots your_session_config 6
 
 To test all session configs, just run this::
 
