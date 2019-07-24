@@ -300,10 +300,11 @@ Let's say you have 3 integer fields in your form whose names are
 
         def error_message(self, values):
             print('values is', values)
-            if values["int1"] + values["int2"] + values["int3"] != 100:
+            if values['int1'] + values['int2'] + values['int3'] != 100:
                 return 'The numbers must add up to 100'
 
 Notes:
+
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
 -   This function is only executed if there are no other errors in the form.
 

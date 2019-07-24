@@ -234,29 +234,6 @@ To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
 and look at the ``group`` and ``id_in_group`` columns in each round.
 
-group.set_players()
-~~~~~~~~~~~~~~~~~~~
-
-If you just want to rearrange players within a group, you can use
-the method on ``group.set_players()`` that takes as an argument a list of
-the players to assign to that group, in order.
-
-For example, if you want players
-to be reassigned to the same groups but to have roles randomly shuffled
-around within their groups (e.g. so player 1 will either become player 2
-or remain player 1), you would do this:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            for group in self.get_groups():
-                players = group.get_players()
-                random.shuffle(players)
-                group.set_players(players)
-
-
 Example: assigning players to roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

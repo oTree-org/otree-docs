@@ -92,34 +92,6 @@ Then in your Page:
             return self.session.config['my_page_timeout_seconds']
 
 
-.. _timeout_submission:
-
-timeout_submission
-~~~~~~~~~~~~~~~~~~
-
-You can use ``timeout_submission`` to define what values
-should be submitted for a page if a timeout occurs,
-or if the experimenter moves the
-participant forward.
-
-Example:
-
-.. code-block:: python
-
-    class Page1(Page):
-        form_model = 'player'
-        form_fields = ['accept']
-
-        timeout_seconds = 60
-        timeout_submission = dict(accept=True)
-
-If omitted, then oTree will default to
-``0`` for numeric fields, ``False`` for boolean fields, and the empty
-string ``''`` for text/character fields.
-
-If the values submitted need to be computed dynamically,
-don't use ``timeout_submission``; just
-check :ref:`timeout_happened` in ``before_next_page``.
 
 Advanced techniques
 -------------------
@@ -132,16 +104,14 @@ Forms submitted by timeout
 If a form is auto-submitted because of a timeout,
 oTree will try to save whichever fields were filled out at the time of submission.
 If a field in the form contains an error (i.e. blank or invalid value),
-oTree will use that field's entry according to :ref:`timeout_submission`.
+oTree will default to ``0`` for numeric fields, ``False`` for boolean fields, and the empty
+string ``''`` for string fields.
+
+If you want to discard the auto-submitted values, you can just
+check if ``self.timeout_happened``, and if so, overwrite the values.
+
 If the ``error_message()`` method fails, then the whole form might be invalid,
-so the whole form will be discarded and :ref:`timeout_submission`
-will be used instead.
-
-If you want to discard the auto-submitted form, you can just
-set the values in ``before_next_page``, which will overwrite the data from the form.
-You can loop through the items in ``self.timeout_submission``
-and use ``setattr()`` to set those fields on the player.
-
+so the whole form will be discarded.
 
 Timeouts that span multiple pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

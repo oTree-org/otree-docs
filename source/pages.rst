@@ -56,9 +56,14 @@ Use this to pass variables to the template. Example:
     class Page1(Page):
         def vars_for_template(self):
             return dict(
-                a = 1 + 1,
-                b = self.player.num_apples * 10
+                a=1 + 1,
+                b=self.player.num_apples * 10
             )
+
+.. note::
+
+    The documentation now uses ``dict()`` instead of ``{}`` in code examples.
+    More info `here <https://groups.google.com/forum/#!topic/otree/gSggNVict6g>`__.
 
 Then in the template you can access ``a`` and ``b`` like this:
 
@@ -125,8 +130,8 @@ set ``template_name``. Example:
     class Page1(Page):
         template_name = 'app_name/MyPage.html'
 
-timeout_seconds, timeout_submission, etc
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+timeout_seconds
+~~~~~~~~~~~~~~~
 
 See :ref:`timeouts`
 

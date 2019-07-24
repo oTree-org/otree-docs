@@ -25,6 +25,11 @@ If you are using PyCharm, go to ``settings.py`` and add an entry to ``SESSION_CO
         app_sequence=['my_app_1', 'my_app_2']
     ),
 
+.. note::
+
+    The documentation now uses ``dict()`` instead of ``{}`` in code examples.
+    More info `here <https://groups.google.com/forum/#!topic/otree/gSggNVict6g>`__.
+
 For more info on how to use ``SESSION_CONFIGS``, see :ref:`edit_config`
 and :ref:`session_config_treatments`.
 

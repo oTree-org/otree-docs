@@ -1,9 +1,6 @@
 Version history
 ```````````````
 
-For each version below, this page lists that version's most important changes,
-or any minor changes that I considered important to know about when upgrading.
-
 Version 2.2
 ===========
 
@@ -41,9 +38,4 @@ Version 2.1
     timeout issues for large files on Heroku.
 -   Better performance, especially for "Monitor" and "Data" tab in admin interface
 
-
-Version 2.0
-===========
-
-See :ref:`v20`.
 

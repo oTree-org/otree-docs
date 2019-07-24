@@ -93,9 +93,6 @@ In addition to the filters available with Django's template language,
 oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
 For example, ``{{ 20|c }}`` displays as ``20 points``.
 
-Also, the ``|abs`` filter lets you take the absolute value.
-So, doing ``{{ -20|abs }}`` would output ``20``.
-
 If you get an "Invalid filter" error,
 make sure you have ``{% load otree %}``
 at the top of your template.
@@ -302,35 +299,43 @@ JavaScript and CSS
 Where to put JavaScript/CSS code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
+You can put JavaScript and CSS anywhere just by using the usual
+``<script></script>`` or ``<style></style>``, anywhere in your template.
 
-    oTree Studio does not yet support editing base templates.
-    If you have custom JS/CSS, paste it into the ``{% block content %}``
-    of every template that needs it.
+If you have a lot of scripts/styles and want to keep your code organized,
+you can put them in separate blocks called ``scripts`` and ``styles``:
 
-It depends whether you want your JS/CSS code to be applied (a) globally,
-(b) in just one app, or (c) in just one page.
+.. code-block:: HTML+django
 
-Globally
-^^^^^^^^
+    {% block content %}
+        ...
+    {% endblock %}
 
-At the root of your oTree project, there is a ``_templates/`` folder
-(not to be confused with the ``templates/`` folder inside each app).
-To apply a style or script to all pages in all games,
-modify ``_templates/global/Page.html``.
-Put any scripts inside ``{% block global_scripts %}``,
-and any styles inside ``{% block global_styles %}``.
+    {% block scripts %}
+        <script>
+            alert('hello world');
+        </script>
+    {% endblock %}
 
 
-For one app
-^^^^^^^^^^^
+    {% block styles %}
+        <style>
 
-To apply a style or script to all pages in one app, create a base template
-and put the style/script in ``{% block app_styles %}`` or ``{% block app_scripts %}``.
+        </style>
+    {% endblock %}
+
+
+It's not mandatory to do this, but: it keeps your code organized and ensures that things are loaded in the correct order
+(CSS, then your page content, then JavaScript).
+
+Advanced: CSS/JS and base templates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To include the same JS/CSS in all pages of an app,
+make a base template for the app.
 
 For example, if your app's name is ``public_goods``,
-then create ``public_goods/templates/public_goods/Page.html``,
-and put this inside it:
+create ``public_goods/templates/public_goods/Page.html``:
 
 .. code-block:: html+django
 
@@ -338,15 +343,18 @@ and put this inside it:
     {% load otree %}
 
     {% block app_styles %}
-
         <style>
-            CSS goes here...
+            ...
         </style>
-
     {% endblock %}
 
+    {% block app_scripts %}
+        <script>
+            ...
+        </script>
+    {% endblock %}
 
-Then each ``public_goods`` template would inherit from this template:
+Then make each template inherit from this template:
 
  .. code-block:: html+django
 
@@ -354,35 +362,9 @@ Then each ``public_goods`` template would inherit from this template:
     {% load otree %}
     ...
 
-Just one page
-^^^^^^^^^^^^^
-
-If you have JavaScript and/or CSS code that just applies to a single page,
-you can put it directly in the ``content`` block, or for better organization,
-put it in blocks called ``scripts`` and ``styles``.
-They should be located outside the ``content`` block, like this:
-
-.. code-block:: HTML+django
-
-    {% block content %}
-        <p>This is some HTML.</p>
-    {% endblock %}
-
-    {% block scripts %}
-
-        <script>
-            alert('hello world');
-        </script>
-
-        <script src="{% static "my_app/script.js" %}"></script>
-    {% endblock %}
-
-
-It's not mandatory to do this, but:
-
--   It keeps your code organized
--   It ensures that things are loaded in the correct order
-    (CSS, then your page content, then JavaScript).
+To include the same JS/CSS in *all apps* of a project,
+modify ``_templates/global/Page.html``.
+In that file, you will find the blocks ``global_scripts`` and ``global_styles``.
 
 .. _selectors:
 
@@ -425,7 +407,6 @@ When possible, use one of the official selectors above.
 Don't use any selector that starts with ``_otree``, and don't select based on Bootstrap classes like
 ``btn-primary`` or ``card``, because those are unstable.
 
-2 underscores (``__``, not ``_``).
 
 .. _json:
 
@@ -441,7 +422,7 @@ write it like this:
 .. code-block:: HTML+django
 
     <script>
-        var payoff = {{ player.payoff|json }};
+        let payoff = {{ player.payoff|json }};
         ...
     </script>
 
@@ -474,10 +455,10 @@ quotes around strings, so you don't need to add them manually:
 .. code-block:: HTML+django
 
         // correct
-        var my_string = {{ my_string|json }};
+        let my_string = {{ my_string|json }};
 
         // incorrect
-        var my_string = "{{ my_string|json }}";
+        let my_string = "{{ my_string|json }}";
 
 If you get an "Invalid filter" error, make sure you have ``{% load otree %}``
 at the top of your template.

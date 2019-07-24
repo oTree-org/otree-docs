@@ -180,7 +180,7 @@ For example:
             payoffs = sorted([p.payoff for p in self.get_players()])
             return dict(payoffs=payoffs)
 
-Then create an includable template ``AdminReport.html`` (or ``admin_report.html``)
+Then create an includable template ``admin_report.html``
 in your app, and display whatever variables were passed in ``vars_for_admin_report``:
 
 .. code-block:: html+django
