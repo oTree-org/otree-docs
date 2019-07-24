@@ -433,7 +433,7 @@ Basic use
 ~~~~~~~~~
 
 -   Write your ``tests.py`` as described above.
--   In ``settings.py``, set ``'use_browser_bots': True`` for your session config(s).
+-   In ``settings.py``, set ``use_browser_bots=True`` for your session config(s).
 -   Run your server and create a session. The pages will auto-play
     with browser bots, once the start links are opened.
 -   If using Heroku, make sure the ``runprodserver2of2`` dyno is enabled.

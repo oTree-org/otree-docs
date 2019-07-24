@@ -150,38 +150,20 @@ variables ``d`` and ``e``):
 .. code-block:: python
 
     class Page1(Page):
-    def vars_for_template(self):
-        return {
-            'a': 1,
-            'b': 2,
-            'c': 3,
-        }
+        def vars_for_template(self):
+            return dict(a=1, b=2, c=3)
 
     class Page2(Page):
         def vars_for_template(self):
-            return {
-                'a': 1,
-                'b': 2,
-                'c': 3,
-            }
+            return dict(a=1, b=2, c=3)
 
 
     class Page3(Page):
         def vars_for_template(self):
             if self.player.id_in_group == 1:
-                return {
-                    'a': 1,
-                    'b': 2,
-                    'c': 3,
-                    'd': 4,
-                    'e': 5,
-                }
+                return dict(a=1, b=2, c=3, d=4, e=5)
             else:
-                return {
-                    'a': 1,
-                    'b': 2,
-                    'c': 3,
-                }
+                return dict(a=1, b=2, c=3)
 
 
 You can simplify this by making a method on your Player model:
@@ -190,11 +172,7 @@ You can simplify this by making a method on your Player model:
 
     class Player(BasePlayer):
         def vars_for_template(self):
-            return {
-                'a': 1,
-                'b': 2,
-                'c': 3,
-            }
+            return dict(a=1, b=2, c=3)
 
 Then in your pages:
 
@@ -210,10 +188,11 @@ Then in your pages:
 
     class Page3(Page):
         def vars_for_template(self):
-            context = self.player.vars_for_template()
+            tvars = self.player.vars_for_template()
             if self.player.id_in_group == 1:
-                context.update({'d': 4, 'e': 5})
-            return context
+                # add d and e to the dict
+                return dict(tvars, d=4, e=5)
+            return tvars
 
 
 Improving code performance
@@ -231,13 +210,14 @@ For example, this code has a redundant query because it asks the database
 
     class MyPage(Page):
         def vars_for_template(self):
-            return {
-                'a': self.player.in_round(1).a,
-                'b': self.player.in_round(1).b,
-                'c': self.player.in_round(1).c,
-                'd': self.player.in_round(1).d,
-                'e': self.player.in_round(1).e,
-            }
+            return dict(
+                a=self.player.in_round(1).a,
+                b=self.player.in_round(1).b,
+                c=self.player.in_round(1).c,
+                d=self.player.in_round(1).d,
+                e=self.player.in_round(1).e
+            )
+
 
 It should be simplified to this:
 
@@ -246,13 +226,14 @@ It should be simplified to this:
     class MyPage(Page):
         def vars_for_template(self):
             round_1_player = self.player.in_round(1)
-            return {
-                'a': round_1_player.a,
-                'b': round_1_player.b,
-                'c': round_1_player.c,
-                'd': round_1_player.d,
-                'e': round_1_player.e,
-            }
+            return dict(
+                a=round_1_player.a,
+                b=round_1_player.b,
+                c=round_1_player.c,
+                d=round_1_player.d,
+                e=round_1_player.e
+            )
+
 
 As an added benefit, this usually makes the code more readable.
 

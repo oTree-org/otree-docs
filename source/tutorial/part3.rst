@@ -224,9 +224,10 @@ Create a ``Choice`` page:
         form_fields = ['penny_side']
 
         def vars_for_template(self):
-            return {
-                'player_in_previous_rounds': self.player.in_previous_rounds(),
-            }
+            return dict(
+                player_in_previous_rounds=self.player.in_previous_rounds()
+            )
+
 
 Also, on this page we would like to display a "history box" table that
 shows the result of all previous rounds. So, we can use
@@ -325,12 +326,11 @@ the current round.
             return self.round_number == Constants.num_rounds
 
         def vars_for_template(self):
-
-            return {
-                'total_payoff': sum([p.payoff for p in self.player.in_all_rounds()]),
-                'paying_round': self.session.vars['paying_round'],
-                'player_in_all_rounds': self.player.in_all_rounds(),
-            }
+            return dict(
+                total_payoff=sum([p.payoff for p in self.player.in_all_rounds()]),
+                paying_round=self.session.vars['paying_round'],
+                player_in_all_rounds=self.player.in_all_rounds()
+            )
 
 Now let's create the HTML template.
 Set the ``title`` block to "Final results", and the ``content`` block to:

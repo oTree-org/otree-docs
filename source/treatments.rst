@@ -107,19 +107,18 @@ except for ``color`` (in oTree Studio, add a "custom entry"):
 .. code-block:: python
 
     SESSION_CONFIGS = [
-        {
-            'name':'my_game_blue',
-            'app_sequence': ['my_game'],
-            'num_demo_participants': 1,
-            'color':'blue',
-
-        },
-        {
-            'name':'my_game_red',
-            'app_sequence': ['my_game'],
-            'num_demo_participants': 1,
-            'color':'red',
-        },
+        dict(
+            name='my_game_blue',
+            app_sequence=['my_game'],
+            num_demo_participants=1,
+            color='blue'
+        ),
+        dict(
+            name='my_game_red',
+            app_sequence=['my_game'],
+            num_demo_participants=1,
+            color='red'
+        ),
     ]
 
 Then in your code you can get the current session's color with ``self.session.config['color'].``

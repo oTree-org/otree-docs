@@ -42,19 +42,19 @@ For example:
 
 .. code-block:: python
 
-    ROOM_DEFAULTS = {}
+    ROOM_DEFAULTS = dict()
 
     ROOMS = [
-        {
-            'name': 'econ101',
-            'display_name': 'Econ 101 class',
-            'participant_label_file': '_rooms/econ101.txt',
-            'use_secure_urls': True,
-        },
-        {
-            'name': 'econ_lab',
-            'display_name': 'Experimental Economics Lab',
-        },
+        dict(
+            name='econ101',
+            display_name='Econ 101 class',
+            participant_label_file='_rooms/econ101.txt',
+            use_secure_urls=True
+        ),
+        dict(
+            name='econ_lab',
+            display_name='Experimental Economics Lab'
+        ),
     ]
 
 ``ROOM_DEFAULTS`` is
