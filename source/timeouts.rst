@@ -6,15 +6,12 @@ Timeouts
 Basics
 ------
 
-You can configure time limits on your pages by using the below
-attributes on your ``Page``.
-
 .. _timeout_seconds:
 
 timeout_seconds
 ~~~~~~~~~~~~~~~
 
-To set a time limit on your page, add ``timeout_seconds`` like this:
+To set a time limit on your page, add ``timeout_seconds``:
 
 .. code-block:: python
 
@@ -23,16 +20,10 @@ To set a time limit on your page, add ``timeout_seconds`` like this:
 
 After the time runs out, the page auto-submits.
 
-Example: ``timeout_seconds = 20``
-
-When there are 60 seconds left, the page displays a timer warning the participant.
-
-.. note::
-
-    If you are running the production server (``runprodserver``),
-    the page will always submit, even if the user closes their browser window.
-    However, this does not occur if you are running the development server
-    (``devserver`` or ``runzip``).
+If you are running the production server (``runprodserver``),
+the page will always submit, even if the user closes their browser window.
+However, this does not occur if you are running the development server
+(``devserver`` or ``runzip``).
 
 If you need the timeout to be dynamically determined, use :ref:`get_timeout_seconds`.
 
@@ -41,10 +32,7 @@ If you need the timeout to be dynamically determined, use :ref:`get_timeout_seco
 timeout_happened
 ~~~~~~~~~~~~~~~~
 
-This attribute is automatically set to ``True``
-if the page was submitted by timeout.
-It can be accessed in ``before_next_page``.
-For example:
+You can check if the page was submitted by timeout:
 
 .. code-block:: python
 
@@ -63,26 +51,20 @@ For example:
 get_timeout_seconds
 ~~~~~~~~~~~~~~~~~~~
 
-This is a dynamic alternative to ``timeout_seconds``,
-so that you can base the timeout on ``self.player``, ``self.session``, etc.:
+This is a more flexible alternative to ``timeout_seconds``,
+so that you can make the timeout depend on ``self.player``, ``self.session``, etc.
 
-For example, you can make the timeout for a page configurable by adding a parameter
-to the session config (see :ref:`edit_config`) and referencing it in your page.
-In ``settings.py`` add this:
+For example:
 
 .. code-block:: python
 
-    SESSION_CONFIGS = [
-        dict(
-            name='my_app',
-            num_demo_participants=1,
-            app_sequence=['my_app'],
-            my_page_timeout_seconds=60
-        ),
-        # etc...
-    ]
+    class MyPage(Page):
 
-Then in your Page:
+        def get_timeout_seconds(self):
+            return self.player.my_page_timeout_seconds
+
+
+Or, using a custom session config parameter (see :ref:`session_config_treatments`).
 
 .. code-block:: python
 
@@ -90,7 +72,6 @@ Then in your Page:
 
         def get_timeout_seconds(self):
             return self.session.config['my_page_timeout_seconds']
-
 
 
 Advanced techniques
@@ -103,8 +84,8 @@ Forms submitted by timeout
 
 If a form is auto-submitted because of a timeout,
 oTree will try to save whichever fields were filled out at the time of submission.
-If a field in the form contains an error (i.e. blank or invalid value),
-oTree will default to ``0`` for numeric fields, ``False`` for boolean fields, and the empty
+If a field in the form has an error because it is missing or invalid,
+it will be set to ``0`` for numeric fields, ``False`` for boolean fields, and the empty
 string ``''`` for string fields.
 
 If you want to discard the auto-submitted values, you can just
@@ -123,8 +104,7 @@ until that expiration time.
 
 First, choose a place to start the timer. This could be a page called
 "Start" that displays text like "Press the button when you're ready to start".
-When the user clicks the "next" button, ``before_next_page`` will be executed
-and the expiry timestamp will be set:
+When the user clicks the "next" button, ``before_next_page`` will be executed:
 
 .. code-block:: python
 
@@ -165,49 +145,11 @@ a few seconds remaining (e.g. 3).
             return self.participant.vars['expiry'] - time.time()
 
         def is_displayed(self):
-            return self.participant.vars['expiry'] - time.time() > 3
+            return self.get_timeout_seconds() > 3
 
 If you have multiple pages in your ``page_sequence`` that need to share
-the timeout, rather than copy-pasting the above code to every page redundantly,
-you can define the timeout in on the Player model:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-        def get_timeout_seconds(self):
-            return self.participant.vars['expiry'] - time.time()
-
-        def is_displayed(self):
-            return self.participant.vars['expiry'] - time.time() > 3
-
-
-Then in your Pages:
-
-.. code-block:: python
-
-    class Page1(Page):
-        def get_timeout_seconds(self):
-            return self.player.get_timeout_seconds()
-
-        def is_displayed(self):
-            return self.player.is_displayed()
-
-    class Page2(Page):
-        def get_timeout_seconds(self):
-            return self.player.get_timeout_seconds()
-
-        def is_displayed(self):
-            return self.player.is_displayed()
-
-    class Page3(Page):
-        def get_timeout_seconds(self):
-            return self.player.get_timeout_seconds()
-
-        def is_displayed(self):
-            return self.player.is_displayed()
-
-
-See the section on :ref:`composition <composition>` for more info.
+the timeout, you can define the timeout in on the Player model.
+See the section on :ref:`composition <composition>` for some hints.
 
 The default text on the timer says "Time left to complete this page:".
 But if your timeout spans multiple pages, you should word it more accurately,
@@ -222,16 +164,9 @@ by setting ``timer_text``:
         def get_timeout_seconds(self):
             return self.participant.vars['expiry'] - time.time()
 
-        def is_displayed(self):
-            return self.participant.vars['expiry'] - time.time() > 3
-
 
 Customizing the timer
 ~~~~~~~~~~~~~~~~~~~~~
-
-By default, the timer looks like this:
-
-.. figure:: _static/timer.png
 
 Hiding the timer
 ^^^^^^^^^^^^^^^^
@@ -263,29 +198,23 @@ For example, to hide the timer until there is only 10 seconds left,
 
 .. code-block:: html+django
 
-    {% block styles %}
-        <style>
-            .otree-timer {
-                display: none;
-            }
-        </style>
-    {% endblock %}
+    <style>
+        .otree-timer {
+            display: none;
+        }
+    </style>
 
-    {% block scripts %}
-        <script>
-            $(function () {
-                $('.otree-timer__time-left').on('update.countdown', function (event) {
-                    if (event.offset.totalSeconds === 10) {
-                        $('.otree-timer').show();
-                    }
-                });
+    <script>
+        $(function () {
+            $('.otree-timer__time-left').on('update.countdown', function (event) {
+                if (event.offset.totalSeconds === 10) {
+                    $('.otree-timer').show();
+                }
             });
-        </script>
-    {% endblock %}
+        });
+    </script>
 
-(To apply this to all pages, go to ``_templates/global/Page.html`` and modify
-``{% global_styles %}`` and ``{% global_scripts %}``.
-See :ref:`base-template`.
+(To apply this to all pages, see the instructions in :ref:`base-template`.)
 
 Note: even if you turn off the ``finish.countdown`` event handler from submitting
 the page, if you are running the timeoutworker, the page will be submitted on the server

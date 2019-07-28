@@ -16,7 +16,7 @@ oTree defines a few extra ones like ``resetdb``, ``create_session``, and ``runpr
 Migrations and "resetdb"
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are using oTree, you generally shouldn't use ``makemigrations`` and ``migrate``.
+You generally shouldn't use ``makemigrations`` and ``migrate``.
 Instead, run ``otree resetdb``, which will reset and sync the database.
 If you need to preserve the database between updates, you can try the strategy
 mentioned in :ref:`migrations`.
@@ -112,7 +112,7 @@ Real-time and WebSockets
 
 .. warning::
 
-    This section is for advanced programmers who want to use oTree's unstable/unsupported features.
+    This section is for advanced programmers who want to use oTree's internal and unsupported features.
 
     The information below has changed as of July 2019.
 
@@ -146,7 +146,7 @@ In particular:
     (don't be confused by dots in type names, they just get converted to underscores).
 
 The "ChatConsumer" example
-`here <https://channels.readthedocs.io/en/latest/tutorial/part_2.html#enable-a-channel-layer>
+`here <https://channels.readthedocs.io/en/latest/tutorial/part_2.html#enable-a-channel-layer>`__
 is a good simple example showing the new API.
 
 You also need to define websocket routes (which are like URL patterns that decide which consumer to run).
@@ -160,3 +160,10 @@ to see how oTree queries and saves models inside consumers.
 If you're on Windows you will need to pip install ``pypiwin32``.
 Otherwise you will get ``ImportError: No module named win32api``.
 (This will be unnecessary when the next version of Twisted is released.)
+
+If you are building your app for long-term stability, beware of importing anything from ``otree.channels`` into your code.
+Like anything outside of ``otree.api``, it may be removed abruptly.
+
+In addition to upgrading to Channels 2.x,
+we have upgraded the ReconnectingWebSocket library used internally from `this <https://github.com/joewalnes/reconnecting-websocket/>`__
+to `this <https://github.com/pladaria/reconnecting-websocket/>`__. The API may differ in some places.

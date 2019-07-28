@@ -78,14 +78,8 @@ You can access them in the template like this: ``{{ Constants.blah }}`` or ``{{ 
 If you need to pass the same variables to many pages,
 see :ref:`here <vars_for_many_templates>`.
 
-.. note::
-
-    You shouldn't generate random values in ``vars_for_template``,
-    because if the user refreshes their page, ``vars_for_template`` will be executed again,
-    and the random calculation might return a different value.
-    Instead, you should calculate random values in either ``creating_session``,
-    ``before_next_page``, or ``after_all_players_arrive``, each of which
-    only executes once.
+If the user refreshes the page, ``vars_for_template`` gets re-executed.
+Keep this in mind before generating random values in ``vars_for_template``.
 
 .. _before_next_page:
 

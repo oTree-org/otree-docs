@@ -13,10 +13,10 @@
         :align: center
 
 
-Live demo
-^^^^^^^^^
+Live demos
+^^^^^^^^^^
 
-http://demo.otree.org/
+https://www.otreehub.com/projects/?featured=1
 
 
 Homepage
@@ -43,6 +43,12 @@ For help, post to our Google Groups `forum <https://groups.google.com/forum/#!fo
 
 Contents:
 ^^^^^^^^^
+
+.. note::
+
+   As of August 2019, our code examples have switched from ``{}`` to ``dict()``
+   for creating a dictionary. More background `here <https://groups.google.com/forum/#!topic/otree/gSggNVict6g>`__).
+   This affects how we write ``vars_for_template``, ``SESSION_CONFIGS``, ``ROOMS``, etc.
 
 .. toctree::
     :maxdepth: 2

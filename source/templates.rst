@@ -291,7 +291,6 @@ If you are using oTree Studio, click the button to include a template.
 Otherwise, create the file in your ``templates`` folder,
 and see the sample games for examples of how to include the template (e.g. ``instructions_template``).
 
-.. _base-template:
 
 JavaScript and CSS
 ------------------
@@ -327,6 +326,8 @@ you can put them in separate blocks called ``scripts`` and ``styles``:
 
 It's not mandatory to do this, but: it keeps your code organized and ensures that things are loaded in the correct order
 (CSS, then your page content, then JavaScript).
+
+.. _base-template:
 
 Advanced: CSS/JS and base templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

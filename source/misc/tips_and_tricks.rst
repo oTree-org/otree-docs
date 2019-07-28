@@ -157,13 +157,9 @@ variables ``d`` and ``e``):
         def vars_for_template(self):
             return dict(a=1, b=2, c=3)
 
-
     class Page3(Page):
         def vars_for_template(self):
-            if self.player.id_in_group == 1:
-                return dict(a=1, b=2, c=3, d=4, e=5)
-            else:
-                return dict(a=1, b=2, c=3)
+            return dict(a=1, b=2, c=3, d=4, e=5)
 
 
 You can simplify this by making a method on your Player model:
@@ -188,11 +184,7 @@ Then in your pages:
 
     class Page3(Page):
         def vars_for_template(self):
-            tvars = self.player.vars_for_template()
-            if self.player.id_in_group == 1:
-                # add d and e to the dict
-                return dict(tvars, d=4, e=5)
-            return tvars
+            return dict(self.player.vars_for_template(), d=4, e=5)
 
 
 Improving code performance
@@ -237,3 +229,51 @@ It should be simplified to this:
 
 As an added benefit, this usually makes the code more readable.
 
+Use BooleanField instead of StringField, where possible
+-------------------------------------------------------
+
+Many ``StringFields`` should be broken down into ``BooleanFields``, especially
+if they only have 2 distinct values.
+
+Suppose you have a field called ``treatment``:
+
+.. code-block:: python
+
+    treatment = models.StringField()
+
+And let's say ``treatment`` it can only have 4 different values:
+
+-   ``high_income_high_tax``
+-   ``high_income_low_tax``
+-   ``low_income_high_tax``
+-   ``low_income_low_tax``
+
+In your pages, you might use it like this:
+
+.. code-block:: python
+
+    class HighIncome(Page):
+        def is_displayed(self):
+            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'high_income_low_tax'
+
+    class HighTax(Page):
+        def is_displayed(self):
+            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'low_income_high_tax'
+
+
+It would be much better to break this to 2 separate BooleanFields::
+
+    high_income = models.BooleanField()
+    high_tax = models.BooleanField()
+
+Then your pages could be simplified to:
+
+.. code-block:: python
+
+    class HighIncome(Page):
+        def is_displayed(self):
+            return self.player.high_income
+
+    class HighTax(Page):
+        def is_displayed(self):
+            return self.player.high_tax

@@ -147,27 +147,6 @@ Will output::
     in creating_session 5
 
 
-group_randomly()
-~~~~~~~~~~~~~~~~
-
-See :ref:`shuffling`.
-
-group_like_round()
-~~~~~~~~~~~~~~~~~~
-
-See :ref:`shuffling`.
-
-get_group_matrix()
-~~~~~~~~~~~~~~~~~~
-
-See :ref:`shuffling`.
-
-set_group_matrix()
-~~~~~~~~~~~~~~~~~~
-
-See :ref:`shuffling`.
-
-
 get_groups()
 ~~~~~~~~~~~~
 
@@ -178,26 +157,17 @@ get_players()
 
 Returns a list of all the players in the subsession.
 
-in_previous_rounds()
-~~~~~~~~~~~~~~~~~~~~
+Other subsession methods
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-See :ref:`in_rounds`.
-
-in_all_rounds()
-~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
-in_round(round_number)
-~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
-in_rounds(self, first, last)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
+-   :ref:`group_randomly() <shuffling>`
+-   :ref:`group_like_round() <shuffling>`
+-   :ref:`get_group_matrix() <shuffling>`
+-   :ref:`set_group_matrix() <shuffling>`
+-   :ref:`in_all_rounds() <in_rounds>`
+-   :ref:`in_previous_rounds() <in_rounds>`
+-   :ref:`in_rounds(first, last) <in_rounds>`
+-   :ref:`in_round(round_number) <in_rounds>`
 
 
 Group
@@ -210,45 +180,17 @@ The session/subsession this group belongs to.
 See :ref:`object_model`.
 
 
-get_players()
-~~~~~~~~~~~~~
+Other group methods
+~~~~~~~~~~~~~~~~~~~
 
-See :ref:`groups`.
+-   :ref:`in_all_rounds() <in_rounds>`
+-   :ref:`in_previous_rounds() <in_rounds>`
+-   :ref:`in_rounds(first, last) <in_rounds>`
+-   :ref:`in_round(round_number) <in_rounds>`
+-   :ref:`get_player_by_role(role) <groups>`
+-   :ref:`get_player_by_id(id_in_group) <groups>`
+-   :ref:`get_players() <groups>`
 
-get_player_by_role(role)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`groups`.
-
-get_player_by_id(id_in_group)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`groups`.
-
-set_players(players_list)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`shuffling`.
-
-in_previous_rounds()
-~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
-in_all_rounds()
-~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
-in_round(round_number)
-~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
-in_rounds(self, first, last)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
 
 Player
 ------
@@ -267,17 +209,6 @@ session/subsession/group/participant
 
 The session/subsession/group/participant this player belongs to.
 See :ref:`object_model`.
-
-
-get_others_in_group()
-~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`groups`.
-
-get_others_in_subsession()
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`groups`.
 
 .. _role:
 
@@ -303,25 +234,15 @@ See :ref:`groups`.
 Also, the player's role will be displayed in the oTree admin interface,
 in the "results" tab.
 
-in_previous_rounds()
+Other player methods
 ~~~~~~~~~~~~~~~~~~~~
 
-See :ref:`in_rounds`.
-
-in_all_rounds()
-~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
-in_round(round_number)
-~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
-
-in_rounds(self, first, last)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`in_rounds`.
+-   :ref:`in_all_rounds() <in_rounds>`
+-   :ref:`in_previous_rounds() <in_rounds>`
+-   :ref:`in_rounds(first, last) <in_rounds>`
+-   :ref:`in_round(round_number) <in_rounds>`
+-   :ref:`get_others_in_subsession() <groups>`
+-   :ref:`get_others_in_group() <groups>`
 
 Session
 -------
@@ -334,8 +255,7 @@ The number of participants in the session.
 config
 ~~~~~~
 
-See :ref:`edit_config`
-and :ref:`session_config_treatments`.
+See :ref:`session_config_treatments`.
 
 vars
 ~~~~
@@ -345,31 +265,19 @@ See :ref:`session_vars`.
 Participant
 -----------
 
-vars
-~~~~
-
-See :ref:`vars`.
-
-label
-~~~~~
-
-See :ref:`participant_label`.
-
 id_in_session
 ~~~~~~~~~~~~~
 
 The participant's ID in the session. This is the same as the player's
 ``id_in_subsession``.
 
-payoff
-~~~~~~
+Other participant attributes and methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See :ref:`payoff`.
-
-payoff_plus_participation_fee()
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See :ref:`payoff`.
+-   :ref:`vars <vars>`
+-   :ref:`label <participant_label>`
+-   :ref:`payoff <payoff>`
+-   :ref:`payoff_plus_participation_fee <payoff>`
 
 .. _constants:
 
@@ -436,7 +344,7 @@ For example, don't do this:
 .. code-block:: python
 
     class Constants(BaseConstants):
-        p = random.random() # wrong
+        p = random.randint(1, 10) # wrong
 
 If it changes randomly, it isn't a constant.
 
@@ -448,7 +356,7 @@ Or this:
 
         p = models.FloatField(
             # wrong
-            initial=random.random()
+            initial=random.randint(1, 10)
         )
 
 These won't work because they will change every time

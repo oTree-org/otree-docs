@@ -39,13 +39,11 @@ Enter this command at the prompt:
 
     pip3 install -U otree
 
-.. note::
+If you get an error like this::
 
-    If you get an error like this::
+    error: Microsoft Visual C++ is required (Unable to find vcvarsall.bat).
 
-        error: Microsoft Visual C++ is required (Unable to find vcvarsall.bat).
-
-    To fix this, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
+To fix this, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
 
 Next steps
 ----------

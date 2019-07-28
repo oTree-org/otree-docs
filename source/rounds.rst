@@ -63,8 +63,7 @@ you can use one of the techniques described below.
 in_rounds, in_previous_rounds, in_round, etc.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Player, group, and subsession objects have the following methods, which work
-similarly:
+Player, group, and subsession objects have the following methods:
 
 -   in_previous_rounds()
 -   in_all_rounds()
@@ -84,12 +83,9 @@ because it includes the current round's player.
 For example, to get the player's payoff in the previous round,
 you would do ``self.player.in_round(self.round_number - 1).payoff``.
 
-Similarly, subsession objects have methods ``in_previous_rounds()``,
-``in_all_rounds()``, ``in_rounds(m,n)`` and ``in_round(m)`` that work the same way.
+These methods work the same way for subsessions (e.g. ``self.subsession.in_all_rounds()``).
 
-Group objects also have methods ``in_previous_rounds()``, ``in_all_rounds()``, ``in_rounds(m,n)`` and ``in_round(m)``,
-but note that if you re-shuffle groups between rounds,
-then these methods may not return anything meaningful.
+They also work the same way for groups, but it does not make sense to use them if you re-shuffle groups between rounds.
 
 .. _vars:
 
@@ -140,13 +136,9 @@ etc.).
             for p in self.get_players():
                 p.participant.vars['foo'] = 1
 
-If your key may or may not exist, you can use the ``.get()`` method.
-For example, ``self.participant.vars.get('my_var', DEFAULT_VALUE)``.
-More `here <https://docs.python.org/3/library/stdtypes.html#dict.get>`__.
+You can test if ``'my_var'`` exists with ``if 'my_var' in self.participant.vars:``.
 
-or you can test if ``'my_var'`` exists with ``'my_var' in self.participant.vars``.
-
-Note: ``participant.vars`` is not included in the Excel/CSV data export,
+``participant.vars`` is not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you can create a
 ``StringField`` on your player (for example, called ``participant_vars_dump``)
 and then at the end of your session, assign:

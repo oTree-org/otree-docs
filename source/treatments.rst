@@ -127,53 +127,66 @@ You can even combine this with the randomization approach. You can check
 ``if 'color' in self.session.config:``; if yes, then use that color; if no,
 then choose it randomly.
 
-Also see :ref:`edit_config`.
+.. _edit_config:
 
-Use BooleanField instead of StringField, where possible
--------------------------------------------------------
+Configure sessions
+------------------
 
-Many ``StringFields`` should be broken down into ``BooleanFields``, especially
-if they only have 2 distinct values.
+You can make your session configurable,
+so that you can adjust the game's parameters in the admin interface,
+without needing to edit the source code:
 
-Suppose you have a field called ``treatment``:
-
-.. code-block:: python
-
-    treatment = models.StringField()
-
-And let's say ``treatment`` it can only have 4 different values:
-
--   ``high_income_high_tax``
--   ``high_income_low_tax``
--   ``low_income_high_tax``
--   ``low_income_low_tax``
-
-In your pages, you might use it like this:
-
-.. code-block:: python
-
-    class HighIncome(Page):
-        def is_displayed(self):
-            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'high_income_low_tax'
-
-    class HighTax(Page):
-        def is_displayed(self):
-            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'low_income_high_tax'
+.. image:: _static/admin/edit-config.png
+    :align: center
 
 
-It would be much better to break this to 2 separate BooleanFields::
+For example, let's say you are making a public goods game,
+whose payoff function depends on
+an "multiplier" parameter that is a numeric constant,
+like 1.5 or 2. The usual approach would be to define it in ``Constants``,
+e.g. ``Constants.multiplier``
 
-    high_income = models.BooleanField()
-    high_tax = models.BooleanField()
-
-Then your pages could be simplified to:
+However, to make your custom parameter configurable, instead of adding it to
+``Constants``, add it to your config in :ref:`SESSION_CONFIGS`. For example:
 
 .. code-block:: python
 
-    class HighIncome(Page):
-        def is_displayed(self):
-            return self.player.high_income
+    dict(
+        name='my_session_config',
+        display_name='My Session Config',
+        num_demo_participants=2,
+        app_sequence=['my_app_1', 'my_app_2'],
+        multiplier=1.5
+    ),
 
-    class HighTax(Page):
-        def is_displayed(self):
-            return self.player.high_tax
+Then, when you create a session in the admin interface
+and select this session config, the ``multiplier`` parameter will
+be listed, and you can change it to a number other than 1.5.
+If you want to explain the meaning of the variable to the person creating
+the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
+
+.. code-block:: python
+
+    dict(
+        name='my_session_config',
+        display_name='My Session Config',
+        num_demo_participants=2,
+        app_sequence=['my_app_1', 'my_app_2'],
+        multiplier=1.5,
+        doc="""
+        Edit the 'multiplier' parameter to change the factor by which
+        contributions to the group are multiplied.
+        """
+    ),
+
+Then in your app's code, you can do ``self.session.config['multiplier']``
+to retrieve the current session's multiplier.
+
+Notes:
+
+-   For a field to be configurable, its value must be a simple data type
+    (number, boolean, or string).
+-   On the "Demo" section of the admin, sessions are not configurable.
+    It's only available when creating a session in "Sessions" or "Rooms".
+
+

@@ -31,13 +31,6 @@ setup. Currently, oTree Hub is for Heroku only.
 Modifying an existing database
 ------------------------------
 
-.. note::
-
-    If you are getting errors related to migrations, like
-    "django.db.migrations.graph.NodeNotFoundError: Migration my_app.0001_initial dependencies
-    reference nonexistent parent node", you can make the problem go away by
-    just deleting ``my_app/migrations``.
-
 This section is more advanced and is for people who are comfortable with troubleshooting.
 
 If your database already contains data and you want to update the structure

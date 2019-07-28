@@ -111,7 +111,7 @@ This will group players randomly each round, but keep ``id_in_group`` fixed:
         def creating_session(self):
             self.group_randomly(fixed_id_in_group=True)
 
-For the following example, assume that ``players_per_group = 3``, and that there are 12 participants in the session::
+For the following example, assume that ``players_per_group = 3``, and that there are 12 participants in the session:
 
 .. code-block:: python
 
@@ -188,7 +188,7 @@ group matrix with ``get_group_matrix()``.
 Construct your matrix using Python list operations like
 ``.extend()``, ``.append()``, ``.pop()``, ``.reverse()``,
 and list indexing and slicing (e.g. ``[0]``, ``[2:4]``).
-Then pass this modified matrix to ``set_group_matrix()``::
+Then pass this modified matrix to ``set_group_matrix()``:
 
 .. code-block:: python
 
