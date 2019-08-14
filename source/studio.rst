@@ -3,7 +3,7 @@
 oTree Studio
 ============
 
-`oTree Studio <https://www.otreehub.com/>`__
+`oTree Studio <https://www.otreehub.com/studio>`__
 is a point-and-click interface for building oTree apps.
 
 We recommend for new users to start with oTree Studio instead of a text editor (like PyCharm),
