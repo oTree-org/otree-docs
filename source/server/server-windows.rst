@@ -39,29 +39,18 @@ We recommend you use PostgreSQL.
 Install `Postgres for Windows <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`__,
 using the default options. Note down the password you chose for the root ``postgres`` user.
 
-Launch pgAdmin (you can find it in your Windows Start menu),
-and using the browser, create a new database:
-
-.. figure:: ../_static/pgadmin.png
-
-In the "Database" field, enter the name ``django_db``.
-
-Now, edit your ``pg_hba.conf``, which is usually located in ``C:\Program Files\PostgreSQL\9.6\data``
-or a similarly named folder. On the lines for ``IPv4`` and ``IPv6``, change
-the ``METHOD`` from ``md5`` to ``trust``.
+Launch pgAdmin, and using the browser, create a new database called ``django_db``.
+Now, edit your ``pg_hba.conf``, which is usually located in ``C:\Program Files\PostgreSQL\``.
+On the lines for ``IPv4`` and ``IPv6``, change the ``METHOD`` from ``md5`` to ``trust``.
 
 Now, set your ``DATABASE_URL`` environment variable to this::
 
     postgres://postgres@localhost/django_db
 
-To set the environment variable, do a Windows search (or control panel search)
-for "environment variables". This will take you to the dialog with a name like
-"Edit system environment variables". Add a new system entry for ``DATABASE_URL`` with the above URL.
-
 Then restart your Command Prompt so the environment variable gets loaded.
 
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
-(This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
+
 
 psycopg2
 ~~~~~~~~
@@ -99,45 +88,9 @@ The steps are essentially the same as on Linux.
 Set environment variables
 -------------------------
 
-Now let's set the variables that control security.
 You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and ``OTREE_AUTH_LEVEL``.
-
 
 Allow other computers to connect
 --------------------------------
 
 See instructions :ref:`here <server-adhoc>`.
-
-
-Next steps
-----------
-
-See :ref:`server_final_steps` for steps you should take before launching your study.
-
-Advanced
---------
-
-(Optional) create a virtualenv
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-It's a best practice to use a virtualenv (though optional)::
-
-    python3 -m venv venv_otree
-
-You can configure PowerShell to always activate this virtualenv.
-Enter::
-
-    notepad $shell
-
-Then put this in the file::
-
-    cd "C:\path\to\oTree"
-    . "C:\path\to\oTree\venv_otree\Scripts\activate.ps1"
-
-(Note the dot at the beginning of the line.)
-
-
-(Optional) use git
-~~~~~~~~~~~~~~~~~~
-
-The remaining steps are to deploy your code with Git as described :ref:`here <git-generic>`,

@@ -1,6 +1,16 @@
 Version history
 ```````````````
 
+Version 2.3
+===========
+
+-   Django Channels has been upgraded to version 2.x
+-   ``runprodserver`` uses Uvicorn instead of Daphne
+-   You can do MTurk sandbox testing locally. Install Redis then run
+    ``otree runprodserver 8001 --dev-https`` to run an HTTPS server on ``https://localhost:8001``.
+    You will get a security warning but it's OK because the site is on your own computer.
+
+
 Version 2.2
 ===========
 

@@ -1,7 +1,7 @@
 .. _server-ubuntu:
 
-Linux Server
-============
+Ubuntu Linux Server
+===================
 
 We typically recommend newcomers to oTree to deploy to Heroku
 (see instructions :ref:`here <heroku>`),
@@ -19,9 +19,6 @@ setting up an oTree server is the same as any Django project, except:
 -   You need Redis
 -   You start the server with ``otree runprodserver``, rather than a WSGI server.
 
-For those who want full details on the setup, read the below sections,
-which are for Ubuntu 16.04.
-
 Install apt-get packages
 ------------------------
 
@@ -36,20 +33,12 @@ It's a best practice to use a virtualenv::
 
     python3 -m venv venv_otree
 
-To activate this venv every time you start your shell, edit your ``.bashrc``
-file using nano::
-
-    nano ~/.bashrc
-
-And add this line to the end::
+To activate this venv every time you start your shell, put this in your ``.bashrc`` or ``.profile``::
 
     source ~/venv_otree/bin/activate
 
-To save and exit, press ``Ctrl+O``, ``Enter``, and ``Ctrl+X``.
-
-Close and reopen your terminal window. You should see ``(venv_otree)`` at the beginning
-of your prompt. If it's not there, try adding the above lines to ``~/.bash_profile``
-instead of ``~/.bashrc``, because some systems use a different filename.
+Once your virtualenv is active, you will see ``(venv_otree)`` at the beginning
+of your prompt.
 
 .. _postgres-linux:
 
@@ -71,41 +60,22 @@ Then start the Postgres shell::
 Once you're in the shell, create a database and user::
 
     CREATE DATABASE django_db;
-    CREATE USER otree_user WITH PASSWORD 'mydbpassword';
-    GRANT ALL PRIVILEGES ON DATABASE django_db TO otree_user;
+    alter user postgres password 'password';
 
 Exit the SQL prompt::
 
     \q
 
-Exit out of the postgres user and return to your regular command prompt::
+Return to your regular command prompt::
 
     exit
 
-Now you should tell oTree to use Postgres instead of SQLite.
-Set the ``DATABASE_URL`` environment variable on your server.
-This allows you to continue to use SQLite on your development machine,
-while using Postgres on your production server.
 
-If you used the values in the example above
-(username ``otree_user``, password ``mydbpassword`` and database ``django_db``),
+Then add this line to the end of your .bashrc/.profile::
 
-Run::
-
-    nano ~/.bashrc
-
-(Or, ``nano ~/.bash_profile``, whichever file you edited in the previous step.)
-
-Then add this line to the end of the file::
-
-    export DATABASE_URL=postgres://otree_user:mydbpassword@localhost/django_db
-
-To save and exit, press ``Ctrl+O``, ``Enter``, and ``Ctrl+X``.
-Then close and reopen your terminal and confirm with ``echo $DATABASE_URL``
-that it was set properly.
+    export DATABASE_URL=postgres://postgres:postgres@localhost/django_db
 
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
-(This is done via `dj_database_url <https://pypi.python.org/pypi/dj-database-url>`__.)
 
 When you run ``otree resetdb`` later,
 if you get an error that says "password authentication failed for user",
@@ -125,9 +95,7 @@ e.g. `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
 Push your code to the server
 ----------------------------
 
-You can get your code on the server using SCP, SFTP, Dropbox, etc.
-If you are interested in using Git (which is somewhat more advanced),
-see the instructions :ref:`here <git-generic>`.
+You can get your code on the server using SCP, SFTP, Git, etc.
 
 For this tutorial, we will assume you are storing your files under
 ``/home/my_username/oTree``.
@@ -189,19 +157,11 @@ Notes:
 Set remaining environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run::
-
-    nano ~/.bashrc
-
-(Or, ``nano ~/.bash_profile``, whichever file you edited previously.)
-
-Then add these lines to the end of the file (substitute your own values)::
+Add these in the same place where you set ``DATABASE_URL``::
 
     export OTREE_ADMIN_PASSWORD=my_password
     #export OTREE_PRODUCTION=1 # uncomment this line to enable production mode
     export OTREE_AUTH_LEVEL=DEMO
-
-To save and exit, press ``Ctrl+O``, ``Enter``, and ``Ctrl+X``.
 
 (Optional) Process control system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -237,8 +197,6 @@ To stop circus, run::
 
     circusctl stop
 
-
-
 (Optional) Apache, Nginx, etc.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -251,29 +209,6 @@ However, you still might want to use Apache/Nginx as a reverse proxy, for the fo
 -   You need to host other websites on the same server
 -   You need features like SSL or proxy buffering
 
-Apache
-``````
-If you want to run oTree on a subdomain of your host so that you can share
-port 80 with other sites hosted on the same machine,
-you can try the below configuration.
-The below example assumes oTree server is running on port 8000.
-For HTTPS, change ``80`` to ``443`` ``ws`` prefix to ``wss``::
-
-    <VirtualHost *:80>
-            ServerName otree.domain.com
-            ProxyRequests Off
-            ProxyPreserveHost On
-            ProxyPass / http://localhost:8080/
-            ProxyPassReverse / http://localhost:8080/
-
-            RewriteEngine On
-            RewriteCond %{HTTP:Connection} Upgrade [NC]
-            RewriteCond %{HTTP:Upgrade} websocket [NC]
-            RewriteRule /(.*) ws://localhost:8000/$1 [P,L]
-    </VirtualHost>
-
-
-
 Troubleshooting
 ---------------
 
@@ -283,7 +218,6 @@ it might be caused by another oTree instance that didn't shut down.
 Try stopping oTree and reload again.
 Also make sure that you are not sharing the same Postgres or Redis
 databases between two oTree instances.
-
 
 Sharing a server with other oTree users
 ---------------------------------------

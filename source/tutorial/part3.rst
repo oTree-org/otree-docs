@@ -70,26 +70,17 @@ Subsession
 
 Now let's define the code to randomly choose a round for payment.
 
-First, put this line at the top of the file, so we can use Python's built-in
-``random`` module:
-
-.. code-block:: python
-
-    import random
-
-(If you're using oTree Studio, random is automatically imported.)
-
 Create a method on the Subsession called ``creating_session``
 (see :ref:`creating_session`).
 
-We start by writing something like this, which chooses a random
-integer between 1 and 4, and then assigns it into ``session.vars``:
+We start by choosing a random integer between 1 and 4:
 
 .. code-block:: python
 
     class Subsession(BaseSubsession):
 
         def creating_session(self):
+            import random
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
             print('set the paying round to', paying_round)
@@ -102,28 +93,23 @@ subsessions), this code will get executed 4 times, e.g.::
     set the paying round to 3
     set the paying round to 1
 
-Each time, it will overwrite the previous value of
-``session.vars['paying_round']``, which is unnecessary.
-We can fix this with an ``if`` statement that makes it only
-run once (if ``round_number`` is 1; see :ref:`rounds`):
+Each time, it will unnecessarily overwrite the previous value of
+``session.vars['paying_round']``. We can fix this with an ``if`` statement:
 
 .. code-block:: python
 
     class Subsession(BaseSubsession):
 
         def creating_session(self):
+            import random
             print('in creating_session')
             if self.round_number == 1:
                 paying_round = random.randint(1, Constants.num_rounds)
                 self.session.vars['paying_round'] = paying_round
                 print('set the paying round to', paying_round)
 
-Now, let's also define the code to swap roles halfway through. This kind
-of group-shuffling code should also go in ``creating_session``. We
-put it after our existing code.
-
-So, in round 3, we should do the shuffle,
-and then in round 4, use ``group_like_round(3)`` to copy the group structure from round 3.
+In round 3, let's swap roles,
+and in round 4, use ``group_like_round(3)`` to copy the group structure from round 3.
 (See :ref:`group_like_round <group_like_round>`):
 
 .. code-block:: python
@@ -131,6 +117,7 @@ and then in round 4, use ``group_like_round(3)`` to copy the group structure fro
     class Subsession(BaseSubsession):
 
         def creating_session(self):
+            import random
             print('in creating_session')
             if self.round_number == 1:
                 paying_round = random.randint(1, Constants.num_rounds)
@@ -150,14 +137,10 @@ and then in round 4, use ``group_like_round(3)`` to copy the group structure fro
 Group
 -----
 
-Now we define our ``Group`` class. Add a method called ``set_payoffs``
+Go to your ``Group`` class and add a method called ``set_payoffs``
 (you can choose another name).
-Below we use ``get_player_by_role`` to fetch each of the 2 players in the group. We
-could also use ``get_player_by_id``, but I find it easier to identify
-the players by their roles as matcher/mismatcher. Then, depending on
-whether the penny sides match, we either make P1 or P2 the winner.
-
-So, we start with this:
+Below we use ``get_player_by_role`` to fetch each of the 2 players in the group,
+and decide the winner:
 
 .. code-block:: python
 
@@ -175,8 +158,8 @@ So, we start with this:
                 mismatcher.is_winner = True
 
 Now let's set payoffs.
-Remember that the player should only receive a payoff if the current round is
-the randomly chosen paying round. Otherwise, the payoff should be 0.
+A player should only receive a payoff if the current round is
+the randomly chosen paying round.
 So, we check the current round number and compare it against the
 value we previously stored in ``session.vars``. We loop through both
 players (``[P1,P2]``, or ``[mismatcher, matcher]``) and do the same
@@ -215,7 +198,9 @@ This game has 2 main pages:
 Choice page
 ~~~~~~~~~~~
 
-Create a ``Choice`` page: 
+Create a ``Choice`` page.
+``vars_for_template`` returns a variable ``player_in_previous_rounds``,
+so we can get the data for to get their data from rounds 1, 2, 3, etc.
 
 .. code-block:: python
 
@@ -228,15 +213,7 @@ Create a ``Choice`` page:
                 player_in_previous_rounds=self.player.in_previous_rounds()
             )
 
-
-Also, on this page we would like to display a "history box" table that
-shows the result of all previous rounds. So, we can use
-``player.in_previous_rounds()``, which returns a list referring to the
-same participant in rounds 1, 2, 3, etc. (For more on the distinction
-between "player" and "participant", see :ref:`participants_and_players`.)
-
 Next, create the HTML template as before:
-
 In the ``title`` block:
 
 .. code-block:: html+django
@@ -281,18 +258,17 @@ In the ``content`` block:
 
     {% next_button %}
 
-Note that the ``{% for %}`` is looping over the variable ``player_in_previous_rounds`` that we defined
-in ``vars_for_template``.
 
 ResultsWaitPage
 ~~~~~~~~~~~~~~~
 
 Before a player proceeds to the next
-round's ``Choice`` page,  they need to wait for the other player to complete the ``Choice`` page as well.  So, as usual, we use a ``WaitPage``.
+round's ``Choice`` page,  they need to wait for the other player to complete the ``Choice`` page as well.
+So, as usual, we use a ``WaitPage``.
 Also, once both players have arrived at the wait page, we call the ``set_payoffs``
 method we defined earlier.
 
-::
+.. code-block:: python
 
     class ResultsWaitPage(WaitPage):
 

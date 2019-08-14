@@ -69,35 +69,3 @@ In most university networks, your internal IP address will generally stay the sa
 as long as you stay connected to the same network. If it changes unpredictably,
 you can ask your IT department to add a rule on their DHCP server to always
 assign the same IP to your computer.
-
-
-Try using port 80 (optional)
-----------------------------
-
-If it works, you can try using port 80, which is the conventional port for web servers,
-and allows you to omit the ``:8000`` from your URLs.
-
-(If you use Skype) fix Skype issue
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Skype sometimes uses port 80, which can conflict with oTree.
-go in Skype to Tools > Options > Advanced > Connections
-and unselect "Use port 80 and 443 for additional incoming connections".
-Or just quit Skype.
-
-Run the server on port 80
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Replace "8000" with "80".
-And actually, instead of typing in your IP address,
-you can just use the "wildcard address" ``0.0.0.0``, and oTree will
-automatically start your server on whatever your computer's IP address is.
-
-On Windows::
-
-    otree devserver 0.0.0.0:80
-
-On macOS, you need superuser privilege to use port 80::
-
-    sudo otree devserver 0.0.0.0:80
-

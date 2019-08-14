@@ -4,18 +4,15 @@ Treatments
 ==========
 
 To assign participants to different treatment groups, you
-can use ``creating_session``
-(for more info see :ref:`creating_session`).
-For example, if you want some participants to be in a "blue" treatment group
-and others to be in a "red" treatment group, first define
-a ``color`` field on the ``Player`` model:
+can use :ref:`creating_session <creating_session>`.
+For example, you can create a ``color`` field on the ``Player`` model:
 
 .. code-block:: python
 
     class Player(BasePlayer):
         color = models.StringField()
 
-Then you can assign to this field randomly:
+And then randomly assign players to the "blue" or "red" treatment group:
 
 .. code-block:: python
 
@@ -34,11 +31,9 @@ in the ``Group`` class and change the above code to use
 Treatment groups & multiple rounds
 ----------------------------------
 
-If your game has multiple rounds, the above code gets executed
-for each round. So if you want to ensure that participants are assigned
-to the same treatment group each round, you should set the property at
-the participant level, which persists across subsessions, and only set
-it in the first round:
+If your game has multiple rounds, a player could have different colors in different rounds,
+because ``creating_session`` gets executed for each round independently.
+To prevent this, set it on the participant, rather than the player:
 
 .. code-block:: python
 
@@ -52,25 +47,6 @@ it in the first round:
 Then elsewhere in your code, you can access the participant's color with
 ``self.participant.vars['color']``.
 
-Groups do not have any ``vars`` field,
-because groups can be re-shuffled across rounds.
-You should instead store the variable on one of the participants in the group:
-
-.. code-block:: python
-
-    def creating_session(self):
-        if self.round_number == 1:
-            for g in self.get_groups():
-                p1 = g.get_player_by_id(1)
-                p1.participant.vars['group_color'] = random.choice(['blue', 'red'])
-
-Then, when you need to access a group's color, you would look it up like this:
-
-.. code-block:: python
-
-    p1 = self.group.get_player_by_id(1)
-    color = p1.participant.vars['group_color']
-
 For more on vars, see :ref:`vars`.
 
 Balanced treatment groups
@@ -78,15 +54,14 @@ Balanced treatment groups
 
 The above code makes a random drawing independently for each player,
 so you may end up with an imbalance between "blue" and "red".
-To solve this, you can use ``itertools.cycle``, which alternates:
+To solve this, you can use ``itertools.cycle``:
 
 .. code-block:: python
-
-    import itertools
 
     class Subsession(BaseSubsession):
 
         def creating_session(self):
+            import itertools
             colors = itertools.cycle(['blue', 'red'])
             for p in self.get_players():
                 p.color = next(colors)
@@ -133,21 +108,16 @@ Configure sessions
 ------------------
 
 You can make your session configurable,
-so that you can adjust the game's parameters in the admin interface,
-without needing to edit the source code:
+so that you can adjust the game's parameters in the admin interface.
 
 .. image:: _static/admin/edit-config.png
     :align: center
 
-
-For example, let's say you are making a public goods game,
-whose payoff function depends on
-an "multiplier" parameter that is a numeric constant,
-like 1.5 or 2. The usual approach would be to define it in ``Constants``,
-e.g. ``Constants.multiplier``
-
-However, to make your custom parameter configurable, instead of adding it to
-``Constants``, add it to your config in :ref:`SESSION_CONFIGS`. For example:
+For example, let's say you have a "num_apples" parameter.
+The usual approach would be to define it in ``Constants``,
+e.g. ``Constants.num_apples``.
+But to make it configurable, you can instead define it in your :ref:`session config <SESSION_CONFIGS>`.
+For example:
 
 .. code-block:: python
 
@@ -156,14 +126,11 @@ However, to make your custom parameter configurable, instead of adding it to
         display_name='My Session Config',
         num_demo_participants=2,
         app_sequence=['my_app_1', 'my_app_2'],
-        multiplier=1.5
+        num_apples=10
     ),
 
-Then, when you create a session in the admin interface
-and select this session config, the ``multiplier`` parameter will
-be listed, and you can change it to a number other than 1.5.
-If you want to explain the meaning of the variable to the person creating
-the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
+When you create a session in the admin interface, there will be a text box to change this number.
+You can also add help text with ``'doc'``:
 
 .. code-block:: python
 
@@ -172,21 +139,42 @@ the session, you can add a ``'doc'`` parameter to the session config dict, e.g.:
         display_name='My Session Config',
         num_demo_participants=2,
         app_sequence=['my_app_1', 'my_app_2'],
-        multiplier=1.5,
+        num_apples=10,
         doc="""
-        Edit the 'multiplier' parameter to change the factor by which
+        Edit the 'num_apples' parameter to change the factor by which
         contributions to the group are multiplied.
         """
     ),
 
-Then in your app's code, you can do ``self.session.config['multiplier']``
-to retrieve the current session's multiplier.
+In your app's code, you can do ``self.session.config['num_apples']``.
 
 Notes:
 
--   For a field to be configurable, its value must be a simple data type
-    (number, boolean, or string).
+-   For a parameter to be configurable, its value must be a number, boolean, or string.
 -   On the "Demo" section of the admin, sessions are not configurable.
     It's only available when creating a session in "Sessions" or "Rooms".
 
+Advanced topics
+---------------
 
+Group treatments that persist across rounds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Groups do not have any ``vars`` field,
+because groups can be re-shuffled across rounds.
+You should instead store the variable on one of the participants in the group:
+
+.. code-block:: python
+
+    def creating_session(self):
+        if self.round_number == 1:
+            for g in self.get_groups():
+                p1 = g.get_player_by_id(1)
+                p1.participant.vars['group_color'] = random.choice(['blue', 'red'])
+
+Then, when you need to access a group's color, you would look it up like this:
+
+.. code-block:: python
+
+    p1 = self.group.get_player_by_id(1)
+    color = p1.participant.vars['group_color']

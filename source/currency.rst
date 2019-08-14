@@ -24,21 +24,13 @@ For example:
     class Player(BasePlayer):
         random_bonus = models.CurrencyField()
 
-Note: instead of using Python's built-in ``range`` function,
-you should use oTree's ``currency_range`` with currency values,
-e.g.:
+To make a list of currency amounts, use ``currency_range``:
 
 .. code-block:: python
 
-    class Player(BasePlayer):
-        contribution = models.CurrencyField(
-            choices=currency_range(c(0), c(0.10), c(0.02))
-            # this gives:
-            # [$0.00, $0.02, $0.04, $0.06, $0.08, $0.10]
-        )
-
-
-``currency_range`` takes 3 arguments (start, stop, step), similar to range.
+    currency_range(c(0), c(0.10), c(0.02))
+    # this gives:
+    # [$0.00, $0.02, $0.04, $0.06, $0.08, $0.10]
 
 In templates, instead of using the ``c()`` function, you should use the
 ``|c`` filter.

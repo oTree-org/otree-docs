@@ -15,17 +15,6 @@ Testing with browser bots
 Before launching a study, it's advisable to test your apps with bots,
 especially browser bots. See the section :ref:`bots`.
 
-.. _sentry:
-
-Sentry service
---------------
-
-As of 2018-11-20,
-our Sentry service has been replaced by the much more comprehensive
-`oTree Hub <https://www.otreehub.com/>`__, which includes automatic Sentry
-setup. Currently, oTree Hub is for Heroku only.
-
-
 .. _migrations:
 
 Modifying an existing database

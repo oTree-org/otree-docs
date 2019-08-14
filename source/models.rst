@@ -309,9 +309,11 @@ Miscellaneous topics
 Defining your own methods
 -------------------------
 
-You can define your own custom model methods,
-and name them whatever you like.
-This helps you keep your code organized as it gets more complex.
+In addition to the methods listed on this page,
+you can define your own.
+Just remember to *use* them somewhere!
+Just defining them with ``def`` has no effect.
+
 For example:
 
 .. code-block:: python
@@ -321,17 +323,13 @@ For example:
             print('in set_payoffs')
             # etc ...
 
-``def`` just *defines* a function, so
-you need to actually *use* it ("call" it) somewhere, such as your page:
+Then call it:
 
 .. code-block:: python
 
     class MyWaitPage(WaitPage):
         def after_all_players_arrive(self):
             self.group.set_payoffs()
-
-It will not be executed automatically, unlike built-in functions
-like ``creating_session()``, ``after_all_players_arrive()``, etc.
 
 .. _how_otree_executes_code:
 

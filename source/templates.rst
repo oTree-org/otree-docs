@@ -93,10 +93,6 @@ In addition to the filters available with Django's template language,
 oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
 For example, ``{{ 20|c }}`` displays as ``20 points``.
 
-If you get an "Invalid filter" error,
-make sure you have ``{% load otree %}``
-at the top of your template.
-
 Things you can't do
 ~~~~~~~~~~~~~~~~~~~
 
@@ -254,11 +250,12 @@ You can follow the above technique for including video in your project,
 but it's better to embed them from YouTube or Dropbox, etc. Including videos in your project
 can make uploads/downloads slow.
 
-Including other templates
--------------------------
+Includable templates
+--------------------
 
-If you are copy-pasting the same content across many templates, it's better to use
-``{% include %}``. This lets you define content once and insert it in many places.
+If you are copy-pasting the same content across many templates,
+it's better to create an includable template and reuse it with
+``{% include %}``.
 
 For example, if your game has instructions that need to be repeated on every page,
 make a template called ``instructions.html``, and put the instructions there,
@@ -275,14 +272,7 @@ for example:
             Instructions
         </h3>
         <p>
-            This is a trust game with 2 players.
-        </p>
-        <p>
-            To start, participant A receives an endowment;
-            participant B receives nothing.
-            Participant A can send some or all of his endowment to participant B.
-            Before B receives this amount it will be tripled.
-            Once B receives the tripled amount he can decide to send some or all of it back to A.
+            These are the instructions for the game....
         </p>
         </div>
     </div>
@@ -460,13 +450,6 @@ quotes around strings, so you don't need to add them manually:
 
         // incorrect
         let my_string = "{{ my_string|json }}";
-
-If you get an "Invalid filter" error, make sure you have ``{% load otree %}``
-at the top of your template.
-
-Note: The ``|json`` template filter replaces the old ``safe_json``
-function. However, ``safe_json`` still works.
-Just use one or the other, not both.
 
 
 Bootstrap
