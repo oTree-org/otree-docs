@@ -4,10 +4,12 @@ Version history
 Version 2.3
 ===========
 
+-   Various improvements to performance, stability, and ease of use.
 -   oTree now requires Python 3.7
--   Django Channels has been upgraded to version 2.x.
--   oTree extensions written for old versions of oTree (such otree_tools, mturkotreeutils, etc)
+-   oTree extensions written for old versions of oTree & Channels (such otree_tools, mturkotreeutils, etc)
     may not work until they are upgraded to the new version.
+-   Django Channels has been upgraded to version 2.x. If you are the developer of an extension based on
+    Channels, see more info here: :ref:`channels`.
 -   Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩.
 -   On Windows, ``runprodserver`` just launches 1 worker process. If you want more processes,
     you should use a process manager. (This is due to a limitation of the ASGI server)
