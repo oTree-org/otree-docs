@@ -120,12 +120,8 @@ oTree uses `Django channels <https://channels.readthedocs.io/en/stable/>`__
 for real-time (WebSocket) functionality.
 You can add your own real-time interactions such as a continuous-time market.
 
-As of July 2019, we have released a beta version with support for
-Django Channels 2.x.
+As of September 2019, we use Django Channels 2.x.
 (Until now, oTree has used Django Channels 0.17.3.)
-You can install the beta with::
-
-    pip install -U otree --pre
 
 Django Channels 2.x has many API changes.
 Any existing oTree apps that depend on
@@ -154,7 +150,7 @@ You can put them in a module called ``your_app/otree_extensions/routing.py``.
 You should make a list of routes called ``websocket_routes`` (not ``channel_routing`` like before).
 Then in ``settings.py``, set ``EXTENSION_APPS = ['your_app']``.
 
-Once you have installed the beta, see ``otree.channels.consumers``
+See ``otree.channels.consumers``
 to see how oTree queries and saves models inside consumers.
 
 If you're on Windows you will need to pip install ``pypiwin32``.

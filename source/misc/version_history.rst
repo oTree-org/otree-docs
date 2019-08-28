@@ -4,12 +4,18 @@ Version history
 Version 2.3
 ===========
 
--   Django Channels has been upgraded to version 2.x
--   ``runprodserver`` uses Uvicorn instead of Daphne
--   You can do MTurk sandbox testing locally. Install Redis then run
-    ``otree runprodserver 8001 --dev-https`` to run an HTTPS server on ``https://localhost:8001``.
+-   oTree now requires Python 3.7
+-   Django Channels has been upgraded to version 2.x.
+-   oTree extensions written for old versions of oTree (such otree_tools, mturkotreeutils, etc)
+    may not work until they are upgraded to the new version.
+-   Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩.
+-   On Windows, ``runprodserver`` just launches 1 worker process. If you want more processes,
+    you should use a process manager. (This is due to a limitation of the ASGI server)
+-   ``runprodserver`` uses Uvicorn/Hypercorn instead of Daphne
+-   Experimental feature: You can do MTurk sandbox testing locally. Install Redis then run
+    ``otree runprodserver 8001 --dev-https`` then go to ``https://127.0.0.1:8001``.
     You will get a security warning but it's OK because the site is on your own computer.
-
+-   update_my_code has been removed
 
 Version 2.2
 ===========

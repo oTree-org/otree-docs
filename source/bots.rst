@@ -468,11 +468,8 @@ For example, if it's on Heroku, you would do like this::
     otree browser_bots mysession --server-url=https://YOUR-SITE.herokuapp.com
 
 
-Command-line browser bots: tips & tricks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You will get the best performance if you use PostgreSQL rather
-SQLite, and use ``runprodserver`` rather than ``devserver``.
+Performance
+~~~~~~~~~~~
 
 On my PC, running the default public_goods session with 3 participants takes about 4-5 seconds,
 and with 9 participants takes about 10 seconds.

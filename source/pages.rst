@@ -55,9 +55,10 @@ Use this to pass variables to the template. Example:
 
     class Page1(Page):
         def vars_for_template(self):
+            a = self.player.num_apples * 10
             return dict(
-                a=1 + 1,
-                b=self.player.num_apples * 10
+                a=a,
+                b=1 + 1,
             )
 
 .. note::
