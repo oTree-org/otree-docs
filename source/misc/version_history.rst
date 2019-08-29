@@ -9,8 +9,8 @@ Version 2.3
 -   oTree extensions written for old versions of oTree (such otree_tools, mturkotreeutils, etc)
     may not work until they are upgraded to the new version of Channels.
     more info
-    :ref:`here <https://groups.google.com/d/msg/otree/FGwgNYDp8TQ/zClOFHbGEwAJ>__,
-    :ref:`here <https://groups.google.com/d/msg/otree/hCV7j03TP_o/_-snq3QEAgAJ>__, and
+    :ref:`here <https://groups.google.com/d/msg/otree/FGwgNYDp8TQ/zClOFHbGEwAJ>`__,
+    :ref:`here <https://groups.google.com/d/msg/otree/hCV7j03TP_o/_-snq3QEAgAJ>`__, and
     :ref:`here <channels>`.
 -   Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩.
 -   On Windows, ``runprodserver`` just launches 1 worker process. If you want more processes,
