@@ -94,15 +94,3 @@ This means amounts will get rounded to whole numbers,
 like ``10`` divided by ``3`` is ``3``.
 So, we recommend using point magnitudes high enough that you don't care about rounding error.
 For example, set the endowment of a game to 1000 points, rather than 100.
-If you really want decimal places in your points, you can set
-``POINTS_DECIMAL_PLACES = 2``, etc.
-(But in our experience, it's simpler to just keep points as integers,
-because with decimal places there are more complications about formatting and rounding.)
-Anyway, if the extra decimal places show up but are always 0,
-then you should reset the database.
-
-Misc
-----
-
-If you want numbers to be formatted like ``1,000,000`` or ``1 000 000``,
-see `USE_THOUSAND_SEPARATOR <https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-USE_THOUSAND_SEPARATOR>`__.

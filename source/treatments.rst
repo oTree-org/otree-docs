@@ -25,8 +25,7 @@ And then randomly assign players to the "blue" or "red" treatment group:
                 print('set player.color to', player.color)
 
 You can also assign treatments at the group level (put the ``StringField``
-in the ``Group`` class and change the above code to use
-``get_groups()`` and ``group.color``).
+in ``Group`` and change the above code to use ``get_groups()`` and ``group.color``).
 
 Treatment groups & multiple rounds
 ----------------------------------
@@ -77,7 +76,7 @@ But when you are testing your game, it is often useful to choose explicitly whic
 Let's say you are developing the game from the above example and want to show your
 colleagues both treatments (red and blue). You can create 2 session
 configs that are the same,
-except for ``color`` (in oTree Studio, add a "custom entry"):
+except for ``color`` (in oTree Studio, add a "custom parameter"):
 
 .. code-block:: python
 

@@ -7,11 +7,12 @@ Version 2.3
 -   Various improvements to performance, stability, and ease of use.
 -   oTree now requires Python 3.7
 -   oTree extensions written for old versions of oTree (such otree_tools, mturkotreeutils, etc)
-    may not work until they are upgraded to the new version of Channels.
+    may not work until they are upgraded to the new version of Django & Channels.
     more info
     `here <https://groups.google.com/d/msg/otree/FGwgNYDp8TQ/zClOFHbGEwAJ>`__,
     `here <https://groups.google.com/d/msg/otree/hCV7j03TP_o/_-snq3QEAgAJ>`__, and
     :ref:`here <channels>`.
+-   oTree now uses Django 2.2.
 -   Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩.
 -   On Windows, ``runprodserver`` just launches 1 worker process. If you want more processes,
     you should use a process manager. (This is due to a limitation of the ASGI server)
@@ -51,11 +52,50 @@ Version 2.1
     If you can't remove the offending variable,
     you can apply the ``|default`` filter, like: ``{{ my_undefined_variable|default:None }}``
 -   oTree now warns you if you use an invalid attribute on a Page/WaitPage.
-    You can disable this by setting ``_allow_custom_attributes=True`` on the page class.
-    See `here <https://groups.google.com/forum/#!topic/otree/_yzlaTMfJKs>`__
-    for more details.
 -   CSV/Excel data export is done asynchronously, which will fix
     timeout issues for large files on Heroku.
 -   Better performance, especially for "Monitor" and "Data" tab in admin interface
+
+
+.. _dynamic-validation-new-format:
+
+New format for form validation
+------------------------------
+
+As of May 2019, it is recommended to define the following methods on the Player
+(or Group) model, not the Page:
+
+-   FIELD_min
+-   FIELD_max
+-   FIELD_choices
+-   FIELD_error_message
+
+For example, here is the old format:
+
+.. code-block:: python
+
+    class MyPage(Page):
+
+        form_model = 'player'
+        form_fields = ['offer']
+
+        def offer_max(self):
+            return self.player.endowment
+
+To change this to the new format, you move ``offer_max`` into the Player model:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+
+        offer = models.CurrencyField()
+
+        def offer_max(self):
+            return self.endowment
+
+Note that we change ``return self.player.endowment`` to just ``self.endowment``,
+because ``self`` *is* the player.
+
+The old format will continue to work, so it is not urgent for you to make this change.
 
 

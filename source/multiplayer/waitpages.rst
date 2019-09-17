@@ -16,12 +16,7 @@ to proceed.
 If your subsession has multiple groups playing simultaneously, and you
 would like a wait page that waits for all groups (i.e. all players in
 the subsession), you can set the attribute
-``wait_for_all_groups = True`` on the wait page, e.g.:
-
-.. code-block:: python
-
-    class AllGroupsWaitPage(WaitPage):
-        wait_for_all_groups = True
+``wait_for_all_groups = True`` on the wait page.
 
 For more information on groups, see :ref:`groups`.
 
@@ -38,11 +33,10 @@ or determine the winner.
 
 .. code-block:: python
 
-    class ResultsWaitPage(WaitPage):
-        def after_all_players_arrive(self):
-            print('in after_all_players_arrive')
-            for player in self.group.get_players():
-                player.payoff = c(100)
+    def after_all_players_arrive(self):
+        print('in after_all_players_arrive')
+        for player in self.group.get_players():
+            player.payoff = c(100)
 
 Note, you can't use ``self.player`` inside ``after_all_players_arrive``,
 because the code is executed once for the entire group,
@@ -56,7 +50,6 @@ Works the same way as with regular pages.
 
 If some players in the group skip the wait page,
 then ``after_all_players_arrive()`` may not be run.
-
 
 .. _group_by_arrival_time:
 

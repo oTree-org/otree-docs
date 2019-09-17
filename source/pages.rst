@@ -3,13 +3,9 @@
 Pages
 =====
 
-Each page that your participants see is defined by a ``Page`` class.
+Each page that your participants see is defined by a ``Page``.
 
-Your ``page_sequence`` variable that gives the order of the pages. For example:
-
-.. code-block:: python
-
-    page_sequence = [Start, Offer, Accept, Results]
+Your ``page_sequence`` gives the order of the pages.
 
 If your game has multiple rounds, this sequence will be repeated (see :ref:`rounds`).
 
@@ -28,21 +24,17 @@ For example, to only show the page to P2 in each group:
 
 .. code-block:: python
 
-    class Page1(Page):
-        def is_displayed(self):
-            return self.player.id_in_group == 2
+    def is_displayed(self):
+        return self.player.id_in_group == 2
 
 Or only show the page in round 1:
 
 .. code-block:: python
 
-    class Page1(Page):
-        def is_displayed(self):
-            return self.round_number == 1
+    def is_displayed(self):
+        return self.round_number == 1
 
-If you need to repeat the same rule for many pages, see :ref:`here <skip_many>`.
-Or try out :ref:`app_after_this_page`.
-
+If you need to repeat the same rule for many pages, use :ref:`app_after_this_page`.
 
 .. _vars_for_template:
 
@@ -53,18 +45,12 @@ Use this to pass variables to the template. Example:
 
 .. code-block:: python
 
-    class Page1(Page):
-        def vars_for_template(self):
-            a = self.player.num_apples * 10
-            return dict(
-                a=a,
-                b=1 + 1,
-            )
-
-.. note::
-
-    The documentation now uses ``dict()`` instead of ``{}`` in code examples.
-    More info `here <https://groups.google.com/forum/#!topic/otree/gSggNVict6g>`__.
+    def vars_for_template(self):
+        a = self.player.num_apples * 10
+        return dict(
+            a=a,
+            b=1 + 1,
+        )
 
 Then in the template you can access ``a`` and ``b`` like this:
 
@@ -97,33 +83,9 @@ Example:
 
 .. code-block:: python
 
-    class Page1(Page):
-        def before_next_page(self):
-            self.player.tripled_apples = self.player.num_apples * 3
+    def before_next_page(self):
+        self.player.tripled_apples = self.player.num_apples * 3
 
-template_name
-~~~~~~~~~~~~~
-
-Each Page should have a file in ``templates/`` with the same name.
-For example, if your app has this page in ``my_app/pages.py``:
-
-.. code-block:: python
-
-    class Page1(Page):
-        pass
-
-Then you should create a file ``my_app/templates/my_app/Page1.html``,
-(note that my_app is repeated).
-See :ref:`templates` for info on how to write an HTML template.
-
-If the template needs to have a different name from your
-page class (e.g. you are sharing the same template for multiple pages),
-set ``template_name``. Example:
-
-.. code-block:: python
-
-    class Page1(Page):
-        template_name = 'app_name/MyPage.html'
 
 timeout_seconds
 ~~~~~~~~~~~~~~~
@@ -151,10 +113,9 @@ For example, to skip to the next app, you would do:
 
 .. code-block:: python
 
-    class MyPage(Page):
-        def app_after_this_page(self, upcoming_apps):
-            if self.player.whatever:
-                return upcoming_apps[0]
+    def app_after_this_page(self, upcoming_apps):
+        if self.player.whatever:
+            return upcoming_apps[0]
 
 ``upcoming_apps`` is the remainder of the ``app_sequence`` (a list of strings).
 Therefore, to skip to the last app, you would return ``upcoming_apps[-1]``.
@@ -163,11 +124,10 @@ Or you could just return a hardcoded string
 
 .. code-block:: python
 
-    class MyPage(Page):
-        def app_after_this_page(self, upcoming_apps):
-            print('upcoming_apps is', upcoming_apps)
-            if self.player.whatever:
-                return "public_goods"
+    def app_after_this_page(self, upcoming_apps):
+        print('upcoming_apps is', upcoming_apps)
+        if self.player.whatever:
+            return "public_goods"
 
 If this function doesn't return anything,
 the player proceeds to the next page as usual.

@@ -26,6 +26,90 @@ such as making 2 session configs that have a different
 ``'treatment'`` parameter,
 and then checking for ``self.session.config['treatment']`` in your app's code.
 
+
+.. _many-fields:
+
+How to make many fields
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Let's say your app has many fields that are almost the same, such as:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+
+        f1 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f2 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f3 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f4 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f5 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f6 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f7 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f8 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f9 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+        f10 = models.IntegerField(
+            choices=[-1, 0, 1], widget=widgets.RadioSelect,
+            blank=True, initial=0
+        )
+
+        # etc...
+
+This is quite complex; you should look for a way to simplify.
+
+Are the fields all displayed on separate pages? If so, consider converting
+this to a 10-round game with just one field. See the
+`real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
+sample game for an example of how to just have 1 page that gets looped over many rounds,
+varying the question that gets displayed with each round.
+
+If that's not possible, then you can reduce the amount of repeated code
+by defining a function that returns a field:
+
+.. code-block:: python
+
+    def make_field(label):
+        return models.IntegerField(
+            choices=[1,2,3,4,5],
+            label=label,
+            widget=widgets.RadioSelect,
+        )
+
+    class Player(BasePlayer):
+
+        q1 = make_field('I am quick to understand things.')
+        q2 = make_field('I use difficult words.')
+        q3 = make_field('I am full of ideas.')
+        q4 = make_field('I have excellent ideas.')
+
+
+
 Templates: prevent code duplication by using a base template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -79,7 +163,7 @@ In Django, it's generally recommended to have "thick models" and "thin pages".
 Example 1: is_displayed
 ```````````````````````
 
-For example, let's say that your page classes all
+For example, let's say that your pages all
 repeat some of the code. For example, you use ``is_displayed`` to skip
 the rest of the app once a certain participant var is set:
 
@@ -277,3 +361,5 @@ Then your pages could be simplified to:
     class HighTax(Page):
         def is_displayed(self):
             return self.player.high_tax
+
+

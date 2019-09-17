@@ -129,9 +129,6 @@ using
 `get_FOO_display <https://docs.djangoproject.com/en/1.11/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
 , like this:
 ``player.get_level_display() # returns e.g. 'Medium'``.
-However, if you define the choices dynamically with :ref:`FOO_choices`,
-in order to use ``get_*_display()`` you need to also define the ``*_choices``
-method on the Player/Group in models.py.
 
 Optional fields
 ~~~~~~~~~~~~~~~
@@ -155,54 +152,13 @@ If you want them to be determined dynamically
 then you can instead define one of the below
 methods on your Page.
 
-.. note::
-
-    As of May 2019 (oTree 2.1.35), it is recommended to define the following methods on the Player
-    (or Group) model, not the Page:
-
-    -   FIELD_min
-    -   FIELD_max
-    -   FIELD_choices
-    -   FIELD_error_message
-
-    For example, here is the old format:
-
-    .. code-block:: python
-
-        class MyPage(Page):
-
-            form_model = 'player'
-            form_fields = ['offer']
-
-            def offer_max(self):
-                return self.player.endowment
-
-    To change this to the new format, you move ``offer_max`` into the Player model:
-
-    .. code-block:: python
-
-        class Player(BasePlayer):
-
-            offer = models.CurrencyField()
-
-            def offer_max(self):
-                return self.endowment
-
-    Note that we change ``return self.player.endowment`` to just ``self.endowment``,
-    because ``self`` *is* the player.
-
-    The old format will continue to work, so it is not urgent for you to make this change.
-
+Note: if you have apps written before May 2019, the recommended format for these validation methods
+has changed. See :ref:`dynamic-validation-new-format`.
 
 .. _FOO_choices:
 
 {field_name}_choices()
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    It is now recommended to define this method on the Player
-    (or Group) model, not the Page. See the note above.
 
 Like setting ``choices=``,
 this will set the choices for the form field
@@ -217,21 +173,15 @@ Example:
         fruit = models.StringField()
 
         def fruit_choices(self):
+            import random
             choices = ['apple', 'kiwi', 'mango']
             random.shuffle(choices)
             return choices
-
-(If you're not using oTree Studio, then you need to have ``import random`` at the top of your file.)
 
 .. _FOO_max:
 
 {field_name}_max()
 ~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    It is now recommended to define this method on the Player
-    (or Group) model, not the Page. See the note above.
 
 The dynamic alternative to setting ``max=`` in the model field. For example:
 
@@ -249,10 +199,6 @@ The dynamic alternative to setting ``max=`` in the model field. For example:
 
 {field_name}_min()
 ~~~~~~~~~~~~~~~~~~
-.. note::
-
-    It is now recommended to define this method on the Player
-    (or Group) model, not the Page. See the note above.
 
 The dynamic alternative to setting ``min=`` on the model field.
 
@@ -260,11 +206,6 @@ The dynamic alternative to setting ``min=`` on the model field.
 
 {field_name}_error_message()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    It is now recommended to define this method on the Player
-    (or Group) model, not the Page. See the note above.
 
 This is the most flexible method for validating a field.
 
@@ -289,7 +230,7 @@ Validating multiple fields together
 
 Let's say you have 3 integer fields in your form whose names are
 ``int1``, ``int2``, and ``int3``, and the values submitted must sum to
-100. You can enforce this with the ``error_message`` method:
+100. You can enforce this with the ``error_message`` method, which goes on the page, not the Player model:
 
 .. code-block:: python
 
@@ -338,23 +279,22 @@ And in your template, you would have::
     {% formfield group.offer %}
 
 
+.. _get_form_fields:
+
 Determining form fields dynamically
 -----------------------------------
 
 If you need the list of form fields to be dynamic, instead of
-``form_fields`` you can define a method ``get_form_fields(self)`` that
+``form_fields`` you can define a method ``get_form_fields`` that
 returns the list. For example:
 
 .. code-block:: python
 
-    class MyPage(Page):
-
-        form_model = 'player'
-        def get_form_fields(self):
-            if self.player.num_bids == 3:
-                return ['bid_1', 'bid_2', 'bid_3']
-            else:
-                return ['bid_1', 'bid_2']
+    def get_form_fields(self):
+        if self.player.num_bids == 3:
+            return ['bid_1', 'bid_2', 'bid_3']
+        else:
+            return ['bid_1', 'bid_2']
 
 But if you do this, you have to be sure to also include the same
 ``{% formfield %}`` elements in your template. The easiest way is to use
@@ -559,34 +499,6 @@ add ``type="button"`` to the ``<button>``:
 
 Miscellaneous & advanced
 ------------------------
-
-Forms with a dynamic vector of fields
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Let's say you want a form with a vector of n fields that are identical, except for some numerical index, e.g.:
-
-.. code-block:: python
-
-    contribution[1], contribution[2], ..., contribution[n]
-
-Furthermore, suppose n is variable (can range from 1 to N).
-
-Currently in oTree, you can only define a fixed number of fields in a model.
-So, you should define in ``models.py`` N fields (``contribution_1...contribution_N...``),
-and then use ``get_form_fields`` as described above to dynamically return a list with the desired subset of these fields.
-
-For example, let's say the above variable ``n`` is actually an ``IntegerField`` on the player,
-which gets set dynamically at some point in the game. You can use ``get_form_fields``
-like this:
-
-.. code-block:: python
-
-    class MyPage(Page):
-
-        form_model = 'player'
-        def get_form_fields(self):
-            return ['contribution_{}'.format(i) for i in range(1, self.player.n + 1)]
-
 
 Form fields with dynamic labels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -22,7 +22,7 @@ The following variables are available in templates:
 -   ``subsession``: the subsession the current player belongs to
 -   ``participant``: the participant the current player belongs to
 -   ``session``: the current session
--   ``Constants``: your Constants class
+-   ``Constants``
 -   Any variables you passed with :ref:`vars_for_template`.
 
 Conditions ("if")
@@ -291,71 +291,10 @@ Where to put JavaScript/CSS code
 You can put JavaScript and CSS anywhere just by using the usual
 ``<script></script>`` or ``<style></style>``, anywhere in your template.
 
-If you have a lot of scripts/styles and want to keep your code organized,
-you can put them in separate blocks called ``scripts`` and ``styles``:
-
-.. code-block:: HTML+django
-
-    {% block content %}
-        ...
-    {% endblock %}
-
-    {% block scripts %}
-        <script>
-            alert('hello world');
-        </script>
-    {% endblock %}
-
-
-    {% block styles %}
-        <style>
-
-        </style>
-    {% endblock %}
-
-
+If you have a lot of scripts/styles,
+you can put them in separate blocks outside of ``content``: ``scripts`` and ``styles``.
 It's not mandatory to do this, but: it keeps your code organized and ensures that things are loaded in the correct order
 (CSS, then your page content, then JavaScript).
-
-.. _base-template:
-
-Advanced: CSS/JS and base templates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To include the same JS/CSS in all pages of an app,
-make a base template for the app.
-
-For example, if your app's name is ``public_goods``,
-create ``public_goods/templates/public_goods/Page.html``:
-
-.. code-block:: html+django
-
-    {% extends "global/Page.html" %}
-    {% load otree %}
-
-    {% block app_styles %}
-        <style>
-            ...
-        </style>
-    {% endblock %}
-
-    {% block app_scripts %}
-        <script>
-            ...
-        </script>
-    {% endblock %}
-
-Then make each template inherit from this template:
-
- .. code-block:: html+django
-
-    {% extends "public_goods/Page.html" %}
-    {% load otree %}
-    ...
-
-To include the same JS/CSS in *all apps* of a project,
-modify ``_templates/global/Page.html``.
-In that file, you will find the blocks ``global_scripts`` and ``global_styles``.
 
 .. _selectors:
 

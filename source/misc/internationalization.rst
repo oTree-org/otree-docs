@@ -25,7 +25,7 @@ system.
 
 A quick summary:
 
--   Go to ``settings.py``, change ``LANGUAGE_CODE``, and restart the server.
+-   In your settings, change ``LANGUAGE_CODE``, and restart the server.
     Examples::
 
         LANGUAGE_CODE = 'fr'

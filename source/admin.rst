@@ -27,6 +27,13 @@ to ``DEMO``.
 If you don't want any password protection at all,
 leave this variable unset/blank.
 
+The normal admin username is "admin".
+You should set your password in the ``OTREE_ADMIN_PASSWORD`` environment variable
+(on Heroku, log into your Heroku dashboard, and define it as a config var).
+
+If you change the admin username or password, you need to reset the database.
+
+
 Start links
 -----------
 

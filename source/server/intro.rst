@@ -32,9 +32,6 @@ Follow these steps:
 
 :ref:`Ubuntu Linux <server-ubuntu>` instructions.
 
-**Next steps**
-After setting up your server, see :ref:`server_final_steps`.
-
 ..  Consider removing the toctree because I think it's better for people to read
     through the instructions above, rather than jumping into a page they don't
     understand. Or, add info to the individual pages above, so incoming visitors
@@ -47,5 +44,3 @@ After setting up your server, see :ref:`server_final_steps`.
     server-windows.rst
     adhoc.rst
     ubuntu.rst
-    next_steps.rst
-    git.rst

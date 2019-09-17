@@ -1,19 +1,62 @@
-.. _server_final_steps:
+Advanced features
+=================
 
-Server deployment: final steps
-==============================
+These are advanced features that are mostly unsupported in oTree Studio.
 
-Look at your server check
--------------------------
+Templates
+---------
 
-In the oTree admin interface, click "Server Check" in the header bar.
+template_name
+~~~~~~~~~~~~~
 
+If the template needs to have a different name from your
+page class (e.g. you are sharing the same template for multiple pages),
+set ``template_name``. Example:
 
-Testing with browser bots
--------------------------
+.. code-block:: python
 
-Before launching a study, it's advisable to test your apps with bots,
-especially browser bots. See the section :ref:`bots`.
+    class Page1(Page):
+        template_name = 'app_name/MyPage.html'
+
+.. _base-template:
+
+CSS/JS and base templates
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To include the same JS/CSS in all pages of an app,
+make a base template for the app.
+
+For example, if your app's name is ``public_goods``,
+create ``public_goods/templates/public_goods/Page.html``:
+
+.. code-block:: html+django
+
+    {% extends "global/Page.html" %}
+    {% load otree %}
+
+    {% block app_styles %}
+        <style>
+            ...
+        </style>
+    {% endblock %}
+
+    {% block app_scripts %}
+        <script>
+            ...
+        </script>
+    {% endblock %}
+
+Then make each template inherit from this template:
+
+ .. code-block:: html+django
+
+    {% extends "public_goods/Page.html" %}
+    {% load otree %}
+    ...
+
+To include the same JS/CSS in *all apps* of a project,
+modify ``_templates/global/Page.html``.
+In that file, you will find the blocks ``global_scripts`` and ``global_styles``.
 
 .. _migrations:
 

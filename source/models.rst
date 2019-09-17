@@ -1,7 +1,7 @@
 Models
 ++++++
 
-An oTree app must define 3 data models:
+An oTree app has 3 data models:
 
 -  Subsession
 -  Group
@@ -119,7 +119,7 @@ More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.
 
 Note that ``self`` here is a subsession object,
-because we are inside the ``Subsession`` class.
+because we are inside ``Subsession``.
 So, you cannot do ``self.player``, because there is more than 1 player
 in the subsession. Instead, use ``self.get_players()`` to get all of them.
 
@@ -284,24 +284,30 @@ Other participant attributes and methods
 Constants
 ---------
 
-The ``Constants`` class is the recommended place to put your app's
+``Constants`` is the recommended place to put your app's
 parameters and constants that do not vary from player
 to player.
 
 Here are the required constants:
 
--   ``name_in_url``: the name used to identify your app in the
-    participant's URL.
-
-    For example, if you set it to ``public_goods``, a participant's URL might
-    look like this:
-
-    ``http://otree-demo.herokuapp.com/p/zuzepona/public_goods/Introduction/1/``
-
 -  ``players_per_group`` (described in :ref:`groups`)
-
 -  ``num_rounds`` (described in :ref:`rounds`)
 
+If you're coding oTree games in a text editor, you must also define ``name_in_url``,
+which is the name used to identify your app in URLs that the participant may see.
+By default, it is the name of your app, but you can change it to something else if you want
+to hide your app's name.
+
+Constants can be numbers, strings, booleans, lists, etc.
+But for more complex data types like dicts, lists of dicts, etc,
+you should instead define it in a subsession method. For example,
+instead of defining a Constant called ``my_dict``, do this:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+        def my_dict(self):
+            return dict(a=[1,2], b=[3,4])
 
 Miscellaneous topics
 ====================
@@ -363,85 +369,4 @@ It may appear to work during testing but will eventually break.
 Instead, you should generate the random variables inside a method,
 such as :ref:`creating_session`.
 
-
-.. _many-fields:
-
-How to make many fields
------------------------
-
-Let's say your app has many fields that are almost the same, such as:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        f1 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f2 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f3 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f4 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f5 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f6 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f7 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f8 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f9 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-        f10 = models.IntegerField(
-            choices=[-1, 0, 1], widget=widgets.RadioSelect,
-            blank=True, initial=0
-        )
-
-        # etc...
-
-This is quite complex; you should look for a way to simplify.
-
-Are the fields all displayed on separate pages? If so, consider converting
-this to a 10-round game with just one field. See the
-`real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
-sample game for an example of how to just have 1 page that gets looped over many rounds,
-varying the question that gets displayed with each round.
-
-If that's not possible, then you can reduce the amount of repeated code
-by defining a function that returns a field:
-
-.. code-block:: python
-
-    def make_field(label):
-        return models.IntegerField(
-            choices=[1,2,3,4,5],
-            label=label,
-            widget=widgets.RadioSelect,
-        )
-
-    class Player(BasePlayer):
-
-        q1 = make_field('I am quick to understand things.')
-        q2 = make_field('I use difficult words.')
-        q3 = make_field('I am full of ideas.')
-        q4 = make_field('I have excellent ideas.')
 

@@ -137,7 +137,7 @@ and in round 4, use ``group_like_round(3)`` to copy the group structure from rou
 Group
 -----
 
-Go to your ``Group`` class and add a method called ``set_payoffs``
+Go to ``Group`` and add a method called ``set_payoffs``
 (you can choose another name).
 Below we use ``get_player_by_role`` to fetch each of the 2 players in the group,
 and decide the winner:

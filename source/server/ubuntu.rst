@@ -256,7 +256,3 @@ each user should have their own conf file, with their personal
 parameters like virtualenv path, oTree project path,
 ``DATABASE_URL`` and ``REDIS_URL`` env vars, port number, etc.
 
-Next steps
-----------
-
-See :ref:`server_final_steps` for steps you should take before launching your study.

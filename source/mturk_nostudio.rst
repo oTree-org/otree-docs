@@ -61,11 +61,11 @@ You can modify the text as you wish:
 Session config
 --------------
 
-In ``SESSION_CONFIG_DEFAULTS``, add the entry:
+In ``SESSION_CONFIG_DEFAULTS``, add an entry called `mturk_hit_settings` whose value is:
 
 .. code-block:: python
 
-    'mturk_hit_settings': {
+    {
         'keywords': ['bonus', 'study'],
         'title': 'Title for your experiment',
         'description': 'Description for your experiment',

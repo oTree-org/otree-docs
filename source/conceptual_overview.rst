@@ -70,18 +70,14 @@ A player is like a temporary "role" played by a participant.
 A participant can be player 2 in the first subsession, player 1 in the
 next subsession, etc.
 
-
-
 .. _object_model:
 
 What is "self"?
 ---------------
 
 If you are ever wondering what ``self`` means in a particular context,
-scroll up until you see the name of the class.
-
-For example, in this code, ``self`` is a player
-(an instance of the ``Player`` class).
+it is whatever class the method belongs to: Player, Group, Subsession, or Page.
+For example, in this code, ``self`` is the player.
 
 .. code-block:: python
 
@@ -94,8 +90,7 @@ For example, in this code, ``self`` is a player
 The name ``self`` is just shorter and more convenient than ``player``.
 
 This is similar to how people don't use their own names when they talk about themselves; they just
-use pronouns like "me", "myself", and "I". So, ``self`` is basically a pronoun.
-
+use pronouns like "me", "myself", and "I".
 
 Self: extended examples
 -----------------------

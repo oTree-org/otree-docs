@@ -284,7 +284,7 @@ before players begin playing. So, if your shuffling logic needs to depend on
 something that happens after the session starts, you should do the
 shuffling in a wait page instead.
 
-Let's say you have defined a method on the ``Subsession`` class
+Let's say you have defined a method on the ``Subsession``
 called ``do_my_shuffle()`` that uses ``set_group_matrix``, etc.
 
 You need to make a ``WaitPage`` with ``wait_for_all_groups=True``
