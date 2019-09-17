@@ -83,9 +83,9 @@ For example:
 
     from otree.api import expect
 
-    expect(self.player.budget, 100)
-    yield pages.Buy, dict(apples=1)
-    expect(self.player.budget, 99)
+    expect(self.player.num_apples, 100)
+    yield pages.Eat, dict(apples_eaten=1)
+    expect(self.player.num_apples, 99)
 
 If ``self.player.num_apples`` is not 99, then you will be alerted with an error.
 
