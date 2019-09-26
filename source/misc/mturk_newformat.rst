@@ -33,6 +33,7 @@ How do I switch to the new design?
 ----------------------------------
 
 #.  Install the new beta of oTree: ``pip3 install -U --pre otree``
+#.  In your ``requirements_base.txt``, put ``otree[mturk]>=2.4.0b1``.
 #.  Remove the "next button" on the last page of your study.
     (oTree will no longer automatically submit the assignment to MTurk.)
 #.  On the last page of your study, give the user a completion code.
@@ -82,3 +83,6 @@ You can easily test the appearance of this template by double-clicking the HTML 
 
 Once you have done all the above, the process for publishing to MTurk is the same
 (although the "publish" page looks different because various elements have been removed).
+
+Also, you can test in the MTurk sandbox locally. 
+(Before 2.4 you needed to first push to an HTTPS server like Heroku first.)

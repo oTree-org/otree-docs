@@ -66,7 +66,7 @@ In ``SESSION_CONFIG_DEFAULTS``, add an entry called `mturk_hit_settings` whose v
 .. code-block:: python
 
     {
-        'keywords': ['bonus', 'study'],
+        'keywords': 'bonus, study',
         'title': 'Title for your experiment',
         'description': 'Description for your experiment',
         'frame_height': 500,
