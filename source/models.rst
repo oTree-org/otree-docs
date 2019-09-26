@@ -118,33 +118,20 @@ For example:
 More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.
 
-Note that ``self`` here is a subsession object,
-because we are inside ``Subsession``.
-So, you cannot do ``self.player``, because there is more than 1 player
-in the subsession. Instead, use ``self.get_players()`` to get all of them.
-
 If your app has multiple rounds, ``creating_session`` gets run multiple
 times consecutively:
 
 .. code-block:: python
 
-    class Constants(BaseConstants):
-        name_in_url = 'print_statements'
-        players_per_group = None
-        num_rounds = 5
-
-
     class Subsession(BaseSubsession):
         def creating_session(self):
             print('in creating_session', self.round_number)
 
-Will output::
+Will output all at once::
 
     in creating_session 1
     in creating_session 2
     in creating_session 3
-    in creating_session 4
-    in creating_session 5
 
 
 get_groups()
@@ -288,15 +275,13 @@ Constants
 parameters and constants that do not vary from player
 to player.
 
-Here are the required constants:
+Here are the built-in constants:
 
 -  ``players_per_group`` (described in :ref:`groups`)
 -  ``num_rounds`` (described in :ref:`rounds`)
 
-If you're coding oTree games in a text editor, you must also define ``name_in_url``,
+You can also define ``name_in_url``,
 which is the name used to identify your app in URLs that the participant may see.
-By default, it is the name of your app, but you can change it to something else if you want
-to hide your app's name.
 
 Constants can be numbers, strings, booleans, lists, etc.
 But for more complex data types like dicts, lists of dicts, etc,

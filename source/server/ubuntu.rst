@@ -209,6 +209,9 @@ However, you still might want to use Apache/Nginx as a reverse proxy, for the fo
 -   You need to host other websites on the same server
 -   You need features like SSL or proxy buffering
 
+If you set up a reverse proxy, make sure to enable not only HTTP traffic
+but also websockets.
+no
 Troubleshooting
 ---------------
 

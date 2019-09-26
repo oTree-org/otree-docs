@@ -54,6 +54,11 @@ participants see. Clicking this button will submit the HIT and take the user bac
 In the admin interface for the session, the "Payments" tab lets you accept submitted assignments
 and pay workers.
 
+.. note::
+
+    As of September 2019, oTree is testing out a new format for
+    publishing studies on MTurk. See :ref:`here <mturk-new-format>`.
+
 Publishing a HIT
 ----------------
 

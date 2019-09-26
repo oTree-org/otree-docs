@@ -58,6 +58,73 @@ To include the same JS/CSS in *all apps* of a project,
 modify ``_templates/global/Page.html``.
 In that file, you will find the blocks ``global_scripts`` and ``global_styles``.
 
+Wait pages
+----------
+
+.. _customize_wait_page:
+
+Custom wait page template
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can make a custom wait page template.
+For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.html``:
+
+.. code-block:: html+django
+
+    {% extends 'otree/WaitPage.html' %}
+    {% load otree %}
+    {% block title %}{{ title_text }}{% endblock %}
+    {% block content %}
+        {{ body_text }}
+        <p>
+            My custom content here.
+        </p>
+    {% endblock %}
+
+Then tell your wait page to use this template:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        template_name = 'your_app_name/MyWaitPage.html'
+
+Then you can use ``vars_for_template`` in the usual way.
+Actually, the ``body_text`` and ``title_text`` attributes
+are just shorthand for setting ``vars_for_template``;
+the following 2 code snippets are equivalent:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        body_text = "foo"
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        def vars_for_template(self):
+            return dict(body_text="foo")
+
+If you want to apply your custom wait page template globally,
+save it to ``_templates/global/WaitPage.html``.
+oTree will then automatically use it everywhere instead of the built-in wait page.
+
+CSS and JavaScript in Wait Pages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Wait pages have the same block structure as regular pages
+(``global_scripts``, ``app_scripts``, ``scripts``, etc...),
+so you can follow the same instructions described in :ref:`base-template`
+and :ref:`selectors`.
+
+For example, to apply CSS to your custom wait page at ``_templates/global/WaitPage.html``,
+put a block ``global_scripts`` in the template.
+
+You can even make other custom wait pages inherit from ``_templates/global/WaitPage.html``,
+just the way regular pages inherit from ``_templates/global/Page.html``,
+and they can define the blocks ``app_scripts`` and ``scripts``, etc.
+
+
+
 .. _migrations:
 
 Modifying an existing database

@@ -433,9 +433,6 @@ First, include the HighCharts JavaScript::
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
-If you will be using HighCharts in many places, you can also put it in
-``app_scripts`` or ``global_scripts``; see above for more info.
-(But note that HighCharts can make your pages slower.)
 
 Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__
 and find the chart type that you want to make.

@@ -244,10 +244,3 @@ but ``age`` did not.
 
 If :ref:`error_message <error_message>` returns an error,
 then ``error_fields`` will be ``['__all__']``.
-
-Disabling HTML checks
----------------------
-
-If many of your pages incorrectly fail the static HTML checks,
-you can bypass these checks globally by setting ``BOTS_CHECK_HTML = False``
-in ``settings.py``.

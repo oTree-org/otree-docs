@@ -22,6 +22,8 @@ The recommended way to deploy to Heroku is to use
 which automates your Heroku setup.
 It's free for public projects.
 
+oTree Hub also offers error/performance monitoring and a Sentry service.
+
 The previous instructions for deploying to oTree through the command line and git
 are
 `here <https://github.com/oTree-org/otree-docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/source/server/heroku.rst#heroku-setup-option-2>`__.
