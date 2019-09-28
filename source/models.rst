@@ -280,8 +280,9 @@ Here are the built-in constants:
 -  ``players_per_group`` (described in :ref:`groups`)
 -  ``num_rounds`` (described in :ref:`rounds`)
 
-You can also define ``name_in_url``,
-which is the name used to identify your app in URLs that the participant may see.
+if you don't want your app's real name
+to be displayed in URLs,
+define a string constant ``name_in_url`` with your desired name.
 
 Constants can be numbers, strings, booleans, lists, etc.
 But for more complex data types like dicts, lists of dicts, etc,

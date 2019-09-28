@@ -249,36 +249,6 @@ Notes:
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
 -   This function is only executed if there are no other errors in the form.
 
-.. _form-model-group:
-
-form_model = 'group'
---------------------
-
-If you set ``form_model = 'group'``,
-the values submitted by the user will be stored
-onto the group model, rather than the player.
-This is often useful in games where some players make decisions on behalf of the group.
-For example, in an ultimatum game, player 1 makes an offer and player 2 accepts or rejects.
-Since there is only 1 offer made per group, you would define the ``offer`` field on the group:
-
-.. code-block:: python
-
-    class Group(Group):
-        offer = models.CurrencyField()
-
-Your page would look like this:
-
-.. code-block:: python
-
-    class Offer(Page):
-        form_model = 'group'
-        form_fields = ['offer'] # this means it will be stored in group.offer
-
-And in your template, you would have::
-
-    {% formfield group.offer %}
-
-
 .. _get_form_fields:
 
 Determining form fields dynamically
@@ -330,6 +300,8 @@ If you want a slider, it's recommended to use HTML like this:
         </div>
     </div>
 
+Remember to also define a field called ``pizza`` on your Player model with the appropriate
+min/max.
 (oTree also has a ``Slider`` widget but its customizability is limited.)
 
 .. _django-forms:
