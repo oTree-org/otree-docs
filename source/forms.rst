@@ -307,16 +307,30 @@ Widgets
 The full list of form input widgets offered by Django is
 `here <https://docs.djangoproject.com/en/1.7/ref/forms/widgets/#built-in-widgets>`__.
 
-oTree additionally offers:
-
--   ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal
+oTree additionally offers ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal
     layout, as you would see with a Likert scale)
--   ``Slider``
 
-    -   Slider is not yet supported in oTree Studio
-    -   To specify the step size, do: ``Slider(attrs={'step': '0.01'})``
-    -   To disable the current value from being displayed, do:
-        ``Slider(show_value=False)``
+If you want a slider, it's recommended to use HTML like this:
+
+.. code-block:: html
+
+    <label class="col-form-label">
+        Pizza is the best food:
+    </label>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Disagree</span>
+        </div>
+
+        <input type="range" name="pizza" min="1" max="5" step="1" class="form-control">
+
+        <div class="input-group-append">
+            <span class="input-group-text">Agree</span>
+        </div>
+    </div>
+
+(oTree also has a ``Slider`` widget but its customizability is limited.)
 
 .. _django-forms:
 
@@ -440,10 +454,10 @@ hidden form field. For example:
     form_fields = ['my_hidden_input']
 
     # HTML template
-    <input type="hidden" name="my_hidden_input" id="id_my_hidden_input"/>
+    <input type="hidden" name="my_hidden_input" />
 
 Then you can use JavaScript to set the value of that input, by selecting
-the element by id ``id_my_hidden_input``, and setting its ``value`` attribute.
+the element by name ``my_hidden_input``, and setting its ``value`` attribute.
 
 When the page is submitted, the value of your hidden input will be recorded
 in oTree like any other form field.
