@@ -280,7 +280,8 @@ The full list of form input widgets offered by Django is
 oTree additionally offers ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal
     layout, as you would see with a Likert scale)
 
-If you want a slider, it's recommended to use HTML like this:
+If you want a slider, instead of ``{% formfield %}``,
+put HTML like this in your template:
 
 .. code-block:: html
 

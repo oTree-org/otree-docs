@@ -41,6 +41,6 @@ Follow these steps:
     :maxdepth: 2
 
     heroku.rst
+    ubuntu.rst
     server-windows.rst
     adhoc.rst
-    ubuntu.rst
