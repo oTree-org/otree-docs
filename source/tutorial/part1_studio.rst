@@ -1,6 +1,6 @@
 .. _tutorial-studio:
 
-Part 0: Simple survey (for oTree Studio users)
+Part 1: Simple survey (for oTree Studio users)
 ==============================================
 
 (A video of this tutorial is on

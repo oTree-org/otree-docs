@@ -1,110 +1,117 @@
-Part 2: Trust game
-==================
+Part 2: Public goods game
+=========================
 
-Now let's create a 2-player `Trust game <https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,
-and learn some more features of oTree.
+(A video of this tutorial is on
+`YouTube <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__
+)
 
-To start, Player 1 receives 10 points; Player 2 receives nothing. Player
-1 can send some or all of his points to Player 2. Before P2 receives
-these points they will be tripled. Once P2 receives the tripled points he
-can decide to send some or all of his points to P1.
+We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__.
+The public goods game is a classic game in economics.
 
-The completed app is
-`here <https://github.com/oTree-org/oTree/tree/master/trust_simple>`__.
+This is a three player game where each player is initially endowed with 100 points.
+Each player individually makes a decision about how many of their points they want to contribute to the group.
+The combined contributions are multiplied by 2, and then divided evenly three ways and redistributed back to the players.
+
+The full code for the app we will write is
+`here <https://github.com/oTree-org/oTree/tree/master/public_goods_simple>`__.
+
 
 Create the app
 --------------
 
-Just as in the previous part of the tutorial, create another app, called ``my_trust``.
+Just as in the previous part of the tutorial, create another app, called ``my_public_goods``.
+
 
 Constants
 ---------
 
 Go to your app's Constants.
+(For more info, see :ref:`constants`.)
 
-First we define our app's constants. The endowment is 10 points and the
-donation gets tripled.
+-   Set ``players_per_group`` to 3.
+    oTree will then automatically divide players into groups of 3.
+-   The endowment to each player is 1000 points. So, let's define
+    ``endowment`` and set it to a currency value of ``1000``.
+-   Each contribution is multiplied by 2. So define an integer
+    constant called ``multiplier = 2``:
 
+Now we have the following constants:
+
+.. code-block:: Python
+
+    players_per_group = 3
+    num_rounds = 1
+    endowment = c(1000) # c() means it's a currency
+    multiplier = 2
+
+
+After the game is played,
+what data points will we need about each player?
+It's important to record how much each person contributed.
+So, go to the Player model and define a ``contribution`` column:
 
 .. code-block:: python
 
-    class Constants(BaseConstants):
-        name_in_url = 'my_trust'
-        players_per_group = 2
-        num_rounds = 1
-
-        endowment = c(10)
-        multiplication_factor = 3
-
-Models
-------
-
-Then we add fields to player and group. There are 2
-critical data points to record: the "sent" amount from P1, and the
-"sent back" amount from P2.
-
-Your first instinct may be to define the fields on the Player like this:
-
-.. code-block:: python
-
-    # Don't copy paste this
     class Player(BasePlayer):
+        contribution = models.CurrencyField(
+            min=0,
+            max=Constants.endowment,
+            label="How much will you contribute?"
+        )
 
-        sent_amount = models.CurrencyField()
-        sent_back_amount = models.CurrencyField()
+We also need to record the payoff the user makes at the end of the game,
+but we don't need to explicitly define a ``payoff`` field,
+because in oTree, the Player already contains a ``payoff`` column.
 
-The problem with this model is that ``sent_amount`` only applies to P1,
-and ``sent_back_amount`` only applies to P2. It does not make sense that
-P1 should have a field called ``sent_back_amount``. How can we make our
-data model more accurate?
-
-We can do it by defining those fields at the ``Group`` level. This makes
-sense because each group has exactly 1 ``sent_amount`` and exactly 1
-``sent_back_amount``:
+What data points are we interested in recording about each group? We
+might be interested in knowing the total contributions to the group, and
+the individual share returned to each player. So, we define those 2
+fields on the Group:
 
 .. code-block:: python
 
     class Group(BaseGroup):
+        total_contribution = models.CurrencyField()
+        individual_share = models.CurrencyField()
 
-        sent_amount = models.CurrencyField(
-            label="How much do you want to send to participant B?"
-        )
-        sent_back_amount = models.CurrencyField(
-            label="How much do you want to send back?"
-        )
 
-Define the templates and pages
-------------------------------
+Pages
+-----
 
-We need 3 pages:
+This game has 3 pages:
 
--  P1's "Send" page
--  P2's "Send back" page
--  "Results" page that both users see.
+-  Page 1: players decide how much to contribute
+-  Page 2: Wait page: players wait for others in their group
+-  Page 3: players are told the results
 
-Send page
-~~~~~~~~~
+Page 1: Contribute
+~~~~~~~~~~~~~~~~~~
+
+First let's define ``Contribute``. This page contains a form, so
+we need to define ``form_model`` and ``form_fields``.
+Specifically, this form should let you set the ``contribution``
+field on the player. (For more info, see :ref:`forms`.)
 
 .. code-block:: python
 
-    class Send(Page):
+    class Contribute(Page):
 
-        form_model = 'group'
-        form_fields = ['sent_amount']
+        form_model = 'player'
+        form_fields = ['contribution']
 
-        def is_displayed(self):
-            return self.player.id_in_group == 1
+Now, we create the HTML template.
+(If using PyCharm, create the template file ``Contribute.html``)
 
-Also, we use :ref:`is_displayed` to only show this to P1; P2 skips the
-page. For more info on ``id_in_group``, see :ref:`groups`.
-
-For the template, set the ``title`` block to ``Trust Game: Your Choice``, 
+Set the ``title`` block to ``Contribute``, 
 and the ``content`` block to:
 
-.. code-block:: django
+.. code-block:: html+django
 
     <p>
-    You are Participant A. Now you have {{Constants.endowment}}.
+        This is a public goods game with
+        {{ Constants.players_per_group }} players per group,
+        an endowment of {{ Constants.endowment }},
+        and a multiplier of {{ Constants.multiplier }}.
     </p>
 
     {% formfields %}
@@ -112,168 +119,132 @@ and the ``content`` block to:
     {% next_button %}
 
 
-SendBack.html
-~~~~~~~~~~~~~
+Page 2: ResultsWaitPage
+~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the page that P2 sees to send money back.
-Set the ``title`` block to ``Trust Game: Your Choice``, 
-and the ``content`` block to:
+When all players have completed the ``Contribute`` page,
+the players' payoffs can be calculated.
+Go to your Group model and add a method called ``set_payoffs``
+(note that ``self`` refers to the group):
+
+.. code-block:: python
+
+    def set_payoffs(self):
+        players = self.get_players()
+        contributions = [p.contribution for p in players]
+        self.total_contribution = sum(contributions)
+        self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
+        for p in players:
+            p.payoff = Constants.endowment - p.contribution + self.individual_share
+
+After a player makes a
+contribution, they cannot see the results page right away; they first
+need to wait for the other players to contribute. You therefore need to
+add a ``WaitPage``. Let's call it ``ResultsWaitPage``.
+When a player arrives at a wait page,
+they must wait until all other players in the group have arrived.
+Then everyone can proceed to the next page. (For more info, see :ref:`wait_pages`).
+
+Add ``after_all_players_arrive`` method to ``ResultsWaitPage``,
+and set it to trigger the ``set_payoffs`` method:
+
+.. code-block:: python
+
+    def after_all_players_arrive(self):
+        self.group.set_payoffs()
+
+Page 3: Results
+~~~~~~~~~~~~~~~
+
+Now we create a page called ``Results``.
+Set the template's content to:
 
 .. code-block:: html+django
 
     <p>
-        You are Participant B. Participant A sent you {{group.sent_amount}}
-        and you received {{tripled_amount}}.
+        You started with an endowment of {{ Constants.endowment }},
+        of which you contributed {{ player.contribution }}.
+        Your group contributed {{ group.total_contribution }},
+        resulting in an individual share of {{ group.individual_share }}.
+        Your profit is therefore {{ player.payoff }}.
     </p>
-
-    {% formfield group.sent_back_amount %}
 
     {% next_button %}
 
+Page sequence
+-------------
 
-Here is the code from pages.py. Notes:
-
--  We use :ref:`vars_for_template` to pass the variable ``tripled_amount``
-   to the template. You cannot do calculations directly in the HTML code,
-   so this number needs to be calculated in Python code and
-   passed to the template.
--  We define a method ``sent_back_amount_choices`` to populate the
-   dropdown menu dynamically. This is the feature called
-   ``{field_name}_choices``, which is explained here: :ref:`dynamic_validation`.
-
-.. code-block:: python
-
-    class SendBack(Page):
-
-        form_model = 'group'
-        form_fields = ['sent_back_amount']
-
-        def is_displayed(self):
-            return self.player.id_in_group == 2
-
-        def vars_for_template(self):
-            return dict(
-                tripled_amount=self.group.sent_amount * Constants.multiplication_factor
-            )
-
-        def sent_back_amount_choices(self):
-            return currency_range(
-                c(0),
-                self.group.sent_amount * Constants.multiplication_factor,
-                c(1)
-            )
-
-Results
-~~~~~~~
-
-The results page needs to look slightly different for P1 vs. P2. So, we
-use the ``{% if %}`` statement
-to condition on the current player's ``id_in_group``.
-Set the ``title`` block to ``Results``, and the content block to:
-
-.. code-block:: html+django
-
-    {% if player.id_in_group == 1 %}
-        <p>
-            You sent Participant B {{ group.sent_amount }}.
-            Participant B returned {{ group.sent_back_amount }}.
-        </p>
-    {% else %}
-        <p>
-            Participant A sent you {{ group.sent_amount }}.
-            You returned {{ group.sent_back_amount }}.
-        </p>
-
-    {% endif %}
-
-    <p>
-    Therefore, your total payoff is {{ player.payoff }}.
-    </p>
-
-.. code-block:: python
-
-    class Results(Page):
-        pass
-
-
-Wait pages and page sequence
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This game has 2 wait pages:
-
--  P2 needs to wait while P1 decides how much to send
--  P1 needs to wait while P2 decides how much to send back
-
-After the second wait page, we should calculate the payoffs. So, we use
-``after_all_players_arrive``.
-
-So, we define these pages:
-
-.. code-block:: python
-
-    class WaitForP1(WaitPage):
-        pass
-
-    class ResultsWaitPage(WaitPage):
-
-        def after_all_players_arrive(self):
-            group = self.group
-            p1 = group.get_player_by_id(1)
-            p2 = group.get_player_by_id(2)
-            p1.payoff = Constants.endowment - group.sent_amount + group.sent_back_amount
-            p2.payoff = group.sent_amount * Constants.multiplication_factor - group.sent_back_amount
-
-.. note::
-
-    An equivalent way would be to define
-    the payoff function in ``models.py`` like this
-    (note that the group is called ``self`` in this context):
-
-    .. code-block:: python
-
-        class Group(BaseGroup):
-
-            def set_payoffs(self):
-                p1 = self.get_player_by_id(1)
-                p2 = self.get_player_by_id(2)
-                p1.payoff = Constants.endowment - self.sent_amount + self.sent_back_amount
-                p2.payoff = self.sent_amount * Constants.multiplication_factor - self.sent_back_amount
-
-    Then, we could call it ("trigger it")
-    in ``after_all_players_arrive`` like this:
-
-    .. code-block:: python
-
-        def after_all_players_arrive(self):
-            self.group.set_payoffs()
-
-    This is actually the technique that's used more in the sample games.
-    Although it looks a bit more complex, you will see over time that putting your
-    game's logic in ``models.py`` helps with organization.
-
-    (The name ``set_payoffs`` is arbitrary.)
-
-Then we define the page sequence:
+Make sure your page_sequence is correct:
 
 .. code-block:: python
 
     page_sequence = [
-        Send,
-        WaitForP1,
-        SendBack,
+        Contribute,
         ResultsWaitPage,
-        Results,
+        Results
     ]
 
-Add an entry to your ``SESSION_CONFIGS``
-----------------------------------------
 
--   name: my_trust
--   display_name: My Trust Game (Simple Version)
--   num_demo_participants: 2
--   app_sequence: ['my_trust']
+Define the session config
+-------------------------
 
-Run the server
---------------
+We add another session config:
 
-Run your server and open your browser to ``http://localhost:8000`` to play the game.
+-   name: my_public_goods
+-   num_demo_participants: 3
+-   app_sequence: ['my_public_goods']
+
+
+Run the code
+------------
+
+Load the project again then open your browser to ``http://localhost:8000``.
+
+.. _print_debugging:
+
+Troubleshoot with print()
+-------------------------
+
+I often read messages on programming forums like,
+"My program is not working. I can't find the mistake,
+even though I have spent hours looking at my code".
+
+The solution is not to re-read the code until you find an error;
+it's to interactively **test** your program.
+
+The simplest way is using ``print()`` statements.
+If you don't learn this technique, you won't be able to program games effectively.
+
+You just need to insert a line in your code like this:
+
+.. code-block:: python
+
+    print('group.total_contribution is', self.group.total_contribution)
+
+Put this line in the part of your code that's not working,
+such as the payoff function defined above.
+When you play the game in your browser and that code gets executed,
+your print statement will be displayed in your command prompt window
+(not in your web browser).
+
+You can sprinkle lots of prints in your code
+
+.. code-block:: python
+
+    print('in payoff function')
+    contributions = [p.contribution for p in players]
+    print('contributions:', contributions)
+    group.total_contribution = sum(contributions)
+    group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
+    print('individual share', group.individual_share)
+    for p in players:
+        print('payoff before', p.payoff)
+        p.payoff = Constants.endowment - p.contribution + group.individual_share
+        print('payoff after', p.payoff)
+
+
+If you don't see the output in your console window,
+that means your code is not getting executed! (Which is why it isn't working.)
+
+Maybe it's because your code is inside an "if" statement that is always ``False``.
+Or maybe your code is in a function that never gets called (executed).

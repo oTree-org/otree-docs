@@ -1,376 +1,251 @@
-Part 3: Matching pennies
-========================
+Part 3: Trust game
+==================
 
-We will now create a "Matching pennies" game with the following
-features:
+Now let's create a 2-player `Trust game <https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,
+and learn some more features of oTree.
 
--  4 rounds
--  The roles of the players will be reversed halfway through
--  In each round, a "history box" will display the results of previous
-   rounds
--  A random round will be chosen for payment
+To start, Player 1 receives 10 points; Player 2 receives nothing. Player
+1 can send some or all of his points to Player 2. Before P2 receives
+these points they will be tripled. Once P2 receives the tripled points he
+can decide to send some or all of his points to P1.
 
 The completed app is
-`here <https://github.com/oTree-org/oTree/tree/master/matching_pennies>`__.
-
+`here <https://github.com/oTree-org/oTree/tree/master/trust_simple>`__.
 
 Create the app
 --------------
 
-Create an app called ``my_matching_pennies``.
-
+Just as in the previous part of the tutorial, create another app, called ``my_trust``.
 
 Constants
 ---------
 
-We define our constants as we have previously. Matching pennies is a
-2-person game and the payoff for winning a paying round is 1000 points.
-In this case, the game has 4 rounds, so we set ``num_rounds`` (see :ref:`rounds`).
+Go to your app's Constants.
+
+First we define our app's constants. The endowment is 10 points and the
+donation gets tripled.
+
 
 .. code-block:: python
 
     class Constants(BaseConstants):
-        name_in_url = 'my_matching_pennies'
+        name_in_url = 'my_trust'
         players_per_group = 2
-        num_rounds = 4
-        stakes = c(1000)
+        num_rounds = 1
 
-Player
+        endowment = c(10)
+        multiplication_factor = 3
+
+Models
 ------
 
-Now let's define our ``Player`` class:
+Then we add fields to player and group. There are 2
+critical data points to record: the "sent" amount from P1, and the
+"sent back" amount from P2.
 
--  In each round, each player decides "Heads" or "Tails", so we define a
-   field ``penny_side``, which will be displayed as a radio button.
--  We also have a boolean field ``is_winner`` that records if this
-   player won this round.
--  We define the ``role`` method (see :ref:`groups`) to define which player is the "Matcher"
-   and which is the "Mismatcher".
-
-So we have:
+Your first instinct may be to define the fields on the Player like this:
 
 .. code-block:: python
 
+    # Don't copy paste this
     class Player(BasePlayer):
-        penny_side = models.StringField(
-            choices=['Heads', 'Tails'],
-            widget=widgets.RadioSelect
+
+        sent_amount = models.CurrencyField()
+        sent_back_amount = models.CurrencyField()
+
+The problem with this model is that ``sent_amount`` only applies to P1,
+and ``sent_back_amount`` only applies to P2. It does not make sense that
+P1 should have a field called ``sent_back_amount``. How can we make our
+data model more accurate?
+
+We can do it by defining those fields at the ``Group`` level. This makes
+sense because each group has exactly 1 ``sent_amount`` and exactly 1
+``sent_back_amount``:
+
+.. code-block:: python
+
+    class Group(BaseGroup):
+
+        sent_amount = models.CurrencyField(
+            label="How much do you want to send to participant B?"
+        )
+        sent_back_amount = models.CurrencyField(
+            label="How much do you want to send back?"
         )
 
-        is_winner = models.BooleanField()
-
-        def role(self):
-            if self.id_in_group == 1:
-                return 'Mismatcher'
-            if self.id_in_group == 2:
-                return 'Matcher'
-
-Subsession
-----------
-
-Now let's define the code to randomly choose a round for payment.
-
-Create a method on the Subsession called ``creating_session``
-(see :ref:`creating_session`).
-
-We start by choosing a random integer between 1 and 4:
+We also define a method called ``sent_back_amount_choices`` to populate the
+dropdown menu dynamically. This is the feature called
+``{field_name}_choices``, which is explained here: :ref:`dynamic_validation`.
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            import random
-            paying_round = random.randint(1, Constants.num_rounds)
-            self.session.vars['paying_round'] = paying_round
-            print('set the paying round to', paying_round)
-
-There is a slight mistake, however. Because there are 4 rounds (i.e.
-subsessions), this code will get executed 4 times, e.g.::
-
-    set the paying round to 2
-    set the paying round to 4
-    set the paying round to 3
-    set the paying round to 1
-
-Each time, it will unnecessarily overwrite the previous value of
-``session.vars['paying_round']``. We can fix this with an ``if`` statement:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            import random
-            print('in creating_session')
-            if self.round_number == 1:
-                paying_round = random.randint(1, Constants.num_rounds)
-                self.session.vars['paying_round'] = paying_round
-                print('set the paying round to', paying_round)
-
-In round 3, let's swap roles,
-and in round 4, use ``group_like_round(3)`` to copy the group structure from round 3.
-(See :ref:`group_like_round <group_like_round>`):
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            import random
-            print('in creating_session')
-            if self.round_number == 1:
-                paying_round = random.randint(1, Constants.num_rounds)
-                self.session.vars['paying_round'] = paying_round
-                print('set the paying round to', paying_round)
-            if self.round_number == 3:
-                # reverse the roles
-                matrix = self.get_group_matrix()
-                for row in matrix:
-                    row.reverse()
-                self.set_group_matrix(matrix)
-            if self.round_number > 3:
-                self.group_like_round(3)
-
-(You can learn more about group shuffling in :ref:`shuffling`.)
-
-Group
------
-
-Go to ``Group`` and add a method called ``set_payoffs``
-(you can choose another name).
-Below we use ``get_player_by_role`` to fetch each of the 2 players in the group,
-and decide the winner:
-
-.. code-block:: python
-
-    class Group(BaseGroup):
-        def set_payoffs(self):
-            print('in set_payoffs')
-            matcher = self.get_player_by_role('Matcher')
-            mismatcher = self.get_player_by_role('Mismatcher')
-
-            if matcher.penny_side == mismatcher.penny_side:
-                matcher.is_winner = True
-                mismatcher.is_winner = False
-            else:
-                matcher.is_winner = False
-                mismatcher.is_winner = True
-
-Now let's set payoffs.
-A player should only receive a payoff if the current round is
-the randomly chosen paying round.
-So, we check the current round number and compare it against the
-value we previously stored in ``session.vars``. We loop through both
-players (``[P1,P2]``, or ``[mismatcher, matcher]``) and do the same
-check for both of them.
-
-.. code-block:: python
-
-    class Group(BaseGroup):
-        def set_payoffs(self):
-            print('in set_payoffs')
-            matcher = self.get_player_by_role('Matcher')
-            mismatcher = self.get_player_by_role('Mismatcher')
-
-            if matcher.penny_side == mismatcher.penny_side:
-                matcher.is_winner = True
-                mismatcher.is_winner = False
-            else:
-                matcher.is_winner = False
-                mismatcher.is_winner = True
-            for player in [mismatcher, matcher]:
-                if self.subsession.round_number == self.session.vars['paying_round'] and player.is_winner:
-                    player.payoff = Constants.stakes
-                else:
-                    player.payoff = c(0)
+        def sent_back_amount_choices(self):
+            return currency_range(
+                c(0),
+                self.group.sent_amount * Constants.multiplication_factor,
+                c(1)
+            )
 
 Define the templates and pages
 ------------------------------
 
-This game has 2 main pages:
+We need 3 pages:
 
--  A ``Choice`` page that gets repeated for each round. The user is asked to choose heads/tails, and they are
-   also shown a "history box" showing the results of previous rounds.
--  A ``ResultsSummary`` page that only gets displayed once at the end, and
-   tells the user their final payoff.
+-  P1's "Send" page
+-  P2's "Send back" page
+-  "Results" page that both users see.
 
-Choice page
-~~~~~~~~~~~
-
-Create a ``Choice`` page.
-``vars_for_template`` returns a variable ``player_in_previous_rounds``,
-so we can get the data for to get their data from rounds 1, 2, 3, etc.
+Send page
+~~~~~~~~~
 
 .. code-block:: python
 
-    class Choice(Page):
-        form_model = 'player'
-        form_fields = ['penny_side']
+    class Send(Page):
 
-        def vars_for_template(self):
-            return dict(
-                player_in_previous_rounds=self.player.in_previous_rounds()
-            )
+        form_model = 'group'
+        form_fields = ['sent_amount']
 
-Next, create the HTML template as before:
-In the ``title`` block:
+        def is_displayed(self):
+            return self.player.id_in_group == 1
 
-.. code-block:: html+django
+We use :ref:`is_displayed` to only show this to P1; P2 skips the
+page. For more info on ``id_in_group``, see :ref:`groups`.
 
-    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
+For the template, set the ``title`` to ``Trust Game: Your Choice``,
+and ``content`` to:
 
-In the ``content`` block:
-
-.. code-block:: html+django
-
-    <h4>Instructions</h4>
-    <p>
-        This is a matching pennies game.
-        Player 1 is the 'Mismatcher' and wins if the choices mismatch;
-        Player 2 is the 'Matcher' and wins if they match.
-
-    </p>
+.. code-block:: django
 
     <p>
-        At the end, a random round will be chosen for payment.
+    You are Participant A. Now you have {{Constants.endowment}}.
     </p>
 
-    <h4>Round history</h4>
-    <table class="table">
-        <tr>
-            <th>Round</th>
-            <th>Player and outcome</th>
-        </tr>
-        {% for p in player_in_previous_rounds %}
-            <tr>
-                <td>{{ p.round_number }}</td>
-                <td>You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>
-            </tr>
-        {% endfor %}
-    </table>
-
-    <p>
-        In this round, you are the {{ player.role }}.
-    </p>
-
-    {% formfield player.penny_side label="I choose:" %}
+    {% formfields %}
 
     {% next_button %}
 
 
-ResultsWaitPage
-~~~~~~~~~~~~~~~
+SendBack.html
+~~~~~~~~~~~~~
 
-Before a player proceeds to the next
-round's ``Choice`` page,  they need to wait for the other player to complete the ``Choice`` page as well.
-So, as usual, we use a ``WaitPage``.
-Also, once both players have arrived at the wait page, we call the ``set_payoffs``
-method we defined earlier.
-
-.. code-block:: python
-
-    class ResultsWaitPage(WaitPage):
-
-        def after_all_players_arrive(self):
-            self.group.set_payoffs()
-
-ResultsSummary
-~~~~~~~~~~~~~~
-
-Create a page called "ResultsSummary".
-
-Notes:
-
--  It only gets shown in the last round, so we set ``is_displayed``
-   accordingly.
--  We retrieve the value of ``paying_round`` from ``session.vars``
--  We get the user's total payoff by summing up how much they made in
-   each round.
--  We pass the round history to the template with
-   ``player.in_all_rounds()``
-
-In the ``Choice`` page we used ``in_previous_rounds``, but here we use
-``in_all_rounds``. This is because we also want to include the result of
-the current round.
-
-.. code-block:: python
-
-    class ResultsSummary(Page):
-
-        def is_displayed(self):
-            return self.round_number == Constants.num_rounds
-
-        def vars_for_template(self):
-            return dict(
-                total_payoff=sum([p.payoff for p in self.player.in_all_rounds()]),
-                paying_round=self.session.vars['paying_round'],
-                player_in_all_rounds=self.player.in_all_rounds()
-            )
-
-Now let's create the HTML template.
-Set the ``title`` block to "Final results", and the ``content`` block to:
+This is the page that P2 sees to send money back.
+Set the ``title`` block to ``Trust Game: Your Choice``, 
+and the ``content`` block to:
 
 .. code-block:: html+django
 
-    <table class="table">
-        <tr>
-            <th>Round</th>
-            <th>Player and outcome</th>
-        </tr>
-        {% for p in player_in_all_rounds %}
-            <tr>
-                <td>{{ p.round_number }}</td>
-                <td>
-                    You were the {{ p.role }} and {% if p.is_winner %} won
-                    {% else %} lost {% endif %}
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-
     <p>
-        The paying round was {{ paying_round }}.
-        Your total payoff is therefore {{ total_payoff }}.
+        You are Participant B. Participant A sent you {{group.sent_amount}}
+        and you received {{tripled_amount}}.
     </p>
 
+    {% formfield group.sent_back_amount %}
 
-Page sequence
-~~~~~~~~~~~~~
+    {% next_button %}
 
-Your ``page_sequence`` should look like this:
+
+Here is the code from pages.py. Notes:
+
+-  We use :ref:`vars_for_template` to pass the variable ``tripled_amount``
+   to the template. You cannot do calculations directly in the HTML code,
+   so this number needs to be calculated in Python code and
+   passed to the template.
+
+.. code-block:: python
+
+    class SendBack(Page):
+
+        form_model = 'group'
+        form_fields = ['sent_back_amount']
+
+        def is_displayed(self):
+            return self.player.id_in_group == 2
+
+        def vars_for_template(self):
+            return dict(
+                tripled_amount=self.group.sent_amount * Constants.multiplication_factor
+            )
+
+Results
+~~~~~~~
+
+The results page needs to look slightly different for P1 vs. P2. So, we
+use the ``{% if %}`` statement
+to condition on the current player's ``id_in_group``.
+Set the ``title`` block to ``Results``, and the content block to:
+
+.. code-block:: html+django
+
+    {% if player.id_in_group == 1 %}
+        <p>
+            You sent Participant B {{ group.sent_amount }}.
+            Participant B returned {{ group.sent_back_amount }}.
+        </p>
+    {% else %}
+        <p>
+            Participant A sent you {{ group.sent_amount }}.
+            You returned {{ group.sent_back_amount }}.
+        </p>
+
+    {% endif %}
+
+    <p>
+    Therefore, your total payoff is {{ player.payoff }}.
+    </p>
+
+.. code-block:: python
+
+    class Results(Page):
+        pass
+
+
+Wait pages and page sequence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add 2 wait pages:
+
+-  ``WaitForP1`` (P2 needs to wait while P1 decides how much to send)
+-  ``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send back)
+
+After the second wait page, we should calculate the payoffs.
+So, we define a method on the Group called ``set_payoffs``:
+
+.. code-block:: python
+
+    def set_payoffs(self):
+        p1 = self.get_player_by_id(1)
+        p2 = self.get_player_by_id(2)
+        p1.payoff = Constants.endowment - self.sent_amount + self.sent_back_amount
+        p2.payoff = self.sent_amount * Constants.multiplication_factor - self.sent_back_amount
+
+Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:
+
+.. code-block:: python
+
+    def after_all_players_arrive(self):
+        self.group.set_payoffs()
+
+Make sure they are ordered correctly in the page_sequence:
 
 .. code-block:: python
 
     page_sequence = [
-        Choice,
+        Send,
+        WaitForP1,
+        SendBack,
         ResultsWaitPage,
-        ResultsSummary
+        Results,
     ]
-
-This page sequence will loop for each round. However, ``ResultsSummary``
-is skipped in every round except the last, because of how we set
-``is_displayed``, resulting in this sequence of pages:
-
--  Choice [Round 1]
--  ResultsWaitPage [Round 1]
--  Choice [Round 2]
--  ResultsWaitPage [Round 2]
--  Choice [Round 3]
--  ResultsWaitPage [Round 3]
--  Choice [Round 4]
--  ResultsWaitPage [Round 4]
--  ResultsSummary [Round 4]
-
 
 Add an entry to your ``SESSION_CONFIGS``
 ----------------------------------------
 
-When we run a real experiment in the lab, we will want multiple groups,
-but to test the demo we just set ``num_demo_participants`` to 2, meaning
-there will be 1 group.
-
--   name: my_matching_pennies
--   display_name: My Matching Pennies (tutorial version)
+-   name: my_trust
+-   display_name: My Trust Game (Simple Version)
 -   num_demo_participants: 2
--   app_sequence: ['my_matching_pennies']
+-   app_sequence: ['my_trust']
+
+Run the server
+--------------
+
+Load the project again then open your browser to ``http://localhost:8000``.

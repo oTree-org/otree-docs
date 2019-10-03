@@ -93,7 +93,7 @@ you need to store these credentials onto your computer.
 If using Windows, search for "environment variables" in the control panel,
 and create 2 environment variables so it looks like this:
 
-.. figure:: _static/mturk/mturk.png
+.. figure:: _static/mturk/env-vars.png
     :align: center
 
 On Mac, put your credentials into your ``~/.bash_profile`` file like this::

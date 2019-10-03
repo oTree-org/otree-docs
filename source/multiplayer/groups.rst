@@ -300,26 +300,6 @@ and put the shuffling code in ``after_all_players_arrive``:
 
 After this wait page, the players will be reassigned to their new groups.
 
-Let's say you have a game with multiple rounds,
-and in a wait page at the beginning you want to shuffle the groups,
-and apply this new group structure to all rounds.
-You can use ``group_like_round()`` together with ``in_rounds()``.
-You should also use ``is_displayed()`` so that this method only executes once.
-For example:
-
-.. code-block:: python
-
-    class ShuffleWaitPage(WaitPage):
-        wait_for_all_groups = True
-
-        def after_all_players_arrive(self):
-            [...shuffle groups for round 1]
-            for subsession in self.subsession.in_rounds(2, Constants.num_rounds):
-                subsession.group_like_round(1)
-
-        def is_displayed(self):
-            return self.round_number == 1
-
 Group by arrival time
 ~~~~~~~~~~~~~~~~~~~~~
 

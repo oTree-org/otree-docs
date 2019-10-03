@@ -27,21 +27,18 @@ Wait pages can define the following methods:
 after_all_players_arrive()
 --------------------------
 
-Any code you define here will be executed once all players have arrived at the wait
-page. For example, this is a good place to set the players' payoffs
-or determine the winner.
+``after_all_players_arrive`` will be executed once all players have arrived at the wait
+page. This is a good place to set the players' payoffs
+or determine the winner. You should first define a method on the group,
+then call it here:
 
 .. code-block:: python
 
     def after_all_players_arrive(self):
-        print('in after_all_players_arrive')
-        for player in self.group.get_players():
-            player.payoff = c(100)
+        self.group.set_payoffs()
 
-Note, you can't use ``self.player`` inside ``after_all_players_arrive``,
-because the code is executed once for the entire group,
-not for each individual player.
-
+If you set ``wait_for_all_groups = True``,
+then you should define a method on the *subsession* and call that.
 
 is_displayed()
 --------------

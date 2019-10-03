@@ -1,4 +1,4 @@
-Part 0: Simple survey (for PyCharm users)
+Part 1: Simple survey (for PyCharm users)
 =========================================
 
 Let's create a simple survey -- on the first page, we ask the participant
