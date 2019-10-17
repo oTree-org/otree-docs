@@ -90,7 +90,7 @@ sample game for an example of how to just have 1 page that gets looped over many
 varying the question that gets displayed with each round.
 
 If that's not possible, then you can reduce the amount of repeated code
-by defining a function that returns a field:
+by defining a method that returns a field:
 
 .. code-block:: python
 

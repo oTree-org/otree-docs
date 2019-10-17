@@ -121,7 +121,7 @@ for real-time (WebSocket) functionality.
 You can add your own real-time interactions such as a continuous-time market.
 
 As of September 2019, we use Django Channels 2.x.
-(Until now, oTree has used Django Channels 0.17.3.)
+(Previously, oTree used Django Channels 0.17.3.)
 
 Django Channels 2.x has many API changes.
 Any existing oTree apps that depend on
@@ -133,7 +133,8 @@ In particular:
 
 -   ``channels.Group`` no longer exists.
     Instead, you use ``group_add`` and ``group_send``.
--   You need to wrap ``group_add`` and ``group_send`` in ``async_to_sync``.
+-   If your functions are not async,
+    you need to wrap ``group_add`` and ``group_send`` in ``async_to_sync``.
 -   If you want to send to a group from ``models.py`` or ``pages.py``,
     you use ``get_channel_layer()``, then do ``group_send``.
     Rather than sending JSON to the websocket directly, you invoke a method on your consumer class,
@@ -153,11 +154,8 @@ Then in ``settings.py``, set ``EXTENSION_APPS = ['your_app']``.
 See ``otree.channels.consumers``
 to see how oTree queries and saves models inside consumers.
 
-If you're on Windows you will need to pip install ``pypiwin32``.
-Otherwise you will get ``ImportError: No module named win32api``.
-(This will be unnecessary when the next version of Twisted is released.)
-
-If you are building your app for long-term stability, beware of importing anything from ``otree.channels`` into your code.
+If you are building your app for long-term stability,
+beware of importing anything from ``otree.channels`` into your code.
 Like anything outside of ``otree.api``, it may be removed abruptly.
 
 In addition to upgrading to Channels 2.x,

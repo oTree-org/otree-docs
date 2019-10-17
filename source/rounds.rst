@@ -8,13 +8,6 @@ An oTree app is a folder containing Python and HTML code.
 A project contains multiple apps.
 A session is basically a sequence of apps that are played one after the other.
 
-Creating an app
----------------
-
-If you're using oTree Studio, click "Apps".
-If you're using PyCharm, enter ``otree startapp your_app_name``
-at the command line.
-
 Combining apps
 --------------
 

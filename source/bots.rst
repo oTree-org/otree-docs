@@ -3,17 +3,20 @@
 Bots
 ====
 
-You can write "bots" that simulate participants playing your app,
-to test that it works properly and can handle the traffic of a real experiment.
+Bots simulate participants playing your app.
+They click through each page, fill out forms, and make sure that everything works properly.
 
-Each time you make a change to your app,
-you can just re-run your tests. It's a great time saver.
+This feature is designed for lazy people who would prefer
+for oTree to automatically test their apps for them.
+And oTree Studio can even design your bot code for you,
+so the whole process (writing and running bots) involves barely any effort.
 
 .. _browser-bots:
 
 Running bots
 ------------
 
+-   Add bots to your app (see instructions below)
 -   In your session config, set ``use_browser_bots=True``.
 -   Run your server and create a session. The pages will auto-play
     with browser bots, once the start links are opened.
@@ -22,7 +25,11 @@ Running bots
 Writing tests
 -------------
 
-If you are using oTree Studio, go to the "Tests" section of your app.
+In oTree Studio, go to the "Tests" section of your app.
+Click the button to auto-write bots code.
+If you want to refine the code that was generated
+(such as adding ``expect()`` statements),
+read the below sections.
 
 If you are using a text editor, go to ``tests.py``.
 
@@ -57,8 +64,7 @@ You use ``if`` statements to play any player or round number. For example:
 Your ``if`` statements can depend on ``self.player``, ``self.group``,
 ``self.round_number``, etc.
 
-Ignore wait pages when writing bots. The bot will wait
-until any wait pages are cleared, then it will execute the next ``yield``.
+Ignore wait pages when writing bots.
 
 Rounds
 ~~~~~~
@@ -73,7 +79,7 @@ expect()
 
     The ``expect()`` function was introduced in September 2019.
     Previously we recommended using ``assert`` statements, which are still OK
-    but when ``assert`` is used with browser bots, the error is not reported clearly.
+    but ``expect()`` can report errors more clearly.
 
 You can use ``expect`` statements to ensure that your code is working as you expect.
 
@@ -192,29 +198,6 @@ You can use ``Submission`` with ``timeout_happened=True``:
 
     from otree.api import Submission
     yield Submission(pages.MyPage, dict(foo=99), timeout_happened=True)
-
-Misc note
-~~~~~~~~~
-
-In bots, it is risky to assign
-``player = self.player`` (or ``participant = self.participant``, etc),
-even though that kind of code is encouraged in ``pages.py``.
-
-Because if there is a ``yield`` in between, the data can be stale:
-
-.. code-block:: python
-
-    from otree.api import expect
-
-    player = self.player
-    expect(player.money_left, c(10))
-    yield pages.Contribute, dict(contribution=c(1))
-    # don't do this!
-    # "player" variable still has the data from BEFORE pages.Contribute was submitted.
-    expect(player.money_left, c(9))
-
-It's safer to use ``self.player.money_left`` directly,
-because doing ``self.player`` gets the most recent data from the database.
 
 Advanced features
 -----------------

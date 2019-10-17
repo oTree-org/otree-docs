@@ -100,7 +100,6 @@ field on the player. (For more info, see :ref:`forms`.)
         form_fields = ['contribution']
 
 Now, we create the HTML template.
-(If using PyCharm, create the template file ``Contribute.html``)
 
 Set the ``title`` block to ``Contribute``, 
 and the ``content`` block to:
@@ -188,11 +187,7 @@ Make sure your page_sequence is correct:
 Define the session config
 -------------------------
 
-We add another session config:
-
--   name: my_public_goods
--   num_demo_participants: 3
--   app_sequence: ['my_public_goods']
+We add another session config with ``my_public_goods`` in the app sequence.
 
 
 Run the code
@@ -222,7 +217,7 @@ You just need to insert a line in your code like this:
     print('group.total_contribution is', self.group.total_contribution)
 
 Put this line in the part of your code that's not working,
-such as the payoff function defined above.
+such as the payoff method defined above.
 When you play the game in your browser and that code gets executed,
 your print statement will be displayed in your command prompt window
 (not in your web browser).
@@ -247,4 +242,4 @@ If you don't see the output in your console window,
 that means your code is not getting executed! (Which is why it isn't working.)
 
 Maybe it's because your code is inside an "if" statement that is always ``False``.
-Or maybe your code is in a function that never gets called (executed).
+Or maybe your code is in a method that never gets called (executed).

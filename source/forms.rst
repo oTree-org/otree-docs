@@ -247,7 +247,7 @@ Let's say you have 3 integer fields in your form whose names are
 Notes:
 
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
--   This function is only executed if there are no other errors in the form.
+-   This method is only executed if there are no other errors in the form.
 
 .. _get_form_fields:
 
@@ -278,7 +278,7 @@ The full list of form input widgets offered by Django is
 `here <https://docs.djangoproject.com/en/1.7/ref/forms/widgets/#built-in-widgets>`__.
 
 oTree additionally offers ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal
-    layout, as you would see with a Likert scale)
+layout, as you would see with a Likert scale)
 
 If you want a slider, instead of ``{% formfield %}``,
 put HTML like this in your template:
@@ -294,15 +294,14 @@ put HTML like this in your template:
             <span class="input-group-text">Disagree</span>
         </div>
 
-        <input type="range" name="pizza" min="1" max="5" step="1" class="form-control">
+        <input type="range" name="pizza" min="1" max="5" step="1">
 
         <div class="input-group-append">
             <span class="input-group-text">Agree</span>
         </div>
     </div>
 
-Remember to also define a field called ``pizza`` on your Player model with the appropriate
-min/max.
+Remember to also define a field called ``pizza`` on your Player model.
 (oTree also has a ``Slider`` widget but its customizability is limited.)
 
 .. _django-forms:
@@ -420,10 +419,10 @@ hidden form field. For example:
 
 .. code-block:: python
 
-    # models.py
+    # Player class
     my_hidden_input = models.IntegerField()
 
-    # pages.py
+    # page
     form_fields = ['my_hidden_input']
 
     # HTML template
@@ -490,7 +489,7 @@ Miscellaneous & advanced
 Form fields with dynamic labels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the label should contain a variable, you can construct the string in ``pages.py``:
+If the label should contain a variable, you can construct the string in your page:
 
 .. code-block:: python
 

@@ -204,7 +204,7 @@ role()
 
 Unlike most other built-in player methods, this is one you define yourself.
 
-This function should return a label with the player's role,
+This method should return a label with the player's role,
 usually depending on ``id_in_group``.
 
 For example::
@@ -328,7 +328,7 @@ Then call it:
 Don't put random values in Constants
 ------------------------------------
 
-Never generate random values outside of a function.
+Never generate random values outside of a method.
 For example, don't do this:
 
 .. code-block:: python

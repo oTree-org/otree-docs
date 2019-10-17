@@ -142,15 +142,15 @@ Notes:
 
 -   ``subsession``, ``session``, and ``Constants`` are passed to the template
     automatically.
--   ``AdminReport.html`` does not need to use ``{% block %}`` or ``{% extends %}``  etc.
-    The above example is valid as the full contents of ``AdminReport.html``.
+-   ``admin_report.html`` does not need to use ``{% block %}`` or ``{% extends %}``  etc.
+    The above example is valid as the full contents of ``admin_report.html``.
 
-If one or more apps in your session have an ``AdminReport.html``,
+If one or more apps in your session have an ``admin_report.html``,
 your admin page will have a "Reports" tab. Use the menu to select the app
 and the round number, to see the report for that subsession.
 
 Tip: if you are displaying the same chart in the admin report and participant pages,
-you can reuse ``AdminReport.html`` in the participant template with an ``{% include %}``,
+you can reuse ``admin_report.html`` in the participant template with an ``{% include %}``,
 and pass the variables like this:
 
 .. code-block:: python

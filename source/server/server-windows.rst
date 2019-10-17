@@ -4,7 +4,7 @@ Windows Server (advanced)
 =========================
 
 If you are just testing your app on your personal computer, you can use
-``otree runzip`` or ``otree devserver``. You don't need a full server setup as described below,
+``otree zipserver`` or ``otree devserver``. You don't need a full server setup as described below,
 which is necessary for sharing your app with an audience.
 
 This section is for people who are experienced with setting up web servers.

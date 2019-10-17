@@ -1,6 +1,12 @@
 Version history
 ```````````````
 
+Version 2.4
+===========
+
+-   ``zipserver`` command
+-   New MTurk format
+
 Version 2.3
 ===========
 
@@ -17,16 +23,13 @@ Version 2.3
 -   On Windows, ``runprodserver`` just launches 1 worker process. If you want more processes,
     you should use a process manager. (This is due to a limitation of the ASGI server)
 -   ``runprodserver`` uses Uvicorn/Hypercorn instead of Daphne
--   Experimental feature: You can do MTurk sandbox testing locally. Install Redis then run
-    ``otree runprodserver 8001 --dev-https`` then go to ``https://127.0.0.1:8001``.
-    You will get a security warning but it's OK because the site is on your own computer.
 -   update_my_code has been removed
 
 Version 2.2
 ===========
 
 -   support for the ``otreezip`` format
-    (``otree zip``, ``otree unzip``, ``otree runzip``)
+    (``otree zip``, ``otree unzip``)
 -   MTurk: in sandbox mode, don't grant qualifications
     or check qualification requirements
 -   MTurk: before paying participants, check if there is adequate

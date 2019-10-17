@@ -101,6 +101,7 @@ On Mac, put your credentials into your ``~/.bash_profile`` file like this::
     export AWS_ACCESS_KEY_ID=AKIASOMETHINGSOMETHING
     export AWS_SECRET_ACCESS_KEY=yoursecretaccesskeyhere
 
+Restart your command prompt and run oTree.
 From the oTree admin interface, click on "Sessions" and then,
 on the button that says "Create New Session", select "For MTurk":
 

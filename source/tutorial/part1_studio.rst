@@ -64,11 +64,7 @@ Set the template's ``title`` block to ``Results`` and set the ``content`` block 
 Define the session config
 -------------------------
 
-In the sidebar, go to "Session Configs" and set the following properties:
-
--   name: my_simple_survey
--   num_demo_participants: 1
--   app_sequence: my_simple_survey
+In the sidebar, go to "Session Configs", create a session config, and add your survey app to the ``app_sequence``.
 
 
 Download and run

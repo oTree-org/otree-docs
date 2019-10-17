@@ -144,7 +144,7 @@ and the ``content`` block to:
     {% next_button %}
 
 
-Here is the code from pages.py. Notes:
+Here is the page code. Notes:
 
 -  We use :ref:`vars_for_template` to pass the variable ``tripled_amount``
    to the template. You cannot do calculations directly in the HTML code,
@@ -240,10 +240,7 @@ Make sure they are ordered correctly in the page_sequence:
 Add an entry to your ``SESSION_CONFIGS``
 ----------------------------------------
 
--   name: my_trust
--   display_name: My Trust Game (Simple Version)
--   num_demo_participants: 2
--   app_sequence: ['my_trust']
+Create a session config with ``my_trust`` in the app sequence.
 
 Run the server
 --------------

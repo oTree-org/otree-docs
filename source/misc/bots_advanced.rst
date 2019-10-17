@@ -244,3 +244,26 @@ but ``age`` did not.
 
 If :ref:`error_message <error_message>` returns an error,
 then ``error_fields`` will be ``['__all__']``.
+
+Misc note
+---------
+
+In bots, it is risky to assign
+``player = self.player`` (or ``participant = self.participant``, etc),
+even though that kind of code is encouraged elsewhere.
+
+Because if there is a ``yield`` in between, the data can be stale:
+
+.. code-block:: python
+
+    from otree.api import expect
+
+    player = self.player
+    expect(player.money_left, c(10))
+    yield pages.Contribute, dict(contribution=c(1))
+    # don't do this!
+    # "player" variable still has the data from BEFORE pages.Contribute was submitted.
+    expect(player.money_left, c(9))
+
+It's safer to use ``self.player.money_left`` directly,
+because doing ``self.player`` gets the most recent data from the database.

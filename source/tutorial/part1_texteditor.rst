@@ -4,13 +4,6 @@ Part 1: Simple survey (for PyCharm users)
 Let's create a simple survey -- on the first page, we ask the participant
 for their name and age, then on the next page, display this info back to them.
 
-Upgrade oTree
--------------
-
-To ensure you are using the latest version of oTree, open your command window and run::
-
-    pip3 install -U otree
-
 Create the app
 --------------
 
@@ -260,7 +253,3 @@ which is not part of my app, but rather an external package::
 In these situations, look to see if any of your code is contained in the traceback.
 Above we can see that the traceback goes through the file ``/Users/chris/oTree/public_goods/pages.py``,
 which is part of my project. The bug is on line 108, as indicated.
-
-If you can't figure out the cause of the error,
-you can ask a question on the oTree
-`discussion group <https://groups.google.com/forum/#!forum/otree>`__.

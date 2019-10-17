@@ -16,7 +16,7 @@ A ``Page`` can have any of the following methods and attributes.
 is_displayed()
 ~~~~~~~~~~~~~~
 
-You can define this function to return ``True`` if the page should be shown,
+You can define this method to return ``True`` if the page should be shown,
 and False if the page should be skipped.
 If omitted, the page will be shown.
 
@@ -129,5 +129,5 @@ Or you could just return a hardcoded string
         if self.player.whatever:
             return "public_goods"
 
-If this function doesn't return anything,
+If this method doesn't return anything,
 the player proceeds to the next page as usual.

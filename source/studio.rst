@@ -7,8 +7,7 @@ oTree Studio
 is a point-and-click interface for building oTree apps.
 
 We recommend using oTree Studio instead of a text editor (like PyCharm),
-because it has makes learning oTree much easier,
-prevents many common mistakes,
-and has a free trial mode and sandbox mode.
+because it has makes learning oTree much easier and
+prevents many common mistakes.
 
 Here are some `YouTube videos <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ about oTree Studio.

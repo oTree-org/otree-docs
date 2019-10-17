@@ -250,7 +250,7 @@ and that there are twice as many female players as male players.
 
     class Subsession(BaseSubsession):
         def do_my_shuffle(self):
-            # note: to use this function
+            # note: to use this method
             # you would need to call self.subsession.do_my_shuffle()
             # from somewhere, such as after_all_players_arrive
 

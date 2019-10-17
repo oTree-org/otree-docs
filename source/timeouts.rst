@@ -23,7 +23,7 @@ After the time runs out, the page auto-submits.
 If you are running the production server (``runprodserver``),
 the page will always submit, even if the user closes their browser window.
 However, this does not occur if you are running the development server
-(``devserver`` or ``runzip``).
+(``devserver`` or ``zipserver``).
 
 If you need the timeout to be dynamically determined, use :ref:`get_timeout_seconds`.
 
@@ -108,14 +108,13 @@ When the user clicks the "next" button, ``before_next_page`` will be executed:
 
 .. code-block:: python
 
-    import time
-
     class Start(Page):
 
         def is_displayed(self):
             return self.round_number == 1
 
         def before_next_page(self):
+            import time
             # user has 5 minutes to complete as many pages as possible
             self.participant.vars['expiry'] = time.time() + 5*60
 

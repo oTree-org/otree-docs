@@ -37,8 +37,15 @@ then call it here:
     def after_all_players_arrive(self):
         self.group.set_payoffs()
 
+In the latest version of oTree (2.4+, Oct 2019),
+you can simply set it to the name of the method like this:
+
+.. code-block:: python
+
+    after_all_players_arrive = 'set_payoffs'
+
 If you set ``wait_for_all_groups = True``,
-then you should define a method on the *subsession* and call that.
+then ``after_all_players_arrive`` should refer to a method on your *subsession* class.
 
 is_displayed()
 --------------
