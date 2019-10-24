@@ -11,18 +11,18 @@ a small form on the MTurk site.
 
 This is a common practice for MTurk HITs, and MTurk workers are familiar with it.
 
-Why are we making this change?
-------------------------------
+Why did we make this change?
+----------------------------
 
--   There are technical challenges to having oTree embedded inside a frame.
-    Users recently reported "CSRF" errors that only occur inside the frame.
-    When oTree is tightly integrated with MTurk, issues like this are bound to happen
-    and some of them are outside oTree's control.
--   Currently it's not possible for a worker to submit an assignment if they don't get
+-   There were technical challenges to having oTree embedded inside a frame.
+    Users reported "CSRF" errors that only occur inside the frame.
+    When oTree is tightly integrated with MTurk, issues like this were bound to happen
+    and some of them were outside oTree's control.
+-   Previously it was not possible for a worker to submit an assignment if they don't get
     to the last page. For example, if they get stuck waiting for someone else on a wait page.
-    With the new design, you could give them a completion code to enter if they end up waiting
+    With the new design, you can give them a completion code to enter if they end up waiting
     too long.
--   Currently it is not possible to do MTurk sandbox testing locally because it requires an HTTPS
+-   Previously it was not possible to do MTurk sandbox testing locally because it required an HTTPS
     server. The new design does not require HTTPS, making local sandbox testing easy.
 -   Being embedded inside MTurk limits the screen space available for your study and
     may be awkward in terms of distractions, difficulty scrolling, etc.
@@ -34,12 +34,12 @@ How do I switch to the new design?
 
 #.  Install the new version of oTree: ``pip3 install -U otree``
 #.  In your ``requirements_base.txt``, put ``otree[mturk]>=2.4.0``.
-#.  Remove the "next button" on the last page of your study.
+#.  Remove the next_button on the last page of your study.
     oTree will no longer automatically submit the assignment to MTurk;
     instead, you should give them a completion code they can paste into the MTurk site.
-#.  In your MTurk HIT settings, replace ``preview_template`` with
-    ``template``, and make it point to an HTML file (you can call it something like ``mturk_template.html``)
-    with the following contents:
+#.  In your MTurk HIT settings, remove the line ``'preview_template': `` to
+    ``template``, and change its value from ``'global/MTurkPreview.html'`` to ``'global/mturk_template.html'``.
+#.  Follow the rest of the instructions :ref:`here <mturk>`.
 
 Once you have done all the above, the process for publishing to MTurk and paying workers is the same
 (although the "publish" page looks different because various elements have been removed).

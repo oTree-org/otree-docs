@@ -11,8 +11,7 @@ A session is basically a sequence of apps that are played one after the other.
 Combining apps
 --------------
 
-In your :ref:`SESSION_CONFIGS <SESSION_CONFIGS>`, you can combine apps
-by setting ``'app_sequence'``.
+You can combine apps by setting your session config's ``'app_sequence'``.
 
 Passing data between apps
 -------------------------

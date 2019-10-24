@@ -64,9 +64,6 @@ For example, ``c(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
 You can decide the conversion rate to real money
 by adding a ``real_world_currency_per_point`` entry to your session config.
 
-To customize the name "points" to something else like "tokens" or "credits",
-set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``.
-
 Converting points to real world currency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -80,14 +77,10 @@ You can convert a points amount to money using the method
 (The ``self.session`` is necessary because
 different sessions can have different conversion rates).
 
-
 Decimal places
 --------------
 
-Money amounts are displayed with 2 decimal places;
-you can change this with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
-If the extra decimal places show up but are always 0,
-then you should reset the database.
+Money amounts are displayed with 2 decimal places.
 
 On the other hand, points are integers.
 This means amounts will get rounded to whole numbers,

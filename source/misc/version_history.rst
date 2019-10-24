@@ -6,6 +6,7 @@ Version 2.4
 
 -   ``zipserver`` command
 -   New MTurk format
+-   oTree no longer records participants' IP addresses.
 
 Version 2.3
 ===========

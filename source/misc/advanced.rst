@@ -161,3 +161,14 @@ migrations will be updated for every app that has a ``migrations`` folder.
 Then commit, push, and run ``python manage.py migrate`` again as described above.
 
 More info `here <https://docs.djangoproject.com/en/1.9/topics/migrations/#workflow>`__
+
+Currency
+--------
+
+To customize the name "points" to something else like "tokens" or "credits",
+set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``.
+
+You can change the number of decimal places in real world currency amounts
+with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
+If the extra decimal places show up but are always 0,
+then you should reset the database.

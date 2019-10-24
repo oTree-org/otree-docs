@@ -115,7 +115,7 @@ so that you can adjust the game's parameters in the admin interface.
 For example, let's say you have a "num_apples" parameter.
 The usual approach would be to define it in ``Constants``,
 e.g. ``Constants.num_apples``.
-But to make it configurable, you can instead define it in your :ref:`session config <SESSION_CONFIGS>`.
+But to make it configurable, you can instead define it in your session config.
 For example:
 
 .. code-block:: python

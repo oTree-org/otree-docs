@@ -1,3 +1,6 @@
+.. _mturk:
+
+
 Mechanical Turk
 ===============
 
