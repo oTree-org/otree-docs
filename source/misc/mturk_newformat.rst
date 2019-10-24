@@ -37,7 +37,7 @@ How do I switch to the new design?
 #.  Remove the next_button on the last page of your study.
     oTree will no longer automatically submit the assignment to MTurk;
     instead, you should give them a completion code they can paste into the MTurk site.
-#.  In your MTurk HIT settings, remove the line ``'preview_template': `` to
+#.  In your MTurk HIT settings, change ``'preview_template''`` to
     ``template``, and change its value from ``'global/MTurkPreview.html'`` to ``'global/mturk_template.html'``.
 #.  Follow the rest of the instructions :ref:`here <mturk>`.
 
