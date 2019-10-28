@@ -41,7 +41,7 @@ You should make one ``yield`` per page submission. For example:
 .. code-block:: python
 
     yield pages.Start
-    yield pages.Survey(name="Bob", age=20)
+    yield pages.Survey, dict(name="Bob", age=20)
 
 Here, we first submit the ``Start`` page, which does not contain a form.
 The following page has 2 form fields, so we submit a dict.
