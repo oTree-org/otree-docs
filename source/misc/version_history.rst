@@ -1,6 +1,11 @@
 Version history
 ```````````````
 
+Version 2.5
+===========
+-   Removed old ``runserver`` command.
+-   Deprecated non-oTree widgets and model fields. See `here <https://groups.google.com/forum/#!topic/otree/vsvsQ7njjY8>`__.
+
 Version 2.4
 ===========
 

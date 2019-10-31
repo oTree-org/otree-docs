@@ -1,7 +1,7 @@
 .. _currency:
 
-Money & Payoffs
-===============
+Currency
+========
 
 In many experiments, participants play for currency:
 either real money, or points. oTree supports both;

@@ -180,45 +180,25 @@ HTML that was generated (along with any JavaScript or CSS).
 Images (static files)
 ---------------------
 
-.. note::
+The simplest way to include images, video, 3rd party JS/CSS libraries, and other static files in your project is to
+host them online, for example on Dropbox, Imgur, YouTube, etc.
 
-    If you're using oTree Studio, you can skip this section.
+Then, put its URL in an <img> or <video> tag in your template, for example:
 
-Here is how to include images (or any other static file like .css, .js, etc.) in your pages.
+.. code-block:: html
 
-At the root of your oTree project, there is a ``_static/`` folder.
-Put a file there, for example ``puppy.jpg``.
-Then, in your template, you can get the URL to that file with
-``{% static 'puppy.jpg' %}``.
+    <img src="https://i.imgur.com/gM5yeyS.jpg" width="500px" />
 
-To display an image, use the ``<img>`` tag, like this:
+You can also store images directly in your project.
+(but note that large file sizes can affect performance).
+oTree Studio has an image upload tool.
+(If you are using a text editor, see :ref:`here <staticfiles>`.)
+Once you have stored the image, you can display it like this:
 
-.. code-block:: HTML+django
+.. code-block:: html
 
-    <img src="{% static 'puppy.jpg' %}"/>
+    <img src="{% static "folder_name/puppy.jpg" %}"/>
 
-Above we saved our image in ``_static/puppy.jpg``,
-But actually it's better to make a subfolder with the name of your app,
-and save it as ``_static/your_app_name/puppy.jpg``, to keep files organized
-and prevent name conflicts.
-
-Then your HTML code becomes:
-
-.. code-block:: HTML+django
-
-    <img src="{% static "your_app_name/puppy.jpg" %}"/>
-
-(If you prefer, you can also put static files inside your app folder,
-in a subfolder called ``static/your_app_name``.)
-
-If a static file is not updating even after you changed it,
-this is because your browser cached the file. Do a full page reload
-(usually Ctrl+F5)
-
-If you have videos or high-resolution images,
-it's preferable to store them somewhere online and reference them by URL
-because the large file size can make uploading your
-.otreezip file much slower.
 
 Dynamic images
 ~~~~~~~~~~~~~~
@@ -242,13 +222,6 @@ Then in the template:
 
     <img src="{% static image_path %}"/>
 
-
-Videos
-------
-
-You can follow the above technique for including video in your project,
-but it's better to embed them from YouTube or Dropbox, etc. Including videos in your project
-can make uploads/downloads slow.
 
 Includable templates
 --------------------

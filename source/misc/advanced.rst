@@ -58,6 +58,49 @@ To include the same JS/CSS in *all apps* of a project,
 modify ``_templates/global/Page.html``.
 In that file, you will find the blocks ``global_scripts`` and ``global_styles``.
 
+.. _staticfiles:
+
+Static files
+------------
+
+
+Here is how to include images (or any other static file like .css, .js, etc.) in your pages.
+
+At the root of your oTree project, there is a ``_static/`` folder.
+Put a file there, for example ``puppy.jpg``.
+Then, in your template, you can get the URL to that file with
+``{% static 'puppy.jpg' %}``.
+
+To display an image, use the ``<img>`` tag, like this:
+
+.. code-block:: HTML+django
+
+    <img src="{% static 'puppy.jpg' %}"/>
+
+Above we saved our image in ``_static/puppy.jpg``,
+But actually it's better to make a subfolder with the name of your app,
+and save it as ``_static/your_app_name/puppy.jpg``, to keep files organized
+and prevent name conflicts.
+
+Then your HTML code becomes:
+
+.. code-block:: HTML+django
+
+    <img src="{% static "your_app_name/puppy.jpg" %}"/>
+
+(If you prefer, you can also put static files inside your app folder,
+in a subfolder called ``static/your_app_name``.)
+
+If a static file is not updating even after you changed it,
+this is because your browser cached the file. Do a full page reload
+(usually Ctrl+F5)
+
+If you have videos or high-resolution images,
+it's preferable to store them somewhere online and reference them by URL
+because the large file size can make uploading your
+.otreezip file much slower.
+
+
 Wait pages
 ----------
 
