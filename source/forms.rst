@@ -274,11 +274,13 @@ But if you do this, you have to be sure to also include the same
 Widgets
 -------
 
-The full list of form input widgets offered by Django is
-`here <https://docs.djangoproject.com/en/1.7/ref/forms/widgets/#built-in-widgets>`__.
+You can set a model field's ``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal`` if you want choices
+to be displayed with radio buttons, instead of a dropdown menu.
 
-oTree additionally offers ``RadioSelectHorizontal`` (same as ``RadioSelect`` but with a horizontal
-layout, as you would see with a Likert scale)
+If you want a checkbox,
+either put a ``<input type="checkbox" />``
+directly in your template (for example, ``<input name="consent" type="checkbox" required />``),
+or use ``widget=widgets.CheckboxInput`` in the model field.
 
 If you want a slider, instead of ``{% formfield %}``,
 put HTML like this in your template:
@@ -301,7 +303,6 @@ put HTML like this in your template:
         </div>
     </div>
 
-Remember to also define a field called ``pizza`` on your Player model.
 (oTree also has a ``Slider`` widget but its customizability is limited.)
 
 .. _django-forms:
