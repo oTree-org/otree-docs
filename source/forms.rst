@@ -277,33 +277,6 @@ Widgets
 You can set a model field's ``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal`` if you want choices
 to be displayed with radio buttons, instead of a dropdown menu.
 
-If you want a checkbox,
-either put a ``<input type="checkbox" />``
-directly in your template (for example, ``<input name="consent" type="checkbox" required />``),
-or use ``widget=widgets.CheckboxInput`` in the model field.
-
-If you want a slider, instead of ``{% formfield %}``,
-put HTML like this in your template:
-
-.. code-block:: html
-
-    <label class="col-form-label">
-        Pizza is the best food:
-    </label>
-
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">Disagree</span>
-        </div>
-
-        <input type="range" name="pizza" min="1" max="5" step="1">
-
-        <div class="input-group-append">
-            <span class="input-group-text">Agree</span>
-        </div>
-    </div>
-
-(oTree also has a ``Slider`` widget but its customizability is limited.)
 
 .. _django-forms:
 
@@ -384,24 +357,51 @@ you can use the ``choice_label`` and ``tag`` attributes on a field choice.
 
 .. _raw_html:
 
-Advanced: Raw HTML widgets
---------------------------
+Raw HTML widgets
+----------------
 
 If ``{% formfield %}`` and :ref:`manual field rendering <django-forms>`
-are still not flexible enough for you,
-you can write the raw HTML for your form input.
+don't give you the appearance you want,
+you can write your own widget in raw HTML.
 However, you will lose the convenient features handled
 automatically by oTree. For example, if the form has an error and the page
 re-loads, all entries by the user may be wiped out.
 
-To use raw HTML, just ensure that each field in your Page's ``form_fields``
-has a corresponding ``<input>`` element with a matching ``name`` attribute.
+First, add an ``<input>`` element.
+For example, if your ``form_fields`` includes ``my_field``,
+you can do ``<input name="my_field" type="checkbox" />``
+(consult the HTML documentation on ``<input>``'s available ``type`` values).
 
-Remember that for any field ``my_field``,
-you should include ``{{ form.my_field.errors }}``,
-so that if there is an error in the form,
-the participant will see the error message.
+Second, you should usually include ``{{ form.my_field.errors }}``,
+so that if the participant submits an incorrect or missing value),
+they can see the error message.
 
+
+Raw HTML example: slider
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you want a slider, instead of ``{% formfield %}``,
+put HTML like this in your template:
+
+.. code-block:: html
+
+    <label class="col-form-label">
+        Pizza is the best food:
+    </label>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Disagree</span>
+        </div>
+
+        <input type="range" name="pizza" min="1" max="5" step="1">
+
+        <div class="input-group-append">
+            <span class="input-group-text">Agree</span>
+        </div>
+    </div>
+
+(oTree also has a ``Slider`` widget but its customizability is limited.)
 
 Raw HTML example: custom user interface with JavaScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

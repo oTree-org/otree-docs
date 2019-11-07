@@ -124,6 +124,7 @@ times consecutively:
 .. code-block:: python
 
     class Subsession(BaseSubsession):
+
         def creating_session(self):
             print('in creating_session', self.round_number)
 
