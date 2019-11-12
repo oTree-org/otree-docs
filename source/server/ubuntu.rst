@@ -115,7 +115,7 @@ Install the requirements and reset the database::
 Running the server
 ------------------
 
-If you are just testing your app locally, you can use the usual ``devserver``
+If you are just testing your app locally, you can use the usual ``zipserver`` or ``devserver``
 command.
 
 However, when you want to use oTree in production, you need to run the

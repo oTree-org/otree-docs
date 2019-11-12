@@ -23,7 +23,7 @@ After the time runs out, the page auto-submits.
 If you are running the production server (``runprodserver``),
 the page will always submit, even if the user closes their browser window.
 However, this does not occur if you are running the development server
-(``devserver`` or ``zipserver``).
+(``zipserver`` or ``devserver``).
 
 If you need the timeout to be dynamically determined, use :ref:`get_timeout_seconds`.
 

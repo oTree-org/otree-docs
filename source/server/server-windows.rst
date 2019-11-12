@@ -16,7 +16,7 @@ If you would like an easier and quicker way, we recommend using
 Why do I need to install server software?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-oTree's development setup (using ``devserver`` with a SQLite database)
+oTree's development setup (using ``zipserver`` with a SQLite database)
 is not designed for running actual studies. One known risk is that
 if you don't install Postgres, your SQLite database
 might lock when multiple users are accessing it simultaneously.

@@ -39,8 +39,7 @@ Enter this:
 Next steps
 ----------
 
--   If you will use :ref:`oTree Studio <studio>`,
-    go to `otreehub.com <https://www.otreehub.com/studio>`__
-    and get started with oTree Studio.
+-   If you will use :ref:`oTree Studio <studio>` (recommended),
+    go to `otreehub.com <https://www.otreehub.com/studio>`__.
 -   If you will use PyCharm or another text-based code editor,
     follow the steps :ref:`here <install-nostudio>`.

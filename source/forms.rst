@@ -401,6 +401,9 @@ put HTML like this in your template:
         </div>
     </div>
 
+If you want to show the current value, or hide the knob until the slider is clicked
+(to avoid anchoring), it's recommended to use the ``RadioSelectHorizontal`` widget instead.
+
 (oTree also has a ``Slider`` widget but its customizability is limited.)
 
 Raw HTML example: custom user interface with JavaScript

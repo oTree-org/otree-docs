@@ -326,8 +326,8 @@ Then call it:
 
 .. _how_otree_executes_code:
 
-Don't put random values in Constants
-------------------------------------
+About using random()
+--------------------
 
 Never generate random values outside of a method.
 For example, don't do this:
@@ -354,6 +354,8 @@ These won't work because they will change every time
 the server launches a new process.
 It may appear to work during testing but will eventually break.
 Instead, you should generate the random variables inside a method,
-such as :ref:`creating_session`.
+such as :ref:`creating_session` (and preferably not ``vars_for_template``,
+which gets re-executed if the user refreshes the page).
 
-
+If you want to set your own random seed, don't use the ``random.seed()`` function.
+Instead, generate an instance of ``random.Random`` as described `here <https://stackoverflow.com/a/37356024>`__

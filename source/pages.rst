@@ -66,7 +66,6 @@ If you need to pass the same variables to many pages,
 see :ref:`here <vars_for_many_templates>`.
 
 If the user refreshes the page, ``vars_for_template`` gets re-executed.
-Keep this in mind before generating random values in ``vars_for_template``.
 
 .. _before_next_page:
 
