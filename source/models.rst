@@ -321,8 +321,7 @@ Then call it:
 .. code-block:: python
 
     class MyWaitPage(WaitPage):
-        def after_all_players_arrive(self):
-            self.group.set_payoffs()
+        after_all_players_arrive = 'set_payoffs'
 
 .. _how_otree_executes_code:
 

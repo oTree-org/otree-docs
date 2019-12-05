@@ -195,7 +195,7 @@ oTree Studio has an image upload tool.
 (If you are using a text editor, see :ref:`here <staticfiles>`.)
 Once you have stored the image, you can display it like this:
 
-.. code-block:: html
+.. code-block:: html+django
 
     <img src="{% static "folder_name/puppy.jpg" %}"/>
 
@@ -316,11 +316,38 @@ Don't use any selector that starts with ``_otree``, and don't select based on Bo
 Passing data from Python to JavaScript (json)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to insert a variable into to your JavaScript code,
-write it as ``{{ my_variable|json }}`` rather than just ``{{ my_variable }}``.
+.. _js_vars:
 
-For example, if you need to pass the player's payoff to a script,
-write it like this:
+Technique 1: js_vars
+````````````````````
+.. note::
+
+    ``js_vars`` is a beta feature new in November 2019.
+    It will be added to oTree Studio when it comes out of beta.
+
+To pass data to JavaScript code in your template,
+define a method ``js_vars`` on your Page, for example:
+
+.. code-block:: HTML+django
+
+    def js_vars(self):
+        return dict(
+            payoff=self.player.payoff,
+        )
+
+Then, in your template, you can refer to these variables:
+
+.. code-block:: HTML+django
+
+    <script>
+        let x = js_vars.payoff;
+        // etc...
+    </script>
+
+Technique 2: json filter
+````````````````````````
+
+Another way to pass data to JavaScript is like this:
 
 .. code-block:: HTML+django
 
@@ -328,7 +355,6 @@ write it like this:
         let payoff = {{ player.payoff|json }};
         ...
     </script>
-
 
 If you don't use ``|json``,
 the variable might not be valid JavaScript.
@@ -346,23 +372,10 @@ In Python      In template, without ``|json``       With ``|json``
 ``['a']``      ``[&#39;a&#39;]``                    ``["a"]``
 =============  ===================================  ==================
 
-``|json`` can be used on simple values like ``1``,
+``js_vars`` and ``|json`` can be used on simple values like ``1``,
 or a nesting of dictionaries and lists like ``{'a': [1,2]}``, etc.
-
-``|json`` converts to JSON and marks the data as safe (trusted)
+They convert the data to JSON and mark the data as safe (trusted)
 so that Django does not auto-escape it.
-
-As shown in the above table, ``|json`` will automatically put
-quotes around strings, so you don't need to add them manually:
-
-.. code-block:: HTML+django
-
-        // correct
-        let my_string = {{ my_string|json }};
-
-        // incorrect
-        let my_string = "{{ my_string|json }}";
-
 
 Bootstrap
 ---------

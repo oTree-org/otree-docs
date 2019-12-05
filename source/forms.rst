@@ -415,8 +415,8 @@ or playing a graphical game. Or, you want to record extra data like how long
 they spent on part of the page, how many times they clicked, etc.
 
 You can build these interfaces in any front-end framework you want.
-Simple ones can be done with jQuery; more complex ones would use something
-like React or Polymer.
+Simple ones can be done with plain JavaScript or jQuery; more complex ones would use something
+like React or Vue.js.
 
 Then, use JavaScript to record the relevant data points and store it in a
 hidden form field. For example:

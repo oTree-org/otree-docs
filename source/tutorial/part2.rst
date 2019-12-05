@@ -149,8 +149,7 @@ and set it to trigger the ``set_payoffs`` method:
 
 .. code-block:: python
 
-    def after_all_players_arrive(self):
-        self.group.set_payoffs()
+    after_all_players_arrive = 'set_payoffs'
 
 Page 3: Results
 ~~~~~~~~~~~~~~~

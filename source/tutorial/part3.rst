@@ -222,8 +222,7 @@ Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:
 
 .. code-block:: python
 
-    def after_all_players_arrive(self):
-        self.group.set_payoffs()
+    after_all_players_arrive = 'set_payoffs'
 
 Make sure they are ordered correctly in the page_sequence:
 

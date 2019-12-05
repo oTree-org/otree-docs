@@ -295,8 +295,7 @@ and put the shuffling code in ``after_all_players_arrive``:
     class ShuffleWaitPage(WaitPage):
         wait_for_all_groups = True
 
-        def after_all_players_arrive(self):
-            self.subsession.do_my_shuffle()
+        after_all_players_arrive = 'do_my_shuffle'
 
 After this wait page, the players will be reassigned to their new groups.
 

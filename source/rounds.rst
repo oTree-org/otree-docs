@@ -132,7 +132,7 @@ You can test if ``'my_var'`` exists with ``if 'my_var' in self.participant.vars:
 
 ``participant.vars`` is not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you can create a
-``StringField`` on your player (for example, called ``participant_vars_dump``)
+``LongStringField`` on your player (for example, called ``participant_vars_dump``)
 and then at the end of your session, assign:
 
 .. code-block:: python

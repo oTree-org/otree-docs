@@ -100,7 +100,7 @@ Randomizing page sequence
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can randomize the order of pages using rounds.
-An example is `here <https://github.com/oTree-org/otree-snippets/tree/master/random_page_order>`__.
+An example is `here <https://www.otreehub.com/projects/otree-snippets/>`__.
 
 .. _app_after_this_page:
 

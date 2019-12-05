@@ -24,28 +24,35 @@ Wait pages can define the following methods:
 
 .. _after_all_players_arrive:
 
-after_all_players_arrive()
---------------------------
+after_all_players_arrive
+------------------------
 
-``after_all_players_arrive`` will be executed once all players have arrived at the wait
+``after_all_players_arrive`` lets you run some calculations
+once all players have arrived at the wait
 page. This is a good place to set the players' payoffs
-or determine the winner. You should first define a method on the group,
-then call it here:
-
-.. code-block:: python
-
-    def after_all_players_arrive(self):
-        self.group.set_payoffs()
-
-In the latest version of oTree (2.4+, Oct 2019),
-you can simply set it to the name of the method like this:
+or determine the winner.
+You should first define a method on your Group that does the desired calculations.
+Let's say you called it ``set_payoffs``.
+You can trigger this method by doing:
 
 .. code-block:: python
 
     after_all_players_arrive = 'set_payoffs'
 
 If you set ``wait_for_all_groups = True``,
-then ``after_all_players_arrive`` should refer to a method on your *subsession* class.
+then you should set ``after_all_players_arrive`` to the name of to a method on your *Subsession* model.
+
+.. note::
+
+    In oTree 2.3 and earlier, ``after_all_players_arrive`` was a method:
+
+    .. code-block:: python
+
+        def after_all_players_arrive(self):
+            self.group.set_payoffs()
+
+    This format will continue to be supported, for compatibility.
+
 
 is_displayed()
 --------------
@@ -113,20 +120,28 @@ Notes:
     "on the fly" as players arrive at the wait page.
 
 If you need further control on arranging players into groups,
-use :ref:`get_players_for_group`.
+use :ref:`group_by_arrival_time_method`.
 
-.. _get_players_for_group:
+.. _group_by_arrival_time_method:
 
-get_players_for_group()
------------------------
+group_by_arrival_time_method()
+------------------------------
+
+.. note::
+
+    Before November 2019, this was a method called ``get_players_for_group``,
+    and it was on the Page, not the Subsession.
+    The old format is still compatible.
+
+    ``group_by_arrival_time_method`` will be added to oTree Studio when it comes out of beta.
 
 If you're using ``group_by_arrival_time`` and want more control over
-which players are assigned together, you can use ``get_players_for_group()``.
+which players are assigned together, you can use ``group_by_arrival_time_method()``.
 
 Let's say that in addition to grouping by arrival time, you need each group
 group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
 
-If you define a method called ``get_players_for_group``,
+If you define a method called ``group_by_arrival_time_method`` on your Subsession,
 it will get called whenever a new player reaches the wait page.
 The method's argument is the list of players who are waiting to be grouped
 (minus those who have disconnected or closed the page).
@@ -138,11 +153,10 @@ Here's an example where each group has 2 A players, 2 B players.
 
 .. code-block:: python
 
-    class GroupingWaitPage(WaitPage):
-        group_by_arrival_time = True
+    class Subsession(BaseSubsession):
 
-        def get_players_for_group(self, waiting_players):
-            print('in get_players_for_group')
+        def group_by_arrival_time_method(self, waiting_players):
+            print('in group_by_arrival_time_method')
             a_players = [p for p in waiting_players if p.participant.vars['type'] == 'A']
             b_players = [p for p in waiting_players if p.participant.vars['type'] == 'B']
 
@@ -150,9 +164,6 @@ Here's an example where each group has 2 A players, 2 B players.
                 print('about to create a group')
                 return [a_players[0], a_players[1], b_players[0], b_players[1]]
             print('not enough players to create a group')
-
-        def is_displayed(self):
-            return self.round_number == 1
 
 .. _wait-page-stuck:
 
