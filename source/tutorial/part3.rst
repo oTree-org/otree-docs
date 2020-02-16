@@ -82,7 +82,7 @@ dropdown menu dynamically. This is the feature called
         def sent_back_amount_choices(self):
             return currency_range(
                 c(0),
-                self.group.sent_amount * Constants.multiplication_factor,
+                self.sent_amount * Constants.multiplication_factor,
                 c(1)
             )
 

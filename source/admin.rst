@@ -161,10 +161,6 @@ and pass the variables like this:
             return self.subsession.vars_for_admin_report()
 
 
-If you're generating a chart with JavaScript,
-remember to use the :ref:`|json <json>` filter.
-
-
 Kiosk Mode
 ----------
 

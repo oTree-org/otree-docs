@@ -51,7 +51,7 @@ then you should set ``after_all_players_arrive`` to the name of to a method on y
         def after_all_players_arrive(self):
             self.group.set_payoffs()
 
-    This format will continue to be supported, for compatibility.
+    This is still supported for compatibility, but it's recommended to use the new format.
 
 
 is_displayed()
@@ -131,9 +131,7 @@ group_by_arrival_time_method()
 
     Before November 2019, this was a method called ``get_players_for_group``,
     and it was on the Page, not the Subsession.
-    The old format is still compatible.
-
-    ``group_by_arrival_time_method`` will be added to oTree Studio when it comes out of beta.
+    The old format is still compatible but we recommend switching to the new format.
 
 If you're using ``group_by_arrival_time`` and want more control over
 which players are assigned together, you can use ``group_by_arrival_time_method()``.

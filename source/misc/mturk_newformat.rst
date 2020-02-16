@@ -47,13 +47,3 @@ Once you have done all the above, the process for publishing to MTurk and paying
 Also, you can test in the MTurk sandbox locally.
 With this new version,
 you don't need to upload to Heroku until you launch the live (non-Sandbox) HIT.
-
-How can I continue using the old format?
-----------------------------------------
-
-The old format is being removed in the new versions of oTree,
-so the only way to continue using it is to delay upgrading past oTree 2.2.
-Use ``otree[mturk]<2.3`` in ``requirements_base.txt`` and your ``pip3 install`` commands.
-
-Here is the
-`old documentation <https://github.com/oTree-org/otree-docs/blob/cebcfbb743fced18621df9077da5ab4de8f5d25c/source/mturk.rst>`__

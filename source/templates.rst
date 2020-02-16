@@ -312,18 +312,10 @@ Don't use any selector that starts with ``_otree``, and don't select based on Bo
 
 
 .. _json:
-
-Passing data from Python to JavaScript (json)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. _js_vars:
 
-Technique 1: js_vars
-````````````````````
-.. note::
-
-    ``js_vars`` is a beta feature new in November 2019.
-    It will be added to oTree Studio when it comes out of beta.
+Passing data from Python to JavaScript (js_vars)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To pass data to JavaScript code in your template,
 define a method ``js_vars`` on your Page, for example:
@@ -344,38 +336,9 @@ Then, in your template, you can refer to these variables:
         // etc...
     </script>
 
-Technique 2: json filter
-````````````````````````
+(An alternative is to use the ``|json`` filter in the template,
+e.g. ``let x = {{ player.payoff|json }};``, but ``js_vars`` is simpler.
 
-Another way to pass data to JavaScript is like this:
-
-.. code-block:: HTML+django
-
-    <script>
-        let payoff = {{ player.payoff|json }};
-        ...
-    </script>
-
-If you don't use ``|json``,
-the variable might not be valid JavaScript.
-Examples:
-
-=============  ===================================  ==================
-In Python      In template, without ``|json``       With ``|json``
-=============  ===================================  ==================
-``None``       ``None``                             ``null``
-``3.14``       ``3,14`` (depends on LANGUAGE_CODE)  ``3.14``
-``c(3.14)``    ``$3.14`` or ``$3,14``               ``3.14``
-``True``       ``True``                             ``true``
-``"a"``        ``a``                                ``"a"``
-``{'a': 1}``   ``{&#39;a&#39;: 1}``                 ``{"a": 1}``
-``['a']``      ``[&#39;a&#39;]``                    ``["a"]``
-=============  ===================================  ==================
-
-``js_vars`` and ``|json`` can be used on simple values like ``1``,
-or a nesting of dictionaries and lists like ``{'a': [1,2]}``, etc.
-They convert the data to JSON and mark the data as safe (trusted)
-so that Django does not auto-escape it.
 
 Bootstrap
 ---------
@@ -445,12 +408,10 @@ For example, change this::
 
 To this::
 
-    series: {{ highcharts_series|json }}
+    series: js_vars.highcharts_series
 
-In the page's ``vars_for_template``, generate the nested data structure in Python
-(the above example is a list of dictionaries),
-pass it to the template, and remember to use the :ref:`|json <json>` filter`` on any variables
-you insert in JavaScript.
+
+...where ``highcharts_series`` is a variable you defined in `js_vars <js_vars>`.
 
 If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
