@@ -131,7 +131,7 @@ Here is how to test that it is working properly:
 
 .. code-block:: python
 
-    from otree.api SubmissionMustFail
+    from otree.api import SubmissionMustFail
 
     yield SubmissionMustFail(pages.MyPage, dict(int1=99, int2=0))
     yield pages.MyPage, dict(int1=99, int2=1)
