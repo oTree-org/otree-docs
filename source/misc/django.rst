@@ -89,11 +89,11 @@ In this file, put:
 .. code-block:: python
 
     # urls.py
-    from django.conf.urls import url
+    from django.urls import path
     from otree.urls import urlpatterns
+    import my_app.pages
 
-    urlpatterns.append(url(r'^my_view/$', 'my_app.pages.my_view'))
-
+    urlpatterns.append(path('my_view/', my_app.pages.my_view))
 
 In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you just created:
 
@@ -102,8 +102,6 @@ In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you j
     # settings.py
     ROOT_URLCONF = 'urls'
 
-If you need to access oTree's models, you will have to handle querying and saving
-objects yourself.
 
 .. _channels:
 
