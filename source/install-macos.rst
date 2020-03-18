@@ -20,7 +20,8 @@ If the below steps don't work for you, please email chris@otree.org with details
 Step 1: Install Python
 ----------------------
 
-*   Download and install the latest `Python <https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__.
+*   Download and install `Python <https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__
+    (oTree is not yet compatible with Python 3.8).
 
 *   In Finder, search for and open the "Terminal" app:
 
@@ -34,6 +35,8 @@ Enter this:
 .. code-block:: bash
 
     pip3 install -U otree
+
+(If you get a long error related to Twisted, enter ``xcode-select --install`` and try again.)
 
 
 Next steps

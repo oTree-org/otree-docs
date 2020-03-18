@@ -20,7 +20,8 @@ If the below steps don't work for you, please email chris@otree.org with details
 Step 1: Install Python
 ----------------------
 
-Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe>`__.
+Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe>`__
+(oTree is not yet compatible with Python 3.8).
 Check the box to add Python to PATH:
 
 .. figure:: _static/setup/py-win-installer.png

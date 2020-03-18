@@ -61,16 +61,16 @@ Participant labels
 This is the "guest list" for the room.
 It should contain one participant label per line. For example::
 
-        PC_1
-        PC_2
-        PC_3
-        PC_4
-        PC_5
-        PC_6
-        PC_7
-        PC_8
-        PC_9
-        PC_10
+        LAB1
+        LAB2
+        LAB3
+        LAB4
+        LAB5
+        LAB6
+        LAB7
+        LAB8
+        LAB9
+        LAB10
 
 If you don't specify participant labels, then anyone can join
 as long as they know the room-wide URL.
@@ -159,3 +159,27 @@ Or, you can open the browsers to participant-specific URLs,
 but before creating the session, close the browsers on unattended computers.
 
 Participants can join after the session has been created, as long as there are spots remaining.
+
+Pre-assigning participants to labels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let's say your participant labels are numbered like LAB1, LAB2, ... LAB30,
+and you want these to line up with the oTree IDs also, so that LAB29 will always be participant 29
+in the session. Just assign those participant labels in ``creating_session``:
+
+.. code-block:: python
+
+    class Subsession(BaseSubsession):
+        def creating_session(self):
+            for p in self.get_players():
+                p.participant.label = 'LAB{}'.format(p.participant.id_in_session)
+
+
+When someone arrives through a start link with a label,
+oTree checks if any participants in the session already have that participant label,
+and if so, assigns that person to the oTree participant.
+
+Passing data about a participant into oTree
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See :ref:`participant_vars_rest`.

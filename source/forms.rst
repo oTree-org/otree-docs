@@ -126,7 +126,7 @@ You can do this for ``BooleanField``, ``StringField``, etc.:
 
 After the field has been set, you can access the human-readable name
 using
-`get_FOO_display <https://docs.djangoproject.com/en/1.11/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
+`get_FOO_display <https://docs.djangoproject.com/en/2.2/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
 , like this:
 ``player.get_level_display() # returns e.g. 'Medium'``.
 
@@ -292,7 +292,7 @@ you can use Django's manual field rendering. Instead of ``{% formfield player.my
 do ``{{ form.my_field }}``, to get just the input element.
 Just remember to also include ``{{ form.my_field.errors }}``.
 
-More info `here <https://docs.djangoproject.com/en/1.11/topics/forms/#rendering-fields-manually>`__.
+More info `here <https://docs.djangoproject.com/en/2.2/topics/forms/#rendering-fields-manually>`__.
 
 .. _radio-table:
 .. _subwidgets:
@@ -351,7 +351,7 @@ you can arrange them in a table:
 
 You can also get choices individually by using their 0-based index,
 e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
-For more granular control, as described `here <https://docs.djangoproject.com/en/1.11/ref/forms/widgets/#radioselect>`__,
+For more granular control, as described `here <https://docs.djangoproject.com/en/2.2/ref/forms/widgets/#radioselect>`__,
 you can use the ``choice_label`` and ``tag`` attributes on a field choice.
 
 

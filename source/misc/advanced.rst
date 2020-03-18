@@ -177,7 +177,7 @@ This section is more advanced and is for people who are comfortable with trouble
 
 If your database already contains data and you want to update the structure
 without running ``resetdb`` (which will delete existing data), you can use Django's migrations feature.
-Below is a quick summary; for full info see the Django docs `here <https://docs.djangoproject.com/en/1.9/topics/migrations/#workflow>`__.
+Below is a quick summary; for full info see the Django docs `here <https://docs.djangoproject.com/en/2.2/topics/migrations/#workflow>`__.
 
 First, add an empty file ``otree_core_migrations/__init__.py``
 in your project top-level folder.
@@ -203,7 +203,7 @@ If you make further modifications to your apps or upgrade otree, you can run
 migrations will be updated for every app that has a ``migrations`` folder.
 Then commit, push, and run ``python manage.py migrate`` again as described above.
 
-More info `here <https://docs.djangoproject.com/en/1.9/topics/migrations/#workflow>`__
+More info `here <https://docs.djangoproject.com/en/2.2/topics/migrations/#workflow>`__
 
 Currency
 --------

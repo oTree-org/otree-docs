@@ -231,14 +231,26 @@ You can sprinkle lots of prints in your code
     group.total_contribution = sum(contributions)
     group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
     print('individual share', group.individual_share)
-    for p in players:
-        print('payoff before', p.payoff)
-        p.payoff = Constants.endowment - p.contribution + group.individual_share
-        print('payoff after', p.payoff)
+    if group.individual_share > 100:
+        print('inside if statement')
+        for p in players:
+            p.payoff = Constants.endowment - p.contribution + group.individual_share
+            print('payoff after', p.payoff)
 
 
-If you don't see the output in your console window,
-that means your code is not getting executed! (Which is why it isn't working.)
+.. _no-print-output:
 
-Maybe it's because your code is inside an "if" statement that is always ``False``.
+print statement not displayed in console/logs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you don't see the output of the print statement in your console window,
+that means that line is not getting executed! (Which is why it isn't working.)
+
+Maybe it's because your code is in some unreachable place like after a ``return`` statement,
+or inside an "if" statement that is always ``False``. Start putting print statements from the top of the method,
+then see where they stop getting displayed.
+
 Or maybe your code is in a method that never gets called (executed).
+oTree's built-in methods such as ``creating_session`` and ``before_next_page`` are automatically executed,
+but if you define a custom method such as ``set_payoffs``, you need to remember to call that function
+from a built-in method.

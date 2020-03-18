@@ -92,6 +92,7 @@ For example:
     expect(self.player.num_apples, 100)
     yield pages.Eat, dict(apples_eaten=1)
     expect(self.player.num_apples, 99)
+    yield pages.SomeOtherPage
 
 If ``self.player.num_apples`` is not 99, then you will be alerted with an error.
 

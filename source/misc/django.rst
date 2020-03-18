@@ -25,7 +25,7 @@ Project folder
 ~~~~~~~~~~~~~~
 
 The folder containing your games is a Django project, as explained
-`here <https://docs.djangoproject.com/en/1.11/intro/tutorial01/#creating-a-project>`__.
+`here <https://docs.djangoproject.com/en/2.2/intro/tutorial01/#creating-a-project>`__.
 
 It comes pre-configured with all the files,
 settings and dependencies so that it works right away.
@@ -69,8 +69,8 @@ Adding custom pages & URLs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can create URLs and views that are independent of oTree,
-using Django's `URL dispatcher <https://docs.djangoproject.com/en/1.9/topics/http/urls/>`__
-and `views <https://docs.djangoproject.com/en/1.11/topics/http/views/>`__.
+using Django's `URL dispatcher <https://docs.djangoproject.com/en/2.2/topics/http/urls/>`__
+and `views <https://docs.djangoproject.com/en/2.2/topics/http/views/>`__.
 
 First, define the view function in one of your project modules.
 
