@@ -1,15 +1,16 @@
 REST
 ====
 
+.. note::
+
+    This section describes a feature that is not yet publicly released.
+    It will be in oTree 2.6.
+
 oTree has a small REST API that enables external programs
 (such as other websites) to communicate with oTree, in particular:
 
 -   Create sessions
 -   Add participant vars
-
-.. note::
-
-    The REST API is new in oTree 2.6 and is currently in beta.
 
 REST Setup
 ----------
