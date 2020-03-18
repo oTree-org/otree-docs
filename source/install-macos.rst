@@ -36,7 +36,9 @@ Enter this:
 
     pip3 install -U otree
 
-(If you get a long error related to Twisted, enter ``xcode-select --install`` and try again.)
+(If you get a long error related to Twisted & xcrun,
+follow the steps :ref:`here <https://apple.stackexchange.com/a/254381>`__
+then try again.)
 
 
 Next steps
