@@ -79,7 +79,7 @@ Parameters
 .. _participant_vars_rest:
 
 "Participant vars" REST endpoint
--------------------------------
+--------------------------------
 
 POST URL: ``/api/v1/participant_vars/``
 
