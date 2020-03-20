@@ -1,5 +1,50 @@
 Version history
 ```````````````
+.. _v26:
+
+Version 2.6 beta
+================
+
+Install the beta with: ``pip3 install -U otree --pre`` and send feedback to chris@otree.org.
+In your requirements_base.txt, put ``otree>=2.6.0b1`` (or whatever version of the beta you installed).
+
+REST API
+--------
+
+See :ref:`rest`
+
+Player.start()
+--------------
+
+If you define a method called ``start`` on your Player model,
+you can specify actions to be taken when the player starts the round.
+For example:
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        endowment = models.CurrencyField()
+
+        def start(self):
+            self.endowment = self.participant.vars['endowment']
+
+Here you can setup/initialize the player by passing data from previous rounds or apps.
+The differences between ``Player.start`` and ``Subsession.creating_session`` are:
+
+-   ``start`` is run when the player reaches the first page of the round,
+    whereas ``creating_session`` is run before the whole session even starts
+-   ``start`` is run individually for each player,
+    whereas ``creating_session`` is run once for the whole subsession (since it's a Subsession method).
+
+``start()`` is skipped if the round is being skipped with ``app_after_this_page``.
+Otherwise, it is always run, even if the player skips all the pages in that round.
+
+Other things
+------------
+
+-   When browser bots complete, they keep the last page open
+-   group_by_arrival_time: quicker detection if a participant goes offline
+-   Minor bugfixes
 
 Version 2.5
 ===========

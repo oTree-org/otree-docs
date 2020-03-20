@@ -1,10 +1,12 @@
+.. _rest:
+
 REST
 ====
 
 .. note::
 
-    This section describes a feature that is not yet publicly released.
-    It will be in oTree 2.6.
+    These features are only available in :ref:`oTree 2.6 <v26>`,
+    currently in beta.
 
 oTree has a small REST API that enables external programs
 (such as other websites) to communicate with oTree, in particular:
