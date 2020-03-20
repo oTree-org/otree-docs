@@ -58,12 +58,12 @@ Example
 
     import requests
 
-    def post_session(**payload):
+    def create_session(**payload):
         return requests.post(SERVER_URL + '/api/v1/sessions/', json=payload,
             headers={'otree-rest-key': REST_KEY}
         )
 
-    resp = post_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
+    resp = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
     print(resp.text) # returns the session code
 
 Parameters
@@ -100,12 +100,12 @@ Example
 
     import requests
 
-    def post_vars(**payload):
+    def set_participant_vars(**payload):
         return requests.post(SERVER_URL + '/api/v1/participant_vars/', json=payload,
             headers={'otree-rest-key': REST_KEY}
         )
 
-    resp = post_vars(room_name='qualtrics_study', participant_label='albert_e', vars=dict(age=25, is_male=True, x=[3,6,9]))
+    resp = set_participant_vars(room_name='qualtrics_study', participant_label='albert_e', vars=dict(age=25, is_male=True, x=[3,6,9]))
     resp.raise_for_status() # ensure it succeeded
 
 Parameters
