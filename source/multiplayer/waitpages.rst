@@ -192,6 +192,15 @@ Use :ref:`timeout_seconds` on each page, so that if a player is slow or inactive
 their page will automatically advance. Or, you can manually force a timeout by clicking
 the "Advance slowest participants" button in the admin interface.
 
+Check timeout_happened
+~~~~~~~~~~~~~~~~~~~~~~
+
+You can tell users they must submit a page before its ``timeout_seconds``,
+or else they will be counted as a dropout.
+Then check :ref:`timeout_happened`. If it is True, you can do various things such as
+set a field on that player/group to indicate the dropout, and skip the rest of the pages in the round.
+
+
 Customizing the wait page's appearance
 --------------------------------------
 

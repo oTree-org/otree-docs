@@ -45,6 +45,8 @@ Other things
 -   When browser bots complete, they keep the last page open
 -   group_by_arrival_time: quicker detection if a participant goes offline
 -   Minor bugfixes
+-   Browser bots launched through CLI ``browser_bots`` command require ``OTREE_REST_KEY`` to be set
+    (see :ref:`rest`).
 
 Version 2.5
 ===========

@@ -17,8 +17,10 @@ oTree has a small REST API that enables external programs
 REST Setup
 ----------
 
-Create an environment variable (i.e. Heroku config var) ``OTREE_REST_KEY``.
-Set it to some secret value. This is the "password" to prevent unwanted API access.
+Create an environment variable (i.e. Heroku config var) ``OTREE_REST_KEY``
+on the server. Set it to some secret value.
+This is the "password" to prevent unauthorized access
+(though only enforced when your server has password protection via "auth level").
 
 Then simply make an JSON-encoded request to one of the below endpoint URLs,
 including the secret key in an HTTP header.
@@ -27,6 +29,7 @@ The below examples use the Python Requests library (``pip3 install requests``),
 but you can make HTTP requests using any programming language,
 even JavaScript code in an oTree template
 (but don't expose the secret key to non-admin users).
+Additionally, many online tools allow making POST requests (e.g. through webhooks).
 
 Setup code:
 
@@ -87,7 +90,7 @@ This endpoint lets you set a participant's vars, i.e. ``self.participant.vars``.
 The main purpose is to allow other sites/apps to pass information about a participant to oTree.
 For example, if the user does a survey on Qualtrics that then links to oTree,
 you can pass their survey data (like gender, age, etc) into oTree as participant vars.
-(Qualtrics supports REST APIs with their `web service <https://www.qualtrics.com/support/survey-platform/survey-module/survey-flow/advanced-elements/web-service/>`__
+(Qualtrics allows making POST requests through their `web service <https://www.qualtrics.com/support/survey-platform/survey-module/survey-flow/advanced-elements/web-service/>`__
 feature.)
 
 The POST request should be made server-side.
@@ -146,7 +149,7 @@ You can also set participant labels here.
 
 When you run a session in demo mode, or using bots, ``mock_exogenous_data()``
 will automatically be run after ``creating_session``. However, it will not be run
-if the session created in a room.
+if the session is created in a room.
 
 If you have multiple session configs that require different exogenous data,
 you can branch like this:
