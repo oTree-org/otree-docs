@@ -17,28 +17,12 @@ oTree has a small REST API that enables external programs
 REST Setup
 ----------
 
-Create an environment variable (i.e. Heroku config var) ``OTREE_REST_KEY``
-on the server. Set it to some secret value.
-This is the "password" to prevent unauthorized access
-(though only enforced when your server has password protection via "auth level").
-
-Then simply make an JSON-encoded request to one of the below endpoint URLs,
-including the secret key in an HTTP header.
-
-The below examples use the Python Requests library (``pip3 install requests``),
+Simply make an JSON-encoded request to one of the below endpoint URLs.
+The examples on this page use the Python Requests library (``pip3 install requests``),
 but you can make HTTP requests using any programming language,
-even JavaScript code in an oTree template
-(but don't expose the secret key to non-admin users).
+even JavaScript code in an oTree template.
 Additionally, many online tools allow making POST requests (e.g. through webhooks).
-
-Setup code:
-
-.. code-block:: python
-
-    import requests
-
-    SERVER_URL = 'https://your-otree-server.herokuapp.com'
-    REST_KEY = 'your_secret_rest_key'
+See also the note about authentication below.
 
 "Create sessions" REST endpoint
 -------------------------------
@@ -62,9 +46,7 @@ Example
     import requests
 
     def create_session(**payload):
-        return requests.post(SERVER_URL + '/api/v1/sessions/', json=payload,
-            headers={'otree-rest-key': REST_KEY}
-        )
+        return requests.post(SERVER_URL + '/api/v1/sessions/', json=payload)
 
     resp = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
     print(resp.text) # returns the session code
@@ -93,7 +75,7 @@ you can pass their survey data (like gender, age, etc) into oTree as participant
 (Qualtrics allows making POST requests through their `web service <https://www.qualtrics.com/support/survey-platform/survey-module/survey-flow/advanced-elements/web-service/>`__
 feature.)
 
-The POST request should be made server-side.
+The POST request would typically be made server-side.
 You can do it on the last page of your survey, presumably before you display them their oTree link.
 
 Example
@@ -104,9 +86,7 @@ Example
     import requests
 
     def set_participant_vars(**payload):
-        return requests.post(SERVER_URL + '/api/v1/participant_vars/', json=payload,
-            headers={'otree-rest-key': REST_KEY}
-        )
+        return requests.post(SERVER_URL + '/api/v1/participant_vars/', json=payload)
 
     resp = set_participant_vars(room_name='qualtrics_study', participant_label='albert_e', vars=dict(age=25, is_male=True, x=[3,6,9]))
     resp.raise_for_status() # ensure it succeeded
@@ -124,8 +104,33 @@ Participants are uniquely identified with the combination of room name & partici
 So you will need to give participants a link with a ``participant_label``,
 although this does not need to come from a ``participant_label_file``.
 
+Authentication
+--------------
+
+If you have set your auth level to DEMO or STUDY,
+you must authenticate your REST API requests.
+
+Create an environment variable (i.e. Heroku config var) ``OTREE_REST_KEY``
+on the server. Set it to some secret value.
+
+When you make a request, add that key as an HTTP header called ``otree-rest-key``.
+For example:
+
+.. code-block:: python
+
+    import requests
+
+    REST_KEY = 'your_key'
+
+    def create_session(**payload):
+        return requests.post(SERVER_URL + '/api/v1/sessions/', json=payload,
+            headers={'otree-rest-key': REST_KEY}
+        )
+
+
+
 Demo & testing
-~~~~~~~~~~~~~~
+--------------
 
 For convenience during development, you can generate fake vars to simulate
 data that, in a real session, will come from the REST API.
