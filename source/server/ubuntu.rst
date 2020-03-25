@@ -73,7 +73,7 @@ Return to your regular command prompt::
 
 Then add this line to the end of your .bashrc/.profile::
 
-    export DATABASE_URL=postgres://postgres:postgres@localhost/django_db
+    export DATABASE_URL=postgres://postgres:password@localhost/django_db
 
 Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
 
