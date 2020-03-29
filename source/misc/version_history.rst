@@ -8,6 +8,11 @@ Version 2.6 beta
 Install the beta with: ``pip3 install -U otree --pre`` and send feedback to chris@otree.org.
 In your requirements_base.txt, put ``otree>=2.6.0b1`` (or whatever version of the beta you installed).
 
+Live pages
+----------
+
+See :ref:`live`.
+
 REST API
 --------
 

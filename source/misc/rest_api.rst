@@ -14,15 +14,13 @@ oTree has a small REST API that enables external programs
 -   Create sessions
 -   Add participant vars
 
-REST Setup
-----------
-
 Simply make an JSON-encoded request to one of the below endpoint URLs.
 The examples on this page use the Python Requests library (``pip3 install requests``),
 but you can make HTTP requests using any programming language,
 even JavaScript code in an oTree template.
 Additionally, many online tools allow making POST requests (e.g. through webhooks).
-See also the note about authentication below.
+
+If your site is password protected, see the note about authentication below.
 
 "Create sessions" REST endpoint
 -------------------------------

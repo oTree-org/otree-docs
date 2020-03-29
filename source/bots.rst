@@ -72,6 +72,8 @@ Rounds
 Your bot code should just play 1 round at a time.
 oTree will automatically execute it ``num_rounds`` times.
 
+.. _expect:
+
 expect()
 ~~~~~~~~
 

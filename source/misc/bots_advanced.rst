@@ -105,6 +105,8 @@ Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/1420
 that you use just for browser testing. When oTree launches Chrome,
 it should use the last profile you had open.
 
+.. _cases:
+
 Test cases
 ----------
 
