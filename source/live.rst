@@ -25,6 +25,11 @@ For example, to submit a bid of 99 on behalf of the user, call:
 
     liveSend(99);
 
+.. note::
+
+    After upgrading oTree, in your browser you should do Ctrl+F5,
+    to clear out the old JavaScript files and load the new ones.
+
 On your ``Group``, define a method that will receive this message.
 Its arguments are the ``id_in_group`` of the sender and whatever data
 was sent.
