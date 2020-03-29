@@ -36,13 +36,14 @@ was sent.
         def your_live_method(self, id_in_group, payload):
             print('received a bid from', id_in_group, ':', payload)
 
-On your ``Page`` class (not ``WaitPage``), set ``live_method`` to route the messages to that method:
+On your ``Page`` class, set ``live_method`` to route the messages to that method:
 
 .. code-block:: python
 
     class MyPage(Page):
         live_method = 'your_live_method'
 
+(Note, ``live_method`` on ``WaitPage`` is not yet supported.)
 
 Sending data to the page
 ------------------------
@@ -58,7 +59,7 @@ to whoever sends a message.
         return {id_in_group: 'thanks'}
 
 To send to multiple players, just use their ``id_in_group``.
-This will forward any message on to players 2 and 3:
+For example, this forwards every message to players 2 and 3:
 
 .. code-block:: python
 
@@ -122,6 +123,8 @@ since it allows you to include multiple pieces of metadata:
 
     liveSend({'type': 'offer', 'value': 99.9, 'to': 3})
     liveSend({'type': 'response', 'accepted': true, 'to': 3})
+
+Then you can use ``if`` statements to process different types of messages:
 
 .. code-block:: python
 
@@ -200,9 +203,9 @@ Let's say you require 10 messages to be sent before the users can proceed
 to the next page.
 
 First, you should omit the ``{% next_button %}``.
-(Or use JS to hide it until the game is complete.)
+(Or use JS to hide it until the task is complete.)
 
-When the game is completed, you send a message:
+When the task is completed, you send a message:
 
 .. code-block:: python
 
@@ -228,7 +231,7 @@ Then in the template, automatically submit the page via JavaScript:
         // handle other types of messages here..
     }
 
-As an extra layer of security, you should use :ref:`error_message`:
+As an extra layer of security, you should use :ref:`error_message <error_message>`:
 
 .. code-block:: javascript
 
@@ -242,7 +245,7 @@ As an extra layer of security, you should use :ref:`error_message`:
 Bots
 ----
 
-To simulate live pages with bots, define ``call_live_method``.
+To test live methods with bots, define ``call_live_method``.
 (If using a a text editor, it should be a top-level function in ``tests.py``.)
 This function should simulate the sequence of calls to your ``live_method``.
 For example:
