@@ -25,11 +25,6 @@ For example, to submit a bid of 99 on behalf of the user, call:
 
     liveSend(99);
 
-.. note::
-
-    After upgrading oTree, in your browser you should do Ctrl+F5,
-    to clear out the old JavaScript files and load the new ones.
-
 On your ``Group``, define a method that will receive this message.
 Its arguments are the ``id_in_group`` of the sender and whatever data
 was sent.
@@ -155,22 +150,6 @@ it just needs to be the method's last argument:
 
     def your_live_method(self, id_in_group, bid):
         print(bid)
-
-HTML & JavaScript
------------------
-
-One quirk is that if the user hits Enter to submit any text or number inputs on the page,
-oTree will interpret that as submitting the page.
-You can block that by putting this code after your input elements.
-
-.. code-block:: javascript
-
-    $('input').on('keypress', function (e) {
-        if (e.key === 'Enter') {
-            sendMsgContent();
-            e.preventDefault();
-        }
-    });
 
 History
 -------
