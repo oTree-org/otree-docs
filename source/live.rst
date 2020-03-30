@@ -199,7 +199,6 @@ When the task is completed, you send a message:
         def your_live_method(self, id_in_group, payload):
             self.num_messages += 1
             if self.num_messages >= 10:
-                # signal the game is complete
                 msg = {'game_finished': True}
                 return {0: msg}
 
@@ -215,7 +214,7 @@ Then in the template, automatically submit the page via JavaScript:
         // handle other types of messages here..
     }
 
-As an extra layer of security, you should use :ref:`error_message <error_message>`:
+For security, you should use :ref:`error_message <error_message>`:
 
 .. code-block:: javascript
 
@@ -232,6 +231,8 @@ Bots
 To test live methods with bots, define ``call_live_method``.
 (If using a a text editor, it should be a top-level function in ``tests.py``.)
 This function should simulate the sequence of calls to your ``live_method``.
+The argument ``method`` is the instance method on your group,
+i.e. ``method = group.your_live_method``.
 For example:
 
 .. code-block:: python
