@@ -5,10 +5,7 @@ Forms
 
 Each page in oTree can contain a form, which the player should fill out
 and submit by clicking the "Next" button. To create a form, first
-you need fields on the ``Player`` model. Then,
-in your Page class, set ``form_model`` and ``form_fields``.
-
-For example, here is a Player model:
+you need fields on the ``Player`` model, for example:
 
 .. code-block:: python
 
@@ -16,7 +13,7 @@ For example, here is a Player model:
         name = models.StringField(label="Your name:")
         age = models.IntegerField(label="Your age:")
 
-And page:
+Then, in your Page class, set ``form_model`` and ``form_fields``:
 
 .. code-block:: python
 
@@ -230,7 +227,7 @@ Validating multiple fields together
 
 Let's say you have 3 integer fields in your form whose names are
 ``int1``, ``int2``, and ``int3``, and the values submitted must sum to
-100. You can enforce this with the ``error_message`` method, which goes on the page, not the Player model:
+100. You can enforce this with the ``error_message`` method, which goes on the *page*, not the Player model:
 
 .. code-block:: python
 

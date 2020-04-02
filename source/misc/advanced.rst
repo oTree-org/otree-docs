@@ -166,6 +166,134 @@ You can even make other custom wait pages inherit from ``_templates/global/WaitP
 just the way regular pages inherit from ``_templates/global/Page.html``,
 and they can define the blocks ``app_scripts`` and ``scripts``, etc.
 
+.. _aux-models:
+
+Extra models
+------------
+
+.. note::
+
+    New in :ref:`oTree 2.6 <v26>`.
+    If you try using this feature on an older version of oTree,
+    you will get an error about your ForeignKey like
+    "TypeError: __init__() missing 1 required positional argument: 'on_delete'"
+
+You can define extra models, in addition to ``Player``, ``Group``, and ``Subsession``.
+This is useful especially when using :ref:`live`,
+where each player may have multiple bids/messages/offers.
+
+For example, put this at the bottom of your models.py:
+
+.. code-block:: python
+
+    class Bid(models.Model):
+        player = models.ForeignKey(Player)
+        resource = models.StringField()
+        offer = models.CurrencyField()
+
+Now, you can use the Django ORM to create/update/delete bids.
+For example, to create a bid for a player:
+
+.. code-block:: python
+
+    Bid.objects.create(player=player, resource='pipeline', offer=500)
+
+To list all bids for a player:
+
+.. code-block:: python
+
+    bids = Bid.objects.filter(player=player)
+
+
+If you want to use the model in your pages or tests,
+you should do ``from .models import Bid``.
+
+To export data in extra models, you can use :ref:`custom-export`.
+
+Foreign key to group
+~~~~~~~~~~~~~~~~~~~~
+
+If you need to find all bids in a group, add a foreign key to Group:
+
+.. code-block:: python
+
+    class Bid(models.Model):
+        player = models.ForeignKey(Player)
+        group = models.ForeignKey(Group)
+        # etc...
+
+When you create the model, set the group:
+
+.. code-block:: python
+
+    Bid.objects.create(player=player, group=player.group, offer=500)
+
+That way, you can also query by group:
+
+.. code-block:: python
+
+    bids = Bid.objects.filter(player=player)
+
+About foreign keys
+~~~~~~~~~~~~~~~~~~
+
+The first argument to ``ForeignKey`` should be the model the bid belongs to
+e.g. ``Player`` or ``Group``.
+
+To link the model to 2 separate players
+(e.g. representing a link between 2 players in a network game),
+use 2 separate ForeignKeys to Player:
+
+.. code-block:: python
+
+    class Contract(models.Model):
+        proposer = models.ForeignKey(Player, related_name='proposers')
+        responder = models.ForeignKey(Player, related_name='responders')
+        offer = models.CurrencyField()
+        # etc...
+
+.. _django-orm:
+
+Django ORM
+~~~~~~~~~~
+
+Here are some examples of using the Django ORM.
+
+Create:
+
+.. code-block:: python
+
+    Bid.objects.create(player=player, resource='pipeline', offer=500)
+
+Query & sort:
+
+.. code-block:: python
+
+    bids = Bid.objects.filter(player=player).exclude(offer=0).order_by('offer')
+
+Get a unique record (e.g. when you know there is exactly 1 accepted bid):
+
+.. code-block:: python
+
+    bid = Bid.objects.get(group=group, is_accepted=True)
+
+Update:
+
+.. code-block:: python
+
+    Bid.objects.filter(player=player).update(is_accepted=False)
+
+    # OR:
+    for bid in Bid.objects.filter(player=player):
+        bid.is_accepted=False
+        # must be saved manually
+        bid.save()
+
+Delete:
+
+.. code-block:: python
+
+    bids = Bid.objects.filter(player=player, offer=0).delete()
 
 
 .. _migrations:

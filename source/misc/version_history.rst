@@ -18,6 +18,18 @@ REST API
 
 See :ref:`rest`
 
+Custom data export
+------------------
+
+See :ref:`custom-export`.
+
+Extra models
+------------
+
+oTree now supports defining extra models in addition to Player/Group/Subsession.
+See :ref:`aux-models`.
+
+
 Player.start()
 --------------
 
@@ -47,11 +59,16 @@ Otherwise, it is always run, even if the player skips all the pages in that roun
 Other things
 ------------
 
+-   You can now download a single session's data as Excel or CSV (through session's Data tab)
+-   The text "Please correct the errors in the form" has been removed.
 -   When browser bots complete, they keep the last page open
 -   group_by_arrival_time: quicker detection if a participant goes offline
 -   Minor bugfixes
 -   Browser bots launched through CLI ``browser_bots`` command require ``OTREE_REST_KEY`` to be set
     (see :ref:`rest`).
+-   ``models.ForeignKey`` has changed implementation. If you were previously using it,
+    you may want to import it directly from Django to keep using the old one.
+
 
 Version 2.5
 ===========

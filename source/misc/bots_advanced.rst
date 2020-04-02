@@ -52,6 +52,7 @@ You can launch browser bots from the command line, using ``otree browser_bots``.
 
 -   Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings.py``
     (more info below).
+-   Set ``OTREE_REST_KEY`` env var as described in :ref:`rest`.
 -   Run your server
 -   Close all Chrome windows.
 -   Run this::

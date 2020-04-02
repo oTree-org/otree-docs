@@ -198,6 +198,36 @@ In the admin interface, click on "Data"
 (try http://localhost:8000/export/)
 to download your data as CSV or Excel.
 
+.. _custom-export:
+
+Custom data exports
+~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    New in :ref:`oTree 2.6 <v26>`,
+
+To make your own custom data export for an app, define a function ``custom_export()``.
+If using a text editor, put it at the bottom of your ``models.py``.
+The argument ``players`` is a queryset of all the players in the database.
+Use a ``yield`` for each row of data.
+
+.. code-block:: python
+
+    def custom_export(players):
+        # header row
+        yield ['session', 'participant_code', 'round_number', 'id_in_group', 'payoff']
+        for p in players:
+            yield [p.session.code, p.participant.code, p.round_number, p.id_in_group, p.payoff]
+
+Once this function is defined, your custom data export will be available in the
+regular data export page, as CSV and Excel.
+
+Notes:
+-   Since ``players`` is a QuerySet, you can call methods such as ``players.values_list()``,
+    ``players.filter()``, etc.
+-   You can even ignore the argument ``players`` and export some other data altogether.
+
 Debug Info
 ----------
 

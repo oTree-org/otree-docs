@@ -7,8 +7,6 @@ Live pages
 
     These features are only available in :ref:`oTree 2.6 <v26>`,
     currently in beta.
-    Live messaging is slow on Heroku/``runprodserver``.
-    I am currently working on this.
 
 You can make pages that communicate with the server continuously
 and update in real time, enabling continuous time games.
@@ -156,7 +154,15 @@ History
 
 By default, participants will not see messages that were sent before they arrived at the page.
 (And data will not be re-sent if they refresh the page.)
-If you want to save history, you should define fields on the Group/Player and save it there.
+If you want to save history, you should store it in the database.
+When a player loads the page, your JavaScript can call something like ``liveSend({'type': 'connect'})``,
+and you can configure your live_method to retrieve the history of the game from the database.
+
+Here are 2 ways you can store the history in the database.
+
+LongStringField
+~~~~~~~~~~~~~~~
+
 One way is to use a ``LongStringField``:
 
 .. code-block:: python
@@ -173,12 +179,11 @@ One way is to use a ``LongStringField``:
             self.history = json.dumps(history)
 
 Then in your live_method, you call these methods each time a message is sent.
-Then your JavaScript could call ``liveSend({'type': 'connect'})``
-immediately when a user connects, and you can configure your live_method
-to send the past history of the game using ``self.get_history()``.
 
-A more powerful option is to create a custom Django model with a foreign key to ``Player``
-or ``Group``, but that is beyond the scope of this documentation.
+Extra model
+~~~~~~~~~~~
+
+A more powerful/flexible option is to store your data in an :ref:`extra model <aux-models>`.
 
 Keeping users on the page
 -------------------------

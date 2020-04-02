@@ -137,7 +137,8 @@ In your session config, add the parameter ``mock_exogenous_data=True``
 (We call it **exogenous** data because it originates outside oTree.)
 
 Then define a function with the same name (``mock_exogenous_data``)
-in your project's utils.py (if you are using a text editor, you may need to create that module).
+in your project's shared_in.py (if you are using a text editor,
+you may need to create that file).
 
 Here's an example:
 
