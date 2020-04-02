@@ -224,6 +224,7 @@ Once this function is defined, your custom data export will be available in the
 regular data export page, as CSV and Excel.
 
 Notes:
+
 -   Since ``players`` is a QuerySet, you can call methods such as ``players.values_list()``,
     ``players.filter()``, etc.
 -   You can even ignore the argument ``players`` and export some other data altogether.
