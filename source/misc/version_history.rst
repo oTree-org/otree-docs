@@ -66,8 +66,6 @@ Other things
 -   Minor bugfixes
 -   Browser bots launched through CLI ``browser_bots`` command require ``OTREE_REST_KEY`` to be set
     (see :ref:`rest`).
--   ``models.ForeignKey`` has changed implementation. If you were previously using it,
-    you may want to import it directly from Django to keep using the old one.
 
 
 Version 2.5

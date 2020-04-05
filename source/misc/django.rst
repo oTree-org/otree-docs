@@ -108,11 +108,15 @@ In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` that you j
 Real-time and WebSockets
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    oTree 2.6 has a feature called :ref:`live pages <live>`,
+    which are an easier way of adding real-time functionality to your app.
+    Before using Django Channels, see if you can accomplish it using live pages.
+
 .. warning::
 
     This section is for advanced programmers who want to use oTree's internal and unsupported features.
-
-    The information below has changed as of July 2019.
 
 oTree uses `Django channels <https://channels.readthedocs.io/en/stable/>`__
 for real-time (WebSocket) functionality.

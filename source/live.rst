@@ -230,6 +230,10 @@ For security, you should use :ref:`error_message <error_message>`:
             if self.group.num_messages < 10:
                 return 'you need to stay until 10 messages are sent'
 
+By the way, using a similar technique, you could implement a pseudo
+wait page, e.g. one that lets you proceed after a certain timeout,
+even if not all players have arrived.
+
 Bots
 ----
 

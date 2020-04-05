@@ -174,117 +174,107 @@ Extra models
 .. note::
 
     New in :ref:`oTree 2.6 <v26>`.
-    If you try using this feature on an older version of oTree,
-    you will get an error about your ForeignKey like
-    "TypeError: __init__() missing 1 required positional argument: 'on_delete'"
 
 You can define extra models, in addition to ``Player``, ``Group``, and ``Subsession``.
 This is useful especially when using :ref:`live`,
-where each player may have multiple bids/messages/offers.
+where each player may have multiple bids/messages/contracts.
 
 For example, put this at the bottom of your models.py:
 
 .. code-block:: python
 
-    class Bid(models.Model):
-        player = models.ForeignKey(Player)
-        resource = models.StringField()
+    class Bid(models.ExtraModel):
+        player = models.Link(Player)
         offer = models.CurrencyField()
 
-Now, you can use the Django ORM to create/update/delete bids.
-For example, to create a bid for a player:
+To list a player's bids:
 
 .. code-block:: python
 
-    Bid.objects.create(player=player, resource='pipeline', offer=500)
+    bids = Bid.objects.filter(player=your_player)
 
-To list all bids for a player:
+To create a bid:
 
 .. code-block:: python
 
-    bids = Bid.objects.filter(player=player)
-
-
-If you want to use the model in your pages or tests,
-you should do ``from .models import Bid``.
+    Bid.objects.create(player=your_player, offer=500)
 
 To export data in extra models, you can use :ref:`custom-export`.
 
-Foreign key to group
-~~~~~~~~~~~~~~~~~~~~
+Link to Player and Group
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to find all bids in a group, add a foreign key to Group:
+To create an extra model with a link to the Group instead of the Player,
+follow the instructions above but substitute group for player everywhere.
+
+It's often useful to link to player *and* group.
+For example, if bids are made by a player but you need to filter for all bids in a group.
+Do this:
 
 .. code-block:: python
 
-    class Bid(models.Model):
-        player = models.ForeignKey(Player)
-        group = models.ForeignKey(Group)
+    class Bid(models.ExtraModel):
+        player = models.Link(Player)
+        group = models.Link(Group)
         # etc...
 
-When you create the model, set the group:
+When you create the model, remember to set the group:
 
 .. code-block:: python
 
     Bid.objects.create(player=player, group=player.group, offer=500)
 
-That way, you can also query by group:
+Handy tip: make a method
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can make your code more concise by defining a method:
 
 .. code-block:: python
 
-    bids = Bid.objects.filter(player=player)
+    class Player(BasePlayer):
 
-About foreign keys
-~~~~~~~~~~~~~~~~~~
+        def bids(self):
+            return Bid.objects.filter(player=self)
 
-The first argument to ``ForeignKey`` should be the model the bid belongs to
-e.g. ``Player`` or ``Group``.
+Now, ``player.bids()`` returns all that player's bids.
+You can loop over it to print all of them.
+And since it is a queryset, you can do things like
+``player.bids().filter()``, ``player.bids().order_by()``, etc.
 
-To link the model to 2 separate players
-(e.g. representing a link between 2 players in a network game),
-use 2 separate ForeignKeys to Player:
-
-.. code-block:: python
-
-    class Contract(models.Model):
-        proposer = models.ForeignKey(Player, related_name='proposers')
-        responder = models.ForeignKey(Player, related_name='responders')
-        offer = models.CurrencyField()
-        # etc...
-
-.. _django-orm:
-
-Django ORM
-~~~~~~~~~~
-
-Here are some examples of using the Django ORM.
-
-Create:
+Same thing if your model has a link to the group:
 
 .. code-block:: python
 
-    Bid.objects.create(player=player, resource='pipeline', offer=500)
+    class Group(BaseGroup):
 
-Query & sort:
+        def bids(self):
+            return Bid.objects.filter(group=self)
+
+.. _queryset:
+
+QuerySets
+~~~~~~~~~
+
+A Django queryset is a bit like a list, but you can use various methods like
+``order_by``, ``filter``, ``exclude``, ``create``, ``delete``, ``exists``.
+Here are some examples of using querysets, following from the above sections.
+These examples also show how you can chain methods pretty much arbitrarily,
+e.g. ``exclude().filter().order_by()``.
+
+Filter & sort:
 
 .. code-block:: python
 
-    bids = Bid.objects.filter(player=player).exclude(offer=0).order_by('offer')
-
-Get a unique record (e.g. when you know there is exactly 1 accepted bid):
-
-.. code-block:: python
-
-    bid = Bid.objects.get(group=group, is_accepted=True)
+    bids = Bid.objects.filter(player=player).exclude(offer=0).order_by('-offer')
 
 Update:
 
 .. code-block:: python
 
-    Bid.objects.filter(player=player).update(is_accepted=False)
+    Bid.objects.filter(player=your_player).update(is_accepted=False)
 
-    # OR:
-    for bid in Bid.objects.filter(player=player):
+    # or:
+    for bid in Bid.objects.filter(player=your_player):
         bid.is_accepted=False
         # must be saved manually
         bid.save()
@@ -293,8 +283,13 @@ Delete:
 
 .. code-block:: python
 
-    bids = Bid.objects.filter(player=player, offer=0).delete()
+    Bid.objects.filter(player=player, offer=0).delete()
 
+Get a unique record (e.g. when you know there is exactly 1 accepted bid):
+
+.. code-block:: python
+
+    bid = Bid.objects.filter(group=your_group).get(is_accepted=True)
 
 .. _migrations:
 
