@@ -82,24 +82,48 @@ This will be automatically called each time a message is received from the serve
         // your code goes here
     }
 
-With JavaScript you can then do whatever you want with that data,
-e.g. adding it to a table on the page, using ``.innerHTML``, ``jQuery.append()``, etc.
-
-Updating the database
----------------------
-
-To keep track of data, simply update a Group field:
+Example: auction
+----------------
 
 .. code-block:: python
 
     class Group(BaseGroup):
-        max_bid = models.IntegerField(initial=0)
+        highest_bidder = models.IntegerField()
+        highest_bid = models.CurrencyField(initial=0)
 
-        def your_live_method(self, id_in_group, payload):
-            if payload > self.max_bid:
-                self.max_bid = payload
-                # broadcast to group
-                return {0: self.max_bid}
+        def live_auction(self, id_in_group, bid):
+            if bid > self.highest_bid:
+                self.highest_bid = bid
+                self.highest_bidder = id_in_group
+                broadcast = dict(id_in_group=id_in_group, bid=bid)
+                return {0: broadcast}
+
+.. code-block:: html+django
+
+  <table id="history" class="table">
+    <tr>
+      <th>Player</th>
+      <th>Bid</th>
+    </tr>
+  </table>
+  <input id="inputbox" type="number">
+  <button type="button" id="sendbutton">Send</button>
+
+  <script>
+
+      let history = document.getElementById('history');
+      let inputbox = document.getElementById('inputbox');
+      let sendbutton = document.getElementById('sendbutton');
+
+      function liveRecv(payload) {
+          history.innerHTML += '<tr><td>' + payload.id_in_group + '</td><td>' + payload.bid + '</td></tr>';
+      }
+
+      sendbutton.onclick = function () {
+          liveSend(parseInt(inputbox.value));
+      };
+
+  </script>
 
 Payload
 -------
@@ -233,6 +257,11 @@ For security, you should use :ref:`error_message <error_message>`:
 By the way, using a similar technique, you could implement a pseudo
 wait page, e.g. one that lets you proceed after a certain timeout,
 even if not all players have arrived.
+
+Misc notes
+----------
+
+-   live methods are executed in a single thread, so you don't need to worry about race conditions.
 
 Bots
 ----
