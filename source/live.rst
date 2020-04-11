@@ -98,6 +98,11 @@ Example: auction
                 broadcast = dict(id_in_group=id_in_group, bid=bid)
                 return {0: broadcast}
 
+.. code-block:: python
+
+    class Auction(Page):
+        live_method = 'live_auction'
+
 .. code-block:: html+django
 
   <table id="history" class="table">
@@ -128,7 +133,7 @@ Example: auction
 Payload
 -------
 
-The payload can be any data type (as long as it is JSON serializable).
+The payloads that you send and receive can be any data type (as long as it is JSON serializable).
 For example these are all valid:
 
 .. code-block:: javascript
@@ -151,7 +156,6 @@ Then you can use ``if`` statements to process different types of messages:
 .. code-block:: python
 
     def your_live_method(self, id_in_group, payload):
-        players = self.get_players()
         t = payload['type']
         if t == 'offer':
             other_player = payload['to']
@@ -182,32 +186,8 @@ If you want to save history, you should store it in the database.
 When a player loads the page, your JavaScript can call something like ``liveSend({'type': 'connect'})``,
 and you can configure your live_method to retrieve the history of the game from the database.
 
-Here are 2 ways you can store the history in the database.
-
-LongStringField
-~~~~~~~~~~~~~~~
-
-One way is to use a ``LongStringField``:
-
-.. code-block:: python
-
-    class Group(BaseGroup):
-        history = models.LongStringField(initial='[]')
-
-        def get_history(self):
-            import json
-            return json.loads(self.history)
-
-        def set_history(self, history):
-            import json
-            self.history = json.dumps(history)
-
-Then in your live_method, you call these methods each time a message is sent.
-
-Extra model
-~~~~~~~~~~~
-
-A more powerful/flexible option is to store your data in an :ref:`extra model <aux-models>`.
+If you need to store each individual bid/message that is sent,
+you can use an :ref:`extra model <aux-models>`.
 
 Keeping users on the page
 -------------------------
@@ -224,10 +204,12 @@ When the task is completed, you send a message:
 
     class Group(BaseGroup):
         num_messages = models.IntegerField()
+        game_finished = models.BooleanField()
 
         def your_live_method(self, id_in_group, payload):
             self.num_messages += 1
             if self.num_messages >= 10:
+                self.game_finished = True
                 msg = {'game_finished': True}
                 return {0: msg}
 
@@ -251,7 +233,7 @@ For security, you should use :ref:`error_message <error_message>`:
         live_method = 'live_method'
 
         def error_message(self, values):
-            if self.group.num_messages < 10:
+            if not self.group.game_finished:
                 return 'you need to stay until 10 messages are sent'
 
 By the way, using a similar technique, you could implement a pseudo
@@ -261,6 +243,7 @@ even if not all players have arrived.
 Misc notes
 ----------
 
+-   On Heroku, you need to turn on your 2nd dyno.
 -   live methods are executed in a single thread, so you don't need to worry about race conditions.
 
 Bots

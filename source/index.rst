@@ -61,6 +61,7 @@ Contents:
     bots.rst
     timeouts.rst
     treatments.rst
+    live.rst
     server/intro.rst
     admin.rst
     rooms.rst
