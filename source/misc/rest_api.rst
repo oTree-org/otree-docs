@@ -87,6 +87,7 @@ Example
         return requests.post(SERVER_URL + '/api/v1/participant_vars/', json=payload)
 
     resp = set_participant_vars(room_name='qualtrics_study', participant_label='albert_e', vars=dict(age=25, is_male=True, x=[3,6,9]))
+    print(resp.content)
     resp.raise_for_status() # ensure it succeeded
 
 Parameters

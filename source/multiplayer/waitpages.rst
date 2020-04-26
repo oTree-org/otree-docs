@@ -32,8 +32,16 @@ once all players have arrived at the wait
 page. This is a good place to set the players' payoffs
 or determine the winner.
 You should first define a method on your Group that does the desired calculations.
-Let's say you called it ``set_payoffs``.
-You can trigger this method by doing:
+For example:
+
+    .. code-block:: python
+
+        class Group(BaseGroup):
+            def set_payoffs(self):
+                for player in self.get_players():
+                    player.payoff = c(100)
+
+Then trigger this method by doing:
 
 .. code-block:: python
 
@@ -44,15 +52,9 @@ then you should set ``after_all_players_arrive`` to the name of to a method on y
 
 .. note::
 
-    In oTree 2.3 and earlier, ``after_all_players_arrive`` was a method:
-
-    .. code-block:: python
-
-        def after_all_players_arrive(self):
-            self.group.set_payoffs()
-
-    This is still supported for compatibility, but it's recommended to use the new format.
-
+    In oTree 2.3 and earlier, ``after_all_players_arrive`` was a method,
+    i.e. ``def after_all_players_arrive(self):``.
+    However, the new format is better and you should use it instead.
 
 is_displayed()
 --------------
@@ -131,37 +133,52 @@ group_by_arrival_time_method()
 
     Before November 2019, this was a method called ``get_players_for_group``,
     and it was on the Page, not the Subsession.
-    The old format is still compatible but we recommend switching to the new format.
+    We recommend switching to the new format.
 
 If you're using ``group_by_arrival_time`` and want more control over
 which players are assigned together, you can use ``group_by_arrival_time_method()``.
 
 Let's say that in addition to grouping by arrival time, you need each group
-group to consist of 1 man and 1 woman (or 2 "A" players and 2 "B" players, etc).
+group to consist of 2 men and 2 women.
 
 If you define a method called ``group_by_arrival_time_method`` on your Subsession,
 it will get called whenever a new player reaches the wait page.
 The method's argument is the list of players who are waiting to be grouped
 (minus those who have disconnected or closed the page).
-If you select some of these players and return them as a list,
+If you pick some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
 
-Here's an example where each group has 2 A players, 2 B players.
+Here's an example where each group has 2 men and 2 women:
 
 .. code-block:: python
 
     class Subsession(BaseSubsession):
-
         def group_by_arrival_time_method(self, waiting_players):
             print('in group_by_arrival_time_method')
-            a_players = [p for p in waiting_players if p.participant.vars['type'] == 'A']
-            b_players = [p for p in waiting_players if p.participant.vars['type'] == 'B']
+            m_players = [p for p in waiting_players if p.participant.vars['category'] == 'M']
+            f_players = [p for p in waiting_players if p.participant.vars['category'] == 'F']
 
-            if len(a_players) >= 2 and len(b_players) >= 2:
+            if len(m_players) >= 2 and len(f_players) >= 2:
                 print('about to create a group')
-                return [a_players[0], a_players[1], b_players[0], b_players[1]]
+                return [m_players[0], m_players[1], f_players[0], f_players[1]]
             print('not enough players to create a group')
+
+The above example is hardcoded for only 2 categories (M and F).
+If you have many categories, and want to match players in the same category,
+you can do this:
+
+.. code-block:: python
+
+    def group_by_arrival_time_method(self, waiting_players):
+        from collections import defaultdict
+        d = defaultdict(list)
+        for p in waiting_players:
+            category = p.participant.vars['category']
+            players_with_this_category = d[category]
+            players_with_this_category.append(p)
+            if len(players_with_this_category) == 3:
+                return players_with_this_category
 
 .. _wait-page-stuck:
 

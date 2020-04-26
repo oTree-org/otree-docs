@@ -236,10 +236,21 @@ timer at all. Instead, make your own with JavaScript, for example:
         60*1000 // 60 seconds
     );
 
-Require minimum time on page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Minimum time on page
+~~~~~~~~~~~~~~~~~~~~
 
 If you want to require the user to spend *at least* a certain amount of time
 on a page, you can use some simple JavaScript: hide the next button
 (use the ``.otree-btn-next`` selector),
 then use ``setTimeout`` to re-display it after a certain amount of time.
+
+In addition, you can also use ref:`error_message <error_message>`.
+Assuming you previously set a field like ``expiry_time`` on the player,
+then use this:
+
+.. code-block:: python
+
+    def error_message(self, values):
+        import time
+        if time.time() < self.player.expiry_time:
+            return 'You submitted the page early'

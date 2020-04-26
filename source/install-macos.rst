@@ -20,8 +20,8 @@ If the below steps don't work for you, please email chris@otree.org with details
 Step 1: Install Python
 ----------------------
 
-*   Download and install `Python <https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__
-    (oTree is not yet compatible with Python 3.8).
+*   Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__
+    (**not 3.8**).
 
 *   In Finder, search for and open the "Terminal" app:
 

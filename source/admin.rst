@@ -223,11 +223,21 @@ Use a ``yield`` for each row of data.
 Once this function is defined, your custom data export will be available in the
 regular data export page, as CSV and Excel.
 
+If you are exporting some other data like an ExtraModel, do something like this:
+
+.. code-block:: python
+
+    def custom_export(players):
+        for bid in Bid.objects.all():
+            player = bid.player
+            participant = player.participant
+            yield [participant.code, player.round_number, bid.amount]
+
+
 Notes:
 
 -   Since ``players`` is a QuerySet, you can call methods such as ``players.values_list()``,
     ``players.filter()``, etc.
--   You can even ignore the argument ``players`` and export some other data altogether.
 
 Debug Info
 ----------
