@@ -45,7 +45,8 @@ Then trigger this method by doing:
 
 .. code-block:: python
 
-    after_all_players_arrive = 'set_payoffs'
+    class MyWaitPage(WaitPage):
+        after_all_players_arrive = 'set_payoffs'
 
 If you set ``wait_for_all_groups = True``,
 then you should set ``after_all_players_arrive`` to the name of to a method on your *Subsession* model.
@@ -136,20 +137,20 @@ group_by_arrival_time_method()
     We recommend switching to the new format.
 
 If you're using ``group_by_arrival_time`` and want more control over
-which players are assigned together, you can use ``group_by_arrival_time_method()``.
+which players are assigned together, you can also use ``group_by_arrival_time_method()``.
 
 Let's say that in addition to grouping by arrival time, you need each group
-group to consist of 2 men and 2 women.
+to consist of 2 men and 2 women.
 
 If you define a method called ``group_by_arrival_time_method`` on your Subsession,
 it will get called whenever a new player reaches the wait page.
-The method's argument is the list of players who are waiting to be grouped
-(minus those who have disconnected or closed the page).
+The method's argument is the list of players who are currently waiting at your wait page.
 If you pick some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
 
-Here's an example where each group has 2 men and 2 women:
+Here's an example where each group has 2 men and 2 women.
+It assumes that in a previous app, you assigned ``self.participant.vars['category']`` to each participant.
 
 .. code-block:: python
 
@@ -162,7 +163,7 @@ Here's an example where each group has 2 men and 2 women:
             if len(m_players) >= 2 and len(f_players) >= 2:
                 print('about to create a group')
                 return [m_players[0], m_players[1], f_players[0], f_players[1]]
-            print('not enough players to create a group')
+            print('not enough players yet to create a group')
 
 The above example is hardcoded for only 2 categories (M and F).
 If you have many categories, and want to match players in the same category,
@@ -171,6 +172,7 @@ you can do this:
 .. code-block:: python
 
     def group_by_arrival_time_method(self, waiting_players):
+        # this function will make a group as soon as there are 3 players with the same 'category'.
         from collections import defaultdict
         d = defaultdict(list)
         for p in waiting_players:
@@ -214,6 +216,7 @@ Check timeout_happened
 
 You can tell users they must submit a page before its ``timeout_seconds``,
 or else they will be counted as a dropout.
+Even have a page that just says "click the next button to confirm you are still playing".
 Then check :ref:`timeout_happened`. If it is True, you can do various things such as
 set a field on that player/group to indicate the dropout, and skip the rest of the pages in the round.
 
