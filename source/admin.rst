@@ -228,7 +228,7 @@ If you are exporting some other data like an ExtraModel, do something like this:
 .. code-block:: python
 
     def custom_export(players):
-        for bid in Bid.objects.all():
+        for bid in Bid.objects.order_by('id'):
             player = bid.player
             participant = player.participant
             yield [participant.code, player.round_number, bid.amount]

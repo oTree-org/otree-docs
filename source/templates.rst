@@ -411,7 +411,7 @@ To this::
     series: js_vars.highcharts_series
 
 
-...where ``highcharts_series`` is a variable you defined in `js_vars <js_vars>`.
+...where ``highcharts_series`` is a variable you defined in :ref:`js_vars <js_vars>`.
 
 If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.

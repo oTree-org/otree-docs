@@ -191,7 +191,7 @@ To list a player's bids:
 
 .. code-block:: python
 
-    bids = Bid.objects.filter(player=your_player)
+    bids = Bid.objects.filter(player=your_player).order_by('id')
 
 To create a bid:
 
@@ -200,6 +200,12 @@ To create a bid:
     Bid.objects.create(player=your_player, offer=500)
 
 To export data in extra models, you can use :ref:`custom-export`.
+
+Every ExtraModel automatically has a field called ``id``,
+which is an automatically assigned integer.
+ExtraModel instances that were created earlier have lower IDs,
+so you can use ``.order_by('id')`` on a QuerySet to order them as
+they were created.
 
 Link to Player and Group
 ~~~~~~~~~~~~~~~~~~~~~~~~

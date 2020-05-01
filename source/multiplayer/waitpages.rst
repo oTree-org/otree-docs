@@ -34,12 +34,12 @@ or determine the winner.
 You should first define a method on your Group that does the desired calculations.
 For example:
 
-    .. code-block:: python
+.. code-block:: python
 
-        class Group(BaseGroup):
-            def set_payoffs(self):
-                for player in self.get_players():
-                    player.payoff = c(100)
+    class Group(BaseGroup):
+        def set_payoffs(self):
+            for player in self.get_players():
+                player.payoff = c(100)
 
 Then trigger this method by doing:
 

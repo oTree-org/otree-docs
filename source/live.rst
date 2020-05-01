@@ -11,8 +11,9 @@ Live pages
 Live pages communicate with the server continuously
 and update in real time, enabling continuous time games.
 Live pages are a great fit for games with lots of fast iteration
-and interaction between users. However, they require knowledge of JavaScript
-and are more complex for certain things such as :ref:`form validation <live-forms>`.
+and interaction between users.
+However, they require JavaScript programming and are somewhat more complex
+to implement than regular oTree pages.
 
 Sending data to the server
 --------------------------
