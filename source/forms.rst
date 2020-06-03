@@ -245,6 +245,8 @@ Notes:
 
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
 -   This method is only executed if there are no other errors in the form.
+-   You can also return a dict that maps field names to error messages.
+    (But using :ref:`FOO_error_message` is often simpler.)
 
 .. _get_form_fields:
 

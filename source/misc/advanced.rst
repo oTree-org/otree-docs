@@ -179,11 +179,14 @@ You can define extra models, in addition to ``Player``, ``Group``, and ``Subsess
 This is useful especially when using :ref:`live`,
 where each player may have multiple bids/messages/contracts.
 
-For example, put this at the bottom of your models.py:
+First, if using a text editor,
+add ``ExtraModel`` to your oTree imports.
+
+Then define your model, for example:
 
 .. code-block:: python
 
-    class Bid(models.ExtraModel):
+    class Bid(ExtraModel):
         player = models.Link(Player)
         offer = models.CurrencyField()
 
@@ -219,7 +222,7 @@ Do this:
 
 .. code-block:: python
 
-    class Bid(models.ExtraModel):
+    class Bid(ExtraModel):
         player = models.Link(Player)
         group = models.Link(Group)
         # etc...

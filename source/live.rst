@@ -7,6 +7,7 @@ Live pages
 
     These features are only available in :ref:`oTree 2.6 <v26>`,
     currently in beta.
+    Because they are in beta, they are not yet supported in oTree Studio.
 
 Live pages communicate with the server continuously
 and update in real time, enabling continuous time games.
@@ -35,7 +36,7 @@ was sent.
 
     class Group(BaseGroup):
 
-        def your_live_method(self, id_in_group, payload):
+        def live_bid(self, id_in_group, payload):
             print('received a bid from', id_in_group, ':', payload)
 
 On your ``Page`` class, set ``live_method`` to route the messages to that method:
@@ -43,7 +44,7 @@ On your ``Page`` class, set ``live_method`` to route the messages to that method
 .. code-block:: python
 
     class MyPage(Page):
-        live_method = 'your_live_method'
+        live_method = 'live_bid'
 
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
 
@@ -57,7 +58,7 @@ to whoever sends a message.
 
 .. code-block:: python
 
-    def your_live_method(self, id_in_group, payload):
+    def live_xyz(self, id_in_group, payload):
         return {id_in_group: 'thanks'}
 
 To send to multiple players, use their ``id_in_group``.
@@ -65,7 +66,7 @@ For example, this forwards every message to players 2 and 3:
 
 .. code-block:: python
 
-    def your_live_method(self, id_in_group, payload):
+    def live_xyz(self, id_in_group, payload):
         return {2: payload, 3: payload}
 
 To broadcast it to the whole group, use ``0``
@@ -73,7 +74,7 @@ To broadcast it to the whole group, use ``0``
 
 .. code-block:: python
 
-    def your_live_method(self, id_in_group, payload):
+    def live_xyz(self, id_in_group, payload):
         return {0: payload}
 
 In your JavaScript, define a function ``liveRecv``.
@@ -99,7 +100,7 @@ Example: auction
             if bid > self.highest_bid:
                 self.highest_bid = bid
                 self.highest_bidder = id_in_group
-                broadcast = {'id_in_group': id_in_group, 'bid': bid}
+                broadcast = dict(id_in_group=id_in_group, bid=bid)
                 return {0: broadcast}
 
 .. code-block:: python
@@ -125,8 +126,7 @@ Example: auction
       let sendbutton = document.getElementById('sendbutton');
 
       function liveRecv(payload) {
-
-          history.innerHTML += '<tr><td>' + payload['id_in_group'] + '</td><td>' + payload['bid'] + '</td></tr>';
+          history.innerHTML += '<tr><td>' + payload.id_in_group + '</td><td>' + payload.bid + '</td></tr>';
       }
 
       sendbutton.onclick = function () {
@@ -134,6 +134,8 @@ Example: auction
       };
 
   </script>
+
+(Note, in JavaScript ``payload.id_in_group == payload['id_in_group']``.)
 
 Payload
 -------
@@ -149,7 +151,8 @@ For example these are all valid:
         liveSend({'type': 'bid', 'value': 10.5});
 
 The most versatile type of payload is a dict,
-since it allows you to include multiple pieces of metadata:
+since it allows you to include multiple pieces of metadata,
+in particular what type of message it is:
 
 .. code-block:: javascript
 
@@ -215,7 +218,7 @@ When the task is completed, you send a message:
             self.num_messages += 1
             if self.num_messages >= 10:
                 self.game_finished = True
-                msg = {'type': 'game_finished'}
+                msg = dict(type='game_finished')
                 return {0: msg}
 
 Then in the template, automatically submit the page via JavaScript:
@@ -224,9 +227,9 @@ Then in the template, automatically submit the page via JavaScript:
 
     function liveRecv(message) {
         console.log('received', message);
-        type = message['type']
-        if (type == 'game_finished') {
-            document.querySelector("form").submit();
+        let type = message.type;
+        if (type === 'game_finished') {
+            document.getElementById("#form").submit();
         }
         // handle other types of messages here..
     }
@@ -269,7 +272,7 @@ But with live pages, you must verify it inside the ``live_method``:
         if bid > 99:
             # just an example.
             # it's up to you to handle this message in your JavaScript code.
-            message = {'type': 'error', 'message': 'Bid is too high'}
+            message = dict(type='error', message='Bid is too high')
             return {id_in_group: message}
         ...
 
@@ -297,11 +300,22 @@ To trigger validation when the user submits the bid, use this
 any errors in their form fields. It also returns a boolean
 that tells if the form is currently valid. You can use that to skip the ``liveSend``.
 
-Misc notes
-----------
+Troubleshooting
+---------------
 
 -   On Heroku, you need to turn on your 2nd dyno.
--   live methods are executed in a single thread, so you don't need to worry about race conditions.
+-   On the production server, live methods are executed in a single thread, so you don't need to worry about race conditions.
+-   If you call ``liveSend`` before the page has finished loading,
+    you will get an error like ``liveSend is not defined``.
+    So, wait for ``DOMContentLoaded`` (or jQuery document.ready, etc):
+
+.. code-block:: javascript
+
+    <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        // your code goes here...
+    });
+    </script>
 
 Bots
 ----

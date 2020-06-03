@@ -45,9 +45,12 @@ Install a text editor
 ---------------------
 
 Install a text editor like `PyCharm <https://www.jetbrains.com/pycharm/download/>`__
-or `Visual Studio Code <https://code.visualstudio.com/>`__
-which you will use for editing your Python files.
-You can find up-to-date instructions on installing those editors on their websites.
+for editing your Python files.
+See the PyCharm documentation on how to configure your interpreter so that you get
+code completion:
+
+.. figure:: _static/setup/pycharm-autocomplete.png
+
 Then launch the text editor and open your entire project folder.
 
 .. _upgrade:

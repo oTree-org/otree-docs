@@ -131,15 +131,9 @@ etc.).
 You can test if ``'my_var'`` exists with ``if 'my_var' in self.participant.vars:``.
 
 ``participant.vars`` is not included in the Excel/CSV data export,
-or in the "Data" tab in the session admin. If you want that, you can create a
-``LongStringField`` on your player (for example, called ``participant_vars_dump``)
-and then at the end of your session, assign:
-
-.. code-block:: python
-
-    self.player.participant_vars_dump = str(self.participant.vars)
-
-(The same concept applies for ``session.vars`` below.)
+or in the "Data" tab in the session admin. If you want that, you should either
+use :ref:`custom-export` or save ``str(self.participant.vars)`` into a ``LongStringField``.
+(The same concept applies for ``session.vars``.)
 
 .. _session_vars:
 
@@ -155,6 +149,7 @@ to all participants in the session, not just one.
 As described :ref:`here <object_model>`, the ``session`` object can be
 accessed from a ``Page`` object or any of the models (``Player``, ``Group``,
 ``Subsession``, etc.).
+
 
 
 Variable number of rounds

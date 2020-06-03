@@ -19,6 +19,8 @@ oTree provides integration with Amazon Mechanical Turk (MTurk):
 #.  From oTree's admin interface, you send each participant their participation fee
     and bonus (payoff).
 
+If you are publishing to MTurk using another service like TurkPrime,
+you may not need to follow the below steps.
 
 Extra steps for non-Studio users
 --------------------------------
@@ -165,9 +167,6 @@ Preventing retakes (repeat workers)
 To prevent a worker from participating twice,
 you can grant a Qualification to each worker in your study,
 and then block people who already have this Qualification.
-
-This technique is described
-`here <http://turkrequesters.blogspot.kr/2014/08/how-to-block-past-workers-from-doing.html?spref=tw>`__.
 
 Login to your MTurk requester account and create a qualification.
 Go to your oTree MTurk settings and paste that qualification ID into ``grant_qualification_id``.

@@ -134,8 +134,8 @@ When time runs out, ``get_timeout_seconds`` will return 0 or a negative value,
 which will result in the page loading and being auto-submitted right away.
 This means all the remaining pages will quickly flash on the participant's screen,
 which is usually undesired. So, you should use
-``is_displayed`` to skip the page if time has run out, or if there's only
-a few seconds remaining (e.g. 3).
+``is_displayed`` to skip the page if there's not enough time
+for the participant to realistically read the whole page.
 
 .. code-block:: python
 
@@ -146,9 +146,7 @@ a few seconds remaining (e.g. 3).
         def is_displayed(self):
             return self.get_timeout_seconds() > 3
 
-If you have multiple pages in your ``page_sequence`` that need to share
-the timeout, you can define the timeout in on the Player model.
-See the section on :ref:`composition <composition>` for some hints.
+(If you are curious how to avoid repeating this code on every page, see the section on :ref:`composition <composition>` for some hints.)
 
 The default text on the timer says "Time left to complete this page:".
 But if your timeout spans multiple pages, you should word it more accurately,

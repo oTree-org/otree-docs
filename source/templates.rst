@@ -373,10 +373,8 @@ Charts
 ------
 
 You can use any HTML/JavaScript library for adding charts to your app.
-
-We particularly recommend `HighCharts <http://www.highcharts.com/demo>`__,
+A good option is `HighCharts <http://www.highcharts.com/demo>`__,
 to draw pie charts, line graphs, bar charts, time series, etc.
-Some of oTree's sample games use HighCharts.
 
 First, include the HighCharts JavaScript::
 

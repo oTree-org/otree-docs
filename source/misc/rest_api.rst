@@ -44,7 +44,9 @@ Example
     import requests
 
     def create_session(**payload):
-        return requests.post(SERVER_URL + '/api/v1/sessions/', json=payload)
+        resp = requests.post(SERVER_URL + '/api/v1/sessions/', json=payload)
+        resp.raise_for_status() # ensure it succeeded
+        return resp
 
     resp = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
     print(resp.text) # returns the session code
@@ -84,11 +86,12 @@ Example
     import requests
 
     def set_participant_vars(**payload):
-        return requests.post(SERVER_URL + '/api/v1/participant_vars/', json=payload)
+        resp = requests.post(SERVER_URL + '/api/v1/participant_vars/', json=payload)
+        resp.raise_for_status() # ensure it succeeded
+        return resp
 
     resp = set_participant_vars(room_name='qualtrics_study', participant_label='albert_e', vars=dict(age=25, is_male=True, x=[3,6,9]))
-    print(resp.content)
-    resp.raise_for_status() # ensure it succeeded
+    print(resp.text)
 
 Parameters
 ~~~~~~~~~~
@@ -122,10 +125,14 @@ For example:
     REST_KEY = 'your_key'
 
     def create_session(**payload):
-        return requests.post(SERVER_URL + '/api/v1/sessions/', json=payload,
+        resp = requests.post(SERVER_URL + '/api/v1/sessions/', json=payload,
             headers={'otree-rest-key': REST_KEY}
         )
+        resp.raise_for_status() # ensure it succeeded
+        return resp
 
+    resp = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
+    print(resp.text) # returns the session code
 
 
 Demo & testing
@@ -138,7 +145,7 @@ In your session config, add the parameter ``mock_exogenous_data=True``
 (We call it **exogenous** data because it originates outside oTree.)
 
 Then define a function with the same name (``mock_exogenous_data``)
-in your project's shared_in.py (if you are using a text editor,
+in your project's shared_out.py (if you are using a text editor,
 you may need to create that file).
 
 Here's an example:
