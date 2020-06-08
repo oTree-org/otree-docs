@@ -99,10 +99,6 @@ See :ref:`rounds`.
 creating_session()
 ~~~~~~~~~~~~~~~~~~
 
-Unlike most other built-in subsession methods,
-this method is one you must define yourself.
-Any code you put here is executed when you create the session.
-
 ``creating_session`` allows you to set initial values on fields on
 players, groups, participants, or the subsession.
 For example:
@@ -118,6 +114,11 @@ For example:
 More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.
 
+Unlike most other built-in subsession methods,
+this method is one you must define yourself.
+
+``creating_session`` is **not** run at the beginning of each round.
+It is run when you click the "create session" button, i.e. before anybody starts playing.
 If your app has multiple rounds, ``creating_session`` gets run multiple
 times consecutively:
 
