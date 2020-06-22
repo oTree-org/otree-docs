@@ -68,11 +68,11 @@ To call a method from one of your models, omit the parentheses
 
     Your doubled payoff is {{ player.doubled_payoff }}.
 
-Accessing items in a list or dict
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Accessing items in a dict
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Whereas in Python code you do ``my_list[0]`` and ``my_dict['foo']``,
-in a template you would do ``{{ my_list.0 }}`` and ``{{ my_dict.foo }}``.
+Whereas in Python code you do ``my_dict['foo']``,
+in a template you would do ``{{ my_dict.foo }}``.
 
 Comments
 ~~~~~~~~
@@ -110,7 +110,6 @@ oTree templates are a mix of 2 languages:
 -   *Django template tags*
     (which use curly braces like ``{% this %}`` and ``{{ this }}``
 
-Here is an example of how the two languages work together.
 In this example, let's say your template looks like this:
 
 .. code-block:: html+django
@@ -130,7 +129,7 @@ Step 1: oTree scans Django tags, produces HTML (a.k.a. "server side")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 oTree uses the current values of the variables
-(provided by :ref:`vars_for_template`) to convert the above Django code to
+to convert the above Django code to
 plain HTML, like this:
 
 .. code-block:: html+django

@@ -11,7 +11,7 @@ Here are things for Django developers to know about oTree.
 The ``otree`` command is a customized version of Django's ``manage.py``.
 
 In addition to the built-in Django management commands like ``startapp``,
-oTree defines a few extra ones like ``resetdb``, ``create_session``, and ``runprodserver``.
+oTree defines a few extra ones like ``resetdb``, ``create_session``, and ``prodserver``.
 
 Migrations and "resetdb"
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,7 +36,7 @@ Server
 
 oTree doesn't work with Gunicorn, mod_wsgi, or any other typical WSGI server.
 Because it uses `Django Channels <http://channels.readthedocs.io/en/latest/>`__
-for WebSocket support, it should be run with ``otree runprodserver``,
+for WebSocket support, it should be run with ``otree prodserver``,
 which internally starts the Daphne server, several channels workers, and a task queue.
 More info :ref:`here <server-ubuntu>`.
 

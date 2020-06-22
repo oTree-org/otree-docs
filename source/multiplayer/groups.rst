@@ -234,46 +234,6 @@ To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
 and look at the ``group`` and ``id_in_group`` columns in each round.
 
-Example: assigning players to roles
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Let's say you want to assign players to roles based on some external criterion,
-like their gender.
-
-This example shows how to make groups of 3 players, where player 1 is male, and players 2 & 3 are female.
-The example assumes that you already set ``participant.vars['gender']``
-on each participant (e.g. in a previous app),
-and that there are twice as many female players as male players.
-
-.. code-block:: python
-
-
-    class Subsession(BaseSubsession):
-        def do_my_shuffle(self):
-            # note: to use this method
-            # you would need to call self.subsession.do_my_shuffle()
-            # from somewhere, such as after_all_players_arrive
-
-            if self.round_number == 1:
-                players = self.get_players()
-
-                M_players = [p for p in players if p.participant.vars['gender'] == 'M']
-                F_players = [p for p in players if p.participant.vars['gender'] == 'F']
-
-                group_matrix = []
-
-                # pop elements from M_players until it's empty
-                while M_players:
-                    new_group = [
-                        M_players.pop(),
-                        F_players.pop(),
-                        F_players.pop(),
-                    ]
-                    group_matrix.append(new_group)
-
-                self.set_group_matrix(group_matrix)
-            else:
-                self.group_like_round(1)
 
 Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -297,7 +257,13 @@ and put the shuffling code in ``after_all_players_arrive``:
 
         after_all_players_arrive = 'do_my_shuffle'
 
-After this wait page, the players will be reassigned to their new groups.
+To apply the same grouping to multiple rounds without needing
+``wait_for_all_groups`` in each round, add this to the method where you shuffle the groups:
+
+.. code-block:: python
+
+    for subsession in self.in_rounds(2, Constants.num_rounds):
+        subsession.group_like_round(1)
 
 Group by arrival time
 ~~~~~~~~~~~~~~~~~~~~~

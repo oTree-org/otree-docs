@@ -24,9 +24,6 @@ anybody can play a demo version of your game
 (but not access the full admin interface), set ``OTREE_AUTH_LEVEL``
 to ``DEMO``.
 
-If you don't want any password protection at all,
-leave this variable unset/blank.
-
 The normal admin username is "admin".
 You should set your password in the ``OTREE_ADMIN_PASSWORD`` environment variable
 (on Heroku, log into your Heroku dashboard, and define it as a config var).
@@ -187,10 +184,6 @@ Payments page
 At the end of your session, you can open and print a page that lists all
 the participants and how much they should be paid.
 
-.. figure:: _static/admin/nSMlWcY.png
-   :alt:
-
-
 Export Data
 -----------
 
@@ -221,7 +214,7 @@ Use a ``yield`` for each row of data.
             yield [p.session.code, p.participant.code, p.round_number, p.id_in_group, p.payoff]
 
 Once this function is defined, your custom data export will be available in the
-regular data export page, as CSV and Excel.
+regular data export page.
 
 If you are exporting some other data like an ExtraModel, do something like this:
 

@@ -36,8 +36,8 @@ was sent.
 
     class Group(BaseGroup):
 
-        def live_bid(self, id_in_group, payload):
-            print('received a bid from', id_in_group, ':', payload)
+        def live_bid(self, id_in_group, data):
+            print('received a bid from', id_in_group, ':', data)
 
 On your ``Page`` class, set ``live_method`` to route the messages to that method:
 
@@ -58,7 +58,7 @@ to whoever sends a message.
 
 .. code-block:: python
 
-    def live_xyz(self, id_in_group, payload):
+    def live_xyz(self, id_in_group, data):
         return {id_in_group: 'thanks'}
 
 To send to multiple players, use their ``id_in_group``.
@@ -66,24 +66,24 @@ For example, this forwards every message to players 2 and 3:
 
 .. code-block:: python
 
-    def live_xyz(self, id_in_group, payload):
-        return {2: payload, 3: payload}
+    def live_xyz(self, id_in_group, data):
+        return {2: data, 3: data}
 
 To broadcast it to the whole group, use ``0``
 (special case since it is not an actual ``id_in_group``).
 
 .. code-block:: python
 
-    def live_xyz(self, id_in_group, payload):
-        return {0: payload}
+    def live_xyz(self, id_in_group, data):
+        return {0: data}
 
 In your JavaScript, define a function ``liveRecv``.
 This will be automatically called each time a message is received from the server.
 
 .. code-block:: javascript
 
-    function liveRecv(payload) {
-        console.log('received a message!', payload);
+    function liveRecv(data) {
+        console.log('received a message!', data);
         // your code goes here
     }
 
@@ -100,8 +100,8 @@ Example: auction
             if bid > self.highest_bid:
                 self.highest_bid = bid
                 self.highest_bidder = id_in_group
-                broadcast = dict(id_in_group=id_in_group, bid=bid)
-                return {0: broadcast}
+                response = dict(id_in_group=id_in_group, bid=bid)
+                return {0: response}
 
 .. code-block:: python
 
@@ -125,8 +125,8 @@ Example: auction
       let inputbox = document.getElementById('inputbox');
       let sendbutton = document.getElementById('sendbutton');
 
-      function liveRecv(payload) {
-          history.innerHTML += '<tr><td>' + payload.id_in_group + '</td><td>' + payload.bid + '</td></tr>';
+      function liveRecv(data) {
+          history.innerHTML += '<tr><td>' + data.id_in_group + '</td><td>' + data.bid + '</td></tr>';
       }
 
       sendbutton.onclick = function () {
@@ -135,7 +135,7 @@ Example: auction
 
   </script>
 
-(Note, in JavaScript ``payload.id_in_group == payload['id_in_group']``.)
+(Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)
 
 Payload
 -------
@@ -150,7 +150,7 @@ For example these are all valid:
         liveSend([4, 5, 6]);
         liveSend({'type': 'bid', 'value': 10.5});
 
-The most versatile type of payload is a dict,
+The most versatile type of data is a dict,
 since it allows you to include multiple pieces of metadata,
 in particular what type of message it is:
 
@@ -163,21 +163,21 @@ Then you can use ``if`` statements to process different types of messages:
 
 .. code-block:: python
 
-    def your_live_method(self, id_in_group, payload):
-        t = payload['type']
+    def your_live_method(self, id_in_group, data):
+        t = data['type']
         if t == 'offer':
-            other_player = payload['to']
-            msg = {
+            other_player = data['to']
+            response = {
                 'type': 'offer',
                 'from': id_in_group,
-                'value': payload['value']
+                'value': data['value']
             }
-            return {other_player: msg}
+            return {other_player: response}
         if t == 'response':
             # etc
             ...
 
-You can call the payload by another name;
+You can call the data by another name;
 it just needs to be the method's last argument:
 
 .. code-block:: python
@@ -214,20 +214,20 @@ When the task is completed, you send a message:
         num_messages = models.IntegerField()
         game_finished = models.BooleanField()
 
-        def your_live_method(self, id_in_group, payload):
+        def your_live_method(self, id_in_group, data):
             self.num_messages += 1
             if self.num_messages >= 10:
                 self.game_finished = True
-                msg = dict(type='game_finished')
-                return {0: msg}
+                response = dict(type='game_finished')
+                return {0: response}
 
 Then in the template, automatically submit the page via JavaScript:
 
 .. code-block:: javascript
 
-    function liveRecv(message) {
-        console.log('received', message);
-        let type = message.type;
+    function liveRecv(data) {
+        console.log('received', data);
+        let type = data.type;
         if (type === 'game_finished') {
             document.getElementById("#form").submit();
         }
@@ -272,8 +272,8 @@ But with live pages, you must verify it inside the ``live_method``:
         if bid > 99:
             # just an example.
             # it's up to you to handle this message in your JavaScript code.
-            message = dict(type='error', message='Bid is too high')
-            return {id_in_group: message}
+            response = dict(type='error', message='Bid is too high')
+            return {id_in_group: response}
         ...
 
 In addition, you can add attributes to the ``<input>`` element like ``max="99"``.
@@ -304,7 +304,6 @@ Troubleshooting
 ---------------
 
 -   On Heroku, you need to turn on your 2nd dyno.
--   On the production server, live methods are executed in a single thread, so you don't need to worry about race conditions.
 -   If you call ``liveSend`` before the page has finished loading,
     you will get an error like ``liveSend is not defined``.
     So, wait for ``DOMContentLoaded`` (or jQuery document.ready, etc):
@@ -333,7 +332,8 @@ For example:
         method(1, {"offer": 50})
         method(2, {"accepted": False})
         method(1, {"offer": 60})
-        method(2, {"accepted": True})
+        retval = method(2, {"accepted": True})
+        # you can do asserts on retval
 
 ``kwargs`` contains at least the following parameters.
 

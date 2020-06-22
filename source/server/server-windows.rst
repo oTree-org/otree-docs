@@ -80,9 +80,9 @@ Run the production server
 
 Run::
 
-    otree runprodserver 80
+    otree prodserver 80
 
-See :ref:`here <runprodserver>` for full instructions.
+See :ref:`here <prodserver>` for full instructions.
 The steps are essentially the same as on Linux.
 
 Set environment variables

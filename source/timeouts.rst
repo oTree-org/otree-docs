@@ -20,7 +20,7 @@ To set a time limit on your page, add ``timeout_seconds``:
 
 After the time runs out, the page auto-submits.
 
-If you are running the production server (``runprodserver``),
+If you are running the production server (``prodserver``),
 the page will always submit, even if the user closes their browser window.
 However, this does not occur if you are running the development server
 (``zipserver`` or ``devserver``).

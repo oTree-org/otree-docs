@@ -59,14 +59,14 @@ Otherwise, it is always run, even if the player skips all the pages in that roun
 Other things
 ------------
 
+-   Python 3.8 is now supported.
 -   You can now download a single session's data as Excel or CSV (through session's Data tab)
--   The text "Please correct the errors in the form" has been removed.
 -   When browser bots complete, they keep the last page open
 -   group_by_arrival_time: quicker detection if a participant goes offline
 -   Minor bugfixes
 -   Browser bots launched through CLI ``browser_bots`` command require ``OTREE_REST_KEY`` to be set
     (see :ref:`rest`).
-
+-   ``runprodserver`` is now an alias for ``prodserver``.
 
 Version 2.5
 ===========
@@ -93,9 +93,9 @@ Version 2.3
     :ref:`here <channels>`.
 -   oTree now uses Django 2.2.
 -   Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩.
--   On Windows, ``runprodserver`` just launches 1 worker process. If you want more processes,
+-   On Windows, ``prodserver`` just launches 1 worker process. If you want more processes,
     you should use a process manager. (This is due to a limitation of the ASGI server)
--   ``runprodserver`` uses Uvicorn/Hypercorn instead of Daphne
+-   ``prodserver`` uses Uvicorn/Hypercorn instead of Daphne
 -   update_my_code has been removed
 
 Version 2.2

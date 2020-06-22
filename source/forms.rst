@@ -29,7 +29,7 @@ saved to the corresponding fields on the player model.
 Forms in templates
 ------------------
 
-In your template, you can display the form simply with:
+In your template, you can display the form with:
 
 .. code-block:: html+django
 
@@ -57,8 +57,7 @@ Simple form field validation
 min and max
 ~~~~~~~~~~~
 
-Here is how you would
-require an integer to be between 12 and 24:
+To require an integer to be between 12 and 24:
 
 .. code-block:: python
 
@@ -107,7 +106,6 @@ by making a list of [value, display] pairs:
 
 If you do this, users will just see a menu with "Low", "Medium", "High",
 but their responses will be recorded as 1, 2, or 3.
-
 
 You can do this for ``BooleanField``, ``StringField``, etc.:
 
@@ -246,7 +244,6 @@ Notes:
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
 -   This method is only executed if there are no other errors in the form.
 -   You can also return a dict that maps field names to error messages.
-    (But using :ref:`FOO_error_message` is often simpler.)
 
 .. _get_form_fields:
 
@@ -254,8 +251,7 @@ Determining form fields dynamically
 -----------------------------------
 
 If you need the list of form fields to be dynamic, instead of
-``form_fields`` you can define a method ``get_form_fields`` that
-returns the list. For example:
+``form_fields`` you can define a method ``get_form_fields``:
 
 .. code-block:: python
 
@@ -268,7 +264,6 @@ returns the list. For example:
 But if you do this, you have to be sure to also include the same
 ``{% formfield %}`` elements in your template. The easiest way is to use
 ``{% formfields %}``.
-
 
 Widgets
 -------
@@ -331,7 +326,6 @@ Instead, you should simply loop over the choices in the field as follows:
         {% endfor %}
     </tr>
 
-
 If you have many fields with the same number of choices,
 you can arrange them in a table:
 
@@ -393,15 +387,16 @@ put HTML like this in your template:
             <span class="input-group-text">Disagree</span>
         </div>
 
-        <input type="range" name="pizza" min="1" max="5" step="1">
+        <input type="range" name="pizza" min="-2" max="2" step="1">
 
         <div class="input-group-append">
             <span class="input-group-text">Agree</span>
         </div>
     </div>
 
-If you want to show the current value, or hide the knob until the slider is clicked
-(to avoid anchoring), it's recommended to use the ``RadioSelectHorizontal`` widget instead.
+If you want to show the current numeric value, or hide the knob until the slider is clicked
+(to avoid anchoring), you could do that with JavaScript,
+but consider using the ``RadioSelectHorizontal`` widget instead.
 
 (oTree also has a ``Slider`` widget but its customizability is limited.)
 
@@ -414,7 +409,7 @@ or playing a graphical game. Or, you want to record extra data like how long
 they spent on part of the page, how many times they clicked, etc.
 
 You can build these interfaces in any front-end framework you want.
-Simple ones can be done with plain JavaScript or jQuery; more complex ones would use something
+Simple ones can be done with plain JavaScript; more complex ones would use something
 like React or Vue.js.
 
 Then, use JavaScript to record the relevant data points and store it in a

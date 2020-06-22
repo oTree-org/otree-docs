@@ -17,7 +17,7 @@ If you are experienced in Django server setup, you just need to know that
 setting up an oTree server is the same as any Django project, except:
 
 -   You need Redis
--   You start the server with ``otree runprodserver``, rather than a WSGI server.
+-   You start the server with ``otree prodserver``, rather than a WSGI server.
 
 Install apt-get packages
 ------------------------
@@ -110,7 +110,7 @@ Install the requirements and reset the database::
     otree resetdb
 
 
-.. _runprodserver:
+.. _prodserver:
 
 Running the server
 ------------------
@@ -129,7 +129,7 @@ Testing the production server
 
 From your project folder, run::
 
-    otree runprodserver 8000
+    otree prodserver 8000
 
 Then navigate in your browser to your server's
 IP/hostname followed by ``:8000``.
@@ -140,16 +140,16 @@ This requires superuser permission, so let's use sudo,
 but add some extra args to preserve environment variables like ``PATH``,
 ``DATABASE_URL``, etc::
 
-    sudo -E env "PATH=$PATH" otree runprodserver 80
+    sudo -E env "PATH=$PATH" otree prodserver 80
 
 Try again to open your browser;
 this time, you don't need to append :80 to the URL, because that is the default HTTP port.
 
 Notes:
 
--   unlike ``devserver``, ``runprodserver`` does not restart automatically
+-   unlike ``devserver``, ``prodserver`` does not restart automatically
     when your files are changed.
--   ``runprodserver`` automatically runs Django's ``collectstatic``
+-   ``prodserver`` automatically runs Django's ``collectstatic``
     to collect your files under ``_static_root/``.
     If you have already run ``collectstatic``, you can skip it with
     ``--no-collectstatic``.
@@ -180,7 +180,7 @@ with the following content::
 
     [watcher:webapp]
     cmd = otree
-    args = runprodserver 80
+    args = prodserver 80
     use_sockets = True
     copy_env = True
 
@@ -249,7 +249,7 @@ Once these steps are done, the second user can push code to the server,
 then run ``otree resetdb``.
 
 If you don't need multiple people to run experiments simultaneously,
-then each user can take turns running the server on port 80 with ``otree runprodserver 80``.
+then each user can take turns running the server on port 80 with ``otree prodserver 80``.
 However, if multiple people need to run experiments at the same time,
 then you would need to run the server on multiple ports, e.g. ``8000``,
 ``8001``, etc.

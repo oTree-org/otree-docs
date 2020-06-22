@@ -68,15 +68,13 @@ Parameters
 
 POST URL: ``/api/v1/participant_vars/``
 
-This endpoint lets you set a participant's vars, i.e. ``self.participant.vars``.
-The main purpose is to allow other sites/apps to pass information about a participant to oTree.
+This endpoint lets you set ``participant.vars``.
+The main purpose is to allow other sites/apps to pass information about a participant to oTree,
+via web services / webhooks.
 For example, if the user does a survey on Qualtrics that then links to oTree,
 you can pass their survey data (like gender, age, etc) into oTree as participant vars.
 (Qualtrics allows making POST requests through their `web service <https://www.qualtrics.com/support/survey-platform/survey-module/survey-flow/advanced-elements/web-service/>`__
 feature.)
-
-The POST request would typically be made server-side.
-You can do it on the last page of your survey, presumably before you display them their oTree link.
 
 Example
 ~~~~~~~
@@ -112,7 +110,7 @@ Authentication
 If you have set your auth level to DEMO or STUDY,
 you must authenticate your REST API requests.
 
-Create an environment variable (i.e. Heroku config var) ``OTREE_REST_KEY``
+Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY``
 on the server. Set it to some secret value.
 
 When you make a request, add that key as an HTTP header called ``otree-rest-key``.

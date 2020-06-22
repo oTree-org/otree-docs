@@ -20,8 +20,6 @@ the subsession), you can set the attribute
 
 For more information on groups, see :ref:`groups`.
 
-Wait pages can define the following methods:
-
 .. _after_all_players_arrive:
 
 after_all_players_arrive
@@ -166,13 +164,12 @@ It assumes that in a previous app, you assigned ``self.participant.vars['categor
             print('not enough players yet to create a group')
 
 The above example is hardcoded for only 2 categories (M and F).
-If you have many categories, and want to match players in the same category,
-you can do this:
+The below example works for any number of categories.
+It makes a group as soon as there are 3 players with the same category.
 
 .. code-block:: python
 
     def group_by_arrival_time_method(self, waiting_players):
-        # this function will make a group as soon as there are 3 players with the same 'category'.
         from collections import defaultdict
         d = defaultdict(list)
         for p in waiting_players:
@@ -181,6 +178,35 @@ you can do this:
             players_with_this_category.append(p)
             if len(players_with_this_category) == 3:
                 return players_with_this_category
+
+You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page,
+for example to allow the participant to proceed individually if they have been waiting
+longer than 5 minutes. First, you must record ``time.time()`` on the final page before the app with ``group_by_arrival_time``.
+Store it in ``self.participant.vars``.
+
+Then define a Player method:
+
+.. code-block:: python
+
+    def waiting_too_long(self):
+        import time
+        return time.time() - self.participant.vars['wait_page_arrival'] > 5*60
+
+Now use this:
+
+.. code-block:: python
+
+    def group_by_arrival_time_method(self, waiting_players):
+        import time
+        if len(waiting_players) >= 3:
+            return waiting_players[:3]
+        for p in waiting_players:
+            if p.waiting_too_long():
+                # [p] means a single-player group.
+                return [p]
+
+This works because the wait page automatically refreshes once or twice a minute,
+which re-executes ``group_by_arrival_time_method``.
 
 .. _wait-page-stuck:
 
