@@ -79,8 +79,15 @@ Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLit
 
 When you run ``otree resetdb`` later,
 if you get an error that says "password authentication failed for user",
-find your ``hba_auth.conf`` file, and on the lines for ``IPv4`` and ``IPv6``,
-change the ``METHOD`` from ``md5`` (or whatever it currently is) to ``trust``.
+first, find the location of your ``hba_file``:
+
+    sudo su - postgres
+    psql
+    
+    postgres=# SHOW hba_file;
+    
+Open the file in a text editor and and on the lines for ``IPv4`` and ``IPv6``,
+change the ``METHOD`` from ``md5`` (or whatever it currently is) to ``password``.
 
 Install Redis
 -------------
