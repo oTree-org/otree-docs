@@ -1,14 +1,19 @@
 # oTree Documentation
 
+[otree.readthedocs.io](http://otree.readthedocs.io/)
+
 To contribute a translation in Chinese or Japanese:
 
--   Clone this repo
--   `pip install -r requirements.txt`
--   Go to locales/ and edit the .po files for your language in poedit or simply using a text editor
--   Build the docs, using your language code (e.g. zh_CN for Chinese): `sphinx-build -b html -D language=zh_CN source build/html/zh_CN`    
--   Open the HTML files in your browser and check that they look OK
--   If the HTML output looks OK, then commit your changes to the .po files & make a pull request.
+1.   Clone this repo
+1.   `pip install -r requirements.txt`
+1.   Go to locales/ and edit the .po files using [poedit](http://poedit.net) or simply using a text editor
+1.   To preview your changes:
+    - Chinese: `sphinx-build -b html -D language=zh_CN source build/html/zh_CN`
+    - Japanese: `sphinx-build -b html -D language=ja source build/html/ja`
+1.   Open the HTML files in your browser and check that they look OK
+1.   Commit your changes to the .po files & make a pull request.
 
-Note: The content on [otree.readthedocs.org](http://otree.readthedocs.io/en/latest/index.html)
-is built only when a push is made to the oTree-org/otree-docs repo.
-It will not build immediately after a pull request is accepted.
+Then, your changes will be visible at:
+
+[https://otree.readthedocs.io/zh_CN/latest/index.html](https://otree.readthedocs.io/zh_CN/latest/index.html)
+[https://otree.readthedocs.io/ja/latest/index.html](https://otree.readthedocs.io/ja/latest/index.html)

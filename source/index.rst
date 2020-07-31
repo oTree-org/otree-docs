@@ -34,7 +34,6 @@ oTree is a framework based on Python that lets you build:
 - Controlled behavioral experiments in economics, psychology, and related fields
 - Surveys and quizzes
 
-
 Support
 ^^^^^^^
 
@@ -43,6 +42,8 @@ For help, post to our Google Groups `forum <https://groups.google.com/forum/#!fo
 
 Contents:
 ^^^^^^^^^
+
+`中文, 日本語 <https://github.com/oTree-org/otree-docs>`__
 
 .. toctree::
     :maxdepth: 2
