@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/pages.rst:4
 msgid "Pages"
-msgstr ""
+msgstr "Paginas"
 
 #: ../../source/pages.rst:6
 msgid "Each page that your participants see is defined by a ``Page``."
