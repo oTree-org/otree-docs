@@ -483,6 +483,3 @@ msgid ""
 ":ref:`dynamic_validation`."
 msgstr ""
 
-#~ msgid "Then in the template, set the label to this variable:"
-#~ msgstr ""
-

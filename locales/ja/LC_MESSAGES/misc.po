@@ -697,12 +697,12 @@ msgid ""
 msgstr ""
 
 #: ../../source/misc/django.rst:44
-msgid "Models (Japanese test)"
+msgid "Models"
 msgstr ""
 
 #: ../../source/misc/django.rst:49
 msgid "Auto-save of models"
-msgstr ""
+msgstr "Auto-save of models (Japanese test)"
 
 #: ../../source/misc/django.rst:51
 msgid ""
