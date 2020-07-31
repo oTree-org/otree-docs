@@ -165,6 +165,7 @@ Pre-assigning participants to labels
 
 oTree assigns participants based on arrival time, e.g. the first person to arrive is participant 1.
 However, in some situations this may be undesirable, for example:
+
 -   You want your participant labels to line up with the oTree IDs,
     in a fixed order, e.g. so that LAB29 will always be participant 29.
 -   You want Alice/Bob/Charlie to always be participants 1/2/3,

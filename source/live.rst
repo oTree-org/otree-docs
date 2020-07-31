@@ -307,11 +307,9 @@ So, wait for ``DOMContentLoaded`` (or jQuery document.ready, etc):
 
 .. code-block:: javascript
 
-    <script>
     window.addEventListener('DOMContentLoaded', (event) => {
         // your code goes here...
     });
-    </script>
 
 Bots
 ----
