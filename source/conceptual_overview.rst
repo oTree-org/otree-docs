@@ -72,8 +72,8 @@ next subsession, etc.
 
 .. _object_model:
 
-What is "self"?!
-----------------
+What is "self"?
+---------------
 
 If you are ever wondering what ``self`` means in a particular context,
 it is whatever class the method belongs to: Player, Group, Subsession, or Page.

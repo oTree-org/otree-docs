@@ -17,3 +17,5 @@ Then, your changes will be visible at:
 
 [https://otree.readthedocs.io/zh_CN/latest/index.html](https://otree.readthedocs.io/zh_CN/latest/index.html)
 [https://otree.readthedocs.io/ja/latest/index.html](https://otree.readthedocs.io/ja/latest/index.html)
+
+To rebuild .pot files, run `sphinx-build -b gettext source build/gettext`.
