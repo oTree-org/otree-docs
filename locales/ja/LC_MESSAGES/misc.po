@@ -697,7 +697,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/misc/django.rst:44
-msgid "Models"
+msgid "Models (Japanese test)"
 msgstr ""
 
 #: ../../source/misc/django.rst:49
