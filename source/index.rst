@@ -12,6 +12,7 @@
     .. image:: _static/splash.png
         :align: center
 
+`中文, 日本語 <https://github.com/oTree-org/otree-docs>`__
 
 Live demos
 ^^^^^^^^^^
@@ -38,8 +39,6 @@ Support
 ^^^^^^^
 
 For help, post to our Google Groups `forum <https://groups.google.com/forum/#!forum/otree>`__.
-
-`中文, 日本語 <https://github.com/oTree-org/otree-docs>`__
 
 Contents:
 ^^^^^^^^^
