@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2020-07-31 23:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -474,7 +474,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/forms.rst:503
-msgid "Then in the template, set the label to this variable:"
+msgid "Then, in the template:"
 msgstr ""
 
 #: ../../source/forms.rst:509
@@ -482,4 +482,7 @@ msgid ""
 "If you use this technique, you may also want to use "
 ":ref:`dynamic_validation`."
 msgstr ""
+
+#~ msgid "Then in the template, set the label to this variable:"
+#~ msgstr ""
 
