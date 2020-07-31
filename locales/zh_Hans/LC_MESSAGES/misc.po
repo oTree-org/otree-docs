@@ -698,7 +698,7 @@ msgstr ""
 
 #: ../../source/misc/django.rst:44
 msgid "Models"
-msgstr ""
+msgstr "Models (Chinese test)"
 
 #: ../../source/misc/django.rst:49
 msgid "Auto-save of models"
