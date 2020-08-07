@@ -194,7 +194,7 @@ Then pass this modified matrix to ``set_group_matrix()``:
 
     class Subsession(BaseSubsession):
         def creating_session(self):
-            matrix = s.get_group_matrix()
+            matrix = self.get_group_matrix()
 
             for row in matrix:
                 row.reverse()
@@ -216,7 +216,7 @@ For example::
 
     class Subsession(BaseSubsession):
         def creating_session(self):
-            matrix = s.get_group_matrix()
+            matrix = self.get_group_matrix()
 
             new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
             self.set_group_matrix(new_structure)
