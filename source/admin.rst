@@ -84,6 +84,14 @@ will be used to identify that participant in the
 oTree admin interface and the payments page, etc.
 You can also access it from your code as ``self.participant.label``.
 
+Another benefit of participant labels is that if the participant opens their start link twice,
+they will be assigned back to the same participant (if you are using a room-wide or session-wide URL).
+This reduces duplicate participation.
+
+If you're using Prolific,
+you can add ``participant_label={{%PROLIFIC_PID%}}`` to your study URL.
+When the user clicks the link, Prolific will replace that with the participant's actual Prolific ID.
+
 Arrival order
 -------------
 

@@ -20,7 +20,12 @@ If the below steps don't work for you, please email chris@otree.org with details
 Step 1: Install Python
 ----------------------
 
-Download and install `Python 3.7 or 3.8 <https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe>`__.
+Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe>`__.
+
+..
+    3.7 is preferred because Twisted wheel is not yet available on 3.8, meaning people need to install
+    Visual C++ build tools.
+    Windows Store version of Python does not add otree.exe to PATH.
 
 Check the box to add Python to PATH:
 
@@ -40,11 +45,8 @@ Enter this command at the prompt:
 
     pip3 install -U otree
 
-If you get an error like this::
-
-    error: Microsoft Visual C++ is required (Unable to find vcvarsall.bat).
-
-To fix this, install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
+If you get an error like "Microsoft Visual C++ is required",
+install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
 
 Next steps
 ----------
