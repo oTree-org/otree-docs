@@ -117,7 +117,7 @@ POST URL: ``/api/v1/session_vars/``
 
 This endpoint lets you set ``session.vars``.
 One use is experimenter input.
-For example, if the experimenter does a random drawing in the middle of the experiment,
+For example, if the experimenter does a lottery drawing in the middle of the experiment,
 they can input the result by running a script like the one below.
 
 Example
@@ -140,6 +140,20 @@ Parameters
 -   ``vars`` (required): a dict of session vars to add.
 
 This feature requires you to use a Room.
+
+Note
+~~~~
+
+If you are using this for experimenter input during an experiment,
+you may want to use it together with :ref:`error_message <error_message>`.
+Block participants from proceeding to the next page until the drawing is done:
+
+.. code-block:: python
+
+    def error_message(self, values):
+        if 'dice_roll' not in self.session.vars:
+            return 'You must wait until the dice roll before proceeding'
+
 
 Authentication
 --------------
