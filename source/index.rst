@@ -48,7 +48,6 @@ Contents:
 
     install.rst
     python.rst
-    studio.rst
     tutorial/intro.rst
     conceptual_overview.rst
     models.rst

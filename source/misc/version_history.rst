@@ -177,6 +177,3 @@ To change this to the new format, you move ``offer_max`` into the Player model:
 Note that we change ``return self.player.endowment`` to just ``self.endowment``,
 because ``self`` *is* the player.
 
-The old format will continue to work, so it is not urgent for you to make this change.
-
-

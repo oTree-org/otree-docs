@@ -60,9 +60,6 @@ is_displayed()
 
 Works the same way as with regular pages.
 
-If some players in the group skip the wait page,
-then ``after_all_players_arrive()`` may not be run.
-
 .. _group_by_arrival_time:
 
 group_by_arrival_time
@@ -197,7 +194,6 @@ Now use this:
 .. code-block:: python
 
     def group_by_arrival_time_method(self, waiting_players):
-        import time
         if len(waiting_players) >= 3:
             return waiting_players[:3]
         for p in waiting_players:

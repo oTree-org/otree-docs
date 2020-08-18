@@ -244,7 +244,8 @@ Notes:
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
 -   This method is only executed if there are no other errors in the form.
 -   You can also return a dict that maps field names to error messages.
-    This way, you don't need to write many repetitive FIELD_error_message methods.
+    This way, you don't need to write many repetitive FIELD_error_message methods
+    (see :ref:`here <duplicate_validation_methods>`).
 
 .. _get_form_fields:
 

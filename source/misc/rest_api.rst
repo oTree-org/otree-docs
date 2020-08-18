@@ -12,6 +12,7 @@ oTree has a small REST API that enables external programs
 
 -   Create sessions
 -   Add participant vars
+-   Add session vars
 
 Simply make an JSON-encoded request to one of the below endpoint URLs.
 The examples on this page use the Python Requests library (``pip3 install requests``),
@@ -102,6 +103,43 @@ This feature requires you to use a Room.
 Participants are uniquely identified with the combination of room name & participant label.
 So you will need to give participants a link with a ``participant_label``,
 although this does not need to come from a ``participant_label_file``.
+
+.. _session_vars_rest:
+
+"Session vars" REST endpoint
+----------------------------
+
+.. note::
+
+    New in oTree 3.0.6
+
+POST URL: ``/api/v1/session_vars/``
+
+This endpoint lets you set ``session.vars``.
+One use is experimenter input.
+For example, if the experimenter does a random drawing in the middle of the experiment,
+they can input the result by running a script like the one below.
+
+Example
+~~~~~~~
+
+.. code-block:: python
+
+    def set_session_vars(**payload):
+        return requests.post(SERVER_URL + "/api/v1/session_vars/", json=payload)
+
+    resp = set_session_vars(
+        room_name="my_room",
+        vars=dict(dice_roll=4),
+    )
+
+Parameters
+~~~~~~~~~~
+
+-   ``room_name`` (required)
+-   ``vars`` (required): a dict of session vars to add.
+
+This feature requires you to use a Room.
 
 Authentication
 --------------

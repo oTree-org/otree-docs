@@ -5,7 +5,7 @@
 oTree Setup (text editor)
 =========================
 
-Note: it's recommended to use oTree Studio
+Note: it's recommended to use `oTree Studio <https://www.otreehub.com/studio>`__
 since it is specifically designed for building oTree apps.
 You can easily switch to using a text editor later, by downloading your code.
 

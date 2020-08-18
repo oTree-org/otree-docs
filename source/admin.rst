@@ -212,9 +212,9 @@ Custom data exports
 
     New in oTree 3.0 (July 2020).
 
-To make your own custom data export for an app,
-define a function ``custom_export()`` at the bottom of your ``models.py``, not within a class.
-(this feature is currently unavailable in oTree Studio).
+You can make your own custom data export for an app.
+In oTree Studio, go to the "Player" model and click on "custom_export" at the bottom.
+(If using a text editor, define the below function at the bottom of your ``models.py``, not within a class.)
 The argument ``players`` is a queryset of all the players in the database.
 Use a ``yield`` for each row of data.
 

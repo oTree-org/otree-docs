@@ -363,3 +363,52 @@ Then your pages could be simplified to:
             return self.player.high_tax
 
 
+
+.. _duplicate_validation_methods:
+
+Avoid duplicated validation methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have many repetitive :ref:`FIELD_error_message <_FOO_error_message>` methods,
+you can replace them with a single :ref:`error_message <error_message>` method.
+For example:
+
+.. code-block:: python
+
+    def quiz1_error_message(self, value):
+        if value != 42:
+            return 'Wrong answer'
+
+    def quiz2_error_message(self, value):
+        if value != 'Ottawa':
+            return 'Wrong answer'
+
+    def quiz3_error_message(self, value):
+        if value != 3.14:
+            return 'Wrong answer'
+
+    def quiz4_error_message(self, value):
+        if value != 'George Washington':
+            return 'Wrong answer'
+
+You can instead define this method on your page (not Player class):
+
+.. code-block:: python
+
+    def error_message(self, values):
+        solutions = dict(
+            quiz1=42,
+            quiz2='Ottawa',
+            quiz3='3.14',
+            quiz4='George Washington'
+        )
+
+        error_messages = dict()
+
+        for field_name in solutions:
+            if values[field_name] != solutions[field_name]:
+                error_messages[field_name] = 'Wrong answer'
+
+        return error_messages
+
+(Usually ``error_message`` is used to return a single error message as a string, but you can also return a dict.)
