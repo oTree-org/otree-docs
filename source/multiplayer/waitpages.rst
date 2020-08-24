@@ -242,6 +242,36 @@ Even have a page that just says "click the next button to confirm you are still 
 Then check :ref:`timeout_happened`. If it is True, you can do various things such as
 set a field on that player/group to indicate the dropout, and skip the rest of the pages in the round.
 
+Replacing dropped out player with a bot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here's an example that combines some of the above techniques, so that even if a player drops out,
+they continue to auto-play, like a bot. Just use ``get_timeout_seconds`` and ``before_next_page`` on every page,
+like this:
+
+.. code-block:: python
+
+    class Page1(Page):
+        form_model = 'player'
+        form_fields = ['contribution']
+
+        def get_timeout_seconds(self):
+            if self.participant.vars.get('is_dropout'):
+                return 1  # instant timeout, 1 second
+            else:
+                return 5*60
+
+        def before_next_page(self):
+            if self.timeout_happened:
+                self.participant.vars['is_dropout'] = True
+                self.player.contribution = c(100)
+
+Notes:
+
+-   If the player fails to submit the page on time, we set ``is_dropout`` to ``True``.
+-   Once ``is_dropout`` is set, each page gets auto-submitted instantly.
+-   When a page is auto-submitted, you use ``timeout_happened`` to decide what value gets submitted on the user's behalf.
+
 
 Customizing the wait page's appearance
 --------------------------------------

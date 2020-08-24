@@ -145,8 +145,7 @@ Note
 ~~~~
 
 If you are using this for experimenter input during an experiment,
-you may want to use it together with :ref:`error_message <error_message>`.
-Block participants from proceeding to the next page until the drawing is done:
+you may also want to use :ref:`error_message <error_message>`:
 
 .. code-block:: python
 
