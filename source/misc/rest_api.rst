@@ -25,7 +25,7 @@ If your site is password protected, see the note about authentication below.
 "Create sessions" REST endpoint
 -------------------------------
 
-POST URL: ``/api/v1/sessions/``
+POST URL: ``/api/sessions/``
 
 Here are some examples of how the "create sessions" endpoint can be used:
 
@@ -44,7 +44,7 @@ Example
     import requests
 
     def create_session(**payload):
-        resp = requests.post(SERVER_URL + '/api/v1/sessions/', json=payload)
+        resp = requests.post(SERVER_URL + '/api/sessions/', json=payload)
         resp.raise_for_status() # ensure it succeeded
         return resp
 
@@ -66,7 +66,7 @@ Parameters
 "Participant vars" REST endpoint
 --------------------------------
 
-POST URL: ``/api/v1/participant_vars/``
+POST URL: ``/api/participant_vars/``
 
 This endpoint lets you set ``participant.vars``.
 The main purpose is to allow other sites/apps to pass information about a participant to oTree,
@@ -84,7 +84,7 @@ Example
     import requests
 
     def set_participant_vars(**payload):
-        resp = requests.post(SERVER_URL + '/api/v1/participant_vars/', json=payload)
+        resp = requests.post(SERVER_URL + '/api/participant_vars/', json=payload)
         resp.raise_for_status() # ensure it succeeded
         return resp
 
@@ -113,7 +113,7 @@ although this does not need to come from a ``participant_label_file``.
 
     New in oTree 3.0.6
 
-POST URL: ``/api/v1/session_vars/``
+POST URL: ``/api/session_vars/``
 
 This endpoint lets you set ``session.vars``.
 One use is experimenter input.
@@ -126,7 +126,7 @@ Example
 .. code-block:: python
 
     def set_session_vars(**payload):
-        return requests.post(SERVER_URL + "/api/v1/session_vars/", json=payload)
+        return requests.post(SERVER_URL + "/api/session_vars/", json=payload)
 
     resp = set_session_vars(
         room_name="my_room",
@@ -173,7 +173,7 @@ For example:
     REST_KEY = 'your_key'
 
     def create_session(**payload):
-        resp = requests.post(SERVER_URL + '/api/v1/sessions/', json=payload,
+        resp = requests.post(SERVER_URL + '/api/sessions/', json=payload,
             headers={'otree-rest-key': REST_KEY}
         )
         resp.raise_for_status() # ensure it succeeded

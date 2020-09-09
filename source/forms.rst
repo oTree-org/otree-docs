@@ -412,7 +412,7 @@ they spent on part of the page, how many times they clicked, etc.
 
 You can build these interfaces in any front-end framework you want.
 Simple ones can be done with plain JavaScript; more complex ones would use something
-like React or Vue.js.
+like React, Vue.js, or jsPsych.
 
 Then, use JavaScript to record the relevant data points and store it in a
 hidden form field. For example:
@@ -428,8 +428,11 @@ hidden form field. For example:
     # HTML template
     <input type="hidden" name="my_hidden_input" />
 
-Then you can use JavaScript to set the value of that input, by selecting
-the element by name ``my_hidden_input``, and setting its ``value`` attribute.
+Then use JavaScript to set the value of that input:
+
+.. code-block:: javascript
+
+    document.querySelector('[name=my_hidden_input]').value = 42;
 
 When the page is submitted, the value of your hidden input will be recorded
 in oTree like any other form field.

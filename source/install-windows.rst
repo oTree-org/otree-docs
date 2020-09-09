@@ -45,8 +45,10 @@ Enter this command at the prompt:
 
     pip3 install -U otree
 
-If you get an error like "Microsoft Visual C++ is required",
-install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__.
+If you get an error like "Microsoft Visual C++ is required", uninstall Python 3.8
+and install 3.7 (simple solution), or install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__
+(somewhat more complicated).
+
 
 Next steps
 ----------
