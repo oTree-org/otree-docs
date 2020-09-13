@@ -177,7 +177,6 @@ Just assign those participant labels in ``creating_session``:
 
     class Subsession(BaseSubsession):
         def creating_session(self):
-            from pathlib import Path
             labels = ['alice', 'bob', 'charlie']
             for player, label in zip(self.get_players(), labels):
                 p.participant.label = label
