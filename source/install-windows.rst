@@ -20,7 +20,8 @@ If the below steps don't work for you, please email chris@otree.org with details
 Step 1: Install Python
 ----------------------
 
-Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe>`__.
+Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__.
+(3.8 not recommended currently.)
 
 ..
     3.7 is preferred because Twisted wheel is not yet available on 3.8, meaning people need to install
@@ -29,7 +30,7 @@ Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.3/python
 
 Check the box to add Python to PATH:
 
-.. figure:: _static/setup/py-win-installer.png
+.. figure:: _static/setup/py-win-installer-37.png
 
 Step 2: Install oTree
 ---------------------
