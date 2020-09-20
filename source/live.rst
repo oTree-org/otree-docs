@@ -26,16 +26,21 @@ For example, to submit a bid of 99 on behalf of the user, call:
 
     liveSend(99);
 
-On your ``Group``, define a method that will receive this message.
-Its arguments are the ``id_in_group`` of the sender and whatever data
+On your ``Player``, define a method that will receive this message.
+Its argument is whatever data
 was sent.
+
+.. note::
+
+    This has changed since September 15, 2020 (oTree 3.0.8).
+    Previously, the live_method was on the Group, but now it is recommended to define it on the Player.
 
 .. code-block:: python
 
-    class Group(BaseGroup):
+    class Player(BasePlayer):
 
-        def live_bid(self, id_in_group, data):
-            print('received a bid from', id_in_group, ':', data)
+        def live_bid(self, data):
+            print('received a bid from', self.id_in_group, ':', data)
 
 (Its name should start with ``live_``.)
 On your ``Page`` class, set ``live_method`` to route the messages to that method:
@@ -51,21 +56,21 @@ Sending data to the page
 ------------------------
 
 To send data back, return a dictionary whose keys are the IDs of the players
-to receive the message.
+to receive a message.
 For example, here is a method that simply sends "thanks"
 to whoever sends a message.
 
 .. code-block:: python
 
-    def live_xyz(self, id_in_group, data):
-        return {id_in_group: 'thanks'}
+    def live_xyz(self, data):
+        return {self.id_in_group: 'thanks'}
 
 To send to multiple players, use their ``id_in_group``.
 For example, this forwards every message to players 2 and 3:
 
 .. code-block:: python
 
-    def live_xyz(self, id_in_group, data):
+    def live_xyz(self, data):
         return {2: data, 3: data}
 
 To broadcast it to the whole group, use ``0``
@@ -73,7 +78,7 @@ To broadcast it to the whole group, use ``0``
 
 .. code-block:: python
 
-    def live_xyz(self, id_in_group, data):
+    def live_xyz(self, data):
         return {0: data}
 
 In your JavaScript, define a function ``liveRecv``.
@@ -95,11 +100,14 @@ Example: auction
         highest_bidder = models.IntegerField()
         highest_bid = models.CurrencyField(initial=0)
 
-        def live_auction(self, id_in_group, bid):
-            if bid > self.highest_bid:
-                self.highest_bid = bid
-                self.highest_bidder = id_in_group
-                response = dict(id_in_group=id_in_group, bid=bid)
+    class Player(BasePlayer):
+        def live_auction(self, bid):
+            group = self.group
+            my_id = self.id_in_group
+            if bid > group.highest_bid:
+                group.highest_bid = bid
+                group.highest_bidder = my_id
+                response = dict(id_in_group=my_id, bid=bid)
                 return {0: response}
 
 .. code-block:: python
@@ -162,13 +170,13 @@ Then you can use ``if`` statements to process different types of messages:
 
 .. code-block:: python
 
-    def your_live_method(self, id_in_group, data):
+    def live_xyz(self, data):
         t = data['type']
         if t == 'offer':
             other_player = data['to']
             response = {
                 'type': 'offer',
-                'from': id_in_group,
+                'from': self.id_in_group,
                 'value': data['value']
             }
             return {other_player: response}
@@ -177,11 +185,11 @@ Then you can use ``if`` statements to process different types of messages:
             ...
 
 You can call the data by another name;
-it just needs to be the method's last argument:
+it just needs to be the method's second argument:
 
 .. code-block:: python
 
-    def your_live_method(self, id_in_group, bid):
+    def live_xyz(self, bid):
         print(bid)
 
 History
@@ -213,10 +221,12 @@ When the task is completed, you send a message:
         num_messages = models.IntegerField()
         game_finished = models.BooleanField()
 
-        def your_live_method(self, id_in_group, data):
-            self.num_messages += 1
-            if self.num_messages >= 10:
-                self.game_finished = True
+    class Player(BasePlayer):
+        def live_xyz(self, data):
+            group = self.group
+            group.num_messages += 1
+            if group.num_messages >= 10:
+                group.game_finished = True
                 response = dict(type='game_finished')
                 return {0: response}
 
@@ -267,12 +277,12 @@ But with live pages, you must verify it inside the ``live_method``:
 
 .. code-block:: python
 
-    def live_auction(self, id_in_group, bid):
+    def live_auction(self, bid):
         if bid > 99:
             # just an example.
             # it's up to you to handle this message in your JavaScript code.
             response = dict(type='error', message='Bid is too high')
-            return {id_in_group: response}
+            return {self.id_in_group: response}
         ...
 
 In addition, you can add attributes to the ``<input>`` element like ``max="99"``.
@@ -317,8 +327,8 @@ Bots
 To test live methods with bots, define ``call_live_method`` as a top-level function in ``tests.py``.
 (Not available in oTree Studio.)
 This function should simulate the sequence of calls to your ``live_method``.
-The argument ``method`` is the instance method on your group,
-i.e. ``method = group.your_live_method``.
+The argument ``method`` simulates the live method on your Player model.
+For example, ``method(3, 'hello')`` calls the live method on Player 3 with ``data`` set to ``'hello'``.
 For example:
 
 .. code-block:: python
