@@ -144,8 +144,7 @@ for fixed (constant) values.
  
 If you want them to be determined dynamically
 (e.g. different from player to player),
-then you can instead define one of the below
-methods on your Page.
+then you can instead define one of the below methods.
 
 Note: if you have apps written before May 2019, the recommended format for these validation methods
 has changed. See :ref:`dynamic-validation-new-format`.

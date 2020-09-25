@@ -128,6 +128,7 @@ until that expiration time:
 
     class Page1(Page):
         def get_timeout_seconds(self):
+            import time
             return self.participant.vars['expiry'] - time.time()
 
 When time runs out, ``get_timeout_seconds`` will return 0 or a negative value,
@@ -141,6 +142,7 @@ for the participant to realistically read the whole page.
 
     class Page1(Page):
         def get_timeout_seconds(self):
+            import time
             return self.participant.vars['expiry'] - time.time()
 
         def is_displayed(self):
@@ -159,6 +161,7 @@ by setting ``timer_text``:
         timer_text = 'Time left to complete this section:'
 
         def get_timeout_seconds(self):
+            import time
             return self.participant.vars['expiry'] - time.time()
 
 
