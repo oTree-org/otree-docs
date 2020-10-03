@@ -199,30 +199,6 @@ session/subsession/group/participant
 The session/subsession/group/participant this player belongs to.
 See :ref:`object_model`.
 
-.. _role:
-
-role()
-~~~~~~
-
-Unlike most other built-in player methods, this is one you define yourself.
-
-This method should return a label with the player's role,
-usually depending on ``id_in_group``.
-
-For example::
-
-    def role(self):
-        if self.id_in_group == 1:
-            return 'buyer'
-        if self.id_in_group == 2:
-            return 'seller'
-
-Then you can use ``get_player_by_role('seller')`` to get player 2.
-See :ref:`groups`.
-
-Also, the player's role will be displayed in the oTree admin interface,
-in the "results" tab.
-
 Other player methods
 ~~~~~~~~~~~~~~~~~~~~
 

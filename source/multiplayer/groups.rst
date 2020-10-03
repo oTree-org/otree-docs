@@ -37,27 +37,18 @@ get_player_by_role(r)
 ~~~~~~~~~~~~~~~~~~~~~
 
 Returns the player with the given role.
-If you use this method, you must define the :ref:`role <role>` method.
-For example:
+If you use this method, you must define a Player method called ``role``,
+e.g.:
 
 .. code-block:: python
 
-    class Group(BaseGroup):
-        def set_payoff(self):
-            buyer = self.get_player_by_role('buyer')
-            print(buyer.decision)
-            # etc ...
-
-
     class Player(BasePlayer):
-        decision = models.BooleanField()
-
         def role(self):
-            if self.id_in_group == 1:
-                return 'buyer'
-            else:
-                return 'seller'
-
+            roles = {
+                1: 'buyer',
+                2: 'seller',
+            }
+            return roles[self.id_in_group]
 
 Getting other players
 ---------------------

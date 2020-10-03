@@ -369,7 +369,7 @@ Then your pages could be simplified to:
 Avoid duplicated validation methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have many repetitive :ref:`FIELD_error_message <_FOO_error_message>` methods,
+If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` methods,
 you can replace them with a single :ref:`error_message <error_message>` method.
 For example:
 

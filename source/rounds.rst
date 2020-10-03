@@ -118,7 +118,7 @@ accessed from a ``Page`` or ``Player``:
             self.participant.vars['foo'] = 1
 
 You can also access it from ``Group`` or subsession, as long as you retrieve
-a ``Player`` instance (e.g. using ``get_players()`` or ``get_player_by_role()``,
+a ``Player`` instance (e.g. using ``get_players()`` or ``get_player_by_id()``,
 etc.).
 
 .. code-block:: python
