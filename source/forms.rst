@@ -35,20 +35,6 @@ In your template, you can display the form with:
 
     {% formfields %}
 
-If you want to position the fields individually,
-you can instead use ``{% formfield %}``:
-
-.. code-block:: html+django
-
-    {% formfield player.contribution %}
-
-You can also put the ``label`` in directly in the template:
-
-.. code-block:: html+django
-
-    {% formfield player.contribution label="How much do you want to contribute?" %}
-
-
 .. _form-validation:
 
 Simple form field validation
@@ -273,6 +259,24 @@ You can set a model field's ``widget`` to ``RadioSelect`` or ``RadioSelectHorizo
 to be displayed with radio buttons, instead of a dropdown menu.
 
 
+{% formfield %}
+---------------
+
+If you want to position the fields individually,
+instead of ``{% formfields %}`` you can use ``{% formfield %}``:
+
+.. code-block:: html+django
+
+    {% formfield player.contribution %}
+
+You can also put the ``label`` in directly in the template:
+
+.. code-block:: html+django
+
+    {% formfield player.contribution label="How much do you want to contribute?" %}
+
+
+
 .. _django-forms:
 
 Customizing a field's appearance
@@ -354,7 +358,7 @@ you can use the ``choice_label`` and ``tag`` attributes on a field choice.
 Raw HTML widgets
 ----------------
 
-If ``{% formfield %}`` and :ref:`manual field rendering <django-forms>`
+If ``{% formfields %}`` and :ref:`manual field rendering <django-forms>`
 don't give you the appearance you want,
 you can write your own widget in raw HTML.
 However, you will lose the convenient features handled
@@ -374,7 +378,7 @@ they can see the error message.
 Raw HTML example: slider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want a slider, instead of ``{% formfield %}``,
+If you want a slider, instead of ``{% formfields %}``,
 put HTML like this in your template:
 
 .. code-block:: html

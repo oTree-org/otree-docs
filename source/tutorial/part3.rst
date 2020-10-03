@@ -139,7 +139,7 @@ and the ``content`` block to:
         and you received {{tripled_amount}}.
     </p>
 
-    {% formfield group.sent_back_amount %}
+    {% formfields %}
 
     {% next_button %}
 

@@ -14,10 +14,12 @@ oTree has a small REST API that enables external programs
 -   Add participant vars
 -   Add session vars
 
-Simply make an JSON-encoded request to one of the below endpoint URLs.
+A REST API is just a URL on your server that is designed to be accessed by programs,
+rather than being opened manually in a web browser.
+
+Simply make a request to one of the below URLs.
 The examples on this page use the Python Requests library (``pip3 install requests``),
-but you can make HTTP requests using any programming language,
-even JavaScript code in an oTree template.
+but you can make HTTP requests using any programming language.
 Additionally, many online tools allow making POST requests (e.g. through webhooks).
 
 If your site is password protected, see the note about authentication below.
