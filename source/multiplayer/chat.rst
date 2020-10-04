@@ -58,14 +58,8 @@ and all sellers can talk with each other.
 
     class Player(BasePlayer):
 
-        def role(self):
-            if self.id_in_group == 1:
-                return 'Seller'
-            else:
-                return 'Buyer'
-
         def chat_nickname(self):
-            return 'Group {} {}'.format(self.group.id_in_subsession, self.role())
+            return 'Group {} player {}'.format(self.group.id_in_subsession, self.id_in_group)
 
 In the page:
 
@@ -74,7 +68,6 @@ In the page:
     class MyPage(Page):
         def vars_for_template(self):
             return dict(
-                role=self.player.role(),
                 nickname=self.player.chat_nickname()
             )
 
@@ -82,7 +75,7 @@ Then in the template:
 
 .. code-block:: html+django
 
-    {% chat nickname=nickname channel=role %}
+    {% chat nickname=nickname channel=player.id_in_group %}
 
 Example: chat across rounds
 ```````````````````````````

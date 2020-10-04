@@ -33,22 +33,6 @@ get_player_by_id(n)
 
 Returns the player in the group with the given ``id_in_group``.
 
-get_player_by_role(r)
-~~~~~~~~~~~~~~~~~~~~~
-
-Returns the player with the given role.
-If you use this method, you must define a Player method called ``role``,
-e.g.:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-        def role(self):
-            roles = {
-                1: 'buyer',
-                2: 'seller',
-            }
-            return roles[self.id_in_group]
 
 Getting other players
 ---------------------
