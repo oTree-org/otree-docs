@@ -155,7 +155,9 @@ accessed from a ``Page`` object or any of the models (``Player``, ``Group``,
 Variable number of rounds
 -------------------------
 
-If you want a variable number of rounds, consider setting ``num_rounds``
-to some high number, and then in your app, conditionally hide the
+If you want a variable number of rounds, consider using :ref:`live`.
+
+Alternatively, you can set ``num_rounds`` to some high number, and then in your app, conditionally hide the
 ``{% next_button %}`` element, so that the user cannot proceed to the next
-page, or use :ref:`app_after_this_page`.
+page, or use :ref:`app_after_this_page`. But note that having many rounds (e.g. more than 100)
+might cause performance problems, so test your app carefully.

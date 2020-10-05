@@ -41,6 +41,7 @@ Player objects have methods ``get_others_in_group()`` and
 ``get_others_in_subsession()`` that return a list of the *other* players
 in the group and subsession.
 
+
 .. _shuffling:
 
 Group matching
