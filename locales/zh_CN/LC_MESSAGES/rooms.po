@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2020-10-19 01:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -234,21 +234,22 @@ msgstr ""
 msgid ""
 "oTree assigns participants based on arrival time, e.g. the first person "
 "to arrive is participant 1. However, in some situations this may be "
-"undesirable, for example: -   You want your participant labels to line up"
-" with the oTree IDs,"
+"undesirable, for example:"
 msgstr ""
 
 #: ../../source/rooms.rst:169
-msgid "in a fixed order, e.g. so that LAB29 will always be participant 29."
+msgid ""
+"You want your participant labels to line up with the oTree IDs, in a "
+"fixed order, e.g. so that LAB29 will always be participant 29."
 msgstr ""
 
-#: ../../source/rooms.rst:170
+#: ../../source/rooms.rst:171
 msgid ""
 "You want Alice/Bob/Charlie to always be participants 1/2/3, so that they "
 "get grouped to play together."
 msgstr ""
 
-#: ../../source/rooms.rst:173
+#: ../../source/rooms.rst:174
 msgid "Just assign those participant labels in ``creating_session``:"
 msgstr ""
 
