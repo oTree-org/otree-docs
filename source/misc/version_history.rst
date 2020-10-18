@@ -1,6 +1,11 @@
 Version history
 ```````````````
-.. _v26:
+
+Version 3.2
+===========
+
+-   Should use less memory and have fewer memory spikes.
+-   Enhancements to SessionData and SessionMonitor.
 
 Version 3.0
 ===========
