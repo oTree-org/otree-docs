@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:44+0800\n"
+"POT-Creation-Date: 2020-10-19 01:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,72 +46,61 @@ msgstr ""
 msgid "In your template, you can display the form with:"
 msgstr ""
 
-#: ../../source/forms.rst:38
-#, python-format
-msgid ""
-"If you want to position the fields individually, you can instead use ``{%"
-" formfield %}``:"
-msgstr ""
-
-#: ../../source/forms.rst:45
-msgid "You can also put the ``label`` in directly in the template:"
-msgstr ""
-
-#: ../../source/forms.rst:55
+#: ../../source/forms.rst:41
 msgid "Simple form field validation"
 msgstr ""
 
-#: ../../source/forms.rst:58
+#: ../../source/forms.rst:44
 msgid "min and max"
 msgstr ""
 
-#: ../../source/forms.rst:60
+#: ../../source/forms.rst:46
 msgid "To require an integer to be between 12 and 24:"
 msgstr ""
 
-#: ../../source/forms.rst:66
+#: ../../source/forms.rst:52
 msgid "If the max/min are not fixed, you should use :ref:`FOO_max`"
 msgstr ""
 
-#: ../../source/forms.rst:71
+#: ../../source/forms.rst:57
 msgid "choices"
 msgstr ""
 
-#: ../../source/forms.rst:73
+#: ../../source/forms.rst:59
 msgid ""
 "If you want a field to be a dropdown menu with a list of choices, set "
 "``choices=``:"
 msgstr ""
 
-#: ../../source/forms.rst:82
+#: ../../source/forms.rst:68
 msgid ""
 "To use radio buttons instead of a dropdown menu, you should set the "
 "``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal``:"
 msgstr ""
 
-#: ../../source/forms.rst:92
+#: ../../source/forms.rst:78
 msgid ""
 "If the list of choices needs to be determined dynamically, use "
 ":ref:`FOO_choices`"
 msgstr ""
 
-#: ../../source/forms.rst:94
+#: ../../source/forms.rst:80
 msgid ""
 "You can also set display names for each choice by making a list of "
 "[value, display] pairs:"
 msgstr ""
 
-#: ../../source/forms.rst:107
+#: ../../source/forms.rst:93
 msgid ""
 "If you do this, users will just see a menu with \"Low\", \"Medium\", "
 "\"High\", but their responses will be recorded as 1, 2, or 3."
 msgstr ""
 
-#: ../../source/forms.rst:110
+#: ../../source/forms.rst:96
 msgid "You can do this for ``BooleanField``, ``StringField``, etc.:"
 msgstr ""
 
-#: ../../source/forms.rst:122
+#: ../../source/forms.rst:108
 msgid ""
 "After the field has been set, you can access the human-readable name "
 "using `get_FOO_display "
@@ -119,121 +108,120 @@ msgid ""
 " , like this: ``player.get_level_display() # returns e.g. 'Medium'``."
 msgstr ""
 
-#: ../../source/forms.rst:129
+#: ../../source/forms.rst:115
 msgid "Optional fields"
 msgstr ""
 
-#: ../../source/forms.rst:131
+#: ../../source/forms.rst:117
 msgid "If a field is optional, you can use ``blank=True`` like this:"
 msgstr ""
 
-#: ../../source/forms.rst:140
+#: ../../source/forms.rst:126
 msgid "Dynamic form field validation"
 msgstr ""
 
-#: ../../source/forms.rst:142
+#: ../../source/forms.rst:128
 msgid ""
 "The ``min``, ``max``, and ``choices`` described above are only for fixed "
 "(constant) values."
 msgstr ""
 
-#: ../../source/forms.rst:145
+#: ../../source/forms.rst:131
 msgid ""
 "If you want them to be determined dynamically (e.g. different from player"
-" to player), then you can instead define one of the below methods on your"
-" Page."
+" to player), then you can instead define one of the below methods."
 msgstr ""
 
-#: ../../source/forms.rst:150
+#: ../../source/forms.rst:135
 msgid ""
 "Note: if you have apps written before May 2019, the recommended format "
 "for these validation methods has changed. See :ref:`dynamic-validation-"
 "new-format`."
 msgstr ""
 
-#: ../../source/forms.rst:156
+#: ../../source/forms.rst:141
 msgid "{field_name}_choices()"
 msgstr ""
 
-#: ../../source/forms.rst:158
+#: ../../source/forms.rst:143
 msgid ""
 "Like setting ``choices=``, this will set the choices for the form field "
 "(e.g. the dropdown menu or radio buttons)."
 msgstr ""
 
-#: ../../source/forms.rst:162
+#: ../../source/forms.rst:147
 msgid "Example:"
 msgstr ""
 
-#: ../../source/forms.rst:179
+#: ../../source/forms.rst:164
 msgid "{field_name}_max()"
 msgstr ""
 
-#: ../../source/forms.rst:181
+#: ../../source/forms.rst:166
 msgid ""
 "The dynamic alternative to setting ``max=`` in the model field. For "
 "example:"
 msgstr ""
 
-#: ../../source/forms.rst:196
+#: ../../source/forms.rst:181
 msgid "{field_name}_min()"
 msgstr ""
 
-#: ../../source/forms.rst:198
+#: ../../source/forms.rst:183
 msgid "The dynamic alternative to setting ``min=`` on the model field."
 msgstr ""
 
-#: ../../source/forms.rst:203
+#: ../../source/forms.rst:188
 msgid "{field_name}_error_message()"
 msgstr ""
 
-#: ../../source/forms.rst:205
+#: ../../source/forms.rst:190
 msgid "This is the most flexible method for validating a field."
 msgstr ""
 
-#: ../../source/forms.rst:224
+#: ../../source/forms.rst:209
 msgid "Validating multiple fields together"
 msgstr ""
 
-#: ../../source/forms.rst:226
+#: ../../source/forms.rst:211
 msgid ""
-"Let's say you have 3 integer fields in your form whose names are "
-"``int1``, ``int2``, and ``int3``, and the values submitted must sum to "
-"100. You can enforce this with the ``error_message`` method, which goes "
-"on the *page*, not the Player model:"
+"Let's say your form has 3 number fields whose values must sum to 100. You"
+" can enforce this with the ``error_message`` method, which goes on the "
+"*page* (not the Player model):"
 msgstr ""
 
-#: ../../source/forms.rst:242
+#: ../../source/forms.rst:226
 msgid "Notes:"
 msgstr ""
 
-#: ../../source/forms.rst:244
+#: ../../source/forms.rst:228
 msgid ""
 "If a field was left blank (and you set ``blank=True``), its value here "
 "will be ``None``."
 msgstr ""
 
-#: ../../source/forms.rst:245
+#: ../../source/forms.rst:229
 msgid "This method is only executed if there are no other errors in the form."
 msgstr ""
 
-#: ../../source/forms.rst:246
+#: ../../source/forms.rst:230
 msgid ""
 "You can also return a dict that maps field names to error messages. This "
-"way, you don't need to write many repetitive FIELD_error_message methods."
+"way, you don't need to write many repetitive FIELD_error_message methods "
+"(see :ref:`here <duplicate_validation_methods>`)."
 msgstr ""
 
-#: ../../source/forms.rst:252
+#: ../../source/forms.rst:237
 msgid "Determining form fields dynamically"
 msgstr ""
 
-#: ../../source/forms.rst:254
+#: ../../source/forms.rst:239
 msgid ""
 "If you need the list of form fields to be dynamic, instead of "
 "``form_fields`` you can define a method ``get_form_fields``:"
 msgstr ""
 
-#: ../../source/forms.rst:265
+#: ../../source/forms.rst:250
 #, python-format
 msgid ""
 "But if you do this, you have to be sure to also include the same ``{% "
@@ -241,22 +229,38 @@ msgid ""
 "formfields %}``."
 msgstr ""
 
-#: ../../source/forms.rst:270
+#: ../../source/forms.rst:255
 msgid "Widgets"
 msgstr ""
 
-#: ../../source/forms.rst:272
+#: ../../source/forms.rst:257
 msgid ""
 "You can set a model field's ``widget`` to ``RadioSelect`` or "
 "``RadioSelectHorizontal`` if you want choices to be displayed with radio "
 "buttons, instead of a dropdown menu."
 msgstr ""
 
-#: ../../source/forms.rst:279
+#: ../../source/forms.rst:262
+#, python-format
+msgid "{% formfield %}"
+msgstr ""
+
+#: ../../source/forms.rst:264
+#, python-format
+msgid ""
+"If you want to position the fields individually, instead of ``{% "
+"formfields %}`` you can use ``{% formfield %}``:"
+msgstr ""
+
+#: ../../source/forms.rst:271
+msgid "You can also put the ``label`` in directly in the template:"
+msgstr ""
+
+#: ../../source/forms.rst:282
 msgid "Customizing a field's appearance"
 msgstr ""
 
-#: ../../source/forms.rst:281
+#: ../../source/forms.rst:284
 #, python-format
 msgid ""
 "``{% formfields %}`` and ``{% formfield %}`` are easy to use because they"
@@ -264,7 +268,7 @@ msgid ""
 " label, and any error messages), with Bootstrap styling."
 msgstr ""
 
-#: ../../source/forms.rst:285
+#: ../../source/forms.rst:288
 #, python-format
 msgid ""
 "However, if you want more control over the appearance and layout, you can"
@@ -273,49 +277,49 @@ msgid ""
 "element. Just remember to also include ``{{ form.my_field.errors }}``."
 msgstr ""
 
-#: ../../source/forms.rst:290
+#: ../../source/forms.rst:293
 msgid ""
 "More info `here <https://docs.djangoproject.com/en/2.2/topics/forms"
 "/#rendering-fields-manually>`__."
 msgstr ""
 
-#: ../../source/forms.rst:296
+#: ../../source/forms.rst:299
 msgid "Example: Radio buttons in tables and other custom layouts"
 msgstr ""
 
-#: ../../source/forms.rst:298
+#: ../../source/forms.rst:301
 msgid "Let's say you have a set of ``IntegerField`` in your model:"
 msgstr ""
 
-#: ../../source/forms.rst:310
+#: ../../source/forms.rst:313
 msgid ""
 "And you'd like to present them as a likert scale, where each option is in"
 " a separate column."
 msgstr ""
 
-#: ../../source/forms.rst:313
+#: ../../source/forms.rst:316
 msgid ""
 "(First, try to reduce the code duplication in models.py by following the "
 "instructions in :ref:`many-fields`.)"
 msgstr ""
 
-#: ../../source/forms.rst:316
+#: ../../source/forms.rst:319
 msgid ""
 "Because the options must be in separate table cells, the ordinary "
 "``RadioSelectHorizontal`` widget will not work here."
 msgstr ""
 
-#: ../../source/forms.rst:319
+#: ../../source/forms.rst:322
 msgid "Instead, you should simply loop over the choices in the field as follows:"
 msgstr ""
 
-#: ../../source/forms.rst:330
+#: ../../source/forms.rst:333
 msgid ""
 "If you have many fields with the same number of choices, you can arrange "
 "them in a table:"
 msgstr ""
 
-#: ../../source/forms.rst:346
+#: ../../source/forms.rst:349
 msgid ""
 "You can also get choices individually by using their 0-based index, e.g. "
 "``{{ form.my_field.0 }}`` gives you the radio button of the first choice."
@@ -325,47 +329,47 @@ msgid ""
 "choice."
 msgstr ""
 
-#: ../../source/forms.rst:355
+#: ../../source/forms.rst:358
 msgid "Raw HTML widgets"
 msgstr ""
 
-#: ../../source/forms.rst:357
+#: ../../source/forms.rst:360
 #, python-format
 msgid ""
-"If ``{% formfield %}`` and :ref:`manual field rendering <django-forms>` "
+"If ``{% formfields %}`` and :ref:`manual field rendering <django-forms>` "
 "don't give you the appearance you want, you can write your own widget in "
 "raw HTML. However, you will lose the convenient features handled "
 "automatically by oTree. For example, if the form has an error and the "
 "page re-loads, all entries by the user may be wiped out."
 msgstr ""
 
-#: ../../source/forms.rst:364
+#: ../../source/forms.rst:367
 msgid ""
 "First, add an ``<input>`` element. For example, if your ``form_fields`` "
 "includes ``my_field``, you can do ``<input name=\"my_field\" "
-"type=\"checkbox\" />`` (consult the HTML documentation on ``<input>``'s "
-"available ``type`` values)."
+"type=\"checkbox\" />`` (some other common types are ``radio``, ``text``, "
+"``number``, and ``range``)."
 msgstr ""
 
-#: ../../source/forms.rst:369
+#: ../../source/forms.rst:372
 msgid ""
 "Second, you should usually include ``{{ form.my_field.errors }}``, so "
 "that if the participant submits an incorrect or missing value), they can "
 "see the error message."
 msgstr ""
 
-#: ../../source/forms.rst:375
+#: ../../source/forms.rst:378
 msgid "Raw HTML example: slider"
 msgstr ""
 
-#: ../../source/forms.rst:377
+#: ../../source/forms.rst:380
 #, python-format
 msgid ""
-"If you want a slider, instead of ``{% formfield %}``, put HTML like this "
-"in your template:"
+"If you want a slider, instead of ``{% formfields %}``, put HTML like this"
+" in your template:"
 msgstr ""
 
-#: ../../source/forms.rst:398
+#: ../../source/forms.rst:401
 msgid ""
 "If you want to show the current numeric value, or hide the knob until the"
 " slider is clicked (to avoid anchoring), you could do that with "
@@ -373,15 +377,15 @@ msgid ""
 "instead."
 msgstr ""
 
-#: ../../source/forms.rst:402
+#: ../../source/forms.rst:405
 msgid "(oTree also has a ``Slider`` widget but its customizability is limited.)"
 msgstr ""
 
-#: ../../source/forms.rst:405
+#: ../../source/forms.rst:408
 msgid "Raw HTML example: custom user interface with JavaScript"
 msgstr ""
 
-#: ../../source/forms.rst:407
+#: ../../source/forms.rst:410
 msgid ""
 "Let's say you don't want users to fill out form fields, but instead "
 "interact with some sort of visual app, like a clicking on a chart or "
@@ -389,95 +393,92 @@ msgid ""
 " they spent on part of the page, how many times they clicked, etc."
 msgstr ""
 
-#: ../../source/forms.rst:412
+#: ../../source/forms.rst:415
 msgid ""
 "You can build these interfaces in any front-end framework you want. "
 "Simple ones can be done with plain JavaScript; more complex ones would "
-"use something like React or Vue.js."
+"use something like React, Vue.js, or jsPsych."
 msgstr ""
 
-#: ../../source/forms.rst:416
+#: ../../source/forms.rst:419
 msgid ""
 "Then, use JavaScript to record the relevant data points and store it in a"
 " hidden form field. For example:"
 msgstr ""
 
-#: ../../source/forms.rst:430
-msgid ""
-"Then you can use JavaScript to set the value of that input, by selecting "
-"the element by name ``my_hidden_input``, and setting its ``value`` "
-"attribute."
+#: ../../source/forms.rst:433
+msgid "Then use JavaScript to set the value of that input:"
 msgstr ""
 
-#: ../../source/forms.rst:433
+#: ../../source/forms.rst:439
 msgid ""
 "When the page is submitted, the value of your hidden input will be "
 "recorded in oTree like any other form field."
 msgstr ""
 
-#: ../../source/forms.rst:437
+#: ../../source/forms.rst:443
 msgid "Buttons"
 msgstr ""
 
-#: ../../source/forms.rst:440
+#: ../../source/forms.rst:446
 msgid "Button that submits the form"
 msgstr ""
 
-#: ../../source/forms.rst:442
+#: ../../source/forms.rst:448
 msgid ""
 "If your page only contains 1 decision, you could omit the ``{% "
 "next_button %}`` and instead have the user click on one of several "
 "buttons to go to the next page."
 msgstr ""
 
-#: ../../source/forms.rst:447
+#: ../../source/forms.rst:453
 msgid ""
 "For example, let's say your Player model has ``offer_accepted = "
 "models.BooleanField()``, and rather than a radio button you'd like to "
 "present it as a button like this:"
 msgstr ""
 
-#: ../../source/forms.rst:453
+#: ../../source/forms.rst:459
 msgid ""
 "First, put ``offer_accepted`` in your Page's ``form_fields`` as usual. "
 "Then put this code in the template:"
 msgstr ""
 
-#: ../../source/forms.rst:464
+#: ../../source/forms.rst:470
 msgid ""
 "You can use this technique for any type of field, not just "
 "``BooleanField``."
 msgstr ""
 
-#: ../../source/forms.rst:468
+#: ../../source/forms.rst:474
 msgid "Button that doesn't submit the form"
 msgstr ""
 
-#: ../../source/forms.rst:470
+#: ../../source/forms.rst:476
 msgid ""
 "If the button has some purpose other than submitting the form, add "
 "``type=\"button\"``:"
 msgstr ""
 
-#: ../../source/forms.rst:485
+#: ../../source/forms.rst:491
 msgid "Miscellaneous & advanced"
 msgstr ""
 
-#: ../../source/forms.rst:488
+#: ../../source/forms.rst:494
 msgid "Form fields with dynamic labels"
 msgstr ""
 
-#: ../../source/forms.rst:490
+#: ../../source/forms.rst:496
 msgid ""
 "If the label should contain a variable, you can construct the string in "
 "your page:"
 msgstr ""
 
-#: ../../source/forms.rst:503
+#: ../../source/forms.rst:509
 msgid "Then, in the template:"
 msgstr ""
 
-#: ../../source/forms.rst:509
+#: ../../source/forms.rst:515
 msgid ""
 "If you use this technique, you may also want to use "
 ":ref:`dynamic_validation`."

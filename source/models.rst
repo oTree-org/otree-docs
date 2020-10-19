@@ -1,25 +1,18 @@
 Models
 ++++++
 
-An oTree app has 3 data models:
-
--  Subsession
--  Group
--  Player
+An oTree app has 3 data models: Subsession, Group, and Player.
 
 A player is part of a group, which is part of a subsession.
 See :ref:`conceptual_overview`.
 
 Let's say you want your experiment to generate data
-that looks like this:
+that looks like this::
 
-.. csv-table::
-    :header-rows: 1
-
-    name,age,is_student
-    John,30,False
-    Alice,22,True
-    Bob,35,False
+    name    age is_student
+    John    30  False
+    Alice   22  True
+    Bob     35  False
     ...
 
 Here is how to define the above table structure:

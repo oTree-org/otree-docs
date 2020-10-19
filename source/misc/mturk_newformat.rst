@@ -33,7 +33,7 @@ How do I switch to the new design?
 ----------------------------------
 
 #.  Install the new version of oTree: ``pip3 install -U otree``
-#.  In your ``requirements_base.txt``, put ``otree[mturk]>=2.4.0``.
+#.  In your ``requirements.txt`` or ``requirements_base.txt``, put ``otree[mturk]>=2.4.0``.
 #.  Remove the next_button on the last page of your study.
     oTree will no longer automatically submit the assignment to MTurk;
     instead, you should give them a completion code they can paste into the MTurk site.

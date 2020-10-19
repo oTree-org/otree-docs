@@ -208,9 +208,8 @@ This is the most flexible method for validating a field.
 Validating multiple fields together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's say you have 3 integer fields in your form whose names are
-``int1``, ``int2``, and ``int3``, and the values submitted must sum to
-100. You can enforce this with the ``error_message`` method, which goes on the *page*, not the Player model:
+Let's say your form has 3 number fields whose values must sum to 100.
+You can enforce this with the ``error_message`` method, which goes on the *page* (not the Player model):
 
 .. code-block:: python
 
@@ -368,7 +367,7 @@ re-loads, all entries by the user may be wiped out.
 First, add an ``<input>`` element.
 For example, if your ``form_fields`` includes ``my_field``,
 you can do ``<input name="my_field" type="checkbox" />``
-(consult the HTML documentation on ``<input>``'s available ``type`` values).
+(some other common types are ``radio``, ``text``, ``number``, and ``range``).
 
 Second, you should usually include ``{{ form.my_field.errors }}``,
 so that if the participant submits an incorrect or missing value),

@@ -15,4 +15,9 @@ Then, your changes will be visible at:
 
 [https://otree.readthedocs.io/zh_CN/latest/index.html](https://otree.readthedocs.io/zh_CN/latest/index.html)
 
-To rebuild .pot files, run `sphinx-build -b gettext source build/gettext`.
+To generate new .po files after an update to the English version, run:
+		
+```
+sphinx-build -b gettext source build/gettext
+sphinx-intl update -p build/gettext -l zh_CN
+```

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2020-10-19 01:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,51 +46,49 @@ msgstr ""
 
 #: ../../source/install-windows.rst:23
 msgid ""
-"Download and install `Python 3.7 or 3.8 "
-"<https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe>`__."
+"Download and install `Python 3.7 "
+"<https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__. (3.8"
+" not recommended currently.)"
 msgstr ""
 
-#: ../../source/install-windows.rst:25
+#: ../../source/install-windows.rst:31
 msgid "Check the box to add Python to PATH:"
 msgstr ""
 
-#: ../../source/install-windows.rst:30
+#: ../../source/install-windows.rst:36
 msgid "Step 2: Install oTree"
 msgstr ""
 
-#: ../../source/install-windows.rst:32
+#: ../../source/install-windows.rst:38
 msgid ""
 "Go to the folder where you want to store your oTree project. Then click "
 "the \"File\" menu and open PowerShell:"
 msgstr ""
 
-#: ../../source/install-windows.rst:37
+#: ../../source/install-windows.rst:43
 msgid "Enter this command at the prompt:"
 msgstr ""
 
-#: ../../source/install-windows.rst:43
-msgid "If you get an error like this::"
-msgstr ""
-
-#: ../../source/install-windows.rst:47
+#: ../../source/install-windows.rst:49
 msgid ""
-"To fix this, install the `Visual C++ Build Tools "
-"<http://go.microsoft.com/fwlink/?LinkId=691126>`__."
+"If you get an error like \"Microsoft Visual C++ is required\", uninstall "
+"Python 3.8 and install 3.7 (simple solution), or install the `Visual C++ "
+"Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__ (somewhat "
+"more complicated)."
 msgstr ""
 
-#: ../../source/install-windows.rst:50
+#: ../../source/install-windows.rst:55
 msgid "Next steps"
 msgstr ""
 
-#: ../../source/install-windows.rst:52
+#: ../../source/install-windows.rst:57
 msgid ""
 "If you will use :ref:`oTree Studio <studio>` (recommended), go to "
 "`otreehub.com <https://www.otreehub.com/studio>`__."
 msgstr ""
 
-#: ../../source/install-windows.rst:54
+#: ../../source/install-windows.rst:59
 msgid ""
 "If you will use PyCharm or another text-based code editor, follow the "
 "steps :ref:`here <install-nostudio>`."
 msgstr ""
-

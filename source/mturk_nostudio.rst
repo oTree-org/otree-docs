@@ -17,7 +17,7 @@ integration.
 Installation
 ------------
 
-In your ``requirements_base.txt``, you should change ``otree`` to ``otree[mturk]``.
+In your ``requirements.txt`` or ``requirements_base.txt`` (not both), you should change ``otree`` to ``otree[mturk]``.
 
 Preview template
 ----------------
