@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-19 01:38+0800\n"
-"PO-Revision-Date: 2020-10-22 00:42+0800\n"
+"PO-Revision-Date: 2020-10-23 00:23+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -351,13 +351,15 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:2
 msgid "Part 2: Public goods game"
-msgstr ""
+msgstr "第二部分：公共品博弈"
 
 #: ../../source/tutorial/part2.rst:8
 msgid ""
 "We will now create a simple `public goods game <https://en.wikipedia.org/wiki/"
 "Public_goods_game>`__. The public goods game is a classic game in economics."
 msgstr ""
+"我们现在创建一个简单的 `公共品博弈 <https://en.wikipedia.org/wiki/"
+"Public_goods_game>`__. 公共品博弈是经济学中的经典博弈。"
 
 #: ../../source/tutorial/part2.rst:11
 msgid ""
@@ -367,48 +369,52 @@ msgid ""
 "multiplied by 2, and then divided evenly three ways and redistributed back to "
 "the players."
 msgstr ""
+"这是一个三人游戏，每位玩家初始获得100点数。每位玩家独立决定为团队贡献出多少自己"
+"的点数。团队总贡献值将被乘以2并以均分的方式重新分配给三位玩家。"
 
 #: ../../source/tutorial/part2.rst:15
 msgid ""
 "The full code for the app we will write is `here <https://github.com/oTree-org/"
 "oTree/tree/master/public_goods_simple>`__."
 msgstr ""
+"本应用的全部代码在 `这里 <https://github.com/oTree-org/oTree/tree/master/"
+"public_goods_simple>`__."
 
 #: ../../source/tutorial/part2.rst:22
 msgid ""
 "Just as in the previous part of the tutorial, create another app, called "
 "``my_public_goods``."
-msgstr ""
+msgstr "正如教程的前一部分，创建另一个应用，起名为 ``my_public_goods``."
 
 #: ../../source/tutorial/part2.rst:26 ../../source/tutorial/part3.rst:21
 msgid "Constants"
-msgstr ""
+msgstr "常量"
 
 #: ../../source/tutorial/part2.rst:28
 msgid "Go to your app's Constants. (For more info, see :ref:`constants`.)"
-msgstr ""
+msgstr "设置本应用的常量（查看 :ref:`constants` 可获得更多信息）。"
 
 #: ../../source/tutorial/part2.rst:31
 msgid ""
 "Set ``players_per_group`` to 3. oTree will then automatically divide players "
 "into groups of 3."
-msgstr ""
+msgstr "设置 ``players_per_group`` 为3.oTree会自动将玩家分为3组。"
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""
 "The endowment to each player is 1000 points. So, let's define ``endowment`` and "
 "set it to a currency value of ``1000``."
-msgstr ""
+msgstr "每位玩家初始有1000点数。故定义 ``endowment`` 并将其设定为1000货币值。"
 
 #: ../../source/tutorial/part2.rst:35
 msgid ""
 "Each contribution is multiplied by 2. So define an integer constant called "
 "``multiplier = 2``:"
-msgstr ""
+msgstr "团队贡献值将被乘以2.故定义一个整数常量 ``multiplier = 2``:"
 
 #: ../../source/tutorial/part2.rst:38
 msgid "Now we have the following constants:"
-msgstr ""
+msgstr "我们就有了下面的常量："
 
 #: ../../source/tutorial/part2.rst:48
 msgid ""
@@ -416,6 +422,8 @@ msgid ""
 "important to record how much each person contributed. So, go to the Player "
 "model and define a ``contribution`` column:"
 msgstr ""
+"在游戏结束之后，我们需要关于玩家的何种数据？我们需要记录每位玩家的贡献值。故在玩"
+"家模型中定义 ``contribution`` 字段："
 
 #: ../../source/tutorial/part2.rst:62
 msgid ""
@@ -423,6 +431,8 @@ msgid ""
 "don't need to explicitly define a ``payoff`` field, because in oTree, the "
 "Player already contains a ``payoff`` column."
 msgstr ""
+"我们还需要记录玩家在游戏结束时的收益，不过我们无需显式地定义一个 ``payoff`` 字"
+"段，因为在oTree中，Player类已经包含了一个 ``payoff`` 字段。"
 
 #: ../../source/tutorial/part2.rst:66
 msgid ""
@@ -430,26 +440,28 @@ msgid ""
 "interested in knowing the total contributions to the group, and the individual "
 "share returned to each player. So, we define those 2 fields on the Group:"
 msgstr ""
+"我们对每一组的何种数据感兴趣？我们可能会对组内总贡献值感兴趣，以及返还给每位玩家"
+"的份额。故我们在Group类中定义下面两个字段："
 
 #: ../../source/tutorial/part2.rst:81
 msgid "This game has 3 pages:"
-msgstr ""
+msgstr "本游戏包含了3个页面："
 
 #: ../../source/tutorial/part2.rst:83
 msgid "Page 1: players decide how much to contribute"
-msgstr ""
+msgstr "页面1：玩家决定贡献值"
 
 #: ../../source/tutorial/part2.rst:84
 msgid "Page 2: Wait page: players wait for others in their group"
-msgstr ""
+msgstr "页面2：等待页面：玩家等待组内其他玩家做选择"
 
 #: ../../source/tutorial/part2.rst:85
 msgid "Page 3: players are told the results"
-msgstr ""
+msgstr "页面3：玩家被告知结果"
 
 #: ../../source/tutorial/part2.rst:88
 msgid "Page 1: Contribute"
-msgstr ""
+msgstr "页面1：Contribute"
 
 #: ../../source/tutorial/part2.rst:90
 msgid ""
@@ -458,18 +470,21 @@ msgid ""
 "you set the ``contribution`` field on the player. (For more info, see :ref:"
 "`forms`.)"
 msgstr ""
+"首先我们来定义 ``Contribute``.这一页面包含一个表单，所以我们需要定义 "
+"``form_model`` 与 ``form_fields``.具体来说，这一表单让你能够设定玩家的 "
+"``contribution`` 字段。（查看 :ref:`forms` 以获得更多信息）"
 
 #: ../../source/tutorial/part2.rst:102
 msgid "Now, we create the HTML template."
-msgstr ""
+msgstr "现在我们来创建HTML模板。"
 
 #: ../../source/tutorial/part2.rst:104
 msgid "Set the ``title`` block to ``Contribute``, and the ``content`` block to:"
-msgstr ""
+msgstr "设置 ``title`` 为 ``Contribute``， ``content`` 如下："
 
 #: ../../source/tutorial/part2.rst:122
 msgid "Page 2: ResultsWaitPage"
-msgstr ""
+msgstr "页面2：ResultsWaitPage"
 
 #: ../../source/tutorial/part2.rst:124
 msgid ""
@@ -477,6 +492,8 @@ msgid ""
 "can be calculated. Go to your Group model and add a method called "
 "``set_payoffs`` (note that ``self`` refers to the group):"
 msgstr ""
+"当所有玩家都完成了 ``Contribute`` 页面，玩家的收益就会被计算。前往Group model并"
+"添加一个方法，命名为 ``set_payoffs`` （注意此处 ``self`` 指本小组）："
 
 #: ../../source/tutorial/part2.rst:139
 msgid ""
@@ -487,68 +504,79 @@ msgid ""
 "group have arrived. Then everyone can proceed to the next page. (For more info, "
 "see :ref:`wait_pages`)."
 msgstr ""
+"当玩家选择了贡献值后，并不能立刻看到结果页面；他们首先需要等待其他玩家选择贡献"
+"值。故你需要添加一个 ``WaitPage``.不妨将其命名为 ``ResultsWaitPage``.当一位玩家"
+"到达等待页面之后，他必须等待组内其他玩家到达。之后所有人才能继续前往下一页面。"
+"（查看 :ref:`wait_pages` 以获得更多信息）。"
 
 #: ../../source/tutorial/part2.rst:147
 msgid ""
 "Add ``after_all_players_arrive`` method to ``ResultsWaitPage``, and set it to "
 "trigger the ``set_payoffs`` method:"
 msgstr ""
+"在 ``ResultsWaitPage`` 中添加 ``after_all_players_arrive`` 方法，将其设置如下以"
+"触发 ``set_payoffs`` 方法:"
 
 #: ../../source/tutorial/part2.rst:155
 msgid "Page 3: Results"
-msgstr ""
+msgstr "页面3：Results"
 
 #: ../../source/tutorial/part2.rst:157
 msgid "Now we create a page called ``Results``. Set the template's content to:"
-msgstr ""
+msgstr "现在来创建 ``Results`` 页面。将模板内容设置如下："
 
 #: ../../source/tutorial/part2.rst:173
 msgid "Page sequence"
-msgstr ""
+msgstr "页面序列"
 
 #: ../../source/tutorial/part2.rst:175
 msgid "Make sure your page_sequence is correct:"
-msgstr ""
+msgstr "确保你的page_sequence是正确的："
 
 #: ../../source/tutorial/part2.rst:189
 msgid ""
 "We add another session config with ``my_public_goods`` in the app sequence."
-msgstr ""
+msgstr "我们在应用序列中添加另一个属于 ``my_public_goods`` 的session config。"
 
 #: ../../source/tutorial/part2.rst:193
 msgid "Run the code"
-msgstr ""
+msgstr "运行代码"
 
 #: ../../source/tutorial/part2.rst:195 ../../source/tutorial/part3.rst:247
 msgid ""
 "Load the project again then open your browser to ``http://localhost:8000``."
-msgstr ""
+msgstr "载入你的项目并打开浏览器，网址为 ``http://localhost:8000``."
 
 #: ../../source/tutorial/part2.rst:200
 msgid "Troubleshoot with print()"
-msgstr ""
+msgstr "使用print()解决问题"
 
 #: ../../source/tutorial/part2.rst:202
 msgid ""
 "I often read messages on programming forums like, \"My program is not working. "
 "I can't find the mistake, even though I have spent hours looking at my code\"."
 msgstr ""
+"我经常在编程论坛上看到下面这样的帖子，\"我的程序不能正常运行. 我找不到错误在哪, "
+"尽管我已经花了数小时看我的代码\"."
 
 #: ../../source/tutorial/part2.rst:206
 msgid ""
 "The solution is not to re-read the code until you find an error; it's to "
 "interactively **test** your program."
 msgstr ""
+"解决方案并不是重读你的代码直到你发现错误为止，而是交互式地 **测试** 你的程序。"
 
 #: ../../source/tutorial/part2.rst:209
 msgid ""
 "The simplest way is using ``print()`` statements. If you don't learn this "
 "technique, you won't be able to program games effectively."
 msgstr ""
+"最简单地方法就是利用 ``print()`` 语句。如果你没有学会这个技巧，那么你将不能高效"
+"地编程。"
 
 #: ../../source/tutorial/part2.rst:212
 msgid "You just need to insert a line in your code like this:"
-msgstr ""
+msgstr "你只需要像下面这样在你的代码中插入一行："
 
 #: ../../source/tutorial/part2.rst:218
 msgid ""
@@ -557,20 +585,25 @@ msgid ""
 "executed, your print statement will be displayed in your command prompt window "
 "(not in your web browser)."
 msgstr ""
+"将这一行代码插入到你代码无法正常工作的部分，如上面定义的payoff方法。当你在浏览器"
+"中进行游戏时，这行代码就会执行，你的print语句将会显示在命令行窗口中（不是你的浏"
+"览器中）"
 
 #: ../../source/tutorial/part2.rst:224
 msgid "You can sprinkle lots of prints in your code"
-msgstr ""
+msgstr "你可以在代码中添加很多print语句"
 
 #: ../../source/tutorial/part2.rst:244
 msgid "print statement not displayed in console/logs"
-msgstr ""
+msgstr "print语句没有显示在控制台窗口/日志中"
 
 #: ../../source/tutorial/part2.rst:246
 msgid ""
 "If you don't see the output of the print statement in your console window, that "
 "means that line is not getting executed! (Which is why it isn't working.)"
 msgstr ""
+"如果你在控制台窗口中没有看到print语句的输出，这意味着这行代码没有被执行！（也就"
+"是程序没有正常工作的原因）"
 
 #: ../../source/tutorial/part2.rst:249
 msgid ""
@@ -579,6 +612,9 @@ msgid ""
 "Start putting print statements from the top of the method, then see where they "
 "stop getting displayed."
 msgstr ""
+"可能这是因为你的代码处于不可达的位置，如 ``return`` 语句的后面，或在一个总是返"
+"回 ``False`` 的”if“语句中。尝试将一系列print语句从方法的开头开始向下放置，然后查"
+"看它们在何处停止了显示。"
 
 #: ../../source/tutorial/part2.rst:253
 msgid ""
@@ -588,6 +624,9 @@ msgid ""
 "``set_payoffs``, you need to remember to call that function from a built-in "
 "method."
 msgstr ""
+"或者也可能你的代码在一个从未被调用（执行）的方法中。oTree的内置函数如 "
+"``creating_session`` 与 ``before_next_page`` 会被自动执行，但是如果你定义了一个"
+"自定义方法如 ``set_payoffs``，你必须记得在某个内置方法中调用它。"
 
 #: ../../source/tutorial/part3.rst:2
 msgid "Part 3: Trust game"
