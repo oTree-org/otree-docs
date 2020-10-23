@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-19 01:38+0800\n"
-"PO-Revision-Date: 2020-10-23 00:23+0800\n"
+"PO-Revision-Date: 2020-10-23 22:01+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -630,7 +630,7 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:2
 msgid "Part 3: Trust game"
-msgstr ""
+msgstr "第三部分：信任博弈"
 
 #: ../../source/tutorial/part3.rst:4
 msgid ""
@@ -638,6 +638,8 @@ msgid ""
 "Bestiary_of_Behavioral_Economics/Trust_Game>`__, and learn some more features "
 "of oTree."
 msgstr ""
+"现在我们来创建一个2人 `信任博弈 <https://en.wikibooks.org/wiki/"
+"Bestiary_of_Behavioral_Economics/Trust_Game>`__, 并学习oTree的一些特性。"
 
 #: ../../source/tutorial/part3.rst:7
 msgid ""
@@ -646,42 +648,49 @@ msgid ""
 "they will be tripled. Once P2 receives the tripled points he can decide to send "
 "some or all of his points to P1."
 msgstr ""
+"开始时，玩家1获得10点数；玩家2无点数。玩家1可以将他点数的一部分或者全部给与玩家"
+"2。之后玩家2收到的点数会变为原来的3倍。当玩家2收到3倍的点数之后，他可以决定将部"
+"分或者全部的点数给予玩家1."
 
 #: ../../source/tutorial/part3.rst:12
 msgid ""
 "The completed app is `here <https://github.com/oTree-org/oTree/tree/master/"
 "trust_simple>`__."
 msgstr ""
+"应用完整的代码在 `这里 <https://github.com/oTree-org/oTree/tree/master/"
+"trust_simple>`__."
 
 #: ../../source/tutorial/part3.rst:18
 msgid ""
 "Just as in the previous part of the tutorial, create another app, called "
 "``my_trust``."
-msgstr ""
+msgstr "正如教程的前一部分，创建另一个应用，命名为 ``my_trust``."
 
 #: ../../source/tutorial/part3.rst:23
 msgid "Go to your app's Constants."
-msgstr ""
+msgstr "转到本应用的常量。"
 
 #: ../../source/tutorial/part3.rst:25
 msgid ""
 "First we define our app's constants. The endowment is 10 points and the "
 "donation gets tripled."
-msgstr ""
+msgstr "首先我们定义应用的常量。初始点数为10，并且捐赠会变为3倍。"
 
 #: ../../source/tutorial/part3.rst:40
 msgid "Models"
-msgstr ""
+msgstr "模型"
 
 #: ../../source/tutorial/part3.rst:42
 msgid ""
 "Then we add fields to player and group. There are 2 critical data points to "
 "record: the \"sent\" amount from P1, and the \"sent back\" amount from P2."
 msgstr ""
+"现在我们添加player与group的字段。这里有两种关键的数据需要记录：玩家1的”捐赠“值与"
+"玩家2的“返还”值。"
 
 #: ../../source/tutorial/part3.rst:46
 msgid "Your first instinct may be to define the fields on the Player like this:"
-msgstr ""
+msgstr "直觉上，你可能如下定义Player类中的字段："
 
 #: ../../source/tutorial/part3.rst:56
 msgid ""
@@ -690,6 +699,9 @@ msgid ""
 "have a field called ``sent_back_amount``. How can we make our data model more "
 "accurate?"
 msgstr ""
+"此模型的问题在于， ``sent_amount`` 只对玩家1有意义， ``sent_back_amount`` 只对玩"
+"家2有意义。所以 ``sent_back_amount`` 字段对于玩家1无意义。我们如何才能使得模型更"
+"加精确呢？"
 
 #: ../../source/tutorial/part3.rst:61
 msgid ""
@@ -697,6 +709,8 @@ msgid ""
 "because each group has exactly 1 ``sent_amount`` and exactly 1 "
 "``sent_back_amount``:"
 msgstr ""
+"我们可以将这些字段定义到 ``Group`` 层级。这非常合理，因为每一小组恰好有一个 "
+"``sent_amount`` 与一个 ``sent_back_amount``:"
 
 #: ../../source/tutorial/part3.rst:76
 msgid ""
@@ -704,56 +718,65 @@ msgid ""
 "dropdown menu dynamically. This is the feature called ``{field_name}_choices``, "
 "which is explained here: :ref:`dynamic_validation`."
 msgstr ""
+"我们定义一个名为 ``sent_back_amount_choices`` 的方法为下拉菜单动态地添加数据。这"
+"一特性称为 ``{field_name}_choices``, 在这里: :ref:`dynamic_validation` 被详细解"
+"释。"
 
 #: ../../source/tutorial/part3.rst:90
 msgid "Define the templates and pages"
-msgstr ""
+msgstr "定义模板与页面"
 
 #: ../../source/tutorial/part3.rst:92
 msgid "We need 3 pages:"
-msgstr ""
+msgstr "我们需要3个页面："
 
 #: ../../source/tutorial/part3.rst:94
 msgid "P1's \"Send\" page"
-msgstr ""
+msgstr "玩家1的“Send”页面"
 
 #: ../../source/tutorial/part3.rst:95
 msgid "P2's \"Send back\" page"
-msgstr ""
+msgstr "玩家2的“Send back”页面"
 
 #: ../../source/tutorial/part3.rst:96
 msgid "\"Results\" page that both users see."
-msgstr ""
+msgstr "两位玩家都能看到的“Results”页面。"
 
 #: ../../source/tutorial/part3.rst:99
 msgid "Send page"
-msgstr ""
+msgstr "Send页面"
 
 #: ../../source/tutorial/part3.rst:111
 msgid ""
 "We use :ref:`is_displayed` to only show this to P1; P2 skips the page. For more "
 "info on ``id_in_group``, see :ref:`groups`."
 msgstr ""
+"我们使用 :ref:`is_displayed` 让此页面仅显示给玩家1；玩家2跳过此页面。获取更多 "
+"``id_in_group`` 的信息，可查看 :ref:`groups`."
 
 #: ../../source/tutorial/part3.rst:114
 msgid ""
 "For the template, set the ``title`` to ``Trust Game: Your Choice``, and "
 "``content`` to:"
 msgstr ""
+"将模板的 ``title`` 设为 ``Trust Game: Your Choice``, 并且将 ``content`` 设置如"
+"下："
 
 #: ../../source/tutorial/part3.rst:129
 msgid "SendBack.html"
-msgstr ""
+msgstr "SendBack.html"
 
 #: ../../source/tutorial/part3.rst:131
 msgid ""
 "This is the page that P2 sees to send money back. Set the ``title`` block to "
 "``Trust Game: Your Choice``, and the ``content`` block to:"
 msgstr ""
+"这是玩家2需要查看的将钱返还的页面。将 ``title`` 设为 ``Trust Game: Your "
+"Choice``,并将 ``content`` 设置如下："
 
 #: ../../source/tutorial/part3.rst:147
 msgid "Here is the page code. Notes:"
-msgstr ""
+msgstr "下面是页面的代码。请注意："
 
 #: ../../source/tutorial/part3.rst:149
 msgid ""
@@ -761,10 +784,12 @@ msgid ""
 "template. You cannot do calculations directly in the HTML code, so this number "
 "needs to be calculated in Python code and passed to the template."
 msgstr ""
+"我们使用 :ref:`vars_for_template` 将变量 ``tripled_amount`` 传递给模板。你不能直"
+"接在HTML代码中做计算，所以这一数字需要使用Python代码计算并传给模板。"
 
 #: ../../source/tutorial/part3.rst:170
 msgid "Results"
-msgstr ""
+msgstr "Results"
 
 #: ../../source/tutorial/part3.rst:172
 #, python-format
@@ -773,46 +798,50 @@ msgid ""
 "``{% if %}`` statement to condition on the current player's ``id_in_group``. "
 "Set the ``title`` block to ``Results``, and the content block to:"
 msgstr ""
+"玩家1与玩家2所看到的结果页面有细微的不同。所以我们使用 ``{% if %}`` 语句来判断当"
+"前玩家的 ``id_in_group``.将 ``title`` 设置为 ``Results``，并将内容部分设置如下："
 
 #: ../../source/tutorial/part3.rst:203
 msgid "Wait pages and page sequence"
-msgstr ""
+msgstr "等待页面与页面序列"
 
 #: ../../source/tutorial/part3.rst:205
 msgid "Add 2 wait pages:"
-msgstr ""
+msgstr "添加2个等待页面："
 
 #: ../../source/tutorial/part3.rst:207
 msgid "``WaitForP1`` (P2 needs to wait while P1 decides how much to send)"
-msgstr ""
+msgstr "``WaitForP1`` (玩家2需要等待玩家1决定捐赠值)"
 
 #: ../../source/tutorial/part3.rst:208
 msgid ""
 "``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send back)"
-msgstr ""
+msgstr "``ResultsWaitPage`` (玩家1需要等待玩家2决定返还值)"
 
 #: ../../source/tutorial/part3.rst:210
 msgid ""
 "After the second wait page, we should calculate the payoffs. So, we define a "
 "method on the Group called ``set_payoffs``:"
 msgstr ""
+"在第二个等待页面之后，我们应当计算收益。所以我们在Group类中定义一个方法，命名为 "
+"``set_payoffs``:"
 
 #: ../../source/tutorial/part3.rst:221
 msgid "Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:"
-msgstr ""
+msgstr "在 ``ResultsWaitPage``, 设置 ``after_all_players_arrive`` 使得方法被触发:"
 
 #: ../../source/tutorial/part3.rst:227
 msgid "Make sure they are ordered correctly in the page_sequence:"
-msgstr ""
+msgstr "确保在page_sequence中页面顺序是正确的："
 
 #: ../../source/tutorial/part3.rst:240
 msgid "Add an entry to your ``SESSION_CONFIGS``"
-msgstr ""
+msgstr "在 ``SESSION_CONFIGS`` 中增加一个条目"
 
 #: ../../source/tutorial/part3.rst:242
 msgid "Create a session config with ``my_trust`` in the app sequence."
-msgstr ""
+msgstr "在应用序列中创建一个属于 ``my_trust`` 的session config。"
 
 #: ../../source/tutorial/part3.rst:245
 msgid "Run the server"
-msgstr ""
+msgstr "运行服务器"
