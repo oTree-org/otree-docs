@@ -3,99 +3,107 @@
 # This file is distributed under the same license as the oTree package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree \n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-19 01:38+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-10-28 19:11+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: ../../source/install-nostudio.rst:6
 msgid "oTree Setup (text editor)"
-msgstr ""
+msgstr "安装oTree（文本编辑器）"
 
 #: ../../source/install-nostudio.rst:8
 msgid ""
-"Note: it's recommended to use `oTree Studio "
-"<https://www.otreehub.com/studio>`__ since it is specifically designed "
-"for building oTree apps. You can easily switch to using a text editor "
-"later, by downloading your code."
+"Note: it's recommended to use `oTree Studio <https://www.otreehub.com/"
+"studio>`__ since it is specifically designed for building oTree apps. You "
+"can easily switch to using a text editor later, by downloading your code."
 msgstr ""
+"注意：推荐使用 `oTree Studio <https://www.otreehub.com/studio>`__ ，这是为"
+"构建oTree应用而专门设计的。你可以方便地在之后换为使用文本编辑器，下载你的"
+"代码即可。"
 
 #: ../../source/install-nostudio.rst:14
 msgid ""
-"You should first install oTree for :ref:`Windows <install-windows>` or "
-":ref:`Mac <install-macos>`."
+"You should first install oTree for :ref:`Windows <install-windows>` or :"
+"ref:`Mac <install-macos>`."
 msgstr ""
+"你应当首先安装oTree，在 :ref:`Windows <install-windows>` 或 :ref:`Mac "
+"<install-macos>` 上."
 
 #: ../../source/install-nostudio.rst:19
 msgid "Run oTree"
-msgstr ""
+msgstr "运行oTree"
 
 #: ../../source/install-nostudio.rst:21
 msgid "If you're on MacOS, run::"
-msgstr ""
+msgstr "如果你使用MacOS，运行下面的命令："
 
 #: ../../source/install-nostudio.rst:25
 msgid ""
 "(If you are not using version 3.8 of Python, edit the above command "
 "appropriately.)"
-msgstr ""
+msgstr "（如果使用的Python版本不是3.8，请适当修改上面的命令。）"
 
 #: ../../source/install-nostudio.rst:27
 msgid "From your command prompt, create your project folder::"
-msgstr ""
+msgstr "从命令行窗口创建你的项目文件夹："
 
 #: ../../source/install-nostudio.rst:31
 msgid "When it asks you \"Include sample games?\" choose yes."
-msgstr ""
+msgstr "当被询问\"Include sample games?\"时，选择是。"
 
 #: ../../source/install-nostudio.rst:33
 msgid "Move into the folder you just created::"
-msgstr ""
+msgstr "进入你刚刚创建的文件夹："
 
 #: ../../source/install-nostudio.rst:37
 msgid "Run the server::"
-msgstr ""
+msgstr "运行服务器："
 
 #: ../../source/install-nostudio.rst:41
 msgid ""
-"Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__."
-" You should see the oTree demo site."
+"Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__. "
+"You should see the oTree demo site."
 msgstr ""
+"打开浏览器并输入地址 `http://localhost:8000/ <http://localhost:8000/>`__. "
+"你应当就能看到oTree演示页面。"
 
 #: ../../source/install-nostudio.rst:44
 msgid "To stop the server, press ``Control + C`` at your command line."
-msgstr ""
+msgstr "在命令行输入 ``Control + C`` 即可关闭服务器。"
 
 #: ../../source/install-nostudio.rst:49
 msgid "Install a text editor"
-msgstr ""
+msgstr "安装文本编辑器"
 
 #: ../../source/install-nostudio.rst:51
 msgid ""
-"Install a text editor like `PyCharm "
-"<https://www.jetbrains.com/pycharm/download/>`__ for editing your Python "
-"files. See the PyCharm documentation on how to configure your interpreter"
-" so that you get code completion."
+"Install a text editor like `PyCharm <https://www.jetbrains.com/pycharm/"
+"download/>`__ for editing your Python files. See the PyCharm "
+"documentation on how to configure your interpreter so that you get code "
+"completion."
 msgstr ""
+"安装一个文本编辑器如 `PyCharm <https://www.jetbrains.com/pycharm/download/"
+">`__ 以编辑Python文件。参考PyCharm的文档对解释器进行配置以获得代码补全。"
 
 #: ../../source/install-nostudio.rst:58
 msgid "Then launch the text editor and open your entire project folder."
-msgstr ""
+msgstr "启动文本编辑器并打开你的项目文件夹。"
 
 #: ../../source/install-nostudio.rst:64
 msgid "Upgrading/reinstalling oTree"
-msgstr ""
+msgstr "升级/重装oTree"
 
 #: ../../source/install-nostudio.rst:66
 msgid "We recommend upgrading every couple of weeks. It's the same command:"
-msgstr ""
-
+msgstr "我们推荐每隔几周就升级一次。使用与安装同样的命令即可："
