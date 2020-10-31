@@ -3,515 +3,572 @@
 # This file is distributed under the same license as the oTree package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree \n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-31 23:32+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-10-31 18:28+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: ../../source/templates.rst:4
 msgid "Templates"
-msgstr ""
+msgstr "模板"
 
 #: ../../source/templates.rst:7
 msgid "Template syntax"
-msgstr ""
+msgstr "模板语法"
 
 #: ../../source/templates.rst:10
 msgid "Variables"
-msgstr ""
+msgstr "变量"
 
 #: ../../source/templates.rst:12
 msgid "You can display a variable like this:"
-msgstr ""
+msgstr "你可以像下面这样显示一个变量："
 
 #: ../../source/templates.rst:18
 msgid "The following variables are available in templates:"
-msgstr ""
+msgstr "下面的变量在模板中均可用："
 
 #: ../../source/templates.rst:20
 msgid "``player``: the player currently viewing the page"
-msgstr ""
+msgstr "``player``: 当前正在浏览页面的玩家"
 
 #: ../../source/templates.rst:21
 msgid "``group``: the group the current player belongs to"
-msgstr ""
+msgstr "``group``: 当前玩家所属的小组"
 
 #: ../../source/templates.rst:22
 msgid "``subsession``: the subsession the current player belongs to"
-msgstr ""
+msgstr "``subsession``: 当前玩家所属的子会话"
 
 #: ../../source/templates.rst:23
 msgid "``participant``: the participant the current player belongs to"
-msgstr ""
+msgstr "``participant``: 当前玩家所属的参与人"
 
 #: ../../source/templates.rst:24
 msgid "``session``: the current session"
-msgstr ""
+msgstr "``session``: 当前会话"
 
 #: ../../source/templates.rst:25
 msgid "``Constants``"
-msgstr ""
+msgstr "``Constants``"
 
 #: ../../source/templates.rst:26
 msgid "Any variables you passed with :ref:`vars_for_template`."
-msgstr ""
+msgstr "任何你使用 :ref:`vars_for_template` 传递的变量。"
 
 #: ../../source/templates.rst:29
 msgid "Conditions (\"if\")"
-msgstr ""
+msgstr "条件（“if”）"
 
 #: ../../source/templates.rst:35
 msgid "With an 'else':"
-msgstr ""
+msgstr "使用‘else’："
 
 #: ../../source/templates.rst:46
 msgid "Loops (\"for\")"
-msgstr ""
+msgstr "循环（“for”）"
 
 #: ../../source/templates.rst:56
 msgid "Method calls"
-msgstr ""
+msgstr "函数调用"
 
 #: ../../source/templates.rst:58
 msgid ""
 "To call a method from one of your models, omit the parentheses (unlike "
 "regular Python code)."
-msgstr ""
+msgstr "可调用模型中的方法，注意无需括号（与正常Python代码不同）。"
 
 #: ../../source/templates.rst:72
 msgid "Accessing items in a dict"
-msgstr ""
+msgstr "获取字典中的元素"
 
 #: ../../source/templates.rst:74
 msgid ""
-"Whereas in Python code you do ``my_dict['foo']``, in a template you would"
-" do ``{{ my_dict.foo }}``."
+"Whereas in Python code you do ``my_dict['foo']``, in a template you would do "
+"``{{ my_dict.foo }}``."
 msgstr ""
+"在Python代码中使用 ``my_dict['foo']``, 但在模板中应当使用 ``{{ my_dict.foo }}"
+"``."
 
 #: ../../source/templates.rst:78
 msgid "Comments"
-msgstr ""
+msgstr "注释"
 
 #: ../../source/templates.rst:90
 msgid "Template filters"
-msgstr ""
+msgstr "模板过滤器"
 
 #: ../../source/templates.rst:92
 msgid ""
-"In addition to the filters available with Django's template language, "
-"oTree has the ``|c`` filter, which is equivalent to the ``c()`` function."
-" For example, ``{{ 20|c }}`` displays as ``20 points``."
+"In addition to the filters available with Django's template language, oTree "
+"has the ``|c`` filter, which is equivalent to the ``c()`` function. For "
+"example, ``{{ 20|c }}`` displays as ``20 points``."
 msgstr ""
+"除了Django模板语言自带的过滤器，oTree有 ``|c`` 过滤器，功能等价于 ``c()`` 函"
+"数。例如，``{{ 20|c }}`` 会显示为 ``20 points``."
 
 #: ../../source/templates.rst:97
 msgid "Things you can't do"
-msgstr ""
+msgstr "不应当使用的语法"
 
 #: ../../source/templates.rst:99
 msgid ""
-"The template language is just for displaying values. You can't do math "
-"(``+``, ``*``, ``/``, ``-``) or otherwise modify numbers, lists, strings,"
-" etc. For that, you should use :ref:`vars_for_template`."
+"The template language is just for displaying values. You can't do math (``"
+"+``, ``*``, ``/``, ``-``) or otherwise modify numbers, lists, strings, etc. "
+"For that, you should use :ref:`vars_for_template`."
 msgstr ""
+"模板语言仅仅是为了显示值。你不能在其中做数学运算 (``+``, ``*``, ``/``, ``-"
+"``) 或者修改数字，列表，字符串等等。为了修改变量，应当使用 :ref:"
+"`vars_for_template`."
 
 #: ../../source/templates.rst:105
 msgid "How templates work: an example"
-msgstr ""
+msgstr "模板是如何工作的：一个例子"
 
 #: ../../source/templates.rst:107
 msgid "oTree templates are a mix of 2 languages:"
-msgstr ""
+msgstr "oTree模板是两种语言的混合："
 
 #: ../../source/templates.rst:109
 msgid "*HTML* (which uses angle brackets like ``<this>`` and ``</this>``."
-msgstr ""
+msgstr "*HTML* (使用尖角括号如 ``<this>`` 与 ``</this>``."
 
 #: ../../source/templates.rst:110
 msgid ""
 "*Django template tags* (which use curly braces like ``{% this %}`` and "
 "``{{ this }}``"
-msgstr ""
+msgstr "*Django 模板标签* (使用大括号如 ``{% this %}`` 与 ``{{ this }}``"
 
 #: ../../source/templates.rst:113
 msgid "In this example, let's say your template looks like this:"
-msgstr ""
+msgstr "在这个例子中，假定你的模板如下："
 
 #: ../../source/templates.rst:129
 msgid "Step 1: oTree scans Django tags, produces HTML (a.k.a. \"server side\")"
-msgstr ""
+msgstr "步骤1：oTree扫描Django标签，生成HTML（亦称“服务器端”）"
 
 #: ../../source/templates.rst:131
 msgid ""
-"oTree uses the current values of the variables to convert the above "
-"Django code to plain HTML, like this:"
-msgstr ""
+"oTree uses the current values of the variables to convert the above Django "
+"code to plain HTML, like this:"
+msgstr "oTree使用变量当前的值将Django代码转换为纯HTML，像下面这样："
 
 #: ../../source/templates.rst:147
 msgid ""
-"Step 2: Browser scans HTML tags, produces a webpage (a.k.a. \"client "
-"side\")"
-msgstr ""
+"Step 2: Browser scans HTML tags, produces a webpage (a.k.a. \"client side\")"
+msgstr "步骤2：浏览器扫描HTML标签，生成web页面（亦称“浏览器端”）"
 
 #: ../../source/templates.rst:149
 msgid ""
-"The oTree server then sends this HTML to the user's computer, where their"
-" web browser can read the code and display it as a formatted web page:"
+"The oTree server then sends this HTML to the user's computer, where their "
+"web browser can read the code and display it as a formatted web page:"
 msgstr ""
+"oTree服务器将HTML发送给用户的电脑，用户的web浏览器可以解析这些代码并将其显示"
+"为格式化的web页面："
 
 #: ../../source/templates.rst:155
 msgid "Note that the browser never sees the Django tags."
-msgstr ""
+msgstr "注意浏览器永远不会收到Django标签。"
 
 #: ../../source/templates.rst:158
 msgid "The key point"
-msgstr ""
+msgstr "要点"
 
 #: ../../source/templates.rst:160
 msgid ""
-"If one of your pages doesn't look the way you want, you can isolate which"
-" of the above steps went wrong. In your browser, right-click and \"view "
-"source\". (Note: \"view source\" may not work in split-screen mode.)"
+"If one of your pages doesn't look the way you want, you can isolate which of "
+"the above steps went wrong. In your browser, right-click and \"view source"
+"\". (Note: \"view source\" may not work in split-screen mode.)"
 msgstr ""
+"如果页面没有如期望正常工作，你可以分开来看上面两步哪一步出错了。在浏览器中，"
+"右键单击并“查看源代码”。（注意：“查看源代码”在分离屏幕模式下可能无法正常工"
+"作。）"
 
 #: ../../source/templates.rst:165
 msgid ""
-"You can then see the pure HTML that was generated (along with any "
-"JavaScript or CSS)."
-msgstr ""
+"You can then see the pure HTML that was generated (along with any JavaScript "
+"or CSS)."
+msgstr "你可以看到生成的纯HTML（与JavaScript和CSS）。"
 
 #: ../../source/templates.rst:168
 msgid ""
-"If the HTML code doesn't look the way you expect, then something went "
-"wrong on the server side. Look for mistakes in your ``vars_for_template``"
-" or your Django template tags."
+"If the HTML code doesn't look the way you expect, then something went wrong "
+"on the server side. Look for mistakes in your ``vars_for_template`` or your "
+"Django template tags."
 msgstr ""
+"如果HTML代码看起来不是所期望的，那么可能服务器端出现了某种问题。可在 "
+"``vars_for_template`` 或者Django模板标签中寻找错误。"
 
 #: ../../source/templates.rst:171
 msgid ""
-"If there was no error in generating the HTML code, then it is probably an"
-" issue with how you are using HTML (or JavaScript) syntax. Try pasting "
-"the problematic part of the HTML back into a template, without the Django"
-" tags, and edit it until it produces the right output. Then put the "
-"Django tags back in, to make it dynamic again."
+"If there was no error in generating the HTML code, then it is probably an "
+"issue with how you are using HTML (or JavaScript) syntax. Try pasting the "
+"problematic part of the HTML back into a template, without the Django tags, "
+"and edit it until it produces the right output. Then put the Django tags "
+"back in, to make it dynamic again."
 msgstr ""
+"如果生成的HTML代码没有任何错误，那么可能你使用了错误的HTML（或者JavaScript）"
+"语法。试着将HTML有问题的部分粘贴回模板中，无需Django模板标签，编辑它直到输出"
+"正常。再尝试将Django标签加回去，使得页面重新成为动态的。"
 
 #: ../../source/templates.rst:180
 msgid "Images (static files)"
-msgstr ""
+msgstr "图片（静态文件）"
 
 #: ../../source/templates.rst:182
 msgid ""
-"The simplest way to include images, video, 3rd party JS/CSS libraries, "
-"and other static files in your project is to host them online, for "
-"example on Dropbox, Imgur, YouTube, etc."
+"The simplest way to include images, video, 3rd party JS/CSS libraries, and "
+"other static files in your project is to host them online, for example on "
+"Dropbox, Imgur, YouTube, etc."
 msgstr ""
+"在项目中包含图片，视频，第三方JS/CSS库或者其他静态文件的最简单的方法是将它们"
+"在线存放，例如Dropbox，Imgur，YouTube等等。"
 
 #: ../../source/templates.rst:185
 msgid ""
-"Then, put its URL in an <img> or <video> tag in your template, for "
-"example:"
-msgstr ""
+"Then, put its URL in an <img> or <video> tag in your template, for example:"
+msgstr "然后，将URL包含在 <img> 或 <video> 标签内放在模板中，例如："
 
 #: ../../source/templates.rst:191
 msgid ""
 "You can also store images directly in your project. (but note that large "
-"file sizes can affect performance). oTree Studio has an image upload "
-"tool. (If you are using a text editor, see :ref:`here <staticfiles>`.) "
-"Once you have stored the image, you can display it like this:"
+"file sizes can affect performance). oTree Studio has an image upload tool. "
+"(If you are using a text editor, see :ref:`here <staticfiles>`.) Once you "
+"have stored the image, you can display it like this:"
 msgstr ""
+"你也可以直接将图片存放在你的项目中。（但注意文件较大会影响性能）。oTree "
+"Studio有一个图片上传工具。（如果你使用文本编辑器，参考 :ref:`这里 "
+"<staticfiles>`.）将图片存储在项目中后，你可以像下面这样显示它："
 
 #: ../../source/templates.rst:203
 msgid "Dynamic images"
-msgstr ""
+msgstr "动态图片"
 
 #: ../../source/templates.rst:205
 msgid ""
-"If you need to show different images depending on the context (like "
-"showing a different image each round), you can construct it in "
-"``vars_for_template`` and pass it to the template, e.g.:"
+"If you need to show different images depending on the context (like showing "
+"a different image each round), you can construct it in ``vars_for_template`` "
+"and pass it to the template, e.g.:"
 msgstr ""
+"如果你需要根据上下文显示不同的图片（比如每一轮显示不同的图片），那么你可以在 "
+"``vars_for_template`` 中构建并将其传递给模板，例如："
 
 #: ../../source/templates.rst:218
 msgid "Then in the template:"
-msgstr ""
+msgstr "在模板中使用："
 
 #: ../../source/templates.rst:226
 msgid "Includable templates"
-msgstr ""
+msgstr "可包含的模板"
 
 #: ../../source/templates.rst:228
 #, python-format
 msgid ""
-"If you are copy-pasting the same content across many templates, it's "
-"better to create an includable template and reuse it with ``{% include "
-"%}``."
+"If you are copy-pasting the same content across many templates, it's better "
+"to create an includable template and reuse it with ``{% include %}``."
 msgstr ""
+"如果你将同样的内容在多个模板之间复制粘贴，更好的方案是创建一个可包含的模板并"
+"使用 ``{% include %}`` 复用模板。"
 
 #: ../../source/templates.rst:232
 msgid ""
-"For example, if your game has instructions that need to be repeated on "
-"every page, make a template called ``instructions.html``, and put the "
-"instructions there, for example:"
+"For example, if your game has instructions that need to be repeated on every "
+"page, make a template called ``instructions.html``, and put the instructions "
+"there, for example:"
 msgstr ""
+"举例来说，如果在你的游戏中游戏说明需要在每一个页面上重复出现，那么就可以创建"
+"一个模板，叫做 ``instructions.html``, 将说明放入其中，举例如下："
 
 #: ../../source/templates.rst:252
 msgid ""
 "If you are using oTree Studio, click the button to include a template. "
-"Otherwise, create the file in your ``templates`` folder, and see the "
-"sample games for examples of how to include the template (e.g. "
+"Otherwise, create the file in your ``templates`` folder, and see the sample "
+"games for examples of how to include the template (e.g. "
 "``instructions_template``)."
 msgstr ""
+"如果你使用的是oTree Studio，点击一个按钮即可包含一个模板。如使用文本编辑器，"
+"则在 ``templates`` 文件夹中创建文件，然后查看简单的游戏示例来弄明白如何包含模"
+"板（例如 ``instructions_template``）。"
 
 #: ../../source/templates.rst:258
 msgid "JavaScript and CSS"
-msgstr ""
+msgstr "JavaScript 与 CSS"
 
 #: ../../source/templates.rst:261
 msgid "Where to put JavaScript/CSS code"
-msgstr ""
+msgstr "将JavaScript/CSS代码放在何处"
 
 #: ../../source/templates.rst:263
 msgid ""
-"You can put JavaScript and CSS anywhere just by using the usual "
-"``<script></script>`` or ``<style></style>``, anywhere in your template."
+"You can put JavaScript and CSS anywhere just by using the usual ``<script></"
+"script>`` or ``<style></style>``, anywhere in your template."
 msgstr ""
+"你可以使用常见的 ``<script></script>`` 或 ``<style></style>`` 标签将"
+"JavaScript与CSS放在你模板的任意位置。"
 
 #: ../../source/templates.rst:266
 msgid ""
 "If you have a lot of scripts/styles, you can put them in separate blocks "
-"outside of ``content``: ``scripts`` and ``styles``. It's not mandatory to"
-" do this, but: it keeps your code organized and ensures that things are "
-"loaded in the correct order (CSS, then your page content, then "
-"JavaScript)."
+"outside of ``content``: ``scripts`` and ``styles``. It's not mandatory to do "
+"this, but: it keeps your code organized and ensures that things are loaded "
+"in the correct order (CSS, then your page content, then JavaScript)."
 msgstr ""
+"如果你有很多脚本/样式，你可以将它们包含在独立的部分中，在 ``content`` 之外： "
+"``scripts`` and ``styles`` 中.这并非强制的要求，但这样做会使你的代码更有条理"
+"并确保页面按照顺序加载（CSS，然后是页面内容，然后是JavaScript）。"
 
 #: ../../source/templates.rst:274
 msgid "Customizing the theme"
-msgstr ""
+msgstr "定制主题"
 
 #: ../../source/templates.rst:276
 msgid ""
 "If you want to customize the appearance of an oTree element, here is the "
 "list of CSS selectors:"
-msgstr ""
+msgstr "如果你想要定制oTree元素的外观，下表列出了CSS选择器："
 
 #: ../../source/templates.rst:280
 msgid "Element"
-msgstr ""
+msgstr "元素"
 
 #: ../../source/templates.rst:280
 msgid "CSS/jQuery selector"
-msgstr ""
+msgstr "CSS/jQuery 选择器"
 
 #: ../../source/templates.rst:282
 msgid "Page body"
-msgstr ""
+msgstr "页面主体"
 
 #: ../../source/templates.rst:282
 msgid "``.otree-body``"
-msgstr ""
+msgstr "``.otree-body``"
 
 #: ../../source/templates.rst:283
 msgid "Page title"
-msgstr ""
+msgstr "页面标题"
 
 #: ../../source/templates.rst:283
 msgid "``.otree-title``"
-msgstr ""
+msgstr "``.otree-title``"
 
 #: ../../source/templates.rst:284
 msgid "Wait page (entire dialog)"
-msgstr ""
+msgstr "等待页面（整个对话框）"
 
 #: ../../source/templates.rst:284
 msgid "``.otree-wait-page``"
-msgstr ""
+msgstr "``.otree-wait-page``"
 
 #: ../../source/templates.rst:285
 msgid "Wait page dialog title"
-msgstr ""
+msgstr "等待页面对话框标题"
 
 #: ../../source/templates.rst:285
 msgid "``.otree-wait-page__title`` (note: ``__``, not ``_``)"
-msgstr ""
+msgstr "``.otree-wait-page__title`` (注意: ``__``, 而非 ``_``)"
 
 #: ../../source/templates.rst:286
 msgid "Wait page dialog body"
-msgstr ""
+msgstr "等待页面对话框主体"
 
 #: ../../source/templates.rst:286
 msgid "``.otree-wait-page__body``"
-msgstr ""
+msgstr "``.otree-wait-page__body``"
 
 #: ../../source/templates.rst:287
 msgid "Timer"
-msgstr ""
+msgstr "计时器"
 
 #: ../../source/templates.rst:287
 msgid "``.otree-timer``"
-msgstr ""
+msgstr "``.otree-timer``"
 
 #: ../../source/templates.rst:288
 msgid "Next button"
-msgstr ""
+msgstr "下一步按钮"
 
 #: ../../source/templates.rst:288
 msgid "``.otree-btn-next``"
-msgstr ""
+msgstr "``.otree-btn-next``"
 
 #: ../../source/templates.rst:289
 msgid "Form errors alert"
-msgstr ""
+msgstr "表单错误警告"
 
 #: ../../source/templates.rst:289
 msgid "``.otree-form-errors``"
-msgstr ""
+msgstr "``.otree-form-errors``"
 
 #: ../../source/templates.rst:292
 msgid ""
-"For example, to change the page width, put CSS in your base template like"
-" this:"
-msgstr ""
+"For example, to change the page width, put CSS in your base template like "
+"this:"
+msgstr "举例来说，如改变页面宽度，将CSS在基模板中放置如下："
 
 #: ../../source/templates.rst:302
 msgid ""
 "To get more info, in your browser, right-click the element you want to "
-"modify and select \"Inspect\". Then you can navigate to see the different"
-" elements and try modifying their styles:"
+"modify and select \"Inspect\". Then you can navigate to see the different "
+"elements and try modifying their styles:"
 msgstr ""
+"获取更多信息，可在浏览器中右键单击你想要修改的元素并选择“审查元素”。然后你可"
+"以导航到不同元素并试着改变它们的样式："
 
 #: ../../source/templates.rst:308
 msgid ""
 "When possible, use one of the official selectors above. Don't use any "
-"selector that starts with ``_otree``, and don't select based on Bootstrap"
-" classes like ``btn-primary`` or ``card``, because those are unstable."
+"selector that starts with ``_otree``, and don't select based on Bootstrap "
+"classes like ``btn-primary`` or ``card``, because those are unstable."
 msgstr ""
+"尽可能使用上面给出的官方选择器。不要使用任何以 ``_otree`` 开头或者基于"
+"Bootstrap类的选择器，如 ``btn-primary`` 或 ``card``,它们都是不稳定的。"
 
 #: ../../source/templates.rst:317
 msgid "Passing data from Python to JavaScript (js_vars)"
-msgstr ""
+msgstr "从Python向JavaScript传递数据（js_vars）"
 
 #: ../../source/templates.rst:319
 msgid ""
 "To pass data to JavaScript code in your template, define a method "
 "``js_vars`` on your Page, for example:"
 msgstr ""
+"为了在模板中向JavaScript代码传递数据，定义一个 ``js_vars`` 方法在你的页面中，"
+"例如："
 
 #: ../../source/templates.rst:329
 msgid "Then, in your template, you can refer to these variables:"
-msgstr ""
+msgstr "在模板中，你就可以像下面这样引用这些变量："
 
 #: ../../source/templates.rst:338
 msgid ""
-"(An alternative is to use the ``|json`` filter in the template, e.g. "
-"``let x = {{ player.payoff|json }};``, but ``js_vars`` is simpler."
+"(An alternative is to use the ``|json`` filter in the template, e.g. ``let x "
+"= {{ player.payoff|json }};``, but ``js_vars`` is simpler."
 msgstr ""
+"（另一种方法是在模板中使用 ``|json`` 过滤器，例如 ``let x = {{ player.payoff|"
+"json }};``,不过 ``js_vars`` 更简单。"
 
 #: ../../source/templates.rst:343
 msgid "Bootstrap"
-msgstr ""
+msgstr "Bootstrap"
 
 #: ../../source/templates.rst:345
 msgid ""
-"oTree comes with `Bootstrap "
-"<https://getbootstrap.com/docs/4.0/components/alerts/>`__, a popular "
-"library for customizing a website's user interface."
+"oTree comes with `Bootstrap <https://getbootstrap.com/docs/4.0/components/"
+"alerts/>`__, a popular library for customizing a website's user interface."
 msgstr ""
+"oTree使用 `Bootstrap <https://getbootstrap.com/docs/4.0/components/alerts/"
+">`__,一个流行的用于定制网站用户界面的库。"
 
 #: ../../source/templates.rst:348
 msgid ""
-"You can use it if you want a `custom style "
-"<http://getbootstrap.com/css/>`__, or a `specific component "
-"<http://getbootstrap.com/components/>`__ like a table, alert, progress "
-"bar, label, etc. You can even make your page dynamic with elements like "
-"`popovers <https://getbootstrap.com/docs/4.0/components/popovers/>`__, "
-"`modals <https://getbootstrap.com/docs/4.0/components/modal/>`__, and "
-"`collapsible text "
-"<https://getbootstrap.com/docs/4.0/components/collapse/>`__."
+"You can use it if you want a `custom style <http://getbootstrap.com/css/"
+">`__, or a `specific component <http://getbootstrap.com/components/>`__ like "
+"a table, alert, progress bar, label, etc. You can even make your page "
+"dynamic with elements like `popovers <https://getbootstrap.com/docs/4.0/"
+"components/popovers/>`__, `modals <https://getbootstrap.com/docs/4.0/"
+"components/modal/>`__, and `collapsible text <https://getbootstrap.com/"
+"docs/4.0/components/collapse/>`__."
 msgstr ""
+"如果你想要 `定制样式 <http://getbootstrap.com/css/>`__,或者 `特定组件 "
+"<http://getbootstrap.com/components/>`__ 如表格，警告，进度条，标签，等等，你"
+"可以使用此库。你甚至可以让你的页面变得动态，使用组件像 `popovers <https://"
+"getbootstrap.com/docs/4.0/components/popovers/>`__, `modals <https://"
+"getbootstrap.com/docs/4.0/components/modal/>`__, 和 `collapsible text "
+"<https://getbootstrap.com/docs/4.0/components/collapse/>`__."
 
 #: ../../source/templates.rst:355
 msgid ""
 "To use Bootstrap, usually you add a ``class=`` attribute to your HTML "
 "element."
-msgstr ""
+msgstr "使用Bootstrap，通常需要在HTML元素中添加一个 ``class=`` 属性。"
 
 #: ../../source/templates.rst:358
 msgid "For example, the following HTML will create a \"Success\" alert:"
-msgstr ""
+msgstr "举例来说，下面得HTML会创建一个“Success”警告："
 
 #: ../../source/templates.rst:365
 msgid "Mobile devices"
-msgstr ""
+msgstr "移动设备"
 
 #: ../../source/templates.rst:367
 msgid ""
 "Bootstrap tries to show a \"mobile friendly\" version when viewed on a "
 "smartphone or tablet."
-msgstr ""
+msgstr "Bootstrap会在手机或平板上试着显示一个“移动端友好”的版本。"
 
 #: ../../source/templates.rst:372
 msgid "Charts"
-msgstr ""
+msgstr "图表"
 
 #: ../../source/templates.rst:374
 msgid ""
 "You can use any HTML/JavaScript library for adding charts to your app. A "
-"good option is `HighCharts <http://www.highcharts.com/demo>`__, to draw "
-"pie charts, line graphs, bar charts, time series, etc."
+"good option is `HighCharts <http://www.highcharts.com/demo>`__, to draw pie "
+"charts, line graphs, bar charts, time series, etc."
 msgstr ""
+"你可以使用任何HTML/JavaScript库来为你的应用添加图表。一个好的选择是 "
+"`HighCharts <http://www.highcharts.com/demo>`__,它可以用来画饼状图，折线图，"
+"直方图，时间序列等等。"
 
 #: ../../source/templates.rst:378
 msgid "First, include the HighCharts JavaScript::"
-msgstr ""
+msgstr "首先，引入HighCharts JavaScript："
 
 #: ../../source/templates.rst:383
 msgid ""
-"Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__ and "
-"find the chart type that you want to make. Then click \"edit in "
-"JSFiddle\" to edit it to your liking, using hardcoded data."
+"Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__ and find "
+"the chart type that you want to make. Then click \"edit in JSFiddle\" to "
+"edit it to your liking, using hardcoded data."
 msgstr ""
+"在HighCharts `demo site <http://www.highcharts.com/demo>`__ 寻找你想要的图表"
+"类型。然后点击\"edit in JSFiddle\"将其编辑成你想要的样子，使用硬编码数据。"
 
 #: ../../source/templates.rst:388
 msgid ""
-"Then, copy-paste the JS and HTML into your template, and load the page. "
-"If you don't see your chart, it may be because your HTML is missing the "
+"Then, copy-paste the JS and HTML into your template, and load the page. If "
+"you don't see your chart, it may be because your HTML is missing the "
 "``<div>`` that your JS code is trying to insert the chart into."
 msgstr ""
+"然后，复制粘贴JS与HTML到你的模板中，并加载页面。如果你没有看到你的图表，可能"
+"是因为JS代码试图插入图表的那一部分HTML缺少了 ``<div>`` 标签。"
 
 #: ../../source/templates.rst:393
 msgid ""
-"Once your chart is loading properly, you can replace the hardcoded data "
-"like ``series`` and ``categories`` with dynamically generated variables."
+"Once your chart is loading properly, you can replace the hardcoded data like "
+"``series`` and ``categories`` with dynamically generated variables."
 msgstr ""
+"一旦你的图表加载正常，你就可以将硬编码的数据替换为 ``series`` 和 "
+"``categories`` 这样动态生成的变量。"
 
 #: ../../source/templates.rst:396
 msgid "For example, change this::"
-msgstr ""
+msgstr "例如，将这个："
 
 #: ../../source/templates.rst:406
 msgid "To this::"
-msgstr ""
+msgstr "改为这个："
 
 #: ../../source/templates.rst:411
 msgid ""
-"...where ``highcharts_series`` is a variable you defined in :ref:`js_vars"
-" <js_vars>`."
+"...where ``highcharts_series`` is a variable you defined in :ref:`js_vars "
+"<js_vars>`."
 msgstr ""
+"...此处 ``highcharts_series`` 是你在 :ref:`js_vars <js_vars>` 中定义的变量。"
 
 #: ../../source/templates.rst:413
 msgid ""
 "If your chart is not loading, click \"View Source\" in your browser and "
-"check if there is something wrong with the data you dynamically "
-"generated."
+"check if there is something wrong with the data you dynamically generated."
 msgstr ""
-
+"如果你的图表没有加载，在浏览器中单击“查看源码”检查是否是动态生成的数据出现了"
+"问题。"
