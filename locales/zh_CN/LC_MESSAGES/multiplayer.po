@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-19 01:38+0800\n"
-"PO-Revision-Date: 2020-11-15 12:55+0800\n"
+"PO-Revision-Date: 2020-11-16 18:41+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,21 +20,21 @@ msgstr ""
 
 #: ../../source/multiplayer/chat.rst:4
 msgid "Chat"
-msgstr ""
+msgstr "聊天"
 
 #: ../../source/multiplayer/chat.rst:6
 msgid ""
 "You can add a chat room to a page so that participants can communicate with "
 "each other."
-msgstr ""
+msgstr "你可以在页面上添加一个聊天室，使得参与者之间可以互相交流。"
 
 #: ../../source/multiplayer/chat.rst:9
 msgid "Basic usage"
-msgstr ""
+msgstr "基本用法"
 
 #: ../../source/multiplayer/chat.rst:11
 msgid "In your template HTML, put:"
-msgstr ""
+msgstr "在你的模板HTML中，放入："
 
 #: ../../source/multiplayer/chat.rst:17
 msgid ""
@@ -42,18 +42,20 @@ msgid ""
 "player's nickname is displayed as \"Player 1\", \"Player 2\", etc. (based on "
 "the player's ``id_in_group``)."
 msgstr ""
+"这会创建一个同组玩家间的聊天室，玩家的昵称为“玩家1”，“玩家2”等等。（基于玩家"
+"的 ``id_in_group``）。"
 
 #: ../../source/multiplayer/chat.rst:22
 msgid "Customizing the nickname and chat room members"
-msgstr ""
+msgstr "定制昵称与聊天室成员"
 
 #: ../../source/multiplayer/chat.rst:24
 msgid "You can specify a ``channel`` and/or ``nickname`` like this:"
-msgstr ""
+msgstr "你可以像下面这样指定一个 ``channel`` 和/或 ``nickname`` ："
 
 #: ../../source/multiplayer/chat.rst:31
 msgid "Nickname"
-msgstr ""
+msgstr "昵称"
 
 #: ../../source/multiplayer/chat.rst:33
 #, python-format
@@ -61,10 +63,12 @@ msgid ""
 "``nickname`` is the nickname that will be displayed for that user in the "
 "chat. A typical usage would be ``{% chat nickname=player.role %}``."
 msgstr ""
+"``nickname`` 即用户在聊天时显示的昵称。一种典型的用法是 ``{% chat "
+"nickname=player.role %}``."
 
 #: ../../source/multiplayer/chat.rst:37
 msgid "Channel"
-msgstr ""
+msgstr "频道"
 
 #: ../../source/multiplayer/chat.rst:39
 msgid ""
@@ -77,10 +81,15 @@ msgid ""
 "the chat will at least be scoped to players in the same session and the same "
 "app."
 msgstr ""
+"``channel`` 是聊天室的名字，这意味着如果2名玩家在同一 ``channel`` 内，那么他们"
+"可以互相聊天。 ``channel`` 并不会在用户界面上显示；它是在内部使用的。它的默认"
+"值是 ``group.id``，表示所有同一组的玩家都可以一起聊天。你可以使用 ``channel`` "
+"将聊天的范围限制为当前的页面或者组中的划分等等（参考下面的例子）。无论 "
+"``channel`` 的值如何，聊天的范围至少在同一应用的同一会话的玩家内。"
 
 #: ../../source/multiplayer/chat.rst:49
 msgid "Example: chat by role"
-msgstr ""
+msgstr "例子：基于角色聊天"
 
 #: ../../source/multiplayer/chat.rst:51
 msgid ""
@@ -88,140 +97,144 @@ msgid ""
 "communication between groups based on role, e.g. all buyers can talk with "
 "each other, and all sellers can talk with each other."
 msgstr ""
+"下面是一个在组间基于角色聊天，而不是在组内聊天的例子。例如所有的买家可以相互交"
+"流，所有的卖家可以相互交流。"
 
 #: ../../source/multiplayer/chat.rst:64
 msgid "In the page:"
-msgstr ""
+msgstr "在页面中："
 
 #: ../../source/multiplayer/chat.rst:74
 msgid "Then in the template:"
-msgstr ""
+msgstr "然后在模板中："
 
 #: ../../source/multiplayer/chat.rst:81
 msgid "Example: chat across rounds"
-msgstr ""
+msgstr "例子：跨轮次的聊天"
 
 #: ../../source/multiplayer/chat.rst:83
 msgid ""
 "If you need players to chat with players who are currently in a different "
 "round of the game, you can do:"
-msgstr ""
+msgstr "如果你需要玩家可以与不在同一轮的其他玩家聊天，你可以这样做："
 
 #: ../../source/multiplayer/chat.rst:91
 msgid "Example: chat between all groups in all rounds"
-msgstr ""
+msgstr "例子：所有轮次所有小组玩家一起聊天"
 
 #: ../../source/multiplayer/chat.rst:93
 msgid ""
 "If you want everyone in the session to freely chat with each other, just do:"
-msgstr ""
+msgstr "如果你想让会话中的所有玩家可以自由地与其他人交流，可以这样做："
 
 #: ../../source/multiplayer/chat.rst:99
 msgid ""
 "(The number 1 is not significant; all that matters is that it's the same for "
 "everyone.)"
-msgstr ""
+msgstr "（数字1并没有特殊含义，关键在于这一值对所有人相同）"
 
 #: ../../source/multiplayer/chat.rst:102
 msgid "Advanced customization"
-msgstr ""
+msgstr "高级自定义"
 
 #: ../../source/multiplayer/chat.rst:104
 msgid ""
 "If you look at the page source code in your browser's inspector, you will see "
 "the following selectors are available:"
-msgstr ""
+msgstr "如果你在浏览器中查看了页面的源码，你会发现下面的这些选择器是可用的："
 
 #: ../../source/multiplayer/chat.rst:108
 msgid "Element"
-msgstr ""
+msgstr "元素"
 
 #: ../../source/multiplayer/chat.rst:108
 msgid "CSS/jQuery selector"
-msgstr ""
+msgstr "CSS/jQuery 选择器"
 
 #: ../../source/multiplayer/chat.rst:110
 msgid "Entire chat widget"
-msgstr ""
+msgstr "聊天窗体"
 
 #: ../../source/multiplayer/chat.rst:110
 msgid "``.otree-chat``"
-msgstr ""
+msgstr "``.otree-chat``"
 
 #: ../../source/multiplayer/chat.rst:111
 msgid "Textbox to type a message"
-msgstr ""
+msgstr "输入消息的文本框"
 
 #: ../../source/multiplayer/chat.rst:111
 msgid "``.otree-chat__input`` (note: ``__``, not ``_``)"
-msgstr ""
+msgstr "``.otree-chat__input`` (注意: ``__``, 而不是 ``_``)"
 
 #: ../../source/multiplayer/chat.rst:112
 msgid "Button to submit a message"
-msgstr ""
+msgstr "提交消息的按钮"
 
 #: ../../source/multiplayer/chat.rst:112
 msgid "``.otree-chat__btn-send``"
-msgstr ""
+msgstr "``.otree-chat__btn-send``"
 
 #: ../../source/multiplayer/chat.rst:113
 msgid "Div with all messages"
-msgstr ""
+msgstr "所有消息的div"
 
 #: ../../source/multiplayer/chat.rst:113
 msgid "``.otree-chat__messages``"
-msgstr ""
+msgstr "``.otree-chat__messages``"
 
 #: ../../source/multiplayer/chat.rst:114
 msgid "Message"
-msgstr ""
+msgstr "消息"
 
 #: ../../source/multiplayer/chat.rst:114
 msgid "``.otree-chat__msg``"
-msgstr ""
+msgstr "``.otree-chat__msg``"
 
 #: ../../source/multiplayer/chat.rst:115
 msgid "Message's nickname"
-msgstr ""
+msgstr "消息的昵称"
 
 #: ../../source/multiplayer/chat.rst:115
 msgid "``.otree-chat__nickname``"
-msgstr ""
+msgstr "``.otree-chat__nickname``"
 
 #: ../../source/multiplayer/chat.rst:116
 msgid "Message's body text"
-msgstr ""
+msgstr "消息的文本部分"
 
 #: ../../source/multiplayer/chat.rst:116
 msgid "``.otree-chat__body``"
-msgstr ""
+msgstr "``.otree-chat__body``"
 
 #: ../../source/multiplayer/chat.rst:119
 msgid ""
 "You can use CSS or JS to change the appearance or behavior of these elements "
 "(or hide them entirely)."
-msgstr ""
+msgstr "你可以使用CSS或JS改变这些元素的外观或者行为（或者将它们完全隐藏起来）。"
 
 #: ../../source/multiplayer/chat.rst:122
 #, python-format
 msgid ""
 "For example, to customize the style, just include some CSS after the "
 "``{% chat %}`` element, e.g.:"
-msgstr ""
+msgstr "举例来说，要定制样式，将CSS包含在 ``{% chat %}`` 元素之后即可，如："
 
 #: ../../source/multiplayer/chat.rst:140
 msgid "Note that there are 2 underscores (``__``, not ``_``)."
-msgstr ""
+msgstr "注意这里有2个下划线（``__``, 而不是 ``_``）。"
 
 #: ../../source/multiplayer/chat.rst:142
 msgid ""
 "You can also customize the appearance by putting it inside a ``<div>`` and "
 "styling that parent ``<div>``. For example, to set the width:"
 msgstr ""
+"你也可以通过将其放入一个 ``<div>`` 并调整这个父 ``<div>`` 的样式来定制外观。例"
+"如像下面这样设置宽度："
 
 #: ../../source/multiplayer/chat.rst:152
 msgid "Multiple chats on a page"
-msgstr ""
+msgstr "同一页面上多个聊天"
 
 #: ../../source/multiplayer/chat.rst:154
 #, python-format
@@ -229,20 +242,22 @@ msgid ""
 "You can have multiple ``{% chat %}`` boxes on each page, so that a player can "
 "be in multiple channels simultaneously."
 msgstr ""
+"你可以在同一页面上放置多个 ``{% chat %}`` ，这样一名玩家就可以同时处于多个频道"
+"中。"
 
 #: ../../source/multiplayer/chat.rst:157
 msgid ""
 "For example, this code enables 1:1 chat with every other player in the group."
-msgstr ""
+msgstr "举例来说，下面的代码实现了对所有组内其他玩家1对1的聊天。"
 
 #: ../../source/multiplayer/chat.rst:190
 msgid "Exporting CSV of chat logs"
-msgstr ""
+msgstr "将聊天日志导出为CSV"
 
 #: ../../source/multiplayer/chat.rst:192
 msgid ""
 "The chat logs download link will appear on oTree's regular data export page."
-msgstr ""
+msgstr "聊天日志的下载链接在oTree的常规数据导出页面。"
 
 #: ../../source/multiplayer/groups.rst:4
 msgid "Groups"
