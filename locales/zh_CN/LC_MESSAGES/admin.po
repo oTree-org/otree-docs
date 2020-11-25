@@ -3,348 +3,397 @@
 # This file is distributed under the same license as the oTree package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree \n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-19 01:38+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-11-25 19:23+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ../../source/admin.rst:2
 msgid "Admin"
-msgstr ""
+msgstr "管理员（Admin）"
 
 #: ../../source/admin.rst:4
 msgid ""
 "oTree's admin interface lets you create, monitor, and export data from "
 "sessions."
-msgstr ""
+msgstr "oTree的管理员界面允许你创建会话，监控会话，并从会话中导出数据。"
 
 #: ../../source/admin.rst:7
 msgid ""
-"Open your browser to *http://localhost:8000/* or whatever you server's "
-"URL is."
-msgstr ""
+"Open your browser to *http://localhost:8000/* or whatever you server's URL is."
+msgstr "打开你的浏览器，网址为 *http://localhost:8000/* 或你的服务器的URL。"
 
 #: ../../source/admin.rst:12
 msgid "Password protection"
-msgstr ""
+msgstr "密码保护"
 
 #: ../../source/admin.rst:14
 msgid ""
 "When you first install oTree, The entire admin interface is accessible "
-"without a password. However, when you are ready to deploy to your "
-"audience, you should password protect the admin."
+"without a password. However, when you are ready to deploy to your audience, "
+"you should password protect the admin."
 msgstr ""
+"当你首次安装oTree后，整个管理员界面是不需要密码访问的。然而，当你准备向用户部"
+"署时，你应当用密码保护管理员界面。"
 
 #: ../../source/admin.rst:18
 msgid ""
-"If you are launching an experiment and want visitors to only be able to "
-"play your app if you provided them with a start link, set the environment"
-" variable ``OTREE_AUTH_LEVEL`` to ``STUDY``."
+"If you are launching an experiment and want visitors to only be able to play "
+"your app if you provided them with a start link, set the environment variable "
+"``OTREE_AUTH_LEVEL`` to ``STUDY``."
 msgstr ""
+"如果你发起实验时想让访问者仅可通过所提供的开始链接进行游戏，将环境变量 "
+"``OTREE_AUTH_LEVEL`` 设为 ``STUDY``."
 
 #: ../../source/admin.rst:22
 msgid ""
-"To put your site online in public demo mode where anybody can play a demo"
-" version of your game (but not access the full admin interface), set "
+"To put your site online in public demo mode where anybody can play a demo "
+"version of your game (but not access the full admin interface), set "
 "``OTREE_AUTH_LEVEL`` to ``DEMO``."
 msgstr ""
+"将你的网站上线并设为公开demo模式，也就是说任何人都可以游玩你游戏的demo版本（但"
+"不能完全访问管理员界面），设置 ``OTREE_AUTH_LEVEL`` 为 ``DEMO``."
 
 #: ../../source/admin.rst:27
 msgid ""
-"The normal admin username is \"admin\". You should set your password in "
-"the ``OTREE_ADMIN_PASSWORD`` environment variable (on Heroku, log into "
-"your Heroku dashboard, and define it as a config var)."
+"The normal admin username is \"admin\". You should set your password in the "
+"``OTREE_ADMIN_PASSWORD`` environment variable (on Heroku, log into your "
+"Heroku dashboard, and define it as a config var)."
 msgstr ""
+"通常管理员的用户名是\"admin\"。你应当在环境变量 ``OTREE_ADMIN_PASSWORD`` 中设"
+"置你的密码（在Heroku中，登录到你的Heroku仪表盘，并将其定义为一个配置变量"
+"（config var））"
 
 #: ../../source/admin.rst:31
 msgid ""
-"If you change the admin username or password, you need to reset the "
-"database."
-msgstr ""
+"If you change the admin username or password, you need to reset the database."
+msgstr "如果你修改了管理员的用户名或者密码，你需要重置数据库。"
 
 #: ../../source/admin.rst:35
 msgid "Start links"
-msgstr ""
+msgstr "开始链接"
 
 #: ../../source/admin.rst:37
 msgid "There are multiple types of start links you can use."
-msgstr ""
+msgstr "有多种类型的开始链接可供使用。"
 
 #: ../../source/admin.rst:40
 msgid "Rooms"
-msgstr ""
+msgstr "房间"
 
 #: ../../source/admin.rst:42
 msgid ""
-"In most cases where you are doing a study, the best way to set up URLs is"
-" to make a :ref:`room <rooms>`."
+"In most cases where you are doing a study, the best way to set up URLs is to "
+"make a :ref:`room <rooms>`."
 msgstr ""
+"在使用oTree进行研究的多数情况下，设置URL的最好方法就是创建一个 :ref:`room "
+"<rooms>`."
 
 #: ../../source/admin.rst:48
 msgid "Single-use links"
-msgstr ""
+msgstr "单次使用链接"
 
 #: ../../source/admin.rst:50
 msgid ""
-"If a room is not suited for your needs, you can use oTree's single-use "
-"links. Every time you create a session, you will need to re-distribute "
-"URLs to each participant."
+"If a room is not suited for your needs, you can use oTree's single-use links. "
+"Every time you create a session, you will need to re-distribute URLs to each "
+"participant."
 msgstr ""
+"如果使用房间不符合你的需求，你可以使用oTree的单次使用链接。每一次你创建一个会"
+"话，你都需要将URL重新分发给每一位参与者。"
 
 #: ../../source/admin.rst:56
 msgid "Session-wide link"
-msgstr ""
+msgstr "会话链接"
 
 #: ../../source/admin.rst:58
 msgid ""
 "The session-wide link lets you provide the same start link to all "
-"participants in the session. Note: this may result in the same "
-"participant playing twice, unless you use the ``participant_label`` "
-"parameter in the URL (see :ref:`participant_label`)."
+"participants in the session. Note: this may result in the same participant "
+"playing twice, unless you use the ``participant_label`` parameter in the URL "
+"(see :ref:`participant_label`)."
 msgstr ""
+"会话链接让你可以将相同的开始链接提供给会话中的所有参与者。注意：这可能会导致同"
+"一参与者玩了两次游戏，除非你在URL中使用了 ``participant_label`` 参数（参见 :"
+"ref:`participant_label`）。"
 
 #: ../../source/admin.rst:63
 msgid ""
-"Before using the session-wide link, consider using a :ref:`room <rooms>`,"
-" because you can also use a room without a participant label file to "
-"allow everyone to play with the same URL. The advantage of using a room "
-"is that the URL is simpler to type (doesn't contain a randomly generated "
-"code), and you can reuse it across sessions."
+"Before using the session-wide link, consider using a :ref:`room <rooms>`, "
+"because you can also use a room without a participant label file to allow "
+"everyone to play with the same URL. The advantage of using a room is that the "
+"URL is simpler to type (doesn't contain a randomly generated code), and you "
+"can reuse it across sessions."
 msgstr ""
+"在使用会话链接之前，先考虑使用 :ref:`room <rooms>`，因为你也可以使用不带参与者"
+"标签文件的房间来使得所有人都使用同一个URL。使用房间的优势是URL易于输入（不包含"
+"随机生成的字符），并且你可以在不同会话间复用它。"
 
 #: ../../source/admin.rst:73
 msgid "Participant labels"
-msgstr ""
+msgstr "参与人标签"
 
 #: ../../source/admin.rst:75
 msgid ""
 "Whether or not you're using a :ref:`room <rooms>`, you can append a "
-"``participant_label`` parameter to each participant's start URL to "
-"identify them, e.g. by name, ID number, or computer workstation. For "
-"example::"
+"``participant_label`` parameter to each participant's start URL to identify "
+"them, e.g. by name, ID number, or computer workstation. For example::"
 msgstr ""
+"不管使用 :ref:`room <rooms>` 与否，你可以给每位参与人的开始链接添加 "
+"``participant_label`` 参数来标识他们，比如通过名字，ID号码，电脑等。例如："
 
 #: ../../source/admin.rst:82
 msgid ""
-"oTree will record this participant label. It will be used to identify "
-"that participant in the oTree admin interface and the payments page, etc."
-" You can also access it from your code as ``self.participant.label``."
+"oTree will record this participant label. It will be used to identify that "
+"participant in the oTree admin interface and the payments page, etc. You can "
+"also access it from your code as ``self.participant.label``."
 msgstr ""
+"oTree会记录下这个参与人标签。它会被用来在oTree管理员界面和报酬页面等地方标识参"
+"与者身份。你也可以在你的代码中通过 ``self.participant.label`` 来访问它。"
 
 #: ../../source/admin.rst:87
 msgid ""
-"Another benefit of participant labels is that if the participant opens "
-"their start link twice, they will be assigned back to the same "
-"participant (if you are using a room-wide or session-wide URL). This "
-"reduces duplicate participation."
+"Another benefit of participant labels is that if the participant opens their "
+"start link twice, they will be assigned back to the same participant (if you "
+"are using a room-wide or session-wide URL). This reduces duplicate "
+"participation."
 msgstr ""
+"另一个使用参与人标签的好处是如果参与人打开了参与链接两次，他们会被分配为同一个"
+"参与者（如果你使用了房间链接或者会话链接）。这减少了重复参与。"
 
 #: ../../source/admin.rst:91
 msgid ""
-"If you're using Prolific, you can add "
-"``participant_label={{%PROLIFIC_PID%}}`` to your study URL. When the user"
-" clicks the link, Prolific will replace that with the participant's "
-"actual Prolific ID."
+"If you're using Prolific, you can add ``participant_label={{%PROLIFIC_PID%}}"
+"`` to your study URL. When the user clicks the link, Prolific will replace "
+"that with the participant's actual Prolific ID."
 msgstr ""
+"如果你使用了Prolific，你可以在URL中加上 ``participant_label={{%PROLIFIC_PID%}}"
+"``。当用户点击链接时，Prolific会将其替换为参与者实际的Prolific ID."
 
 #: ../../source/admin.rst:96
 msgid "Arrival order"
-msgstr ""
+msgstr "到达顺序"
 
 #: ../../source/admin.rst:98
 msgid ""
-"oTree will assign the first person who arrives to be P1, the second to be"
-" P2, etc., unless you are using single-use links."
+"oTree will assign the first person who arrives to be P1, the second to be P2, "
+"etc., unless you are using single-use links."
 msgstr ""
+"oTree会将第一个到达的人分配为P1，第二个分配为P2，以此类推，除非你使用了单次使"
+"用链接。"
 
 #: ../../source/admin.rst:104
 msgid "Customizing the admin interface (admin reports)"
-msgstr ""
+msgstr "定制管理员界面（管理员报告）"
 
 #: ../../source/admin.rst:106
 msgid ""
-"You can add a custom tab to a session's admin page with any content you "
-"want; for example:"
+"You can add a custom tab to a session's admin page with any content you want; "
+"for example:"
 msgstr ""
+"你可以在会话的管理员界面上添加一个自定义标签，放入任何你想要的内容。例如："
 
 #: ../../source/admin.rst:109
 msgid "A chart/graph with the game's results"
-msgstr ""
+msgstr "玩家结果的表格/图"
 
 #: ../../source/admin.rst:110
 msgid "A custom payments page that is different from oTree's built-in one"
-msgstr ""
+msgstr "与oTree内置不同的定制的报酬页面"
 
 #: ../../source/admin.rst:112
 msgid "Here is a screenshot:"
-msgstr ""
+msgstr "下面是屏幕截图："
 
 #: ../../source/admin.rst:117
 msgid ""
 "Here is a trivial example, where we add an admin report that displays a "
 "sorted list of payoffs for a given round."
 msgstr ""
+"下面是一个简单的例子，我们添加一个管理员报告，它展示了某一给定轮次的排序过的收"
+"益列表。"
 
 #: ../../source/admin.rst:120
 msgid ""
 "First, define a method ``vars_for_admin_report`` on the Subsession. This "
 "works the same way as :ref:`vars_for_template`. For example:"
 msgstr ""
+"首先，在Subsesssion类中定义一个 ``vars_for_admin_report`` 方法。这与 :ref:"
+"`vars_for_template` 原理类似。例如："
 
 #: ../../source/admin.rst:131
 msgid ""
-"Then create an includable template ``admin_report.html`` in your app, and"
-" display whatever variables were passed in ``vars_for_admin_report``:"
+"Then create an includable template ``admin_report.html`` in your app, and "
+"display whatever variables were passed in ``vars_for_admin_report``:"
 msgstr ""
+"然后在你的应用中创建一个可包含的模板 ``admin_report.html`` ，并展示任何你想展"
+"示的通过 ``vars_for_admin_report`` 传入的变量："
 
 #: ../../source/admin.rst:146 ../../source/admin.rst:243
 msgid "Notes:"
-msgstr ""
+msgstr "注意："
 
 #: ../../source/admin.rst:148
 msgid ""
-"``subsession``, ``session``, and ``Constants`` are passed to the template"
-" automatically."
-msgstr ""
+"``subsession``, ``session``, and ``Constants`` are passed to the template "
+"automatically."
+msgstr "``subsession``, ``session``, 与 ``Constants`` 会被自动传递给模板。"
 
 #: ../../source/admin.rst:150
 #, python-format
 msgid ""
-"``admin_report.html`` does not need to use ``{% block %}`` or ``{% "
-"extends %}``  etc. The above example is valid as the full contents of "
-"``admin_report.html``."
+"``admin_report.html`` does not need to use ``{% block %}`` or ``{% extends %}"
+"``  etc. The above example is valid as the full contents of ``admin_report."
+"html``."
 msgstr ""
+"``admin_report.html`` 不需要使用 ``{% block %}`` 或 ``{% extends %}`` 等部分。"
+"上面的例子是完整有效的 ``admin_report.html`` 的内容。"
 
 #: ../../source/admin.rst:153
 msgid ""
-"If one or more apps in your session have an ``admin_report.html``, your "
-"admin page will have a \"Reports\" tab. Use the menu to select the app "
-"and the round number, to see the report for that subsession."
+"If one or more apps in your session have an ``admin_report.html``, your admin "
+"page will have a \"Reports\" tab. Use the menu to select the app and the "
+"round number, to see the report for that subsession."
 msgstr ""
+"如果你会话中有一个或多个应用具有 ``admin_report.html``，你的管理员页面就会有 "
+"\"Reports\" 选项卡。使用菜单选择应用与轮数，以查看特定子会话的报告。"
 
 #: ../../source/admin.rst:157
 #, python-format
 msgid ""
-"Tip: if you are displaying the same chart in the admin report and "
-"participant pages, you can reuse ``admin_report.html`` in the participant"
-" template with an ``{% include %}``, and pass the variables like this:"
+"Tip: if you are displaying the same chart in the admin report and participant "
+"pages, you can reuse ``admin_report.html`` in the participant template with "
+"an ``{% include %}``, and pass the variables like this:"
 msgstr ""
+"提示：如果你想在管理员报告与参与人页面中展示相同的图表，你可以在参与人模板中通"
+"过 ``{% include %}`` 复用 ``admin_report.html`` ，并像下面这样传递参数："
 
 #: ../../source/admin.rst:170
 msgid "Kiosk Mode"
-msgstr ""
+msgstr "资讯站模式"
 
 #: ../../source/admin.rst:172
 msgid ""
-"During a lab study you may want to restrict participants from doing "
-"things like:"
-msgstr ""
+"During a lab study you may want to restrict participants from doing things "
+"like:"
+msgstr "在实验室研究中你可能会希望参与人不要做下面这些事情："
 
 #: ../../source/admin.rst:174
 msgid "Closing the browser window"
-msgstr ""
+msgstr "关闭浏览器窗口"
 
 #: ../../source/admin.rst:175
 msgid "Clicking the \"back\" button"
-msgstr ""
+msgstr "点击“返回”按钮"
 
 #: ../../source/admin.rst:176
 msgid "Viewing the URL in the address bar"
-msgstr ""
+msgstr "在地址栏查看URL"
 
 #: ../../source/admin.rst:178
 msgid ""
-"You can restrict these things with \"kiosk mode\", a setting available in"
-" most web browsers. Consult your web browser's documentation for "
-"information on how to enable kiosk mode."
+"You can restrict these things with \"kiosk mode\", a setting available in "
+"most web browsers. Consult your web browser's documentation for information "
+"on how to enable kiosk mode."
 msgstr ""
+"你可以通过“资讯站模式”禁止这些事情，这种模式在大多数现代浏览器上都可用。查询你"
+"所使用的浏览器文档来获知如何启用资讯站模式。"
 
 #: ../../source/admin.rst:185
 msgid "Monitor sessions"
-msgstr ""
+msgstr "监视会话"
 
 #: ../../source/admin.rst:187
 msgid "The admin interface lets you monitor the live progress of your sessions."
-msgstr ""
+msgstr "管理员界面让你能够监视会话的实时进度。"
 
 #: ../../source/admin.rst:190
 msgid "Payments page"
-msgstr ""
+msgstr "报酬页面"
 
 #: ../../source/admin.rst:192
 msgid ""
-"At the end of your session, you can open and print a page that lists all "
-"the participants and how much they should be paid."
-msgstr ""
+"At the end of your session, you can open and print a page that lists all the "
+"participants and how much they should be paid."
+msgstr "在会话结束时，你可以打开并打印一个列出了所有参与者和他们的报酬的页面。"
 
 #: ../../source/admin.rst:196
 msgid "Export Data"
-msgstr ""
+msgstr "导出数据"
 
 #: ../../source/admin.rst:198
 msgid ""
-"In the admin interface, click on \"Data\" to download your data as CSV or"
-" Excel."
-msgstr ""
+"In the admin interface, click on \"Data\" to download your data as CSV or "
+"Excel."
+msgstr "在管理员界面，点击“Data”来下载你的数据，以CSV或者Excel的形式。"
 
 #: ../../source/admin.rst:201
 msgid ""
-"There is also a data export for \"page times\", which shows the exact "
-"time when users completed every page. :download:`Here "
-"<_static/pagetimes.py>` is a Python script you can run that tabulates how"
-" much time is spent on each page. You can modify this script to calculate"
-" similar things, such as how much time each participant spends on wait "
-"pages in total."
+"There is also a data export for \"page times\", which shows the exact time "
+"when users completed every page. :download:`Here <_static/pagetimes.py>` is a "
+"Python script you can run that tabulates how much time is spent on each page. "
+"You can modify this script to calculate similar things, such as how much time "
+"each participant spends on wait pages in total."
 msgstr ""
+"有一种数据导出是为”页面时间“准备的，它保存了用户完成每一个页面的精确时间。 :"
+"download:`这 <_static/pagetimes.py>` 是一个Python脚本，你可以用它列出每一页分"
+"别花了多长时间。你可以修改这个脚本来计算类似的事情，比如每位参与人在等待页面上"
+"一共花了多长时间。"
 
 #: ../../source/admin.rst:209
 msgid "Custom data exports"
-msgstr ""
+msgstr "自定义数据导出"
 
 #: ../../source/admin.rst:213
 msgid "New in oTree 3.0 (July 2020)."
-msgstr ""
+msgstr "在oTree 3.0引入（2020年7月）。"
 
 #: ../../source/admin.rst:215
 msgid ""
-"You can make your own custom data export for an app. In oTree Studio, go "
-"to the \"Player\" model and click on \"custom_export\" at the bottom. (If"
-" using a text editor, define the below function at the bottom of your "
-"``models.py``, not within a class.) The argument ``players`` is a "
-"queryset of all the players in the database. Use a ``yield`` for each row"
-" of data."
+"You can make your own custom data export for an app. In oTree Studio, go to "
+"the \"Player\" model and click on \"custom_export\" at the bottom. (If using "
+"a text editor, define the below function at the bottom of your ``models.py``, "
+"not within a class.) The argument ``players`` is a queryset of all the "
+"players in the database. Use a ``yield`` for each row of data."
 msgstr ""
+"你可以在应用中自定义数据导出。在oTree Studio中，前往 \"Player\" 模块并点击底部"
+"的\"custom_export\"。（如果使用文本编辑器，在 ``models.py`` 的下方，而不是在类"
+"中，定义下面的函数。）参数 ``players`` 是数据库中所有玩家组成的QuerySet。使用 "
+"``yield`` 来获取每一行数据。"
 
 #: ../../source/admin.rst:229
 msgid ""
-"Once this function is defined, your custom data export will be available "
-"in the regular data export page."
-msgstr ""
+"Once this function is defined, your custom data export will be available in "
+"the regular data export page."
+msgstr "一旦定义了这个函数，你的自定义数据导出就在正常的数据导出页面可用。"
 
 #: ../../source/admin.rst:232
 msgid ""
-"If you are exporting some other data like an ExtraModel, do something "
-"like this:"
-msgstr ""
+"If you are exporting some other data like an ExtraModel, do something like "
+"this:"
+msgstr "如果你想要导出其他数据如一个ExtraModel，像下面这样操作："
 
 #: ../../source/admin.rst:245
 msgid ""
-"Since ``players`` is a QuerySet, you can call methods such as "
-"``players.values_list()``, ``players.filter()``, etc."
+"Since ``players`` is a QuerySet, you can call methods such as ``players."
+"values_list()``, ``players.filter()``, etc."
 msgstr ""
+"由于 ``players`` 是一个QuerySet，你可以调用 ``players.values_list()``, "
+"``players.filter()``, 等等方法."
 
 #: ../../source/admin.rst:249
 msgid "Debug Info"
-msgstr ""
+msgstr "Debug信息"
 
 #: ../../source/admin.rst:251
 msgid ""
@@ -352,4 +401,5 @@ msgid ""
 "``OTREE_PRODUCTION`` is not set), debug information is displayed on the "
 "bottom of all screens."
 msgstr ""
-
+"当oTree以 ``DEBUG`` 模式（也即环境变量 ``OTREE_PRODUCTION`` 未被设置）运行时，"
+"debug信息会被显示在屏幕的底部。"
