@@ -143,10 +143,10 @@ Example: auction
 
 (Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)
 
-Payload
--------
+Data
+----
 
-The payloads that you send and receive can be any data type (as long as it is JSON serializable).
+The data you send and receive can be any data type (as long as it is JSON serializable).
 For example these are all valid:
 
 .. code-block:: javascript
@@ -183,13 +183,6 @@ Then you can use ``if`` statements to process different types of messages:
             # etc
             ...
 
-You can call the data by another name;
-it just needs to be the method's second argument:
-
-.. code-block:: python
-
-    def live_xyz(self, bid):
-        print(bid)
 
 History
 -------
@@ -250,7 +243,7 @@ For security, you should use :ref:`error_message <error_message>`:
             if not self.group.game_finished:
                 return 'you need to stay until 10 messages are sent'
 
-By the way, using a similar technique, you could implement a pseudo
+By the way, using a similar technique, you could implement a custom
 wait page, e.g. one that lets you proceed after a certain timeout,
 even if not all players have arrived.
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2020-11-29 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,13 +105,13 @@ msgid "(Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)"
 msgstr ""
 
 #: ../../source/live.rst:147
-msgid "Payload"
+msgid "Data"
 msgstr ""
 
 #: ../../source/live.rst:149
 msgid ""
-"The payloads that you send and receive can be any data type (as long as "
-"it is JSON serializable). For example these are all valid:"
+"The data you send and receive can be any data type (as long as it is JSON"
+" serializable). For example these are all valid:"
 msgstr ""
 
 #: ../../source/live.rst:159
@@ -124,17 +124,11 @@ msgstr ""
 msgid "Then you can use ``if`` statements to process different types of messages:"
 msgstr ""
 
-#: ../../source/live.rst:186
-msgid ""
-"You can call the data by another name; it just needs to be the method's "
-"second argument:"
-msgstr ""
-
-#: ../../source/live.rst:195
+#: ../../source/live.rst:188
 msgid "History"
 msgstr ""
 
-#: ../../source/live.rst:197
+#: ../../source/live.rst:190
 msgid ""
 "By default, participants will not see messages that were sent before they"
 " arrived at the page. (And data will not be re-sent if they refresh the "
@@ -144,52 +138,46 @@ msgid ""
 " to retrieve the history of the game from the database."
 msgstr ""
 
-#: ../../source/live.rst:203
-msgid ""
-"If you need to store each individual bid/message that is sent, you can "
-"use an :ref:`extra model <aux-models>`."
-msgstr ""
-
-#: ../../source/live.rst:207
+#: ../../source/live.rst:197
 msgid "Keeping users on the page"
 msgstr ""
 
-#: ../../source/live.rst:209
+#: ../../source/live.rst:199
 msgid ""
 "Let's say you require 10 messages to be sent before the users can proceed"
 " to the next page."
 msgstr ""
 
-#: ../../source/live.rst:212
+#: ../../source/live.rst:202
 msgid ""
 "First, you should omit the ``{% next_button %}``. (Or use JS to hide it "
 "until the task is complete.)"
 msgstr ""
 
-#: ../../source/live.rst:215
+#: ../../source/live.rst:205
 msgid "When the task is completed, you send a message:"
 msgstr ""
 
-#: ../../source/live.rst:232
+#: ../../source/live.rst:222
 msgid "Then in the template, automatically submit the page via JavaScript:"
 msgstr ""
 
-#: ../../source/live.rst:245
+#: ../../source/live.rst:235
 msgid "For security, you should use :ref:`error_message <error_message>`:"
 msgstr ""
 
-#: ../../source/live.rst:256
+#: ../../source/live.rst:246
 msgid ""
-"By the way, using a similar technique, you could implement a pseudo wait "
+"By the way, using a similar technique, you could implement a custom wait "
 "page, e.g. one that lets you proceed after a certain timeout, even if not"
 " all players have arrived."
 msgstr ""
 
-#: ../../source/live.rst:263
+#: ../../source/live.rst:253
 msgid "Form validation"
 msgstr ""
 
-#: ../../source/live.rst:267
+#: ../../source/live.rst:257
 #, python-format
 msgid ""
 "If you have a form with multiple fields, it may be simpler to use a "
@@ -197,7 +185,7 @@ msgid ""
 "have the convenience of ``{% formfields %}`` and ``error_message``, etc."
 msgstr ""
 
-#: ../../source/live.rst:272
+#: ../../source/live.rst:262
 msgid ""
 "Let's say your live page asks players to submit bids, and the maximum bid"
 " is 99. In a non-live page you would check this using :ref:`form-"
@@ -205,7 +193,7 @@ msgid ""
 "``live_method``:"
 msgstr ""
 
-#: ../../source/live.rst:287
+#: ../../source/live.rst:277
 msgid ""
 "In addition, you can add attributes to the ``<input>`` element like "
 "``max=\"99\"``. (But note HTML code is not secure and can be modified by "
@@ -215,17 +203,17 @@ msgid ""
 "validation will not be triggered ."
 msgstr ""
 
-#: ../../source/live.rst:293
+#: ../../source/live.rst:283
 msgid "So, it looks like this:"
 msgstr ""
 
-#: ../../source/live.rst:299
+#: ../../source/live.rst:289
 msgid ""
 "To trigger validation when the user submits the bid, use this (e.g. in "
 "your ``onclick`` handler):"
 msgstr ""
 
-#: ../../source/live.rst:307
+#: ../../source/live.rst:297
 msgid ""
 "``reportValidity()`` is a built-in JavaScript function that will show the"
 " user any errors in their form fields. It also returns a boolean that "
@@ -233,22 +221,22 @@ msgid ""
 "``liveSend``."
 msgstr ""
 
-#: ../../source/live.rst:312
+#: ../../source/live.rst:302
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../source/live.rst:313
+#: ../../source/live.rst:303
 msgid ""
 "If you call ``liveSend`` before the page has finished loading, you will "
 "get an error like ``liveSend is not defined``. So, wait for "
 "``DOMContentLoaded`` (or jQuery document.ready, etc):"
 msgstr ""
 
-#: ../../source/live.rst:324
+#: ../../source/live.rst:314
 msgid "Bots"
 msgstr ""
 
-#: ../../source/live.rst:326
+#: ../../source/live.rst:316
 msgid ""
 "To test live methods with bots, define ``call_live_method`` as a top-"
 "level function in ``tests.py``. (Not available in oTree Studio.) This "
@@ -258,27 +246,26 @@ msgid ""
 "with ``data`` set to ``'hello'``. For example:"
 msgstr ""
 
-#: ../../source/live.rst:342
+#: ../../source/live.rst:332
 msgid "``kwargs`` contains at least the following parameters."
 msgstr ""
 
-#: ../../source/live.rst:344
+#: ../../source/live.rst:334
 msgid "``case`` as described in :ref:`cases`."
 msgstr ""
 
-#: ../../source/live.rst:345
+#: ../../source/live.rst:335
 msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
 msgstr ""
 
-#: ../../source/live.rst:346
+#: ../../source/live.rst:336
 msgid "``round_number``"
 msgstr ""
 
-#: ../../source/live.rst:348
+#: ../../source/live.rst:338
 msgid ""
 "``call_live_method`` will be automatically executed when the fastest bot "
 "in the group arrives on a page with ``live_method``. (Other bots may be "
 "on previous pages at that point, unless you restrict this with a "
 "WaitPage.)"
 msgstr ""
-
