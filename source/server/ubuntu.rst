@@ -13,12 +13,6 @@ However, you may prefer to run oTree on a proper Linux server. Reasons may inclu
 -   You want full control over server configuration
 -   You want better performance (local servers have less latency)
 
-If you are experienced in Django server setup, you just need to know that
-setting up an oTree server is the same as any Django project, except:
-
--   You need Redis
--   You start the server with ``otree prodserver``, rather than a WSGI server.
-
 Install apt-get packages
 ------------------------
 
@@ -56,7 +50,7 @@ Install Redis
 -------------
 
 If you installed ``redis-server`` through ``apt-get`` as instructed earlier,
-Redis should be running on port 6379. You can test with ``redis-cli ping``,
+Redis will be running on port 6379. You can test with ``redis-cli ping``,
 which should output ``PONG``.
 
 Then add this line in the same place where you set ``DATABASE_URL``::
@@ -103,14 +97,8 @@ but add some extra args to preserve environment variables like ``PATH``,
 Try again to open your browser;
 this time, you don't need to append :80 to the URL, because that is the default HTTP port.
 
-Notes:
-
--   unlike ``devserver``, ``prodserver`` does not restart automatically
-    when your files are changed.
--   ``prodserver`` automatically runs Django's ``collectstatic``
-    to collect your files under ``_static_root/``.
-    If you have already run ``collectstatic``, you can skip it with
-    ``--no-collectstatic``.
+Unlike ``devserver``, ``prodserver`` does not restart automatically
+when your files are changed.
 
 Set remaining environment variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,7 +157,6 @@ However, you still might want to use Apache/Nginx as a reverse proxy, for the fo
 
 If you set up a reverse proxy, make sure to enable not only HTTP traffic
 but also websockets.
-
 
 Troubleshooting
 ---------------

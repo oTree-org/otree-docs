@@ -36,11 +36,6 @@ Custom data export
 
 See :ref:`custom-export`.
 
-Extra models
-------------
-
-oTree now supports defining extra models in addition to Player/Group/Subsession.
-See :ref:`aux-models`.
 
 Player.start()
 --------------

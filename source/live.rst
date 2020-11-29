@@ -200,9 +200,6 @@ If you want to save history, you should store it in the database.
 When a player loads the page, your JavaScript can call something like ``liveSend({'type': 'connect'})``,
 and you can configure your live_method to retrieve the history of the game from the database.
 
-If you need to store each individual bid/message that is sent,
-you can use an :ref:`extra model <aux-models>`.
-
 Keeping users on the page
 -------------------------
 
