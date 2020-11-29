@@ -166,52 +166,14 @@ You can even make other custom wait pages inherit from ``_templates/global/WaitP
 just the way regular pages inherit from ``_templates/global/Page.html``,
 and they can define the blocks ``app_scripts`` and ``scripts``, etc.
 
-
 .. _migrations:
 
 Modifying an existing database
 ------------------------------
 
-This section is more advanced and is for people who are comfortable with troubleshooting.
-
 If your database already contains data and you want to update the structure
-without running ``resetdb`` (which will delete existing data), you can use Django's migrations feature.
-Below is a quick summary; for full info see the Django docs `here <https://docs.djangoproject.com/en/2.2/topics/migrations/#workflow>`__.
-
-Importantly, these first steps have to be taken before you add any new fields to your database. If you have already added variables to your ``models.py`` files, comment them out before starting this process.
-
-First, add an empty file ``otree_core_migrations/__init__.py``
-in your project top-level folder.
-
-Then, add the following line to settings.py::
-
-    MIGRATION_MODULES = {'otree': 'otree_core_migrations'}
-
-Then run::
-
-    python manage.py makemigrations otree
-
-Then run ``python manage.py makemigrations my_app_name`` (substituting your app's name),
-for each app you are working on. This will create a ``migrations`` folder in your app.
-Add this as well as the ``otree_core_migrations/__init__.py`` to your git repo, commit, and push to your server.
-
-Instead of using ``otree resetdb`` on the server, run ``python manage.py migrate --fake`` (or ``otree migrate --fake``).
-If using Heroku, you would do ``heroku run otree migrate --fake``.
-This tells django to add these migrations to the list of applied migrations. Since nothing in your database has changed so far, it should not try to actually apply them however, hence the ``--fake``.
-
-You can now make your database relevant changes locally (or uncomment the fields). Once you're done, run ``otree makemigrations`` again. The console output should reflect the changes you have made. A new migrations file will appear in your apps migrations folder. Again, add this to git, commit and push.
-
-Now, on the server, you can run ``otree migrate your_app_name``.
-This will update your database tables.
-
-If you make further modifications to your apps or upgrade otree, you can run
-``python manage.py makemigrations``. You don't need to specify the app names in this command;
-migrations will be updated for every app that has a ``migrations`` folder.
-Then commit, push, and run ``python manage.py migrate`` again as described above.
-
-The migration files build on each other which means you should not delete your local copies of the files from the git repo as django might otherwise be unable to detect what has changed.
-
-More info `here <https://docs.djangoproject.com/en/2.2/topics/migrations/#workflow>`__
+without running ``resetdb`` (which will delete existing data),
+see `here <https://github.com/oTree-org/otree-docs/blob/f3c6ceca5346b988b194dad5f805a06814ebea68/source/misc/advanced.rst#modifying-an-existing-database>`__
 
 Currency
 --------
@@ -244,5 +206,3 @@ this gets simplified to:
 
     with open('yourapp/yourfile.txt', encoding='utf-8') as file:
         txt = file.read()
-
-You can also use the pathlib module to read files.

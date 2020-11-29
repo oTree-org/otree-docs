@@ -179,17 +179,10 @@ On the server you should create a different Unix user for each person
 using oTree. Then each person should follow the same steps described above,
 but in some cases name things differently to avoid clashes:
 
--   Create a virtualenv in their home directory (can also be named ``venv_otree``)
--   Create a different Postgres database (e.g. ``postgres://otree_user2:mydbpassword@localhost/django_db``),
-    as described earlier,
+-   Create a virtualenv in their home directory
+-   Create a different Postgres database, as described earlier,
     and set this in the DATABASE_URL env var.
 -   Each user needs their own Redis database.
-    By default, oTree uses ``redis://localhost:6379``;
-    but if another person uses the same server, they need to set the
-    ``REDIS_URL`` env var explicitly, to avoid clashes.
-    You can set it to ``redis://localhost:6379/1``, ``redis://localhost:6379/2``,
-    etc. (which will use databases 1, 2, etc...instead of the default database 0).
-    Another option is to run multiple instances of Redis on different ports.
 
 Once these steps are done, the second user can push code to the server,
 then run ``otree resetdb``.
@@ -199,9 +192,3 @@ then each user can take turns running the server on port 80 with ``otree prodser
 However, if multiple people need to run experiments at the same time,
 then you would need to run the server on multiple ports, e.g. ``8000``,
 ``8001``, etc.
-
-Finally, if you use supervisor (or circus) as described above,
-each user should have their own conf file, with their personal
-parameters like virtualenv path, oTree project path,
-``DATABASE_URL`` and ``REDIS_URL`` env vars, port number, etc.
-
