@@ -24,7 +24,35 @@ It's free for public projects.
 
 oTree Hub also offers error/performance monitoring and a Sentry service.
 
-The old instructions for deploying through the command line and git
+(The old instructions for deploying through the command line and git
 are
 `here <https://github.com/oTree-org/otree-docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/source/server/heroku.rst#heroku-setup-option-2>`__
-However, you are more likely to run into issues this way and I am not able to provide much support.
+However, you are more likely to run into issues this way and I am not able to provide much support.)
+
+.. _perf:
+
+Server performance
+------------------
+
+Heroku offers different performance tiers for resources such as your dyno and database.
+What tier you need depends on how much traffic your app will get, and how it is coded.
+
+Performance is a complicated subject since there are many factors that affect performance.
+oTree Hub's Pro plan has a "monitor" section that will analyze your logs to identify
+performance issues.
+
+General tips:
+
+-   Upgrade oTree to the latest version
+-   Use browser bots to stress-test your app.
+-   With the higher dyno tiers, Heroku provides a "Metrics" tab. Look at "Dyno load".
+    If users are experiencing slow page load times and your your dyno load stays above 1,
+    then you should get a faster dyno. (But don't run more than 1 web dyno.)
+-   If your dyno load stays under 1 but page load times are still slow,
+    the bottleneck might be something else like your Postgres database.
+-   RAM usage should never go above the limit. If that is happening, contact chris@otree.org.
+
+The most demanding sessions are the ones with a combination of (1) many rounds, (2) players
+spending just a few seconds on each page, and (3) many players playing concurrently,
+because these sessions have a high number of page requests per second, which can overload the server.
+Consider adapting these games to use :ref:`live`, which will result in much faster performance.

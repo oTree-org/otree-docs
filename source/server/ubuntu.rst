@@ -24,7 +24,7 @@ Install apt-get packages
 
 Run::
 
-    sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib redis-server git
+    sudo apt-get install python3-pip redis-server git
 
 Create a virtualenv
 -------------------
@@ -45,42 +45,12 @@ of your prompt.
 Database (Postgres)
 -------------------
 
-oTree's default database is SQLite, which is fine for local development,
-but insufficient for production.
-We recommend you use PostgreSQL.
+If you want, you can use Postgres as your production database.
+Install Postgres and psycopg2, create a new database and set the ``DATABASE_URL`` env var, for example:
+to ``postgres://postgres@localhost/django_db``
 
-Change users to the ``postgres`` user, so that you can execute some commands::
-
-    sudo su - postgres
-
-Then start the Postgres shell::
-
-    psql
-
-Once you're in the shell, create a database and user::
-
-    CREATE DATABASE django_db;
-    alter user postgres password 'password';
-
-Exit the SQL prompt::
-
-    \q
-
-Return to your regular command prompt::
-
-    exit
-
-
-Then add this line to the end of your .bashrc/.profile::
-
-    export DATABASE_URL=postgres://postgres:password@localhost/django_db
-
-Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
-
-When you run ``otree resetdb`` later,
-if you get an error that says "password authentication failed for user",
-find your ``hba_auth.conf`` file, and on the lines for ``IPv4`` and ``IPv6``,
-change the ``METHOD`` from ``md5`` (or whatever it currently is) to ``trust``.
+However, in principle, oTree 3.0+ should do fine with its default SQLite in production,
+since the server is now is single threaded.
 
 Install Redis
 -------------
@@ -88,9 +58,6 @@ Install Redis
 If you installed ``redis-server`` through ``apt-get`` as instructed earlier,
 Redis should be running on port 6379. You can test with ``redis-cli ping``,
 which should output ``PONG``.
-
-If there was an installation problem, you can try installing Redis from an alternate source,
-e.g. `here <https://launchpad.net/~chris-lea/+archive/ubuntu/redis-server>`__.
 
 Then add this line in the same place where you set ``DATABASE_URL``::
 
@@ -100,19 +67,10 @@ Then add this line in the same place where you set ``DATABASE_URL``::
 
     REDIS_URL is a new requirement as of oTree 3.0 (July 2020).
 
-
-Push your code to the server
-----------------------------
-
-You can get your code on the server using SCP, SFTP, Git, etc.
-
-For this tutorial, we will assume you are storing your files under
-``/home/my_username/oTree``.
-
 Reset the database on the server
 --------------------------------
 
-On the server, ``cd`` to the folder containing your oTree project.
+``cd`` to the folder containing your oTree project.
 Install the requirements and reset the database::
 
     pip3 install -r requirements.txt
@@ -123,15 +81,6 @@ Install the requirements and reset the database::
 
 Running the server
 ------------------
-
-If you are just testing your app locally, you can use the usual ``zipserver`` or ``devserver``
-command.
-
-However, when you want to use oTree in production, you need to run the
-production server, which can handle more traffic.
-
-Note: oTree does not run with typical Django WSGI servers like ``gunicorn``,
-because it is ASGI based.
 
 Testing the production server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -220,7 +169,8 @@ However, you still might want to use Apache/Nginx as a reverse proxy, for the fo
 
 If you set up a reverse proxy, make sure to enable not only HTTP traffic
 but also websockets.
-no
+
+
 Troubleshooting
 ---------------
 

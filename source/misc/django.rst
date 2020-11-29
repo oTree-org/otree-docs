@@ -5,14 +5,6 @@ Django
 
 Here are things for Django developers to know about oTree.
 
-``otree`` command
-~~~~~~~~~~~~~~~~~
-
-The ``otree`` command is a customized version of Django's ``manage.py``.
-
-In addition to the built-in Django management commands like ``startapp``,
-oTree defines a few extra ones like ``resetdb``, ``create_session``, and ``prodserver``.
-
 Migrations and "resetdb"
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -21,24 +13,10 @@ Instead, run ``otree resetdb``, which will reset and sync the database.
 If you need to preserve the database between updates, you can try the strategy
 mentioned in :ref:`migrations`.
 
-Project folder
-~~~~~~~~~~~~~~
-
-The folder containing your games is a Django project, as explained
-`here <https://docs.djangoproject.com/en/2.2/intro/tutorial01/#creating-a-project>`__.
-
-It comes pre-configured with all the files,
-settings and dependencies so that it works right away.
-You should create your apps inside this folder.
-
 Server
 ~~~~~~
 
-oTree doesn't work with Gunicorn, mod_wsgi, or any other typical WSGI server.
-Because it uses `Django Channels <http://channels.readthedocs.io/en/latest/>`__
-for WebSocket support, it should be run with ``otree prodserver``,
-which internally starts the Daphne server, several channels workers, and a task queue.
-More info :ref:`here <server-ubuntu>`.
+oTree is based on ASGI, so it doesn't work with WSGI servers like Gunicorn.
 
 Models
 ~~~~~~
@@ -122,35 +100,9 @@ oTree uses `Django channels <https://channels.readthedocs.io/en/stable/>`__
 for real-time (WebSocket) functionality.
 You can add your own real-time interactions such as a continuous-time market.
 
-As of September 2019, we use Django Channels 2.x.
-(Previously, oTree used Django Channels 0.17.3.)
-
-Django Channels 2.x has many API changes.
-Any existing oTree apps that depend on
-the old version of Channels will **break** when you upgrade.
-
-`This <https://channels.readthedocs.io/en/latest/one-to-two.html>`__ article lists the differences
-in the new version of channels.
-In particular:
-
--   ``channels.Group`` no longer exists.
-    Instead, you use ``group_add`` and ``group_send``.
--   If your functions are not async,
-    you need to wrap ``group_add`` and ``group_send`` in ``async_to_sync``.
--   If you want to send to a group from ``models.py`` or ``pages.py``,
-    you use ``get_channel_layer()``, then do ``group_send``.
-    Rather than sending JSON to the websocket directly, you invoke a method on your consumer class,
-    by adding ``"type": "your_method_name"`` to the event.
-    See `here <https://channels.readthedocs.io/en/latest/topics/channel_layers.html#using-outside-of-consumers>`__
-    (don't be confused by dots in type names, they just get converted to underscores).
-
-The "ChatConsumer" example
-`here <https://channels.readthedocs.io/en/latest/tutorial/part_2.html#enable-a-channel-layer>`__
-is a good simple example showing the new API.
-
 You also need to define websocket routes (which are like URL patterns that decide which consumer to run).
 You can put them in a module called ``your_app/otree_extensions/routing.py``.
-You should make a list of routes called ``websocket_routes`` (not ``channel_routing`` like before).
+You should make a list of routes called ``websocket_routes``.
 Then in ``settings.py``, set ``EXTENSION_APPS = ['your_app']``.
 
 See ``otree.channels.consumers``
@@ -158,8 +110,4 @@ to see how oTree queries and saves models inside consumers.
 
 If you are building your app for long-term stability,
 beware of importing anything from ``otree.channels`` into your code.
-Like anything outside of ``otree.api``, it may be removed abruptly.
-
-In addition to upgrading to Channels 2.x,
-we have upgraded the ReconnectingWebSocket library used internally from `this <https://github.com/joewalnes/reconnecting-websocket/>`__
-to `this <https://github.com/pladaria/reconnecting-websocket/>`__. The API may differ in some places.
+Since it is not part of ``otree.api``, it may be removed abruptly.

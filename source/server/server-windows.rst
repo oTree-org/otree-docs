@@ -16,49 +16,19 @@ If you would like an easier and quicker way, we recommend using
 Why do I need to install server software?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-oTree's development setup (using ``zipserver`` with a SQLite database)
-is not designed for running actual studies. One known risk is that
-if you don't install Postgres, your SQLite database
-might lock when multiple users are accessing it simultaneously.
+oTree's development setup (``devserver``)
+is not designed for running actual studies.
 
-For a short, small study, you might be able to get away with just using
-``devserver``,
-as long as you set up your IP address as described in :ref:`server-adhoc`
-and run ``otree collectstatic``.
-
-However, for reliable results, you should follow the steps below.
 
 Database (Postgres)
 -------------------
 
-oTree's default database is SQLite, which is fine for local development,
-but insufficient for production, because it often locks when it multiple
-clients are accessing it.
+If you want, you can use Postgres as your production database.
+Install Postgres and psycopg2, create a new database and set the ``DATABASE_URL`` env var, for example:
+to ``postgres://postgres@localhost/django_db``
 
-We recommend you use PostgreSQL.
-Install `Postgres for Windows <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`__,
-using the default options. Note down the password you chose for the root ``postgres`` user.
-
-Launch pgAdmin, and using the browser, create a new database called ``django_db``.
-Now, edit your ``pg_hba.conf``, which is usually located in ``C:\Program Files\PostgreSQL\``.
-On the lines for ``IPv4`` and ``IPv6``, change the ``METHOD`` from ``md5`` to ``trust``.
-
-Now, set your ``DATABASE_URL`` environment variable to this::
-
-    postgres://postgres@localhost/django_db
-
-Then restart your Command Prompt so the environment variable gets loaded.
-
-Once ``DATABASE_URL`` is defined, oTree will use it instead of the default SQLite.
-
-
-psycopg2
-~~~~~~~~
-
-To use Postgres, you need to install psycopg2 with ``pip3 install psycopg2``.
-If the pip install doesn't work,
-download it `here <http://www.stickpeople.com/projects/python/win-psycopg/>`__.
-(If you are using a virtualenv, note the special installation instructions on that page.)
+However, in principle, oTree 3.0+ should do fine with its default SQLite in production,
+since the server is now is single threaded.
 
 resetdb
 ~~~~~~~

@@ -1,6 +1,17 @@
 Version history
 ```````````````
 
+Version 3.3
+===========
+
+-   BooleanField now uses radio buttons by default (instead of dropdown)
+-   ``otree zip`` can now keep your requirements.txt up to date.
+-   Faster server
+-   Faster startup time
+-   Faster installation
+-   Data export page no longer outputs XLSX files. Instead it outputs CSV files formatted for Excel
+-   Admin UI improvements, especially session data tab
+
 Version 3.2
 ===========
 

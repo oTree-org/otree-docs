@@ -11,24 +11,6 @@ a small form on the MTurk site.
 
 This is a common practice for MTurk HITs, and MTurk workers are familiar with it.
 
-Why did we make this change?
-----------------------------
-
--   There were technical challenges to having oTree embedded inside a frame.
-    Users reported "CSRF" errors that only occur inside the frame.
-    When oTree is tightly integrated with MTurk, issues like this were bound to happen
-    and some of them were outside oTree's control.
--   Previously it was not possible for a worker to submit an assignment if they don't get
-    to the last page. For example, if they get stuck waiting for someone else on a wait page.
-    With the new design, you can give them a completion code to enter if they end up waiting
-    too long.
--   Previously it was not possible to do MTurk sandbox testing locally because it required an HTTPS
-    server. The new design does not require HTTPS, making local sandbox testing easy.
--   Being embedded inside MTurk limits the screen space available for your study and
-    may be awkward in terms of distractions, difficulty scrolling, etc.
--   You will not need special testing to see how your app works inside the MTurk frame.
-
-
 How do I switch to the new design?
 ----------------------------------
 

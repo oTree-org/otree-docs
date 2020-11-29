@@ -18,11 +18,18 @@ A REST API is just a URL on your server that is designed to be accessed by progr
 rather than being opened manually in a web browser.
 
 Simply make a request to one of the below URLs.
-The examples on this page use the Python Requests library (``pip3 install requests``),
-but you can make HTTP requests using any programming language.
-Additionally, many online tools allow making POST requests (e.g. through webhooks).
 
-If your site is password protected, see the note about authentication below.
+Where do I put this code?
+-------------------------
+
+This code does not need to go inside your oTree project folder.
+Since the point of the REST API is to allow external programs and servers to communicate with oTree
+across the internet, you should put this code in that other program.
+That also means you should use whatever language that other server uses.
+The examples on this page use Python,
+but it's simple to make HTTP requests using any programming language,
+or tools like webhooks or cURL.
+
 
 "Create sessions" REST endpoint
 -------------------------------
@@ -43,7 +50,7 @@ Example
 
 .. code-block:: python
 
-    import requests
+    import requests  # pip3 install requests
 
     def create_session(**payload):
         resp = requests.post(SERVER_URL + '/api/sessions/', json=payload)

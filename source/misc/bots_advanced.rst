@@ -5,22 +5,15 @@ Bots: advanced features
 
 These are advanced features that are mostly unsupported in oTree Studio.
 
+.. _cli-bots:
+
 Command line bots
 -----------------
 
 An alternative to running bots in your web browser is to run them in the command line.
-You will see each page submission printed in your command line window.
-Let's say you have this session config:
+Command line bots run faster and require less setup.
 
-.. code-block:: python
-
-    dict(
-        name='mysession',
-        app_sequence=['ultimatum', 'survey'],
-        num_demo_participants=1,
-    ),
-
-If each app in the ``app_sequence`` has bots, you can run them with::
+Run this::
 
     otree test mysession
 
@@ -164,6 +157,10 @@ For example:
                 else:
                     expected_payoff = 150
                 assert self.player.payoff == expected_payoff
+
+.. note::
+
+    If you use cases, it's better to use :ref:`cli-bots` since browser bots will only execute a single case.
 
 ``cases`` needs to be a list, but it can contain any data type, such as strings,
 integers, or even dictionaries. Here is a trust game bot that uses dictionaries
