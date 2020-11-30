@@ -52,21 +52,6 @@ Loops ("for")
     {% endfor %}
 
 
-Method calls
-~~~~~~~~~~~~
-
-To call a method from one of your models, omit the parentheses
-(unlike regular Python code).
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-        def doubled_payoff(self):
-            return self.payoff * 2
-
-.. code-block:: django
-
-    Your doubled payoff is {{ player.doubled_payoff }}.
 
 Accessing items in a dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,10 +65,7 @@ Comments
 .. code-block:: django
 
 
-    {% comment %}
-    This is a
-    multi-line comment
-    {% endcomment %}
+    {# this is a comment #}
 
 
 Template filters
