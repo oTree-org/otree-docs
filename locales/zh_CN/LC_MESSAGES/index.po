@@ -95,7 +95,3 @@ msgstr ""
 #: ../../source/index.rst:78
 msgid ":ref:`search`"
 msgstr ""
-
-#~ msgid "`中文 <https://github.com/oTree-org/otree-docs>`__"
-#~ msgstr ""
-
