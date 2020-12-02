@@ -54,7 +54,7 @@ Use this to pass variables to the template. Example:
 
 Then in the template you can access ``a`` and ``b`` like this:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     Variables {{ a }} and {{ b }} ...
 

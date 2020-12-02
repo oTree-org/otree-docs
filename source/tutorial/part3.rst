@@ -114,7 +114,7 @@ page. For more info on ``id_in_group``, see :ref:`groups`.
 For the template, set the ``title`` to ``Trust Game: Your Choice``,
 and ``content`` to:
 
-.. code-block:: django
+.. code-block:: djang0
 
     <p>
     You are Participant A. Now you have {{Constants.endowment}}.
@@ -132,7 +132,7 @@ This is the page that P2 sees to send money back.
 Set the ``title`` block to ``Trust Game: Your Choice``, 
 and the ``content`` block to:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <p>
         You are Participant B. Participant A sent you {{group.sent_amount}}
@@ -174,7 +174,7 @@ use the ``{% if %}`` statement
 to condition on the current player's ``id_in_group``.
 Set the ``title`` block to ``Results``, and the content block to:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% if player.id_in_group == 1 %}
         <p>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-29 14:23+0800\n"
+"POT-Creation-Date: 2020-12-03 00:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -322,71 +322,52 @@ msgid ""
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:73
-msgid "Performance"
-msgstr ""
-
-#: ../../source/misc/bots_advanced.rst:75
-msgid ""
-"On my PC, running the default public_goods session with 3 participants "
-"takes about 4-5 seconds, and with 9 participants takes about 10 seconds."
-msgstr ""
-
-#: ../../source/misc/bots_advanced.rst:79
 msgid "Choosing session configs and sizes"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:81
+#: ../../source/misc/bots_advanced.rst:75
 msgid "You can specify the number of participants::"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:85
+#: ../../source/misc/bots_advanced.rst:79
 msgid "To test all session configs, just run this::"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:91
+#: ../../source/misc/bots_advanced.rst:85
 msgid "Browser bots: misc notes"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:93
+#: ../../source/misc/bots_advanced.rst:87
 msgid ""
 "You can use a browser other than Chrome by setting ``BROWSER_COMMAND`` in"
 " ``settings.py``. Then, oTree will open the browser by doing something "
 "like ``subprocess.Popen(settings.BROWSER_COMMAND)``."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:97
-msgid ""
-"(Optional) To make the bots run more quickly, disable most/all add-ons, "
-"especially ad-blockers. Or `create a fresh Chrome profile "
-"<https://support.google.com/chrome/answer/142059?hl=en>`__ that you use "
-"just for browser testing. When oTree launches Chrome, it should use the "
-"last profile you had open."
-msgstr ""
-
-#: ../../source/misc/bots_advanced.rst:105
+#: ../../source/misc/bots_advanced.rst:94
 msgid "Test cases"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:107
+#: ../../source/misc/bots_advanced.rst:96
 msgid ""
 "You can define an attribute ``cases`` on your PlayerBot class that lists "
 "different test cases. For example, in a public goods game, you may want "
 "to test 3 scenarios:"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:111
+#: ../../source/misc/bots_advanced.rst:100
 msgid "All players contribute half their endowment"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:112
+#: ../../source/misc/bots_advanced.rst:101
 msgid "All players contribute nothing"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:113
+#: ../../source/misc/bots_advanced.rst:102
 msgid "All players contribute their entire endowment (100 points)"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:115
+#: ../../source/misc/bots_advanced.rst:104
 msgid ""
 "We can call these 3 test cases \"basic\", \"min\", and \"max\", "
 "respectively, and put them in ``cases``. Then, oTree will execute the bot"
@@ -394,74 +375,74 @@ msgid ""
 "``cases`` will be assigned to ``self.case`` in the bot."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:120
+#: ../../source/misc/bots_advanced.rst:109
 msgid "For example:"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:163
+#: ../../source/misc/bots_advanced.rst:152
 msgid ""
 "If you use cases, it's better to use :ref:`cli-bots` since browser bots "
 "will only execute a single case."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:165
+#: ../../source/misc/bots_advanced.rst:154
 msgid ""
 "``cases`` needs to be a list, but it can contain any data type, such as "
 "strings, integers, or even dictionaries. Here is a trust game bot that "
 "uses dictionaries as cases."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:207
+#: ../../source/misc/bots_advanced.rst:196
 msgid "error_fields"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:209
+#: ../../source/misc/bots_advanced.rst:198
 msgid ""
 "When using ``SubmissionMustFail`` on forms with multiple fields, you can "
 "use ``error_fields`` for extra thoroughness."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:212
+#: ../../source/misc/bots_advanced.rst:201
 msgid ""
 "For example, let's say we a submit a valid ``age``, but an invalid "
 "``weight`` and ``height``:"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:226
+#: ../../source/misc/bots_advanced.rst:215
 msgid ""
 "What's missing is that the bot system doesn't tell us exactly *why* the "
 "submission fails. Is it an invalid ``weight``, ``height``, or both? "
 "``error_fields`` can resolve the ambiguity:"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:242
+#: ../../source/misc/bots_advanced.rst:231
 msgid ""
 "This will verify that ``weight`` and ``height`` contained errors, but "
 "``age`` did not."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:245
+#: ../../source/misc/bots_advanced.rst:234
 msgid ""
 "If :ref:`error_message <error_message>` returns an error, then "
 "``error_fields`` will be ``['__all__']``."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:249
+#: ../../source/misc/bots_advanced.rst:238
 msgid "Misc note"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:251
+#: ../../source/misc/bots_advanced.rst:240
 msgid ""
 "In bots, it is risky to assign ``player = self.player`` (or ``participant"
 " = self.participant``, etc), even though that kind of code is encouraged "
 "elsewhere."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:255
+#: ../../source/misc/bots_advanced.rst:244
 msgid "Because if there is a ``yield`` in between, the data can be stale:"
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:268
+#: ../../source/misc/bots_advanced.rst:257
 msgid ""
 "It's safer to use ``self.player.money_left`` directly, because doing "
 "``self.player`` gets the most recent data from the database."
@@ -471,310 +452,16 @@ msgstr ""
 msgid "Django"
 msgstr ""
 
-#: ../../source/misc/django.rst:6
-msgid "Here are things for Django developers to know about oTree."
-msgstr ""
-
-#: ../../source/misc/django.rst:9
-msgid "Migrations and \"resetdb\""
-msgstr ""
-
-#: ../../source/misc/django.rst:11
-msgid ""
-"You generally shouldn't use ``makemigrations`` and ``migrate``. Instead, "
-"run ``otree resetdb``, which will reset and sync the database. If you "
-"need to preserve the database between updates, you can try the strategy "
-"mentioned in :ref:`migrations`."
-msgstr ""
-
-#: ../../source/misc/django.rst:17
-msgid "Server"
-msgstr ""
-
-#: ../../source/misc/django.rst:19
-msgid ""
-"oTree is based on ASGI, so it doesn't work with WSGI servers like "
-"Gunicorn."
-msgstr ""
-
-#: ../../source/misc/django.rst:22
-msgid "Models"
-msgstr ""
-
-#: ../../source/misc/django.rst:27
-msgid "Auto-save of models"
-msgstr "Auto-save of models (Chinese test)"
-
-#: ../../source/misc/django.rst:29
-msgid ""
-"In oTree, you don't need to explicitly call ``.save()`` on your models; "
-"oTree will do it automatically (it uses an idmap cache). However, this "
-"auto-save feature does not apply to custom models or pages that don't "
-"inherit from oTree's, or custom WebSocket/AJAX code. In that case, you "
-"have to remember to save your database models yourself as you would in a "
-"regular Django project."
-msgstr ""
-
-#: ../../source/misc/django.rst:35
-msgid ""
-"You will also need to figure out how to query your models using Django's "
-"ORM and the model's pk/code, etc."
-msgstr ""
-
-#: ../../source/misc/django.rst:39
-msgid "Misc notes on models"
-msgstr ""
-
-#: ../../source/misc/django.rst:41
-msgid ""
-"``null=True`` and ``default=None`` are not necessary in your model field "
-"declarations; in oTree fields are null by default."
-msgstr ""
-
-#: ../../source/misc/django.rst:43
-msgid "``initial`` is an alias for ``default`` in a model field's kwargs."
-msgstr ""
-
-#: ../../source/misc/django.rst:44
-msgid "``label`` is an alias for ``verbose_name`` in a model field's kwargs."
-msgstr ""
-
-#: ../../source/misc/django.rst:47
-msgid "Adding custom pages & URLs"
-msgstr ""
-
-#: ../../source/misc/django.rst:49
-msgid ""
-"You can create URLs and views that are independent of oTree, using "
-"Django's `URL dispatcher "
-"<https://docs.djangoproject.com/en/2.2/topics/http/urls/>`__ and `views "
-"<https://docs.djangoproject.com/en/2.2/topics/http/views/>`__."
-msgstr ""
-
-#: ../../source/misc/django.rst:53
-msgid "First, define the view function in one of your project modules."
-msgstr ""
-
-#: ../../source/misc/django.rst:64
-msgid "Create a file ``urls.py`` in your project root. In this file, put:"
-msgstr ""
-
-#: ../../source/misc/django.rst:76
-msgid ""
-"In your settings.py, set ``ROOT_URLCONF`` to point to the ``urls.py`` "
-"that you just created:"
-msgstr ""
-
-#: ../../source/misc/django.rst:87
-msgid "Real-time and WebSockets"
-msgstr ""
-
-#: ../../source/misc/django.rst:91
-msgid ""
-"oTree 3.0 has a feature called :ref:`live pages <live>`, which are an "
-"easier way of adding real-time functionality to your app. Before using "
-"Django Channels, see if you can accomplish it using live pages."
-msgstr ""
-
-#: ../../source/misc/django.rst:97
-msgid ""
-"This section is for advanced programmers who want to use oTree's internal"
-" and unsupported features."
-msgstr ""
-
-#: ../../source/misc/django.rst:99
-msgid ""
-"oTree uses `Django channels "
-"<https://channels.readthedocs.io/en/stable/>`__ for real-time (WebSocket)"
-" functionality. You can add your own real-time interactions such as a "
-"continuous-time market."
-msgstr ""
-
-#: ../../source/misc/django.rst:103
-msgid ""
-"You also need to define websocket routes (which are like URL patterns "
-"that decide which consumer to run). You can put them in a module called "
-"``your_app/otree_extensions/routing.py``. You should make a list of "
-"routes called ``websocket_routes``. Then in ``settings.py``, set "
-"``EXTENSION_APPS = ['your_app']``."
-msgstr ""
-
-#: ../../source/misc/django.rst:108
-msgid ""
-"See ``otree.channels.consumers`` to see how oTree queries and saves "
-"models inside consumers."
-msgstr ""
-
-#: ../../source/misc/django.rst:111
-msgid ""
-"If you are building your app for long-term stability, beware of importing"
-" anything from ``otree.channels`` into your code. Since it is not part of"
-" ``otree.api``, it may be removed abruptly."
+#: ../../source/misc/django.rst:6 ../../source/misc/internationalization.rst:4
+msgid "(This section is under construction.)"
 msgstr ""
 
 #: ../../source/misc/internationalization.rst:2
 msgid "Localization"
 msgstr ""
 
-#: ../../source/misc/internationalization.rst:5
-msgid "Changing the language setting"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:7
-msgid "Go to your settings and change ``LANGUAGE_CODE``:."
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:9
-msgid "For example::"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:14
-msgid ""
-"This will customize certain things such validation messages and "
-"formatting of numbers. For more information, see the Django documentation"
-" on translation and localization."
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:18
-msgid "Writing your app in multiple languages"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:20
-msgid ""
-"You may want your own app to work in multiple languages. For example, "
-"let's say you want to run the same experiment with English, French, and "
-"Chinese participants."
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:23
-msgid ""
-"For this, you can use Django's `translation "
-"<https://docs.djangoproject.com/en/2.2/topics/i18n/translation/>`__ "
-"system."
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:26
-msgid "A quick summary:"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:28
-msgid ""
-"In your settings, change ``LANGUAGE_CODE``, and restart the server. "
-"Examples::"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:33
-msgid ""
-"Create a folder ``locale`` in each app you are translating, e.g. "
-"``public_goods/locale``. (If you forget to create this folder, the "
-"translations will go into your root folder's ``locale`` folder.)"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:35
-#, python-format
-msgid ""
-"At the top of your templates, add ``{% load i18n %}``. Then use ``{% "
-"blocktrans trimmed %}...{% endblocktrans %}``. There are some things you "
-"can't use inside a ``blocktrans``, such as variables containing dots "
-"(e.g. ``{{ Constants.foo }}``), or tags (e.g. ``{% if %}``). More info "
-"`here <https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#std"
-":templatetag-blocktrans>`__."
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:39
-msgid "If you have localizable strings in your Python code, use ``ugettext``."
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:40
-msgid ""
-"Use ``makemessages`` to create the ``.po`` files in your app's ``locale``"
-" folder. Examples::"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:46
-msgid "Edit the ``.po`` file in `Poedit <http://poedit.net/>`__"
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:47
-msgid ""
-"Run ``django-admin compilemessages`` to create ``.mo`` files next to your"
-" ``.po`` files. If it doesn't work, try running the command inside the "
-"app folder containing the ``locale/`` folder."
-msgstr ""
-
-#: ../../source/misc/internationalization.rst:51
-msgid ""
-"If you localize the files under ``_templates/global``, you need to create"
-" a folder ``locale`` in the root of the project."
-msgstr ""
-
 #: ../../source/misc/intro.rst:2
 msgid "Miscellaneous"
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:4
-msgid "Migrating to the new MTurk format"
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:6
-msgid ""
-"oTree now uses a new format for integration with MTurk. Instead of your "
-"study appearing embedded in a frame inside the MTurk website, workers "
-"click a link which opens your study in a separate tab. On the last page, "
-"you give them a completion code, which they then enter into a small form "
-"on the MTurk site."
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:12
-msgid ""
-"This is a common practice for MTurk HITs, and MTurk workers are familiar "
-"with it."
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:15
-msgid "How do I switch to the new design?"
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:17
-msgid "Install the new version of oTree: ``pip3 install -U otree``"
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:18
-msgid ""
-"In your ``requirements.txt`` or ``requirements_base.txt``, put "
-"``otree[mturk]>=2.4.0``."
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:19
-msgid ""
-"Remove the next_button on the last page of your study. oTree will no "
-"longer automatically submit the assignment to MTurk; instead, you should "
-"give them a completion code they can paste into the MTurk site."
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:22
-msgid ""
-"In your MTurk HIT settings, change ``'preview_template''`` to "
-"``template``, and change its value from ``'global/MTurkPreview.html'`` to"
-" ``'global/mturk_template.html'``."
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:24
-msgid "Follow the rest of the instructions :ref:`here <mturk>`."
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:26
-msgid ""
-"Once you have done all the above, the process for publishing to MTurk and"
-" paying workers is the same (although the \"publish\" page looks "
-"different because various elements have been removed)."
-msgstr ""
-
-#: ../../source/misc/mturk_newformat.rst:29
-msgid ""
-"Also, you can test in the MTurk sandbox locally. With this new version, "
-"you don't need to upload to Heroku until you launch the live (non-"
-"Sandbox) HIT."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:4
@@ -1508,88 +1195,77 @@ msgid "oTree now requires Python 3.7"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:104
-msgid ""
-"oTree extensions written for old versions of oTree (such otree_tools, "
-"mturkotreeutils, etc) may not work until they are upgraded to the new "
-"version of Django & Channels. more info `here "
-"<https://groups.google.com/d/msg/otree/FGwgNYDp8TQ/zClOFHbGEwAJ>`__, "
-"`here "
-"<https://groups.google.com/d/msg/otree/hCV7j03TP_o/_-snq3QEAgAJ>`__, and "
-":ref:`here <channels>`."
-msgstr ""
-
-#: ../../source/misc/version_history.rst:110
 msgid "oTree now uses Django 2.2."
 msgstr ""
 
-#: ../../source/misc/version_history.rst:111
+#: ../../source/misc/version_history.rst:105
 msgid "Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩."
 msgstr ""
 
-#: ../../source/misc/version_history.rst:112
+#: ../../source/misc/version_history.rst:106
 msgid ""
 "On Windows, ``prodserver`` just launches 1 worker process. If you want "
 "more processes, you should use a process manager. (This is due to a "
 "limitation of the ASGI server)"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:114
+#: ../../source/misc/version_history.rst:108
 msgid "``prodserver`` uses Uvicorn/Hypercorn instead of Daphne"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:115
+#: ../../source/misc/version_history.rst:109
 msgid "update_my_code has been removed"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:118
+#: ../../source/misc/version_history.rst:112
 msgid "Version 2.2"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:120
+#: ../../source/misc/version_history.rst:114
 msgid "support for the ``otreezip`` format (``otree zip``, ``otree unzip``)"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:122
+#: ../../source/misc/version_history.rst:116
 msgid ""
 "MTurk: in sandbox mode, don't grant qualifications or check qualification"
 " requirements"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:124
+#: ../../source/misc/version_history.rst:118
 msgid ""
 "MTurk: before paying participants, check if there is adequate account "
 "balance."
 msgstr ""
 
-#: ../../source/misc/version_history.rst:126
+#: ../../source/misc/version_history.rst:120
 msgid ""
 "\"next button\" is disabled after clicking, to prevent congesting the "
 "server with duplicate page loads."
 msgstr ""
 
-#: ../../source/misc/version_history.rst:128
+#: ../../source/misc/version_history.rst:122
 msgid "Upgrade to the latest version of Sentry"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:129
+#: ../../source/misc/version_history.rst:123
 msgid ""
 "Form validation methods should go on the model, not the page. See "
 ":ref:`dynamic_validation`"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:131
+#: ../../source/misc/version_history.rst:125
 msgid ":ref:`app_after_this_page`"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:132
+#: ../../source/misc/version_history.rst:126
 msgid "Various performance and stability improvements"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:137
+#: ../../source/misc/version_history.rst:131
 msgid "Version 2.1"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:139
+#: ../../source/misc/version_history.rst:133
 #, python-format
 msgid ""
 "oTree now raises an error if you use an undefined variable in your "
@@ -1600,59 +1276,59 @@ msgid ""
 "filter, like: ``{{ my_undefined_variable|default:None }}``"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:146
+#: ../../source/misc/version_history.rst:140
 msgid "oTree now warns you if you use an invalid attribute on a Page/WaitPage."
 msgstr ""
 
-#: ../../source/misc/version_history.rst:147
+#: ../../source/misc/version_history.rst:141
 msgid ""
 "CSV/Excel data export is done asynchronously, which will fix timeout "
 "issues for large files on Heroku."
 msgstr ""
 
-#: ../../source/misc/version_history.rst:149
+#: ../../source/misc/version_history.rst:143
 msgid ""
 "Better performance, especially for \"Monitor\" and \"Data\" tab in admin "
 "interface"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:155
+#: ../../source/misc/version_history.rst:149
 msgid "New format for form validation"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:157
+#: ../../source/misc/version_history.rst:151
 msgid ""
 "As of May 2019, it is recommended to define the following methods on the "
 "Player (or Group) model, not the Page:"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:160
+#: ../../source/misc/version_history.rst:154
 msgid "FIELD_min"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:161
+#: ../../source/misc/version_history.rst:155
 msgid "FIELD_max"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:162
+#: ../../source/misc/version_history.rst:156
 msgid "FIELD_choices"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:163
+#: ../../source/misc/version_history.rst:157
 msgid "FIELD_error_message"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:165
+#: ../../source/misc/version_history.rst:159
 msgid "For example, here is the old format:"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:177
+#: ../../source/misc/version_history.rst:171
 msgid ""
 "To change this to the new format, you move ``offer_max`` into the Player "
 "model:"
 msgstr ""
 
-#: ../../source/misc/version_history.rst:188
+#: ../../source/misc/version_history.rst:182
 msgid ""
 "Note that we change ``return self.player.endowment`` to just "
 "``self.endowment``, because ``self`` *is* the player."

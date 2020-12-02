@@ -29,7 +29,7 @@ make a base template for the app.
 For example, if your app's name is ``public_goods``,
 create ``public_goods/templates/public_goods/Page.html``:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% extends "global/Page.html" %}
     {% load otree %}
@@ -48,7 +48,7 @@ create ``public_goods/templates/public_goods/Page.html``:
 
 Then make each template inherit from this template:
 
- .. code-block:: html+django
+ .. code-block:: html+djang0
 
     {% extends "public_goods/Page.html" %}
     {% load otree %}
@@ -73,7 +73,7 @@ Then, in your template, you can get the URL to that file with
 
 To display an image, use the ``<img>`` tag, like this:
 
-.. code-block:: HTML+django
+.. code-block:: html+djang0
 
     <img src="{% static 'puppy.jpg' %}"/>
 
@@ -84,7 +84,7 @@ and prevent name conflicts.
 
 Then your HTML code becomes:
 
-.. code-block:: HTML+django
+.. code-block:: html+djang0
 
     <img src="{% static "your_app_name/puppy.jpg" %}"/>
 
@@ -112,7 +112,7 @@ Custom wait page template
 You can make a custom wait page template.
 For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.html``:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% extends 'otree/WaitPage.html' %}
     {% load otree %}

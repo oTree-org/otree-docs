@@ -31,7 +31,7 @@ Forms in templates
 
 In your template, you can display the form with:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% formfields %}
 
@@ -264,13 +264,13 @@ to be displayed with radio buttons, instead of a dropdown menu.
 If you want to position the fields individually,
 instead of ``{% formfields %}`` you can use ``{% formfield %}``:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% formfield player.contribution %}
 
 You can also put the ``label`` in directly in the template:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% formfield player.contribution label="How much do you want to contribute?" %}
 
@@ -321,7 +321,7 @@ the ordinary ``RadioSelectHorizontal`` widget will not work here.
 
 Instead, you should simply loop over the choices in the field as follows:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <tr>
         <td>{{ form.offer_1.label }}</td>
@@ -333,7 +333,7 @@ Instead, you should simply loop over the choices in the field as follows:
 If you have many fields with the same number of choices,
 you can arrange them in a table:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <table class="table">
         {% for field in form %}
@@ -459,7 +459,7 @@ and rather than a radio button you'd like to present it as a button like this:
 First, put ``offer_accepted`` in your Page's ``form_fields`` as usual.
 Then put this code in the template:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <p>Do you wish to accept the offer?</p>
     <div>
@@ -476,7 +476,7 @@ Button that doesn't submit the form
 If the button has some purpose other than submitting the form,
 add ``type="button"``:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <button>
         Clicking this will submit the form
@@ -508,7 +508,7 @@ If the label should contain a variable, you can construct the string in your pag
 
 Then, in the template:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% formfield player.contribution label=contribution_label %}
 

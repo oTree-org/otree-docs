@@ -131,7 +131,7 @@ For example:
 Then create an includable template ``admin_report.html``
 in your app, and display whatever variables were passed in ``vars_for_admin_report``:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     {% load otree %}
 

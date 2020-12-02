@@ -26,7 +26,7 @@ MTurk template
 
 Put the following inside your ``mturk_template.html``:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
 

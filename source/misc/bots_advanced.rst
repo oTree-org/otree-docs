@@ -69,12 +69,6 @@ For example, if it's on Heroku, you would do like this::
     otree browser_bots mysession --server-url=https://YOUR-SITE.herokuapp.com
 
 
-Performance
-~~~~~~~~~~~
-
-On my PC, running the default public_goods session with 3 participants takes about 4-5 seconds,
-and with 9 participants takes about 10 seconds.
-
 Choosing session configs and sizes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -93,11 +87,6 @@ Browser bots: misc notes
 You can use a browser other than Chrome by setting ``BROWSER_COMMAND``
 in ``settings.py``. Then, oTree will open the browser by doing something like
 ``subprocess.Popen(settings.BROWSER_COMMAND)``.
-
-(Optional) To make the bots run more quickly, disable most/all add-ons, especially ad-blockers.
-Or `create a fresh Chrome profile <https://support.google.com/chrome/answer/142059?hl=en>`__
-that you use just for browser testing. When oTree launches Chrome,
-it should use the last profile you had open.
 
 .. _cases:
 

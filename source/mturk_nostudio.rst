@@ -11,7 +11,7 @@ integration.
 .. note::
 
     As of October 2019, oTree is using a new MTurk format.
-    If you ran studies previously, see :ref:`here <mturk-new-format>`.
+    If you ran studies previously, see `here <https://github.com/oTree-org/otree-docs/blob/master/source/misc/mturk_newformat.rst>`__.
 
 
 Installation

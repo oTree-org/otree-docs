@@ -1,1 +1,6 @@
-(This section is being reorganized.)
+.. _django:
+
+Django
+------
+
+(This section is under construction.)

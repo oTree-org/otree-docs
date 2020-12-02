@@ -11,7 +11,7 @@ Variables
 
 You can display a variable like this:
 
-.. code-block:: django
+.. code-block:: djang0
 
      Your payoff is {{ player.payoff }}.
 
@@ -28,13 +28,13 @@ The following variables are available in templates:
 Conditions ("if")
 ~~~~~~~~~~~~~~~~~
 
-.. code-block:: django
+.. code-block:: djang0
 
     {% if player.is_winner %} you won! {% endif %}
 
 With an 'else':
 
-.. code-block:: django
+.. code-block:: djang0
 
     {% if some_number >= 0 %}
         positive
@@ -45,7 +45,7 @@ With an 'else':
 Loops ("for")
 ~~~~~~~~~~~~~
 
-.. code-block:: django
+.. code-block:: djang0
 
     {% for item in some_list %}
         {{ item }}
@@ -62,7 +62,7 @@ in a template you would do ``{{ my_dict.foo }}``.
 Comments
 ~~~~~~~~
 
-.. code-block:: django
+.. code-block:: djang0
 
 
     {# this is a comment #}
@@ -94,7 +94,7 @@ oTree templates are a mix of 2 languages:
 
 In this example, let's say your template looks like this:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <p>Your payoff this round was {{ player.payoff }}.</p>
 
@@ -114,7 +114,7 @@ oTree uses the current values of the variables
 to convert the above Django code to
 plain HTML, like this:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <p>Your payoff this round was $10.</p>
 
@@ -176,7 +176,7 @@ oTree Studio has an image upload tool.
 (If you are using a text editor, see :ref:`here <staticfiles>`.)
 Once you have stored the image, you can display it like this:
 
-.. code-block:: html+django
+.. code-block:: html+djang0
 
     <img src="{% static "folder_name/puppy.jpg" %}"/>
 
@@ -199,7 +199,7 @@ you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
 Then in the template:
 
-.. code-block:: HTML+django
+.. code-block:: html+djang0
 
     <img src="{% static image_path %}"/>
 
@@ -215,7 +215,7 @@ For example, if your game has instructions that need to be repeated on every pag
 make a template called ``instructions.html``, and put the instructions there,
 for example:
 
-.. code-block:: HTML+django
+.. code-block:: html+djang0
 
     {% load otree %}
 
@@ -301,7 +301,7 @@ Passing data from Python to JavaScript (js_vars)
 To pass data to JavaScript code in your template,
 define a method ``js_vars`` on your Page, for example:
 
-.. code-block:: HTML+django
+.. code-block:: html+djang0
 
     def js_vars(self):
         return dict(
@@ -310,7 +310,7 @@ define a method ``js_vars`` on your Page, for example:
 
 Then, in your template, you can refer to these variables:
 
-.. code-block:: HTML+django
+.. code-block:: html+djang0
 
     <script>
         let x = js_vars.payoff;

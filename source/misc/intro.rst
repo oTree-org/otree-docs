@@ -11,4 +11,3 @@ Miscellaneous
     advanced.rst
     bots_advanced.rst
     version_history.rst
-    mturk_newformat.rst

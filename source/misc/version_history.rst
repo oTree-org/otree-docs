@@ -101,12 +101,6 @@ Version 2.3
 
 -   Various improvements to performance, stability, and ease of use.
 -   oTree now requires Python 3.7
--   oTree extensions written for old versions of oTree (such otree_tools, mturkotreeutils, etc)
-    may not work until they are upgraded to the new version of Django & Channels.
-    more info
-    `here <https://groups.google.com/d/msg/otree/FGwgNYDp8TQ/zClOFHbGEwAJ>`__,
-    `here <https://groups.google.com/d/msg/otree/hCV7j03TP_o/_-snq3QEAgAJ>`__, and
-    :ref:`here <channels>`.
 -   oTree now uses Django 2.2.
 -   Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩.
 -   On Windows, ``prodserver`` just launches 1 worker process. If you want more processes,
