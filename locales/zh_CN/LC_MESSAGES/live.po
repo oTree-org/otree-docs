@@ -3,269 +3,312 @@
 # This file is distributed under the same license as the oTree package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree \n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-29 13:52+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-12-02 23:34+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
 #: ../../source/live.rst:4
 msgid "Live pages"
-msgstr ""
+msgstr "实时页面"
 
 #: ../../source/live.rst:8
 msgid "New in oTree 3.0 (July 2020)"
-msgstr ""
+msgstr "在oTree3.0（2020年7月）新引入"
 
 #: ../../source/live.rst:10
 msgid ""
-"Live pages communicate with the server continuously and update in real "
-"time, enabling continuous time games. Live pages are a great fit for "
-"games with lots of fast iteration and interaction between users. However,"
-" they require JavaScript programming."
+"Live pages communicate with the server continuously and update in real time, "
+"enabling continuous time games. Live pages are a great fit for games with lots "
+"of fast iteration and interaction between users. However, they require "
+"JavaScript programming."
 msgstr ""
+"实时页面与服务器持续通讯并实时更新，让实时游戏成为可能。实时页面对于用户间存在很"
+"多快速重复与交互的游戏非常适合。然而，这需要JavaScript编程。"
 
 #: ../../source/live.rst:17
 msgid "Sending data to the server"
-msgstr ""
+msgstr "向服务器发送数据"
 
 #: ../../source/live.rst:19
 msgid ""
-"In your template's JavaScript code, call the function ``liveSend()`` "
-"whenever you want to send data to the server. For example, to submit a "
-"bid of 99 on behalf of the user, call:"
+"In your template's JavaScript code, call the function ``liveSend()`` whenever "
+"you want to send data to the server. For example, to submit a bid of 99 on "
+"behalf of the user, call:"
 msgstr ""
+"在你模板的JavaScript代码中，调用 ``liveSend()`` 函数来向服务器发送数据。例如，代"
+"表用户提交一个99的点数："
 
 #: ../../source/live.rst:28
 msgid ""
 "On your ``Player``, define a method that will receive this message. Its "
 "argument is whatever data was sent."
 msgstr ""
+"在 ``Player`` 中，定义一个可以接收此消息的方法。它的参数就是所发送的数据。"
 
 #: ../../source/live.rst:34
 msgid ""
 "This has changed since September 15, 2020 (oTree 3.0.8). Previously, the "
-"live_method was on the Group, but now it is recommended to define it on "
-"the Player."
+"live_method was on the Group, but now it is recommended to define it on the "
+"Player."
 msgstr ""
+"此方法在2020年9月15日（oTree3.0.8）改变过。在此之前，这个实时方法是在Group中的，"
+"但是现在推荐在Player中定义它。"
 
 #: ../../source/live.rst:44
 msgid ""
 "(Its name should start with ``live_``.) On your ``Page`` class, set "
 "``live_method`` to route the messages to that method:"
 msgstr ""
+"（名字必须以 ``live_`` 开头。）在 ``Page`` 类中，设置 ``live_method`` 将此消息路"
+"由至那个方法："
 
 #: ../../source/live.rst:52
 msgid "(Note, ``live_method`` on ``WaitPage`` is not yet supported.)"
-msgstr ""
+msgstr "（注意，在 ``WaitPage`` 中的 ``live_method`` 尚未支持。）"
 
 #: ../../source/live.rst:55
 msgid "Sending data to the page"
-msgstr ""
+msgstr "向页面发送数据"
 
 #: ../../source/live.rst:57
 msgid ""
-"To send data back, return a dictionary whose keys are the IDs of the "
-"players to receive a message. For example, here is a method that simply "
-"sends \"thanks\" to whoever sends a message."
+"To send data back, return a dictionary whose keys are the IDs of the players to "
+"receive a message. For example, here is a method that simply sends \"thanks\" "
+"to whoever sends a message."
 msgstr ""
+"为将数据发回，返回一个字典，键为玩家的ID以收到消息。例如，下面是一个简单的方法，"
+"发送“thinks”给任何发送消息的人。"
 
 #: ../../source/live.rst:67
 msgid ""
-"To send to multiple players, use their ``id_in_group``. For example, this"
-" forwards every message to players 2 and 3:"
+"To send to multiple players, use their ``id_in_group``. For example, this "
+"forwards every message to players 2 and 3:"
 msgstr ""
+"为向多位玩家发送消息，使用他们的 ``id_in_group`` 作为键即可。举例来说，下面的函"
+"数将消息发送给玩家2和3："
 
 #: ../../source/live.rst:75
 msgid ""
-"To broadcast it to the whole group, use ``0`` (special case since it is "
-"not an actual ``id_in_group``)."
+"To broadcast it to the whole group, use ``0`` (special case since it is not an "
+"actual ``id_in_group``)."
 msgstr ""
+"向全组进行广播，使用 ``0`` 作为键（这是特殊情况，不是某个 ``id_in_group``）。"
 
 #: ../../source/live.rst:83
 msgid ""
-"In your JavaScript, define a function ``liveRecv``. This will be "
-"automatically called each time a message is received from the server."
+"In your JavaScript, define a function ``liveRecv``. This will be automatically "
+"called each time a message is received from the server."
 msgstr ""
+"在你的JavaScript代码中，定义函数 ``liveRecv``。此函数在每次收到服务器的消息时会"
+"被自动调用。"
 
 #: ../../source/live.rst:94
 msgid "Example: auction"
-msgstr ""
+msgstr "例子：拍卖"
 
 #: ../../source/live.rst:144
 msgid "(Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)"
-msgstr ""
+msgstr "（注意，在JavaScript中 ``data.id_in_group == data['id_in_group']``.）"
 
 #: ../../source/live.rst:147
 msgid "Data"
-msgstr ""
+msgstr "数据"
 
 #: ../../source/live.rst:149
 msgid ""
-"The data you send and receive can be any data type (as long as it is JSON"
-" serializable). For example these are all valid:"
+"The data you send and receive can be any data type (as long as it is JSON "
+"serializable). For example these are all valid:"
 msgstr ""
+"你所发送和接受的数据可以是任意数据类型（只要其能够被JSON序列化）。举例来说下面均"
+"是合法的："
 
 #: ../../source/live.rst:159
 msgid ""
-"The most versatile type of data is a dict, since it allows you to include"
-" multiple pieces of metadata, in particular what type of message it is:"
-msgstr ""
+"The most versatile type of data is a dict, since it allows you to include "
+"multiple pieces of metadata, in particular what type of message it is:"
+msgstr "最多用途的数据类型是字典，它可以让你包含多种元数据，尤其是消息的类型："
 
 #: ../../source/live.rst:168
 msgid "Then you can use ``if`` statements to process different types of messages:"
-msgstr ""
+msgstr "此时你就可以用 ``if`` 语句来处理不同种类的消息："
 
 #: ../../source/live.rst:188
 msgid "History"
-msgstr ""
+msgstr "历史"
 
 #: ../../source/live.rst:190
 msgid ""
-"By default, participants will not see messages that were sent before they"
-" arrived at the page. (And data will not be re-sent if they refresh the "
-"page.) If you want to save history, you should store it in the database. "
-"When a player loads the page, your JavaScript can call something like "
-"``liveSend({'type': 'connect'})``, and you can configure your live_method"
-" to retrieve the history of the game from the database."
+"By default, participants will not see messages that were sent before they "
+"arrived at the page. (And data will not be re-sent if they refresh the page.) "
+"If you want to save history, you should store it in the database. When a player "
+"loads the page, your JavaScript can call something like ``liveSend({'type': "
+"'connect'})``, and you can configure your live_method to retrieve the history "
+"of the game from the database."
 msgstr ""
+"默认情况下，参与者不会看见他们到达页面之前发送的消息。（并且如果刷新页面数据并不"
+"会重新发送。）如果你希望保存历史，你应当将其存储在数据库中。当玩家加载页面时，你"
+"的JavaScript可以调用像 ``liveSend({'type': 'connect'})`` 的东西，并且你可以配置"
+"你自己的实时方法来从数据库中提取游戏的历史。"
 
 #: ../../source/live.rst:197
 msgid "Keeping users on the page"
-msgstr ""
+msgstr "让用户停留在页面上"
 
 #: ../../source/live.rst:199
 msgid ""
-"Let's say you require 10 messages to be sent before the users can proceed"
-" to the next page."
-msgstr ""
+"Let's say you require 10 messages to be sent before the users can proceed to "
+"the next page."
+msgstr "假定玩家在进行下一个页面之前你需要先发送10条消息。"
 
 #: ../../source/live.rst:202
 msgid ""
-"First, you should omit the ``{% next_button %}``. (Or use JS to hide it "
-"until the task is complete.)"
-msgstr ""
+"First, you should omit the ``{% next_button %}``. (Or use JS to hide it until "
+"the task is complete.)"
+msgstr "首先，将 ``{% next_button %}`` 删除。（或使用JS将其隐藏直到工作完成。）"
 
 #: ../../source/live.rst:205
 msgid "When the task is completed, you send a message:"
-msgstr ""
+msgstr "当信息发送完成后，发送一条消息："
 
 #: ../../source/live.rst:222
 msgid "Then in the template, automatically submit the page via JavaScript:"
-msgstr ""
+msgstr "然后在模板中，通过JavaScript自动提交页面："
 
 #: ../../source/live.rst:235
 msgid "For security, you should use :ref:`error_message <error_message>`:"
-msgstr ""
+msgstr "出于安全考虑，你应当使用 :ref:`error_message <error_message>`:"
 
 #: ../../source/live.rst:246
 msgid ""
-"By the way, using a similar technique, you could implement a custom wait "
-"page, e.g. one that lets you proceed after a certain timeout, even if not"
-" all players have arrived."
+"By the way, using a similar technique, you could implement a custom wait page, "
+"e.g. one that lets you proceed after a certain timeout, even if not all players "
+"have arrived."
 msgstr ""
+"顺带一提，使用相同的技巧，你可以实现一个自定义的等待页面，例如在某个时间之后才会"
+"进行下一页面，即使所有玩家均已到达的等待页面。"
 
 #: ../../source/live.rst:253
 msgid "Form validation"
-msgstr ""
+msgstr "表单验证"
 
 #: ../../source/live.rst:257
 #, python-format
 msgid ""
-"If you have a form with multiple fields, it may be simpler to use a "
-"regular page with ``form_model`` and ``form_fields``. because then you "
-"have the convenience of ``{% formfields %}`` and ``error_message``, etc."
+"If you have a form with multiple fields, it may be simpler to use a regular "
+"page with ``form_model`` and ``form_fields``. because then you have the "
+"convenience of ``{% formfields %}`` and ``error_message``, etc."
 msgstr ""
+"如果你的表单中有多个字段，那么使用常规页面的 ``form_model`` 与 ``form_fields`` "
+"验证比较简单。因为你可以享受 ``{% formfields %}`` 与 ``error_message`` 等带来的"
+"便利。"
 
 #: ../../source/live.rst:262
 msgid ""
-"Let's say your live page asks players to submit bids, and the maximum bid"
-" is 99. In a non-live page you would check this using :ref:`form-"
-"validation`. But with live pages, you must verify it inside the "
-"``live_method``:"
+"Let's say your live page asks players to submit bids, and the maximum bid is "
+"99. In a non-live page you would check this using :ref:`form-validation`. But "
+"with live pages, you must verify it inside the ``live_method``:"
 msgstr ""
+"假定你的实时页面要求玩家提交出价，并且最高出价为99。在非实时页面中你可能会使用 :"
+"ref:`form-validation` 来检查这一点。但在实时页面中，你必须在 ``live_method`` 中"
+"确认这一点："
 
 #: ../../source/live.rst:277
 msgid ""
-"In addition, you can add attributes to the ``<input>`` element like "
-"``max=\"99\"``. (But note HTML code is not secure and can be modified by "
-"tech-savvy participants.) If you do this, you should also add "
-"``form=\"liveform\"``. This will exclude that ``<input>`` from the page's"
-" main form, so that when the user clicks the ``{% next_button %}``, the "
-"validation will not be triggered ."
+"In addition, you can add attributes to the ``<input>`` element like ``max="
+"\"99\"``. (But note HTML code is not secure and can be modified by tech-savvy "
+"participants.) If you do this, you should also add ``form=\"liveform\"``. This "
+"will exclude that ``<input>`` from the page's main form, so that when the user "
+"clicks the ``{% next_button %}``, the validation will not be triggered ."
 msgstr ""
+"除此之外，你可以给 ``<input>`` 元素添加属性如 ``max=\"99\"``.（但请注意HTML代码"
+"不是安全的并且可被了解技术的参与者修改。）如果你这样做了，你应当还要添加 ``form="
+"\"liveform\"``.这会将 ``<input>`` 表单排除在页面的主表单之外，使得用户点击 ``{% "
+"next_button %}`` 时，此验证不会被触发。"
 
 #: ../../source/live.rst:283
 msgid "So, it looks like this:"
-msgstr ""
+msgstr "所以代码看起来如下："
 
 #: ../../source/live.rst:289
 msgid ""
-"To trigger validation when the user submits the bid, use this (e.g. in "
-"your ``onclick`` handler):"
+"To trigger validation when the user submits the bid, use this (e.g. in your "
+"``onclick`` handler):"
 msgstr ""
+"为了在用户提交报价时触发验证，使用下面的代码（例如在你的 ``onclick`` 事件处理器"
+"中）："
 
 #: ../../source/live.rst:297
 msgid ""
-"``reportValidity()`` is a built-in JavaScript function that will show the"
-" user any errors in their form fields. It also returns a boolean that "
-"tells if the form is currently valid. You can use that to skip the "
-"``liveSend``."
+"``reportValidity()`` is a built-in JavaScript function that will show the user "
+"any errors in their form fields. It also returns a boolean that tells if the "
+"form is currently valid. You can use that to skip the ``liveSend``."
 msgstr ""
+"``reportValidity()`` 是一个内置的JavaScript函数用来展示用户在表单中的错误。它还"
+"会返回一个布尔值表明表单是合法的。你可以使用此方法跳过 ``liveSend``."
 
 #: ../../source/live.rst:302
 msgid "Troubleshooting"
-msgstr ""
+msgstr "故障排除"
 
 #: ../../source/live.rst:303
 msgid ""
-"If you call ``liveSend`` before the page has finished loading, you will "
-"get an error like ``liveSend is not defined``. So, wait for "
-"``DOMContentLoaded`` (or jQuery document.ready, etc):"
+"If you call ``liveSend`` before the page has finished loading, you will get an "
+"error like ``liveSend is not defined``. So, wait for ``DOMContentLoaded`` (or "
+"jQuery document.ready, etc):"
 msgstr ""
+"如果你在页面载入完成之前调用了 ``liveSend`` ，你会得到一个错误如 ``liveSend is "
+"not defined``.所以先等待 ``DOMContentLoaded`` （或jQuery document.ready 等等）："
 
 #: ../../source/live.rst:314
 msgid "Bots"
-msgstr ""
+msgstr "机器人"
 
 #: ../../source/live.rst:316
 msgid ""
-"To test live methods with bots, define ``call_live_method`` as a top-"
-"level function in ``tests.py``. (Not available in oTree Studio.) This "
-"function should simulate the sequence of calls to your ``live_method``. "
-"The argument ``method`` simulates the live method on your Player model. "
-"For example, ``method(3, 'hello')`` calls the live method on Player 3 "
-"with ``data`` set to ``'hello'``. For example:"
+"To test live methods with bots, define ``call_live_method`` as a top-level "
+"function in ``tests.py``. (Not available in oTree Studio.) This function should "
+"simulate the sequence of calls to your ``live_method``. The argument ``method`` "
+"simulates the live method on your Player model. For example, ``method(3, "
+"'hello')`` calls the live method on Player 3 with ``data`` set to ``'hello'``. "
+"For example:"
 msgstr ""
+"为使用机器人测试实时方法，在 ``tests.py`` 中定义顶级函数 ``call_live_method`` 。"
+"（在oTree Studio中不可用。）此函数可模拟一系列对你的 ``live_method`` 的调用。参"
+"数 ``method`` 模拟你的玩家模型中的实时方法。例如， ``method(3, 'hello')`` 调用了"
+"玩家3上的实时方法，并且 ``data`` 设置为 ``'hello'``.例如："
 
 #: ../../source/live.rst:332
 msgid "``kwargs`` contains at least the following parameters."
-msgstr ""
+msgstr "``kwargs`` 至少包含下列参数。"
 
 #: ../../source/live.rst:334
 msgid "``case`` as described in :ref:`cases`."
-msgstr ""
+msgstr "``case`` 如 :ref:`cases` 中所述。"
 
 #: ../../source/live.rst:335
 msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
-msgstr ""
+msgstr "``page_class``: 当前的页面类，例如 ``pages.MyPage``."
 
 #: ../../source/live.rst:336
 msgid "``round_number``"
-msgstr ""
+msgstr "``round_number``"
 
 #: ../../source/live.rst:338
 msgid ""
-"``call_live_method`` will be automatically executed when the fastest bot "
-"in the group arrives on a page with ``live_method``. (Other bots may be "
-"on previous pages at that point, unless you restrict this with a "
-"WaitPage.)"
+"``call_live_method`` will be automatically executed when the fastest bot in the "
+"group arrives on a page with ``live_method``. (Other bots may be on previous "
+"pages at that point, unless you restrict this with a WaitPage.)"
 msgstr ""
+"当小组中最快的bot到达一个有 ``live_method`` 的页面时 ``call_live_method`` 会被自"
+"动执行。（其他bot此时可能在前一个页面，除非你使用等待页面限制了这种情况。）"
