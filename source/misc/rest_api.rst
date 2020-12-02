@@ -19,18 +19,6 @@ rather than being opened manually in a web browser.
 
 Simply make a request to one of the below URLs.
 
-Where do I put this code?
--------------------------
-
-This code does not need to go inside your oTree project folder.
-Since the point of the REST API is to allow external programs and servers to communicate with oTree
-across the internet, you should put this code in that other program.
-That also means you should use whatever language that other server uses.
-The examples on this page use Python,
-but it's simple to make HTTP requests using any programming language,
-or tools like webhooks or cURL.
-
-
 "Create sessions" REST endpoint
 -------------------------------
 
@@ -59,6 +47,20 @@ Example
 
     resp = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
     print(resp.text) # returns the session code
+
+
+.. note::
+
+    *"Where should I put this code?"*
+
+    This code does not need to go inside your oTree project folder.
+    Since the point of the REST API is to allow external programs and servers to communicate with oTree
+    across the internet, you should put this code in that other program.
+    That also means you should use whatever language that other server uses.
+    The examples on this page use Python,
+    but it's simple to make HTTP requests using any programming language,
+    or tools like webhooks or cURL.
+
 
 Parameters
 ~~~~~~~~~~

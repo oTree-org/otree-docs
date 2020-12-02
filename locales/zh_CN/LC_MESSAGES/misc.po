@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-03 00:14+0800\n"
+"POT-Creation-Date: 2020-12-03 00:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -501,10 +501,49 @@ msgid "Simply make a request to one of the below URLs."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:23
-msgid "Where do I put this code?"
+msgid "\"Create sessions\" REST endpoint"
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:25
+msgid "POST URL: ``/api/sessions/``"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:27
+msgid ""
+"Here are some examples of how the \"create sessions\" endpoint can be "
+"used:"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:29
+msgid "Other websites can create oTree sessions automatically"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:30
+msgid ""
+"You can make a fancier alternative to oTree's :ref:`edit_config` "
+"interface (e.g. with sliders and visual widgets)"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:32
+msgid "Process that will create new oTree sessions on some fixed schedule"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:33
+msgid ""
+"Command line script to create customized sessions (if ``otree "
+"create_session`` is not sufficient)"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:37 ../../source/misc/rest_api.rst:91
+#: ../../source/misc/rest_api.rst:135
+msgid "Example"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:54
+msgid "*\"Where should I put this code?\"*"
+msgstr ""
+
+#: ../../source/misc/rest_api.rst:56
 msgid ""
 "This code does not need to go inside your oTree project folder. Since the"
 " point of the REST API is to allow external programs and servers to "
@@ -515,77 +554,38 @@ msgid ""
 "webhooks or cURL."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:35
-msgid "\"Create sessions\" REST endpoint"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:37
-msgid "POST URL: ``/api/sessions/``"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:39
-msgid ""
-"Here are some examples of how the \"create sessions\" endpoint can be "
-"used:"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:41
-msgid "Other websites can create oTree sessions automatically"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:42
-msgid ""
-"You can make a fancier alternative to oTree's :ref:`edit_config` "
-"interface (e.g. with sliders and visual widgets)"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:44
-msgid "Process that will create new oTree sessions on some fixed schedule"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:45
-msgid ""
-"Command line script to create customized sessions (if ``otree "
-"create_session`` is not sufficient)"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:49 ../../source/misc/rest_api.rst:89
-#: ../../source/misc/rest_api.rst:133
-msgid "Example"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:64 ../../source/misc/rest_api.rst:104
-#: ../../source/misc/rest_api.rst:146
+#: ../../source/misc/rest_api.rst:66 ../../source/misc/rest_api.rst:106
+#: ../../source/misc/rest_api.rst:148
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:66
+#: ../../source/misc/rest_api.rst:68
 msgid "``session_config_name`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:67
+#: ../../source/misc/rest_api.rst:69
 msgid "``num_participants`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:68
+#: ../../source/misc/rest_api.rst:70
 msgid ""
 "``modified_session_config_fields``: an optional dict of session config "
 "parameters, as discussed in :ref:`edit_config`."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:70
+#: ../../source/misc/rest_api.rst:72
 msgid "``room_name`` if you want to create the session in a room."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:76
+#: ../../source/misc/rest_api.rst:78
 msgid "\"Participant vars\" REST endpoint"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:78
+#: ../../source/misc/rest_api.rst:80
 msgid "POST URL: ``/api/participant_vars/``"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:80
+#: ../../source/misc/rest_api.rst:82
 msgid ""
 "This endpoint lets you set ``participant.vars``. The main purpose is to "
 "allow other sites/apps to pass information about a participant to oTree, "
@@ -597,21 +597,21 @@ msgid ""
 "flow/advanced-elements/web-service/>`__ feature.)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:106 ../../source/misc/rest_api.rst:148
+#: ../../source/misc/rest_api.rst:108 ../../source/misc/rest_api.rst:150
 msgid "``room_name`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:107
+#: ../../source/misc/rest_api.rst:109
 msgid "``participant_label`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:108
+#: ../../source/misc/rest_api.rst:110
 msgid ""
 "``vars`` (required): a dict of participant vars to add. Values can be any"
 " JSON-serializable data type, even nested dicts/lists."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:111
+#: ../../source/misc/rest_api.rst:113
 msgid ""
 "This feature requires you to use a Room. Participants are uniquely "
 "identified with the combination of room name & participant label. So you "
@@ -619,19 +619,19 @@ msgid ""
 "although this does not need to come from a ``participant_label_file``."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:119
+#: ../../source/misc/rest_api.rst:121
 msgid "\"Session vars\" REST endpoint"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:123
+#: ../../source/misc/rest_api.rst:125
 msgid "New in oTree 3.0.6"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:125
+#: ../../source/misc/rest_api.rst:127
 msgid "POST URL: ``/api/session_vars/``"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:127
+#: ../../source/misc/rest_api.rst:129
 msgid ""
 "This endpoint lets you set ``session.vars``. One use is experimenter "
 "input. For example, if the experimenter does a lottery drawing in the "
@@ -639,78 +639,78 @@ msgid ""
 "like the one below."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:149
+#: ../../source/misc/rest_api.rst:151
 msgid "``vars`` (required): a dict of session vars to add."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:151
+#: ../../source/misc/rest_api.rst:153
 msgid "This feature requires you to use a Room."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:154
+#: ../../source/misc/rest_api.rst:156
 msgid "Note"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:156
+#: ../../source/misc/rest_api.rst:158
 msgid ""
 "If you are using this for experimenter input during an experiment, you "
 "may also want to use :ref:`error_message <error_message>`:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:167
+#: ../../source/misc/rest_api.rst:169
 msgid "Authentication"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:169
+#: ../../source/misc/rest_api.rst:171
 msgid ""
 "If you have set your auth level to DEMO or STUDY, you must authenticate "
 "your REST API requests."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:172
+#: ../../source/misc/rest_api.rst:174
 msgid ""
 "Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the "
 "server. Set it to some secret value."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:175
+#: ../../source/misc/rest_api.rst:177
 msgid ""
 "When you make a request, add that key as an HTTP header called ``otree-"
 "rest-key``. For example:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:196
+#: ../../source/misc/rest_api.rst:198
 msgid "Demo & testing"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:198
+#: ../../source/misc/rest_api.rst:200
 msgid ""
 "For convenience during development, you can generate fake vars to "
 "simulate data that, in a real session, will come from the REST API."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:201
+#: ../../source/misc/rest_api.rst:203
 msgid ""
 "In your session config, add the parameter ``mock_exogenous_data=True`` "
 "(We call it **exogenous** data because it originates outside oTree.)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:204
+#: ../../source/misc/rest_api.rst:206
 msgid ""
 "Then define a function with the same name (``mock_exogenous_data``) in "
 "your project's shared_out.py (if you are using a text editor, you may "
 "need to create that file)."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:208
+#: ../../source/misc/rest_api.rst:210
 msgid "Here's an example:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:217
+#: ../../source/misc/rest_api.rst:219
 msgid "You can also set participant labels here."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:219
+#: ../../source/misc/rest_api.rst:221
 msgid ""
 "When you run a session in demo mode, or using bots, "
 "``mock_exogenous_data()`` will automatically be run after "
@@ -718,7 +718,7 @@ msgid ""
 "created in a room."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:223
+#: ../../source/misc/rest_api.rst:225
 msgid ""
 "If you have multiple session configs that require different exogenous "
 "data, you can branch like this:"
@@ -1333,3 +1333,7 @@ msgid ""
 "Note that we change ``return self.player.endowment`` to just "
 "``self.endowment``, because ``self`` *is* the player."
 msgstr ""
+
+#~ msgid "Where do I put this code?"
+#~ msgstr ""
+
