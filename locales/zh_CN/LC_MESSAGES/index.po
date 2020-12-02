@@ -7,8 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2020-12-03 00:28+0800\n"
 "PO-Revision-Date: 2020-10-19 00:42+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +21,7 @@ msgid "oTree"
 msgstr "oTree"
 
 #: ../../source/index.rst:15
-msgid "`中文 <https://github.com/oTree-org/otree-docs>`__"
+msgid "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
 msgstr ""
 
 #: ../../source/index.rst:18
@@ -71,8 +73,8 @@ msgid ""
 "For help, post to our Google Groups `forum "
 "<https://groups.google.com/forum/#!forum/otree>`__."
 msgstr ""
-"可将问题发布到Google群组 `论坛 <https://groups.google.com/forum/#!forum/"
-"otree>`__ 以获取帮助."
+"可将问题发布到Google群组 `论坛 <https://groups.google.com/forum/#!forum/otree>`__ "
+"以获取帮助."
 
 #: ../../source/index.rst:44
 msgid "Contents:"
@@ -93,4 +95,7 @@ msgstr ""
 #: ../../source/index.rst:78
 msgid ":ref:`search`"
 msgstr ""
+
+#~ msgid "`中文 <https://github.com/oTree-org/otree-docs>`__"
+#~ msgstr ""
 
