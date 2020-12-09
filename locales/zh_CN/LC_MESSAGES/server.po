@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-29 14:18+0800\n"
-"PO-Revision-Date: 2020-12-04 01:09+0800\n"
+"PO-Revision-Date: 2020-12-09 18:28+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -227,7 +227,7 @@ msgstr "将oTree升级至最新版本"
 
 #: ../../source/server/heroku.rst:47
 msgid "Use browser bots to stress-test your app."
-msgstr "使用浏览器bot来对你的应用进行压力测试"
+msgstr "使用浏览器bot来对你的应用进行压力测试。"
 
 #: ../../source/server/heroku.rst:48
 msgid ""
@@ -461,7 +461,7 @@ msgstr "参考 :ref:`这里 <server-adhoc>`."
 
 #: ../../source/server/ubuntu.rst:4
 msgid "Ubuntu Linux Server"
-msgstr ""
+msgstr "Ubuntu Linux 服务器"
 
 #: ../../source/server/ubuntu.rst:6
 msgid ""
@@ -469,48 +469,52 @@ msgid ""
 "instructions :ref:`here <heroku>`), or to use their own personal computer as "
 "a temporary server (see :ref:`here <server-adhoc>`)."
 msgstr ""
+"我们一般推荐入门者将oTree部署至Heroku (参见 :ref:`这里 <heroku>` )，或者使用自"
+"己的个人电脑作为临时服务器（参见 :ref:`这里 <server-adhoc>`）。"
 
 #: ../../source/server/ubuntu.rst:10
 msgid ""
 "However, you may prefer to run oTree on a proper Linux server. Reasons may "
 "include:"
-msgstr ""
+msgstr "然而，你可能更想将oTree运行在一个适当的Linux服务器上。原因可能包括："
 
 #: ../../source/server/ubuntu.rst:12
 msgid "Your lab doesn't have internet"
-msgstr ""
+msgstr "你的实验室没有网络"
 
 #: ../../source/server/ubuntu.rst:13
 msgid "You want full control over server configuration"
-msgstr ""
+msgstr "你想要完全控制服务器的配置"
 
 #: ../../source/server/ubuntu.rst:14
 msgid "You want better performance (local servers have less latency)"
-msgstr ""
+msgstr "你想要更好的性能（局域网服务器有更低的延迟）"
 
 #: ../../source/server/ubuntu.rst:17
 msgid "Install apt-get packages"
-msgstr ""
+msgstr "安装 apt-get 包"
 
 #: ../../source/server/ubuntu.rst:24
 msgid "Create a virtualenv"
-msgstr ""
+msgstr "创建一个virtualenv"
 
 #: ../../source/server/ubuntu.rst:26
 msgid "It's a best practice to use a virtualenv::"
-msgstr ""
+msgstr "使用virtualenv的最佳实践是："
 
 #: ../../source/server/ubuntu.rst:30
 msgid ""
 "To activate this venv every time you start your shell, put this in your ``."
 "bashrc`` or ``.profile``::"
 msgstr ""
+"为在每次打开shell时激活此venv，将此放到你的 ``.bashrc`` 或 ``.profile`` 中:"
 
 #: ../../source/server/ubuntu.rst:34
 msgid ""
 "Once your virtualenv is active, you will see ``(venv_otree)`` at the "
 "beginning of your prompt."
 msgstr ""
+"一旦你的virtualenv被激活，你会看见 ``(venv_otree)`` 显示在命令行的开头。"
 
 #: ../../source/server/ubuntu.rst:52
 msgid ""
@@ -518,38 +522,40 @@ msgid ""
 "Redis will be running on port 6379. You can test with ``redis-cli ping``, "
 "which should output ``PONG``."
 msgstr ""
+"如果你如之前所建议的通过 ``apt-get`` 安装了 ``redis-server`` ，Redis会运行在端"
+"口6379上。你可以使用 ``redis-cli ping`` 进行测试，输出应当是 ``PONG``."
 
 #: ../../source/server/ubuntu.rst:56
 msgid "Then add this line in the same place where you set ``DATABASE_URL``::"
-msgstr ""
+msgstr "然后将下面这一行加到与你设置 ``DATABASE_URL`` 同样的地方："
 
 #: ../../source/server/ubuntu.rst:65
 msgid "Reset the database on the server"
-msgstr ""
+msgstr "在服务器上重置数据库"
 
 #: ../../source/server/ubuntu.rst:67
 msgid ""
 "``cd`` to the folder containing your oTree project. Install the requirements "
 "and reset the database::"
-msgstr ""
+msgstr "``cd`` 到包含oTree项目的文件夹。安装依赖并重置数据库："
 
 #: ../../source/server/ubuntu.rst:77
 msgid "Running the server"
-msgstr ""
+msgstr "运行服务器"
 
 #: ../../source/server/ubuntu.rst:80
 msgid "Testing the production server"
-msgstr ""
+msgstr "测试生产服务器"
 
 #: ../../source/server/ubuntu.rst:82
 msgid "From your project folder, run::"
-msgstr ""
+msgstr "在你的项目文件夹，运行："
 
 #: ../../source/server/ubuntu.rst:86
 msgid ""
 "Then navigate in your browser to your server's IP/hostname followed by "
 "``:8000``."
-msgstr ""
+msgstr "然后在浏览器中导航至你的服务器的IP/主机名并以 ``:8000`` 结尾。"
 
 #: ../../source/server/ubuntu.rst:89
 msgid ""
@@ -558,30 +564,34 @@ msgid ""
 "let's use sudo, but add some extra args to preserve environment variables "
 "like ``PATH``, ``DATABASE_URL``, etc::"
 msgstr ""
+"如果你没有使用反向代理如Nginx 或 Apache，你可能想直接将oTree运行在80端口上。这"
+"需要超级管理员权限，所以要使用sudo，但需添加一下额外的参数来保存环境变量如 "
+"``PATH``, ``DATABASE_URL``, 等等:"
 
 #: ../../source/server/ubuntu.rst:97
 msgid ""
 "Try again to open your browser; this time, you don't need to append :80 to "
 "the URL, because that is the default HTTP port."
 msgstr ""
+"再打开你的浏览器；这一次，你无需在URL后添加 :80 ，因为这是HTTP默认的端口。"
 
 #: ../../source/server/ubuntu.rst:100
 msgid ""
 "Unlike ``devserver``, ``prodserver`` does not restart automatically when your "
 "files are changed."
-msgstr ""
+msgstr "区别于 ``devserver``, ``prodserver`` 不会在你的文件改变时自动重启。"
 
 #: ../../source/server/ubuntu.rst:104
 msgid "Set remaining environment variables"
-msgstr ""
+msgstr "设置其余的环境变量"
 
 #: ../../source/server/ubuntu.rst:106
 msgid "Add these in the same place where you set ``DATABASE_URL``::"
-msgstr ""
+msgstr "将下面这些添加到与你设置 ``DATABASE_URL`` 相同的位置："
 
 #: ../../source/server/ubuntu.rst:113
 msgid "(Optional) Process control system"
-msgstr ""
+msgstr "(可选) 进程控制系统"
 
 #: ../../source/server/ubuntu.rst:115
 msgid ""
@@ -589,32 +599,34 @@ msgid ""
 "process control system like Supervisord or Circus. This will restart your "
 "processes in case they crash, keep it running if you log out, etc."
 msgstr ""
+"一旦服务器如上正常工作，使用如Supervisord 或 Circus这样的进程管理系统是一个好"
+"的实践。这会自动重启你的进程无论它是如何崩溃的，并在你登出时保持运行，等等。"
 
 #: ../../source/server/ubuntu.rst:122
 msgid "Circus"
-msgstr ""
+msgstr "Circus"
 
 #: ../../source/server/ubuntu.rst:124
 msgid ""
 "Install Circus, then create a ``circus.ini`` in your project folder, with the "
 "following content::"
-msgstr ""
+msgstr "安装 Circus，然后在你的项目文件夹创建一个 ``circus.ini`` ，内容如下："
 
 #: ../../source/server/ubuntu.rst:133
 msgid "Then run::"
-msgstr ""
+msgstr "然后运行："
 
 #: ../../source/server/ubuntu.rst:137
 msgid "If this is working properly, you can start it as a daemon::"
-msgstr ""
+msgstr "如果它工作正常，你可以将其作为守护进程启动："
 
 #: ../../source/server/ubuntu.rst:142
 msgid "To stop circus, run::"
-msgstr ""
+msgstr "要停止circus，运行："
 
 #: ../../source/server/ubuntu.rst:147
 msgid "(Optional) Apache, Nginx, etc."
-msgstr ""
+msgstr "(可选) Apache, Nginx, 等等"
 
 #: ../../source/server/ubuntu.rst:149
 msgid ""
@@ -622,30 +634,32 @@ msgid ""
 "be run with an ASGI server. However, you still might want to use Apache/Nginx "
 "as a reverse proxy, for the following reasons:"
 msgstr ""
+"你不能使用Apache 或 Nginx作为你的首选web服务器，因为oTree必须使用ASGI服务器运"
+"行。然而，你仍可以使用Apache/Nginx作为反向代理，出于下面这些原因："
 
 #: ../../source/server/ubuntu.rst:153
 msgid ""
 "You are trying to optimize serving of static files (though oTree uses "
 "Whitenoise, which is already fairly efficient)"
-msgstr ""
+msgstr "你试图优化静态文件的速度（尽管oTree使用了Whitenoise，已经相当高效率了）"
 
 #: ../../source/server/ubuntu.rst:155
 msgid "You need to host other websites on the same server"
-msgstr ""
+msgstr "你需要在同一台服务器上部署其他网站"
 
 #: ../../source/server/ubuntu.rst:156
 msgid "You need features like SSL or proxy buffering"
-msgstr ""
+msgstr "你需要类似SSL或代理缓存的特性"
 
 #: ../../source/server/ubuntu.rst:158
 msgid ""
 "If you set up a reverse proxy, make sure to enable not only HTTP traffic but "
 "also websockets."
-msgstr ""
+msgstr "如果你设置了反向代理，确保其不仅代理了HTTP通信还代理了websocket。"
 
 #: ../../source/server/ubuntu.rst:162
 msgid "Troubleshooting"
-msgstr ""
+msgstr "故障排除"
 
 #: ../../source/server/ubuntu.rst:164
 msgid ""
@@ -654,10 +668,13 @@ msgid ""
 "Try stopping oTree and reload again. Also make sure that you are not sharing "
 "the same Postgres or Redis databases between two oTree instances."
 msgstr ""
+"如果你遇到了奇怪的程序行为，如每次页面重载时会随机变化，这可能是另一个未被关闭"
+"的oTree实例导致的。试着停止oTree并再一次重载。并请确保没有在两个oTree实例间共"
+"享Postgres 或 Redis数据库。"
 
 #: ../../source/server/ubuntu.rst:172
 msgid "Sharing a server with other oTree users"
-msgstr ""
+msgstr "与其他oTree用户共享服务器"
 
 #: ../../source/server/ubuntu.rst:174
 msgid ""
@@ -665,6 +682,8 @@ msgid ""
 "that the code and databases are kept separate, so they don't conflict with "
 "each other."
 msgstr ""
+"你可以与其他oTree用户共享服务器；你只需确保代码与数据库保持隔离，这样就不会相"
+"互冲突。"
 
 #: ../../source/server/ubuntu.rst:178
 msgid ""
@@ -672,26 +691,31 @@ msgid ""
 "oTree. Then each person should follow the same steps described above, but in "
 "some cases name things differently to avoid clashes:"
 msgstr ""
+"在服务器上你应当为每一个使用oTree的人创建一个不同的Unix用户。然后每个人应当按"
+"照上面所描述的同样的步骤操作，但是在某些情况下应当使用不同的名字以避免冲突："
 
 #: ../../source/server/ubuntu.rst:182
 msgid "Create a virtualenv in their home directory"
-msgstr ""
+msgstr "在home目录下创建一个virtualenv"
 
 #: ../../source/server/ubuntu.rst:183
 msgid ""
 "Create a different Postgres database, as described earlier, and set this in "
 "the DATABASE_URL env var."
 msgstr ""
+"创建一个不同的Postgres数据库，如之前所述，并将此设置在DATABASE_URL环境变量中。"
 
 #: ../../source/server/ubuntu.rst:185
 msgid "Each user needs their own Redis database."
-msgstr ""
+msgstr "每位用户需要使用自己的Redis数据库。"
 
 #: ../../source/server/ubuntu.rst:187
 msgid ""
 "Once these steps are done, the second user can push code to the server, then "
 "run ``otree resetdb``."
 msgstr ""
+"一旦完成这些步骤，第二位用户就可以将代码推送至服务器，并运行 ``otree "
+"resetdb``."
 
 #: ../../source/server/ubuntu.rst:190
 msgid ""
@@ -701,3 +725,6 @@ msgid ""
 "same time, then you would need to run the server on multiple ports, e.g. "
 "``8000``, ``8001``, etc."
 msgstr ""
+"如果不需要多人同时运行实验，那么每位用户可以轮流将服务器运行在80端口上，使用 "
+"``otree prodserver 80`` 命令。然而，如果多人需要同时运行实验，那么你需要将服务"
+"器运行在不同的端口上，例如 ``8000``, ``8001``, 等等."
