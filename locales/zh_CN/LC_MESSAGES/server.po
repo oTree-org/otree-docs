@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-29 14:18+0800\n"
-"PO-Revision-Date: 2020-12-09 18:28+0800\n"
+"PO-Revision-Date: 2020-12-11 12:17+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,13 +20,15 @@ msgstr ""
 
 #: ../../source/server/adhoc.rst:4
 msgid "Configure your computer to be a server (advanced)"
-msgstr ""
+msgstr "将你的电脑配置为服务器（高级）"
 
 #: ../../source/server/adhoc.rst:8
 msgid ""
 "This page assumes you have already installed the oTree server, as described "
 "on the server setup pages for Windows/Mac (see :ref:`here <server>`)."
 msgstr ""
+"本页面假设你已经安装了oTree服务器，按照Windows/Mac服务器安装页面所描述的(参"
+"见 :ref:`这里 <server>`)。"
 
 #: ../../source/server/adhoc.rst:12
 msgid ""
@@ -34,51 +36,53 @@ msgid ""
 "your university network) and don't need access from the internet, you can "
 "follow the below steps to use your own computer as a server."
 msgstr ""
+"如果你将使用局域网中的设备运行你的研究（例如你所在大学的网络）就无需连接到互联"
+"网，你可以按照下面的步骤将你自己的电脑作为服务器。"
 
 #: ../../source/server/adhoc.rst:17
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../source/server/adhoc.rst:20
 msgid "Create a firewall rule (Windows only)"
-msgstr ""
+msgstr "创建防火墙规则（仅适用于Windows）"
 
 #: ../../source/server/adhoc.rst:22
 msgid ""
 "You need to allow other computers to connect to oTree through your firewall."
-msgstr ""
+msgstr "你需要允许其他电脑通过你的防火墙以连接到oTree。"
 
 #: ../../source/server/adhoc.rst:24
 msgid "Open the Windows Firewall"
-msgstr ""
+msgstr "打开Windows防火墙（高级安全 Windows Defender 防火墙）"
 
 #: ../../source/server/adhoc.rst:25
 msgid "Go to \"Inbound Rules\""
-msgstr ""
+msgstr "前往“入站规则”"
 
 #: ../../source/server/adhoc.rst:26
 msgid "Click \"New Rule\""
-msgstr ""
+msgstr "点击“新建规则”"
 
 #: ../../source/server/adhoc.rst:27
 msgid "Select \"Port\" to make a port rule"
-msgstr ""
+msgstr "选择“端口”以创建一个端口规则"
 
 #: ../../source/server/adhoc.rst:28
 msgid "Under \"Specific local ports\", enter 80 and 8000"
-msgstr ""
+msgstr "在“特定本地端口”下，输入80和8000"
 
 #: ../../source/server/adhoc.rst:29
 msgid "Select \"Allow the connection\""
-msgstr ""
+msgstr "选择“允许连接”"
 
 #: ../../source/server/adhoc.rst:30
 msgid "Click \"next\" then choose a name for your rule (e.g. \"oTree\")."
-msgstr ""
+msgstr "点击“下一步“并为你的规则起一个名字（例如”oTree“）。"
 
 #: ../../source/server/adhoc.rst:33
 msgid "Find your IP address (Windows)"
-msgstr ""
+msgstr "确定你的IP地址（Windows）"
 
 #: ../../source/server/adhoc.rst:35
 msgid ""
@@ -86,14 +90,16 @@ msgid ""
 "``IPv4 Address``. Maybe it will look something like ``10.0.1.3``, or could "
 "also start with 172 or 192."
 msgstr ""
+"打开PowerShell或命令提示符并输入 ``ipconfig``。查看条目 ``IPv4 Address``。它看"
+"起来可能如 ``10.0.1.3``，或以172或192开头。"
 
 #: ../../source/server/adhoc.rst:40
 msgid "MacOS"
-msgstr ""
+msgstr "MacOS"
 
 #: ../../source/server/adhoc.rst:43
 msgid "Find your IP address (MacOS)"
-msgstr ""
+msgstr "确定你的IP地址 (MacOS)"
 
 #: ../../source/server/adhoc.rst:45
 msgid ""
@@ -102,16 +108,20 @@ msgid ""
 "> \"TCP/IP\" to view your IP address. Maybe it will look something like "
 "``10.0.1.3``, or could also start with 172 or 192."
 msgstr ""
+"前往“系统设置” > \"网络\"，并选择你在使用的网络。根据macOS的版本，你可能会点"
+"击“高级” > \"TCP/IP\"来查看你的IP地址。它看起来可能如 ``10.0.1.3``，或以172或"
+"192开头。"
 
 #: ../../source/server/adhoc.rst:51
 msgid "Run the server"
-msgstr ""
+msgstr "运行服务器"
 
 #: ../../source/server/adhoc.rst:53
 msgid ""
 "Start the server with your IP address and port 8000, e.g. ``otree devserver "
 "10.0.1.3:8000``."
 msgstr ""
+"使用你的IP地址和8000端口启动服务器，例如 ``otree devserver 10.0.1.3:8000``."
 
 #: ../../source/server/adhoc.rst:58
 msgid ""
@@ -119,6 +129,8 @@ msgid ""
 "steps working, you should switch to using the production server ``otree "
 "prodserver``."
 msgstr ""
+"使用 ``devserver`` 仅为一个临时的步骤。一旦这些步骤正常工作，你应当转而使用生"
+"产服务器 ``otree prodserver``."
 
 #: ../../source/server/adhoc.rst:62
 msgid ""
@@ -126,10 +138,12 @@ msgid ""
 "``:8000``, e.g. ``10.0.1.3:8000`` and you should be able to load the oTree "
 "demo page."
 msgstr ""
+"在客户端的浏览器上，连接至IP地址加上 ``:8000``，例如 ``10.0.1.3:8000`` ，oTree"
+"页面应当就能够加载出来。"
 
 #: ../../source/server/adhoc.rst:66
 msgid "Make sure your IP address doesn't change"
-msgstr ""
+msgstr "确保你的IP地址不会改变"
 
 #: ../../source/server/adhoc.rst:68
 msgid ""
@@ -138,6 +152,9 @@ msgid ""
 "unpredictably, you can ask your IT department to add a rule on their DHCP "
 "server to always assign the same IP to your computer."
 msgstr ""
+"在大多数大学网络中，你的内网IP地址一般保持不变，只要一直连接同一个网络。如果出"
+"乎意料地改变了，你可以请求IT部门在他们的DHCP服务器上添加一条规则总是将相同的IP"
+"分配给你的电脑。"
 
 #: ../../source/server/heroku.rst:4
 msgid "Basic Server Setup (Heroku)"
