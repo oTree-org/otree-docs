@@ -6,6 +6,7 @@ Version 3.3
 
 -   BooleanField now uses radio buttons by default (instead of dropdown)
 -   ``otree zip`` can now keep your requirements.txt up to date.
+-   oTree no longer installs `sentry-sdk`. If you need Sentry on Heroku, you should add it to your `requirements.txt` manually.
 -   Faster server
 -   Faster startup time
 -   Faster installation

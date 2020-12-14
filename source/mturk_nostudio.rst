@@ -2,8 +2,8 @@
 
 .. _mturknostudio:
 
-MTurk Studio setup (without Studio)
-===================================
+MTurk setup (without Studio)
+============================
 
 If you are not using oTree Studio, here are the extra steps to set up Mechanical Turk
 integration.
@@ -27,11 +27,11 @@ Create an file (empty for now) called ``_templates/global/mturk_template.html``.
 Session config
 --------------
 
-In ``SESSION_CONFIG_DEFAULTS``, add an entry called `mturk_hit_settings` whose value is:
+In ``SESSION_CONFIG_DEFAULTS``, add:
 
 .. code-block:: python
 
-    dict(
+    mturk_hit_settings=dict(
         keywords='bonus, study',
         title='Title for your experiment',
         description='Description for your experiment',
@@ -41,4 +41,4 @@ In ``SESSION_CONFIG_DEFAULTS``, add an entry called `mturk_hit_settings` whose v
         expiration_hours=7 * 24,
         qualification_requirements=[]
         # grant_qualification_id='YOUR_QUALIFICATION_ID_HERE', # to prevent retakes
-    )
+    ),
