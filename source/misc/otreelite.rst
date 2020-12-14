@@ -5,24 +5,24 @@ As of December 2020, there is an alternative implementation of oTree that runs a
 not dependent on Django.
 
 Advantages
-``````````
+----------
 
 Simpler codebase
-----------------
+~~~~~~~~~~~~~~~~
 
 If you are someone who wants to be able to read oTree's source code, it is currently quite hard sometimes.
 To understand how certain parts of oTree work, you have to go far up the chain into Django.
 This codebase is simpler and more self-contained.
 
 Easier to extend
-----------------
+~~~~~~~~~~~~~~~~
 
 Django is quite a heavyweight framework and imposes a lot of constraints.
 It can be hard to add custom functionality unless you really know how Django works.
 In contrast, this implementation is smaller and uses more modern components such as Starlette.
 
 Lightweight
------------
+~~~~~~~~~~~
 
 It is also considerably more lightweight, which you will notice during deployment,
 running commands, etc (for example it doesn't require Redis or a second dyno).
@@ -39,11 +39,12 @@ run::
 that is clearly distinct from that of the stable releases.)
 
 Compatibility
-`````````````
+-------------
+
 This new implementation is generally compatible with existing oTree apps. However, here are some differences:
 
 Templates
----------
+~~~~~~~~~
 
 The template system uses `Ibis <http://www.dmulholl.com/docs/ibis/master/index.html>`__,
 which at first glance looks the same as Django templates, but there are some differences, including:
@@ -57,7 +58,7 @@ which at first glance looks the same as Django templates, but there are some dif
     Ibis does not do this. If you want to escape special characters, you should use the triple braces ``{{{ }}}``.
 
 Forms
------
+~~~~~
 
 In templates, if you use ``{{ form.my_field.errors }}``, you should wrap it inside an ``if``::
 
@@ -69,7 +70,7 @@ This is because in wtforms (which oTree now uses), ``.errors`` is a list of stri
 and displaying it when there are no errors will output ``[]`` which looks a bit weird.
 
 Older oTree formats
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 Since this is an experimental version of oTree, I did not see any need to implement support for certain features found in older oTree
 projects, such as:
@@ -79,7 +80,7 @@ projects, such as:
 -   ``widgets.Slider``, ``widgets.CheckboxInput``
 
 Bootstrap
----------
+~~~~~~~~~
 
 Since bootstrap 5 beta just got released, I included it in this package.
 Certain things are different from bootstrap 4; consult the bootstrap migration docs.
@@ -89,7 +90,7 @@ In my experience the main things that differed are:
 -   ``form-group`` no longer exists
 
 oTree features
---------------
+~~~~~~~~~~~~~~
 
 The following oTree features are not supported yet:
 -   ``ExtraModel``
@@ -99,7 +100,7 @@ The following oTree features are not supported yet:
 it will not work; see below.
 
 Django (for advanced use cases)
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This new implementation does not use Django or Channels in any way.
 So, it will not run any code you got from Django documentation, such as Django views, ModelForms, ORM, etc.
