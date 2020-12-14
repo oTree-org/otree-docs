@@ -1,5 +1,5 @@
-oTree alternative implementation
-================================
+oTree Lite
+==========
 
 As of December 2020, there is an alternative implementation of oTree that runs as a self-contained framework,
 not dependent on Django.
