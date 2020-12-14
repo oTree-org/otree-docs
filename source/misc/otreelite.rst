@@ -36,7 +36,7 @@ run::
     pip install "otree>=5.0.0a1"
 
 (Note: this does not mean it will actually be version 5 of oTree, but rather I wanted to give it a version number
-that is clearly distinct from that of the stable releases.)
+that is clearly distinct from that of the mainline releases.)
 
 Compatibility
 -------------
