@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the oTree package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree \n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-03 00:26+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-12-15 20:22+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ../../source/misc/advanced.rst:2
 msgid "Advanced features"
@@ -35,9 +36,9 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:12
 msgid ""
-"If the template needs to have a different name from your page class (e.g."
-" you are sharing the same template for multiple pages), set "
-"``template_name``. Example:"
+"If the template needs to have a different name from your page class (e.g. you "
+"are sharing the same template for multiple pages), set ``template_name``. "
+"Example:"
 msgstr ""
 
 #: ../../source/misc/advanced.rst:24
@@ -46,14 +47,14 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:26
 msgid ""
-"To include the same JS/CSS in all pages of an app, make a base template "
-"for the app."
+"To include the same JS/CSS in all pages of an app, make a base template for "
+"the app."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:29
 msgid ""
-"For example, if your app's name is ``public_goods``, create "
-"``public_goods/templates/public_goods/Page.html``:"
+"For example, if your app's name is ``public_goods``, create ``public_goods/"
+"templates/public_goods/Page.html``:"
 msgstr ""
 
 #: ../../source/misc/advanced.rst:49
@@ -62,9 +63,9 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:57
 msgid ""
-"To include the same JS/CSS in *all apps* of a project, modify "
-"``_templates/global/Page.html``. In that file, you will find the blocks "
-"``global_scripts`` and ``global_styles``."
+"To include the same JS/CSS in *all apps* of a project, modify ``_templates/"
+"global/Page.html``. In that file, you will find the blocks ``global_scripts`` "
+"and ``global_styles``."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:64
@@ -73,16 +74,16 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:67
 msgid ""
-"Here is how to include images (or any other static file like .css, .js, "
-"etc.) in your pages."
+"Here is how to include images (or any other static file like .css, .js, etc.) "
+"in your pages."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:69
 #, python-format
 msgid ""
-"At the root of your oTree project, there is a ``_static/`` folder. Put a "
-"file there, for example ``puppy.jpg``. Then, in your template, you can "
-"get the URL to that file with ``{% static 'puppy.jpg' %}``."
+"At the root of your oTree project, there is a ``_static/`` folder. Put a file "
+"there, for example ``puppy.jpg``. Then, in your template, you can get the URL "
+"to that file with ``{% static 'puppy.jpg' %}``."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:74
@@ -91,10 +92,9 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:80
 msgid ""
-"Above we saved our image in ``_static/puppy.jpg``, But actually it's "
-"better to make a subfolder with the name of your app, and save it as "
-"``_static/your_app_name/puppy.jpg``, to keep files organized and prevent "
-"name conflicts."
+"Above we saved our image in ``_static/puppy.jpg``, But actually it's better to "
+"make a subfolder with the name of your app, and save it as ``_static/"
+"your_app_name/puppy.jpg``, to keep files organized and prevent name conflicts."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:85
@@ -103,22 +103,21 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:91
 msgid ""
-"(If you prefer, you can also put static files inside your app folder, in "
-"a subfolder called ``static/your_app_name``.)"
+"(If you prefer, you can also put static files inside your app folder, in a "
+"subfolder called ``static/your_app_name``.)"
 msgstr ""
 
 #: ../../source/misc/advanced.rst:94
 msgid ""
-"If a static file is not updating even after you changed it, this is "
-"because your browser cached the file. Do a full page reload (usually "
-"Ctrl+F5)"
+"If a static file is not updating even after you changed it, this is because "
+"your browser cached the file. Do a full page reload (usually Ctrl+F5)"
 msgstr ""
 
 #: ../../source/misc/advanced.rst:98
 msgid ""
-"If you have videos or high-resolution images, it's preferable to store "
-"them somewhere online and reference them by URL because the large file "
-"size can make uploading your .otreezip file much slower."
+"If you have videos or high-resolution images, it's preferable to store them "
+"somewhere online and reference them by URL because the large file size can "
+"make uploading your .otreezip file much slower."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:105
@@ -142,16 +141,15 @@ msgstr ""
 #: ../../source/misc/advanced.rst:134
 msgid ""
 "Then you can use ``vars_for_template`` in the usual way. Actually, the "
-"``body_text`` and ``title_text`` attributes are just shorthand for "
-"setting ``vars_for_template``; the following 2 code snippets are "
-"equivalent:"
+"``body_text`` and ``title_text`` attributes are just shorthand for setting "
+"``vars_for_template``; the following 2 code snippets are equivalent:"
 msgstr ""
 
 #: ../../source/misc/advanced.rst:150
 msgid ""
 "If you want to apply your custom wait page template globally, save it to "
-"``_templates/global/WaitPage.html``. oTree will then automatically use it"
-" everywhere instead of the built-in wait page."
+"``_templates/global/WaitPage.html``. oTree will then automatically use it "
+"everywhere instead of the built-in wait page."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:155
@@ -160,25 +158,23 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:157
 msgid ""
-"Wait pages have the same block structure as regular pages "
-"(``global_scripts``, ``app_scripts``, ``scripts``, etc...), so you can "
-"follow the same instructions described in :ref:`base-template` and "
-":ref:`selectors`."
+"Wait pages have the same block structure as regular pages (``global_scripts``, "
+"``app_scripts``, ``scripts``, etc...), so you can follow the same instructions "
+"described in :ref:`base-template` and :ref:`selectors`."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:162
 msgid ""
-"For example, to apply CSS to your custom wait page at "
-"``_templates/global/WaitPage.html``, put a block ``global_scripts`` in "
-"the template."
+"For example, to apply CSS to your custom wait page at ``_templates/global/"
+"WaitPage.html``, put a block ``global_scripts`` in the template."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:165
 msgid ""
-"You can even make other custom wait pages inherit from "
-"``_templates/global/WaitPage.html``, just the way regular pages inherit "
-"from ``_templates/global/Page.html``, and they can define the blocks "
-"``app_scripts`` and ``scripts``, etc."
+"You can even make other custom wait pages inherit from ``_templates/global/"
+"WaitPage.html``, just the way regular pages inherit from ``_templates/global/"
+"Page.html``, and they can define the blocks ``app_scripts`` and ``scripts``, "
+"etc."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:172
@@ -187,11 +183,11 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:174
 msgid ""
-"If your database already contains data and you want to update the "
-"structure without running ``resetdb`` (which will delete existing data), "
-"see `here <https://github.com/oTree-org/otree-"
-"docs/blob/f3c6ceca5346b988b194dad5f805a06814ebea68/source/misc/advanced.rst"
-"#modifying-an-existing-database>`__"
+"If your database already contains data and you want to update the structure "
+"without running ``resetdb`` (which will delete existing data), see `here "
+"<https://github.com/oTree-org/otree-docs/blob/"
+"f3c6ceca5346b988b194dad5f805a06814ebea68/source/misc/advanced.rst#modifying-an-"
+"existing-database>`__"
 msgstr ""
 
 #: ../../source/misc/advanced.rst:179
@@ -200,17 +196,15 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:181
 msgid ""
-"To customize the name \"points\" to something else like \"tokens\" or "
-"\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
-"'tokens'``."
+"To customize the name \"points\" to something else like \"tokens\" or \"credits"
+"\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:184
 msgid ""
-"You can change the number of decimal places in real world currency "
-"amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
-"extra decimal places show up but are always 0, then you should reset the "
-"database."
+"You can change the number of decimal places in real world currency amounts "
+"with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the extra decimal "
+"places show up but are always 0, then you should reset the database."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:190
@@ -219,14 +213,14 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:192
 msgid ""
-"Store yourfile.csv in your app, next to models.py. Then put this code "
-"anywhere you want to read the file (in a method or in Constants):"
+"Store yourfile.csv in your app, next to models.py. Then put this code anywhere "
+"you want to read the file (in a method or in Constants):"
 msgstr ""
 
 #: ../../source/misc/advanced.rst:202
 msgid ""
-"If it's not CSV and you just want to read the file contents as a string, "
-"this gets simplified to:"
+"If it's not CSV and you just want to read the file contents as a string, this "
+"gets simplified to:"
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:4
@@ -243,15 +237,14 @@ msgid ""
 "command line. Command line bots run faster and require less setup."
 msgstr ""
 
-#: ../../source/misc/bots_advanced.rst:16
-#: ../../source/misc/bots_advanced.rst:51
+#: ../../source/misc/bots_advanced.rst:16 ../../source/misc/bots_advanced.rst:51
 msgid "Run this::"
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:20
 msgid ""
-"To test with a specific number of participants (otherwise it will default"
-" to ``num_demo_participants``)::"
+"To test with a specific number of participants (otherwise it will default to "
+"``num_demo_participants``)::"
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:25
@@ -282,8 +275,8 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:46
 msgid ""
-"Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in "
-"``settings.py`` (more info below)."
+"Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings."
+"py`` (more info below)."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:48
@@ -300,14 +293,14 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:55
 msgid ""
-"This will launch several Chrome tabs and run the bots. When finished, the"
-" tabs will close, and you will see a report in your terminal window."
+"This will launch several Chrome tabs and run the bots. When finished, the tabs "
+"will close, and you will see a report in your terminal window."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:59
 msgid ""
-"If Chrome doesn't close windows properly, make sure you closed all Chrome"
-" windows prior to launching the command."
+"If Chrome doesn't close windows properly, make sure you closed all Chrome "
+"windows prior to launching the command."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:63
@@ -316,9 +309,9 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:65
 msgid ""
-"If the server is running on a host/port other than the usual "
-"``http://localhost:8000``, you need to pass ``--server-url``. For "
-"example, if it's on Heroku, you would do like this::"
+"If the server is running on a host/port other than the usual ``http://"
+"localhost:8000``, you need to pass ``--server-url``. For example, if it's on "
+"Heroku, you would do like this::"
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:73
@@ -339,9 +332,9 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:87
 msgid ""
-"You can use a browser other than Chrome by setting ``BROWSER_COMMAND`` in"
-" ``settings.py``. Then, oTree will open the browser by doing something "
-"like ``subprocess.Popen(settings.BROWSER_COMMAND)``."
+"You can use a browser other than Chrome by setting ``BROWSER_COMMAND`` in "
+"``settings.py``. Then, oTree will open the browser by doing something like "
+"``subprocess.Popen(settings.BROWSER_COMMAND)``."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:94
@@ -351,8 +344,8 @@ msgstr ""
 #: ../../source/misc/bots_advanced.rst:96
 msgid ""
 "You can define an attribute ``cases`` on your PlayerBot class that lists "
-"different test cases. For example, in a public goods game, you may want "
-"to test 3 scenarios:"
+"different test cases. For example, in a public goods game, you may want to "
+"test 3 scenarios:"
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:100
@@ -369,10 +362,10 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:104
 msgid ""
-"We can call these 3 test cases \"basic\", \"min\", and \"max\", "
-"respectively, and put them in ``cases``. Then, oTree will execute the bot"
-" 3 times, once for each test case. Each time, a different value from "
-"``cases`` will be assigned to ``self.case`` in the bot."
+"We can call these 3 test cases \"basic\", \"min\", and \"max\", respectively, "
+"and put them in ``cases``. Then, oTree will execute the bot 3 times, once for "
+"each test case. Each time, a different value from ``cases`` will be assigned "
+"to ``self.case`` in the bot."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:109
@@ -381,15 +374,15 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:152
 msgid ""
-"If you use cases, it's better to use :ref:`cli-bots` since browser bots "
-"will only execute a single case."
+"If you use cases, it's better to use :ref:`cli-bots` since browser bots will "
+"only execute a single case."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:154
 msgid ""
 "``cases`` needs to be a list, but it can contain any data type, such as "
-"strings, integers, or even dictionaries. Here is a trust game bot that "
-"uses dictionaries as cases."
+"strings, integers, or even dictionaries. Here is a trust game bot that uses "
+"dictionaries as cases."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:196
@@ -398,14 +391,14 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:198
 msgid ""
-"When using ``SubmissionMustFail`` on forms with multiple fields, you can "
-"use ``error_fields`` for extra thoroughness."
+"When using ``SubmissionMustFail`` on forms with multiple fields, you can use "
+"``error_fields`` for extra thoroughness."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:201
 msgid ""
-"For example, let's say we a submit a valid ``age``, but an invalid "
-"``weight`` and ``height``:"
+"For example, let's say we a submit a valid ``age``, but an invalid ``weight`` "
+"and ``height``:"
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:215
@@ -417,8 +410,8 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:231
 msgid ""
-"This will verify that ``weight`` and ``height`` contained errors, but "
-"``age`` did not."
+"This will verify that ``weight`` and ``height`` contained errors, but ``age`` "
+"did not."
 msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:234
@@ -433,8 +426,8 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:240
 msgid ""
-"In bots, it is risky to assign ``player = self.player`` (or ``participant"
-" = self.participant``, etc), even though that kind of code is encouraged "
+"In bots, it is risky to assign ``player = self.player`` (or ``participant = "
+"self.participant``, etc), even though that kind of code is encouraged "
 "elsewhere."
 msgstr ""
 
@@ -444,8 +437,8 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:257
 msgid ""
-"It's safer to use ``self.player.money_left`` directly, because doing "
-"``self.player`` gets the most recent data from the database."
+"It's safer to use ``self.player.money_left`` directly, because doing ``self."
+"player`` gets the most recent data from the database."
 msgstr ""
 
 #: ../../source/misc/django.rst:4
@@ -466,263 +459,293 @@ msgstr ""
 
 #: ../../source/misc/rest_api.rst:4
 msgid "REST"
-msgstr ""
+msgstr "REST"
 
 #: ../../source/misc/rest_api.rst:8
 msgid "These features are new in oTree 3.0 (July 2020)."
-msgstr ""
+msgstr "这些特性是在oTree3.0(2020年7月)新引入的。"
 
 #: ../../source/misc/rest_api.rst:10
 msgid ""
 "oTree has a small REST API that enables external programs (such as other "
 "websites) to communicate with oTree, in particular:"
-msgstr ""
+msgstr "oTree有一个REST API使得外部程序（如其他网站）可与oTree通信，具体有："
 
 #: ../../source/misc/rest_api.rst:13
 msgid "Create sessions"
-msgstr ""
+msgstr "创建session"
 
 #: ../../source/misc/rest_api.rst:14
 msgid "Add participant vars"
-msgstr ""
+msgstr "添加participant vars"
 
 #: ../../source/misc/rest_api.rst:15
 msgid "Add session vars"
-msgstr ""
+msgstr "添加session vars"
 
 #: ../../source/misc/rest_api.rst:17
 msgid ""
-"A REST API is just a URL on your server that is designed to be accessed "
-"by programs, rather than being opened manually in a web browser."
+"A REST API is just a URL on your server that is designed to be accessed by "
+"programs, rather than being opened manually in a web browser."
 msgstr ""
+"REST API是一个在你的服务器上被设计用来被其他程序使用的URL，而不是用于在浏览器中"
+"手动打开的。"
 
 #: ../../source/misc/rest_api.rst:20
 msgid "Simply make a request to one of the below URLs."
-msgstr ""
+msgstr "使用REST API只需向下面这些URL发送请求。"
 
 #: ../../source/misc/rest_api.rst:23
 msgid "\"Create sessions\" REST endpoint"
-msgstr ""
+msgstr "\"Create sessions\" REST endpoint"
 
 #: ../../source/misc/rest_api.rst:25
 msgid "POST URL: ``/api/sessions/``"
-msgstr ""
+msgstr "POST URL: ``/api/sessions/``"
 
 #: ../../source/misc/rest_api.rst:27
 msgid ""
-"Here are some examples of how the \"create sessions\" endpoint can be "
-"used:"
-msgstr ""
+"Here are some examples of how the \"create sessions\" endpoint can be used:"
+msgstr "下面是一些\"create sessions\"路径应当如何使用的例子："
 
 #: ../../source/misc/rest_api.rst:29
 msgid "Other websites can create oTree sessions automatically"
-msgstr ""
+msgstr "其他网站可自动创建oTree会话"
 
 #: ../../source/misc/rest_api.rst:30
 msgid ""
-"You can make a fancier alternative to oTree's :ref:`edit_config` "
-"interface (e.g. with sliders and visual widgets)"
+"You can make a fancier alternative to oTree's :ref:`edit_config` interface (e."
+"g. with sliders and visual widgets)"
 msgstr ""
+"你可以自己创造一个更好看的oTree :ref:`edit_config` 界面（例如加上侧边栏和控件）"
 
 #: ../../source/misc/rest_api.rst:32
 msgid "Process that will create new oTree sessions on some fixed schedule"
-msgstr ""
+msgstr "在某些固定时刻创建oTree会话的进程"
 
 #: ../../source/misc/rest_api.rst:33
 msgid ""
-"Command line script to create customized sessions (if ``otree "
-"create_session`` is not sufficient)"
-msgstr ""
+"Command line script to create customized sessions (if ``otree create_session`` "
+"is not sufficient)"
+msgstr "创建自定义会话的命令行脚本（如果 ``otree create_session`` 不够用的话）"
 
 #: ../../source/misc/rest_api.rst:37 ../../source/misc/rest_api.rst:91
 #: ../../source/misc/rest_api.rst:135
 msgid "Example"
-msgstr ""
+msgstr "例子"
 
 #: ../../source/misc/rest_api.rst:54
 msgid "*\"Where should I put this code?\"*"
-msgstr ""
+msgstr "*\"这些代码应当放在哪里\"*"
 
 #: ../../source/misc/rest_api.rst:56
 msgid ""
-"This code does not need to go inside your oTree project folder. Since the"
-" point of the REST API is to allow external programs and servers to "
-"communicate with oTree across the internet, you should put this code in "
-"that other program. That also means you should use whatever language that"
-" other server uses. The examples on this page use Python, but it's simple"
-" to make HTTP requests using any programming language, or tools like "
-"webhooks or cURL."
+"This code does not need to go inside your oTree project folder. Since the "
+"point of the REST API is to allow external programs and servers to communicate "
+"with oTree across the internet, you should put this code in that other "
+"program. That also means you should use whatever language that other server "
+"uses. The examples on this page use Python, but it's simple to make HTTP "
+"requests using any programming language, or tools like webhooks or cURL."
 msgstr ""
+"这些代码无需包含在你的oTree项目文件夹中。由于REST API的关键就在于使得外部程序和"
+"服务器可以与oTree通过网络通信，你应当将这些代码放在其他程序中。这意味着你可以使"
+"用在其他服务器上适用的任何语言来编写程序。本页面上的例子使用的是Python，但是使"
+"用其他编程语言进行HTTP请求也很简单，如webhooks工具或者cURL。"
 
 #: ../../source/misc/rest_api.rst:66 ../../source/misc/rest_api.rst:106
 #: ../../source/misc/rest_api.rst:148
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/misc/rest_api.rst:68
 msgid "``session_config_name`` (required)"
-msgstr ""
+msgstr "``session_config_name`` (必要)"
 
 #: ../../source/misc/rest_api.rst:69
 msgid "``num_participants`` (required)"
-msgstr ""
+msgstr "``num_participants`` (必要)"
 
 #: ../../source/misc/rest_api.rst:70
 msgid ""
 "``modified_session_config_fields``: an optional dict of session config "
 "parameters, as discussed in :ref:`edit_config`."
 msgstr ""
+"``modified_session_config_fields``: 一个可选的包含session config参数的字典，详"
+"见 :ref:`edit_config`."
 
 #: ../../source/misc/rest_api.rst:72
 msgid "``room_name`` if you want to create the session in a room."
-msgstr ""
+msgstr "``room_name`` 如果你想在房间中创建session。"
 
 #: ../../source/misc/rest_api.rst:78
 msgid "\"Participant vars\" REST endpoint"
-msgstr ""
+msgstr "\"Participant vars\" REST endpoint"
 
 #: ../../source/misc/rest_api.rst:80
 msgid "POST URL: ``/api/participant_vars/``"
-msgstr ""
+msgstr "POST URL: ``/api/participant_vars/``"
 
 #: ../../source/misc/rest_api.rst:82
 msgid ""
-"This endpoint lets you set ``participant.vars``. The main purpose is to "
-"allow other sites/apps to pass information about a participant to oTree, "
-"via web services / webhooks. For example, if the user does a survey on "
-"Qualtrics that then links to oTree, you can pass their survey data (like "
-"gender, age, etc) into oTree as participant vars. (Qualtrics allows "
-"making POST requests through their `web service "
-"<https://www.qualtrics.com/support/survey-platform/survey-module/survey-"
-"flow/advanced-elements/web-service/>`__ feature.)"
+"This endpoint lets you set ``participant.vars``. The main purpose is to allow "
+"other sites/apps to pass information about a participant to oTree, via web "
+"services / webhooks. For example, if the user does a survey on Qualtrics that "
+"then links to oTree, you can pass their survey data (like gender, age, etc) "
+"into oTree as participant vars. (Qualtrics allows making POST requests through "
+"their `web service <https://www.qualtrics.com/support/survey-platform/survey-"
+"module/survey-flow/advanced-elements/web-service/>`__ feature.)"
 msgstr ""
+"这一路径让你能够设置 ``participant.vars``.主要的目的是使得其他网站/应用传递有关"
+"参与人的信息到oTree，通过web服务/webhooks。例如如果用户在Qualtrics上参与了连接"
+"到oTree的问卷调查，你就可以将问卷数据（如性别，年龄等等）存为participant vars。"
+"（Qualtrics允许通过他们的 `web service <https://www.qualtrics.com/support/"
+"survey-platform/survey-module/survey-flow/advanced-elements/web-service/>`__ 特"
+"性发送POST请求。）"
 
 #: ../../source/misc/rest_api.rst:108 ../../source/misc/rest_api.rst:150
 msgid "``room_name`` (required)"
-msgstr ""
+msgstr "``room_name`` (必要)"
 
 #: ../../source/misc/rest_api.rst:109
 msgid "``participant_label`` (required)"
-msgstr ""
+msgstr "``participant_label`` (必要)"
 
 #: ../../source/misc/rest_api.rst:110
 msgid ""
-"``vars`` (required): a dict of participant vars to add. Values can be any"
-" JSON-serializable data type, even nested dicts/lists."
+"``vars`` (required): a dict of participant vars to add. Values can be any JSON-"
+"serializable data type, even nested dicts/lists."
 msgstr ""
+"``vars`` (必要): 用于加入participant vars的字典， 其中值必须是可被JSON序列化的"
+"数据类型, 甚至可以是嵌套的字典/列表。"
 
 #: ../../source/misc/rest_api.rst:113
 msgid ""
-"This feature requires you to use a Room. Participants are uniquely "
-"identified with the combination of room name & participant label. So you "
-"will need to give participants a link with a ``participant_label``, "
-"although this does not need to come from a ``participant_label_file``."
+"This feature requires you to use a Room. Participants are uniquely identified "
+"with the combination of room name & participant label. So you will need to "
+"give participants a link with a ``participant_label``, although this does not "
+"need to come from a ``participant_label_file``."
 msgstr ""
+"此特性要求你必须使用房间。参与人被房间名与参与人标签的组合唯一地确定。故你需要"
+"给参与人一个带 ``participant_label`` 的链接，尽管它不必包含在 "
+"``participant_label_file`` 中。"
 
 #: ../../source/misc/rest_api.rst:121
 msgid "\"Session vars\" REST endpoint"
-msgstr ""
+msgstr "\"Session vars\" REST endpoint"
 
 #: ../../source/misc/rest_api.rst:125
 msgid "New in oTree 3.0.6"
-msgstr ""
+msgstr "oTree 3.0.6中新引入"
 
 #: ../../source/misc/rest_api.rst:127
 msgid "POST URL: ``/api/session_vars/``"
-msgstr ""
+msgstr "POST URL: ``/api/session_vars/``"
 
 #: ../../source/misc/rest_api.rst:129
 msgid ""
-"This endpoint lets you set ``session.vars``. One use is experimenter "
-"input. For example, if the experimenter does a lottery drawing in the "
-"middle of the experiment, they can input the result by running a script "
-"like the one below."
+"This endpoint lets you set ``session.vars``. One use is experimenter input. "
+"For example, if the experimenter does a lottery drawing in the middle of the "
+"experiment, they can input the result by running a script like the one below."
 msgstr ""
+"这一路径使你可以设置 ``session.vars``。一种用途是实验输入。举例来说，如果实验中"
+"有一次抽奖，就可以通过运行下面的脚本来输入结果。"
 
 #: ../../source/misc/rest_api.rst:151
 msgid "``vars`` (required): a dict of session vars to add."
-msgstr ""
+msgstr "``vars`` (必要): 用于添加的一个session vars的字典。"
 
 #: ../../source/misc/rest_api.rst:153
 msgid "This feature requires you to use a Room."
-msgstr ""
+msgstr "此特性要求你使用房间。"
 
 #: ../../source/misc/rest_api.rst:156
 msgid "Note"
-msgstr ""
+msgstr "注意"
 
 #: ../../source/misc/rest_api.rst:158
 msgid ""
-"If you are using this for experimenter input during an experiment, you "
-"may also want to use :ref:`error_message <error_message>`:"
+"If you are using this for experimenter input during an experiment, you may "
+"also want to use :ref:`error_message <error_message>`:"
 msgstr ""
+"如果你使用此方法在实验中进行输入，你可能也会想要使用 :ref:`error_message "
+"<error_message>`:"
 
 #: ../../source/misc/rest_api.rst:169
 msgid "Authentication"
-msgstr ""
+msgstr "认证"
 
 #: ../../source/misc/rest_api.rst:171
 msgid ""
-"If you have set your auth level to DEMO or STUDY, you must authenticate "
-"your REST API requests."
-msgstr ""
+"If you have set your auth level to DEMO or STUDY, you must authenticate your "
+"REST API requests."
+msgstr "如果你将你的验证等级从DEMO改为STUDY，你必须验证你的REST API请求。"
 
 #: ../../source/misc/rest_api.rst:174
 msgid ""
-"Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the "
-"server. Set it to some secret value."
+"Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the server. "
+"Set it to some secret value."
 msgstr ""
+"在服务器上创建一个环境变量（即 Heroku config var） ``OTREE_REST_KEY`` 。将其设"
+"置为某个秘密值。"
 
 #: ../../source/misc/rest_api.rst:177
 msgid ""
-"When you make a request, add that key as an HTTP header called ``otree-"
-"rest-key``. For example:"
-msgstr ""
+"When you make a request, add that key as an HTTP header called ``otree-rest-"
+"key``. For example:"
+msgstr "在发送请求时，在HTTP header里将其添加为 ``otree-rest-key``。例如："
 
 #: ../../source/misc/rest_api.rst:198
 msgid "Demo & testing"
-msgstr ""
+msgstr "演示 & 测试"
 
 #: ../../source/misc/rest_api.rst:200
 msgid ""
-"For convenience during development, you can generate fake vars to "
-"simulate data that, in a real session, will come from the REST API."
+"For convenience during development, you can generate fake vars to simulate "
+"data that, in a real session, will come from the REST API."
 msgstr ""
+"为在开发时更便利，你可以在一个真实的会话中生成假的vars来模拟从REST API获得的数"
+"据。"
 
 #: ../../source/misc/rest_api.rst:203
 msgid ""
-"In your session config, add the parameter ``mock_exogenous_data=True`` "
-"(We call it **exogenous** data because it originates outside oTree.)"
+"In your session config, add the parameter ``mock_exogenous_data=True`` (We "
+"call it **exogenous** data because it originates outside oTree.)"
 msgstr ""
+"在你的session config中，添加参数 ``mock_exogenous_data=True`` (称其为 "
+"**exogenous(外源性)** 数据是因为其是在oTree外部生成的。)"
 
 #: ../../source/misc/rest_api.rst:206
 msgid ""
-"Then define a function with the same name (``mock_exogenous_data``) in "
-"your project's shared_out.py (if you are using a text editor, you may "
-"need to create that file)."
+"Then define a function with the same name (``mock_exogenous_data``) in your "
+"project's shared_out.py (if you are using a text editor, you may need to "
+"create that file)."
 msgstr ""
+"然后在你的项目的shared_out.py中（如果你使用的是文本编辑器，你可能需要创建此文"
+"件）定义一个同名函数(``mock_exogenous_data``)。"
 
 #: ../../source/misc/rest_api.rst:210
 msgid "Here's an example:"
-msgstr ""
+msgstr "下面是一个例子："
 
 #: ../../source/misc/rest_api.rst:219
 msgid "You can also set participant labels here."
-msgstr ""
+msgstr "你也可以在此处设置参与人标签。"
 
 #: ../../source/misc/rest_api.rst:221
 msgid ""
-"When you run a session in demo mode, or using bots, "
-"``mock_exogenous_data()`` will automatically be run after "
-"``creating_session``. However, it will not be run if the session is "
-"created in a room."
+"When you run a session in demo mode, or using bots, ``mock_exogenous_data()`` "
+"will automatically be run after ``creating_session``. However, it will not be "
+"run if the session is created in a room."
 msgstr ""
+"当你的会话运行在demo模式下，或者使用bot， ``mock_exogenous_data()`` 会在 "
+"``creating_session`` 之后自动运行。然而，如果是在房间里创建的会话则不会运行。"
 
 #: ../../source/misc/rest_api.rst:225
 msgid ""
-"If you have multiple session configs that require different exogenous "
-"data, you can branch like this:"
+"If you have multiple session configs that require different exogenous data, "
+"you can branch like this:"
 msgstr ""
+"如果你有多个session config需要不同的外源性数据，你可以像下面这样区分它们："
 
 #: ../../source/misc/tips_and_tricks.rst:2
 msgid "Tips and tricks"
@@ -734,11 +757,11 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:7
 msgid ""
-"As much as possible, it's good to avoid copy-pasting the same code in "
-"multiple places. Although it sometimes takes a bit of thinking to figure "
-"out how to avoid copy-pasting code, you will see that having your code in"
-" only one place usually saves you a lot of effort later when you need to "
-"change the design of your code or fix bugs."
+"As much as possible, it's good to avoid copy-pasting the same code in multiple "
+"places. Although it sometimes takes a bit of thinking to figure out how to "
+"avoid copy-pasting code, you will see that having your code in only one place "
+"usually saves you a lot of effort later when you need to change the design of "
+"your code or fix bugs."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:14
@@ -752,17 +775,17 @@ msgstr ""
 #: ../../source/misc/tips_and_tricks.rst:19
 msgid ""
 "If possible, you should avoid copying an app's folder to make a slightly "
-"different version, because then you have duplicated code that is harder "
-"to maintain."
+"different version, because then you have duplicated code that is harder to "
+"maintain."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:22
 msgid ""
 "If you need multiple rounds, set ``num_rounds``. If you need slightly "
 "different versions (e.g. different treatments), then you should use the "
-"techniques described in :ref:`treatments`, such as making 2 session "
-"configs that have a different ``'treatment'`` parameter, and then "
-"checking for ``self.session.config['treatment']`` in your app's code."
+"techniques described in :ref:`treatments`, such as making 2 session configs "
+"that have a different ``'treatment'`` parameter, and then checking for ``self."
+"session.config['treatment']`` in your app's code."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:33
@@ -779,18 +802,17 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:86
 msgid ""
-"Are the fields all displayed on separate pages? If so, consider "
-"converting this to a 10-round game with just one field. See the `real "
-"effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__ "
-"sample game for an example of how to just have 1 page that gets looped "
-"over many rounds, varying the question that gets displayed with each "
-"round."
+"Are the fields all displayed on separate pages? If so, consider converting "
+"this to a 10-round game with just one field. See the `real effort <https://"
+"github.com/oTree-org/oTree/tree/master/real_effort>`__ sample game for an "
+"example of how to just have 1 page that gets looped over many rounds, varying "
+"the question that gets displayed with each round."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:92
 msgid ""
-"If that's not possible, then you can reduce the amount of repeated code "
-"by defining a method that returns a field:"
+"If that's not possible, then you can reduce the amount of repeated code by "
+"defining a method that returns a field:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:114
@@ -799,9 +821,8 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:116
 msgid ""
-"If you are copy-pasting the same JavaScript or CSS to multiple templates,"
-" you should instead put it in one of the following blocks in a base "
-"template:"
+"If you are copy-pasting the same JavaScript or CSS to multiple templates, you "
+"should instead put it in one of the following blocks in a base template:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:119
@@ -830,18 +851,17 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:129
 msgid ""
-"If you have many many pages that are almost the same, consider just "
-"having 1 page and looping it for multiple rounds. One sign that your code"
-" can be simplified is if it looks something like this:"
+"If you have many many pages that are almost the same, consider just having 1 "
+"page and looping it for multiple rounds. One sign that your code can be "
+"simplified is if it looks something like this:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:148
 msgid ""
-"See the `quiz <https://github.com/oTree-org/oTree/tree/master/quiz>`__ or"
-" `real effort <https://github.com/oTree-"
-"org/oTree/tree/master/real_effort>`__ sample games for examples of how to"
-" just have 1 page that gets looped over many rounds, varying the question"
-" that gets displayed with each round."
+"See the `quiz <https://github.com/oTree-org/oTree/tree/master/quiz>`__ or "
+"`real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__ "
+"sample games for examples of how to just have 1 page that gets looped over "
+"many rounds, varying the question that gets displayed with each round."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:156
@@ -850,9 +870,9 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:158
 msgid ""
-"You should try to move as much code as possible into your "
-"Player/Group/Subsession. In Django, it's generally recommended to have "
-"\"thick models\" and \"thin pages\"."
+"You should try to move as much code as possible into your Player/Group/"
+"Subsession. In Django, it's generally recommended to have \"thick models\" and "
+"\"thin pages\"."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:164
@@ -862,14 +882,14 @@ msgstr ""
 #: ../../source/misc/tips_and_tricks.rst:166
 msgid ""
 "For example, let's say that your pages all repeat some of the code. For "
-"example, you use ``is_displayed`` to skip the rest of the app once a "
-"certain participant var is set:"
+"example, you use ``is_displayed`` to skip the rest of the app once a certain "
+"participant var is set:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:193
 msgid ""
-"You can eliminate this repetition by moving the ``is_displayed`` code "
-"into the Player model:"
+"You can eliminate this repetition by moving the ``is_displayed`` code into the "
+"Player model:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:203
@@ -883,8 +903,8 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:231
 msgid ""
-"Let's say you've got the following code (note that ``Page3`` passes extra"
-" variables ``d`` and ``e``):"
+"Let's say you've got the following code (note that ``Page3`` passes extra "
+"variables ``d`` and ``e``):"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:249
@@ -897,16 +917,16 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:277
 msgid ""
-"You should avoid redundant use of ``get_players()``, "
-"``get_player_by_id()``, ``in_*_rounds()``, ``get_others_in_group()``, or "
-"any other methods that return a player or list of players. These methods "
-"all require a database query, which can be slow."
+"You should avoid redundant use of ``get_players()``, ``get_player_by_id()``, "
+"``in_*_rounds()``, ``get_others_in_group()``, or any other methods that return "
+"a player or list of players. These methods all require a database query, which "
+"can be slow."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:282
 msgid ""
-"For example, this code has a redundant query because it asks the database"
-" 5 times for the exact same player:"
+"For example, this code has a redundant query because it asks the database 5 "
+"times for the exact same player:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:298
@@ -923,8 +943,8 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:319
 msgid ""
-"Many ``StringFields`` should be broken down into ``BooleanFields``, "
-"especially if they only have 2 distinct values."
+"Many ``StringFields`` should be broken down into ``BooleanFields``, especially "
+"if they only have 2 distinct values."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:322
@@ -969,9 +989,9 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:372
 msgid ""
-"If you have many repetitive :ref:`FIELD_error_message "
-"<FOO_error_message>` methods, you can replace them with a single "
-":ref:`error_message <error_message>` method. For example:"
+"If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` "
+"methods, you can replace them with a single :ref:`error_message "
+"<error_message>` method. For example:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:394
@@ -1014,8 +1034,8 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:12
 msgid ""
-"Data export page no longer outputs XLSX files. Instead it outputs CSV "
-"files formatted for Excel"
+"Data export page no longer outputs XLSX files. Instead it outputs CSV files "
+"formatted for Excel"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:13
@@ -1072,36 +1092,34 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:48
 msgid ""
-"If you define a method called ``start`` on your Player model, you can "
-"specify actions to be taken when the player starts the round. For "
-"example:"
+"If you define a method called ``start`` on your Player model, you can specify "
+"actions to be taken when the player starts the round. For example:"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:60
 msgid ""
-"Here you can setup/initialize the player by passing data from previous "
-"rounds or apps. The differences between ``Player.start`` and "
-"``Subsession.creating_session`` are:"
+"Here you can setup/initialize the player by passing data from previous rounds "
+"or apps. The differences between ``Player.start`` and ``Subsession."
+"creating_session`` are:"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:63
 msgid ""
-"``start`` is run when the player reaches the first page of the round, "
-"whereas ``creating_session`` is run before the whole session even starts"
+"``start`` is run when the player reaches the first page of the round, whereas "
+"``creating_session`` is run before the whole session even starts"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:65
 msgid ""
-"``start`` is run individually for each player, whereas "
-"``creating_session`` is run once for the whole subsession (since it's a "
-"Subsession method)."
+"``start`` is run individually for each player, whereas ``creating_session`` is "
+"run once for the whole subsession (since it's a Subsession method)."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:68
 msgid ""
 "``start()`` is skipped if the round is being skipped with "
-"``app_after_this_page``. Otherwise, it is always run, even if the player "
-"skips all the pages in that round."
+"``app_after_this_page``. Otherwise, it is always run, even if the player skips "
+"all the pages in that round."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:73
@@ -1136,20 +1154,19 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:82
 msgid ""
-"Instead of ``runprodserver`` you can now use ``prodserver`` (that will be"
-" the preferred name going forward)."
+"Instead of ``runprodserver`` you can now use ``prodserver`` (that will be the "
+"preferred name going forward)."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:83
 msgid ""
-"\"Page time\" data export now has more details such as whether it is a "
-"wait page."
+"\"Page time\" data export now has more details such as whether it is a wait "
+"page."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:84
 msgid ""
-"``devserver`` and ``zipserver`` now must use ``db.sqlite3`` as the "
-"database."
+"``devserver`` and ``zipserver`` now must use ``db.sqlite3`` as the database."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:88
@@ -1162,8 +1179,8 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:90
 msgid ""
-"Deprecated non-oTree widgets and model fields. See `here "
-"<https://groups.google.com/forum/#!topic/otree/vsvsQ7njjY8>`__."
+"Deprecated non-oTree widgets and model fields. See `here <https://groups."
+"google.com/forum/#!topic/otree/vsvsQ7njjY8>`__."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:93
@@ -1199,14 +1216,15 @@ msgid "oTree now uses Django 2.2."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:105
-msgid "Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩."
+msgid ""
+"Chinese/Japanese/Korean currencies are displayed as 元/円/원 instead of ¥/₩."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:106
 msgid ""
-"On Windows, ``prodserver`` just launches 1 worker process. If you want "
-"more processes, you should use a process manager. (This is due to a "
-"limitation of the ASGI server)"
+"On Windows, ``prodserver`` just launches 1 worker process. If you want more "
+"processes, you should use a process manager. (This is due to a limitation of "
+"the ASGI server)"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:108
@@ -1227,20 +1245,19 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:116
 msgid ""
-"MTurk: in sandbox mode, don't grant qualifications or check qualification"
-" requirements"
+"MTurk: in sandbox mode, don't grant qualifications or check qualification "
+"requirements"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:118
 msgid ""
-"MTurk: before paying participants, check if there is adequate account "
-"balance."
+"MTurk: before paying participants, check if there is adequate account balance."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:120
 msgid ""
-"\"next button\" is disabled after clicking, to prevent congesting the "
-"server with duplicate page loads."
+"\"next button\" is disabled after clicking, to prevent congesting the server "
+"with duplicate page loads."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:122
@@ -1249,8 +1266,8 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:123
 msgid ""
-"Form validation methods should go on the model, not the page. See "
-":ref:`dynamic_validation`"
+"Form validation methods should go on the model, not the page. See :ref:"
+"`dynamic_validation`"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:125
@@ -1268,12 +1285,12 @@ msgstr ""
 #: ../../source/misc/version_history.rst:133
 #, python-format
 msgid ""
-"oTree now raises an error if you use an undefined variable in your "
-"template. This will help catch typos like ``{{ Player.payoff }}`` or ``{%"
-" if player.id_in_gruop %}``. This means that apps that previously worked "
-"may now get a template error (previously, it failed silently). If you "
-"can't remove the offending variable, you can apply the ``|default`` "
-"filter, like: ``{{ my_undefined_variable|default:None }}``"
+"oTree now raises an error if you use an undefined variable in your template. "
+"This will help catch typos like ``{{ Player.payoff }}`` or ``{% if player."
+"id_in_gruop %}``. This means that apps that previously worked may now get a "
+"template error (previously, it failed silently). If you can't remove the "
+"offending variable, you can apply the ``|default`` filter, like: "
+"``{{ my_undefined_variable|default:None }}``"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:140
@@ -1282,8 +1299,8 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:141
 msgid ""
-"CSV/Excel data export is done asynchronously, which will fix timeout "
-"issues for large files on Heroku."
+"CSV/Excel data export is done asynchronously, which will fix timeout issues "
+"for large files on Heroku."
 msgstr ""
 
 #: ../../source/misc/version_history.rst:143
@@ -1324,16 +1341,11 @@ msgstr ""
 
 #: ../../source/misc/version_history.rst:171
 msgid ""
-"To change this to the new format, you move ``offer_max`` into the Player "
-"model:"
+"To change this to the new format, you move ``offer_max`` into the Player model:"
 msgstr ""
 
 #: ../../source/misc/version_history.rst:182
 msgid ""
-"Note that we change ``return self.player.endowment`` to just "
-"``self.endowment``, because ``self`` *is* the player."
+"Note that we change ``return self.player.endowment`` to just ``self."
+"endowment``, because ``self`` *is* the player."
 msgstr ""
-
-#~ msgid "Where do I put this code?"
-#~ msgstr ""
-
