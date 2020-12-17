@@ -158,10 +158,17 @@ For example, this code enables 1:1 chat with every other player in the group.
 
 .. code-block:: python
 
+    class Subsession(BaseSubsession):
+
+        def creating_session(self):
+            for p in self.get_players():
+                p.chat_nickname = 'Player {}'.format(p.id_in_group)
+
+    # ...
+
     class Player(BasePlayer):
 
-        def chat_nickname(self):
-            return 'Player {}'.format(self.id_in_group)
+        chat_nickname = models.StringField()
 
         def chat_configs(self):
             configs = []
@@ -174,7 +181,7 @@ For example, this code enables 1:1 chat with every other player in the group.
                     # make a name for the channel that is the same for all
                     # channel members. That's why we order it (lower, higher)
                     'channel': '{}-{}-{}'.format(self.group.id, lower_id, higher_id),
-                    'label': 'Chat with {}'.format(other.chat_nickname())
+                    'label': 'Chat with {}'.format(other.chat_nickname)
                 })
             return configs
 

@@ -33,13 +33,71 @@ get_player_by_id(n)
 
 Returns the player in the group with the given ``id_in_group``.
 
-
 Getting other players
 ---------------------
 
 Player objects have methods ``get_others_in_group()`` and
 ``get_others_in_subsession()`` that return a list of the *other* players
 in the group and subsession.
+
+.. _roles:
+
+Roles
+-----
+
+.. note::
+
+    New in oTree 3.1 (October 2020)
+
+If each group has multiple roles, such as buyer/seller, principal/agent, etc.,
+you can define them in Constants. Make their names start with ``role_``:
+
+.. code-block:: python
+
+    class Constants(BaseConstants):
+        ...
+
+        role_principal = 'Principal'
+        role_agent = 'Agent
+
+oTree will then automatically assign each ``role`` to a different player
+(sequentially according to ``id_in_group``).
+You can use this to show each role different content, e.g.:
+
+.. code-block:: python
+
+    class AgentPage(Page):
+        def is_displayed(self):
+            return self.player.role == Constants.role_agent
+
+In a template:
+
+.. code-block:: html+djang0
+
+    You are the {{ player.role }}.
+
+You can also use ``group.get_player_by_role()``, which is similar to ``get_player_by_id()``:
+
+.. code-block:: python
+
+    class Group(BaseGroup):
+        def set_payoffs(self):
+            principal = self.get_player_by_role(Constants.role_principal)
+            agent = self.get_player_by_role(Constants.role_agent)
+            # ...
+
+If you want to switch players' roles,
+you should rearrange the groups, using ``set_group_matrix``, ``group_randomly``, etc.
+
+.. note::
+
+    Before this feature, it was recommended to make a method called ``role()``,
+    and therefore it required parentheses: ``player.role()``.
+    The new syntax has no parentheses: ``player.role``.
+    The new format has the advantages of (1) being displayed in more places such as the data export,
+    and (2) helps you write more reliable code.
+    If you want to switch your code to the new format, simply replace your ``role()`` method by the ``role_*`` Constants,
+    and remove the parentheses from any ``.role()`` call.
 
 
 .. _shuffling:

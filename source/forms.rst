@@ -266,14 +266,19 @@ instead of ``{% formfields %}`` you can use ``{% formfield %}``:
 
 .. code-block:: html+djang0
 
-    {% formfield player.contribution %}
+    {% formfield 'contribution' %}
 
 You can also put the ``label`` in directly in the template:
 
 .. code-block:: html+djang0
 
-    {% formfield player.contribution label="How much do you want to contribute?" %}
+    {% formfield 'contribution' label="How much do you want to contribute?" %}
 
+.. note::
+
+    The format ``{% formfield 'xyz' %}`` is new as of oTree 3.1 (October 2020).
+    If you are using an older version of oTree, you should do ``{% formfield player.xyz %}``.
+    This format is still supported in new versions.
 
 
 .. _django-forms:

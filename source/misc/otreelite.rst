@@ -41,7 +41,11 @@ that is clearly distinct from that of the mainline releases.)
 Compatibility
 -------------
 
-This new implementation is generally compatible with existing oTree apps. However, here are some differences:
+This alternative implementation is generally compatible with existing oTree apps.
+However, you will probably see small things that changed, especially in how forms and templates are rendered.
+This is somewhat inevitable as oTree has undergone a "brain transplant".
+
+Here are the most important differences:
 
 Templates
 ~~~~~~~~~
@@ -56,6 +60,11 @@ which at first glance looks the same as Django templates, but there are some dif
     e.g. ``<script>alert('XSS');</script>`` becomes ``&lt;script&gt;alert(&apos;XSS&apos;);&lt;/script&gt;``,
     which you need to use ``mark_safe`` or the ``|safe`` filter to undo.
     Ibis does not do this. If you want to escape special characters, you should use the triple braces ``{{{ }}}``.
+
+.. note::
+
+    If you are using PyCharm with Django highlighting, it will flag some Ibis syntax as a syntax error,
+    so you may want to turn off Django highlighting.
 
 Forms
 ~~~~~
@@ -89,15 +98,17 @@ In my experience the main things that differed are:
 -   ``data-*`` attributes are renamed to ``data-bs-*``
 -   ``form-group`` no longer exists
 
-oTree features
-~~~~~~~~~~~~~~
+Known issues
+~~~~~~~~~~~~
 
 The following oTree features are not supported yet:
+
 -   ``ExtraModel``
--   and translation with {% blocktrans %}.
+-   translation with {% blocktrans %}.
 
 ``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
 it will not work; see below.
+
 
 Django (for advanced use cases)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,3 +132,4 @@ Here is a quick guide to how each component has been replaced.
 -   **Django forms** are replaced with `wtforms <https://wtforms.readthedocs.io/>`__, which are quite similar.
 -   **oTree shell** and **Management commands**: you can run a script (or launch a Jupyter notebook etc)
     by putting this at the top: ``from otree.main import setup; setup()``
+
