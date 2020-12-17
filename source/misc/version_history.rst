@@ -19,6 +19,12 @@ Version 3.2
 -   Should use less memory and have fewer memory spikes.
 -   Enhancements to SessionData and SessionMonitor.
 
+Version 3.1
+===========
+
+-   New way to define :ref:`roles`
+-   You can pass a string to ``formfield``, for example ``{% formfield 'contribution' %}``.
+
 Version 3.0
 ===========
 

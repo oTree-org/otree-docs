@@ -181,13 +181,13 @@ If there is an error in your code, the command line will display a "traceback"
         execute_from_command_line(sys.argv, script_file=__file__)
       File "c:\otree\core\otree\management\cli.py", line 170, in execute_from_command_line
         utility.execute()
-      File "C:\oTree\venv\lib\site-packages\django\core\management\__init__.py", line 328, in execute
-        django.setup()
-      File "C:\oTree\venv\lib\site-packages\django\__init__.py", line 18, in setup
+      File "C:\oTree\venv\lib\site-packages\pkg\core\management\__init__.py", line 328, in execute
+        pkg.setup()
+      File "C:\oTree\venv\lib\site-packages\pkg\__init__.py", line 18, in setup
         apps.populate(settings.INSTALLED_APPS)
-      File "C:\oTree\venv\lib\site-packages\django\apps\registry.py", line 108, in populate
+      File "C:\oTree\venv\lib\site-packages\pkg\apps\registry.py", line 108, in populate
         app_config.import_models(all_models)
-      File "C:\oTree\venv\lib\site-packages\django\apps\config.py", line 198, in import_models
+      File "C:\oTree\venv\lib\site-packages\pkg\apps\config.py", line 198, in import_models
         self.models_module = import_module(models_module_name)
       File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
         __import__(name)
@@ -211,25 +211,25 @@ For example, in the below traceback, the last line refers to ``/site-packages/ea
 which is not part of my app, but rather an external package::
 
     Traceback:
-    File "/usr/local/lib/python3.5/site-packages/django/core/handlers/base.py" in get_response
+    File "/usr/local/lib/python3.5/site-packages/pkg/core/handlers/base.py" in get_response
       132.                     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/pages/generic/base.py" in view
+    File "/usr/local/lib/python3.5/site-packages/pkg/pages/generic/base.py" in view
       71.             return self.dispatch(request, *args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in _wrapper
+    File "/usr/local/lib/python3.5/site-packages/pkg/utils/decorators.py" in _wrapper
       34.             return bound_func(*args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/pages/decorators/cache.py" in _wrapped_view_func
+    File "/usr/local/lib/python3.5/site-packages/pkg/pages/decorators/cache.py" in _wrapped_view_func
       57.         response = view_func(request, *args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in bound_func
+    File "/usr/local/lib/python3.5/site-packages/pkg/utils/decorators.py" in bound_func
       30.                 return func.__get__(self, type(self))(*args2, **kwargs2)
-    File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in _wrapper
+    File "/usr/local/lib/python3.5/site-packages/pkg/utils/decorators.py" in _wrapper
       34.             return bound_func(*args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/pages/decorators/cache.py" in _cache_controlled
+    File "/usr/local/lib/python3.5/site-packages/pkg/pages/decorators/cache.py" in _cache_controlled
       43.             response = viewfunc(request, *args, **kw)
-    File "/usr/local/lib/python3.5/site-packages/django/utils/decorators.py" in bound_func
+    File "/usr/local/lib/python3.5/site-packages/pkg/utils/decorators.py" in bound_func
       30.                 return func.__get__(self, type(self))(*args2, **kwargs2)
     File "/usr/local/lib/python3.5/site-packages/otree/pages/abstract.py" in dispatch
       315.                 request, *args, **kwargs)
-    File "/usr/local/lib/python3.5/site-packages/django/pages/generic/base.py" in dispatch
+    File "/usr/local/lib/python3.5/site-packages/pkg/pages/generic/base.py" in dispatch
       89.         return handler(request, *args, **kwargs)
     File "/usr/local/lib/python3.5/site-packages/otree/pages/abstract.py" in get
       814.         return super(FormPageMixin, self).get(request, *args, **kwargs)

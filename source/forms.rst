@@ -293,7 +293,7 @@ with Bootstrap styling.
 However, if you want more control over the appearance and layout,
 you can use Django's manual field rendering. Instead of ``{% formfield player.my_field %}``,
 do ``{{ form.my_field }}``, to get just the input element.
-Just remember to also include ``{{ form.my_field.errors }}``.
+Just remember to also include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``.
 
 More info `here <https://docs.djangoproject.com/en/2.2/topics/forms/#rendering-fields-manually>`__.
 
