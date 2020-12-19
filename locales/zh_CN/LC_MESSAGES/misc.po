@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-03 00:26+0800\n"
-"PO-Revision-Date: 2020-12-15 20:22+0800\n"
+"PO-Revision-Date: 2020-12-19 18:15+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -455,7 +455,7 @@ msgstr ""
 
 #: ../../source/misc/intro.rst:2
 msgid "Miscellaneous"
-msgstr ""
+msgstr "杂项"
 
 #: ../../source/misc/rest_api.rst:4
 msgid "REST"
@@ -749,11 +749,11 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:2
 msgid "Tips and tricks"
-msgstr ""
+msgstr "提示与技巧"
 
 #: ../../source/misc/tips_and_tricks.rst:5
 msgid "Preventing code duplication"
-msgstr ""
+msgstr "避免代码重复"
 
 #: ../../source/misc/tips_and_tricks.rst:7
 msgid ""
@@ -763,14 +763,17 @@ msgid ""
 "usually saves you a lot of effort later when you need to change the design of "
 "your code or fix bugs."
 msgstr ""
+"尽可能避免复制粘贴同一段代码到多个地方是很好的习惯。尽管有时需要一些思考才能明"
+"白如何避免复制粘贴代码，但是将代码只重复一次通常会在你需要更改设计或者修复错误"
+"时为你节省很多时间和精力。"
 
 #: ../../source/misc/tips_and_tricks.rst:14
 msgid "Below are some techniques to achieve code reuse."
-msgstr ""
+msgstr "下面是一些实现代码复用的技巧。"
 
 #: ../../source/misc/tips_and_tricks.rst:17
 msgid "Don't make multiple copies of your app"
-msgstr ""
+msgstr "不要将你的应用复制多份"
 
 #: ../../source/misc/tips_and_tricks.rst:19
 msgid ""
@@ -778,6 +781,8 @@ msgid ""
 "different version, because then you have duplicated code that is harder to "
 "maintain."
 msgstr ""
+"你应当尽可能避免复制你的应用文件夹来创建一个有细微差别的版本，因为此时重复代码"
+"很难维护。"
 
 #: ../../source/misc/tips_and_tricks.rst:22
 msgid ""
@@ -787,18 +792,22 @@ msgid ""
 "that have a different ``'treatment'`` parameter, and then checking for ``self."
 "session.config['treatment']`` in your app's code."
 msgstr ""
+"如果你需要多轮游戏，可通过设置 ``num_rounds`` 来实现。如果你需要略微不同的版本"
+"（例如不同的实验组），那么你应当使用 :ref:`treatments` 中所描述的技巧，比如创建"
+"两个session config在其中设置不同的 ``'treatment'`` 参数，并在你的代码中检查 "
+"``self.session.config['treatment']`` 来进行区分。"
 
 #: ../../source/misc/tips_and_tricks.rst:33
 msgid "How to make many fields"
-msgstr ""
+msgstr "如何创建多个字段"
 
 #: ../../source/misc/tips_and_tricks.rst:35
 msgid "Let's say your app has many fields that are almost the same, such as:"
-msgstr ""
+msgstr "假定你的应用中有很多几乎完全一样的字段，例如："
 
 #: ../../source/misc/tips_and_tricks.rst:84
 msgid "This is quite complex; you should look for a way to simplify."
-msgstr ""
+msgstr "这太复杂了，你应当找到一个能将其简化的方法。"
 
 #: ../../source/misc/tips_and_tricks.rst:86
 msgid ""
@@ -808,46 +817,53 @@ msgid ""
 "example of how to just have 1 page that gets looped over many rounds, varying "
 "the question that gets displayed with each round."
 msgstr ""
+"这些字段都显示在单独的页面上吗？如果是的，考虑将其转换为一个仅有一个字段的10轮"
+"游戏。查看 `real effort <https://github.com/oTree-org/oTree/tree/master/"
+"real_effort>`__ 示例游戏，这个例子说明了仅包含1页循环多轮的游戏，如何在每一轮显"
+"示不同的问题。"
 
 #: ../../source/misc/tips_and_tricks.rst:92
 msgid ""
 "If that's not possible, then you can reduce the amount of repeated code by "
 "defining a method that returns a field:"
 msgstr ""
+"如果上述均不可行，你可以通过定义一个返回字段的函数的方式减少重复代码的数量："
 
 #: ../../source/misc/tips_and_tricks.rst:114
 msgid "Templates: prevent code duplication by using a base template"
-msgstr ""
+msgstr "模板：通过使用基模板避免代码重复"
 
 #: ../../source/misc/tips_and_tricks.rst:116
 msgid ""
 "If you are copy-pasting the same JavaScript or CSS to multiple templates, you "
 "should instead put it in one of the following blocks in a base template:"
 msgstr ""
+"如果你将相同的JavaScript与CSS复制到不同模板中，你应当将其放入下面的基模板的某一"
+"block中："
 
 #: ../../source/misc/tips_and_tricks.rst:119
 msgid "``{% block global_styles %}``"
-msgstr ""
+msgstr "``{% block global_styles %}``"
 
 #: ../../source/misc/tips_and_tricks.rst:120
 msgid "``{% block global_scripts %}``"
-msgstr ""
+msgstr "``{% block global_scripts %}``"
 
 #: ../../source/misc/tips_and_tricks.rst:121
 msgid "``{% block app_styles %}``"
-msgstr ""
+msgstr "``{% block app_styles %}``"
 
 #: ../../source/misc/tips_and_tricks.rst:122
 msgid "``{% block app_scripts %}``"
-msgstr ""
+msgstr "``{% block app_scripts %}``"
 
 #: ../../source/misc/tips_and_tricks.rst:124
 msgid "Read more in :ref:`base-template`."
-msgstr ""
+msgstr "更多可参考 :ref:`base-template`."
 
 #: ../../source/misc/tips_and_tricks.rst:127
 msgid "Prevent duplicate pages by using multiple rounds"
-msgstr ""
+msgstr "通过使用多轮游戏避免代码重复"
 
 #: ../../source/misc/tips_and_tricks.rst:129
 msgid ""
@@ -855,6 +871,8 @@ msgid ""
 "page and looping it for multiple rounds. One sign that your code can be "
 "simplified is if it looks something like this:"
 msgstr ""
+"如果你有很多几乎完全一样的页面，考虑仅保留一个页面并将游戏重复多轮。你的代码可"
+"被简化的一个标志是它看上去像下面这样："
 
 #: ../../source/misc/tips_and_tricks.rst:148
 msgid ""
@@ -863,10 +881,13 @@ msgid ""
 "sample games for examples of how to just have 1 page that gets looped over "
 "many rounds, varying the question that gets displayed with each round."
 msgstr ""
+"参考 `quiz <https://github.com/oTree-org/oTree/tree/master/quiz>`__ 或 `real "
+"effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__ 示例游"
+"戏，这个例子说明了仅包含1页循环多轮的游戏，如何在每一轮显示不同的问题。"
 
 #: ../../source/misc/tips_and_tricks.rst:156
 msgid "pages.py: prevent code duplication by moving code to your models"
-msgstr ""
+msgstr "pages.py: 通过将你的代码移至模型中减少代码重复"
 
 #: ../../source/misc/tips_and_tricks.rst:158
 msgid ""
@@ -874,10 +895,12 @@ msgid ""
 "Subsession. In Django, it's generally recommended to have \"thick models\" and "
 "\"thin pages\"."
 msgstr ""
+"你应当试着将尽可能多的代码移入Player/Group/Subsession中。在Django中，一般推荐使"
+"用“厚模型”和“瘦页面”。"
 
 #: ../../source/misc/tips_and_tricks.rst:164
 msgid "Example 1: is_displayed"
-msgstr ""
+msgstr "例子1：is_displayed"
 
 #: ../../source/misc/tips_and_tricks.rst:166
 msgid ""
@@ -885,35 +908,37 @@ msgid ""
 "example, you use ``is_displayed`` to skip the rest of the app once a certain "
 "participant var is set:"
 msgstr ""
+"例如，假定你的所有页面在重复某些代码。假定这些代码是使用 ``is_displayed`` 来跳"
+"过应用的剩下部分，当一个特定的participant var被设置时："
 
 #: ../../source/misc/tips_and_tricks.rst:193
 msgid ""
 "You can eliminate this repetition by moving the ``is_displayed`` code into the "
 "Player model:"
-msgstr ""
+msgstr "你可以通过将 ``is_displayed`` 代码放入Player模型中来消除这一重复："
 
 #: ../../source/misc/tips_and_tricks.rst:203
 #: ../../source/misc/tips_and_tricks.rst:257
 msgid "Then in your pages:"
-msgstr ""
+msgstr "那么你的页面代码就是："
 
 #: ../../source/misc/tips_and_tricks.rst:229
 msgid "Example 2: vars_for_template"
-msgstr ""
+msgstr "例子2：vars_for_template"
 
 #: ../../source/misc/tips_and_tricks.rst:231
 msgid ""
 "Let's say you've got the following code (note that ``Page3`` passes extra "
 "variables ``d`` and ``e``):"
-msgstr ""
+msgstr "假定你的代码如下（注意 ``Page3`` 传递了额外的 ``d`` 和 ``e`` 参数）："
 
 #: ../../source/misc/tips_and_tricks.rst:249
 msgid "You can simplify this by making a method on your Player model:"
-msgstr ""
+msgstr "你可以通过在Player模型中创建一个函数来进行简化："
 
 #: ../../source/misc/tips_and_tricks.rst:275
 msgid "Improving code performance"
-msgstr ""
+msgstr "提高代码性能"
 
 #: ../../source/misc/tips_and_tricks.rst:277
 msgid ""
@@ -922,70 +947,75 @@ msgid ""
 "a player or list of players. These methods all require a database query, which "
 "can be slow."
 msgstr ""
+"你应当避免不必要的 ``get_players()``, ``get_player_by_id()``, "
+"``in_*_rounds()``, ``get_others_in_group()`` 或者任何返回一个玩家或者玩家列表的"
+"函数的调用。这些方法都需要数据库查询，而数据库查询是很慢的。"
 
 #: ../../source/misc/tips_and_tricks.rst:282
 msgid ""
 "For example, this code has a redundant query because it asks the database 5 "
 "times for the exact same player:"
-msgstr ""
+msgstr "例如，下面的代码有冗余的查询，对同一玩家进行了5次数据库查询："
 
 #: ../../source/misc/tips_and_tricks.rst:298
 msgid "It should be simplified to this:"
-msgstr ""
+msgstr "这应当被简化为："
 
 #: ../../source/misc/tips_and_tricks.rst:314
 msgid "As an added benefit, this usually makes the code more readable."
-msgstr ""
+msgstr "作为额外的好处，这通常使得代码更具有可读性。"
 
 #: ../../source/misc/tips_and_tricks.rst:317
 msgid "Use BooleanField instead of StringField, where possible"
-msgstr ""
+msgstr "使用BooleanField而不是StringField，如果可能的话"
 
 #: ../../source/misc/tips_and_tricks.rst:319
 msgid ""
 "Many ``StringFields`` should be broken down into ``BooleanFields``, especially "
 "if they only have 2 distinct values."
 msgstr ""
+"许多 ``StringFields`` 应当被转化为 ``BooleanFields``,尤其是其仅有2个不同的值"
+"时。"
 
 #: ../../source/misc/tips_and_tricks.rst:322
 msgid "Suppose you have a field called ``treatment``:"
-msgstr ""
+msgstr "假定你有一个字段叫做 ``treatment``:"
 
 #: ../../source/misc/tips_and_tricks.rst:328
 msgid "And let's say ``treatment`` it can only have 4 different values:"
-msgstr ""
+msgstr "假定 ``treatment`` 有4个不同的可能值："
 
 #: ../../source/misc/tips_and_tricks.rst:330
 msgid "``high_income_high_tax``"
-msgstr ""
+msgstr "``high_income_high_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:331
 msgid "``high_income_low_tax``"
-msgstr ""
+msgstr "``high_income_low_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:332
 msgid "``low_income_high_tax``"
-msgstr ""
+msgstr "``low_income_high_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:333
 msgid "``low_income_low_tax``"
-msgstr ""
+msgstr "``low_income_low_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:335
 msgid "In your pages, you might use it like this:"
-msgstr ""
+msgstr "在你的页面中，你可能会这样使用它："
 
 #: ../../source/misc/tips_and_tricks.rst:348
 msgid "It would be much better to break this to 2 separate BooleanFields::"
-msgstr ""
+msgstr "将其化为两个单独的BooleanFields是很好的改进："
 
 #: ../../source/misc/tips_and_tricks.rst:353
 msgid "Then your pages could be simplified to:"
-msgstr ""
+msgstr "那么你的页面代码可被简化为："
 
 #: ../../source/misc/tips_and_tricks.rst:370
 msgid "Avoid duplicated validation methods"
-msgstr ""
+msgstr "避免重复的验证方法"
 
 #: ../../source/misc/tips_and_tricks.rst:372
 msgid ""
@@ -993,16 +1023,20 @@ msgid ""
 "methods, you can replace them with a single :ref:`error_message "
 "<error_message>` method. For example:"
 msgstr ""
+"如果你有多个重复的 :ref:`FIELD_error_message <FOO_error_message>` 方法，你可以"
+"使用一个 :ref:`error_message <error_message>` 来替换它。例如："
 
 #: ../../source/misc/tips_and_tricks.rst:394
 msgid "You can instead define this method on your page (not Player class):"
-msgstr ""
+msgstr "你可以在你的页面中（不是Player类中）定义一个方法来替换："
 
 #: ../../source/misc/tips_and_tricks.rst:414
 msgid ""
 "(Usually ``error_message`` is used to return a single error message as a "
 "string, but you can also return a dict.)"
 msgstr ""
+"（通常 ``error_message`` 被用来返回某一错误信息字符串，但你也可以返回一个字"
+"典。）"
 
 #: ../../source/misc/version_history.rst:2
 msgid "Version history"
