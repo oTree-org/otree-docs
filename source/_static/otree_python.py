@@ -42,10 +42,6 @@ not False  # => True
 2 <= 2  # => True
 2 >= 2  # => True
 
-# Comparisons can be chained!
-1 < 2 < 3  # => True
-2 < 3 < 2  # => False
-
 # A string (text) is created with " or '
 "This is a string."
 'This is also a string.'

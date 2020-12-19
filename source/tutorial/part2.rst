@@ -104,7 +104,7 @@ Now, we create the HTML template.
 Set the ``title`` block to ``Contribute``, 
 and the ``content`` block to:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <p>
         This is a public goods game with
@@ -157,7 +157,7 @@ Page 3: Results
 Now we create a page called ``Results``.
 Set the template's content to:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <p>
         You started with an endowment of {{ Constants.endowment }},

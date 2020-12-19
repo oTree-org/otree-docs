@@ -19,6 +19,12 @@ Version 3.2
 -   Should use less memory and have fewer memory spikes.
 -   Enhancements to SessionData and SessionMonitor.
 
+Version 3.1
+===========
+
+-   New way to define :ref:`roles`
+-   You can pass a string to ``formfield``, for example ``{% formfield 'contribution' %}``.
+
 Version 3.0
 ===========
 
@@ -143,43 +149,4 @@ Version 2.1
     timeout issues for large files on Heroku.
 -   Better performance, especially for "Monitor" and "Data" tab in admin interface
 
-
-.. _dynamic-validation-new-format:
-
-New format for form validation
-------------------------------
-
-As of May 2019, it is recommended to define the following methods on the Player
-(or Group) model, not the Page:
-
--   FIELD_min
--   FIELD_max
--   FIELD_choices
--   FIELD_error_message
-
-For example, here is the old format:
-
-.. code-block:: python
-
-    class MyPage(Page):
-
-        form_model = 'player'
-        form_fields = ['offer']
-
-        def offer_max(self):
-            return self.player.endowment
-
-To change this to the new format, you move ``offer_max`` into the Player model:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        offer = models.CurrencyField()
-
-        def offer_max(self):
-            return self.endowment
-
-Note that we change ``return self.player.endowment`` to just ``self.endowment``,
-because ``self`` *is* the player.
 

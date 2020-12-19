@@ -94,7 +94,7 @@ oTree templates are a mix of 2 languages:
 
 In this example, let's say your template looks like this:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <p>Your payoff this round was {{ player.payoff }}.</p>
 
@@ -114,7 +114,7 @@ oTree uses the current values of the variables
 to convert the above Django code to
 plain HTML, like this:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <p>Your payoff this round was $10.</p>
 
@@ -176,7 +176,7 @@ oTree Studio has an image upload tool.
 (If you are using a text editor, see :ref:`here <staticfiles>`.)
 Once you have stored the image, you can display it like this:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <img src="{% static "folder_name/puppy.jpg" %}"/>
 
@@ -199,7 +199,7 @@ you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
 Then in the template:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <img src="{% static image_path %}"/>
 
@@ -215,7 +215,7 @@ For example, if your game has instructions that need to be repeated on every pag
 make a template called ``instructions.html``, and put the instructions there,
 for example:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% load otree %}
 
@@ -301,7 +301,7 @@ Passing data from Python to JavaScript (js_vars)
 To pass data to JavaScript code in your template,
 define a method ``js_vars`` on your Page, for example:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     def js_vars(self):
         return dict(
@@ -310,7 +310,7 @@ define a method ``js_vars`` on your Page, for example:
 
 Then, in your template, you can refer to these variables:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <script>
         let x = js_vars.payoff;
@@ -324,15 +324,15 @@ e.g. ``let x = {{ player.payoff|json }};``, but ``js_vars`` is simpler.
 Bootstrap
 ---------
 
-oTree comes with `Bootstrap <https://getbootstrap.com/docs/4.0/components/alerts/>`__, a
+oTree comes with `Bootstrap <https://getbootstrap.com/docs/5.0/components/alerts/>`__, a
 popular library for customizing a website's user interface.
 
 You can use it if you want a `custom style <http://getbootstrap.com/css/>`__, or
 a `specific component <http://getbootstrap.com/components/>`__ like a table,
 alert, progress bar, label, etc. You can even make your page dynamic with
-elements like `popovers <https://getbootstrap.com/docs/4.0/components/popovers/>`__,
-`modals <https://getbootstrap.com/docs/4.0/components/modal/>`__, and
-`collapsible text <https://getbootstrap.com/docs/4.0/components/collapse/>`__.
+elements like `popovers <https://getbootstrap.com/docs/5.0/components/popovers/>`__,
+`modals <https://getbootstrap.com/docs/5.0/components/modal/>`__, and
+`collapsible text <https://getbootstrap.com/docs/5.0/components/collapse/>`__.
 
 To use Bootstrap, usually you add a ``class=`` attribute to your HTML
 element.

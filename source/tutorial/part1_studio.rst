@@ -38,7 +38,7 @@ to ``player`` and for ``form_fields``, select ``name`` and ``age``.
 
 Then, set the template's title to ``Enter your information``, and set the content to:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     Please enter the following information.
 
@@ -54,7 +54,7 @@ Now we define ``Results``.
 
 Set the template's ``title`` block to ``Results`` and set the ``content`` block to:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <p>Your name is {{ player.name }} and your age is {{ player.age }}.</p>
 

@@ -1,3 +1,5 @@
+.. _otreelite:
+
 oTree Lite
 ==========
 
@@ -41,43 +43,62 @@ that is clearly distinct from that of the mainline releases.)
 Compatibility
 -------------
 
-This new implementation is generally compatible with existing oTree apps. However, here are some differences:
+This alternative implementation is generally compatible with existing oTree apps.
+However, you will probably see small things that changed, especially in how forms and templates are rendered.
+This is somewhat inevitable as oTree has undergone a "brain transplant".
+
+Here are the most important differences:
 
 Templates
 ~~~~~~~~~
 
-The template system uses `Ibis <http://www.dmulholl.com/docs/ibis/master/index.html>`__,
-which at first glance looks the same as Django templates, but there are some differences, including:
+The template system is basically compatible with Django templates,
+except that only the basic tags & filters have been implemented:
 
--   Method calls in templates require parentheses, as they do in Python code, e.g. ``{{ player.in_all_rounds() }}``
--	``{{ forloop.counter }}`` is replaced with ``{{ loop.count }}``
--	The set of available tags & filters is different. For example no ``|floatformat``. Though writing custom filters and tags is easier than in Django.
--   With Django, if you ever tried to pass HTML or certain characters to your template, you would notice it gets autoescaped,
-    e.g. ``<script>alert('XSS');</script>`` becomes ``&lt;script&gt;alert(&apos;XSS&apos;);&lt;/script&gt;``,
-    which you need to use ``mark_safe`` or the ``|safe`` filter to undo.
-    Ibis does not do this. If you want to escape special characters, you should use the triple braces ``{{{ }}}``.
+-   Tags: ``if``, ``for``, ``block``, ``extends``, ``with``, ``default``,
+-   Filters: ``json``, ``escape``, ``c``
+
+There is no ``floatformat`` filter, but there are new rounding filters that replace it.
+For example::
+
+    {{ pi|floatformat:0 }} -> {{ pi|to0 }}
+    {{ pi|floatformat:1 }} -> {{ pi|to1 }}
+    {{ pi|floatformat:2 }} -> {{ pi|to2 }}
+
+The ``|safe`` filter and ``mark_safe`` are not needed anymore, because the new template system does not
+autoescape content. However, if you want to escape content (e.g. displaying an untrusted string to a different
+player), you should use the ``|escape`` filter.
+
+Method calls must be at the end of the expression, and not followed by more dots.
+For example, if you have a Player method called ``other_player()``,
+you can do::
+
+    Your partner is {{ player.other_player }}
+
+But you cannot do::
+
+    Your partner's decision was {{ player.other_player.decision }}
+
 
 Forms
 ~~~~~
 
-In templates, if you use ``{{ form.my_field.errors }}``, you should wrap it inside an ``if``::
+In templates, if you are doing manual form rendering, you should change
+``{{ form.my_field.errors }}`` to::
 
     {% if form.my_field.errors %}
-        {{ form.my_field.errors }}
+        {{ form.my_field.errors.0 }}
     {% endif %}
 
-This is because in wtforms (which oTree now uses), ``.errors`` is a list of strings,
+This is because in ``.errors`` is now a list of strings,
 and displaying it when there are no errors will output ``[]`` which looks a bit weird.
 
 Older oTree formats
 ~~~~~~~~~~~~~~~~~~~
 
-Since this is an experimental version of oTree, I did not see any need to implement support for certain features found in older oTree
-projects, such as:
-
--   views.py instead of pages.py
--   FIELD_choices defined in pages.py rather than models.py.
--   ``widgets.Slider``, ``widgets.CheckboxInput``
+Since this is an experimental version of oTree, it does not implement support for certain features found in older oTree
+projects. To check you should run ``otree update_my_code``,
+which will tell you the changes you need to make before your code can run on oTree Lite.
 
 Bootstrap
 ~~~~~~~~~
@@ -89,15 +110,16 @@ In my experience the main things that differed are:
 -   ``data-*`` attributes are renamed to ``data-bs-*``
 -   ``form-group`` no longer exists
 
-oTree features
-~~~~~~~~~~~~~~
+Known issues
+~~~~~~~~~~~~
 
 The following oTree features are not supported yet:
+
 -   ``ExtraModel``
--   and translation with {% blocktrans %}.
 
 ``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
 it will not work; see below.
+
 
 Django (for advanced use cases)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,6 +140,4 @@ Here is a quick guide to how each component has been replaced.
 -   **Django ORM / QuerySet** is replaced by SQLAlchemy. SQLAlchemy has a very different syntax and a steeper learning curve
     (and also the documentation is not as friendly). However, it is a better fit for oTree since it is based on the
     "identity map"/"unit of work" model.
--   **Django forms** are replaced with `wtforms <https://wtforms.readthedocs.io/>`__, which are quite similar.
--   **oTree shell** and **Management commands**: you can run a script (or launch a Jupyter notebook etc)
-    by putting this at the top: ``from otree.main import setup; setup()``
+-   **Translating** an app to multiple languages works differently. See :ref:`i18n`.

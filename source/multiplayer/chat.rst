@@ -10,7 +10,7 @@ Basic usage
 
 In your template HTML, put:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% chat %}
 
@@ -23,7 +23,7 @@ Customizing the nickname and chat room members
 
 You can specify a ``channel`` and/or ``nickname`` like this:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% chat nickname="abc" channel="123" %}
 
@@ -73,7 +73,7 @@ In the page:
 
 Then in the template:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% chat nickname=nickname channel=player.id_in_group %}
 
@@ -83,7 +83,7 @@ Example: chat across rounds
 If you need players to chat with players who are currently in a different round
 of the game, you can do:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% chat channel=group.id_in_subsession %}
 
@@ -92,7 +92,7 @@ Example: chat between all groups in all rounds
 
 If you want everyone in the session to freely chat with each other, just do:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% chat channel=1 %}
 
@@ -123,7 +123,7 @@ For example, to customize the style,
 just include some CSS after the ``{% chat %}`` element,
 e.g.:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% chat %}
 
@@ -142,7 +142,7 @@ Note that there are 2 underscores (``__``, not ``_``).
 You can also customize the appearance by putting it inside a ``<div>``
 and styling that parent ``<div>``. For example, to set the width:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <div style="width: 400px">
         {% chat %}
@@ -158,10 +158,17 @@ For example, this code enables 1:1 chat with every other player in the group.
 
 .. code-block:: python
 
+    class Subsession(BaseSubsession):
+
+        def creating_session(self):
+            for p in self.get_players():
+                p.chat_nickname = 'Player {}'.format(p.id_in_group)
+
+    # ...
+
     class Player(BasePlayer):
 
-        def chat_nickname(self):
-            return 'Player {}'.format(self.id_in_group)
+        chat_nickname = models.StringField()
 
         def chat_configs(self):
             configs = []
@@ -174,11 +181,11 @@ For example, this code enables 1:1 chat with every other player in the group.
                     # make a name for the channel that is the same for all
                     # channel members. That's why we order it (lower, higher)
                     'channel': '{}-{}-{}'.format(self.group.id, lower_id, higher_id),
-                    'label': 'Chat with {}'.format(other.chat_nickname())
+                    'label': 'Chat with {}'.format(other.chat_nickname)
                 })
             return configs
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% for config in player.chat_configs %}
         <h4>{{ config.label }}</h4>

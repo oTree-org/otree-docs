@@ -132,7 +132,7 @@ This is the page that P2 sees to send money back.
 Set the ``title`` block to ``Trust Game: Your Choice``, 
 and the ``content`` block to:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <p>
         You are Participant B. Participant A sent you {{group.sent_amount}}
@@ -174,7 +174,7 @@ use the ``{% if %}`` statement
 to condition on the current player's ``id_in_group``.
 Set the ``title`` block to ``Results``, and the content block to:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% if player.id_in_group == 1 %}
         <p>
