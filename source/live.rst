@@ -114,7 +114,7 @@ Example: auction
     class Auction(Page):
         live_method = 'live_auction'
 
-.. code-block:: html+djang0
+.. code-block:: html
 
   <table id="history" class="table">
     <tr>

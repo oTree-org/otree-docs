@@ -72,7 +72,7 @@ You can use this to show each role different content, e.g.:
 
 In a template:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     You are the {{ player.role }}.
 

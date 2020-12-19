@@ -31,7 +31,7 @@ Forms in templates
 
 In your template, you can display the form with:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% formfields %}
 
@@ -264,22 +264,21 @@ to be displayed with radio buttons, instead of a dropdown menu.
 If you want to position the fields individually,
 instead of ``{% formfields %}`` you can use ``{% formfield %}``:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
-    {% formfield 'contribution' %}
+    {% formfield player.contribution %}
+
 
 You can also put the ``label`` in directly in the template:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
-    {% formfield 'contribution' label="How much do you want to contribute?" %}
+    {% formfield player.contribution label="How much do you want to contribute?" %}
 
 .. note::
 
-    The format ``{% formfield 'xyz' %}`` is new as of oTree 3.1 (October 2020).
-    If you are using an older version of oTree, you should do ``{% formfield player.xyz %}``.
-    This format is still supported in new versions.
-
+    You can also do ``{% formfield 'xyz' %}``, starting with oTree 3.1 (October 2020).
+    This format is better for a number of use cases, such as looping over a subset of form fields.
 
 .. _django-forms:
 
@@ -326,7 +325,7 @@ the ordinary ``RadioSelectHorizontal`` widget will not work here.
 
 Instead, you should simply loop over the choices in the field as follows:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <tr>
         <td>{{ form.offer_1.label }}</td>
@@ -338,7 +337,7 @@ Instead, you should simply loop over the choices in the field as follows:
 If you have many fields with the same number of choices,
 you can arrange them in a table:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <table class="table">
         {% for field in form %}
@@ -353,8 +352,6 @@ you can arrange them in a table:
 
 You can also get choices individually by using their 0-based index,
 e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
-For more granular control, as described `here <https://docs.djangoproject.com/en/2.2/ref/forms/widgets/#radioselect>`__,
-you can use the ``choice_label`` and ``tag`` attributes on a field choice.
 
 
 .. _raw_html:
@@ -406,8 +403,6 @@ put HTML like this in your template:
 If you want to show the current numeric value, or hide the knob until the slider is clicked
 (to avoid anchoring), you could do that with JavaScript,
 but consider using the ``RadioSelectHorizontal`` widget instead.
-
-(oTree also has a ``Slider`` widget but its customizability is limited.)
 
 Raw HTML example: custom user interface with JavaScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -464,7 +459,7 @@ and rather than a radio button you'd like to present it as a button like this:
 First, put ``offer_accepted`` in your Page's ``form_fields`` as usual.
 Then put this code in the template:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <p>Do you wish to accept the offer?</p>
     <div>
@@ -481,7 +476,7 @@ Button that doesn't submit the form
 If the button has some purpose other than submitting the form,
 add ``type="button"``:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <button>
         Clicking this will submit the form
@@ -513,7 +508,7 @@ If the label should contain a variable, you can construct the string in your pag
 
 Then, in the template:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% formfield player.contribution label=contribution_label %}
 

@@ -51,7 +51,7 @@ Put your templates there.
 
 Let's name the first page ``MyPage.html``, and put these contents inside:
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% extends "global/Page.html" %}
     {% load otree %}
@@ -72,7 +72,7 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 
 The second template will be called ``Results.html``.
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     {% extends "global/Page.html" %}
     {% load otree %}

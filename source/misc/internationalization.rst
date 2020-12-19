@@ -72,7 +72,9 @@ In your templates, any translatable strings should be inside a ``trans`` tag, fo
 
     {% trans 'this is inside a trans tag' %}
 
-(blocktrans is not supported.)
+(blocktrans is not supported. If you want to translate large sections of text,
+put them in separate includable templates and use an `if` statement to decide which language
+should be shown.)
 
 Install Babel with ``pip install babel``.
 Create ``babel.ini`` in your project root, containing::
@@ -83,17 +85,17 @@ Create ``babel.ini`` in your project root, containing::
     [otreetemplate: **.html]
     [python: **.py]
 
-Now run this command, listing all your app names::
+Now run this command::
 
-    pybabel extract -F babel.ini trustgame auction -o messages.pot -k trans
+    pybabel extract . -F babel.ini -o messages.pot -k trans
 
 This will create a ``messages.pot`` file with your translatable strings.
 Translate that using poedit.
 
 Create the following folder::
 
-    mkdir _locale/fr/LC_MESSAGES/  # if french
-    mkdir _locale/zh_Hans/LC_MESSAGES/  # if chinese
+    _locale/fr/LC_MESSAGES/  # if french
+    _locale/zh_Hans/LC_MESSAGES/  # if chinese
 
 Then create the .mo file::
 

@@ -69,12 +69,16 @@ The ``|safe`` filter and ``mark_safe`` are not needed anymore, because the new t
 autoescape content. However, if you want to escape content (e.g. displaying an untrusted string to a different
 player), you should use the ``|escape`` filter.
 
-You can also implement your own tags & filters; more on this later.
+Method calls must be at the end of the expression, and not followed by more dots.
+For example, if you have a Player method called ``other_player()``,
+you can do::
 
-.. note::
+    Your partner is {{ player.other_player }}
 
-    If you are using PyCharm with Django highlighting, it will flag some of the new syntax as a syntax error,
-    so you may want to turn off Django highlighting.
+But you cannot do::
+
+    Your partner's decision was {{ player.other_player.decision }}
+
 
 Forms
 ~~~~~
@@ -86,18 +90,15 @@ In templates, if you are doing manual form rendering, you should change
         {{ form.my_field.errors.0 }}
     {% endif %}
 
-This is because in wtforms (which oTree now uses), ``.errors`` is a list of strings,
+This is because in ``.errors`` is now a list of strings,
 and displaying it when there are no errors will output ``[]`` which looks a bit weird.
 
 Older oTree formats
 ~~~~~~~~~~~~~~~~~~~
 
-Since this is an experimental version of oTree, I did not see any need to implement support for certain features found in older oTree
-projects, such as:
-
--   views.py instead of pages.py
--   FIELD_choices defined in pages.py rather than models.py.
--   ``widgets.Slider``, ``widgets.CheckboxInput``
+Since this is an experimental version of oTree, it does not implement support for certain features found in older oTree
+projects. To check you should run ``otree update_my_code``,
+which will tell you the changes you need to make before your code can run on oTree Lite.
 
 Bootstrap
 ~~~~~~~~~
@@ -139,5 +140,4 @@ Here is a quick guide to how each component has been replaced.
 -   **Django ORM / QuerySet** is replaced by SQLAlchemy. SQLAlchemy has a very different syntax and a steeper learning curve
     (and also the documentation is not as friendly). However, it is a better fit for oTree since it is based on the
     "identity map"/"unit of work" model.
--   **Django forms** are replaced with `wtforms <https://wtforms.readthedocs.io/>`__, which are quite similar.
 -   **Translating** an app to multiple languages works differently. See :ref:`i18n`.

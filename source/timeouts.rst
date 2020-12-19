@@ -196,7 +196,7 @@ The countdown element is ``.otree-timer__time-left``.
 
 For example, to hide the timer until there is only 10 seconds left,
 
-.. code-block:: html+djang0
+.. code-block:: html
 
     <style>
         .otree-timer {
