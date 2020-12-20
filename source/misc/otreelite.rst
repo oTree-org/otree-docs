@@ -99,6 +99,7 @@ Older oTree formats
 Since this is an experimental version of oTree, it does not implement support for certain features found in older oTree
 projects. To check you should run ``otree update_my_code``,
 which will tell you the changes you need to make before your code can run on oTree Lite.
+(It will also fix a few things automatically.)
 
 Bootstrap
 ~~~~~~~~~
@@ -112,6 +113,10 @@ In my experience the main things that differed are:
 
 Known issues
 ~~~~~~~~~~~~
+
+If you get stuck during resetdb on Heroku, run::
+
+    heroku pg:reset DATABASE_URL
 
 The following oTree features are not supported yet:
 
