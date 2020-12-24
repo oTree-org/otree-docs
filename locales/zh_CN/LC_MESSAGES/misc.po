@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-19 19:31+0800\n"
-"PO-Revision-Date: 2020-12-21 10:59+0800\n"
+"PO-Revision-Date: 2020-12-24 19:40+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -253,107 +253,112 @@ msgstr "如果文件不是CSV格式并且你想读入文件内容为一个字符
 
 #: ../../source/misc/bots_advanced.rst:4
 msgid "Bots: advanced features"
-msgstr ""
+msgstr "Bots: 高级特性"
 
 #: ../../source/misc/bots_advanced.rst:11
 msgid "Command line bots"
-msgstr ""
+msgstr "命令行bots"
 
 #: ../../source/misc/bots_advanced.rst:13
 msgid ""
 "An alternative to running bots in your web browser is to run them in the command line. Command "
 "line bots run faster and require less setup."
 msgstr ""
+"一种可选的在浏览器中运行bots的方式是在命令行中运行。命令行bots运行更快且需要更少的安装步骤。"
 
 #: ../../source/misc/bots_advanced.rst:16 ../../source/misc/bots_advanced.rst:51
 msgid "Run this::"
-msgstr ""
+msgstr "运行下面的代码："
 
 #: ../../source/misc/bots_advanced.rst:20
 msgid ""
 "To test with a specific number of participants (otherwise it will default to "
 "``num_demo_participants``)::"
-msgstr ""
+msgstr "使用指定参与者人数进行测试（否则默认为 ``num_demo_participants``）："
 
 #: ../../source/misc/bots_advanced.rst:25
 msgid "To run tests for all session configs::"
-msgstr ""
+msgstr "在所有session config上运行测试："
 
 #: ../../source/misc/bots_advanced.rst:30
 msgid "Exporting data"
-msgstr ""
+msgstr "导出数据"
 
 #: ../../source/misc/bots_advanced.rst:32
 msgid "Use the ``--export`` flag to export the results to a CSV file::"
-msgstr ""
+msgstr "使用 ``--export`` 选项来将结果导出为CSV文件："
 
 #: ../../source/misc/bots_advanced.rst:36
 msgid "To specify the folder where the data is saved, do::"
-msgstr ""
+msgstr "为指定数据所保存的文件夹，可使用："
 
 #: ../../source/misc/bots_advanced.rst:42
 msgid "Command-line browser bots"
-msgstr ""
+msgstr "命令行浏览器bots"
 
 #: ../../source/misc/bots_advanced.rst:44
 msgid "You can launch browser bots from the command line, using ``otree browser_bots``."
-msgstr ""
+msgstr "你可以在命令行启动bots，通过使用 ``otree browser_bots``."
 
 #: ../../source/misc/bots_advanced.rst:46
 msgid ""
 "Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings.py`` (more info "
 "below)."
 msgstr ""
+"确保已安装了Google Chrome，或在 ``settings.py`` 中设置了 ``BROWSER_COMMAND`` （更多信息见下面）"
 
 #: ../../source/misc/bots_advanced.rst:48
 msgid "Set ``OTREE_REST_KEY`` env var as described in :ref:`rest`."
-msgstr ""
+msgstr "设置 ``OTREE_REST_KEY`` 环境变量如 :ref:`rest` 中所述。"
 
 #: ../../source/misc/bots_advanced.rst:49
 msgid "Run your server"
-msgstr ""
+msgstr "运行你的服务器"
 
 #: ../../source/misc/bots_advanced.rst:50
 msgid "Close all Chrome windows."
-msgstr ""
+msgstr "关闭所有Chrome窗口。"
 
 #: ../../source/misc/bots_advanced.rst:55
 msgid ""
 "This will launch several Chrome tabs and run the bots. When finished, the tabs will close, and "
 "you will see a report in your terminal window."
 msgstr ""
+"这会启动数个Chrome标签页并运行bots。当完成后，标签页会自动关闭，并且你会在终端窗口中看到一份报告。"
 
 #: ../../source/misc/bots_advanced.rst:59
 msgid ""
 "If Chrome doesn't close windows properly, make sure you closed all Chrome windows prior to "
 "launching the command."
-msgstr ""
+msgstr "如果Chrome没有正常关闭窗口，确保你在运行指令之前已经关闭了所有Chrome窗口。"
 
 #: ../../source/misc/bots_advanced.rst:63
 msgid "Command-line browser bots on a remote server (e.g. Heroku)"
-msgstr ""
+msgstr "远程服务器(例如 Heroku)上的命令行bots"
 
 #: ../../source/misc/bots_advanced.rst:65
 msgid ""
 "If the server is running on a host/port other than the usual ``http://localhost:8000``, you need "
 "to pass ``--server-url``. For example, if it's on Heroku, you would do like this::"
 msgstr ""
+"如果服务器不是运行在通常的主机/端口 ``http://localhost:8000`` 上，你需要传递 ``--server-url`` 参"
+"数。例如，如果在Heroku上，你需要这样做："
 
 #: ../../source/misc/bots_advanced.rst:73
 msgid "Choosing session configs and sizes"
-msgstr ""
+msgstr "选择session config与人数"
 
 #: ../../source/misc/bots_advanced.rst:75
 msgid "You can specify the number of participants::"
-msgstr ""
+msgstr "你可以指定参与人的人数："
 
 #: ../../source/misc/bots_advanced.rst:79
 msgid "To test all session configs, just run this::"
-msgstr ""
+msgstr "为测试所有的session config，运行："
 
 #: ../../source/misc/bots_advanced.rst:85
 msgid "Browser bots: misc notes"
-msgstr ""
+msgstr "浏览器bots：杂项"
 
 #: ../../source/misc/bots_advanced.rst:87
 msgid ""
@@ -361,28 +366,32 @@ msgid ""
 "oTree will open the browser by doing something like ``subprocess.Popen(settings."
 "BROWSER_COMMAND)``."
 msgstr ""
+"你可以使用非Chrome浏览器，需在 ``settings.py`` 中设置 ``BROWSER_COMMAND`` 。然后，oTree会自动启动"
+"浏览器，通过类似 ``subprocess.Popen(settings.BROWSER_COMMAND)`` 的操作。"
 
 #: ../../source/misc/bots_advanced.rst:94
 msgid "Test cases"
-msgstr ""
+msgstr "测试用例"
 
 #: ../../source/misc/bots_advanced.rst:96
 msgid ""
 "You can define an attribute ``cases`` on your PlayerBot class that lists different test cases. "
 "For example, in a public goods game, you may want to test 3 scenarios:"
 msgstr ""
+"你可以在你的PlayerBot类中定义属性 ``cases`` 来列出不同的测试用例。例如，在公共品博弈中，你可能想要"
+"测试三种场景："
 
 #: ../../source/misc/bots_advanced.rst:100
 msgid "All players contribute half their endowment"
-msgstr ""
+msgstr "所有玩家贡献其初始值的一半"
 
 #: ../../source/misc/bots_advanced.rst:101
 msgid "All players contribute nothing"
-msgstr ""
+msgstr "所有玩家均不做任何贡献"
 
 #: ../../source/misc/bots_advanced.rst:102
 msgid "All players contribute their entire endowment (100 points)"
-msgstr ""
+msgstr "所有玩家贡献出他们全部的初始值（100点）"
 
 #: ../../source/misc/bots_advanced.rst:104
 msgid ""
@@ -390,73 +399,86 @@ msgid ""
 "``cases``. Then, oTree will execute the bot 3 times, once for each test case. Each time, a "
 "different value from ``cases`` will be assigned to ``self.case`` in the bot."
 msgstr ""
+"你可以分别将3个测试用例命名为\"basic\", \"min\", 和 \"max\"，并将他们放在 ``cases`` 中。然后，"
+"oTree会自动执行bot3次，每次一个测试用例。每一次执行时， ``cases`` 中的不同值都会在bot中被赋值给 "
+"``self.case``。"
 
 #: ../../source/misc/bots_advanced.rst:109
 msgid "For example:"
-msgstr ""
+msgstr "例如："
 
 #: ../../source/misc/bots_advanced.rst:152
 msgid ""
 "If you use cases, it's better to use :ref:`cli-bots` since browser bots will only execute a "
 "single case."
-msgstr ""
+msgstr "如果你使用测试用例，更推荐使用 :ref:`cli-bots` 因为浏览器bots仅会执行一个单独的用例。"
 
 #: ../../source/misc/bots_advanced.rst:154
 msgid ""
 "``cases`` needs to be a list, but it can contain any data type, such as strings, integers, or "
 "even dictionaries. Here is a trust game bot that uses dictionaries as cases."
 msgstr ""
+"``cases`` 必须是列表，但可以包含任何数据类型，如字符串，整数，甚至字典。下面是一个信任博弈，它使用"
+"字典作为用例。"
 
 #: ../../source/misc/bots_advanced.rst:196
 msgid "error_fields"
-msgstr ""
+msgstr "error_fields"
 
 #: ../../source/misc/bots_advanced.rst:198
 msgid ""
 "When using ``SubmissionMustFail`` on forms with multiple fields, you can use ``error_fields`` for "
 "extra thoroughness."
 msgstr ""
+"当在多个字段的表单上使用 ``SubmissionMustFail`` 时，你可以使用 ``error_fields`` 获得额外的提示。"
 
 #: ../../source/misc/bots_advanced.rst:201
 msgid ""
 "For example, let's say we a submit a valid ``age``, but an invalid ``weight`` and ``height``:"
-msgstr ""
+msgstr "例如，假定我们提交了一个合法的 ``age``, 但同时提交了非法的 ``weight`` 与 ``height``:"
 
 #: ../../source/misc/bots_advanced.rst:215
 msgid ""
 "What's missing is that the bot system doesn't tell us exactly *why* the submission fails. Is it "
 "an invalid ``weight``, ``height``, or both? ``error_fields`` can resolve the ambiguity:"
 msgstr ""
+"Bot系统不会告诉我们具体 *为什么* 提交会失败，这是缺失的信息。是 ``weight`` 还是 ``height`` 还是两"
+"者一起出错？ ``error_fields`` 可以解决这种模棱两可的情况："
 
 #: ../../source/misc/bots_advanced.rst:231
 msgid "This will verify that ``weight`` and ``height`` contained errors, but ``age`` did not."
-msgstr ""
+msgstr "它会查对出 ``weight`` 和 ``height`` 包含错误，但是 ``age`` 没有。"
 
 #: ../../source/misc/bots_advanced.rst:234
 msgid ""
 "If :ref:`error_message <error_message>` returns an error, then ``error_fields`` will be "
 "``['__all__']``."
 msgstr ""
+"如果 :ref:`error_message <error_message>` 返回一个错误，那么 ``error_fields`` 将会是 "
+"``['__all__']``."
 
 #: ../../source/misc/bots_advanced.rst:238
 msgid "Misc note"
-msgstr ""
+msgstr "杂项"
 
 #: ../../source/misc/bots_advanced.rst:240
 msgid ""
 "In bots, it is risky to assign ``player = self.player`` (or ``participant = self.participant``, "
 "etc), even though that kind of code is encouraged elsewhere."
 msgstr ""
+"在bots中，赋值语句 ``player = self.player`` (或 ``participant = self.participant``, 等等)是有风险"
+"的，即使这种代码在别处是被鼓励的。"
 
 #: ../../source/misc/bots_advanced.rst:244
 msgid "Because if there is a ``yield`` in between, the data can be stale:"
-msgstr ""
+msgstr "因为如果有一个 ``yield`` 语句在中间，数据可能没有更新："
 
 #: ../../source/misc/bots_advanced.rst:257
 msgid ""
 "It's safer to use ``self.player.money_left`` directly, because doing ``self.player`` gets the "
 "most recent data from the database."
 msgstr ""
+"直接使用 ``self.player.money_left`` 是安全的，因为 ``self.player`` 会从数据库中获取最新的数据。"
 
 #: ../../source/misc/django.rst:4
 msgid "Django"
