@@ -140,8 +140,6 @@ Here is a quick guide to how each component has been replaced.
 -   **Channels consumers** are also replaced with Starlette endpoints. They are pretty similar, except there is no notion of
     groups or a Channel layer (you would need to implement one yourself; you can see how oTree does it in ``otree.channels.utils``).
 -   **Django URLs** have been replaced with `Starlette routes <https://www.starlette.io/routing/>`__.
-    You can define custom routes for websockets & views by creating
-    ``asgi_routes.py`` in your project root, and oTree will look for a var called ``routes``.
 -   **Django ORM / QuerySet** is replaced by SQLAlchemy. SQLAlchemy has a very different syntax and a steeper learning curve
     (and also the documentation is not as friendly). However, it is a better fit for oTree since it is based on the
     "identity map"/"unit of work" model.

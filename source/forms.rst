@@ -278,7 +278,8 @@ You can also put the ``label`` in directly in the template:
 .. note::
 
     You can also do ``{% formfield 'xyz' %}``, starting with oTree 3.1 (October 2020).
-    This format is better for a number of use cases, such as looping over a subset of form fields.
+    This allows you to provide the field name as a variable and loop over form fields
+    in different ways.
 
 .. _django-forms:
 
@@ -393,7 +394,7 @@ put HTML like this in your template:
             <span class="input-group-text">Disagree</span>
         </div>
 
-        <input type="range" name="pizza" min="-2" max="2" step="1">
+        <input type="range" name="pizza" min="-2" max="2" step="1" class="form-range">
 
         <div class="input-group-append">
             <span class="input-group-text">Agree</span>
