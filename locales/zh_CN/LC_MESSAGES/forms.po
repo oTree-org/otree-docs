@@ -106,7 +106,6 @@ msgid "You can do this for ``BooleanField``, ``StringField``, etc.:"
 msgstr "你可以这样设置 ``BooleanField``, ``StringField``, 等等:"
 
 #: ../../source/forms.rst:108
-#, fuzzy
 msgid ""
 "After the field has been set, you can access the human-readable name "
 "using ``get_FIELD_display``, like this: ``player.get_level_display() # "

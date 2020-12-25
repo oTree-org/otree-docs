@@ -1308,11 +1308,10 @@ msgid "pages.py: prevent code duplication by moving code to your models"
 msgstr "pages.py: 通过将你的代码移至模型中减少代码重复"
 
 #: ../../source/misc/tips_and_tricks.rst:158
-#, fuzzy
 msgid ""
 "You should try to move as much code as possible into your "
 "Player/Group/Subsession."
-msgstr "你应当试着将尽可能多的代码移入Player/Group/Subsession中。在Django中，一般推荐使用“厚模型”和“瘦页面”。"
+msgstr "你应当试着将尽可能多的代码移入Player/Group/Subsession中。"
 
 #: ../../source/misc/tips_and_tricks.rst:163
 msgid "Example 1: is_displayed"

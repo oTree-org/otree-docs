@@ -122,7 +122,7 @@ msgstr "*HTML* (使用尖角括号如 ``<this>`` 与 ``</this>``."
 msgid ""
 "*Template tags* (which use curly braces like ``{% this %}`` and ``{{ this"
 " }}``"
-msgstr "*Django 模板标签* (使用大括号如 ``{% this %}`` 与 ``{{ this }}``"
+msgstr "*模板标签* (使用大括号如 ``{% this %}`` 与 ``{{ this }}``"
 
 #: ../../source/templates.rst:88
 msgid "In this example, let's say your template looks like this:"
@@ -131,7 +131,7 @@ msgstr "在这个例子中，假定你的模板如下："
 #: ../../source/templates.rst:104
 #, fuzzy
 msgid "Step 1: oTree scans template tags, produces HTML (a.k.a. \"server side\")"
-msgstr "步骤1：oTree扫描Django标签，生成HTML（亦称“服务器端”）"
+msgstr "步骤1：oTree扫描标签，生成HTML（亦称“服务器端”）"
 
 #: ../../source/templates.rst:106
 #, fuzzy
@@ -427,17 +427,15 @@ msgid "Bootstrap"
 msgstr "Bootstrap"
 
 #: ../../source/templates.rst:320
-#, fuzzy
 msgid ""
 "oTree comes with `Bootstrap "
 "<https://getbootstrap.com/docs/5.0/components/alerts/>`__, a popular "
 "library for customizing a website's user interface."
 msgstr ""
 "oTree使用 `Bootstrap "
-"<https://getbootstrap.com/docs/4.0/components/alerts/>`__,一个流行的用于定制网站用户界面的库。"
+"<https://getbootstrap.com/docs/5.0/components/alerts/>`__,一个流行的用于定制网站用户界面的库。"
 
 #: ../../source/templates.rst:323
-#, fuzzy
 msgid ""
 "You can use it if you want a `custom style "
 "<http://getbootstrap.com/css/>`__, or a `specific component "
@@ -451,9 +449,9 @@ msgstr ""
 "如果你想要 `定制样式 <http://getbootstrap.com/css/>`__,或者 `特定组件 "
 "<http://getbootstrap.com/components/>`__ "
 "如表格，警告，进度条，标签，等等，你可以使用此库。你甚至可以让你的页面变得动态，使用组件像 `popovers "
-"<https://getbootstrap.com/docs/4.0/components/popovers/>`__, `modals "
-"<https://getbootstrap.com/docs/4.0/components/modal/>`__, 和 `collapsible "
-"text <https://getbootstrap.com/docs/4.0/components/collapse/>`__."
+"<https://getbootstrap.com/docs/5.0/components/popovers/>`__, `modals "
+"<https://getbootstrap.com/docs/5.0/components/modal/>`__, 和 `collapsible "
+"text <https://getbootstrap.com/docs/5.0/components/collapse/>`__."
 
 #: ../../source/templates.rst:330
 msgid ""
