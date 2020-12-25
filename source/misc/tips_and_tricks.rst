@@ -156,7 +156,6 @@ pages.py: prevent code duplication by moving code to your models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You should try to move as much code as possible into your Player/Group/Subsession.
-In Django, it's generally recommended to have "thick models" and "thin pages".
 
 .. _skip_many:
 

@@ -68,13 +68,6 @@ Comments
     {# this is a comment #}
 
 
-Template filters
-~~~~~~~~~~~~~~~~
-
-In addition to the filters available with Django's template language,
-oTree has the ``|c`` filter, which is equivalent to the ``c()`` function.
-For example, ``{{ 20|c }}`` displays as ``20 points``.
-
 Things you can't do
 ~~~~~~~~~~~~~~~~~~~
 
@@ -89,7 +82,7 @@ How templates work: an example
 oTree templates are a mix of 2 languages:
 
 -   *HTML* (which uses angle brackets like ``<this>`` and ``</this>``.
--   *Django template tags*
+-   *Template tags*
     (which use curly braces like ``{% this %}`` and ``{{ this }}``
 
 In this example, let's say your template looks like this:
@@ -107,11 +100,11 @@ In this example, let's say your template looks like this:
     {% next_button %}
 
 
-Step 1: oTree scans Django tags, produces HTML (a.k.a. "server side")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 1: oTree scans template tags, produces HTML (a.k.a. "server side")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 oTree uses the current values of the variables
-to convert the above Django code to
+to convert the above template tags to
 plain HTML, like this:
 
 .. code-block:: html
@@ -134,7 +127,7 @@ as a formatted web page:
 
 .. figure:: _static/template-example.png
 
-Note that the browser never sees the Django tags.
+Note that the browser never sees the template tags.
 
 The key point
 ~~~~~~~~~~~~~
@@ -149,13 +142,13 @@ HTML that was generated (along with any JavaScript or CSS).
 
 -   If the HTML code doesn't look the way you expect, then something
     went wrong on the server side. Look for mistakes in your ``vars_for_template``
-    or your Django template tags.
+    or your template tags.
 -   If there was no error in generating the HTML code,
     then it is probably an issue with how you are using
     HTML (or JavaScript) syntax.
     Try pasting the problematic part of the HTML back into a template,
-    without the Django tags, and edit it until it produces the right output.
-    Then put the Django tags back in, to make it dynamic again.
+    without the template tags, and edit it until it produces the right output.
+    Then put the template tags back in, to make it dynamic again.
 
 
 Images (static files)

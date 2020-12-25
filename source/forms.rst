@@ -107,8 +107,7 @@ You can do this for ``BooleanField``, ``StringField``, etc.:
 
 After the field has been set, you can access the human-readable name
 using
-`get_FOO_display <https://docs.djangoproject.com/en/2.2/ref/models/instances/#django.db.models.Model.get_FOO_display>`__
-, like this:
+``get_FIELD_display``, like this:
 ``player.get_level_display() # returns e.g. 'Medium'``.
 
 Optional fields
@@ -281,7 +280,7 @@ You can also put the ``label`` in directly in the template:
     This allows you to provide the field name as a variable and loop over form fields
     in different ways.
 
-.. _django-forms:
+.. _manual-forms:
 
 Customizing a field's appearance
 --------------------------------
@@ -291,11 +290,9 @@ all necessary parts of a form field (the input, the label, and any error message
 with Bootstrap styling.
 
 However, if you want more control over the appearance and layout,
-you can use Django's manual field rendering. Instead of ``{% formfield player.my_field %}``,
+you can use manual field rendering. Instead of ``{% formfield 'my_field' %}``,
 do ``{{ form.my_field }}``, to get just the input element.
 Just remember to also include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``.
-
-More info `here <https://docs.djangoproject.com/en/2.2/topics/forms/#rendering-fields-manually>`__.
 
 .. _radio-table:
 .. _subwidgets:
@@ -360,7 +357,7 @@ e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
 Raw HTML widgets
 ----------------
 
-If ``{% formfields %}`` and :ref:`manual field rendering <django-forms>`
+If ``{% formfields %}`` and :ref:`manual field rendering <manual-forms>`
 don't give you the appearance you want,
 you can write your own widget in raw HTML.
 However, you will lose the convenient features handled
