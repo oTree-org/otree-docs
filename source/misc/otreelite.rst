@@ -114,10 +114,6 @@ In my experience the main things that differed are:
 Known issues
 ~~~~~~~~~~~~
 
-If you get stuck during resetdb on Heroku, run::
-
-    heroku pg:reset DATABASE_URL
-
 The following oTree features are not supported yet:
 
 -   ``ExtraModel``
