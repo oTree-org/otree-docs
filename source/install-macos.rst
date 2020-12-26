@@ -32,7 +32,7 @@ Enter this:
 
 .. code-block:: bash
 
-    pip3 install -U otree
+    pip3 install -U "otree<5"
 
 (If you get a long error related to Twisted & xcrun,
 follow the steps `here <https://apple.stackexchange.com/a/254381>`__
