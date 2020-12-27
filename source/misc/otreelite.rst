@@ -35,10 +35,8 @@ Installation
 
 run::
 
-    pip install "otree>=5.0.0a1"
+    pip install -U "otree>=5a"
 
-(Note: this does not mean it will actually be version 5 of oTree, but rather I wanted to give it a version number
-that is clearly distinct from that of the mainline releases.)
 
 Compatibility
 -------------
@@ -101,6 +99,11 @@ projects. To check you should run ``otree update_my_code``,
 which will tell you the changes you need to make before your code can run on oTree Lite.
 (It will also fix a few things automatically.)
 
+A few common issues:
+
+-   The ``Slider`` and ``CheckboxInput`` widgets are unavailable.
+    You should instead use :ref:`raw_html` (which has been the recommended solution anyway)
+
 Bootstrap
 ~~~~~~~~~
 
@@ -120,7 +123,6 @@ The following oTree features are not supported yet:
 
 ``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
 it will not work; see below.
-
 
 Django (for advanced use cases)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

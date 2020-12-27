@@ -68,5 +68,5 @@ It's the same command:
 
 .. code-block:: bash
 
-    pip3 install -U "otree<5"
+    pip3 install -U otree
 
