@@ -11,7 +11,7 @@ Variables
 
 You can display a variable like this:
 
-.. code-block:: djang0
+.. code-block:: django
 
      Your payoff is {{ player.payoff }}.
 
@@ -28,13 +28,13 @@ The following variables are available in templates:
 Conditions ("if")
 ~~~~~~~~~~~~~~~~~
 
-.. code-block:: djang0
+.. code-block:: django
 
     {% if player.is_winner %} you won! {% endif %}
 
 With an 'else':
 
-.. code-block:: djang0
+.. code-block:: django
 
     {% if some_number >= 0 %}
         positive
@@ -45,7 +45,7 @@ With an 'else':
 Loops ("for")
 ~~~~~~~~~~~~~
 
-.. code-block:: djang0
+.. code-block:: django
 
     {% for item in some_list %}
         {{ item }}
@@ -62,7 +62,7 @@ in a template you would do ``{{ my_dict.foo }}``.
 Comments
 ~~~~~~~~
 
-.. code-block:: djang0
+.. code-block:: django
 
 
     {# this is a comment #}
