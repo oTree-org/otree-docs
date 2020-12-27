@@ -12,15 +12,14 @@ Advantages
 Simpler codebase
 ~~~~~~~~~~~~~~~~
 
-If you are someone who wants to be able to read oTree's source code, it is currently quite hard sometimes.
-To understand how certain parts of oTree work, you have to go far up the chain into Django.
 This codebase is simpler and more self-contained.
+For the curious people who want to delve into oTree's internal source code,
+you will have an easier time navigating oTree Lite.
 
 Easier to extend
 ~~~~~~~~~~~~~~~~
 
 Django is quite a heavyweight framework and imposes a lot of constraints.
-It can be hard to add custom functionality unless you really know how Django works.
 In contrast, this implementation is smaller and uses more modern components such as Starlette.
 
 Lightweight
@@ -44,6 +43,7 @@ Compatibility
 This alternative implementation is generally compatible with existing oTree apps.
 However, you will probably see small things that changed, especially in how forms and templates are rendered.
 This is somewhat inevitable as oTree has undergone a "brain transplant".
+Please send any feedback to chris@otree.org.
 
 Here are the most important differences:
 
