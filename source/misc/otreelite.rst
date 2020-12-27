@@ -73,13 +73,13 @@ Method calls must be at the end of the expression, and not followed by more dots
 For example, if you have a Player method called ``other_player()``,
 you can do:
 
-.. code-block::html+django
+.. code-block:: html+django
 
     Your partner is {{ player.other_player }}
 
 But you cannot do:
 
-.. code-block::html+django
+.. code-block:: html+django
 
     Your partner's decision was {{ player.other_player.decision }}
 
@@ -89,7 +89,7 @@ Forms
 In templates, if you are doing manual form rendering, you should change
 ``{{ form.my_field.errors }}`` to:
 
-.. code-block::html+django
+.. code-block:: html+django
 
     {% if form.my_field.errors %}
         {{ form.my_field.errors.0 }}
