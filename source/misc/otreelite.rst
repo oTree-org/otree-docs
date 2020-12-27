@@ -53,8 +53,8 @@ Templates
 The template system is basically compatible with Django templates,
 except that only the basic tags & filters have been implemented:
 
--   Tags: ``if``, ``for``, ``block``, ``extends``, ``with``, ``default``,
--   Filters: ``json``, ``escape``, ``c``
+-   Tags: ``if``, ``for``, ``block``, ``extends``, ``with``
+-   Filters: ``json``, ``escape``, ``c``, ``default``
 
 There is no ``floatformat`` filter, but there are new rounding filters that replace it.
 For example:
