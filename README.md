@@ -1,5 +1,3 @@
-# oTree Documentation
-
 [otree.readthedocs.io](http://otree.readthedocs.io/)
 
 If you know Japanese or Chinese, please help contribute a translation!
