@@ -27,7 +27,7 @@ msgstr ""
 
 #: ../../source/index.rst:18
 msgid "Live demos"
-msgstr "あの山"
+msgstr ""
 
 #: ../../source/index.rst:20
 msgid "https://www.otreehub.com/projects/?featured=1"

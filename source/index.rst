@@ -12,7 +12,7 @@
     .. image:: _static/splash.png
         :align: center
 
-`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__
+`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 <https://github.com/oTree-org/otree-docs/blob/master/README.md>`__
 
 Live demos
 ^^^^^^^^^^
