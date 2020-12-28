@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2020-12-26 00:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,149 +88,149 @@ msgid ""
 " each other, and all sellers can talk with each other."
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:70
+#: ../../source/multiplayer/chat.rst:64
 msgid "In the page:"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:81
+#: ../../source/multiplayer/chat.rst:74
 msgid "Then in the template:"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:88
+#: ../../source/multiplayer/chat.rst:81
 msgid "Example: chat across rounds"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:90
+#: ../../source/multiplayer/chat.rst:83
 msgid ""
 "If you need players to chat with players who are currently in a different"
 " round of the game, you can do:"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:98
+#: ../../source/multiplayer/chat.rst:91
 msgid "Example: chat between all groups in all rounds"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:100
+#: ../../source/multiplayer/chat.rst:93
 msgid ""
 "If you want everyone in the session to freely chat with each other, just "
 "do:"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:106
+#: ../../source/multiplayer/chat.rst:99
 msgid ""
 "(The number 1 is not significant; all that matters is that it's the same "
 "for everyone.)"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:109
+#: ../../source/multiplayer/chat.rst:102
 msgid "Advanced customization"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:111
+#: ../../source/multiplayer/chat.rst:104
 msgid ""
 "If you look at the page source code in your browser's inspector, you will"
 " see the following selectors are available:"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:115
+#: ../../source/multiplayer/chat.rst:108
 msgid "Element"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:115
+#: ../../source/multiplayer/chat.rst:108
 msgid "CSS/jQuery selector"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:117
+#: ../../source/multiplayer/chat.rst:110
 msgid "Entire chat widget"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:117
+#: ../../source/multiplayer/chat.rst:110
 msgid "``.otree-chat``"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:118
+#: ../../source/multiplayer/chat.rst:111
 msgid "Textbox to type a message"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:118
+#: ../../source/multiplayer/chat.rst:111
 msgid "``.otree-chat__input`` (note: ``__``, not ``_``)"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:119
+#: ../../source/multiplayer/chat.rst:112
 msgid "Button to submit a message"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:119
+#: ../../source/multiplayer/chat.rst:112
 msgid "``.otree-chat__btn-send``"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:120
+#: ../../source/multiplayer/chat.rst:113
 msgid "Div with all messages"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:120
+#: ../../source/multiplayer/chat.rst:113
 msgid "``.otree-chat__messages``"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:121
+#: ../../source/multiplayer/chat.rst:114
 msgid "Message"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:121
+#: ../../source/multiplayer/chat.rst:114
 msgid "``.otree-chat__msg``"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:122
+#: ../../source/multiplayer/chat.rst:115
 msgid "Message's nickname"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:122
+#: ../../source/multiplayer/chat.rst:115
 msgid "``.otree-chat__nickname``"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:123
+#: ../../source/multiplayer/chat.rst:116
 msgid "Message's body text"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:123
+#: ../../source/multiplayer/chat.rst:116
 msgid "``.otree-chat__body``"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:126
+#: ../../source/multiplayer/chat.rst:119
 msgid ""
 "You can use CSS or JS to change the appearance or behavior of these "
 "elements (or hide them entirely)."
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:129
+#: ../../source/multiplayer/chat.rst:122
 #, python-format
 msgid ""
 "For example, to customize the style, just include some CSS after the ``{%"
 " chat %}`` element, e.g.:"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:147
+#: ../../source/multiplayer/chat.rst:140
 msgid "Note that there are 2 underscores (``__``, not ``_``)."
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:149
+#: ../../source/multiplayer/chat.rst:142
 msgid ""
 "You can also customize the appearance by putting it inside a ``<div>`` "
 "and styling that parent ``<div>``. For example, to set the width:"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:159
+#: ../../source/multiplayer/chat.rst:152
 msgid "Multiple chats on a page"
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:161
+#: ../../source/multiplayer/chat.rst:154
 #, python-format
 msgid ""
 "You can have multiple ``{% chat %}`` boxes on each page, so that a player"
 " can be in multiple channels simultaneously."
 msgstr ""
 
-#: ../../source/multiplayer/chat.rst:164
+#: ../../source/multiplayer/chat.rst:157
 msgid ""
 "For example, this code enables 1:1 chat with every other player in the "
 "group."
@@ -301,35 +301,75 @@ msgid "Returns the player in the group with the given ``id_in_group``."
 msgstr ""
 
 #: ../../source/multiplayer/groups.rst:37
-msgid "get_player_by_role(r)"
-msgstr ""
-
-#: ../../source/multiplayer/groups.rst:39
-msgid ""
-"Returns the player with the given role. If you use this method, you must "
-"define the :ref:`role <role>` method. For example:"
-msgstr ""
-
-#: ../../source/multiplayer/groups.rst:63
 msgid "Getting other players"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:65
+#: ../../source/multiplayer/groups.rst:39
 msgid ""
 "Player objects have methods ``get_others_in_group()`` and "
 "``get_others_in_subsession()`` that return a list of the *other* players "
 "in the group and subsession."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:72
-msgid "Group matching"
+#: ../../source/multiplayer/groups.rst:46
+msgid "Roles"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:77
-msgid "Fixed matching"
+#: ../../source/multiplayer/groups.rst:50
+msgid "New in oTree 3.1 (October 2020)"
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:52
+msgid ""
+"If each group has multiple roles, such as buyer/seller, principal/agent, "
+"etc., you can define them in Constants. Make their names start with "
+"``role_``:"
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:63
+msgid ""
+"oTree will then automatically assign each ``role`` to a different player "
+"(sequentially according to ``id_in_group``). You can use this to show "
+"each role different content, e.g.:"
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:73
+msgid "In a template:"
 msgstr ""
 
 #: ../../source/multiplayer/groups.rst:79
+msgid ""
+"You can also use ``group.get_player_by_role()``, which is similar to "
+"``get_player_by_id()``:"
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:89
+msgid ""
+"If you want to switch players' roles, you should rearrange the groups, "
+"using ``set_group_matrix``, ``group_randomly``, etc."
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:94
+msgid ""
+"Before this feature, it was recommended to make a method called "
+"``role()``, and therefore it required parentheses: ``player.role()``. The"
+" new syntax has no parentheses: ``player.role``. The new format has the "
+"advantages of (1) being displayed in more places such as the data export,"
+" and (2) helps you write more reliable code. If you want to switch your "
+"code to the new format, simply replace your ``role()`` method by the "
+"``role_*`` Constants, and remove the parentheses from any ``.role()`` "
+"call."
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:106
+msgid "Group matching"
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:111
+msgid "Fixed matching"
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:113
 msgid ""
 "By default, in each round, players are split into groups of "
 "``Constants.players_per_group``. They are grouped sequentially -- for "
@@ -338,86 +378,86 @@ msgid ""
 "also assigned sequentially within each group."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:84
+#: ../../source/multiplayer/groups.rst:118
 msgid ""
 "This means that by default, the groups are the same in each round, and "
 "even between apps that have the same ``players_per_group``."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:87
+#: ../../source/multiplayer/groups.rst:121
 msgid "If you want to rearrange groups, you can use the below techniques."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:90
+#: ../../source/multiplayer/groups.rst:124
 msgid "group_randomly()"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:92
+#: ../../source/multiplayer/groups.rst:126
 msgid ""
 "Subsessions have a method ``group_randomly()`` that shuffles players "
 "randomly, so they can end up in any group, and any position within the "
 "group."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:95
+#: ../../source/multiplayer/groups.rst:129
 msgid ""
 "If you would like to shuffle players between groups but keep players in "
 "fixed roles, use ``group_randomly(fixed_id_in_group=True)``."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:98
+#: ../../source/multiplayer/groups.rst:132
 msgid "For example, this will group players randomly each round:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:106
+#: ../../source/multiplayer/groups.rst:140
 msgid ""
 "This will group players randomly each round, but keep ``id_in_group`` "
 "fixed:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:114
+#: ../../source/multiplayer/groups.rst:148
 msgid ""
 "For the following example, assume that ``players_per_group = 3``, and "
 "that there are 12 participants in the session:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:143
+#: ../../source/multiplayer/groups.rst:177
 msgid "group_like_round()"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:145
+#: ../../source/multiplayer/groups.rst:179
 msgid ""
 "To copy the group structure from one round to another round, use the "
 "``group_like_round(n)`` method. The argument to this method is the round "
 "number whose group structure should be copied."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:150
+#: ../../source/multiplayer/groups.rst:184
 msgid ""
 "In the below example, the groups are shuffled in round 1, and then "
 "subsequent rounds copy round 1's grouping structure."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:165
+#: ../../source/multiplayer/groups.rst:199
 msgid "get_group_matrix()"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:167
+#: ../../source/multiplayer/groups.rst:201
 msgid ""
 "Subsessions have a method called ``get_group_matrix()`` that return the "
 "structure of groups as a matrix, i.e. a list of lists, with each sublist "
 "being the players in a group, ordered by ``id_in_group``."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:171
+#: ../../source/multiplayer/groups.rst:205
 msgid "The following lines are equivalent."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:183
+#: ../../source/multiplayer/groups.rst:217
 msgid "set_group_matrix()"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:185
+#: ../../source/multiplayer/groups.rst:219
 msgid ""
 "``set_group_matrix()`` lets you modify the group structure in any way you"
 " want. First, get the list of players with ``get_players()``, or the pre-"
@@ -427,29 +467,29 @@ msgid ""
 "``[2:4]``). Then pass this modified matrix to ``set_group_matrix()``:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:212
+#: ../../source/multiplayer/groups.rst:246
 msgid ""
 "You can also pass a matrix of integers. It must contain all integers from"
 " 1 to the number of players in the subsession. Each integer represents "
 "the player who has that ``id_in_subsession``. For example::"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:231
+#: ../../source/multiplayer/groups.rst:265
 msgid "You can even use ``set_group_matrix`` to make groups of uneven sizes."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:233
+#: ../../source/multiplayer/groups.rst:267
 msgid ""
 "To check if your group shuffling worked correctly, open your browser to "
 "the \"Results\" tab of your session, and look at the ``group`` and "
 "``id_in_group`` columns in each round."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:239
+#: ../../source/multiplayer/groups.rst:273
 msgid "Shuffling during the session"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:241
+#: ../../source/multiplayer/groups.rst:275
 msgid ""
 "``creating_session`` is usually a good place to shuffle groups, but "
 "remember that ``creating_session`` is run when the session is created, "
@@ -458,44 +498,44 @@ msgid ""
 "shuffling in a wait page instead."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:247
+#: ../../source/multiplayer/groups.rst:281
 msgid ""
 "Let's say you have defined a method on the subsession called "
 "``do_my_shuffle()`` that uses ``set_group_matrix``, etc."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:250
+#: ../../source/multiplayer/groups.rst:284
 msgid ""
 "You need to make a ``WaitPage`` with ``wait_for_all_groups=True`` and put"
 " the shuffling code in ``after_all_players_arrive``:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:260
+#: ../../source/multiplayer/groups.rst:294
 msgid ""
 "To apply the same grouping to multiple rounds without needing "
 "``wait_for_all_groups`` in each round, add this to the method where you "
 "shuffle the groups:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:269
+#: ../../source/multiplayer/groups.rst:303
 msgid "Group by arrival time"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:271
+#: ../../source/multiplayer/groups.rst:305
 msgid "See :ref:`group_by_arrival_time`."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:274
+#: ../../source/multiplayer/groups.rst:308
 msgid "Example: configurable group size"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:276
+#: ../../source/multiplayer/groups.rst:310
 msgid ""
 "Let's say you want to be able to configure the number of players per "
 "group each time you create a session."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:279
+#: ../../source/multiplayer/groups.rst:313
 msgid ""
 "As described in :ref:`edit_config`, create a key in your session config "
 "(you can call it ``players_per_group``), then use this code to chunk the "
@@ -574,30 +614,24 @@ msgstr ""
 msgid "Works the same way as with regular pages."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:63
-msgid ""
-"If some players in the group skip the wait page, then "
-"``after_all_players_arrive()`` may not be run."
-msgstr ""
-
-#: ../../source/multiplayer/waitpages.rst:69
+#: ../../source/multiplayer/waitpages.rst:66
 msgid "group_by_arrival_time"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:71
+#: ../../source/multiplayer/waitpages.rst:68
 msgid ""
 "If you set ``group_by_arrival_time = True`` on a WaitPage, players will "
 "be grouped in the order they arrive at that wait page:"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:79
+#: ../../source/multiplayer/waitpages.rst:76
 msgid ""
 "For example, if ``players_per_group = 2``, the first 2 players to arrive "
 "at the wait page will be grouped together, then the next 2 players, and "
 "so on."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:82
+#: ../../source/multiplayer/waitpages.rst:79
 msgid ""
 "This is useful in sessions where some participants might drop out (e.g. "
 "online experiments, or experiments with consent pages that let the "
@@ -605,7 +639,7 @@ msgid ""
 "longer than others."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:87
+#: ../../source/multiplayer/waitpages.rst:84
 msgid ""
 "A typical way to use ``group_by_arrival_time`` is to put it after an app "
 "that filters out participants. For example, if your session has a consent"
@@ -617,13 +651,13 @@ msgid ""
 "``my_game``."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:96
+#: ../../source/multiplayer/waitpages.rst:93
 msgid ""
 "If a game has multiple rounds, you may want to only group by arrival time"
 " in round 1:"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:107
+#: ../../source/multiplayer/waitpages.rst:104
 msgid ""
 "If you do this, then subsequent rounds will keep the same group structure"
 " as round 1. Otherwise, players will be re-grouped by their arrival time "
@@ -631,67 +665,68 @@ msgid ""
 "future rounds.)"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:112
+#: ../../source/multiplayer/waitpages.rst:109
+#: ../../source/multiplayer/waitpages.rst:269
 msgid "Notes:"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:114
+#: ../../source/multiplayer/waitpages.rst:111
 msgid ""
 "``id_in_group`` is not necessarily assigned in the order players arrived "
 "at the page."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:115
+#: ../../source/multiplayer/waitpages.rst:112
 msgid ""
 "``group_by_arrival_time`` can only be used if the wait page is the first "
 "page in ``page_sequence``"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:116
+#: ../../source/multiplayer/waitpages.rst:113
 msgid ""
 "If you use ``is_displayed`` on a page with ``group_by_arrival_time``, it "
 "should only be based on the round number. Don't use ``is_displayed`` to "
 "show the page to some players but not others."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:119
+#: ../../source/multiplayer/waitpages.rst:116
 msgid ""
 "If ``group_by_arrival_time = True``, then in ``creating_session``, all "
 "players will initially be in the same group. Groups are only created \"on"
 " the fly\" as players arrive at the wait page."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:123
+#: ../../source/multiplayer/waitpages.rst:120
 msgid ""
 "If you need further control on arranging players into groups, use "
 ":ref:`group_by_arrival_time_method`."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:129
+#: ../../source/multiplayer/waitpages.rst:126
 msgid "group_by_arrival_time_method()"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:133
+#: ../../source/multiplayer/waitpages.rst:130
 msgid ""
 "Before November 2019, this was a method called ``get_players_for_group``,"
 " and it was on the Page, not the Subsession. We recommend switching to "
 "the new format."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:137
+#: ../../source/multiplayer/waitpages.rst:134
 msgid ""
 "If you're using ``group_by_arrival_time`` and want more control over "
 "which players are assigned together, you can also use "
 "``group_by_arrival_time_method()``."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:140
+#: ../../source/multiplayer/waitpages.rst:137
 msgid ""
 "Let's say that in addition to grouping by arrival time, you need each "
 "group to consist of 2 men and 2 women."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:143
+#: ../../source/multiplayer/waitpages.rst:140
 msgid ""
 "If you define a method called ``group_by_arrival_time_method`` on your "
 "Subsession, it will get called whenever a new player reaches the wait "
@@ -701,21 +736,21 @@ msgid ""
 "forward. If you don't return anything, then no grouping occurs."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:150
+#: ../../source/multiplayer/waitpages.rst:147
 msgid ""
 "Here's an example where each group has 2 men and 2 women. It assumes that"
 " in a previous app, you assigned ``self.participant.vars['category']`` to"
 " each participant."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:166
+#: ../../source/multiplayer/waitpages.rst:163
 msgid ""
 "The above example is hardcoded for only 2 categories (M and F). The below"
 " example works for any number of categories. It makes a group as soon as "
 "there are 3 players with the same category."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:182
+#: ../../source/multiplayer/waitpages.rst:179
 msgid ""
 "You can also use ``group_by_arrival_time_method`` to put a timeout on the"
 " wait page, for example to allow the participant to proceed individually "
@@ -724,47 +759,47 @@ msgid ""
 "``group_by_arrival_time``. Store it in ``self.participant.vars``."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:187
+#: ../../source/multiplayer/waitpages.rst:184
 msgid "Then define a Player method:"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:195
+#: ../../source/multiplayer/waitpages.rst:192
 msgid "Now use this:"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:208
+#: ../../source/multiplayer/waitpages.rst:204
 msgid ""
 "This works because the wait page automatically refreshes once or twice a "
 "minute, which re-executes ``group_by_arrival_time_method``."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:214
+#: ../../source/multiplayer/waitpages.rst:210
 msgid "Preventing players from getting stuck on wait pages"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:216
+#: ../../source/multiplayer/waitpages.rst:212
 msgid ""
 "A common problem especially with online experiments is players getting "
 "stuck waiting for another player in their group who dropped out or is too"
 " slow."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:219
+#: ../../source/multiplayer/waitpages.rst:215
 msgid "Here are some things you can do to reduce this problem:"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:222
+#: ../../source/multiplayer/waitpages.rst:218
 msgid "Use ``group_by_arrival_time``"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:224
+#: ../../source/multiplayer/waitpages.rst:220
 msgid ""
 "As described above, you can use ``group_by_arrival_time`` so that only "
 "players who are actively playing around the same time get grouped "
 "together."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:227
+#: ../../source/multiplayer/waitpages.rst:223
 msgid ""
 "``group_by_arrival_time`` works well if used after a \"lock-in\" task. In"
 " other words, before your multiplayer game, you can have a single-player "
@@ -772,11 +807,11 @@ msgid ""
 "this initial task, they are less likely to drop out after that point."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:234
+#: ../../source/multiplayer/waitpages.rst:230
 msgid "Use page timeouts"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:236
+#: ../../source/multiplayer/waitpages.rst:232
 msgid ""
 "Use :ref:`timeout_seconds` on each page, so that if a player is slow or "
 "inactive, their page will automatically advance. Or, you can manually "
@@ -784,11 +819,11 @@ msgid ""
 "in the admin interface."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:241
+#: ../../source/multiplayer/waitpages.rst:237
 msgid "Check timeout_happened"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:243
+#: ../../source/multiplayer/waitpages.rst:239
 msgid ""
 "You can tell users they must submit a page before its "
 "``timeout_seconds``, or else they will be counted as a dropout. Even have"
@@ -798,17 +833,45 @@ msgid ""
 "dropout, and skip the rest of the pages in the round."
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:251
+#: ../../source/multiplayer/waitpages.rst:246
+msgid "Replacing dropped out player with a bot"
+msgstr ""
+
+#: ../../source/multiplayer/waitpages.rst:248
+msgid ""
+"Here's an example that combines some of the above techniques, so that "
+"even if a player drops out, they continue to auto-play, like a bot. Just "
+"use ``get_timeout_seconds`` and ``before_next_page`` on every page, like "
+"this:"
+msgstr ""
+
+#: ../../source/multiplayer/waitpages.rst:271
+msgid ""
+"If the player fails to submit the page on time, we set ``is_dropout`` to "
+"``True``."
+msgstr ""
+
+#: ../../source/multiplayer/waitpages.rst:272
+msgid "Once ``is_dropout`` is set, each page gets auto-submitted instantly."
+msgstr ""
+
+#: ../../source/multiplayer/waitpages.rst:273
+msgid ""
+"When a page is auto-submitted, you use ``timeout_happened`` to decide "
+"what value gets submitted on the user's behalf."
+msgstr ""
+
+#: ../../source/multiplayer/waitpages.rst:277
 msgid "Customizing the wait page's appearance"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:253
+#: ../../source/multiplayer/waitpages.rst:279
 msgid ""
 "You can customize the text that appears on a wait page by setting the "
 "``title_text`` and ``body_text`` attributes, e.g.:"
 msgstr ""
 
-#: ../../source/multiplayer/waitpages.rst:262
+#: ../../source/multiplayer/waitpages.rst:288
 msgid "See also: :ref:`customize_wait_page`."
 msgstr ""
 

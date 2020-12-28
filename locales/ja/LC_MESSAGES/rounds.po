@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2020-10-19 01:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,7 +183,7 @@ msgstr ""
 msgid ""
 "You can also access it from ``Group`` or subsession, as long as you "
 "retrieve a ``Player`` instance (e.g. using ``get_players()`` or "
-"``get_player_by_role()``, etc.)."
+"``get_player_by_id()``, etc.)."
 msgstr ""
 
 #: ../../source/rounds.rst:131
@@ -226,10 +226,15 @@ msgid "Variable number of rounds"
 msgstr ""
 
 #: ../../source/rounds.rst:158
+msgid "If you want a variable number of rounds, consider using :ref:`live`."
+msgstr ""
+
+#: ../../source/rounds.rst:160
 msgid ""
-"If you want a variable number of rounds, consider setting ``num_rounds`` "
-"to some high number, and then in your app, conditionally hide the ``{% "
-"next_button %}`` element, so that the user cannot proceed to the next "
-"page, or use :ref:`app_after_this_page`."
+"Alternatively, you can set ``num_rounds`` to some high number, and then "
+"in your app, conditionally hide the ``{% next_button %}`` element, so "
+"that the user cannot proceed to the next page, or use "
+":ref:`app_after_this_page`. But note that having many rounds (e.g. more "
+"than 100) might cause performance problems, so test your app carefully."
 msgstr ""
 

@@ -36,7 +36,22 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+import sys
+if 'gettext' in sys.argv:
+
+    exclude_patterns = [
+        'misc/otreelite.rst',
+        'misc/version_history.rst',
+        'misc/internationalization.rst',
+        'misc/django.rst',
+        # for some reason, it seems I can exclude files like misc/django.rst
+        # that are members of a subfolder with other files,
+        # but i can't exclude a top-level file like mturk.rst, or all files within a folder.
+        'mturk.rst',
+        'mturk_nostudio.rst',
+    ]
+else:
+    exclude_patterns = []
 
 
 # -- Options for HTML output -------------------------------------------------
