@@ -156,7 +156,7 @@ Misc
 
 -   ``ExtraModel`` is not supported yet
 -   ``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
-it will not work; see below.
+    it will not work; see below.
 -   If you try to access a Player/Group/Subsession field whose value is still ``None``,
     oTree will raise an error.
 
