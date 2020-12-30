@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, oTree team
+# This file is distributed under the same license as the oTree package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-26 00:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/mturk_nostudio.rst:6
+msgid "MTurk setup (without Studio)"
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:8
+msgid ""
+"If you are not using oTree Studio, here are the extra steps to set up "
+"Mechanical Turk integration."
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:13
+msgid ""
+"As of October 2019, oTree is using a new MTurk format. If you ran studies"
+" previously, see `here <https://github.com/oTree-org/otree-"
+"docs/blob/master/source/misc/mturk_newformat.rst>`__."
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:18
+msgid "Installation"
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:20
+msgid ""
+"In your ``requirements.txt`` or ``requirements_base.txt`` (not both), you"
+" should change ``otree`` to ``otree[mturk]``."
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:23
+msgid "Preview template"
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:25
+msgid ""
+"Create an file (empty for now) called "
+"``_templates/global/mturk_template.html``."
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:28
+msgid "Session config"
+msgstr ""
+
+#: ../../source/mturk_nostudio.rst:30
+msgid "In ``SESSION_CONFIG_DEFAULTS``, add:"
+msgstr ""
+

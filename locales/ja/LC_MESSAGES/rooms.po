@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, oTree team
+# This file is distributed under the same license as the oTree package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/rooms.rst:4
+msgid "Rooms"
+msgstr ""
+
+#: ../../source/rooms.rst:6
+msgid "oTree lets you configure \"rooms\", which provide:"
+msgstr ""
+
+#: ../../source/rooms.rst:8
+msgid ""
+"Links that you can assign to participants or lab computers, which stay "
+"constant across sessions"
+msgstr ""
+
+#: ../../source/rooms.rst:10
+msgid ""
+"A \"waiting room\" that lets you see which participants are currently "
+"waiting to start a session."
+msgstr ""
+
+#: ../../source/rooms.rst:11
+msgid ""
+"Short links that are easy for participants to type, good for quick live "
+"demos."
+msgstr ""
+
+#: ../../source/rooms.rst:13
+msgid "Here is a screenshot:"
+msgstr ""
+
+#: ../../source/rooms.rst:19
+msgid "Creating rooms"
+msgstr ""
+
+#: ../../source/rooms.rst:21
+msgid ""
+"You can create multiple rooms -- say, for for different classes you "
+"teach, or different labs you manage."
+msgstr ""
+
+#: ../../source/rooms.rst:25
+msgid "If using oTree Studio"
+msgstr ""
+
+#: ../../source/rooms.rst:27
+msgid "In the sidebar, go to \"Settings\" and then add a room at the bottom."
+msgstr ""
+
+#: ../../source/rooms.rst:30
+msgid "If using PyCharm"
+msgstr ""
+
+#: ../../source/rooms.rst:32
+msgid "Go to your ``settings.py`` and set ``ROOMS``."
+msgstr ""
+
+#: ../../source/rooms.rst:34
+msgid "For example:"
+msgstr ""
+
+#: ../../source/rooms.rst:51
+msgid ""
+"If you are using participant labels (see below), you need a "
+"``participant_label_file`` which is a relative (or absolute) path to a "
+"text file with the participant labels."
+msgstr ""
+
+#: ../../source/rooms.rst:56
+msgid "Configuring a room"
+msgstr ""
+
+#: ../../source/rooms.rst:59
+msgid "Participant labels"
+msgstr ""
+
+#: ../../source/rooms.rst:61
+msgid ""
+"This is the \"guest list\" for the room. It should contain one "
+"participant label per line. For example::"
+msgstr ""
+
+#: ../../source/rooms.rst:75
+msgid ""
+"If you don't specify participant labels, then anyone can join as long as "
+"they know the room-wide URL. See :ref:`no-participant-labels`."
+msgstr ""
+
+#: ../../source/rooms.rst:80
+msgid "use_secure_urls (optional)"
+msgstr ""
+
+#: ../../source/rooms.rst:82
+msgid ""
+"This setting provides extra security on top of the "
+"``participant_label_file``. For example, without secure URLs, your start "
+"URLs would look something like this::"
+msgstr ""
+
+#: ../../source/rooms.rst:89
+msgid ""
+"If Student1 is mischievous, he might change his URL's participant_label "
+"from \"Student1\" to \"Student2\", so that he can impersonate Student2. "
+"However, if you use ``use_secure_urls``, each URL gets a unique code like"
+" this::"
+msgstr ""
+
+#: ../../source/rooms.rst:98
+msgid "Then, Student1 can't impersonate Student2 without the secret code."
+msgstr ""
+
+#: ../../source/rooms.rst:101
+msgid "Using rooms"
+msgstr ""
+
+#: ../../source/rooms.rst:103
+msgid ""
+"In the admin interface, click \"Rooms\" in the header bar, and click the "
+"room you created. Scroll down to the section with the participant URLs."
+msgstr ""
+
+#: ../../source/rooms.rst:108
+msgid "If you have a participant_label_file"
+msgstr ""
+
+#: ../../source/rooms.rst:110
+msgid ""
+"In the room's admin page, monitor which participants are present, and "
+"when you are ready, create a session for the desired number of people."
+msgstr ""
+
+#: ../../source/rooms.rst:113
+msgid "You can either use the participant-specific URLs, or the room-wide URL."
+msgstr ""
+
+#: ../../source/rooms.rst:115
+msgid ""
+"The participant-specific URLs already contain the participant label. For "
+"example::"
+msgstr ""
+
+#: ../../source/rooms.rst:120
+msgid "The room-wide URL does not contain it::"
+msgstr ""
+
+#: ../../source/rooms.rst:124
+msgid ""
+"So, if you use room-wide URLs, participants will be required to enter "
+"their participant label:"
+msgstr ""
+
+#: ../../source/rooms.rst:132
+msgid "If you don't have a participant_label_file"
+msgstr ""
+
+#: ../../source/rooms.rst:134
+msgid ""
+"Just have each participant open the room-wide URL. Then, in the room's "
+"admin page, check how many people are present, and create a session for "
+"the desired number of people."
+msgstr ""
+
+#: ../../source/rooms.rst:138
+msgid ""
+"Although this option is simple, it is less reliable than using "
+"participant labels, because someone could play twice by opening the URL "
+"in 2 different browsers."
+msgstr ""
+
+#: ../../source/rooms.rst:142
+msgid "Reusing for multiple sessions"
+msgstr ""
+
+#: ../../source/rooms.rst:144
+msgid ""
+"Room URLs are designed to be reused across sessions. In a lab, you can "
+"set them as the browser's home page (using either room-wide or "
+"participant-specific URLs)."
+msgstr ""
+
+#: ../../source/rooms.rst:148
+msgid ""
+"In classroom experiments, you can give each student their URL that they "
+"can use through the semester."
+msgstr ""
+
+#: ../../source/rooms.rst:152
+msgid "What if not all participants show up?"
+msgstr ""
+
+#: ../../source/rooms.rst:154
+msgid ""
+"If you're doing a lab experiment and the number of participants is "
+"unpredictable, you can consider using the room-wide URL, and asking "
+"participants to manually enter their participant label. Participants are "
+"only counted as present after they enter their participant label."
+msgstr ""
+
+#: ../../source/rooms.rst:158
+msgid ""
+"Or, you can open the browsers to participant-specific URLs, but before "
+"creating the session, close the browsers on unattended computers."
+msgstr ""
+
+#: ../../source/rooms.rst:161
+msgid ""
+"Participants can join after the session has been created, as long as "
+"there are spots remaining."
+msgstr ""
+
+#: ../../source/rooms.rst:164
+msgid "Pre-assigning participants to labels"
+msgstr ""
+
+#: ../../source/rooms.rst:166
+msgid ""
+"oTree assigns participants based on arrival time, e.g. the first person "
+"to arrive is participant 1. However, in some situations this may be "
+"undesirable, for example:"
+msgstr ""
+
+#: ../../source/rooms.rst:169
+msgid ""
+"You want your participant labels to line up with the oTree IDs, in a "
+"fixed order, e.g. so that LAB29 will always be participant 29."
+msgstr ""
+
+#: ../../source/rooms.rst:171
+msgid ""
+"You want Alice/Bob/Charlie to always be participants 1/2/3, so that they "
+"get grouped to play together."
+msgstr ""
+
+#: ../../source/rooms.rst:174
+msgid "Just assign those participant labels in ``creating_session``:"
+msgstr ""
+
+#: ../../source/rooms.rst:184
+msgid ""
+"If someone opens a start link with ``participant_label=alice``, oTree "
+"checks if any participant in the session already has that label. (This is"
+" necessary so that clicking a start link twice assigns back to the same "
+"participant.)"
+msgstr ""
+
+#: ../../source/rooms.rst:189
+msgid "Passing data about a participant into oTree"
+msgstr ""
+
+#: ../../source/rooms.rst:191
+msgid "See :ref:`participant_vars_rest`."
+msgstr ""
+

@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, oTree team
+# This file is distributed under the same license as the oTree package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/treatments.rst:4
+msgid "Treatments"
+msgstr ""
+
+#: ../../source/treatments.rst:6
+msgid ""
+"To assign participants to different treatment groups, you can use "
+":ref:`creating_session <creating_session>`. For example, you can create a"
+" ``color`` field on the ``Player`` model:"
+msgstr ""
+
+#: ../../source/treatments.rst:15
+msgid ""
+"And then randomly assign players to the \"blue\" or \"red\" treatment "
+"group:"
+msgstr ""
+
+#: ../../source/treatments.rst:27
+msgid ""
+"You can also assign treatments at the group level (put the "
+"``StringField`` in ``Group`` and change the above code to use "
+"``get_groups()`` and ``group.color``)."
+msgstr ""
+
+#: ../../source/treatments.rst:31
+msgid "Treatment groups & multiple rounds"
+msgstr ""
+
+#: ../../source/treatments.rst:33
+msgid ""
+"If your game has multiple rounds, a player could have different colors in"
+" different rounds, because ``creating_session`` gets executed for each "
+"round independently. To prevent this, set it on the participant, rather "
+"than the player:"
+msgstr ""
+
+#: ../../source/treatments.rst:46
+msgid ""
+"Then elsewhere in your code, you can access the participant's color with "
+"``self.participant.vars['color']``."
+msgstr ""
+
+#: ../../source/treatments.rst:49
+msgid "For more on vars, see :ref:`vars`."
+msgstr ""
+
+#: ../../source/treatments.rst:52
+msgid "Balanced treatment groups"
+msgstr ""
+
+#: ../../source/treatments.rst:54
+msgid ""
+"The above code makes a random drawing independently for each player, so "
+"you may end up with an imbalance between \"blue\" and \"red\". To solve "
+"this, you can use ``itertools.cycle``:"
+msgstr ""
+
+#: ../../source/treatments.rst:72
+msgid "Choosing which treatment to play"
+msgstr ""
+
+#: ../../source/treatments.rst:74
+msgid ""
+"In a live experiment, you often want to give a player a random treatment."
+" But when you are testing your game, it is often useful to choose "
+"explicitly which treatment to play. Let's say you are developing the game"
+" from the above example and want to show your colleagues both treatments "
+"(red and blue). You can create 2 session configs that are the same, "
+"except for ``color`` (in oTree Studio, add a \"custom parameter\"):"
+msgstr ""
+
+#: ../../source/treatments.rst:98
+msgid ""
+"Then in your code you can get the current session's color with "
+"``self.session.config['color'].``"
+msgstr ""
+
+#: ../../source/treatments.rst:100
+msgid ""
+"You can even combine this with the randomization approach. You can check "
+"``if 'color' in self.session.config:``; if yes, then use that color; if "
+"no, then choose it randomly."
+msgstr ""
+
+#: ../../source/treatments.rst:107
+msgid "Configure sessions"
+msgstr ""
+
+#: ../../source/treatments.rst:109
+msgid ""
+"You can make your session configurable, so that you can adjust the game's"
+" parameters in the admin interface."
+msgstr ""
+
+#: ../../source/treatments.rst:115
+msgid ""
+"For example, let's say you have a \"num_apples\" parameter. The usual "
+"approach would be to define it in ``Constants``, e.g. "
+"``Constants.num_apples``. But to make it configurable, you can instead "
+"define it in your session config. For example:"
+msgstr ""
+
+#: ../../source/treatments.rst:131
+msgid ""
+"When you create a session in the admin interface, there will be a text "
+"box to change this number. You can also add help text with ``'doc'``:"
+msgstr ""
+
+#: ../../source/treatments.rst:148
+msgid "In your app's code, you can do ``self.session.config['num_apples']``."
+msgstr ""
+
+#: ../../source/treatments.rst:150
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/treatments.rst:152
+msgid ""
+"For a parameter to be configurable, its value must be a number, boolean, "
+"or string."
+msgstr ""
+
+#: ../../source/treatments.rst:153
+msgid ""
+"On the \"Demo\" section of the admin, sessions are not configurable. It's"
+" only available when creating a session in \"Sessions\" or \"Rooms\"."
+msgstr ""
+
+#: ../../source/treatments.rst:157
+msgid "Advanced topics"
+msgstr ""
+
+#: ../../source/treatments.rst:160
+msgid "Group treatments that persist across rounds"
+msgstr ""
+
+#: ../../source/treatments.rst:162
+msgid ""
+"Groups do not have any ``vars`` field, because groups can be re-shuffled "
+"across rounds. You should instead store the variable on one of the "
+"participants in the group:"
+msgstr ""
+
+#: ../../source/treatments.rst:174
+msgid ""
+"Then, when you need to access a group's color, you would look it up like "
+"this:"
+msgstr ""
+

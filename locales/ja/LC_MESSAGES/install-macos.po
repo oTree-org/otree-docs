@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, oTree team
+# This file is distributed under the same license as the oTree package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install-macos.rst:6
+msgid "Installing oTree on macOS"
+msgstr ""
+
+#: ../../source/install-macos.rst:9
+msgid "Important note"
+msgstr ""
+
+#: ../../source/install-macos.rst:11
+msgid ""
+"If you publish research conducted using oTree, you are required by the "
+"oTree license to cite `this paper "
+"<http://dx.doi.org/10.1016/j.jbef.2015.12.001>`__. (Citation: Chen, D.L.,"
+" Schonger, M., Wickens, C., 2016. oTree - An open-source platform for "
+"laboratory, online and field experiments. Journal of Behavioral and "
+"Experimental Finance, vol 9: 88-97)"
+msgstr ""
+
+#: ../../source/install-macos.rst:18
+msgid ""
+"If the below steps don't work for you, please email chris@otree.org with "
+"details."
+msgstr ""
+
+#: ../../source/install-macos.rst:21
+msgid "Step 1: Install Python"
+msgstr ""
+
+#: ../../source/install-macos.rst:23
+msgid ""
+"Download and install `Python 3.7 or 3.8 "
+"<https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__"
+msgstr ""
+
+#: ../../source/install-macos.rst:24
+msgid "In Finder, search for and open the \"Terminal\" app:"
+msgstr ""
+
+#: ../../source/install-macos.rst:29
+msgid "Step 2: Install oTree"
+msgstr ""
+
+#: ../../source/install-macos.rst:31
+msgid "Enter this:"
+msgstr ""
+
+#: ../../source/install-macos.rst:37
+msgid ""
+"(If you get a long error related to Twisted & xcrun, follow the steps "
+"`here <https://apple.stackexchange.com/a/254381>`__ then try again.)"
+msgstr ""
+
+#: ../../source/install-macos.rst:43
+msgid "Next steps"
+msgstr ""
+
+#: ../../source/install-macos.rst:45
+msgid ""
+"If you will use :ref:`oTree Studio <studio>` (recommended), go to "
+"`otreehub.com <https://www.otreehub.com/studio>`__."
+msgstr ""
+
+#: ../../source/install-macos.rst:47
+msgid ""
+"If you will use PyCharm or another text-based code editor, follow the "
+"steps :ref:`here <install-nostudio>`."
+msgstr ""
+
