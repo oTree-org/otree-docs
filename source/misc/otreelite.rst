@@ -6,28 +6,18 @@ oTree Lite
 As of December 2020, there is an alternative implementation of oTree that runs as a self-contained framework,
 not dependent on Django.
 
-Advantages
-----------
+It is smaller, which makes it easier to install, deploy, and use. For example:
 
-Simpler codebase
-~~~~~~~~~~~~~~~~
+-   Simpler error messages
+-   Fewer dependencies such as Twisted that cause installation problems for some people
+-   Compatible with more versions of Python
+-   No need for Redis or second dyno
+-   I also expect it to eventually run much faster, once I start performance tuning it.
 
-This codebase is simpler and more self-contained.
+oTree Lite's codebase is simpler and more self-contained.
 For the curious people who want to delve into oTree's internal source code,
 you will have an easier time navigating oTree Lite.
 
-Easier to extend
-~~~~~~~~~~~~~~~~
-
-Django is quite a heavyweight framework and imposes a lot of constraints.
-In contrast, this implementation is smaller and uses more modern components such as Starlette.
-
-Lightweight
-~~~~~~~~~~~
-
-It is also considerably more lightweight, which you will notice during deployment,
-running commands, etc (for example it doesn't require Redis or a second dyno).
-I also expect it to eventually run much faster, once I start performance tuning it.
 
 Installation
 ------------
@@ -35,6 +25,46 @@ Installation
 run::
 
     pip install -U "otree>=5a"
+
+
+.. _lite_vs_mainline:
+
+Should I install oTree Lite, or oTree 3.x?
+------------------------------------------
+
+oTree 3.x and oTree Lite each have unique advantages, so I will be actively maintaining
+both. You can try either version and switch back and forth between them, since they
+have the same features and are compatible with the same code format.
+
+Reasons in favor of using oTree Lite:
+
+-   You are a first-time oTree user
+-   Your apps were developed in the past 1 or 2 years, or using oTree Studio
+    (so they likely already use the latest format)
+-   Or, you want some of the features of oTree Lite,
+    and don't mind running ``otree update_my_code`` to update your older apps.
+
+Reasons in favor of using oTree 3.x (mainline version):
+
+-   You have existing apps that are rather complex and want to guarantee compatibility
+-   Your apps use features from the Django documentation,
+    or addons you got from someone else.
+
+How can I ensure I stay on oTree 3.x?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To ensure that you don't install oTree Lite, specify ``<5`` when you upgrade::
+
+    pip3 install -U "otree<5"
+
+For Heroku, use one of the following formats in your ``requirements.txt``
+(replace 3.3.7 with whatever 3.x version you want)::
+
+    otree<5
+    # or:
+    otree>=3.3.7,<5
+    # or:
+    otree==3.3.7
 
 
 Compatibility
@@ -121,15 +151,14 @@ In my experience the main things that differed are:
 -   ``data-*`` attributes are renamed to ``data-bs-*``
 -   ``form-group`` no longer exists
 
-Known issues
-~~~~~~~~~~~~
+Misc
+~~~~
 
-The following oTree features are not supported yet:
-
--   ``ExtraModel``
-
-``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
+-   ``ExtraModel`` is not supported yet
+-   ``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
 it will not work; see below.
+-   If you try to access a Player/Group/Subsession field whose value is still ``None``,
+    oTree will raise an error.
 
 Django (for advanced use cases)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -28,15 +28,18 @@ Step 1: Install Python
 Step 2: Install oTree
 ---------------------
 
-Enter this:
+To install the regular version of oTree:
 
 .. code-block:: bash
 
-    pip3 install -U otree
+    pip3 install -U "otree<5"
 
-(If you get a long error related to Twisted & xcrun,
-follow the steps `here <https://apple.stackexchange.com/a/254381>`__
-then try again.)
+To install oTree Lite
+(a streamlined version of oTree, in beta; more :ref:`here <lite_vs_mainline>`):
+
+.. code-block:: bash
+
+    pip3 install -U "otree>=5a"
 
 
 Next steps

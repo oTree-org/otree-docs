@@ -21,7 +21,6 @@ Step 1: Install Python
 ----------------------
 
 Download and install `Python 3.7 <https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__.
-(3.8 not recommended currently.)
 
 ..
     3.7 is preferred because Twisted wheel is not yet available on 3.8, meaning people need to install
@@ -40,15 +39,21 @@ Then click the "File" menu and open PowerShell:
 
 .. figure:: _static/setup/open-powershell.png
 
-Enter this command at the prompt:
+..
+    Enter this command at the prompt:
+
+To install the regular version of oTree:
 
 .. code-block:: bash
 
-    pip3 install -U otree
+    pip3 install -U "otree<5"
 
-If you get an error like "Microsoft Visual C++ is required", uninstall Python 3.8
-and install 3.7 (simple solution), or install the `Visual C++ Build Tools <http://go.microsoft.com/fwlink/?LinkId=691126>`__
-(somewhat more complicated).
+To install oTree Lite
+(a streamlined version of oTree, in beta; more :ref:`here <lite_vs_mainline>`):
+
+.. code-block:: bash
+
+    pip3 install -U "otree>=5a"
 
 
 Next steps
