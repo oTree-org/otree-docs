@@ -53,8 +53,6 @@ for editing your Python files.
 See the PyCharm documentation on how to configure your interpreter so that you get
 code completion.
 
-.. figure:: _static/setup/pycharm-autocomplete.gif
-
 Then launch the text editor and open your entire project folder.
 
 .. _upgrade:
@@ -70,3 +68,14 @@ It's the same command:
 
     pip3 install -U otree
 
+The best way to ensure that your apps continue to work after you upgrade is to
+use only the functions described in this documentation.
+Some code snippets you may find online were written by people who access oTree's internal functions
+and "hack" them to do something different.
+Although these snippets can enable some innovative new functionality,
+be aware that they increase the chance of things breaking when you upgrade.
+Because oTree's internal code layout changes from release to release.
+
+For similar reasons, we also caution about directly using Django functionality,
+apart from the few components linked in this documentation
+(such as Django templates).

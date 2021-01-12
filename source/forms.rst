@@ -348,10 +348,6 @@ you can arrange them in a table:
         {% endfor %}
     </table>
 
-You can also get choices individually by using their 0-based index,
-e.g. ``{{ form.my_field.0 }}`` gives you the radio button of the first choice.
-
-
 .. _raw_html:
 
 Raw HTML widgets
@@ -369,10 +365,9 @@ For example, if your ``form_fields`` includes ``my_field``,
 you can do ``<input name="my_field" type="checkbox" />``
 (some other common types are ``radio``, ``text``, ``number``, and ``range``).
 
-Second, you should usually include ``{{ form.my_field.errors }}``,
+Second, you should usually include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
-
 
 Raw HTML example: slider
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,8 +393,8 @@ put HTML like this in your template:
         </div>
     </div>
 
-If you want to show the current numeric value, or hide the knob until the slider is clicked
-(to avoid anchoring), you could do that with JavaScript,
+If you want to show the current numeric value, or hide the knob until the slider is clicked,
+you could do that with JavaScript,
 but consider using the ``RadioSelectHorizontal`` widget instead.
 
 Raw HTML example: custom user interface with JavaScript
@@ -410,29 +405,23 @@ but instead interact with some sort of visual app, like a clicking on a chart
 or playing a graphical game. Or, you want to record extra data like how long
 they spent on part of the page, how many times they clicked, etc.
 
-You can build these interfaces in any front-end framework you want.
-Simple ones can be done with plain JavaScript; more complex ones would use something
-like React, Vue.js, or jsPsych.
-
-Then, use JavaScript to record the relevant data points and store it in a
+First, build your interface using HTML and JavaScript.
+Then use JavaScript to write the results into a
 hidden form field. For example:
 
 .. code-block:: python
 
     # Player class
-    my_hidden_input = models.IntegerField()
+    num_clicks = models.IntegerField()
 
     # page
-    form_fields = ['my_hidden_input']
+    form_fields = ['num_clicks']
 
-    # HTML template
-    <input type="hidden" name="my_hidden_input" />
+    # HTML
+    <input type="hidden" name="num_clicks" id="num_clicks" />
 
-Then use JavaScript to set the value of that input:
-
-.. code-block:: javascript
-
-    document.querySelector('[name=my_hidden_input]').value = 42;
+    # JavaScript
+    document.getElementById('num_clicks').value = 42;
 
 When the page is submitted, the value of your hidden input will be recorded
 in oTree like any other form field.

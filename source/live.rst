@@ -54,7 +54,7 @@ On your ``Page`` class, set ``live_method`` to route the messages to that method
 Sending data to the page
 ------------------------
 
-To send data back, return a dictionary whose keys are the IDs of the players
+To send data back, return a dict whose keys are the IDs of the players
 to receive a message.
 For example, here is a method that simply sends "thanks"
 to whoever sends a message.
@@ -227,7 +227,7 @@ Then in the template, automatically submit the page via JavaScript:
         console.log('received', data);
         let type = data.type;
         if (type === 'game_finished') {
-            document.getElementById("#form").submit();
+            document.getElementById("form").submit();
         }
         // handle other types of messages here..
     }

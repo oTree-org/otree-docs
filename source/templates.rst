@@ -65,7 +65,9 @@ Comments
 .. code-block:: django
 
 
-    {# this is a comment #}
+    {% comment %}
+    this is a comment
+    {% endcomment %}
 
 
 Things you can't do

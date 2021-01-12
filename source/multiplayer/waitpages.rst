@@ -160,21 +160,6 @@ It assumes that in a previous app, you assigned ``self.participant.vars['categor
                 return [m_players[0], m_players[1], f_players[0], f_players[1]]
             print('not enough players yet to create a group')
 
-The above example is hardcoded for only 2 categories (M and F).
-The below example works for any number of categories.
-It makes a group as soon as there are 3 players with the same category.
-
-.. code-block:: python
-
-    def group_by_arrival_time_method(self, waiting_players):
-        from collections import defaultdict
-        d = defaultdict(list)
-        for p in waiting_players:
-            category = p.participant.vars['category']
-            players_with_this_category = d[category]
-            players_with_this_category.append(p)
-            if len(players_with_this_category) == 3:
-                return players_with_this_category
 
 You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page,
 for example to allow the participant to proceed individually if they have been waiting

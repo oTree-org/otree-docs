@@ -1,6 +1,6 @@
 [otree.readthedocs.io](http://otree.readthedocs.io/)
 
-If you know Japanese or Chinese, please help contribute a translation!
+If you know Japanese, please help contribute a translation!
 
 1.   Fork & download this repo
 1.   `pip install -r requirements.txt`

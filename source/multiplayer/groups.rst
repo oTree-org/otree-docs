@@ -219,10 +219,7 @@ set_group_matrix()
 ``set_group_matrix()`` lets you modify the group structure in any way you want.
 First, get the list of players with ``get_players()``, or the pre-existing
 group matrix with ``get_group_matrix()``.
-Construct your matrix using Python list operations like
-``.extend()``, ``.append()``, ``.pop()``, ``.reverse()``,
-and list indexing and slicing (e.g. ``[0]``, ``[2:4]``).
-Then pass this modified matrix to ``set_group_matrix()``:
+Make your matrix then pass it to ``set_group_matrix()``:
 
 .. code-block:: python
 
@@ -250,7 +247,6 @@ For example::
 
     class Subsession(BaseSubsession):
         def creating_session(self):
-            matrix = self.get_group_matrix()
 
             new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
             self.set_group_matrix(new_structure)
@@ -261,8 +257,6 @@ For example::
             #  [<Player  7>, <Player  9>, <Player 11>],
             #  [<Player  2>, <Player  4>, <Player  6>],
             #  [<Player  8>, <Player 10>, <Player 12>]]
-
-You can even use ``set_group_matrix`` to make groups of uneven sizes.
 
 To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
@@ -303,24 +297,3 @@ Group by arrival time
 ~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`group_by_arrival_time`.
-
-Example: configurable group size
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Let's say you want to be able to configure the number of players per group
-each time you create a session.
-
-As described in :ref:`edit_config`, create a key in your session config
-(you can call it ``players_per_group``), then use this code to chunk the players
-into groups of that size:
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-        def creating_session(self):
-            group_matrix = []
-            players = self.get_players()
-            ppg = self.session.config['players_per_group']
-            for i in range(0, len(players), ppg):
-                group_matrix.append(players[i:i+ppg])
-            self.set_group_matrix(group_matrix)

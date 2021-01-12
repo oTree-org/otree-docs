@@ -83,8 +83,8 @@ Templates
 The template system is basically compatible with Django templates,
 except that only the basic tags & filters have been implemented:
 
--   Tags: ``if``, ``for``, ``block``, ``extends``, ``with``
--   Filters: ``json``, ``escape``, ``c``, ``default``
+-   Tags: ``{% if %}``, ``{% for %}``, ``{% block %}``, ``{% extends %}``, ``{% with %}``
+-   Filters: ``{{ x|json }}``, ``{{ x|escape }}``, ``{{ x|c }}``, ``{{ x|default }}``
 
 There is no ``floatformat`` filter, but there are new rounding filters that replace it.
 For example:
@@ -138,7 +138,7 @@ which will tell you the changes you need to make before your code can run on oTr
 
 A few common issues:
 
--   The ``Slider`` and ``CheckboxInput`` widgets are unavailable.
+-   The ``Slider`` widget is unavailable.
     You should instead use :ref:`raw_html` (which has been the recommended solution anyway)
 
 Bootstrap
@@ -154,6 +154,8 @@ In my experience the main things that differed are:
 Misc
 ~~~~
 
+-   In ``get_group_matrix`` returns a matrix of integers, rather than a matrix of player objects.
+    To preserve the previous behavior, you should pass ``objects=True``, like ``.get_group_matrix(objects=True)``.
 -   ``ExtraModel`` is not supported yet
 -   ``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
     it will not work; see below.

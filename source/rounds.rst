@@ -11,7 +11,7 @@ A session is basically a sequence of apps that are played one after the other.
 Combining apps
 --------------
 
-You can combine apps by setting your session config's ``'app_sequence'``.
+You can combine apps by setting your session config's ``app_sequence``.
 
 Passing data between apps
 -------------------------
@@ -73,7 +73,12 @@ because it includes the current round's player.
 
 ``player.in_round(m)`` returns just the player in round ``m``.
 For example, to get the player's payoff in the previous round,
-you would do ``self.player.in_round(self.round_number - 1).payoff``.
+you would do:
+
+.. code-block:: python
+
+    prev_player = self.player.in_round(self.round_number - 1)
+    print(prev_player.payoff)
 
 These methods work the same way for subsessions (e.g. ``self.subsession.in_all_rounds()``).
 
@@ -89,7 +94,7 @@ you should store this data on the participant object,
 which persists across apps (see :ref:`participants_and_players`).
 (``in_all_rounds()`` only is useful when you need to access data from a previous
 round of the same app.)
-Put it in ``participant.vars``, which is a dictionary that can store any data.
+Put it in ``participant.vars``, which is a dict that can store any data.
 For example, you can set an attribute like this::
 
     self.participant.vars['blah'] = [1, 2, 3]
@@ -97,13 +102,11 @@ For example, you can set an attribute like this::
 Later in the session (e.g. in a separate app),
 you can retrieve it like this::
 
-    # the below line gives [1, 2, 3]
     self.participant.vars['blah']
     # or try printing:
     print('vars is', self.participant.vars)
 
-As described :ref:`here <object_model>`, the current participant can be
-accessed from a ``Page`` or ``Player``:
+Here are some examples:
 
 .. code-block:: python
 
@@ -116,10 +119,6 @@ accessed from a ``Page`` or ``Player``:
     class Player(BasePlayer):
         def some_method(self):
             self.participant.vars['foo'] = 1
-
-You can also access it from ``Group`` or subsession, as long as you retrieve
-a ``Player`` instance (e.g. using ``get_players()`` or ``get_player_by_id()``,
-etc.).
 
 .. code-block:: python
 
@@ -142,14 +141,7 @@ session.vars
 
 For global variables that are the same for all participants in the session,
 you can use ``self.session.vars``.
-This is a dictionary just like ``participant.vars``. The difference is that
-if you set a variable in ``self.session.vars``, it will apply
-to all participants in the session, not just one.
-
-As described :ref:`here <object_model>`, the ``session`` object can be
-accessed from a ``Page`` object or any of the models (``Player``, ``Group``,
-``Subsession``, etc.).
-
+This is a dict just like ``participant.vars``.
 
 
 Variable number of rounds
