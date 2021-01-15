@@ -40,8 +40,9 @@ You can check if the page was submitted by timeout:
         timeout_seconds = 60
 
         def before_next_page(self):
+            player = self.player
             if self.timeout_happened:
-                self.player.xyz = True
+                player.xyz = True
 
 
 ``timeout_happened`` only exists in ``before_next_page``.

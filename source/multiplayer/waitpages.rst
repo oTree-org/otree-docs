@@ -181,10 +181,10 @@ Now use this:
     def group_by_arrival_time_method(self, waiting_players):
         if len(waiting_players) >= 3:
             return waiting_players[:3]
-        for p in waiting_players:
-            if p.waiting_too_long():
-                # [p] means a single-player group.
-                return [p]
+        for player in waiting_players:
+            if player.waiting_too_long():
+                # make a single-player group.
+                return [player]
 
 This works because the wait page automatically refreshes once or twice a minute,
 which re-executes ``group_by_arrival_time_method``.
@@ -247,9 +247,10 @@ like this:
                 return 5*60
 
         def before_next_page(self):
+            player = self.player
             if self.timeout_happened:
+                player.contribution = c(100)
                 self.participant.vars['is_dropout'] = True
-                self.player.contribution = c(100)
 
 Notes:
 

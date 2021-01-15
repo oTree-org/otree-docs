@@ -299,8 +299,9 @@ define a method ``js_vars`` on your Page, for example:
 .. code-block:: html
 
     def js_vars(self):
+        player = self.player
         return dict(
-            payoff=self.player.payoff,
+            payoff=player.payoff,
         )
 
 Then, in your template, you can refer to these variables:

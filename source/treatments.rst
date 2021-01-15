@@ -40,8 +40,8 @@ To prevent this, set it on the participant, rather than the player:
 
         def creating_session(self):
             if self.round_number == 1:
-                for p in self.get_players():
-                    p.participant.vars['color'] = random.choice(['blue', 'red'])
+                for player in self.get_players():
+                    player.participant.vars['color'] = random.choice(['blue', 'red'])
 
 Then elsewhere in your code, you can access the participant's color with
 ``self.participant.vars['color']``.
@@ -62,8 +62,8 @@ To solve this, you can use ``itertools.cycle``:
         def creating_session(self):
             import itertools
             colors = itertools.cycle(['blue', 'red'])
-            for p in self.get_players():
-                p.color = next(colors)
+            for player in self.get_players():
+                player.color = next(colors)
 
 
 .. _session_config_treatments:

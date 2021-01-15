@@ -67,8 +67,9 @@ In the page:
 
     class MyPage(Page):
         def vars_for_template(self):
+            player = self.player
             return dict(
-                nickname=self.player.chat_nickname()
+                nickname=player.chat_nickname()
             )
 
 Then in the template:
@@ -161,8 +162,8 @@ For example, this code enables 1:1 chat with every other player in the group.
     class Subsession(BaseSubsession):
 
         def creating_session(self):
-            for p in self.get_players():
-                p.chat_nickname = 'Player {}'.format(p.id_in_group)
+            for player in self.get_players():
+                player.chat_nickname = 'Player {}'.format(p.id_in_group)
 
     # ...
 

@@ -43,8 +43,8 @@ Passing data between rounds or apps
 -----------------------------------
 
 Each round has separate subsession, ``Group``, and ``Player`` objects.
-For example, let's say you set ``self.player.my_field = True`` in round 1.
-In round 2, if you try to access ``self.player.my_field``,
+For example, let's say you set ``player.my_field = True`` in round 1.
+In round 2, if you try to access ``player.my_field``,
 you will find its value is ``None``.
 This is because the ``Player`` objects
 in round 1 are separate from ``Player`` objects in round 2.
@@ -77,7 +77,7 @@ you would do:
 
 .. code-block:: python
 
-    prev_player = self.player.in_round(self.round_number - 1)
+    prev_player = player.in_round(self.round_number - 1)
     print(prev_player.payoff)
 
 These methods work the same way for subsessions (e.g. ``self.subsession.in_all_rounds()``).
@@ -124,8 +124,8 @@ Here are some examples:
 
     class Subsession(BaseSubsession):
         def creating_session(self):
-            for p in self.get_players():
-                p.participant.vars['foo'] = 1
+            for player in self.get_players():
+                player.participant.vars['foo'] = 1
 
 You can test if ``'my_var'`` exists with ``if 'my_var' in self.participant.vars:``.
 

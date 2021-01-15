@@ -101,8 +101,8 @@ For example:
     class Subsession(BaseSubsession):
 
         def creating_session(self):
-            for p in self.get_players():
-                p.payoff = c(10)
+            for player in self.get_players():
+                player.payoff = c(10)
 
 More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.

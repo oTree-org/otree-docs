@@ -46,7 +46,8 @@ Use this to pass variables to the template. Example:
 .. code-block:: python
 
     def vars_for_template(self):
-        a = self.player.num_apples * 10
+        player = self.player
+        a = player.num_apples * 10
         return dict(
             a=a,
             b=1 + 1,
@@ -83,7 +84,8 @@ Example:
 .. code-block:: python
 
     def before_next_page(self):
-        self.player.tripled_apples = self.player.num_apples * 3
+        player = self.player
+        player.tripled_apples = player.num_apples * 3
 
 
 timeout_seconds

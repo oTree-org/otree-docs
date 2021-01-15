@@ -133,8 +133,8 @@ Go to your Group model and add a method called ``set_payoffs``
         contributions = [p.contribution for p in players]
         self.total_contribution = sum(contributions)
         self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
-        for p in players:
-            p.payoff = Constants.endowment - p.contribution + self.individual_share
+        for player in players:
+            player.payoff = Constants.endowment - player.contribution + self.individual_share
 
 After a player makes a
 contribution, they cannot see the results page right away; they first
@@ -233,8 +233,8 @@ You can sprinkle lots of prints in your code
     print('individual share', group.individual_share)
     if group.individual_share > 100:
         print('inside if statement')
-        for p in players:
-            p.payoff = Constants.endowment - p.contribution + group.individual_share
+        for player in players:
+            player.payoff = Constants.endowment - p.contribution + group.individual_share
             print('payoff after', p.payoff)
 
 
