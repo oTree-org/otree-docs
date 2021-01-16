@@ -106,7 +106,8 @@ Send page
         form_fields = ['sent_amount']
 
         def is_displayed(self):
-            return self.player.id_in_group == 1
+            player = self.player
+            return player.id_in_group == 1
 
 We use :ref:`is_displayed` to only show this to P1; P2 skips the
 page. For more info on ``id_in_group``, see :ref:`groups`.
@@ -159,7 +160,8 @@ Here is the page code. Notes:
         form_fields = ['sent_back_amount']
 
         def is_displayed(self):
-            return self.player.id_in_group == 2
+            player = self.player
+            return player.id_in_group == 2
 
         def vars_for_template(self):
             return dict(

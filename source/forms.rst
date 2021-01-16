@@ -241,7 +241,8 @@ If you need the list of form fields to be dynamic, instead of
 .. code-block:: python
 
     def get_form_fields(self):
-        if self.player.num_bids == 3:
+        player = self.player
+        if player.num_bids == 3:
             return ['bid_1', 'bid_2', 'bid_3']
         else:
             return ['bid_1', 'bid_2']
@@ -489,8 +490,9 @@ If the label should contain a variable, you can construct the string in your pag
         form_fields = ['contribution']
 
         def vars_for_template(self):
+            player = self.player
             return dict(
-                contribution_label='How much of your {} do you want to contribute?'.format(self.player.endowment)
+                contribution_label='How much of your {} do you want to contribute?'.format(player.endowment)
             )
 
 Then, in the template:

@@ -248,7 +248,8 @@ like this:
 
         def before_next_page(self):
             player = self.player
-            if self.timeout_happened:
+            timeout_happened = self.timeout_happened
+            if timeout_happened:
                 player.contribution = c(100)
                 self.participant.vars['is_dropout'] = True
 

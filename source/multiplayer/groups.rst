@@ -68,7 +68,8 @@ You can use this to show each role different content, e.g.:
 
     class AgentPage(Page):
         def is_displayed(self):
-            return self.player.role == Constants.role_agent
+            player = self.player
+            return player.role == Constants.role_agent
 
 In a template:
 

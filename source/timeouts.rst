@@ -41,7 +41,8 @@ You can check if the page was submitted by timeout:
 
         def before_next_page(self):
             player = self.player
-            if self.timeout_happened:
+            timeout_happened = self.timeout_happened
+            if timeout_happened:
                 player.xyz = True
 
 
@@ -62,7 +63,8 @@ For example:
     class MyPage(Page):
 
         def get_timeout_seconds(self):
-            return self.player.my_page_timeout_seconds
+            player = self.player
+            return player.my_page_timeout_seconds
 
 
 Or, using a custom session config parameter (see :ref:`session_config_treatments`).
@@ -90,7 +92,7 @@ it will be set to ``0`` for numeric fields, ``False`` for boolean fields, and th
 string ``''`` for string fields.
 
 If you want to discard the auto-submitted values, you can just
-check if ``self.timeout_happened``, and if so, overwrite the values.
+check if ``timeout_happened``, and if so, overwrite the values.
 
 If the ``error_message()`` method fails, then the whole form might be invalid,
 so the whole form will be discarded.

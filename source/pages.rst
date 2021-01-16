@@ -25,7 +25,8 @@ For example, to only show the page to P2 in each group:
 .. code-block:: python
 
     def is_displayed(self):
-        return self.player.id_in_group == 2
+        player = self.player
+        return player.id_in_group == 2
 
 Or only show the page in round 1:
 
@@ -115,7 +116,8 @@ For example, to skip to the next app, you would do:
 .. code-block:: python
 
     def app_after_this_page(self, upcoming_apps):
-        if self.player.whatever:
+        player = self.player
+        if player.whatever:
             return upcoming_apps[0]
 
 ``upcoming_apps`` is the remainder of the ``app_sequence`` (a list of strings).
@@ -126,8 +128,9 @@ Or you could just return a hardcoded string
 .. code-block:: python
 
     def app_after_this_page(self, upcoming_apps):
+        player = self.player
         print('upcoming_apps is', upcoming_apps)
-        if self.player.whatever:
+        if player.whatever:
             return "public_goods"
 
 If this method doesn't return anything,
