@@ -28,18 +28,18 @@ Step 1: Install Python
 Step 2: Install oTree
 ---------------------
 
-To install the regular version of oTree:
-
-.. code-block:: bash
-
-    pip3 install -U "otree<5"
-
 To install oTree Lite
-(a streamlined version of oTree, in beta; more :ref:`here <lite_vs_mainline>`):
+(recommended for new users; more info :ref:`here <lite_vs_mainline>`):
 
 .. code-block:: bash
 
     pip3 install -U "otree>=5a"
+
+To install the regular version of oTree (recommended for maximum compatibility with existing apps):
+
+.. code-block:: bash
+
+    pip3 install -U "otree<5"
 
 
 Next steps
