@@ -50,15 +50,15 @@ Roles
     New in oTree 3.1 (October 2020)
 
 If each group has multiple roles, such as buyer/seller, principal/agent, etc.,
-you can define them in Constants. Make their names start with ``role_``:
+you can define them in Constants. Make their names end with ``_role``:
 
 .. code-block:: python
 
     class Constants(BaseConstants):
         ...
 
-        role_principal = 'Principal'
-        role_agent = 'Agent
+        principal_role = 'Principal'
+        agent_role = 'Agent
 
 oTree will then automatically assign each ``role`` to a different player
 (sequentially according to ``id_in_group``).
@@ -70,7 +70,7 @@ You can use this to show each role different content, e.g.:
 
         @staticmethod
         def is_displayed(player):
-            return player.role == Constants.role_agent
+            return player.role == Constants.agent_role
 
 In a template:
 
@@ -83,12 +83,13 @@ You can also use ``group.get_player_by_role()``, which is similar to ``get_playe
 .. code-block:: python
 
     def set_payoffs(group):
-        principal = group.get_player_by_role(Constants.role_principal)
-        agent = group.get_player_by_role(Constants.role_agent)
+        principal = group.get_player_by_role(Constants.principal_role)
+        agent = group.get_player_by_role(Constants.agent_role)
         # ...
 
 If you want to switch players' roles,
-you should rearrange the groups, using ``set_group_matrix``, ``group_randomly``, etc.
+you should rearrange the groups, using ``subsession.group_randomly()``,
+``group.set_players()``, etc.
 
 .. note::
 
