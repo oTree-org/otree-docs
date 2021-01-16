@@ -24,15 +24,15 @@ For example, to only show the page to P2 in each group:
 
 .. code-block:: python
 
-    def is_displayed(self):
-        return self.player.id_in_group == 2
+    def is_displayed(player):
+        return player.id_in_group == 2
 
 Or only show the page in round 1:
 
 .. code-block:: python
 
-    def is_displayed(self):
-        return self.round_number == 1
+    def is_displayed(player):
+        return player.round_number == 1
 
 If you need to repeat the same rule for many pages, use :ref:`app_after_this_page`.
 
@@ -45,8 +45,7 @@ Use this to pass variables to the template. Example:
 
 .. code-block:: python
 
-    def vars_for_template(self):
-        player = self.player
+    def vars_for_template(player):
         a = player.num_apples * 10
         return dict(
             a=a,
@@ -83,8 +82,7 @@ Example:
 
 .. code-block:: python
 
-    def before_next_page(self):
-        player = self.player
+    def before_next_page(player):
         player.tripled_apples = player.num_apples * 3
 
 
@@ -114,8 +112,8 @@ For example, to skip to the next app, you would do:
 
 .. code-block:: python
 
-    def app_after_this_page(self, upcoming_apps):
-        if self.player.whatever:
+    def app_after_this_page(player, upcoming_apps):
+        if player.whatever:
             return upcoming_apps[0]
 
 ``upcoming_apps`` is the remainder of the ``app_sequence`` (a list of strings).
@@ -125,9 +123,9 @@ Or you could just return a hardcoded string
 
 .. code-block:: python
 
-    def app_after_this_page(self, upcoming_apps):
+    def app_after_this_page(player, upcoming_apps):
         print('upcoming_apps is', upcoming_apps)
-        if self.player.whatever:
+        if player.whatever:
             return "public_goods"
 
 If this method doesn't return anything,

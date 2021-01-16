@@ -82,7 +82,7 @@ For example::
 oTree will record this participant label. It
 will be used to identify that participant in the
 oTree admin interface and the payments page, etc.
-You can also access it from your code as ``self.participant.label``.
+You can also access it from your code as ``player.participant.label``.
 
 Another benefit of participant labels is that if the participant opens their start link twice,
 they will be assigned back to the same participant (if you are using a room-wide or session-wide URL).
@@ -117,16 +117,15 @@ Here is a screenshot:
 Here is a trivial example, where we add an admin report that
 displays a sorted list of payoffs for a given round.
 
-First, define a method ``vars_for_admin_report`` on the Subsession.
+First, define a function ``vars_for_admin_report``.
 This works the same way as :ref:`vars_for_template`.
 For example:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-        def vars_for_admin_report(self):
-            payoffs = sorted([p.payoff for p in self.get_players()])
-            return dict(payoffs=payoffs)
+    def vars_for_admin_report(subsession):
+        payoffs = sorted([p.payoff for p in subsession.get_players()])
+        return dict(payoffs=payoffs)
 
 Then create an includable template ``admin_report.html``
 in your app, and display whatever variables were passed in ``vars_for_admin_report``:
@@ -162,8 +161,9 @@ and pass the variables like this:
 
     class Results(Page):
 
-        def vars_for_template(self):
-            return self.subsession.vars_for_admin_report()
+        @staticmethod
+        def vars_for_template(player):
+            return vars_for_admin_report(player.subsession)
 
 
 Kiosk Mode
@@ -214,7 +214,7 @@ Custom data exports
 
 You can make your own custom data export for an app.
 In oTree Studio, go to the "Player" model and click on "custom_export" at the bottom.
-(If using a text editor, define the below function at the bottom of your ``models.py``, not within a class.)
+(If using a text editor, define the below function.)
 The argument ``players`` is a queryset of all the players in the database.
 Use a ``yield`` for each row of data.
 

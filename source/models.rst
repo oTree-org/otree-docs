@@ -98,17 +98,12 @@ For example:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            for player in self.get_players():
-                player.payoff = c(10)
+    def creating_session(subsession):
+        for player in subsession.get_players():
+            player.payoff = c(10)
 
 More info on the section on :ref:`treatments <treatments>` and
 :ref:`group shuffling <shuffling>`.
-
-Unlike most other built-in subsession methods,
-this method is one you must define yourself.
 
 ``creating_session`` is **not** run at the beginning of each round.
 It is run when you click the "create session" button, i.e. before anybody starts playing.
@@ -117,10 +112,8 @@ times consecutively:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            print('in creating_session', self.round_number)
+    def creating_session(subsession):
+        print('in creating_session', subsession.round_number)
 
 Will output all at once::
 
@@ -257,14 +250,13 @@ define a string constant ``name_in_url`` with your desired name.
 
 Constants can be numbers, strings, booleans, lists, etc.
 But for more complex data types like dicts, lists of dicts, etc,
-you should instead define it in a subsession method. For example,
+you should instead define it in a subsession function. For example,
 instead of defining a Constant called ``my_dict``, do this:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-        def my_dict(self):
-            return dict(a=[1,2], b=[3,4])
+    def my_dict(subsession):
+        return dict(a=[1,2], b=[3,4])
 
 Miscellaneous topics
 ====================
@@ -281,10 +273,9 @@ For example:
 
 .. code-block:: python
 
-    class Group(BaseGroup):
-        def set_payoffs(self):
-            print('in set_payoffs')
-            # etc ...
+    def set_payoffs(group):
+        print('in set_payoffs')
+        # etc ...
 
 Then call it:
 

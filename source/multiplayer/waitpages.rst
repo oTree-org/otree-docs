@@ -29,15 +29,14 @@ after_all_players_arrive
 once all players have arrived at the wait
 page. This is a good place to set the players' payoffs
 or determine the winner.
-You should first define a method on your Group that does the desired calculations.
+You should first define a Group function that does the desired calculations.
 For example:
 
 .. code-block:: python
 
-    class Group(BaseGroup):
-        def set_payoffs(self):
-            for player in self.get_players():
-                player.payoff = c(100)
+    def set_payoffs(group):
+        for p in group.get_players():
+            p.payoff = c(100)
 
 Then trigger this method by doing:
 
@@ -98,8 +97,9 @@ you may want to only group by arrival time in round 1:
     class MyWaitPage(WaitPage):
         group_by_arrival_time = True
 
-        def is_displayed(self):
-            return self.round_number == 1
+        @staticmethod
+        def is_displayed(player):
+            return player.round_number == 1
 
 If you do this, then subsequent rounds will keep the same group structure as
 round 1. Otherwise, players will be re-grouped by their arrival time
@@ -149,36 +149,35 @@ It assumes that in a previous app, you assigned ``self.participant.vars['categor
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-        def group_by_arrival_time_method(self, waiting_players):
-            print('in group_by_arrival_time_method')
-            m_players = [p for p in waiting_players if p.participant.vars['category'] == 'M']
-            f_players = [p for p in waiting_players if p.participant.vars['category'] == 'F']
+    def group_by_arrival_time_method(subsession, waiting_players):
+        print('in group_by_arrival_time_method')
+        m_players = [p for p in waiting_players if p.participant.vars['category'] == 'M']
+        f_players = [p for p in waiting_players if p.participant.vars['category'] == 'F']
 
-            if len(m_players) >= 2 and len(f_players) >= 2:
-                print('about to create a group')
-                return [m_players[0], m_players[1], f_players[0], f_players[1]]
-            print('not enough players yet to create a group')
+        if len(m_players) >= 2 and len(f_players) >= 2:
+            print('about to create a group')
+            return [m_players[0], m_players[1], f_players[0], f_players[1]]
+        print('not enough players yet to create a group')
 
 
 You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page,
 for example to allow the participant to proceed individually if they have been waiting
 longer than 5 minutes. First, you must record ``time.time()`` on the final page before the app with ``group_by_arrival_time``.
-Store it in ``self.participant.vars``.
+Store it in ``player.participant.vars``.
 
 Then define a Player method:
 
 .. code-block:: python
 
-    def waiting_too_long(self):
+    def waiting_too_long(player):
         import time
-        return time.time() - self.participant.vars['wait_page_arrival'] > 5*60
+        return time.time() - player.participant.vars['wait_page_arrival'] > 5*60
 
 Now use this:
 
 .. code-block:: python
 
-    def group_by_arrival_time_method(self, waiting_players):
+    def group_by_arrival_time_method(subsession, waiting_players):
         if len(waiting_players) >= 3:
             return waiting_players[:3]
         for player in waiting_players:
@@ -240,17 +239,18 @@ like this:
         form_model = 'player'
         form_fields = ['contribution']
 
-        def get_timeout_seconds(self):
-            if self.participant.vars.get('is_dropout'):
+        @staticmethod
+        def get_timeout_seconds(player):
+            if player.participant.vars.get('is_dropout'):
                 return 1  # instant timeout, 1 second
             else:
                 return 5*60
 
-        def before_next_page(self):
-            player = self.player
-            if self.timeout_happened:
+        @staticmethod
+        def before_next_page(player):
+            if player.timeout_happened:
                 player.contribution = c(100)
-                self.participant.vars['is_dropout'] = True
+                player.participant.vars['is_dropout'] = True
 
 Notes:
 

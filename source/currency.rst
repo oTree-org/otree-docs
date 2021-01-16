@@ -43,15 +43,15 @@ payoffs
 
 Each player has a ``payoff`` field.
 If your player makes money, you should store it in this field.
-``self.participant.payoff`` automatically stores the sum of payoffs
-from all subsessions. You can modify ``self.participant.payoff`` directly,
+``participant.payoff`` automatically stores the sum of payoffs
+from all subsessions. You can modify ``participant.payoff`` directly,
 e.g. to round the final payoff to a whole number.
 
 At the end of the experiment, a participant's
-total profit can be accessed by ``self.participant.payoff_plus_participation_fee()``;
-it is calculated by converting ``self.participant.payoff`` to real-world currency
+total profit can be accessed by ``participant.payoff_plus_participation_fee()``;
+it is calculated by converting ``participant.payoff`` to real-world currency
 (if ``USE_POINTS`` is ``True``), and then adding
-``self.session.config['participation_fee']``.
+``session.config['participation_fee']``.
 
 .. _points:
 
@@ -68,13 +68,13 @@ Converting points to real world currency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can convert a points amount to money using the method
-``.to_real_world_currency(self.session)``. For example:
+``.to_real_world_currency``. For example:
 
 .. code-block:: python
 
-    c(10).to_real_world_currency(self.session)
+    c(10).to_real_world_currency(player.session)
 
-(The ``self.session`` is necessary because
+(The ``session`` is necessary because
 different sessions can have different conversion rates).
 
 Decimal places

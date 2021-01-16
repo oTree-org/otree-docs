@@ -19,10 +19,10 @@ Then, create the app::
 
 Then in PyCharm, go to the folder ``my_simple_survey`` that was created.
 
-Define models.py
-----------------
+Define models
+-------------
 
-Open ``models.py`` and scroll to the line that says ``class Player(BasePlayer):``.
+Scroll to the line that says ``class Player(BasePlayer):``.
 Here we define the columns for the Player table in the database.
 Let's add 2 fields:
 
@@ -45,9 +45,6 @@ This survey has 2 pages:
 -  Page 2: players see the data they entered on the previous page
 
 So, let's make 2 HTML template files.
-Next to your ``models.py`` you will find a folder called ``templates/``,
-which in turn has another subfolder called ``my_simple_survey``.
-Put your templates there.
 
 Let's name the first page ``MyPage.html``, and put these contents inside:
 
@@ -89,13 +86,13 @@ The second template will be called ``Results.html``.
     {% endblock %}
 
 
-Define pages.py
----------------
+Define pages
+------------
 
 Now we define our pages, which contain the logic for how to display the
 HTML templates.
 
-Since we have 2 templates, we need 2 ``Page`` classes in ``pages.py``.
+Since we have 2 templates, we need 2 ``Page`` classes.
 The names should match those of the templates (``MyPage`` and
 ``Results``).
 
@@ -116,18 +113,13 @@ special attributes, so we just write "pass".
     class Results(Page):
         pass
 
-If ``pages.py`` already has a ``WaitPage``, you can delete that,
+If there is already a ``WaitPage``, you can delete that,
 because WaitPages are only necessary for multi-player games.
 
 Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``.
-So, all in all, ``pages.py`` should contain this:
+So, all in all, your pages should look like this:
 
 .. code-block:: python
-
-    from otree.api import Currency as c, currency_range
-    from ._builtin import Page, WaitPage
-    from .models import Constants
-
 
     class MyPage(Page):
         form_model = 'player'

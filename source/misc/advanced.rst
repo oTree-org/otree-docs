@@ -144,7 +144,9 @@ the following 2 code snippets are equivalent:
 .. code-block:: python
 
     class MyWaitPage(WaitPage):
-        def vars_for_template(self):
+
+        @staticmethod
+        def vars_for_template(player):
             return dict(body_text="foo")
 
 If you want to apply your custom wait page template globally,
@@ -189,7 +191,7 @@ then you should reset the database.
 Reading CSV or other files
 --------------------------
 
-Store yourfile.csv in your app, next to models.py.
+Store yourfile.csv in your app folder.
 Then put this code anywhere you want to read the file
 (in a method or in Constants):
 

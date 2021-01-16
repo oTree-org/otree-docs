@@ -25,29 +25,19 @@ For example, to submit a bid of 99 on behalf of the user, call:
 
     liveSend(99);
 
-On your ``Player``, define a method that will receive this message.
+Define a function that will receive this message.
 Its argument is whatever data
 was sent.
 
-.. note::
-
-    This has changed since September 15, 2020 (oTree 3.0.8).
-    Previously, the live_method was on the Group, but now it is recommended to define it on the Player.
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        def live_bid(self, data):
-            print('received a bid from', self.id_in_group, ':', data)
-
 (Its name should start with ``live_``.)
-On your ``Page`` class, set ``live_method`` to route the messages to that method:
 
 .. code-block:: python
 
     class MyPage(Page):
-        live_method = 'live_bid'
+
+        @staticmethod
+        def live_bid(player, data):
+            print('received a bid from', player.id_in_group, ':', data)
 
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
 
@@ -61,15 +51,15 @@ to whoever sends a message.
 
 .. code-block:: python
 
-    def live_xyz(self, data):
-        return {self.id_in_group: 'thanks'}
+    def live_xyz(player, data):
+        return {player.id_in_group: 'thanks'}
 
 To send to multiple players, use their ``id_in_group``.
 For example, this forwards every message to players 2 and 3:
 
 .. code-block:: python
 
-    def live_xyz(self, data):
+    def live_xyz(player, data):
         return {2: data, 3: data}
 
 To broadcast it to the whole group, use ``0``
@@ -77,7 +67,7 @@ To broadcast it to the whole group, use ``0``
 
 .. code-block:: python
 
-    def live_xyz(self, data):
+    def live_xyz(player, data):
         return {0: data}
 
 In your JavaScript, define a function ``liveRecv``.
@@ -100,19 +90,20 @@ Example: auction
         highest_bid = models.CurrencyField(initial=0)
 
     class Player(BasePlayer):
-        def live_auction(self, bid):
-            group = self.group
-            my_id = self.id_in_group
+        pass
+
+
+.. code-block:: python
+
+    class Auction(Page):
+        def live_method(player, bid):
+            group = player.group
+            my_id = player.id_in_group
             if bid > group.highest_bid:
                 group.highest_bid = bid
                 group.highest_bidder = my_id
                 response = dict(id_in_group=my_id, bid=bid)
                 return {0: response}
-
-.. code-block:: python
-
-    class Auction(Page):
-        live_method = 'live_auction'
 
 .. code-block:: html
 
@@ -169,13 +160,13 @@ Then you can use ``if`` statements to process different types of messages:
 
 .. code-block:: python
 
-    def live_xyz(self, data):
+    def live_method(player, data):
         t = data['type']
         if t == 'offer':
             other_player = data['to']
             response = {
                 'type': 'offer',
-                'from': self.id_in_group,
+                'from': player.id_in_group,
                 'value': data['value']
             }
             return {other_player: response}
@@ -210,9 +201,12 @@ When the task is completed, you send a message:
         num_messages = models.IntegerField()
         game_finished = models.BooleanField()
 
-    class Player(BasePlayer):
-        def live_xyz(self, data):
-            group = self.group
+
+    class MyPage(Page):
+
+        @staticmethod
+        def live_method(player, data):
+            group = player.group
             group.num_messages += 1
             if group.num_messages >= 10:
                 group.game_finished = True
@@ -237,10 +231,13 @@ For security, you should use :ref:`error_message <error_message>`:
 .. code-block:: python
 
     class MyPage(Page):
-        live_method = 'live_method'
+        @staticmethod
+        def live_method(player, data):
+            ...
 
-        def error_message(self, values):
-            if not self.group.game_finished:
+        @staticmethod
+        def error_message(player, values):
+            if not player.group.game_finished:
                 return 'you need to stay until 10 messages are sent'
 
 By the way, using a similar technique, you could implement a custom
@@ -266,12 +263,12 @@ But with live pages, you must verify it inside the ``live_method``:
 
 .. code-block:: python
 
-    def live_auction(self, bid):
+    def live_auction(player, bid):
         if bid > 99:
             # just an example.
             # it's up to you to handle this message in your JavaScript code.
             response = dict(type='error', message='Bid is too high')
-            return {self.id_in_group: response}
+            return {player.id_in_group: response}
         ...
 
 In addition, you can add attributes to the ``<input>`` element like ``max="99"``.

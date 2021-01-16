@@ -187,9 +187,10 @@ you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
     class MyPage(Page):
 
-        def vars_for_template(self):
+        @staticmethod
+        def vars_for_template(player):
             return dict(
-                image_path='my_app/{}.png'.format(self.round_number)
+                image_path='my_app/{}.png'.format(player.round_number)
             )
 
 Then in the template:
@@ -298,8 +299,8 @@ define a method ``js_vars`` on your Page, for example:
 
 .. code-block:: html
 
-    def js_vars(self):
-        player = self.player
+    @staticmethod
+    def js_vars(player):
         return dict(
             payoff=player.payoff,
         )

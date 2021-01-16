@@ -123,18 +123,17 @@ Page 2: ResultsWaitPage
 
 When all players have completed the ``Contribute`` page,
 the players' payoffs can be calculated.
-Go to your Group model and add a method called ``set_payoffs``
-(note that ``self`` refers to the group):
+Add a group function called ``set_payoffs``:
 
 .. code-block:: python
 
-    def set_payoffs(self):
-        players = self.get_players()
+    def set_payoffs(group):
+        players = group.get_players()
         contributions = [p.contribution for p in players]
-        self.total_contribution = sum(contributions)
-        self.individual_share = self.total_contribution * Constants.multiplier / Constants.players_per_group
+        group.total_contribution = sum(contributions)
+        group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
         for player in players:
-            player.payoff = Constants.endowment - player.contribution + self.individual_share
+            player.payoff = Constants.endowment - player.contribution + group.individual_share
 
 After a player makes a
 contribution, they cannot see the results page right away; they first
@@ -144,8 +143,8 @@ When a player arrives at a wait page,
 they must wait until all other players in the group have arrived.
 Then everyone can proceed to the next page. (For more info, see :ref:`wait_pages`).
 
-Add ``after_all_players_arrive`` method to ``ResultsWaitPage``,
-and set it to trigger the ``set_payoffs`` method:
+Add ``after_all_players_arrive`` to ``ResultsWaitPage``,
+and set it to trigger ``set_payoffs``:
 
 .. code-block:: python
 

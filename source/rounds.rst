@@ -33,8 +33,8 @@ then your sessions will contain 4 subsessions.
 Round numbers
 -------------
 
-You can get the current round number with ``self.round_number``
-(this attribute is present on subsession, group, player, and page objects).
+You can get the current round number with ``player.round_number``
+(this attribute is present on subsession, group, and player objects).
 Round numbers start from 1.
 
 .. _in_rounds:
@@ -77,10 +77,10 @@ you would do:
 
 .. code-block:: python
 
-    prev_player = player.in_round(self.round_number - 1)
+    prev_player = player.in_round(player.round_number - 1)
     print(prev_player.payoff)
 
-These methods work the same way for subsessions (e.g. ``self.subsession.in_all_rounds()``).
+These methods work the same way for subsessions (e.g. ``subsession.in_all_rounds()``).
 
 They also work the same way for groups, but it does not make sense to use them if you re-shuffle groups between rounds.
 
@@ -97,41 +97,21 @@ round of the same app.)
 Put it in ``participant.vars``, which is a dict that can store any data.
 For example, you can set an attribute like this::
 
-    self.participant.vars['blah'] = [1, 2, 3]
+    player.participant.vars['blah'] = [1, 2, 3]
 
 Later in the session (e.g. in a separate app),
 you can retrieve it like this::
 
-    self.participant.vars['blah']
+    player.participant.vars['blah']
     # or try printing:
-    print('vars is', self.participant.vars)
+    print('vars is', player.participant.vars)
 
-Here are some examples:
 
-.. code-block:: python
-
-    class MyPage(Page):
-        def before_next_page(self):
-            self.participant.vars['foo'] = 1
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-        def some_method(self):
-            self.participant.vars['foo'] = 1
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-        def creating_session(self):
-            for player in self.get_players():
-                player.participant.vars['foo'] = 1
-
-You can test if ``'my_var'`` exists with ``if 'my_var' in self.participant.vars:``.
+You can test if ``'my_var'`` exists with ``if 'my_var' in player.participant.vars:``.
 
 ``participant.vars`` is not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you should either
-use :ref:`custom-export` or save ``str(self.participant.vars)`` into a ``LongStringField``.
+use :ref:`custom-export` or save ``str(player.participant.vars)`` into a ``LongStringField``.
 (The same concept applies for ``session.vars``.)
 
 .. _session_vars:
@@ -140,7 +120,7 @@ session.vars
 ~~~~~~~~~~~~
 
 For global variables that are the same for all participants in the session,
-you can use ``self.session.vars``.
+you can use ``session.vars``.
 This is a dict just like ``participant.vars``.
 
 

@@ -16,13 +16,11 @@ And then randomly assign players to the "blue" or "red" treatment group:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            # randomize to treatments
-            for player in self.get_players():
-                player.color = random.choice(['blue', 'red'])
-                print('set player.color to', player.color)
+    def creating_session(subsession):
+        # randomize to treatments
+        for player in subsession.get_players():
+            player.color = random.choice(['blue', 'red'])
+            print('set player.color to', player.color)
 
 You can also assign treatments at the group level (put the ``StringField``
 in ``Group`` and change the above code to use ``get_groups()`` and ``group.color``).
@@ -36,12 +34,10 @@ To prevent this, set it on the participant, rather than the player:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            if self.round_number == 1:
-                for player in self.get_players():
-                    player.participant.vars['color'] = random.choice(['blue', 'red'])
+    def creating_session(subsession):
+        if self.round_number == 1:
+            for player in subsession.get_players():
+                player.participant.vars['color'] = random.choice(['blue', 'red'])
 
 Then elsewhere in your code, you can access the participant's color with
 ``self.participant.vars['color']``.
@@ -57,13 +53,11 @@ To solve this, you can use ``itertools.cycle``:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            import itertools
-            colors = itertools.cycle(['blue', 'red'])
-            for player in self.get_players():
-                player.color = next(colors)
+    def creating_session(subsession):
+        import itertools
+        colors = itertools.cycle(['blue', 'red'])
+        for player in subsession.get_players():
+            player.color = next(colors)
 
 
 .. _session_config_treatments:
@@ -95,10 +89,10 @@ except for ``color`` (in oTree Studio, add a "custom parameter"):
         ),
     ]
 
-Then in your code you can get the current session's color with ``self.session.config['color'].``
+Then in your code you can get the current session's color with ``session.config['color'].``
 
 You can even combine this with the randomization approach. You can check
-``if 'color' in self.session.config:``; if yes, then use that color; if no,
+``if 'color' in subsession.session.config:``; if yes, then use that color; if no,
 then choose it randomly.
 
 .. _edit_config:
@@ -145,7 +139,7 @@ You can also add help text with ``'doc'``:
         """
     ),
 
-In your app's code, you can do ``self.session.config['num_apples']``.
+In your app's code, you can do ``session.config['num_apples']``.
 
 Notes:
 
@@ -165,9 +159,9 @@ You should instead store the variable on one of the participants in the group:
 
 .. code-block:: python
 
-    def creating_session(self):
-        if self.round_number == 1:
-            for g in self.get_groups():
+    def creating_session(subsession):
+        if subsession.round_number == 1:
+            for g in subsession.get_groups():
                 p1 = g.get_player_by_id(1)
                 p1.participant.vars['group_color'] = random.choice(['blue', 'red'])
 
@@ -175,5 +169,5 @@ Then, when you need to access a group's color, you would look it up like this:
 
 .. code-block:: python
 
-    p1 = self.group.get_player_by_id(1)
+    p1 = player.group.get_player_by_id(1)
     color = p1.participant.vars['group_color']

@@ -56,20 +56,19 @@ and all sellers can talk with each other.
 
 .. code-block:: python
 
-    class Player(BasePlayer):
-
-        def chat_nickname(self):
-            return 'Group {} player {}'.format(self.group.id_in_subsession, self.id_in_group)
+    def chat_nickname(player):
+        return 'Group {} player {}'.format(player.group.id_in_subsession, player.id_in_group)
 
 In the page:
 
 .. code-block:: python
 
     class MyPage(Page):
-        def vars_for_template(self):
-            player = self.player
+
+        @staticmethod
+        def vars_for_template(player):
             return dict(
-                nickname=player.chat_nickname()
+                nickname=chat_nickname(player)
             )
 
 Then in the template:
@@ -154,45 +153,6 @@ Multiple chats on a page
 
 You can have multiple ``{% chat %}`` boxes on each page,
 so that a player can be in multiple channels simultaneously.
-
-For example, this code enables 1:1 chat with every other player in the group.
-
-.. code-block:: python
-
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            for player in self.get_players():
-                player.chat_nickname = 'Player {}'.format(p.id_in_group)
-
-    # ...
-
-    class Player(BasePlayer):
-
-        chat_nickname = models.StringField()
-
-        def chat_configs(self):
-            configs = []
-            for other in self.get_others_in_group():
-                if other.id_in_group < self.id_in_group:
-                    lower_id, higher_id = other.id_in_group, self.id_in_group
-                else:
-                    lower_id, higher_id = self.id_in_group, other.id_in_group
-                configs.append({
-                    # make a name for the channel that is the same for all
-                    # channel members. That's why we order it (lower, higher)
-                    'channel': '{}-{}-{}'.format(self.group.id, lower_id, higher_id),
-                    'label': 'Chat with {}'.format(other.chat_nickname)
-                })
-            return configs
-
-.. code-block:: html
-
-    {% for config in player.chat_configs %}
-        <h4>{{ config.label }}</h4>
-        {% chat nickname=player.chat_nickname channel=config.channel %}
-    {% endfor %}
-
 
 Exporting CSV of chat logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

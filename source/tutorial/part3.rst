@@ -73,18 +73,18 @@ sense because each group has exactly 1 ``sent_amount`` and exactly 1
             label="How much do you want to send back?"
         )
 
-We also define a method called ``sent_back_amount_choices`` to populate the
+We also define a function called ``sent_back_amount_choices`` to populate the
 dropdown menu dynamically. This is the feature called
 ``{field_name}_choices``, which is explained here: :ref:`dynamic_validation`.
 
 .. code-block:: python
 
-        def sent_back_amount_choices(self):
-            return currency_range(
-                c(0),
-                self.sent_amount * Constants.multiplication_factor,
-                c(1)
-            )
+    def sent_back_amount_choices(group):
+        return currency_range(
+            c(0),
+            group.sent_amount * Constants.multiplication_factor,
+            c(1)
+        )
 
 Define the templates and pages
 ------------------------------
@@ -105,8 +105,9 @@ Send page
         form_model = 'group'
         form_fields = ['sent_amount']
 
-        def is_displayed(self):
-            return self.player.id_in_group == 1
+        @staticmethod
+        def is_displayed(player):
+            return player.id_in_group == 1
 
 We use :ref:`is_displayed` to only show this to P1; P2 skips the
 page. For more info on ``id_in_group``, see :ref:`groups`.
@@ -158,12 +159,14 @@ Here is the page code. Notes:
         form_model = 'group'
         form_fields = ['sent_back_amount']
 
-        def is_displayed(self):
-            return self.player.id_in_group == 2
+        @staticmethod
+        def is_displayed(player):
+            return player.id_in_group == 2
 
-        def vars_for_template(self):
+        @staticmethod
+        def vars_for_template(player):
             return dict(
-                tripled_amount=self.group.sent_amount * Constants.multiplication_factor
+                tripled_amount=player.group.sent_amount * Constants.multiplication_factor
             )
 
 Results
@@ -212,11 +215,11 @@ So, we define a method on the Group called ``set_payoffs``:
 
 .. code-block:: python
 
-    def set_payoffs(self):
-        p1 = self.get_player_by_id(1)
-        p2 = self.get_player_by_id(2)
-        p1.payoff = Constants.endowment - self.sent_amount + self.sent_back_amount
-        p2.payoff = self.sent_amount * Constants.multiplication_factor - self.sent_back_amount
+    def set_payoffs(group):
+        p1 = group.get_player_by_id(1)
+        p2 = group.get_player_by_id(2)
+        p1.payoff = Constants.endowment - group.sent_amount + group.sent_back_amount
+        p2.payoff = group.sent_amount * Constants.multiplication_factor - group.sent_back_amount
 
 Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:
 

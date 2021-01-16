@@ -67,8 +67,10 @@ You can use this to show each role different content, e.g.:
 .. code-block:: python
 
     class AgentPage(Page):
-        def is_displayed(self):
-            return self.player.role == Constants.role_agent
+
+        @staticmethod
+        def is_displayed(player):
+            return player.role == Constants.role_agent
 
 In a template:
 
@@ -80,11 +82,10 @@ You can also use ``group.get_player_by_role()``, which is similar to ``get_playe
 
 .. code-block:: python
 
-    class Group(BaseGroup):
-        def set_payoffs(self):
-            principal = self.get_player_by_role(Constants.role_principal)
-            agent = self.get_player_by_role(Constants.role_agent)
-            # ...
+    def set_payoffs(group):
+        principal = group.get_player_by_role(Constants.role_principal)
+        agent = group.get_player_by_role(Constants.role_agent)
+        # ...
 
 If you want to switch players' roles,
 you should rearrange the groups, using ``set_group_matrix``, ``group_randomly``, etc.
@@ -133,43 +134,40 @@ For example, this will group players randomly each round:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-        def creating_session(self):
-            self.group_randomly()
+    def creating_session(subsession):
+        subsession.group_randomly()
 
 This will group players randomly each round, but keep ``id_in_group`` fixed:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-        def creating_session(self):
-            self.group_randomly(fixed_id_in_group=True)
+    def creating_session(subsession):
+        subsession.group_randomly(fixed_id_in_group=True)
 
 For the following example, assume that ``players_per_group = 3``, and that there are 12 participants in the session:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-        def creating_session(self):
-            print(self.get_group_matrix()) # outputs the following:
-            # [[<Player  1>, <Player  2>, <Player  3>],
-            #  [<Player  4>, <Player  5>, <Player  6>],
-            #  [<Player  7>, <Player  8>, <Player  9>],
-            #  [<Player 10>, <Player 11>, <Player 12>]]
+    def creating_session(subsession):
+        print(subsession.get_group_matrix()) # outputs the following:
+        # [[<Player  1>, <Player  2>, <Player  3>],
+        #  [<Player  4>, <Player  5>, <Player  6>],
+        #  [<Player  7>, <Player  8>, <Player  9>],
+        #  [<Player 10>, <Player 11>, <Player 12>]]
 
-            self.group_randomly(fixed_id_in_group=True)
-            print(self.get_group_matrix()) # outputs the following:
-            # [[<Player  1>, <Player  8>, <Player 12>],
-            #  [<Player 10>, <Player  5>, <Player  3>],
-            #  [<Player  4>, <Player  2>, <Player  6>],
-            #  [<Player  7>, <Player 11>, <Player  9>]]
+        subsession.group_randomly(fixed_id_in_group=True)
+        print(subsession.get_group_matrix()) # outputs the following:
+        # [[<Player  1>, <Player  8>, <Player 12>],
+        #  [<Player 10>, <Player  5>, <Player  3>],
+        #  [<Player  4>, <Player  2>, <Player  6>],
+        #  [<Player  7>, <Player 11>, <Player  9>]]
 
-            self.group_randomly()
-            print(self.get_group_matrix()) # outputs the following:
-            # [[<Player  8>, <Player 10>, <Player  3>],
-            #  [<Player  4>, <Player 11>, <Player  2>],
-            #  [<Player  9>, <Player  1>, <Player  6>],
-            #  [<Player 12>, <Player  5>, <Player  7>]]
+        subsession.group_randomly()
+        print(subsession.get_group_matrix()) # outputs the following:
+        # [[<Player  8>, <Player 10>, <Player  3>],
+        #  [<Player  4>, <Player 11>, <Player  2>],
+        #  [<Player  9>, <Player  1>, <Player  6>],
+        #  [<Player 12>, <Player  5>, <Player  7>]]
 
 .. _group_like_round:
 
@@ -186,13 +184,11 @@ and then subsequent rounds copy round 1's grouping structure.
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-
-        def creating_session(self):
-            if self.round_number == 1:
-                # <some shuffling code here>
-            else:
-                self.group_like_round(1)
+    def creating_session(subsession):
+        if subsession.round_number == 1:
+            # <some shuffling code here>
+        else:
+            subsession.group_like_round(1)
 
 
 get_group_matrix()
@@ -206,9 +202,9 @@ The following lines are equivalent.
 
 .. code-block:: python
 
-    matrix = self.get_group_matrix()
+    matrix = subsession.get_group_matrix()
     # === is equivalent to ===
-    matrix = [group.get_players() for group in self.get_groups()]
+    matrix = [group.get_players() for group in subsession.get_groups()]
 
 
 .. _set_group_matrix:
@@ -223,40 +219,40 @@ Make your matrix then pass it to ``set_group_matrix()``:
 
 .. code-block:: python
 
-    class Subsession(BaseSubsession):
-        def creating_session(self):
-            matrix = self.get_group_matrix()
+    def creating_session(subsession):
+        matrix = subsession.get_group_matrix()
 
-            for row in matrix:
-                row.reverse()
+        for row in matrix:
+            row.reverse()
 
-            # now the 'matrix' variable looks like this,
-            # but it hasn't been saved yet!
-            # [[<Player  3>, <Player  2>, <Player  1>],
-            #  [<Player  6>, <Player  5>, <Player  4>],
-            #  [<Player  9>, <Player  8>, <Player  7>],
-            #  [<Player 12>, <Player 11>, <Player 10>]]
+        # now the 'matrix' variable looks like this,
+        # but it hasn't been saved yet!
+        # [[<Player  3>, <Player  2>, <Player  1>],
+        #  [<Player  6>, <Player  5>, <Player  4>],
+        #  [<Player  9>, <Player  8>, <Player  7>],
+        #  [<Player 12>, <Player 11>, <Player 10>]]
 
-            # save it
-            self.set_group_matrix(matrix)
+        # save it
+        subsession.set_group_matrix(matrix)
 
 You can also pass a matrix of integers.
 It must contain all integers from 1 to the number of players
 in the subsession. Each integer represents the player who has that ``id_in_subsession``.
-For example::
+For example:
 
-    class Subsession(BaseSubsession):
-        def creating_session(self):
+.. code-block:: python
 
-            new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
-            self.set_group_matrix(new_structure)
+    def creating_session(subsession):
 
-            print(self.get_group_matrix()) # will output this:
+        new_structure = [[1,3,5], [7,9,11], [2,4,6], [8,10,12]]
+        subsession.set_group_matrix(new_structure)
 
-            # [[<Player  1>, <Player  3>, <Player  5>],
-            #  [<Player  7>, <Player  9>, <Player 11>],
-            #  [<Player  2>, <Player  4>, <Player  6>],
-            #  [<Player  8>, <Player 10>, <Player 12>]]
+        print(subsession.get_group_matrix()) # will output this:
+
+        # [[<Player  1>, <Player  3>, <Player  5>],
+        #  [<Player  7>, <Player  9>, <Player 11>],
+        #  [<Player  2>, <Player  4>, <Player  6>],
+        #  [<Player  8>, <Player 10>, <Player 12>]]
 
 To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
@@ -282,16 +278,8 @@ and put the shuffling code in ``after_all_players_arrive``:
 
     class ShuffleWaitPage(WaitPage):
         wait_for_all_groups = True
-
         after_all_players_arrive = 'do_my_shuffle'
 
-To apply the same grouping to multiple rounds without needing
-``wait_for_all_groups`` in each round, add this to the method where you shuffle the groups:
-
-.. code-block:: python
-
-    for subsession in self.in_rounds(2, Constants.num_rounds):
-        subsession.group_like_round(1)
 
 Group by arrival time
 ~~~~~~~~~~~~~~~~~~~~~

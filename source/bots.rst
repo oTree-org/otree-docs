@@ -126,7 +126,8 @@ For example, let's say you have this page:
         form_model = 'player'
         form_fields = ['int1', 'int2']
 
-        def error_message(self, values):
+        @staticmethod
+        def error_message(player, values):
             if values["int1"] + values["int2"] != 100:
                 return 'The numbers must add up to 100'
 

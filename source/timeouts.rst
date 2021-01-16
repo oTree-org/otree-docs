@@ -39,13 +39,11 @@ You can check if the page was submitted by timeout:
     class Page1(Page):
         timeout_seconds = 60
 
-        def before_next_page(self):
-            player = self.player
-            if self.timeout_happened:
+        @staticmethod
+        def before_next_page(player, timeout_happened):
+            if timeout_happened:
                 player.xyz = True
 
-
-``timeout_happened`` only exists in ``before_next_page``.
 
 .. _get_timeout_seconds:
 
@@ -53,7 +51,7 @@ get_timeout_seconds
 ~~~~~~~~~~~~~~~~~~~
 
 This is a more flexible alternative to ``timeout_seconds``,
-so that you can make the timeout depend on ``self.player``, ``self.session``, etc.
+so that you can make the timeout depend on ``player``, ``player.session``, etc.
 
 For example:
 
@@ -61,18 +59,17 @@ For example:
 
     class MyPage(Page):
 
-        def get_timeout_seconds(self):
-            return self.player.my_page_timeout_seconds
+        @staticmethod
+        def get_timeout_seconds(player):
+            return player.my_page_timeout_seconds
 
 
 Or, using a custom session config parameter (see :ref:`session_config_treatments`).
 
 .. code-block:: python
 
-    class MyPage(Page):
-
-        def get_timeout_seconds(self):
-            return self.session.config['my_page_timeout_seconds']
+    def get_timeout_seconds(player):
+        return player.session.config['my_page_timeout_seconds']
 
 
 Advanced techniques
@@ -90,7 +87,7 @@ it will be set to ``0`` for numeric fields, ``False`` for boolean fields, and th
 string ``''`` for string fields.
 
 If you want to discard the auto-submitted values, you can just
-check if ``self.timeout_happened``, and if so, overwrite the values.
+check if ``timeout_happened``, and if so, overwrite the values.
 
 If the ``error_message()`` method fails, then the whole form might be invalid,
 so the whole form will be discarded.
@@ -111,13 +108,15 @@ When the user clicks the "next" button, ``before_next_page`` will be executed:
 
     class Start(Page):
 
-        def is_displayed(self):
-            return self.round_number == 1
+        @staticmethod
+        def is_displayed(player):
+            return player.round_number == 1
 
-        def before_next_page(self):
+        @staticmethod
+        def before_next_page(player):
             import time
             # user has 5 minutes to complete as many pages as possible
-            self.participant.vars['expiry'] = time.time() + 5*60
+            player.participant.vars['expiry'] = time.time() + 5*60
 
 (You could also start the timer in ``after_all_players_arrive`` or ``creating_session``,
 and it could be stored in ``session.vars`` if it's the same for everyone in the session.)
@@ -128,9 +127,11 @@ until that expiration time:
 .. code-block:: python
 
     class Page1(Page):
-        def get_timeout_seconds(self):
+
+        @staticmethod
+        def get_timeout_seconds(player):
             import time
-            return self.participant.vars['expiry'] - time.time()
+            return player.participant.vars['expiry'] - time.time()
 
 When time runs out, ``get_timeout_seconds`` will return 0 or a negative value,
 which will result in the page loading and being auto-submitted right away.
@@ -141,15 +142,17 @@ for the participant to realistically read the whole page.
 
 .. code-block:: python
 
+    def get_timeout_seconds(player):
+        import time
+        return player.participant.vars['expiry'] - time.time()
+
     class Page1(Page):
-        def get_timeout_seconds(self):
-            import time
-            return self.participant.vars['expiry'] - time.time()
+        get_timeout_seconds = get_timeout_seconds
 
-        def is_displayed(self):
-            return self.get_timeout_seconds() > 3
+        @staticmethod
+        def is_displayed(player):
+            return get_timeout_seconds(player) > 3
 
-(If you are curious how to avoid repeating this code on every page, see the section on :ref:`composition <composition>` for some hints.)
 
 The default text on the timer says "Time left to complete this page:".
 But if your timeout spans multiple pages, you should word it more accurately,
@@ -161,9 +164,10 @@ by setting ``timer_text``:
 
         timer_text = 'Time left to complete this section:'
 
-        def get_timeout_seconds(self):
+        @staticmethod
+        def get_timeout_seconds(player):
             import time
-            return self.participant.vars['expiry'] - time.time()
+            return player.participant.vars['expiry'] - time.time()
 
 
 Customizing the timer

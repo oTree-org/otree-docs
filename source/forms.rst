@@ -148,14 +148,14 @@ Example:
 .. code-block:: python
 
     class Player(BasePlayer):
-
         fruit = models.StringField()
 
-        def fruit_choices(self):
-            import random
-            choices = ['apple', 'kiwi', 'mango']
-            random.shuffle(choices)
-            return choices
+
+    def fruit_choices(player):
+        import random
+        choices = ['apple', 'kiwi', 'mango']
+        random.shuffle(choices)
+        return choices
 
 .. _FOO_max:
 
@@ -167,14 +167,12 @@ The dynamic alternative to setting ``max=`` in the model field. For example:
 .. code-block:: python
 
     class Player(BasePlayer):
-
         offer = models.CurrencyField()
-
-        def offer_max(self):
-            return self.budget
-
         budget = models.CurrencyField()
 
+
+    def offer_max(player):
+        return player.budget
 
 {field_name}_min()
 ~~~~~~~~~~~~~~~~~~
@@ -191,15 +189,13 @@ This is the most flexible method for validating a field.
 .. code-block:: python
 
     class Player(BasePlayer):
-
         offer = models.CurrencyField()
-
-        def offer_error_message(self, value):
-            print('value is', value)
-            if value > self.budget / 2:
-                return 'Cannot offer more than half your remaining budget'
-
         budget = models.CurrencyField()
+
+    def offer_error_message(player, value):
+        print('value is', value)
+        if value > player.budget:
+            return 'Cannot offer more than your remaining budget'
 
 
 .. _error_message:
@@ -217,7 +213,8 @@ You can enforce this with the ``error_message`` method, which goes on the *page*
         form_model = 'player'
         form_fields = ['int1', 'int2', 'int3']
 
-        def error_message(self, values):
+        @staticmethod
+        def error_message(player, values):
             print('values is', values)
             if values['int1'] + values['int2'] + values['int3'] != 100:
                 return 'The numbers must add up to 100'
@@ -240,8 +237,8 @@ If you need the list of form fields to be dynamic, instead of
 
 .. code-block:: python
 
-    def get_form_fields(self):
-        if self.player.num_bids == 3:
+    def get_form_fields(player):
+        if player.num_bids == 3:
             return ['bid_1', 'bid_2', 'bid_3']
         else:
             return ['bid_1', 'bid_2']
@@ -305,7 +302,6 @@ Let's say you have a set of ``IntegerField`` in your model:
 .. code-block:: python
 
     class Player(BasePlayer):
-
         offer_1 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
         offer_2 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
         offer_3 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3])
@@ -315,7 +311,7 @@ Let's say you have a set of ``IntegerField`` in your model:
 And you'd like to present them as a likert scale, where each option is
 in a separate column.
 
-(First, try to reduce the code duplication in models.py by following
+(First, try to reduce the code duplication in your model by following
 the instructions in :ref:`many-fields`.)
 
 Because the options must be in separate table cells,
@@ -488,9 +484,10 @@ If the label should contain a variable, you can construct the string in your pag
         form_model = 'player'
         form_fields = ['contribution']
 
-        def vars_for_template(self):
+        @staticmethod
+        def vars_for_template(player):
             return dict(
-                contribution_label='How much of your {} do you want to contribute?'.format(self.player.endowment)
+                contribution_label='How much of your {} do you want to contribute?'.format(player.endowment)
             )
 
 Then, in the template:
