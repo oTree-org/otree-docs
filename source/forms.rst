@@ -262,20 +262,18 @@ instead of ``{% formfields %}`` you can use ``{% formfield %}``:
 
 .. code-block:: html
 
-    {% formfield player.contribution %}
+    {% formfield 'bid' %}
 
 
 You can also put the ``label`` in directly in the template:
 
 .. code-block:: html
 
-    {% formfield player.contribution label="How much do you want to contribute?" %}
+    {% formfield 'bid' label="How much do you want to contribute?" %}
 
 .. note::
 
-    You can also do ``{% formfield 'xyz' %}``, starting with oTree 3.1 (October 2020).
-    This allows you to provide the field name as a variable and loop over form fields
-    in different ways.
+    The previous syntax of ``{% formfield player.bid %}`` is still supported.
 
 .. _manual-forms:
 

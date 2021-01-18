@@ -57,10 +57,6 @@ Then add this line in the same place where you set ``DATABASE_URL``::
 
     export REDIS_URL=redis://localhost:6379
 
-.. note::
-
-    REDIS_URL is a new requirement as of oTree 3.0 (July 2020).
-
 Reset the database on the server
 --------------------------------
 

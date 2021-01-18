@@ -3,10 +3,6 @@
 Live pages
 ==========
 
-.. note::
-
-    New in oTree 3.0 (July 2020)
-
 Live pages communicate with the server continuously
 and update in real time, enabling continuous time games.
 Live pages are a great fit for games with lots of fast iteration

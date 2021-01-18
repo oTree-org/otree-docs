@@ -3,10 +3,6 @@
 REST
 ====
 
-.. note::
-
-    These features are new in oTree 3.0 (July 2020).
-
 oTree has a small REST API that enables external programs
 (such as other websites) to communicate with oTree, in particular:
 
@@ -118,10 +114,6 @@ although this does not need to come from a ``participant_label_file``.
 
 "Session vars" REST endpoint
 ----------------------------
-
-.. note::
-
-    New in oTree 3.0.6
 
 POST URL: ``/api/session_vars/``
 

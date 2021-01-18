@@ -48,12 +48,6 @@ Then trigger this method by doing:
 If you set ``wait_for_all_groups = True``,
 then you should set ``after_all_players_arrive`` to the name of to a method on your *Subsession* model.
 
-.. note::
-
-    In oTree 2.3 and earlier, ``after_all_players_arrive`` was a method,
-    i.e. ``def after_all_players_arrive(self):``.
-    However, the new format is better and you should use it instead.
-
 is_displayed()
 --------------
 
@@ -124,12 +118,6 @@ use :ref:`group_by_arrival_time_method`.
 
 group_by_arrival_time_method()
 ------------------------------
-
-.. note::
-
-    Before November 2019, this was a method called ``get_players_for_group``,
-    and it was on the Page, not the Subsession.
-    We recommend switching to the new format.
 
 If you're using ``group_by_arrival_time`` and want more control over
 which players are assigned together, you can also use ``group_by_arrival_time_method()``.

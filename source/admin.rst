@@ -208,10 +208,6 @@ participant spends on wait pages in total.
 Custom data exports
 ~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    New in oTree 3.0 (July 2020).
-
 You can make your own custom data export for an app.
 In oTree Studio, go to the "Player" model and click on "custom_export" at the bottom.
 (If using a text editor, define the below function.)

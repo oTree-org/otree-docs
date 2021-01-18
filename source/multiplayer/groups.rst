@@ -45,10 +45,6 @@ in the group and subsession.
 Roles
 -----
 
-.. note::
-
-    New in oTree 3.1 (October 2020)
-
 If each group has multiple roles, such as buyer/seller, principal/agent, etc.,
 you can define them in Constants. Make their names end with ``_role``:
 
@@ -90,16 +86,6 @@ You can also use ``group.get_player_by_role()``, which is similar to ``get_playe
 If you want to switch players' roles,
 you should rearrange the groups, using ``subsession.group_randomly()``,
 ``group.set_players()``, etc.
-
-.. note::
-
-    Before this feature, it was recommended to make a method called ``role()``,
-    and therefore it required parentheses: ``player.role()``.
-    The new syntax has no parentheses: ``player.role``.
-    The new format has the advantages of (1) being displayed in more places such as the data export,
-    and (2) helps you write more reliable code.
-    If you want to switch your code to the new format, simply replace your ``role()`` method by the ``role_*`` Constants,
-    and remove the parentheses from any ``.role()`` call.
 
 
 .. _shuffling:

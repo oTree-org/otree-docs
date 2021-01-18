@@ -47,11 +47,6 @@ which should output ``PONG``.
 
 Set your ``REDIS_URL`` env var to ``redis://localhost:6379`` in the same place where you set ``DATABASE_URL``.
 
-.. note::
-
-    REDIS_URL is a new requirement as of oTree 3.0 (July 2020).
-
-
 Run the production server
 -------------------------
 
