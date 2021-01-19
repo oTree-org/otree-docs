@@ -103,13 +103,14 @@ Now since we fit everything in app.py, this folder is smaller, so there is room 
 Also, that mysterious _builtin/ folder is not needed anymore.
 So we end up with this:
 
-.. code-block::
+.. code-block:: python
 
     dictator/
         __init__.py
         app.py
         Decide.html
         Results.html
+
 
 Second bonus: The "import" section at the top is simplified.
 
