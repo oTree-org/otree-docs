@@ -163,31 +163,29 @@ For example, this code has a redundant query because it asks the database
 
 .. code-block:: python
 
-    class MyPage(Page):
-        def vars_for_template(self):
-            return dict(
-                a=self.player.in_round(1).a,
-                b=self.player.in_round(1).b,
-                c=self.player.in_round(1).c,
-                d=self.player.in_round(1).d,
-                e=self.player.in_round(1).e
-            )
+    def vars_for_template(player):
+        return dict(
+            a=player.in_round(1).a,
+            b=player.in_round(1).b,
+            c=player.in_round(1).c,
+            d=player.in_round(1).d,
+            e=player.in_round(1).e
+        )
 
 
 It should be simplified to this:
 
 .. code-block:: python
 
-    class MyPage(Page):
-        def vars_for_template(self):
-            round_1_player = self.player.in_round(1)
-            return dict(
-                a=round_1_player.a,
-                b=round_1_player.b,
-                c=round_1_player.c,
-                d=round_1_player.d,
-                e=round_1_player.e
-            )
+    def vars_for_template(player):
+        round_1_player = player.in_round(1)
+        return dict(
+            a=round_1_player.a,
+            b=round_1_player.b,
+            c=round_1_player.c,
+            d=round_1_player.d,
+            e=round_1_player.e
+        )
 
 
 As an added benefit, this usually makes the code more readable.
@@ -216,12 +214,14 @@ In your pages, you might use it like this:
 .. code-block:: python
 
     class HighIncome(Page):
-        def is_displayed(self):
-            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'high_income_low_tax'
+        @staticmethod
+        def is_displayed(player):
+            return player.treatment == 'high_income_high_tax' or player.treatment == 'high_income_low_tax'
 
     class HighTax(Page):
-        def is_displayed(self):
-            return self.player.treatment == 'high_income_high_tax' or self.player.treatment == 'low_income_high_tax'
+        @staticmethod
+        def is_displayed(player):
+            return player.treatment == 'high_income_high_tax' or player.treatment == 'low_income_high_tax'
 
 
 It would be much better to break this to 2 separate BooleanFields::
@@ -234,12 +234,14 @@ Then your pages could be simplified to:
 .. code-block:: python
 
     class HighIncome(Page):
-        def is_displayed(self):
-            return self.player.high_income
+        @staticmethod
+        def is_displayed(player):
+            return player.high_income
 
     class HighTax(Page):
-        def is_displayed(self):
-            return self.player.high_tax
+        @staticmethod
+        def is_displayed(player):
+            return player.high_tax
 
 
 
@@ -254,19 +256,19 @@ For example:
 
 .. code-block:: python
 
-    def quiz1_error_message(self, value):
+    def quiz1_error_message(player, value):
         if value != 42:
             return 'Wrong answer'
 
-    def quiz2_error_message(self, value):
+    def quiz2_error_message(player, value):
         if value != 'Ottawa':
             return 'Wrong answer'
 
-    def quiz3_error_message(self, value):
+    def quiz3_error_message(player, value):
         if value != 3.14:
             return 'Wrong answer'
 
-    def quiz4_error_message(self, value):
+    def quiz4_error_message(player, value):
         if value != 'George Washington':
             return 'Wrong answer'
 
@@ -274,7 +276,7 @@ You can instead define this method on your page (not Player class):
 
 .. code-block:: python
 
-    def error_message(self, values):
+    def error_message(player, values):
         solutions = dict(
             quiz1=42,
             quiz2='Ottawa',

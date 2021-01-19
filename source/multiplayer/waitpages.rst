@@ -235,7 +235,7 @@ like this:
                 return 5*60
 
         @staticmethod
-        def before_next_page(player):
+        def before_next_page(player, timeout_happened):
             if player.timeout_happened:
                 player.contribution = c(100)
                 player.participant.vars['is_dropout'] = True

@@ -151,8 +151,10 @@ you may also want to use :ref:`error_message <error_message>`:
 
 .. code-block:: python
 
-    def error_message(self, values):
-        if 'dice_roll' not in self.session.vars:
+    def error_message(player, values):
+        session = player.session
+
+        if 'dice_roll' not in session.vars:
             return 'You must wait until the dice roll before proceeding'
 
 
