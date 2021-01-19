@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../../source/install-macos.rst:23
 msgid ""
-"Download and install `Python 3.7 or 3.8 "
+"Download and install `Python "
 "<https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__"
 msgstr ""
 
@@ -60,26 +60,20 @@ msgid "Step 2: Install oTree"
 msgstr ""
 
 #: ../../source/install-macos.rst:31
-msgid "Enter this:"
+msgid "Enter this command at the prompt:"
 msgstr ""
 
-#: ../../source/install-macos.rst:37
-msgid ""
-"(If you get a long error related to Twisted & xcrun, follow the steps "
-"`here <https://apple.stackexchange.com/a/254381>`__ then try again.)"
-msgstr ""
-
-#: ../../source/install-macos.rst:43
+#: ../../source/install-macos.rst:39
 msgid "Next steps"
 msgstr ""
 
-#: ../../source/install-macos.rst:45
+#: ../../source/install-macos.rst:41
 msgid ""
 "If you will use :ref:`oTree Studio <studio>` (recommended), go to "
 "`otreehub.com <https://www.otreehub.com/studio>`__."
 msgstr ""
 
-#: ../../source/install-macos.rst:47
+#: ../../source/install-macos.rst:43
 msgid ""
 "If you will use PyCharm or another text-based code editor, follow the "
 "steps :ref:`here <install-nostudio>`."

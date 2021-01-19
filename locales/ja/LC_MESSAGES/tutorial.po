@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 21:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,7 +120,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/part1_studio.rst:65
-#: ../../source/tutorial/part2.rst:187
+#: ../../source/tutorial/part2.rst:186
 msgid "Define the session config"
 msgstr ""
 
@@ -171,12 +171,12 @@ msgid "Then in PyCharm, go to the folder ``my_simple_survey`` that was created."
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:23
-msgid "Define models.py"
+msgid "Define models"
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:25
 msgid ""
-"Open ``models.py`` and scroll to the line that says ``class "
+"In ``app.py``, scroll to the line that says ``class "
 "Player(BasePlayer):``. Here we define the columns for the Player table in"
 " the database. Let's add 2 fields:"
 msgstr ""
@@ -194,94 +194,90 @@ msgid "Define the template"
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:47
-msgid ""
-"So, let's make 2 HTML template files. Next to your ``models.py`` you will"
-" find a folder called ``templates/``, which in turn has another subfolder"
-" called ``my_simple_survey``. Put your templates there."
+msgid "So, let's make 2 HTML template files."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:52
+#: ../../source/tutorial/part1_texteditor.rst:49
 msgid "Let's name the first page ``MyPage.html``, and put these contents inside:"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:73
+#: ../../source/tutorial/part1_texteditor.rst:70
 msgid "The second template will be called ``Results.html``."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:93
-msgid "Define pages.py"
+#: ../../source/tutorial/part1_texteditor.rst:90
+msgid "Define pages"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:95
+#: ../../source/tutorial/part1_texteditor.rst:92
 msgid ""
 "Now we define our pages, which contain the logic for how to display the "
 "HTML templates."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:98
+#: ../../source/tutorial/part1_texteditor.rst:95
 msgid ""
-"Since we have 2 templates, we need 2 ``Page`` classes in ``pages.py``. "
-"The names should match those of the templates (``MyPage`` and "
-"``Results``)."
+"Since we have 2 templates, we need 2 ``Page`` classes. The names should "
+"match those of the templates (``MyPage`` and ``Results``)."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:102
+#: ../../source/tutorial/part1_texteditor.rst:99
 msgid ""
 "First let's define ``MyPage``. This page contains a form, so we need to "
 "define ``form_model`` and ``form_fields``."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:111
+#: ../../source/tutorial/part1_texteditor.rst:108
 msgid ""
 "Now we define ``Results``. This page doesn't have a form or any other "
 "special attributes, so we just write \"pass\"."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:119
+#: ../../source/tutorial/part1_texteditor.rst:116
 msgid ""
-"If ``pages.py`` already has a ``WaitPage``, you can delete that, because "
+"If there is already a ``WaitPage``, you can delete that, because "
 "WaitPages are only necessary for multi-player games."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:122
+#: ../../source/tutorial/part1_texteditor.rst:119
 msgid ""
 "Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. "
-"So, all in all, ``pages.py`` should contain this:"
+"So, all in all, your pages should look like this:"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:148
+#: ../../source/tutorial/part1_texteditor.rst:140
 msgid "Define the session config in settings.py"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:150
+#: ../../source/tutorial/part1_texteditor.rst:142
 msgid ""
 "Now we go to ``settings.py`` in the project's top folder and add an entry"
 " to ``SESSION_CONFIGS``."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:164
+#: ../../source/tutorial/part1_texteditor.rst:156
 msgid "Start the server"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:166
+#: ../../source/tutorial/part1_texteditor.rst:158
 msgid "Enter::"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:170
+#: ../../source/tutorial/part1_texteditor.rst:162
 msgid "Then open your browser to ``http://localhost:8000`` to try out the survey."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:174
+#: ../../source/tutorial/part1_texteditor.rst:166
 msgid "Fix any errors"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:176
+#: ../../source/tutorial/part1_texteditor.rst:168
 msgid ""
 "If there is an error in your code, the command line will display a "
 "\"traceback\" (error message) that is formatted something like this::"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:199
+#: ../../source/tutorial/part1_texteditor.rst:191
 msgid ""
 "It's called a \"traceback\" because it traces the error down through the "
 "chain of code. Your first step should be to look at the last lines of the"
@@ -294,7 +290,7 @@ msgid ""
 "with code indentation). Try to fix the error then run the command again."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:209
+#: ../../source/tutorial/part1_texteditor.rst:201
 msgid ""
 "Sometimes the last line of the traceback refers to a file that is not "
 "part of your code. For example, in the below traceback, the last line "
@@ -302,7 +298,7 @@ msgid ""
 "but rather an external package::"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:252
+#: ../../source/tutorial/part1_texteditor.rst:244
 msgid ""
 "In these situations, look to see if any of your code is contained in the "
 "traceback. Above we can see that the traceback goes through the file "
@@ -437,11 +433,10 @@ msgstr ""
 #: ../../source/tutorial/part2.rst:124
 msgid ""
 "When all players have completed the ``Contribute`` page, the players' "
-"payoffs can be calculated. Go to your Group model and add a method called"
-" ``set_payoffs`` (note that ``self`` refers to the group):"
+"payoffs can be calculated. Add a group function called ``set_payoffs``:"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:139
+#: ../../source/tutorial/part2.rst:138
 msgid ""
 "After a player makes a contribution, they cannot see the results page "
 "right away; they first need to wait for the other players to contribute. "
@@ -451,72 +446,72 @@ msgid ""
 "proceed to the next page. (For more info, see :ref:`wait_pages`)."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:147
+#: ../../source/tutorial/part2.rst:146
 msgid ""
-"Add ``after_all_players_arrive`` method to ``ResultsWaitPage``, and set "
-"it to trigger the ``set_payoffs`` method:"
+"Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to "
+"trigger ``set_payoffs``:"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:155
+#: ../../source/tutorial/part2.rst:154
 msgid "Page 3: Results"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:157
+#: ../../source/tutorial/part2.rst:156
 msgid "Now we create a page called ``Results``. Set the template's content to:"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:173
+#: ../../source/tutorial/part2.rst:172
 msgid "Page sequence"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:175
+#: ../../source/tutorial/part2.rst:174
 msgid "Make sure your page_sequence is correct:"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:189
+#: ../../source/tutorial/part2.rst:188
 msgid ""
 "We add another session config with ``my_public_goods`` in the app "
 "sequence."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:193
+#: ../../source/tutorial/part2.rst:192
 msgid "Run the code"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:195 ../../source/tutorial/part3.rst:247
+#: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:250
 msgid ""
 "Load the project again then open your browser to "
 "``http://localhost:8000``."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:200
+#: ../../source/tutorial/part2.rst:199
 msgid "Troubleshoot with print()"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:202
+#: ../../source/tutorial/part2.rst:201
 msgid ""
 "I often read messages on programming forums like, \"My program is not "
 "working. I can't find the mistake, even though I have spent hours looking"
 " at my code\"."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:206
+#: ../../source/tutorial/part2.rst:205
 msgid ""
 "The solution is not to re-read the code until you find an error; it's to "
 "interactively **test** your program."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:209
+#: ../../source/tutorial/part2.rst:208
 msgid ""
 "The simplest way is using ``print()`` statements. If you don't learn this"
 " technique, you won't be able to program games effectively."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:212
+#: ../../source/tutorial/part2.rst:211
 msgid "You just need to insert a line in your code like this:"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:218
+#: ../../source/tutorial/part2.rst:217
 msgid ""
 "Put this line in the part of your code that's not working, such as the "
 "payoff method defined above. When you play the game in your browser and "
@@ -524,22 +519,22 @@ msgid ""
 "command prompt window (not in your web browser)."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:224
+#: ../../source/tutorial/part2.rst:223
 msgid "You can sprinkle lots of prints in your code"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:244
+#: ../../source/tutorial/part2.rst:243
 msgid "print statement not displayed in console/logs"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:246
+#: ../../source/tutorial/part2.rst:245
 msgid ""
 "If you don't see the output of the print statement in your console "
 "window, that means that line is not getting executed! (Which is why it "
 "isn't working.)"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:249
+#: ../../source/tutorial/part2.rst:248
 msgid ""
 "Maybe it's because your code is in some unreachable place like after a "
 "``return`` statement, or inside an \"if\" statement that is always "
@@ -547,7 +542,7 @@ msgid ""
 "then see where they stop getting displayed."
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:253
+#: ../../source/tutorial/part2.rst:252
 msgid ""
 "Or maybe your code is in a method that never gets called (executed). "
 "oTree's built-in methods such as ``creating_session`` and "
@@ -629,8 +624,8 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:76
 msgid ""
-"We also define a method called ``sent_back_amount_choices`` to populate "
-"the dropdown menu dynamically. This is the feature called "
+"We also define a function called ``sent_back_amount_choices`` to populate"
+" the dropdown menu dynamically. This is the feature called "
 "``{field_name}_choices``, which is explained here: "
 ":ref:`dynamic_validation`."
 msgstr ""
@@ -659,33 +654,33 @@ msgstr ""
 msgid "Send page"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:111
+#: ../../source/tutorial/part3.rst:112
 msgid ""
 "We use :ref:`is_displayed` to only show this to P1; P2 skips the page. "
 "For more info on ``id_in_group``, see :ref:`groups`."
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:114
+#: ../../source/tutorial/part3.rst:115
 msgid ""
 "For the template, set the ``title`` to ``Trust Game: Your Choice``, and "
 "``content`` to:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:129
+#: ../../source/tutorial/part3.rst:130
 msgid "SendBack.html"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:131
+#: ../../source/tutorial/part3.rst:132
 msgid ""
 "This is the page that P2 sees to send money back. Set the ``title`` block"
 " to ``Trust Game: Your Choice``, and the ``content`` block to:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:147
+#: ../../source/tutorial/part3.rst:148
 msgid "Here is the page code. Notes:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:149
+#: ../../source/tutorial/part3.rst:150
 msgid ""
 "We use :ref:`vars_for_template` to pass the variable ``tripled_amount`` "
 "to the template. You cannot do calculations directly in the HTML code, so"
@@ -693,11 +688,11 @@ msgid ""
 "template."
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:170
+#: ../../source/tutorial/part3.rst:173
 msgid "Results"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:172
+#: ../../source/tutorial/part3.rst:175
 #, python-format
 msgid ""
 "The results page needs to look slightly different for P1 vs. P2. So, we "
@@ -706,47 +701,47 @@ msgid ""
 "block to:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:203
+#: ../../source/tutorial/part3.rst:206
 msgid "Wait pages and page sequence"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:205
+#: ../../source/tutorial/part3.rst:208
 msgid "Add 2 wait pages:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:207
+#: ../../source/tutorial/part3.rst:210
 msgid "``WaitForP1`` (P2 needs to wait while P1 decides how much to send)"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:208
+#: ../../source/tutorial/part3.rst:211
 msgid ""
 "``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send "
 "back)"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:210
+#: ../../source/tutorial/part3.rst:213
 msgid ""
 "After the second wait page, we should calculate the payoffs. So, we "
 "define a method on the Group called ``set_payoffs``:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:221
+#: ../../source/tutorial/part3.rst:224
 msgid "Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:227
+#: ../../source/tutorial/part3.rst:230
 msgid "Make sure they are ordered correctly in the page_sequence:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:240
+#: ../../source/tutorial/part3.rst:243
 msgid "Add an entry to your ``SESSION_CONFIGS``"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:242
+#: ../../source/tutorial/part3.rst:245
 msgid "Create a session config with ``my_trust`` in the app sequence."
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:245
+#: ../../source/tutorial/part3.rst:248
 msgid "Run the server"
 msgstr ""
 

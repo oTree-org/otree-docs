@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-26 00:49+0800\n"
+"POT-Creation-Date: 2021-01-19 20:07+0800\n"
 "PO-Revision-Date: 2020-11-05 21:06+0800\n"
 "Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
 "Language: zh_CN\n"
@@ -111,7 +111,8 @@ msgid ""
 "using ``get_FIELD_display``, like this: ``player.get_level_display() # "
 "returns e.g. 'Medium'``."
 msgstr ""
-"在字段被设置之后，你可以通过 `get_FOO_display, 获取人类可读的名字，如：``player.get_level_display() # 返回如 'Medium'``."
+"在字段被设置之后，你可以通过 `get_FOO_display, 获取人类可读的名字，如：``player.get_level_display()"
+" # 返回如 'Medium'``."
 
 #: ../../source/forms.rst:114
 msgid "Optional fields"
@@ -137,60 +138,51 @@ msgid ""
 " to player), then you can instead define one of the below methods."
 msgstr "如果你想让它们动态地被决定（例如在不同玩家间有区别），那么你可以定义下面的方法。"
 
-#: ../../source/forms.rst:134
-msgid ""
-"Note: if you have apps written before May 2019, the recommended format "
-"for these validation methods has changed. See :ref:`dynamic-validation-"
-"new-format`."
-msgstr ""
-"注意：如果你的应用写于2019年5月之前，那么这些表单验证方法的推荐格式已经改变。参考 :ref:`dynamic-validation-new-"
-"format`."
-
-#: ../../source/forms.rst:140
+#: ../../source/forms.rst:137
 msgid "{field_name}_choices()"
 msgstr "{field_name}_choices()"
 
-#: ../../source/forms.rst:142
+#: ../../source/forms.rst:139
 msgid ""
 "Like setting ``choices=``, this will set the choices for the form field "
 "(e.g. the dropdown menu or radio buttons)."
 msgstr "与设置了 ``choices=`` 相同，这一方法会设置表单字段的选项（例如下拉菜单或者单选按钮）。"
 
-#: ../../source/forms.rst:146
+#: ../../source/forms.rst:143
 msgid "Example:"
 msgstr "例如："
 
-#: ../../source/forms.rst:163
+#: ../../source/forms.rst:160
 msgid "{field_name}_max()"
 msgstr "{field_name}_max()"
 
-#: ../../source/forms.rst:165
+#: ../../source/forms.rst:162
 msgid ""
 "The dynamic alternative to setting ``max=`` in the model field. For "
 "example:"
 msgstr "此函数为在模型字段中动态地设置 ``max=`` 的方法。例如："
 
-#: ../../source/forms.rst:180
+#: ../../source/forms.rst:175
 msgid "{field_name}_min()"
 msgstr "{field_name}_min()"
 
-#: ../../source/forms.rst:182
+#: ../../source/forms.rst:177
 msgid "The dynamic alternative to setting ``min=`` on the model field."
 msgstr "此函数为在模型字段中动态地设置 ``min=`` 的方法。"
 
-#: ../../source/forms.rst:187
+#: ../../source/forms.rst:182
 msgid "{field_name}_error_message()"
 msgstr "{field_name}_error_message()"
 
-#: ../../source/forms.rst:189
+#: ../../source/forms.rst:184
 msgid "This is the most flexible method for validating a field."
 msgstr "这是验证一个字段的最灵活的方法。"
 
-#: ../../source/forms.rst:208
+#: ../../source/forms.rst:201
 msgid "Validating multiple fields together"
 msgstr "同时验证多个字段"
 
-#: ../../source/forms.rst:210
+#: ../../source/forms.rst:203
 msgid ""
 "Let's say your form has 3 number fields whose values must sum to 100. You"
 " can enforce this with the ``error_message`` method, which goes on the "
@@ -199,21 +191,21 @@ msgstr ""
 "假设你的表单中有3个数字字段，它们的和必须为100.你可以通过 ``error_message`` 方法确保这一点，注意是在 *页面* "
 "中（而不是玩家模型）："
 
-#: ../../source/forms.rst:225
+#: ../../source/forms.rst:219
 msgid "Notes:"
 msgstr "注意："
 
-#: ../../source/forms.rst:227
+#: ../../source/forms.rst:221
 msgid ""
 "If a field was left blank (and you set ``blank=True``), its value here "
 "will be ``None``."
 msgstr "如果一个字段未被填写（并且你设置了 ``blank=True``），它的值就会为 ``None``."
 
-#: ../../source/forms.rst:228
+#: ../../source/forms.rst:222
 msgid "This method is only executed if there are no other errors in the form."
 msgstr "此方法仅会在表单中没有任何其他错误的情况下会被执行。"
 
-#: ../../source/forms.rst:229
+#: ../../source/forms.rst:223
 msgid ""
 "You can also return a dict that maps field names to error messages. This "
 "way, you don't need to write many repetitive FIELD_error_message methods "
@@ -222,17 +214,17 @@ msgstr ""
 "你也可以返回一个记录着字段名及其对应的错误信息的字典。在这种方法中，你不需要写很多重复的FIELD_error_message方法（参考 "
 ":ref:`这里 <duplicate_validation_methods>`）。"
 
-#: ../../source/forms.rst:236
+#: ../../source/forms.rst:230
 msgid "Determining form fields dynamically"
 msgstr "动态决定表单字段"
 
-#: ../../source/forms.rst:238
+#: ../../source/forms.rst:232
 msgid ""
 "If you need the list of form fields to be dynamic, instead of "
 "``form_fields`` you can define a method ``get_form_fields``:"
 msgstr "如果你需要表单字段是动态的，你可以定义 ``get_form_fields`` 方法取代 ``form_fields`` ："
 
-#: ../../source/forms.rst:249
+#: ../../source/forms.rst:243
 #, python-format
 msgid ""
 "But if you do this, you have to be sure to also include the same ``{% "
@@ -242,11 +234,11 @@ msgstr ""
 "但如使用这种方法，你必须保证在模板中包含同样的 ``{% formfield %}`` 元素。最简单的方法是使用 ``{% formfields "
 "%}``."
 
-#: ../../source/forms.rst:254
+#: ../../source/forms.rst:248
 msgid "Widgets"
 msgstr "控件"
 
-#: ../../source/forms.rst:256
+#: ../../source/forms.rst:250
 msgid ""
 "You can set a model field's ``widget`` to ``RadioSelect`` or "
 "``RadioSelectHorizontal`` if you want choices to be displayed with radio "
@@ -255,35 +247,32 @@ msgstr ""
 "你可以设定一个模型字段的 ``widget`` 为 ``RadioSelect`` 或 ``RadioSelectHorizontal`` "
 "如果你想让选项表现为单选按钮而不是下拉菜单的话。"
 
-#: ../../source/forms.rst:261
+#: ../../source/forms.rst:255
 #, python-format
 msgid "{% formfield %}"
 msgstr "{% formfield %}"
 
-#: ../../source/forms.rst:263
+#: ../../source/forms.rst:257
 #, python-format
 msgid ""
 "If you want to position the fields individually, instead of ``{% "
 "formfields %}`` you can use ``{% formfield %}``:"
 msgstr "如果你想分别设定字段的位置，可以使用 ``{% formfield %}`` 替代 ``{% formfields %}`` ："
 
-#: ../../source/forms.rst:271
+#: ../../source/forms.rst:265
 msgid "You can also put the ``label`` in directly in the template:"
 msgstr "你也可以将 ``label`` 直接放在模板中："
 
-#: ../../source/forms.rst:279
+#: ../../source/forms.rst:273
 #, python-format
-msgid ""
-"You can also do ``{% formfield 'xyz' %}``, starting with oTree 3.1 "
-"(October 2020). This allows you to provide the field name as a variable "
-"and loop over form fields in different ways."
+msgid "The previous syntax of ``{% formfield player.bid %}`` is still supported."
 msgstr ""
 
-#: ../../source/forms.rst:286
+#: ../../source/forms.rst:278
 msgid "Customizing a field's appearance"
 msgstr "定制字段的外观"
 
-#: ../../source/forms.rst:288
+#: ../../source/forms.rst:280
 #, python-format
 msgid ""
 "``{% formfields %}`` and ``{% formfield %}`` are easy to use because they"
@@ -293,7 +282,7 @@ msgstr ""
 "``{% formfields %}`` 与 ``{% formfield %}`` "
 "很容易使用，因为它们自动输出了一个表单字段所必需的所有部分（输入框，标签，错误信息），并使用Bootstrap的样式。"
 
-#: ../../source/forms.rst:292
+#: ../../source/forms.rst:284
 #, python-format
 msgid ""
 "However, if you want more control over the appearance and layout, you can"
@@ -302,58 +291,53 @@ msgid ""
 "to also include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 "
 "}}{% endif %}``."
 msgstr ""
-"然而，如果你想要自己更多地控制外观与布局，你可以使用Django手动字段渲染。使用 ``{{ "
-"form.my_field }}``,而不是 ``{% formfield "
-"player.my_field %}`` 来获取输入元素。只需记得包含 ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``."
+"然而，如果你想要自己更多地控制外观与布局，你可以使用Django手动字段渲染。使用 ``{{ form.my_field }}``,而不是 "
+"``{% formfield player.my_field %}`` 来获取输入元素。只需记得包含 ``{% if "
+"form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``."
 
-#: ../../source/forms.rst:301
+#: ../../source/forms.rst:293
 msgid "Example: Radio buttons in tables and other custom layouts"
 msgstr "例子：表格中的单选按钮与其他定制布局"
 
-#: ../../source/forms.rst:303
+#: ../../source/forms.rst:295
 msgid "Let's say you have a set of ``IntegerField`` in your model:"
 msgstr "假定你在模型中有很多 ``IntegerField`` ："
 
-#: ../../source/forms.rst:315
+#: ../../source/forms.rst:306
 msgid ""
 "And you'd like to present them as a likert scale, where each option is in"
 " a separate column."
 msgstr "并且你想要它们表现得像李克特量表，每一个选项在独立的一列中。"
 
-#: ../../source/forms.rst:318
+# Chris comment: we don't mention models.py anymore, since it could be in app.py
+#: ../../source/forms.rst:309
+#, fuzzy
 msgid ""
-"(First, try to reduce the code duplication in models.py by following the "
-"instructions in :ref:`many-fields`.)"
+"(First, try to reduce the code duplication in your model by following the"
+" instructions in :ref:`many-fields`.)"
 msgstr "（首先，试着减少models.py中的代码冗余，根据 :ref:`many-fields` 中的提示）"
 
-#: ../../source/forms.rst:321
+#: ../../source/forms.rst:312
 msgid ""
 "Because the options must be in separate table cells, the ordinary "
 "``RadioSelectHorizontal`` widget will not work here."
 msgstr "由于选项必须在独立的表格单元中，原生的 ``RadioSelectHorizontal`` 控件不会正常工作。"
 
-#: ../../source/forms.rst:324
+#: ../../source/forms.rst:315
 msgid "Instead, you should simply loop over the choices in the field as follows:"
 msgstr "作为替代方案，你应当简单地通过循环重复字段的选项，如下所示："
 
-#: ../../source/forms.rst:335
+#: ../../source/forms.rst:326
 msgid ""
 "If you have many fields with the same number of choices, you can arrange "
 "them in a table:"
 msgstr "如果数个字段均有相同数量的选项，你可以将其组织成表格："
 
-#: ../../source/forms.rst:351
-msgid ""
-"You can also get choices individually by using their 0-based index, e.g. "
-"``{{ form.my_field.0 }}`` gives you the radio button of the first choice."
-msgstr "你也可以分别获取选项元素，使用从0开始的下标即可，例如 ``{{ form.my_field.0 "
-"}}`` 就代表了第一个选项的按钮"
-
-#: ../../source/forms.rst:358
+#: ../../source/forms.rst:345
 msgid "Raw HTML widgets"
 msgstr "原始HTML控件"
 
-#: ../../source/forms.rst:360
+#: ../../source/forms.rst:347
 #, python-format
 msgid ""
 "If ``{% formfields %}`` and :ref:`manual field rendering <manual-forms>` "
@@ -362,12 +346,10 @@ msgid ""
 "automatically by oTree. For example, if the form has an error and the "
 "page re-loads, all entries by the user may be wiped out."
 msgstr ""
-"如果 ``{% formfields %}`` 与 :ref:`manual"
-" field rendering <manual-forms>` "
+"如果 ``{% formfields %}`` 与 :ref:`manual field rendering <manual-forms>` "
 "不能实现你想要的外观，你可以使用原始HTML写你自己的控件。然而，这样做会失去由oTree自动处理的一些便捷的特性。举例来说，如果表单有一个错误并且页面重载了，所有用户已经输入的条目可能被清除。"
 
-
-#: ../../source/forms.rst:367
+#: ../../source/forms.rst:354
 msgid ""
 "First, add an ``<input>`` element. For example, if your ``form_fields`` "
 "includes ``my_field``, you can do ``<input name=\"my_field\" "
@@ -378,41 +360,41 @@ msgstr ""
 "``<input name=\"my_field\" type=\"checkbox\" />`` （其他一些常见的type为 "
 "``radio``, ``text``, ``number``, 与 ``range``）。"
 
-#: ../../source/forms.rst:372
+#: ../../source/forms.rst:359
+#, python-format
 msgid ""
-"Second, you should usually include ``{{ form.my_field.errors }}``, so "
-"that if the participant submits an incorrect or missing value), they can "
-"see the error message."
+"Second, you should usually include ``{% if form.my_field.errors %}{{ "
+"form.my_field.errors.0 }}{% endif %}``, so that if the participant "
+"submits an incorrect or missing value), they can see the error message."
 msgstr ""
-"其次，你通常应当包含 ``{{ form.my_field.errors }}``, "
+"其次，你通常应当包含 ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``, "
 "这样如果参与人提交了一个不正确的值或者缺少了某些值时，他们就可以看见报错信息。"
 
-#: ../../source/forms.rst:378
+#: ../../source/forms.rst:364
 msgid "Raw HTML example: slider"
 msgstr "原始HTML的例子：滑动条"
 
-#: ../../source/forms.rst:380
+#: ../../source/forms.rst:366
 #, python-format
 msgid ""
 "If you want a slider, instead of ``{% formfields %}``, put HTML like this"
 " in your template:"
 msgstr "如果你想使用滑动条，将下面这样的HTML放入模板中，而不使用 ``{% formfields %}``："
 
-#: ../../source/forms.rst:401
+#: ../../source/forms.rst:387
 msgid ""
 "If you want to show the current numeric value, or hide the knob until the"
-" slider is clicked (to avoid anchoring), you could do that with "
-"JavaScript, but consider using the ``RadioSelectHorizontal`` widget "
-"instead."
+" slider is clicked, you could do that with JavaScript, but consider using"
+" the ``RadioSelectHorizontal`` widget instead."
 msgstr ""
-"如果你想显示当前的数值，或者当滑动条未被点击时隐藏滑动块（为了避免锚定），你可以使用JavaScript实现，但是可以考虑使用 "
+"如果你想显示当前的数值，或者当滑动条未被点击时隐藏滑动块，你可以使用JavaScript实现，但是可以考虑使用 "
 "``RadioSelectHorizontal`` 控件替代。"
 
-#: ../../source/forms.rst:406
+#: ../../source/forms.rst:392
 msgid "Raw HTML example: custom user interface with JavaScript"
 msgstr "原始HTML的例子：使用JavaScript定制用户界面"
 
-#: ../../source/forms.rst:408
+#: ../../source/forms.rst:394
 msgid ""
 "Let's say you don't want users to fill out form fields, but instead "
 "interact with some sort of visual app, like a clicking on a chart or "
@@ -420,47 +402,34 @@ msgid ""
 " they spent on part of the page, how many times they clicked, etc."
 msgstr "假设你不想让用户填写表单，而是与某种可视化的应用交互，比如在图表上点击或者玩一个图形游戏等等。或者，你想要记录一些额外数据，比如用户在页面的某个部分花了多少时间，用户点击了多少次，诸如此类。"
 
-#: ../../source/forms.rst:413
+#: ../../source/forms.rst:399
 msgid ""
-"You can build these interfaces in any front-end framework you want. "
-"Simple ones can be done with plain JavaScript; more complex ones would "
-"use something like React, Vue.js, or jsPsych."
+"First, build your interface using HTML and JavaScript. Then use "
+"JavaScript to write the results into a hidden form field. For example:"
 msgstr ""
-"你可以使用任何后端框架构建这些接口。一些简单的可以用纯JavaScript实现，更加复杂的可能会使用React, Vue.js, "
-"jsPsych或其他类似的框架。"
 
 #: ../../source/forms.rst:417
-msgid ""
-"Then, use JavaScript to record the relevant data points and store it in a"
-" hidden form field. For example:"
-msgstr "然后，使用JavaScript记录相关数据并将其记录在隐藏的表单字段中。例如："
-
-#: ../../source/forms.rst:431
-msgid "Then use JavaScript to set the value of that input:"
-msgstr "之后使用JavaScript设置输入的值："
-
-#: ../../source/forms.rst:437
 msgid ""
 "When the page is submitted, the value of your hidden input will be "
 "recorded in oTree like any other form field."
 msgstr "当页面被提交的时候，隐藏输入中的值会被记录到oTree中，如其他表单字段一样。"
 
-#: ../../source/forms.rst:441
+#: ../../source/forms.rst:421
 msgid "Buttons"
 msgstr "按钮"
 
-#: ../../source/forms.rst:444
+#: ../../source/forms.rst:424
 msgid "Button that submits the form"
 msgstr "提交表单的按钮"
 
-#: ../../source/forms.rst:446
+#: ../../source/forms.rst:426
 msgid ""
 "If your page only contains 1 decision, you could omit the ``{% "
 "next_button %}`` and instead have the user click on one of several "
 "buttons to go to the next page."
 msgstr "如果你的页面只包含一个问题，你可以忽略 ``{% next_button %}`` ，并让用户在一系列按钮中点击一个，并前往下一个页面。"
 
-#: ../../source/forms.rst:451
+#: ../../source/forms.rst:431
 msgid ""
 "For example, let's say your Player model has ``offer_accepted = "
 "models.BooleanField()``, and rather than a radio button you'd like to "
@@ -469,47 +438,47 @@ msgstr ""
 "举例来说，假定你的玩家模型有 ``offer_accepted = models.BooleanField()``, "
 "并且你希望像下面这样展示按钮，而不是一个单选按钮："
 
-#: ../../source/forms.rst:457
+#: ../../source/forms.rst:437
 msgid ""
 "First, put ``offer_accepted`` in your Page's ``form_fields`` as usual. "
 "Then put this code in the template:"
 msgstr "首先，将 ``offer_accepted`` 放入你的页面的 ``form_fields`` 。然后将这样的代码放入模板中："
 
-#: ../../source/forms.rst:468
+#: ../../source/forms.rst:448
 msgid ""
 "You can use this technique for any type of field, not just "
 "``BooleanField``."
 msgstr "你可以在任何类型的字段上使用这个技巧，不只是 ``BooleanField``."
 
-#: ../../source/forms.rst:472
+#: ../../source/forms.rst:452
 msgid "Button that doesn't submit the form"
 msgstr "非提交表单的按钮"
 
-#: ../../source/forms.rst:474
+#: ../../source/forms.rst:454
 msgid ""
 "If the button has some purpose other than submitting the form, add "
 "``type=\"button\"``:"
 msgstr "如果按钮有别的用途，而不是用来提交表单，添加 ``type=\"button\"``:"
 
-#: ../../source/forms.rst:489
+#: ../../source/forms.rst:469
 msgid "Miscellaneous & advanced"
 msgstr "杂项与进阶"
 
-#: ../../source/forms.rst:492
+#: ../../source/forms.rst:472
 msgid "Form fields with dynamic labels"
 msgstr "具有动态标签的表单字段"
 
-#: ../../source/forms.rst:494
+#: ../../source/forms.rst:474
 msgid ""
 "If the label should contain a variable, you can construct the string in "
 "your page:"
 msgstr "如果标签包含变量，你可以在页面中构建字符串："
 
-#: ../../source/forms.rst:507
+#: ../../source/forms.rst:488
 msgid "Then, in the template:"
 msgstr "然后在模板中："
 
-#: ../../source/forms.rst:513
+#: ../../source/forms.rst:494
 msgid ""
 "If you use this technique, you may also want to use "
 ":ref:`dynamic_validation`."

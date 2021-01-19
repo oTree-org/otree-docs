@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,15 +87,33 @@ msgid ""
 " so that you get code completion."
 msgstr ""
 
-#: ../../source/install-nostudio.rst:58
+#: ../../source/install-nostudio.rst:56
 msgid "Then launch the text editor and open your entire project folder."
 msgstr ""
 
-#: ../../source/install-nostudio.rst:64
+#: ../../source/install-nostudio.rst:62
 msgid "Upgrading/reinstalling oTree"
 msgstr ""
 
-#: ../../source/install-nostudio.rst:66
+#: ../../source/install-nostudio.rst:64
 msgid "We recommend upgrading every couple of weeks. It's the same command:"
+msgstr ""
+
+#: ../../source/install-nostudio.rst:71
+msgid ""
+"The best way to ensure that your apps continue to work after you upgrade "
+"is to use only the functions described in this documentation. Some code "
+"snippets you may find online were written by people who access oTree's "
+"internal functions and \"hack\" them to do something different. Although "
+"these snippets can enable some innovative new functionality, be aware "
+"that they increase the chance of things breaking when you upgrade. "
+"Because oTree's internal code layout changes from release to release."
+msgstr ""
+
+#: ../../source/install-nostudio.rst:79
+msgid ""
+"For similar reasons, we also caution about directly using Django "
+"functionality, apart from the few components linked in this documentation"
+" (such as Django templates)."
 msgstr ""
 

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,45 +168,45 @@ msgstr ""
 msgid "For example, let's say you have this page:"
 msgstr ""
 
-#: ../../source/bots.rst:133
+#: ../../source/bots.rst:134
 msgid "Here is how to test that it is working properly:"
 msgstr ""
 
-#: ../../source/bots.rst:142
+#: ../../source/bots.rst:143
 msgid ""
 "The bot will submit ``MyPage`` twice. If the first submission "
 "**succeeds**, an error will be raised, because it is not supposed to "
 "succeed."
 msgstr ""
 
-#: ../../source/bots.rst:147
+#: ../../source/bots.rst:148
 msgid "Checking the HTML"
 msgstr ""
 
-#: ../../source/bots.rst:149
+#: ../../source/bots.rst:150
 msgid ""
 "``self.html`` contains the HTML of the page you are about to submit. You "
 "can use this together with ``expect()``:"
 msgstr ""
 
-#: ../../source/bots.rst:166
+#: ../../source/bots.rst:167
 msgid ""
 "``self.html`` is updated with the next page's HTML, after every ``yield``"
 " statement. Linebreaks and extra spaces are ignored."
 msgstr ""
 
-#: ../../source/bots.rst:170
+#: ../../source/bots.rst:171
 msgid "Automatic HTML checks"
 msgstr ""
 
-#: ../../source/bots.rst:172
+#: ../../source/bots.rst:173
 msgid ""
 "An error will be raised if the bot is trying to submit form fields that "
 "are not actually found in the page's HTML, or if the page's HTML is "
 "missing a submit button."
 msgstr ""
 
-#: ../../source/bots.rst:175
+#: ../../source/bots.rst:176
 msgid ""
 "However, the bot system is not able to see fields and buttons that are "
 "added dynamically with JavaScript. In these cases, you should disable the"
@@ -214,29 +214,29 @@ msgid ""
 "example, change this:"
 msgstr ""
 
-#: ../../source/bots.rst:183
+#: ../../source/bots.rst:184
 msgid "to this:"
 msgstr ""
 
-#: ../../source/bots.rst:190
+#: ../../source/bots.rst:191
 msgid ""
 "(If you used ``Submission`` without ``check_html=False``, the two code "
 "samples would be equivalent.)"
 msgstr ""
 
-#: ../../source/bots.rst:196
+#: ../../source/bots.rst:197
 msgid "Simulate a page timeout"
 msgstr ""
 
-#: ../../source/bots.rst:198
+#: ../../source/bots.rst:199
 msgid "You can use ``Submission`` with ``timeout_happened=True``:"
 msgstr ""
 
-#: ../../source/bots.rst:206
+#: ../../source/bots.rst:207
 msgid "Advanced features"
 msgstr ""
 
-#: ../../source/bots.rst:208
+#: ../../source/bots.rst:209
 msgid "See :ref:`bots_advanced`"
 msgstr ""
 

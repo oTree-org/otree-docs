@@ -151,15 +151,17 @@ It assumes that in a previous app, you assigned ``self.participant.vars['categor
 You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page,
 for example to allow the participant to proceed individually if they have been waiting
 longer than 5 minutes. First, you must record ``time.time()`` on the final page before the app with ``group_by_arrival_time``.
-Store it in ``player.participant.vars``.
+Store it in ``participant.vars``.
 
 Then define a Player method:
 
 .. code-block:: python
 
     def waiting_too_long(player):
+        participant = player.participant
+
         import time
-        return time.time() - player.participant.vars['wait_page_arrival'] > 5*60
+        return time.time() - participant.vars['wait_page_arrival'] > 5*60
 
 Now use this:
 
@@ -229,16 +231,20 @@ like this:
 
         @staticmethod
         def get_timeout_seconds(player):
-            if player.participant.vars.get('is_dropout'):
+            participant = player.participant
+
+            if participant.vars.get('is_dropout'):
                 return 1  # instant timeout, 1 second
             else:
                 return 5*60
 
         @staticmethod
         def before_next_page(player, timeout_happened):
+            participant = player.participant
+
             if player.timeout_happened:
                 player.contribution = c(100)
-                player.participant.vars['is_dropout'] = True
+                participant.vars['is_dropout'] = True
 
 Notes:
 

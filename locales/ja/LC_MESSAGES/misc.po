@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-29 00:00+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,18 +147,18 @@ msgid ""
 "equivalent:"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:150
+#: ../../source/misc/advanced.rst:152
 msgid ""
 "If you want to apply your custom wait page template globally, save it to "
 "``_templates/global/WaitPage.html``. oTree will then automatically use it"
 " everywhere instead of the built-in wait page."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:155
+#: ../../source/misc/advanced.rst:157
 msgid "CSS and JavaScript in Wait Pages"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:157
+#: ../../source/misc/advanced.rst:159
 msgid ""
 "Wait pages have the same block structure as regular pages "
 "(``global_scripts``, ``app_scripts``, ``scripts``, etc...), so you can "
@@ -166,14 +166,14 @@ msgid ""
 ":ref:`selectors`."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:162
+#: ../../source/misc/advanced.rst:164
 msgid ""
 "For example, to apply CSS to your custom wait page at "
 "``_templates/global/WaitPage.html``, put a block ``global_scripts`` in "
 "the template."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:165
+#: ../../source/misc/advanced.rst:167
 msgid ""
 "You can even make other custom wait pages inherit from "
 "``_templates/global/WaitPage.html``, just the way regular pages inherit "
@@ -181,11 +181,11 @@ msgid ""
 "``app_scripts`` and ``scripts``, etc."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:172
+#: ../../source/misc/advanced.rst:174
 msgid "Modifying an existing database"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:174
+#: ../../source/misc/advanced.rst:176
 msgid ""
 "If your database already contains data and you want to update the "
 "structure without running ``resetdb`` (which will delete existing data), "
@@ -194,18 +194,18 @@ msgid ""
 "#modifying-an-existing-database>`__"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:179
+#: ../../source/misc/advanced.rst:181
 msgid "Currency"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:181
+#: ../../source/misc/advanced.rst:183
 msgid ""
 "To customize the name \"points\" to something else like \"tokens\" or "
 "\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
 "'tokens'``."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:184
+#: ../../source/misc/advanced.rst:186
 msgid ""
 "You can change the number of decimal places in real world currency "
 "amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
@@ -213,17 +213,17 @@ msgid ""
 "database."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:190
+#: ../../source/misc/advanced.rst:192
 msgid "Reading CSV or other files"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:192
+#: ../../source/misc/advanced.rst:194
 msgid ""
-"Store yourfile.csv in your app, next to models.py. Then put this code "
-"anywhere you want to read the file (in a method or in Constants):"
+"Store yourfile.csv in your app folder. Then put this code anywhere you "
+"want to read the file (in a method or in Constants):"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:202
+#: ../../source/misc/advanced.rst:204
 msgid ""
 "If it's not CSV and you just want to read the file contents as a string, "
 "this gets simplified to:"
@@ -456,82 +456,78 @@ msgstr ""
 msgid "REST"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:8
-msgid "These features are new in oTree 3.0 (July 2020)."
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:10
+#: ../../source/misc/rest_api.rst:6
 msgid ""
 "oTree has a small REST API that enables external programs (such as other "
 "websites) to communicate with oTree, in particular:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:13
+#: ../../source/misc/rest_api.rst:9
 msgid "Create sessions"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:14
+#: ../../source/misc/rest_api.rst:10
 msgid "Add participant vars"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:15
+#: ../../source/misc/rest_api.rst:11
 msgid "Add session vars"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:17
+#: ../../source/misc/rest_api.rst:13
 msgid ""
 "A REST API is just a URL on your server that is designed to be accessed "
 "by programs, rather than being opened manually in a web browser."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:20
+#: ../../source/misc/rest_api.rst:16
 msgid "Simply make a request to one of the below URLs."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:23
+#: ../../source/misc/rest_api.rst:19
 msgid "\"Create sessions\" REST endpoint"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:25
+#: ../../source/misc/rest_api.rst:21
 msgid "POST URL: ``/api/sessions/``"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:27
+#: ../../source/misc/rest_api.rst:23
 msgid ""
 "Here are some examples of how the \"create sessions\" endpoint can be "
 "used:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:29
+#: ../../source/misc/rest_api.rst:25
 msgid "Other websites can create oTree sessions automatically"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:30
+#: ../../source/misc/rest_api.rst:26
 msgid ""
 "You can make a fancier alternative to oTree's :ref:`edit_config` "
 "interface (e.g. with sliders and visual widgets)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:32
+#: ../../source/misc/rest_api.rst:28
 msgid "Process that will create new oTree sessions on some fixed schedule"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:33
+#: ../../source/misc/rest_api.rst:29
 msgid ""
 "Command line script to create customized sessions (if ``otree "
 "create_session`` is not sufficient)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:37 ../../source/misc/rest_api.rst:91
-#: ../../source/misc/rest_api.rst:134
+#: ../../source/misc/rest_api.rst:33 ../../source/misc/rest_api.rst:87
+#: ../../source/misc/rest_api.rst:126
 msgid "Example"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:54
+#: ../../source/misc/rest_api.rst:50
 msgid "*\"Where should I put this code?\"*"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:56
+#: ../../source/misc/rest_api.rst:52
 msgid ""
 "This code does not need to go inside your oTree project folder. Since the"
 " point of the REST API is to allow external programs and servers to "
@@ -542,38 +538,38 @@ msgid ""
 "webhooks or cURL."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:66 ../../source/misc/rest_api.rst:105
-#: ../../source/misc/rest_api.rst:147
+#: ../../source/misc/rest_api.rst:62 ../../source/misc/rest_api.rst:101
+#: ../../source/misc/rest_api.rst:139
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:68
+#: ../../source/misc/rest_api.rst:64
 msgid "``session_config_name`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:69
+#: ../../source/misc/rest_api.rst:65
 msgid "``num_participants`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:70
+#: ../../source/misc/rest_api.rst:66
 msgid ""
 "``modified_session_config_fields``: an optional dict of session config "
 "parameters, as discussed in :ref:`edit_config`."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:72
+#: ../../source/misc/rest_api.rst:68
 msgid "``room_name`` if you want to create the session in a room."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:78
+#: ../../source/misc/rest_api.rst:74
 msgid "\"Participant vars\" REST endpoint"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:80
+#: ../../source/misc/rest_api.rst:76
 msgid "POST URL: ``/api/participant_vars/``"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:82
+#: ../../source/misc/rest_api.rst:78
 msgid ""
 "This endpoint lets you set ``participant.vars``. The main purpose is to "
 "allow other sites/apps to pass information about a participant to oTree, "
@@ -585,21 +581,21 @@ msgid ""
 "flow/advanced-elements/web-service/>`__ feature.)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:107 ../../source/misc/rest_api.rst:149
+#: ../../source/misc/rest_api.rst:103 ../../source/misc/rest_api.rst:141
 msgid "``room_name`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:108
+#: ../../source/misc/rest_api.rst:104
 msgid "``participant_label`` (required)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:109
+#: ../../source/misc/rest_api.rst:105
 msgid ""
 "``vars`` (required): a dict of participant vars to add. Values can be any"
 " JSON-serializable data type, even nested dicts/lists."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:112
+#: ../../source/misc/rest_api.rst:108
 msgid ""
 "This feature requires you to use a Room. Participants are uniquely "
 "identified with the combination of room name & participant label. So you "
@@ -607,19 +603,15 @@ msgid ""
 "although this does not need to come from a ``participant_label_file``."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:120
+#: ../../source/misc/rest_api.rst:116
 msgid "\"Session vars\" REST endpoint"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:124
-msgid "New in oTree 3.0.6"
-msgstr ""
-
-#: ../../source/misc/rest_api.rst:126
+#: ../../source/misc/rest_api.rst:118
 msgid "POST URL: ``/api/session_vars/``"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:128
+#: ../../source/misc/rest_api.rst:120
 msgid ""
 "This endpoint lets you set ``session.vars``. One use is experimenter "
 "input. For example, if the experimenter does a lottery drawing in the "
@@ -627,78 +619,78 @@ msgid ""
 "like the one below."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:150
+#: ../../source/misc/rest_api.rst:142
 msgid "``vars`` (required): a dict of session vars to add."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:152
+#: ../../source/misc/rest_api.rst:144
 msgid "This feature requires you to use a Room."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:155
+#: ../../source/misc/rest_api.rst:147
 msgid "Note"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:157
+#: ../../source/misc/rest_api.rst:149
 msgid ""
 "If you are using this for experimenter input during an experiment, you "
 "may also want to use :ref:`error_message <error_message>`:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:168
+#: ../../source/misc/rest_api.rst:162
 msgid "Authentication"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:170
+#: ../../source/misc/rest_api.rst:164
 msgid ""
 "If you have set your auth level to DEMO or STUDY, you must authenticate "
 "your REST API requests."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:173
+#: ../../source/misc/rest_api.rst:167
 msgid ""
 "Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the "
 "server. Set it to some secret value."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:176
+#: ../../source/misc/rest_api.rst:170
 msgid ""
 "When you make a request, add that key as an HTTP header called ``otree-"
 "rest-key``. For example:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:196
+#: ../../source/misc/rest_api.rst:190
 msgid "Demo & testing"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:198
+#: ../../source/misc/rest_api.rst:192
 msgid ""
 "For convenience during development, you can generate fake vars to "
 "simulate data that, in a real session, will come from the REST API."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:201
+#: ../../source/misc/rest_api.rst:195
 msgid ""
 "In your session config, add the parameter ``mock_exogenous_data=True`` "
 "(We call it **exogenous** data because it originates outside oTree.)"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:204
+#: ../../source/misc/rest_api.rst:198
 msgid ""
 "Then define a function with the same name (``mock_exogenous_data``) in "
 "your project's shared_out.py (if you are using a text editor, you may "
 "need to create that file)."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:208
+#: ../../source/misc/rest_api.rst:202
 msgid "Here's an example:"
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:217
+#: ../../source/misc/rest_api.rst:211
 msgid "You can also set participant labels here."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:219
+#: ../../source/misc/rest_api.rst:213
 msgid ""
 "When you run a session in demo mode, or using bots, "
 "``mock_exogenous_data()`` will automatically be run after "
@@ -706,7 +698,7 @@ msgid ""
 "created in a room."
 msgstr ""
 
-#: ../../source/misc/rest_api.rst:223
+#: ../../source/misc/rest_api.rst:217
 msgid ""
 "If you have multiple session configs that require different exogenous "
 "data, you can branch like this:"
@@ -832,57 +824,11 @@ msgid ""
 " that gets displayed with each round."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:156
-msgid "pages.py: prevent code duplication by moving code to your models"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:158
-msgid ""
-"You should try to move as much code as possible into your "
-"Player/Group/Subsession."
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:163
-msgid "Example 1: is_displayed"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:165
-msgid ""
-"For example, let's say that your pages all repeat some of the code. For "
-"example, you use ``is_displayed`` to skip the rest of the app once a "
-"certain participant var is set:"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:192
-msgid ""
-"You can eliminate this repetition by moving the ``is_displayed`` code "
-"into the Player model:"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:202
-#: ../../source/misc/tips_and_tricks.rst:256
-msgid "Then in your pages:"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:228
-msgid "Example 2: vars_for_template"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:230
-msgid ""
-"Let's say you've got the following code (note that ``Page3`` passes extra"
-" variables ``d`` and ``e``):"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:248
-msgid "You can simplify this by making a method on your Player model:"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:274
+#: ../../source/misc/tips_and_tricks.rst:154
 msgid "Improving code performance"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:276
+#: ../../source/misc/tips_and_tricks.rst:156
 msgid ""
 "You should avoid redundant use of ``get_players()``, "
 "``get_player_by_id()``, ``in_*_rounds()``, ``get_others_in_group()``, or "
@@ -890,82 +836,82 @@ msgid ""
 "all require a database query, which can be slow."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:281
+#: ../../source/misc/tips_and_tricks.rst:161
 msgid ""
 "For example, this code has a redundant query because it asks the database"
 " 5 times for the exact same player:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:297
+#: ../../source/misc/tips_and_tricks.rst:176
 msgid "It should be simplified to this:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:313
+#: ../../source/misc/tips_and_tricks.rst:191
 msgid "As an added benefit, this usually makes the code more readable."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:316
+#: ../../source/misc/tips_and_tricks.rst:194
 msgid "Use BooleanField instead of StringField, where possible"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:318
+#: ../../source/misc/tips_and_tricks.rst:196
 msgid ""
 "Many ``StringFields`` should be broken down into ``BooleanFields``, "
 "especially if they only have 2 distinct values."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:321
+#: ../../source/misc/tips_and_tricks.rst:199
 msgid "Suppose you have a field called ``treatment``:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:327
+#: ../../source/misc/tips_and_tricks.rst:205
 msgid "And let's say ``treatment`` it can only have 4 different values:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:329
+#: ../../source/misc/tips_and_tricks.rst:207
 msgid "``high_income_high_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:330
+#: ../../source/misc/tips_and_tricks.rst:208
 msgid "``high_income_low_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:331
+#: ../../source/misc/tips_and_tricks.rst:209
 msgid "``low_income_high_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:332
+#: ../../source/misc/tips_and_tricks.rst:210
 msgid "``low_income_low_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:334
+#: ../../source/misc/tips_and_tricks.rst:212
 msgid "In your pages, you might use it like this:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:347
+#: ../../source/misc/tips_and_tricks.rst:227
 msgid "It would be much better to break this to 2 separate BooleanFields::"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:352
+#: ../../source/misc/tips_and_tricks.rst:232
 msgid "Then your pages could be simplified to:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:369
+#: ../../source/misc/tips_and_tricks.rst:251
 msgid "Avoid duplicated validation methods"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:371
+#: ../../source/misc/tips_and_tricks.rst:253
 msgid ""
 "If you have many repetitive :ref:`FIELD_error_message "
 "<FOO_error_message>` methods, you can replace them with a single "
 ":ref:`error_message <error_message>` method. For example:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:393
+#: ../../source/misc/tips_and_tricks.rst:275
 msgid "You can instead define this method on your page (not Player class):"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:413
+#: ../../source/misc/tips_and_tricks.rst:295
 msgid ""
 "(Usually ``error_message`` is used to return a single error message as a "
 "string, but you can also return a dict.)"

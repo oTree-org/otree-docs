@@ -82,7 +82,7 @@ For example::
 oTree will record this participant label. It
 will be used to identify that participant in the
 oTree admin interface and the payments page, etc.
-You can also access it from your code as ``player.participant.label``.
+You can also access it from your code as ``participant.label``.
 
 Another benefit of participant labels is that if the participant opens their start link twice,
 they will be assigned back to the same participant (if you are using a room-wide or session-wide URL).

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 20:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,100 +69,50 @@ msgid ""
 "subsessions.)"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:40
+#: ../../source/conceptual_overview.rst:41
 msgid "Object hierarchy"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:42
+#: ../../source/conceptual_overview.rst:43
 msgid "oTree's entities can be arranged into the following hierarchy::"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:51
+#: ../../source/conceptual_overview.rst:50
 msgid "A session is a series of subsessions"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:52
+#: ../../source/conceptual_overview.rst:51
 msgid "A subsession contains multiple groups"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:53
+#: ../../source/conceptual_overview.rst:52
 msgid "A group contains multiple players"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:54
+#: ../../source/conceptual_overview.rst:53
 msgid "Each player proceeds through multiple pages"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:59
+#: ../../source/conceptual_overview.rst:55
+msgid "You can access any higher-up object from a lower object:"
+msgstr ""
+
+#: ../../source/conceptual_overview.rst:70
 msgid "Participant"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:61
+#: ../../source/conceptual_overview.rst:72
 msgid ""
 "In oTree, the terms \"player\" and \"participant\" have distinct "
 "meanings. The relationship between participant and player is the same as "
 "the relationship between session and subsession:"
 msgstr ""
 
-#: ../../source/conceptual_overview.rst:68
+#: ../../source/conceptual_overview.rst:79
 msgid ""
 "A player is an instance of a participant in one particular subsession. A "
 "player is like a temporary \"role\" played by a participant. A "
 "participant can be player 2 in the first subsession, player 1 in the next"
 " subsession, etc."
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:76
-msgid "What is \"self\"?"
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:78
-msgid ""
-"If you are ever wondering what ``self`` means in a particular context, it"
-" is whatever class the method belongs to: Player, Group, Subsession, or "
-"Page. For example, in this code, ``self`` is the player."
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:90
-msgid "The name ``self`` is just shorter and more convenient than ``player``."
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:92
-msgid ""
-"This is similar to how people don't use their own names when they talk "
-"about themselves; they just use pronouns like \"me\", \"myself\", and "
-"\"I\"."
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:96
-msgid "Self: extended examples"
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:98
-msgid "What properties can you access through ``self``?"
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:100
-msgid "Here is a diagram:"
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:105
-msgid ""
-"For example, if you are in a method on the ``Player`` class, you can "
-"access the player's payoff with ``self.payoff`` (because ``self`` is the "
-"player). But if you are inside a ``Page`` method, you need to do "
-"``self.player.payoff``."
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:109
-msgid "Here are some code examples to illustrate:"
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:111
-msgid "in your ``models.py``"
-msgstr ""
-
-#: ../../source/conceptual_overview.rst:169
-msgid "In a page:"
 msgstr ""
 

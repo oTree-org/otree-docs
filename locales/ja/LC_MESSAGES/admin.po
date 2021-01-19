@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 21:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,7 +137,7 @@ msgstr ""
 msgid ""
 "oTree will record this participant label. It will be used to identify "
 "that participant in the oTree admin interface and the payments page, etc."
-" You can also access it from your code as ``self.participant.label``."
+" You can also access it from your code as ``participant.label``."
 msgstr ""
 
 #: ../../source/admin.rst:87
@@ -196,27 +196,27 @@ msgstr ""
 
 #: ../../source/admin.rst:120
 msgid ""
-"First, define a method ``vars_for_admin_report`` on the Subsession. This "
-"works the same way as :ref:`vars_for_template`. For example:"
+"First, define a function ``vars_for_admin_report``. This works the same "
+"way as :ref:`vars_for_template`. For example:"
 msgstr ""
 
-#: ../../source/admin.rst:131
+#: ../../source/admin.rst:130
 msgid ""
 "Then create an includable template ``admin_report.html`` in your app, and"
 " display whatever variables were passed in ``vars_for_admin_report``:"
 msgstr ""
 
-#: ../../source/admin.rst:146 ../../source/admin.rst:243
+#: ../../source/admin.rst:145
 msgid "Notes:"
 msgstr ""
 
-#: ../../source/admin.rst:148
+#: ../../source/admin.rst:147
 msgid ""
 "``subsession``, ``session``, and ``Constants`` are passed to the template"
 " automatically."
 msgstr ""
 
-#: ../../source/admin.rst:150
+#: ../../source/admin.rst:149
 #, python-format
 msgid ""
 "``admin_report.html`` does not need to use ``{% block %}`` or ``{% "
@@ -224,14 +224,14 @@ msgid ""
 "``admin_report.html``."
 msgstr ""
 
-#: ../../source/admin.rst:153
+#: ../../source/admin.rst:152
 msgid ""
 "If one or more apps in your session have an ``admin_report.html``, your "
 "admin page will have a \"Reports\" tab. Use the menu to select the app "
 "and the round number, to see the report for that subsession."
 msgstr ""
 
-#: ../../source/admin.rst:157
+#: ../../source/admin.rst:156
 #, python-format
 msgid ""
 "Tip: if you are displaying the same chart in the admin report and "
@@ -310,43 +310,26 @@ msgstr ""
 msgid "Custom data exports"
 msgstr ""
 
-#: ../../source/admin.rst:213
-msgid "New in oTree 3.0 (July 2020)."
-msgstr ""
-
-#: ../../source/admin.rst:215
+#: ../../source/admin.rst:211
 msgid ""
 "You can make your own custom data export for an app. In oTree Studio, go "
 "to the \"Player\" model and click on \"custom_export\" at the bottom. (If"
-" using a text editor, define the below function at the bottom of your "
-"``models.py``, not within a class.) The argument ``players`` is a "
-"queryset of all the players in the database. Use a ``yield`` for each row"
-" of data."
+" using a text editor, define the below function.) The argument "
+"``players`` is a queryset of all the players in the database. Use a "
+"``yield`` for each row of data."
 msgstr ""
 
-#: ../../source/admin.rst:229
+#: ../../source/admin.rst:225
 msgid ""
 "Once this function is defined, your custom data export will be available "
 "in the regular data export page."
 msgstr ""
 
-#: ../../source/admin.rst:232
-msgid ""
-"If you are exporting some other data like an ExtraModel, do something "
-"like this:"
-msgstr ""
-
-#: ../../source/admin.rst:245
-msgid ""
-"Since ``players`` is a QuerySet, you can call methods such as "
-"``players.values_list()``, ``players.filter()``, etc."
-msgstr ""
-
-#: ../../source/admin.rst:249
+#: ../../source/admin.rst:229
 msgid "Debug Info"
 msgstr ""
 
-#: ../../source/admin.rst:251
+#: ../../source/admin.rst:231
 msgid ""
 "When oTree runs in ``DEBUG`` mode (i.e. when the environment variable "
 "``OTREE_PRODUCTION`` is not set), debug information is displayed on the "

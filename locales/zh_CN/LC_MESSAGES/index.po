@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-03 00:28+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: 2020-10-19 00:42+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,9 @@ msgid "oTree"
 msgstr "oTree"
 
 #: ../../source/index.rst:15
-msgid "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
+msgid ""
+"`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 "
+"<https://github.com/oTree-org/otree-docs/blob/master/README.md>`__"
 msgstr ""
 
 #: ../../source/index.rst:18
@@ -95,3 +97,7 @@ msgstr ""
 #: ../../source/index.rst:78
 msgid ":ref:`search`"
 msgstr ""
+
+#~ msgid "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
+#~ msgstr ""
+

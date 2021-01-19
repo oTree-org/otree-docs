@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-29 14:18+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -383,39 +383,35 @@ msgid ""
 "place where you set ``DATABASE_URL``."
 msgstr ""
 
-#: ../../source/server/server-windows.rst:52 ../../source/server/ubuntu.rst:62
-msgid "REDIS_URL is a new requirement as of oTree 3.0 (July 2020)."
-msgstr ""
-
-#: ../../source/server/server-windows.rst:56
+#: ../../source/server/server-windows.rst:51
 msgid "Run the production server"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:58 ../../source/server/ubuntu.rst:19
+#: ../../source/server/server-windows.rst:53 ../../source/server/ubuntu.rst:19
 msgid "Run::"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:62
+#: ../../source/server/server-windows.rst:57
 msgid ""
 "See :ref:`here <prodserver>` for full instructions. The steps are "
 "essentially the same as on Linux."
 msgstr ""
 
-#: ../../source/server/server-windows.rst:66
+#: ../../source/server/server-windows.rst:61
 msgid "Set environment variables"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:68
+#: ../../source/server/server-windows.rst:63
 msgid ""
 "You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and "
 "``OTREE_AUTH_LEVEL``."
 msgstr ""
 
-#: ../../source/server/server-windows.rst:71
+#: ../../source/server/server-windows.rst:66
 msgid "Allow other computers to connect"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:73
+#: ../../source/server/server-windows.rst:68
 msgid "See instructions :ref:`here <server-adhoc>`."
 msgstr ""
 
@@ -483,35 +479,35 @@ msgstr ""
 msgid "Then add this line in the same place where you set ``DATABASE_URL``::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:65
+#: ../../source/server/ubuntu.rst:61
 msgid "Reset the database on the server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:67
+#: ../../source/server/ubuntu.rst:63
 msgid ""
 "``cd`` to the folder containing your oTree project. Install the "
 "requirements and reset the database::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:77
+#: ../../source/server/ubuntu.rst:73
 msgid "Running the server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:80
+#: ../../source/server/ubuntu.rst:76
 msgid "Testing the production server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:82
+#: ../../source/server/ubuntu.rst:78
 msgid "From your project folder, run::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:86
+#: ../../source/server/ubuntu.rst:82
 msgid ""
 "Then navigate in your browser to your server's IP/hostname followed by "
 "``:8000``."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:89
+#: ../../source/server/ubuntu.rst:85
 msgid ""
 "If you're not using a reverse proxy like Nginx or Apache, you probably "
 "want to run oTree directly on port 80. This requires superuser "
@@ -519,31 +515,31 @@ msgid ""
 "environment variables like ``PATH``, ``DATABASE_URL``, etc::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:97
+#: ../../source/server/ubuntu.rst:93
 msgid ""
 "Try again to open your browser; this time, you don't need to append :80 "
 "to the URL, because that is the default HTTP port."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:100
+#: ../../source/server/ubuntu.rst:96
 msgid ""
 "Unlike ``devserver``, ``prodserver`` does not restart automatically when "
 "your files are changed."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:104
+#: ../../source/server/ubuntu.rst:100
 msgid "Set remaining environment variables"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:106
+#: ../../source/server/ubuntu.rst:102
 msgid "Add these in the same place where you set ``DATABASE_URL``::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:113
+#: ../../source/server/ubuntu.rst:109
 msgid "(Optional) Process control system"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:115
+#: ../../source/server/ubuntu.rst:111
 msgid ""
 "Once the server is working as described above, it's a good practice to "
 "use a process control system like Supervisord or Circus. This will "
@@ -551,64 +547,64 @@ msgid ""
 "out, etc."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:122
+#: ../../source/server/ubuntu.rst:118
 msgid "Circus"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:124
+#: ../../source/server/ubuntu.rst:120
 msgid ""
 "Install Circus, then create a ``circus.ini`` in your project folder, with"
 " the following content::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:133
+#: ../../source/server/ubuntu.rst:129
 msgid "Then run::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:137
+#: ../../source/server/ubuntu.rst:133
 msgid "If this is working properly, you can start it as a daemon::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:142
+#: ../../source/server/ubuntu.rst:138
 msgid "To stop circus, run::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:147
+#: ../../source/server/ubuntu.rst:143
 msgid "(Optional) Apache, Nginx, etc."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:149
+#: ../../source/server/ubuntu.rst:145
 msgid ""
 "You cannot use Apache or Nginx as your primary web server, because oTree "
 "must be run with an ASGI server. However, you still might want to use "
 "Apache/Nginx as a reverse proxy, for the following reasons:"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:153
+#: ../../source/server/ubuntu.rst:149
 msgid ""
 "You are trying to optimize serving of static files (though oTree uses "
 "Whitenoise, which is already fairly efficient)"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:155
+#: ../../source/server/ubuntu.rst:151
 msgid "You need to host other websites on the same server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:156
+#: ../../source/server/ubuntu.rst:152
 msgid "You need features like SSL or proxy buffering"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:158
+#: ../../source/server/ubuntu.rst:154
 msgid ""
 "If you set up a reverse proxy, make sure to enable not only HTTP traffic "
 "but also websockets."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:162
+#: ../../source/server/ubuntu.rst:158
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:164
+#: ../../source/server/ubuntu.rst:160
 msgid ""
 "If you get strange behavior, such as random changes each time the page "
 "reloads, it might be caused by another oTree instance that didn't shut "
@@ -617,45 +613,45 @@ msgid ""
 "instances."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:172
+#: ../../source/server/ubuntu.rst:168
 msgid "Sharing a server with other oTree users"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:174
+#: ../../source/server/ubuntu.rst:170
 msgid ""
 "You can share a server with other oTree users; you just have to make sure"
 " that the code and databases are kept separate, so they don't conflict "
 "with each other."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:178
+#: ../../source/server/ubuntu.rst:174
 msgid ""
 "On the server you should create a different Unix user for each person "
 "using oTree. Then each person should follow the same steps described "
 "above, but in some cases name things differently to avoid clashes:"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:182
+#: ../../source/server/ubuntu.rst:178
 msgid "Create a virtualenv in their home directory"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:183
+#: ../../source/server/ubuntu.rst:179
 msgid ""
 "Create a different Postgres database, as described earlier, and set this "
 "in the DATABASE_URL env var."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:185
+#: ../../source/server/ubuntu.rst:181
 msgid "Each user needs their own Redis database."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:187
+#: ../../source/server/ubuntu.rst:183
 msgid ""
 "Once these steps are done, the second user can push code to the server, "
 "then run ``otree resetdb``."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:190
+#: ../../source/server/ubuntu.rst:186
 msgid ""
 "If you don't need multiple people to run experiments simultaneously, then"
 " each user can take turns running the server on port 80 with ``otree "

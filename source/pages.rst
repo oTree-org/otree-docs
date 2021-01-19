@@ -62,9 +62,6 @@ oTree automatically passes the following objects to the template:
 ``player``, ``group``, ``subsession``, ``participant``, ``session``, and ``Constants``.
 You can access them in the template like this: ``{{ Constants.blah }}`` or ``{{ player.blah }}``.
 
-If you need to pass the same variables to many pages,
-see :ref:`here <vars_for_many_templates>`.
-
 If the user refreshes the page, ``vars_for_template`` gets re-executed.
 
 .. _before_next_page:

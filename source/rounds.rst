@@ -97,21 +97,21 @@ round of the same app.)
 Put it in ``participant.vars``, which is a dict that can store any data.
 For example, you can set an attribute like this::
 
-    player.participant.vars['blah'] = [1, 2, 3]
+    participant.vars['blah'] = [1, 2, 3]
 
 Later in the session (e.g. in a separate app),
 you can retrieve it like this::
 
-    player.participant.vars['blah']
+    participant.vars['blah']
     # or try printing:
-    print('vars is', player.participant.vars)
+    print('vars is', participant.vars)
 
 
-You can test if ``'my_var'`` exists with ``if 'my_var' in player.participant.vars:``.
+You can test if ``'my_var'`` exists with ``if 'my_var' in participant.vars:``.
 
 ``participant.vars`` is not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you should either
-use :ref:`custom-export` or save ``str(player.participant.vars)`` into a ``LongStringField``.
+use :ref:`custom-export` or save ``str(participant.vars)`` into a ``LongStringField``.
 (The same concept applies for ``session.vars``.)
 
 .. _session_vars:

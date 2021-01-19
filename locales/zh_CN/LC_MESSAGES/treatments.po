@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: 2020-11-29 12:23+0800\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.4.2\n"
 
 #: ../../source/treatments.rst:4
 msgid "Treatments"
@@ -24,13 +24,12 @@ msgstr "实验组（Treatments）"
 
 #: ../../source/treatments.rst:6
 msgid ""
-"To assign participants to different treatment groups, you can use :ref:"
-"`creating_session <creating_session>`. For example, you can create a "
-"``color`` field on the ``Player`` model:"
+"To assign participants to different treatment groups, you can use "
+":ref:`creating_session <creating_session>`. For example, you can create a"
+" ``color`` field on the ``Player`` model:"
 msgstr ""
-"为将参与人分配至不同的实验组，你可以使用 :ref:`creating_session "
-"<creating_session>`。举例来说，你可以在 ``Player`` 模型中创建一个 "
-"``color`` 字段："
+"为将参与人分配至不同的实验组，你可以使用 :ref:`creating_session <creating_session>`。举例来说，你可以在"
+" ``Player`` 模型中创建一个 ``color`` 字段："
 
 #: ../../source/treatments.rst:15
 msgid ""
@@ -38,160 +37,148 @@ msgid ""
 "group:"
 msgstr "并随机地将玩家分配给“蓝”或者“红”实验组："
 
-#: ../../source/treatments.rst:27
+#: ../../source/treatments.rst:25
 msgid ""
-"You can also assign treatments at the group level (put the ``StringField`` "
-"in ``Group`` and change the above code to use ``get_groups()`` and ``group."
-"color``)."
+"You can also assign treatments at the group level (put the "
+"``StringField`` in ``Group`` and change the above code to use "
+"``get_groups()`` and ``group.color``)."
 msgstr ""
-"你也可以将实验组设为小组级别（将 ``StringField`` 加入 ``Group`` 并将上面的"
-"代码改为使用 ``get_groups()`` 与 ``group.color``）。"
+"你也可以将实验组设为小组级别（将 ``StringField`` 加入 ``Group`` 并将上面的代码改为使用 "
+"``get_groups()`` 与 ``group.color``）。"
 
-#: ../../source/treatments.rst:31
+#: ../../source/treatments.rst:29
 msgid "Treatment groups & multiple rounds"
 msgstr "实验组与多轮次"
 
-#: ../../source/treatments.rst:33
+#: ../../source/treatments.rst:31
 msgid ""
-"If your game has multiple rounds, a player could have different colors in "
-"different rounds, because ``creating_session`` gets executed for each "
+"If your game has multiple rounds, a player could have different colors in"
+" different rounds, because ``creating_session`` gets executed for each "
 "round independently. To prevent this, set it on the participant, rather "
 "than the player:"
 msgstr ""
-"如果你的游戏有很多轮，一位玩家可以在不同轮有不同颜色，因为 "
-"``creating_session`` 会在每一轮独立地执行。为了避免这种情况，将其设置在参与"
-"人上，而不是玩家上："
+"如果你的游戏有很多轮，一位玩家可以在不同轮有不同颜色，因为 ``creating_session`` "
+"会在每一轮独立地执行。为了避免这种情况，将其设置在参与人上，而不是玩家上："
 
-#: ../../source/treatments.rst:46
+#: ../../source/treatments.rst:42
 msgid ""
 "Then elsewhere in your code, you can access the participant's color with "
 "``self.participant.vars['color']``."
-msgstr ""
-"然后在你的代码的任何地方，你都可以通过 ``self.participant.vars['color']`` "
-"获取参与人的颜色。"
+msgstr "然后在你的代码的任何地方，你都可以通过 ``self.participant.vars['color']`` 获取参与人的颜色。"
 
-#: ../../source/treatments.rst:49
+#: ../../source/treatments.rst:45
 msgid "For more on vars, see :ref:`vars`."
 msgstr "获取有关vars的更多信息，参见 :ref:`vars`."
 
-#: ../../source/treatments.rst:52
+#: ../../source/treatments.rst:48
 msgid "Balanced treatment groups"
 msgstr "平衡实验组"
 
-#: ../../source/treatments.rst:54
+#: ../../source/treatments.rst:50
 msgid ""
 "The above code makes a random drawing independently for each player, so "
 "you may end up with an imbalance between \"blue\" and \"red\". To solve "
 "this, you can use ``itertools.cycle``:"
 msgstr ""
-"上面的代码对每个玩家都进行随机分配，故你可能最终得到一个不平衡的“蓝色”与“红"
-"色”分组。为解决此问题，你可以使用 ``itertools.cycle``:"
+"上面的代码对每个玩家都进行随机分配，故你可能最终得到一个不平衡的“蓝色”与“红色”分组。为解决此问题，你可以使用 "
+"``itertools.cycle``:"
 
-#: ../../source/treatments.rst:72
+#: ../../source/treatments.rst:66
 msgid "Choosing which treatment to play"
 msgstr "选择特定实验组进行游戏"
 
-#: ../../source/treatments.rst:74
+#: ../../source/treatments.rst:68
 msgid ""
-"In a live experiment, you often want to give a player a random treatment. "
-"But when you are testing your game, it is often useful to choose "
-"explicitly which treatment to play. Let's say you are developing the game "
-"from the above example and want to show your colleagues both treatments "
-"(red and blue). You can create 2 session configs that are the same, except "
-"for ``color`` (in oTree Studio, add a \"custom parameter\"):"
+"In a live experiment, you often want to give a player a random treatment."
+" But when you are testing your game, it is often useful to choose "
+"explicitly which treatment to play. Let's say you are developing the game"
+" from the above example and want to show your colleagues both treatments "
+"(red and blue). You can create 2 session configs that are the same, "
+"except for ``color`` (in oTree Studio, add a \"custom parameter\"):"
 msgstr ""
-"在实际实验中，你一般会随机将玩家分配到实验组。但是当你测试你的游戏时，常常"
-"需要显式指定某一实验组进行游戏。假定你在基于上面的例子开发游戏，并想向你的"
-"同学展示两个实验组（红色和蓝色）。你可以创建2个除了 ``color`` 外完全相同的"
-"session config（在oTree Studio中，添加一个\"custom parameter\"）："
+"在实际实验中，你一般会随机将玩家分配到实验组。但是当你测试你的游戏时，常常需要显式指定某一实验组进行游戏。假定你在基于上面的例子开发游戏，并想向你的同学展示两个实验组（红色和蓝色）。你可以创建2个除了"
+" ``color`` 外完全相同的session config（在oTree Studio中，添加一个\"custom parameter\"）："
 
-#: ../../source/treatments.rst:98
+#: ../../source/treatments.rst:92
 msgid ""
-"Then in your code you can get the current session's color with ``self."
-"session.config['color'].``"
-msgstr ""
-"然后在你的代码中，你可以通过 ``self.session.config['color']`` 获当前会话的"
-"颜色。"
+"Then in your code you can get the current session's color with "
+"``session.config['color'].``"
+msgstr "然后在你的代码中，你可以通过 ``session.config['color']`` 获当前会话的颜色。"
 
-#: ../../source/treatments.rst:100
+#: ../../source/treatments.rst:94
+#, fuzzy
 msgid ""
 "You can even combine this with the randomization approach. You can check "
-"``if 'color' in self.session.config:``; if yes, then use that color; if "
-"no, then choose it randomly."
+"``if 'color' in subsession.session.config:``; if yes, then use that "
+"color; if no, then choose it randomly."
 msgstr ""
-"你甚至可以将此与随机化方法结合起来。你可以检查 ``if 'color' in self."
-"session.config:`` ；如果是，那就使用此颜色；如果否，就随机选择一个颜色。"
+"你甚至可以将此与随机化方法结合起来。你可以检查 ``if 'color' in session.config:`` "
+"；如果是，那就使用此颜色；如果否，就随机选择一个颜色。"
 
-#: ../../source/treatments.rst:107
+#: ../../source/treatments.rst:101
 msgid "Configure sessions"
 msgstr "配置会话"
 
-#: ../../source/treatments.rst:109
+#: ../../source/treatments.rst:103
 msgid ""
-"You can make your session configurable, so that you can adjust the game's "
-"parameters in the admin interface."
+"You can make your session configurable, so that you can adjust the game's"
+" parameters in the admin interface."
 msgstr "你可以使你的会话可配置，这样你就可以在管理员界面调整游戏的参数。"
 
-#: ../../source/treatments.rst:115
+#: ../../source/treatments.rst:109
 msgid ""
 "For example, let's say you have a \"num_apples\" parameter. The usual "
-"approach would be to define it in ``Constants``, e.g. ``Constants."
-"num_apples``. But to make it configurable, you can instead define it in "
-"your session config. For example:"
+"approach would be to define it in ``Constants``, e.g. "
+"``Constants.num_apples``. But to make it configurable, you can instead "
+"define it in your session config. For example:"
 msgstr ""
-"举例来说，假定你有一个“num_apple”参数。通常的方法是将其定义在 "
-"``Constants`` 中，如 ``Constants.num_apples``.但是要使其可配置，你可以将其"
-"定义在你的session config中。例如："
+"举例来说，假定你有一个“num_apple”参数。通常的方法是将其定义在 ``Constants`` 中，如 "
+"``Constants.num_apples``.但是要使其可配置，你可以将其定义在你的session config中。例如："
 
-#: ../../source/treatments.rst:131
+#: ../../source/treatments.rst:125
 msgid ""
-"When you create a session in the admin interface, there will be a text box "
-"to change this number. You can also add help text with ``'doc'``:"
-msgstr ""
-"当你在管理员界面创建会话的时候，就会有一个文本框可改变这一值。你也可以使用 "
-"``'doc'`` 添加帮助信息："
+"When you create a session in the admin interface, there will be a text "
+"box to change this number. You can also add help text with ``'doc'``:"
+msgstr "当你在管理员界面创建会话的时候，就会有一个文本框可改变这一值。你也可以使用 ``'doc'`` 添加帮助信息："
 
-#: ../../source/treatments.rst:148
-msgid "In your app's code, you can do ``self.session.config['num_apples']``."
-msgstr "在你的代码中，可使用 ``self.session.config['num_apples']``."
+#: ../../source/treatments.rst:142
+msgid "In your app's code, you can do ``session.config['num_apples']``."
+msgstr "在你的代码中，可使用 ``session.config['num_apples']``."
 
-#: ../../source/treatments.rst:150
+#: ../../source/treatments.rst:144
 msgid "Notes:"
 msgstr "注意："
 
-#: ../../source/treatments.rst:152
+#: ../../source/treatments.rst:146
 msgid ""
 "For a parameter to be configurable, its value must be a number, boolean, "
 "or string."
 msgstr "对于一个可配置的参数，它的值必须是数值，布尔或字符串。"
 
-#: ../../source/treatments.rst:153
+#: ../../source/treatments.rst:147
 msgid ""
-"On the \"Demo\" section of the admin, sessions are not configurable. It's "
-"only available when creating a session in \"Sessions\" or \"Rooms\"."
-msgstr ""
-"在管理员界面的“Demo”部分，会话是不可配置的。它仅在 \"Sessions\" 或 \"Rooms"
-"\"中创建会话时可用。"
+"On the \"Demo\" section of the admin, sessions are not configurable. It's"
+" only available when creating a session in \"Sessions\" or \"Rooms\"."
+msgstr "在管理员界面的“Demo”部分，会话是不可配置的。它仅在 \"Sessions\" 或 \"Rooms\"中创建会话时可用。"
 
-#: ../../source/treatments.rst:157
+#: ../../source/treatments.rst:151
 msgid "Advanced topics"
 msgstr "进阶技巧"
 
-#: ../../source/treatments.rst:160
+#: ../../source/treatments.rst:154
 msgid "Group treatments that persist across rounds"
 msgstr "多轮不变的实验组"
 
-#: ../../source/treatments.rst:162
+#: ../../source/treatments.rst:156
 msgid ""
 "Groups do not have any ``vars`` field, because groups can be re-shuffled "
 "across rounds. You should instead store the variable on one of the "
 "participants in the group:"
-msgstr ""
-"Group类没有 ``vars`` 字段，因为小组在不同轮之间可能成员会重新排列。你应当将"
-"其保存在组内某个参与人的变量中："
+msgstr "Group类没有 ``vars`` 字段，因为小组在不同轮之间可能成员会重新排列。你应当将其保存在组内某个参与人的变量中："
 
-#: ../../source/treatments.rst:174
+#: ../../source/treatments.rst:168
 msgid ""
 "Then, when you need to access a group's color, you would look it up like "
 "this:"
 msgstr "此时，当你需要获取小组的颜色时，你可以这样查询："
+

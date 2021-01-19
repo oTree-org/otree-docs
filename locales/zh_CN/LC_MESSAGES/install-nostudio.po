@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: 2020-10-28 19:11+0800\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.4.1\n"
 
 #: ../../source/install-nostudio.rst:6
 msgid "oTree Setup (text editor)"
@@ -24,21 +24,21 @@ msgstr "安装oTree（文本编辑器）"
 
 #: ../../source/install-nostudio.rst:8
 msgid ""
-"Note: it's recommended to use `oTree Studio <https://www.otreehub.com/"
-"studio>`__ since it is specifically designed for building oTree apps. You "
-"can easily switch to using a text editor later, by downloading your code."
+"Note: it's recommended to use `oTree Studio "
+"<https://www.otreehub.com/studio>`__ since it is specifically designed "
+"for building oTree apps. You can easily switch to using a text editor "
+"later, by downloading your code."
 msgstr ""
-"注意：推荐使用 `oTree Studio <https://www.otreehub.com/studio>`__ ，这是为"
-"构建oTree应用而专门设计的。你可以方便地在之后换为使用文本编辑器，下载你的"
-"代码即可。"
+"注意：推荐使用 `oTree Studio <https://www.otreehub.com/studio>`__ "
+"，这是为构建oTree应用而专门设计的。你可以方便地在之后换为使用文本编辑器，下载你的代码即可。"
 
 #: ../../source/install-nostudio.rst:14
 msgid ""
-"You should first install oTree for :ref:`Windows <install-windows>` or :"
-"ref:`Mac <install-macos>`."
+"You should first install oTree for :ref:`Windows <install-windows>` or "
+":ref:`Mac <install-macos>`."
 msgstr ""
-"你应当首先安装oTree，在 :ref:`Windows <install-windows>` 或 :ref:`Mac "
-"<install-macos>` 上."
+"你应当首先安装oTree，在 :ref:`Windows <install-windows>` 或 :ref:`Mac <install-"
+"macos>` 上."
 
 #: ../../source/install-nostudio.rst:19
 msgid "Run oTree"
@@ -72,8 +72,8 @@ msgstr "运行服务器："
 
 #: ../../source/install-nostudio.rst:41
 msgid ""
-"Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__. "
-"You should see the oTree demo site."
+"Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__."
+" You should see the oTree demo site."
 msgstr ""
 "打开浏览器并输入地址 `http://localhost:8000/ <http://localhost:8000/>`__. "
 "你应当就能看到oTree演示页面。"
@@ -88,22 +88,41 @@ msgstr "安装文本编辑器"
 
 #: ../../source/install-nostudio.rst:51
 msgid ""
-"Install a text editor like `PyCharm <https://www.jetbrains.com/pycharm/"
-"download/>`__ for editing your Python files. See the PyCharm "
-"documentation on how to configure your interpreter so that you get code "
-"completion."
+"Install a text editor like `PyCharm "
+"<https://www.jetbrains.com/pycharm/download/>`__ for editing your Python "
+"files. See the PyCharm documentation on how to configure your interpreter"
+" so that you get code completion."
 msgstr ""
-"安装一个文本编辑器如 `PyCharm <https://www.jetbrains.com/pycharm/download/"
-">`__ 以编辑Python文件。参考PyCharm的文档对解释器进行配置以获得代码补全。"
+"安装一个文本编辑器如 `PyCharm <https://www.jetbrains.com/pycharm/download/>`__ "
+"以编辑Python文件。参考PyCharm的文档对解释器进行配置以获得代码补全。"
 
-#: ../../source/install-nostudio.rst:58
+#: ../../source/install-nostudio.rst:56
 msgid "Then launch the text editor and open your entire project folder."
 msgstr "启动文本编辑器并打开你的项目文件夹。"
 
-#: ../../source/install-nostudio.rst:64
+#: ../../source/install-nostudio.rst:62
 msgid "Upgrading/reinstalling oTree"
 msgstr "升级/重装oTree"
 
-#: ../../source/install-nostudio.rst:66
+#: ../../source/install-nostudio.rst:64
 msgid "We recommend upgrading every couple of weeks. It's the same command:"
 msgstr "我们推荐每隔几周就升级一次。使用与安装同样的命令即可："
+
+#: ../../source/install-nostudio.rst:71
+msgid ""
+"The best way to ensure that your apps continue to work after you upgrade "
+"is to use only the functions described in this documentation. Some code "
+"snippets you may find online were written by people who access oTree's "
+"internal functions and \"hack\" them to do something different. Although "
+"these snippets can enable some innovative new functionality, be aware "
+"that they increase the chance of things breaking when you upgrade. "
+"Because oTree's internal code layout changes from release to release."
+msgstr ""
+
+#: ../../source/install-nostudio.rst:79
+msgid ""
+"For similar reasons, we also caution about directly using Django "
+"functionality, apart from the few components linked in this documentation"
+" (such as Django templates)."
+msgstr ""
+

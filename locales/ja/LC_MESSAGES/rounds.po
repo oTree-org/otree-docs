@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 21:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgid "Combining apps"
 msgstr ""
 
 #: ../../source/rounds.rst:14
-msgid "You can combine apps by setting your session config's ``'app_sequence'``."
+msgid "You can combine apps by setting your session config's ``app_sequence``."
 msgstr ""
 
 #: ../../source/rounds.rst:17
@@ -67,9 +67,9 @@ msgstr ""
 
 #: ../../source/rounds.rst:36
 msgid ""
-"You can get the current round number with ``self.round_number`` (this "
-"attribute is present on subsession, group, player, and page objects). "
-"Round numbers start from 1."
+"You can get the current round number with ``player.round_number`` (this "
+"attribute is present on subsession, group, and player objects). Round "
+"numbers start from 1."
 msgstr ""
 
 #: ../../source/rounds.rst:43
@@ -79,10 +79,10 @@ msgstr ""
 #: ../../source/rounds.rst:45
 msgid ""
 "Each round has separate subsession, ``Group``, and ``Player`` objects. "
-"For example, let's say you set ``self.player.my_field = True`` in round "
-"1. In round 2, if you try to access ``self.player.my_field``, you will "
-"find its value is ``None``. This is because the ``Player`` objects in "
-"round 1 are separate from ``Player`` objects in round 2."
+"For example, let's say you set ``player.my_field = True`` in round 1. In "
+"round 2, if you try to access ``player.my_field``, you will find its "
+"value is ``None``. This is because the ``Player`` objects in round 1 are "
+"separate from ``Player`` objects in round 2."
 msgstr ""
 
 #: ../../source/rounds.rst:52
@@ -137,99 +137,75 @@ msgstr ""
 #: ../../source/rounds.rst:74
 msgid ""
 "``player.in_round(m)`` returns just the player in round ``m``. For "
-"example, to get the player's payoff in the previous round, you would do "
-"``self.player.in_round(self.round_number - 1).payoff``."
+"example, to get the player's payoff in the previous round, you would do:"
 msgstr ""
 
-#: ../../source/rounds.rst:78
+#: ../../source/rounds.rst:83
 msgid ""
 "These methods work the same way for subsessions (e.g. "
-"``self.subsession.in_all_rounds()``)."
+"``subsession.in_all_rounds()``)."
 msgstr ""
 
-#: ../../source/rounds.rst:80
+#: ../../source/rounds.rst:85
 msgid ""
 "They also work the same way for groups, but it does not make sense to use"
 " them if you re-shuffle groups between rounds."
 msgstr ""
 
-#: ../../source/rounds.rst:85
+#: ../../source/rounds.rst:90
 msgid "participant.vars"
 msgstr ""
 
-#: ../../source/rounds.rst:87
+#: ../../source/rounds.rst:92
 msgid ""
 "If you want to access a participant's data from a previous app, you "
 "should store this data on the participant object, which persists across "
 "apps (see :ref:`participants_and_players`). (``in_all_rounds()`` only is "
 "useful when you need to access data from a previous round of the same "
-"app.) Put it in ``participant.vars``, which is a dictionary that can "
-"store any data. For example, you can set an attribute like this::"
+"app.) Put it in ``participant.vars``, which is a dict that can store any "
+"data. For example, you can set an attribute like this::"
 msgstr ""
 
-#: ../../source/rounds.rst:97
+#: ../../source/rounds.rst:102
 msgid ""
 "Later in the session (e.g. in a separate app), you can retrieve it like "
 "this::"
 msgstr ""
 
-#: ../../source/rounds.rst:105
-msgid ""
-"As described :ref:`here <object_model>`, the current participant can be "
-"accessed from a ``Page`` or ``Player``:"
-msgstr ""
-
-#: ../../source/rounds.rst:120
-msgid ""
-"You can also access it from ``Group`` or subsession, as long as you "
-"retrieve a ``Player`` instance (e.g. using ``get_players()`` or "
-"``get_player_by_id()``, etc.)."
-msgstr ""
-
-#: ../../source/rounds.rst:131
+#: ../../source/rounds.rst:110
 msgid ""
 "You can test if ``'my_var'`` exists with ``if 'my_var' in "
-"self.participant.vars:``."
+"participant.vars:``."
 msgstr ""
 
-#: ../../source/rounds.rst:133
+#: ../../source/rounds.rst:112
 msgid ""
 "``participant.vars`` is not included in the Excel/CSV data export, or in "
 "the \"Data\" tab in the session admin. If you want that, you should "
-"either use :ref:`custom-export` or save ``str(self.participant.vars)`` "
-"into a ``LongStringField``. (The same concept applies for "
-"``session.vars``.)"
+"either use :ref:`custom-export` or save ``str(participant.vars)`` into a "
+"``LongStringField``. (The same concept applies for ``session.vars``.)"
 msgstr ""
 
-#: ../../source/rounds.rst:141
+#: ../../source/rounds.rst:120
 msgid "session.vars"
 msgstr ""
 
-#: ../../source/rounds.rst:143
+#: ../../source/rounds.rst:122
 msgid ""
 "For global variables that are the same for all participants in the "
-"session, you can use ``self.session.vars``. This is a dictionary just "
-"like ``participant.vars``. The difference is that if you set a variable "
-"in ``self.session.vars``, it will apply to all participants in the "
-"session, not just one."
+"session, you can use ``session.vars``. This is a dict just like "
+"``participant.vars``."
 msgstr ""
 
-#: ../../source/rounds.rst:149
-msgid ""
-"As described :ref:`here <object_model>`, the ``session`` object can be "
-"accessed from a ``Page`` object or any of the models (``Player``, "
-"``Group``, ``Subsession``, etc.)."
-msgstr ""
-
-#: ../../source/rounds.rst:156
+#: ../../source/rounds.rst:128
 msgid "Variable number of rounds"
 msgstr ""
 
-#: ../../source/rounds.rst:158
+#: ../../source/rounds.rst:130
 msgid "If you want a variable number of rounds, consider using :ref:`live`."
 msgstr ""
 
-#: ../../source/rounds.rst:160
+#: ../../source/rounds.rst:132
 msgid ""
 "Alternatively, you can set ``num_rounds`` to some high number, and then "
 "in your app, conditionally hide the ``{% next_button %}`` element, so "

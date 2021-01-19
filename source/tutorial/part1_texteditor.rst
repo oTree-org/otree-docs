@@ -22,7 +22,7 @@ Then in PyCharm, go to the folder ``my_simple_survey`` that was created.
 Define models
 -------------
 
-Scroll to the line that says ``class Player(BasePlayer):``.
+In ``app.py``, scroll to the line that says ``class Player(BasePlayer):``.
 Here we define the columns for the Player table in the database.
 Let's add 2 fields:
 

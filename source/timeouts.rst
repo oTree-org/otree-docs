@@ -114,9 +114,11 @@ When the user clicks the "next" button, ``before_next_page`` will be executed:
 
         @staticmethod
         def before_next_page(player):
+            participant = player.participant
             import time
+
             # user has 5 minutes to complete as many pages as possible
-            player.participant.vars['expiry'] = time.time() + 5*60
+            participant.vars['expiry'] = time.time() + 5*60
 
 (You could also start the timer in ``after_all_players_arrive`` or ``creating_session``,
 and it could be stored in ``session.vars`` if it's the same for everyone in the session.)

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,19 +59,19 @@ msgstr ""
 #: ../../source/currency.rst:44
 msgid ""
 "Each player has a ``payoff`` field. If your player makes money, you "
-"should store it in this field. ``self.participant.payoff`` automatically "
+"should store it in this field. ``participant.payoff`` automatically "
 "stores the sum of payoffs from all subsessions. You can modify "
-"``self.participant.payoff`` directly, e.g. to round the final payoff to a"
-" whole number."
+"``participant.payoff`` directly, e.g. to round the final payoff to a "
+"whole number."
 msgstr ""
 
 #: ../../source/currency.rst:50
 msgid ""
 "At the end of the experiment, a participant's total profit can be "
-"accessed by ``self.participant.payoff_plus_participation_fee()``; it is "
-"calculated by converting ``self.participant.payoff`` to real-world "
-"currency (if ``USE_POINTS`` is ``True``), and then adding "
-"``self.session.config['participation_fee']``."
+"accessed by ``participant.payoff_plus_participation_fee()``; it is "
+"calculated by converting ``participant.payoff`` to real-world currency "
+"(if ``USE_POINTS`` is ``True``), and then adding "
+"``session.config['participation_fee']``."
 msgstr ""
 
 #: ../../source/currency.rst:59
@@ -98,12 +98,12 @@ msgstr ""
 #: ../../source/currency.rst:70
 msgid ""
 "You can convert a points amount to money using the method "
-"``.to_real_world_currency(self.session)``. For example:"
+"``.to_real_world_currency``. For example:"
 msgstr ""
 
 #: ../../source/currency.rst:77
 msgid ""
-"(The ``self.session`` is necessary because different sessions can have "
+"(The ``session`` is necessary because different sessions can have "
 "different conversion rates)."
 msgstr ""
 

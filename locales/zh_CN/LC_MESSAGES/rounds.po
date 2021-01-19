@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 21:11+0800\n"
 "PO-Revision-Date: 2020-11-19 00:31+0800\n"
+"Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.4.2\n"
 
 #: ../../source/rounds.rst:2
 msgid "Apps & rounds"
@@ -28,19 +28,17 @@ msgstr "应用"
 
 #: ../../source/rounds.rst:7
 msgid ""
-"An oTree app is a folder containing Python and HTML code. A project contains "
-"multiple apps. A session is basically a sequence of apps that are played one "
-"after the other."
-msgstr ""
-"一个oTree应用就是一个包含Python与HTML代码的文件夹。一个项目包含多个应用。一个会"
-"话基本上就是一个接一个被游玩的应用序列。"
+"An oTree app is a folder containing Python and HTML code. A project "
+"contains multiple apps. A session is basically a sequence of apps that "
+"are played one after the other."
+msgstr "一个oTree应用就是一个包含Python与HTML代码的文件夹。一个项目包含多个应用。一个会话基本上就是一个接一个被游玩的应用序列。"
 
 #: ../../source/rounds.rst:12
 msgid "Combining apps"
 msgstr "组合应用"
 
 #: ../../source/rounds.rst:14
-msgid "You can combine apps by setting your session config's ``'app_sequence'``."
+msgid "You can combine apps by setting your session config's ``app_sequence``."
 msgstr "你可以通过设置session config的 ``'app_sequence'`` 来组合应用。"
 
 #: ../../source/rounds.rst:17
@@ -49,8 +47,7 @@ msgstr "在应用之间传递数据"
 
 #: ../../source/rounds.rst:19
 msgid "See :ref:`participant.vars <vars>` and :ref:`session.vars <session_vars>`."
-msgstr ""
-"参考 :ref:`participant.vars <vars>` 与 :ref:`session.vars <session_vars>`."
+msgstr "参考 :ref:`participant.vars <vars>` 与 :ref:`session.vars <session_vars>`."
 
 #: ../../source/rounds.rst:25
 msgid "Rounds"
@@ -58,15 +55,15 @@ msgstr "轮次"
 
 #: ../../source/rounds.rst:27
 msgid ""
-"You can make a game run for multiple rounds by setting ``Constants."
-"num_rounds``. For example, if your session config's ``app_sequence`` is "
-"``['app1', 'app2']``, where ``app1`` has ``num_rounds = 3`` and ``app2`` has "
-"``num_rounds = 1``, then your sessions will contain 4 subsessions."
+"You can make a game run for multiple rounds by setting "
+"``Constants.num_rounds``. For example, if your session config's "
+"``app_sequence`` is ``['app1', 'app2']``, where ``app1`` has ``num_rounds"
+" = 3`` and ``app2`` has ``num_rounds = 1``, then your sessions will "
+"contain 4 subsessions."
 msgstr ""
-"你可以通过设置 ``Constants.num_rounds`` 来使一个游戏进行多轮。举例来说，如果你的"
-"session config中的 ``app_sequence`` 是 ``['app1', 'app2']``,同时 ``app1`` 中 "
-"``num_rounds = 3`` 且 ``app2`` 中 ``num_rounds = 1``,那么你的会话中就包含4个子会"
-"话。"
+"你可以通过设置 ``Constants.num_rounds`` 来使一个游戏进行多轮。举例来说，如果你的session config中的 "
+"``app_sequence`` 是 ``['app1', 'app2']``,同时 ``app1`` 中 ``num_rounds = 3`` "
+"且 ``app2`` 中 ``num_rounds = 1``,那么你的会话中就包含4个子会话。"
 
 #: ../../source/rounds.rst:34
 msgid "Round numbers"
@@ -74,12 +71,12 @@ msgstr "轮数"
 
 #: ../../source/rounds.rst:36
 msgid ""
-"You can get the current round number with ``self.round_number`` (this attribute "
-"is present on subsession, group, player, and page objects). Round numbers start "
-"from 1."
+"You can get the current round number with ``player.round_number`` (this "
+"attribute is present on subsession, group, and player objects). Round "
+"numbers start from 1."
 msgstr ""
-"你可以通过 ``self.round_number`` （目前subsession, group, player, 与 page 对象有"
-"此属性）来获得当前的轮数。轮数从1开始。"
+"你可以通过 ``player.round_number`` （目前subsession, group, player, 与 page "
+"对象有此属性）来获得当前的轮数。轮数从1开始。"
 
 #: ../../source/rounds.rst:43
 msgid "Passing data between rounds or apps"
@@ -87,21 +84,20 @@ msgstr "在应用或轮次之间传递数据"
 
 #: ../../source/rounds.rst:45
 msgid ""
-"Each round has separate subsession, ``Group``, and ``Player`` objects. For "
-"example, let's say you set ``self.player.my_field = True`` in round 1. In round "
-"2, if you try to access ``self.player.my_field``, you will find its value is "
-"``None``. This is because the ``Player`` objects in round 1 are separate from "
-"``Player`` objects in round 2."
+"Each round has separate subsession, ``Group``, and ``Player`` objects. "
+"For example, let's say you set ``player.my_field = True`` in round 1. In "
+"round 2, if you try to access ``player.my_field``, you will find its "
+"value is ``None``. This is because the ``Player`` objects in round 1 are "
+"separate from ``Player`` objects in round 2."
 msgstr ""
-"每一轮都拥有独立的subsession， ``Group``, 与 ``Player`` 对象。举例来说，假定你在"
-"第一轮中设定了 ``self.player.my_field = True`` 。在第二轮时，你试图访问 ``self."
-"player.my_field``，你会发现它的值是 ``None``。这是因为第一轮的 ``Player`` 对象与"
-"第二轮的 ``Player`` 对象是独立的。"
+"每一轮都拥有独立的subsession， ``Group``, 与 ``Player`` 对象。举例来说，假定你在第一轮中设定了 "
+"``player.my_field = True`` 。在第二轮时，你试图访问 ``player.my_field``，你会发现它的值是 "
+"``None``。这是因为第一轮的 ``Player`` 对象与第二轮的 ``Player`` 对象是独立的。"
 
 #: ../../source/rounds.rst:52
 msgid ""
-"To access data from a previous round or app, you can use one of the techniques "
-"described below."
+"To access data from a previous round or app, you can use one of the "
+"techniques described below."
 msgstr "为了获得之前轮次或者应用的数据，你可以使用下面描述的这些技巧。"
 
 #: ../../source/rounds.rst:56
@@ -130,155 +126,123 @@ msgstr "in_round()"
 
 #: ../../source/rounds.rst:65
 msgid ""
-"For example, if you are in the last round of a 10-round game, ``player."
-"in_previous_rounds()`` will return a list with 9 player objects, which "
-"represent the current participant in all previous rounds."
+"For example, if you are in the last round of a 10-round game, "
+"``player.in_previous_rounds()`` will return a list with 9 player objects,"
+" which represent the current participant in all previous rounds."
 msgstr ""
-"举例来说，如果你在一个10轮游戏的最后一轮， ``player.in_previous_rounds()`` 会返"
-"回一个由9个player对象组成的列表，就代表了当前参与者在之前轮次的对象。"
+"举例来说，如果你在一个10轮游戏的最后一轮， ``player.in_previous_rounds()`` "
+"会返回一个由9个player对象组成的列表，就代表了当前参与者在之前轮次的对象。"
 
 #: ../../source/rounds.rst:69
 msgid ""
 "``player.in_all_rounds()`` is almost the same but the list will have 10 "
 "objects, because it includes the current round's player."
-msgstr ""
-"``player.in_all_rounds()`` 几乎与上面相同，只不过列表中有10个对象，因为它包含了"
-"当前轮次的player对象。"
+msgstr "``player.in_all_rounds()`` 几乎与上面相同，只不过列表中有10个对象，因为它包含了当前轮次的player对象。"
 
 #: ../../source/rounds.rst:72
 msgid ""
-"``player.in_rounds(m, n)`` returns a list of players representing the same "
-"participant from rounds ``m`` to ``n``."
+"``player.in_rounds(m, n)`` returns a list of players representing the "
+"same participant from rounds ``m`` to ``n``."
 msgstr ""
-"``player.in_rounds(m, n)`` 返回一个player对象的列表，其中代表了同一参与人第 "
-"``m`` 到 ``n`` 轮的player对象。"
+"``player.in_rounds(m, n)`` 返回一个player对象的列表，其中代表了同一参与人第 ``m`` 到 ``n`` "
+"轮的player对象。"
 
+# Chris comment: I moved the code out of the text into a separate block.
 #: ../../source/rounds.rst:74
+#, fuzzy
 msgid ""
-"``player.in_round(m)`` returns just the player in round ``m``. For example, to "
-"get the player's payoff in the previous round, you would do ``self.player."
-"in_round(self.round_number - 1).payoff``."
+"``player.in_round(m)`` returns just the player in round ``m``. For "
+"example, to get the player's payoff in the previous round, you would do:"
 msgstr ""
-"``player.in_round(m)`` 返回第 ``m`` 的player对象。举例来说，可以通过 ``self."
-"player.in_round(self.round_number - 1).payoff`` 获得玩家前一轮的收益。"
+"``player.in_round(m)`` 返回第 ``m`` 的player对象。举例来说，可以通过 "
+"``self.player.in_round(self.round_number - 1).payoff`` 获得玩家前一轮的收益。"
 
-#: ../../source/rounds.rst:78
+#: ../../source/rounds.rst:83
 msgid ""
-"These methods work the same way for subsessions (e.g. ``self.subsession."
-"in_all_rounds()``)."
-msgstr ""
-"这些方法对于subsession也是相同的（例如 ``self.subsession.in_all_rounds()``）。"
-
-#: ../../source/rounds.rst:80
-msgid ""
-"They also work the same way for groups, but it does not make sense to use them "
-"if you re-shuffle groups between rounds."
-msgstr ""
-"这些方法对于group也是相同的，但是如果你在轮次之间重新安排了小组，那么使用这些方"
-"法是没有意义的。"
+"These methods work the same way for subsessions (e.g. "
+"``subsession.in_all_rounds()``)."
+msgstr "这些方法对于subsession也是相同的（例如 ``subsession.in_all_rounds()``）。"
 
 #: ../../source/rounds.rst:85
+msgid ""
+"They also work the same way for groups, but it does not make sense to use"
+" them if you re-shuffle groups between rounds."
+msgstr "这些方法对于group也是相同的，但是如果你在轮次之间重新安排了小组，那么使用这些方法是没有意义的。"
+
+#: ../../source/rounds.rst:90
 msgid "participant.vars"
 msgstr "participant.vars"
 
-#: ../../source/rounds.rst:87
+#: ../../source/rounds.rst:92
 msgid ""
-"If you want to access a participant's data from a previous app, you should "
-"store this data on the participant object, which persists across apps (see :ref:"
-"`participants_and_players`). (``in_all_rounds()`` only is useful when you need "
-"to access data from a previous round of the same app.) Put it in ``participant."
-"vars``, which is a dictionary that can store any data. For example, you can set "
-"an attribute like this::"
+"If you want to access a participant's data from a previous app, you "
+"should store this data on the participant object, which persists across "
+"apps (see :ref:`participants_and_players`). (``in_all_rounds()`` only is "
+"useful when you need to access data from a previous round of the same "
+"app.) Put it in ``participant.vars``, which is a dict that can store any "
+"data. For example, you can set an attribute like this::"
 msgstr ""
-"如果你想要获取一位参与人在之前应用中的数据，你应当将数据存储在参与人对象中，这样"
-"数据可以在不同应用间保持。（参考 :ref:`participants_and_players`）。"
-"（``in_all_rounds()`` 仅在你需要获取同一应用中的之前轮次的数据时有用。）将数据放"
-"入 ``participant.vars`` 中即可，这是一个可以存放任何数据的字典。举例来说，你可以"
-"像下面这样设置属性："
+"如果你想要获取一位参与人在之前应用中的数据，你应当将数据存储在参与人对象中，这样数据可以在不同应用间保持。（参考 "
+":ref:`participants_and_players`）。（``in_all_rounds()`` "
+"仅在你需要获取同一应用中的之前轮次的数据时有用。）将数据放入 ``participant.vars`` "
+"中即可，这是一个可以存放任何数据的字典。举例来说，你可以像下面这样设置属性："
 
-#: ../../source/rounds.rst:97
+#: ../../source/rounds.rst:102
 msgid ""
-"Later in the session (e.g. in a separate app), you can retrieve it like this::"
+"Later in the session (e.g. in a separate app), you can retrieve it like "
+"this::"
 msgstr "在之后的会话中（例如另一个应用中），你可以像下面这样提取数据："
 
-#: ../../source/rounds.rst:105
+#: ../../source/rounds.rst:110
+#, fuzzy
 msgid ""
-"As described :ref:`here <object_model>`, the current participant can be "
-"accessed from a ``Page`` or ``Player``:"
-msgstr ""
-"正如 :ref:`这里 <object_model>` 所描述的，当前的参与人可以通过 ``Page`` 或 "
-"``Player`` 类来获取:"
+"You can test if ``'my_var'`` exists with ``if 'my_var' in "
+"participant.vars:``."
+msgstr "你可以通过 ``if 'my_var' in participant.vars:`` 来测试 ``'my_var'`` 是否存在。"
 
-#: ../../source/rounds.rst:120
+#: ../../source/rounds.rst:112
+#, fuzzy
 msgid ""
-"You can also access it from ``Group`` or subsession, as long as you retrieve a "
-"``Player`` instance (e.g. using ``get_players()`` or ``get_player_by_id()``, "
-"etc.)."
-msgstr ""
-"你也可以从 ``Group`` 或subsession中获取参与人对象，只需取出 ``Player`` 实例（例"
-"如使用 ``get_players()`` 或 ``get_player_by_id()``, 诸如此类.）。"
-
-#: ../../source/rounds.rst:131
-msgid ""
-"You can test if ``'my_var'`` exists with ``if 'my_var' in self.participant.vars:"
-"``."
-msgstr ""
-"你可以通过 ``if 'my_var' in self.participant.vars:`` 来测试 ``'my_var'`` 是否存"
-"在。"
-
-#: ../../source/rounds.rst:133
-msgid ""
-"``participant.vars`` is not included in the Excel/CSV data export, or in the "
-"\"Data\" tab in the session admin. If you want that, you should either use :ref:"
-"`custom-export` or save ``str(self.participant.vars)`` into a "
+"``participant.vars`` is not included in the Excel/CSV data export, or in "
+"the \"Data\" tab in the session admin. If you want that, you should "
+"either use :ref:`custom-export` or save ``str(participant.vars)`` into a "
 "``LongStringField``. (The same concept applies for ``session.vars``.)"
 msgstr ""
-"``participant.vars`` 不包括在Excel/CSV数据导出中，也不在会话admin界面的\"Data"
-"\"标签下。如果你需要这种数据，你应当使用 :ref:`custom-export` 或保存 ``str(self."
-"participant.vars)`` 到一个 ``LongStringField`` 中。（相同的概念适用于 ``session."
-"vars``。）"
+"``participant.vars`` "
+"不包括在Excel/CSV数据导出中，也不在会话admin界面的\"Data\"标签下。如果你需要这种数据，你应当使用 :ref:`custom-"
+"export` 或保存 ``str(participant.vars)`` 到一个 ``LongStringField`` 中。（相同的概念适用于"
+" ``session.vars``。）"
 
-#: ../../source/rounds.rst:141
+#: ../../source/rounds.rst:120
 msgid "session.vars"
 msgstr "session.vars"
 
-#: ../../source/rounds.rst:143
+#: ../../source/rounds.rst:122
 msgid ""
-"For global variables that are the same for all participants in the session, you "
-"can use ``self.session.vars``. This is a dictionary just like ``participant."
-"vars``. The difference is that if you set a variable in ``self.session.vars``, "
-"it will apply to all participants in the session, not just one."
+"For global variables that are the same for all participants in the "
+"session, you can use ``session.vars``. This is a dict just like "
+"``participant.vars``."
 msgstr ""
-"对于在会话中所有参与者都相同的全局变量，你可以使用 ``self.session.vars``。这是一"
-"个与 ``participant.vars`` 相似的字典。区别在于如果你设置了一个 ``self.session."
-"vars`` 中的变量，它将会应用到会话中的所有参与者，而不是某一个。"
+"对于在会话中所有参与者都相同的全局变量，你可以使用 ``session.vars``。这是一个与 ``participant.vars`` "
+"相似的字典。区别在于如果你设置了一个 ``session.vars`` 中的变量，它将会应用到会话中的所有参与者，而不是某一个。"
 
-#: ../../source/rounds.rst:149
-msgid ""
-"As described :ref:`here <object_model>`, the ``session`` object can be accessed "
-"from a ``Page`` object or any of the models (``Player``, ``Group``, "
-"``Subsession``, etc.)."
-msgstr ""
-"正如 :ref:`这里 <object_model>` 所描述的， ``session`` 对象可以通过 ``Page`` 对"
-"象或者任意模型中的对象（``Player``, ``Group``, ``Subsession``, 等等）被访问到。"
-
-#: ../../source/rounds.rst:156
+#: ../../source/rounds.rst:128
 msgid "Variable number of rounds"
 msgstr "可变轮数"
 
-#: ../../source/rounds.rst:158
+#: ../../source/rounds.rst:130
 msgid "If you want a variable number of rounds, consider using :ref:`live`."
 msgstr "如果你想要可变的轮数，考虑使用 :ref:`live`."
 
-#: ../../source/rounds.rst:160
+#: ../../source/rounds.rst:132
 msgid ""
-"Alternatively, you can set ``num_rounds`` to some high number, and then in your "
-"app, conditionally hide the ``{% next_button %}`` element, so that the user "
-"cannot proceed to the next page, or use :ref:`app_after_this_page`. But note "
-"that having many rounds (e.g. more than 100) might cause performance problems, "
-"so test your app carefully."
+"Alternatively, you can set ``num_rounds`` to some high number, and then "
+"in your app, conditionally hide the ``{% next_button %}`` element, so "
+"that the user cannot proceed to the next page, or use "
+":ref:`app_after_this_page`. But note that having many rounds (e.g. more "
+"than 100) might cause performance problems, so test your app carefully."
 msgstr ""
-"作为替代方案，你可以将 ``num_rounds`` 设为一个较大的数，然后在应用中，有条件地隐"
-"藏 ``{% next_button %}`` 元素，使得用户无法继续进行到下一页面，或者使用 :ref:"
-"`app_after_this_page`. 但是注意轮数较大（例如超过100）可能会导致性能问题，所以请"
-"仔细测试你的程序。"
+"作为替代方案，你可以将 ``num_rounds`` 设为一个较大的数，然后在应用中，有条件地隐藏 ``{% next_button %}`` "
+"元素，使得用户无法继续进行到下一页面，或者使用 :ref:`app_after_this_page`. "
+"但是注意轮数较大（例如超过100）可能会导致性能问题，所以请仔细测试你的程序。"
+

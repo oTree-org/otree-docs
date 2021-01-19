@@ -35,6 +35,7 @@ Each subsession can be further divided into groups of players;
 for example, you could have a subsession with 30 players, divided into 15 groups of 2 players each.
 (Note: groups can be shuffled between subsessions.)
 
+.. _object_model:
 
 Object hierarchy
 ----------------

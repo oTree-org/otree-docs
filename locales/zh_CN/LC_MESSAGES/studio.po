@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,28 +16,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/studio.rst:4
+#: ../../source/studio.rst:6
 msgid "oTree Studio"
 msgstr ""
 
-#: ../../source/studio.rst:6
+#: ../../source/studio.rst:8
 msgid ""
 "`oTree Studio <https://www.otreehub.com/studio>`__ is a point-and-click "
 "interface for building oTree apps. It is free to use for small/medium "
 "sized projects."
 msgstr ""
 
-#: ../../source/studio.rst:10
+#: ../../source/studio.rst:12
 msgid ""
 "We recommend using oTree Studio instead of a text editor (like PyCharm), "
-"because it has makes learning oTree much easier and prevents many common "
+"because it makes learning oTree much easier and prevents many common "
 "mistakes."
 msgstr ""
 
-#: ../../source/studio.rst:14
+#: ../../source/studio.rst:16
 msgid ""
 "Here are some `YouTube videos "
 "<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
 "about oTree Studio."
 msgstr ""
-

@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2020, oTree team
 # This file is distributed under the same license as the oTree package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-19 01:38+0800\n"
+"POT-Creation-Date: 2021-01-19 20:05+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -144,19 +144,13 @@ msgid ""
 "players, groups, participants, or the subsession. For example:"
 msgstr ""
 
-#: ../../source/models.rst:107
+#: ../../source/models.rst:105
 msgid ""
 "More info on the section on :ref:`treatments <treatments>` and "
 ":ref:`group shuffling <shuffling>`."
 msgstr ""
 
-#: ../../source/models.rst:110
-msgid ""
-"Unlike most other built-in subsession methods, this method is one you "
-"must define yourself."
-msgstr ""
-
-#: ../../source/models.rst:113
+#: ../../source/models.rst:108
 msgid ""
 "``creating_session`` is **not** run at the beginning of each round. It is"
 " run when you click the \"create session\" button, i.e. before anybody "
@@ -164,278 +158,278 @@ msgid ""
 "gets run multiple times consecutively:"
 msgstr ""
 
-#: ../../source/models.rst:125
+#: ../../source/models.rst:118
 msgid "Will output all at once::"
 msgstr ""
 
-#: ../../source/models.rst:133
+#: ../../source/models.rst:126
 msgid "get_groups()"
 msgstr ""
 
-#: ../../source/models.rst:135
+#: ../../source/models.rst:128
 msgid "Returns a list of all the groups in the subsession."
 msgstr ""
 
-#: ../../source/models.rst:138
+#: ../../source/models.rst:131
 msgid "get_players()"
 msgstr ""
 
-#: ../../source/models.rst:140
+#: ../../source/models.rst:133
 msgid "Returns a list of all the players in the subsession."
 msgstr ""
 
-#: ../../source/models.rst:143
+#: ../../source/models.rst:136
 msgid "Other subsession methods"
 msgstr ""
 
-#: ../../source/models.rst:145
+#: ../../source/models.rst:138
 msgid ":ref:`group_randomly() <shuffling>`"
 msgstr ""
 
-#: ../../source/models.rst:146
+#: ../../source/models.rst:139
 msgid ":ref:`group_like_round() <shuffling>`"
 msgstr ""
 
-#: ../../source/models.rst:147
+#: ../../source/models.rst:140
 msgid ":ref:`get_group_matrix() <shuffling>`"
 msgstr ""
 
-#: ../../source/models.rst:148
+#: ../../source/models.rst:141
 msgid ":ref:`set_group_matrix() <shuffling>`"
 msgstr ""
 
-#: ../../source/models.rst:149 ../../source/models.rst:168
-#: ../../source/models.rst:198
+#: ../../source/models.rst:142 ../../source/models.rst:161
+#: ../../source/models.rst:191
 msgid ":ref:`in_all_rounds() <in_rounds>`"
 msgstr ""
 
-#: ../../source/models.rst:150 ../../source/models.rst:169
-#: ../../source/models.rst:199
+#: ../../source/models.rst:143 ../../source/models.rst:162
+#: ../../source/models.rst:192
 msgid ":ref:`in_previous_rounds() <in_rounds>`"
 msgstr ""
 
-#: ../../source/models.rst:151 ../../source/models.rst:170
-#: ../../source/models.rst:200
+#: ../../source/models.rst:144 ../../source/models.rst:163
+#: ../../source/models.rst:193
 msgid ":ref:`in_rounds(first, last) <in_rounds>`"
 msgstr ""
 
-#: ../../source/models.rst:152 ../../source/models.rst:171
-#: ../../source/models.rst:201
+#: ../../source/models.rst:145 ../../source/models.rst:164
+#: ../../source/models.rst:194
 msgid ":ref:`in_round(round_number) <in_rounds>`"
 msgstr ""
 
-#: ../../source/models.rst:156
+#: ../../source/models.rst:149
 msgid "Group"
 msgstr ""
 
-#: ../../source/models.rst:159
+#: ../../source/models.rst:152
 msgid "session/subsession"
 msgstr ""
 
-#: ../../source/models.rst:161
+#: ../../source/models.rst:154
 msgid "The session/subsession this group belongs to. See :ref:`object_model`."
 msgstr ""
 
-#: ../../source/models.rst:166
+#: ../../source/models.rst:159
 msgid "Other group methods"
 msgstr ""
 
-#: ../../source/models.rst:172
+#: ../../source/models.rst:165
 msgid ":ref:`get_player_by_role(role) <groups>`"
 msgstr ""
 
-#: ../../source/models.rst:173
+#: ../../source/models.rst:166
 msgid ":ref:`get_player_by_id(id_in_group) <groups>`"
 msgstr ""
 
-#: ../../source/models.rst:174
+#: ../../source/models.rst:167
 msgid ":ref:`get_players() <groups>`"
 msgstr ""
 
-#: ../../source/models.rst:178
+#: ../../source/models.rst:171
 msgid "Player"
 msgstr ""
 
-#: ../../source/models.rst:181
+#: ../../source/models.rst:174
 msgid "id_in_group"
 msgstr ""
 
-#: ../../source/models.rst:182
+#: ../../source/models.rst:175
 msgid ""
 "Automatically assigned integer starting from 1. In multiplayer games, "
 "indicates whether this is player 1, player 2, etc."
 msgstr ""
 
-#: ../../source/models.rst:186
+#: ../../source/models.rst:179
 msgid "payoff"
 msgstr ""
 
-#: ../../source/models.rst:187
+#: ../../source/models.rst:180
 msgid "The player's payoff in this round. See :ref:`payoff`."
 msgstr ""
 
-#: ../../source/models.rst:190
+#: ../../source/models.rst:183
 msgid "session/subsession/group/participant"
 msgstr ""
 
-#: ../../source/models.rst:192
+#: ../../source/models.rst:185
 msgid ""
 "The session/subsession/group/participant this player belongs to. See "
 ":ref:`object_model`."
 msgstr ""
 
-#: ../../source/models.rst:196
+#: ../../source/models.rst:189
 msgid "Other player methods"
 msgstr ""
 
-#: ../../source/models.rst:202
+#: ../../source/models.rst:195
 msgid ":ref:`get_others_in_subsession() <groups>`"
 msgstr ""
 
-#: ../../source/models.rst:203
+#: ../../source/models.rst:196
 msgid ":ref:`get_others_in_group() <groups>`"
 msgstr ""
 
-#: ../../source/models.rst:206
+#: ../../source/models.rst:199
 msgid "Session"
 msgstr ""
 
-#: ../../source/models.rst:209
+#: ../../source/models.rst:202
 msgid "num_participants"
 msgstr ""
 
-#: ../../source/models.rst:211
+#: ../../source/models.rst:204
 msgid "The number of participants in the session."
 msgstr ""
 
-#: ../../source/models.rst:214
+#: ../../source/models.rst:207
 msgid "config"
 msgstr ""
 
-#: ../../source/models.rst:216
+#: ../../source/models.rst:209
 msgid "See :ref:`session_config_treatments`."
 msgstr ""
 
-#: ../../source/models.rst:219
+#: ../../source/models.rst:212
 msgid "vars"
 msgstr ""
 
-#: ../../source/models.rst:221
+#: ../../source/models.rst:214
 msgid "See :ref:`session_vars`."
 msgstr ""
 
-#: ../../source/models.rst:224
+#: ../../source/models.rst:217
 msgid "Participant"
 msgstr ""
 
-#: ../../source/models.rst:227
+#: ../../source/models.rst:220
 msgid "id_in_session"
 msgstr ""
 
-#: ../../source/models.rst:229
+#: ../../source/models.rst:222
 msgid ""
 "The participant's ID in the session. This is the same as the player's "
 "``id_in_subsession``."
 msgstr ""
 
-#: ../../source/models.rst:233
+#: ../../source/models.rst:226
 msgid "Other participant attributes and methods"
 msgstr ""
 
-#: ../../source/models.rst:235
+#: ../../source/models.rst:228
 msgid ":ref:`vars <vars>`"
 msgstr ""
 
-#: ../../source/models.rst:236
+#: ../../source/models.rst:229
 msgid ":ref:`label <participant_label>`"
 msgstr ""
 
-#: ../../source/models.rst:237
+#: ../../source/models.rst:230
 msgid ":ref:`payoff <payoff>`"
 msgstr ""
 
-#: ../../source/models.rst:238
+#: ../../source/models.rst:231
 msgid ":ref:`payoff_plus_participation_fee <payoff>`"
 msgstr ""
 
-#: ../../source/models.rst:243
+#: ../../source/models.rst:236
 msgid "Constants"
 msgstr ""
 
-#: ../../source/models.rst:245
+#: ../../source/models.rst:238
 msgid ""
 "``Constants`` is the recommended place to put your app's parameters and "
 "constants that do not vary from player to player."
 msgstr ""
 
-#: ../../source/models.rst:249
+#: ../../source/models.rst:242
 msgid "Here are the built-in constants:"
 msgstr ""
 
-#: ../../source/models.rst:251
+#: ../../source/models.rst:244
 msgid "``players_per_group`` (described in :ref:`groups`)"
 msgstr ""
 
-#: ../../source/models.rst:252
+#: ../../source/models.rst:245
 msgid "``num_rounds`` (described in :ref:`rounds`)"
 msgstr ""
 
-#: ../../source/models.rst:254
+#: ../../source/models.rst:247
 msgid ""
 "if you don't want your app's real name to be displayed in URLs, define a "
 "string constant ``name_in_url`` with your desired name."
 msgstr ""
 
-#: ../../source/models.rst:258
+#: ../../source/models.rst:251
 msgid ""
 "Constants can be numbers, strings, booleans, lists, etc. But for more "
 "complex data types like dicts, lists of dicts, etc, you should instead "
-"define it in a subsession method. For example, instead of defining a "
+"define it in a subsession function. For example, instead of defining a "
 "Constant called ``my_dict``, do this:"
 msgstr ""
 
-#: ../../source/models.rst:270
+#: ../../source/models.rst:262
 msgid "Miscellaneous topics"
 msgstr ""
 
-#: ../../source/models.rst:273
+#: ../../source/models.rst:265
 msgid "Defining your own methods"
 msgstr ""
 
-#: ../../source/models.rst:275
+#: ../../source/models.rst:267
 msgid ""
 "In addition to the methods listed on this page, you can define your own. "
 "Just remember to *use* them somewhere! Just defining them with ``def`` "
 "has no effect."
 msgstr ""
 
-#: ../../source/models.rst:280
+#: ../../source/models.rst:272
 msgid "For example:"
 msgstr ""
 
-#: ../../source/models.rst:289
+#: ../../source/models.rst:280
 msgid "Then call it:"
 msgstr ""
 
-#: ../../source/models.rst:299
+#: ../../source/models.rst:290
 msgid "About using random()"
 msgstr ""
 
-#: ../../source/models.rst:301
+#: ../../source/models.rst:292
 msgid ""
 "Never generate random values outside of a method. For example, don't do "
 "this:"
 msgstr ""
 
-#: ../../source/models.rst:309
+#: ../../source/models.rst:300
 msgid "If it changes randomly, it isn't a constant."
 msgstr ""
 
-#: ../../source/models.rst:311
+#: ../../source/models.rst:302
 msgid "Or this:"
 msgstr ""
 
-#: ../../source/models.rst:322
+#: ../../source/models.rst:313
 msgid ""
 "These won't work because they will change every time the server launches "
 "a new process. It may appear to work during testing but will eventually "
@@ -445,7 +439,7 @@ msgid ""
 "page)."
 msgstr ""
 
-#: ../../source/models.rst:329
+#: ../../source/models.rst:320
 msgid ""
 "If you want to set your own random seed, don't use the ``random.seed()`` "
 "function. Instead, generate an instance of ``random.Random`` as described"
