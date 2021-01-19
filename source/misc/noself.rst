@@ -153,6 +153,9 @@ After:
         WaitPage,
     )
 
+You can see the sample games in the new format here:
+`https://github.com/oTree-org/oTree/tree/noself-demo <https://github.com/oTree-org/oTree/tree/noself-demo>`__,
+
 How does this affect you?
 -------------------------
 
