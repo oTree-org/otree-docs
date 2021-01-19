@@ -249,4 +249,7 @@ and pass it to your template as a separate variable.
 Misc notes
 ----------
 
-``before_next_page`` changes how  now takes an extra arg ``timeout_happened``
+-   ``before_next_page`` now takes a second arg ``timeout_happened``.
+-   You can optionally add a type hint to your function signatures. For example,
+    change ``def xyz(player)`` to ``def xyz(player: Player)``. If you use PyCharm or VS Code,
+    that will mean you get better autocompletion.
