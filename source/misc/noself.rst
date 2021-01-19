@@ -135,7 +135,9 @@ Before:
     from .models import Constants
 
 
-    After:
+After:
+
+.. code-block:: python
 
     # app.py
     from otree.api import (
@@ -154,11 +156,10 @@ Before:
 How does this affect you?
 -------------------------
 
-1. If you use oTree Studio, your code will get automatically upgraded to the new format, behind the scenes. oTree Studio will look and function essentially the same.
-
-2. If you use a text editor, you can choose to use whichever format you prefer.
-It is fine for me to support both formats in the long term, since it is just a small internal component that loads your code from a different place (e.g. looking in models.Subsession.creating_session vs app.creating_session).
-Both formats have access to the same features. You can keep developing new apps in the models.py format, and you will continue to benefit from new features.
+1.  If you use oTree Studio, your code will get automatically upgraded to the new format, behind the scenes. oTree Studio will look and function essentially the same.
+2.  If you use a text editor, you can choose to use whichever format you prefer.
+    It is fine for me to support both formats in the long term, since it is just a small internal component that loads your code from a different place (e.g. looking in models.Subsession.creating_session vs app.creating_session).
+    Both formats have access to the same features. You can keep developing new apps in the models.py format, and you will continue to benefit from new features.
 
 This app.py format is only available with oTree Lite.
 oTree Lite supports both formats. Within the same project, you can have some apps that use the models.py format, and some that use the app.py format.
