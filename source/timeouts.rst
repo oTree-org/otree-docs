@@ -149,7 +149,8 @@ for the participant to realistically read the whole page.
             return self.participant.vars['expiry'] - time.time()
 
         def is_displayed(self):
-            return self.get_timeout_seconds() > 3
+            import time
+            return self.participant.vars['expiry'] - time.time() > 3
 
 (If you are curious how to avoid repeating this code on every page, see the section on :ref:`composition <composition>` for some hints.)
 
