@@ -12,3 +12,4 @@ Miscellaneous
     bots_advanced.rst
     otreelite.rst
     version_history.rst
+    noself.rst
