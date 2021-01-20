@@ -87,7 +87,6 @@ So, what has changed?
 #.  There is no longer any distinction between page methods and model methods. The is_displayed and vars_for_template can freely be moved up into the "FUNCTIONS" section, and reused between pages, or put inside a page class if they only pertain to that class.
 #.  Bonus: we can simplify the app folder. Let's take a look at the original structure::
 
-
     dictator/
         _builtin/
         templates/
