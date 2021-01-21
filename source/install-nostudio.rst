@@ -36,8 +36,10 @@ Move into the folder you just created::
 
 Open this folder in your file explorer and look at the files.
 
-If you see an ``app.py`` in each folder, that means you are using the new format.
-**Switch to the documentation `here <https://otree.readthedocs.io/en/master/>`__.**
+
+**If you see an app.py in each folder, that means you are using the new format. Switch to the documentation here:**
+`https://otree.readthedocs.io/en/master/ <https://otree.readthedocs.io/en/master/>`__.
+
 If you see a ``models.py`` in each folder, then continue reading.
 
 .. note::
