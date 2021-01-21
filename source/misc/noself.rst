@@ -8,7 +8,7 @@ It's only available in oTree Lite, which can run either format (models.py or app
 The new format unifies oTree's syntax.
 For example, before, you needed to write either ``player.payoff``, ``self.payoff``,
 or ``self.player.payoff``, depending on what part of the code you were in.
-Now, you can always write ``player.payoff`.
+Now, you can always write ``player.payoff``.
 In fact, the ``self`` keyword has been eliminated entirely
 (this app.py format can also be called the "no-self" format).
 
