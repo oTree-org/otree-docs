@@ -33,6 +33,7 @@ get_player_by_id(n)
 
 Returns the player in the group with the given ``id_in_group``.
 
+
 Getting other players
 ---------------------
 
@@ -84,8 +85,8 @@ You can also use ``group.get_player_by_role()``, which is similar to ``get_playe
         # ...
 
 If you want to switch players' roles,
-you should rearrange the groups, using ``subsession.group_randomly()``,
-``group.set_players()``, etc.
+you should rearrange the groups, using ``group.set_players()``, ``subsession.group_randomly()``,
+etc.
 
 
 .. _shuffling:
@@ -245,6 +246,11 @@ To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
 and look at the ``group`` and ``id_in_group`` columns in each round.
 
+group.set_players()
+~~~~~~~~~~~~~~~~~~~
+
+This is similar to ``set_group_matrix``, but it only shuffles players within a group,
+e.g. so that you can give them different roles.
 
 Shuffling during the session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

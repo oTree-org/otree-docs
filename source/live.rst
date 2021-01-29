@@ -47,7 +47,7 @@ to whoever sends a message.
 
 .. code-block:: python
 
-    def live_xyz(player, data):
+    def live_method(player, data):
         return {player.id_in_group: 'thanks'}
 
 To send to multiple players, use their ``id_in_group``.
@@ -55,7 +55,7 @@ For example, this forwards every message to players 2 and 3:
 
 .. code-block:: python
 
-    def live_xyz(player, data):
+    def live_method(player, data):
         return {2: data, 3: data}
 
 To broadcast it to the whole group, use ``0``
@@ -63,7 +63,7 @@ To broadcast it to the whole group, use ``0``
 
 .. code-block:: python
 
-    def live_xyz(player, data):
+    def live_method(player, data):
         return {0: data}
 
 In your JavaScript, define a function ``liveRecv``.
@@ -103,16 +103,16 @@ Example: auction
 
 .. code-block:: html
 
-  <table id="history" class="table">
+    <table id="history" class="table">
     <tr>
       <th>Player</th>
       <th>Bid</th>
     </tr>
-  </table>
-  <input id="inputbox" type="number">
-  <button type="button" id="sendbutton">Send</button>
+    </table>
+    <input id="inputbox" type="number">
+    <button type="button" id="sendbutton">Send</button>
 
-  <script>
+    <script>
 
       let history = document.getElementById('history');
       let inputbox = document.getElementById('inputbox');
@@ -126,7 +126,7 @@ Example: auction
           liveSend(parseInt(inputbox.value));
       };
 
-  </script>
+    </script>
 
 (Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)
 
@@ -259,7 +259,7 @@ But with live pages, you must verify it inside the ``live_method``:
 
 .. code-block:: python
 
-    def live_auction(player, bid):
+    def live_method(player, bid):
         if bid > 99:
             # just an example.
             # it's up to you to handle this message in your JavaScript code.
@@ -302,6 +302,9 @@ So, wait for ``DOMContentLoaded`` (or jQuery document.ready, etc):
     window.addEventListener('DOMContentLoaded', (event) => {
         // your code goes here...
     });
+
+Don't trigger ``liveSend`` when the user clicks the "next" button, since leaving the page might interrupt
+the ``liveSend``. At least wait to receive a response through ``liveRecv``.
 
 Bots
 ----

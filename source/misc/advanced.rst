@@ -32,7 +32,6 @@ create ``public_goods/templates/public_goods/Page.html``:
 .. code-block:: html
 
     {% extends "global/Page.html" %}
-    {% load otree %}
 
     {% block app_styles %}
         <style>
@@ -51,7 +50,7 @@ Then make each template inherit from this template:
  .. code-block:: html
 
     {% extends "public_goods/Page.html" %}
-    {% load otree %}
+
     ...
 
 To include the same JS/CSS in *all apps* of a project,
@@ -115,7 +114,7 @@ For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.htm
 .. code-block:: html
 
     {% extends 'otree/WaitPage.html' %}
-    {% load otree %}
+
     {% block title %}{{ title_text }}{% endblock %}
     {% block content %}
         {{ body_text }}
@@ -167,15 +166,6 @@ put a block ``global_scripts`` in the template.
 You can even make other custom wait pages inherit from ``_templates/global/WaitPage.html``,
 just the way regular pages inherit from ``_templates/global/Page.html``,
 and they can define the blocks ``app_scripts`` and ``scripts``, etc.
-
-.. _migrations:
-
-Modifying an existing database
-------------------------------
-
-If your database already contains data and you want to update the structure
-without running ``resetdb`` (which will delete existing data),
-see `here <https://github.com/oTree-org/otree-docs/blob/f3c6ceca5346b988b194dad5f805a06814ebea68/source/misc/advanced.rst#modifying-an-existing-database>`__
 
 Currency
 --------

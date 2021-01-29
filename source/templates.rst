@@ -51,8 +51,6 @@ Loops ("for")
         {{ item }}
     {% endfor %}
 
-
-
 Accessing items in a dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -185,13 +183,10 @@ you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
 .. code-block:: python
 
-    class MyPage(Page):
-
-        @staticmethod
-        def vars_for_template(player):
-            return dict(
-                image_path='my_app/{}.png'.format(player.round_number)
-            )
+    def vars_for_template(player):
+        return dict(
+            image_path='my_app/{}.png'.format(player.round_number)
+        )
 
 Then in the template:
 
@@ -212,8 +207,6 @@ make a template called ``instructions.html``, and put the instructions there,
 for example:
 
 .. code-block:: html
-
-    {% load otree %}
 
     <div class="card bg-light">
         <div class="card-body">
@@ -299,7 +292,6 @@ define a method ``js_vars`` on your Page, for example:
 
 .. code-block:: html
 
-    @staticmethod
     def js_vars(player):
         return dict(
             payoff=player.payoff,
@@ -313,10 +305,6 @@ Then, in your template, you can refer to these variables:
         let x = js_vars.payoff;
         // etc...
     </script>
-
-(An alternative is to use the ``|json`` filter in the template,
-e.g. ``let x = {{ player.payoff|json }};``, but ``js_vars`` is simpler.
-
 
 Bootstrap
 ---------
@@ -391,3 +379,9 @@ To this::
 
 If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
+
+Miscellaneous
+=============
+
+You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For example::
+``{{ 0.1234|to2}}`` outputs 0.12.

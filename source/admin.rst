@@ -132,7 +132,7 @@ in your app, and display whatever variables were passed in ``vars_for_admin_repo
 
 .. code-block:: html
 
-    {% load otree %}
+
 
     <p>Here is the sorted list of payoffs in round {{ subsession.round_number }}</p>
 

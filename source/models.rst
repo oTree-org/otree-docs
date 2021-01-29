@@ -165,6 +165,7 @@ Other group methods
 -   :ref:`get_player_by_role(role) <groups>`
 -   :ref:`get_player_by_id(id_in_group) <groups>`
 -   :ref:`get_players() <groups>`
+-   :ref:`set_players() <groups>`
 
 
 Player

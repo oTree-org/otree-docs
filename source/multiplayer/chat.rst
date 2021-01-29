@@ -57,7 +57,9 @@ and all sellers can talk with each other.
 .. code-block:: python
 
     def chat_nickname(player):
-        return 'Group {} player {}'.format(player.group.id_in_subsession, player.id_in_group)
+        group = player.group
+
+        return 'Group {} player {}'.format(group.id_in_subsession, player.id_in_group)
 
 In the page:
 
