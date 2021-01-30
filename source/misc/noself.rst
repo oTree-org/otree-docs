@@ -3,7 +3,6 @@ The new no-self format
 
 As of Jan 2021, there is a new optional format for oTree apps.
 It replaces ``models.py`` and ``pages.py`` with a single ``__init__.py``.
-It's only available in oTree Lite, which can run either format (models.py or __init__.py).
 
 The new format unifies oTree's syntax.
 For example, before, you needed to write either ``player.payoff``, ``self.payoff``,
@@ -11,8 +10,7 @@ or ``self.player.payoff``, depending on what part of the code you were in.
 Now, you can always write ``player.payoff``.
 In fact, the ``self`` keyword has been eliminated entirely
 
-**If you use oTree Studio**, you don't need to worry about this new format.
-All changes will be handled automatically.
+**If you use oTree Studio**, your code has already been upgraded to the no-self format.
 
 **If you use a text editor**, you can keep using the existing format, or use the new one if you wish.
 They both have access to the same features. The models.py format will continue to be fully supported
@@ -84,7 +82,7 @@ So, what has changed?
 #.  As you see, set_payoffs has changed from a group method to a regular function that takes "group" as its argument. This should be clearer to most people.
 #.  is_displayed and vars_for_template are no longer page methods that take an argument 'self', but direct functions of the player. Now you can directly write 'player' without needing 'self.' in front of it. (If you are using a text editor like PyCharm, you should add @staticmethod before vars_for_template and is_displayed to indicate that they are not regular methods.)
 #.  There is no longer any distinction between page methods and model methods. The is_displayed and vars_for_template can freely be moved up into the "FUNCTIONS" section, and reused between pages, or put inside a page class if they only pertain to that class.
-#.  Bonus: we can simplify the app folder. Let's take a look at the original structure::
+#.  The app folder is simplified from this::
 
     dictator/
         _builtin/
@@ -96,9 +94,7 @@ So, what has changed?
         models.py
         pages.py
 
-Now since we fit everything in __init__.py, this folder is smaller, so there is room for the templates to come live downstairs.
-Also, that mysterious _builtin/ folder is not needed anymore.
-So we end up with this::
+To this::
 
     dictator/
         __init__.py
@@ -106,7 +102,7 @@ So we end up with this::
         Results.html
 
 
-Second bonus: The "import" section at the top is simplified.
+Also, the "import" section at the top is simplified.
 
 Before:
 
@@ -153,11 +149,6 @@ You can see the sample games in the new format here:
 
 How does this affect you?
 -------------------------
-
-1.  If you use oTree Studio, your code will get automatically upgraded to the new format, behind the scenes. oTree Studio will look and function essentially the same.
-2.  If you use a text editor, you can choose to use whichever format you prefer.
-    It is fine for me to support both formats in the long term, since it is just a small internal component that loads your code from a different place (e.g. looking in models.Subsession.creating_session vs app.creating_session).
-    Both formats have access to the same features. You can keep developing new apps in the models.py format, and you will continue to benefit from new features.
 
 This no-self format is only available with oTree Lite.
 oTree Lite supports both formats. Within the same project, you can have some apps that use the models.py format, and some that use the no-self format.

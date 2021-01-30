@@ -34,6 +34,12 @@ Move into the folder you just created::
 
     cd myproject
 
+
+**If you see a ``models.py`` in each folder, then to the documentation here:**
+`https://otree.readthedocs.io/en/self/ <https://otree.readthedocs.io/en/self/>`__
+
+If you don't see a models.py in each folder, that means you are using the new no-self format.
+
 Run the server::
 
     otree devserver
