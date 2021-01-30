@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, oTree team
+# This file is distributed under the same license as the oTree package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-19 23:47+0800\n"
+"PO-Revision-Date: 2021-01-25 18:42+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: ../../source/mturk.rst:5
+msgid "Mechanical Turk"
+msgstr "Mechanical Turk"
+
+#: ../../source/mturk.rst:8
+msgid "Overview"
+msgstr "总览"
+
+#: ../../source/mturk.rst:10
+msgid "oTree provides integration with Amazon Mechanical Turk (MTurk):"
+msgstr "oTree提供与Amazon Mechanical Turk (MTurk)的集成："
+
+#: ../../source/mturk.rst:12
+msgid "From oTree's admin interface, you publish your session to MTurk."
+msgstr "从oTree的管理员界面，你可以将你的会话发布至MTurk。"
+
+#: ../../source/mturk.rst:13
+msgid "Workers on Mechanical Turk participate in your session."
+msgstr "Mechanical Turk上的worker可以参与你的会话。"
+
+#: ../../source/mturk.rst:14
+msgid ""
+"From oTree's admin interface, you send each participant their "
+"participation fee and bonus (payoff)."
+msgstr ""
+"从oTree的管理界面，你可以向参与者发放他们的报酬和额外奖励（payoff）。"
+
+#: ../../source/mturk.rst:18
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/mturk.rst:25
+msgid "MTurk template"
+msgstr "MTurk模板"
+
+#: ../../source/mturk.rst:27
+msgid "Put the following inside your ``mturk_template.html``:"
+msgstr "将下面的内容放入你的 ``mturk_template.html``:"
+
+#: ../../source/mturk.rst:54
+msgid ""
+"You can easily test out the appearance by putting it in an .html file on "
+"your desktop, then double-clicking the HTML file to open it in your "
+"browser. Modify the content inside the ``<crowd-form>`` as you wish, but "
+"make sure it has the following:"
+msgstr ""
+"你可以轻易地测试页面的外观，通过将内容放入一个.html文件，并双击在浏览器中"
+"打开。你可以根据你的需要修改 ``<crowd-form>`` 内部的内容，但注意下面的事"
+"项："
+
+#: ../../source/mturk.rst:58
+msgid ""
+"The link to the study, which should look like ``<a class=\"otree-link"
+"\">Link text</a>``. Once the user has accepted the assignment, oTree will "
+"automatically add the ``href`` to those links to make them point to your "
+"study."
+msgstr ""
+"实验的链接应当如 ``<a class=\"otree-link\">Link text</a>``。一旦用户接受了"
+"任务，oTree会自动为这些链接添加 ``href`` 使它们指向你的实验。"
+
+#: ../../source/mturk.rst:60
+msgid ""
+"If you want the completion code to be displayed in the oTree Admin "
+"interface (Payments tab), you need a ``<crowd-input>`` named "
+"``completion_code``."
+msgstr ""
+"如果你想要完成代码显示在oTree管理员页面（Payments选项卡），你需要一个名为 "
+"``completion_code`` 的 ``<crowd-input>`` 。"
+
+#: ../../source/mturk.rst:64
+msgid "Making your session work on MTurk"
+msgstr "让你的会话在MTurk上运行"
+
+#: ../../source/mturk.rst:66
+msgid ""
+"On the last page of your study, give the user a completion code. For "
+"example, you can simply display: \"You have completed the study. Your "
+"completion code is TRUST2020.\" If you like, you can generate unique "
+"completion codes. You don't need to worry too much about completion "
+"codes, because oTree tracks each worker by their MTurk ID and displays "
+"that in the admin interface and shows whether they arrived on the last "
+"page. The completion code is just an extra layer of verification, and it "
+"gives workers a specific objective which they are used to having."
+msgstr ""
+"在你的实验的最后一个页面，给用户一个完成代码。例如，你可以简单地显示：“你"
+"已经完成了实验。你的完成代码是TRUST2020。”如果你愿意，你可以生成唯一的完成"
+"代码。你无需过于担心完成代码，因为oTree追踪了每位worker的MTurk ID并将其显"
+"示在管理员页面上，同时显示他们是否到达了最终页面。完成代码只是一层额外的验"
+"证，它给与了worker一个特定的他们习惯于有的目标。"
+
+#: ../../source/mturk.rst:77
+msgid "Extra steps for non-Studio users"
+msgstr "不使用oTree Studio用户的额外步骤"
+
+#: ../../source/mturk.rst:79
+msgid ""
+"If you are not using oTree Studio, you need to additionally follow the "
+"steps :ref:`here <mturknostudio>`."
+msgstr ""
+"如果你不使用oTree Studio，你需要按照 :ref:`这里 <mturknostudio>` 的步骤操"
+"作。"
+
+#: ../../source/mturk.rst:83
+msgid "Local Sandbox testing"
+msgstr "本地沙箱测试"
+
+#: ../../source/mturk.rst:85
+msgid ""
+"Before launching a study, you must create an employer account with MTurk, "
+"to get your ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``."
+msgstr ""
+"在开始实验之前，你必须创建一个MTurk雇主账户，获取你的 "
+"``AWS_ACCESS_KEY_ID`` 和 ``AWS_SECRET_ACCESS_KEY``。"
+
+#: ../../source/mturk.rst:88
+msgid ""
+"You can obtain these credentials `here <https://console.aws.amazon.com/"
+"iam/home?#security_credential>`__:"
+msgstr ""
+"你可以在 `这里 <https://console.aws.amazon.com/iam/home?"
+"#security_credential>`__ 获取这些证书："
+
+#: ../../source/mturk.rst:93
+msgid ""
+"To test in the MTurk Sandbox locally, and see how it will appear to "
+"workers, you need to store these credentials onto your computer."
+msgstr ""
+"为了在进行本地MTurk沙箱测试，查看实验展示给worker的样子，你需要将这些证书"
+"存储进你的电脑。"
+
+#: ../../source/mturk.rst:97
+msgid ""
+"If using Windows, search for \"environment variables\" in the control "
+"panel, and create 2 environment variables so it looks like this:"
+msgstr ""
+"如果使用Windows，在控制面版里搜索“环境变量”，并像下面这样创建两个环境变"
+"量："
+
+#: ../../source/mturk.rst:103
+msgid ""
+"On Mac, put your credentials into your ``~/.bash_profile`` file like "
+"this::"
+msgstr "在Mac上，将你的证书像这样放入你的 ``~/.bash_profile`` 文件："
+
+#: ../../source/mturk.rst:108
+msgid ""
+"Restart your command prompt and run oTree. From the oTree admin "
+"interface, click on \"Sessions\" and then, on the button that says "
+"\"Create New Session\", select \"For MTurk\":"
+msgstr ""
+"重启你的命令行窗口并运行oTree。在oTree管理员界面，点击“Session”，在按钮 "
+"\"Create New Session\"下，选择\"For MTurk\":"
+
+#: ../../source/mturk.rst:115
+msgid "Set environment variables on your web server"
+msgstr "在你的web服务器上设置环境变量"
+
+#: ../../source/mturk.rst:117
+msgid ""
+"If using Heroku, go to your App Dashboard's \"settings\", and set the "
+"config vars ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``."
+msgstr ""
+"如果你使用Heroku，前往你的App Dashboard的\"settings\"界面，并设置config "
+"vars ``AWS_ACCESS_KEY_ID`` 和 ``AWS_SECRET_ACCESS_KEY``。"
+
+#: ../../source/mturk.rst:123
+msgid "Qualification requirements"
+msgstr "资格要求"
+
+#: ../../source/mturk.rst:125
+msgid ""
+"oTree uses boto3 syntax for qualification requirements. Here is an "
+"example with 2 qualification requirements that you can paste into your "
+"``qualification_requirements`` setting:"
+msgstr ""
+"oTree使用boto3语法进行资格要求。下面是两个资格要求的例子，你可以将其复制到"
+"你的 ``qualification_requirements`` 设置中："
+
+#: ../../source/mturk.rst:143
+msgid ""
+"Here is how you would require workers from the US. "
+"(`00000000000000000071` is the code for a location-based qualification.)"
+msgstr ""
+"下面展示了如何要求worker来自美国。 (`00000000000000000071` 是基于位置的资"
+"格类型代码。)"
+
+#: ../../source/mturk.rst:156
+msgid ""
+"See the `MTurk API reference <http://docs.aws.amazon.com/AWSMechTurk/"
+"latest/AWSMturkAPI/"
+"ApiReference_QualificationRequirementDataStructureArticle.html>`__. "
+"(However, note that the code examples there are in JavaScript, so you "
+"would need to modify the syntax to make it work in Python, e.g. adding "
+"quotes around dictionary keys.)"
+msgstr ""
+"参见 `MTurk API reference <http://docs.aws.amazon.com/AWSMechTurk/latest/"
+"AWSMturkAPI/ApiReference_QualificationRequirementDataStructureArticle."
+"html>`__。（然而，注意到这里的代码示例使用的是JavaScript，所以你需要修改语"
+"法才能使之运行在Python下，例如为字典的键添加引号。）"
+
+#: ../../source/mturk.rst:161
+msgid ""
+"Note: when you are in sandbox mode, oTree ignores qualification "
+"requirements."
+msgstr "注意：当运行在沙箱模式下时，oTree忽略资格要求。"
+
+#: ../../source/mturk.rst:164
+msgid "Preventing retakes (repeat workers)"
+msgstr "避免重复参加（重复的worker）"
+
+#: ../../source/mturk.rst:166
+msgid ""
+"To prevent a worker from participating twice, you can grant a "
+"Qualification to each worker in your study, and then block people who "
+"already have this Qualification."
+msgstr ""
+"为了避免一个worker参加两次，你可以在实验中对每一个worker设置一个验证"
+"（Qualification），并屏蔽已有此验证的人。"
+
+#: ../../source/mturk.rst:170
+msgid ""
+"Login to your MTurk requester account and create a qualification. Go to "
+"your oTree MTurk settings and paste that qualification ID into "
+"``grant_qualification_id``. Then, add an entry to "
+"``qualification_requirements``:"
+msgstr ""
+"登录到你的MTurk账号并创建一个验证。前往你的oTree MTurk设置并粘贴验证ID到 "
+"``grant_qualification_id`` 。然后，添加一个条目到 "
+"``qualification_requirements``:"
+
+#: ../../source/mturk.rst:182
+msgid "Multiplayer games & dropouts"
+msgstr "多人游戏与中途退出者"
+
+#: ../../source/mturk.rst:184
+msgid ""
+"Games that involve wait pages are difficult on Mechanical Turk, because "
+"some participants drop out or delay starting the game until some time "
+"after accepting the assignment."
+msgstr ""
+"涉及到等待页面的游戏在Mechanical Turk上实现困难，因为有些参与者会中途退出"
+"或直到接受任务之后一段时间才开始游戏。"
+
+#: ../../source/mturk.rst:189
+msgid "To mitigate this, see the recommendations in :ref:`wait-page-stuck`."
+msgstr "为了减少这种事情的发生，参考 :ref:`wait-page-stuck` 中的推荐做法。"
+
+#: ../../source/mturk.rst:191
+msgid ""
+"When you create a session with N participants for MTurk, oTree actually "
+"creates (N x 2) participants, because spares are needed in case some "
+"MTurk workers start but then return the assignment."
+msgstr ""
+"当你为MTurk创建了一个N个参与人的会话，oTree实际上会创建(N*2)个参与者，因为"
+"在某些MTurk worker开始但又退回了任务时需要这种冗余。"
+
+#: ../../source/mturk.rst:196
+msgid "Managing your HITs"
+msgstr "管理HIT"
+
+#: ../../source/mturk.rst:198
+msgid ""
+"oTree provides the ability to approve/reject assignments, send bonuses, "
+"and expire HITs early. If you want to do anything beyond this (e.g. "
+"extend expiration date, interact with workers, send custom bonuses, etc), "
+"you will need to install the `MTurk command-line tools <https://aws."
+"amazon.com/cli/>`__ or use the 3rd party `Manage HITs Individually "
+"<https://manage-hits-individually.s3.amazonaws.com/v4.0/index.html#/"
+"credentials>`__ tool."
+msgstr ""
+"oTree提供了通过/拒绝任务，发送奖励，提前终止HIT等功能。如果你想要更多的功"
+"能（例如延长到期时间，与worker交互，发送自定义的奖励等等），你需要安装 "
+"`MTurk command-line tools <https://aws.amazon.com/cli/>`__ 或使用第三方 "
+"`Manage HITs Individually <https://manage-hits-individually.s3.amazonaws."
+"com/v4.0/index.html#/credentials>`__ 工具。"
+
+#: ../../source/mturk.rst:209
+msgid "Misc notes"
+msgstr "杂项"
+
+#: ../../source/mturk.rst:211
+msgid ""
+"If you are publishing to MTurk using another service like TurkPrime, you "
+"may not need to follow the steps on this page."
+msgstr ""
+"如果你使用其他服务如TurkPrime发布到MTurk，你可能无需按照本页面的步骤操作。"

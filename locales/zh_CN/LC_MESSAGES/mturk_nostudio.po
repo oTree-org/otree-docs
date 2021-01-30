@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, oTree team
+# This file is distributed under the same license as the oTree package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-19 19:31+0800\n"
+"PO-Revision-Date: 2021-01-25 18:09+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: ../../source/mturk_nostudio.rst:6
+msgid "MTurk setup (without Studio)"
+msgstr "MTurk安装（不使用oTree Studio）"
+
+#: ../../source/mturk_nostudio.rst:8
+msgid ""
+"If you are not using oTree Studio, here are the extra steps to set up "
+"Mechanical Turk integration."
+msgstr ""
+"如果你没有使用oTree Studio，下面是一些安装Mechanical Turk集成的额外步骤。"
+
+#: ../../source/mturk_nostudio.rst:13
+msgid ""
+"As of October 2019, oTree is using a new MTurk format. If you ran "
+"studies previously, see `here <https://github.com/oTree-org/otree-docs/"
+"blob/master/source/misc/mturk_newformat.rst>`__."
+msgstr ""
+"在2019年10月，oTree使用了一个新的MTurk格式。如果你在运行之前的实验，参考 "
+"`这里 <https://github.com/oTree-org/otree-docs/blob/master/source/misc/"
+"mturk_newformat.rst>`__。"
+
+#: ../../source/mturk_nostudio.rst:18
+msgid "Installation"
+msgstr "安装"
+
+#: ../../source/mturk_nostudio.rst:20
+msgid ""
+"In your ``requirements.txt`` or ``requirements_base.txt`` (not both), "
+"you should change ``otree`` to ``otree[mturk]``."
+msgstr ""
+"在你的 ``requirements.txt`` 或 ``requirements_base.txt`` 中（不是两者都"
+"要），你应当将 ``otree`` 改为 ``otree[mturk]``。"
+
+#: ../../source/mturk_nostudio.rst:23
+msgid "Preview template"
+msgstr "预览模板"
+
+#: ../../source/mturk_nostudio.rst:25
+msgid ""
+"Create an file (empty for now) called ``_templates/global/mturk_template."
+"html``."
+msgstr ""
+"创建一个文件（目前还是空的）命名为 ``_templates/global/mturk_template."
+"html``。"
+
+#: ../../source/mturk_nostudio.rst:28
+msgid "Session config"
+msgstr "Session config"
+
+#: ../../source/mturk_nostudio.rst:30
+msgid "In ``SESSION_CONFIG_DEFAULTS``, add:"
+msgstr "在 ``SESSION_CONFIG_DEFAULTS`` 中，添加："
