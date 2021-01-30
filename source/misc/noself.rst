@@ -1,16 +1,15 @@
-The new app.py format
-=====================
+The new no-self format
+======================
 
 As of Jan 2021, there is a new optional format for oTree apps.
-It replaces ``models.py`` and ``pages.py`` with a single ``app.py``.
-It's only available in oTree Lite, which can run either format (models.py or app.py).
+It replaces ``models.py`` and ``pages.py`` with a single ``__init__.py``.
+It's only available in oTree Lite, which can run either format (models.py or __init__.py).
 
 The new format unifies oTree's syntax.
 For example, before, you needed to write either ``player.payoff``, ``self.payoff``,
 or ``self.player.payoff``, depending on what part of the code you were in.
 Now, you can always write ``player.payoff``.
 In fact, the ``self`` keyword has been eliminated entirely
-(this app.py format can also be called the "no-self" format).
 
 **If you use oTree Studio**, you don't need to worry about this new format.
 All changes will be handled automatically.
@@ -25,10 +24,10 @@ About the new format
 1. "self" is totally gone from your app's code.
 2. Whenever you want to refer to the player, you write player. Same for group and subsession.
 3. Each method in oTree is changed to a function.
-4. There is no more models.py and pages.py. The whole game fits into one file (app.py).
+4. There is no more models.py and pages.py. The whole game fits into one file (__init__.py).
 5. Everything else stays the same. All functions and features do the same thing as before.
 
-Here is an example of an app.py in the "no self" format (with the dictator game):
+Here is an example of an __init__.py in the "no self" format (with the dictator game):
 
 
 .. code-block:: python
@@ -97,13 +96,12 @@ So, what has changed?
         models.py
         pages.py
 
-Now since we fit everything in app.py, this folder is smaller, so there is room for the templates to come live downstairs.
+Now since we fit everything in __init__.py, this folder is smaller, so there is room for the templates to come live downstairs.
 Also, that mysterious _builtin/ folder is not needed anymore.
 So we end up with this::
 
     dictator/
         __init__.py
-        app.py
         Decide.html
         Results.html
 
@@ -136,7 +134,7 @@ After:
 
 .. code-block:: python
 
-    # app.py
+    # __init__.py
     from otree.api import (
         models,
         widgets,
@@ -161,10 +159,10 @@ How does this affect you?
     It is fine for me to support both formats in the long term, since it is just a small internal component that loads your code from a different place (e.g. looking in models.Subsession.creating_session vs app.creating_session).
     Both formats have access to the same features. You can keep developing new apps in the models.py format, and you will continue to benefit from new features.
 
-This app.py format is only available with oTree Lite.
-oTree Lite supports both formats. Within the same project, you can have some apps that use the models.py format, and some that use the app.py format.
+This no-self format is only available with oTree Lite.
+oTree Lite supports both formats. Within the same project, you can have some apps that use the models.py format, and some that use the no-self format.
 
-There is a command "otree remove_self" that can automatically convert the models.py format to the app.py format. This is for people who are curious what their app would look like in the no-self format. Later, I will describe this command and how to use it.
+There is a command "otree remove_self" that can automatically convert the models.py format to the no-self format. This is for people who are curious what their app would look like in the no-self format. Later, I will describe this command and how to use it.
 
 
 FAQ
@@ -197,10 +195,10 @@ Then do one of the following:
 
 a.  Convert your existing apps using ``otree remove_self``, as described in this page.
 b.  Download `this <https://github.com/oTree-org/oTree/tree/noself-demo>`__ repo,
-    which has all the sample games in the app.py format.
-    When you next run ``otree startapp``, it will create an app in the app.py format.
+    which has all the sample games in the no-self format.
+    When you next run ``otree startapp``, it will create an app in the no-self format.
 
-There are now 2 branches of the documentation. These docs you are reading now are based on the app.py format
+There are now 2 branches of the documentation. These docs you are reading now are based on the no-self format
 (see the note at the top of the page).
 
 Try it out and send me any feedback!
@@ -209,7 +207,7 @@ Try it out and send me any feedback!
 The "otree remove_self" command
 -------------------------------
 
-If you prefer the app.py format, or are curious what your app would look like in this format, follow these steps.
+If you prefer the no-self format, or are curious what your app would look like in this format, follow these steps.
 First, then install oTree Lite::
 
     pip3 install -U "otree>=5a"
@@ -218,7 +216,7 @@ First, save a copy of your original code. Run::
 
     otree remove_self
 
-Then check the output (app.py and tests_noself.py), then run ``otree remove_self_finalize``.
+Then check the output (__init__.py and tests_noself.py), then run ``otree remove_self_finalize``.
 That will delete the old files and move your templates into the main folder.
 
 Note this command pretty aggressively converts all your model methods to functions. For example, if you have this:
