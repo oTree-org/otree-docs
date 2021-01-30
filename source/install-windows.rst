@@ -40,6 +40,10 @@ Enter this command at the prompt:
 
     pip3 install -U "otree>=5a"
 
+.. note::
+
+    This documentation is for oTree Lite. If you need maximum compatibility with existing oTree apps,
+    switch to `this <https://otree.readthedocs.io/en/latest/index.html>`__ documentation.
 
 Next steps
 ----------
