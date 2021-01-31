@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-02-01 05:35+0800\n"
 "PO-Revision-Date: 2020-12-24 19:40+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -59,11 +59,11 @@ msgstr ""
 "例如，如果你的应用名为 ``public_goods``,创建 "
 "``public_goods/templates/public_goods/Page.html``:"
 
-#: ../../source/misc/advanced.rst:49
+#: ../../source/misc/advanced.rst:48
 msgid "Then make each template inherit from this template:"
 msgstr "然后使得所有模板继承自此模板："
 
-#: ../../source/misc/advanced.rst:57
+#: ../../source/misc/advanced.rst:56
 msgid ""
 "To include the same JS/CSS in *all apps* of a project, modify "
 "``_templates/global/Page.html``. In that file, you will find the blocks "
@@ -72,17 +72,17 @@ msgstr ""
 "为将同样的JS/CSS包含在项目的 *全部应用* 中，修改 ``_templates/global/Page.html``. 在此文件中，你会找到"
 " ``global_scripts`` 和 ``global_styles`` block。"
 
-#: ../../source/misc/advanced.rst:64
+#: ../../source/misc/advanced.rst:63
 msgid "Static files"
 msgstr "静态文件"
 
-#: ../../source/misc/advanced.rst:67
+#: ../../source/misc/advanced.rst:66
 msgid ""
 "Here is how to include images (or any other static file like .css, .js, "
 "etc.) in your pages."
 msgstr "下面说明了如何在页面中包含图片（或任何静态文件如.css, .js，等等）。"
 
-#: ../../source/misc/advanced.rst:69
+#: ../../source/misc/advanced.rst:68
 #, python-format
 msgid ""
 "At the root of your oTree project, there is a ``_static/`` folder. Put a "
@@ -92,11 +92,11 @@ msgstr ""
 "在你的oTree项目的根文件夹中，有一个 ``_static/`` 文件夹。将文件放在这里，例如 "
 "``puppy.jpg``.然后，在你的模板中，你可以通过 ``{% static 'puppy.jpg' %}`` 获取文件的URL。"
 
-#: ../../source/misc/advanced.rst:74
+#: ../../source/misc/advanced.rst:73
 msgid "To display an image, use the ``<img>`` tag, like this:"
 msgstr "要显示图片，使用 ``<img>`` 标签，如："
 
-#: ../../source/misc/advanced.rst:80
+#: ../../source/misc/advanced.rst:79
 msgid ""
 "Above we saved our image in ``_static/puppy.jpg``, But actually it's "
 "better to make a subfolder with the name of your app, and save it as "
@@ -106,39 +106,39 @@ msgstr ""
 "上面我们将文件保存在 ``_static/puppy.jpg``,但是实际上更好的做法是创建一个子文件夹，起名为你应用的名字，并存为 "
 "``_static/your_app_name/puppy.jpg`` ，这使得文件组织有条理，并避免了名字冲突。"
 
-#: ../../source/misc/advanced.rst:85
+#: ../../source/misc/advanced.rst:84
 msgid "Then your HTML code becomes:"
 msgstr "此时你的HTML代码变为："
 
-#: ../../source/misc/advanced.rst:91
+#: ../../source/misc/advanced.rst:90
 msgid ""
 "(If you prefer, you can also put static files inside your app folder, in "
 "a subfolder called ``static/your_app_name``.)"
 msgstr "（如果你愿意的话，你也可以将静态文件放入你的应用文件夹，在子文件夹 ``static/your_app_name`` 中。）"
 
-#: ../../source/misc/advanced.rst:94
+#: ../../source/misc/advanced.rst:93
 msgid ""
 "If a static file is not updating even after you changed it, this is "
 "because your browser cached the file. Do a full page reload (usually "
 "Ctrl+F5)"
 msgstr "如果静态文件在你更改了之后仍不改变，这是因为你的浏览器缓存了这个文件。重载整个页面即可（通常快捷键是 Ctrl+F5）"
 
-#: ../../source/misc/advanced.rst:98
+#: ../../source/misc/advanced.rst:97
 msgid ""
 "If you have videos or high-resolution images, it's preferable to store "
 "them somewhere online and reference them by URL because the large file "
 "size can make uploading your .otreezip file much slower."
 msgstr "如果你需要视频或者高解析度的图片，更好的做法是将其存储在线上别的地方并使用URL进行引用。因为大文件使得上传 .otreezip文件非常缓慢。"
 
-#: ../../source/misc/advanced.rst:105
+#: ../../source/misc/advanced.rst:104
 msgid "Wait pages"
 msgstr "等待页面"
 
-#: ../../source/misc/advanced.rst:110
+#: ../../source/misc/advanced.rst:109
 msgid "Custom wait page template"
 msgstr "自定义等待页面模板"
 
-#: ../../source/misc/advanced.rst:112
+#: ../../source/misc/advanced.rst:111
 msgid ""
 "You can make a custom wait page template. For example, save this to "
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
@@ -146,11 +146,11 @@ msgstr ""
 "你可以自定义等待页面模板。例如，存为 \n"
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
 
-#: ../../source/misc/advanced.rst:127
+#: ../../source/misc/advanced.rst:126
 msgid "Then tell your wait page to use this template:"
 msgstr "然后在等待页面中使用这一模板："
 
-#: ../../source/misc/advanced.rst:134
+#: ../../source/misc/advanced.rst:133
 msgid ""
 "Then you can use ``vars_for_template`` in the usual way. Actually, the "
 "``body_text`` and ``title_text`` attributes are just shorthand for "
@@ -160,7 +160,7 @@ msgstr ""
 "此时你可以如寻常一样使用 ``vars_for_template`` 。实际上， ``body_text`` 与 ``title_text`` "
 "属性就是设置 ``vars_for_template`` 的简略方式；下面两段代码是等价的："
 
-#: ../../source/misc/advanced.rst:152
+#: ../../source/misc/advanced.rst:151
 msgid ""
 "If you want to apply your custom wait page template globally, save it to "
 "``_templates/global/WaitPage.html``. oTree will then automatically use it"
@@ -169,11 +169,11 @@ msgstr ""
 "如果你想全局应用你的自定义等待页面模板，将其保存在 "
 "``_templates/global/WaitPage.html``.oTree将自动地在所有地方使用它替换内置的等待页面。"
 
-#: ../../source/misc/advanced.rst:157
+#: ../../source/misc/advanced.rst:156
 msgid "CSS and JavaScript in Wait Pages"
 msgstr "等待页面中的CSS 与 JavaScript"
 
-#: ../../source/misc/advanced.rst:159
+#: ../../source/misc/advanced.rst:158
 msgid ""
 "Wait pages have the same block structure as regular pages "
 "(``global_scripts``, ``app_scripts``, ``scripts``, etc...), so you can "
@@ -183,7 +183,7 @@ msgstr ""
 "等待页面与普通页面有相同的块结构(``global_scripts``, ``app_scripts``, ``scripts``, "
 "etc...), 故你可以参考同样的指南如 :ref:`base-template` 和 :ref:`selectors` 中所描述的。"
 
-#: ../../source/misc/advanced.rst:164
+#: ../../source/misc/advanced.rst:163
 msgid ""
 "For example, to apply CSS to your custom wait page at "
 "``_templates/global/WaitPage.html``, put a block ``global_scripts`` in "
@@ -192,7 +192,7 @@ msgstr ""
 "例如，为将CSS应用到你的自定义的等待页面 ``_templates/global/WaitPage.html`` 上，将 "
 "``global_scripts`` 块放置在模板中即可。"
 
-#: ../../source/misc/advanced.rst:167
+#: ../../source/misc/advanced.rst:166
 msgid ""
 "You can even make other custom wait pages inherit from "
 "``_templates/global/WaitPage.html``, just the way regular pages inherit "
@@ -203,28 +203,11 @@ msgstr ""
 "``_templates/global/Page.html`` 完全相同，也可定义 ``app_scripts`` 与 ``scripts`` "
 "块等等。"
 
-#: ../../source/misc/advanced.rst:174
-msgid "Modifying an existing database"
-msgstr "修改现存的数据库"
-
-#: ../../source/misc/advanced.rst:176
-msgid ""
-"If your database already contains data and you want to update the "
-"structure without running ``resetdb`` (which will delete existing data), "
-"see `here <https://github.com/oTree-org/otree-"
-"docs/blob/f3c6ceca5346b988b194dad5f805a06814ebea68/source/misc/advanced.rst"
-"#modifying-an-existing-database>`__"
-msgstr ""
-"如果你的数据库已经保存了一些数据并且你想要更新数据库结构但不运行 ``resetdb`` （这会删除现存数据），参考 `这里 "
-"<https://github.com/oTree-org/otree-"
-"docs/blob/f3c6ceca5346b988b194dad5f805a06814ebea68/source/misc/advanced.rst"
-"#modifying-an-existing-database>`__"
-
-#: ../../source/misc/advanced.rst:181
+#: ../../source/misc/advanced.rst:171
 msgid "Currency"
 msgstr "货币"
 
-#: ../../source/misc/advanced.rst:183
+#: ../../source/misc/advanced.rst:173
 msgid ""
 "To customize the name \"points\" to something else like \"tokens\" or "
 "\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
@@ -233,7 +216,7 @@ msgstr ""
 "为将\"points\"自定义为别的名字如\"tokens\" 或 \"credits\", 设置 ``POINTS_CUSTOM_NAME`` "
 "，例如 ``POINTS_CUSTOM_NAME = 'tokens'``."
 
-#: ../../source/misc/advanced.rst:186
+#: ../../source/misc/advanced.rst:176
 msgid ""
 "You can change the number of decimal places in real world currency "
 "amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
@@ -243,19 +226,19 @@ msgstr ""
 "你可以改变真实世界货币的小数位数，通过设置 "
 "``REAL_WORLD_CURRENCY_DECIMAL_PLACES``。如果额外的小数位数显示出来但总是0，那么你应当重置数据库。"
 
-#: ../../source/misc/advanced.rst:192
+#: ../../source/misc/advanced.rst:182
 msgid "Reading CSV or other files"
 msgstr "读入CSV或其他文件"
 
 # Chris comment: I removed the mention of models.py.
-#: ../../source/misc/advanced.rst:194
+#: ../../source/misc/advanced.rst:184
 #, fuzzy
 msgid ""
 "Store yourfile.csv in your app folder. Then put this code anywhere you "
 "want to read the file (in a method or in Constants):"
 msgstr "将yourfile.csv存储在你的应用中，与models.py放在一起。然后将下面的代码放在你想要读文件的任何地方（在函数中或者常量中）："
 
-#: ../../source/misc/advanced.rst:204
+#: ../../source/misc/advanced.rst:194
 msgid ""
 "If it's not CSV and you just want to read the file contents as a string, "
 "this gets simplified to:"
@@ -992,3 +975,4 @@ msgid ""
 "(Usually ``error_message`` is used to return a single error message as a "
 "string, but you can also return a dict.)"
 msgstr "（通常 ``error_message`` 被用来返回某一错误信息字符串，但你也可以返回一个字典。）"
+

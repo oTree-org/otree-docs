@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-02-01 05:35+0800\n"
 "PO-Revision-Date: 2020-11-29 12:23+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -160,25 +160,3 @@ msgid ""
 "On the \"Demo\" section of the admin, sessions are not configurable. It's"
 " only available when creating a session in \"Sessions\" or \"Rooms\"."
 msgstr "在管理员界面的“Demo”部分，会话是不可配置的。它仅在 \"Sessions\" 或 \"Rooms\"中创建会话时可用。"
-
-#: ../../source/treatments.rst:151
-msgid "Advanced topics"
-msgstr "进阶技巧"
-
-#: ../../source/treatments.rst:154
-msgid "Group treatments that persist across rounds"
-msgstr "多轮不变的实验组"
-
-#: ../../source/treatments.rst:156
-msgid ""
-"Groups do not have any ``vars`` field, because groups can be re-shuffled "
-"across rounds. You should instead store the variable on one of the "
-"participants in the group:"
-msgstr "Group类没有 ``vars`` 字段，因为小组在不同轮之间可能成员会重新排列。你应当将其保存在组内某个参与人的变量中："
-
-#: ../../source/treatments.rst:168
-msgid ""
-"Then, when you need to access a group's color, you would look it up like "
-"this:"
-msgstr "此时，当你需要获取小组的颜色时，你可以这样查询："
-

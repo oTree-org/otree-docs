@@ -358,8 +358,6 @@ msgstr ""
 " ``yield`` 来获取每一行数据。"
 
 
-msgstr ""
-
 #: ../../source/admin.rst:225
 msgid ""
 "Once this function is defined, your custom data export will be available "

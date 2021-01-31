@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-26 00:51+0800\n"
+"POT-Creation-Date: 2021-02-01 05:35+0800\n"
 "PO-Revision-Date: 2020-10-31 18:28+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -78,17 +78,17 @@ msgstr "使用‘else’："
 msgid "Loops (\"for\")"
 msgstr "循环（“for”）"
 
-#: ../../source/templates.rst:57
+#: ../../source/templates.rst:55
 msgid "Accessing items in a dict"
 msgstr "获取字典中的元素"
 
-#: ../../source/templates.rst:59
+#: ../../source/templates.rst:57
 msgid ""
 "Whereas in Python code you do ``my_dict['foo']``, in a template you would"
 " do ``{{ my_dict.foo }}``."
 msgstr "在Python代码中使用 ``my_dict['foo']``, 但在模板中应当使用 ``{{ my_dict.foo }}``."
 
-#: ../../source/templates.rst:63
+#: ../../source/templates.rst:61
 msgid "Comments"
 msgstr "注释"
 
@@ -240,15 +240,15 @@ msgstr ""
 "如果你需要根据上下文显示不同的图片（比如每一轮显示不同的图片），那么你可以在 ``vars_for_template`` "
 "中构建并将其传递给模板，例如："
 
-#: ../../source/templates.rst:193
+#: ../../source/templates.rst:191
 msgid "Then in the template:"
 msgstr "在模板中使用："
 
-#: ../../source/templates.rst:201
+#: ../../source/templates.rst:199
 msgid "Includable templates"
 msgstr "可包含的模板"
 
-#: ../../source/templates.rst:203
+#: ../../source/templates.rst:201
 #, python-format
 msgid ""
 "If you are copy-pasting the same content across many templates, it's "
@@ -256,7 +256,7 @@ msgid ""
 "%}``."
 msgstr "如果你将同样的内容在多个模板之间复制粘贴，更好的方案是创建一个可包含的模板并使用 ``{% include %}`` 复用模板。"
 
-#: ../../source/templates.rst:207
+#: ../../source/templates.rst:205
 msgid ""
 "For example, if your game has instructions that need to be repeated on "
 "every page, make a template called ``instructions.html``, and put the "
@@ -265,7 +265,7 @@ msgstr ""
 "举例来说，如果在你的游戏中游戏说明需要在每一个页面上重复出现，那么就可以创建一个模板，叫做 ``instructions.html``, "
 "将说明放入其中，举例如下："
 
-#: ../../source/templates.rst:227
+#: ../../source/templates.rst:223
 msgid ""
 "If you are using oTree Studio, click the button to include a template. "
 "Otherwise, create the file in your ``templates`` folder, and see the "
@@ -275,15 +275,15 @@ msgstr ""
 "如果你使用的是oTree Studio，点击一个按钮即可包含一个模板。如使用文本编辑器，则在 ``templates`` "
 "文件夹中创建文件，然后查看简单的游戏示例来弄明白如何包含模板（例如 ``instructions_template``）。"
 
-#: ../../source/templates.rst:233
+#: ../../source/templates.rst:229
 msgid "JavaScript and CSS"
 msgstr "JavaScript 与 CSS"
 
-#: ../../source/templates.rst:236
+#: ../../source/templates.rst:232
 msgid "Where to put JavaScript/CSS code"
 msgstr "将JavaScript/CSS代码放在何处"
 
-#: ../../source/templates.rst:238
+#: ../../source/templates.rst:234
 msgid ""
 "You can put JavaScript and CSS anywhere just by using the usual "
 "``<script></script>`` or ``<style></style>``, anywhere in your template."
@@ -291,7 +291,7 @@ msgstr ""
 "你可以使用常见的 ``<script></script>`` 或 ``<style></style>`` "
 "标签将JavaScript与CSS放在你模板的任意位置。"
 
-#: ../../source/templates.rst:241
+#: ../../source/templates.rst:237
 msgid ""
 "If you have a lot of scripts/styles, you can put them in separate blocks "
 "outside of ``content``: ``scripts`` and ``styles``. It's not mandatory to"
@@ -302,102 +302,102 @@ msgstr ""
 "如果你有很多脚本/样式，你可以将它们包含在独立的部分中，在 ``content`` 之外： ``scripts`` and ``styles`` "
 "中.这并非强制的要求，但这样做会使你的代码更有条理并确保页面按照顺序加载（CSS，然后是页面内容，然后是JavaScript）。"
 
-#: ../../source/templates.rst:249
+#: ../../source/templates.rst:245
 msgid "Customizing the theme"
 msgstr "定制主题"
 
-#: ../../source/templates.rst:251
+#: ../../source/templates.rst:247
 msgid ""
 "If you want to customize the appearance of an oTree element, here is the "
 "list of CSS selectors:"
 msgstr "如果你想要定制oTree元素的外观，下表列出了CSS选择器："
 
-#: ../../source/templates.rst:255
+#: ../../source/templates.rst:251
 msgid "Element"
 msgstr "元素"
 
-#: ../../source/templates.rst:255
+#: ../../source/templates.rst:251
 msgid "CSS/jQuery selector"
 msgstr "CSS/jQuery 选择器"
 
-#: ../../source/templates.rst:257
+#: ../../source/templates.rst:253
 msgid "Page body"
 msgstr "页面主体"
 
-#: ../../source/templates.rst:257
+#: ../../source/templates.rst:253
 msgid "``.otree-body``"
 msgstr "``.otree-body``"
 
-#: ../../source/templates.rst:258
+#: ../../source/templates.rst:254
 msgid "Page title"
 msgstr "页面标题"
 
-#: ../../source/templates.rst:258
+#: ../../source/templates.rst:254
 msgid "``.otree-title``"
 msgstr "``.otree-title``"
 
-#: ../../source/templates.rst:259
+#: ../../source/templates.rst:255
 msgid "Wait page (entire dialog)"
 msgstr "等待页面（整个对话框）"
 
-#: ../../source/templates.rst:259
+#: ../../source/templates.rst:255
 msgid "``.otree-wait-page``"
 msgstr "``.otree-wait-page``"
 
-#: ../../source/templates.rst:260
+#: ../../source/templates.rst:256
 msgid "Wait page dialog title"
 msgstr "等待页面对话框标题"
 
-#: ../../source/templates.rst:260
+#: ../../source/templates.rst:256
 msgid "``.otree-wait-page__title`` (note: ``__``, not ``_``)"
 msgstr "``.otree-wait-page__title`` (注意: ``__``, 而非 ``_``)"
 
-#: ../../source/templates.rst:261
+#: ../../source/templates.rst:257
 msgid "Wait page dialog body"
 msgstr "等待页面对话框主体"
 
-#: ../../source/templates.rst:261
+#: ../../source/templates.rst:257
 msgid "``.otree-wait-page__body``"
 msgstr "``.otree-wait-page__body``"
 
-#: ../../source/templates.rst:262
+#: ../../source/templates.rst:258
 msgid "Timer"
 msgstr "计时器"
 
-#: ../../source/templates.rst:262
+#: ../../source/templates.rst:258
 msgid "``.otree-timer``"
 msgstr "``.otree-timer``"
 
-#: ../../source/templates.rst:263
+#: ../../source/templates.rst:259
 msgid "Next button"
 msgstr "下一步按钮"
 
-#: ../../source/templates.rst:263
+#: ../../source/templates.rst:259
 msgid "``.otree-btn-next``"
 msgstr "``.otree-btn-next``"
 
-#: ../../source/templates.rst:264
+#: ../../source/templates.rst:260
 msgid "Form errors alert"
 msgstr "表单错误警告"
 
-#: ../../source/templates.rst:264
+#: ../../source/templates.rst:260
 msgid "``.otree-form-errors``"
 msgstr "``.otree-form-errors``"
 
-#: ../../source/templates.rst:267
+#: ../../source/templates.rst:263
 msgid ""
 "For example, to change the page width, put CSS in your base template like"
 " this:"
 msgstr "举例来说，如改变页面宽度，将CSS在基模板中放置如下："
 
-#: ../../source/templates.rst:277
+#: ../../source/templates.rst:273
 msgid ""
 "To get more info, in your browser, right-click the element you want to "
 "modify and select \"Inspect\". Then you can navigate to see the different"
 " elements and try modifying their styles:"
 msgstr "获取更多信息，可在浏览器中右键单击你想要修改的元素并选择“审查元素”。然后你可以导航到不同元素并试着改变它们的样式："
 
-#: ../../source/templates.rst:283
+#: ../../source/templates.rst:279
 msgid ""
 "When possible, use one of the official selectors above. Don't use any "
 "selector that starts with ``_otree``, and don't select based on Bootstrap"
@@ -406,33 +406,25 @@ msgstr ""
 "尽可能使用上面给出的官方选择器。不要使用任何以 ``_otree`` 开头或者基于Bootstrap类的选择器，如 ``btn-primary``"
 " 或 ``card``,它们都是不稳定的。"
 
-#: ../../source/templates.rst:292
+#: ../../source/templates.rst:288
 msgid "Passing data from Python to JavaScript (js_vars)"
 msgstr "从Python向JavaScript传递数据（js_vars）"
 
-#: ../../source/templates.rst:294
+#: ../../source/templates.rst:290
 msgid ""
 "To pass data to JavaScript code in your template, define a method "
 "``js_vars`` on your Page, for example:"
 msgstr "为了在模板中向JavaScript代码传递数据，定义一个 ``js_vars`` 方法在你的页面中，例如："
 
-#: ../../source/templates.rst:304
+#: ../../source/templates.rst:300
 msgid "Then, in your template, you can refer to these variables:"
 msgstr "在模板中，你就可以像下面这样引用这些变量："
 
-#: ../../source/templates.rst:313
-msgid ""
-"(An alternative is to use the ``|json`` filter in the template, e.g. "
-"``let x = {{ player.payoff|json }};``, but ``js_vars`` is simpler."
-msgstr ""
-"（另一种方法是在模板中使用 ``|json`` 过滤器，例如 ``let x = {{ player.payoff|json }};``,不过 "
-"``js_vars`` 更简单。"
-
-#: ../../source/templates.rst:318
+#: ../../source/templates.rst:310
 msgid "Bootstrap"
 msgstr "Bootstrap"
 
-#: ../../source/templates.rst:320
+#: ../../source/templates.rst:312
 msgid ""
 "oTree comes with `Bootstrap "
 "<https://getbootstrap.com/docs/5.0/components/alerts/>`__, a popular "
@@ -441,7 +433,7 @@ msgstr ""
 "oTree使用 `Bootstrap "
 "<https://getbootstrap.com/docs/5.0/components/alerts/>`__,一个流行的用于定制网站用户界面的库。"
 
-#: ../../source/templates.rst:323
+#: ../../source/templates.rst:315
 msgid ""
 "You can use it if you want a `custom style "
 "<http://getbootstrap.com/css/>`__, or a `specific component "
@@ -459,31 +451,31 @@ msgstr ""
 "<https://getbootstrap.com/docs/5.0/components/modal/>`__, 和 `collapsible "
 "text <https://getbootstrap.com/docs/5.0/components/collapse/>`__."
 
-#: ../../source/templates.rst:330
+#: ../../source/templates.rst:322
 msgid ""
 "To use Bootstrap, usually you add a ``class=`` attribute to your HTML "
 "element."
 msgstr "使用Bootstrap，通常需要在HTML元素中添加一个 ``class=`` 属性。"
 
-#: ../../source/templates.rst:333
+#: ../../source/templates.rst:325
 msgid "For example, the following HTML will create a \"Success\" alert:"
 msgstr "举例来说，下面得HTML会创建一个“Success”警告："
 
-#: ../../source/templates.rst:340
+#: ../../source/templates.rst:332
 msgid "Mobile devices"
 msgstr "移动设备"
 
-#: ../../source/templates.rst:342
+#: ../../source/templates.rst:334
 msgid ""
 "Bootstrap tries to show a \"mobile friendly\" version when viewed on a "
 "smartphone or tablet."
 msgstr "Bootstrap会在手机或平板上试着显示一个“移动端友好”的版本。"
 
-#: ../../source/templates.rst:347
+#: ../../source/templates.rst:339
 msgid "Charts"
 msgstr "图表"
 
-#: ../../source/templates.rst:349
+#: ../../source/templates.rst:341
 msgid ""
 "You can use any HTML/JavaScript library for adding charts to your app. A "
 "good option is `HighCharts <http://www.highcharts.com/demo>`__, to draw "
@@ -492,11 +484,11 @@ msgstr ""
 "你可以使用任何HTML/JavaScript库来为你的应用添加图表。一个好的选择是 `HighCharts "
 "<http://www.highcharts.com/demo>`__,它可以用来画饼状图，折线图，直方图，时间序列等等。"
 
-#: ../../source/templates.rst:353
+#: ../../source/templates.rst:345
 msgid "First, include the HighCharts JavaScript::"
 msgstr "首先，引入HighCharts JavaScript："
 
-#: ../../source/templates.rst:358
+#: ../../source/templates.rst:350
 msgid ""
 "Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__ and "
 "find the chart type that you want to make. Then click \"edit in "
@@ -505,7 +497,7 @@ msgstr ""
 "在HighCharts `demo site <http://www.highcharts.com/demo>`__ "
 "寻找你想要的图表类型。然后点击\"edit in JSFiddle\"将其编辑成你想要的样子，使用硬编码数据。"
 
-#: ../../source/templates.rst:363
+#: ../../source/templates.rst:355
 msgid ""
 "Then, copy-paste the JS and HTML into your template, and load the page. "
 "If you don't see your chart, it may be because your HTML is missing the "
@@ -514,29 +506,39 @@ msgstr ""
 "然后，复制粘贴JS与HTML到你的模板中，并加载页面。如果你没有看到你的图表，可能是因为JS代码试图插入图表的那一部分HTML缺少了 "
 "``<div>`` 标签。"
 
-#: ../../source/templates.rst:368
+#: ../../source/templates.rst:360
 msgid ""
 "Once your chart is loading properly, you can replace the hardcoded data "
 "like ``series`` and ``categories`` with dynamically generated variables."
 msgstr "一旦你的图表加载正常，你就可以将硬编码的数据替换为 ``series`` 和 ``categories`` 这样动态生成的变量。"
 
-#: ../../source/templates.rst:371
+#: ../../source/templates.rst:363
 msgid "For example, change this::"
 msgstr "例如，将这个："
 
-#: ../../source/templates.rst:381
+#: ../../source/templates.rst:373
 msgid "To this::"
 msgstr "改为这个："
 
-#: ../../source/templates.rst:386
+#: ../../source/templates.rst:378
 msgid ""
 "...where ``highcharts_series`` is a variable you defined in :ref:`js_vars"
 " <js_vars>`."
 msgstr "...此处 ``highcharts_series`` 是你在 :ref:`js_vars <js_vars>` 中定义的变量。"
 
-#: ../../source/templates.rst:388
+#: ../../source/templates.rst:380
 msgid ""
 "If your chart is not loading, click \"View Source\" in your browser and "
 "check if there is something wrong with the data you dynamically "
 "generated."
 msgstr "如果你的图表没有加载，在浏览器中单击“查看源码”检查是否是动态生成的数据出现了问题。"
+
+#: ../../source/templates.rst:384
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../../source/templates.rst:386
+msgid ""
+"You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For"
+" example:: ``{{ 0.1234|to2}}`` outputs 0.12."
+msgstr ""

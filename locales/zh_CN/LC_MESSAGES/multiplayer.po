@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-02-01 05:35+0800\n"
 "PO-Revision-Date: 2020-11-16 18:41+0800\n"
 "Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
 "Language: zh_CN\n"
@@ -93,153 +93,153 @@ msgid ""
 " each other, and all sellers can talk with each other."
 msgstr "下面是一个在组间基于角色聊天，而不是在组内聊天的例子。例如所有的买家可以相互交流，所有的卖家可以相互交流。"
 
-#: ../../source/multiplayer/chat.rst:62
+#: ../../source/multiplayer/chat.rst:64
 msgid "In the page:"
 msgstr "在页面中："
 
-#: ../../source/multiplayer/chat.rst:74
+#: ../../source/multiplayer/chat.rst:76
 msgid "Then in the template:"
 msgstr "然后在模板中："
 
-#: ../../source/multiplayer/chat.rst:81
+#: ../../source/multiplayer/chat.rst:83
 msgid "Example: chat across rounds"
 msgstr "例子：跨轮次的聊天"
 
-#: ../../source/multiplayer/chat.rst:83
+#: ../../source/multiplayer/chat.rst:85
 msgid ""
 "If you need players to chat with players who are currently in a different"
 " round of the game, you can do:"
 msgstr "如果你需要玩家可以与不在同一轮的其他玩家聊天，你可以这样做："
 
-#: ../../source/multiplayer/chat.rst:91
+#: ../../source/multiplayer/chat.rst:93
 msgid "Example: chat between all groups in all rounds"
 msgstr "例子：所有轮次所有小组玩家一起聊天"
 
-#: ../../source/multiplayer/chat.rst:93
+#: ../../source/multiplayer/chat.rst:95
 msgid ""
 "If you want everyone in the session to freely chat with each other, just "
 "do:"
 msgstr "如果你想让会话中的所有玩家可以自由地与其他人交流，可以这样做："
 
-#: ../../source/multiplayer/chat.rst:99
+#: ../../source/multiplayer/chat.rst:101
 msgid ""
 "(The number 1 is not significant; all that matters is that it's the same "
 "for everyone.)"
 msgstr "（数字1并没有特殊含义，关键在于这一值对所有人相同）"
 
-#: ../../source/multiplayer/chat.rst:102
+#: ../../source/multiplayer/chat.rst:104
 msgid "Advanced customization"
 msgstr "高级自定义"
 
-#: ../../source/multiplayer/chat.rst:104
+#: ../../source/multiplayer/chat.rst:106
 msgid ""
 "If you look at the page source code in your browser's inspector, you will"
 " see the following selectors are available:"
 msgstr "如果你在浏览器中查看了页面的源码，你会发现下面的这些选择器是可用的："
 
-#: ../../source/multiplayer/chat.rst:108
+#: ../../source/multiplayer/chat.rst:110
 msgid "Element"
 msgstr "元素"
 
-#: ../../source/multiplayer/chat.rst:108
+#: ../../source/multiplayer/chat.rst:110
 msgid "CSS/jQuery selector"
 msgstr "CSS/jQuery 选择器"
 
-#: ../../source/multiplayer/chat.rst:110
+#: ../../source/multiplayer/chat.rst:112
 msgid "Entire chat widget"
 msgstr "聊天窗体"
 
-#: ../../source/multiplayer/chat.rst:110
+#: ../../source/multiplayer/chat.rst:112
 msgid "``.otree-chat``"
 msgstr "``.otree-chat``"
 
-#: ../../source/multiplayer/chat.rst:111
+#: ../../source/multiplayer/chat.rst:113
 msgid "Textbox to type a message"
 msgstr "输入消息的文本框"
 
-#: ../../source/multiplayer/chat.rst:111
+#: ../../source/multiplayer/chat.rst:113
 msgid "``.otree-chat__input`` (note: ``__``, not ``_``)"
 msgstr "``.otree-chat__input`` (注意: ``__``, 而不是 ``_``)"
 
-#: ../../source/multiplayer/chat.rst:112
+#: ../../source/multiplayer/chat.rst:114
 msgid "Button to submit a message"
 msgstr "提交消息的按钮"
 
-#: ../../source/multiplayer/chat.rst:112
+#: ../../source/multiplayer/chat.rst:114
 msgid "``.otree-chat__btn-send``"
 msgstr "``.otree-chat__btn-send``"
 
-#: ../../source/multiplayer/chat.rst:113
+#: ../../source/multiplayer/chat.rst:115
 msgid "Div with all messages"
 msgstr "所有消息的div"
 
-#: ../../source/multiplayer/chat.rst:113
+#: ../../source/multiplayer/chat.rst:115
 msgid "``.otree-chat__messages``"
 msgstr "``.otree-chat__messages``"
 
-#: ../../source/multiplayer/chat.rst:114
+#: ../../source/multiplayer/chat.rst:116
 msgid "Message"
 msgstr "消息"
 
-#: ../../source/multiplayer/chat.rst:114
+#: ../../source/multiplayer/chat.rst:116
 msgid "``.otree-chat__msg``"
 msgstr "``.otree-chat__msg``"
 
-#: ../../source/multiplayer/chat.rst:115
+#: ../../source/multiplayer/chat.rst:117
 msgid "Message's nickname"
 msgstr "消息的昵称"
 
-#: ../../source/multiplayer/chat.rst:115
+#: ../../source/multiplayer/chat.rst:117
 msgid "``.otree-chat__nickname``"
 msgstr "``.otree-chat__nickname``"
 
-#: ../../source/multiplayer/chat.rst:116
+#: ../../source/multiplayer/chat.rst:118
 msgid "Message's body text"
 msgstr "消息的文本部分"
 
-#: ../../source/multiplayer/chat.rst:116
+#: ../../source/multiplayer/chat.rst:118
 msgid "``.otree-chat__body``"
 msgstr "``.otree-chat__body``"
 
-#: ../../source/multiplayer/chat.rst:119
+#: ../../source/multiplayer/chat.rst:121
 msgid ""
 "You can use CSS or JS to change the appearance or behavior of these "
 "elements (or hide them entirely)."
 msgstr "你可以使用CSS或JS改变这些元素的外观或者行为（或者将它们完全隐藏起来）。"
 
-#: ../../source/multiplayer/chat.rst:122
+#: ../../source/multiplayer/chat.rst:124
 #, python-format
 msgid ""
 "For example, to customize the style, just include some CSS after the ``{%"
 " chat %}`` element, e.g.:"
 msgstr "举例来说，要定制样式，将CSS包含在 ``{% chat %}`` 元素之后即可，如："
 
-#: ../../source/multiplayer/chat.rst:140
+#: ../../source/multiplayer/chat.rst:142
 msgid "Note that there are 2 underscores (``__``, not ``_``)."
 msgstr "注意这里有2个下划线（``__``, 而不是 ``_``）。"
 
-#: ../../source/multiplayer/chat.rst:142
+#: ../../source/multiplayer/chat.rst:144
 msgid ""
 "You can also customize the appearance by putting it inside a ``<div>`` "
 "and styling that parent ``<div>``. For example, to set the width:"
 msgstr "你也可以通过将其放入一个 ``<div>`` 并调整这个父 ``<div>`` 的样式来定制外观。例如像下面这样设置宽度："
 
-#: ../../source/multiplayer/chat.rst:152
+#: ../../source/multiplayer/chat.rst:154
 msgid "Multiple chats on a page"
 msgstr "同一页面上多个聊天"
 
-#: ../../source/multiplayer/chat.rst:154
+#: ../../source/multiplayer/chat.rst:156
 #, python-format
 msgid ""
 "You can have multiple ``{% chat %}`` boxes on each page, so that a player"
 " can be in multiple channels simultaneously."
 msgstr "你可以在同一页面上放置多个 ``{% chat %}`` ，这样一名玩家就可以同时处于多个频道中。"
 
-#: ../../source/multiplayer/chat.rst:158
+#: ../../source/multiplayer/chat.rst:160
 msgid "Exporting CSV of chat logs"
 msgstr "将聊天日志导出为CSV"
 
-#: ../../source/multiplayer/chat.rst:160
+#: ../../source/multiplayer/chat.rst:162
 msgid ""
 "The chat logs download link will appear on oTree's regular data export "
 "page."
@@ -301,11 +301,11 @@ msgstr "get_player_by_id(n)"
 msgid "Returns the player in the group with the given ``id_in_group``."
 msgstr "返回组内具有所指定 ``id_in_group`` 的玩家。"
 
-#: ../../source/multiplayer/groups.rst:37
+#: ../../source/multiplayer/groups.rst:38
 msgid "Getting other players"
 msgstr "获得其他玩家"
 
-#: ../../source/multiplayer/groups.rst:39
+#: ../../source/multiplayer/groups.rst:40
 msgid ""
 "Player objects have methods ``get_others_in_group()`` and "
 "``get_others_in_subsession()`` that return a list of the *other* players "
@@ -314,49 +314,49 @@ msgstr ""
 "玩家对象有 ``get_others_in_group()`` 与 ``get_others_in_subsession()`` "
 "方法，分别返回同一小组与子会话中的 *其他* 玩家的列表。"
 
-#: ../../source/multiplayer/groups.rst:46
+#: ../../source/multiplayer/groups.rst:47
 msgid "Roles"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:48
+#: ../../source/multiplayer/groups.rst:49
 msgid ""
 "If each group has multiple roles, such as buyer/seller, principal/agent, "
 "etc., you can define them in Constants. Make their names end with "
 "``_role``:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:59
+#: ../../source/multiplayer/groups.rst:60
 msgid ""
 "oTree will then automatically assign each ``role`` to a different player "
 "(sequentially according to ``id_in_group``). You can use this to show "
 "each role different content, e.g.:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:71
+#: ../../source/multiplayer/groups.rst:72
 msgid "In a template:"
 msgstr "然后在模板中："
 
-#: ../../source/multiplayer/groups.rst:77
+#: ../../source/multiplayer/groups.rst:78
 msgid ""
 "You can also use ``group.get_player_by_role()``, which is similar to "
 "``get_player_by_id()``:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:86
+#: ../../source/multiplayer/groups.rst:87
 msgid ""
 "If you want to switch players' roles, you should rearrange the groups, "
-"using ``subsession.group_randomly()``, ``group.set_players()``, etc."
+"using ``group.set_players()``, ``subsession.group_randomly()``, etc."
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:94
+#: ../../source/multiplayer/groups.rst:95
 msgid "Group matching"
 msgstr "小组配对"
 
-#: ../../source/multiplayer/groups.rst:99
+#: ../../source/multiplayer/groups.rst:100
 msgid "Fixed matching"
 msgstr "固定配对"
 
-#: ../../source/multiplayer/groups.rst:101
+#: ../../source/multiplayer/groups.rst:102
 msgid ""
 "By default, in each round, players are split into groups of "
 "``Constants.players_per_group``. They are grouped sequentially -- for "
@@ -368,71 +368,71 @@ msgstr ""
 "``Constants.players_per_group``.分组是按照顺序进行的——举例来说，如果2人一组，那么玩家1与玩家2就会被分为一组，然后是玩家3与玩家4被分为一组，以此类推。"
 " ``id_in_group`` 也在每组中被顺序分配。"
 
-#: ../../source/multiplayer/groups.rst:106
+#: ../../source/multiplayer/groups.rst:107
 msgid ""
 "This means that by default, the groups are the same in each round, and "
 "even between apps that have the same ``players_per_group``."
 msgstr "这意味着默认情况下，每一轮中分组是相同的，甚至在不同应用之间均有相同的 ``players_per_group``."
 
-#: ../../source/multiplayer/groups.rst:109
+#: ../../source/multiplayer/groups.rst:110
 msgid "If you want to rearrange groups, you can use the below techniques."
 msgstr "如果你想重新安排小组，你可以使用下面的技巧。"
 
-#: ../../source/multiplayer/groups.rst:112
+#: ../../source/multiplayer/groups.rst:113
 msgid "group_randomly()"
 msgstr "group_randomly()"
 
-#: ../../source/multiplayer/groups.rst:114
+#: ../../source/multiplayer/groups.rst:115
 msgid ""
 "Subsessions have a method ``group_randomly()`` that shuffles players "
 "randomly, so they can end up in any group, and any position within the "
 "group."
 msgstr "子会话有一个 ``group_randomly()`` 方法可以随机排列玩家，此时玩家被随机分配在任一小组的任一位置。"
 
-#: ../../source/multiplayer/groups.rst:117
+#: ../../source/multiplayer/groups.rst:118
 msgid ""
 "If you would like to shuffle players between groups but keep players in "
 "fixed roles, use ``group_randomly(fixed_id_in_group=True)``."
 msgstr "如果你想要在不同小组间随机安排玩家但保持玩家的角色不变，使用 ``group_randomly(fixed_id_in_group=True)``."
 
-#: ../../source/multiplayer/groups.rst:120
+#: ../../source/multiplayer/groups.rst:121
 msgid "For example, this will group players randomly each round:"
 msgstr "举例来说，下面的代码会使玩家在每一轮之间随机组队："
 
-#: ../../source/multiplayer/groups.rst:127
+#: ../../source/multiplayer/groups.rst:128
 msgid ""
 "This will group players randomly each round, but keep ``id_in_group`` "
 "fixed:"
 msgstr "下面的代码让玩家在每一轮之间随机组队，但是保持 ``id_in_group`` 不变："
 
-#: ../../source/multiplayer/groups.rst:134
+#: ../../source/multiplayer/groups.rst:135
 msgid ""
 "For the following example, assume that ``players_per_group = 3``, and "
 "that there are 12 participants in the session:"
 msgstr "下面的例子中，假定 ``players_per_group = 3``, 并且会话中共有12名参与者："
 
-#: ../../source/multiplayer/groups.rst:162
+#: ../../source/multiplayer/groups.rst:163
 msgid "group_like_round()"
 msgstr "group_like_round()"
 
-#: ../../source/multiplayer/groups.rst:164
+#: ../../source/multiplayer/groups.rst:165
 msgid ""
 "To copy the group structure from one round to another round, use the "
 "``group_like_round(n)`` method. The argument to this method is the round "
 "number whose group structure should be copied."
 msgstr "在不同轮之间复制小组的结构，可使用 ``group_like_round(n)`` 方法。方法中的参数即小组结构被复制的那一轮的轮次。"
 
-#: ../../source/multiplayer/groups.rst:169
+#: ../../source/multiplayer/groups.rst:170
 msgid ""
 "In the below example, the groups are shuffled in round 1, and then "
 "subsequent rounds copy round 1's grouping structure."
 msgstr "在下面的例子中，第一轮将随机组队，后面的轮次均复制第一轮的小组结构。"
 
-#: ../../source/multiplayer/groups.rst:182
+#: ../../source/multiplayer/groups.rst:183
 msgid "get_group_matrix()"
 msgstr "get_group_matrix()"
 
-#: ../../source/multiplayer/groups.rst:184
+#: ../../source/multiplayer/groups.rst:185
 msgid ""
 "Subsessions have a method called ``get_group_matrix()`` that return the "
 "structure of groups as a matrix, i.e. a list of lists, with each sublist "
@@ -441,15 +441,15 @@ msgstr ""
 "子会话有一个方法 ``get_group_matrix()`` "
 "，此方法返回小组的结构，以矩阵的形式，也即列表的列表，每一个子列表均为小组中的玩家，按照  ``id_in_group`` 排序。"
 
-#: ../../source/multiplayer/groups.rst:188
+#: ../../source/multiplayer/groups.rst:189
 msgid "The following lines are equivalent."
 msgstr "下面的两行是等价的。"
 
-#: ../../source/multiplayer/groups.rst:200
+#: ../../source/multiplayer/groups.rst:201
 msgid "set_group_matrix()"
 msgstr "set_group_matrix()"
 
-#: ../../source/multiplayer/groups.rst:202
+#: ../../source/multiplayer/groups.rst:203
 msgid ""
 "``set_group_matrix()`` lets you modify the group structure in any way you"
 " want. First, get the list of players with ``get_players()``, or the pre-"
@@ -457,7 +457,7 @@ msgid ""
 "pass it to ``set_group_matrix()``:"
 msgstr ""
 
-#: ../../source/multiplayer/groups.rst:225
+#: ../../source/multiplayer/groups.rst:226
 msgid ""
 "You can also pass a matrix of integers. It must contain all integers from"
 " 1 to the number of players in the subsession. Each integer represents "
@@ -466,7 +466,7 @@ msgstr ""
 "你也可以传递一个整数矩阵。整数矩阵中必须包含从1到子会话中的玩家数量的所有整数。每一个整数代表 ``id_in_subsession`` "
 "为此整数的玩家。举例如下："
 
-#: ../../source/multiplayer/groups.rst:244
+#: ../../source/multiplayer/groups.rst:245
 msgid ""
 "To check if your group shuffling worked correctly, open your browser to "
 "the \"Results\" tab of your session, and look at the ``group`` and "
@@ -476,10 +476,21 @@ msgstr ""
 "``id_in_group`` 两栏是否正确。"
 
 #: ../../source/multiplayer/groups.rst:250
+#, fuzzy
+msgid "group.set_players()"
+msgstr "get_players()"
+
+#: ../../source/multiplayer/groups.rst:252
+msgid ""
+"This is similar to ``set_group_matrix``, but it only shuffles players "
+"within a group, e.g. so that you can give them different roles."
+msgstr ""
+
+#: ../../source/multiplayer/groups.rst:256
 msgid "Shuffling during the session"
 msgstr "在会话中重排小组"
 
-#: ../../source/multiplayer/groups.rst:252
+#: ../../source/multiplayer/groups.rst:258
 msgid ""
 "``creating_session`` is usually a good place to shuffle groups, but "
 "remember that ``creating_session`` is run when the session is created, "
@@ -490,13 +501,13 @@ msgstr ""
 "``creating_session`` 通常是重排小组的好地方，但是 ``creating_session`` "
 "是在会话创建前运行，即玩家开始行动之前。所以如果你的重排逻辑需要依赖于会话开始后的因素，你应当在等待页面重排。"
 
-#: ../../source/multiplayer/groups.rst:258
+#: ../../source/multiplayer/groups.rst:264
 msgid ""
 "Let's say you have defined a method on the subsession called "
 "``do_my_shuffle()`` that uses ``set_group_matrix``, etc."
 msgstr "假定你在子会话中定义了一个方法，名为 ``do_my_shuffle()`` ，它使用了 ``set_group_matrix`` ，诸如此类。"
 
-#: ../../source/multiplayer/groups.rst:261
+#: ../../source/multiplayer/groups.rst:267
 msgid ""
 "You need to make a ``WaitPage`` with ``wait_for_all_groups=True`` and put"
 " the shuffling code in ``after_all_players_arrive``:"
@@ -504,11 +515,11 @@ msgstr ""
 "你需要创建一个 ``WaitPage`` 且在其中设定 ``wait_for_all_groups=True`` 并将重排的代码放入 "
 "``after_all_players_arrive`` 中:"
 
-#: ../../source/multiplayer/groups.rst:272
+#: ../../source/multiplayer/groups.rst:278
 msgid "Group by arrival time"
 msgstr "按照到达时间组队"
 
-#: ../../source/multiplayer/groups.rst:274
+#: ../../source/multiplayer/groups.rst:280
 msgid "See :ref:`group_by_arrival_time`."
 msgstr "参考 :ref:`group_by_arrival_time`."
 
@@ -865,4 +876,3 @@ msgstr "你可以定制出现在等待页面上的文本，通过设定 ``title_
 #: ../../source/multiplayer/waitpages.rst:268
 msgid "See also: :ref:`customize_wait_page`."
 msgstr "也可参考: :ref:`customize_wait_page`."
-
