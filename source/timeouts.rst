@@ -69,7 +69,9 @@ Or, using a custom session config parameter (see :ref:`session_config_treatments
 .. code-block:: python
 
     def get_timeout_seconds(player):
-        return player.session.config['my_page_timeout_seconds']
+        session = player.session
+
+        return session.config['my_page_timeout_seconds']
 
 
 Advanced techniques
@@ -132,8 +134,9 @@ until that expiration time:
 
         @staticmethod
         def get_timeout_seconds(player):
+            participant = player.participant
             import time
-            return player.participant.vars['expiry'] - time.time()
+            return participant.vars['expiry'] - time.time()
 
 When time runs out, ``get_timeout_seconds`` will return 0 or a negative value,
 which will result in the page loading and being auto-submitted right away.
@@ -145,8 +148,9 @@ for the participant to realistically read the whole page.
 .. code-block:: python
 
     def get_timeout_seconds(player):
+        participant = player.participant
         import time
-        return player.participant.vars['expiry'] - time.time()
+        return participant.vars['expiry'] - time.time()
 
     class Page1(Page):
         get_timeout_seconds = get_timeout_seconds
@@ -168,8 +172,7 @@ by setting ``timer_text``:
 
         @staticmethod
         def get_timeout_seconds(player):
-            import time
-            return player.participant.vars['expiry'] - time.time()
+            ...
 
 
 Customizing the timer

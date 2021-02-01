@@ -203,37 +203,15 @@ First, then install oTree Lite::
 
     pip3 install -U "otree>=5a"
 
-First, save a copy of your original code. Run::
+Run::
 
     otree remove_self
 
-Then check the output (__init__.py and tests_noself.py), then run ``otree remove_self_finalize``.
-That will delete the old files and move your templates into the main folder.
 
-Note this command pretty aggressively converts all your model methods to functions. For example, if you have this:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-      def xyz(self):
-        return 'whatever'
-
-``otree remove_self`` will convert it to a function like:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-      pass
-
-    def xyz(player):
-      return 'whatever'
-
-If ``xyz`` is a built-in oTree method, then this is OK.
-But if it's a method you are calling yourself like ``player.xyz()``,
-then this might break your code. You would need to change ``player.xyz()`` to ``xyz(player)``.
-
-If you are doing {{ player.xyz() }} in a template, you need to instead calculate ``xyz(player)`` in ``vars_for_template``
-and pass it to your template as a separate variable.
+Note this command pretty aggressively converts all your model methods to functions,
+e.g. changing ``player.foo()`` to ``foo(player)``.
+If you have a lot of custom methods,
+you should check that your method calls still work.
 
 
 Misc notes
