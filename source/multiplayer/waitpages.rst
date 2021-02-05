@@ -48,6 +48,8 @@ Then trigger this method by doing:
 If you set ``wait_for_all_groups = True``,
 then you should set ``after_all_players_arrive`` to the name of to a method on your *Subsession* model.
 
+``after_all_players_arrive`` can also be defined directly in the WaitPge as a ``@staticmethod``.
+
 is_displayed()
 --------------
 

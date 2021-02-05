@@ -23,45 +23,13 @@ set ``template_name``. Example:
 CSS/JS and base templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To include the same JS/CSS in all pages of an app,
-make a base template for the app.
-
-For example, if your app's name is ``public_goods``,
-create ``public_goods/templates/public_goods/Page.html``:
-
-.. code-block:: html
-
-    {% extends "global/Page.html" %}
-
-    {% block app_styles %}
-        <style>
-            ...
-        </style>
-    {% endblock %}
-
-    {% block app_scripts %}
-        <script>
-            ...
-        </script>
-    {% endblock %}
-
-Then make each template inherit from this template:
-
- .. code-block:: html
-
-    {% extends "public_goods/Page.html" %}
-
-    ...
-
-To include the same JS/CSS in *all apps* of a project,
-modify ``_templates/global/Page.html``.
-In that file, you will find the blocks ``global_scripts`` and ``global_styles``.
+To include the same JS/CSS in all pages of an app, either put it in a ref:`static file <staticfiles>`
+or put it in an includable template.
 
 .. _staticfiles:
 
 Static files
 ------------
-
 
 Here is how to include images (or any other static file like .css, .js, etc.) in your pages.
 
@@ -152,20 +120,6 @@ If you want to apply your custom wait page template globally,
 save it to ``_templates/global/WaitPage.html``.
 oTree will then automatically use it everywhere instead of the built-in wait page.
 
-CSS and JavaScript in Wait Pages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Wait pages have the same block structure as regular pages
-(``global_scripts``, ``app_scripts``, ``scripts``, etc...),
-so you can follow the same instructions described in :ref:`base-template`
-and :ref:`selectors`.
-
-For example, to apply CSS to your custom wait page at ``_templates/global/WaitPage.html``,
-put a block ``global_scripts`` in the template.
-
-You can even make other custom wait pages inherit from ``_templates/global/WaitPage.html``,
-just the way regular pages inherit from ``_templates/global/Page.html``,
-and they can define the blocks ``app_scripts`` and ``scripts``, etc.
 
 Currency
 --------

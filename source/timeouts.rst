@@ -224,7 +224,7 @@ For example, to hide the timer until there is only 10 seconds left,
         });
     </script>
 
-(To apply this to all pages, see the instructions in :ref:`base-template`.)
+To avoid copy-pasting this code on every page, put it in an includable template.
 
 Note: even if you turn off the ``finish.countdown`` event handler from submitting
 the page, if you are running the timeoutworker, the page will be submitted on the server

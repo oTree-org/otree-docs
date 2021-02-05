@@ -195,6 +195,8 @@ Then in the template:
     <img src="{% static image_path %}"/>
 
 
+.. _includable:
+
 Includable templates
 --------------------
 

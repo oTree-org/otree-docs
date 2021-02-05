@@ -1,3 +1,5 @@
+.. _noself:
+
 The new no-self format
 ======================
 
@@ -82,7 +84,9 @@ So, what has changed?
 #.  As you see, set_payoffs has changed from a group method to a regular function that takes "group" as its argument. This should be clearer to most people.
 #.  is_displayed and vars_for_template are no longer page methods that take an argument 'self', but direct functions of the player. Now you can directly write 'player' without needing 'self.' in front of it. (If you are using a text editor like PyCharm, you should add @staticmethod before vars_for_template and is_displayed to indicate that they are not regular methods.)
 #.  There is no longer any distinction between page methods and model methods. The is_displayed and vars_for_template can freely be moved up into the "FUNCTIONS" section, and reused between pages, or put inside a page class if they only pertain to that class.
-#.  The app folder is simplified from this::
+#.  The app folder is simplified from this:
+
+.. code-block::
 
     dictator/
         _builtin/

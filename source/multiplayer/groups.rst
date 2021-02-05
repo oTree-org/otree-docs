@@ -46,6 +46,10 @@ in the group and subsession.
 Roles
 -----
 
+.. note::
+
+    New as of January 2021
+
 If each group has multiple roles, such as buyer/seller, principal/agent, etc.,
 you can define them in Constants. Make their names end with ``_role``:
 

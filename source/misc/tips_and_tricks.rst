@@ -109,20 +109,6 @@ by defining a method that returns a field:
         q4 = make_field('I have excellent ideas.')
 
 
-
-Templates: prevent code duplication by using a base template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you are copy-pasting the same JavaScript or CSS to multiple templates,
-you should instead put it in one of the following blocks in a base template:
-
--   ``{% block global_styles %}``
--   ``{% block global_scripts %}``
--   ``{% block app_styles %}``
--   ``{% block app_scripts %}``
-
-Read more in :ref:`base-template`.
-
 Prevent duplicate pages by using multiple rounds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
