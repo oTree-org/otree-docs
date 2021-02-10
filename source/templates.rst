@@ -383,7 +383,7 @@ If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
 
 Miscellaneous
-=============
+-------------
 
 You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For example::
 ``{{ 0.1234|to2}}`` outputs 0.12.

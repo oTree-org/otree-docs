@@ -256,3 +256,32 @@ Because if there is a ``yield`` in between, the data can be stale:
 
 It's safer to use ``self.player.money_left`` directly,
 because doing ``self.player`` gets the most recent data from the database.
+
+Live pages
+----------
+
+To test live methods with bots, define ``call_live_method`` as a top-level function in ``tests.py``.
+(Not available in oTree Studio.)
+This function should simulate the sequence of calls to your ``live_method``.
+The argument ``method`` simulates the live method on your Player model.
+For example, ``method(3, 'hello')`` calls the live method on Player 3 with ``data`` set to ``'hello'``.
+For example:
+
+.. code-block:: python
+
+    def call_live_method(method, **kwargs):
+        method(1, {"offer": 50})
+        method(2, {"accepted": False})
+        method(1, {"offer": 60})
+        retval = method(2, {"accepted": True})
+        # you can do asserts on retval
+
+``kwargs`` contains at least the following parameters.
+
+-   ``case`` as described in :ref:`cases`.
+-   ``page_class``: the current page class, e.g. ``pages.MyPage``.
+-   ``round_number``
+
+``call_live_method`` will be automatically executed when the fastest bot in the group
+arrives on a page with ``live_method``.
+(Other bots may be on previous pages at that point, unless you restrict this with a WaitPage.)

@@ -25,14 +25,12 @@ Define a function that will receive this message.
 Its argument is whatever data
 was sent.
 
-(Its name should start with ``live_``.)
-
 .. code-block:: python
 
     class MyPage(Page):
 
         @staticmethod
-        def live_bid(player, data):
+        def live_method(player, data):
             print('received a bid from', player.id_in_group, ':', data)
 
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
@@ -92,13 +90,13 @@ Example: auction
 .. code-block:: python
 
     class Auction(Page):
-        def live_method(player, bid):
+        def live_method(player, data):
             group = player.group
             my_id = player.id_in_group
             if bid > group.highest_bid:
-                group.highest_bid = bid
+                group.highest_bid = data
                 group.highest_bidder = my_id
-                response = dict(id_in_group=my_id, bid=bid)
+                response = dict(id_in_group=my_id, bid=data)
                 return {0: response}
 
 .. code-block:: html
@@ -305,32 +303,3 @@ So, wait for ``DOMContentLoaded`` (or jQuery document.ready, etc):
 
 Don't trigger ``liveSend`` when the user clicks the "next" button, since leaving the page might interrupt
 the ``liveSend``. At least wait to receive a response through ``liveRecv``.
-
-Bots
-----
-
-To test live methods with bots, define ``call_live_method`` as a top-level function in ``tests.py``.
-(Not available in oTree Studio.)
-This function should simulate the sequence of calls to your ``live_method``.
-The argument ``method`` simulates the live method on your Player model.
-For example, ``method(3, 'hello')`` calls the live method on Player 3 with ``data`` set to ``'hello'``.
-For example:
-
-.. code-block:: python
-
-    def call_live_method(method, **kwargs):
-        method(1, {"offer": 50})
-        method(2, {"accepted": False})
-        method(1, {"offer": 60})
-        retval = method(2, {"accepted": True})
-        # you can do asserts on retval
-
-``kwargs`` contains at least the following parameters.
-
--   ``case`` as described in :ref:`cases`.
--   ``page_class``: the current page class, e.g. ``pages.MyPage``.
--   ``round_number``
-
-``call_live_method`` will be automatically executed when the fastest bot in the group
-arrives on a page with ``live_method``.
-(Other bots may be on previous pages at that point, unless you restrict this with a WaitPage.)
