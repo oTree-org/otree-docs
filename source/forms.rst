@@ -240,9 +240,6 @@ If you need the list of form fields to be dynamic, instead of
         else:
             return ['bid_1', 'bid_2']
 
-But if you do this, you have to be sure to also include the same
-``{% formfield %}`` elements in your template. The easiest way is to use
-``{% formfields %}``.
 
 Widgets
 -------

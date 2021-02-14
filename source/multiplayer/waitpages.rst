@@ -127,7 +127,7 @@ which players are assigned together, you can also use ``group_by_arrival_time_me
 Let's say that in addition to grouping by arrival time, you need each group
 to consist of 2 men and 2 women.
 
-If you define a method called ``group_by_arrival_time_method`` on your Subsession,
+If you define a subsession function called ``group_by_arrival_time_method``,
 it will get called whenever a new player reaches the wait page.
 The method's argument is the list of players who are currently waiting at your wait page.
 If you pick some of these players and return them as a list,
@@ -155,7 +155,7 @@ for example to allow the participant to proceed individually if they have been w
 longer than 5 minutes. First, you must record ``time.time()`` on the final page before the app with ``group_by_arrival_time``.
 Store it in ``participant.vars``.
 
-Then define a Player method:
+Then define a Player function:
 
 .. code-block:: python
 
@@ -173,7 +173,7 @@ Now use this:
         if len(waiting_players) >= 3:
             return waiting_players[:3]
         for player in waiting_players:
-            if player.waiting_too_long():
+            if waiting_too_long(player):
                 # make a single-player group.
                 return [player]
 
