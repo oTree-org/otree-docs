@@ -5,9 +5,8 @@ Live pages
 
 Live pages communicate with the server continuously
 and update in real time, enabling continuous time games.
-Live pages are a great fit for games with lots of fast iteration
-and interaction between users.
-However, they require JavaScript programming.
+Live pages are a great fit for games with lots of back-and-forth interaction
+between users, and for single-player games with quick iteration.
 
 Sending data to the server
 --------------------------
@@ -27,11 +26,12 @@ was sent.
 
 .. code-block:: python
 
-    class MyPage(Page):
+    def live_bid(player, data):
+        print('received a bid from', player.id_in_group, ':', data)
 
-        @staticmethod
-        def live_method(player, data):
-            print('received a bid from', player.id_in_group, ':', data)
+    class MyPage(Page):
+        live_method = 'live_bid'
+
 
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
 
@@ -89,15 +89,14 @@ Example: auction
 
 .. code-block:: python
 
-    class Auction(Page):
-        def live_method(player, data):
-            group = player.group
-            my_id = player.id_in_group
-            if bid > group.highest_bid:
-                group.highest_bid = data
-                group.highest_bidder = my_id
-                response = dict(id_in_group=my_id, bid=data)
-                return {0: response}
+    def live_method(player, data):
+        group = player.group
+        my_id = player.id_in_group
+        if bid > group.highest_bid:
+            group.highest_bid = data
+            group.highest_bidder = my_id
+            response = dict(id_in_group=my_id, bid=data)
+            return {0: response}
 
 .. code-block:: html
 
@@ -195,17 +194,16 @@ When the task is completed, you send a message:
         num_messages = models.IntegerField()
         game_finished = models.BooleanField()
 
+    def live_method(player, data):
+        group = player.group
+        group.num_messages += 1
+        if group.num_messages >= 10:
+            group.game_finished = True
+            response = dict(type='game_finished')
+            return {0: response}
 
     class MyPage(Page):
-
-        @staticmethod
-        def live_method(player, data):
-            group = player.group
-            group.num_messages += 1
-            if group.num_messages >= 10:
-                group.game_finished = True
-                response = dict(type='game_finished')
-                return {0: response}
+        live_method = 'live_method'
 
 Then in the template, automatically submit the page via JavaScript:
 
@@ -224,10 +222,11 @@ For security, you should use :ref:`error_message <error_message>`:
 
 .. code-block:: python
 
+    def live_method(player, data):
+        ...
+
     class MyPage(Page):
-        @staticmethod
-        def live_method(player, data):
-            ...
+        live_method = 'live_method'
 
         @staticmethod
         def error_message(player, values):

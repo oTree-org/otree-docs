@@ -251,7 +251,7 @@ define a string constant ``name_in_url`` with your desired name.
 
 Constants can be numbers, strings, booleans, lists, etc.
 But for more complex data types like dicts, lists of dicts, etc,
-you should instead define it in a subsession function. For example,
+you should instead define it in a function. For example,
 instead of defining a Constant called ``my_dict``, do this:
 
 .. code-block:: python
