@@ -26,11 +26,11 @@ was sent.
 
 .. code-block:: python
 
-    def live_bid(player, data):
+    def live_method(player, data):
         print('received a bid from', player.id_in_group, ':', data)
 
     class MyPage(Page):
-        live_method = 'live_bid'
+        live_method = live_method
 
 
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
@@ -288,6 +288,90 @@ To trigger validation when the user submits the bid, use this
 any errors in their form fields. It also returns a boolean
 that tells if the form is currently valid. You can use that to skip the ``liveSend``.
 
+General advice about live pages
+-------------------------------
+
+Here is some general advice (does not apply to all situations).
+We recommend implementing most of your logic in Python,
+and just using JavaScript to update the page's HTML, because:
+
+-   The JavaScript language can be quite tricky to use properly
+-   Your Python code runs on the server, which is centralized and reliable.
+    JavaScript runs on the clients, which can get out of sync with each other,
+    and data can get lost when the page is closed or reloaded.
+-   Because Python code runs on the server, it is more secure and cannot be viewed or modified
+    by participants.
+
+Example
+~~~~~~~
+
+Let's say you are implementing a game of tic-tac-toe.
+There are 2 types of messages your live_method can receive:
+
+1.   A user marks a square, so you need to notify the other player
+2.   A user loads (or reloads) the page, so you need to send them the current board layout.
+
+For situation 1, you should use a JavaScript event handler like ``onclick``, e.g. so when the user clicks on square 3,
+that move gets sent to the server:
+
+.. code-block:: javascript
+
+        liveSend({square: 3});
+
+For situation 2, it's good to put some code like this in your template, which sends an empty message
+to the server when the page loads:
+
+.. code-block:: javascript
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        liveSend({});
+    });
+
+The server handles these 2 situations with an "if" statement:
+
+.. code-block:: python
+
+    def live_method(player, data):
+        group = player.group
+
+        if 'square' in data:
+            # SITUATION 1
+            square = data['square']
+            # save_move should save the move into a group field.
+            # for example, if player 1 modifies square 3,
+            # that changes group.board from 'X O XX  O' to 'X OOXX  O'
+            save_move(group, square, player.id_in_group)
+            # so that we can highlight the square (and maybe say who made the move)
+            feedback = {'square': square, 'id_in_group': player.id_in_group}
+        else:
+            # SITUATION 2
+            feedback = {}
+        # get_state should contain the current state of the game, for example:
+        # {'board': 'X O XX  O', 'whose_turn': 2}
+        payload = get_state(group)
+        payload.update(feedback)
+        return {0: payload}
+
+In situation 2 (the player loads the page), the client gets a message like:
+
+.. code-block:: javascript
+
+    {'board': 'X OOXX  O', 'whose_turn': 2}
+
+In situation 1, the player gets the update about the move that was just made, AND the current state.
+
+.. code-block:: javascript
+
+    {'board': 'X OOXX  O', 'whose_turn': 2, 'square': square, 'id_in_group': player.id_in_group}
+
+The JavaScript code can be "dumb".
+It doesn't need to keep track of whose move it is; it just trusts the info it receives from the server.
+It can even redraw the board each time it receives a message.
+
+Your code will also need to validate user input. For example, if player 1 tries to move when it is actually player 2's
+turn, you need to block that. For reasons listed in the previous section, it's better to do this in your live_method than
+in JavaScript code.
+
 Troubleshooting
 ---------------
 If you call ``liveSend`` before the page has finished loading,
@@ -301,4 +385,5 @@ So, wait for ``DOMContentLoaded`` (or jQuery document.ready, etc):
     });
 
 Don't trigger ``liveSend`` when the user clicks the "next" button, since leaving the page might interrupt
-the ``liveSend``. At least wait to receive a response through ``liveRecv``.
+the ``liveSend``. Instead, have the user click a regular button that triggers a ``liveSend``, and
+then doing ``document.getElementById("form").submit();`` in your ``liveRecv``.
