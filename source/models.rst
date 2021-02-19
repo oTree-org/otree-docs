@@ -68,16 +68,8 @@ and ``id_in_group``, as well as methods like
 
 These built-in fields and methods are listed below.
 
-
 Subsession
 ----------
-
-session
-~~~~~~~
-
-The session this subsession belongs to.
-See :ref:`object_model`.
-
 
 round_number
 ~~~~~~~~~~~~
@@ -86,40 +78,6 @@ Gives the current round number.
 Only relevant if the app has multiple rounds
 (set in ``Constants.num_rounds``).
 See :ref:`rounds`.
-
-.. _creating_session:
-
-creating_session()
-~~~~~~~~~~~~~~~~~~
-
-``creating_session`` allows you to set initial values on fields on
-players, groups, participants, or the subsession.
-For example:
-
-.. code-block:: python
-
-    def creating_session(subsession):
-        for player in subsession.get_players():
-            player.payoff = c(10)
-
-More info on the section on :ref:`treatments <treatments>` and
-:ref:`group shuffling <shuffling>`.
-
-``creating_session`` is **not** run at the beginning of each round.
-It is run when you click the "create session" button, i.e. before anybody starts playing.
-If your app has multiple rounds, ``creating_session`` gets run multiple
-times consecutively:
-
-.. code-block:: python
-
-    def creating_session(subsession):
-        print('in creating_session', subsession.round_number)
-
-Will output all at once::
-
-    in creating_session 1
-    in creating_session 2
-    in creating_session 3
 
 
 get_groups()
@@ -144,16 +102,13 @@ Other subsession methods
 -   :ref:`in_rounds(first, last) <in_rounds>`
 -   :ref:`in_round(round_number) <in_rounds>`
 
-
 Group
 -----
 
-session/subsession
-~~~~~~~~~~~~~~~~~~
+round_number
+~~~~~~~~~~~~
 
-The session/subsession this group belongs to.
-See :ref:`object_model`.
-
+Gives the current round number.
 
 Other group methods
 ~~~~~~~~~~~~~~~~~~~
@@ -180,11 +135,10 @@ payoff
 ~~~~~~
 The player's payoff in this round. See :ref:`payoff`.
 
-session/subsession/group/participant
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+round_number
+~~~~~~~~~~~~
 
-The session/subsession/group/participant this player belongs to.
-See :ref:`object_model`.
+Gives the current round number.
 
 Other player methods
 ~~~~~~~~~~~~~~~~~~~~
@@ -232,6 +186,25 @@ Other participant attributes and methods
 -   :ref:`payoff_plus_participation_fee <payoff>`
 
 .. _constants:
+
+.. _creating_session:
+
+creating_session()
+------------------
+
+``creating_session`` allows you to set initial values on your models.
+For example:
+
+.. code-block:: python
+
+    def creating_session(subsession):
+        import random
+
+        for player in subsession.get_players():
+            player.endowment = random.randint(100, 199)
+
+``creating_session`` is run immediately when you click the "create session" button,
+even if the app is not first in the ``app_sequence``.
 
 Constants
 ---------

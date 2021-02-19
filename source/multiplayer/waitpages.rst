@@ -36,7 +36,7 @@ For example:
 
     def set_payoffs(group):
         for p in group.get_players():
-            p.payoff = c(100)
+            p.payoff = cu(100)
 
 Then trigger this method by doing:
 
@@ -149,6 +149,8 @@ It assumes that in a previous app, you assigned ``self.participant.vars['categor
             return [m_players[0], m_players[1], f_players[0], f_players[1]]
         print('not enough players yet to create a group')
 
+Timeouts on wait pages
+~~~~~~~~~~~~~~~~~~~~~~
 
 You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page,
 for example to allow the participant to proceed individually if they have been waiting
@@ -245,7 +247,7 @@ like this:
             participant = player.participant
 
             if player.timeout_happened:
-                player.contribution = c(100)
+                player.contribution = cu(100)
                 participant.vars['is_dropout'] = True
 
 Notes:

@@ -248,11 +248,11 @@ Because if there is a ``yield`` in between, the data can be stale:
     from otree.api import expect
 
     player = self.player
-    expect(player.money_left, c(10))
-    yield pages.Contribute, dict(contribution=c(1))
+    expect(player.money_left, cu(10))
+    yield pages.Contribute, dict(contribution=cu(1))
     # don't do this!
     # "player" variable still has the data from BEFORE pages.Contribute was submitted.
-    expect(player.money_left, c(9))
+    expect(player.money_left, cu(9))
 
 It's safer to use ``self.player.money_left`` directly,
 because doing ``self.player`` gets the most recent data from the database.

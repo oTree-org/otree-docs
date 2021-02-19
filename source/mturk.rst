@@ -19,7 +19,7 @@ Installation
 
 .. code-block::
 
-    pip3 install -U otree[mturk]
+    pip3 install -U "otree[mturk]"
 
 MTurk template
 --------------

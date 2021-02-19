@@ -9,9 +9,9 @@ you can switch from points to real money by setting ``USE_POINTS = False``
 in ``settings.py``.
 
 In your Python code, you can indicate a currency amount
-with ``c()``, e.g. ``c(10)`` or ``c(0)``.
+with ``cu()``, e.g. ``cu(10)`` or ``cu(0)``.
 It will still work just like a number
-(e.g. ``c(1) + c(0.2) == c(1.2)``).
+(e.g. ``cu(1) + cu(0.2) == cu(1.2)``).
 The advantage is that when it's displayed to users, it will automatically
 be formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
@@ -28,13 +28,14 @@ To make a list of currency amounts, use ``currency_range``:
 
 .. code-block:: python
 
-    currency_range(c(0), c(0.10), c(0.02))
+    currency_range(cu(0), cu(0.10), cu(0.02))
     # this gives:
     # [$0.00, $0.02, $0.04, $0.06, $0.08, $0.10]
 
-In templates, instead of using the ``c()`` function, you should use the
-``|c`` filter.
-For example, ``{{ 20|c }}`` displays as ``20 points``.
+In templates, instead of using the ``cu()`` function, you should use the
+``|cu`` filter.
+For example, ``{{ 20|cu }}`` displays as ``20 points``.
+(You can also use ``|c``, which was the standard in oTree 3.)
 
 .. _payoff:
 
@@ -59,7 +60,7 @@ Points (i.e. "experimental currency")
 -------------------------------------
 
 If you set ``USE_POINTS = True``, then currency amounts will be points instead of dollars/euros/etc.
-For example, ``c(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
+For example, ``cu(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
 
 You can decide the conversion rate to real money
 by adding a ``real_world_currency_per_point`` entry to your session config.
@@ -72,7 +73,7 @@ You can convert a points amount to money using the method
 
 .. code-block:: python
 
-    c(10).to_real_world_currency(player.session)
+    cu(10).to_real_world_currency(player.session)
 
 (The ``session`` is necessary because
 different sessions can have different conversion rates).

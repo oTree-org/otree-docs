@@ -161,22 +161,10 @@ Misc
     it will not work; see below.
 -   If you try to access a Player/Group/Subsession field whose value is still ``None``,
     oTree will raise an error.
+-   Translating an app to multiple languages works differently. See :ref:`i18n`.
 
-Django (for advanced use cases)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Django
+~~~~~~
 
 This new implementation does not use Django or Channels in any way.
 So, it will not run any code you got from Django documentation, such as Django views, ModelForms, ORM, etc.
-Here is a quick guide to how each component has been replaced.
-
--   **Django views** are replaced with `Starlette endpoints <https://www.starlette.io/endpoints/>`__,
-    which are similar in that they are classes with a `get()` and `post()` method that returns a Response object.
-    You can implement them as regular sync or async.
-    However, the details are different, e.g. ``self.request`` is different from a Django request object.
--   **Channels consumers** are also replaced with Starlette endpoints. They are pretty similar, except there is no notion of
-    groups or a Channel layer (you would need to implement one yourself; you can see how oTree does it in ``otree.channels.utils``).
--   **Django URLs** have been replaced with `Starlette routes <https://www.starlette.io/routing/>`__.
--   **Django ORM / QuerySet** is replaced by SQLAlchemy. SQLAlchemy has a very different syntax and a steeper learning curve
-    (and also the documentation is not as friendly). However, it is a better fit for oTree since it is based on the
-    "identity map"/"unit of work" model.
--   **Translating** an app to multiple languages works differently. See :ref:`i18n`.

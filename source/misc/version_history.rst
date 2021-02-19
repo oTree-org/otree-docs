@@ -1,5 +1,15 @@
 Version history
 ```````````````
+Version 5.0
+===========
+
+-   oTree Lite
+-   The no-self format
+-   The beta method ``Player.start()`` has been removed.
+-   ``cu()`` is now available as an alias for ``Currency``.
+    (Unlike ``cu()``, which is defined by ``from otree.api import Currency as c``,
+    ``cu`` is actually part of oTree's API,
+    meaning that ``from otree.api import *`` will import ``cu``.)
 
 Version 3.3
 ===========
@@ -42,39 +52,6 @@ Custom data export
 ------------------
 
 See :ref:`custom-export`.
-
-
-Player.start()
---------------
-
-.. note::
-
-    Although version 3.0 has been released,
-    this feature is still in beta.
-
-If you define a method called ``start`` on your Player model,
-you can specify actions to be taken when the player starts the round.
-For example:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-        endowment = models.CurrencyField()
-
-        def start(self):
-            self.endowment = self.participant.vars['endowment']
-
-Here you can setup/initialize the player by passing data from previous rounds or apps.
-The differences between ``Player.start`` and ``Subsession.creating_session`` are:
-
--   ``start`` is run when the player reaches the first page of the round,
-    whereas ``creating_session`` is run before the whole session even starts
--   ``start`` is run individually for each player,
-    whereas ``creating_session`` is run once for the whole subsession (since it's a Subsession method).
-
-``start()`` is skipped if the round is being skipped with ``app_after_this_page``.
-Otherwise, it is always run, even if the player skips all the pages in that round.
-
 
 Other things
 ------------

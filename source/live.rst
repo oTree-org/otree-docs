@@ -26,11 +26,11 @@ was sent.
 
 .. code-block:: python
 
-    def live_method(player, data):
-        print('received a bid from', player.id_in_group, ':', data)
 
     class MyPage(Page):
-        live_method = live_method
+        @staticmethod
+        def live_method(player, data):
+            print('received a bid from', player.id_in_group, ':', data)
 
 
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
@@ -107,21 +107,20 @@ Example: auction
     </tr>
     </table>
     <input id="inputbox" type="number">
-    <button type="button" id="sendbutton">Send</button>
+    <button type="button" onclick="sendValue()">Send</button>
 
     <script>
 
       let history = document.getElementById('history');
       let inputbox = document.getElementById('inputbox');
-      let sendbutton = document.getElementById('sendbutton');
 
       function liveRecv(data) {
           history.innerHTML += '<tr><td>' + data.id_in_group + '</td><td>' + data.bid + '</td></tr>';
       }
 
-      sendbutton.onclick = function () {
-          liveSend(parseInt(inputbox.value));
-      };
+      function sendValue() {
+        liveSend(parseInt(inputbox.value));
+      }
 
     </script>
 
@@ -194,16 +193,15 @@ When the task is completed, you send a message:
         num_messages = models.IntegerField()
         game_finished = models.BooleanField()
 
-    def live_method(player, data):
-        group = player.group
-        group.num_messages += 1
-        if group.num_messages >= 10:
-            group.game_finished = True
-            response = dict(type='game_finished')
-            return {0: response}
 
     class MyPage(Page):
-        live_method = 'live_method'
+        def live_method(player, data):
+            group = player.group
+            group.num_messages += 1
+            if group.num_messages >= 10:
+                group.game_finished = True
+                response = dict(type='game_finished')
+                return {0: response}
 
 Then in the template, automatically submit the page via JavaScript:
 
@@ -222,11 +220,10 @@ For security, you should use :ref:`error_message <error_message>`:
 
 .. code-block:: python
 
-    def live_method(player, data):
-        ...
 
     class MyPage(Page):
-        live_method = 'live_method'
+        def live_method(player, data):
+            ...
 
         @staticmethod
         def error_message(player, values):
@@ -302,8 +299,8 @@ and just using JavaScript to update the page's HTML, because:
 -   Because Python code runs on the server, it is more secure and cannot be viewed or modified
     by participants.
 
-Example
-~~~~~~~
+Example: tic-tac-toe
+~~~~~~~~~~~~~~~~~~~~
 
 Let's say you are implementing a game of tic-tac-toe.
 There are 2 types of messages your live_method can receive:
@@ -337,6 +334,7 @@ The server handles these 2 situations with an "if" statement:
         if 'square' in data:
             # SITUATION 1
             square = data['square']
+
             # save_move should save the move into a group field.
             # for example, if player 1 modifies square 3,
             # that changes group.board from 'X O XX  O' to 'X OOXX  O'
@@ -349,6 +347,7 @@ The server handles these 2 situations with an "if" statement:
         # get_state should contain the current state of the game, for example:
         # {'board': 'X O XX  O', 'whose_turn': 2}
         payload = get_state(group)
+        # .update just combines 2 dicts
         payload.update(feedback)
         return {0: payload}
 
@@ -371,6 +370,22 @@ It can even redraw the board each time it receives a message.
 Your code will also need to validate user input. For example, if player 1 tries to move when it is actually player 2's
 turn, you need to block that. For reasons listed in the previous section, it's better to do this in your live_method than
 in JavaScript code.
+
+Summary
+~~~~~~~
+
+As illustrated above, the typical pattern for a live_method is like this::
+
+    if the user made an action:
+        if (action is illegal/invalid):
+            return
+        update = (produce the update to send back to the user, or onward to other users)
+    else:
+        update = (nothing)
+    state = (get the current state of the game)
+    payload = (state combined with update)
+    return payload
+
 
 Troubleshooting
 ---------------
