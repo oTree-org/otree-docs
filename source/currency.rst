@@ -6,14 +6,13 @@ Currency
 In many experiments, participants play for currency:
 either real money, or points. oTree supports both;
 you can switch from points to real money by setting ``USE_POINTS = False``
-in ``settings.py``.
+in your settings.
 
-In your Python code, you can indicate a currency amount
-with ``cu()``, e.g. ``cu(10)`` or ``cu(0)``.
-It will still work just like a number
-(e.g. ``cu(1) + cu(0.2) == cu(1.2)``).
+You can write ``cu(42)`` to represent "42 currency units".
+It works just like a number
+(e.g. ``cu(0.1) + cu(0.2) == cu(0.3)``).
 The advantage is that when it's displayed to users, it will automatically
-be formatted as ``$1.20`` or ``1,20 €``, etc., depending on your
+be formatted as ``$0.30`` or ``0,30 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
 
 Use ``CurrencyField`` to store currencies in the database.
@@ -35,7 +34,13 @@ To make a list of currency amounts, use ``currency_range``:
 In templates, instead of using the ``cu()`` function, you should use the
 ``|cu`` filter.
 For example, ``{{ 20|cu }}`` displays as ``20 points``.
-(You can also use ``|c``, which was the standard in oTree 3.)
+
+.. note::
+
+    In the past, oTree used ``c`` for currency.
+    This worked because each file had
+    ``from otree.api import Currency as c`` at the top.
+    If you want the previous behavior, just put that line at the top.
 
 .. _payoff:
 

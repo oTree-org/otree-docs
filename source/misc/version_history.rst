@@ -7,9 +7,13 @@ Version 5.0
 -   The no-self format
 -   The beta method ``Player.start()`` has been removed.
 -   ``cu()`` is now available as an alias for ``Currency``.
-    (Unlike ``cu()``, which is defined by ``from otree.api import Currency as c``,
+    Unlike ``c()``, which is defined by ``from otree.api import Currency as c``,
     ``cu`` is actually part of oTree's API,
-    meaning that ``from otree.api import *`` will import ``cu``.)
+    meaning that ``from otree.api import *`` will import ``cu``.
+    (Why did I make an insignificant change like renaming ``c()`` to ``cu()``?
+    It's because I am finally adding the abbreviated alias to oTree's API,
+    and it is not a good practice to have a 1-letter variable name in a public API.)
+
 
 Version 3.3
 ===========
