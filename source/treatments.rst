@@ -1,20 +1,16 @@
 .. _treatments:
+.. _creating_session:
 
 Treatments
 ==========
 
 To assign participants to different treatment groups, you
-can use :ref:`creating_session <creating_session>`.
-For example, you can create a ``color`` field on the ``Player`` model:
+can use ``creating_session``. For example:
 
 .. code-block:: python
 
     class Player(BasePlayer):
         color = models.StringField()
-
-And then randomly assign players to the "blue" or "red" treatment group:
-
-.. code-block:: python
 
     def creating_session(subsession):
         # randomize to treatments
@@ -24,6 +20,9 @@ And then randomly assign players to the "blue" or "red" treatment group:
 
 You can also assign treatments at the group level (put the ``StringField``
 in ``Group`` and change the above code to use ``get_groups()`` and ``group.color``).
+
+``creating_session`` is run immediately when you click the "create session" button,
+even if the app is not first in the ``app_sequence``.
 
 Treatment groups & multiple rounds
 ----------------------------------
@@ -35,12 +34,13 @@ To prevent this, set it on the participant, rather than the player:
 .. code-block:: python
 
     def creating_session(subsession):
-        if self.round_number == 1:
+        if subsession.round_number == 1:
             for player in subsession.get_players():
-                player.participant.vars['color'] = random.choice(['blue', 'red'])
+                participant = player.participant
+                participant.vars['color'] = random.choice(['blue', 'red'])
 
 Then elsewhere in your code, you can access the participant's color with
-``self.participant.vars['color']``.
+``participant.vars['color']``.
 
 For more on vars, see :ref:`vars`.
 
@@ -92,7 +92,7 @@ except for ``color`` (in oTree Studio, add a "custom parameter"):
 Then in your code you can get the current session's color with ``session.config['color'].``
 
 You can even combine this with the randomization approach. You can check
-``if 'color' in subsession.session.config:``; if yes, then use that color; if no,
+``if 'color' in session.config:``; if yes, then use that color; if no,
 then choose it randomly.
 
 .. _edit_config:

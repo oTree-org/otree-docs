@@ -135,7 +135,7 @@ those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
 
 Here's an example where each group has 2 men and 2 women.
-It assumes that in a previous app, you assigned ``self.participant.vars['category']`` to each participant.
+It assumes that in a previous app, you assigned ``participant.vars['category']`` to each participant.
 
 .. code-block:: python
 

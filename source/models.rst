@@ -187,25 +187,6 @@ Other participant attributes and methods
 
 .. _constants:
 
-.. _creating_session:
-
-creating_session()
-------------------
-
-``creating_session`` allows you to set initial values on your models.
-For example:
-
-.. code-block:: python
-
-    def creating_session(subsession):
-        import random
-
-        for player in subsession.get_players():
-            player.endowment = random.randint(100, 199)
-
-``creating_session`` is run immediately when you click the "create session" button,
-even if the app is not first in the ``app_sequence``.
-
 Constants
 ---------
 

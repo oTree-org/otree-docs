@@ -163,7 +163,8 @@ and pass the variables like this:
 
         @staticmethod
         def vars_for_template(player):
-            return vars_for_admin_report(player.subsession)
+            subsession = player.subsession
+            return vars_for_admin_report(subsession)
 
 
 Kiosk Mode

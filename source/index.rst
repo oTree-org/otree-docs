@@ -56,9 +56,9 @@ Contents:
     forms.rst
     multiplayer/intro.rst
     rounds.rst
-    bots.rst
-    timeouts.rst
     treatments.rst
+    timeouts.rst
+    bots.rst
     live.rst
     server/intro.rst
     admin.rst

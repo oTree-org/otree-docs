@@ -15,6 +15,13 @@ The advantage is that when it's displayed to users, it will automatically
 be formatted as ``$0.30`` or ``0,30 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
 
+.. note::
+
+    If you get ``NameError: name 'cu' is not defined``,
+    use ``c()`` instead of ``cu()``.
+    One of the two will work, depending on the version of oTree and how your app imports from
+    ``otree.api``.
+
 Use ``CurrencyField`` to store currencies in the database.
 For example:
 
@@ -34,13 +41,6 @@ To make a list of currency amounts, use ``currency_range``:
 In templates, instead of using the ``cu()`` function, you should use the
 ``|cu`` filter.
 For example, ``{{ 20|cu }}`` displays as ``20 points``.
-
-.. note::
-
-    In the past, oTree used ``c`` for currency.
-    This worked because each file had
-    ``from otree.api import Currency as c`` at the top.
-    If you want the previous behavior, just put that line at the top.
 
 .. _payoff:
 

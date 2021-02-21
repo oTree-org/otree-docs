@@ -79,7 +79,6 @@ Example:
 
 .. code-block:: python
 
-    @staticmethod
     def before_next_page(player, timeout_happened):
         player.tripled_apples = player.num_apples * 3
 

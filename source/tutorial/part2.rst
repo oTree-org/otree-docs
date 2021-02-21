@@ -212,7 +212,7 @@ You just need to insert a line in your code like this:
 
 .. code-block:: python
 
-    print('group.total_contribution is', self.group.total_contribution)
+    print('group.total_contribution is', group.total_contribution)
 
 Put this line in the part of your code that's not working,
 such as the payoff method defined above.

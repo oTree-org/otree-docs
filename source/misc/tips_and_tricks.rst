@@ -24,7 +24,7 @@ If you need slightly different versions (e.g. different treatments),
 then you should use the techniques described in :ref:`treatments`,
 such as making 2 session configs that have a different
 ``'treatment'`` parameter,
-and then checking for ``self.session.config['treatment']`` in your app's code.
+and then checking for ``session.config['treatment']`` in your app's code.
 
 
 .. _many-fields:

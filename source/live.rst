@@ -377,15 +377,19 @@ Summary
 As illustrated above, the typical pattern for a live_method is like this::
 
     if the user made an action:
+        state = (get the current state of the game)
         if (action is illegal/invalid):
             return
-        update = (produce the update to send back to the user, or onward to other users)
+        update the models based on the move.
+        feedback = (produce the feedback to send back to the user, or onward to other users)
     else:
-        update = (nothing)
+        feedback = (nothing)
     state = (get the current state of the game)
-    payload = (state combined with update)
+    payload = (state combined with feedback)
     return payload
 
+Note that we get the game's state twice. That's because the state changes when we update our models,
+so we need to refresh it.
 
 Troubleshooting
 ---------------

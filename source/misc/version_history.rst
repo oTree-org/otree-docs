@@ -10,7 +10,7 @@ Version 5.0
     Unlike ``c()``, which is defined by ``from otree.api import Currency as c``,
     ``cu`` is actually part of oTree's API,
     meaning that ``from otree.api import *`` will import ``cu``.
-    (Why did I make an insignificant change like renaming ``c()`` to ``cu()``?
+    (Why not keep the name ``c()``?
     It's because I am finally adding the abbreviated alias to oTree's API,
     and it is not a good practice to have a 1-letter variable name in a public API.)
 
