@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-02-01 05:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,25 +61,38 @@ msgstr ""
 msgid "Move into the folder you just created::"
 msgstr ""
 
-#: ../../source/install-nostudio.rst:37
-msgid "Run the server::"
+#: ../../source/install-nostudio.rst:38
+msgid ""
+"**If you see a ``models.py`` in each folder, then to the documentation "
+"here:** `https://otree.readthedocs.io/en/self/ "
+"<https://otree.readthedocs.io/en/self/>`__"
 msgstr ""
 
 #: ../../source/install-nostudio.rst:41
+msgid ""
+"If you don't see a models.py in each folder, that means you are using the"
+" new no-self format."
+msgstr ""
+
+#: ../../source/install-nostudio.rst:43
+msgid "Run the server::"
+msgstr ""
+
+#: ../../source/install-nostudio.rst:47
 msgid ""
 "Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__."
 " You should see the oTree demo site."
 msgstr ""
 
-#: ../../source/install-nostudio.rst:44
+#: ../../source/install-nostudio.rst:50
 msgid "To stop the server, press ``Control + C`` at your command line."
 msgstr ""
 
-#: ../../source/install-nostudio.rst:49
+#: ../../source/install-nostudio.rst:55
 msgid "Install a text editor"
 msgstr ""
 
-#: ../../source/install-nostudio.rst:51
+#: ../../source/install-nostudio.rst:57
 msgid ""
 "Install a text editor like `PyCharm "
 "<https://www.jetbrains.com/pycharm/download/>`__ for editing your Python "
@@ -87,33 +100,55 @@ msgid ""
 " so that you get code completion."
 msgstr ""
 
-#: ../../source/install-nostudio.rst:56
+#: ../../source/install-nostudio.rst:62
 msgid "Then launch the text editor and open your entire project folder."
 msgstr ""
 
-#: ../../source/install-nostudio.rst:62
+#: ../../source/install-nostudio.rst:68
+msgid "About this documentation"
+msgstr ""
+
+#: ../../source/install-nostudio.rst:70
+msgid ""
+"If you are using a text editor to write your oTree code, remember to add "
+"``@staticmethod`` before all page methods, like ``is_displayed``, "
+"``vars_for_template``, ``before_next_page``, etc. They are sometimes "
+"omitted from this documentation for brevity."
+msgstr ""
+
+#: ../../source/install-nostudio.rst:74
+msgid ""
+"If you are using PyCharm, VS Code, or another IDE, you can also add type "
+"annotations on your functions."
+msgstr ""
+
+#: ../../source/install-nostudio.rst:76
+msgid "For example:"
+msgstr ""
+
+#: ../../source/install-nostudio.rst:84
+msgid "Or:"
+msgstr ""
+
+#: ../../source/install-nostudio.rst:91
+msgid "This will help your editor provide better autocompletion."
+msgstr ""
+
+#: ../../source/install-nostudio.rst:94
 msgid "Upgrading/reinstalling oTree"
 msgstr ""
 
-#: ../../source/install-nostudio.rst:64
-msgid "We recommend upgrading every couple of weeks. It's the same command:"
+#: ../../source/install-nostudio.rst:96
+msgid "We recommend upgrading every couple of weeks."
 msgstr ""
 
-#: ../../source/install-nostudio.rst:71
+#: ../../source/install-nostudio.rst:102
 msgid ""
 "The best way to ensure that your apps continue to work after you upgrade "
 "is to use only the functions described in this documentation. Some code "
 "snippets you may find online were written by people who access oTree's "
 "internal functions and \"hack\" them to do something different. Although "
 "these snippets can enable some innovative new functionality, be aware "
-"that they increase the chance of things breaking when you upgrade. "
-"Because oTree's internal code layout changes from release to release."
+"that they increase the chance of things breaking when you upgrade, "
+"because oTree's internal code layout changes from release to release."
 msgstr ""
-
-#: ../../source/install-nostudio.rst:79
-msgid ""
-"For similar reasons, we also caution about directly using Django "
-"functionality, apart from the few components linked in this documentation"
-" (such as Django templates)."
-msgstr ""
-

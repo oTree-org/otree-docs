@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-02-23 16:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,38 +46,21 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:26
 msgid ""
-"To include the same JS/CSS in all pages of an app, make a base template "
-"for the app."
+"To include the same JS/CSS in all pages of an app, either put it in a "
+"ref:`static file <staticfiles>` or put it in an includable template."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:29
-msgid ""
-"For example, if your app's name is ``public_goods``, create "
-"``public_goods/templates/public_goods/Page.html``:"
-msgstr ""
-
-#: ../../source/misc/advanced.rst:49
-msgid "Then make each template inherit from this template:"
-msgstr ""
-
-#: ../../source/misc/advanced.rst:57
-msgid ""
-"To include the same JS/CSS in *all apps* of a project, modify "
-"``_templates/global/Page.html``. In that file, you will find the blocks "
-"``global_scripts`` and ``global_styles``."
-msgstr ""
-
-#: ../../source/misc/advanced.rst:64
+#: ../../source/misc/advanced.rst:32
 msgid "Static files"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:67
+#: ../../source/misc/advanced.rst:34
 msgid ""
 "Here is how to include images (or any other static file like .css, .js, "
 "etc.) in your pages."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:69
+#: ../../source/misc/advanced.rst:36
 #, python-format
 msgid ""
 "At the root of your oTree project, there is a ``_static/`` folder. Put a "
@@ -85,11 +68,11 @@ msgid ""
 "get the URL to that file with ``{% static 'puppy.jpg' %}``."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:74
+#: ../../source/misc/advanced.rst:41
 msgid "To display an image, use the ``<img>`` tag, like this:"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:80
+#: ../../source/misc/advanced.rst:47
 msgid ""
 "Above we saved our image in ``_static/puppy.jpg``, But actually it's "
 "better to make a subfolder with the name of your app, and save it as "
@@ -97,49 +80,49 @@ msgid ""
 "name conflicts."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:85
+#: ../../source/misc/advanced.rst:52
 msgid "Then your HTML code becomes:"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:91
+#: ../../source/misc/advanced.rst:58
 msgid ""
 "(If you prefer, you can also put static files inside your app folder, in "
 "a subfolder called ``static/your_app_name``.)"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:94
+#: ../../source/misc/advanced.rst:61
 msgid ""
 "If a static file is not updating even after you changed it, this is "
 "because your browser cached the file. Do a full page reload (usually "
 "Ctrl+F5)"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:98
+#: ../../source/misc/advanced.rst:65
 msgid ""
 "If you have videos or high-resolution images, it's preferable to store "
 "them somewhere online and reference them by URL because the large file "
 "size can make uploading your .otreezip file much slower."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:105
+#: ../../source/misc/advanced.rst:72
 msgid "Wait pages"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:110
+#: ../../source/misc/advanced.rst:77
 msgid "Custom wait page template"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:112
+#: ../../source/misc/advanced.rst:79
 msgid ""
 "You can make a custom wait page template. For example, save this to "
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:127
+#: ../../source/misc/advanced.rst:94
 msgid "Then tell your wait page to use this template:"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:134
+#: ../../source/misc/advanced.rst:101
 msgid ""
 "Then you can use ``vars_for_template`` in the usual way. Actually, the "
 "``body_text`` and ``title_text`` attributes are just shorthand for "
@@ -147,65 +130,25 @@ msgid ""
 "equivalent:"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:152
+#: ../../source/misc/advanced.rst:119
 msgid ""
 "If you want to apply your custom wait page template globally, save it to "
 "``_templates/global/WaitPage.html``. oTree will then automatically use it"
 " everywhere instead of the built-in wait page."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:157
-msgid "CSS and JavaScript in Wait Pages"
-msgstr ""
-
-#: ../../source/misc/advanced.rst:159
-msgid ""
-"Wait pages have the same block structure as regular pages "
-"(``global_scripts``, ``app_scripts``, ``scripts``, etc...), so you can "
-"follow the same instructions described in :ref:`base-template` and "
-":ref:`selectors`."
-msgstr ""
-
-#: ../../source/misc/advanced.rst:164
-msgid ""
-"For example, to apply CSS to your custom wait page at "
-"``_templates/global/WaitPage.html``, put a block ``global_scripts`` in "
-"the template."
-msgstr ""
-
-#: ../../source/misc/advanced.rst:167
-msgid ""
-"You can even make other custom wait pages inherit from "
-"``_templates/global/WaitPage.html``, just the way regular pages inherit "
-"from ``_templates/global/Page.html``, and they can define the blocks "
-"``app_scripts`` and ``scripts``, etc."
-msgstr ""
-
-#: ../../source/misc/advanced.rst:174
-msgid "Modifying an existing database"
-msgstr ""
-
-#: ../../source/misc/advanced.rst:176
-msgid ""
-"If your database already contains data and you want to update the "
-"structure without running ``resetdb`` (which will delete existing data), "
-"see `here <https://github.com/oTree-org/otree-"
-"docs/blob/f3c6ceca5346b988b194dad5f805a06814ebea68/source/misc/advanced.rst"
-"#modifying-an-existing-database>`__"
-msgstr ""
-
-#: ../../source/misc/advanced.rst:181
+#: ../../source/misc/advanced.rst:125
 msgid "Currency"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:183
+#: ../../source/misc/advanced.rst:127
 msgid ""
 "To customize the name \"points\" to something else like \"tokens\" or "
 "\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
 "'tokens'``."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:186
+#: ../../source/misc/advanced.rst:130
 msgid ""
 "You can change the number of decimal places in real world currency "
 "amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
@@ -213,17 +156,17 @@ msgid ""
 "database."
 msgstr ""
 
-#: ../../source/misc/advanced.rst:192
+#: ../../source/misc/advanced.rst:136
 msgid "Reading CSV or other files"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:194
+#: ../../source/misc/advanced.rst:138
 msgid ""
 "Store yourfile.csv in your app folder. Then put this code anywhere you "
 "want to read the file (in a method or in Constants):"
 msgstr ""
 
-#: ../../source/misc/advanced.rst:204
+#: ../../source/misc/advanced.rst:148
 msgid ""
 "If it's not CSV and you just want to read the file contents as a string, "
 "this gets simplified to:"
@@ -446,6 +389,44 @@ msgstr ""
 msgid ""
 "It's safer to use ``self.player.money_left`` directly, because doing "
 "``self.player`` gets the most recent data from the database."
+msgstr ""
+
+#: ../../source/misc/bots_advanced.rst:261
+msgid "Live pages"
+msgstr ""
+
+#: ../../source/misc/bots_advanced.rst:263
+msgid ""
+"To test live methods with bots, define ``call_live_method`` as a top-"
+"level function in ``tests.py``. (Not available in oTree Studio.) This "
+"function should simulate the sequence of calls to your ``live_method``. "
+"The argument ``method`` simulates the live method on your Player model. "
+"For example, ``method(3, 'hello')`` calls the live method on Player 3 "
+"with ``data`` set to ``'hello'``. For example:"
+msgstr ""
+
+#: ../../source/misc/bots_advanced.rst:279
+msgid "``kwargs`` contains at least the following parameters."
+msgstr ""
+
+#: ../../source/misc/bots_advanced.rst:281
+msgid "``case`` as described in :ref:`cases`."
+msgstr ""
+
+#: ../../source/misc/bots_advanced.rst:282
+msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
+msgstr ""
+
+#: ../../source/misc/bots_advanced.rst:283
+msgid "``round_number``"
+msgstr ""
+
+#: ../../source/misc/bots_advanced.rst:285
+msgid ""
+"``call_live_method`` will be automatically executed when the fastest bot "
+"in the group arrives on a page with ``live_method``. (Other bots may be "
+"on previous pages at that point, unless you restrict this with a "
+"WaitPage.)"
 msgstr ""
 
 #: ../../source/misc/intro.rst:2
@@ -742,7 +723,7 @@ msgid ""
 "different versions (e.g. different treatments), then you should use the "
 "techniques described in :ref:`treatments`, such as making 2 session "
 "configs that have a different ``'treatment'`` parameter, and then "
-"checking for ``self.session.config['treatment']`` in your app's code."
+"checking for ``session.config['treatment']`` in your app's code."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:33
@@ -773,49 +754,18 @@ msgid ""
 "by defining a method that returns a field:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:114
-msgid "Templates: prevent code duplication by using a base template"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:116
-msgid ""
-"If you are copy-pasting the same JavaScript or CSS to multiple templates,"
-" you should instead put it in one of the following blocks in a base "
-"template:"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:119
-msgid "``{% block global_styles %}``"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:120
-msgid "``{% block global_scripts %}``"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:121
-msgid "``{% block app_styles %}``"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:122
-msgid "``{% block app_scripts %}``"
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:124
-msgid "Read more in :ref:`base-template`."
-msgstr ""
-
-#: ../../source/misc/tips_and_tricks.rst:127
+#: ../../source/misc/tips_and_tricks.rst:113
 msgid "Prevent duplicate pages by using multiple rounds"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:129
+#: ../../source/misc/tips_and_tricks.rst:115
 msgid ""
 "If you have many many pages that are almost the same, consider just "
 "having 1 page and looping it for multiple rounds. One sign that your code"
 " can be simplified is if it looks something like this:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:148
+#: ../../source/misc/tips_and_tricks.rst:134
 msgid ""
 "See the `quiz <https://github.com/oTree-org/oTree/tree/master/quiz>`__ or"
 " `real effort <https://github.com/oTree-"
@@ -824,11 +774,11 @@ msgid ""
 " that gets displayed with each round."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:154
+#: ../../source/misc/tips_and_tricks.rst:140
 msgid "Improving code performance"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:156
+#: ../../source/misc/tips_and_tricks.rst:142
 msgid ""
 "You should avoid redundant use of ``get_players()``, "
 "``get_player_by_id()``, ``in_*_rounds()``, ``get_others_in_group()``, or "
@@ -836,82 +786,82 @@ msgid ""
 "all require a database query, which can be slow."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:161
+#: ../../source/misc/tips_and_tricks.rst:147
 msgid ""
 "For example, this code has a redundant query because it asks the database"
 " 5 times for the exact same player:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:176
+#: ../../source/misc/tips_and_tricks.rst:162
 msgid "It should be simplified to this:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:191
+#: ../../source/misc/tips_and_tricks.rst:177
 msgid "As an added benefit, this usually makes the code more readable."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:194
+#: ../../source/misc/tips_and_tricks.rst:180
 msgid "Use BooleanField instead of StringField, where possible"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:196
+#: ../../source/misc/tips_and_tricks.rst:182
 msgid ""
 "Many ``StringFields`` should be broken down into ``BooleanFields``, "
 "especially if they only have 2 distinct values."
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:199
+#: ../../source/misc/tips_and_tricks.rst:185
 msgid "Suppose you have a field called ``treatment``:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:205
+#: ../../source/misc/tips_and_tricks.rst:191
 msgid "And let's say ``treatment`` it can only have 4 different values:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:207
+#: ../../source/misc/tips_and_tricks.rst:193
 msgid "``high_income_high_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:208
+#: ../../source/misc/tips_and_tricks.rst:194
 msgid "``high_income_low_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:209
+#: ../../source/misc/tips_and_tricks.rst:195
 msgid "``low_income_high_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:210
+#: ../../source/misc/tips_and_tricks.rst:196
 msgid "``low_income_low_tax``"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:212
+#: ../../source/misc/tips_and_tricks.rst:198
 msgid "In your pages, you might use it like this:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:227
+#: ../../source/misc/tips_and_tricks.rst:213
 msgid "It would be much better to break this to 2 separate BooleanFields::"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:232
+#: ../../source/misc/tips_and_tricks.rst:218
 msgid "Then your pages could be simplified to:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:251
+#: ../../source/misc/tips_and_tricks.rst:237
 msgid "Avoid duplicated validation methods"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:253
+#: ../../source/misc/tips_and_tricks.rst:239
 msgid ""
 "If you have many repetitive :ref:`FIELD_error_message "
 "<FOO_error_message>` methods, you can replace them with a single "
 ":ref:`error_message <error_message>` method. For example:"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:275
+#: ../../source/misc/tips_and_tricks.rst:261
 msgid "You can instead define this method on your page (not Player class):"
 msgstr ""
 
-#: ../../source/misc/tips_and_tricks.rst:295
+#: ../../source/misc/tips_and_tricks.rst:281
 msgid ""
 "(Usually ``error_message`` is used to return a single error message as a "
 "string, but you can also return a dict.)"

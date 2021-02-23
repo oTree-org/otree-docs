@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-02-23 16:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../source/treatments.rst:4
+#: ../../source/treatments.rst:5
 msgid "Treatments"
 msgstr ""
 
-#: ../../source/treatments.rst:6
+#: ../../source/treatments.rst:7
 msgid ""
 "To assign participants to different treatment groups, you can use "
-":ref:`creating_session <creating_session>`. For example, you can create a"
-" ``color`` field on the ``Player`` model:"
+"``creating_session``. For example:"
 msgstr ""
 
-#: ../../source/treatments.rst:15
-msgid ""
-"And then randomly assign players to the \"blue\" or \"red\" treatment "
-"group:"
-msgstr ""
-
-#: ../../source/treatments.rst:25
+#: ../../source/treatments.rst:21
 msgid ""
 "You can also assign treatments at the group level (put the "
 "``StringField`` in ``Group`` and change the above code to use "
 "``get_groups()`` and ``group.color``)."
 msgstr ""
 
-#: ../../source/treatments.rst:29
+#: ../../source/treatments.rst:24
+msgid ""
+"``creating_session`` is run immediately when you click the \"create "
+"session\" button, even if the app is not first in the ``app_sequence``."
+msgstr ""
+
+#: ../../source/treatments.rst:28
 msgid "Treatment groups & multiple rounds"
 msgstr ""
 
-#: ../../source/treatments.rst:31
+#: ../../source/treatments.rst:30
 msgid ""
 "If your game has multiple rounds, a player could have different colors in"
 " different rounds, because ``creating_session`` gets executed for each "
@@ -56,7 +55,7 @@ msgstr ""
 #: ../../source/treatments.rst:42
 msgid ""
 "Then elsewhere in your code, you can access the participant's color with "
-"``self.participant.vars['color']``."
+"``participant.vars['color']``."
 msgstr ""
 
 #: ../../source/treatments.rst:45
@@ -97,8 +96,8 @@ msgstr ""
 #: ../../source/treatments.rst:94
 msgid ""
 "You can even combine this with the randomization approach. You can check "
-"``if 'color' in subsession.session.config:``; if yes, then use that "
-"color; if no, then choose it randomly."
+"``if 'color' in session.config:``; if yes, then use that color; if no, "
+"then choose it randomly."
 msgstr ""
 
 #: ../../source/treatments.rst:101
@@ -144,25 +143,3 @@ msgid ""
 "On the \"Demo\" section of the admin, sessions are not configurable. It's"
 " only available when creating a session in \"Sessions\" or \"Rooms\"."
 msgstr ""
-
-#: ../../source/treatments.rst:151
-msgid "Advanced topics"
-msgstr ""
-
-#: ../../source/treatments.rst:154
-msgid "Group treatments that persist across rounds"
-msgstr ""
-
-#: ../../source/treatments.rst:156
-msgid ""
-"Groups do not have any ``vars`` field, because groups can be re-shuffled "
-"across rounds. You should instead store the variable on one of the "
-"participants in the group:"
-msgstr ""
-
-#: ../../source/treatments.rst:168
-msgid ""
-"Then, when you need to access a group's color, you would look it up like "
-"this:"
-msgstr ""
-
