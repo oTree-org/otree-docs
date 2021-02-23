@@ -8,19 +8,12 @@ either real money, or points. oTree supports both;
 you can switch from points to real money by setting ``USE_POINTS = False``
 in your settings.
 
-You can write ``cu(42)`` to represent "42 currency units".
+You can write ``c(42)`` to represent "42 currency units".
 It works just like a number
-(e.g. ``cu(0.1) + cu(0.2) == cu(0.3)``).
+(e.g. ``c(0.1) + c(0.2) == c(0.3)``).
 The advantage is that when it's displayed to users, it will automatically
 be formatted as ``$0.30`` or ``0,30 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
-
-.. note::
-
-    If you get ``NameError: name 'cu' is not defined``,
-    use ``c()`` instead of ``cu()``.
-    One of the two will work, depending on the version of oTree and how your app imports from
-    ``otree.api``.
 
 Use ``CurrencyField`` to store currencies in the database.
 For example:
@@ -34,13 +27,13 @@ To make a list of currency amounts, use ``currency_range``:
 
 .. code-block:: python
 
-    currency_range(cu(0), cu(0.10), cu(0.02))
+    currency_range(c(0), c(0.10), c(0.02))
     # this gives:
     # [$0.00, $0.02, $0.04, $0.06, $0.08, $0.10]
 
-In templates, instead of using the ``cu()`` function, you should use the
-``|cu`` filter.
-For example, ``{{ 20|cu }}`` displays as ``20 points``.
+In templates, instead of using the ``c()`` function, you should use the
+``|c`` filter.
+For example, ``{{ 20|c }}`` displays as ``20 points``.
 
 .. _payoff:
 
@@ -65,7 +58,7 @@ Points (i.e. "experimental currency")
 -------------------------------------
 
 If you set ``USE_POINTS = True``, then currency amounts will be points instead of dollars/euros/etc.
-For example, ``cu(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
+For example, ``c(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
 
 You can decide the conversion rate to real money
 by adding a ``real_world_currency_per_point`` entry to your session config.
@@ -78,7 +71,7 @@ You can convert a points amount to money using the method
 
 .. code-block:: python
 
-    cu(10).to_real_world_currency(player.session)
+    c(10).to_real_world_currency(player.session)
 
 (The ``session`` is necessary because
 different sessions can have different conversion rates).

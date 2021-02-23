@@ -105,11 +105,6 @@ You can do this for ``BooleanField``, ``StringField``, etc.:
     )
 
 
-After the field has been set, you can access the human-readable name
-using
-``get_FIELD_display``, like this:
-``player.get_level_display() # returns e.g. 'Medium'``.
-
 Optional fields
 ~~~~~~~~~~~~~~~
 

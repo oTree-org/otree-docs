@@ -227,7 +227,8 @@ For security, you should use :ref:`error_message <error_message>`:
 
         @staticmethod
         def error_message(player, values):
-            if not player.group.game_finished:
+            group = player.group
+            if not group.game_finished:
                 return 'you need to stay until 10 messages are sent'
 
 By the way, using a similar technique, you could implement a custom

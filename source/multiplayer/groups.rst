@@ -187,16 +187,15 @@ get_group_matrix()
 ~~~~~~~~~~~~~~~~~~
 
 Subsessions have a method called ``get_group_matrix()`` that
-return the structure of groups as a matrix, i.e. a list of lists,
-with each sublist being the players in a group, ordered by ``id_in_group``.
-
-The following lines are equivalent.
+return the structure of groups as a matrix, for example:
 
 .. code-block:: python
 
-    matrix = subsession.get_group_matrix()
-    # === is equivalent to ===
-    matrix = [group.get_players() for group in subsession.get_groups()]
+    [[1, 3, 5],
+     [7, 9, 11],
+     [2, 4, 6],
+     [8, 10, 12]]
+
 
 
 .. _set_group_matrix:

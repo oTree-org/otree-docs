@@ -36,7 +36,7 @@ For example:
 
     def set_payoffs(group):
         for p in group.get_players():
-            p.payoff = cu(100)
+            p.payoff = c(100)
 
 Then trigger this method by doing:
 
@@ -247,7 +247,7 @@ like this:
             participant = player.participant
 
             if player.timeout_happened:
-                player.contribution = cu(100)
+                player.contribution = c(100)
                 participant.vars['is_dropout'] = True
 
 Notes:

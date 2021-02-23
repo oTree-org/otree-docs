@@ -33,7 +33,7 @@ donation gets tripled.
         players_per_group = 2
         num_rounds = 1
 
-        endowment = cu(10)
+        endowment = c(10)
         multiplication_factor = 3
 
 Models
@@ -81,9 +81,9 @@ dropdown menu dynamically. This is the feature called
 
     def sent_back_amount_choices(group):
         return currency_range(
-            cu(0),
+            c(0),
             group.sent_amount * Constants.multiplication_factor,
-            cu(1)
+            c(1)
         )
 
 Define the templates and pages
@@ -165,8 +165,10 @@ Here is the page code. Notes:
 
         @staticmethod
         def vars_for_template(player):
+            group = player.group
+
             return dict(
-                tripled_amount=player.group.sent_amount * Constants.multiplication_factor
+                tripled_amount=group.sent_amount * Constants.multiplication_factor
             )
 
 Results
