@@ -173,7 +173,7 @@ How to use it
 
 First, ensure that you are using oTree Lite::
 
-    pip3 install -U "otree>=5a"
+    pip3 install -U otree
 
 Then do one of the following:
 
@@ -194,7 +194,7 @@ The "otree remove_self" command
 If you prefer the no-self format, or are curious what your app would look like in this format, follow these steps.
 First, then install oTree Lite::
 
-    pip3 install -U "otree>=5a"
+    pip3 install -U otree
 
 Run::
 

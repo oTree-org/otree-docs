@@ -97,7 +97,7 @@ We recommend upgrading every couple of weeks.
 
 .. code-block:: bash
 
-    pip3 install -U "otree>=5a"
+    pip3 install -U otree
 
 The best way to ensure that your apps continue to work after you upgrade is to
 use only the functions described in this documentation.

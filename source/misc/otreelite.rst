@@ -24,7 +24,7 @@ Installation
 
 run::
 
-    pip install -U "otree>=5a"
+    pip install -U otree
 
 
 .. _lite_vs_mainline:

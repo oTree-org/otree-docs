@@ -3,6 +3,66 @@ Advanced features
 
 These are advanced features that are mostly unsupported in oTree Studio.
 
+.. _ExtraModel:
+
+ExtraModel
+----------
+
+.. note::
+
+    This feature is new as of March 2021 and is currently in beta.
+
+An ExtraModel is useful when you need to store dozens or hundreds of data points about a single player.
+For example, a list of bids, or a list of stimuli and reaction times.
+They are frequently used together with :ref:`live`.
+
+An ExtraModel should link to another model:
+
+.. code-block:: python
+
+    class Bid(ExtraModel):
+        player = models.Link(Player)
+        amount = models.CurrencyField()
+
+Each time the user makes a bid, you store it in the database:
+
+.. code-block:: python
+
+    Bid.create(player=player, amount=500)
+
+Later, you can retrieve the list of a player's bids:
+
+.. code-block:: python
+
+    bids = Bid.filter(player=player)
+
+An ExtraModel can have multiple links:
+
+.. code-block:: python
+
+    class Offer(ExtraModel):
+        sender = models.Link(Player)
+        receiver = models.Link(Player)
+        group = models.Link(Group)
+        amount = models.CurrencyField()
+        accepted = models.BooleanField()
+
+Then you can query it in various ways:
+
+.. code-block:: python
+
+    this_group_offers = Offer.filter(group=group)
+    offers_i_accepted = Offer.filter(receiver=player, accepted=True)
+
+For more complex filters and sorting, you should use list operations:
+
+.. code-block:: python
+
+    offers_over_500 = [o for o in Offer.filter(group=group) if o.amount > 500]
+
+See the example psychology games such as the Stroop task,
+which show how to generate ExtraModel data from each row of a CSV spreadsheet.
+
 Templates
 ---------
 

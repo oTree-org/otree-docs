@@ -32,7 +32,7 @@ Enter this command at the prompt:
 
 .. code-block:: bash
 
-    pip3 install -U "otree>=5a"
+    pip3 install -U otree
 
 .. note::
 

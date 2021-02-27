@@ -176,6 +176,12 @@ If you want to save history, you should store it in the database.
 When a player loads the page, your JavaScript can call something like ``liveSend({'type': 'connect'})``,
 and you can configure your live_method to retrieve the history of the game from the database.
 
+ExtraModel
+----------
+
+Live pages are often used together with an :ref:`ExtraModel <ExtraModel>`,
+which allows you to store each individual message or action in the database.
+
 Keeping users on the page
 -------------------------
 
