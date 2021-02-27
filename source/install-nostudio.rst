@@ -20,9 +20,9 @@ Run oTree
 
 If you're on MacOS, run::
 
-    /Applications/Python\ 3.8/Install\ Certificates.command
+    /Applications/Python\ 3.9/Install\ Certificates.command
 
-(If you are not using version 3.8 of Python, edit the above command appropriately.)
+(If you are not using version 3.9 of Python, edit the above command appropriately.)
 
 From your command prompt, create your project folder::
 
@@ -35,7 +35,7 @@ Move into the folder you just created::
     cd myproject
 
 
-**If you see a ``models.py`` in each folder, then to the documentation here:**
+**If you see a ``models.py`` in each folder, then switch to the documentation here:**
 `https://otree.readthedocs.io/en/self/ <https://otree.readthedocs.io/en/self/>`__
 
 If you don't see a models.py in each folder, that means you are using the new no-self format.

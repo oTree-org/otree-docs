@@ -37,7 +37,7 @@ Enter this command at the prompt:
 .. note::
 
     This documentation is for oTree Lite. If you need maximum compatibility with existing oTree apps,
-    switch to `this <https://otree.readthedocs.io/en/latest/index.html>`__ documentation.
+    switch to `this <https://otree.readthedocs.io/en/self/index.html>`__ documentation.
 
 
 Next steps

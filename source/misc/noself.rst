@@ -135,18 +135,7 @@ After:
 .. code-block:: python
 
     # __init__.py
-    from otree.api import (
-        models,
-        widgets,
-        BaseConstants,
-        BaseSubsession,
-        BaseGroup,
-        BasePlayer,
-        Currency as c,
-        currency_range,
-        Page,
-        WaitPage,
-    )
+    from otree.api import *
 
 You can see the sample games in the new format here:
 `https://github.com/oTree-org/oTree/tree/noself-demo <https://github.com/oTree-org/oTree/tree/noself-demo>`__,
