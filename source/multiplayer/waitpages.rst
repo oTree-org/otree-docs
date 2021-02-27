@@ -135,14 +135,14 @@ those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
 
 Here's an example where each group has 2 men and 2 women.
-It assumes that in a previous app, you assigned ``participant.vars['category']`` to each participant.
+It assumes that in a previous app, you assigned ``participant.category`` to each participant.
 
 .. code-block:: python
 
     def group_by_arrival_time_method(subsession, waiting_players):
         print('in group_by_arrival_time_method')
-        m_players = [p for p in waiting_players if p.participant.vars['category'] == 'M']
-        f_players = [p for p in waiting_players if p.participant.vars['category'] == 'F']
+        m_players = [p for p in waiting_players if p.participant.category == 'M']
+        f_players = [p for p in waiting_players if p.participant.category == 'F']
 
         if len(m_players) >= 2 and len(f_players) >= 2:
             print('about to create a group')
@@ -155,7 +155,7 @@ Timeouts on wait pages
 You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page,
 for example to allow the participant to proceed individually if they have been waiting
 longer than 5 minutes. First, you must record ``time.time()`` on the final page before the app with ``group_by_arrival_time``.
-Store it in ``participant.vars``.
+Store it in a :ref:`participant field <vars>`.
 
 Then define a Player function:
 
@@ -165,7 +165,7 @@ Then define a Player function:
         participant = player.participant
 
         import time
-        return time.time() - participant.vars['wait_page_arrival'] > 5*60
+        return time.time() - participant.wait_page_arrival > 5*60
 
 Now use this:
 
@@ -224,7 +224,9 @@ Replacing dropped out player with a bot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here's an example that combines some of the above techniques, so that even if a player drops out,
-they continue to auto-play, like a bot. Just use ``get_timeout_seconds`` and ``before_next_page`` on every page,
+they continue to auto-play, like a bot.
+First, define a field called ``is_dropout`` in :ref:`PARTICIPANT_FIELDS`, and set its initial value to
+``False`` in ``creating_session``. Then use ``get_timeout_seconds`` and ``before_next_page`` on every page,
 like this:
 
 .. code-block:: python
@@ -237,7 +239,7 @@ like this:
         def get_timeout_seconds(player):
             participant = player.participant
 
-            if participant.vars.get('is_dropout'):
+            if participant.is_dropout:
                 return 1  # instant timeout, 1 second
             else:
                 return 5*60
@@ -248,7 +250,7 @@ like this:
 
             if player.timeout_happened:
                 player.contribution = c(100)
-                participant.vars['is_dropout'] = True
+                participant.is_dropout = True
 
 Notes:
 

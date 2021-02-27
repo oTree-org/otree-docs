@@ -29,7 +29,8 @@ Treatment groups & multiple rounds
 
 If your game has multiple rounds, a player could have different colors in different rounds,
 because ``creating_session`` gets executed for each round independently.
-To prevent this, set it on the participant, rather than the player:
+To prevent this, set it on the participant, rather than the player.
+Add ``'color'`` to ``PARTICIPANT_FIELDS``, then do this:
 
 .. code-block:: python
 
@@ -37,10 +38,10 @@ To prevent this, set it on the participant, rather than the player:
         if subsession.round_number == 1:
             for player in subsession.get_players():
                 participant = player.participant
-                participant.vars['color'] = random.choice(['blue', 'red'])
+                participant.color = random.choice(['blue', 'red'])
 
 Then elsewhere in your code, you can access the participant's color with
-``participant.vars['color']``.
+``participant.color``.
 
 For more on vars, see :ref:`vars`.
 
