@@ -165,6 +165,7 @@ Then define a Player function:
         participant = player.participant
 
         import time
+        # assumes you set wait_page_arrival in PARTICIPANT_FIELDS.
         return time.time() - participant.wait_page_arrival > 5*60
 
 Now use this:
@@ -225,7 +226,7 @@ Replacing dropped out player with a bot
 
 Here's an example that combines some of the above techniques, so that even if a player drops out,
 they continue to auto-play, like a bot.
-First, define a field called ``is_dropout`` in :ref:`PARTICIPANT_FIELDS`, and set its initial value to
+First, define a :ref:`participant field <PARTICIPANT_FIELDS>` called ``is_dropout``, and set its initial value to
 ``False`` in ``creating_session``. Then use ``get_timeout_seconds`` and ``before_next_page`` on every page,
 like this:
 

@@ -109,10 +109,12 @@ which is a list of the names of fields you want to define on your participant.
 
 Then in your code, you can get and set any type of data on these fields:
 
-    participant.my_var = [1, 2, 3]
+.. code-block:: python
+
+    participant.mylist = [1, 2, 3]
 
 Internally, all participant fields are stored in a dict called ``participant.vars``.
-Setting ``participant.my_var = 1`` is equivalent to ``participant.vars['my_var'] = 1``
+``participant.xyz`` is equivalent to ``participant.vars['xyz']``
 
 Participant fields are not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you should either
@@ -124,16 +126,13 @@ use :ref:`custom-export` or save ``str(participant.vars)`` into a ``LongStringFi
 Session fields
 ~~~~~~~~~~~~~~
 
+.. note::
+
+    This is a new feature; see the note above about ``PARTICIPANT_FIELDS``.
+
 For global variables that are the same for all participants in the session,
-define the setting ``SESSION_FIELDS``.
-It works the same as ``PARTICIPANT_FIELDS``, and all session fields are stored in ``session.vars``.
-All participant fields are
-you can use session fields, which work just like participant fields.
-
-
-which
-This is a dict just like ``participant.vars``.
-
+add them to the ``SESSION_FIELDS``, which works the same as ``PARTICIPANT_FIELDS``.
+Internally, all session fields are stored in ``session.vars``.
 
 Variable number of rounds
 -------------------------

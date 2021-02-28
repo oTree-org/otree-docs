@@ -111,15 +111,10 @@ When the user clicks the "next" button, ``before_next_page`` will be executed:
     class Start(Page):
 
         @staticmethod
-        def is_displayed(player):
-            return player.round_number == 1
-
-        @staticmethod
         def before_next_page(player):
             participant = player.participant
             import time
 
-            # user has 5 minutes to complete as many pages as possible
             # remember to add 'expiry' to PARTICIPANT_FIELDS.
             participant.expiry = time.time() + 5*60
 

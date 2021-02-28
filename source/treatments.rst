@@ -30,7 +30,7 @@ Treatment groups & multiple rounds
 If your game has multiple rounds, a player could have different colors in different rounds,
 because ``creating_session`` gets executed for each round independently.
 To prevent this, set it on the participant, rather than the player.
-Add ``'color'`` to ``PARTICIPANT_FIELDS``, then do this:
+Add ``color`` to ``PARTICIPANT_FIELDS``, then do this:
 
 .. code-block:: python
 
