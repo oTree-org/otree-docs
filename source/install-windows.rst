@@ -37,15 +37,7 @@ Then click the "File" menu and open PowerShell:
 
 .. figure:: _static/setup/open-powershell.png
 
-..
-    Enter this command at the prompt:
-
-To install oTree Lite
-(recommended for new users; more info :ref:`here <lite_vs_mainline>`):
-
-.. code-block:: bash
-
-    pip3 install -U "otree>=5a"
+Enter this command at the prompt:
 
 To install the regular version of oTree (recommended for maximum compatibility with existing apps):
 
