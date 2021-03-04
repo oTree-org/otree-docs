@@ -41,7 +41,7 @@ Now we have the following constants:
 
     players_per_group = 3
     num_rounds = 1
-    endowment = c(1000)
+    endowment = cu(1000)
     multiplier = 2
 
 

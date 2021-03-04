@@ -6,10 +6,10 @@ Version 5.0
 -   oTree Lite
 -   The no-self format
 -   The beta method ``Player.start()`` has been removed.
--   ``c()`` is now available as an alias for ``Currency``.
-    ``c()`` will still work as long as you have ``from otree.api import Currency as c``
+-   ``cu()`` is now available as an alias for ``Currency``.
+    ``cu()`` will still work as long as you have ``from otree.api import Currency as c``
     at the top of your file.
-    (Why not keep the name ``c()``?
+    (Why not keep the name ``cu()``?
     It's because I am finally adding the abbreviated alias to oTree's API,
     and it is not a good practice to have a 1-letter variable name in a public API.)
 
