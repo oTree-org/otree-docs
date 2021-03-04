@@ -104,6 +104,15 @@ You can do this for ``BooleanField``, ``StringField``, etc.:
         ]
     )
 
+You can get the human-readable label corresponding to the user's choice like this:
+
+.. code-block:: python
+
+    player.get_field_display('cooperated')  # returns e.g. 'Defect'
+
+.. note::
+
+    ``get_field_display`` is new in oTree 5 (March 2021).
 
 Optional fields
 ~~~~~~~~~~~~~~~
