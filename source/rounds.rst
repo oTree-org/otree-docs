@@ -92,7 +92,7 @@ Participant fields
 
 .. note::
 
-    As of March 2021, this is a new syntax for ``participant.vars``.
+    As of March 2021, this is a new **optional** syntax for ``participant.vars``.
     Instead of setting ``participant.vars['my_field'] = 1``,
     you can now set ``participant.my_field = 1`` directly.
     Just make sure to define ``PARTICIPANT_FIELDS`` first.

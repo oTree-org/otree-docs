@@ -53,7 +53,6 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
     {% block title %}
         Enter your information
     {% endblock %}
-
     {% block content %}
 
         Please enter the following information.
@@ -71,7 +70,6 @@ The second template will be called ``Results.html``.
     {% block title %}
         Results
     {% endblock %}
-
     {% block content %}
 
         <p>Your name is {{ player.name }} and your age is {{ player.age }}.</p>
