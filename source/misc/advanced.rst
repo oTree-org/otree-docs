@@ -141,8 +141,6 @@ For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.htm
 
 .. code-block:: html
 
-    {% extends 'otree/WaitPage.html' %}
-
     {% block title %}{{ title_text }}{% endblock %}
     {% block content %}
         {{ body_text }}

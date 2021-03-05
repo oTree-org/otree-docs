@@ -83,7 +83,7 @@ Templates
 The template system is basically compatible with Django templates,
 except that only the basic tags & filters have been implemented:
 
--   Tags: ``{% if %}``, ``{% for %}``, ``{% block %}``, ``{% extends %}``, ``{% with %}``
+-   Tags: ``{% if %}``, ``{% for %}``, ``{% block %}``
 -   Filters: ``{{ x|json }}``, ``{{ x|escape }}``, ``{{ x|c }}``, ``{{ x|default }}``
 
 There is no ``floatformat`` filter, but there are new rounding filters that replace it.

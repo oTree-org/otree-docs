@@ -146,7 +146,7 @@ Notes:
 
 -   ``subsession``, ``session``, and ``Constants`` are passed to the template
     automatically.
--   ``admin_report.html`` does not need to use ``{% block %}`` or ``{% extends %}``  etc.
+-   ``admin_report.html`` does not need to use ``{% block %}``.
     The above example is valid as the full contents of ``admin_report.html``.
 
 If one or more apps in your session have an ``admin_report.html``,
