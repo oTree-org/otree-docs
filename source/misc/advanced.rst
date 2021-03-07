@@ -113,7 +113,7 @@ Then your HTML code becomes:
 
 .. code-block:: html
 
-    <img src="{% static "your_app_name/puppy.jpg" %}"/>
+    <img src="{% static 'your_app_name/puppy.jpg %}"/>
 
 (If you prefer, you can also put static files inside your app folder,
 in a subfolder called ``static/your_app_name``.)

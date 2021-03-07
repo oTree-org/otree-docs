@@ -171,7 +171,7 @@ Once you have stored the image, you can display it like this:
 
 .. code-block:: html
 
-    <img src="{% static "folder_name/puppy.jpg" %}"/>
+    <img src="{% static 'folder_name/puppy.jpg' %}"/>
 
 
 Dynamic images

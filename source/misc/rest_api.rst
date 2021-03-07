@@ -38,11 +38,10 @@ Example
 
     def create_session(**payload):
         resp = requests.post(SERVER_URL + '/api/sessions/', json=payload)
-        resp.raise_for_status() # ensure it succeeded
-        return resp
+        return resp.json()
 
-    resp = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
-    print(resp.text) # returns the session code
+    data = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
+    print(data)
 
 
 .. note::
@@ -66,6 +65,97 @@ Parameters
 -   ``modified_session_config_fields``: an optional dict of session config parameters,
     as discussed in :ref:`edit_config`.
 -   ``room_name`` if you want to create the session in a room.
+
+"Get session data" endpoint
+---------------------------
+
+.. note::
+
+    New beta feature as of March 2021.
+
+GET URL: ``/api/sessions/``
+
+This API retrieves data about a session and its participants.
+It's useful if you want to integrate oTree with MTurk or any other online platform
+to automate payments and participant recruitment.
+`Here is a how-to guide <https://1drv.ms/w/s!AkzFB3_uPYH5gYd3IEj8oDFylx2Sjg?e=M4q3lJ>`__ on how to do this.
+
+Example
+~~~~~~~
+
+.. code-block:: python
+
+    def get_session(**payload):
+        resp = requests.get(SERVER_URL + '/api/sessions/', json=payload)
+        return resp.json()
+
+    data = get_session(code='vfyqlw1q')
+    # to only return data about some participants, pass participant_labels:
+    # data = get_session(code='vfyqlw1q', participant_labels=['Alice'])
+
+    print(data)
+
+Example output
+~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    {'num_participants': 3,
+     'room_url': 'http://localhost:8000/room/econ101',
+     'session_url': 'http://localhost:8000/join/bfzza6vhbx',
+     'REAL_WORLD_CURRENCY_CODE': 'USD',
+     'config': {'app_sequence': ['public_goods_simple'],
+                'display_name': 'public_goods_simple',
+                'doc': '',
+                'mturk_hit_settings': {'description': 'Description for your '
+                                                      'experiment',
+                                       'expiration_hours': 168,
+                                       'frame_height': 500,
+                                       'keywords': 'bonus, study',
+                                       'minutes_allotted_per_assignment': 60,
+                                       'qualification_requirements': [],
+                                       'template': 'global/mturk_template.html',
+                                       'title': 'Title for your experiment'},
+                'name': 'public_goods_simple',
+                'num_demo_participants': 3,
+                'participation_fee': 5.0,
+                'real_world_currency_per_point': 1.0},
+     'participants': [{'code': '3iscjiet',
+                       'id_in_session': 1,
+                       'label': 'Alice',
+                       'payoff_in_real_world_currency': 13.0},
+                      {'code': 'n76h05bp',
+                       'id_in_session': 2,
+                       'label': 'Bob',
+                       'payoff_in_real_world_currency': 0.0},
+                      {'code': 'fmjenzca',
+                       'id_in_session': 3,
+                       'label': None,
+                       'payoff_in_real_world_currency': 7.0}],
+     }
+
+"Session configs" REST endpoint
+-------------------------------
+
+.. note::
+
+    New beta feature as of March 2021.
+
+GET URL: ``/api/session_configs/``
+
+This endpoint simply returns the list of all your session configs, as dicts
+with all their properties, e.g. ``participation_fee``, etc.
+
+Example
+~~~~~~~
+
+.. code-block:: python
+
+    def get_configs():
+        resp = requests.get(SERVER_URL + '/api/session_configs/')
+        return resp.json()
+
+    configs = get_configs()
 
 
 .. _participant_vars_rest:
