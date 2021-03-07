@@ -75,8 +75,8 @@ Example
     data = call_api(GET, 'otree_version')
     # returns: {'version': '5.0.0'}
 
-"Session configs" REST endpoint
--------------------------------
+"Session configs" endpoint
+--------------------------
 
 .. note::
 
@@ -95,8 +95,8 @@ Example
     data = call_api(GET, 'session_configs')
     pprint(data)
 
-"Create sessions" REST endpoint
--------------------------------
+"Create sessions" endpoint
+--------------------------
 
 POST URL: ``/api/sessions/``
 
@@ -133,6 +133,8 @@ Parameters
     as discussed in :ref:`edit_config`.
 -   ``room_name`` if you want to create the session in a room.
 
+.. _REST-session-data:
+
 "Get session data" endpoint
 ---------------------------
 
@@ -146,7 +148,7 @@ GET URL: ``/api/sessions/``
 This API retrieves data about a session and its participants.
 It's useful if you want to integrate oTree with MTurk or any other online platform
 to automate payments and participant recruitment.
-`Here is a how-to guide <https://1drv.ms/w/s!AkzFB3_uPYH5gYd3IEj8oDFylx2Sjg?e=M4q3lJ>`__ on how to do this.
+If you are interested in this, I wrote `a how-to guide <https://1drv.ms/w/s!AkzFB3_uPYH5gYd3IEj8oDFylx2Sjg?e=M4q3lJ>`__.
 
 Example
 ~~~~~~~

@@ -160,3 +160,8 @@ Exporting CSV of chat logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The chat logs download link will appear on oTree's regular data export page.
+
+Chat between participants and experimenter
+------------------------------------------
+
+See :ref:`experimenter-chat`.

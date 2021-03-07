@@ -132,8 +132,6 @@ in your app, and display whatever variables were passed in ``vars_for_admin_repo
 
 .. code-block:: html
 
-
-
     <p>Here is the sorted list of payoffs in round {{ subsession.round_number }}</p>
 
     <ul>
@@ -166,32 +164,6 @@ and pass the variables like this:
             subsession = player.subsession
             return vars_for_admin_report(subsession)
 
-
-Kiosk Mode
-----------
-
-During a lab study you may want to restrict participants from doing things like:
-
--   Closing the browser window
--   Clicking the "back" button
--   Viewing the URL in the address bar
-
-You can restrict these things with "kiosk mode", a setting available in
-most web browsers.
-Consult your web browser's documentation for information on how to enable
-kiosk mode.
-
-
-Monitor sessions
-----------------
-
-The admin interface lets you monitor the live progress of your sessions.
-
-Payments page
--------------
-
-At the end of your session, you can open and print a page that lists all
-the participants and how much they should be paid.
 
 Export Data
 -----------
@@ -232,3 +204,31 @@ Debug Info
 When oTree runs in ``DEBUG`` mode (i.e. when the environment variable
 ``OTREE_PRODUCTION`` is not set), debug information is displayed
 on the bottom of all screens.
+
+
+.. _experimenter-chat:
+
+Chat between participants and experimenter
+------------------------------------------
+
+To enable your participants to send you chat messages,
+consider using a software like `Chatwoot <https://github.com/chatwoot/chatwoot/blob/develop/README.md>`__.
+Click on Chatwoot's "Deploy to Heroku" button for 1-click setup of your Chatwoot server.
+Set up an inbox, then add its JavaScript snippet to the below code.
+Set the ``BASE_URL`` to your Chatwoot server.
+Put the combined code in an includable template, then include it in each page of your study.
+
+    <script>
+        window.addEventListener('chatwoot:ready', function () {
+            window.$chatwoot.setUser(`{{ participant.code }}`, {
+                // or can use participant.label if you want
+                name: '{{ participant.code }}',
+                // doesn't need to be a real email address
+                email: '{{ participant.code }}@example.com',
+                identifier_hash: '{{ participant.code }}'
+            })
+        });
+    </script>
+    <!-- chatwootSDK code goes here...remember to substitute BASE_URL. -->
+
+
