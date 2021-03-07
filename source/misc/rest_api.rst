@@ -4,12 +4,96 @@ REST
 ====
 
 oTree has a REST API that enables external programs
-(such as other websites) to communicate with oTree:
+(such as other websites) to communicate with oTree.
 
 A REST API is just a URL on your server that is designed to be accessed by programs,
 rather than being opened manually in a web browser.
 
-Simply make a request to one of the below URLs.
+.. note::
+
+    As of March 2021, all API calls return JSON.
+
+.. _rest-setup:
+
+Setup
+-----
+
+.. note::
+
+    *"Where should I put this code?"*
+
+    This code does not need to go inside your oTree project folder.
+    Since the point of the REST API is to allow external programs and servers to communicate with oTree
+    across the internet, you should put this code in that other program.
+    That also means you should use whatever language that other server uses.
+    The examples on this page use Python,
+    but it's simple to make HTTP requests using any programming language,
+    or tools like webhooks or cURL.
+
+.. code-block:: python
+
+    import requests  # pip3 install requests
+    from pprint import pprint
+
+
+    GET = requests.get
+    POST = requests.post
+
+    # if using Heroku, change this to https://YOURAPP.herokuapp.com
+    SERVER_URL = 'http://localhost:8000'
+    REST_KEY = ''  # fill this later
+
+    def call_api(method, endpoint, **params) -> dict:
+        resp = method(
+            SERVER_URL + f'/api/{endpoint}/',
+            json=params,
+            headers={'otree-rest-key': REST_KEY},
+        )
+        if not resp.ok:
+            msg = (
+                f'Request to "/api/{endpoint}" failed '
+                f'with status code {resp.status_code}: {resp.text}'
+            )
+            raise Exception(msg)
+        return resp.json()
+
+
+"oTree version" endpoint
+------------------------
+
+.. note::
+
+    New beta feature as of March 2021.
+
+GET URL: ``/api/otree_version/``
+
+Example
+~~~~~~~
+
+.. code-block:: python
+
+    data = call_api(GET, 'otree_version')
+    # returns: {'version': '5.0.0'}
+
+"Session configs" REST endpoint
+-------------------------------
+
+.. note::
+
+    New beta feature as of March 2021.
+
+GET URL: ``/api/session_configs/``
+
+This endpoint simply returns the list of all your session configs, as dicts
+with all their properties, e.g. ``participation_fee``, etc.
+
+Example
+~~~~~~~
+
+.. code-block:: python
+
+    data = call_api(GET, 'session_configs')
+    pprint(data)
 
 "Create sessions" REST endpoint
 -------------------------------
@@ -30,28 +114,15 @@ Example
 
 .. code-block:: python
 
-    import requests  # pip3 install requests
-
-    def create_session(**payload):
-        resp = requests.post(SERVER_URL + '/api/sessions/', json=payload)
-        return resp.json()
-
-    data = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
-    print(data)
-
-
-.. note::
-
-    *"Where should I put this code?"*
-
-    This code does not need to go inside your oTree project folder.
-    Since the point of the REST API is to allow external programs and servers to communicate with oTree
-    across the internet, you should put this code in that other program.
-    That also means you should use whatever language that other server uses.
-    The examples on this page use Python,
-    but it's simple to make HTTP requests using any programming language,
-    or tools like webhooks or cURL.
-
+    data = call_api(
+        POST,
+        'sessions',
+        session_config_name='trust',
+        room_name='econ101',
+        num_participants=4,
+        modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]),
+    )
+    pprint(data)
 
 Parameters
 ~~~~~~~~~~
@@ -67,7 +138,8 @@ Parameters
 
 .. note::
 
-    New beta feature as of March 2021.
+    New feature as of March 2021.
+    In beta until we get sufficient user feedback.
 
 GET URL: ``/api/sessions/``
 
@@ -81,22 +153,15 @@ Example
 
 .. code-block:: python
 
-    def get_session(**payload):
-        resp = requests.get(SERVER_URL + '/api/sessions/', json=payload)
-        return resp.json()
-
-    data = get_session(code='vfyqlw1q')
-    # to only return data about some participants, pass participant_labels:
-    # data = get_session(code='vfyqlw1q', participant_labels=['Alice'])
-
-    print(data)
+    data = call_api(GET, 'sessions', code='vfyqlw1q', participant_labels=['Alice'])
+    pprint(data)
 
 Example output
 ~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    {'num_participants': 3,
+    {'num_participants': 2,
      'room_url': 'http://localhost:8000/room/econ101',
      'session_url': 'http://localhost:8000/join/bfzza6vhbx',
      'REAL_WORLD_CURRENCY_CODE': 'USD',
@@ -120,44 +185,17 @@ Example output
                        'id_in_session': 1,
                        'label': 'Alice',
                        'payoff_in_real_world_currency': 13.0},
-                      {'code': 'n76h05bp',
-                       'id_in_session': 2,
-                       'label': 'Bob',
-                       'payoff_in_real_world_currency': 0.0},
                       {'code': 'fmjenzca',
                        'id_in_session': 3,
                        'label': None,
                        'payoff_in_real_world_currency': 7.0}],
      }
 
-"Session configs" REST endpoint
--------------------------------
-
-.. note::
-
-    New beta feature as of March 2021.
-
-GET URL: ``/api/session_configs/``
-
-This endpoint simply returns the list of all your session configs, as dicts
-with all their properties, e.g. ``participation_fee``, etc.
-
-Example
-~~~~~~~
-
-.. code-block:: python
-
-    def get_configs():
-        resp = requests.get(SERVER_URL + '/api/session_configs/')
-        return resp.json()
-
-    configs = get_configs()
-
 
 .. _participant_vars_rest:
 
-"Participant vars" REST endpoint
---------------------------------
+"Participant vars" endpoint
+---------------------------
 
 POST URL: ``/api/participant_vars/``
 
@@ -174,14 +212,14 @@ Example
 
 .. code-block:: python
 
-    import requests
+    call_api(
+        POST,
+        'participant_vars',
+        room_name='qualtrics_study',
+        participant_label='albert_e',
+        vars=dict(age=25, is_male=True, x=[3, 6, 9]),
+    )
 
-    def set_participant_vars(**payload):
-        resp = requests.post(SERVER_URL + '/api/participant_vars/', json=payload)
-        return resp
-
-    resp = set_participant_vars(room_name='qualtrics_study', participant_label='albert_e', vars=dict(age=25, is_male=True, x=[3,6,9]))
-    print(resp.text)
 
 Parameters
 ~~~~~~~~~~
@@ -198,8 +236,8 @@ although this does not need to come from a ``participant_label_file``.
 
 .. _session_vars_rest:
 
-"Session vars" REST endpoint
-----------------------------
+"Session vars" endpoint
+-----------------------
 
 POST URL: ``/api/session_vars/``
 
@@ -213,13 +251,7 @@ Example
 
 .. code-block:: python
 
-    def set_session_vars(**payload):
-        return requests.post(SERVER_URL + "/api/session_vars/", json=payload)
-
-    resp = set_session_vars(
-        room_name="my_room",
-        vars=dict(dice_roll=4),
-    )
+    call_api(POST, 'session_vars', room_name="my_room", vars=dict(dice_roll=4))
 
 Parameters
 ~~~~~~~~~~
@@ -254,23 +286,7 @@ Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY``
 on the server. Set it to some secret value.
 
 When you make a request, add that key as an HTTP header called ``otree-rest-key``.
-For example:
-
-.. code-block:: python
-
-    import requests
-
-    REST_KEY = 'your_key'
-
-    def create_session(**payload):
-        resp = requests.post(SERVER_URL + '/api/sessions/', json=payload,
-            headers={'otree-rest-key': REST_KEY}
-        )
-        return resp
-
-    resp = create_session(session_config_name='trust', room_name='econ101', num_participants=4, modified_session_config_fields=dict(num_apples=10, abc=[1, 2, 3]))
-    print(resp.text) # returns the session code
-
+If following the :ref:`setup example <rest-setup>` above, you would set the ``REST_KEY`` variable.
 
 Demo & testing
 --------------
