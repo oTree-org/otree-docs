@@ -7,11 +7,12 @@ Version 5.0
 -   The no-self format
 -   The beta method ``Player.start()`` has been removed.
 -   ``cu()`` is now available as an alias for ``Currency``.
-    ``cu()`` will still work as long as you have ``from otree.api import Currency as c``
+    ``c()`` will still work as long as you have ``from otree.api import Currency as c``
     at the top of your file.
-    (Why not keep the name ``cu()``?
-    It's because I am finally adding the abbreviated alias to oTree's API,
-    and it is not a good practice to have a 1-letter variable name in a public API.)
+    More details `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__.
+-   oTree 3.x used two types of tags in templates: ``{{ }}`` and ``{% %}``.
+    Starting in oTree 5, however, you can forget about ``{% %}`` and just use ``{{ }}`` everywhere if you want.
+    More details `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__.
 
 
 Version 3.3

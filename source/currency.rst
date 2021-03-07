@@ -18,6 +18,7 @@ be formatted as ``$0.30`` or ``0,30 €``, etc., depending on your
 .. note::
 
     ``cu()`` is new in oTree 5. Previously, ``c()`` was used to denote currencies.
+    Code that already uses ``c()`` will continue to work.
     More info `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__.
 
 Use ``CurrencyField`` to store currencies in the database.
@@ -77,7 +78,7 @@ You can convert a points amount to money using the method
 
 .. code-block:: python
 
-    cu(10).to_real_world_currency(player.session)
+    cu(10).to_real_world_currency(session)
 
 (The ``session`` is necessary because
 different sessions can have different conversion rates).

@@ -173,7 +173,7 @@ History
 By default, participants will not see messages that were sent before they arrived at the page.
 (And data will not be re-sent if they refresh the page.)
 If you want to save history, you should store it in the database.
-When a player loads the page, your JavaScript can call something like ``liveSend({'type': 'connect'})``,
+When a player loads the page, your JavaScript can call something like ``liveSend({})``,
 and you can configure your live_method to retrieve the history of the game from the database.
 
 ExtraModel

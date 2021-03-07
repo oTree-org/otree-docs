@@ -133,7 +133,7 @@ for fixed (constant) values.
  
 If you want them to be determined dynamically
 (e.g. different from player to player),
-then you can instead define one of the below methods.
+then you can instead define one of the below functions.
 
 .. _FOO_choices:
 
@@ -205,7 +205,7 @@ Validating multiple fields together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say your form has 3 number fields whose values must sum to 100.
-You can enforce this with the ``error_message`` method, which goes on the *page* (not the Player model):
+You can enforce this with the ``error_message`` method, which goes on the page:
 
 .. code-block:: python
 
@@ -374,15 +374,9 @@ put HTML like this in your template:
     </label>
 
     <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">Disagree</span>
-        </div>
-
+        <span class="input-group-text">Disagree</span>
         <input type="range" name="pizza" min="-2" max="2" step="1" class="form-range">
-
-        <div class="input-group-append">
-            <span class="input-group-text">Agree</span>
-        </div>
+        <span class="input-group-text">Agree</span>
     </div>
 
 If you want to show the current numeric value, or hide the knob until the slider is clicked,
@@ -441,10 +435,8 @@ Then put this code in the template:
 .. code-block:: html
 
     <p>Do you wish to accept the offer?</p>
-    <div>
-        <button name="offer_accepted" value="True">Yes</button>
-        <button name="offer_accepted" value="False">No</button>
-    </div>
+    <button name="offer_accepted" value="True">Yes</button>
+    <button name="offer_accepted" value="False">No</button>
 
 You can use this technique for any type of field,
 not just ``BooleanField``.
