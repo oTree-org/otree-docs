@@ -3,12 +3,8 @@
 REST
 ====
 
-oTree has a small REST API that enables external programs
-(such as other websites) to communicate with oTree, in particular:
-
--   Create sessions
--   Add participant vars
--   Add session vars
+oTree has a REST API that enables external programs
+(such as other websites) to communicate with oTree:
 
 A REST API is just a URL on your server that is designed to be accessed by programs,
 rather than being opened manually in a web browser.
