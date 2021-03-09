@@ -6,7 +6,7 @@ oTree Lite
 As of December 2020, there is an alternative implementation of oTree that runs as a self-contained framework,
 not dependent on Django.
 
-It is smaller, which makes it easier to install, deploy, and use. For example:
+Advantages:
 
 -   Simpler error messages
 -   Fewer dependencies such as Twisted that cause installation problems for some people
@@ -18,42 +18,12 @@ oTree Lite's codebase is simpler and more self-contained.
 For the curious people who want to delve into oTree's internal source code,
 you will have an easier time navigating oTree Lite.
 
-
-Installation
-------------
-
-run::
-
-    pip install -U otree
-
-
 .. _lite_vs_mainline:
 
-Should I install oTree Lite, or oTree 3.x?
-------------------------------------------
-
-oTree 3.x and oTree Lite each have unique advantages, so I will be actively maintaining
-both. You can try either version and switch back and forth between them, since they
-have the same features and are compatible with the same code format.
-
-Reasons in favor of using oTree Lite:
-
--   You are a first-time oTree user
--   Your apps were developed in the past 1 or 2 years, or using oTree Studio
-    (so they likely already use the latest format)
--   Or, you want some of the features of oTree Lite,
-    and don't mind running ``otree update_my_code`` to update your older apps.
-
-Reasons in favor of using oTree 3.x (mainline version):
-
--   You have existing apps that are rather complex and want to guarantee compatibility
--   Your apps use features from the Django documentation,
-    or addons you got from someone else.
-
 How can I ensure I stay on oTree 3.x?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
-To ensure that you don't install oTree Lite, specify ``<5`` when you upgrade::
+To ensure that you don't install oTree Lite, you can specify ``<5`` when you upgrade::
 
     pip3 install -U "otree<5"
 
@@ -131,7 +101,7 @@ and displaying it when there are no errors will output ``[]`` which looks a bit 
 Older oTree formats
 ~~~~~~~~~~~~~~~~~~~
 
-Since this is an experimental version of oTree, it does not implement support for certain features found in older oTree
+oTree Lite does not implement support for certain features found in older oTree
 projects. To check you should run ``otree update_my_code``,
 which will tell you the changes you need to make before your code can run on oTree Lite.
 (It will also fix a few things automatically.)

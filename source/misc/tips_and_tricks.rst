@@ -84,10 +84,7 @@ Let's say your app has many fields that are almost the same, such as:
 This is quite complex; you should look for a way to simplify.
 
 Are the fields all displayed on separate pages? If so, consider converting
-this to a 10-round game with just one field. See the
-`real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
-sample game for an example of how to just have 1 page that gets looped over many rounds,
-varying the question that gets displayed with each round.
+this to a 10-round game with just one field.
 
 If that's not possible, then you can reduce the amount of repeated code
 by defining a method that returns a field:
@@ -131,10 +128,6 @@ something like this:
 
     # etc...
 
-See the `quiz <https://github.com/oTree-org/oTree/tree/master/quiz>`__
-or `real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
-sample games for examples of how to just have 1 page that gets looped over many rounds,
-varying the question that gets displayed with each round.
 
 Improving code performance
 --------------------------

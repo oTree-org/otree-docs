@@ -13,7 +13,7 @@ Version 5.0
 -   oTree 3.x used two types of tags in templates: ``{{ }}`` and ``{% %}``.
     Starting in oTree 5, however, you can forget about ``{% %}`` and just use ``{{ }}`` everywhere if you want.
     More details `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__.
-
+-   All REST API calls now return JSON
 
 Version 3.3
 ===========

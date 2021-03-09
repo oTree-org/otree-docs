@@ -215,7 +215,7 @@ To enable your participants to send you chat messages,
 consider using a software like `Chatwoot <https://github.com/chatwoot/chatwoot/blob/develop/README.md>`__.
 Click on Chatwoot's "Deploy to Heroku" button for 1-click setup of your Chatwoot server.
 Set up an inbox, then add its JavaScript snippet to the below code.
-Set the ``BASE_URL`` to your Chatwoot server.
+Set the ``BASE_URL`` to your Chatwoot server (not your oTree site).
 Put the combined code in an includable template, then include it in each page of your study:
 
 .. code-block:: html
