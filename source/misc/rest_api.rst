@@ -143,19 +143,16 @@ Parameters
     New feature as of March 2021.
     In beta until we get sufficient user feedback.
 
-GET URL: ``/api/sessions/``
+GET URL: ``/api/session/``
 
 This API retrieves data about a session and its participants.
-It's useful if you want to integrate oTree with MTurk or any other online platform
-to automate payments and participant recruitment.
-If you are interested in this, I wrote `a how-to guide <https://1drv.ms/w/s!AkzFB3_uPYH5gYd3IEj8oDFylx2Sjg?e=M4q3lJ>`__.
 
 Example
 ~~~~~~~
 
 .. code-block:: python
 
-    data = call_api(GET, 'sessions', code='vfyqlw1q', participant_labels=['Alice'])
+    data = call_api(GET, 'session', code='vfyqlw1q', participant_labels=['Alice'])
     pprint(data)
 
 Example output
@@ -165,7 +162,8 @@ Example output
 
     {'num_participants': 2,
      'room_url': 'http://localhost:8000/room/econ101',
-     'session_url': 'http://localhost:8000/join/bfzza6vhbx',
+     'session_wide_url': 'http://localhost:8000/join/bfzza6vhbx',
+     'admin_url': 'http://localhost:8000/SessionStartLinks/vfyqlw1q',
      'REAL_WORLD_CURRENCY_CODE': 'USD',
      'config': {'app_sequence': ['public_goods_simple'],
                 'display_name': 'public_goods_simple',

@@ -138,7 +138,7 @@ After:
     from otree.api import *
 
 You can see the sample games in the new format here:
-`https://github.com/oTree-org/oTree/tree/noself-demo <https://github.com/oTree-org/oTree/tree/noself-demo>`__,
+`here <https://github.com/oTree-org/otree>`__.
 
 How does this affect you?
 -------------------------
@@ -153,17 +153,14 @@ FAQ
 ---
 
 Q: Do I need to change my existing apps?
-
 A: No, you can keep them as is. The "no-self" format is optional.
 
 
 Q: Will I have to re-learn oTree for this new format?
-
 A: No, you don't really need to relearn anything. Every function, from creating_session, to before_next_page, etc, does the same thing as before. And there are no changes to other parts of oTree like templates or settings.py.
 
 
 Q: Why didn't you implement it this way originally?
-
 A: The first reason is that oTree got its structure from Django. But now that I made oTree Lite which is not based on Django, I have more freedom to design the app structure the way I see fit. The second reason is that this is quite a tailored design. It was necessary to wait and see how oTree evolved and how people use oTree before I could come up with the most appropriate design.
 
 
@@ -214,3 +211,11 @@ Misc notes
 -   You can optionally add a type hint to your function signatures. For example,
     change ``def xyz(player)`` to ``def xyz(player: Player)``. If you use PyCharm or VS Code,
     that will mean you get better autocompletion.
+-   If your apps are big and you want to split the code between several files like
+    ``models.py`` and ``pages.py``, that should work fine.
+    Just put this in your ``__init__.py``:
+
+.. code-block:: python
+
+    from .models import *
+    from .pages import *

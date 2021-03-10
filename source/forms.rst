@@ -285,7 +285,7 @@ with Bootstrap styling.
 However, if you want more control over the appearance and layout,
 you can use manual field rendering. Instead of ``{% formfield 'my_field' %}``,
 do ``{{ form.my_field }}``, to get just the input element.
-Just remember to also include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``.
+Just remember to also include ``{% formfield_errors 'my_field' %}``.
 
 .. _radio-table:
 .. _subwidgets:
@@ -357,9 +357,13 @@ For example, if your ``form_fields`` includes ``my_field``,
 you can do ``<input name="my_field" type="checkbox" />``
 (some other common types are ``radio``, ``text``, ``number``, and ``range``).
 
-Second, you should usually include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``,
+Second, you should usually include ````{% formfield_errors 'xyz' %}````,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
+
+.. note::
+
+    ``formfield_errors`` is new in oTree 5.0.5+.
 
 Raw HTML example: slider
 ~~~~~~~~~~~~~~~~~~~~~~~~

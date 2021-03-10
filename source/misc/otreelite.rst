@@ -87,16 +87,7 @@ Forms
 ~~~~~
 
 In templates, if you are doing manual form rendering, you should change
-``{{ form.my_field.errors }}`` to:
-
-.. code-block:: html+django
-
-    {% if form.my_field.errors %}
-        {{ form.my_field.errors.0 }}
-    {% endif %}
-
-This is because in ``.errors`` is now a list of strings,
-and displaying it when there are no errors will output ``[]`` which looks a bit weird.
+``{{ form.my_field.errors }}`` to ``{% formfield_errors 'my_field' %}``.
 
 Older oTree formats
 ~~~~~~~~~~~~~~~~~~~
@@ -126,9 +117,6 @@ Misc
 
 -   In ``get_group_matrix`` returns a matrix of integers, rather than a matrix of player objects.
     To preserve the previous behavior, you should pass ``objects=True``, like ``.get_group_matrix(objects=True)``.
--   ``ExtraModel`` is not supported yet
--   ``custom_export`` still works, though if you use any Django QuerySet syntax like ``Player.objects.filter()``,
-    it will not work; see below.
 -   If you try to access a Player/Group/Subsession field whose value is still ``None``,
     oTree will raise an error.
 -   Translating an app to multiple languages works differently. See :ref:`i18n`.
