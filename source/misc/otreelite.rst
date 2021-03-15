@@ -117,9 +117,17 @@ Misc
 
 -   In ``get_group_matrix`` returns a matrix of integers, rather than a matrix of player objects.
     To preserve the previous behavior, you should pass ``objects=True``, like ``.get_group_matrix(objects=True)``.
--   If you try to access a Player/Group/Subsession field whose value is still ``None``,
-    oTree will raise an error.
 -   Translating an app to multiple languages works differently. See :ref:`i18n`.
+-   If you try to access a Player/Group/Subsession field whose value is still ``None``,
+    oTree will raise an error. You can override this behavior by catching the exception:
+
+.. code-block:: python
+
+    try:
+      xyz = player.xyz
+    except TypeError:
+      xyz = None
+
 
 Django
 ~~~~~~

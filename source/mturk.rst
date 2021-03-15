@@ -205,8 +205,8 @@ or use the 3rd party
 `Manage HITs Individually <https://manage-hits-individually.s3.amazonaws.com/v4.0/index.html#/credentials>`__
 tool.
 
-If you want to build a friendly interface to manage HITs,
-you can use oTree's :ref:`REST API <REST-session-data>`.
+There is also a project called `oTree HR <https://github.com/oTree-org/HR>`__ that you can add your own
+functionality to.
 
 Misc notes
 ----------

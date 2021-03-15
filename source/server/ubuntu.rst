@@ -46,17 +46,6 @@ to ``postgres://postgres@localhost/django_db``
 However, in principle, oTree 3.0+ should do fine with its default SQLite in production,
 since the server is now is single threaded.
 
-Install Redis
--------------
-
-If you installed ``redis-server`` through ``apt-get`` as instructed earlier,
-Redis will be running on port 6379. You can test with ``redis-cli ping``,
-which should output ``PONG``.
-
-Then add this line in the same place where you set ``DATABASE_URL``::
-
-    export REDIS_URL=redis://localhost:6379
-
 Reset the database on the server
 --------------------------------
 

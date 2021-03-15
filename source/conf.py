@@ -71,3 +71,5 @@ html_static_path = ['_static']
 master_doc = 'index'
 
 locale_dirs = ["../locales/"]
+
+#html_logo = '_static/otree-icon.png'

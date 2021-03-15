@@ -357,7 +357,7 @@ For example, if your ``form_fields`` includes ``my_field``,
 you can do ``<input name="my_field" type="checkbox" />``
 (some other common types are ``radio``, ``text``, ``number``, and ``range``).
 
-Second, you should usually include ````{% formfield_errors 'xyz' %}````,
+Second, you should usually include ``{% formfield_errors 'xyz' %}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
 

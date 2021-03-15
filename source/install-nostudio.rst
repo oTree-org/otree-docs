@@ -64,8 +64,8 @@ Then launch the text editor and open your entire project folder.
 .. _upgrade:
 .. _upgrade-otree-core:
 
-About this documentation
-------------------------
+About @staticmethod, etc.
+-------------------------
 
 If you are using a text editor to write your oTree code, remember to add ``@staticmethod`` before
 all page methods, like ``is_displayed``, ``vars_for_template``, ``before_next_page``, etc.
@@ -75,7 +75,7 @@ If you are using PyCharm, VS Code, or another IDE, you can also add type annotat
 
 For example:
 
-.. code-block::python
+.. code-block:: python
 
     @staticmethod
     def is_displayed(player: Player):
@@ -83,7 +83,7 @@ For example:
 
 Or:
 
-.. code-block::python
+.. code-block:: python
 
     def creating_session(subsession: Subsession):
         ...
