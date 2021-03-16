@@ -8,11 +8,6 @@ MTurk setup (without Studio)
 If you are not using oTree Studio, here are the extra steps to set up Mechanical Turk
 integration.
 
-.. note::
-
-    As of October 2019, oTree is using a new MTurk format.
-    If you ran studies previously, see `here <https://github.com/oTree-org/otree-docs/blob/master/source/misc/mturk_newformat.rst>`__.
-
 
 Installation
 ------------
