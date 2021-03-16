@@ -188,7 +188,7 @@ Keeping users on the page
 Let's say you require 10 messages to be sent before the users can proceed
 to the next page.
 
-First, you should omit the ``{% next_button %}``.
+First, you should omit the ``{{ next_button }}``.
 (Or use JS to hide it until the task is complete.)
 
 When the task is completed, you send a message:
@@ -250,7 +250,7 @@ Form validation
 
     If you have a form with multiple fields,
     it may be simpler to use a regular page with ``form_model`` and ``form_fields``.
-    because then you have the convenience of ``{% formfields %}`` and ``error_message``,
+    because then you have the convenience of ``{{ formfields }}`` and ``error_message``,
     etc.
 
 Let's say your live page asks players to submit bids,
@@ -272,7 +272,7 @@ In addition, you can add attributes to the ``<input>`` element like ``max="99"``
 (But note HTML code is not secure and can be modified by tech-savvy participants.)
 If you do this, you should also add ``form="liveform"``.
 This will exclude that ``<input>`` from the page's main form,
-so that when the user clicks the ``{% next_button %}``, the validation will not be triggered .
+so that when the user clicks the ``{{ next_button }}``, the validation will not be triggered .
 
 So, it looks like this:
 

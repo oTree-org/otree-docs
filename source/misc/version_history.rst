@@ -37,7 +37,7 @@ Version 3.1
 ===========
 
 -   New way to define :ref:`roles`
--   You can pass a string to ``formfield``, for example ``{% formfield 'contribution' %}``.
+-   You can pass a string to ``formfield``, for example ``{{ formfield 'contribution' }}``.
 
 Version 3.0
 ===========
@@ -120,7 +120,7 @@ Version 2.1
 
 -   oTree now raises an error if you use an undefined variable in your template.
     This will help catch typos like
-    ``{{ Player.payoff }}`` or ``{% if player.id_in_gruop %}``.
+    ``{{ Player.payoff }}`` or ``{{ if player.id_in_gruop }}``.
     This means that apps that previously worked may now get a template error
     (previously, it failed silently).
     If you can't remove the offending variable,

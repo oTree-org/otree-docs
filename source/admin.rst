@@ -89,7 +89,7 @@ they will be assigned back to the same participant (if you are using a room-wide
 This reduces duplicate participation.
 
 If you're using Prolific,
-you can add ``participant_label={{%PROLIFIC_PID%}}`` to your study URL.
+you can add ``participant_label={{{PROLIFIC_PID}}}`` to your study URL.
 When the user clicks the link, Prolific will replace that with the participant's actual Prolific ID.
 
 Arrival order
@@ -135,16 +135,16 @@ in your app, and display whatever variables were passed in ``vars_for_admin_repo
     <p>Here is the sorted list of payoffs in round {{ subsession.round_number }}</p>
 
     <ul>
-        {% for payoff in payoffs %}
+        {{ for payoff in payoffs }}
             <li>{{ payoff }}</li>
-        {% endfor %}
+        {{ endfor }}
     </ul>
 
 Notes:
 
 -   ``subsession``, ``session``, and ``Constants`` are passed to the template
     automatically.
--   ``admin_report.html`` does not need to use ``{% block %}``.
+-   ``admin_report.html`` does not need to use ``{{ block }}``.
     The above example is valid as the full contents of ``admin_report.html``.
 
 If one or more apps in your session have an ``admin_report.html``,
@@ -152,7 +152,7 @@ your admin page will have a "Reports" tab. Use the menu to select the app
 and the round number, to see the report for that subsession.
 
 Tip: if you are displaying the same chart in the admin report and participant pages,
-you can reuse ``admin_report.html`` in the participant template with an ``{% include %}``,
+you can reuse ``admin_report.html`` in the participant template with an ``{{ include }}``,
 and pass the variables like this:
 
 .. code-block:: python

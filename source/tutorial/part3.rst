@@ -121,9 +121,9 @@ and ``content`` to:
     You are Participant A. Now you have {{Constants.endowment}}.
     </p>
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 SendBack.html
@@ -140,9 +140,9 @@ and the ``content`` block to:
         and you received {{tripled_amount}}.
     </p>
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 Here is the page code. Notes:
@@ -175,24 +175,24 @@ Results
 ~~~~~~~
 
 The results page needs to look slightly different for P1 vs. P2. So, we
-use the ``{% if %}`` statement
+use the ``{{ if }}`` statement
 to condition on the current player's ``id_in_group``.
 Set the ``title`` block to ``Results``, and the content block to:
 
 .. code-block:: html+django
 
-    {% if player.id_in_group == 1 %}
+    {{ if player.id_in_group == 1 }}
         <p>
             You sent Participant B {{ group.sent_amount }}.
             Participant B returned {{ group.sent_back_amount }}.
         </p>
-    {% else %}
+    {{ else }}
         <p>
             Participant A sent you {{ group.sent_amount }}.
             You returned {{ group.sent_back_amount }}.
         </p>
 
-    {% endif %}
+    {{ endif }}
 
     <p>
     Therefore, your total payoff is {{ player.payoff }}.

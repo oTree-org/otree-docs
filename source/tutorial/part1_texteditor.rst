@@ -50,32 +50,32 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 
 .. code-block:: html
 
-    {% block title %}
+    {{ block title }}
         Enter your information
-    {% endblock %}
-    {% block content %}
+    {{ endblock }}
+    {{ block content }}
 
         Please enter the following information.
 
-        {% formfields %}
+        {{ formfields }}
 
-        {% next_button %}
+        {{ next_button }}
 
-    {% endblock %}
+    {{ endblock }}
 
 The second template will be called ``Results.html``.
 
 .. code-block:: html
 
-    {% block title %}
+    {{ block title }}
         Results
-    {% endblock %}
-    {% block content %}
+    {{ endblock }}
+    {{ block content }}
 
         <p>Your name is {{ player.name }} and your age is {{ player.age }}.</p>
 
-        {% next_button %}
-    {% endblock %}
+        {{ next_button }}
+    {{ endblock }}
 
 
 Define pages

@@ -60,7 +60,7 @@ Templates
 The template system is basically compatible with Django templates,
 except that only the basic tags & filters have been implemented:
 
--   Tags: ``{% if %}``, ``{% for %}``, ``{% block %}``
+-   Tags: ``{{ if }}``, ``{{ for }}``, ``{{ block }}``
 -   Filters: ``{{ x|json }}``, ``{{ x|escape }}``, ``{{ x|c }}``, ``{{ x|default }}``
 
 There is no ``floatformat`` filter, but there are new rounding filters that replace it.
@@ -94,7 +94,7 @@ Forms
 ~~~~~
 
 In templates, if you are doing manual form rendering, you should change
-``{{ form.my_field.errors }}`` to ``{% formfield_errors 'my_field' %}``.
+``{{ form.my_field.errors }}`` to ``{{ formfield_errors 'my_field' }}``.
 
 Older oTree formats
 ~~~~~~~~~~~~~~~~~~~

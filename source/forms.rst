@@ -33,7 +33,7 @@ In your template, you can display the form with:
 
 .. code-block:: html
 
-    {% formfields %}
+    {{ formfields }}
 
 .. _form-validation:
 
@@ -252,40 +252,40 @@ You can set a model field's ``widget`` to ``RadioSelect`` or ``RadioSelectHorizo
 to be displayed with radio buttons, instead of a dropdown menu.
 
 
-{% formfield %}
+{{ formfield }}
 ---------------
 
 If you want to position the fields individually,
-instead of ``{% formfields %}`` you can use ``{% formfield %}``:
+instead of ``{{ formfields }}`` you can use ``{{ formfield }}``:
 
 .. code-block:: html
 
-    {% formfield 'bid' %}
+    {{ formfield 'bid' }}
 
 
 You can also put the ``label`` in directly in the template:
 
 .. code-block:: html
 
-    {% formfield 'bid' label="How much do you want to contribute?" %}
+    {{ formfield 'bid' label="How much do you want to contribute?" }}
 
 .. note::
 
-    The previous syntax of ``{% formfield player.bid %}`` is still supported.
+    The previous syntax of ``{{ formfield player.bid }}`` is still supported.
 
 .. _manual-forms:
 
 Customizing a field's appearance
 --------------------------------
 
-``{% formfields %}`` and ``{% formfield %}`` are easy to use because they automatically output
+``{{ formfields }}`` and ``{{ formfield }}`` are easy to use because they automatically output
 all necessary parts of a form field (the input, the label, and any error messages),
 with Bootstrap styling.
 
 However, if you want more control over the appearance and layout,
-you can use manual field rendering. Instead of ``{% formfield 'my_field' %}``,
+you can use manual field rendering. Instead of ``{{ formfield 'my_field' }}``,
 do ``{{ form.my_field }}``, to get just the input element.
-Just remember to also include ``{% formfield_errors 'my_field' %}``.
+Just remember to also include ``{{ formfield_errors 'my_field' }}``.
 
 .. _radio-table:
 .. _subwidgets:
@@ -319,9 +319,9 @@ Instead, you should simply loop over the choices in the field as follows:
 
     <tr>
         <td>{{ form.offer_1.label }}</td>
-        {% for choice in form.offer_1 %}
+        {{ for choice in form.offer_1 }}
             <td>{{ choice }}</td>
-        {% endfor %}
+        {{ endfor }}
     </tr>
 
 If you have many fields with the same number of choices,
@@ -330,14 +330,14 @@ you can arrange them in a table:
 .. code-block:: html
 
     <table class="table">
-        {% for field in form %}
+        {{ for field in form }}
             <tr>
                 <th>{{ field.label }}</th>
-                {% for choice in field %}
+                {{ for choice in field }}
                     <td>{{ choice }}</td>
-                {% endfor %}
+                {{ endfor }}
             </tr>
-        {% endfor %}
+        {{ endfor }}
     </table>
 
 .. _raw_html:
@@ -345,7 +345,7 @@ you can arrange them in a table:
 Raw HTML widgets
 ----------------
 
-If ``{% formfields %}`` and :ref:`manual field rendering <manual-forms>`
+If ``{{ formfields }}`` and :ref:`manual field rendering <manual-forms>`
 don't give you the appearance you want,
 you can write your own widget in raw HTML.
 However, you will lose the convenient features handled
@@ -357,7 +357,7 @@ For example, if your ``form_fields`` includes ``my_field``,
 you can do ``<input name="my_field" type="checkbox" />``
 (some other common types are ``radio``, ``text``, ``number``, and ``range``).
 
-Second, you should usually include ``{% formfield_errors 'xyz' %}``,
+Second, you should usually include ``{{ formfield_errors 'xyz' }}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
 
@@ -368,7 +368,7 @@ they can see the error message.
 Raw HTML example: slider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want a slider, instead of ``{% formfields %}``,
+If you want a slider, instead of ``{{ formfields }}``,
 put HTML like this in your template:
 
 .. code-block:: html
@@ -423,7 +423,7 @@ Button that submits the form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your page only contains 1 decision,
-you could omit the ``{% next_button %}``
+you could omit the ``{{ next_button }}``
 and instead have the user click on one of several buttons
 to go to the next page.
 
@@ -486,6 +486,6 @@ Then, in the template:
 
 .. code-block:: html
 
-    {% formfield player.contribution label=contribution_label %}
+    {{ formfield player.contribution label=contribution_label }}
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.

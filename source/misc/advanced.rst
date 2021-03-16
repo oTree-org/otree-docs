@@ -96,13 +96,13 @@ Here is how to include images (or any other static file like .css, .js, etc.) in
 At the root of your oTree project, there is a ``_static/`` folder.
 Put a file there, for example ``puppy.jpg``.
 Then, in your template, you can get the URL to that file with
-``{% static 'puppy.jpg' %}``.
+``{{ static 'puppy.jpg' }}``.
 
 To display an image, use the ``<img>`` tag, like this:
 
 .. code-block:: html
 
-    <img src="{% static 'puppy.jpg' %}"/>
+    <img src="{{ static 'puppy.jpg' }}"/>
 
 Above we saved our image in ``_static/puppy.jpg``,
 But actually it's better to make a subfolder with the name of your app,
@@ -113,7 +113,7 @@ Then your HTML code becomes:
 
 .. code-block:: html
 
-    <img src="{% static 'your_app_name/puppy.jpg %}"/>
+    <img src="{{ static 'your_app_name/puppy.jpg }}"/>
 
 (If you prefer, you can also put static files inside your app folder,
 in a subfolder called ``static/your_app_name``.)
@@ -141,13 +141,13 @@ For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.htm
 
 .. code-block:: html
 
-    {% block title %}{{ title_text }}{% endblock %}
-    {% block content %}
+    {{ block title }}{{ title_text }}{{ endblock }}
+    {{ block content }}
         {{ body_text }}
         <p>
             My custom content here.
         </p>
-    {% endblock %}
+    {{ endblock }}
 
 Then tell your wait page to use this template:
 

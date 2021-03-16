@@ -113,9 +113,9 @@ and the ``content`` block to:
         and a multiplier of {{ Constants.multiplier }}.
     </p>
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 Page 2: ResultsWaitPage
@@ -166,7 +166,7 @@ Set the template's content to:
         Your profit is therefore {{ player.payoff }}.
     </p>
 
-    {% next_button %}
+    {{ next_button }}
 
 Page sequence
 -------------
