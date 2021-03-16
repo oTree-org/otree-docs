@@ -3,10 +3,18 @@
 oTree Lite
 ==========
 
-As of December 2020, there is an alternative implementation of oTree that runs as a self-contained framework,
+oTree 5 is based on oTree Lite, a new implementation of oTree that runs as a self-contained framework,
 not dependent on Django.
 
-Advantages:
+oTree Lite's codebase is simpler and more self-contained.
+This makes it easier for me to add new features, investigate bug reports, and keep oTree simple to use.
+
+Django comes with many features "out of the box", so being based on Django initially helped oTree
+add new features and iterate quickly.
+However, Django brings complexity and restrictions.
+In the long run, the "framework inside a framework" approach becomes more of a liability.
+
+Other advantages of oTree Lite:
 
 -   Simpler error messages
 -   Fewer dependencies such as Twisted that cause installation problems for some people
@@ -14,7 +22,6 @@ Advantages:
 -   No need for Redis or second dyno
 -   I also expect it to eventually run much faster, once I start performance tuning it.
 
-oTree Lite's codebase is simpler and more self-contained.
 For the curious people who want to delve into oTree's internal source code,
 you will have an easier time navigating oTree Lite.
 
@@ -40,7 +47,7 @@ For Heroku, use one of the following formats in your ``requirements.txt``
 Compatibility
 -------------
 
-This alternative implementation is generally compatible with existing oTree apps.
+oTree Lite is generally compatible with previous oTree apps.
 However, you will probably see small things that changed, especially in how forms and templates are rendered.
 This is somewhat inevitable as oTree has undergone a "brain transplant".
 Please send any feedback to chris@otree.org.
@@ -119,7 +126,8 @@ Misc
     To preserve the previous behavior, you should pass ``objects=True``, like ``.get_group_matrix(objects=True)``.
 -   Translating an app to multiple languages works differently. See :ref:`i18n`.
 -   If you try to access a Player/Group/Subsession field whose value is still ``None``,
-    oTree will raise an error. You can override this behavior by catching the exception:
+    oTree will raise an error. You can override this behavior by setting the initial value of the field
+    to something other than ``None``, or by catching the exception:
 
 .. code-block:: python
 

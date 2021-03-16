@@ -36,19 +36,33 @@ For example:
 
     def set_payoffs(group):
         for p in group.get_players():
-            p.payoff = cu(100)
+            p.payoff = 100
 
 Then trigger this method by doing:
 
 .. code-block:: python
 
     class MyWaitPage(WaitPage):
-        after_all_players_arrive = 'set_payoffs'
+        after_all_players_arrive = set_payoffs
 
 If you set ``wait_for_all_groups = True``,
 then ``after_all_players_arrive`` must be a *Subsession* function.
 
-``after_all_players_arrive`` can also be defined directly in the WaitPge as a ``@staticmethod``.
+If you are using a text editor, ``after_all_players_arrive`` can also be defined directly in the WaitPage:
+
+    class MyWaitPage(WaitPage):
+        @staticmethod
+        def after_all_players_arrive(group):
+            for p in group.get_players():
+                p.payoff = 100
+
+It can also be a string:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        after_all_players_arrive = 'set_payoffs'
+
 
 is_displayed()
 --------------

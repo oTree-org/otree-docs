@@ -32,6 +32,7 @@ If you want to refine the code that was generated
 read the below sections.
 
 If you are using a text editor, go to ``tests.py``.
+See examples of how to define ``tests.py`` `here <https://github.com/oTree-org/otree>`__.
 
 Submitting pages
 ~~~~~~~~~~~~~~~~
