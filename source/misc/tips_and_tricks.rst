@@ -87,7 +87,7 @@ Are the fields all displayed on separate pages? If so, consider converting
 this to a 10-round game with just one field.
 
 If that's not possible, then you can reduce the amount of repeated code
-by defining a method that returns a field:
+by defining a function that returns a field:
 
 .. code-block:: python
 
@@ -230,7 +230,7 @@ Avoid duplicated validation methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` methods,
-you can replace them with a single :ref:`error_message <error_message>` method.
+you can replace them with a single :ref:`error_message <error_message>` function.
 For example:
 
 .. code-block:: python
@@ -251,7 +251,7 @@ For example:
         if value != 'George Washington':
             return 'Wrong answer'
 
-You can instead define this method on your page (not Player class):
+You can instead define this function on your page:
 
 .. code-block:: python
 

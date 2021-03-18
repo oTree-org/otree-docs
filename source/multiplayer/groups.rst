@@ -264,17 +264,19 @@ before players begin playing. So, if your shuffling logic needs to depend on
 something that happens after the session starts, you should do the
 shuffling in a wait page instead.
 
-Let's say you have defined a method on the subsession
-called ``do_my_shuffle()`` that uses ``set_group_matrix``, etc.
-
 You need to make a ``WaitPage`` with ``wait_for_all_groups=True``
 and put the shuffling code in ``after_all_players_arrive``:
 
 .. code-block:: python
 
     class ShuffleWaitPage(WaitPage):
+
         wait_for_all_groups = True
-        after_all_players_arrive = 'do_my_shuffle'
+
+        @staticmethod
+        def after_all_players_arrive(subsession):
+            subsession.group_randomly()
+            # etc...
 
 
 Group by arrival time

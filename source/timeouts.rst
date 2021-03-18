@@ -91,7 +91,7 @@ string ``''`` for string fields.
 If you want to discard the auto-submitted values, you can just
 check if ``timeout_happened``, and if so, overwrite the values.
 
-If the ``error_message()`` method fails, then the whole form might be invalid,
+If the ``error_message()`` function fails, then the whole form might be invalid,
 so the whole form will be discarded.
 
 Timeouts that span multiple pages

@@ -8,6 +8,8 @@ and update in real time, enabling continuous time games.
 Live pages are a great fit for games with lots of back-and-forth interaction
 between users, and for single-player games with quick iteration.
 
+There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-demos/>`__.
+
 Sending data to the server
 --------------------------
 
@@ -221,21 +223,6 @@ Then in the template, automatically submit the page via JavaScript:
         }
         // handle other types of messages here..
     }
-
-For security, you should use :ref:`error_message <error_message>`:
-
-.. code-block:: python
-
-
-    class MyPage(Page):
-        def live_method(player, data):
-            ...
-
-        @staticmethod
-        def error_message(player, values):
-            group = player.group
-            if not group.game_finished:
-                return 'you need to stay until 10 messages are sent'
 
 By the way, using a similar technique, you could implement a custom
 wait page, e.g. one that lets you proceed after a certain timeout,

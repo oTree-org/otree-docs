@@ -296,7 +296,7 @@ Passing data from Python to JavaScript (js_vars)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To pass data to JavaScript code in your template,
-define a method ``js_vars`` on your Page, for example:
+define a function ``js_vars`` on your Page, for example:
 
 .. code-block:: html
 

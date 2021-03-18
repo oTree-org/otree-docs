@@ -16,6 +16,8 @@ An ExtraModel is useful when you need to store dozens or hundreds of data points
 For example, a list of bids, or a list of stimuli and reaction times.
 They are frequently used together with :ref:`live`.
 
+There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-demos/>`__.
+
 An ExtraModel should link to another model:
 
 .. code-block:: python
@@ -195,7 +197,7 @@ Reading CSV or other files
 
 Store yourfile.csv in your app folder.
 Then put this code anywhere you want to read the file
-(in a method or in Constants):
+(in a function or in Constants):
 
 .. code-block:: python
 

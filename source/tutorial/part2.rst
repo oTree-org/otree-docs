@@ -215,7 +215,7 @@ You just need to insert a line in your code like this:
     print('group.total_contribution is', group.total_contribution)
 
 Put this line in the part of your code that's not working,
-such as the payoff method defined above.
+such as the payoff function defined above.
 When you play the game in your browser and that code gets executed,
 your print statement will be displayed in your command prompt window
 (not in your web browser).
@@ -246,10 +246,10 @@ If you don't see the output of the print statement in your console window,
 that means that line is not getting executed! (Which is why it isn't working.)
 
 Maybe it's because your code is in some unreachable place like after a ``return`` statement,
-or inside an "if" statement that is always ``False``. Start putting print statements from the top of the method,
+or inside an "if" statement that is always ``False``. Start putting print statements from the top of the function,
 then see where they stop getting displayed.
 
-Or maybe your code is in a method that never gets called (executed).
+Or maybe your code is in a function that never gets called (executed).
 oTree's built-in methods such as ``creating_session`` and ``before_next_page`` are automatically executed,
-but if you define a custom method such as ``set_payoffs``, you need to remember to call that function
-from a built-in method.
+but if you define a custom function such as ``set_payoffs``, you need to remember to call that function
+from a built-in function.

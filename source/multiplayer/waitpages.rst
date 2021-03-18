@@ -38,7 +38,7 @@ For example:
         for p in group.get_players():
             p.payoff = 100
 
-Then trigger this method by doing:
+Then trigger this function by doing:
 
 .. code-block:: python
 
@@ -141,9 +141,9 @@ which players are assigned together, you can also use ``group_by_arrival_time_me
 Let's say that in addition to grouping by arrival time, you need each group
 to consist of 2 men and 2 women.
 
-If you define a subsession function called ``group_by_arrival_time_method``,
+If you define a function called ``group_by_arrival_time_method``,
 it will get called whenever a new player reaches the wait page.
-The method's argument is the list of players who are currently waiting at your wait page.
+The function's second argument is the list of players who are currently waiting at your wait page.
 If you pick some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.

@@ -213,7 +213,7 @@ Add 2 wait pages:
 -  ``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send back)
 
 After the second wait page, we should calculate the payoffs.
-So, we define a method on the Group called ``set_payoffs``:
+So, we define a function called ``set_payoffs``:
 
 .. code-block:: python
 
@@ -227,7 +227,7 @@ Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:
 
 .. code-block:: python
 
-    after_all_players_arrive = 'set_payoffs'
+    after_all_players_arrive = set_payoffs
 
 Make sure they are ordered correctly in the page_sequence:
 

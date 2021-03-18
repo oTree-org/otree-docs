@@ -205,7 +205,7 @@ Validating multiple fields together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say your form has 3 number fields whose values must sum to 100.
-You can enforce this with the ``error_message`` method, which goes on the page:
+You can enforce this with the ``error_message`` function, which goes on the page:
 
 .. code-block:: python
 
@@ -223,7 +223,7 @@ You can enforce this with the ``error_message`` method, which goes on the page:
 Notes:
 
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
--   This method is only executed if there are no other errors in the form.
+-   This function is only executed if there are no other errors in the form.
 -   You can also return a dict that maps field names to error messages.
     This way, you don't need to write many repetitive FIELD_error_message methods
     (see :ref:`here <duplicate_validation_methods>`).
@@ -234,7 +234,7 @@ Determining form fields dynamically
 -----------------------------------
 
 If you need the list of form fields to be dynamic, instead of
-``form_fields`` you can define a method ``get_form_fields``:
+``form_fields`` you can define a function ``get_form_fields``:
 
 .. code-block:: python
 
