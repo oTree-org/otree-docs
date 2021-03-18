@@ -228,57 +228,6 @@ By the way, using a similar technique, you could implement a custom
 wait page, e.g. one that lets you proceed after a certain timeout,
 even if not all players have arrived.
 
-.. _live-forms:
-
-Form validation
----------------
-
-.. note::
-
-    If you have a form with multiple fields,
-    it may be simpler to use a regular page with ``form_model`` and ``form_fields``.
-    because then you have the convenience of ``{{ formfields }}`` and ``error_message``,
-    etc.
-
-Let's say your live page asks players to submit bids,
-and the maximum bid is 99.
-In a non-live page you would check this using :ref:`form-validation`.
-But with live pages, you must verify it inside the ``live_method``:
-
-.. code-block:: python
-
-    def live_method(player, bid):
-        if bid > 99:
-            # just an example.
-            # it's up to you to handle this message in your JavaScript code.
-            response = dict(type='error', message='Bid is too high')
-            return {player.id_in_group: response}
-        ...
-
-In addition, you can add attributes to the ``<input>`` element like ``max="99"``.
-(But note HTML code is not secure and can be modified by tech-savvy participants.)
-If you do this, you should also add ``form="liveform"``.
-This will exclude that ``<input>`` from the page's main form,
-so that when the user clicks the ``{{ next_button }}``, the validation will not be triggered .
-
-So, it looks like this:
-
-.. code-block:: javascript
-
-  <input id="whatever" type="number" max="99" required form="liveform">
-
-To trigger validation when the user submits the bid, use this
-(e.g. in your ``onclick`` handler):
-
-.. code-block:: javascript
-
-    let liveform = document.getElementById('liveform');
-    let isValid = liveform.reportValidity();
-
-``reportValidity()`` is a built-in JavaScript function that will show the user
-any errors in their form fields. It also returns a boolean
-that tells if the form is currently valid. You can use that to skip the ``liveSend``.
-
 General advice about live pages
 -------------------------------
 
@@ -334,15 +283,15 @@ The server handles these 2 situations with an "if" statement:
             # that changes group.board from 'X O XX  O' to 'X OOXX  O'
             save_move(group, square, player.id_in_group)
             # so that we can highlight the square (and maybe say who made the move)
-            feedback = {'square': square, 'id_in_group': player.id_in_group}
+            news = {'square': square, 'id_in_group': player.id_in_group}
         else:
             # SITUATION 2
-            feedback = {}
+            news = {}
         # get_state should contain the current state of the game, for example:
         # {'board': 'X O XX  O', 'whose_turn': 2}
         payload = get_state(group)
         # .update just combines 2 dicts
-        payload.update(feedback)
+        payload.update(news)
         return {0: payload}
 
 In situation 2 (the player loads the page), the client gets a message like:
@@ -375,11 +324,11 @@ As illustrated above, the typical pattern for a live_method is like this::
         if (action is illegal/invalid):
             return
         update the models based on the move.
-        feedback = (produce the feedback to send back to the user, or onward to other users)
+        news = (produce the feedback to send back to the user, or onward to other users)
     else:
-        feedback = (nothing)
+        news = (nothing)
     state = (get the current state of the game)
-    payload = (state combined with feedback)
+    payload = (state combined with news)
     return payload
 
 Note that we get the game's state twice. That's because the state changes when we update our models,

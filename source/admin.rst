@@ -212,25 +212,18 @@ Chat between participants and experimenter
 ------------------------------------------
 
 To enable your participants to send you chat messages,
-consider using a software like `Chatwoot <https://github.com/chatwoot/chatwoot/blob/develop/README.md>`__.
-Click on Chatwoot's "Deploy to Heroku" button for 1-click setup of your Chatwoot server.
-Set up an inbox, then add its JavaScript snippet to the below code.
-Set the ``BASE_URL`` to your Chatwoot server (not your oTree site).
-Put the combined code in an includable template, then include it in each page of your study:
+consider using a software like `Papercups <https://github.com/papercups-io/papercups/blob/master/README.md>`__.
+Click on the "Deploy to Heroku" button for 1-click setup of your Papercups server.
+When it prompts you for config vars such as ``BACKEND_URL`` and ``REACT_APP_URL``,
+that refers to your Papercups site, not your oTree site.
+It will give you some HTML embedding code.
+Put this code in an includable template called ``papercups.html``,
+then use ``{{ include }}`` to add the widget to each of your pages.
+You should also add this to the embedding config:
 
-.. code-block:: html
+.. code-block:: javascript
 
-    <script>
-        window.addEventListener('chatwoot:ready', function () {
-            window.$chatwoot.setUser(`{{ participant.code }}`, {
-                // or can use participant.label if you want
-                name: '{{ participant.code }}',
-                // doesn't need to be a real email address
-                email: '{{ participant.code }}@example.com',
-                identifier_hash: '{{ participant.code }}'
-            })
-        });
-    </script>
-    <!-- chatwootSDK code goes here...remember to substitute BASE_URL. -->
-
-
+    customer: {
+      name: '{{participant.code}}',
+      external_id: '{{participant.code}}',
+    }
