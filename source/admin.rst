@@ -214,10 +214,9 @@ Chat between participants and experimenter
 To enable your participants to send you chat messages,
 consider using a software like `Papercups <https://github.com/papercups-io/papercups/blob/master/README.md>`__.
 Click on the "Deploy to Heroku" button for 1-click setup of your Papercups server.
-When it prompts you for config vars such as ``BACKEND_URL`` and ``REACT_APP_URL``,
-that refers to your Papercups site, not your oTree site.
-It will give you some HTML embedding code.
-Put this code in an includable template called ``papercups.html``,
+Fill out the required config vars and leave the others empty.
+``BACKEND_URL`` and ``REACT_APP_URL`` refer to your Papercups site, not your oTree site.
+Login to your site and copy the HTML embedding code to an includable template called ``papercups.html``,
 then use ``{{ include }}`` to add the widget to each of your pages.
 You should also add this to the embedding config:
 
