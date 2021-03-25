@@ -271,7 +271,7 @@ You can also put the ``label`` in directly in the template:
 
 .. note::
 
-    The previous syntax of ``{{ formfield player.bid }}`` is still supported.
+    The previous syntax of ``{% formfield player.bid %}`` is still supported.
 
 .. _manual-forms:
 

@@ -193,7 +193,9 @@ Use a ``yield`` for each row of data.
         # header row
         yield ['session', 'participant_code', 'round_number', 'id_in_group', 'payoff']
         for p in players:
-            yield [p.session.code, p.participant.code, p.round_number, p.id_in_group, p.payoff]
+            participant = p.participant
+            session = p.session
+            yield [session.code, participant.code, p.round_number, p.id_in_group, p.payoff]
 
 Once this function is defined, your custom data export will be available in the
 regular data export page.
@@ -218,7 +220,8 @@ Fill out the required config vars and leave the others empty.
 ``BACKEND_URL`` and ``REACT_APP_URL`` refer to your Papercups site, not your oTree site.
 Login to your site and copy the HTML embedding code to an includable template called ``papercups.html``,
 then use ``{{ include }}`` to add the widget to each of your pages.
-You should also add this to the embedding config:
+(Put it somewhere in your page content, not inside ``<head>`` as suggested by Papercups documentation.)
+We recommend also adding this to the embedding config:
 
 .. code-block:: javascript
 

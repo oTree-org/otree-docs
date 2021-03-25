@@ -18,7 +18,7 @@ Install apt-get packages
 
 Run::
 
-    sudo apt-get install python3-pip redis-server git
+    sudo apt-get install python3-pip git
 
 Create a virtualenv
 -------------------
@@ -150,8 +150,6 @@ If you get strange behavior,
 such as random changes each time the page reloads,
 it might be caused by another oTree instance that didn't shut down.
 Try stopping oTree and reload again.
-Also make sure that you are not sharing the same Postgres or Redis
-databases between two oTree instances.
 
 Sharing a server with other oTree users
 ---------------------------------------
@@ -167,7 +165,6 @@ but in some cases name things differently to avoid clashes:
 -   Create a virtualenv in their home directory
 -   Create a different Postgres database, as described earlier,
     and set this in the DATABASE_URL env var.
--   Each user needs their own Redis database.
 
 Once these steps are done, the second user can push code to the server,
 then run ``otree resetdb``.

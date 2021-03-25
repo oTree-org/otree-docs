@@ -1,5 +1,11 @@
 Version history
 ```````````````
+
+Version 5.1
+===========
+
+-   Breaking changes to REST API
+
 Version 5.0
 ===========
 

@@ -9,6 +9,8 @@ oTree has a REST API that enables external programs
 A REST API is just a URL on your server that is designed to be accessed by programs,
 rather than being opened manually in a web browser.
 
+One project that uses the REST API a lot is `oTree HR <https://github.com/oTree-org/HR>`__.
+
 .. note::
 
     As of March 2021, all API calls return JSON.
@@ -43,15 +45,15 @@ Setup
     SERVER_URL = 'http://localhost:8000'
     REST_KEY = ''  # fill this later
 
-    def call_api(method, endpoint, **params) -> dict:
-        resp = method(
-            SERVER_URL + f'/api/{endpoint}/',
-            json=params,
-            headers={'otree-rest-key': REST_KEY},
-        )
+    def call_api(method, endpoint, path_param=None, **params) -> dict:
+        if path_param:
+            path = f'/api/{endpoint}/{path_param}/'
+        else:
+            path = f'/api/{endpoint}/'
+        resp = method(SERVER_URL + path, json=params, headers={'otree-rest-key': REST_KEY})
         if not resp.ok:
             msg = (
-                f'Request to "/api/{endpoint}" failed '
+                f'Request to "{path}" failed '
                 f'with status code {resp.status_code}: {resp.text}'
             )
             raise Exception(msg)
@@ -84,8 +86,7 @@ Example
 
 GET URL: ``/api/session_configs/``
 
-This endpoint simply returns the list of all your session configs, as dicts
-with all their properties, e.g. ``participation_fee``, etc.
+Returns the list of all your session configs, as dicts with all their properties.
 
 Example
 ~~~~~~~
@@ -94,6 +95,34 @@ Example
 
     data = call_api(GET, 'session_configs')
     pprint(data)
+
+"Rooms" endpoint
+----------------
+
+.. note::
+
+    New beta feature as of March 2021.
+
+GET URL: ``/api/rooms/``
+
+Example
+~~~~~~~
+
+.. code-block:: python
+
+    data = call_api(GET, 'session_configs')
+    pprint(data)
+
+Example output (note it includes ``session_code`` if there is currently a session in the room):
+
+.. code-block:: python
+
+    [{'name': 'my_room',
+      'session_code': 'lq3cxfn2',
+      'url': 'http://localhost:8000/room/my_room'},
+     {'name': 'live_demo',
+      'session_code': None,
+      'url': 'http://localhost:8000/room/live_demo'}]
 
 "Create sessions" endpoint
 --------------------------
@@ -143,7 +172,7 @@ Parameters
     New feature as of March 2021.
     In beta until we get sufficient user feedback.
 
-GET URL: ``/api/session/``
+GET URL: ``/api/sessions/{code}``
 
 This API retrieves data about a session and its participants.
 
@@ -152,60 +181,57 @@ Example
 
 .. code-block:: python
 
-    data = call_api(GET, 'session', code='vfyqlw1q', participant_labels=['Alice'])
+    data = call_api(GET, 'sessions', 'vfyqlw1q', participant_labels=['Alice'])
     pprint(data)
 
-Example output
-~~~~~~~~~~~~~~
+.. _session_vars_rest:
+
+"Session vars" endpoint
+-----------------------
+
+.. note::
+
+    As of April 2021, this endpoint requires you to pass a session code as a path parameter.
+    If the session is in a room, you can get the session code with the ``rooms`` endpoint.
+
+POST URL: ``/api/session_vars/{session_code}``
+
+This endpoint lets you set ``session.vars``.
+One use is experimenter input.
+For example, if the experimenter does a lottery drawing in the middle of the experiment,
+they can input the result by running a script like the one below.
+
+Example
+~~~~~~~
 
 .. code-block:: python
 
-    {'num_participants': 2,
-     'room_url': 'http://localhost:8000/room/econ101',
-     'session_wide_url': 'http://localhost:8000/join/bfzza6vhbx',
-     'admin_url': 'http://localhost:8000/SessionStartLinks/vfyqlw1q',
-     'REAL_WORLD_CURRENCY_CODE': 'USD',
-     'config': {'app_sequence': ['public_goods_simple'],
-                'display_name': 'public_goods_simple',
-                'doc': '',
-                'mturk_hit_settings': {'description': 'Description for your '
-                                                      'experiment',
-                                       'expiration_hours': 168,
-                                       'frame_height': 500,
-                                       'keywords': 'bonus, study',
-                                       'minutes_allotted_per_assignment': 60,
-                                       'qualification_requirements': [],
-                                       'template': 'global/mturk_template.html',
-                                       'title': 'Title for your experiment'},
-                'name': 'public_goods_simple',
-                'num_demo_participants': 3,
-                'participation_fee': 5.0,
-                'real_world_currency_per_point': 1.0},
-     'participants': [{'code': '3iscjiet',
-                       'id_in_session': 1,
-                       'label': 'Alice',
-                       'payoff_in_real_world_currency': 13.0},
-                      {'code': 'fmjenzca',
-                       'id_in_session': 3,
-                       'label': None,
-                       'payoff_in_real_world_currency': 7.0}],
-     }
+    call_api(POST, 'session_vars', 'vfyqlw1q', vars=dict(dice_roll=4))
 
-
-.. _participant_vars_rest:
 
 "Participant vars" endpoint
 ---------------------------
 
+POST URL: ``/api/participant_vars/{participant_code}``
+
+Pass information about a participant to oTree, via web services / webhooks.
+
+Example
+~~~~~~~
+
+.. code-block:: python
+
+    call_api(POST, 'participant_vars', 'vfyqlw1q', vars=dict(birth_year='1995', gender='F'))
+
+.. _participant_vars_rest:
+
+"Participant vars for room" endpoint
+------------------------------------
+
 POST URL: ``/api/participant_vars/``
 
-This endpoint lets you set ``participant.vars``.
-The main purpose is to allow other sites/apps to pass information about a participant to oTree,
-via web services / webhooks.
-For example, if the user does a survey on Qualtrics that then links to oTree,
-you can pass their survey data (like gender, age, etc) into oTree as participant vars.
-(Qualtrics allows making POST requests through their `web service <https://www.qualtrics.com/support/survey-platform/survey-module/survey-flow/advanced-elements/web-service/>`__
-feature.)
+Similar to the other "participant vars" endpoint, but this one can be used when you don't have
+the participant's code. Instead, you identify the participant by the room name and their participant label.
 
 Example
 ~~~~~~~
@@ -229,52 +255,8 @@ Parameters
 -   ``vars`` (required): a dict of participant vars to add. Values can be any JSON-serializable data type,
     even nested dicts/lists.
 
-This feature requires you to use a Room.
-Participants are uniquely identified with the combination of room name & participant label.
-So you will need to give participants a link with a ``participant_label``,
+You will need to give participants a link with a ``participant_label``,
 although this does not need to come from a ``participant_label_file``.
-
-.. _session_vars_rest:
-
-"Session vars" endpoint
------------------------
-
-POST URL: ``/api/session_vars/``
-
-This endpoint lets you set ``session.vars``.
-One use is experimenter input.
-For example, if the experimenter does a lottery drawing in the middle of the experiment,
-they can input the result by running a script like the one below.
-
-Example
-~~~~~~~
-
-.. code-block:: python
-
-    call_api(POST, 'session_vars', room_name="my_room", vars=dict(dice_roll=4))
-
-Parameters
-~~~~~~~~~~
-
--   ``room_name`` (required)
--   ``vars`` (required): a dict of session vars to add.
-
-This feature requires you to use a Room.
-
-Note
-~~~~
-
-If you are using this for experimenter input during an experiment,
-you may also want to use :ref:`error_message <error_message>`:
-
-.. code-block:: python
-
-    def error_message(player, values):
-        session = player.session
-
-        if 'dice_roll' not in session.vars:
-            return 'You must wait until the dice roll before proceeding'
-
 
 Authentication
 --------------
