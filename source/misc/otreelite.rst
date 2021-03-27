@@ -94,7 +94,7 @@ Forms
 ~~~~~
 
 In templates, if you are doing manual form rendering, you should change
-``{{ form.my_field.errors }}`` to ``{{ formfield_errors 'my_field' }}``.
+``{% form.my_field.errors %}`` to ``{{ formfield_errors 'my_field' }}``.
 
 Older oTree formats
 ~~~~~~~~~~~~~~~~~~~

@@ -11,9 +11,9 @@ rather than being opened manually in a web browser.
 
 One project that uses the REST API a lot is `oTree HR <https://github.com/oTree-org/HR>`__.
 
-.. note::
+.. warning::
 
-    As of March 2021, all API calls return JSON.
+    As of March 2021, there have been some breaking changes to the REST API.
 
 .. _rest-setup:
 
@@ -45,15 +45,13 @@ Setup
     SERVER_URL = 'http://localhost:8000'
     REST_KEY = ''  # fill this later
 
-    def call_api(method, endpoint, path_param=None, **params) -> dict:
-        if path_param:
-            path = f'/api/{endpoint}/{path_param}/'
-        else:
-            path = f'/api/{endpoint}/'
-        resp = method(SERVER_URL + path, json=params, headers={'otree-rest-key': REST_KEY})
+    def call_api(method, *path_parts, **params) -> dict:
+        path_parts = '/'.join(path_parts)
+        url = f'{SERVER_URL}/api/{path_parts}/'
+        resp = method(url, json=params, headers={'otree-rest-key': REST_KEY})
         if not resp.ok:
             msg = (
-                f'Request to "{path}" failed '
+                f'Request to "{url}" failed '
                 f'with status code {resp.status_code}: {resp.text}'
             )
             raise Exception(msg)

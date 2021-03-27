@@ -175,9 +175,7 @@ First, ensure that you are using oTree Lite::
 Then do one of the following:
 
 a.  Convert your existing apps using ``otree remove_self``, as described in this page.
-b.  Download `this <https://github.com/oTree-org/oTree/tree/noself-demo>`__ repo,
-    which has all the sample games in the no-self format.
-    When you next run ``otree startapp``, it will create an app in the no-self format.
+b.  Create a new project.
 
 There are now 2 branches of the documentation. These docs you are reading now are based on the no-self format
 (see the note at the top of the page).

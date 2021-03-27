@@ -70,6 +70,7 @@ About @staticmethod, etc.
 If you are using a text editor to write your oTree code, remember to add ``@staticmethod`` before
 all functions inside a page class, like ``is_displayed``, ``vars_for_template``, ``before_next_page``, etc.
 They are sometimes omitted from this documentation for brevity.
+They are not mandatory but will help your editor provide better autocompletion.
 
 If you are using PyCharm, VS Code, or another IDE, you can also add type annotations on your functions.
 
@@ -88,7 +89,6 @@ Or:
     def creating_session(subsession: Subsession):
         ...
 
-This will help your editor provide better autocompletion.
 
 Upgrading/reinstalling oTree
 ----------------------------

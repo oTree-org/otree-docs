@@ -50,9 +50,11 @@ then ``after_all_players_arrive`` must be a *Subsession* function.
 
 If you are using a text editor, ``after_all_players_arrive`` can also be defined directly in the WaitPage:
 
+.. code-block:: python
+
     class MyWaitPage(WaitPage):
         @staticmethod
-        def after_all_players_arrive(group):
+        def after_all_players_arrive(group: Group):
             for p in group.get_players():
                 p.payoff = 100
 
