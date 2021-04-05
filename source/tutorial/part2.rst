@@ -13,7 +13,7 @@ Each player individually makes a decision about how many of their points they wa
 The combined contributions are multiplied by 2, and then divided evenly three ways and redistributed back to the players.
 
 The full code for the app we will write is
-`here <https://github.com/oTree-org/oTree/tree/master/public_goods_simple>`__.
+`here <https://github.com/oTree-org/oTree/tree/lite/public_goods_simple>`__.
 
 
 Create the app
