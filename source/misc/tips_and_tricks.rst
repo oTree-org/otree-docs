@@ -128,102 +128,6 @@ something like this:
 
     # etc...
 
-
-Improving code performance
---------------------------
-
-You should avoid redundant use of ``get_players()``, ``get_player_by_id()``, ``in_*_rounds()``,
-``get_others_in_group()``, or any other methods that return a player or list of players.
-These methods all require a database query,
-which can be slow.
-
-For example, this code has a redundant query because it asks the database
-5 times for the exact same player:
-
-.. code-block:: python
-
-    def vars_for_template(player):
-        return dict(
-            a=player.in_round(1).a,
-            b=player.in_round(1).b,
-            c=player.in_round(1).c,
-            d=player.in_round(1).d,
-            e=player.in_round(1).e
-        )
-
-
-It should be simplified to this:
-
-.. code-block:: python
-
-    def vars_for_template(player):
-        round_1_player = player.in_round(1)
-        return dict(
-            a=round_1_player.a,
-            b=round_1_player.b,
-            c=round_1_player.c,
-            d=round_1_player.d,
-            e=round_1_player.e
-        )
-
-
-As an added benefit, this usually makes the code more readable.
-
-Use BooleanField instead of StringField, where possible
--------------------------------------------------------
-
-Many ``StringFields`` should be broken down into ``BooleanFields``, especially
-if they only have 2 distinct values.
-
-Suppose you have a field called ``treatment``:
-
-.. code-block:: python
-
-    treatment = models.StringField()
-
-And let's say ``treatment`` it can only have 4 different values:
-
--   ``high_income_high_tax``
--   ``high_income_low_tax``
--   ``low_income_high_tax``
--   ``low_income_low_tax``
-
-In your pages, you might use it like this:
-
-.. code-block:: python
-
-    class HighIncome(Page):
-        @staticmethod
-        def is_displayed(player):
-            return player.treatment == 'high_income_high_tax' or player.treatment == 'high_income_low_tax'
-
-    class HighTax(Page):
-        @staticmethod
-        def is_displayed(player):
-            return player.treatment == 'high_income_high_tax' or player.treatment == 'low_income_high_tax'
-
-
-It would be much better to break this to 2 separate BooleanFields::
-
-    high_income = models.BooleanField()
-    high_tax = models.BooleanField()
-
-Then your pages could be simplified to:
-
-.. code-block:: python
-
-    class HighIncome(Page):
-        @staticmethod
-        def is_displayed(player):
-            return player.high_income
-
-    class HighTax(Page):
-        @staticmethod
-        def is_displayed(player):
-            return player.high_tax
-
-
-
 .. _duplicate_validation_methods:
 
 Avoid duplicated validation methods
@@ -325,3 +229,99 @@ and then reference them wherever they need to be used:
         get_timeout_seconds = get_timeout_seconds1
 
 (In the sample games, ``after_all_players_arrive`` and ``live_method`` are frequently defined in this manner.)
+
+Improving code performance
+--------------------------
+
+You should avoid redundant use of ``get_players()``, ``get_player_by_id()``, ``in_*_rounds()``,
+``get_others_in_group()``, or any other methods that return a player or list of players.
+These methods all require a database query,
+which can be slow.
+
+For example, this code has a redundant query because it asks the database
+5 times for the exact same player:
+
+.. code-block:: python
+
+    def vars_for_template(player):
+        return dict(
+            a=player.in_round(1).a,
+            b=player.in_round(1).b,
+            c=player.in_round(1).c,
+            d=player.in_round(1).d,
+            e=player.in_round(1).e
+        )
+
+
+It should be simplified to this:
+
+.. code-block:: python
+
+    def vars_for_template(player):
+        round_1_player = player.in_round(1)
+        return dict(
+            a=round_1_player.a,
+            b=round_1_player.b,
+            c=round_1_player.c,
+            d=round_1_player.d,
+            e=round_1_player.e
+        )
+
+
+As an added benefit, this usually makes the code more readable.
+
+Use BooleanField instead of StringField, where possible
+-------------------------------------------------------
+
+Many ``StringFields`` should be broken down into ``BooleanFields``, especially
+if they only have 2 distinct values.
+
+Suppose you have a field called ``treatment``:
+
+.. code-block:: python
+
+    treatment = models.StringField()
+
+And let's say ``treatment`` it can only have 4 different values:
+
+-   ``high_income_high_tax``
+-   ``high_income_low_tax``
+-   ``low_income_high_tax``
+-   ``low_income_low_tax``
+
+In your pages, you might use it like this:
+
+.. code-block:: python
+
+    class HighIncome(Page):
+        @staticmethod
+        def is_displayed(player):
+            return player.treatment == 'high_income_high_tax' or player.treatment == 'high_income_low_tax'
+
+    class HighTax(Page):
+        @staticmethod
+        def is_displayed(player):
+            return player.treatment == 'high_income_high_tax' or player.treatment == 'low_income_high_tax'
+
+
+It would be much better to break this to 2 separate BooleanFields::
+
+    high_income = models.BooleanField()
+    high_tax = models.BooleanField()
+
+Then your pages could be simplified to:
+
+.. code-block:: python
+
+    class HighIncome(Page):
+        @staticmethod
+        def is_displayed(player):
+            return player.high_income
+
+    class HighTax(Page):
+        @staticmethod
+        def is_displayed(player):
+            return player.high_tax
+
+
+
