@@ -272,3 +272,56 @@ You can instead define this function on your page:
         return error_messages
 
 (Usually ``error_message`` is used to return a single error message as a string, but you can also return a dict.)
+
+.. _extract-page-method:
+
+Avoid duplicated page functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Any page function can be moved out of the page class, and into a top-level function.
+This is a handy way to share the same function across multiple pages.
+For example, let's say many pages need to have these 2 functions:
+
+.. code-block:: python
+
+    class Page1(Page):
+        @staticmethod
+        def is_displayed(player: Player):
+            participant = player.participant
+
+            return participant.expiry
+
+        @staticmethod
+        def get_timeout_seconds(player):
+            participant = player.participant
+            import time
+            return participant.expiry - time.time()
+
+You can move those functions before all the pages (remove the ``@staticmethod``),
+and then reference them wherever they need to be used:
+
+.. code-block:: python
+
+    def is_displayed1(player: Player):
+        participant = player.participant
+
+        return participant.expiry
+
+
+    def get_timeout_seconds1(player: Player):
+        participant = player.participant
+        import time
+
+        return participant.expiry - time.time()
+
+
+    class Page1(Page):
+        is_displayed = is_displayed1
+        get_timeout_seconds = get_timeout_seconds1
+
+
+    class Page2(Page):
+        is_displayed = is_displayed1
+        get_timeout_seconds = get_timeout_seconds1
+
+(In the sample games, ``after_all_players_arrive`` and ``live_method`` are frequently defined in this manner.)

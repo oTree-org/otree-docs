@@ -143,13 +143,12 @@ for the participant to realistically read the whole page.
 
 .. code-block:: python
 
-    def get_timeout_seconds(player):
-        participant = player.participant
-        import time
-        return participant.expiry - time.time()
 
     class Page1(Page):
-        get_timeout_seconds = get_timeout_seconds
+        def get_timeout_seconds(player):
+            participant = player.participant
+            import time
+            return participant.expiry - time.time()
 
         @staticmethod
         def is_displayed(player):
