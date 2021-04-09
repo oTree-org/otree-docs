@@ -189,6 +189,7 @@ you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
 .. code-block:: python
 
+    @staticmethod
     def vars_for_template(player):
         return dict(
             image_path='my_app/{}.png'.format(player.round_number)
@@ -300,6 +301,7 @@ define a function ``js_vars`` on your Page, for example:
 
 .. code-block:: html
 
+    @staticmethod
     def js_vars(player):
         return dict(
             payoff=player.payoff,

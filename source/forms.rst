@@ -238,6 +238,7 @@ If you need the list of form fields to be dynamic, instead of
 
 .. code-block:: python
 
+    @staticmethod
     def get_form_fields(player):
         if player.num_bids == 3:
             return ['bid_1', 'bid_2', 'bid_3']

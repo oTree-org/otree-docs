@@ -159,6 +159,7 @@ You can instead define this function on your page:
 
 .. code-block:: python
 
+    @staticmethod
     def error_message(player, values):
         solutions = dict(
             quiz1=42,
@@ -243,6 +244,7 @@ For example, this code has a redundant query because it asks the database
 
 .. code-block:: python
 
+    @staticmethod
     def vars_for_template(player):
         return dict(
             a=player.in_round(1).a,
@@ -257,6 +259,7 @@ It should be simplified to this:
 
 .. code-block:: python
 
+    @staticmethod
     def vars_for_template(player):
         round_1_player = player.in_round(1)
         return dict(

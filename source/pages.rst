@@ -24,6 +24,7 @@ For example, to only show the page to P2 in each group:
 
 .. code-block:: python
 
+    @staticmethod
     def is_displayed(player):
         return player.id_in_group == 2
 
@@ -31,6 +32,7 @@ Or only show the page in round 1:
 
 .. code-block:: python
 
+    @staticmethod
     def is_displayed(player):
         return player.round_number == 1
 
@@ -45,6 +47,7 @@ Use this to pass variables to the template. Example:
 
 .. code-block:: python
 
+    @staticmethod
     def vars_for_template(player):
         a = player.num_apples * 10
         return dict(
@@ -79,6 +82,7 @@ Example:
 
 .. code-block:: python
 
+    @staticmethod
     def before_next_page(player, timeout_happened):
         player.tripled_apples = player.num_apples * 3
 
@@ -109,6 +113,7 @@ For example, to skip to the next app, you would do:
 
 .. code-block:: python
 
+    @staticmethod
     def app_after_this_page(player, upcoming_apps):
         if player.whatever:
             return upcoming_apps[0]
@@ -120,6 +125,7 @@ Or you could just return a hardcoded string
 
 .. code-block:: python
 
+    @staticmethod
     def app_after_this_page(player, upcoming_apps):
         print('upcoming_apps is', upcoming_apps)
         if player.whatever:

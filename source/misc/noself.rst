@@ -73,6 +73,7 @@ Here is an example of an __init__.py in the "no self" format (with the dictator 
 
 
     class Results(Page):
+        @staticmethod
         def vars_for_template(player):
             group = player.group
 
