@@ -207,6 +207,12 @@ When oTree runs in ``DEBUG`` mode (i.e. when the environment variable
 ``OTREE_PRODUCTION`` is not set), debug information is displayed
 on the bottom of all screens.
 
+Payments
+--------
+
+If you define a :ref:`participant field <PARTICIPANT_FIELDS>` called `finished`,
+then you can set ``participant.finished = True`` when a participant finishes the session,
+and this will be displayed in various places such as the payments page.
 
 .. _experimenter-chat:
 

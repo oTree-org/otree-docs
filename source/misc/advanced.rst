@@ -8,10 +8,6 @@ These are advanced features that are mostly unsupported in oTree Studio.
 ExtraModel
 ----------
 
-.. note::
-
-    This feature is new as of March 2021 and is currently in beta.
-
 An ExtraModel is useful when you need to store dozens or hundreds of data points about a single player.
 For example, a list of bids, or a list of stimuli and reaction times.
 They are frequently used together with :ref:`live`.

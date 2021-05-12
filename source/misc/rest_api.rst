@@ -173,6 +173,7 @@ Parameters
 GET URL: ``/api/sessions/{code}``
 
 This API retrieves data about a session and its participants.
+If ``participant_labels`` is omitted, it returns data for all participants.
 
 Example
 ~~~~~~~

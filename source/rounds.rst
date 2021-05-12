@@ -113,8 +113,8 @@ Then in your code, you can get and set any type of data on these fields:
 
     participant.mylist = [1, 2, 3]
 
-Internally, all participant fields are stored in a dict called ``participant.vars``.
-``participant.xyz`` is equivalent to ``participant.vars['xyz']``
+(Internally, all participant fields are stored in a dict called ``participant.vars``.
+``participant.xyz`` is equivalent to ``participant.vars['xyz']``.)
 
 Participant fields are not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you should either

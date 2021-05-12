@@ -24,7 +24,7 @@ with open(argv[1]) as inf, open(argv[2], 'w', newline='') as outf:
     for row in reader:
         pcode = row['participant_code']
         # to learn what Epoch time is, search on Google.
-        time = int(row['epoch_time'])
+        time = int(row.get('epoch_time_completed') or row.get('epoch_time'))
         last_time = times.get(pcode)
         if last_time:
             delta = time - last_time
