@@ -89,7 +89,7 @@ they will be assigned back to the same participant (if you are using a room-wide
 This reduces duplicate participation.
 
 If you're using Prolific,
-you can add ``participant_label={{{PROLIFIC_PID}}}`` to your study URL.
+you can add ``participant_label={{%PROLIFIC_PID%}}`` to your study URL.
 When the user clicks the link, Prolific will replace that with the participant's actual Prolific ID.
 
 Arrival order
