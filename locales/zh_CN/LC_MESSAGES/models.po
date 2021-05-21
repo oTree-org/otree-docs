@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-01 05:35+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: 2020-10-25 23:49+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -115,340 +115,290 @@ msgstr ""
 msgid "These built-in fields and methods are listed below."
 msgstr "这些内置的字段与方法列出如下。"
 
-#: ../../source/models.rst:73
+#: ../../source/models.rst:72
 msgid "Subsession"
 msgstr "子会话"
 
-#: ../../source/models.rst:76
-msgid "session"
-msgstr "session"
-
-#: ../../source/models.rst:78
-msgid "The session this subsession belongs to. See :ref:`object_model`."
-msgstr "指子会话所属的那个会话。参考 :ref:`object_model`."
-
-#: ../../source/models.rst:83
+#: ../../source/models.rst:75 ../../source/models.rst:109
+#: ../../source/models.rst:139
 msgid "round_number"
 msgstr "round_number"
 
-#: ../../source/models.rst:85
+#: ../../source/models.rst:77
 msgid ""
 "Gives the current round number. Only relevant if the app has multiple "
 "rounds (set in ``Constants.num_rounds``). See :ref:`rounds`."
 msgstr "给出当前是第几轮。仅在应用有多轮时有意义（轮数由 ``Constants.num_rounds`` 设置 ）。参考 :ref:`rounds`."
 
-#: ../../source/models.rst:93
-msgid "creating_session()"
-msgstr "creating_session()"
-
-#: ../../source/models.rst:95
-msgid ""
-"``creating_session`` allows you to set initial values on fields on "
-"players, groups, participants, or the subsession. For example:"
-msgstr "``creating_session`` 允许你设置玩家，小组，参与人或者子会话字段的初值。举例来说："
-
-#: ../../source/models.rst:105
-msgid ""
-"More info on the section on :ref:`treatments <treatments>` and "
-":ref:`group shuffling <shuffling>`."
-msgstr ""
-"获取更多信息可参考 :ref:`treatments <treatments>` 与 :ref:`group shuffling "
-"<shuffling>`."
-
-#: ../../source/models.rst:108
-msgid ""
-"``creating_session`` is **not** run at the beginning of each round. It is"
-" run when you click the \"create session\" button, i.e. before anybody "
-"starts playing. If your app has multiple rounds, ``creating_session`` "
-"gets run multiple times consecutively:"
-msgstr ""
-"``creating_session`` **并非** 在每一轮开始时运行。它在你点击 \"create session\" "
-"按钮时运行，也就是在还没有人开始游戏时。如果你的应用包含多轮，那么 ``creating_session`` 将连续地运行多次："
-
-#: ../../source/models.rst:118
-msgid "Will output all at once::"
-msgstr "会连续输出下面的内容："
-
-#: ../../source/models.rst:126
+#: ../../source/models.rst:84
 msgid "get_groups()"
 msgstr "get_groups()"
 
-#: ../../source/models.rst:128
+#: ../../source/models.rst:86
 msgid "Returns a list of all the groups in the subsession."
 msgstr "返回一个包含子会话中所有小组的列表。"
 
-#: ../../source/models.rst:131
+#: ../../source/models.rst:89
 msgid "get_players()"
 msgstr "get_players()"
 
-#: ../../source/models.rst:133
+#: ../../source/models.rst:91
 msgid "Returns a list of all the players in the subsession."
 msgstr "返回一个包含子会话中所有玩家的列表。"
 
-#: ../../source/models.rst:136
+#: ../../source/models.rst:94
 msgid "Other subsession methods"
 msgstr "其他子会话方法"
 
-#: ../../source/models.rst:138
+#: ../../source/models.rst:96
 msgid ":ref:`group_randomly() <shuffling>`"
 msgstr ":ref:`group_randomly() <shuffling>`"
 
-#: ../../source/models.rst:139
+#: ../../source/models.rst:97
 msgid ":ref:`group_like_round() <shuffling>`"
 msgstr ":ref:`group_like_round() <shuffling>`"
 
-#: ../../source/models.rst:140
+#: ../../source/models.rst:98
 msgid ":ref:`get_group_matrix() <shuffling>`"
 msgstr ":ref:`get_group_matrix() <shuffling>`"
 
-#: ../../source/models.rst:141
+#: ../../source/models.rst:99
 msgid ":ref:`set_group_matrix() <shuffling>`"
 msgstr ":ref:`set_group_matrix() <shuffling>`"
 
-#: ../../source/models.rst:142 ../../source/models.rst:161
-#: ../../source/models.rst:192
+#: ../../source/models.rst:100 ../../source/models.rst:116
+#: ../../source/models.rst:146
 msgid ":ref:`in_all_rounds() <in_rounds>`"
 msgstr ":ref:`in_all_rounds() <in_rounds>`"
 
-#: ../../source/models.rst:143 ../../source/models.rst:162
-#: ../../source/models.rst:193
+#: ../../source/models.rst:101 ../../source/models.rst:117
+#: ../../source/models.rst:147
 msgid ":ref:`in_previous_rounds() <in_rounds>`"
 msgstr ":ref:`in_previous_rounds() <in_rounds>`"
 
-#: ../../source/models.rst:144 ../../source/models.rst:163
-#: ../../source/models.rst:194
+#: ../../source/models.rst:102 ../../source/models.rst:118
+#: ../../source/models.rst:148
 msgid ":ref:`in_rounds(first, last) <in_rounds>`"
 msgstr ":ref:`in_rounds(first, last) <in_rounds>`"
 
-#: ../../source/models.rst:145 ../../source/models.rst:164
-#: ../../source/models.rst:195
+#: ../../source/models.rst:103 ../../source/models.rst:119
+#: ../../source/models.rst:149
 msgid ":ref:`in_round(round_number) <in_rounds>`"
 msgstr ":ref:`in_round(round_number) <in_rounds>`"
 
-#: ../../source/models.rst:149
+#: ../../source/models.rst:106
 msgid "Group"
 msgstr "小组"
 
-#: ../../source/models.rst:152
-msgid "session/subsession"
-msgstr "session/subsession"
+#: ../../source/models.rst:111 ../../source/models.rst:141
+msgid "Gives the current round number."
+msgstr ""
 
-#: ../../source/models.rst:154
-msgid "The session/subsession this group belongs to. See :ref:`object_model`."
-msgstr "即本小组所属的那个会话/子会话。参考 :ref:`object_model`."
-
-#: ../../source/models.rst:159
+#: ../../source/models.rst:114
 msgid "Other group methods"
 msgstr "其他小组方法"
 
-#: ../../source/models.rst:165
+#: ../../source/models.rst:120
 msgid ":ref:`get_player_by_role(role) <groups>`"
 msgstr ":ref:`get_player_by_role(role) <groups>`"
 
-#: ../../source/models.rst:166
+#: ../../source/models.rst:121
 msgid ":ref:`get_player_by_id(id_in_group) <groups>`"
 msgstr ":ref:`get_player_by_id(id_in_group) <groups>`"
 
-#: ../../source/models.rst:167
+#: ../../source/models.rst:122
 msgid ":ref:`get_players() <groups>`"
 msgstr ":ref:`get_players() <groups>`"
 
-#: ../../source/models.rst:168
+#: ../../source/models.rst:123
 #, fuzzy
 msgid ":ref:`set_players() <groups>`"
 msgstr ":ref:`get_players() <groups>`"
 
-#: ../../source/models.rst:172
+#: ../../source/models.rst:127
 msgid "Player"
 msgstr "玩家"
 
-#: ../../source/models.rst:175
+#: ../../source/models.rst:130
 msgid "id_in_group"
 msgstr "id_in_group"
 
-#: ../../source/models.rst:176
+#: ../../source/models.rst:131
 msgid ""
 "Automatically assigned integer starting from 1. In multiplayer games, "
 "indicates whether this is player 1, player 2, etc."
 msgstr "自动被赋值为从1开始的正整数。在多人游戏中，表示哪位是玩家1，哪位是玩家2，诸如此类。"
 
-#: ../../source/models.rst:180
+#: ../../source/models.rst:135
 msgid "payoff"
 msgstr "payoff"
 
-#: ../../source/models.rst:181
+#: ../../source/models.rst:136
 msgid "The player's payoff in this round. See :ref:`payoff`."
 msgstr "玩家在本轮的收益。参考 :ref:`payoff`."
 
-#: ../../source/models.rst:184
-msgid "session/subsession/group/participant"
-msgstr "session/subsession/group/participant"
-
-#: ../../source/models.rst:186
-msgid ""
-"The session/subsession/group/participant this player belongs to. See "
-":ref:`object_model`."
-msgstr "指玩家所属的会话/子会话/小组/参与人。参考 :ref:`object_model`."
-
-#: ../../source/models.rst:190
+#: ../../source/models.rst:144
 msgid "Other player methods"
 msgstr "其他玩家方法"
 
-#: ../../source/models.rst:196
+#: ../../source/models.rst:150
 msgid ":ref:`get_others_in_subsession() <groups>`"
 msgstr ":ref:`get_others_in_subsession() <groups>`"
 
-#: ../../source/models.rst:197
+#: ../../source/models.rst:151
 msgid ":ref:`get_others_in_group() <groups>`"
 msgstr ":ref:`get_others_in_group() <groups>`"
 
-#: ../../source/models.rst:200
+#: ../../source/models.rst:154
 msgid "Session"
 msgstr "会话"
 
-#: ../../source/models.rst:203
+#: ../../source/models.rst:157
 msgid "num_participants"
 msgstr "num_participants"
 
-#: ../../source/models.rst:205
+#: ../../source/models.rst:159
 msgid "The number of participants in the session."
 msgstr "会话中参与人的数量。"
 
-#: ../../source/models.rst:208
+#: ../../source/models.rst:162
 msgid "config"
 msgstr "config"
 
-#: ../../source/models.rst:210
+#: ../../source/models.rst:164
 msgid "See :ref:`session_config_treatments`."
 msgstr "参考 :ref:`session_config_treatments`."
 
-#: ../../source/models.rst:213
+#: ../../source/models.rst:167
 msgid "vars"
 msgstr "vars"
 
-#: ../../source/models.rst:215
+#: ../../source/models.rst:169
 msgid "See :ref:`session_vars`."
 msgstr "参考 :ref:`session_vars`."
 
-#: ../../source/models.rst:218
+#: ../../source/models.rst:172
 msgid "Participant"
 msgstr "参与人"
 
-#: ../../source/models.rst:221
+#: ../../source/models.rst:175
 msgid "id_in_session"
 msgstr "id_in_session"
 
-#: ../../source/models.rst:223
+#: ../../source/models.rst:177
 msgid ""
 "The participant's ID in the session. This is the same as the player's "
 "``id_in_subsession``."
 msgstr "会话中参与人的ID。这与玩家的 ``id_in_subsession`` 相同。"
 
-#: ../../source/models.rst:227
+#: ../../source/models.rst:181
 msgid "Other participant attributes and methods"
 msgstr "其他参与人属性与方法"
 
-#: ../../source/models.rst:229
+#: ../../source/models.rst:183
 msgid ":ref:`vars <vars>`"
 msgstr ":ref:`vars <vars>`"
 
-#: ../../source/models.rst:230
+#: ../../source/models.rst:184
 msgid ":ref:`label <participant_label>`"
 msgstr ":ref:`label <participant_label>`"
 
-#: ../../source/models.rst:231
+#: ../../source/models.rst:185
 msgid ":ref:`payoff <payoff>`"
 msgstr ":ref:`payoff <payoff>`"
 
-#: ../../source/models.rst:232
+#: ../../source/models.rst:186
 msgid ":ref:`payoff_plus_participation_fee <payoff>`"
 msgstr ":ref:`payoff_plus_participation_fee <payoff>`"
 
-#: ../../source/models.rst:237
+#: ../../source/models.rst:191
 msgid "Constants"
 msgstr "常量"
 
-#: ../../source/models.rst:239
+#: ../../source/models.rst:193
 msgid ""
 "``Constants`` is the recommended place to put your app's parameters and "
 "constants that do not vary from player to player."
 msgstr "``Constants`` 是推荐存放应用的参数或是玩家之间没有区别的常量的地方。"
 
-#: ../../source/models.rst:243
+#: ../../source/models.rst:197
 msgid "Here are the built-in constants:"
 msgstr "下面是内置的常量："
 
-#: ../../source/models.rst:245
+#: ../../source/models.rst:199
 msgid "``players_per_group`` (described in :ref:`groups`)"
 msgstr "``players_per_group`` ( :ref:`groups` 中所描述)"
 
-#: ../../source/models.rst:246
+#: ../../source/models.rst:200
 msgid "``num_rounds`` (described in :ref:`rounds`)"
 msgstr "``num_rounds`` ( :ref:`rounds` 中所描述)"
 
-#: ../../source/models.rst:248
+#: ../../source/models.rst:202
 msgid ""
 "if you don't want your app's real name to be displayed in URLs, define a "
 "string constant ``name_in_url`` with your desired name."
 msgstr "如果你不想让自己应用的真实名字被显示在URL中，那么可以定义一个字符串常量 ``name_in_url`` 并赋予你想显示的名字。"
 
-#: ../../source/models.rst:252
+#: ../../source/models.rst:206
+#, fuzzy
 msgid ""
 "Constants can be numbers, strings, booleans, lists, etc. But for more "
 "complex data types like dicts, lists of dicts, etc, you should instead "
-"define it in a subsession function. For example, instead of defining a "
-"Constant called ``my_dict``, do this:"
+"define it in a function. For example, instead of defining a Constant "
+"called ``my_dict``, do this:"
 msgstr ""
 "常量可以是数字，字符串，布尔值，列表等等类型。但对于更复杂的数据类型如字典，字典的列表等等，你应当在子会话方法中定义，而不是在常量中。举例来说，不要在常量中定义"
 " ``my_dict`` ，而是如下操作："
 
-#: ../../source/models.rst:263
+#: ../../source/models.rst:217
 msgid "Miscellaneous topics"
 msgstr "杂项"
 
-#: ../../source/models.rst:266
+#: ../../source/models.rst:220
 msgid "Defining your own methods"
 msgstr "定义你自己的方法"
 
-#: ../../source/models.rst:268
+#: ../../source/models.rst:222
 msgid ""
 "In addition to the methods listed on this page, you can define your own. "
 "Just remember to *use* them somewhere! Just defining them with ``def`` "
 "has no effect."
 msgstr "除了本页列出的方法，你可以定义自己的方法。只需记住在 *某处* 调用它们！仅仅用 ``def`` 定义它们是没有任何作用的。"
 
-#: ../../source/models.rst:273
+#: ../../source/models.rst:227
 msgid "For example:"
 msgstr "举例来说："
 
-#: ../../source/models.rst:281
+#: ../../source/models.rst:235
 msgid "Then call it:"
 msgstr "然后如下调用："
 
-#: ../../source/models.rst:291
+#: ../../source/models.rst:245
 msgid "About using random()"
 msgstr "关于使用 random()"
 
-#: ../../source/models.rst:293
+#: ../../source/models.rst:247
+#, fuzzy
 msgid ""
-"Never generate random values outside of a method. For example, don't do "
-"this:"
+"Never generate random values outside of a function. For example, don't do"
+" this:"
 msgstr "永远不要在方法外部生成随机值。举例来说，不要写下面这样的代码："
 
-#: ../../source/models.rst:301
+#: ../../source/models.rst:255
 msgid "If it changes randomly, it isn't a constant."
 msgstr "如果它随机变化，它就不算一个常量。"
 
-#: ../../source/models.rst:303
+#: ../../source/models.rst:257
 msgid "Or this:"
 msgstr "或者这样的代码："
 
-#: ../../source/models.rst:314
+#: ../../source/models.rst:268
+#, fuzzy
 msgid ""
 "These won't work because they will change every time the server launches "
 "a new process. It may appear to work during testing but will eventually "
-"break. Instead, you should generate the random variables inside a method,"
-" such as :ref:`creating_session` (and preferably not "
+"break. Instead, you should generate the random variables inside a "
+"function, such as :ref:`creating_session` (and preferably not "
 "``vars_for_template``, which gets re-executed if the user refreshes the "
 "page)."
 msgstr ""
@@ -456,7 +406,7 @@ msgstr ""
 ":ref:`creating_session` 中（尽量不要在 ``vars_for_template`` "
 "中，因为这一方法在用户刷新页面时会重新执行）。"
 
-#: ../../source/models.rst:321
+#: ../../source/models.rst:275
 msgid ""
 "If you want to set your own random seed, don't use the ``random.seed()`` "
 "function. Instead, generate an instance of ``random.Random`` as described"
@@ -464,4 +414,58 @@ msgid ""
 msgstr ""
 "如果你想使用自己的随机种子，不要用 ``random.seed()`` 函数。而应当生成 ``random.Random`` 的实例，如在 `这里"
 " <https://stackoverflow.com/a/37356024>`__ 所描述的"
+
+#~ msgid "session"
+#~ msgstr "session"
+
+#~ msgid "The session this subsession belongs to. See :ref:`object_model`."
+#~ msgstr "指子会话所属的那个会话。参考 :ref:`object_model`."
+
+#~ msgid "creating_session()"
+#~ msgstr "creating_session()"
+
+#~ msgid ""
+#~ "``creating_session`` allows you to set "
+#~ "initial values on fields on players, "
+#~ "groups, participants, or the subsession. "
+#~ "For example:"
+#~ msgstr "``creating_session`` 允许你设置玩家，小组，参与人或者子会话字段的初值。举例来说："
+
+#~ msgid ""
+#~ "More info on the section on "
+#~ ":ref:`treatments <treatments>` and :ref:`group "
+#~ "shuffling <shuffling>`."
+#~ msgstr ""
+#~ "获取更多信息可参考 :ref:`treatments <treatments>` 与 "
+#~ ":ref:`group shuffling <shuffling>`."
+
+#~ msgid ""
+#~ "``creating_session`` is **not** run at "
+#~ "the beginning of each round. It is"
+#~ " run when you click the \"create "
+#~ "session\" button, i.e. before anybody "
+#~ "starts playing. If your app has "
+#~ "multiple rounds, ``creating_session`` gets run"
+#~ " multiple times consecutively:"
+#~ msgstr ""
+#~ "``creating_session`` **并非** 在每一轮开始时运行。它在你点击 \"create"
+#~ " session\" 按钮时运行，也就是在还没有人开始游戏时。如果你的应用包含多轮，那么 "
+#~ "``creating_session`` 将连续地运行多次："
+
+#~ msgid "Will output all at once::"
+#~ msgstr "会连续输出下面的内容："
+
+#~ msgid "session/subsession"
+#~ msgstr "session/subsession"
+
+#~ msgid "The session/subsession this group belongs to. See :ref:`object_model`."
+#~ msgstr "即本小组所属的那个会话/子会话。参考 :ref:`object_model`."
+
+#~ msgid "session/subsession/group/participant"
+#~ msgstr "session/subsession/group/participant"
+
+#~ msgid ""
+#~ "The session/subsession/group/participant this player"
+#~ " belongs to. See :ref:`object_model`."
+#~ msgstr "指玩家所属的会话/子会话/小组/参与人。参考 :ref:`object_model`."
 

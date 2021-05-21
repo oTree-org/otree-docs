@@ -1,6 +1,16 @@
 Version history
 ```````````````
 
+Version 5.2
+===========
+
+-   For compatibility with oTree 3.x,
+    formfield ``<input>`` elements now prefix their ``id`` attribute with ``id_``.
+    If you use ``getElementById``/``querySelector``/etc. to select any formfield inputs,
+    you might need to update your selectors.
+-   The data export now outputs "time started" as UTC.
+
+
 Version 5.1
 ===========
 

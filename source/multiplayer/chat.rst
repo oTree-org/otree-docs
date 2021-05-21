@@ -104,42 +104,10 @@ Advanced customization
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If you look at the page source code in your browser's inspector,
-you will see the following selectors are available:
-
-===========================     =====================================================
-Element                         CSS/jQuery selector
-===========================     =====================================================
-Entire chat widget              ``.otree-chat``
-Textbox to type a message       ``.otree-chat__input`` (note: ``__``, not ``_``)
-Button to submit a message      ``.otree-chat__btn-send``
-Div with all messages           ``.otree-chat__messages``
-Message                         ``.otree-chat__msg``
-Message's nickname              ``.otree-chat__nickname``
-Message's body text             ``.otree-chat__body``
-===========================     =====================================================
+you will see a bunch of classes starting with ``otree-chat__``.
 
 You can use CSS or JS to change the appearance or behavior of these elements
 (or hide them entirely).
-
-For example, to customize the style,
-just include some CSS after the ``{{ chat }}`` element,
-e.g.:
-
-.. code-block:: html
-
-    {{ chat }}
-
-    <style>
-        .otree-chat__messages {
-            height: 400px;
-        }
-        .otree-chat__nickname {
-            color: #0000FF;
-            font-weight: bold;
-        }
-    </style>
-
-Note that there are 2 underscores (``__``, not ``_``).
 
 You can also customize the appearance by putting it inside a ``<div>``
 and styling that parent ``<div>``. For example, to set the width:

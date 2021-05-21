@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:07+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: 2020-10-29 21:04+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -45,8 +45,9 @@ msgid "is_displayed()"
 msgstr "is_displayed()"
 
 #: ../../source/pages.rst:19
+#, fuzzy
 msgid ""
-"You can define this method to return ``True`` if the page should be "
+"You can define this function to return ``True`` if the page should be "
 "shown, and False if the page should be skipped. If omitted, the page will"
 " be shown."
 msgstr ""
@@ -57,29 +58,29 @@ msgstr ""
 msgid "For example, to only show the page to P2 in each group:"
 msgstr "举例来说，如果想仅让每组中的玩家2看到此页面："
 
-#: ../../source/pages.rst:30
+#: ../../source/pages.rst:31
 msgid "Or only show the page in round 1:"
 msgstr "如果仅在第一轮显示此页面："
 
-#: ../../source/pages.rst:37
+#: ../../source/pages.rst:39
 msgid ""
 "If you need to repeat the same rule for many pages, use "
 ":ref:`app_after_this_page`."
 msgstr "如果你需要在一些页面之后重复同样的规则，参考 :ref:`app_after_this_page`."
 
-#: ../../source/pages.rst:42
+#: ../../source/pages.rst:44
 msgid "vars_for_template()"
 msgstr "vars_for_template()"
 
-#: ../../source/pages.rst:44
+#: ../../source/pages.rst:46
 msgid "Use this to pass variables to the template. Example:"
 msgstr "使用这个方法向模板传递变量。例如："
 
-#: ../../source/pages.rst:55
+#: ../../source/pages.rst:58
 msgid "Then in the template you can access ``a`` and ``b`` like this:"
 msgstr "在模板中你就可以像下面这样访问 ``a`` 与 ``b`` ："
 
-#: ../../source/pages.rst:61
+#: ../../source/pages.rst:64
 msgid ""
 "oTree automatically passes the following objects to the template: "
 "``player``, ``group``, ``subsession``, ``participant``, ``session``, and "
@@ -90,51 +91,51 @@ msgstr ""
 "``participant``, ``session``, 与 ``Constants``.你可以像这样： ``{{ Constants.blah"
 " }}`` 或 ``{{ player.blah }}`` 在模板中访问它们."
 
-#: ../../source/pages.rst:65
+#: ../../source/pages.rst:68
 msgid "If the user refreshes the page, ``vars_for_template`` gets re-executed."
 msgstr "如果用户刷新了页面， ``vars_for_template`` 会被重新执行。"
 
-#: ../../source/pages.rst:70
+#: ../../source/pages.rst:73
 msgid "before_next_page()"
 msgstr "before_next_page()"
 
-#: ../../source/pages.rst:72
+#: ../../source/pages.rst:75
 msgid ""
 "Here you define any code that should be executed after form validation, "
 "before the player proceeds to the next page."
 msgstr "在这里你可以定义需要在表单验证之后，玩家继续下一个页面之前执行的任意代码。"
 
-#: ../../source/pages.rst:75
+#: ../../source/pages.rst:78
 msgid ""
 "If the page is skipped with ``is_displayed``, then ``before_next_page`` "
 "will be skipped as well."
 msgstr "如果页面通过 ``is_displayed`` 被跳过，那么 ``before_next_page`` 也会被跳过。"
 
-#: ../../source/pages.rst:78
+#: ../../source/pages.rst:81
 msgid "Example:"
 msgstr "例如："
 
-#: ../../source/pages.rst:88
+#: ../../source/pages.rst:91
 msgid "timeout_seconds"
 msgstr "timeout_seconds"
 
-#: ../../source/pages.rst:90
+#: ../../source/pages.rst:93
 msgid "See :ref:`timeouts`"
 msgstr "参考 :ref:`timeouts`"
 
-#: ../../source/pages.rst:93
+#: ../../source/pages.rst:96
 msgid "Wait pages"
 msgstr "Wait pages"
 
-#: ../../source/pages.rst:95
+#: ../../source/pages.rst:98
 msgid "See :ref:`wait_pages`"
 msgstr "参考 :ref:`wait_pages`"
 
-#: ../../source/pages.rst:98
+#: ../../source/pages.rst:101
 msgid "Randomizing page sequence"
 msgstr "随机页面序列"
 
-#: ../../source/pages.rst:100
+#: ../../source/pages.rst:103
 msgid ""
 "You can randomize the order of pages using rounds. An example is `here "
 "<https://www.otreehub.com/projects/otree-snippets/>`__."
@@ -142,17 +143,17 @@ msgstr ""
 "你可以在每一轮之间随机页面顺序。一个例子在 `这里 <https://www.otreehub.com/projects/otree-"
 "snippets/>`__."
 
-#: ../../source/pages.rst:106
+#: ../../source/pages.rst:109
 msgid "app_after_this_page"
 msgstr "app_after_this_page"
 
-#: ../../source/pages.rst:108
+#: ../../source/pages.rst:111
 msgid ""
 "To skip entire apps, you can define ``app_after_this_page``. For example,"
 " to skip to the next app, you would do:"
 msgstr "为了跳过整个应用，你可以定义 ``app_after_this_page``.例如跳过下一个应用，代码如下："
 
-#: ../../source/pages.rst:117
+#: ../../source/pages.rst:121
 msgid ""
 "``upcoming_apps`` is the remainder of the ``app_sequence`` (a list of "
 "strings). Therefore, to skip to the last app, you would return "
@@ -162,8 +163,10 @@ msgstr ""
 "``upcoming_apps`` 是 ``app_sequence`` （一个字符串列表）的剩余部分。因此，为了跳过最后一个应用，返回 "
 "``upcoming_apps[-1]`` 即可。或者直接返回硬编码字符串（只要字符串在 ``upcoming_apps`` 中）："
 
-#: ../../source/pages.rst:129
+#: ../../source/pages.rst:134
+#, fuzzy
 msgid ""
-"If this method doesn't return anything, the player proceeds to the next "
-"page as usual."
+"If this function doesn't return anything, the player proceeds to the next"
+" page as usual."
 msgstr "如果此方法没有返回任何值，玩家将正常进行下一个页面。"
+

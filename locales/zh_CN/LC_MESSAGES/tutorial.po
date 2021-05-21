@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: 2020-10-23 22:01+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -216,24 +216,24 @@ msgstr ""
 msgid "Let's name the first page ``MyPage.html``, and put these contents inside:"
 msgstr "不妨将第一个页面命名为 ``MyPage.html`` ，填入内容如下："
 
-#: ../../source/tutorial/part1_texteditor.rst:70
+#: ../../source/tutorial/part1_texteditor.rst:66
 msgid "The second template will be called ``Results.html``."
 msgstr "第二个模板命名为 ``Results.html``."
 
 # Chris comment: removed pages.py
-#: ../../source/tutorial/part1_texteditor.rst:90
+#: ../../source/tutorial/part1_texteditor.rst:82
 #, fuzzy
 msgid "Define pages"
 msgstr "定义 pages.py"
 
-#: ../../source/tutorial/part1_texteditor.rst:92
+#: ../../source/tutorial/part1_texteditor.rst:84
 msgid ""
 "Now we define our pages, which contain the logic for how to display the "
 "HTML templates."
 msgstr "现在定义页面，页面包含了如何显示HTML模板的控制逻辑。"
 
 # Chris comment: templates are now in the main folder, together with app.py
-#: ../../source/tutorial/part1_texteditor.rst:95
+#: ../../source/tutorial/part1_texteditor.rst:87
 #, fuzzy
 msgid ""
 "Since we have 2 templates, we need 2 ``Page`` classes. The names should "
@@ -242,20 +242,20 @@ msgstr ""
 "由于我们有两个模板，所以我们需要在 ``pages.py`` 定义2个 ``Page`` 类。类的名字应当与模板的名字匹配（``MyPage`` "
 "and ``Results``）。"
 
-#: ../../source/tutorial/part1_texteditor.rst:99
+#: ../../source/tutorial/part1_texteditor.rst:91
 msgid ""
 "First let's define ``MyPage``. This page contains a form, so we need to "
 "define ``form_model`` and ``form_fields``."
 msgstr "首先定义 ``MyPage``.这个页面包含一个表单，我们需要定义 ``form_model`` 与 ``form_fields``."
 
-#: ../../source/tutorial/part1_texteditor.rst:108
+#: ../../source/tutorial/part1_texteditor.rst:100
 msgid ""
 "Now we define ``Results``. This page doesn't have a form or any other "
 "special attributes, so we just write \"pass\"."
 msgstr "现在来定义 ``Results``. 这一页面不含有表单或其他特殊属性，所以我们只需要写“pass”。"
 
 # Chris comment: removed pages.py
-#: ../../source/tutorial/part1_texteditor.rst:116
+#: ../../source/tutorial/part1_texteditor.rst:108
 #, fuzzy
 msgid ""
 "If there is already a ``WaitPage``, you can delete that, because "
@@ -263,7 +263,7 @@ msgid ""
 msgstr "如果 ``pages.py`` 已经含有一个 ``WaitPage``，你可以将其删除，因为等待页面仅在多人游戏下是必要的。"
 
 # Chris comment: removed pages.py
-#: ../../source/tutorial/part1_texteditor.rst:119
+#: ../../source/tutorial/part1_texteditor.rst:111
 #, fuzzy
 msgid ""
 "Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. "
@@ -272,39 +272,39 @@ msgstr ""
 "然后，设置 ``page_sequence`` 使得 ``MyPage`` 在 ``Results`` 之前.总之，``pages.py`` "
 "应该包含下面的内容："
 
-#: ../../source/tutorial/part1_texteditor.rst:140
+#: ../../source/tutorial/part1_texteditor.rst:132
 msgid "Define the session config in settings.py"
 msgstr "在settings.py中定义session config"
 
-#: ../../source/tutorial/part1_texteditor.rst:142
+#: ../../source/tutorial/part1_texteditor.rst:134
 msgid ""
 "Now we go to ``settings.py`` in the project's top folder and add an entry"
 " to ``SESSION_CONFIGS``."
 msgstr "现在打开在项目文件夹最上方的 ``settings.py`` 并在 ``SESSION_CONFIGS`` 中增加一个条目。"
 
-#: ../../source/tutorial/part1_texteditor.rst:156
+#: ../../source/tutorial/part1_texteditor.rst:148
 msgid "Start the server"
 msgstr "启动服务器"
 
-#: ../../source/tutorial/part1_texteditor.rst:158
+#: ../../source/tutorial/part1_texteditor.rst:150
 msgid "Enter::"
 msgstr "输入："
 
-#: ../../source/tutorial/part1_texteditor.rst:162
+#: ../../source/tutorial/part1_texteditor.rst:154
 msgid "Then open your browser to ``http://localhost:8000`` to try out the survey."
 msgstr "然后打开你的浏览器，输入网站 ``http://localhost:8000`` 即可测试此调查问卷。"
 
-#: ../../source/tutorial/part1_texteditor.rst:166
+#: ../../source/tutorial/part1_texteditor.rst:158
 msgid "Fix any errors"
 msgstr "处理错误"
 
-#: ../../source/tutorial/part1_texteditor.rst:168
+#: ../../source/tutorial/part1_texteditor.rst:160
 msgid ""
 "If there is an error in your code, the command line will display a "
 "\"traceback\" (error message) that is formatted something like this::"
 msgstr "如果你的代码中有错误，那么命令行会显示“traceback”（报错信息），一般格式如下："
 
-#: ../../source/tutorial/part1_texteditor.rst:191
+#: ../../source/tutorial/part1_texteditor.rst:183
 msgid ""
 "It's called a \"traceback\" because it traces the error down through the "
 "chain of code. Your first step should be to look at the last lines of the"
@@ -321,7 +321,7 @@ msgstr ""
 "40``.之后转到对应文件的对应行号。检查在traceback最后一行中提到的错误。在本例中，错误是 ``IndentationError: "
 "expected an indented block`` （这表明了问题应当与代码缩进有关）。尝试修复这个错误并重新运行之前的命令。"
 
-#: ../../source/tutorial/part1_texteditor.rst:201
+#: ../../source/tutorial/part1_texteditor.rst:193
 msgid ""
 "Sometimes the last line of the traceback refers to a file that is not "
 "part of your code. For example, in the below traceback, the last line "
@@ -331,7 +331,7 @@ msgstr ""
 "有些时候traceback的最后一行没有指向你代码的一部分。如下例中的traceback，最后一行指向 ``/site-"
 "packages/easymoney.py``，这并不是你的应用的一部分，而是一个外部的包："
 
-#: ../../source/tutorial/part1_texteditor.rst:244
+#: ../../source/tutorial/part1_texteditor.rst:236
 msgid ""
 "In these situations, look to see if any of your code is contained in the "
 "traceback. Above we can see that the traceback goes through the file "
@@ -364,9 +364,10 @@ msgid ""
 msgstr "这是一个三人游戏，每位玩家初始获得100点数。每位玩家独立决定为团队贡献出多少自己的点数。团队总贡献值将被乘以2并以均分的方式重新分配给三位玩家。"
 
 #: ../../source/tutorial/part2.rst:15
+#, fuzzy
 msgid ""
 "The full code for the app we will write is `here <https://github.com"
-"/oTree-org/oTree/tree/master/public_goods_simple>`__."
+"/oTree-org/oTree/tree/lite/public_goods_simple>`__."
 msgstr ""
 "本应用的全部代码在 `这里 <https://github.com/oTree-"
 "org/oTree/tree/master/public_goods_simple>`__."
@@ -533,7 +534,7 @@ msgstr "我们在应用序列中添加另一个属于 ``my_public_goods`` 的ses
 msgid "Run the code"
 msgstr "运行代码"
 
-#: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:250
+#: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:252
 msgid ""
 "Load the project again then open your browser to "
 "``http://localhost:8000``."
@@ -567,10 +568,11 @@ msgid "You just need to insert a line in your code like this:"
 msgstr "你只需要像下面这样在你的代码中插入一行："
 
 #: ../../source/tutorial/part2.rst:217
+#, fuzzy
 msgid ""
 "Put this line in the part of your code that's not working, such as the "
-"payoff method defined above. When you play the game in your browser and "
-"that code gets executed, your print statement will be displayed in your "
+"payoff function defined above. When you play the game in your browser and"
+" that code gets executed, your print statement will be displayed in your "
 "command prompt window (not in your web browser)."
 msgstr "将这一行代码插入到你代码无法正常工作的部分，如上面定义的payoff方法。当你在浏览器中进行游戏时，这行代码就会执行，你的print语句将会显示在命令行窗口中（不是你的浏览器中）"
 
@@ -590,22 +592,24 @@ msgid ""
 msgstr "如果你在控制台窗口中没有看到print语句的输出，这意味着这行代码没有被执行！（也就是程序没有正常工作的原因）"
 
 #: ../../source/tutorial/part2.rst:248
+#, fuzzy
 msgid ""
 "Maybe it's because your code is in some unreachable place like after a "
 "``return`` statement, or inside an \"if\" statement that is always "
-"``False``. Start putting print statements from the top of the method, "
+"``False``. Start putting print statements from the top of the function, "
 "then see where they stop getting displayed."
 msgstr ""
 "可能这是因为你的代码处于不可达的位置，如 ``return`` 语句的后面，或在一个总是返回 ``False`` "
 "的”if“语句中。尝试将一系列print语句从方法的开头开始向下放置，然后查看它们在何处停止了显示。"
 
 #: ../../source/tutorial/part2.rst:252
+#, fuzzy
 msgid ""
-"Or maybe your code is in a method that never gets called (executed). "
+"Or maybe your code is in a function that never gets called (executed). "
 "oTree's built-in methods such as ``creating_session`` and "
 "``before_next_page`` are automatically executed, but if you define a "
-"custom method such as ``set_payoffs``, you need to remember to call that "
-"function from a built-in method."
+"custom function such as ``set_payoffs``, you need to remember to call "
+"that function from a built-in function."
 msgstr ""
 "或者也可能你的代码在一个从未被调用（执行）的方法中。oTree的内置函数如 ``creating_session`` 与 "
 "``before_next_page`` 会被自动执行，但是如果你定义了一个自定义方法如 "
@@ -767,62 +771,63 @@ msgstr ""
 "我们使用 :ref:`vars_for_template` 将变量 ``tripled_amount`` "
 "传递给模板。你不能直接在HTML代码中做计算，所以这一数字需要使用Python代码计算并传给模板。"
 
-#: ../../source/tutorial/part3.rst:173
+#: ../../source/tutorial/part3.rst:175
 msgid "Results"
 msgstr "Results"
 
-#: ../../source/tutorial/part3.rst:175
-#, python-format
+#: ../../source/tutorial/part3.rst:177
+#, fuzzy, python-format
 msgid ""
 "The results page needs to look slightly different for P1 vs. P2. So, we "
-"use the ``{% if %}`` statement to condition on the current player's "
+"use the ``{{ if }}`` statement to condition on the current player's "
 "``id_in_group``. Set the ``title`` block to ``Results``, and the content "
 "block to:"
 msgstr ""
 "玩家1与玩家2所看到的结果页面有细微的不同。所以我们使用 ``{% if %}`` 语句来判断当前玩家的 ``id_in_group``.将 "
 "``title`` 设置为 ``Results``，并将内容部分设置如下："
 
-#: ../../source/tutorial/part3.rst:206
+#: ../../source/tutorial/part3.rst:208
 msgid "Wait pages and page sequence"
 msgstr "等待页面与页面序列"
 
-#: ../../source/tutorial/part3.rst:208
+#: ../../source/tutorial/part3.rst:210
 msgid "Add 2 wait pages:"
 msgstr "添加2个等待页面："
 
-#: ../../source/tutorial/part3.rst:210
+#: ../../source/tutorial/part3.rst:212
 msgid "``WaitForP1`` (P2 needs to wait while P1 decides how much to send)"
 msgstr "``WaitForP1`` (玩家2需要等待玩家1决定捐赠值)"
 
-#: ../../source/tutorial/part3.rst:211
+#: ../../source/tutorial/part3.rst:213
 msgid ""
 "``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send "
 "back)"
 msgstr "``ResultsWaitPage`` (玩家1需要等待玩家2决定返还值)"
 
-#: ../../source/tutorial/part3.rst:213
+#: ../../source/tutorial/part3.rst:215
+#, fuzzy
 msgid ""
 "After the second wait page, we should calculate the payoffs. So, we "
-"define a method on the Group called ``set_payoffs``:"
+"define a function called ``set_payoffs``:"
 msgstr "在第二个等待页面之后，我们应当计算收益。所以我们在Group类中定义一个方法，命名为 ``set_payoffs``:"
 
-#: ../../source/tutorial/part3.rst:224
+#: ../../source/tutorial/part3.rst:226
 msgid "Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:"
 msgstr "在 ``ResultsWaitPage``, 设置 ``after_all_players_arrive`` 使得方法被触发:"
 
-#: ../../source/tutorial/part3.rst:230
+#: ../../source/tutorial/part3.rst:232
 msgid "Make sure they are ordered correctly in the page_sequence:"
 msgstr "确保在page_sequence中页面顺序是正确的："
 
-#: ../../source/tutorial/part3.rst:243
+#: ../../source/tutorial/part3.rst:245
 msgid "Add an entry to your ``SESSION_CONFIGS``"
 msgstr "在 ``SESSION_CONFIGS`` 中增加一个条目"
 
-#: ../../source/tutorial/part3.rst:245
+#: ../../source/tutorial/part3.rst:247
 msgid "Create a session config with ``my_trust`` in the app sequence."
 msgstr "在应用序列中创建一个属于 ``my_trust`` 的session config。"
 
-#: ../../source/tutorial/part3.rst:248
+#: ../../source/tutorial/part3.rst:250
 msgid "Run the server"
 msgstr "运行服务器"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: 2020-11-25 19:23+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -163,9 +163,10 @@ msgid ""
 msgstr "另一个使用参与人标签的好处是如果参与人打开了参与链接两次，他们会被分配为同一个参与者（如果你使用了房间链接或者会话链接）。这减少了重复参与。"
 
 #: ../../source/admin.rst:91
+#, fuzzy
 msgid ""
 "If you're using Prolific, you can add "
-"``participant_label={{%PROLIFIC_PID%}}`` to your study URL. When the user"
+"``participant_label={{{PROLIFIC_PID}}}`` to your study URL. When the user"
 " clicks the link, Prolific will replace that with the participant's "
 "actual Prolific ID."
 msgstr ""
@@ -229,27 +230,26 @@ msgstr ""
 "然后在你的应用中创建一个可包含的模板 ``admin_report.html`` ，并展示任何你想展示的通过 "
 "``vars_for_admin_report`` 传入的变量："
 
-#: ../../source/admin.rst:145
+#: ../../source/admin.rst:143
 msgid "Notes:"
 msgstr "注意："
 
-#: ../../source/admin.rst:147
+#: ../../source/admin.rst:145
 msgid ""
 "``subsession``, ``session``, and ``Constants`` are passed to the template"
 " automatically."
 msgstr "``subsession``, ``session``, 与 ``Constants`` 会被自动传递给模板。"
 
-#: ../../source/admin.rst:149
-#, python-format
+#: ../../source/admin.rst:147
+#, fuzzy, python-format
 msgid ""
-"``admin_report.html`` does not need to use ``{% block %}`` or ``{% "
-"extends %}``  etc. The above example is valid as the full contents of "
-"``admin_report.html``."
+"``admin_report.html`` does not need to use ``{{ block }}``. The above "
+"example is valid as the full contents of ``admin_report.html``."
 msgstr ""
 "``admin_report.html`` 不需要使用 ``{% block %}`` 或 ``{% extends %}`` "
 "等部分。上面的例子是完整有效的 ``admin_report.html`` 的内容。"
 
-#: ../../source/admin.rst:152
+#: ../../source/admin.rst:150
 msgid ""
 "If one or more apps in your session have an ``admin_report.html``, your "
 "admin page will have a \"Reports\" tab. Use the menu to select the app "
@@ -258,74 +258,27 @@ msgstr ""
 "如果你会话中有一个或多个应用具有 ``admin_report.html``，你的管理员页面就会有 \"Reports\" "
 "选项卡。使用菜单选择应用与轮数，以查看特定子会话的报告。"
 
-#: ../../source/admin.rst:156
-#, python-format
+#: ../../source/admin.rst:154
+#, fuzzy, python-format
 msgid ""
 "Tip: if you are displaying the same chart in the admin report and "
 "participant pages, you can reuse ``admin_report.html`` in the participant"
-" template with an ``{% include %}``, and pass the variables like this:"
+" template with an ``{{ include }}``, and pass the variables like this:"
 msgstr ""
 "提示：如果你想在管理员报告与参与人页面中展示相同的图表，你可以在参与人模板中通过 ``{% include %}`` 复用 "
 "``admin_report.html`` ，并像下面这样传递参数："
 
-#: ../../source/admin.rst:170
-msgid "Kiosk Mode"
-msgstr "资讯站模式"
-
-#: ../../source/admin.rst:172
-msgid ""
-"During a lab study you may want to restrict participants from doing "
-"things like:"
-msgstr "在实验室研究中你可能会希望参与人不要做下面这些事情："
-
-#: ../../source/admin.rst:174
-msgid "Closing the browser window"
-msgstr "关闭浏览器窗口"
-
-#: ../../source/admin.rst:175
-msgid "Clicking the \"back\" button"
-msgstr "点击“返回”按钮"
-
-#: ../../source/admin.rst:176
-msgid "Viewing the URL in the address bar"
-msgstr "在地址栏查看URL"
-
-#: ../../source/admin.rst:178
-msgid ""
-"You can restrict these things with \"kiosk mode\", a setting available in"
-" most web browsers. Consult your web browser's documentation for "
-"information on how to enable kiosk mode."
-msgstr "你可以通过“资讯站模式”禁止这些事情，这种模式在大多数现代浏览器上都可用。查询你所使用的浏览器文档来获知如何启用资讯站模式。"
-
-#: ../../source/admin.rst:185
-msgid "Monitor sessions"
-msgstr "监视会话"
-
-#: ../../source/admin.rst:187
-msgid "The admin interface lets you monitor the live progress of your sessions."
-msgstr "管理员界面让你能够监视会话的实时进度。"
-
-#: ../../source/admin.rst:190
-msgid "Payments page"
-msgstr "报酬页面"
-
-#: ../../source/admin.rst:192
-msgid ""
-"At the end of your session, you can open and print a page that lists all "
-"the participants and how much they should be paid."
-msgstr "在会话结束时，你可以打开并打印一个列出了所有参与者和他们的报酬的页面。"
-
-#: ../../source/admin.rst:196
+#: ../../source/admin.rst:169
 msgid "Export Data"
 msgstr "导出数据"
 
-#: ../../source/admin.rst:198
+#: ../../source/admin.rst:171
 msgid ""
 "In the admin interface, click on \"Data\" to download your data as CSV or"
 " Excel."
 msgstr "在管理员界面，点击“Data”来下载你的数据，以CSV或者Excel的形式。"
 
-#: ../../source/admin.rst:201
+#: ../../source/admin.rst:174
 msgid ""
 "There is also a data export for \"page times\", which shows the exact "
 "time when users completed every page. :download:`Here "
@@ -338,12 +291,12 @@ msgstr ""
 "<_static/pagetimes.py>` "
 "是一个Python脚本，你可以用它列出每一页分别花了多长时间。你可以修改这个脚本来计算类似的事情，比如每位参与人在等待页面上一共花了多长时间。"
 
-#: ../../source/admin.rst:209
+#: ../../source/admin.rst:182
 msgid "Custom data exports"
 msgstr "自定义数据导出"
 
 # Chris comment: we no longer mention models.py
-#: ../../source/admin.rst:211
+#: ../../source/admin.rst:184
 #, fuzzy
 msgid ""
 "You can make your own custom data export for an app. In oTree Studio, go "
@@ -354,21 +307,20 @@ msgid ""
 msgstr ""
 "你可以在应用中自定义数据导出。在oTree Studio中，前往 \"Player\" "
 "模块并点击底部的\"custom_export\"。（如果使用文本编辑器，在 ``models.py`` "
-"的下方，而不是在类中，定义下面的函数。）参数 ``players`` 是数据库中所有玩家组成的QuerySet。使用"
-" ``yield`` 来获取每一行数据。"
+"的下方，而不是在类中，定义下面的函数。）参数 ``players`` 是数据库中所有玩家组成的QuerySet。使用 ``yield`` "
+"来获取每一行数据。"
 
-
-#: ../../source/admin.rst:225
+#: ../../source/admin.rst:200
 msgid ""
 "Once this function is defined, your custom data export will be available "
 "in the regular data export page."
 msgstr "一旦定义了这个函数，你的自定义数据导出就在正常的数据导出页面可用。"
 
-#: ../../source/admin.rst:229
+#: ../../source/admin.rst:204
 msgid "Debug Info"
 msgstr "Debug信息"
 
-#: ../../source/admin.rst:231
+#: ../../source/admin.rst:206
 msgid ""
 "When oTree runs in ``DEBUG`` mode (i.e. when the environment variable "
 "``OTREE_PRODUCTION`` is not set), debug information is displayed on the "
@@ -377,3 +329,34 @@ msgstr ""
 "当oTree以 ``DEBUG`` 模式（也即环境变量 ``OTREE_PRODUCTION`` "
 "未被设置）运行时，debug信息会被显示在屏幕的底部。"
 
+#: ../../source/admin.rst:211
+#, fuzzy
+msgid "Payments"
+msgstr "报酬页面"
+
+#: ../../source/admin.rst:213
+msgid ""
+"If you define a :ref:`participant field <PARTICIPANT_FIELDS>` called "
+"`finished`, then you can set ``participant.finished = True`` when a "
+"participant finishes the session, and this will be displayed in various "
+"places such as the payments page."
+msgstr ""
+
+#: ../../source/admin.rst:220
+msgid "Chat between participants and experimenter"
+msgstr ""
+
+#: ../../source/admin.rst:222
+msgid ""
+"To enable your participants to send you chat messages, consider using a "
+"software like `Papercups <https://github.com/papercups-"
+"io/papercups/blob/master/README.md>`__. Click on the \"Deploy to Heroku\""
+" button for 1-click setup of your Papercups server. Fill out the required"
+" config vars and leave the others empty. ``BACKEND_URL`` and "
+"``REACT_APP_URL`` refer to your Papercups site, not your oTree site. "
+"Login to your site and copy the HTML embedding code to an includable "
+"template called ``papercups.html``, then use ``{{ include }}`` to add the"
+" widget to each of your pages. (Put it somewhere in your page content, "
+"not inside ``<head>`` as suggested by Papercups documentation.) We "
+"recommend also adding this to the embedding config:"
+msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: 2020-11-27 01:08+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -85,15 +85,15 @@ msgid ""
 ":ref:`session_config_treatments`)."
 msgstr "或者使用定制的session config参数 (参见 :ref:`session_config_treatments`)."
 
-#: ../../source/timeouts.rst:76
+#: ../../source/timeouts.rst:78
 msgid "Advanced techniques"
 msgstr "高级技巧"
 
-#: ../../source/timeouts.rst:81
+#: ../../source/timeouts.rst:83
 msgid "Forms submitted by timeout"
 msgstr "因超时提交的表单"
 
-#: ../../source/timeouts.rst:83
+#: ../../source/timeouts.rst:85
 msgid ""
 "If a form is auto-submitted because of a timeout, oTree will try to save "
 "whichever fields were filled out at the time of submission. If a field in"
@@ -104,23 +104,24 @@ msgstr ""
 "如果表单由于超时被自动提交，oTree会试着保存表单在提交时字段所填入的内容。如果表单中的字段中有一个错误如缺失或非法，oTree会自动对数值字段填入"
 " ``0`` ，布尔字段填入 ``False`` ，字符串字段填入 ``''`` 。"
 
-#: ../../source/timeouts.rst:89
+#: ../../source/timeouts.rst:91
 msgid ""
 "If you want to discard the auto-submitted values, you can just check if "
 "``timeout_happened``, and if so, overwrite the values."
 msgstr "如果你想要舍弃这些自动提交的值，你可以检查 ``timeout_happened`` ，如果需要的话，你可以覆写这些值。"
 
-#: ../../source/timeouts.rst:92
+#: ../../source/timeouts.rst:94
+#, fuzzy
 msgid ""
-"If the ``error_message()`` method fails, then the whole form might be "
+"If the ``error_message()`` function fails, then the whole form might be "
 "invalid, so the whole form will be discarded."
 msgstr "如果 ``error_message()`` 方法失败了，那么整个表单可能是非法的，故整个表单都会被舍弃。"
 
-#: ../../source/timeouts.rst:96
+#: ../../source/timeouts.rst:98
 msgid "Timeouts that span multiple pages"
 msgstr "跨越多个页面的超时"
 
-#: ../../source/timeouts.rst:98
+#: ../../source/timeouts.rst:100
 msgid ""
 "You can use ``get_timeout_seconds`` to create timeouts that span multiple"
 " pages, or even the entire session. The trick is to define a fixed "
@@ -131,7 +132,7 @@ msgstr ""
 "来创建跨越多个页面甚至是整个会话的超时。技巧是定义一个固定的\"到期时间\"，然后在每个页面上，让 ``get_timeout_seconds``"
 " 返回当前时间到到期时间的秒数。"
 
-#: ../../source/timeouts.rst:103
+#: ../../source/timeouts.rst:105
 msgid ""
 "First, choose a place to start the timer. This could be a page called "
 "\"Start\" that displays text like \"Press the button when you're ready to"
@@ -142,9 +143,10 @@ msgstr ""
 "``before_next_page`` 会被执行："
 
 #: ../../source/timeouts.rst:121
+#, fuzzy
 msgid ""
 "(You could also start the timer in ``after_all_players_arrive`` or "
-"``creating_session``, and it could be stored in ``session.vars`` if it's "
+"``creating_session``, and it could be stored in a session field if it's "
 "the same for everyone in the session.)"
 msgstr ""
 "（你也可以在 ``after_all_players_arrive`` 或 ``creating_session`` "
@@ -156,7 +158,7 @@ msgid ""
 " until that expiration time:"
 msgstr "然后，每个页面的 ``get_timeout_seconds`` 应当为直到到期时间的秒数："
 
-#: ../../source/timeouts.rst:136
+#: ../../source/timeouts.rst:137
 msgid ""
 "When time runs out, ``get_timeout_seconds`` will return 0 or a negative "
 "value, which will result in the page loading and being auto-submitted "
@@ -169,7 +171,7 @@ msgstr ""
 "会返回0或者一个负数，这会导致页面立即被加载并自动提交。这意味着所有剩余页面会快速闪过参与者的屏幕，这通常不是想要的结果。所以你应该使用 "
 "``is_displayed`` 来跳过这些页面，如果实际上参与者已经没有时间阅读这些页面。"
 
-#: ../../source/timeouts.rst:157
+#: ../../source/timeouts.rst:158
 msgid ""
 "The default text on the timer says \"Time left to complete this page:\". "
 "But if your timeout spans multiple pages, you should word it more "
@@ -222,9 +224,9 @@ msgstr "例如，隐藏计时器直到还剩10秒,"
 
 #: ../../source/timeouts.rst:222
 msgid ""
-"(To apply this to all pages, see the instructions in :ref:`base-"
-"template`.)"
-msgstr "（要将此应用到所有页面上，参考  :ref:`base-template` 中的说明）"
+"To avoid copy-pasting this code on every page, put it in an includable "
+"template."
+msgstr ""
 
 #: ../../source/timeouts.rst:224
 msgid ""
@@ -260,4 +262,9 @@ msgid ""
 msgstr ""
 "如果你想让用户在页面上 *至少* 花上一定量的时间，你可以使用一些简单的JavaScript：隐藏下一步按钮（使用 ``.otree-btn-"
 "next`` 选择器），然后使用 ``setTimeout`` 来在一段时间后重新显示按钮。"
+
+#~ msgid ""
+#~ "(To apply this to all pages, see"
+#~ " the instructions in :ref:`base-template`.)"
+#~ msgstr "（要将此应用到所有页面上，参考  :ref:`base-template` 中的说明）"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: 2020-11-19 00:31+0800\n"
 "Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
 "Language: zh_CN\n"
@@ -46,7 +46,10 @@ msgid "Passing data between apps"
 msgstr "在应用之间传递数据"
 
 #: ../../source/rounds.rst:19
-msgid "See :ref:`participant.vars <vars>` and :ref:`session.vars <session_vars>`."
+#, fuzzy
+msgid ""
+"See :ref:`participant fields <vars>` and :ref:`session fields "
+"<session_vars>`."
 msgstr "参考 :ref:`participant.vars <vars>` 与 :ref:`session.vars <session_vars>`."
 
 #: ../../source/rounds.rst:25
@@ -169,75 +172,94 @@ msgid ""
 " them if you re-shuffle groups between rounds."
 msgstr "这些方法对于group也是相同的，但是如果你在轮次之间重新安排了小组，那么使用这些方法是没有意义的。"
 
-#: ../../source/rounds.rst:90
-msgid "participant.vars"
+#: ../../source/rounds.rst:91
+#, fuzzy
+msgid "Participant fields"
 msgstr "participant.vars"
 
-#: ../../source/rounds.rst:92
+#: ../../source/rounds.rst:95
+msgid ""
+"As of March 2021, this is a new **optional** syntax for "
+"``participant.vars``. Instead of setting ``participant.vars['my_field'] ="
+" 1``, you can now set ``participant.my_field = 1`` directly. Just make "
+"sure to define ``PARTICIPANT_FIELDS`` first. See `here "
+"<https://groups.google.com/g/otree/c/lbJg_ND5QkY>`__ for more info."
+msgstr ""
+
+#: ../../source/rounds.rst:101
+#, fuzzy
 msgid ""
 "If you want to access a participant's data from a previous app, you "
 "should store this data on the participant object, which persists across "
 "apps (see :ref:`participants_and_players`). (``in_all_rounds()`` only is "
 "useful when you need to access data from a previous round of the same "
-"app.) Put it in ``participant.vars``, which is a dict that can store any "
-"data. For example, you can set an attribute like this::"
+"app.)"
 msgstr ""
 "如果你想要获取一位参与人在之前应用中的数据，你应当将数据存储在参与人对象中，这样数据可以在不同应用间保持。（参考 "
 ":ref:`participants_and_players`）。（``in_all_rounds()`` "
 "仅在你需要获取同一应用中的之前轮次的数据时有用。）将数据放入 ``participant.vars`` "
 "中即可，这是一个可以存放任何数据的字典。举例来说，你可以像下面这样设置属性："
 
-#: ../../source/rounds.rst:102
+#: ../../source/rounds.rst:107
 msgid ""
-"Later in the session (e.g. in a separate app), you can retrieve it like "
-"this::"
-msgstr "在之后的会话中（例如另一个应用中），你可以像下面这样提取数据："
+"Go to settings and define ``PARTICIPANT_FIELDS``, which is a list of the "
+"names of fields you want to define on your participant."
+msgstr ""
 
 #: ../../source/rounds.rst:110
-#, fuzzy
-msgid ""
-"You can test if ``'my_var'`` exists with ``if 'my_var' in "
-"participant.vars:``."
-msgstr "你可以通过 ``if 'my_var' in participant.vars:`` 来测试 ``'my_var'`` 是否存在。"
+msgid "Then in your code, you can get and set any type of data on these fields:"
+msgstr ""
 
-#: ../../source/rounds.rst:112
+#: ../../source/rounds.rst:116
+msgid ""
+"(Internally, all participant fields are stored in a dict called "
+"``participant.vars``. ``participant.xyz`` is equivalent to "
+"``participant.vars['xyz']``.)"
+msgstr ""
+
+#: ../../source/rounds.rst:119
 #, fuzzy
 msgid ""
-"``participant.vars`` is not included in the Excel/CSV data export, or in "
+"Participant fields are not included in the Excel/CSV data export, or in "
 "the \"Data\" tab in the session admin. If you want that, you should "
 "either use :ref:`custom-export` or save ``str(participant.vars)`` into a "
-"``LongStringField``. (The same concept applies for ``session.vars``.)"
+"``LongStringField``. (The same concept applies for session fields.)"
 msgstr ""
 "``participant.vars`` "
 "不包括在Excel/CSV数据导出中，也不在会话admin界面的\"Data\"标签下。如果你需要这种数据，你应当使用 :ref:`custom-"
 "export` 或保存 ``str(participant.vars)`` 到一个 ``LongStringField`` 中。（相同的概念适用于"
 " ``session.vars``。）"
 
-#: ../../source/rounds.rst:120
-msgid "session.vars"
+#: ../../source/rounds.rst:127
+#, fuzzy
+msgid "Session fields"
 msgstr "session.vars"
 
-#: ../../source/rounds.rst:122
+#: ../../source/rounds.rst:131
+msgid "This is a new feature; see the note above about ``PARTICIPANT_FIELDS``."
+msgstr ""
+
+#: ../../source/rounds.rst:133
 msgid ""
 "For global variables that are the same for all participants in the "
-"session, you can use ``session.vars``. This is a dict just like "
-"``participant.vars``."
+"session, add them to the ``SESSION_FIELDS``, which works the same as "
+"``PARTICIPANT_FIELDS``. Internally, all session fields are stored in "
+"``session.vars``."
 msgstr ""
-"对于在会话中所有参与者都相同的全局变量，你可以使用 ``session.vars``。这是一个与 ``participant.vars`` "
-"相似的字典。区别在于如果你设置了一个 ``session.vars`` 中的变量，它将会应用到会话中的所有参与者，而不是某一个。"
 
-#: ../../source/rounds.rst:128
+#: ../../source/rounds.rst:138
 msgid "Variable number of rounds"
 msgstr "可变轮数"
 
-#: ../../source/rounds.rst:130
+#: ../../source/rounds.rst:140
 msgid "If you want a variable number of rounds, consider using :ref:`live`."
 msgstr "如果你想要可变的轮数，考虑使用 :ref:`live`."
 
-#: ../../source/rounds.rst:132
+#: ../../source/rounds.rst:142
+#, fuzzy
 msgid ""
 "Alternatively, you can set ``num_rounds`` to some high number, and then "
-"in your app, conditionally hide the ``{% next_button %}`` element, so "
+"in your app, conditionally hide the ``{{ next_button }}`` element, so "
 "that the user cannot proceed to the next page, or use "
 ":ref:`app_after_this_page`. But note that having many rounds (e.g. more "
 "than 100) might cause performance problems, so test your app carefully."
@@ -245,4 +267,26 @@ msgstr ""
 "作为替代方案，你可以将 ``num_rounds`` 设为一个较大的数，然后在应用中，有条件地隐藏 ``{% next_button %}`` "
 "元素，使得用户无法继续进行到下一页面，或者使用 :ref:`app_after_this_page`. "
 "但是注意轮数较大（例如超过100）可能会导致性能问题，所以请仔细测试你的程序。"
+
+#~ msgid ""
+#~ "Later in the session (e.g. in a"
+#~ " separate app), you can retrieve it"
+#~ " like this::"
+#~ msgstr "在之后的会话中（例如另一个应用中），你可以像下面这样提取数据："
+
+#~ msgid ""
+#~ "You can test if ``'my_var'`` exists "
+#~ "with ``if 'my_var' in participant.vars:``."
+#~ msgstr "你可以通过 ``if 'my_var' in participant.vars:`` 来测试 ``'my_var'`` 是否存在。"
+
+#~ msgid ""
+#~ "For global variables that are the "
+#~ "same for all participants in the "
+#~ "session, you can use ``session.vars``. "
+#~ "This is a dict just like "
+#~ "``participant.vars``."
+#~ msgstr ""
+#~ "对于在会话中所有参与者都相同的全局变量，你可以使用 ``session.vars``。这是一个与 "
+#~ "``participant.vars`` 相似的字典。区别在于如果你设置了一个 ``session.vars``"
+#~ " 中的变量，它将会应用到会话中的所有参与者，而不是某一个。"
 
