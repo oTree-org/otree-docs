@@ -5,18 +5,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  oTree\n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2020-12-02 23:34+0800\n"
+"POT-Creation-Date: 2021-05-24 09:30-0600\n"
+"PO-Revision-Date: 2021-05-24 14:02-0600\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ../../source/live.rst:4
 msgid "Live pages"
@@ -25,16 +26,18 @@ msgstr "实时页面"
 #: ../../source/live.rst:6
 #, fuzzy
 msgid ""
-"Live pages communicate with the server continuously and update in real "
-"time, enabling continuous time games. Live pages are a great fit for "
-"games with lots of back-and-forth interaction between users, and for "
-"single-player games with quick iteration."
-msgstr "实时页面与服务器持续通讯并实时更新，让实时游戏成为可能。实时页面对于用户间存在很多快速重复与交互的游戏非常适合。然而，这需要JavaScript编程。"
+"Live pages communicate with the server continuously and update in real time, "
+"enabling continuous time games. Live pages are a great fit for games with lots of "
+"back-and-forth interaction between users, and for single-player games with quick "
+"iteration."
+msgstr ""
+"实时页面与服务器持续通讯并实时更新，让实时游戏成为可能。实时页面对于用户间存在很多"
+"快速重复与交互的游戏非常适合。然而，这需要JavaScript编程。"
 
 #: ../../source/live.rst:11
 msgid ""
-"There are a bunch of examples `here <https://www.otreehub.com/projects"
-"/otree-more-demos/>`__."
+"There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-"
+"demos/>`__."
 msgstr ""
 
 #: ../../source/live.rst:14
@@ -43,265 +46,278 @@ msgstr "向服务器发送数据"
 
 #: ../../source/live.rst:16
 msgid ""
-"In your template's JavaScript code, call the function ``liveSend()`` "
-"whenever you want to send data to the server. For example, to submit a "
-"bid of 99 on behalf of the user, call:"
-msgstr "在你模板的JavaScript代码中，调用 ``liveSend()`` 函数来向服务器发送数据。例如，代表用户提交一个99的点数："
+"In your template's JavaScript code, call the function ``liveSend()`` whenever you "
+"want to send data to the server. For example, to submit a bid of 99 on behalf of "
+"the user, call:"
+msgstr ""
+"在你模板的JavaScript代码中，调用 ``liveSend()`` 函数来向服务器发送数据。例如，代表"
+"用户提交一个99的点数："
 
 # Chris comment: it changed from a Player method to a function.
 #: ../../source/live.rst:25
 msgid ""
-"Define a function that will receive this message. Its argument is "
-"whatever data was sent."
+"Define a function that will receive this message. Its argument is whatever data "
+"was sent."
 msgstr "在 ``Player`` 中，定义一个可以接收此消息的方法。它的参数就是所发送的数据。"
 
 #: ../../source/live.rst:38
-msgid "(Note, ``live_method`` on ``WaitPage`` is not yet supported.)"
-msgstr "（注意，在 ``WaitPage`` 中的 ``live_method`` 尚未支持。）"
+msgid ""
+"If you are using oTree Studio, you must define a player function whose name "
+"starts with ``live_``. (Note, ``live_method`` on ``WaitPage`` is not yet "
+"supported.)"
+msgstr ""
 
-#: ../../source/live.rst:41
+#: ../../source/live.rst:43
 msgid "Sending data to the page"
 msgstr "向页面发送数据"
 
-#: ../../source/live.rst:43
+#: ../../source/live.rst:45
 msgid ""
-"To send data back, return a dict whose keys are the IDs of the players to"
-" receive a message. For example, here is a method that simply sends "
-"\"thanks\" to whoever sends a message."
-msgstr "为将数据发回，返回一个字典，键为玩家的ID以收到消息。例如，下面是一个简单的方法，发送“thanks”给任何发送消息的人。"
+"To send data back, return a dict whose keys are the IDs of the players to receive "
+"a message. For example, here is a method that simply sends \"thanks\" to whoever "
+"sends a message."
+msgstr ""
+"为将数据发回，返回一个字典，键为玩家的ID以收到消息。例如，下面是一个简单的方法，发"
+"送“thanks”给任何发送消息的人。"
 
-#: ../../source/live.rst:53
+#: ../../source/live.rst:55
 msgid ""
-"To send to multiple players, use their ``id_in_group``. For example, this"
-" forwards every message to players 2 and 3:"
-msgstr "为向多位玩家发送消息，使用他们的 ``id_in_group`` 作为键即可。举例来说，下面的函数将消息发送给玩家2和3："
+"To send to multiple players, use their ``id_in_group``. For example, this "
+"forwards every message to players 2 and 3:"
+msgstr ""
+"为向多位玩家发送消息，使用他们的 ``id_in_group`` 作为键即可。举例来说，下面的函数"
+"将消息发送给玩家2和3："
 
-#: ../../source/live.rst:61
+#: ../../source/live.rst:63
 msgid ""
-"To broadcast it to the whole group, use ``0`` (special case since it is "
-"not an actual ``id_in_group``)."
-msgstr "向全组进行广播，使用 ``0`` 作为键（这是特殊情况，不是某个 ``id_in_group``）。"
+"To broadcast it to the whole group, use ``0`` (special case since it is not an "
+"actual ``id_in_group``)."
+msgstr ""
+"向全组进行广播，使用 ``0`` 作为键（这是特殊情况，不是某个 ``id_in_group``）。"
 
-#: ../../source/live.rst:69
+#: ../../source/live.rst:71
 msgid ""
-"In your JavaScript, define a function ``liveRecv``. This will be "
-"automatically called each time a message is received from the server."
-msgstr "在你的JavaScript代码中，定义函数 ``liveRecv``。此函数在每次收到服务器的消息时会被自动调用。"
+"In your JavaScript, define a function ``liveRecv``. This will be automatically "
+"called each time a message is received from the server."
+msgstr ""
+"在你的JavaScript代码中，定义函数 ``liveRecv``。此函数在每次收到服务器的消息时会被"
+"自动调用。"
 
-#: ../../source/live.rst:80
+#: ../../source/live.rst:82
 msgid "Example: auction"
 msgstr "例子：拍卖"
 
-#: ../../source/live.rst:129
+#: ../../source/live.rst:131
 msgid "(Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)"
 msgstr "（注意，在JavaScript中 ``data.id_in_group == data['id_in_group']``.）"
 
-#: ../../source/live.rst:132
+#: ../../source/live.rst:134
 msgid "Data"
 msgstr "数据"
 
-#: ../../source/live.rst:134
+#: ../../source/live.rst:136
 msgid ""
-"The data you send and receive can be any data type (as long as it is JSON"
-" serializable). For example these are all valid:"
-msgstr "你所发送和接受的数据可以是任意数据类型（只要其能够被JSON序列化）。举例来说下面均是合法的："
+"The data you send and receive can be any data type (as long as it is JSON "
+"serializable). For example these are all valid:"
+msgstr ""
+"你所发送和接受的数据可以是任意数据类型（只要其能够被JSON序列化）。举例来说下面均是"
+"合法的："
 
-#: ../../source/live.rst:144
+#: ../../source/live.rst:146
 msgid ""
-"The most versatile type of data is a dict, since it allows you to include"
-" multiple pieces of metadata, in particular what type of message it is:"
+"The most versatile type of data is a dict, since it allows you to include "
+"multiple pieces of metadata, in particular what type of message it is:"
 msgstr "最多用途的数据类型是字典，它可以让你包含多种元数据，尤其是消息的类型："
 
-#: ../../source/live.rst:153
+#: ../../source/live.rst:155
 msgid "Then you can use ``if`` statements to process different types of messages:"
 msgstr "此时你就可以用 ``if`` 语句来处理不同种类的消息："
 
-#: ../../source/live.rst:173
+#: ../../source/live.rst:175
 msgid "History"
 msgstr "历史"
 
-#: ../../source/live.rst:175
+#: ../../source/live.rst:177
 #, fuzzy
 msgid ""
-"By default, participants will not see messages that were sent before they"
-" arrived at the page. (And data will not be re-sent if they refresh the "
-"page.) If you want to save history, you should store it in the database. "
-"When a player loads the page, your JavaScript can call something like "
-"``liveSend({})``, and you can configure your live_method to retrieve the "
-"history of the game from the database."
+"By default, participants will not see messages that were sent before they arrived "
+"at the page. (And data will not be re-sent if they refresh the page.) If you want "
+"to save history, you should store it in the database. When a player loads the "
+"page, your JavaScript can call something like ``liveSend({})``, and you can "
+"configure your live_method to retrieve the history of the game from the database."
 msgstr ""
-"默认情况下，参与者不会看见他们到达页面之前发送的消息。（并且如果刷新页面数据并不会重新发送。）如果你希望保存历史，你应当将其存储在数据库中。当玩家加载页面时，你的JavaScript可以调用像"
-" ``liveSend({'type': 'connect'})`` 的东西，并且你可以配置你自己的实时方法来从数据库中提取游戏的历史。"
+"默认情况下，参与者不会看见他们到达页面之前发送的消息。（并且如果刷新页面数据并不会"
+"重新发送。）如果你希望保存历史，你应当将其存储在数据库中。当玩家加载页面时，你的"
+"JavaScript可以调用像 ``liveSend({'type': 'connect'})`` 的东西，并且你可以配置你自"
+"己的实时方法来从数据库中提取游戏的历史。"
 
-#: ../../source/live.rst:182
+#: ../../source/live.rst:184
 msgid "ExtraModel"
 msgstr ""
 
-#: ../../source/live.rst:184
+#: ../../source/live.rst:186
 msgid ""
-"Live pages are often used together with an :ref:`ExtraModel "
-"<ExtraModel>`, which allows you to store each individual message or "
-"action in the database."
+"Live pages are often used together with an :ref:`ExtraModel <ExtraModel>`, which "
+"allows you to store each individual message or action in the database."
 msgstr ""
 
-#: ../../source/live.rst:188
+#: ../../source/live.rst:190
 msgid "Keeping users on the page"
 msgstr "让用户停留在页面上"
 
-#: ../../source/live.rst:190
+#: ../../source/live.rst:192
 msgid ""
-"Let's say you require 10 messages to be sent before the users can proceed"
-" to the next page."
+"Let's say you require 10 messages to be sent before the users can proceed to the "
+"next page."
 msgstr "假定玩家在进行下一个页面之前你需要先发送10条消息。"
 
-#: ../../source/live.rst:193
-#, fuzzy
+#: ../../source/live.rst:195
 msgid ""
-"First, you should omit the ``{{ next_button }}``. (Or use JS to hide it "
-"until the task is complete.)"
-msgstr "首先，将 ``{% next_button %}`` 删除。（或使用JS将其隐藏直到工作完成。）"
+"First, you should omit the ``{{ next_button }}``. (Or use JS to hide it until the "
+"task is complete.)"
+msgstr "首先，将 ``{{ next_button }}`` 删除。（或使用JS将其隐藏直到工作完成。）"
 
-#: ../../source/live.rst:196
+#: ../../source/live.rst:198
 msgid "When the task is completed, you send a message:"
 msgstr "当信息发送完成后，发送一条消息："
 
-#: ../../source/live.rst:214
+#: ../../source/live.rst:216
 msgid "Then in the template, automatically submit the page via JavaScript:"
 msgstr "然后在模板中，通过JavaScript自动提交页面："
 
-#: ../../source/live.rst:227
+#: ../../source/live.rst:229
 msgid ""
-"By the way, using a similar technique, you could implement a custom wait "
-"page, e.g. one that lets you proceed after a certain timeout, even if not"
-" all players have arrived."
-msgstr "顺带一提，使用相同的技巧，你可以实现一个自定义的等待页面，例如在某个时间之后才会进行下一页面，即使所有玩家均已到达的等待页面。"
+"By the way, using a similar technique, you could implement a custom wait page, e."
+"g. one that lets you proceed after a certain timeout, even if not all players "
+"have arrived."
+msgstr ""
+"顺带一提，使用相同的技巧，你可以实现一个自定义的等待页面，例如在某个时间之后才会进"
+"行下一页面，即使所有玩家均已到达的等待页面。"
 
-#: ../../source/live.rst:232
+#: ../../source/live.rst:234
 msgid "General advice about live pages"
 msgstr ""
 
-#: ../../source/live.rst:234
+#: ../../source/live.rst:236
 msgid ""
-"Here is some general advice (does not apply to all situations). We "
-"recommend implementing most of your logic in Python, and just using "
-"JavaScript to update the page's HTML, because:"
+"Here is some general advice (does not apply to all situations). We recommend "
+"implementing most of your logic in Python, and just using JavaScript to update "
+"the page's HTML, because:"
 msgstr ""
 
-#: ../../source/live.rst:238
+#: ../../source/live.rst:240
 msgid "The JavaScript language can be quite tricky to use properly"
 msgstr ""
 
-#: ../../source/live.rst:239
+#: ../../source/live.rst:241
 msgid ""
 "Your Python code runs on the server, which is centralized and reliable. "
-"JavaScript runs on the clients, which can get out of sync with each "
-"other, and data can get lost when the page is closed or reloaded."
+"JavaScript runs on the clients, which can get out of sync with each other, and "
+"data can get lost when the page is closed or reloaded."
 msgstr ""
 
-#: ../../source/live.rst:242
+#: ../../source/live.rst:244
 msgid ""
-"Because Python code runs on the server, it is more secure and cannot be "
-"viewed or modified by participants."
+"Because Python code runs on the server, it is more secure and cannot be viewed or "
+"modified by participants."
 msgstr ""
 
-#: ../../source/live.rst:246
+#: ../../source/live.rst:248
 #, fuzzy
 msgid "Example: tic-tac-toe"
 msgstr "例子：拍卖"
 
-#: ../../source/live.rst:248
+#: ../../source/live.rst:250
 msgid ""
-"Let's say you are implementing a game of tic-tac-toe. There are 2 types "
-"of messages your live_method can receive:"
+"Let's say you are implementing a game of tic-tac-toe. There are 2 types of "
+"messages your live_method can receive:"
 msgstr ""
 
-#: ../../source/live.rst:251
+#: ../../source/live.rst:253
 msgid "A user marks a square, so you need to notify the other player"
-msgstr ""
-
-#: ../../source/live.rst:252
-msgid ""
-"A user loads (or reloads) the page, so you need to send them the current "
-"board layout."
 msgstr ""
 
 #: ../../source/live.rst:254
 msgid ""
-"For situation 1, you should use a JavaScript event handler like "
-"``onclick``, e.g. so when the user clicks on square 3, that move gets "
-"sent to the server:"
+"A user loads (or reloads) the page, so you need to send them the current board "
+"layout."
 msgstr ""
 
-#: ../../source/live.rst:261
+#: ../../source/live.rst:256
 msgid ""
-"For situation 2, it's good to put some code like this in your template, "
-"which sends an empty message to the server when the page loads:"
+"For situation 1, you should use a JavaScript event handler like ``onclick``, e.g. "
+"so when the user clicks on square 3, that move gets sent to the server:"
 msgstr ""
 
-#: ../../source/live.rst:270
+#: ../../source/live.rst:263
+msgid ""
+"For situation 2, it's good to put some code like this in your template, which "
+"sends an empty message to the server when the page loads:"
+msgstr ""
+
+#: ../../source/live.rst:272
 msgid "The server handles these 2 situations with an \"if\" statement:"
 msgstr ""
 
-#: ../../source/live.rst:297
-msgid ""
-"In situation 2 (the player loads the page), the client gets a message "
-"like:"
+#: ../../source/live.rst:299
+msgid "In situation 2 (the player loads the page), the client gets a message like:"
 msgstr ""
 
-#: ../../source/live.rst:303
+#: ../../source/live.rst:305
 msgid ""
-"In situation 1, the player gets the update about the move that was just "
-"made, AND the current state."
+"In situation 1, the player gets the update about the move that was just made, AND "
+"the current state."
 msgstr ""
 
-#: ../../source/live.rst:309
+#: ../../source/live.rst:311
 msgid ""
-"The JavaScript code can be \"dumb\". It doesn't need to keep track of "
-"whose move it is; it just trusts the info it receives from the server. It"
-" can even redraw the board each time it receives a message."
+"The JavaScript code can be \"dumb\". It doesn't need to keep track of whose move "
+"it is; it just trusts the info it receives from the server. It can even redraw "
+"the board each time it receives a message."
 msgstr ""
 
-#: ../../source/live.rst:313
+#: ../../source/live.rst:315
 msgid ""
-"Your code will also need to validate user input. For example, if player 1"
-" tries to move when it is actually player 2's turn, you need to block "
-"that. For reasons listed in the previous section, it's better to do this "
-"in your live_method than in JavaScript code."
-msgstr ""
-
-#: ../../source/live.rst:318
-msgid "Summary"
+"Your code will also need to validate user input. For example, if player 1 tries "
+"to move when it is actually player 2's turn, you need to block that. For reasons "
+"listed in the previous section, it's better to do this in your live_method than "
+"in JavaScript code."
 msgstr ""
 
 #: ../../source/live.rst:320
+msgid "Summary"
+msgstr ""
+
+#: ../../source/live.rst:322
 msgid "As illustrated above, the typical pattern for a live_method is like this::"
 msgstr ""
 
-#: ../../source/live.rst:334
+#: ../../source/live.rst:336
 msgid ""
-"Note that we get the game's state twice. That's because the state changes"
-" when we update our models, so we need to refresh it."
+"Note that we get the game's state twice. That's because the state changes when we "
+"update our models, so we need to refresh it."
 msgstr ""
 
-#: ../../source/live.rst:338
+#: ../../source/live.rst:340
 msgid "Troubleshooting"
 msgstr "故障排除"
 
-#: ../../source/live.rst:339
+#: ../../source/live.rst:341
 msgid ""
-"If you call ``liveSend`` before the page has finished loading, you will "
-"get an error like ``liveSend is not defined``. So, wait for "
-"``DOMContentLoaded`` (or jQuery document.ready, etc):"
+"If you call ``liveSend`` before the page has finished loading, you will get an "
+"error like ``liveSend is not defined``. So, wait for ``DOMContentLoaded`` (or "
+"jQuery document.ready, etc):"
 msgstr ""
-"如果你在页面载入完成之前调用了 ``liveSend`` ，你会得到一个错误如 ``liveSend is not defined``.所以先等待"
-" ``DOMContentLoaded`` （或jQuery document.ready 等等）："
+"如果你在页面载入完成之前调用了 ``liveSend`` ，你会得到一个错误如 ``liveSend is "
+"not defined``.所以先等待 ``DOMContentLoaded`` （或jQuery document.ready 等等）："
 
-#: ../../source/live.rst:349
+#: ../../source/live.rst:351
 msgid ""
-"Don't trigger ``liveSend`` when the user clicks the \"next\" button, "
-"since leaving the page might interrupt the ``liveSend``. Instead, have "
-"the user click a regular button that triggers a ``liveSend``, and then "
-"doing ``document.getElementById(\"form\").submit();`` in your "
-"``liveRecv``."
+"Don't trigger ``liveSend`` when the user clicks the \"next\" button, since "
+"leaving the page might interrupt the ``liveSend``. Instead, have the user click a "
+"regular button that triggers a ``liveSend``, and then doing ``document."
+"getElementById(\"form\").submit();`` in your ``liveRecv``."
 msgstr ""
 
+#~ msgid "(Note, ``live_method`` on ``WaitPage`` is not yet supported.)"
+#~ msgstr "（注意，在 ``WaitPage`` 中的 ``live_method`` 尚未支持。）"

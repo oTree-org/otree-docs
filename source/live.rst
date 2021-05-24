@@ -35,6 +35,8 @@ was sent.
             print('received a bid from', player.id_in_group, ':', data)
 
 
+If you are using oTree Studio, you must define a player function whose name
+starts with ``live_``.
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
 
 Sending data to the page

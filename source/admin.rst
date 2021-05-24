@@ -224,14 +224,5 @@ consider using a software like `Papercups <https://github.com/papercups-io/paper
 Click on the "Deploy to Heroku" button for 1-click setup of your Papercups server.
 Fill out the required config vars and leave the others empty.
 ``BACKEND_URL`` and ``REACT_APP_URL`` refer to your Papercups site, not your oTree site.
-Login to your site and copy the HTML embedding code to an includable template called ``papercups.html``,
-then use ``{{ include }}`` to add the widget to each of your pages.
-(Put it somewhere in your page content, not inside ``<head>`` as suggested by Papercups documentation.)
-We recommend also adding this to the embedding config:
-
-.. code-block:: javascript
-
-    customer: {
-      name: '{{participant.code}}',
-      external_id: '{{participant.code}}',
-    }
+Login to your site and copy the HTML embedding code to an includable template called ``papercups.html``.
+There is an example called "chat with experimenter" `here <https://www.otreehub.com/projects/otree-snippets/>`__.

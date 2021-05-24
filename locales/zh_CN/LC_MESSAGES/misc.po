@@ -5,18 +5,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  oTree\n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2020-12-24 19:40+0800\n"
+"PO-Revision-Date: 2021-05-24 10:09-0600\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ../../source/misc/advanced.rst:2
 msgid "Advanced features"
@@ -32,16 +33,14 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:11
 msgid ""
-"An ExtraModel is useful when you need to store dozens or hundreds of data"
-" points about a single player. For example, a list of bids, or a list of "
-"stimuli and reaction times. They are frequently used together with "
-":ref:`live`."
+"An ExtraModel is useful when you need to store dozens or hundreds of data points about a single "
+"player. For example, a list of bids, or a list of stimuli and reaction times. They are frequently "
+"used together with :ref:`live`."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:15
 msgid ""
-"There are a bunch of examples `here <https://www.otreehub.com/projects"
-"/otree-more-demos/>`__."
+"There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-demos/>`__."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:17
@@ -70,8 +69,8 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:61
 msgid ""
-"See the example psychology games such as the Stroop task, which show how "
-"to generate ExtraModel data from each row of a CSV spreadsheet."
+"See the example psychology games such as the Stroop task, which show how to generate ExtraModel "
+"data from each row of a CSV spreadsheet."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:65
@@ -84,10 +83,11 @@ msgstr "template_name"
 
 #: ../../source/misc/advanced.rst:70
 msgid ""
-"If the template needs to have a different name from your page class (e.g."
-" you are sharing the same template for multiple pages), set "
-"``template_name``. Example:"
-msgstr "如果模板需要有一个与你的页面类不同的名字（例如你在不同的页面中共享同一模板），设置 ``template_name`` 即可。例如："
+"If the template needs to have a different name from your page class (e.g. you are sharing the "
+"same template for multiple pages), set ``template_name``. Example:"
+msgstr ""
+"如果模板需要有一个与你的页面类不同的名字（例如你在不同的页面中共享同一模板），设置 "
+"``template_name`` 即可。例如："
 
 #: ../../source/misc/advanced.rst:82
 msgid "CSS/JS and base templates"
@@ -95,8 +95,8 @@ msgstr "CSS/JS 与基模板"
 
 #: ../../source/misc/advanced.rst:84
 msgid ""
-"To include the same JS/CSS in all pages of an app, either put it in a "
-"ref:`static file <staticfiles>` or put it in an includable template."
+"To include the same JS/CSS in all pages of an app, either put it in a ref:`static file "
+"<staticfiles>` or put it in an includable template."
 msgstr ""
 
 #: ../../source/misc/advanced.rst:90
@@ -104,20 +104,18 @@ msgid "Static files"
 msgstr "静态文件"
 
 #: ../../source/misc/advanced.rst:92
-msgid ""
-"Here is how to include images (or any other static file like .css, .js, "
-"etc.) in your pages."
+msgid "Here is how to include images (or any other static file like .css, .js, etc.) in your pages."
 msgstr "下面说明了如何在页面中包含图片（或任何静态文件如.css, .js，等等）。"
 
 #: ../../source/misc/advanced.rst:94
-#, fuzzy, python-format
+#, python-format
 msgid ""
-"At the root of your oTree project, there is a ``_static/`` folder. Put a "
-"file there, for example ``puppy.jpg``. Then, in your template, you can "
-"get the URL to that file with ``{{ static 'puppy.jpg' }}``."
+"At the root of your oTree project, there is a ``_static/`` folder. Put a file there, for example "
+"``puppy.jpg``. Then, in your template, you can get the URL to that file with ``{{ static 'puppy."
+"jpg' }}``."
 msgstr ""
-"在你的oTree项目的根文件夹中，有一个 ``_static/`` 文件夹。将文件放在这里，例如 "
-"``puppy.jpg``.然后，在你的模板中，你可以通过 ``{% static 'puppy.jpg' %}`` 获取文件的URL。"
+"在你的oTree项目的根文件夹中，有一个 ``_static/`` 文件夹。将文件放在这里，例如 ``puppy.jpg``.然后，"
+"在你的模板中，你可以通过 ``{{ static 'puppy.jpg' }}`` 获取文件的URL。"
 
 #: ../../source/misc/advanced.rst:99
 msgid "To display an image, use the ``<img>`` tag, like this:"
@@ -125,13 +123,12 @@ msgstr "要显示图片，使用 ``<img>`` 标签，如："
 
 #: ../../source/misc/advanced.rst:105
 msgid ""
-"Above we saved our image in ``_static/puppy.jpg``, But actually it's "
-"better to make a subfolder with the name of your app, and save it as "
-"``_static/your_app_name/puppy.jpg``, to keep files organized and prevent "
-"name conflicts."
+"Above we saved our image in ``_static/puppy.jpg``, But actually it's better to make a subfolder "
+"with the name of your app, and save it as ``_static/your_app_name/puppy.jpg``, to keep files "
+"organized and prevent name conflicts."
 msgstr ""
-"上面我们将文件保存在 ``_static/puppy.jpg``,但是实际上更好的做法是创建一个子文件夹，起名为你应用的名字，并存为 "
-"``_static/your_app_name/puppy.jpg`` ，这使得文件组织有条理，并避免了名字冲突。"
+"上面我们将文件保存在 ``_static/puppy.jpg``,但是实际上更好的做法是创建一个子文件夹，起名为你应用的"
+"名字，并存为 ``_static/your_app_name/puppy.jpg`` ，这使得文件组织有条理，并避免了名字冲突。"
 
 #: ../../source/misc/advanced.rst:110
 msgid "Then your HTML code becomes:"
@@ -139,23 +136,27 @@ msgstr "此时你的HTML代码变为："
 
 #: ../../source/misc/advanced.rst:116
 msgid ""
-"(If you prefer, you can also put static files inside your app folder, in "
-"a subfolder called ``static/your_app_name``.)"
-msgstr "（如果你愿意的话，你也可以将静态文件放入你的应用文件夹，在子文件夹 ``static/your_app_name`` 中。）"
+"(If you prefer, you can also put static files inside your app folder, in a subfolder called "
+"``static/your_app_name``.)"
+msgstr ""
+"（如果你愿意的话，你也可以将静态文件放入你的应用文件夹，在子文件夹 ``static/your_app_name`` 中。）"
 
 #: ../../source/misc/advanced.rst:119
 msgid ""
-"If a static file is not updating even after you changed it, this is "
-"because your browser cached the file. Do a full page reload (usually "
-"Ctrl+F5)"
-msgstr "如果静态文件在你更改了之后仍不改变，这是因为你的浏览器缓存了这个文件。重载整个页面即可（通常快捷键是 Ctrl+F5）"
+"If a static file is not updating even after you changed it, this is because your browser cached "
+"the file. Do a full page reload (usually Ctrl+F5)"
+msgstr ""
+"如果静态文件在你更改了之后仍不改变，这是因为你的浏览器缓存了这个文件。重载整个页面即可（通常快捷键"
+"是 Ctrl+F5）"
 
 #: ../../source/misc/advanced.rst:123
 msgid ""
-"If you have videos or high-resolution images, it's preferable to store "
-"them somewhere online and reference them by URL because the large file "
-"size can make uploading your .otreezip file much slower."
-msgstr "如果你需要视频或者高解析度的图片，更好的做法是将其存储在线上别的地方并使用URL进行引用。因为大文件使得上传 .otreezip文件非常缓慢。"
+"If you have videos or high-resolution images, it's preferable to store them somewhere online and "
+"reference them by URL because the large file size can make uploading your .otreezip file much "
+"slower."
+msgstr ""
+"如果你需要视频或者高解析度的图片，更好的做法是将其存储在线上别的地方并使用URL进行引用。因为大文件"
+"使得上传 .otreezip文件非常缓慢。"
 
 #: ../../source/misc/advanced.rst:130
 msgid "Wait pages"
@@ -167,8 +168,8 @@ msgstr "自定义等待页面模板"
 
 #: ../../source/misc/advanced.rst:137
 msgid ""
-"You can make a custom wait page template. For example, save this to "
-"``your_app_name/templates/your_app_name/MyWaitPage.html``:"
+"You can make a custom wait page template. For example, save this to ``your_app_name/templates/"
+"your_app_name/MyWaitPage.html``:"
 msgstr ""
 "你可以自定义等待页面模板。例如，存为 \n"
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
@@ -179,22 +180,21 @@ msgstr "然后在等待页面中使用这一模板："
 
 #: ../../source/misc/advanced.rst:157
 msgid ""
-"Then you can use ``vars_for_template`` in the usual way. Actually, the "
-"``body_text`` and ``title_text`` attributes are just shorthand for "
-"setting ``vars_for_template``; the following 2 code snippets are "
-"equivalent:"
+"Then you can use ``vars_for_template`` in the usual way. Actually, the ``body_text`` and "
+"``title_text`` attributes are just shorthand for setting ``vars_for_template``; the following 2 "
+"code snippets are equivalent:"
 msgstr ""
-"此时你可以如寻常一样使用 ``vars_for_template`` 。实际上， ``body_text`` 与 ``title_text`` "
-"属性就是设置 ``vars_for_template`` 的简略方式；下面两段代码是等价的："
+"此时你可以如寻常一样使用 ``vars_for_template`` 。实际上， ``body_text`` 与 ``title_text`` 属性就是"
+"设置 ``vars_for_template`` 的简略方式；下面两段代码是等价的："
 
 #: ../../source/misc/advanced.rst:175
 msgid ""
-"If you want to apply your custom wait page template globally, save it to "
-"``_templates/global/WaitPage.html``. oTree will then automatically use it"
-" everywhere instead of the built-in wait page."
+"If you want to apply your custom wait page template globally, save it to ``_templates/global/"
+"WaitPage.html``. oTree will then automatically use it everywhere instead of the built-in wait "
+"page."
 msgstr ""
-"如果你想全局应用你的自定义等待页面模板，将其保存在 "
-"``_templates/global/WaitPage.html``.oTree将自动地在所有地方使用它替换内置的等待页面。"
+"如果你想全局应用你的自定义等待页面模板，将其保存在 ``_templates/global/WaitPage.html``.oTree将自动"
+"地在所有地方使用它替换内置的等待页面。"
 
 #: ../../source/misc/advanced.rst:181
 msgid "Currency"
@@ -202,22 +202,20 @@ msgstr "货币"
 
 #: ../../source/misc/advanced.rst:183
 msgid ""
-"To customize the name \"points\" to something else like \"tokens\" or "
-"\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
-"'tokens'``."
+"To customize the name \"points\" to something else like \"tokens\" or \"credits\", set "
+"``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = 'tokens'``."
 msgstr ""
-"为将\"points\"自定义为别的名字如\"tokens\" 或 \"credits\", 设置 ``POINTS_CUSTOM_NAME`` "
-"，例如 ``POINTS_CUSTOM_NAME = 'tokens'``."
+"为将\"points\"自定义为别的名字如\"tokens\" 或 \"credits\", 设置 ``POINTS_CUSTOM_NAME`` ，例如 "
+"``POINTS_CUSTOM_NAME = 'tokens'``."
 
 #: ../../source/misc/advanced.rst:186
 msgid ""
-"You can change the number of decimal places in real world currency "
-"amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
-"extra decimal places show up but are always 0, then you should reset the "
-"database."
+"You can change the number of decimal places in real world currency amounts with the setting "
+"``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the extra decimal places show up but are always 0, "
+"then you should reset the database."
 msgstr ""
-"你可以改变真实世界货币的小数位数，通过设置 "
-"``REAL_WORLD_CURRENCY_DECIMAL_PLACES``。如果额外的小数位数显示出来但总是0，那么你应当重置数据库。"
+"你可以改变真实世界货币的小数位数，通过设置 ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``。如果额外的小数"
+"位数显示出来但总是0，那么你应当重置数据库。"
 
 #: ../../source/misc/advanced.rst:192
 msgid "Reading CSV or other files"
@@ -227,14 +225,15 @@ msgstr "读入CSV或其他文件"
 #: ../../source/misc/advanced.rst:194
 #, fuzzy
 msgid ""
-"Store yourfile.csv in your app folder. Then put this code anywhere you "
-"want to read the file (in a function or in Constants):"
-msgstr "将yourfile.csv存储在你的应用中，与models.py放在一起。然后将下面的代码放在你想要读文件的任何地方（在函数中或者常量中）："
+"Store yourfile.csv in your app folder. Then put this code anywhere you want to read the file (in "
+"a function or in Constants):"
+msgstr ""
+"将yourfile.csv存储在你的应用中，与models.py放在一起。然后将下面的代码放在你想要读文件的任何地方"
+"（在函数中或者常量中）："
 
 #: ../../source/misc/advanced.rst:204
 msgid ""
-"If it's not CSV and you just want to read the file contents as a string, "
-"this gets simplified to:"
+"If it's not CSV and you just want to read the file contents as a string, this gets simplified to:"
 msgstr "如果文件不是CSV格式并且你想读入文件内容为一个字符串，代码简化为："
 
 #: ../../source/misc/bots_advanced.rst:4
@@ -247,19 +246,19 @@ msgstr "命令行bots"
 
 #: ../../source/misc/bots_advanced.rst:13
 msgid ""
-"An alternative to running bots in your web browser is to run them in the "
-"command line. Command line bots run faster and require less setup."
-msgstr "一种可选的在浏览器中运行bots的方式是在命令行中运行。命令行bots运行更快且需要更少的安装步骤。"
+"An alternative to running bots in your web browser is to run them in the command line. Command "
+"line bots run faster and require less setup."
+msgstr ""
+"一种可选的在浏览器中运行bots的方式是在命令行中运行。命令行bots运行更快且需要更少的安装步骤。"
 
-#: ../../source/misc/bots_advanced.rst:16
-#: ../../source/misc/bots_advanced.rst:51
+#: ../../source/misc/bots_advanced.rst:16 ../../source/misc/bots_advanced.rst:51
 msgid "Run this::"
 msgstr "运行下面的代码："
 
 #: ../../source/misc/bots_advanced.rst:20
 msgid ""
-"To test with a specific number of participants (otherwise it will default"
-" to ``num_demo_participants``)::"
+"To test with a specific number of participants (otherwise it will default to "
+"``num_demo_participants``)::"
 msgstr "使用指定参与者人数进行测试（否则默认为 ``num_demo_participants``）："
 
 #: ../../source/misc/bots_advanced.rst:25
@@ -283,16 +282,15 @@ msgid "Command-line browser bots"
 msgstr "命令行浏览器bots"
 
 #: ../../source/misc/bots_advanced.rst:44
-msgid ""
-"You can launch browser bots from the command line, using ``otree "
-"browser_bots``."
+msgid "You can launch browser bots from the command line, using ``otree browser_bots``."
 msgstr "你可以在命令行启动bots，通过使用 ``otree browser_bots``."
 
 #: ../../source/misc/bots_advanced.rst:46
 msgid ""
-"Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in "
-"``settings.py`` (more info below)."
-msgstr "确保已安装了Google Chrome，或在 ``settings.py`` 中设置了 ``BROWSER_COMMAND`` （更多信息见下面）"
+"Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in ``settings.py`` (more info "
+"below)."
+msgstr ""
+"确保已安装了Google Chrome，或在 ``settings.py`` 中设置了 ``BROWSER_COMMAND`` （更多信息见下面）"
 
 #: ../../source/misc/bots_advanced.rst:48
 msgid "Set ``OTREE_REST_KEY`` env var as described in :ref:`rest`."
@@ -308,14 +306,15 @@ msgstr "关闭所有Chrome窗口。"
 
 #: ../../source/misc/bots_advanced.rst:55
 msgid ""
-"This will launch several Chrome tabs and run the bots. When finished, the"
-" tabs will close, and you will see a report in your terminal window."
-msgstr "这会启动数个Chrome标签页并运行bots。当完成后，标签页会自动关闭，并且你会在终端窗口中看到一份报告。"
+"This will launch several Chrome tabs and run the bots. When finished, the tabs will close, and "
+"you will see a report in your terminal window."
+msgstr ""
+"这会启动数个Chrome标签页并运行bots。当完成后，标签页会自动关闭，并且你会在终端窗口中看到一份报告。"
 
 #: ../../source/misc/bots_advanced.rst:59
 msgid ""
-"If Chrome doesn't close windows properly, make sure you closed all Chrome"
-" windows prior to launching the command."
+"If Chrome doesn't close windows properly, make sure you closed all Chrome windows prior to "
+"launching the command."
 msgstr "如果Chrome没有正常关闭窗口，确保你在运行指令之前已经关闭了所有Chrome窗口。"
 
 #: ../../source/misc/bots_advanced.rst:63
@@ -324,12 +323,11 @@ msgstr "远程服务器(例如 Heroku)上的命令行bots"
 
 #: ../../source/misc/bots_advanced.rst:65
 msgid ""
-"If the server is running on a host/port other than the usual "
-"``http://localhost:8000``, you need to pass ``--server-url``. For "
-"example, if it's on Heroku, you would do like this::"
+"If the server is running on a host/port other than the usual ``http://localhost:8000``, you need "
+"to pass ``--server-url``. For example, if it's on Heroku, you would do like this::"
 msgstr ""
-"如果服务器不是运行在通常的主机/端口 ``http://localhost:8000`` 上，你需要传递 ``--server-url`` "
-"参数。例如，如果在Heroku上，你需要这样做："
+"如果服务器不是运行在通常的主机/端口 ``http://localhost:8000`` 上，你需要传递 ``--server-url`` 参"
+"数。例如，如果在Heroku上，你需要这样做："
 
 #: ../../source/misc/bots_advanced.rst:73
 msgid "Choosing session configs and sizes"
@@ -349,13 +347,12 @@ msgstr "浏览器bots：杂项"
 
 #: ../../source/misc/bots_advanced.rst:87
 msgid ""
-"You can use a browser other than Chrome by setting ``BROWSER_COMMAND`` in"
-" ``settings.py``. Then, oTree will open the browser by doing something "
-"like ``subprocess.Popen(settings.BROWSER_COMMAND)``."
+"You can use a browser other than Chrome by setting ``BROWSER_COMMAND`` in ``settings.py``. Then, "
+"oTree will open the browser by doing something like ``subprocess.Popen(settings."
+"BROWSER_COMMAND)``."
 msgstr ""
-"你可以使用非Chrome浏览器，需在 ``settings.py`` 中设置 ``BROWSER_COMMAND`` "
-"。然后，oTree会自动启动浏览器，通过类似 ``subprocess.Popen(settings.BROWSER_COMMAND)`` "
-"的操作。"
+"你可以使用非Chrome浏览器，需在 ``settings.py`` 中设置 ``BROWSER_COMMAND`` 。然后，oTree会自动启动"
+"浏览器，通过类似 ``subprocess.Popen(settings.BROWSER_COMMAND)`` 的操作。"
 
 #: ../../source/misc/bots_advanced.rst:94
 msgid "Test cases"
@@ -363,10 +360,11 @@ msgstr "测试用例"
 
 #: ../../source/misc/bots_advanced.rst:96
 msgid ""
-"You can define an attribute ``cases`` on your PlayerBot class that lists "
-"different test cases. For example, in a public goods game, you may want "
-"to test 3 scenarios:"
-msgstr "你可以在你的PlayerBot类中定义属性 ``cases`` 来列出不同的测试用例。例如，在公共品博弈中，你可能想要测试三种场景："
+"You can define an attribute ``cases`` on your PlayerBot class that lists different test cases. "
+"For example, in a public goods game, you may want to test 3 scenarios:"
+msgstr ""
+"你可以在你的PlayerBot类中定义属性 ``cases`` 来列出不同的测试用例。例如，在公共品博弈中，你可能想要"
+"测试三种场景："
 
 #: ../../source/misc/bots_advanced.rst:100
 msgid "All players contribute half their endowment"
@@ -382,13 +380,12 @@ msgstr "所有玩家贡献出他们全部的初始值（100点）"
 
 #: ../../source/misc/bots_advanced.rst:104
 msgid ""
-"We can call these 3 test cases \"basic\", \"min\", and \"max\", "
-"respectively, and put them in ``cases``. Then, oTree will execute the bot"
-" 3 times, once for each test case. Each time, a different value from "
-"``cases`` will be assigned to ``self.case`` in the bot."
+"We can call these 3 test cases \"basic\", \"min\", and \"max\", respectively, and put them in "
+"``cases``. Then, oTree will execute the bot 3 times, once for each test case. Each time, a "
+"different value from ``cases`` will be assigned to ``self.case`` in the bot."
 msgstr ""
-"你可以分别将3个测试用例命名为\"basic\", \"min\", 和 \"max\"，并将他们放在 ``cases`` "
-"中。然后，oTree会自动执行bot3次，每次一个测试用例。每一次执行时， ``cases`` 中的不同值都会在bot中被赋值给 "
+"你可以分别将3个测试用例命名为\"basic\", \"min\", 和 \"max\"，并将他们放在 ``cases`` 中。然后，"
+"oTree会自动执行bot3次，每次一个测试用例。每一次执行时， ``cases`` 中的不同值都会在bot中被赋值给 "
 "``self.case``。"
 
 #: ../../source/misc/bots_advanced.rst:109
@@ -397,16 +394,17 @@ msgstr "例如："
 
 #: ../../source/misc/bots_advanced.rst:152
 msgid ""
-"If you use cases, it's better to use :ref:`cli-bots` since browser bots "
-"will only execute a single case."
+"If you use cases, it's better to use :ref:`cli-bots` since browser bots will only execute a "
+"single case."
 msgstr "如果你使用测试用例，更推荐使用 :ref:`cli-bots` 因为浏览器bots仅会执行一个单独的用例。"
 
 #: ../../source/misc/bots_advanced.rst:154
 msgid ""
-"``cases`` needs to be a list, but it can contain any data type, such as "
-"strings, integers, or even dictionaries. Here is a trust game bot that "
-"uses dictionaries as cases."
-msgstr "``cases`` 必须是列表，但可以包含任何数据类型，如字符串，整数，甚至字典。下面是一个信任博弈，它使用字典作为用例。"
+"``cases`` needs to be a list, but it can contain any data type, such as strings, integers, or "
+"even dictionaries. Here is a trust game bot that uses dictionaries as cases."
+msgstr ""
+"``cases`` 必须是列表，但可以包含任何数据类型，如字符串，整数，甚至字典。下面是一个信任博弈，它使用"
+"字典作为用例。"
 
 #: ../../source/misc/bots_advanced.rst:196
 msgid "error_fields"
@@ -414,35 +412,32 @@ msgstr "error_fields"
 
 #: ../../source/misc/bots_advanced.rst:198
 msgid ""
-"When using ``SubmissionMustFail`` on forms with multiple fields, you can "
-"use ``error_fields`` for extra thoroughness."
-msgstr "当在多个字段的表单上使用 ``SubmissionMustFail`` 时，你可以使用 ``error_fields`` 获得额外的提示。"
+"When using ``SubmissionMustFail`` on forms with multiple fields, you can use ``error_fields`` for "
+"extra thoroughness."
+msgstr ""
+"当在多个字段的表单上使用 ``SubmissionMustFail`` 时，你可以使用 ``error_fields`` 获得额外的提示。"
 
 #: ../../source/misc/bots_advanced.rst:201
 msgid ""
-"For example, let's say we a submit a valid ``age``, but an invalid "
-"``weight`` and ``height``:"
+"For example, let's say we a submit a valid ``age``, but an invalid ``weight`` and ``height``:"
 msgstr "例如，假定我们提交了一个合法的 ``age``, 但同时提交了非法的 ``weight`` 与 ``height``:"
 
 #: ../../source/misc/bots_advanced.rst:215
 msgid ""
-"What's missing is that the bot system doesn't tell us exactly *why* the "
-"submission fails. Is it an invalid ``weight``, ``height``, or both? "
-"``error_fields`` can resolve the ambiguity:"
+"What's missing is that the bot system doesn't tell us exactly *why* the submission fails. Is it "
+"an invalid ``weight``, ``height``, or both? ``error_fields`` can resolve the ambiguity:"
 msgstr ""
-"Bot系统不会告诉我们具体 *为什么* 提交会失败，这是缺失的信息。是 ``weight`` 还是 ``height`` 还是两者一起出错？ "
-"``error_fields`` 可以解决这种模棱两可的情况："
+"Bot系统不会告诉我们具体 *为什么* 提交会失败，这是缺失的信息。是 ``weight`` 还是 ``height`` 还是两"
+"者一起出错？ ``error_fields`` 可以解决这种模棱两可的情况："
 
 #: ../../source/misc/bots_advanced.rst:231
-msgid ""
-"This will verify that ``weight`` and ``height`` contained errors, but "
-"``age`` did not."
+msgid "This will verify that ``weight`` and ``height`` contained errors, but ``age`` did not."
 msgstr "它会查对出 ``weight`` 和 ``height`` 包含错误，但是 ``age`` 没有。"
 
 #: ../../source/misc/bots_advanced.rst:234
 msgid ""
-"If :ref:`error_message <error_message>` returns an error, then "
-"``error_fields`` will be ``['__all__']``."
+"If :ref:`error_message <error_message>` returns an error, then ``error_fields`` will be "
+"``['__all__']``."
 msgstr ""
 "如果 :ref:`error_message <error_message>` 返回一个错误，那么 ``error_fields`` 将会是 "
 "``['__all__']``."
@@ -453,12 +448,11 @@ msgstr "杂项"
 
 #: ../../source/misc/bots_advanced.rst:240
 msgid ""
-"In bots, it is risky to assign ``player = self.player`` (or ``participant"
-" = self.participant``, etc), even though that kind of code is encouraged "
-"elsewhere."
+"In bots, it is risky to assign ``player = self.player`` (or ``participant = self.participant``, "
+"etc), even though that kind of code is encouraged elsewhere."
 msgstr ""
-"在bots中，赋值语句 ``player = self.player`` (或 ``participant = "
-"self.participant``, 等等)是有风险的，即使这种代码在别处是被鼓励的。"
+"在bots中，赋值语句 ``player = self.player`` (或 ``participant = self.participant``, 等等)是有风险"
+"的，即使这种代码在别处是被鼓励的。"
 
 #: ../../source/misc/bots_advanced.rst:244
 msgid "Because if there is a ``yield`` in between, the data can be stale:"
@@ -466,9 +460,10 @@ msgstr "因为如果有一个 ``yield`` 语句在中间，数据可能没有更�
 
 #: ../../source/misc/bots_advanced.rst:257
 msgid ""
-"It's safer to use ``self.player.money_left`` directly, because doing "
-"``self.player`` gets the most recent data from the database."
-msgstr "直接使用 ``self.player.money_left`` 是安全的，因为 ``self.player`` 会从数据库中获取最新的数据。"
+"It's safer to use ``self.player.money_left`` directly, because doing ``self.player`` gets the "
+"most recent data from the database."
+msgstr ""
+"直接使用 ``self.player.money_left`` 是安全的，因为 ``self.player`` 会从数据库中获取最新的数据。"
 
 #: ../../source/misc/bots_advanced.rst:261
 #, fuzzy
@@ -477,24 +472,20 @@ msgstr "等待页面"
 
 #: ../../source/misc/bots_advanced.rst:263
 msgid ""
-"To test live methods with bots, define ``call_live_method`` as a top-"
-"level function in ``tests.py``. (Not available in oTree Studio.) This "
-"function should simulate the sequence of calls to your ``live_method``. "
-"The argument ``method`` simulates the live method on your Player model. "
-"For example, ``method(3, 'hello')`` calls the live method on Player 3 "
-"with ``data`` set to ``'hello'``. For example:"
+"To test live methods with bots, define ``call_live_method`` as a top-level function in ``tests."
+"py``. (Not available in oTree Studio.) This function should simulate the sequence of calls to "
+"your ``live_method``. The argument ``method`` simulates the live method on your Player model. For "
+"example, ``method(3, 'hello')`` calls the live method on Player 3 with ``data`` set to "
+"``'hello'``. For example:"
 msgstr ""
-"为使用机器人测试实时方法，在 ``tests.py`` 中定义顶级函数 "
-"``call_live_method`` 。（在oTree Studio中不可用。）此函数可模拟一系列对你的 "
-"``live_method`` 的调用。参数 ``method`` 模拟你的玩家模型中的实时方法。例如，"
-" ``method(3, 'hello')`` 调用了玩家3上的实时方法，并且 ``data``"
-" 设置为 ``'hello'``.例如："
-
+"为使用机器人测试实时方法，在 ``tests.py`` 中定义顶级函数 ``call_live_method`` 。（在oTree Studio中"
+"不可用。）此函数可模拟一系列对你的 ``live_method`` 的调用。参数 ``method`` 模拟你的玩家模型中的实"
+"时方法。例如， ``method(3, 'hello')`` 调用了玩家3上的实时方法，并且 ``data`` 设置为 ``'hello'``.例"
+"如："
 
 #: ../../source/misc/bots_advanced.rst:279
 msgid "``kwargs`` contains at least the following parameters."
 msgstr "``kwargs`` 至少包含下列参数。"
-
 
 #: ../../source/misc/bots_advanced.rst:281
 #, fuzzy
@@ -512,14 +503,12 @@ msgstr ""
 #: ../../source/misc/bots_advanced.rst:285
 #, fuzzy
 msgid ""
-"``call_live_method`` will be automatically executed when the fastest bot "
-"in the group arrives on a page with ``live_method``. (Other bots may be "
-"on previous pages at that point, unless you restrict this with a "
-"WaitPage.)"
+"``call_live_method`` will be automatically executed when the fastest bot in the group arrives on "
+"a page with ``live_method``. (Other bots may be on previous pages at that point, unless you "
+"restrict this with a WaitPage.)"
 msgstr ""
-"当小组中最快的bot到达一个有 ``live_method`` 的页面时 "
-"``call_live_method`` 会被自动执行。（其他bot此时可能在前一个页面，除非你使用等待页面限制了这种情况。）"
-
+"当小组中最快的bot到达一个有 ``live_method`` 的页面时 ``call_live_method`` 会被自动执行。（其他bot"
+"此时可能在前一个页面，除非你使用等待页面限制了这种情况。）"
 
 #: ../../source/misc/intro.rst:2
 msgid "Miscellaneous"
@@ -532,20 +521,18 @@ msgstr "REST"
 #: ../../source/misc/rest_api.rst:6
 #, fuzzy
 msgid ""
-"oTree has a REST API that enables external programs (such as other "
-"websites) to communicate with oTree."
+"oTree has a REST API that enables external programs (such as other websites) to communicate with "
+"oTree."
 msgstr "oTree有一个REST API使得外部程序（如其他网站）可与oTree通信，具体有："
 
 #: ../../source/misc/rest_api.rst:9
 msgid ""
-"A REST API is just a URL on your server that is designed to be accessed "
-"by programs, rather than being opened manually in a web browser."
+"A REST API is just a URL on your server that is designed to be accessed by programs, rather than "
+"being opened manually in a web browser."
 msgstr "REST API是一个在你的服务器上被设计用来被其他程序使用的URL，而不是用于在浏览器中手动打开的。"
 
 #: ../../source/misc/rest_api.rst:12
-msgid ""
-"One project that uses the REST API a lot is `oTree HR <https://github.com"
-"/oTree-org/HR>`__."
+msgid "One project that uses the REST API a lot is `oTree HR <https://github.com/oTree-org/HR>`__."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:16
@@ -562,16 +549,16 @@ msgstr "*\"这些代码应当放在哪里\"*"
 
 #: ../../source/misc/rest_api.rst:27
 msgid ""
-"This code does not need to go inside your oTree project folder. Since the"
-" point of the REST API is to allow external programs and servers to "
-"communicate with oTree across the internet, you should put this code in "
-"that other program. That also means you should use whatever language that"
-" other server uses. The examples on this page use Python, but it's simple"
-" to make HTTP requests using any programming language, or tools like "
-"webhooks or cURL."
+"This code does not need to go inside your oTree project folder. Since the point of the REST API "
+"is to allow external programs and servers to communicate with oTree across the internet, you "
+"should put this code in that other program. That also means you should use whatever language that "
+"other server uses. The examples on this page use Python, but it's simple to make HTTP requests "
+"using any programming language, or tools like webhooks or cURL."
 msgstr ""
-"这些代码无需包含在你的oTree项目文件夹中。由于REST "
-"API的关键就在于使得外部程序和服务器可以与oTree通过网络通信，你应当将这些代码放在其他程序中。这意味着你可以使用在其他服务器上适用的任何语言来编写程序。本页面上的例子使用的是Python，但是使用其他编程语言进行HTTP请求也很简单，如webhooks工具或者cURL。"
+"这些代码无需包含在你的oTree项目文件夹中。由于REST API的关键就在于使得外部程序和服务器可以与oTree通"
+"过网络通信，你应当将这些代码放在其他程序中。这意味着你可以使用在其他服务器上适用的任何语言来编写程"
+"序。本页面上的例子使用的是Python，但是使用其他编程语言进行HTTP请求也很简单，如webhooks工具或者"
+"cURL。"
 
 #: ../../source/misc/rest_api.rst:62
 #, fuzzy
@@ -606,9 +593,7 @@ msgid "GET URL: ``/api/session_configs/``"
 msgstr "POST URL: ``/api/sessions/``"
 
 #: ../../source/misc/rest_api.rst:87
-msgid ""
-"Returns the list of all your session configs, as dicts with all their "
-"properties."
+msgid "Returns the list of all your session configs, as dicts with all their properties."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:98
@@ -621,8 +606,7 @@ msgstr ""
 
 #: ../../source/misc/rest_api.rst:114
 msgid ""
-"Example output (note it includes ``session_code`` if there is currently a"
-" session in the room):"
+"Example output (note it includes ``session_code`` if there is currently a session in the room):"
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:126
@@ -635,9 +619,7 @@ msgid "POST URL: ``/api/sessions/``"
 msgstr "POST URL: ``/api/sessions/``"
 
 #: ../../source/misc/rest_api.rst:130
-msgid ""
-"Here are some examples of how the \"create sessions\" endpoint can be "
-"used:"
+msgid "Here are some examples of how the \"create sessions\" endpoint can be used:"
 msgstr "下面是一些\"create sessions\"路径应当如何使用的例子："
 
 #: ../../source/misc/rest_api.rst:132
@@ -646,8 +628,8 @@ msgstr "其他网站可自动创建oTree会话"
 
 #: ../../source/misc/rest_api.rst:133
 msgid ""
-"You can make a fancier alternative to oTree's :ref:`edit_config` "
-"interface (e.g. with sliders and visual widgets)"
+"You can make a fancier alternative to oTree's :ref:`edit_config` interface (e.g. with sliders and "
+"visual widgets)"
 msgstr "你可以自己创造一个更好看的oTree :ref:`edit_config` 界面（例如加上侧边栏和控件）"
 
 #: ../../source/misc/rest_api.rst:135
@@ -656,8 +638,7 @@ msgstr "在某些固定时刻创建oTree会话的进程"
 
 #: ../../source/misc/rest_api.rst:136
 msgid ""
-"Command line script to create customized sessions (if ``otree "
-"create_session`` is not sufficient)"
+"Command line script to create customized sessions (if ``otree create_session`` is not sufficient)"
 msgstr "创建自定义会话的命令行脚本（如果 ``otree create_session`` 不够用的话）"
 
 #: ../../source/misc/rest_api.rst:155 ../../source/misc/rest_api.rst:250
@@ -674,11 +655,11 @@ msgstr "``num_participants`` (必要)"
 
 #: ../../source/misc/rest_api.rst:159
 msgid ""
-"``modified_session_config_fields``: an optional dict of session config "
-"parameters, as discussed in :ref:`edit_config`."
+"``modified_session_config_fields``: an optional dict of session config parameters, as discussed "
+"in :ref:`edit_config`."
 msgstr ""
-"``modified_session_config_fields``: 一个可选的包含session config参数的字典，详见 "
-":ref:`edit_config`."
+"``modified_session_config_fields``: 一个可选的包含session config参数的字典，详见 :ref:"
+"`edit_config`."
 
 #: ../../source/misc/rest_api.rst:161
 msgid "``room_name`` if you want to create the session in a room."
@@ -690,9 +671,7 @@ msgid "\"Get session data\" endpoint"
 msgstr "\"Create sessions\" REST endpoint"
 
 #: ../../source/misc/rest_api.rst:170
-msgid ""
-"New feature as of March 2021. In beta until we get sufficient user "
-"feedback."
+msgid "New feature as of March 2021. In beta until we get sufficient user feedback."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:173
@@ -702,8 +681,8 @@ msgstr "POST URL: ``/api/sessions/``"
 
 #: ../../source/misc/rest_api.rst:175
 msgid ""
-"This API retrieves data about a session and its participants. If "
-"``participant_labels`` is omitted, it returns data for all participants."
+"This API retrieves data about a session and its participants. If ``participant_labels`` is "
+"omitted, it returns data for all participants."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:189
@@ -713,9 +692,8 @@ msgstr "\"Session vars\" REST endpoint"
 
 #: ../../source/misc/rest_api.rst:193
 msgid ""
-"As of April 2021, this endpoint requires you to pass a session code as a "
-"path parameter. If the session is in a room, you can get the session code"
-" with the ``rooms`` endpoint."
+"As of April 2021, this endpoint requires you to pass a session code as a path parameter. If the "
+"session is in a room, you can get the session code with the ``rooms`` endpoint."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:196
@@ -725,11 +703,12 @@ msgstr "POST URL: ``/api/session_vars/``"
 
 #: ../../source/misc/rest_api.rst:198
 msgid ""
-"This endpoint lets you set ``session.vars``. One use is experimenter "
-"input. For example, if the experimenter does a lottery drawing in the "
-"middle of the experiment, they can input the result by running a script "
-"like the one below."
-msgstr "这一路径使你可以设置 ``session.vars``。一种用途是实验输入。举例来说，如果实验中有一次抽奖，就可以通过运行下面的脚本来输入结果。"
+"This endpoint lets you set ``session.vars``. One use is experimenter input. For example, if the "
+"experimenter does a lottery drawing in the middle of the experiment, they can input the result by "
+"running a script like the one below."
+msgstr ""
+"这一路径使你可以设置 ``session.vars``。一种用途是实验输入。举例来说，如果实验中有一次抽奖，就可以"
+"通过运行下面的脚本来输入结果。"
 
 #: ../../source/misc/rest_api.rst:212
 #, fuzzy
@@ -742,9 +721,7 @@ msgid "POST URL: ``/api/participant_vars/{participant_code}``"
 msgstr "POST URL: ``/api/participant_vars/``"
 
 #: ../../source/misc/rest_api.rst:216
-msgid ""
-"Pass information about a participant to oTree, via web services / "
-"webhooks."
+msgid "Pass information about a participant to oTree, via web services / webhooks."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:228
@@ -758,9 +735,9 @@ msgstr "POST URL: ``/api/participant_vars/``"
 
 #: ../../source/misc/rest_api.rst:232
 msgid ""
-"Similar to the other \"participant vars\" endpoint, but this one can be "
-"used when you don't have the participant's code. Instead, you identify "
-"the participant by the room name and their participant label."
+"Similar to the other \"participant vars\" endpoint, but this one can be used when you don't have "
+"the participant's code. Instead, you identify the participant by the room name and their "
+"participant label."
 msgstr ""
 
 #: ../../source/misc/rest_api.rst:252
@@ -773,20 +750,20 @@ msgstr "``participant_label`` (必要)"
 
 #: ../../source/misc/rest_api.rst:254
 msgid ""
-"``vars`` (required): a dict of participant vars to add. Values can be any"
-" JSON-serializable data type, even nested dicts/lists."
+"``vars`` (required): a dict of participant vars to add. Values can be any JSON-serializable data "
+"type, even nested dicts/lists."
 msgstr ""
-"``vars`` (必要): 用于加入participant vars的字典， 其中值必须是可被JSON序列化的数据类型, "
-"甚至可以是嵌套的字典/列表。"
+"``vars`` (必要): 用于加入participant vars的字典， 其中值必须是可被JSON序列化的数据类型, 甚至可以是"
+"嵌套的字典/列表。"
 
 #: ../../source/misc/rest_api.rst:257
 #, fuzzy
 msgid ""
-"You will need to give participants a link with a ``participant_label``, "
-"although this does not need to come from a ``participant_label_file``."
+"You will need to give participants a link with a ``participant_label``, although this does not "
+"need to come from a ``participant_label_file``."
 msgstr ""
-"此特性要求你必须使用房间。参与人被房间名与参与人标签的组合唯一地确定。故你需要给参与人一个带 ``participant_label`` "
-"的链接，尽管它不必包含在 ``participant_label_file`` 中。"
+"此特性要求你必须使用房间。参与人被房间名与参与人标签的组合唯一地确定。故你需要给参与人一个带 "
+"``participant_label`` 的链接，尽管它不必包含在 ``participant_label_file`` 中。"
 
 #: ../../source/misc/rest_api.rst:261
 msgid "Authentication"
@@ -794,22 +771,21 @@ msgstr "认证"
 
 #: ../../source/misc/rest_api.rst:263
 msgid ""
-"If you have set your auth level to DEMO or STUDY, you must authenticate "
-"your REST API requests."
+"If you have set your auth level to DEMO or STUDY, you must authenticate your REST API requests."
 msgstr "如果你将你的验证等级从DEMO改为STUDY，你必须验证你的REST API请求。"
 
 #: ../../source/misc/rest_api.rst:266
 msgid ""
-"Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the "
-"server. Set it to some secret value."
-msgstr "在服务器上创建一个环境变量（即 Heroku config var） ``OTREE_REST_KEY`` 。将其设置为某个秘密值。"
+"Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the server. Set it to some "
+"secret value."
+msgstr ""
+"在服务器上创建一个环境变量（即 Heroku config var） ``OTREE_REST_KEY`` 。将其设置为某个秘密值。"
 
 #: ../../source/misc/rest_api.rst:269
 #, fuzzy
 msgid ""
-"When you make a request, add that key as an HTTP header called ``otree-"
-"rest-key``. If following the :ref:`setup example <rest-setup>` above, you"
-" would set the ``REST_KEY`` variable."
+"When you make a request, add that key as an HTTP header called ``otree-rest-key``. If following "
+"the :ref:`setup example <rest-setup>` above, you would set the ``REST_KEY`` variable."
 msgstr "在发送请求时，在HTTP header里将其添加为 ``otree-rest-key``。例如："
 
 #: ../../source/misc/rest_api.rst:273
@@ -818,24 +794,25 @@ msgstr "演示 & 测试"
 
 #: ../../source/misc/rest_api.rst:275
 msgid ""
-"For convenience during development, you can generate fake vars to "
-"simulate data that, in a real session, will come from the REST API."
+"For convenience during development, you can generate fake vars to simulate data that, in a real "
+"session, will come from the REST API."
 msgstr "为在开发时更便利，你可以在一个真实的会话中生成假的vars来模拟从REST API获得的数据。"
 
 #: ../../source/misc/rest_api.rst:278
 msgid ""
-"In your session config, add the parameter ``mock_exogenous_data=True`` "
-"(We call it **exogenous** data because it originates outside oTree.)"
+"In your session config, add the parameter ``mock_exogenous_data=True`` (We call it **exogenous** "
+"data because it originates outside oTree.)"
 msgstr ""
-"在你的session config中，添加参数 ``mock_exogenous_data=True`` (称其为 "
-"**exogenous(外源性)** 数据是因为其是在oTree外部生成的。)"
+"在你的session config中，添加参数 ``mock_exogenous_data=True`` (称其为 **exogenous(外源性)** 数据是"
+"因为其是在oTree外部生成的。)"
 
 #: ../../source/misc/rest_api.rst:281
 msgid ""
-"Then define a function with the same name (``mock_exogenous_data``) in "
-"your project's shared_out.py (if you are using a text editor, you may "
-"need to create that file)."
-msgstr "然后在你的项目的shared_out.py中（如果你使用的是文本编辑器，你可能需要创建此文件）定义一个同名函数(``mock_exogenous_data``)。"
+"Then define a function with the same name (``mock_exogenous_data``) in your project's shared_out."
+"py (if you are using a text editor, you may need to create that file)."
+msgstr ""
+"然后在你的项目的shared_out.py中（如果你使用的是文本编辑器，你可能需要创建此文件）定义一个同名函数"
+"(``mock_exogenous_data``)。"
 
 #: ../../source/misc/rest_api.rst:285
 msgid "Here's an example:"
@@ -847,18 +824,17 @@ msgstr "你也可以在此处设置参与人标签。"
 
 #: ../../source/misc/rest_api.rst:296
 msgid ""
-"When you run a session in demo mode, or using bots, "
-"``mock_exogenous_data()`` will automatically be run after "
-"``creating_session``. However, it will not be run if the session is "
-"created in a room."
+"When you run a session in demo mode, or using bots, ``mock_exogenous_data()`` will automatically "
+"be run after ``creating_session``. However, it will not be run if the session is created in a "
+"room."
 msgstr ""
-"当你的会话运行在demo模式下，或者使用bot， ``mock_exogenous_data()`` 会在 "
-"``creating_session`` 之后自动运行。然而，如果是在房间里创建的会话则不会运行。"
+"当你的会话运行在demo模式下，或者使用bot， ``mock_exogenous_data()`` 会在 ``creating_session`` 之后"
+"自动运行。然而，如果是在房间里创建的会话则不会运行。"
 
 #: ../../source/misc/rest_api.rst:300
 msgid ""
-"If you have multiple session configs that require different exogenous "
-"data, you can branch like this:"
+"If you have multiple session configs that require different exogenous data, you can branch like "
+"this:"
 msgstr "如果你有多个session config需要不同的外源性数据，你可以像下面这样区分它们："
 
 #: ../../source/misc/tips_and_tricks.rst:2
@@ -871,12 +847,13 @@ msgstr "避免代码重复"
 
 #: ../../source/misc/tips_and_tricks.rst:7
 msgid ""
-"As much as possible, it's good to avoid copy-pasting the same code in "
-"multiple places. Although it sometimes takes a bit of thinking to figure "
-"out how to avoid copy-pasting code, you will see that having your code in"
-" only one place usually saves you a lot of effort later when you need to "
+"As much as possible, it's good to avoid copy-pasting the same code in multiple places. Although "
+"it sometimes takes a bit of thinking to figure out how to avoid copy-pasting code, you will see "
+"that having your code in only one place usually saves you a lot of effort later when you need to "
 "change the design of your code or fix bugs."
-msgstr "尽可能避免复制粘贴同一段代码到多个地方是很好的习惯。尽管有时需要一些思考才能明白如何避免复制粘贴代码，但是将代码只重复一次通常会在你需要更改设计或者修复错误时为你节省很多时间和精力。"
+msgstr ""
+"尽可能避免复制粘贴同一段代码到多个地方是很好的习惯。尽管有时需要一些思考才能明白如何避免复制粘贴代"
+"码，但是将代码只重复一次通常会在你需要更改设计或者修复错误时为你节省很多时间和精力。"
 
 #: ../../source/misc/tips_and_tricks.rst:14
 msgid "Below are some techniques to achieve code reuse."
@@ -888,23 +865,20 @@ msgstr "不要将你的应用复制多份"
 
 #: ../../source/misc/tips_and_tricks.rst:19
 msgid ""
-"If possible, you should avoid copying an app's folder to make a slightly "
-"different version, because then you have duplicated code that is harder "
-"to maintain."
+"If possible, you should avoid copying an app's folder to make a slightly different version, "
+"because then you have duplicated code that is harder to maintain."
 msgstr "你应当尽可能避免复制你的应用文件夹来创建一个有细微差别的版本，因为此时重复代码很难维护。"
 
 #: ../../source/misc/tips_and_tricks.rst:22
-#, fuzzy
 msgid ""
-"If you need multiple rounds, set ``num_rounds``. If you need slightly "
-"different versions (e.g. different treatments), then you should use the "
-"techniques described in :ref:`treatments`, such as making 2 session "
-"configs that have a different ``'treatment'`` parameter, and then "
-"checking for ``session.config['treatment']`` in your app's code."
+"If you need multiple rounds, set ``num_rounds``. If you need slightly different versions (e.g. "
+"different treatments), then you should use the techniques described in :ref:`treatments`, such as "
+"making 2 session configs that have a different ``'treatment'`` parameter, and then checking for "
+"``session.config['treatment']`` in your app's code."
 msgstr ""
-"如果你需要多轮游戏，可通过设置 ``num_rounds`` 来实现。如果你需要略微不同的版本（例如不同的实验组），那么你应当使用 "
-":ref:`treatments` 中所描述的技巧，比如创建两个session config在其中设置不同的 ``'treatment'`` "
-"参数，并在你的代码中检查 ``self.session.config['treatment']`` 来进行区分。"
+"如果你需要多轮游戏，可通过设置 ``num_rounds`` 来实现。如果你需要略微不同的版本（例如不同的实验"
+"组），那么你应当使用 :ref:`treatments` 中所描述的技巧，比如创建两个session config在其中设置不同的 "
+"``'treatment'`` 参数，并在你的代码中检查 ``session.config['treatment']`` 来进行区分。"
 
 #: ../../source/misc/tips_and_tricks.rst:33
 msgid "How to make many fields"
@@ -920,15 +894,15 @@ msgstr "这太复杂了，你应当找到一个能将其简化的方法。"
 
 #: ../../source/misc/tips_and_tricks.rst:86
 msgid ""
-"Are the fields all displayed on separate pages? If so, consider "
-"converting this to a 10-round game with just one field."
+"Are the fields all displayed on separate pages? If so, consider converting this to a 10-round "
+"game with just one field."
 msgstr "这些字段都显示在单独的页面上吗？如果是的，考虑将其转换为一个仅有一个字段的10轮游戏。"
 
 #: ../../source/misc/tips_and_tricks.rst:89
 #, fuzzy
 msgid ""
-"If that's not possible, then you can reduce the amount of repeated code "
-"by defining a function that returns a field:"
+"If that's not possible, then you can reduce the amount of repeated code by defining a function "
+"that returns a field:"
 msgstr "如果上述均不可行，你可以通过定义一个返回字段的函数的方式减少重复代码的数量："
 
 #: ../../source/misc/tips_and_tricks.rst:110
@@ -937,10 +911,11 @@ msgstr "通过使用多轮游戏避免代码重复"
 
 #: ../../source/misc/tips_and_tricks.rst:112
 msgid ""
-"If you have many many pages that are almost the same, consider just "
-"having 1 page and looping it for multiple rounds. One sign that your code"
-" can be simplified is if it looks something like this:"
-msgstr "如果你有很多几乎完全一样的页面，考虑仅保留一个页面并将游戏重复多轮。你的代码可被简化的一个标志是它看上去像下面这样："
+"If you have many many pages that are almost the same, consider just having 1 page and looping it "
+"for multiple rounds. One sign that your code can be simplified is if it looks something like this:"
+msgstr ""
+"如果你有很多几乎完全一样的页面，考虑仅保留一个页面并将游戏重复多轮。你的代码可被简化的一个标志是它"
+"看上去像下面这样："
 
 #: ../../source/misc/tips_and_tricks.rst:134
 msgid "Avoid duplicated validation methods"
@@ -949,12 +924,11 @@ msgstr "避免重复的验证方法"
 #: ../../source/misc/tips_and_tricks.rst:136
 #, fuzzy
 msgid ""
-"If you have many repetitive :ref:`FIELD_error_message "
-"<FOO_error_message>` methods, you can replace them with a single "
-":ref:`error_message <error_message>` function. For example:"
+"If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` methods, you can "
+"replace them with a single :ref:`error_message <error_message>` function. For example:"
 msgstr ""
-"如果你有多个重复的 :ref:`FIELD_error_message <FOO_error_message>` 方法，你可以使用一个 "
-":ref:`error_message <error_message>` 来替换它。例如："
+"如果你有多个重复的 :ref:`FIELD_error_message <FOO_error_message>` 方法，你可以使用一个 :ref:"
+"`error_message <error_message>` 来替换它。例如："
 
 #: ../../source/misc/tips_and_tricks.rst:158
 #, fuzzy
@@ -963,8 +937,8 @@ msgstr "你可以在你的页面中（不是Player类中）定义一个方法来
 
 #: ../../source/misc/tips_and_tricks.rst:179
 msgid ""
-"(Usually ``error_message`` is used to return a single error message as a "
-"string, but you can also return a dict.)"
+"(Usually ``error_message`` is used to return a single error message as a string, but you can also "
+"return a dict.)"
 msgstr "（通常 ``error_message`` 被用来返回某一错误信息字符串，但你也可以返回一个字典。）"
 
 #: ../../source/misc/tips_and_tricks.rst:184
@@ -974,23 +948,21 @@ msgstr "避免重复的验证方法"
 
 #: ../../source/misc/tips_and_tricks.rst:186
 msgid ""
-"Any page function can be moved out of the page class, and into a top-"
-"level function. This is a handy way to share the same function across "
-"multiple pages. For example, let's say many pages need to have these 2 "
-"functions:"
+"Any page function can be moved out of the page class, and into a top-level function. This is a "
+"handy way to share the same function across multiple pages. For example, let's say many pages "
+"need to have these 2 functions:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:205
 msgid ""
-"You can move those functions before all the pages (remove the "
-"``@staticmethod``), and then reference them wherever they need to be "
-"used:"
+"You can move those functions before all the pages (remove the ``@staticmethod``), and then "
+"reference them wherever they need to be used:"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:232
 msgid ""
-"(In the sample games, ``after_all_players_arrive`` and ``live_method`` "
-"are frequently defined in this manner.)"
+"(In the sample games, ``after_all_players_arrive`` and ``live_method`` are frequently defined in "
+"this manner.)"
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:235
@@ -999,18 +971,18 @@ msgstr "提高代码性能"
 
 #: ../../source/misc/tips_and_tricks.rst:237
 msgid ""
-"You should avoid redundant use of ``get_players()``, "
-"``get_player_by_id()``, ``in_*_rounds()``, ``get_others_in_group()``, or "
-"any other methods that return a player or list of players. These methods "
-"all require a database query, which can be slow."
+"You should avoid redundant use of ``get_players()``, ``get_player_by_id()``, ``in_*_rounds()``, "
+"``get_others_in_group()``, or any other methods that return a player or list of players. These "
+"methods all require a database query, which can be slow."
 msgstr ""
 "你应当避免不必要的 ``get_players()``, ``get_player_by_id()``, ``in_*_rounds()``, "
-"``get_others_in_group()`` 或者任何返回一个玩家或者玩家列表的函数的调用。这些方法都需要数据库查询，而数据库查询是很慢的。"
+"``get_others_in_group()`` 或者任何返回一个玩家或者玩家列表的函数的调用。这些方法都需要数据库查询，"
+"而数据库查询是很慢的。"
 
 #: ../../source/misc/tips_and_tricks.rst:242
 msgid ""
-"For example, this code has a redundant query because it asks the database"
-" 5 times for the exact same player:"
+"For example, this code has a redundant query because it asks the database 5 times for the exact "
+"same player:"
 msgstr "例如，下面的代码有冗余的查询，对同一玩家进行了5次数据库查询："
 
 #: ../../source/misc/tips_and_tricks.rst:258
@@ -1027,8 +999,8 @@ msgstr "使用BooleanField而不是StringField，如果可能的话"
 
 #: ../../source/misc/tips_and_tricks.rst:279
 msgid ""
-"Many ``StringFields`` should be broken down into ``BooleanFields``, "
-"especially if they only have 2 distinct values."
+"Many ``StringFields`` should be broken down into ``BooleanFields``, especially if they only have "
+"2 distinct values."
 msgstr "许多 ``StringFields`` 应当被转化为 ``BooleanFields``,尤其是其仅有2个不同的值时。"
 
 #: ../../source/misc/tips_and_tricks.rst:282
