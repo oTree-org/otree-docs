@@ -651,7 +651,9 @@ msgid ""
 "group to consist of 2 men and 2 women."
 msgstr "我们假定除了按照到达时间组队之外，你还需要每一组由2名男性和2名女性组成。"
 
+# chris comment: it's now a function, not a method.
 #: ../../source/multiplayer/waitpages.rst:146
+#, fuzzy
 msgid ""
 "If you define a function called ``group_by_arrival_time_method``, it will"
 " get called whenever a new player reaches the wait page. The function's "
@@ -660,6 +662,9 @@ msgid ""
 "those players will be assigned to a group, and move forward. If you don't"
 " return anything, then no grouping occurs."
 msgstr ""
+"如果你在子会话中定义了一个 ``group_by_arrival_time_method`` "
+"方法，它会在每一次新玩家到达等待页面时被执行。这一方法的参数是所有处在本等待页面的玩家组成的列表。如果你选择了其中一些玩家并且返回了他们组成的列表，那么这些玩家会被分为一组，并且继续进行下面的游戏。如果你没有返回任何东西，那么组队不会发生。"
+
 
 #: ../../source/multiplayer/waitpages.rst:153
 #, fuzzy
@@ -819,90 +824,4 @@ msgstr "你可以定制出现在等待页面上的文本，通过设定 ``title_
 #: ../../source/multiplayer/waitpages.rst:291
 msgid "See also: :ref:`customize_wait_page`."
 msgstr "也可参考: :ref:`customize_wait_page`."
-
-#~ msgid "Element"
-#~ msgstr "元素"
-
-#~ msgid "CSS/jQuery selector"
-#~ msgstr "CSS/jQuery 选择器"
-
-#~ msgid "Entire chat widget"
-#~ msgstr "聊天窗体"
-
-#~ msgid "``.otree-chat``"
-#~ msgstr "``.otree-chat``"
-
-#~ msgid "Textbox to type a message"
-#~ msgstr "输入消息的文本框"
-
-#~ msgid "``.otree-chat__input`` (note: ``__``, not ``_``)"
-#~ msgstr "``.otree-chat__input`` (注意: ``__``, 而不是 ``_``)"
-
-#~ msgid "Button to submit a message"
-#~ msgstr "提交消息的按钮"
-
-#~ msgid "``.otree-chat__btn-send``"
-#~ msgstr "``.otree-chat__btn-send``"
-
-#~ msgid "Div with all messages"
-#~ msgstr "所有消息的div"
-
-#~ msgid "``.otree-chat__messages``"
-#~ msgstr "``.otree-chat__messages``"
-
-#~ msgid "Message"
-#~ msgstr "消息"
-
-#~ msgid "``.otree-chat__msg``"
-#~ msgstr "``.otree-chat__msg``"
-
-#~ msgid "Message's nickname"
-#~ msgstr "消息的昵称"
-
-#~ msgid "``.otree-chat__nickname``"
-#~ msgstr "``.otree-chat__nickname``"
-
-#~ msgid "Message's body text"
-#~ msgstr "消息的文本部分"
-
-#~ msgid "``.otree-chat__body``"
-#~ msgstr "``.otree-chat__body``"
-
-#~ msgid ""
-#~ "For example, to customize the style, "
-#~ "just include some CSS after the "
-#~ "``{% chat %}`` element, e.g.:"
-#~ msgstr "举例来说，要定制样式，将CSS包含在 ``{% chat %}`` 元素之后即可，如："
-
-#~ msgid "Note that there are 2 underscores (``__``, not ``_``)."
-#~ msgstr "注意这里有2个下划线（``__``, 而不是 ``_``）。"
-
-#~ msgid "The following lines are equivalent."
-#~ msgstr "下面的两行是等价的。"
-
-#~ msgid ""
-#~ "Let's say you have defined a "
-#~ "method on the subsession called "
-#~ "``do_my_shuffle()`` that uses ``set_group_matrix``,"
-#~ " etc."
-#~ msgstr ""
-#~ "假定你在子会话中定义了一个方法，名为 ``do_my_shuffle()`` ，它使用了 "
-#~ "``set_group_matrix`` ，诸如此类。"
-
-#~ msgid ""
-#~ "If you define a method called "
-#~ "``group_by_arrival_time_method`` on your Subsession,"
-#~ " it will get called whenever a "
-#~ "new player reaches the wait page. "
-#~ "The method's argument is the list "
-#~ "of players who are currently waiting "
-#~ "at your wait page. If you pick "
-#~ "some of these players and return "
-#~ "them as a list, those players will"
-#~ " be assigned to a group, and "
-#~ "move forward. If you don't return "
-#~ "anything, then no grouping occurs."
-#~ msgstr ""
-#~ "如果你在子会话中定义了一个 ``group_by_arrival_time_method`` "
-#~ "方法，它会在每一次新玩家到达等待页面时被执行。这一方法的参数是所有处在本等待页面的玩家组成的列表。如果你选择了其中一些玩家并且返回了他们组成的列表，那么这些玩家会被分为一组，并且继续进行下面的游戏。如果你没有返回任何东西，那么组队不会发生。"
 

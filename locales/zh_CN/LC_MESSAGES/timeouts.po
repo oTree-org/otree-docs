@@ -262,9 +262,3 @@ msgid ""
 msgstr ""
 "如果你想让用户在页面上 *至少* 花上一定量的时间，你可以使用一些简单的JavaScript：隐藏下一步按钮（使用 ``.otree-btn-"
 "next`` 选择器），然后使用 ``setTimeout`` 来在一段时间后重新显示按钮。"
-
-#~ msgid ""
-#~ "(To apply this to all pages, see"
-#~ " the instructions in :ref:`base-template`.)"
-#~ msgstr "（要将此应用到所有页面上，参考  :ref:`base-template` 中的说明）"
-

@@ -417,6 +417,10 @@ hidden form field. For example:
 When the page is submitted, the value of your hidden input will be recorded
 in oTree like any other form field.
 
+If this isn't working, open your browser's JavaScript console,
+see if there are any errors, and use ``console.log()`` (JavaScript's equivalent of ``print()``)
+to trace the execution of your code line by line.
+
 Buttons
 -------
 

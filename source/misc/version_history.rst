@@ -9,7 +9,9 @@ Version 5.2
     If you use ``getElementById``/``querySelector``/etc. to select any formfield inputs,
     you might need to update your selectors.
 -   The data export now outputs "time started" as UTC.
-
+-   "Time spent" data export has a column name change.
+    If you have been using the ``pagetimes.py`` script,
+    you should download the new version.
 
 Version 5.1
 ===========

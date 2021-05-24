@@ -96,12 +96,4 @@ msgstr ""
 msgid ":ref:`search`"
 msgstr ""
 
-#~ msgid "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
-#~ " | `日本語 <https://github.com/oTree-org/otree-"
-#~ "docs/blob/master/README.md>`__"
-#~ msgstr ""
 

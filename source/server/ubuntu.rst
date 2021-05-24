@@ -39,12 +39,8 @@ of your prompt.
 Database (Postgres)
 -------------------
 
-If you want, you can use Postgres as your production database.
 Install Postgres and psycopg2, create a new database and set the ``DATABASE_URL`` env var, for example:
 to ``postgres://postgres@localhost/django_db``
-
-However, in principle, oTree 3.0+ should do fine with its default SQLite in production,
-since the server is now is single threaded.
 
 Reset the database on the server
 --------------------------------

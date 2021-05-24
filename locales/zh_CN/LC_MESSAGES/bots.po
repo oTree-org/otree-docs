@@ -258,7 +258,3 @@ msgstr "高级特性"
 #: ../../source/bots.rst:210
 msgid "See :ref:`bots_advanced`"
 msgstr "参见 :ref:`bots_advanced`"
-
-#~ msgid "If you are using a text editor, go to ``tests.py``."
-#~ msgstr "如果你使用的是文本编辑器，前往 ``tests.py``."
-

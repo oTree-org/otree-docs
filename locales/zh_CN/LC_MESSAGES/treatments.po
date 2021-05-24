@@ -162,9 +162,3 @@ msgid ""
 "On the \"Demo\" section of the admin, sessions are not configurable. It's"
 " only available when creating a session in \"Sessions\" or \"Rooms\"."
 msgstr "在管理员界面的“Demo”部分，会话是不可配置的。它仅在 \"Sessions\" 或 \"Rooms\"中创建会话时可用。"
-
-#~ msgid ""
-#~ "And then randomly assign players to "
-#~ "the \"blue\" or \"red\" treatment group:"
-#~ msgstr "并随机地将玩家分配给“蓝”或者“红”实验组："
-

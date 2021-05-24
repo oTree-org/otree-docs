@@ -194,7 +194,7 @@ For example, let's say many pages need to have these 2 functions:
         def is_displayed(player: Player):
             participant = player.participant
 
-            return participant.expiry
+            return participant.expiry - time.time() > 0
 
         @staticmethod
         def get_timeout_seconds(player):
@@ -210,7 +210,7 @@ and then reference them wherever they need to be used:
     def is_displayed1(player: Player):
         participant = player.participant
 
-        return participant.expiry
+        return participant.expiry - time.time() > 0
 
 
     def get_timeout_seconds1(player: Player):
