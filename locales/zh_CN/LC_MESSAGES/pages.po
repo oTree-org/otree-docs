@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2021-05-24 14:15-0600\n"
+"PO-Revision-Date: 2021-05-25 01:52+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -47,7 +47,6 @@ msgstr "is_displayed()"
 
 # method->function
 #: ../../source/pages.rst:19
-#, fuzzy
 msgid ""
 "You can define this function to return ``True`` if the page should be shown, "
 "and False if the page should be skipped. If omitted, the page will be shown."
@@ -89,9 +88,9 @@ msgid ""
 "``Constants``. You can access them in the template like this: ``{{ Constants."
 "blah }}`` or ``{{ player.blah }}``."
 msgstr ""
-"oTree自动将下面的对象传递给模板： ``player``, ``group``, ``subsession``, "
-"``participant``, ``session``, 与 ``Constants``.你可以像这样： ``{{ Constants."
-"blah }}`` 或 ``{{ player.blah }}`` 在模板中访问它们."
+"oTree自动将下面的对象传递给模板： ``player``，``group``，``subsession``，"
+"``participant``，``session`` 与 ``Constants``。你可以像这样： ``{{ Constants."
+"blah }}`` 或 ``{{ player.blah }}`` 在模板中访问它们。"
 
 #: ../../source/pages.rst:68
 msgid "If the user refreshes the page, ``vars_for_template`` gets re-executed."
@@ -129,7 +128,7 @@ msgstr "参考 :ref:`timeouts`"
 
 #: ../../source/pages.rst:96
 msgid "Wait pages"
-msgstr "Wait pages"
+msgstr "等待页面"
 
 #: ../../source/pages.rst:98
 msgid "See :ref:`wait_pages`"
@@ -144,7 +143,7 @@ msgid ""
 "You can randomize the order of pages using rounds. An example is `here "
 "<https://www.otreehub.com/projects/otree-snippets/>`__."
 msgstr ""
-"你可以在每一轮之间随机页面顺序。一个例子在 `这里 <https://www.otreehub.com/"
+"你可以使用轮数随机化页面顺序。一个例子在 `这里 <https://www.otreehub.com/"
 "projects/otree-snippets/>`__."
 
 #: ../../source/pages.rst:109
@@ -172,7 +171,6 @@ msgstr ""
 
 # method->function
 #: ../../source/pages.rst:134
-#, fuzzy
 msgid ""
 "If this function doesn't return anything, the player proceeds to the next "
 "page as usual."
