@@ -10,16 +10,16 @@ can use ``creating_session``. For example:
 .. code-block:: python
 
     class Player(BasePlayer):
-        color = models.StringField()
+        time_pressure = models.BooleanField()
 
     def creating_session(subsession):
         # randomize to treatments
         for player in subsession.get_players():
-            player.color = random.choice(['blue', 'red'])
-            print('set player.color to', player.color)
+            player.time_pressure = random.choice([True, False])
+            print('set time_pressure to', player.time_pressure)
 
 You can also assign treatments at the group level (put the ``StringField``
-in ``Group`` and change the above code to use ``get_groups()`` and ``group.color``).
+in ``Group`` and change the above code to use ``get_groups()`` and ``group.time_pressure``).
 
 ``creating_session`` is run immediately when you click the "create session" button,
 even if the app is not first in the ``app_sequence``.
@@ -27,10 +27,9 @@ even if the app is not first in the ``app_sequence``.
 Treatment groups & multiple rounds
 ----------------------------------
 
-If your game has multiple rounds, a player could have different colors in different rounds,
+If your game has multiple rounds, a player could have different treatments in different rounds,
 because ``creating_session`` gets executed for each round independently.
-To prevent this, set it on the participant, rather than the player.
-Add ``color`` to ``PARTICIPANT_FIELDS``, then do this:
+To prevent this, set it on the participant, rather than the player:
 
 .. code-block:: python
 
@@ -38,27 +37,22 @@ Add ``color`` to ``PARTICIPANT_FIELDS``, then do this:
         if subsession.round_number == 1:
             for player in subsession.get_players():
                 participant = player.participant
-                participant.color = random.choice(['blue', 'red'])
-
-Then elsewhere in your code, you can access the participant's color with
-``participant.color``.
-
-For more on vars, see :ref:`vars`.
+                participant.time_pressure = random.choice([True, False])
 
 Balanced treatment groups
 -------------------------
 
 The above code makes a random drawing independently for each player,
-so you may end up with an imbalance between "blue" and "red".
+so you may end up with an imbalance.
 To solve this, you can use ``itertools.cycle``:
 
 .. code-block:: python
 
     def creating_session(subsession):
         import itertools
-        colors = itertools.cycle(['blue', 'red'])
+        pressures = itertools.cycle([True, False])
         for player in subsession.get_players():
-            player.color = next(colors)
+            player.time_pressure = next(pressures)
 
 
 .. _session_config_treatments:
@@ -69,31 +63,31 @@ Choosing which treatment to play
 In a live experiment, you often want to give a player a random treatment.
 But when you are testing your game, it is often useful to choose explicitly which treatment to play.
 Let's say you are developing the game from the above example and want to show your
-colleagues both treatments (red and blue). You can create 2 session
+colleagues both treatments. You can create 2 session
 configs that are the same,
-except for ``color`` (in oTree Studio, add a "custom parameter"):
+except for ``time_pressure`` (in oTree Studio, add a "custom parameter"):
 
 .. code-block:: python
 
     SESSION_CONFIGS = [
         dict(
-            name='my_game_blue',
+            name='my_game_primed',
             app_sequence=['my_game'],
             num_demo_participants=1,
-            color='blue'
+            time_pressure=True,
         ),
         dict(
-            name='my_game_red',
+            name='my_game_noprime',
             app_sequence=['my_game'],
             num_demo_participants=1,
-            color='red'
+            time_pressure=False,
         ),
     ]
 
-Then in your code you can get the current session's color with ``session.config['color'].``
+Then in your code you can get the current session's color with ``session.config['time_pressure'].``
 
 You can even combine this with the randomization approach. You can check
-``if 'color' in session.config:``; if yes, then use that color; if no,
+``if 'time_pressure' in session.config:``; if yes, then use that; if no,
 then choose it randomly.
 
 .. _edit_config:
