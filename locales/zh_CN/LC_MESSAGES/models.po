@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2021-05-24 14:00-0600\n"
+"PO-Revision-Date: 2021-05-25 11:26+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -25,14 +25,14 @@ msgstr "模型"
 
 #: ../../source/models.rst:4
 msgid "An oTree app has 3 data models: Subsession, Group, and Player."
-msgstr "一个oTree应用有三个数据模型：子会话，小组与玩家。"
+msgstr "一个oTree应用有3个数据模型：子会话，小组与玩家。"
 
 #: ../../source/models.rst:6
 msgid ""
 "A player is part of a group, which is part of a subsession. See :ref:"
 "`conceptual_overview`."
 msgstr ""
-"玩家是小组的一部分，小组是子会话的一部分。参考 :ref:`conceptual_overview`."
+"玩家是小组的一部分，小组是子会话的一部分。参考 :ref:`conceptual_overview`。"
 
 #: ../../source/models.rst:9
 msgid "Let's say you want your experiment to generate data that looks like this::"
@@ -63,7 +63,7 @@ msgstr "``BooleanField`` (表示 true/false 或者 yes/no 这样的值)"
 
 #: ../../source/models.rst:37
 msgid "``CurrencyField`` for currency amounts; see :ref:`currency`."
-msgstr "``CurrencyField`` 表示货币数量; 参考 :ref:`currency`."
+msgstr "``CurrencyField`` 表示货币数量; 参见 :ref:`currency`。"
 
 #: ../../source/models.rst:38
 msgid "``IntegerField``"
@@ -89,7 +89,7 @@ msgstr "初始/默认值"
 
 #: ../../source/models.rst:47
 msgid "Your field's initial value will be ``None``, unless you set ``initial=``:"
-msgstr "字段的初始值为 ``None``,除非你设置了 ``initial=``:"
+msgstr "字段的初始值为 ``None``，除非你设置了 ``initial=``:"
 
 #: ../../source/models.rst:56
 msgid "min, max, choices"
@@ -99,7 +99,8 @@ msgstr "最小值，最大值，可选项"
 msgid ""
 "For info on how to set a field's ``min``, ``max``, or ``choices``, see :ref:"
 "`form-validation`."
-msgstr "如何设置字段的最小值，最大值与可选项，参考 :ref:`form-validation`."
+msgstr ""
+"如何设置字段的 ``min``，``max``， 或 ``choices``，参考 :ref:`form-validation`。"
 
 #: ../../source/models.rst:62
 msgid "Built-in fields and methods"
@@ -112,7 +113,7 @@ msgid ""
 "like ``in_all_rounds()`` and ``get_others_in_group()``."
 msgstr ""
 "玩家，小组与子会话有一些预定义的字段。举例来说， ``Player`` 有 ``payoff`` 与 "
-"``id_in_group`` 字段, ``in_all_rounds()`` 与 ``get_others_in_group()`` 方法."
+"``id_in_group`` 字段， ``in_all_rounds()`` 与 ``get_others_in_group()`` 方法。"
 
 #: ../../source/models.rst:69
 msgid "These built-in fields and methods are listed below."
@@ -133,7 +134,7 @@ msgid ""
 "(set in ``Constants.num_rounds``). See :ref:`rounds`."
 msgstr ""
 "给出当前是第几轮。仅在应用有多轮时有意义（轮数由 ``Constants.num_rounds`` 设"
-"置 ）。参考 :ref:`rounds`."
+"置 ）。参考 :ref:`rounds`。"
 
 #: ../../source/models.rst:84
 msgid "get_groups()"
@@ -197,7 +198,7 @@ msgstr "小组"
 
 #: ../../source/models.rst:111 ../../source/models.rst:141
 msgid "Gives the current round number."
-msgstr ""
+msgstr "给出当前是第几轮。"
 
 #: ../../source/models.rst:114
 msgid "Other group methods"
@@ -241,7 +242,7 @@ msgstr "payoff"
 
 #: ../../source/models.rst:136
 msgid "The player's payoff in this round. See :ref:`payoff`."
-msgstr "玩家在本轮的收益。参考 :ref:`payoff`."
+msgstr "玩家在本轮的收益。参考 :ref:`payoff`。"
 
 #: ../../source/models.rst:144
 msgid "Other player methods"
@@ -273,7 +274,7 @@ msgstr "config"
 
 #: ../../source/models.rst:164
 msgid "See :ref:`session_config_treatments`."
-msgstr "参考 :ref:`session_config_treatments`."
+msgstr "参考 :ref:`session_config_treatments`。"
 
 #: ../../source/models.rst:167
 msgid "vars"
@@ -281,7 +282,7 @@ msgstr "vars"
 
 #: ../../source/models.rst:169
 msgid "See :ref:`session_vars`."
-msgstr "参考 :ref:`session_vars`."
+msgstr "参考 :ref:`session_vars`。"
 
 #: ../../source/models.rst:172
 msgid "Participant"
@@ -333,11 +334,11 @@ msgstr "下面是内置的常量："
 
 #: ../../source/models.rst:199
 msgid "``players_per_group`` (described in :ref:`groups`)"
-msgstr "``players_per_group`` ( :ref:`groups` 中所描述)"
+msgstr "``players_per_group`` (见 :ref:`groups` )"
 
 #: ../../source/models.rst:200
 msgid "``num_rounds`` (described in :ref:`rounds`)"
-msgstr "``num_rounds`` ( :ref:`rounds` 中所描述)"
+msgstr "``num_rounds`` (见 :ref:`rounds` )"
 
 #: ../../source/models.rst:202
 msgid ""
@@ -349,7 +350,6 @@ msgstr ""
 
 # method->function?
 #: ../../source/models.rst:206
-#, fuzzy
 msgid ""
 "Constants can be numbers, strings, booleans, lists, etc. But for more complex "
 "data types like dicts, lists of dicts, etc, you should instead define it in a "
@@ -358,7 +358,7 @@ msgid ""
 msgstr ""
 "常量可以是数字，字符串，布尔值，列表等等类型。但对于更复杂的数据类型如字典，字典"
 "的列表等等，你应当在子会话方法中定义，而不是在常量中。举例来说，不要在常量中定"
-"义 ``my_dict`` ，而是如下操作："
+"义 ``my_dict`` ，而应当使用如下代码："
 
 #: ../../source/models.rst:217
 msgid "Miscellaneous topics"
@@ -373,7 +373,7 @@ msgid ""
 "In addition to the methods listed on this page, you can define your own. Just "
 "remember to *use* them somewhere! Just defining them with ``def`` has no effect."
 msgstr ""
-"除了本页列出的方法，你可以定义自己的方法。只需记住在 *某处* 调用它们！仅仅用 "
+"除了本页列出的方法，你可以定义自己的方法。只需记住在某处 *调用* 它们！仅仅用 "
 "``def`` 定义它们是没有任何作用的。"
 
 #: ../../source/models.rst:227
@@ -390,10 +390,9 @@ msgstr "关于使用 random()"
 
 # method->function
 #: ../../source/models.rst:247
-#, fuzzy
 msgid ""
 "Never generate random values outside of a function. For example, don't do this:"
-msgstr "永远不要在方法外部生成随机值。举例来说，不要写下面这样的代码："
+msgstr "永远不要在函数外部生成随机值。举例来说，不要写下面这样的代码："
 
 #: ../../source/models.rst:255
 msgid "If it changes randomly, it isn't a constant."
@@ -405,7 +404,6 @@ msgstr "或者这样的代码："
 
 # probably method->function
 #: ../../source/models.rst:268
-#, fuzzy
 msgid ""
 "These won't work because they will change every time the server launches a new "
 "process. It may appear to work during testing but will eventually break. "
@@ -414,8 +412,8 @@ msgid ""
 "executed if the user refreshes the page)."
 msgstr ""
 "上述代码不会正常工作，因为随机值在服务器启动一个新进程时会改变。这可能在测试时工"
-"作正常，但最终会出现错误。相反的，你应该在方法内部生成随机值，如 :ref:"
-"`creating_session` 中（尽量不要在 ``vars_for_template`` 中，因为这一方法在用户刷"
+"作正常，但最终会出现错误。相反的，你应该在函数内部生成随机值，如 :ref:"
+"`creating_session` 中（尽量不要在 ``vars_for_template`` 中，因为这一函数在用户刷"
 "新页面时会重新执行）。"
 
 #: ../../source/models.rst:275

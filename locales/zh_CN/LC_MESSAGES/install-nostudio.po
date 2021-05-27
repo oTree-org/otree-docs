@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2021-05-24 14:16-0600\n"
+"PO-Revision-Date: 2021-05-26 11:30+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -39,8 +39,8 @@ msgid ""
 "You should first install oTree for :ref:`Windows <install-windows>` or :"
 "ref:`Mac <install-macos>`."
 msgstr ""
-"你应当首先安装oTree，在 :ref:`Windows <install-windows>` 或 :ref:`Mac "
-"<install-macos>` 上."
+"你应当首先在 :ref:`Windows <install-windows>` 或 :ref:`Mac <install-"
+"macos>` 上安装oTree。"
 
 #: ../../source/install-nostudio.rst:19
 msgid "Run oTree"
@@ -74,12 +74,16 @@ msgid ""
 "documentation here:** `https://otree.readthedocs.io/en/self/ <https://"
 "otree.readthedocs.io/en/self/>`__"
 msgstr ""
+"**如果在每一个文件夹里都有 ``models.py`` ，请转为参考这里的文档:** "
+"`https://otree.readthedocs.io/en/self/ <https://otree.readthedocs.io/en/"
+"self/>`__"
 
 #: ../../source/install-nostudio.rst:41
 msgid ""
 "If you don't see a models.py in each folder, that means you are using "
 "the new no-self format."
 msgstr ""
+"如果每一个文件夹里都没有models.py，这意味着你正在使用新的no-self格式。"
 
 #: ../../source/install-nostudio.rst:43
 msgid "Run the server::"
@@ -91,7 +95,7 @@ msgid ""
 ">`__. You should see the oTree demo site."
 msgstr ""
 "打开浏览器并输入地址 `http://localhost:8000/ <http://localhost:8000/"
-">`__. 你应当就能看到oTree演示页面。"
+">`__。你应当就能看到oTree演示页面。"
 
 #: ../../source/install-nostudio.rst:50
 msgid "To stop the server, press ``Control + C`` at your command line."
@@ -118,7 +122,7 @@ msgstr "启动文本编辑器并打开你的项目文件夹。"
 
 #: ../../source/install-nostudio.rst:68
 msgid "About @staticmethod, etc."
-msgstr ""
+msgstr "关于@staticmethod"
 
 #: ../../source/install-nostudio.rst:70
 msgid ""
@@ -128,20 +132,26 @@ msgid ""
 "are sometimes omitted from this documentation for brevity. They are not "
 "mandatory but will help your editor provide better autocompletion."
 msgstr ""
+"如果你用文本编辑器写oTree代码，记得在所有页面类内的函数前加上 "
+"``@staticmethod`` ，如 ``is_displayed``，``vars_for_template``，"
+"``before_next_page`` 等等函数之前。这一点在本文档中常常因简炼的原因而略"
+"去。这不是强制的，但会帮助文本编辑器提供更好的自动补全。"
 
 #: ../../source/install-nostudio.rst:75
 msgid ""
 "If you are using PyCharm, VS Code, or another IDE, you can also add type "
 "annotations on your functions."
 msgstr ""
+"如果你使用的是PyCharm，VS Code 或其他IDE，你还可以在你的函数上添加类型注"
+"解。"
 
 #: ../../source/install-nostudio.rst:77
 msgid "For example:"
-msgstr ""
+msgstr "例如："
 
 #: ../../source/install-nostudio.rst:85
 msgid "Or:"
-msgstr ""
+msgstr "或者："
 
 #: ../../source/install-nostudio.rst:94
 msgid "Upgrading/reinstalling oTree"
@@ -161,3 +171,7 @@ msgid ""
 "that they increase the chance of things breaking when you upgrade, "
 "because oTree's internal code layout changes from release to release."
 msgstr ""
+"确保你的应用在升级之后仍然可用的最好方法是仅使用文档中所述的函数。你可能"
+"在网上找到一些代码，这些代码通过获取oTree的内部函数并“hack”它们来做一些不"
+"同寻常的事情。尽管这些代码能够实现一些创新的功能，但请时刻注意它们增加了"
+"当你升级时出现问题的风险，因为oTree内部的代码布局在各个版本之间是不同的。"
