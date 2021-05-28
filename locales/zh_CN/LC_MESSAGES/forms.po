@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-24 09:30-0600\n"
-"PO-Revision-Date: 2021-05-24 13:58-0600\n"
+"PO-Revision-Date: 2021-05-28 12:25+0800\n"
 "Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/forms.rst:4
 msgid "Forms"
@@ -93,20 +93,20 @@ msgid ""
 "If you do this, users will just see a menu with \"Low\", \"Medium\", \"High\", but their responses "
 "will be recorded as 1, 2, or 3."
 msgstr ""
-"如果这样设置了，用户就会看见一个有\"Low\", \"Medium\", \"High\"的菜单，但是得到的值仍会被记录为1, 2, "
+"如果这样设置了，用户就会看见一个有\"Low\", \"Medium\", \"High\"的菜单，但是得到的值仍会被记录为1，2，"
 "或 3。"
 
 #: ../../source/forms.rst:96
 msgid "You can do this for ``BooleanField``, ``StringField``, etc.:"
-msgstr "你可以这样设置 ``BooleanField``, ``StringField``, 等等:"
+msgstr "你可以这样设置 ``BooleanField``，``StringField``，等等:"
 
 #: ../../source/forms.rst:107
 msgid "You can get the human-readable label corresponding to the user's choice like this:"
-msgstr ""
+msgstr "你可以通过类似下面的方法获得一个与用户的选择对应的人类可读的标签："
 
 #: ../../source/forms.rst:115
 msgid "``get_field_display`` is new in oTree 5 (March 2021)."
-msgstr ""
+msgstr "``get_field_display`` 在oTree 5（2021年3月）中新引入。"
 
 #: ../../source/forms.rst:118
 msgid "Optional fields"
@@ -114,7 +114,7 @@ msgstr "可选字段"
 
 #: ../../source/forms.rst:120
 msgid "If a field is optional, you can use ``blank=True`` like this:"
-msgstr "如果一个字段是可选的，你可以像这样设置 ``blank=True`` ："
+msgstr "如果一个字段是可选的，你可以像下面这样设置 ``blank=True`` ："
 
 #: ../../source/forms.rst:129
 msgid "Dynamic form field validation"
@@ -122,15 +122,14 @@ msgstr "动态表单验证"
 
 #: ../../source/forms.rst:131
 msgid "The ``min``, ``max``, and ``choices`` described above are only for fixed (constant) values."
-msgstr "上述的 ``min``, ``max``, 与 ``choices`` 仅为固定值（常量）。"
+msgstr "上述的 ``min``，``max``，与 ``choices`` 仅为固定值（常量）。"
 
 # function
 #: ../../source/forms.rst:134
-#, fuzzy
 msgid ""
 "If you want them to be determined dynamically (e.g. different from player to player), then you can "
 "instead define one of the below functions."
-msgstr "如果你想让它们动态地被决定（例如在不同玩家间有区别），那么你可以定义下面的方法。"
+msgstr "如果你想让它们动态地被决定（例如在不同玩家间有区别），那么你可以定义下面这些函数。"
 
 #: ../../source/forms.rst:141
 msgid "{field_name}_choices()"
@@ -176,13 +175,12 @@ msgstr "同时验证多个字段"
 
 # function
 #: ../../source/forms.rst:207
-#, fuzzy
 msgid ""
 "Let's say your form has 3 number fields whose values must sum to 100. You can enforce this with the "
 "``error_message`` function, which goes on the page:"
 msgstr ""
-"假设你的表单中有3个数字字段，它们的和必须为100.你可以通过 ``error_message`` 方法确保这一点，注意是在 *"
-"页面* 中（而不是玩家模型）："
+"假设你的表单中有3个数字字段，它们的和必须为100。你可以通过 ``error_message`` 函数确保这一点，在页面"
+"中："
 
 #: ../../source/forms.rst:223
 msgid "Notes:"
@@ -190,13 +188,12 @@ msgstr "注意："
 
 #: ../../source/forms.rst:225
 msgid "If a field was left blank (and you set ``blank=True``), its value here will be ``None``."
-msgstr "如果一个字段未被填写（并且你设置了 ``blank=True``），它的值就会为 ``None``."
+msgstr "如果一个字段未被填写（并且你设置了 ``blank=True``），它的值就会为 ``None``。"
 
 # function
 #: ../../source/forms.rst:226
-#, fuzzy
 msgid "This function is only executed if there are no other errors in the form."
-msgstr "此方法仅会在表单中没有任何其他错误的情况下会被执行。"
+msgstr "此函数仅会在表单中没有任何其他错误的情况下会被执行。"
 
 #: ../../source/forms.rst:227
 msgid ""
@@ -211,11 +208,10 @@ msgid "Determining form fields dynamically"
 msgstr "动态决定表单字段"
 
 #: ../../source/forms.rst:236
-#, fuzzy
 msgid ""
 "If you need the list of form fields to be dynamic, instead of ``form_fields`` you can define a "
 "function ``get_form_fields``:"
-msgstr "如果你需要表单字段是动态的，你可以定义 ``get_form_fields`` 方法取代 ``form_fields`` ："
+msgstr "如果你需要表单字段是动态的，你可以定义 ``get_form_fields`` 函数取代 ``form_fields`` ："
 
 #: ../../source/forms.rst:250
 msgid "Widgets"
@@ -246,7 +242,7 @@ msgstr "你也可以将 ``label`` 直接放在模板中："
 #: ../../source/forms.rst:275
 #, python-format
 msgid "The previous syntax of ``{% formfield player.bid %}`` is still supported."
-msgstr ""
+msgstr "之前的语法 ``{% formfield player.bid %}`` 仍然可用。"
 
 #: ../../source/forms.rst:280
 msgid "Customizing a field's appearance"
@@ -263,15 +259,14 @@ msgstr ""
 
 # please double check
 #: ../../source/forms.rst:286
-#, fuzzy
 msgid ""
 "However, if you want more control over the appearance and layout, you can use manual field rendering. "
 "Instead of ``{{ formfield 'my_field' }}``, do ``{{ form.my_field }}``, to get just the input element. "
 "Just remember to also include ``{{ formfield_errors 'my_field' }}``."
 msgstr ""
-"然而，如果你想要自己更多地控制外观与布局，你可以使用Django手动字段渲染。使用 ``{{ form.my_field }}``,"
-"而不是 ``{{ formfield player.my_field }}`` 来获取输入元素。只需记得包含 ``{{ formfield_errors "
-"'my_field' }}``."
+"然而，如果你想要自己更多地控制外观与布局，你可以使用手动字段渲染。使用 ``{{ form.my_field }}``，而不"
+"是 ``{{ formfield 'my_field' }}`` 来获取输入元素。只需记得还要包含 ``{{ formfield_errors 'my_field' }}"
+"``。"
 
 #: ../../source/forms.rst:295
 msgid "Example: Radio buttons in tables and other custom layouts"
@@ -287,11 +282,10 @@ msgstr "并且你想要它们表现得像李克特量表，每一个选项在独
 
 # Chris comment: models.py doesn't exist anymore.
 #: ../../source/forms.rst:311
-#, fuzzy
 msgid ""
 "(First, try to reduce the code duplication in your model by following the instructions in :ref:`many-"
 "fields`.)"
-msgstr "（首先，试着减少models.py中的代码冗余，根据 :ref:`many-fields` 中的提示）"
+msgstr "（首先，试着消除你的模型中的代码冗余，根据 :ref:`many-fields` 中的提示。）"
 
 #: ../../source/forms.rst:314
 msgid ""
@@ -318,9 +312,9 @@ msgid ""
 "features handled automatically by oTree. For example, if the form has an error and the page re-loads, "
 "all entries by the user may be wiped out."
 msgstr ""
-"如果 ``{{ formfields }}`` 与 :ref:`manual field rendering <manual-forms>` 不能实现你想要的外观，你可以"
-"使用原始HTML写你自己的控件。然而，这样做会失去由oTree自动处理的一些便捷的特性。举例来说，如果表单有一"
-"个错误并且页面重载了，所有用户已经输入的条目可能被清除。"
+"如果 ``{{ formfields }}`` 与 :ref:`手动字段渲染 <manual-forms>` 不能实现你想要的外观，你可以使用原始"
+"HTML写你自己的控件。然而，这样做会失去由oTree自动处理的一些便捷的特性。举例来说，如果表单有一个错误并"
+"且页面重载了，所有用户已经输入的条目可能被清除。"
 
 #: ../../source/forms.rst:356
 msgid ""
@@ -328,21 +322,21 @@ msgid ""
 "can do ``<input name=\"my_field\" type=\"checkbox\" />`` (some other common types are ``radio``, "
 "``text``, ``number``, and ``range``)."
 msgstr ""
-"首先，添加一个 ``<input>`` 元素。例如，如果你的 ``form_fields`` 包含 ``my_field``,你可以这样写： "
-"``<input name=\"my_field\" type=\"checkbox\" />`` （其他一些常见的type为 ``radio``, ``text``, "
-"``number``, 与 ``range``）。"
+"首先，添加一个 ``<input>`` 元素。例如，如果你的 ``form_fields`` 包含 ``my_field``，你可以这样写： "
+"``<input name=\"my_field\" type=\"checkbox\" />`` （其他一些常见的type为 ``radio``，``text``，"
+"``number``，与 ``range``）。"
 
 #: ../../source/forms.rst:361
 msgid ""
 "Second, you should usually include ``{{ formfield_errors 'xyz' }}``, so that if the participant "
 "submits an incorrect or missing value), they can see the error message."
 msgstr ""
-"其次，你通常应当包含 ``{{ formfield_errors 'xyz' }}``, 这样如果参与人提交了一个不正确的值或者缺少了某"
+"其次，你通常应当包含 ``{{ formfield_errors 'xyz' }}``，这样如果参与人提交了一个不正确的值或者缺少了某"
 "些值时，他们就可以看见报错信息。"
 
 #: ../../source/forms.rst:367
 msgid "``formfield_errors`` is new in oTree 5.0.5+."
-msgstr ""
+msgstr "``formfield_errors`` 在 oTree 5.0.5+ 中新引入。"
 
 #: ../../source/forms.rst:370
 msgid "Raw HTML example: slider"
@@ -378,6 +372,7 @@ msgid ""
 "First, build your interface using HTML and JavaScript. Then use JavaScript to write the results into "
 "a hidden form field. For example:"
 msgstr ""
+"首先，使用HTML与JavaScript构建你的界面。然后使用JavaScript将结果写入一个隐藏的表单字段中。例如："
 
 #: ../../source/forms.rst:417
 msgid ""
@@ -391,6 +386,8 @@ msgid ""
 "``console.log()`` (JavaScript's equivalent of ``print()``) to trace the execution of your code line "
 "by line."
 msgstr ""
+"如果它没有正常工作，打开你浏览器的JavaScript控制台，查看是否有错误，并使用 ``console.log()`` "
+"（JavaScript中的 ``print()``）来逐行地追踪你代码的执行。"
 
 #: ../../source/forms.rst:425
 msgid "Buttons"
@@ -424,7 +421,7 @@ msgstr "首先，将 ``offer_accepted`` 放入你的页面的 ``form_fields`` �
 
 #: ../../source/forms.rst:450
 msgid "You can use this technique for any type of field, not just ``BooleanField``."
-msgstr "你可以在任何类型的字段上使用这个技巧，不只是 ``BooleanField``."
+msgstr "你可以在任何类型的字段上使用这个技巧，不只是 ``BooleanField``。"
 
 #: ../../source/forms.rst:454
 msgid "Button that doesn't submit the form"
@@ -452,4 +449,4 @@ msgstr "然后在模板中："
 
 #: ../../source/forms.rst:496
 msgid "If you use this technique, you may also want to use :ref:`dynamic_validation`."
-msgstr "如果你想使用这个技巧，你可能也想用 :ref:`dynamic_validation`."
+msgstr "如果你想使用这个技巧，你可能也想使用 :ref:`dynamic_validation`。"
