@@ -174,10 +174,10 @@ msgstr "定义模型"
 
 #: ../../source/tutorial/part1_texteditor.rst:25
 msgid ""
-"In ``app.py``, scroll to the line that says ``class Player(BasePlayer):``. Here we define the columns "
+"In ``__init__.py``, scroll to the line that says ``class Player(BasePlayer):``. Here we define the columns "
 "for the Player table in the database. Let's add 2 fields:"
 msgstr ""
-"打开 ``app.py`` 并找到含有 ``class Player(BasePlayer):`` 的那行，在这里定义数据库中玩家表有哪些列。让我们"
+"打开 ``__init__.py`` 并找到含有 ``class Player(BasePlayer):`` 的那行，在这里定义数据库中玩家表有哪些列。让我们"
 "添加下面两个字段："
 
 #: ../../source/tutorial/part1_texteditor.rst:29

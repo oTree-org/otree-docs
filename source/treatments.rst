@@ -18,7 +18,7 @@ can use ``creating_session``. For example:
             player.time_pressure = random.choice([True, False])
             print('set time_pressure to', player.time_pressure)
 
-You can also assign treatments at the group level (put the ``StringField``
+You can also assign treatments at the group level (put the ``BooleanField``
 in ``Group`` and change the above code to use ``get_groups()`` and ``group.time_pressure``).
 
 ``creating_session`` is run immediately when you click the "create session" button,
@@ -65,7 +65,7 @@ But when you are testing your game, it is often useful to choose explicitly whic
 Let's say you are developing the game from the above example and want to show your
 colleagues both treatments. You can create 2 session
 configs that are the same,
-except for ``time_pressure`` (in oTree Studio, add a "custom parameter"):
+except for one parameter (in oTree Studio, add a "custom parameter"):
 
 .. code-block:: python
 
@@ -84,7 +84,11 @@ except for ``time_pressure`` (in oTree Studio, add a "custom parameter"):
         ),
     ]
 
-Then in your code you can get the current session's color with ``session.config['time_pressure'].``
+Then in your code you can get the current session's treatment with:
+
+.. code-block:: python
+
+    session.config['time_pressure']
 
 You can even combine this with the randomization approach. You can check
 ``if 'time_pressure' in session.config:``; if yes, then use that; if no,
