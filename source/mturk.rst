@@ -208,7 +208,7 @@ send custom bonuses, etc), you will need to install the
 
 However, there is a new project called `oTree HR <https://github.com/oTree-org/HR>`__
 that provides a friendlier visual interface to manage your HITs.
-Currently, it just supports a few features, but we welcome contributions
+Currently, it supports microbatching and a few other features, but we welcome contributions
 of new functionality.
 
 Misc notes
