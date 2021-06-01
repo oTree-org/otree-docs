@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2021-05-24 14:10-0600\n"
+"PO-Revision-Date: 2021-06-01 10:45+0800\n"
 "Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/rounds.rst:2
 msgid "Apps & rounds"
@@ -50,11 +50,11 @@ msgstr "在应用之间传递数据"
 
 # vars -> fields
 #: ../../source/rounds.rst:19
-#, fuzzy
 msgid ""
 "See :ref:`participant fields <vars>` and :ref:`session fields <session_vars>`."
 msgstr ""
-"参考 :ref:`participant.vars <vars>` 与 :ref:`session.vars <session_vars>`."
+"参考 :ref:`participant fields <vars>` 与 :ref:`session fields "
+"<session_vars>`。"
 
 #: ../../source/rounds.rst:25
 msgid "Rounds"
@@ -68,8 +68,8 @@ msgid ""
 "``num_rounds = 1``, then your sessions will contain 4 subsessions."
 msgstr ""
 "你可以通过设置 ``Constants.num_rounds`` 来使一个游戏进行多轮。举例来说，如果你"
-"的session config中的 ``app_sequence`` 是 ``['app1', 'app2']``,同时 ``app1`` "
-"中 ``num_rounds = 3`` 且 ``app2`` 中 ``num_rounds = 1``,那么你的会话中就包含4"
+"的session config中的 ``app_sequence`` 是 ``['app1', 'app2']``，同时 ``app1`` "
+"中 ``num_rounds = 3`` 且 ``app2`` 中 ``num_rounds = 1``，那么你的会话中就包含4"
 "个子会话。"
 
 #: ../../source/rounds.rst:34
@@ -82,7 +82,7 @@ msgid ""
 "attribute is present on subsession, group, and player objects). Round numbers "
 "start from 1."
 msgstr ""
-"你可以通过 ``player.round_number`` （目前subsession, group, player, 与 page 对"
+"你可以通过 ``player.round_number`` （目前subsession，group，player 与 page 对"
 "象有此属性）来获得当前的轮数。轮数从1开始。"
 
 #: ../../source/rounds.rst:43
@@ -114,7 +114,7 @@ msgstr "in_rounds, in_previous_rounds, in_round, etc."
 
 #: ../../source/rounds.rst:58
 msgid "Player, group, and subsession objects have the following methods:"
-msgstr "Player, group, 与 subsession 对象有下面这些方法："
+msgstr "Player，group 与 subsession 对象有下面这些方法："
 
 #: ../../source/rounds.rst:60
 msgid "in_previous_rounds()"
@@ -159,13 +159,12 @@ msgstr ""
 
 # Chris comment: I moved the code out of the text into a separate block.
 #: ../../source/rounds.rst:74
-#, fuzzy
 msgid ""
 "``player.in_round(m)`` returns just the player in round ``m``. For example, "
 "to get the player's payoff in the previous round, you would do:"
 msgstr ""
-"``player.in_round(m)`` 返回第 ``m`` 的player对象。举例来说，可以通过 ``self."
-"player.in_round(self.round_number - 1).payoff`` 获得玩家前一轮的收益。"
+"``player.in_round(m)`` 返回第 ``m`` 轮的player对象。举例来说，要获得玩家前一轮"
+"的收益，可用："
 
 #: ../../source/rounds.rst:83
 msgid ""
@@ -183,9 +182,8 @@ msgstr ""
 "方法是没有意义的。"
 
 #: ../../source/rounds.rst:91
-#, fuzzy
 msgid "Participant fields"
-msgstr "participant.vars"
+msgstr "参与人字段"
 
 #: ../../source/rounds.rst:95
 msgid ""
@@ -195,6 +193,10 @@ msgid ""
 "``PARTICIPANT_FIELDS`` first. See `here <https://groups.google.com/g/otree/c/"
 "lbJg_ND5QkY>`__ for more info."
 msgstr ""
+"在2021年3月， ``participant.vars`` 有一种新的 **可选** 语法。你可以直接设置 "
+"``participant.my_field = 1`` 而不是设置 ``participant.vars['my_field'] = 1``。"
+"只需确保你提前定义了 ``PARTICIPANT_FIELDS`` 。参考 `这里 <https://groups."
+"google.com/g/otree/c/lbJg_ND5QkY>`__ 以获得更多信息。"
 
 #: ../../source/rounds.rst:101
 msgid ""
@@ -212,40 +214,41 @@ msgid ""
 "Go to settings and define ``PARTICIPANT_FIELDS``, which is a list of the "
 "names of fields you want to define on your participant."
 msgstr ""
+"设置并定义 ``PARTICIPANT_FIELDS``，它是一个列表，包含了你想要在参与人上定义的"
+"字段名称。"
 
 #: ../../source/rounds.rst:110
 msgid "Then in your code, you can get and set any type of data on these fields:"
-msgstr ""
+msgstr "在代码中，你可以取出或设置这些字段上的任何类型的数据："
 
 #: ../../source/rounds.rst:116
 msgid ""
 "(Internally, all participant fields are stored in a dict called ``participant."
 "vars``. ``participant.xyz`` is equivalent to ``participant.vars['xyz']``.)"
 msgstr ""
+"（在内部，所有参与人字段均存储在一个名为 ``participant.vars`` 的字典中。"
+"``participant.xyz`` 等价于 ``participant.vars['xyz']``。）"
 
 # vars -> fields
 # (although the part with str(participant.vars) is the same as before)
 #: ../../source/rounds.rst:119
-#, fuzzy
 msgid ""
 "Participant fields are not included in the Excel/CSV data export, or in the "
 "\"Data\" tab in the session admin. If you want that, you should either use :"
 "ref:`custom-export` or save ``str(participant.vars)`` into a "
 "``LongStringField``. (The same concept applies for session fields.)"
 msgstr ""
-"``participant.vars`` 不包括在Excel/CSV数据导出中，也不在会话admin界面的\"Data"
-"\"标签下。如果你需要这种数据，你应当使用 :ref:`custom-export` 或保存 "
-"``str(participant.vars)`` 到一个 ``LongStringField`` 中。（相同的概念适用于 "
-"``session.vars``。）"
+"参与人字段不包括在Excel/CSV数据导出中，也不在会话admin界面的\"Data\"标签下。如"
+"果你需要这种数据，你应当使用 :ref:`custom-export` 或保存 ``str(participant."
+"vars)`` 到一个 ``LongStringField`` 中。（相同的概念适用于会话字段。）"
 
 #: ../../source/rounds.rst:127
-#, fuzzy
 msgid "Session fields"
-msgstr "session.vars"
+msgstr "会话字段"
 
 #: ../../source/rounds.rst:131
 msgid "This is a new feature; see the note above about ``PARTICIPANT_FIELDS``."
-msgstr ""
+msgstr "这是一个新特性；参见上面的 ``PARTICIPANT_FIELDS``。"
 
 #: ../../source/rounds.rst:133
 msgid ""
@@ -254,6 +257,9 @@ msgid ""
 "``PARTICIPANT_FIELDS``. Internally, all session fields are stored in "
 "``session.vars``."
 msgstr ""
+"对于会话中所有参与人都相同的全局变量，可将其添加到 ``SESSION_FIELDS`` 中，这"
+"与 ``PARTICIPANT_FIELDS`` 用法相同。在内部，会话字段储存在 ``session.vars`` "
+"中。"
 
 #: ../../source/rounds.rst:138
 msgid "Variable number of rounds"
@@ -261,7 +267,7 @@ msgstr "可变轮数"
 
 #: ../../source/rounds.rst:140
 msgid "If you want a variable number of rounds, consider using :ref:`live`."
-msgstr "如果你想要可变的轮数，考虑使用 :ref:`live`."
+msgstr "如果你想要可变的轮数，考虑使用 :ref:`live`。"
 
 #: ../../source/rounds.rst:142
 msgid ""
@@ -273,5 +279,5 @@ msgid ""
 msgstr ""
 "作为替代方案，你可以将 ``num_rounds`` 设为一个较大的数，然后在应用中，有条件地"
 "隐藏 ``{{ next_button }}`` 元素，使得用户无法继续进行到下一页面，或者使用 :"
-"ref:`app_after_this_page`. 但是注意轮数较大（例如超过100）可能会导致性能问题，"
-"所以请仔细测试你的程序。"
+"ref:`app_after_this_page`。 但是注意轮数较大（例如超过100）可能会导致性能问"
+"题，所以请仔细测试你的程序。"
