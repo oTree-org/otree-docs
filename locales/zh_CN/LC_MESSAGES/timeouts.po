@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2021-05-24 14:05-0600\n"
+"PO-Revision-Date: 2021-06-01 13:03+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/timeouts.rst:4
 msgid "Timeouts"
@@ -33,7 +33,7 @@ msgstr "timeout_seconds"
 
 #: ../../source/timeouts.rst:14
 msgid "To set a time limit on your page, add ``timeout_seconds``:"
-msgstr "为你的页面设置一个时间限制，添加 ``timeout_seconds``:"
+msgstr "为了给你的页面设置一个时间限制，添加 ``timeout_seconds``:"
 
 #: ../../source/timeouts.rst:21
 msgid "After the time runs out, the page auto-submits."
@@ -54,7 +54,7 @@ msgstr ""
 msgid ""
 "If you need the timeout to be dynamically determined, use :ref:"
 "`get_timeout_seconds`."
-msgstr "如果你需要超时能够被动态决定，使用 :ref:`get_timeout_seconds`."
+msgstr "如果你需要超时能够被动态决定，使用 :ref:`get_timeout_seconds`。"
 
 #: ../../source/timeouts.rst:33
 msgid "timeout_happened"
@@ -74,7 +74,7 @@ msgid ""
 "can make the timeout depend on ``player``, ``player.session``, etc."
 msgstr ""
 "有一种更加灵活的替代 ``timeout_seconds`` 的方法，使得你可以让超时取决于 "
-"``player``, ``player.session``, 等等."
+"``player``，``player.session``，等等。"
 
 #: ../../source/timeouts.rst:56
 msgid "For example:"
@@ -85,7 +85,8 @@ msgid ""
 "Or, using a custom session config parameter (see :ref:"
 "`session_config_treatments`)."
 msgstr ""
-"或者使用定制的session config参数 (参见 :ref:`session_config_treatments`)."
+"或者使用定制的session config参数 (参见 :ref:"
+"`session_config_treatments`)。"
 
 #: ../../source/timeouts.rst:78
 msgid "Advanced techniques"
@@ -117,12 +118,11 @@ msgstr ""
 
 # method->function
 #: ../../source/timeouts.rst:94
-#, fuzzy
 msgid ""
 "If the ``error_message()`` function fails, then the whole form might be "
 "invalid, so the whole form will be discarded."
 msgstr ""
-"如果 ``error_message()`` 方法失败了，那么整个表单可能是非法的，故整个表单"
+"如果 ``error_message()`` 函数失败了，那么整个表单可能是非法的，故整个表单"
 "都会被舍弃。"
 
 #: ../../source/timeouts.rst:98
@@ -154,15 +154,14 @@ msgstr ""
 
 # "session.vars" -> "session field"
 #: ../../source/timeouts.rst:121
-#, fuzzy
 msgid ""
 "(You could also start the timer in ``after_all_players_arrive`` or "
 "``creating_session``, and it could be stored in a session field if it's "
 "the same for everyone in the session.)"
 msgstr ""
 "（你也可以在 ``after_all_players_arrive`` 或 ``creating_session`` 中启动"
-"计时器，并将到期时间存储在 ``session.vars`` 中，如果它对会话中的所有人都"
-"相同的话。）"
+"计时器，并将到期时间存储在 会话字段中，如果它对会话中的所有人都相同的"
+"话。）"
 
 #: ../../source/timeouts.rst:124
 msgid ""
@@ -230,17 +229,17 @@ msgid ""
 msgstr ""
 "oTree为 ``update.countdown`` 和 ``finish.countdown`` 设置了事件处理器，故"
 "如果你想要更改它们，你可以使用 ``off()`` 解除它们，并/或通过 ``on()`` 添"
-"加你自己的事件处理器。倒计时元素为 ``.otree-timer__time-left``."
+"加你自己的事件处理器。倒计时元素为 ``.otree-timer__time-left``。"
 
 #: ../../source/timeouts.rst:202
 msgid "For example, to hide the timer until there is only 10 seconds left,"
-msgstr "例如，隐藏计时器直到还剩10秒,"
+msgstr "例如，隐藏计时器直到还剩10秒，"
 
 #: ../../source/timeouts.rst:222
 msgid ""
 "To avoid copy-pasting this code on every page, put it in an includable "
 "template."
-msgstr ""
+msgstr "为了避免将此代码复制到每一个页面上，将其放在一个可包含的模板中。"
 
 #: ../../source/timeouts.rst:224
 msgid ""
