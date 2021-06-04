@@ -1,7 +1,7 @@
 .. _python_tutorial:
 
-Python tutorial
-===============
+About Python
+============
 
 Below is a tutorial with the basics of Python you need to know to use oTree.
 

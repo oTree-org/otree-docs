@@ -110,10 +110,6 @@ For example:
 
 .. code-block:: python
 
-    from . import pages
-    from otree.api import Bot, SubmissionMustFail
-
-
     class PlayerBot(Bot):
 
         cases = ['basic', 'min', 'max']
@@ -156,10 +152,6 @@ integers, or even dictionaries. Here is a trust game bot that uses dictionaries
 as cases.
 
 .. code-block:: python
-
-    from . import pages
-    from otree.api import Bot, SubmissionMustFail
-
 
     class PlayerBot(Bot):
 
@@ -244,8 +236,6 @@ even though that kind of code is encouraged elsewhere.
 Because if there is a ``yield`` in between, the data can be stale:
 
 .. code-block:: python
-
-    from otree.api import expect
 
     player = self.player
     expect(player.money_left, cu(10))
