@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-24 09:36-0600\n"
-"PO-Revision-Date: 2021-05-24 13:59-0600\n"
+"PO-Revision-Date: 2021-06-04 09:51+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/admin.rst:2
 msgid "Admin"
-msgstr "管理员（Admin）"
+msgstr "管理员"
 
 #: ../../source/admin.rst:4
 msgid ""
@@ -55,7 +55,7 @@ msgid ""
 "variable ``OTREE_AUTH_LEVEL`` to ``STUDY``."
 msgstr ""
 "如果你发起实验时想让访问者仅可通过所提供的开始链接进行游戏，将环境变量 "
-"``OTREE_AUTH_LEVEL`` 设为 ``STUDY``."
+"``OTREE_AUTH_LEVEL`` 设为 ``STUDY``。"
 
 #: ../../source/admin.rst:22
 msgid ""
@@ -64,7 +64,7 @@ msgid ""
 "``OTREE_AUTH_LEVEL`` to ``DEMO``."
 msgstr ""
 "将你的网站上线并设为公开demo模式，也就是说任何人都可以游玩你游戏的demo版本"
-"（但不能完全访问管理员界面），设置 ``OTREE_AUTH_LEVEL`` 为 ``DEMO``."
+"（但不能完全访问管理员界面），设置 ``OTREE_AUTH_LEVEL`` 为 ``DEMO``。"
 
 #: ../../source/admin.rst:27
 msgid ""
@@ -74,7 +74,7 @@ msgid ""
 msgstr ""
 "通常管理员的用户名是\"admin\"。你应当在环境变量 ``OTREE_ADMIN_PASSWORD`` 中设"
 "置你的密码（在Heroku中，登录到你的Heroku仪表盘，并将其定义为一个配置变量"
-"（config var））"
+"（config var））。"
 
 #: ../../source/admin.rst:31
 msgid ""
@@ -99,7 +99,7 @@ msgid ""
 "make a :ref:`room <rooms>`."
 msgstr ""
 "在使用oTree进行研究的多数情况下，设置URL的最好方法就是创建一个 :ref:`room "
-"<rooms>`."
+"<rooms>`。"
 
 #: ../../source/admin.rst:48
 msgid "Single-use links"
@@ -155,7 +155,6 @@ msgstr ""
 "``participant_label`` 参数来标识他们，比如通过名字，ID号码，电脑等。例如："
 
 #: ../../source/admin.rst:82
-#, fuzzy
 msgid ""
 "oTree will record this participant label. It will be used to identify that "
 "participant in the oTree admin interface and the payments page, etc. You can "
@@ -229,13 +228,12 @@ msgstr ""
 
 # Chris comment: it changed from a Subsession method to a function.
 #: ../../source/admin.rst:120
-#, fuzzy
 msgid ""
 "First, define a function ``vars_for_admin_report``. This works the same way "
 "as :ref:`vars_for_template`. For example:"
 msgstr ""
-"首先，在Subsesssion类中定义一个 ``vars_for_admin_report`` 方法。这与 :ref:"
-"`vars_for_template` 原理类似。例如："
+"首先，定义一个函数 ``vars_for_admin_report``。这与 :ref:`vars_for_template` "
+"原理类似。例如："
 
 #: ../../source/admin.rst:130
 msgid ""
@@ -253,17 +251,16 @@ msgstr "注意："
 msgid ""
 "``subsession``, ``session``, and ``Constants`` are passed to the template "
 "automatically."
-msgstr "``subsession``, ``session``, 与 ``Constants`` 会被自动传递给模板。"
+msgstr "``subsession``，``session`` 与 ``Constants`` 会被自动传递给模板。"
 
 # "extends doesn't exist anymore"
 #: ../../source/admin.rst:147
-#, fuzzy
 msgid ""
 "``admin_report.html`` does not need to use ``{{ block }}``. The above "
 "example is valid as the full contents of ``admin_report.html``."
 msgstr ""
-"``admin_report.html`` 不需要使用 ``{{ block }}`` 或 ``{% extends %}`` 等部"
-"分。上面的例子是完整有效的 ``admin_report.html`` 的内容。"
+"``admin_report.html`` 不需要使用 ``{{ block }}``。上面的例子包含了 "
+"``admin_report.html`` 完整有效的内容。"
 
 #: ../../source/admin.rst:150
 msgid ""
@@ -275,14 +272,13 @@ msgstr ""
 "\"Reports\" 选项卡。使用菜单选择应用与轮数，以查看特定子会话的报告。"
 
 #: ../../source/admin.rst:154
-#, fuzzy
 msgid ""
 "Tip: if you are displaying the same chart in the admin report and "
 "participant pages, you can reuse ``admin_report.html`` in the participant "
 "template with an ``{{ include }}``, and pass the variables like this:"
 msgstr ""
 "提示：如果你想在管理员报告与参与人页面中展示相同的图表，你可以在参与人模板中"
-"通过 ``{% include %}`` 复用 ``admin_report.html`` ，并像下面这样传递参数："
+"通过 ``{{ include }}`` 复用 ``admin_report.html`` ，并像下面这样传递参数："
 
 #: ../../source/admin.rst:169
 msgid "Export Data"
@@ -313,7 +309,6 @@ msgstr "自定义数据导出"
 
 # Chris comment: we no longer mention models.py
 #: ../../source/admin.rst:184
-#, fuzzy
 msgid ""
 "You can make your own custom data export for an app. In oTree Studio, go to "
 "the \"Player\" model and click on \"custom_export\" at the bottom. (If using "
@@ -322,9 +317,9 @@ msgid ""
 "data."
 msgstr ""
 "你可以在应用中自定义数据导出。在oTree Studio中，前往 \"Player\" 模块并点击底"
-"部的\"custom_export\"。（如果使用文本编辑器，在 ``models.py`` 的下方，而不是"
-"在类中，定义下面的函数。）参数 ``players`` 是数据库中所有玩家组成的QuerySet。"
-"使用 ``yield`` 来获取每一行数据。"
+"部的\"custom_export\"。（如果使用文本编辑器，定义下面的函数。）参数 "
+"``players`` 是数据库中所有玩家组成的queryset。使用 ``yield`` 来获取每一行数"
+"据。"
 
 #: ../../source/admin.rst:200
 msgid ""
@@ -346,9 +341,8 @@ msgstr ""
 "时，debug信息会被显示在屏幕的底部。"
 
 #: ../../source/admin.rst:211
-#, fuzzy
 msgid "Payments"
-msgstr "报酬页面"
+msgstr "报酬"
 
 #: ../../source/admin.rst:213
 msgid ""
@@ -357,10 +351,13 @@ msgid ""
 "participant finishes the session, and this will be displayed in various "
 "places such as the payments page."
 msgstr ""
+"如果你定义了一个名为 `finished` 的 :ref:`participant field "
+"<PARTICIPANT_FIELDS>`，那么你可以在参与人完成会话之后设置 ``participant."
+"finished = True``，这会在报酬页面等不同地方显示。"
 
 #: ../../source/admin.rst:220
 msgid "Chat between participants and experimenter"
-msgstr ""
+msgstr "实验者与参与人聊天"
 
 #: ../../source/admin.rst:222
 msgid ""
@@ -374,3 +371,10 @@ msgid ""
 "an example called \"chat with experimenter\" `here <https://www.otreehub.com/"
 "projects/otree-snippets/>`__."
 msgstr ""
+"为让参与人可以向你发送聊天信息，考虑使用类似 `Papercups <https://github.com/"
+"papercups-io/papercups/blob/master/README.md>`__ 的软件。点击\"Deploy to "
+"Heroku\"按钮一键部署你的Papercups服务器。填写必需的配置参数，余下可以不填。"
+"``BACKEND_URL`` 与 ``REACT_APP_URL`` 指的是你的Papercups站点，不是oTree站点。"
+"登录你的网站并复制HTML内嵌代码至一个可包含的模板，命名为 ``papercups.html``。"
+"`这里 <https://www.otreehub.com/projects/otree-snippets/>`__ 有一个名为"
+"\"chat with experimenter\"的例子。"
