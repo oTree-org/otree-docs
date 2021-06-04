@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-24 09:30-0600\n"
-"PO-Revision-Date: 2021-05-24 13:51-0600\n"
+"PO-Revision-Date: 2021-06-04 00:54+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/server/adhoc.rst:4
 msgid "Configure your computer to be a server (advanced)"
@@ -104,11 +104,11 @@ msgstr "运行服务器"
 
 #: ../../source/server/adhoc.rst:53
 msgid "Start the server with your IP address and port 8000, e.g. ``otree devserver 10.0.1.3:8000``."
-msgstr "使用你的IP地址和8000端口启动服务器，例如 ``otree devserver 10.0.1.3:8000``."
+msgstr "使用你的IP地址和8000端口启动服务器，例如 ``otree devserver 10.0.1.3:8000``。"
 
 #: ../../source/server/adhoc.rst:58
 msgid "We are just using ``devserver`` as a temporary step. Once you have these steps working, you should switch to using the production server ``otree prodserver``."
-msgstr "使用 ``devserver`` 仅为一个临时的步骤。一旦这些步骤正常工作，你应当转而使用生产服务器 ``otree prodserver``."
+msgstr "使用 ``devserver`` 仅为一个临时的步骤。一旦这些步骤正常工作，你应当转而使用生产服务器 ``otree prodserver``。"
 
 #: ../../source/server/adhoc.rst:62
 msgid "On the client device's browser, connect to the IP address followed by ``:8000``, e.g. ``10.0.1.3:8000`` and you should be able to load the oTree demo page."
@@ -149,7 +149,7 @@ msgstr "Heroku设置"
 
 #: ../../source/server/heroku.rst:20
 msgid "The recommended way to deploy to Heroku is to use `oTree Hub <https://www.otreehub.com/>`__, which automates your Heroku setup. It's free for public projects."
-msgstr "部署至Heroku推荐方法是使用 `oTree Hub <https://www.otreehub.com/>`__,这将自动完成Heroku的设置。这对于公共项目是免费的。"
+msgstr "部署至Heroku推荐方法是使用 `oTree Hub <https://www.otreehub.com/>`__，这将自动完成Heroku的设置。这对于公共项目是免费的。"
 
 #: ../../source/server/heroku.rst:25
 msgid "oTree Hub also offers error/performance monitoring and a Sentry service."
@@ -160,8 +160,8 @@ msgid ""
 "(The old instructions for deploying through the command line and git are `here <https://github.com/oTree-org/otree-docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/"
 "source/server/heroku.rst#heroku-setup-option-2>`__ However, you are more likely to run into issues this way and I am not able to provide much support.)"
 msgstr ""
-"（通过命令行和git进行部署的旧说明在 `here <https://github.com/oTree-org/otree-docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/source/server/heroku.rst#heroku-setup-"
-"option-2>`__ 然而，你很可能在使用这种方式时遇到问题并且我不会提供任何支持。）"
+"（通过命令行和git进行部署的旧说明在 `这里 <https://github.com/oTree-org/otree-docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/source/server/heroku.rst#heroku-setup-"
+"option-2>`__ 然而，你很可能在使用这种方式时遇到问题并且我无法提供很多支持。）"
 
 #: ../../source/server/heroku.rst:35
 msgid "Server performance"
@@ -213,8 +213,8 @@ msgid ""
 "concurrently, because these sessions have a high number of page requests per second, which can overload the server. Consider adapting these games to use :ref:`live`, "
 "which will result in much faster performance."
 msgstr ""
-"性能要求最高的场景是下面这些的组合(1) 多个轮次, (2) 玩家在每个页面上仅花费几秒时间, (3) 多个玩家同时进行游戏，因为这些场景会导致每秒页面请求数很高，这会使服务器过载。"
-"考虑使用 :ref:`live` 改写这些游戏，这会使得性能大幅提高。"
+"性能要求最高的场景是下面这些的组合 (1) 多个轮次， (2) 玩家在每个页面上仅花费几秒时间， (3) 多个玩家同时进行游戏，因为这些场景会导致每秒页面请求数很高，这会使服务器过"
+"载。考虑使用 :ref:`live` 改写这些游戏，这会使得性能大幅提高。"
 
 #: ../../source/server/intro.rst:4
 msgid "Server setup"
@@ -329,7 +329,7 @@ msgstr "设置环境变量"
 
 #: ../../source/server/server-windows.rst:47
 msgid "You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and ``OTREE_AUTH_LEVEL``."
-msgstr "你应当设置 ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, 与 ``OTREE_AUTH_LEVEL``."
+msgstr "你应当设置 ``OTREE_ADMIN_PASSWORD``，``OTREE_PRODUCTION`` 与 ``OTREE_AUTH_LEVEL``。"
 
 #: ../../source/server/server-windows.rst:50
 msgid "Allow other computers to connect"
@@ -337,7 +337,7 @@ msgstr "允许其他计算机连接"
 
 #: ../../source/server/server-windows.rst:52
 msgid "See instructions :ref:`here <server-adhoc>`."
-msgstr "参考 :ref:`这里 <server-adhoc>`."
+msgstr "参考 :ref:`这里 <server-adhoc>`。"
 
 #: ../../source/server/ubuntu.rst:4
 msgid "Ubuntu Linux Server"
@@ -414,8 +414,8 @@ msgid ""
 "If you're not using a reverse proxy like Nginx or Apache, you probably want to run oTree directly on port 80. This requires superuser permission, so let's use sudo, "
 "but add some extra args to preserve environment variables like ``PATH``, ``DATABASE_URL``, etc::"
 msgstr ""
-"如果你没有使用反向代理如Nginx 或 Apache，你可能想直接将oTree运行在80端口上。这需要超级管理员权限，所以要使用sudo，但需添加一下额外的参数来保存环境变量如 ``PATH``, "
-"``DATABASE_URL``, 等等:"
+"如果你没有使用反向代理如Nginx 或 Apache，你可能想直接将oTree运行在80端口上。这需要超级管理员权限，所以要使用sudo，但需添加一下额外的参数来保存环境变量如 ``PATH``，"
+"``DATABASE_URL``，等等:"
 
 #: ../../source/server/ubuntu.rst:78
 msgid "Try again to open your browser; this time, you don't need to append :80 to the URL, because that is the default HTTP port."
@@ -423,7 +423,7 @@ msgstr "再打开你的浏览器；这一次，你无需在URL后添加 :80 ，�
 
 #: ../../source/server/ubuntu.rst:81
 msgid "Unlike ``devserver``, ``prodserver`` does not restart automatically when your files are changed."
-msgstr "区别于 ``devserver``, ``prodserver`` 不会在你的文件改变时自动重启。"
+msgstr "区别于 ``devserver``，``prodserver`` 不会在你的文件改变时自动重启。"
 
 #: ../../source/server/ubuntu.rst:85
 msgid "Set remaining environment variables"
@@ -441,7 +441,7 @@ msgstr "(可选) 进程控制系统"
 msgid ""
 "Once the server is working as described above, it's a good practice to use a process control system like Supervisord or Circus. This will restart your processes in "
 "case they crash, keep it running if you log out, etc."
-msgstr "一旦服务器如上正常工作，使用如Supervisord 或 Circus这样的进程管理系统是一个好的实践。这会自动重启你的进程无论它是如何崩溃的，并在你登出时保持运行，等等。"
+msgstr "一旦服务器如上正常工作，使用如 Supervisord 或 Circus 这样的进程管理系统是一个好的实践。这会自动重启你的进程无论它是如何崩溃的，并在你登出时保持运行，等等。"
 
 #: ../../source/server/ubuntu.rst:103
 msgid "Circus"
@@ -471,7 +471,7 @@ msgstr "(可选) Apache, Nginx, 等等"
 msgid ""
 "You cannot use Apache or Nginx as your primary web server, because oTree must be run with an ASGI server. However, you still might want to use Apache/Nginx as a "
 "reverse proxy, for the following reasons:"
-msgstr "你不能使用Apache 或 Nginx作为你的首选web服务器，因为oTree必须使用ASGI服务器运行。然而，你仍可以使用Apache/Nginx作为反向代理，出于下面这些原因："
+msgstr "你不能使用 Apache 或 Nginx 作为你的首选web服务器，因为oTree必须使用ASGI服务器运行。然而，你仍可以使用Apache/Nginx作为反向代理，出于下面这些原因："
 
 #: ../../source/server/ubuntu.rst:134
 msgid "You are trying to optimize serving of static files (though oTree uses Whitenoise, which is already fairly efficient)"
@@ -495,13 +495,10 @@ msgstr "故障排除"
 
 # no more redis
 #: ../../source/server/ubuntu.rst:145
-#, fuzzy
 msgid ""
 "If you get strange behavior, such as random changes each time the page reloads, it might be caused by another oTree instance that didn't shut down. Try stopping oTree "
 "and reload again."
-msgstr ""
-"如果你遇到了奇怪的程序行为，如每次页面重载时会随机变化，这可能是另一个未被关闭的oTree实例导致的。试着停止oTree并再一次重载。并请确保没有在两个oTree实例间共享Postgres "
-"或 Redis数据库。"
+msgstr "如果你遇到了奇怪的程序行为，如每次页面重载时会随机变化，这可能是另一个未被关闭的oTree实例导致的。试着停止oTree并再一次重载。"
 
 #: ../../source/server/ubuntu.rst:151
 msgid "Sharing a server with other oTree users"
@@ -527,7 +524,7 @@ msgstr "创建一个不同的Postgres数据库，如之前所述，并将此设�
 
 #: ../../source/server/ubuntu.rst:165
 msgid "Once these steps are done, the second user can push code to the server, then run ``otree resetdb``."
-msgstr "一旦完成这些步骤，第二位用户就可以将代码推送至服务器，并运行 ``otree resetdb``."
+msgstr "一旦完成这些步骤，第二位用户就可以将代码推送至服务器，并运行 ``otree resetdb``。"
 
 #: ../../source/server/ubuntu.rst:168
 msgid ""
@@ -535,4 +532,4 @@ msgid ""
 "However, if multiple people need to run experiments at the same time, then you would need to run the server on multiple ports, e.g. ``8000``, ``8001``, etc."
 msgstr ""
 "如果不需要多人同时运行实验，那么每位用户可以轮流将服务器运行在80端口上，使用 ``otree prodserver 80`` 命令。然而，如果多人需要同时运行实验，那么你需要将服务器运行在不同"
-"的端口上，例如 ``8000``, ``8001``, 等等."
+"的端口上，例如 ``8000``，``8001``，等等。"
