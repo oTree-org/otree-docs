@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2021-05-24 14:13-0600\n"
+"PO-Revision-Date: 2021-06-05 23:35+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../source/currency.rst:4
 msgid "Currency"
@@ -42,6 +42,10 @@ msgid ""
 "$0.30`` or ``0,30 €``, etc., depending on your ``REAL_WORLD_CURRENCY_CODE`` "
 "and ``LANGUAGE_CODE`` settings."
 msgstr ""
+"你可以使用 ``cu(42)`` 来表示“42单位货币”。它就像一个数字一样（例如 ``cu(0.1) "
+"+ cu(0.2) == cu(0.3)``）。好处是当展示给用户时，它会自动格式化为 ``$0.30`` "
+"或 ``0,30 €``，等等。这取决于你的 ``REAL_WORLD_CURRENCY_CODE`` 与 "
+"``LANGUAGE_CODE`` 设置。"
 
 #: ../../source/currency.rst:20
 msgid ""
@@ -49,6 +53,9 @@ msgid ""
 "currencies. Code that already uses ``c()`` will continue to work. More info "
 "`here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__."
 msgstr ""
+"``cu()`` 在oTree 5中新引入。之前使用 ``c()`` 来表示货币。使用 ``c()`` 的代码"
+"会继续正常工作。更多信息在 `这里 <https://groups.google.com/g/otree/c/"
+"Bwv67asPIlo>`__。"
 
 #: ../../source/currency.rst:24
 msgid "Use ``CurrencyField`` to store currencies in the database. For example:"
@@ -64,7 +71,7 @@ msgid ""
 "cu`` filter. For example, ``{{ 20|cu }}`` displays as ``20 points``."
 msgstr ""
 "在模板中，你应当使用 ``|cu`` 过滤器而不是 ``cu()`` 函数。举例来说， ``{{ 20|"
-"cu }}`` 会显示为 ``20 points``."
+"cu }}`` 会显示为 ``20 points``。"
 
 #: ../../source/currency.rst:48
 msgid "payoffs"
@@ -104,7 +111,7 @@ msgid ""
 "points`` (or ``10 puntos``, etc.)"
 msgstr ""
 "你可以设置 ``USE_POINTS = True``，那么货币值就会使用点数而不是美元/欧元/等"
-"等。举例来说， ``cu(10)`` 会被显示为 ``10 points`` （或者 ``10 puntos``, 诸如"
+"等。举例来说， ``cu(10)`` 会被显示为 ``10 points`` （或者 ``10 puntos``，诸如"
 "此类）"
 
 #: ../../source/currency.rst:70
@@ -113,7 +120,7 @@ msgid ""
 "``real_world_currency_per_point`` entry to your session config."
 msgstr ""
 "你可以通过在你的session config中增加一个 ``real_world_currency_per_point`` 条"
-"目来决定到实际货币的转化率。"
+"目来决定与实际货币的兑换比例。"
 
 #: ../../source/currency.rst:74
 msgid "Converting points to real world currency"
@@ -133,11 +140,11 @@ msgstr "（ ``session`` 是必须的，因为不同的会话会有不同的转�
 
 #: ../../source/currency.rst:87
 msgid "Decimal places"
-msgstr "小数点数位"
+msgstr "小数位数"
 
 #: ../../source/currency.rst:89
 msgid "Money amounts are displayed with 2 decimal places."
-msgstr "钱数使用小数点后两位展示。"
+msgstr "钱数使用两位小数展示。"
 
 #: ../../source/currency.rst:91
 msgid ""
@@ -148,7 +155,7 @@ msgid ""
 msgstr ""
 "从另一方面说，点数都是整数。这意味着数值会被四舍五入为整数，如 ``10`` 除以 "
 "``3`` 是 ``3`` 。所以，我们推荐使用足够大数量级的点数，这样就不用担心舍入的错"
-"误。举例来说，将某个游戏的捐赠设为1000点，而不是100."
+"误。举例来说，将某个游戏的捐赠设为1000点，而不是100。"
 
 #~ msgid ""
 #~ "In your Python code, you can indicate a currency amount with ``c()``, e."
