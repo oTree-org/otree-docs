@@ -6,7 +6,7 @@ Live pages
 Live pages communicate with the server continuously
 and update in real time, enabling continuous time games.
 Live pages are a great fit for games with lots of back-and-forth interaction
-between users, and for single-player games with quick iteration.
+between users.
 
 There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-demos/>`__.
 
