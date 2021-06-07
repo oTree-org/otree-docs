@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-19 17:05-0600\n"
-"PO-Revision-Date: 2021-05-24 10:09-0600\n"
+"PO-Revision-Date: 2021-06-07 11:52+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../source/misc/advanced.rst:2
 msgid "Advanced features"
@@ -29,7 +29,7 @@ msgstr "这些高级特性大多数在oTree Studio中不被支持。"
 
 #: ../../source/misc/advanced.rst:9
 msgid "ExtraModel"
-msgstr ""
+msgstr "附加模型"
 
 #: ../../source/misc/advanced.rst:11
 msgid ""
@@ -37,41 +37,44 @@ msgid ""
 "player. For example, a list of bids, or a list of stimuli and reaction times. They are frequently "
 "used together with :ref:`live`."
 msgstr ""
+"当单个玩家就需要存储几十上百个数据点时，附加模型非常有用。例如存在一系列出价，刺激与反馈时。这常"
+"与 :ref:`live` 一起使用。"
 
 #: ../../source/misc/advanced.rst:15
 msgid ""
 "There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-demos/>`__."
-msgstr ""
+msgstr "`这里 <https://www.otreehub.com/projects/otree-more-demos/>`__ 有很多例子。"
 
 #: ../../source/misc/advanced.rst:17
 msgid "An ExtraModel should link to another model:"
-msgstr ""
+msgstr "一个附加模型应当链接到另一个模型上："
 
 #: ../../source/misc/advanced.rst:25
 msgid "Each time the user makes a bid, you store it in the database:"
-msgstr ""
+msgstr "每当用户出价时，将其存到数据库中："
 
 #: ../../source/misc/advanced.rst:31
 msgid "Later, you can retrieve the list of a player's bids:"
-msgstr ""
+msgstr "之后，你就可以提取出玩家出价的列表："
 
 #: ../../source/misc/advanced.rst:37
 msgid "An ExtraModel can have multiple links:"
-msgstr ""
+msgstr "一个附加模型可以有多个链接："
 
 #: ../../source/misc/advanced.rst:48
 msgid "Then you can query it in various ways:"
-msgstr ""
+msgstr "此时你就可以以多种方式查询："
 
 #: ../../source/misc/advanced.rst:55
 msgid "For more complex filters and sorting, you should use list operations:"
-msgstr ""
+msgstr "对于更加复杂的过滤与排序，你应当使用列表操作："
 
 #: ../../source/misc/advanced.rst:61
 msgid ""
 "See the example psychology games such as the Stroop task, which show how to generate ExtraModel "
 "data from each row of a CSV spreadsheet."
 msgstr ""
+"参考心理学实验的例子，如斯特鲁普测试，它们展示了如何从CSV表格中的每一行中生成附加模型的数据。"
 
 #: ../../source/misc/advanced.rst:65
 msgid "Templates"
@@ -98,6 +101,8 @@ msgid ""
 "To include the same JS/CSS in all pages of an app, either put it in a ref:`static file "
 "<staticfiles>` or put it in an includable template."
 msgstr ""
+"为将相同的JS/CSS包含在一个应用的所有页面中，可将其放入一个 ref:`static file <staticfiles>` 中，也"
+"可将其放入一个可包含的模板。"
 
 #: ../../source/misc/advanced.rst:90
 msgid "Static files"
@@ -223,13 +228,12 @@ msgstr "读入CSV或其他文件"
 
 # Chris comment: I removed the mention of models.py.
 #: ../../source/misc/advanced.rst:194
-#, fuzzy
 msgid ""
 "Store yourfile.csv in your app folder. Then put this code anywhere you want to read the file (in "
 "a function or in Constants):"
 msgstr ""
-"将yourfile.csv存储在你的应用中，与models.py放在一起。然后将下面的代码放在你想要读文件的任何地方"
-"（在函数中或者常量中）："
+"将yourfile.csv存储在你的应用文件夹中。然后将下面的代码放在你想要读文件的任何地方（在函数中或者常量"
+"中）："
 
 #: ../../source/misc/advanced.rst:204
 msgid ""
@@ -283,7 +287,7 @@ msgstr "命令行浏览器bots"
 
 #: ../../source/misc/bots_advanced.rst:44
 msgid "You can launch browser bots from the command line, using ``otree browser_bots``."
-msgstr "你可以在命令行启动bots，通过使用 ``otree browser_bots``."
+msgstr "你可以在命令行启动bots，通过使用 ``otree browser_bots``。"
 
 #: ../../source/misc/bots_advanced.rst:46
 msgid ""
@@ -384,9 +388,9 @@ msgid ""
 "``cases``. Then, oTree will execute the bot 3 times, once for each test case. Each time, a "
 "different value from ``cases`` will be assigned to ``self.case`` in the bot."
 msgstr ""
-"你可以分别将3个测试用例命名为\"basic\", \"min\", 和 \"max\"，并将他们放在 ``cases`` 中。然后，"
-"oTree会自动执行bot3次，每次一个测试用例。每一次执行时， ``cases`` 中的不同值都会在bot中被赋值给 "
-"``self.case``。"
+"你可以分别将3个测试用例命名为\"basic\"，\"min\" 和 \"max\"，并将他们放在 ``cases`` 中。然后，oTree"
+"会自动执行bot3次，每次一个测试用例。每一次执行时， ``cases`` 中的不同值都会在bot中被赋值给 ``self."
+"case``。"
 
 #: ../../source/misc/bots_advanced.rst:109
 msgid "For example:"
@@ -420,7 +424,7 @@ msgstr ""
 #: ../../source/misc/bots_advanced.rst:201
 msgid ""
 "For example, let's say we a submit a valid ``age``, but an invalid ``weight`` and ``height``:"
-msgstr "例如，假定我们提交了一个合法的 ``age``, 但同时提交了非法的 ``weight`` 与 ``height``:"
+msgstr "例如，假定我们提交了一个合法的 ``age``，但同时提交了非法的 ``weight`` 与 ``height``:"
 
 #: ../../source/misc/bots_advanced.rst:215
 msgid ""
@@ -440,7 +444,7 @@ msgid ""
 "``['__all__']``."
 msgstr ""
 "如果 :ref:`error_message <error_message>` 返回一个错误，那么 ``error_fields`` 将会是 "
-"``['__all__']``."
+"``['__all__']``。"
 
 #: ../../source/misc/bots_advanced.rst:238
 msgid "Misc note"
@@ -451,7 +455,7 @@ msgid ""
 "In bots, it is risky to assign ``player = self.player`` (or ``participant = self.participant``, "
 "etc), even though that kind of code is encouraged elsewhere."
 msgstr ""
-"在bots中，赋值语句 ``player = self.player`` (或 ``participant = self.participant``, 等等)是有风险"
+"在bots中，赋值语句 ``player = self.player`` (或 ``participant = self.participant``，等等)是有风险"
 "的，即使这种代码在别处是被鼓励的。"
 
 #: ../../source/misc/bots_advanced.rst:244
@@ -466,9 +470,8 @@ msgstr ""
 "直接使用 ``self.player.money_left`` 是安全的，因为 ``self.player`` 会从数据库中获取最新的数据。"
 
 #: ../../source/misc/bots_advanced.rst:261
-#, fuzzy
 msgid "Live pages"
-msgstr "等待页面"
+msgstr "实时页面"
 
 #: ../../source/misc/bots_advanced.rst:263
 msgid ""
@@ -480,28 +483,26 @@ msgid ""
 msgstr ""
 "为使用机器人测试实时方法，在 ``tests.py`` 中定义顶级函数 ``call_live_method`` 。（在oTree Studio中"
 "不可用。）此函数可模拟一系列对你的 ``live_method`` 的调用。参数 ``method`` 模拟你的玩家模型中的实"
-"时方法。例如， ``method(3, 'hello')`` 调用了玩家3上的实时方法，并且 ``data`` 设置为 ``'hello'``.例"
-"如："
+"时方法。例如， ``method(3, 'hello')`` 调用了玩家3上的实时方法，并且 ``data`` 设置为 ``'hello'``。"
+"例如："
 
 #: ../../source/misc/bots_advanced.rst:279
 msgid "``kwargs`` contains at least the following parameters."
 msgstr "``kwargs`` 至少包含下列参数。"
 
 #: ../../source/misc/bots_advanced.rst:281
-#, fuzzy
 msgid "``case`` as described in :ref:`cases`."
-msgstr "设置 ``OTREE_REST_KEY`` 环境变量如 :ref:`rest` 中所述。"
+msgstr "``case`` 如 :ref:`cases` 中所述。"
 
 #: ../../source/misc/bots_advanced.rst:282
 msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
-msgstr ""
+msgstr "``page_class``: 当前页面类，例如 ``pages.MyPage``。"
 
 #: ../../source/misc/bots_advanced.rst:283
 msgid "``round_number``"
-msgstr ""
+msgstr "``round_number``"
 
 #: ../../source/misc/bots_advanced.rst:285
-#, fuzzy
 msgid ""
 "``call_live_method`` will be automatically executed when the fastest bot in the group arrives on "
 "a page with ``live_method``. (Other bots may be on previous pages at that point, unless you "
@@ -519,11 +520,10 @@ msgid "REST"
 msgstr "REST"
 
 #: ../../source/misc/rest_api.rst:6
-#, fuzzy
 msgid ""
 "oTree has a REST API that enables external programs (such as other websites) to communicate with "
 "oTree."
-msgstr "oTree有一个REST API使得外部程序（如其他网站）可与oTree通信，具体有："
+msgstr "oTree有一个REST API使得外部程序（如其他网站）可与oTree通信。"
 
 #: ../../source/misc/rest_api.rst:9
 msgid ""
@@ -533,15 +533,15 @@ msgstr "REST API是一个在你的服务器上被设计用来被其他程序使�
 
 #: ../../source/misc/rest_api.rst:12
 msgid "One project that uses the REST API a lot is `oTree HR <https://github.com/oTree-org/HR>`__."
-msgstr ""
+msgstr "一个使用了很多REST API的项目是 `oTree HR <https://github.com/oTree-org/HR>`__。"
 
 #: ../../source/misc/rest_api.rst:16
 msgid "As of March 2021, there have been some breaking changes to the REST API."
-msgstr ""
+msgstr "在2021年3月，REST API有一些重大改动。"
 
 #: ../../source/misc/rest_api.rst:21
 msgid "Setup"
-msgstr ""
+msgstr "开始"
 
 #: ../../source/misc/rest_api.rst:25
 msgid "*\"Where should I put this code?\"*"
@@ -561,19 +561,17 @@ msgstr ""
 "cURL。"
 
 #: ../../source/misc/rest_api.rst:62
-#, fuzzy
 msgid "\"oTree version\" endpoint"
-msgstr "\"Create sessions\" REST endpoint"
+msgstr "\"oTree version\" endpoint"
 
 #: ../../source/misc/rest_api.rst:66 ../../source/misc/rest_api.rst:83
 #: ../../source/misc/rest_api.rst:102
 msgid "New beta feature as of March 2021."
-msgstr ""
+msgstr "在2021年3月新引入的beta特性。"
 
 #: ../../source/misc/rest_api.rst:68
-#, fuzzy
 msgid "GET URL: ``/api/otree_version/``"
-msgstr "POST URL: ``/api/sessions/``"
+msgstr "GET URL: ``/api/otree_version/``"
 
 #: ../../source/misc/rest_api.rst:71 ../../source/misc/rest_api.rst:90
 #: ../../source/misc/rest_api.rst:107 ../../source/misc/rest_api.rst:140
@@ -583,36 +581,33 @@ msgid "Example"
 msgstr "例子"
 
 #: ../../source/misc/rest_api.rst:79
-#, fuzzy
 msgid "\"Session configs\" endpoint"
-msgstr "\"Session vars\" REST endpoint"
+msgstr "\"Session configs\" endpoint"
 
 #: ../../source/misc/rest_api.rst:85
-#, fuzzy
 msgid "GET URL: ``/api/session_configs/``"
-msgstr "POST URL: ``/api/sessions/``"
+msgstr "GET URL: ``/api/session_configs/``"
 
 #: ../../source/misc/rest_api.rst:87
 msgid "Returns the list of all your session configs, as dicts with all their properties."
-msgstr ""
+msgstr "返回所有session config组成的列表，使用字典存储它们的所有属性。"
 
 #: ../../source/misc/rest_api.rst:98
 msgid "\"Rooms\" endpoint"
-msgstr ""
+msgstr "\"Rooms\" endpoint"
 
 #: ../../source/misc/rest_api.rst:104
 msgid "GET URL: ``/api/rooms/``"
-msgstr ""
+msgstr "GET URL: ``/api/rooms/``"
 
 #: ../../source/misc/rest_api.rst:114
 msgid ""
 "Example output (note it includes ``session_code`` if there is currently a session in the room):"
-msgstr ""
+msgstr "示例输出（注意它包含了 ``session_code``，如果房间中当前存在一个会话的话）："
 
 #: ../../source/misc/rest_api.rst:126
-#, fuzzy
 msgid "\"Create sessions\" endpoint"
-msgstr "\"Create sessions\" REST endpoint"
+msgstr "\"Create sessions\" endpoint"
 
 #: ../../source/misc/rest_api.rst:128
 msgid "POST URL: ``/api/sessions/``"
@@ -659,47 +654,46 @@ msgid ""
 "in :ref:`edit_config`."
 msgstr ""
 "``modified_session_config_fields``: 一个可选的包含session config参数的字典，详见 :ref:"
-"`edit_config`."
+"`edit_config`。"
 
 #: ../../source/misc/rest_api.rst:161
 msgid "``room_name`` if you want to create the session in a room."
 msgstr "``room_name`` 如果你想在房间中创建session。"
 
 #: ../../source/misc/rest_api.rst:166
-#, fuzzy
 msgid "\"Get session data\" endpoint"
-msgstr "\"Create sessions\" REST endpoint"
+msgstr "\"Get session data\" endpoint"
 
 #: ../../source/misc/rest_api.rst:170
 msgid "New feature as of March 2021. In beta until we get sufficient user feedback."
-msgstr ""
+msgstr "2021年3月引入的新特性。将处于测试阶段直到获取足够的用户反馈。"
 
 #: ../../source/misc/rest_api.rst:173
-#, fuzzy
 msgid "GET URL: ``/api/sessions/{code}``"
-msgstr "POST URL: ``/api/sessions/``"
+msgstr "GET URL: ``/api/sessions/{code}``"
 
 #: ../../source/misc/rest_api.rst:175
 msgid ""
 "This API retrieves data about a session and its participants. If ``participant_labels`` is "
 "omitted, it returns data for all participants."
 msgstr ""
+"此API将取回关于会话及其参与人的数据。如果略去 ``participant_labels``，那么将返回所有参与人的数据。"
 
 #: ../../source/misc/rest_api.rst:189
-#, fuzzy
 msgid "\"Session vars\" endpoint"
-msgstr "\"Session vars\" REST endpoint"
+msgstr "\"Session vars\" endpoint"
 
 #: ../../source/misc/rest_api.rst:193
 msgid ""
 "As of April 2021, this endpoint requires you to pass a session code as a path parameter. If the "
 "session is in a room, you can get the session code with the ``rooms`` endpoint."
 msgstr ""
+"在2021年4月，这一路径要求你传入会话代码作为路径参数。如果会话在房间中的话，你可以通过 ``rooms`` 路"
+"径获得会话代码。"
 
 #: ../../source/misc/rest_api.rst:196
-#, fuzzy
 msgid "POST URL: ``/api/session_vars/{session_code}``"
-msgstr "POST URL: ``/api/session_vars/``"
+msgstr "POST URL: ``/api/session_vars/{session_code}``"
 
 #: ../../source/misc/rest_api.rst:198
 msgid ""
@@ -711,23 +705,20 @@ msgstr ""
 "通过运行下面的脚本来输入结果。"
 
 #: ../../source/misc/rest_api.rst:212
-#, fuzzy
 msgid "\"Participant vars\" endpoint"
-msgstr "\"Participant vars\" REST endpoint"
+msgstr "\"Participant vars\" endpoint"
 
 #: ../../source/misc/rest_api.rst:214
-#, fuzzy
 msgid "POST URL: ``/api/participant_vars/{participant_code}``"
-msgstr "POST URL: ``/api/participant_vars/``"
+msgstr "POST URL: ``/api/participant_vars/{participant_code}``"
 
 #: ../../source/misc/rest_api.rst:216
 msgid "Pass information about a participant to oTree, via web services / webhooks."
-msgstr ""
+msgstr "通过 web services / webhooks 将参与人的信息传递给oTree。"
 
 #: ../../source/misc/rest_api.rst:228
-#, fuzzy
 msgid "\"Participant vars for room\" endpoint"
-msgstr "\"Participant vars\" REST endpoint"
+msgstr "\"Participant vars for room\" endpoint"
 
 #: ../../source/misc/rest_api.rst:230
 msgid "POST URL: ``/api/participant_vars/``"
@@ -739,6 +730,8 @@ msgid ""
 "the participant's code. Instead, you identify the participant by the room name and their "
 "participant label."
 msgstr ""
+"类似于\"participant vars\"路径，但这一API可在你不知道参与人代码时使用。你可以通过房间的名字以及参"
+"与人标签来指定参与人。"
 
 #: ../../source/misc/rest_api.rst:252
 msgid "``room_name`` (required)"
@@ -757,13 +750,12 @@ msgstr ""
 "嵌套的字典/列表。"
 
 #: ../../source/misc/rest_api.rst:257
-#, fuzzy
 msgid ""
 "You will need to give participants a link with a ``participant_label``, although this does not "
 "need to come from a ``participant_label_file``."
 msgstr ""
-"此特性要求你必须使用房间。参与人被房间名与参与人标签的组合唯一地确定。故你需要给参与人一个带 "
-"``participant_label`` 的链接，尽管它不必包含在 ``participant_label_file`` 中。"
+"你需要给参与人一个带 ``participant_label`` 的链接，尽管它不必包含在 ``participant_label_file`` "
+"中。"
 
 #: ../../source/misc/rest_api.rst:261
 msgid "Authentication"
@@ -782,11 +774,12 @@ msgstr ""
 "在服务器上创建一个环境变量（即 Heroku config var） ``OTREE_REST_KEY`` 。将其设置为某个秘密值。"
 
 #: ../../source/misc/rest_api.rst:269
-#, fuzzy
 msgid ""
 "When you make a request, add that key as an HTTP header called ``otree-rest-key``. If following "
 "the :ref:`setup example <rest-setup>` above, you would set the ``REST_KEY`` variable."
-msgstr "在发送请求时，在HTTP header里将其添加为 ``otree-rest-key``。例如："
+msgstr ""
+"在发送请求时，在HTTP header里将其添加为 ``otree-rest-key``。如果按照上面的 :ref:`例子 <rest-"
+"setup>` ，你应当设置 ``REST_KEY`` 变量。"
 
 #: ../../source/misc/rest_api.rst:273
 msgid "Demo & testing"
@@ -899,11 +892,10 @@ msgid ""
 msgstr "这些字段都显示在单独的页面上吗？如果是的，考虑将其转换为一个仅有一个字段的10轮游戏。"
 
 #: ../../source/misc/tips_and_tricks.rst:89
-#, fuzzy
 msgid ""
 "If that's not possible, then you can reduce the amount of repeated code by defining a function "
 "that returns a field:"
-msgstr "如果上述均不可行，你可以通过定义一个返回字段的函数的方式减少重复代码的数量："
+msgstr "如果上述方法不可行，你可以通过定义一个返回字段的函数来减少重复代码的数量："
 
 #: ../../source/misc/tips_and_tricks.rst:110
 msgid "Prevent duplicate pages by using multiple rounds"
@@ -922,18 +914,16 @@ msgid "Avoid duplicated validation methods"
 msgstr "避免重复的验证方法"
 
 #: ../../source/misc/tips_and_tricks.rst:136
-#, fuzzy
 msgid ""
 "If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` methods, you can "
 "replace them with a single :ref:`error_message <error_message>` function. For example:"
 msgstr ""
 "如果你有多个重复的 :ref:`FIELD_error_message <FOO_error_message>` 方法，你可以使用一个 :ref:"
-"`error_message <error_message>` 来替换它。例如："
+"`error_message <error_message>` 函数来替换它们。例如："
 
 #: ../../source/misc/tips_and_tricks.rst:158
-#, fuzzy
 msgid "You can instead define this function on your page:"
-msgstr "你可以在你的页面中（不是Player类中）定义一个方法来替换："
+msgstr "你可以在你的页面中定义一个函数来替换："
 
 #: ../../source/misc/tips_and_tricks.rst:179
 msgid ""
@@ -942,9 +932,8 @@ msgid ""
 msgstr "（通常 ``error_message`` 被用来返回某一错误信息字符串，但你也可以返回一个字典。）"
 
 #: ../../source/misc/tips_and_tricks.rst:184
-#, fuzzy
 msgid "Avoid duplicated page functions"
-msgstr "避免重复的验证方法"
+msgstr "避免重复的页面函数"
 
 #: ../../source/misc/tips_and_tricks.rst:186
 msgid ""
@@ -952,18 +941,20 @@ msgid ""
 "handy way to share the same function across multiple pages. For example, let's say many pages "
 "need to have these 2 functions:"
 msgstr ""
+"任何页面函数均可被移除页面类而变为顶层函数。这是一种在多个页面之间共享函数的便利的方法。例如，假定"
+"许多页面都需要这2个函数："
 
 #: ../../source/misc/tips_and_tricks.rst:205
 msgid ""
 "You can move those functions before all the pages (remove the ``@staticmethod``), and then "
 "reference them wherever they need to be used:"
-msgstr ""
+msgstr "你可以将这些函数移至所有页面之前（移除 ``@staticmethod``），并在需要使用时引用它们："
 
 #: ../../source/misc/tips_and_tricks.rst:232
 msgid ""
 "(In the sample games, ``after_all_players_arrive`` and ``live_method`` are frequently defined in "
 "this manner.)"
-msgstr ""
+msgstr "（在样例游戏中， ``after_all_players_arrive`` 与 ``live_method`` 经常以这种方式被定义。）"
 
 #: ../../source/misc/tips_and_tricks.rst:235
 msgid "Improving code performance"
