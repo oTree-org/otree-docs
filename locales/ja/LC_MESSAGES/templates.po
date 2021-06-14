@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-23 16:12+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,112 +69,120 @@ msgstr ""
 msgid "Conditions (\"if\")"
 msgstr ""
 
-#: ../../source/templates.rst:35
+#: ../../source/templates.rst:33
+#, python-format
+msgid ""
+"oTree 3.x used two types of tags in templates: ``{{ }}`` and ``{% %}``. "
+"Starting in oTree 5, however, you can forget about ``{% %}`` and just use"
+" ``{{ }}`` everywhere if you want. The old format still works."
+msgstr ""
+
+#: ../../source/templates.rst:41
 msgid "With an 'else':"
 msgstr ""
 
-#: ../../source/templates.rst:46
+#: ../../source/templates.rst:52
 msgid "Loops (\"for\")"
 msgstr ""
 
-#: ../../source/templates.rst:55
+#: ../../source/templates.rst:61
 msgid "Accessing items in a dict"
 msgstr ""
 
-#: ../../source/templates.rst:57
+#: ../../source/templates.rst:63
 msgid ""
 "Whereas in Python code you do ``my_dict['foo']``, in a template you would"
 " do ``{{ my_dict.foo }}``."
 msgstr ""
 
-#: ../../source/templates.rst:61
+#: ../../source/templates.rst:67
 msgid "Comments"
 msgstr ""
 
-#: ../../source/templates.rst:72
+#: ../../source/templates.rst:78
 msgid "Things you can't do"
 msgstr ""
 
-#: ../../source/templates.rst:74
+#: ../../source/templates.rst:80
 msgid ""
 "The template language is just for displaying values. You can't do math "
 "(``+``, ``*``, ``/``, ``-``) or otherwise modify numbers, lists, strings,"
 " etc. For that, you should use :ref:`vars_for_template`."
 msgstr ""
 
-#: ../../source/templates.rst:80
+#: ../../source/templates.rst:86
 msgid "How templates work: an example"
 msgstr ""
 
-#: ../../source/templates.rst:82
+#: ../../source/templates.rst:88
 msgid "oTree templates are a mix of 2 languages:"
 msgstr ""
 
-#: ../../source/templates.rst:84
+#: ../../source/templates.rst:90
 msgid "*HTML* (which uses angle brackets like ``<this>`` and ``</this>``."
 msgstr ""
 
-#: ../../source/templates.rst:85
+#: ../../source/templates.rst:91
 msgid ""
-"*Template tags* (which use curly braces like ``{% this %}`` and ``{{ this"
+"*Template tags* (which use curly braces like ``{{ this }}`` and ``{{ this"
 " }}``"
 msgstr ""
 
-#: ../../source/templates.rst:88
+#: ../../source/templates.rst:94
 msgid "In this example, let's say your template looks like this:"
 msgstr ""
 
-#: ../../source/templates.rst:104
+#: ../../source/templates.rst:110
 msgid "Step 1: oTree scans template tags, produces HTML (a.k.a. \"server side\")"
 msgstr ""
 
-#: ../../source/templates.rst:106
+#: ../../source/templates.rst:112
 msgid ""
 "oTree uses the current values of the variables to convert the above "
 "template tags to plain HTML, like this:"
 msgstr ""
 
-#: ../../source/templates.rst:122
+#: ../../source/templates.rst:128
 msgid ""
 "Step 2: Browser scans HTML tags, produces a webpage (a.k.a. \"client "
 "side\")"
 msgstr ""
 
-#: ../../source/templates.rst:124
+#: ../../source/templates.rst:130
 msgid ""
 "The oTree server then sends this HTML to the user's computer, where their"
 " web browser can read the code and display it as a formatted web page:"
 msgstr ""
 
-#: ../../source/templates.rst:130
+#: ../../source/templates.rst:136
 msgid "Note that the browser never sees the template tags."
 msgstr ""
 
-#: ../../source/templates.rst:133
+#: ../../source/templates.rst:139
 msgid "The key point"
 msgstr ""
 
-#: ../../source/templates.rst:135
+#: ../../source/templates.rst:141
 msgid ""
 "If one of your pages doesn't look the way you want, you can isolate which"
 " of the above steps went wrong. In your browser, right-click and \"view "
 "source\". (Note: \"view source\" may not work in split-screen mode.)"
 msgstr ""
 
-#: ../../source/templates.rst:140
+#: ../../source/templates.rst:146
 msgid ""
 "You can then see the pure HTML that was generated (along with any "
 "JavaScript or CSS)."
 msgstr ""
 
-#: ../../source/templates.rst:143
+#: ../../source/templates.rst:149
 msgid ""
 "If the HTML code doesn't look the way you expect, then something went "
 "wrong on the server side. Look for mistakes in your ``vars_for_template``"
 " or your template tags."
 msgstr ""
 
-#: ../../source/templates.rst:146
+#: ../../source/templates.rst:152
 msgid ""
 "If there was no error in generating the HTML code, then it is probably an"
 " issue with how you are using HTML (or JavaScript) syntax. Try pasting "
@@ -183,24 +191,24 @@ msgid ""
 "the template tags back in, to make it dynamic again."
 msgstr ""
 
-#: ../../source/templates.rst:155
+#: ../../source/templates.rst:161
 msgid "Images (static files)"
 msgstr ""
 
-#: ../../source/templates.rst:157
+#: ../../source/templates.rst:163
 msgid ""
 "The simplest way to include images, video, 3rd party JS/CSS libraries, "
 "and other static files in your project is to host them online, for "
 "example on Dropbox, Imgur, YouTube, etc."
 msgstr ""
 
-#: ../../source/templates.rst:160
+#: ../../source/templates.rst:166
 msgid ""
 "Then, put its URL in an <img> or <video> tag in your template, for "
 "example:"
 msgstr ""
 
-#: ../../source/templates.rst:166
+#: ../../source/templates.rst:172
 msgid ""
 "You can also store images directly in your project. (but note that large "
 "file sizes can affect performance). oTree Studio has an image upload "
@@ -208,41 +216,40 @@ msgid ""
 "Once you have stored the image, you can display it like this:"
 msgstr ""
 
-#: ../../source/templates.rst:178
+#: ../../source/templates.rst:184
 msgid "Dynamic images"
 msgstr ""
 
-#: ../../source/templates.rst:180
+#: ../../source/templates.rst:186
 msgid ""
 "If you need to show different images depending on the context (like "
 "showing a different image each round), you can construct it in "
 "``vars_for_template`` and pass it to the template, e.g.:"
 msgstr ""
 
-#: ../../source/templates.rst:191
+#: ../../source/templates.rst:198
 msgid "Then in the template:"
 msgstr ""
 
-#: ../../source/templates.rst:201
+#: ../../source/templates.rst:208
 msgid "Includable templates"
 msgstr ""
 
-#: ../../source/templates.rst:203
-#, python-format
+#: ../../source/templates.rst:210
 msgid ""
 "If you are copy-pasting the same content across many templates, it's "
-"better to create an includable template and reuse it with ``{% include "
-"%}``."
+"better to create an includable template and reuse it with ``{{ include "
+"}}``."
 msgstr ""
 
-#: ../../source/templates.rst:207
+#: ../../source/templates.rst:214
 msgid ""
 "For example, if your game has instructions that need to be repeated on "
 "every page, make a template called ``instructions.html``, and put the "
 "instructions there, for example:"
 msgstr ""
 
-#: ../../source/templates.rst:225
+#: ../../source/templates.rst:232
 msgid ""
 "If you are using oTree Studio, click the button to include a template. "
 "Otherwise, create the file in your ``templates`` folder, and see the "
@@ -250,21 +257,21 @@ msgid ""
 "``instructions_template``)."
 msgstr ""
 
-#: ../../source/templates.rst:231
+#: ../../source/templates.rst:238
 msgid "JavaScript and CSS"
 msgstr ""
 
-#: ../../source/templates.rst:234
+#: ../../source/templates.rst:241
 msgid "Where to put JavaScript/CSS code"
 msgstr ""
 
-#: ../../source/templates.rst:236
+#: ../../source/templates.rst:243
 msgid ""
 "You can put JavaScript and CSS anywhere just by using the usual "
 "``<script></script>`` or ``<style></style>``, anywhere in your template."
 msgstr ""
 
-#: ../../source/templates.rst:239
+#: ../../source/templates.rst:246
 msgid ""
 "If you have a lot of scripts/styles, you can put them in separate blocks "
 "outside of ``content``: ``scripts`` and ``styles``. It's not mandatory to"
@@ -273,134 +280,134 @@ msgid ""
 "JavaScript)."
 msgstr ""
 
-#: ../../source/templates.rst:247
+#: ../../source/templates.rst:254
 msgid "Customizing the theme"
 msgstr ""
 
-#: ../../source/templates.rst:249
+#: ../../source/templates.rst:256
 msgid ""
 "If you want to customize the appearance of an oTree element, here is the "
 "list of CSS selectors:"
 msgstr ""
 
-#: ../../source/templates.rst:253
+#: ../../source/templates.rst:260
 msgid "Element"
 msgstr ""
 
-#: ../../source/templates.rst:253
+#: ../../source/templates.rst:260
 msgid "CSS/jQuery selector"
 msgstr ""
 
-#: ../../source/templates.rst:255
+#: ../../source/templates.rst:262
 msgid "Page body"
 msgstr ""
 
-#: ../../source/templates.rst:255
+#: ../../source/templates.rst:262
 msgid "``.otree-body``"
 msgstr ""
 
-#: ../../source/templates.rst:256
+#: ../../source/templates.rst:263
 msgid "Page title"
 msgstr ""
 
-#: ../../source/templates.rst:256
+#: ../../source/templates.rst:263
 msgid "``.otree-title``"
 msgstr ""
 
-#: ../../source/templates.rst:257
+#: ../../source/templates.rst:264
 msgid "Wait page (entire dialog)"
 msgstr ""
 
-#: ../../source/templates.rst:257
+#: ../../source/templates.rst:264
 msgid "``.otree-wait-page``"
 msgstr ""
 
-#: ../../source/templates.rst:258
+#: ../../source/templates.rst:265
 msgid "Wait page dialog title"
 msgstr ""
 
-#: ../../source/templates.rst:258
+#: ../../source/templates.rst:265
 msgid "``.otree-wait-page__title`` (note: ``__``, not ``_``)"
 msgstr ""
 
-#: ../../source/templates.rst:259
+#: ../../source/templates.rst:266
 msgid "Wait page dialog body"
 msgstr ""
 
-#: ../../source/templates.rst:259
+#: ../../source/templates.rst:266
 msgid "``.otree-wait-page__body``"
 msgstr ""
 
-#: ../../source/templates.rst:260
+#: ../../source/templates.rst:267
 msgid "Timer"
 msgstr ""
 
-#: ../../source/templates.rst:260
+#: ../../source/templates.rst:267
 msgid "``.otree-timer``"
 msgstr ""
 
-#: ../../source/templates.rst:261
+#: ../../source/templates.rst:268
 msgid "Next button"
 msgstr ""
 
-#: ../../source/templates.rst:261
+#: ../../source/templates.rst:268
 msgid "``.otree-btn-next``"
 msgstr ""
 
-#: ../../source/templates.rst:262
+#: ../../source/templates.rst:269
 msgid "Form errors alert"
 msgstr ""
 
-#: ../../source/templates.rst:262
+#: ../../source/templates.rst:269
 msgid "``.otree-form-errors``"
 msgstr ""
 
-#: ../../source/templates.rst:265
+#: ../../source/templates.rst:272
 msgid ""
 "For example, to change the page width, put CSS in your base template like"
 " this:"
 msgstr ""
 
-#: ../../source/templates.rst:275
+#: ../../source/templates.rst:282
 msgid ""
 "To get more info, in your browser, right-click the element you want to "
 "modify and select \"Inspect\". Then you can navigate to see the different"
 " elements and try modifying their styles:"
 msgstr ""
 
-#: ../../source/templates.rst:281
+#: ../../source/templates.rst:288
 msgid ""
 "When possible, use one of the official selectors above. Don't use any "
 "selector that starts with ``_otree``, and don't select based on Bootstrap"
 " classes like ``btn-primary`` or ``card``, because those are unstable."
 msgstr ""
 
-#: ../../source/templates.rst:290
+#: ../../source/templates.rst:297
 msgid "Passing data from Python to JavaScript (js_vars)"
 msgstr ""
 
-#: ../../source/templates.rst:292
+#: ../../source/templates.rst:299
 msgid ""
-"To pass data to JavaScript code in your template, define a method "
+"To pass data to JavaScript code in your template, define a function "
 "``js_vars`` on your Page, for example:"
 msgstr ""
 
-#: ../../source/templates.rst:302
+#: ../../source/templates.rst:310
 msgid "Then, in your template, you can refer to these variables:"
 msgstr ""
 
-#: ../../source/templates.rst:312
+#: ../../source/templates.rst:320
 msgid "Bootstrap"
 msgstr ""
 
-#: ../../source/templates.rst:314
+#: ../../source/templates.rst:322
 msgid ""
 "oTree comes with `Bootstrap "
 "<https://getbootstrap.com/docs/5.0/components/alerts/>`__, a popular "
 "library for customizing a website's user interface."
 msgstr ""
 
-#: ../../source/templates.rst:317
+#: ../../source/templates.rst:325
 msgid ""
 "You can use it if you want a `custom style "
 "<http://getbootstrap.com/css/>`__, or a `specific component "
@@ -412,88 +419,109 @@ msgid ""
 "<https://getbootstrap.com/docs/5.0/components/collapse/>`__."
 msgstr ""
 
-#: ../../source/templates.rst:324
+#: ../../source/templates.rst:332
 msgid ""
 "To use Bootstrap, usually you add a ``class=`` attribute to your HTML "
 "element."
 msgstr ""
 
-#: ../../source/templates.rst:327
+#: ../../source/templates.rst:335
 msgid "For example, the following HTML will create a \"Success\" alert:"
 msgstr ""
 
-#: ../../source/templates.rst:334
+#: ../../source/templates.rst:342
 msgid "Mobile devices"
 msgstr ""
 
-#: ../../source/templates.rst:336
+#: ../../source/templates.rst:344
 msgid ""
 "Bootstrap tries to show a \"mobile friendly\" version when viewed on a "
 "smartphone or tablet."
 msgstr ""
 
-#: ../../source/templates.rst:341
+#: ../../source/templates.rst:349
 msgid "Charts"
 msgstr ""
 
-#: ../../source/templates.rst:343
+#: ../../source/templates.rst:351
 msgid ""
 "You can use any HTML/JavaScript library for adding charts to your app. A "
 "good option is `HighCharts <http://www.highcharts.com/demo>`__, to draw "
 "pie charts, line graphs, bar charts, time series, etc."
 msgstr ""
 
-#: ../../source/templates.rst:347
+#: ../../source/templates.rst:355
 msgid "First, include the HighCharts JavaScript::"
 msgstr ""
 
-#: ../../source/templates.rst:352
+#: ../../source/templates.rst:360
 msgid ""
 "Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__ and "
 "find the chart type that you want to make. Then click \"edit in "
 "JSFiddle\" to edit it to your liking, using hardcoded data."
 msgstr ""
 
-#: ../../source/templates.rst:357
+#: ../../source/templates.rst:365
 msgid ""
 "Then, copy-paste the JS and HTML into your template, and load the page. "
 "If you don't see your chart, it may be because your HTML is missing the "
 "``<div>`` that your JS code is trying to insert the chart into."
 msgstr ""
 
-#: ../../source/templates.rst:362
+#: ../../source/templates.rst:370
 msgid ""
 "Once your chart is loading properly, you can replace the hardcoded data "
 "like ``series`` and ``categories`` with dynamically generated variables."
 msgstr ""
 
-#: ../../source/templates.rst:365
+#: ../../source/templates.rst:373
 msgid "For example, change this::"
 msgstr ""
 
-#: ../../source/templates.rst:375
+#: ../../source/templates.rst:383
 msgid "To this::"
 msgstr ""
 
-#: ../../source/templates.rst:380
+#: ../../source/templates.rst:388
 msgid ""
 "...where ``highcharts_series`` is a variable you defined in :ref:`js_vars"
 " <js_vars>`."
 msgstr ""
 
-#: ../../source/templates.rst:382
+#: ../../source/templates.rst:390
 msgid ""
 "If your chart is not loading, click \"View Source\" in your browser and "
 "check if there is something wrong with the data you dynamically "
 "generated."
 msgstr ""
 
-#: ../../source/templates.rst:386
+#: ../../source/templates.rst:394
 msgid "Miscellaneous"
 msgstr ""
 
-#: ../../source/templates.rst:388
+#: ../../source/templates.rst:396
 msgid ""
 "You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For"
 " example:: ``{{ 0.1234|to2}}`` outputs 0.12."
 msgstr ""
+
+#~ msgid ""
+#~ "*Template tags* (which use curly braces"
+#~ " like ``{% this %}`` and ``{{ "
+#~ "this }}``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you are copy-pasting the same"
+#~ " content across many templates, it's "
+#~ "better to create an includable template"
+#~ " and reuse it with ``{% include "
+#~ "%}``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To pass data to JavaScript code in"
+#~ " your template, define a method "
+#~ "``js_vars`` on your Page, for example:"
+#~ msgstr ""
+

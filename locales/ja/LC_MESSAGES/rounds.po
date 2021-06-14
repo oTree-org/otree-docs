@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,9 @@ msgid "Passing data between apps"
 msgstr ""
 
 #: ../../source/rounds.rst:19
-msgid "See :ref:`participant.vars <vars>` and :ref:`session.vars <session_vars>`."
+msgid ""
+"See :ref:`participant fields <vars>` and :ref:`session fields "
+"<session_vars>`."
 msgstr ""
 
 #: ../../source/rounds.rst:25
@@ -152,65 +154,152 @@ msgid ""
 " them if you re-shuffle groups between rounds."
 msgstr ""
 
-#: ../../source/rounds.rst:90
-msgid "participant.vars"
+#: ../../source/rounds.rst:91
+msgid "Participant fields"
 msgstr ""
 
-#: ../../source/rounds.rst:92
+#: ../../source/rounds.rst:95
+msgid ""
+"As of March 2021, this is a new **optional** syntax for "
+"``participant.vars``. Instead of setting ``participant.vars['my_field'] ="
+" 1``, you can now set ``participant.my_field = 1`` directly. Just make "
+"sure to define ``PARTICIPANT_FIELDS`` first. See `here "
+"<https://groups.google.com/g/otree/c/lbJg_ND5QkY>`__ for more info."
+msgstr ""
+
+#: ../../source/rounds.rst:101
 msgid ""
 "If you want to access a participant's data from a previous app, you "
 "should store this data on the participant object, which persists across "
 "apps (see :ref:`participants_and_players`). (``in_all_rounds()`` only is "
 "useful when you need to access data from a previous round of the same "
-"app.) Put it in ``participant.vars``, which is a dict that can store any "
-"data. For example, you can set an attribute like this::"
+"app.)"
 msgstr ""
 
-#: ../../source/rounds.rst:102
+#: ../../source/rounds.rst:107
 msgid ""
-"Later in the session (e.g. in a separate app), you can retrieve it like "
-"this::"
+"Go to settings and define ``PARTICIPANT_FIELDS``, which is a list of the "
+"names of fields you want to define on your participant."
 msgstr ""
 
 #: ../../source/rounds.rst:110
-msgid ""
-"You can test if ``'my_var'`` exists with ``if 'my_var' in "
-"participant.vars:``."
+msgid "Then in your code, you can get and set any type of data on these fields:"
 msgstr ""
 
-#: ../../source/rounds.rst:112
+#: ../../source/rounds.rst:116
 msgid ""
-"``participant.vars`` is not included in the Excel/CSV data export, or in "
+"(Internally, all participant fields are stored in a dict called "
+"``participant.vars``. ``participant.xyz`` is equivalent to "
+"``participant.vars['xyz']``.)"
+msgstr ""
+
+#: ../../source/rounds.rst:119
+msgid ""
+"Participant fields are not included in the Excel/CSV data export, or in "
 "the \"Data\" tab in the session admin. If you want that, you should "
 "either use :ref:`custom-export` or save ``str(participant.vars)`` into a "
-"``LongStringField``. (The same concept applies for ``session.vars``.)"
+"``LongStringField``. (The same concept applies for session fields.)"
 msgstr ""
 
-#: ../../source/rounds.rst:120
-msgid "session.vars"
+#: ../../source/rounds.rst:127
+msgid "Session fields"
 msgstr ""
 
-#: ../../source/rounds.rst:122
+#: ../../source/rounds.rst:131
+msgid "This is a new feature; see the note above about ``PARTICIPANT_FIELDS``."
+msgstr ""
+
+#: ../../source/rounds.rst:133
 msgid ""
 "For global variables that are the same for all participants in the "
-"session, you can use ``session.vars``. This is a dict just like "
-"``participant.vars``."
+"session, add them to the ``SESSION_FIELDS``, which works the same as "
+"``PARTICIPANT_FIELDS``. Internally, all session fields are stored in "
+"``session.vars``."
 msgstr ""
 
-#: ../../source/rounds.rst:128
+#: ../../source/rounds.rst:138
 msgid "Variable number of rounds"
 msgstr ""
 
-#: ../../source/rounds.rst:130
+#: ../../source/rounds.rst:140
 msgid "If you want a variable number of rounds, consider using :ref:`live`."
 msgstr ""
 
-#: ../../source/rounds.rst:132
+#: ../../source/rounds.rst:142
 msgid ""
 "Alternatively, you can set ``num_rounds`` to some high number, and then "
-"in your app, conditionally hide the ``{% next_button %}`` element, so "
+"in your app, conditionally hide the ``{{ next_button }}`` element, so "
 "that the user cannot proceed to the next page, or use "
 ":ref:`app_after_this_page`. But note that having many rounds (e.g. more "
 "than 100) might cause performance problems, so test your app carefully."
 msgstr ""
+
+#~ msgid ""
+#~ "See :ref:`participant.vars <vars>` and "
+#~ ":ref:`session.vars <session_vars>`."
+#~ msgstr ""
+
+#~ msgid "participant.vars"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you want to access a "
+#~ "participant's data from a previous app,"
+#~ " you should store this data on "
+#~ "the participant object, which persists "
+#~ "across apps (see :ref:`participants_and_players`)."
+#~ " (``in_all_rounds()`` only is useful when"
+#~ " you need to access data from a"
+#~ " previous round of the same app.) "
+#~ "Put it in ``participant.vars``, which is"
+#~ " a dict that can store any "
+#~ "data. For example, you can set an"
+#~ " attribute like this::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Later in the session (e.g. in a"
+#~ " separate app), you can retrieve it"
+#~ " like this::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can test if ``'my_var'`` exists "
+#~ "with ``if 'my_var' in participant.vars:``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``participant.vars`` is not included in "
+#~ "the Excel/CSV data export, or in "
+#~ "the \"Data\" tab in the session "
+#~ "admin. If you want that, you "
+#~ "should either use :ref:`custom-export` "
+#~ "or save ``str(participant.vars)`` into a "
+#~ "``LongStringField``. (The same concept applies"
+#~ " for ``session.vars``.)"
+#~ msgstr ""
+
+#~ msgid "session.vars"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For global variables that are the "
+#~ "same for all participants in the "
+#~ "session, you can use ``session.vars``. "
+#~ "This is a dict just like "
+#~ "``participant.vars``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Alternatively, you can set ``num_rounds`` "
+#~ "to some high number, and then in"
+#~ " your app, conditionally hide the "
+#~ "``{% next_button %}`` element, so that"
+#~ " the user cannot proceed to the "
+#~ "next page, or use :ref:`app_after_this_page`."
+#~ " But note that having many rounds "
+#~ "(e.g. more than 100) might cause "
+#~ "performance problems, so test your app"
+#~ " carefully."
+#~ msgstr ""
 

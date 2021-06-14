@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:07+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: ../../source/pages.rst:19
 msgid ""
-"You can define this method to return ``True`` if the page should be "
+"You can define this function to return ``True`` if the page should be "
 "shown, and False if the page should be skipped. If omitted, the page will"
 " be shown."
 msgstr ""
@@ -54,29 +54,29 @@ msgstr ""
 msgid "For example, to only show the page to P2 in each group:"
 msgstr ""
 
-#: ../../source/pages.rst:30
+#: ../../source/pages.rst:31
 msgid "Or only show the page in round 1:"
 msgstr ""
 
-#: ../../source/pages.rst:37
+#: ../../source/pages.rst:39
 msgid ""
 "If you need to repeat the same rule for many pages, use "
 ":ref:`app_after_this_page`."
 msgstr ""
 
-#: ../../source/pages.rst:42
+#: ../../source/pages.rst:44
 msgid "vars_for_template()"
 msgstr ""
 
-#: ../../source/pages.rst:44
+#: ../../source/pages.rst:46
 msgid "Use this to pass variables to the template. Example:"
 msgstr ""
 
-#: ../../source/pages.rst:55
+#: ../../source/pages.rst:58
 msgid "Then in the template you can access ``a`` and ``b`` like this:"
 msgstr ""
 
-#: ../../source/pages.rst:61
+#: ../../source/pages.rst:64
 msgid ""
 "oTree automatically passes the following objects to the template: "
 "``player``, ``group``, ``subsession``, ``participant``, ``session``, and "
@@ -84,67 +84,67 @@ msgid ""
 "Constants.blah }}`` or ``{{ player.blah }}``."
 msgstr ""
 
-#: ../../source/pages.rst:65
+#: ../../source/pages.rst:68
 msgid "If the user refreshes the page, ``vars_for_template`` gets re-executed."
 msgstr ""
 
-#: ../../source/pages.rst:70
+#: ../../source/pages.rst:73
 msgid "before_next_page()"
 msgstr ""
 
-#: ../../source/pages.rst:72
+#: ../../source/pages.rst:75
 msgid ""
 "Here you define any code that should be executed after form validation, "
 "before the player proceeds to the next page."
 msgstr ""
 
-#: ../../source/pages.rst:75
+#: ../../source/pages.rst:78
 msgid ""
 "If the page is skipped with ``is_displayed``, then ``before_next_page`` "
 "will be skipped as well."
 msgstr ""
 
-#: ../../source/pages.rst:78
+#: ../../source/pages.rst:81
 msgid "Example:"
 msgstr ""
 
-#: ../../source/pages.rst:88
+#: ../../source/pages.rst:91
 msgid "timeout_seconds"
 msgstr ""
 
-#: ../../source/pages.rst:90
+#: ../../source/pages.rst:93
 msgid "See :ref:`timeouts`"
 msgstr ""
 
-#: ../../source/pages.rst:93
+#: ../../source/pages.rst:96
 msgid "Wait pages"
 msgstr ""
 
-#: ../../source/pages.rst:95
+#: ../../source/pages.rst:98
 msgid "See :ref:`wait_pages`"
 msgstr ""
 
-#: ../../source/pages.rst:98
+#: ../../source/pages.rst:101
 msgid "Randomizing page sequence"
 msgstr ""
 
-#: ../../source/pages.rst:100
+#: ../../source/pages.rst:103
 msgid ""
 "You can randomize the order of pages using rounds. An example is `here "
 "<https://www.otreehub.com/projects/otree-snippets/>`__."
 msgstr ""
 
-#: ../../source/pages.rst:106
+#: ../../source/pages.rst:109
 msgid "app_after_this_page"
 msgstr ""
 
-#: ../../source/pages.rst:108
+#: ../../source/pages.rst:111
 msgid ""
 "To skip entire apps, you can define ``app_after_this_page``. For example,"
 " to skip to the next app, you would do:"
 msgstr ""
 
-#: ../../source/pages.rst:117
+#: ../../source/pages.rst:121
 msgid ""
 "``upcoming_apps`` is the remainder of the ``app_sequence`` (a list of "
 "strings). Therefore, to skip to the last app, you would return "
@@ -152,9 +152,23 @@ msgid ""
 "long as that string is in ``upcoming_apps``):"
 msgstr ""
 
-#: ../../source/pages.rst:129
+#: ../../source/pages.rst:134
 msgid ""
-"If this method doesn't return anything, the player proceeds to the next "
-"page as usual."
+"If this function doesn't return anything, the player proceeds to the next"
+" page as usual."
 msgstr ""
+
+#~ msgid ""
+#~ "You can define this method to "
+#~ "return ``True`` if the page should "
+#~ "be shown, and False if the page"
+#~ " should be skipped. If omitted, the"
+#~ " page will be shown."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If this method doesn't return anything,"
+#~ " the player proceeds to the next "
+#~ "page as usual."
+#~ msgstr ""
 

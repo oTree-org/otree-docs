@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-06-06 17:13-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,155 +148,97 @@ msgid ""
 "reduces duplicate participation."
 msgstr ""
 
-#: ../../source/admin.rst:91
-msgid ""
-"If you're using Prolific, you can add "
-"``participant_label={{%PROLIFIC_PID%}}`` to your study URL. When the user"
-" clicks the link, Prolific will replace that with the participant's "
-"actual Prolific ID."
-msgstr ""
-
-#: ../../source/admin.rst:96
+#: ../../source/admin.rst:92
 msgid "Arrival order"
 msgstr ""
 
-#: ../../source/admin.rst:98
+#: ../../source/admin.rst:94
 msgid ""
 "oTree will assign the first person who arrives to be P1, the second to be"
 " P2, etc., unless you are using single-use links."
 msgstr ""
 
-#: ../../source/admin.rst:104
+#: ../../source/admin.rst:100
 msgid "Customizing the admin interface (admin reports)"
 msgstr ""
 
-#: ../../source/admin.rst:106
+#: ../../source/admin.rst:102
 msgid ""
 "You can add a custom tab to a session's admin page with any content you "
 "want; for example:"
 msgstr ""
 
-#: ../../source/admin.rst:109
+#: ../../source/admin.rst:105
 msgid "A chart/graph with the game's results"
 msgstr ""
 
-#: ../../source/admin.rst:110
+#: ../../source/admin.rst:106
 msgid "A custom payments page that is different from oTree's built-in one"
 msgstr ""
 
-#: ../../source/admin.rst:112
+#: ../../source/admin.rst:108
 msgid "Here is a screenshot:"
 msgstr ""
 
-#: ../../source/admin.rst:117
+#: ../../source/admin.rst:113
 msgid ""
 "Here is a trivial example, where we add an admin report that displays a "
 "sorted list of payoffs for a given round."
 msgstr ""
 
-#: ../../source/admin.rst:120
+#: ../../source/admin.rst:116
 msgid ""
 "First, define a function ``vars_for_admin_report``. This works the same "
 "way as :ref:`vars_for_template`. For example:"
 msgstr ""
 
-#: ../../source/admin.rst:130
+#: ../../source/admin.rst:126
 msgid ""
 "Then create an includable template ``admin_report.html`` in your app, and"
 " display whatever variables were passed in ``vars_for_admin_report``:"
 msgstr ""
 
-#: ../../source/admin.rst:145
+#: ../../source/admin.rst:139
 msgid "Notes:"
 msgstr ""
 
-#: ../../source/admin.rst:147
+#: ../../source/admin.rst:141
 msgid ""
 "``subsession``, ``session``, and ``Constants`` are passed to the template"
 " automatically."
 msgstr ""
 
-#: ../../source/admin.rst:149
-#, python-format
+#: ../../source/admin.rst:143
 msgid ""
-"``admin_report.html`` does not need to use ``{% block %}`` or ``{% "
-"extends %}``  etc. The above example is valid as the full contents of "
-"``admin_report.html``."
+"``admin_report.html`` does not need to use ``{{ block }}``. The above "
+"example is valid as the full contents of ``admin_report.html``."
 msgstr ""
 
-#: ../../source/admin.rst:152
+#: ../../source/admin.rst:146
 msgid ""
 "If one or more apps in your session have an ``admin_report.html``, your "
 "admin page will have a \"Reports\" tab. Use the menu to select the app "
 "and the round number, to see the report for that subsession."
 msgstr ""
 
-#: ../../source/admin.rst:156
-#, python-format
+#: ../../source/admin.rst:150
 msgid ""
 "Tip: if you are displaying the same chart in the admin report and "
 "participant pages, you can reuse ``admin_report.html`` in the participant"
-" template with an ``{% include %}``, and pass the variables like this:"
+" template with an ``{{ include }}``, and pass the variables like this:"
 msgstr ""
 
-#: ../../source/admin.rst:170
-msgid "Kiosk Mode"
-msgstr ""
-
-#: ../../source/admin.rst:172
-msgid ""
-"During a lab study you may want to restrict participants from doing "
-"things like:"
-msgstr ""
-
-#: ../../source/admin.rst:174
-msgid "Closing the browser window"
-msgstr ""
-
-#: ../../source/admin.rst:175
-msgid "Clicking the \"back\" button"
-msgstr ""
-
-#: ../../source/admin.rst:176
-msgid "Viewing the URL in the address bar"
-msgstr ""
-
-#: ../../source/admin.rst:178
-msgid ""
-"You can restrict these things with \"kiosk mode\", a setting available in"
-" most web browsers. Consult your web browser's documentation for "
-"information on how to enable kiosk mode."
-msgstr ""
-
-#: ../../source/admin.rst:185
-msgid "Monitor sessions"
-msgstr ""
-
-#: ../../source/admin.rst:187
-msgid "The admin interface lets you monitor the live progress of your sessions."
-msgstr ""
-
-#: ../../source/admin.rst:190
-msgid "Payments page"
-msgstr ""
-
-#: ../../source/admin.rst:192
-msgid ""
-"At the end of your session, you can open and print a page that lists all "
-"the participants and how much they should be paid."
-msgstr ""
-
-#: ../../source/admin.rst:196
+#: ../../source/admin.rst:165
 msgid "Export Data"
 msgstr ""
 
-#: ../../source/admin.rst:198
+#: ../../source/admin.rst:167
 msgid ""
 "In the admin interface, click on \"Data\" to download your data as CSV or"
 " Excel."
 msgstr ""
 
-#: ../../source/admin.rst:201
+#: ../../source/admin.rst:170
 msgid ""
 "There is also a data export for \"page times\", which shows the exact "
 "time when users completed every page. :download:`Here "
@@ -306,11 +248,11 @@ msgid ""
 "pages in total."
 msgstr ""
 
-#: ../../source/admin.rst:209
+#: ../../source/admin.rst:178
 msgid "Custom data exports"
 msgstr ""
 
-#: ../../source/admin.rst:211
+#: ../../source/admin.rst:180
 msgid ""
 "You can make your own custom data export for an app. In oTree Studio, go "
 "to the \"Player\" model and click on \"custom_export\" at the bottom. (If"
@@ -319,20 +261,120 @@ msgid ""
 "``yield`` for each row of data."
 msgstr ""
 
-#: ../../source/admin.rst:225
+#: ../../source/admin.rst:196
 msgid ""
 "Once this function is defined, your custom data export will be available "
 "in the regular data export page."
 msgstr ""
 
-#: ../../source/admin.rst:229
+#: ../../source/admin.rst:200
 msgid "Debug Info"
 msgstr ""
 
-#: ../../source/admin.rst:231
+#: ../../source/admin.rst:202
 msgid ""
 "When oTree runs in ``DEBUG`` mode (i.e. when the environment variable "
 "``OTREE_PRODUCTION`` is not set), debug information is displayed on the "
 "bottom of all screens."
 msgstr ""
+
+#: ../../source/admin.rst:207
+msgid "Payments"
+msgstr ""
+
+#: ../../source/admin.rst:209
+msgid ""
+"If you define a :ref:`participant field <PARTICIPANT_FIELDS>` called "
+"`finished`, then you can set ``participant.finished = True`` when a "
+"participant finishes the session, and this will be displayed in various "
+"places such as the payments page."
+msgstr ""
+
+#: ../../source/admin.rst:216
+msgid "Chat between participants and experimenter"
+msgstr ""
+
+#: ../../source/admin.rst:218
+msgid ""
+"To enable your participants to send you chat messages, consider using a "
+"software like `Papercups <https://github.com/papercups-"
+"io/papercups/blob/master/README.md>`__. Click on the \"Deploy to Heroku\""
+" button for 1-click setup of your Papercups server. Fill out the required"
+" config vars and leave the others empty. ``BACKEND_URL`` and "
+"``REACT_APP_URL`` refer to your Papercups site, not your oTree site. "
+"Login to your site and copy the HTML embedding code to an includable "
+"template called ``papercups.html``. There is an example called \"chat "
+"with experimenter\" `here <https://www.otreehub.com/projects/otree-"
+"snippets/>`__."
+msgstr ""
+
+#~ msgid ""
+#~ "If you're using Prolific, you can "
+#~ "add ``participant_label={{%PROLIFIC_PID%}}`` to your"
+#~ " study URL. When the user clicks "
+#~ "the link, Prolific will replace that "
+#~ "with the participant's actual Prolific "
+#~ "ID."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``admin_report.html`` does not need to "
+#~ "use ``{% block %}`` or ``{% "
+#~ "extends %}``  etc. The above example "
+#~ "is valid as the full contents of"
+#~ " ``admin_report.html``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tip: if you are displaying the "
+#~ "same chart in the admin report and"
+#~ " participant pages, you can reuse "
+#~ "``admin_report.html`` in the participant "
+#~ "template with an ``{% include %}``, "
+#~ "and pass the variables like this:"
+#~ msgstr ""
+
+#~ msgid "Kiosk Mode"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "During a lab study you may want"
+#~ " to restrict participants from doing "
+#~ "things like:"
+#~ msgstr ""
+
+#~ msgid "Closing the browser window"
+#~ msgstr ""
+
+#~ msgid "Clicking the \"back\" button"
+#~ msgstr ""
+
+#~ msgid "Viewing the URL in the address bar"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can restrict these things with "
+#~ "\"kiosk mode\", a setting available in"
+#~ " most web browsers. Consult your web"
+#~ " browser's documentation for information on"
+#~ " how to enable kiosk mode."
+#~ msgstr ""
+
+#~ msgid "Monitor sessions"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The admin interface lets you monitor "
+#~ "the live progress of your sessions."
+#~ msgstr ""
+
+#~ msgid "Payments page"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "At the end of your session, you"
+#~ " can open and print a page that"
+#~ " lists all the participants and how"
+#~ " much they should be paid."
+#~ msgstr ""
 

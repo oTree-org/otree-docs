@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-05-24 09:30-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -340,78 +340,50 @@ msgstr ""
 
 #: ../../source/server/server-windows.rst:26 ../../source/server/ubuntu.rst:42
 msgid ""
-"If you want, you can use Postgres as your production database. Install "
-"Postgres and psycopg2, create a new database and set the ``DATABASE_URL``"
-" env var, for example: to ``postgres://postgres@localhost/django_db``"
+"Install Postgres and psycopg2, create a new database and set the "
+"``DATABASE_URL`` env var, for example: to "
+"``postgres://postgres@localhost/django_db``"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:30 ../../source/server/ubuntu.rst:46
-msgid ""
-"However, in principle, oTree 3.0+ should do fine with its default SQLite "
-"in production, since the server is now is single threaded."
-msgstr ""
-
-#: ../../source/server/server-windows.rst:34
+#: ../../source/server/server-windows.rst:30
 msgid "resetdb"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:36
+#: ../../source/server/server-windows.rst:32
 msgid ""
 "If all the above steps went well, you should be able to run ``otree "
 "resetdb``."
 msgstr ""
 
-#: ../../source/server/server-windows.rst:41 ../../source/server/ubuntu.rst:50
-msgid "Install Redis"
-msgstr ""
-
-#: ../../source/server/server-windows.rst:43
-msgid ""
-"You should download and run `Redis for Windows "
-"<https://github.com/MSOpenTech/redis/releases>`__."
-msgstr ""
-
-#: ../../source/server/server-windows.rst:45
-msgid ""
-"Redis should be running on port 6379. You can test with ``redis-cli "
-"ping``, which should output ``PONG``."
-msgstr ""
-
-#: ../../source/server/server-windows.rst:48
-msgid ""
-"Set your ``REDIS_URL`` env var to ``redis://localhost:6379`` in the same "
-"place where you set ``DATABASE_URL``."
-msgstr ""
-
-#: ../../source/server/server-windows.rst:51
+#: ../../source/server/server-windows.rst:35
 msgid "Run the production server"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:53 ../../source/server/ubuntu.rst:19
+#: ../../source/server/server-windows.rst:37 ../../source/server/ubuntu.rst:19
 msgid "Run::"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:57
+#: ../../source/server/server-windows.rst:41
 msgid ""
 "See :ref:`here <prodserver>` for full instructions. The steps are "
 "essentially the same as on Linux."
 msgstr ""
 
-#: ../../source/server/server-windows.rst:61
+#: ../../source/server/server-windows.rst:45
 msgid "Set environment variables"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:63
+#: ../../source/server/server-windows.rst:47
 msgid ""
 "You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and "
 "``OTREE_AUTH_LEVEL``."
 msgstr ""
 
-#: ../../source/server/server-windows.rst:66
+#: ../../source/server/server-windows.rst:50
 msgid "Allow other computers to connect"
 msgstr ""
 
-#: ../../source/server/server-windows.rst:68
+#: ../../source/server/server-windows.rst:52
 msgid "See instructions :ref:`here <server-adhoc>`."
 msgstr ""
 
@@ -468,46 +440,35 @@ msgid ""
 "beginning of your prompt."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:52
-msgid ""
-"If you installed ``redis-server`` through ``apt-get`` as instructed "
-"earlier, Redis will be running on port 6379. You can test with ``redis-"
-"cli ping``, which should output ``PONG``."
-msgstr ""
-
-#: ../../source/server/ubuntu.rst:56
-msgid "Then add this line in the same place where you set ``DATABASE_URL``::"
-msgstr ""
-
-#: ../../source/server/ubuntu.rst:61
+#: ../../source/server/ubuntu.rst:46
 msgid "Reset the database on the server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:63
+#: ../../source/server/ubuntu.rst:48
 msgid ""
 "``cd`` to the folder containing your oTree project. Install the "
 "requirements and reset the database::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:73
+#: ../../source/server/ubuntu.rst:58
 msgid "Running the server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:76
+#: ../../source/server/ubuntu.rst:61
 msgid "Testing the production server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:78
+#: ../../source/server/ubuntu.rst:63
 msgid "From your project folder, run::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:82
+#: ../../source/server/ubuntu.rst:67
 msgid ""
 "Then navigate in your browser to your server's IP/hostname followed by "
 "``:8000``."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:85
+#: ../../source/server/ubuntu.rst:70
 msgid ""
 "If you're not using a reverse proxy like Nginx or Apache, you probably "
 "want to run oTree directly on port 80. This requires superuser "
@@ -515,31 +476,31 @@ msgid ""
 "environment variables like ``PATH``, ``DATABASE_URL``, etc::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:93
+#: ../../source/server/ubuntu.rst:78
 msgid ""
 "Try again to open your browser; this time, you don't need to append :80 "
 "to the URL, because that is the default HTTP port."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:96
+#: ../../source/server/ubuntu.rst:81
 msgid ""
 "Unlike ``devserver``, ``prodserver`` does not restart automatically when "
 "your files are changed."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:100
+#: ../../source/server/ubuntu.rst:85
 msgid "Set remaining environment variables"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:102
+#: ../../source/server/ubuntu.rst:87
 msgid "Add these in the same place where you set ``DATABASE_URL``::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:109
+#: ../../source/server/ubuntu.rst:94
 msgid "(Optional) Process control system"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:111
+#: ../../source/server/ubuntu.rst:96
 msgid ""
 "Once the server is working as described above, it's a good practice to "
 "use a process control system like Supervisord or Circus. This will "
@@ -547,111 +508,105 @@ msgid ""
 "out, etc."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:118
+#: ../../source/server/ubuntu.rst:103
 msgid "Circus"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:120
+#: ../../source/server/ubuntu.rst:105
 msgid ""
 "Install Circus, then create a ``circus.ini`` in your project folder, with"
 " the following content::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:129
+#: ../../source/server/ubuntu.rst:114
 msgid "Then run::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:133
+#: ../../source/server/ubuntu.rst:118
 msgid "If this is working properly, you can start it as a daemon::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:138
+#: ../../source/server/ubuntu.rst:123
 msgid "To stop circus, run::"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:143
+#: ../../source/server/ubuntu.rst:128
 msgid "(Optional) Apache, Nginx, etc."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:145
+#: ../../source/server/ubuntu.rst:130
 msgid ""
 "You cannot use Apache or Nginx as your primary web server, because oTree "
 "must be run with an ASGI server. However, you still might want to use "
 "Apache/Nginx as a reverse proxy, for the following reasons:"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:149
+#: ../../source/server/ubuntu.rst:134
 msgid ""
 "You are trying to optimize serving of static files (though oTree uses "
 "Whitenoise, which is already fairly efficient)"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:151
+#: ../../source/server/ubuntu.rst:136
 msgid "You need to host other websites on the same server"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:152
+#: ../../source/server/ubuntu.rst:137
 msgid "You need features like SSL or proxy buffering"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:154
+#: ../../source/server/ubuntu.rst:139
 msgid ""
 "If you set up a reverse proxy, make sure to enable not only HTTP traffic "
 "but also websockets."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:158
+#: ../../source/server/ubuntu.rst:143
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:160
+#: ../../source/server/ubuntu.rst:145
 msgid ""
 "If you get strange behavior, such as random changes each time the page "
 "reloads, it might be caused by another oTree instance that didn't shut "
-"down. Try stopping oTree and reload again. Also make sure that you are "
-"not sharing the same Postgres or Redis databases between two oTree "
-"instances."
+"down. Try stopping oTree and reload again."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:168
+#: ../../source/server/ubuntu.rst:151
 msgid "Sharing a server with other oTree users"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:170
+#: ../../source/server/ubuntu.rst:153
 msgid ""
 "You can share a server with other oTree users; you just have to make sure"
 " that the code and databases are kept separate, so they don't conflict "
 "with each other."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:174
+#: ../../source/server/ubuntu.rst:157
 msgid ""
 "On the server you should create a different Unix user for each person "
 "using oTree. Then each person should follow the same steps described "
 "above, but in some cases name things differently to avoid clashes:"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:178
+#: ../../source/server/ubuntu.rst:161
 msgid "Create a virtualenv in their home directory"
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:179
+#: ../../source/server/ubuntu.rst:162
 msgid ""
 "Create a different Postgres database, as described earlier, and set this "
 "in the DATABASE_URL env var."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:181
-msgid "Each user needs their own Redis database."
-msgstr ""
-
-#: ../../source/server/ubuntu.rst:183
+#: ../../source/server/ubuntu.rst:165
 msgid ""
 "Once these steps are done, the second user can push code to the server, "
 "then run ``otree resetdb``."
 msgstr ""
 
-#: ../../source/server/ubuntu.rst:186
+#: ../../source/server/ubuntu.rst:168
 msgid ""
 "If you don't need multiple people to run experiments simultaneously, then"
 " each user can take turns running the server on port 80 with ``otree "
@@ -659,4 +614,69 @@ msgid ""
 "the same time, then you would need to run the server on multiple ports, "
 "e.g. ``8000``, ``8001``, etc."
 msgstr ""
+
+#~ msgid ""
+#~ "If you want, you can use Postgres"
+#~ " as your production database. Install "
+#~ "Postgres and psycopg2, create a new "
+#~ "database and set the ``DATABASE_URL`` "
+#~ "env var, for example: to "
+#~ "``postgres://postgres@localhost/django_db``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "However, in principle, oTree 3.0+ should"
+#~ " do fine with its default SQLite "
+#~ "in production, since the server is "
+#~ "now is single threaded."
+#~ msgstr ""
+
+#~ msgid "Install Redis"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You should download and run `Redis "
+#~ "for Windows "
+#~ "<https://github.com/MSOpenTech/redis/releases>`__."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Redis should be running on port "
+#~ "6379. You can test with ``redis-"
+#~ "cli ping``, which should output "
+#~ "``PONG``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set your ``REDIS_URL`` env var to "
+#~ "``redis://localhost:6379`` in the same place"
+#~ " where you set ``DATABASE_URL``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you installed ``redis-server`` "
+#~ "through ``apt-get`` as instructed "
+#~ "earlier, Redis will be running on "
+#~ "port 6379. You can test with "
+#~ "``redis-cli ping``, which should output "
+#~ "``PONG``."
+#~ msgstr ""
+
+#~ msgid "Then add this line in the same place where you set ``DATABASE_URL``::"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you get strange behavior, such "
+#~ "as random changes each time the "
+#~ "page reloads, it might be caused "
+#~ "by another oTree instance that didn't"
+#~ " shut down. Try stopping oTree and"
+#~ " reload again. Also make sure that"
+#~ " you are not sharing the same "
+#~ "Postgres or Redis databases between two"
+#~ " oTree instances."
+#~ msgstr ""
+
+#~ msgid "Each user needs their own Redis database."
+#~ msgstr ""
 
