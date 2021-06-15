@@ -81,7 +81,7 @@ set ``template_name``. Example:
 CSS/JS and base templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To include the same JS/CSS in all pages of an app, either put it in a ref:`static file <staticfiles>`
+To include the same JS/CSS in all pages of an app, either put it in a :ref:`static file <staticfiles>`
 or put it in an includable template.
 
 .. _staticfiles:
