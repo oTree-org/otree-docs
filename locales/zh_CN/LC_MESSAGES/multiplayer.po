@@ -5,27 +5,26 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  oTree\n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-01 05:35+0800\n"
-"PO-Revision-Date: 2020-11-16 18:41+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"PO-Revision-Date: 2021-05-29 13:44+0800\n"
 "Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/multiplayer/chat.rst:4
 msgid "Chat"
 msgstr "聊天"
 
 #: ../../source/multiplayer/chat.rst:6
-msgid ""
-"You can add a chat room to a page so that participants can communicate "
-"with each other."
+msgid "You can add a chat room to a page so that participants can communicate with each other."
 msgstr "你可以在页面上添加一个聊天室，使得参与者之间可以互相交流。"
 
 #: ../../source/multiplayer/chat.rst:9
@@ -38,10 +37,11 @@ msgstr "在你的模板HTML中，放入："
 
 #: ../../source/multiplayer/chat.rst:17
 msgid ""
-"This will make a chat room among players in the same Group, where each "
-"player's nickname is displayed as \"Player 1\", \"Player 2\", etc. (based"
-" on the player's ``id_in_group``)."
-msgstr "这会创建一个同组玩家间的聊天室，玩家的昵称为“玩家1”，“玩家2”等等。（基于玩家的 ``id_in_group``）。"
+"This will make a chat room among players in the same Group, where each player's nickname is "
+"displayed as \"Player 1\", \"Player 2\", etc. (based on the player's ``id_in_group``)."
+msgstr ""
+"这会创建一个同组玩家间的聊天室，玩家的昵称为“玩家1”，“玩家2”等等。（基于玩家的 "
+"``id_in_group``）。"
 
 #: ../../source/multiplayer/chat.rst:22
 msgid "Customizing the nickname and chat room members"
@@ -49,7 +49,7 @@ msgstr "定制昵称与聊天室成员"
 
 #: ../../source/multiplayer/chat.rst:24
 msgid "You can specify a ``channel`` and/or ``nickname`` like this:"
-msgstr "你可以像下面这样指定一个 ``channel`` 和/或 ``nickname`` ："
+msgstr "你可以像下面这样指定 ``channel`` 和/或 ``nickname`` ："
 
 #: ../../source/multiplayer/chat.rst:31
 msgid "Nickname"
@@ -58,9 +58,10 @@ msgstr "昵称"
 #: ../../source/multiplayer/chat.rst:33
 #, python-format
 msgid ""
-"``nickname`` is the nickname that will be displayed for that user in the "
-"chat. A typical usage would be ``{% chat nickname=player.role %}``."
-msgstr "``nickname`` 即用户在聊天时显示的昵称。一种典型的用法是 ``{% chat nickname=player.role %}``."
+"``nickname`` is the nickname that will be displayed for that user in the chat. A typical "
+"usage would be ``{{ chat nickname=player.role }}``."
+msgstr ""
+"``nickname`` 即用户在聊天时显示的昵称。一种典型的用法是 ``{{ chat nickname=player.role }}``。"
 
 #: ../../source/multiplayer/chat.rst:37
 msgid "Channel"
@@ -68,19 +69,17 @@ msgstr "频道"
 
 #: ../../source/multiplayer/chat.rst:39
 msgid ""
-"``channel`` is the chat room's name, meaning that if 2 players have the "
-"same ``channel``, they can chat with each other. ``channel`` is not "
-"displayed in the user interface; it's just used internally. Its default "
-"value is ``group.id``, meaning all players in the group can chat "
-"together. You can use ``channel`` to instead scope the chat to the "
-"current page or sub-division of a group, etc. (see examples below). "
-"Regardless of the value of ``channel``, the chat will at least be scoped "
-"to players in the same session and the same app."
+"``channel`` is the chat room's name, meaning that if 2 players have the same ``channel``, "
+"they can chat with each other. ``channel`` is not displayed in the user interface; it's just "
+"used internally. Its default value is ``group.id``, meaning all players in the group can "
+"chat together. You can use ``channel`` to instead scope the chat to the current page or sub-"
+"division of a group, etc. (see examples below). Regardless of the value of ``channel``, the "
+"chat will at least be scoped to players in the same session and the same app."
 msgstr ""
-"``channel`` 是聊天室的名字，这意味着如果2名玩家在同一 ``channel`` 内，那么他们可以互相聊天。 ``channel`` "
-"并不会在用户界面上显示；它是在内部使用的。它的默认值是 ``group.id``，表示所有同一组的玩家都可以一起聊天。你可以使用 "
-"``channel`` 将聊天的范围限制为当前的页面或者组中的划分等等（参考下面的例子）。无论 ``channel`` "
-"的值如何，聊天的范围至少在同一应用的同一会话的玩家内。"
+"``channel`` 是聊天室的名字，这意味着如果2名玩家在同一 ``channel`` 内，那么他们可以互相聊天。 "
+"``channel`` 并不会在用户界面上显示；它是在内部使用的。它的默认值是 ``group.id``，表示所有同一"
+"组的玩家都可以一起聊天。你可以使用 ``channel`` 将聊天的范围限制为当前的页面或者组中的划分等等"
+"（参考下面的例子）。无论 ``channel`` 的值如何，聊天的范围至少在同一应用的同一会话的玩家内。"
 
 #: ../../source/multiplayer/chat.rst:49
 msgid "Example: chat by role"
@@ -88,10 +87,12 @@ msgstr "例子：基于角色聊天"
 
 #: ../../source/multiplayer/chat.rst:51
 msgid ""
-"Here's an example where instead of communication within a group, we have "
-"communication between groups based on role, e.g. all buyers can talk with"
-" each other, and all sellers can talk with each other."
-msgstr "下面是一个在组间基于角色聊天，而不是在组内聊天的例子。例如所有的买家可以相互交流，所有的卖家可以相互交流。"
+"Here's an example where instead of communication within a group, we have communication "
+"between groups based on role, e.g. all buyers can talk with each other, and all sellers can "
+"talk with each other."
+msgstr ""
+"下面是一个在组间基于角色聊天，而不是在组内聊天的例子。例如所有的买家可以相互交流，所有的卖家"
+"可以相互交流。"
 
 #: ../../source/multiplayer/chat.rst:64
 msgid "In the page:"
@@ -107,8 +108,8 @@ msgstr "例子：跨轮次的聊天"
 
 #: ../../source/multiplayer/chat.rst:85
 msgid ""
-"If you need players to chat with players who are currently in a different"
-" round of the game, you can do:"
+"If you need players to chat with players who are currently in a different round of the game, "
+"you can do:"
 msgstr "如果你需要玩家可以与不在同一轮的其他玩家聊天，你可以这样做："
 
 #: ../../source/multiplayer/chat.rst:93
@@ -116,15 +117,11 @@ msgid "Example: chat between all groups in all rounds"
 msgstr "例子：所有轮次所有小组玩家一起聊天"
 
 #: ../../source/multiplayer/chat.rst:95
-msgid ""
-"If you want everyone in the session to freely chat with each other, just "
-"do:"
+msgid "If you want everyone in the session to freely chat with each other, just do:"
 msgstr "如果你想让会话中的所有玩家可以自由地与其他人交流，可以这样做："
 
 #: ../../source/multiplayer/chat.rst:101
-msgid ""
-"(The number 1 is not significant; all that matters is that it's the same "
-"for everyone.)"
+msgid "(The number 1 is not significant; all that matters is that it's the same for everyone.)"
 msgstr "（数字1并没有特殊含义，关键在于这一值对所有人相同）"
 
 #: ../../source/multiplayer/chat.rst:104
@@ -133,117 +130,46 @@ msgstr "高级自定义"
 
 #: ../../source/multiplayer/chat.rst:106
 msgid ""
-"If you look at the page source code in your browser's inspector, you will"
-" see the following selectors are available:"
-msgstr "如果你在浏览器中查看了页面的源码，你会发现下面的这些选择器是可用的："
+"If you look at the page source code in your browser's inspector, you will see a bunch of "
+"classes starting with ``otree-chat__``."
+msgstr "如果你在浏览器中查看了页面的源码，你会发现一系列以 ``otree-chat__`` 开头的类。"
 
-#: ../../source/multiplayer/chat.rst:110
-msgid "Element"
-msgstr "元素"
-
-#: ../../source/multiplayer/chat.rst:110
-msgid "CSS/jQuery selector"
-msgstr "CSS/jQuery 选择器"
-
-#: ../../source/multiplayer/chat.rst:112
-msgid "Entire chat widget"
-msgstr "聊天窗体"
-
-#: ../../source/multiplayer/chat.rst:112
-msgid "``.otree-chat``"
-msgstr "``.otree-chat``"
-
-#: ../../source/multiplayer/chat.rst:113
-msgid "Textbox to type a message"
-msgstr "输入消息的文本框"
-
-#: ../../source/multiplayer/chat.rst:113
-msgid "``.otree-chat__input`` (note: ``__``, not ``_``)"
-msgstr "``.otree-chat__input`` (注意: ``__``, 而不是 ``_``)"
-
-#: ../../source/multiplayer/chat.rst:114
-msgid "Button to submit a message"
-msgstr "提交消息的按钮"
-
-#: ../../source/multiplayer/chat.rst:114
-msgid "``.otree-chat__btn-send``"
-msgstr "``.otree-chat__btn-send``"
-
-#: ../../source/multiplayer/chat.rst:115
-msgid "Div with all messages"
-msgstr "所有消息的div"
-
-#: ../../source/multiplayer/chat.rst:115
-msgid "``.otree-chat__messages``"
-msgstr "``.otree-chat__messages``"
-
-#: ../../source/multiplayer/chat.rst:116
-msgid "Message"
-msgstr "消息"
-
-#: ../../source/multiplayer/chat.rst:116
-msgid "``.otree-chat__msg``"
-msgstr "``.otree-chat__msg``"
-
-#: ../../source/multiplayer/chat.rst:117
-msgid "Message's nickname"
-msgstr "消息的昵称"
-
-#: ../../source/multiplayer/chat.rst:117
-msgid "``.otree-chat__nickname``"
-msgstr "``.otree-chat__nickname``"
-
-#: ../../source/multiplayer/chat.rst:118
-msgid "Message's body text"
-msgstr "消息的文本部分"
-
-#: ../../source/multiplayer/chat.rst:118
-msgid "``.otree-chat__body``"
-msgstr "``.otree-chat__body``"
-
-#: ../../source/multiplayer/chat.rst:121
+#: ../../source/multiplayer/chat.rst:109
 msgid ""
-"You can use CSS or JS to change the appearance or behavior of these "
-"elements (or hide them entirely)."
+"You can use CSS or JS to change the appearance or behavior of these elements (or hide them "
+"entirely)."
 msgstr "你可以使用CSS或JS改变这些元素的外观或者行为（或者将它们完全隐藏起来）。"
+
+#: ../../source/multiplayer/chat.rst:112
+msgid ""
+"You can also customize the appearance by putting it inside a ``<div>`` and styling that "
+"parent ``<div>``. For example, to set the width:"
+msgstr ""
+"你也可以通过将其放入一个 ``<div>`` 并调整这个父 ``<div>`` 的样式来定制外观。例如像下面这样设"
+"置宽度："
+
+#: ../../source/multiplayer/chat.rst:122
+msgid "Multiple chats on a page"
+msgstr "同一页面上多个聊天"
 
 #: ../../source/multiplayer/chat.rst:124
 #, python-format
 msgid ""
-"For example, to customize the style, just include some CSS after the ``{%"
-" chat %}`` element, e.g.:"
-msgstr "举例来说，要定制样式，将CSS包含在 ``{% chat %}`` 元素之后即可，如："
+"You can have multiple ``{{ chat }}`` boxes on each page, so that a player can be in multiple "
+"channels simultaneously."
+msgstr "你可以在同一页面上放置多个 ``{{ chat }}`` ，这样一名玩家就可以同时处于多个频道中。"
 
-#: ../../source/multiplayer/chat.rst:142
-msgid "Note that there are 2 underscores (``__``, not ``_``)."
-msgstr "注意这里有2个下划线（``__``, 而不是 ``_``）。"
-
-#: ../../source/multiplayer/chat.rst:144
-msgid ""
-"You can also customize the appearance by putting it inside a ``<div>`` "
-"and styling that parent ``<div>``. For example, to set the width:"
-msgstr "你也可以通过将其放入一个 ``<div>`` 并调整这个父 ``<div>`` 的样式来定制外观。例如像下面这样设置宽度："
-
-#: ../../source/multiplayer/chat.rst:154
-msgid "Multiple chats on a page"
-msgstr "同一页面上多个聊天"
-
-#: ../../source/multiplayer/chat.rst:156
-#, python-format
-msgid ""
-"You can have multiple ``{% chat %}`` boxes on each page, so that a player"
-" can be in multiple channels simultaneously."
-msgstr "你可以在同一页面上放置多个 ``{% chat %}`` ，这样一名玩家就可以同时处于多个频道中。"
-
-#: ../../source/multiplayer/chat.rst:160
+#: ../../source/multiplayer/chat.rst:128
 msgid "Exporting CSV of chat logs"
 msgstr "将聊天日志导出为CSV"
 
-#: ../../source/multiplayer/chat.rst:162
-msgid ""
-"The chat logs download link will appear on oTree's regular data export "
-"page."
+#: ../../source/multiplayer/chat.rst:130
+msgid "The chat logs download link will appear on oTree's regular data export page."
 msgstr "聊天日志的下载链接在oTree的常规数据导出页面。"
+
+#: ../../source/multiplayer/chat.rst:135
+msgid "See :ref:`experimenter-chat`."
+msgstr "参见 :ref:`experimenter-chat`。"
 
 #: ../../source/multiplayer/groups.rst:4
 msgid "Groups"
@@ -251,31 +177,33 @@ msgstr "小组"
 
 #: ../../source/multiplayer/groups.rst:6
 msgid ""
-"You can divide players into groups for multiplayer games. (If you just "
-"need groups in the sense of \"treatment groups\", where players don't "
-"actually interact with each other, then see :ref:`treatments`.)"
-msgstr "你可以在多人游戏中将玩家分为多个小组。（如果你只是需要报酬意义上的分组，组内玩家并不真的产生交互，那么参考 :ref:`treatments`.）"
+"You can divide players into groups for multiplayer games. (If you just need groups in the "
+"sense of \"treatment groups\", where players don't actually interact with each other, then "
+"see :ref:`treatments`.)"
+msgstr ""
+"你可以在多人游戏中将玩家分为多个小组。（如果你只是需要实验意义上的分组，组内玩家并不真的产生"
+"交互，那么参考 :ref:`treatments`。）"
 
 #: ../../source/multiplayer/groups.rst:11
 msgid ""
-"To set the group size, go to your app's Constants and set "
-"``players_per_group``. For example, for a 2-player game, set "
-"``players_per_group = 2``."
+"To set the group size, go to your app's Constants and set ``players_per_group``. For "
+"example, for a 2-player game, set ``players_per_group = 2``."
 msgstr ""
-"要设置每组的人数，前往Constants并设置 ``players_per_group`` 变量即可.举例来说，对于2人游戏，设置 "
-"``players_per_group = 2``."
+"要设置每组的人数，前往Constants并设置 ``players_per_group`` 变量即可。举例来说，对于2人游戏，"
+"设置 ``players_per_group = 2``。"
 
 #: ../../source/multiplayer/groups.rst:15
 msgid ""
-"If all players should be in the same group, or if it's a single-player "
-"game, set it to ``None``:"
+"If all players should be in the same group, or if it's a single-player game, set it to "
+"``None``:"
 msgstr "如果所有玩家均在同一组内，或者这是一个单人游戏，将其设为 ``None``:"
 
 #: ../../source/multiplayer/groups.rst:18
 msgid ""
-"Each player has an attribute ``id_in_group``, which will tell you if it "
-"is player ``1``, player ``2``, etc."
-msgstr "每名玩家均有一个 ``id_in_group`` 属性，这一属性告诉你这是玩家 ``1``,玩家 ``2``,诸如此类。"
+"Each player has an attribute ``id_in_group``, which will tell you if it is player ``1``, "
+"player ``2``, etc."
+msgstr ""
+"每名玩家均有一个 ``id_in_group`` 属性，这一属性告诉你这是玩家 ``1``，玩家 ``2``，诸如此类。"
 
 #: ../../source/multiplayer/groups.rst:22
 msgid "Getting players"
@@ -307,221 +235,219 @@ msgstr "获得其他玩家"
 
 #: ../../source/multiplayer/groups.rst:40
 msgid ""
-"Player objects have methods ``get_others_in_group()`` and "
-"``get_others_in_subsession()`` that return a list of the *other* players "
-"in the group and subsession."
+"Player objects have methods ``get_others_in_group()`` and ``get_others_in_subsession()`` "
+"that return a list of the *other* players in the group and subsession."
 msgstr ""
-"玩家对象有 ``get_others_in_group()`` 与 ``get_others_in_subsession()`` "
-"方法，分别返回同一小组与子会话中的 *其他* 玩家的列表。"
+"玩家对象有 ``get_others_in_group()`` 与 ``get_others_in_subsession()`` 方法，分别返回同一小组"
+"与子会话中的 *其他* 玩家的列表。"
 
 #: ../../source/multiplayer/groups.rst:47
 msgid "Roles"
-msgstr ""
+msgstr "角色"
 
-#: ../../source/multiplayer/groups.rst:49
+#: ../../source/multiplayer/groups.rst:51
+msgid "New as of January 2021"
+msgstr "在2021年1月新引入"
+
+#: ../../source/multiplayer/groups.rst:53
 msgid ""
-"If each group has multiple roles, such as buyer/seller, principal/agent, "
-"etc., you can define them in Constants. Make their names end with "
-"``_role``:"
+"If each group has multiple roles, such as buyer/seller, principal/agent, etc., you can "
+"define them in Constants. Make their names end with ``_role``:"
 msgstr ""
+"如果每一组中均有多种角色，如买家/卖家，委托人/代理人，诸如此类，你可以将它们定义在常量中。变"
+"量名以 ``_role`` 结尾："
 
-#: ../../source/multiplayer/groups.rst:60
+#: ../../source/multiplayer/groups.rst:64
 msgid ""
-"oTree will then automatically assign each ``role`` to a different player "
-"(sequentially according to ``id_in_group``). You can use this to show "
-"each role different content, e.g.:"
+"oTree will then automatically assign each ``role`` to a different player (sequentially "
+"according to ``id_in_group``). You can use this to show each role different content, e.g.:"
 msgstr ""
+"oTree会自动将每一个角色分配给不同的玩家（按照 ``id_in_group`` 循序分配）。你可以通过这一点来"
+"展示给不同角色不同内容，例如："
 
-#: ../../source/multiplayer/groups.rst:72
+#: ../../source/multiplayer/groups.rst:76
 msgid "In a template:"
-msgstr "然后在模板中："
+msgstr "在模板中："
 
-#: ../../source/multiplayer/groups.rst:78
+#: ../../source/multiplayer/groups.rst:82
 msgid ""
-"You can also use ``group.get_player_by_role()``, which is similar to "
-"``get_player_by_id()``:"
-msgstr ""
+"You can also use ``group.get_player_by_role()``, which is similar to ``get_player_by_id()``:"
+msgstr "你也可以使用 ``group.get_player_by_role()``，它类似于 ``get_player_by_id()``："
 
-#: ../../source/multiplayer/groups.rst:87
+#: ../../source/multiplayer/groups.rst:91
 msgid ""
-"If you want to switch players' roles, you should rearrange the groups, "
-"using ``group.set_players()``, ``subsession.group_randomly()``, etc."
+"If you want to switch players' roles, you should rearrange the groups, using ``group."
+"set_players()``, ``subsession.group_randomly()``, etc."
 msgstr ""
+"如果你想要转换玩家的角色，你应当重新分配小组，使用 ``group.set_players()``，``subsession."
+"group_randomly()`` 等等。"
 
-#: ../../source/multiplayer/groups.rst:95
+#: ../../source/multiplayer/groups.rst:99
 msgid "Group matching"
 msgstr "小组配对"
 
-#: ../../source/multiplayer/groups.rst:100
+#: ../../source/multiplayer/groups.rst:104
 msgid "Fixed matching"
 msgstr "固定配对"
 
-#: ../../source/multiplayer/groups.rst:102
+#: ../../source/multiplayer/groups.rst:106
 msgid ""
-"By default, in each round, players are split into groups of "
-"``Constants.players_per_group``. They are grouped sequentially -- for "
-"example, if there are 2 players per group, then P1 and P2 would be "
-"grouped together, and so would P3 and P4, and so on. ``id_in_group`` is "
-"also assigned sequentially within each group."
+"By default, in each round, players are split into groups of ``Constants.players_per_group``. "
+"They are grouped sequentially -- for example, if there are 2 players per group, then P1 and "
+"P2 would be grouped together, and so would P3 and P4, and so on. ``id_in_group`` is also "
+"assigned sequentially within each group."
 msgstr ""
-"默认情况下，每一轮中，每位玩家被分为数个小组，每组人数为 "
-"``Constants.players_per_group``.分组是按照顺序进行的——举例来说，如果2人一组，那么玩家1与玩家2就会被分为一组，然后是玩家3与玩家4被分为一组，以此类推。"
-" ``id_in_group`` 也在每组中被顺序分配。"
+"默认情况下，每一轮中，玩家被分为数个小组，每组人数为 ``Constants.players_per_group``。分组是"
+"按照顺序进行的——举例来说，如果2人一组，那么玩家1与玩家2就会被分为一组，然后是玩家3与玩家4被分"
+"为一组，以此类推。 ``id_in_group`` 也在每组中被顺序分配。"
 
-#: ../../source/multiplayer/groups.rst:107
+#: ../../source/multiplayer/groups.rst:111
 msgid ""
-"This means that by default, the groups are the same in each round, and "
-"even between apps that have the same ``players_per_group``."
-msgstr "这意味着默认情况下，每一轮中分组是相同的，甚至在不同应用之间均有相同的 ``players_per_group``."
+"This means that by default, the groups are the same in each round, and even between apps "
+"that have the same ``players_per_group``."
+msgstr ""
+"这意味着默认情况下，每一轮中分组是相同的，甚至在不同应用之间均有相同的 "
+"``players_per_group``。"
 
-#: ../../source/multiplayer/groups.rst:110
+#: ../../source/multiplayer/groups.rst:114
 msgid "If you want to rearrange groups, you can use the below techniques."
 msgstr "如果你想重新安排小组，你可以使用下面的技巧。"
 
-#: ../../source/multiplayer/groups.rst:113
+#: ../../source/multiplayer/groups.rst:117
 msgid "group_randomly()"
 msgstr "group_randomly()"
 
-#: ../../source/multiplayer/groups.rst:115
+#: ../../source/multiplayer/groups.rst:119
 msgid ""
-"Subsessions have a method ``group_randomly()`` that shuffles players "
-"randomly, so they can end up in any group, and any position within the "
-"group."
-msgstr "子会话有一个 ``group_randomly()`` 方法可以随机排列玩家，此时玩家被随机分配在任一小组的任一位置。"
+"Subsessions have a method ``group_randomly()`` that shuffles players randomly, so they can "
+"end up in any group, and any position within the group."
+msgstr ""
+"子会话有一个 ``group_randomly()`` 方法可以随机排列玩家，此时玩家被随机分配在任一小组的任一位"
+"置。"
 
-#: ../../source/multiplayer/groups.rst:118
+#: ../../source/multiplayer/groups.rst:122
 msgid ""
-"If you would like to shuffle players between groups but keep players in "
-"fixed roles, use ``group_randomly(fixed_id_in_group=True)``."
-msgstr "如果你想要在不同小组间随机安排玩家但保持玩家的角色不变，使用 ``group_randomly(fixed_id_in_group=True)``."
+"If you would like to shuffle players between groups but keep players in fixed roles, use "
+"``group_randomly(fixed_id_in_group=True)``."
+msgstr ""
+"如果你想要在不同小组间随机安排玩家但保持玩家的角色不变，使用 "
+"``group_randomly(fixed_id_in_group=True)``。"
 
-#: ../../source/multiplayer/groups.rst:121
+#: ../../source/multiplayer/groups.rst:125
 msgid "For example, this will group players randomly each round:"
 msgstr "举例来说，下面的代码会使玩家在每一轮之间随机组队："
 
-#: ../../source/multiplayer/groups.rst:128
-msgid ""
-"This will group players randomly each round, but keep ``id_in_group`` "
-"fixed:"
+#: ../../source/multiplayer/groups.rst:132
+msgid "This will group players randomly each round, but keep ``id_in_group`` fixed:"
 msgstr "下面的代码让玩家在每一轮之间随机组队，但是保持 ``id_in_group`` 不变："
 
-#: ../../source/multiplayer/groups.rst:135
+#: ../../source/multiplayer/groups.rst:139
 msgid ""
-"For the following example, assume that ``players_per_group = 3``, and "
-"that there are 12 participants in the session:"
-msgstr "下面的例子中，假定 ``players_per_group = 3``, 并且会话中共有12名参与者："
+"For the following example, assume that ``players_per_group = 3``, and that there are 12 "
+"participants in the session:"
+msgstr "下面的例子中，假定 ``players_per_group = 3``，并且会话中共有12名参与者："
 
-#: ../../source/multiplayer/groups.rst:163
+#: ../../source/multiplayer/groups.rst:167
 msgid "group_like_round()"
 msgstr "group_like_round()"
 
-#: ../../source/multiplayer/groups.rst:165
+#: ../../source/multiplayer/groups.rst:169
 msgid ""
-"To copy the group structure from one round to another round, use the "
-"``group_like_round(n)`` method. The argument to this method is the round "
-"number whose group structure should be copied."
-msgstr "在不同轮之间复制小组的结构，可使用 ``group_like_round(n)`` 方法。方法中的参数即小组结构被复制的那一轮的轮次。"
+"To copy the group structure from one round to another round, use the ``group_like_round(n)`` "
+"method. The argument to this method is the round number whose group structure should be "
+"copied."
+msgstr ""
+"在不同轮之间复制小组的结构，可使用 ``group_like_round(n)`` 方法。方法中的参数即小组结构被复制"
+"的那一轮的轮次。"
 
-#: ../../source/multiplayer/groups.rst:170
+#: ../../source/multiplayer/groups.rst:174
 msgid ""
-"In the below example, the groups are shuffled in round 1, and then "
-"subsequent rounds copy round 1's grouping structure."
+"In the below example, the groups are shuffled in round 1, and then subsequent rounds copy "
+"round 1's grouping structure."
 msgstr "在下面的例子中，第一轮将随机组队，后面的轮次均复制第一轮的小组结构。"
 
-#: ../../source/multiplayer/groups.rst:183
+#: ../../source/multiplayer/groups.rst:187
 msgid "get_group_matrix()"
 msgstr "get_group_matrix()"
 
-#: ../../source/multiplayer/groups.rst:185
-msgid ""
-"Subsessions have a method called ``get_group_matrix()`` that return the "
-"structure of groups as a matrix, i.e. a list of lists, with each sublist "
-"being the players in a group, ordered by ``id_in_group``."
-msgstr ""
-"子会话有一个方法 ``get_group_matrix()`` "
-"，此方法返回小组的结构，以矩阵的形式，也即列表的列表，每一个子列表均为小组中的玩家，按照  ``id_in_group`` 排序。"
-
 #: ../../source/multiplayer/groups.rst:189
-msgid "The following lines are equivalent."
-msgstr "下面的两行是等价的。"
+msgid ""
+"Subsessions have a method called ``get_group_matrix()`` that return the structure of groups "
+"as a matrix, for example:"
+msgstr "子会话有一个方法 ``get_group_matrix()`` ，此方法返回小组的结构，以矩阵的形式，例如："
 
-#: ../../source/multiplayer/groups.rst:201
+#: ../../source/multiplayer/groups.rst:204
 msgid "set_group_matrix()"
 msgstr "set_group_matrix()"
 
-#: ../../source/multiplayer/groups.rst:203
+#: ../../source/multiplayer/groups.rst:206
 msgid ""
-"``set_group_matrix()`` lets you modify the group structure in any way you"
-" want. First, get the list of players with ``get_players()``, or the pre-"
-"existing group matrix with ``get_group_matrix()``. Make your matrix then "
-"pass it to ``set_group_matrix()``:"
+"``set_group_matrix()`` lets you modify the group structure in any way you want. First, get "
+"the list of players with ``get_players()``, or the pre-existing group matrix with "
+"``get_group_matrix()``. Make your matrix then pass it to ``set_group_matrix()``:"
 msgstr ""
+"``set_group_matrix()`` 让你可以任意改变小组结构。首先使用 ``get_players()`` 获得玩家的列表，"
+"或者使用 ``get_group_matrix()`` 获得已经存在的小组矩阵。构建你想要的矩阵并将其传给 "
+"``set_group_matrix()``:"
 
-#: ../../source/multiplayer/groups.rst:226
+#: ../../source/multiplayer/groups.rst:229
 msgid ""
-"You can also pass a matrix of integers. It must contain all integers from"
-" 1 to the number of players in the subsession. Each integer represents "
-"the player who has that ``id_in_subsession``. For example:"
+"You can also pass a matrix of integers. It must contain all integers from 1 to the number of "
+"players in the subsession. Each integer represents the player who has that "
+"``id_in_subsession``. For example:"
 msgstr ""
-"你也可以传递一个整数矩阵。整数矩阵中必须包含从1到子会话中的玩家数量的所有整数。每一个整数代表 ``id_in_subsession`` "
-"为此整数的玩家。举例如下："
+"你也可以传递一个整数矩阵。整数矩阵中必须包含从1到子会话中的玩家数量的所有整数。每一个整数代"
+"表 ``id_in_subsession`` 为此整数的玩家。举例如下："
 
-#: ../../source/multiplayer/groups.rst:245
+#: ../../source/multiplayer/groups.rst:248
 msgid ""
-"To check if your group shuffling worked correctly, open your browser to "
-"the \"Results\" tab of your session, and look at the ``group`` and "
-"``id_in_group`` columns in each round."
+"To check if your group shuffling worked correctly, open your browser to the \"Results\" tab "
+"of your session, and look at the ``group`` and ``id_in_group`` columns in each round."
 msgstr ""
-"为了检查小组重排是否工作正常，打开浏览器并切换到你的会话的\"Results\"选项卡，并检查每一轮中的 ``group`` 与 "
-"``id_in_group`` 两栏是否正确。"
+"为了检查小组重排是否工作正常，打开浏览器并切换到你的会话的\"Results\"选项卡，并检查每一轮中"
+"的 ``group`` 与 ``id_in_group`` 两栏是否正确。"
 
-#: ../../source/multiplayer/groups.rst:250
-#, fuzzy
+#: ../../source/multiplayer/groups.rst:253
 msgid "group.set_players()"
-msgstr "get_players()"
+msgstr "group.set_players()"
 
-#: ../../source/multiplayer/groups.rst:252
+#: ../../source/multiplayer/groups.rst:255
 msgid ""
-"This is similar to ``set_group_matrix``, but it only shuffles players "
-"within a group, e.g. so that you can give them different roles."
+"This is similar to ``set_group_matrix``, but it only shuffles players within a group, e.g. "
+"so that you can give them different roles."
 msgstr ""
+"此函数类似与 ``set_group_matrix``，但它仅仅重新排列小组中的玩家，例如你可以使用它来分配给玩家"
+"不同的角色。"
 
-#: ../../source/multiplayer/groups.rst:256
+#: ../../source/multiplayer/groups.rst:259
 msgid "Shuffling during the session"
 msgstr "在会话中重排小组"
 
-#: ../../source/multiplayer/groups.rst:258
+#: ../../source/multiplayer/groups.rst:261
 msgid ""
-"``creating_session`` is usually a good place to shuffle groups, but "
-"remember that ``creating_session`` is run when the session is created, "
-"before players begin playing. So, if your shuffling logic needs to depend"
-" on something that happens after the session starts, you should do the "
-"shuffling in a wait page instead."
+"``creating_session`` is usually a good place to shuffle groups, but remember that "
+"``creating_session`` is run when the session is created, before players begin playing. So, "
+"if your shuffling logic needs to depend on something that happens after the session starts, "
+"you should do the shuffling in a wait page instead."
 msgstr ""
-"``creating_session`` 通常是重排小组的好地方，但是 ``creating_session`` "
-"是在会话创建前运行，即玩家开始行动之前。所以如果你的重排逻辑需要依赖于会话开始后的因素，你应当在等待页面重排。"
-
-#: ../../source/multiplayer/groups.rst:264
-msgid ""
-"Let's say you have defined a method on the subsession called "
-"``do_my_shuffle()`` that uses ``set_group_matrix``, etc."
-msgstr "假定你在子会话中定义了一个方法，名为 ``do_my_shuffle()`` ，它使用了 ``set_group_matrix`` ，诸如此类。"
+"``creating_session`` 通常是重排小组的好地方，但是 ``creating_session`` 是在会话创建前运行，即"
+"玩家开始行动之前。所以如果你的重排逻辑需要依赖于会话开始后的因素，你应当在等待页面重排。"
 
 #: ../../source/multiplayer/groups.rst:267
 msgid ""
-"You need to make a ``WaitPage`` with ``wait_for_all_groups=True`` and put"
-" the shuffling code in ``after_all_players_arrive``:"
+"You need to make a ``WaitPage`` with ``wait_for_all_groups=True`` and put the shuffling code "
+"in ``after_all_players_arrive``:"
 msgstr ""
 "你需要创建一个 ``WaitPage`` 且在其中设定 ``wait_for_all_groups=True`` 并将重排的代码放入 "
 "``after_all_players_arrive`` 中:"
 
-#: ../../source/multiplayer/groups.rst:278
+#: ../../source/multiplayer/groups.rst:283
 msgid "Group by arrival time"
 msgstr "按照到达时间组队"
 
-#: ../../source/multiplayer/groups.rst:280
+#: ../../source/multiplayer/groups.rst:285
 msgid "See :ref:`group_by_arrival_time`."
-msgstr "参考 :ref:`group_by_arrival_time`."
+msgstr "参考 :ref:`group_by_arrival_time`。"
 
 #: ../../source/multiplayer/intro.rst:2
 msgid "Multiplayer games"
@@ -533,33 +459,34 @@ msgstr "等待页面"
 
 #: ../../source/multiplayer/waitpages.rst:6
 msgid ""
-"Wait pages are necessary when one player needs to wait for others to take"
-" some action before they can proceed. For example, in an ultimatum game, "
-"player 2 cannot accept or reject before they have seen player 1's offer."
-msgstr "当一位玩家需要等待其他玩家进行一些操作之后所有玩家才能继续进行游戏时，等待页面是必须的。举例来说，在最后通牒博弈中，玩家2在他看到玩家1的报价之前不能拒绝或者接受这一报价。"
+"Wait pages are necessary when one player needs to wait for others to take some action before "
+"they can proceed. For example, in an ultimatum game, player 2 cannot accept or reject before "
+"they have seen player 1's offer."
+msgstr ""
+"当一位玩家需要等待其他玩家进行一些操作之后所有玩家才能继续进行游戏时，等待页面是必须的。举例"
+"来说，在最后通牒博弈中，玩家2在他看到玩家1的报价之前不能拒绝或者接受这一报价。"
 
 #: ../../source/multiplayer/waitpages.rst:11
 msgid ""
-"If you have a ``WaitPage`` in your sequence of pages, then oTree waits "
-"until all players in the group have arrived at that point in the "
-"sequence, and then all players are allowed to proceed."
+"If you have a ``WaitPage`` in your sequence of pages, then oTree waits until all players in "
+"the group have arrived at that point in the sequence, and then all players are allowed to "
+"proceed."
 msgstr ""
-"如果你在页面序列中放置了一个 ``WaitPage`` "
-"，那么oTree会等待小组内的所有玩家都到达了序列中的那一点之后，再允许所有玩家继续下面的游戏。"
+"如果你在页面序列中放置了一个 ``WaitPage`` ，那么oTree会等待小组内的所有玩家都到达了序列中的那"
+"一点之后，再允许所有玩家继续下面的游戏。"
 
 #: ../../source/multiplayer/waitpages.rst:16
 msgid ""
-"If your subsession has multiple groups playing simultaneously, and you "
-"would like a wait page that waits for all groups (i.e. all players in the"
-" subsession), you can set the attribute ``wait_for_all_groups = True`` on"
-" the wait page."
+"If your subsession has multiple groups playing simultaneously, and you would like a wait "
+"page that waits for all groups (i.e. all players in the subsession), you can set the "
+"attribute ``wait_for_all_groups = True`` on the wait page."
 msgstr ""
-"如果子会话中有多组同时进行游戏，你可能会希望为所有组（也就是子会话中的所有玩家）设置一个等待页面，你可以在等待页面中设置 "
-"``wait_for_all_groups = True`` 实现这一点。"
+"如果子会话中有多组同时进行游戏，你可能会希望为所有组（也就是子会话中的所有玩家）设置一个等待"
+"页面，你可以在等待页面中设置 ``wait_for_all_groups = True`` 实现这一点。"
 
 #: ../../source/multiplayer/waitpages.rst:21
 msgid "For more information on groups, see :ref:`groups`."
-msgstr "获取更多关于小组的信息，参考 :ref:`groups`."
+msgstr "获取更多关于小组的信息，参考 :ref:`groups`。"
 
 #: ../../source/multiplayer/waitpages.rst:26
 msgid "after_all_players_arrive"
@@ -567,312 +494,321 @@ msgstr "after_all_players_arrive"
 
 # Chris comment: it's a group function, not a method.
 #: ../../source/multiplayer/waitpages.rst:28
-#, fuzzy
 msgid ""
-"``after_all_players_arrive`` lets you run some calculations once all "
-"players have arrived at the wait page. This is a good place to set the "
-"players' payoffs or determine the winner. You should first define a Group"
-" function that does the desired calculations. For example:"
+"``after_all_players_arrive`` lets you run some calculations once all players have arrived at "
+"the wait page. This is a good place to set the players' payoffs or determine the winner. You "
+"should first define a Group function that does the desired calculations. For example:"
 msgstr ""
-"``after_all_players_arrive`` "
-"允许你在所有玩家都到达等待页面之后进行一些计算。这是个设置玩家的收益或者决定获胜者的好地方。你应当首先在Group类中定义一个实现了你想要功能的函数。例如："
+"``after_all_players_arrive`` 允许你在所有玩家都到达等待页面之后进行一些计算。这是个设置玩家的"
+"收益或者决定获胜者的好地方。你应当首先定义一个小组函数，它实现了你想要的功能。例如："
 
 #: ../../source/multiplayer/waitpages.rst:41
-msgid "Then trigger this method by doing:"
+msgid "Then trigger this function by doing:"
 msgstr "然后通过下面的方法触发它："
 
+# method -> function
 #: ../../source/multiplayer/waitpages.rst:48
 msgid ""
-"If you set ``wait_for_all_groups = True``, then you should set "
-"``after_all_players_arrive`` to the name of to a method on your "
-"*Subsession* model."
+"If you set ``wait_for_all_groups = True``, then ``after_all_players_arrive`` must be a "
+"*Subsession* function."
 msgstr ""
-"如果你设置了 ``wait_for_all_groups = True``, 那么你应该将 "
-"``after_all_players_arrive`` 设为你的 *Subsession* 模块中的某个方法的名字。"
+"如果你设置了 ``wait_for_all_groups = True``, 那么 ``after_all_players_arrive`` 应当是一个 *子"
+"会话* 函数。"
 
-#: ../../source/multiplayer/waitpages.rst:52
+#: ../../source/multiplayer/waitpages.rst:51
+msgid ""
+"If you are using a text editor, ``after_all_players_arrive`` can also be defined directly in "
+"the WaitPage:"
+msgstr "如果你使用的是文本编辑器，``after_all_players_arrive`` 可直接在等待页面中定义："
+
+#: ../../source/multiplayer/waitpages.rst:61
+msgid "It can also be a string:"
+msgstr "它也可是一个字符串："
+
+#: ../../source/multiplayer/waitpages.rst:70
 msgid "is_displayed()"
 msgstr "is_displayed()"
 
-#: ../../source/multiplayer/waitpages.rst:54
+#: ../../source/multiplayer/waitpages.rst:72
 msgid "Works the same way as with regular pages."
 msgstr "与普通页面中的功能相同。"
 
-#: ../../source/multiplayer/waitpages.rst:59
+#: ../../source/multiplayer/waitpages.rst:77
 msgid "group_by_arrival_time"
 msgstr "group_by_arrival_time"
 
-#: ../../source/multiplayer/waitpages.rst:61
+#: ../../source/multiplayer/waitpages.rst:79
 msgid ""
-"If you set ``group_by_arrival_time = True`` on a WaitPage, players will "
-"be grouped in the order they arrive at that wait page:"
-msgstr "如果你在等待页面设置了 ``group_by_arrival_time = True`` ，玩家会按照到达等待页面的顺序组队："
-
-#: ../../source/multiplayer/waitpages.rst:69
-msgid ""
-"For example, if ``players_per_group = 2``, the first 2 players to arrive "
-"at the wait page will be grouped together, then the next 2 players, and "
-"so on."
-msgstr "举例来说，假设 ``players_per_group = 2``,那么首先到达等待页面的2位玩家将会被分为一组，然后接下来2名玩家一组，以此类推。"
-
-#: ../../source/multiplayer/waitpages.rst:72
-msgid ""
-"This is useful in sessions where some participants might drop out (e.g. "
-"online experiments, or experiments with consent pages that let the "
-"participant quit early), or sessions where some participants take much "
-"longer than others."
-msgstr "这在一些玩家可能会离开的情况下非常有用（例如在线实验或者有允许玩家提前离开的同意页面的实验），或在某些玩家会比其他玩家花费多得多的时间的情况下非常有用。"
-
-#: ../../source/multiplayer/waitpages.rst:77
-msgid ""
-"A typical way to use ``group_by_arrival_time`` is to put it after an app "
-"that filters out participants. For example, if your session has a consent"
-" page that gives participants the chance to opt out of the study, you can"
-" make a \"consent\" app that just contains the consent pages, and then "
-"have an ``app_sequence`` like ``['consent', 'my_game']``, where "
-"``my_game`` uses ``group_by_arrival_time``. This means that if someone "
-"opts out in ``consent``, they will be excluded from the grouping in "
-"``my_game``."
+"If you set ``group_by_arrival_time = True`` on a WaitPage, players will be grouped in the "
+"order they arrive at that wait page:"
 msgstr ""
-"一种典型的使用 ``group_by_arrival_time`` "
-"的方法是将其放在一个应用前面用来筛选参与人。举例来说，如果你的会话中有一个同意页面使得参与人有机会选择退出实验，你可以创建一个“consent”应用，它仅仅包含同意页面，然后"
-" ``app_sequence`` 就像 ``['consent', 'my_game']``,并且 ``my_game`` 中使用 "
-"``group_by_arrival_time``。这意味着如果有人在 ``consent`` 中选择了退出，他们就不会在 ``my_game``"
-" 中参与组队。"
+"如果你在等待页面设置了 ``group_by_arrival_time = True`` ，玩家会按照到达等待页面的顺序组队："
 
-#: ../../source/multiplayer/waitpages.rst:86
+#: ../../source/multiplayer/waitpages.rst:87
 msgid ""
-"If a game has multiple rounds, you may want to only group by arrival time"
-" in round 1:"
+"For example, if ``players_per_group = 2``, the first 2 players to arrive at the wait page "
+"will be grouped together, then the next 2 players, and so on."
+msgstr ""
+"举例来说，假设 ``players_per_group = 2``,那么首先到达等待页面的2位玩家将会被分为一组，然后接"
+"下来2名玩家一组，以此类推。"
+
+#: ../../source/multiplayer/waitpages.rst:90
+msgid ""
+"This is useful in sessions where some participants might drop out (e.g. online experiments, "
+"or experiments with consent pages that let the participant quit early), or sessions where "
+"some participants take much longer than others."
+msgstr ""
+"这在一些玩家可能会离开的情况下非常有用（例如在线实验或者有允许玩家提前离开的同意页面的实"
+"验），或在某些玩家会比其他玩家花费多得多的时间的情况下非常有用。"
+
+#: ../../source/multiplayer/waitpages.rst:95
+msgid ""
+"A typical way to use ``group_by_arrival_time`` is to put it after an app that filters out "
+"participants. For example, if your session has a consent page that gives participants the "
+"chance to opt out of the study, you can make a \"consent\" app that just contains the "
+"consent pages, and then have an ``app_sequence`` like ``['consent', 'my_game']``, where "
+"``my_game`` uses ``group_by_arrival_time``. This means that if someone opts out in "
+"``consent``, they will be excluded from the grouping in ``my_game``."
+msgstr ""
+"一种典型的使用 ``group_by_arrival_time`` 的方法是将其放在一个应用前面用来筛选参与人。举例来"
+"说，如果你的会话中有一个同意页面使得参与人有机会选择退出实验，你可以创建一个“consent”应用，它"
+"仅仅包含同意页面，然后 ``app_sequence`` 就像 ``['consent', 'my_game']``,并且 ``my_game`` 中使"
+"用 ``group_by_arrival_time``。这意味着如果有人在 ``consent`` 中选择了退出，他们就不会在 "
+"``my_game`` 中参与组队。"
+
+#: ../../source/multiplayer/waitpages.rst:104
+msgid "If a game has multiple rounds, you may want to only group by arrival time in round 1:"
 msgstr "如果一个游戏有多轮，那么你可能只想在第一轮按照到达时间组队："
 
-#: ../../source/multiplayer/waitpages.rst:98
+#: ../../source/multiplayer/waitpages.rst:116
 msgid ""
-"If you do this, then subsequent rounds will keep the same group structure"
-" as round 1. Otherwise, players will be re-grouped by their arrival time "
-"in each round. (``group_by_arrival_time`` copies the group structure to "
-"future rounds.)"
+"If you do this, then subsequent rounds will keep the same group structure as round 1. "
+"Otherwise, players will be re-grouped by their arrival time in each round. "
+"(``group_by_arrival_time`` copies the group structure to future rounds.)"
 msgstr ""
-"如果你这样做，那么余下的轮次会保持第一轮的小组结构。不然的话，玩家在每一轮都会按照他们的到达时间重新组队。（``group_by_arrival_time``"
-" 复制了小组结构到下面的轮次。）"
+"如果你这样做，那么余下的轮次会保持第一轮的小组结构。不然的话，玩家在每一轮都会按照他们的到达"
+"时间重新组队。（``group_by_arrival_time`` 复制了小组结构到下面的轮次。）"
 
-#: ../../source/multiplayer/waitpages.rst:103
-#: ../../source/multiplayer/waitpages.rst:249
+#: ../../source/multiplayer/waitpages.rst:121 ../../source/multiplayer/waitpages.rst:272
 msgid "Notes:"
 msgstr "注意："
 
-#: ../../source/multiplayer/waitpages.rst:105
-msgid ""
-"``id_in_group`` is not necessarily assigned in the order players arrived "
-"at the page."
+#: ../../source/multiplayer/waitpages.rst:123
+msgid "``id_in_group`` is not necessarily assigned in the order players arrived at the page."
 msgstr "``id_in_group`` 并不按照玩家到达页面的顺序被赋值。"
 
-#: ../../source/multiplayer/waitpages.rst:106
+#: ../../source/multiplayer/waitpages.rst:124
 msgid ""
-"``group_by_arrival_time`` can only be used if the wait page is the first "
-"page in ``page_sequence``"
+"``group_by_arrival_time`` can only be used if the wait page is the first page in "
+"``page_sequence``"
 msgstr "``group_by_arrival_time`` 仅在等待页面是 ``page_sequence`` 的第一个页面时可用"
-
-#: ../../source/multiplayer/waitpages.rst:107
-msgid ""
-"If you use ``is_displayed`` on a page with ``group_by_arrival_time``, it "
-"should only be based on the round number. Don't use ``is_displayed`` to "
-"show the page to some players but not others."
-msgstr ""
-"如果你将 ``is_displayed`` 与 ``group_by_arrival_time`` 一起使用，那么它应当仅依赖轮数。不要使用 "
-"``is_displayed`` 来将页面展示给一部分玩家而不展示给其他玩家。"
-
-#: ../../source/multiplayer/waitpages.rst:110
-msgid ""
-"If ``group_by_arrival_time = True``, then in ``creating_session``, all "
-"players will initially be in the same group. Groups are only created \"on"
-" the fly\" as players arrive at the wait page."
-msgstr ""
-"如果 ``group_by_arrival_time = True`` 那么在 ``creating_session`` "
-"时，所有玩家一开始均在同一组中。小组是在玩家到达等待页面的那“一瞬间”被创建的。"
-
-#: ../../source/multiplayer/waitpages.rst:114
-msgid ""
-"If you need further control on arranging players into groups, use "
-":ref:`group_by_arrival_time_method`."
-msgstr "如果你需要进一步控制玩家如何组织成小组，参考 :ref:`group_by_arrival_time_method`."
-
-#: ../../source/multiplayer/waitpages.rst:120
-msgid "group_by_arrival_time_method()"
-msgstr "group_by_arrival_time_method()"
-
-#: ../../source/multiplayer/waitpages.rst:122
-msgid ""
-"If you're using ``group_by_arrival_time`` and want more control over "
-"which players are assigned together, you can also use "
-"``group_by_arrival_time_method()``."
-msgstr ""
-"如果你使用了 ``group_by_arrival_time`` 并想要进一步控制哪些玩家被分配到一起，你可以使用 "
-"``group_by_arrival_time_method()``."
 
 #: ../../source/multiplayer/waitpages.rst:125
 msgid ""
-"Let's say that in addition to grouping by arrival time, you need each "
-"group to consist of 2 men and 2 women."
-msgstr "我们假定除了按照到达时间组队之外，你还需要每一组由2名男性和2名女性组成。"
+"If you use ``is_displayed`` on a page with ``group_by_arrival_time``, it should only be "
+"based on the round number. Don't use ``is_displayed`` to show the page to some players but "
+"not others."
+msgstr ""
+"如果你将 ``is_displayed`` 与 ``group_by_arrival_time`` 一起使用，那么它应当仅依赖轮数。不要使"
+"用 ``is_displayed`` 来将页面展示给一部分玩家而不展示给其他玩家。"
 
 #: ../../source/multiplayer/waitpages.rst:128
 msgid ""
-"If you define a method called ``group_by_arrival_time_method`` on your "
-"Subsession, it will get called whenever a new player reaches the wait "
-"page. The method's argument is the list of players who are currently "
-"waiting at your wait page. If you pick some of these players and return "
-"them as a list, those players will be assigned to a group, and move "
-"forward. If you don't return anything, then no grouping occurs."
+"If ``group_by_arrival_time = True``, then in ``creating_session``, all players will "
+"initially be in the same group. Groups are only created \"on the fly\" as players arrive at "
+"the wait page."
 msgstr ""
-"如果你在子会话中定义了一个 ``group_by_arrival_time_method`` "
-"方法，它会在每一次新玩家到达等待页面时被执行。这一方法的参数是所有处在本等待页面的玩家组成的列表。如果你选择了其中一些玩家并且返回了他们组成的列表，那么这些玩家会被分为一组，并且继续进行下面的游戏。如果你没有返回任何东西，那么组队不会发生。"
+"如果 ``group_by_arrival_time = True`` 那么在 ``creating_session`` 时，所有玩家一开始均在同一"
+"组中。小组是在玩家到达等待页面的那“一瞬间”被创建的。"
 
-#: ../../source/multiplayer/waitpages.rst:135
+#: ../../source/multiplayer/waitpages.rst:132
 msgid ""
-"Here's an example where each group has 2 men and 2 women. It assumes that"
-" in a previous app, you assigned ``self.participant.vars['category']`` to"
-" each participant."
+"If you need further control on arranging players into groups, use :ref:"
+"`group_by_arrival_time_method`."
+msgstr "如果你需要进一步控制玩家如何组织成小组，参考 :ref:`group_by_arrival_time_method`。"
+
+#: ../../source/multiplayer/waitpages.rst:138
+msgid "group_by_arrival_time_method()"
+msgstr "group_by_arrival_time_method()"
+
+#: ../../source/multiplayer/waitpages.rst:140
+msgid ""
+"If you're using ``group_by_arrival_time`` and want more control over which players are "
+"assigned together, you can also use ``group_by_arrival_time_method()``."
+msgstr ""
+"如果你使用了 ``group_by_arrival_time`` 并想要进一步控制哪些玩家被分配到一起，你可以使用 "
+"``group_by_arrival_time_method()``。"
+
+#: ../../source/multiplayer/waitpages.rst:143
+msgid ""
+"Let's say that in addition to grouping by arrival time, you need each group to consist of 2 "
+"men and 2 women."
+msgstr "我们假定除了按照到达时间组队之外，你还需要每一组由2名男性和2名女性组成。"
+
+# chris comment: it's now a function, not a method.
+#: ../../source/multiplayer/waitpages.rst:146
+msgid ""
+"If you define a function called ``group_by_arrival_time_method``, it will get called "
+"whenever a new player reaches the wait page. The function's second argument is the list of "
+"players who are currently waiting at your wait page. If you pick some of these players and "
+"return them as a list, those players will be assigned to a group, and move forward. If you "
+"don't return anything, then no grouping occurs."
+msgstr ""
+"如果你定义了一个 ``group_by_arrival_time_method`` 函数，它会在每一次新玩家到达等待页面时被执"
+"行。这一方法的参数是所有处在本等待页面的玩家组成的列表。如果你选择了其中一些玩家并且返回了他"
+"们组成的列表，那么这些玩家会被分为一组，并且继续进行下面的游戏。如果你没有返回任何东西，那么"
+"组队不会发生。"
+
+#: ../../source/multiplayer/waitpages.rst:153
+msgid ""
+"Here's an example where each group has 2 men and 2 women. It assumes that in a previous app, "
+"you assigned ``participant.category`` to each participant."
 msgstr ""
 "下面是一个每一组中有2名男性和2名女性的例子。这里假定了在上一个应用中，你设置了每一位参加者的 "
-"``self.participant.vars['category']`` 。"
+"``participant.category`` 。"
 
-#: ../../source/multiplayer/waitpages.rst:151
-#, fuzzy
+#: ../../source/multiplayer/waitpages.rst:169
+msgid "Timeouts on wait pages"
+msgstr "等待页面上的超时"
+
+# "participant.vars" changed to "participant fields"
+#: ../../source/multiplayer/waitpages.rst:171
 msgid ""
-"You can also use ``group_by_arrival_time_method`` to put a timeout on the"
-" wait page, for example to allow the participant to proceed individually "
-"if they have been waiting longer than 5 minutes. First, you must record "
-"``time.time()`` on the final page before the app with "
-"``group_by_arrival_time``. Store it in ``participant.vars``."
+"You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page, for "
+"example to allow the participant to proceed individually if they have been waiting longer "
+"than 5 minutes. First, you must record ``time.time()`` on the final page before the app with "
+"``group_by_arrival_time``. Store it in a :ref:`participant field <vars>`."
 msgstr ""
-"你也可以使用 ``group_by_arrival_time_method`` "
-"为等待页面设置一个超时行为，例如允许参与人单独继续进行游戏，如果他们已经等待了超过5分钟。首先，你必须在使用 "
-"``group_by_arrival_time`` 的应用的之前的最后一个页面记录 ``time.time()`` ，并将其存入 "
-"``participant.vars``."
+"你也可以使用 ``group_by_arrival_time_method`` 为等待页面设置一个超时行为，例如允许参与人单独"
+"继续进行游戏，如果他们已经等待了超过5分钟。首先，你必须在使用了 ``group_by_arrival_time`` 的"
+"应用之前的最后一个页面记录 ``time.time()`` 。将其存入 :ref:`participant field <vars>`。"
 
-#: ../../source/multiplayer/waitpages.rst:156
-msgid "Then define a Player method:"
-msgstr "然后定义一个Player类中的方法："
+# method -> function
+#: ../../source/multiplayer/waitpages.rst:176
+msgid "Then define a Player function:"
+msgstr "然后定义一个玩家函数："
 
-#: ../../source/multiplayer/waitpages.rst:166
+#: ../../source/multiplayer/waitpages.rst:187
 msgid "Now use this:"
 msgstr "现在使用下面的代码："
 
-#: ../../source/multiplayer/waitpages.rst:178
+#: ../../source/multiplayer/waitpages.rst:199
 msgid ""
-"This works because the wait page automatically refreshes once or twice a "
-"minute, which re-executes ``group_by_arrival_time_method``."
-msgstr "这样是可行的，因为等待页面会一分钟自动刷新1次或者2次，此时 ``group_by_arrival_time_method`` 就会被重新执行。"
+"This works because the wait page automatically refreshes once or twice a minute, which re-"
+"executes ``group_by_arrival_time_method``."
+msgstr ""
+"这样是可行的，因为等待页面会一分钟自动刷新1次或者2次，此时 ``group_by_arrival_time_method`` "
+"就会被重新执行。"
 
-#: ../../source/multiplayer/waitpages.rst:184
+#: ../../source/multiplayer/waitpages.rst:205
 msgid "Preventing players from getting stuck on wait pages"
 msgstr "避免玩家卡在等待页面"
 
-#: ../../source/multiplayer/waitpages.rst:186
+#: ../../source/multiplayer/waitpages.rst:207
 msgid ""
-"A common problem especially with online experiments is players getting "
-"stuck waiting for another player in their group who dropped out or is too"
-" slow."
+"A common problem especially with online experiments is players getting stuck waiting for "
+"another player in their group who dropped out or is too slow."
 msgstr "一个在线实验中尤其常见的问题是玩家会因为等待一个已经退出或者太慢的玩家而卡住。"
 
-#: ../../source/multiplayer/waitpages.rst:189
+#: ../../source/multiplayer/waitpages.rst:210
 msgid "Here are some things you can do to reduce this problem:"
 msgstr "下面是一些减少此问题的方法："
 
-#: ../../source/multiplayer/waitpages.rst:192
+#: ../../source/multiplayer/waitpages.rst:213
 msgid "Use ``group_by_arrival_time``"
 msgstr "使用 ``group_by_arrival_time``"
 
-#: ../../source/multiplayer/waitpages.rst:194
+#: ../../source/multiplayer/waitpages.rst:215
 msgid ""
-"As described above, you can use ``group_by_arrival_time`` so that only "
-"players who are actively playing around the same time get grouped "
-"together."
-msgstr "正如上文所述，你可以使用 ``group_by_arrival_time`` 使得那些大概同时完成页面的玩家在一起组队。"
-
-#: ../../source/multiplayer/waitpages.rst:197
-msgid ""
-"``group_by_arrival_time`` works well if used after a \"lock-in\" task. In"
-" other words, before your multiplayer game, you can have a single-player "
-"effort task. The idea is that a participant takes the effort to complete "
-"this initial task, they are less likely to drop out after that point."
+"As described above, you can use ``group_by_arrival_time`` so that only players who are "
+"actively playing around the same time get grouped together."
 msgstr ""
-"如果 ``group_by_arrival_time`` "
-"放在一个“锁定”任务之后，它的效果会很好。换句话说，在你的多人游戏之前，你可以先有一个单人任务。这里的想法是如果一位参与人花了力气完成了第一个任务，那么他就有更少的可能在之后退出。"
+"正如上文所述，你可以使用 ``group_by_arrival_time`` 使得那些大概同时完成页面的玩家在一起组队。"
 
-#: ../../source/multiplayer/waitpages.rst:204
+#: ../../source/multiplayer/waitpages.rst:218
+msgid ""
+"``group_by_arrival_time`` works well if used after a \"lock-in\" task. In other words, "
+"before your multiplayer game, you can have a single-player effort task. The idea is that a "
+"participant takes the effort to complete this initial task, they are less likely to drop out "
+"after that point."
+msgstr ""
+"如果 ``group_by_arrival_time`` 放在一个“锁定”任务之后，它的效果会很好。换句话说，在你的多人游"
+"戏之前，你可以先有一个单人任务。这里的想法是如果一位参与人花了力气完成了第一个任务，那么他就"
+"有更少的可能在之后退出。"
+
+#: ../../source/multiplayer/waitpages.rst:225
 msgid "Use page timeouts"
 msgstr "使用页面超时"
 
-#: ../../source/multiplayer/waitpages.rst:206
+#: ../../source/multiplayer/waitpages.rst:227
 msgid ""
-"Use :ref:`timeout_seconds` on each page, so that if a player is slow or "
-"inactive, their page will automatically advance. Or, you can manually "
-"force a timeout by clicking the \"Advance slowest participants\" button "
-"in the admin interface."
+"Use :ref:`timeout_seconds` on each page, so that if a player is slow or inactive, their page "
+"will automatically advance. Or, you can manually force a timeout by clicking the \"Advance "
+"slowest participants\" button in the admin interface."
 msgstr ""
-"在每个页面上使用 :ref:`timeout_seconds` "
-"，这样当一位玩家很慢或者不再操作，他的页面会自动继续进行下去。或者，你可以手动强制超时，通过点击admin界面的 \"Advance "
-"slowest participants\" 按钮。"
+"在每个页面上使用 :ref:`timeout_seconds` ，这样当一位玩家很慢或者不再操作，他的页面会自动继续"
+"进行下去。或者，你可以手动强制超时，通过点击admin界面的 \"Advance slowest participants\" 按"
+"钮。"
 
-#: ../../source/multiplayer/waitpages.rst:211
+#: ../../source/multiplayer/waitpages.rst:232
 msgid "Check timeout_happened"
 msgstr "检查超时发生"
 
-#: ../../source/multiplayer/waitpages.rst:213
+#: ../../source/multiplayer/waitpages.rst:234
 msgid ""
-"You can tell users they must submit a page before its "
-"``timeout_seconds``, or else they will be counted as a dropout. Even have"
-" a page that just says \"click the next button to confirm you are still "
-"playing\". Then check :ref:`timeout_happened`. If it is True, you can do "
-"various things such as set a field on that player/group to indicate the "
-"dropout, and skip the rest of the pages in the round."
+"You can tell users they must submit a page before its ``timeout_seconds``, or else they will "
+"be counted as a dropout. Even have a page that just says \"click the next button to confirm "
+"you are still playing\". Then check :ref:`timeout_happened`. If it is True, you can do "
+"various things such as set a field on that player/group to indicate the dropout, and skip "
+"the rest of the pages in the round."
 msgstr ""
-"你可以告知用户他们必须在 ``timeout_seconds`` "
-"之前提交页面，否则就会被算作退出游戏。甚至可以添加一个页面，仅仅询问“点击继续按钮以确认继续进行游戏”。然后检查 "
-":ref:`timeout_happened`.如果其值为True，你可以做一些事情如设置这位玩家/这个小组的某个字段以标记其已经退出，并跳过本轮余下的页面。"
+"你可以告知用户他们必须在 ``timeout_seconds`` 之前提交页面，否则就会被算作退出游戏。甚至可以添"
+"加一个页面，仅仅询问“点击继续按钮以确认继续进行游戏”。然后检查 :ref:`timeout_happened`。如果"
+"其值为True，你可以做一些事情如设置这位玩家/这个小组的某个字段以标记其已经退出，并跳过本轮余下"
+"的页面。"
 
-#: ../../source/multiplayer/waitpages.rst:220
+#: ../../source/multiplayer/waitpages.rst:241
 msgid "Replacing dropped out player with a bot"
 msgstr "将退出的玩家替换为bot"
 
-#: ../../source/multiplayer/waitpages.rst:222
+#: ../../source/multiplayer/waitpages.rst:243
 msgid ""
-"Here's an example that combines some of the above techniques, so that "
-"even if a player drops out, they continue to auto-play, like a bot. Just "
-"use ``get_timeout_seconds`` and ``before_next_page`` on every page, like "
-"this:"
+"Here's an example that combines some of the above techniques, so that even if a player drops "
+"out, they continue to auto-play, like a bot. First, define a :ref:`participant field "
+"<PARTICIPANT_FIELDS>` called ``is_dropout``, and set its initial value to ``False`` in "
+"``creating_session``. Then use ``get_timeout_seconds`` and ``before_next_page`` on every "
+"page, like this:"
 msgstr ""
-"下面是一个组合使用了上面一些技巧的例子，此时即使某位玩家退出了，他仍可以继续自动游戏，就如机器人一样。即像下面这样在每一个页面上使用 "
+"下面是一个组合使用了上面一些技巧的例子，此时即使某位玩家退出了，他仍可以继续自动游戏，就如机"
+"器人一样。首先定义一个 :ref:`participant field <PARTICIPANT_FIELDS>` 命名为 ``is_dropout``，"
+"并将其初始值在 ``creating_session`` 中设为 ``False`` 。即像下面这样在每一个页面上使用 "
 "``get_timeout_seconds`` 与 ``before_next_page`` ："
 
-#: ../../source/multiplayer/waitpages.rst:251
-msgid ""
-"If the player fails to submit the page on time, we set ``is_dropout`` to "
-"``True``."
-msgstr "如果玩家未能按时提交页面，即将 ``is_dropout`` 设为 ``True``."
+#: ../../source/multiplayer/waitpages.rst:274
+msgid "If the player fails to submit the page on time, we set ``is_dropout`` to ``True``."
+msgstr "如果玩家未能按时提交页面，即将 ``is_dropout`` 设为 ``True``。"
 
-#: ../../source/multiplayer/waitpages.rst:252
+#: ../../source/multiplayer/waitpages.rst:275
 msgid "Once ``is_dropout`` is set, each page gets auto-submitted instantly."
 msgstr "一旦 ``is_dropout`` 被设置，每个页面都会被立即自动提交。"
 
-#: ../../source/multiplayer/waitpages.rst:253
+#: ../../source/multiplayer/waitpages.rst:276
 msgid ""
-"When a page is auto-submitted, you use ``timeout_happened`` to decide "
-"what value gets submitted on the user's behalf."
+"When a page is auto-submitted, you use ``timeout_happened`` to decide what value gets "
+"submitted on the user's behalf."
 msgstr "当页面被自动提交时，可使用 ``timeout_happened`` 来代替用户决定所要提交的值。"
 
-#: ../../source/multiplayer/waitpages.rst:257
+#: ../../source/multiplayer/waitpages.rst:280
 msgid "Customizing the wait page's appearance"
 msgstr "定制等待页面的外观"
 
-#: ../../source/multiplayer/waitpages.rst:259
+#: ../../source/multiplayer/waitpages.rst:282
 msgid ""
-"You can customize the text that appears on a wait page by setting the "
-"``title_text`` and ``body_text`` attributes, e.g.:"
-msgstr "你可以定制出现在等待页面上的文本，通过设定 ``title_text`` 与 ``body_text`` 即可，举例如下："
+"You can customize the text that appears on a wait page by setting the ``title_text`` and "
+"``body_text`` attributes, e.g.:"
+msgstr ""
+"你可以定制出现在等待页面上的文本，通过设定 ``title_text`` 与 ``body_text`` 即可，举例如下："
 
-#: ../../source/multiplayer/waitpages.rst:268
+#: ../../source/multiplayer/waitpages.rst:291
 msgid "See also: :ref:`customize_wait_page`."
-msgstr "也可参考: :ref:`customize_wait_page`."
+msgstr "也可参考: :ref:`customize_wait_page`。"

@@ -23,29 +23,13 @@ is not designed for running actual studies.
 Database (Postgres)
 -------------------
 
-If you want, you can use Postgres as your production database.
 Install Postgres and psycopg2, create a new database and set the ``DATABASE_URL`` env var, for example:
 to ``postgres://postgres@localhost/django_db``
-
-However, in principle, oTree 3.0+ should do fine with its default SQLite in production,
-since the server is now is single threaded.
 
 resetdb
 ~~~~~~~
 
 If all the above steps went well, you should be able to run ``otree resetdb``.
-
-.. _redis-windows:
-
-Install Redis
--------------
-
-You should download and run `Redis for Windows <https://github.com/MSOpenTech/redis/releases>`__.
-
-Redis should be running on port 6379. You can test with ``redis-cli ping``,
-which should output ``PONG``.
-
-Set your ``REDIS_URL`` env var to ``redis://localhost:6379`` in the same place where you set ``DATABASE_URL``.
 
 Run the production server
 -------------------------

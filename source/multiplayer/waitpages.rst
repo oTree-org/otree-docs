@@ -36,19 +36,35 @@ For example:
 
     def set_payoffs(group):
         for p in group.get_players():
-            p.payoff = c(100)
+            p.payoff = 100
 
-Then trigger this method by doing:
+Then trigger this function by doing:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        after_all_players_arrive = set_payoffs
+
+If you set ``wait_for_all_groups = True``,
+then ``after_all_players_arrive`` must be a *Subsession* function.
+
+If you are using a text editor, ``after_all_players_arrive`` can also be defined directly in the WaitPage:
+
+.. code-block:: python
+
+    class MyWaitPage(WaitPage):
+        @staticmethod
+        def after_all_players_arrive(group: Group):
+            for p in group.get_players():
+                p.payoff = 100
+
+It can also be a string:
 
 .. code-block:: python
 
     class MyWaitPage(WaitPage):
         after_all_players_arrive = 'set_payoffs'
 
-If you set ``wait_for_all_groups = True``,
-then ``after_all_players_arrive`` must be a *Subsession* function.
-
-``after_all_players_arrive`` can also be defined directly in the WaitPge as a ``@staticmethod``.
 
 is_displayed()
 --------------
@@ -127,35 +143,37 @@ which players are assigned together, you can also use ``group_by_arrival_time_me
 Let's say that in addition to grouping by arrival time, you need each group
 to consist of 2 men and 2 women.
 
-If you define a method called ``group_by_arrival_time_method`` on your Subsession,
+If you define a function called ``group_by_arrival_time_method``,
 it will get called whenever a new player reaches the wait page.
-The method's argument is the list of players who are currently waiting at your wait page.
+The function's second argument is the list of players who are currently waiting at your wait page.
 If you pick some of these players and return them as a list,
 those players will be assigned to a group, and move forward.
 If you don't return anything, then no grouping occurs.
 
 Here's an example where each group has 2 men and 2 women.
-It assumes that in a previous app, you assigned ``self.participant.vars['category']`` to each participant.
+It assumes that in a previous app, you assigned ``participant.category`` to each participant.
 
 .. code-block:: python
 
     def group_by_arrival_time_method(subsession, waiting_players):
         print('in group_by_arrival_time_method')
-        m_players = [p for p in waiting_players if p.participant.vars['category'] == 'M']
-        f_players = [p for p in waiting_players if p.participant.vars['category'] == 'F']
+        m_players = [p for p in waiting_players if p.participant.category == 'M']
+        f_players = [p for p in waiting_players if p.participant.category == 'F']
 
         if len(m_players) >= 2 and len(f_players) >= 2:
             print('about to create a group')
             return [m_players[0], m_players[1], f_players[0], f_players[1]]
         print('not enough players yet to create a group')
 
+Timeouts on wait pages
+~~~~~~~~~~~~~~~~~~~~~~
 
 You can also use ``group_by_arrival_time_method`` to put a timeout on the wait page,
 for example to allow the participant to proceed individually if they have been waiting
 longer than 5 minutes. First, you must record ``time.time()`` on the final page before the app with ``group_by_arrival_time``.
-Store it in ``participant.vars``.
+Store it in a :ref:`participant field <vars>`.
 
-Then define a Player method:
+Then define a Player function:
 
 .. code-block:: python
 
@@ -163,7 +181,8 @@ Then define a Player method:
         participant = player.participant
 
         import time
-        return time.time() - participant.vars['wait_page_arrival'] > 5*60
+        # assumes you set wait_page_arrival in PARTICIPANT_FIELDS.
+        return time.time() - participant.wait_page_arrival > 5*60
 
 Now use this:
 
@@ -173,7 +192,7 @@ Now use this:
         if len(waiting_players) >= 3:
             return waiting_players[:3]
         for player in waiting_players:
-            if player.waiting_too_long():
+            if waiting_too_long(player):
                 # make a single-player group.
                 return [player]
 
@@ -222,7 +241,9 @@ Replacing dropped out player with a bot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here's an example that combines some of the above techniques, so that even if a player drops out,
-they continue to auto-play, like a bot. Just use ``get_timeout_seconds`` and ``before_next_page`` on every page,
+they continue to auto-play, like a bot.
+First, define a :ref:`participant field <PARTICIPANT_FIELDS>` called ``is_dropout``, and set its initial value to
+``False`` in ``creating_session``. Then use ``get_timeout_seconds`` and ``before_next_page`` on every page,
 like this:
 
 .. code-block:: python
@@ -235,7 +256,7 @@ like this:
         def get_timeout_seconds(player):
             participant = player.participant
 
-            if participant.vars.get('is_dropout'):
+            if participant.is_dropout:
                 return 1  # instant timeout, 1 second
             else:
                 return 5*60
@@ -245,8 +266,8 @@ like this:
             participant = player.participant
 
             if player.timeout_happened:
-                player.contribution = c(100)
-                participant.vars['is_dropout'] = True
+                player.contribution = cu(100)
+                participant.is_dropout = True
 
 Notes:
 

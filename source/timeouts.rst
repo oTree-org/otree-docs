@@ -91,7 +91,7 @@ string ``''`` for string fields.
 If you want to discard the auto-submitted values, you can just
 check if ``timeout_happened``, and if so, overwrite the values.
 
-If the ``error_message()`` method fails, then the whole form might be invalid,
+If the ``error_message()`` function fails, then the whole form might be invalid,
 so the whole form will be discarded.
 
 Timeouts that span multiple pages
@@ -111,19 +111,15 @@ When the user clicks the "next" button, ``before_next_page`` will be executed:
     class Start(Page):
 
         @staticmethod
-        def is_displayed(player):
-            return player.round_number == 1
-
-        @staticmethod
         def before_next_page(player):
             participant = player.participant
             import time
 
-            # user has 5 minutes to complete as many pages as possible
-            participant.vars['expiry'] = time.time() + 5*60
+            # remember to add 'expiry' to PARTICIPANT_FIELDS.
+            participant.expiry = time.time() + 5*60
 
 (You could also start the timer in ``after_all_players_arrive`` or ``creating_session``,
-and it could be stored in ``session.vars`` if it's the same for everyone in the session.)
+and it could be stored in a session field if it's the same for everyone in the session.)
 
 Then, each page's ``get_timeout_seconds`` should be the number of seconds
 until that expiration time:
@@ -136,7 +132,7 @@ until that expiration time:
         def get_timeout_seconds(player):
             participant = player.participant
             import time
-            return participant.vars['expiry'] - time.time()
+            return participant.expiry - time.time()
 
 When time runs out, ``get_timeout_seconds`` will return 0 or a negative value,
 which will result in the page loading and being auto-submitted right away.
@@ -147,13 +143,12 @@ for the participant to realistically read the whole page.
 
 .. code-block:: python
 
-    def get_timeout_seconds(player):
-        participant = player.participant
-        import time
-        return participant.vars['expiry'] - time.time()
 
     class Page1(Page):
-        get_timeout_seconds = get_timeout_seconds
+        def get_timeout_seconds(player):
+            participant = player.participant
+            import time
+            return participant.expiry - time.time()
 
         @staticmethod
         def is_displayed(player):

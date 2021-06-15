@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,81 +70,83 @@ msgid ""
 msgstr ""
 
 #: ../../source/bots.rst:34
-msgid "If you are using a text editor, go to ``tests.py``."
+msgid ""
+"If you are using a text editor, go to ``tests.py``. See examples of how "
+"to define ``tests.py`` `here <https://github.com/oTree-org/otree>`__."
 msgstr ""
 
-#: ../../source/bots.rst:37
+#: ../../source/bots.rst:38
 msgid "Submitting pages"
 msgstr ""
 
-#: ../../source/bots.rst:39
+#: ../../source/bots.rst:40
 msgid "You should make one ``yield`` per page submission. For example:"
 msgstr ""
 
-#: ../../source/bots.rst:46
+#: ../../source/bots.rst:47
 msgid ""
 "Here, we first submit the ``Start`` page, which does not contain a form. "
 "The following page has 2 form fields, so we submit a dict."
 msgstr ""
 
-#: ../../source/bots.rst:49
+#: ../../source/bots.rst:50
 msgid ""
 "The test system will raise an error if the bot submits invalid input for "
 "a page, or if it submits pages in the wrong order."
 msgstr ""
 
-#: ../../source/bots.rst:52
+#: ../../source/bots.rst:53
 msgid "You use ``if`` statements to play any player or round number. For example:"
 msgstr ""
 
-#: ../../source/bots.rst:64
+#: ../../source/bots.rst:65
 msgid ""
 "Your ``if`` statements can depend on ``self.player``, ``self.group``, "
 "``self.round_number``, etc."
 msgstr ""
 
-#: ../../source/bots.rst:67
+#: ../../source/bots.rst:68
 msgid "Ignore wait pages when writing bots."
 msgstr ""
 
-#: ../../source/bots.rst:70
+#: ../../source/bots.rst:71
 msgid "Rounds"
 msgstr ""
 
-#: ../../source/bots.rst:72
+#: ../../source/bots.rst:73
 msgid ""
 "Your bot code should just play 1 round at a time. oTree will "
 "automatically execute it ``num_rounds`` times."
 msgstr ""
 
-#: ../../source/bots.rst:78
+#: ../../source/bots.rst:79
 msgid "expect()"
 msgstr ""
 
-#: ../../source/bots.rst:82
+#: ../../source/bots.rst:83
 msgid ""
 "The ``expect()`` function was introduced in September 2019. Previously we"
 " recommended using ``assert`` statements, which are still OK but "
 "``expect()`` can report errors more clearly."
 msgstr ""
 
-#: ../../source/bots.rst:86
+#: ../../source/bots.rst:87
 msgid ""
 "You can use ``expect`` statements to ensure that your code is working as "
 "you expect."
 msgstr ""
 
-#: ../../source/bots.rst:88
+#: ../../source/bots.rst:89
 msgid "For example:"
 msgstr ""
 
-#: ../../source/bots.rst:99
+#: ../../source/bots.rst:100
 msgid ""
 "If ``self.player.num_apples`` is not 99, then you will be alerted with an"
 " error."
 msgstr ""
 
-#: ../../source/bots.rst:101
+#: ../../source/bots.rst:102
 msgid ""
 "You can also use expect with 3 arguments, like "
 "``expect(self.player.budget, '<', 100)``. This will verify that "
@@ -153,60 +155,60 @@ msgid ""
 "``'in'``, ``'not in'``."
 msgstr ""
 
-#: ../../source/bots.rst:114
+#: ../../source/bots.rst:115
 msgid "Testing form validation"
 msgstr ""
 
-#: ../../source/bots.rst:116
+#: ../../source/bots.rst:117
 msgid ""
 "If you use :ref:`form validation <form-validation>`, you should test that"
 " your app is correctly rejecting invalid input from the user, by using "
 "``SubmissionMustFail()``."
 msgstr ""
 
-#: ../../source/bots.rst:120
+#: ../../source/bots.rst:121
 msgid "For example, let's say you have this page:"
 msgstr ""
 
-#: ../../source/bots.rst:134
+#: ../../source/bots.rst:135
 msgid "Here is how to test that it is working properly:"
 msgstr ""
 
-#: ../../source/bots.rst:143
+#: ../../source/bots.rst:144
 msgid ""
 "The bot will submit ``MyPage`` twice. If the first submission "
 "**succeeds**, an error will be raised, because it is not supposed to "
 "succeed."
 msgstr ""
 
-#: ../../source/bots.rst:148
+#: ../../source/bots.rst:149
 msgid "Checking the HTML"
 msgstr ""
 
-#: ../../source/bots.rst:150
+#: ../../source/bots.rst:151
 msgid ""
 "``self.html`` contains the HTML of the page you are about to submit. You "
 "can use this together with ``expect()``:"
 msgstr ""
 
-#: ../../source/bots.rst:167
+#: ../../source/bots.rst:168
 msgid ""
 "``self.html`` is updated with the next page's HTML, after every ``yield``"
 " statement. Linebreaks and extra spaces are ignored."
 msgstr ""
 
-#: ../../source/bots.rst:171
+#: ../../source/bots.rst:172
 msgid "Automatic HTML checks"
 msgstr ""
 
-#: ../../source/bots.rst:173
+#: ../../source/bots.rst:174
 msgid ""
 "An error will be raised if the bot is trying to submit form fields that "
 "are not actually found in the page's HTML, or if the page's HTML is "
 "missing a submit button."
 msgstr ""
 
-#: ../../source/bots.rst:176
+#: ../../source/bots.rst:177
 msgid ""
 "However, the bot system is not able to see fields and buttons that are "
 "added dynamically with JavaScript. In these cases, you should disable the"
@@ -214,29 +216,32 @@ msgid ""
 "example, change this:"
 msgstr ""
 
-#: ../../source/bots.rst:184
+#: ../../source/bots.rst:185
 msgid "to this:"
 msgstr ""
 
-#: ../../source/bots.rst:191
+#: ../../source/bots.rst:192
 msgid ""
 "(If you used ``Submission`` without ``check_html=False``, the two code "
 "samples would be equivalent.)"
 msgstr ""
 
-#: ../../source/bots.rst:197
+#: ../../source/bots.rst:198
 msgid "Simulate a page timeout"
 msgstr ""
 
-#: ../../source/bots.rst:199
+#: ../../source/bots.rst:200
 msgid "You can use ``Submission`` with ``timeout_happened=True``:"
 msgstr ""
 
-#: ../../source/bots.rst:207
+#: ../../source/bots.rst:208
 msgid "Advanced features"
 msgstr ""
 
-#: ../../source/bots.rst:209
+#: ../../source/bots.rst:210
 msgid "See :ref:`bots_advanced`"
 msgstr ""
+
+#~ msgid "If you are using a text editor, go to ``tests.py``."
+#~ msgstr ""
 

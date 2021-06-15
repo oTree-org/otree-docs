@@ -1,6 +1,38 @@
 Version history
 ```````````````
 
+Version 5.2
+===========
+
+-   For compatibility with oTree 3.x,
+    formfield ``<input>`` elements now prefix their ``id`` attribute with ``id_``.
+    If you use ``getElementById``/``querySelector``/etc. to select any formfield inputs,
+    you might need to update your selectors.
+-   The data export now outputs "time started" as UTC.
+-   "Time spent" data export has a column name change.
+    If you have been using the ``pagetimes.py`` script,
+    you should download the new version.
+
+Version 5.1
+===========
+
+-   Breaking changes to REST API
+
+Version 5.0
+===========
+
+-   oTree Lite
+-   The no-self format
+-   The beta method ``Player.start()`` has been removed.
+-   ``cu()`` is now available as an alias for ``Currency``.
+    ``c()`` will still work as long as you have ``from otree.api import Currency as c``
+    at the top of your file.
+    More details `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__.
+-   oTree 3.x used two types of tags in templates: ``{{ }}`` and ``{% %}``.
+    Starting in oTree 5, however, you can forget about ``{% %}`` and just use ``{{ }}`` everywhere if you want.
+    More details `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__.
+-   All REST API calls now return JSON
+
 Version 3.3
 ===========
 
@@ -23,7 +55,7 @@ Version 3.1
 ===========
 
 -   New way to define :ref:`roles`
--   You can pass a string to ``formfield``, for example ``{% formfield 'contribution' %}``.
+-   You can pass a string to ``formfield``, for example ``{{ formfield 'contribution' }}``.
 
 Version 3.0
 ===========
@@ -42,39 +74,6 @@ Custom data export
 ------------------
 
 See :ref:`custom-export`.
-
-
-Player.start()
---------------
-
-.. note::
-
-    Although version 3.0 has been released,
-    this feature is still in beta.
-
-If you define a method called ``start`` on your Player model,
-you can specify actions to be taken when the player starts the round.
-For example:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-        endowment = models.CurrencyField()
-
-        def start(self):
-            self.endowment = self.participant.vars['endowment']
-
-Here you can setup/initialize the player by passing data from previous rounds or apps.
-The differences between ``Player.start`` and ``Subsession.creating_session`` are:
-
--   ``start`` is run when the player reaches the first page of the round,
-    whereas ``creating_session`` is run before the whole session even starts
--   ``start`` is run individually for each player,
-    whereas ``creating_session`` is run once for the whole subsession (since it's a Subsession method).
-
-``start()`` is skipped if the round is being skipped with ``app_after_this_page``.
-Otherwise, it is always run, even if the player skips all the pages in that round.
-
 
 Other things
 ------------
@@ -139,7 +138,7 @@ Version 2.1
 
 -   oTree now raises an error if you use an undefined variable in your template.
     This will help catch typos like
-    ``{{ Player.payoff }}`` or ``{% if player.id_in_gruop %}``.
+    ``{{ Player.payoff }}`` or ``{{ if player.id_in_gruop }}``.
     This means that apps that previously worked may now get a template error
     (previously, it failed silently).
     If you can't remove the offending variable,

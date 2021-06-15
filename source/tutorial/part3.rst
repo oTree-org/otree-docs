@@ -33,7 +33,7 @@ donation gets tripled.
         players_per_group = 2
         num_rounds = 1
 
-        endowment = c(10)
+        endowment = cu(10)
         multiplication_factor = 3
 
 Models
@@ -81,9 +81,9 @@ dropdown menu dynamically. This is the feature called
 
     def sent_back_amount_choices(group):
         return currency_range(
-            c(0),
+            cu(0),
             group.sent_amount * Constants.multiplication_factor,
-            c(1)
+            cu(1)
         )
 
 Define the templates and pages
@@ -121,9 +121,9 @@ and ``content`` to:
     You are Participant A. Now you have {{Constants.endowment}}.
     </p>
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 SendBack.html
@@ -140,9 +140,9 @@ and the ``content`` block to:
         and you received {{tripled_amount}}.
     </p>
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 Here is the page code. Notes:
@@ -165,32 +165,34 @@ Here is the page code. Notes:
 
         @staticmethod
         def vars_for_template(player):
+            group = player.group
+
             return dict(
-                tripled_amount=player.group.sent_amount * Constants.multiplication_factor
+                tripled_amount=group.sent_amount * Constants.multiplication_factor
             )
 
 Results
 ~~~~~~~
 
 The results page needs to look slightly different for P1 vs. P2. So, we
-use the ``{% if %}`` statement
+use the ``{{ if }}`` statement
 to condition on the current player's ``id_in_group``.
 Set the ``title`` block to ``Results``, and the content block to:
 
 .. code-block:: html+django
 
-    {% if player.id_in_group == 1 %}
+    {{ if player.id_in_group == 1 }}
         <p>
             You sent Participant B {{ group.sent_amount }}.
             Participant B returned {{ group.sent_back_amount }}.
         </p>
-    {% else %}
+    {{ else }}
         <p>
             Participant A sent you {{ group.sent_amount }}.
             You returned {{ group.sent_back_amount }}.
         </p>
 
-    {% endif %}
+    {{ endif }}
 
     <p>
     Therefore, your total payoff is {{ player.payoff }}.
@@ -211,7 +213,7 @@ Add 2 wait pages:
 -  ``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send back)
 
 After the second wait page, we should calculate the payoffs.
-So, we define a method on the Group called ``set_payoffs``:
+So, we define a function called ``set_payoffs``:
 
 .. code-block:: python
 
@@ -225,7 +227,7 @@ Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:
 
 .. code-block:: python
 
-    after_all_players_arrive = 'set_payoffs'
+    after_all_players_arrive = set_payoffs
 
 Make sure they are ordered correctly in the page_sequence:
 

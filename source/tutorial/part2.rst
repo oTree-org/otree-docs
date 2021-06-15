@@ -13,7 +13,7 @@ Each player individually makes a decision about how many of their points they wa
 The combined contributions are multiplied by 2, and then divided evenly three ways and redistributed back to the players.
 
 The full code for the app we will write is
-`here <https://github.com/oTree-org/oTree/tree/master/public_goods_simple>`__.
+`here <https://github.com/oTree-org/oTree/tree/lite/public_goods_simple>`__.
 
 
 Create the app
@@ -41,7 +41,7 @@ Now we have the following constants:
 
     players_per_group = 3
     num_rounds = 1
-    endowment = c(1000) # c() means it's a currency
+    endowment = cu(1000)
     multiplier = 2
 
 
@@ -113,9 +113,9 @@ and the ``content`` block to:
         and a multiplier of {{ Constants.multiplier }}.
     </p>
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 Page 2: ResultsWaitPage
@@ -166,7 +166,7 @@ Set the template's content to:
         Your profit is therefore {{ player.payoff }}.
     </p>
 
-    {% next_button %}
+    {{ next_button }}
 
 Page sequence
 -------------
@@ -212,10 +212,10 @@ You just need to insert a line in your code like this:
 
 .. code-block:: python
 
-    print('group.total_contribution is', self.group.total_contribution)
+    print('group.total_contribution is', group.total_contribution)
 
 Put this line in the part of your code that's not working,
-such as the payoff method defined above.
+such as the payoff function defined above.
 When you play the game in your browser and that code gets executed,
 your print statement will be displayed in your command prompt window
 (not in your web browser).
@@ -246,10 +246,10 @@ If you don't see the output of the print statement in your console window,
 that means that line is not getting executed! (Which is why it isn't working.)
 
 Maybe it's because your code is in some unreachable place like after a ``return`` statement,
-or inside an "if" statement that is always ``False``. Start putting print statements from the top of the method,
+or inside an "if" statement that is always ``False``. Start putting print statements from the top of the function,
 then see where they stop getting displayed.
 
-Or maybe your code is in a method that never gets called (executed).
+Or maybe your code is in a function that never gets called (executed).
 oTree's built-in methods such as ``creating_session`` and ``before_next_page`` are automatically executed,
-but if you define a custom method such as ``set_payoffs``, you need to remember to call that function
-from a built-in method.
+but if you define a custom function such as ``set_payoffs``, you need to remember to call that function
+from a built-in function.

@@ -42,9 +42,9 @@ Then, set the template's title to ``Enter your information``, and set the conten
 
     Please enter the following information.
 
-    {% formfields %}
+    {{ formfields }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 Page 2
@@ -58,7 +58,7 @@ Set the template's ``title`` block to ``Results`` and set the ``content`` block 
 
     <p>Your name is {{ player.name }} and your age is {{ player.age }}.</p>
 
-    {% next_button %}
+    {{ next_button }}
 
 
 Define the session config

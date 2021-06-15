@@ -20,9 +20,9 @@ Run oTree
 
 If you're on MacOS, run::
 
-    /Applications/Python\ 3.8/Install\ Certificates.command
+    /Applications/Python\ 3.9/Install\ Certificates.command
 
-(If you are not using version 3.8 of Python, edit the above command appropriately.)
+(If you are not using version 3.9 of Python, edit the above command appropriately.)
 
 From your command prompt, create your project folder::
 
@@ -35,7 +35,7 @@ Move into the folder you just created::
     cd myproject
 
 
-**If you see a ``models.py`` in each folder, then to the documentation here:**
+**If you see a ``models.py`` in each folder, then switch to the documentation here:**
 `https://otree.readthedocs.io/en/self/ <https://otree.readthedocs.io/en/self/>`__
 
 If you don't see a models.py in each folder, that means you are using the new no-self format.
@@ -64,18 +64,19 @@ Then launch the text editor and open your entire project folder.
 .. _upgrade:
 .. _upgrade-otree-core:
 
-About this documentation
-------------------------
+About @staticmethod, etc.
+-------------------------
 
 If you are using a text editor to write your oTree code, remember to add ``@staticmethod`` before
-all page methods, like ``is_displayed``, ``vars_for_template``, ``before_next_page``, etc.
+all functions inside a page class, like ``is_displayed``, ``vars_for_template``, ``before_next_page``, etc.
 They are sometimes omitted from this documentation for brevity.
+They are not mandatory but will help your editor provide better autocompletion.
 
 If you are using PyCharm, VS Code, or another IDE, you can also add type annotations on your functions.
 
 For example:
 
-.. code-block::python
+.. code-block:: python
 
     @staticmethod
     def is_displayed(player: Player):
@@ -83,12 +84,11 @@ For example:
 
 Or:
 
-.. code-block::python
+.. code-block:: python
 
     def creating_session(subsession: Subsession):
         ...
 
-This will help your editor provide better autocompletion.
 
 Upgrading/reinstalling oTree
 ----------------------------
@@ -97,7 +97,7 @@ We recommend upgrading every couple of weeks.
 
 .. code-block:: bash
 
-    pip3 install -U "otree>=5a"
+    pip3 install -U otree
 
 The best way to ensure that your apps continue to work after you upgrade is to
 use only the functions described in this documentation.

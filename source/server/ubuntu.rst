@@ -18,7 +18,7 @@ Install apt-get packages
 
 Run::
 
-    sudo apt-get install python3-pip redis-server git
+    sudo apt-get install python3-pip git
 
 Create a virtualenv
 -------------------
@@ -39,23 +39,8 @@ of your prompt.
 Database (Postgres)
 -------------------
 
-If you want, you can use Postgres as your production database.
 Install Postgres and psycopg2, create a new database and set the ``DATABASE_URL`` env var, for example:
 to ``postgres://postgres@localhost/django_db``
-
-However, in principle, oTree 3.0+ should do fine with its default SQLite in production,
-since the server is now is single threaded.
-
-Install Redis
--------------
-
-If you installed ``redis-server`` through ``apt-get`` as instructed earlier,
-Redis will be running on port 6379. You can test with ``redis-cli ping``,
-which should output ``PONG``.
-
-Then add this line in the same place where you set ``DATABASE_URL``::
-
-    export REDIS_URL=redis://localhost:6379
 
 Reset the database on the server
 --------------------------------
@@ -161,8 +146,6 @@ If you get strange behavior,
 such as random changes each time the page reloads,
 it might be caused by another oTree instance that didn't shut down.
 Try stopping oTree and reload again.
-Also make sure that you are not sharing the same Postgres or Redis
-databases between two oTree instances.
 
 Sharing a server with other oTree users
 ---------------------------------------
@@ -178,7 +161,6 @@ but in some cases name things differently to avoid clashes:
 -   Create a virtualenv in their home directory
 -   Create a different Postgres database, as described earlier,
     and set this in the DATABASE_URL env var.
--   Each user needs their own Redis database.
 
 Once these steps are done, the second user can push code to the server,
 then run ``otree resetdb``.

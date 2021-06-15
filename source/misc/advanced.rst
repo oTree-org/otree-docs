@@ -3,6 +3,64 @@ Advanced features
 
 These are advanced features that are mostly unsupported in oTree Studio.
 
+.. _ExtraModel:
+
+ExtraModel
+----------
+
+An ExtraModel is useful when you need to store dozens or hundreds of data points about a single player.
+For example, a list of bids, or a list of stimuli and reaction times.
+They are frequently used together with :ref:`live`.
+
+There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-demos/>`__.
+
+An ExtraModel should link to another model:
+
+.. code-block:: python
+
+    class Bid(ExtraModel):
+        player = models.Link(Player)
+        amount = models.CurrencyField()
+
+Each time the user makes a bid, you store it in the database:
+
+.. code-block:: python
+
+    Bid.create(player=player, amount=500)
+
+Later, you can retrieve the list of a player's bids:
+
+.. code-block:: python
+
+    bids = Bid.filter(player=player)
+
+An ExtraModel can have multiple links:
+
+.. code-block:: python
+
+    class Offer(ExtraModel):
+        sender = models.Link(Player)
+        receiver = models.Link(Player)
+        group = models.Link(Group)
+        amount = models.CurrencyField()
+        accepted = models.BooleanField()
+
+Then you can query it in various ways:
+
+.. code-block:: python
+
+    this_group_offers = Offer.filter(group=group)
+    offers_i_accepted = Offer.filter(receiver=player, accepted=True)
+
+For more complex filters and sorting, you should use list operations:
+
+.. code-block:: python
+
+    offers_over_500 = [o for o in Offer.filter(group=group) if o.amount > 500]
+
+See the example psychology games such as the Stroop task,
+which show how to generate ExtraModel data from each row of a CSV spreadsheet.
+
 Templates
 ---------
 
@@ -23,7 +81,7 @@ set ``template_name``. Example:
 CSS/JS and base templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To include the same JS/CSS in all pages of an app, either put it in a ref:`static file <staticfiles>`
+To include the same JS/CSS in all pages of an app, either put it in a :ref:`static file <staticfiles>`
 or put it in an includable template.
 
 .. _staticfiles:
@@ -36,13 +94,13 @@ Here is how to include images (or any other static file like .css, .js, etc.) in
 At the root of your oTree project, there is a ``_static/`` folder.
 Put a file there, for example ``puppy.jpg``.
 Then, in your template, you can get the URL to that file with
-``{% static 'puppy.jpg' %}``.
+``{{ static 'puppy.jpg' }}``.
 
 To display an image, use the ``<img>`` tag, like this:
 
 .. code-block:: html
 
-    <img src="{% static 'puppy.jpg' %}"/>
+    <img src="{{ static 'puppy.jpg' }}"/>
 
 Above we saved our image in ``_static/puppy.jpg``,
 But actually it's better to make a subfolder with the name of your app,
@@ -53,7 +111,7 @@ Then your HTML code becomes:
 
 .. code-block:: html
 
-    <img src="{% static "your_app_name/puppy.jpg" %}"/>
+    <img src="{{ static 'your_app_name/puppy.jpg }}"/>
 
 (If you prefer, you can also put static files inside your app folder,
 in a subfolder called ``static/your_app_name``.)
@@ -81,15 +139,13 @@ For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.htm
 
 .. code-block:: html
 
-    {% extends 'otree/WaitPage.html' %}
-
-    {% block title %}{{ title_text }}{% endblock %}
-    {% block content %}
+    {{ block title }}{{ title_text }}{{ endblock }}
+    {{ block content }}
         {{ body_text }}
         <p>
             My custom content here.
         </p>
-    {% endblock %}
+    {{ endblock }}
 
 Then tell your wait page to use this template:
 
@@ -137,7 +193,7 @@ Reading CSV or other files
 
 Store yourfile.csv in your app folder.
 Then put this code anywhere you want to read the file
-(in a method or in Constants):
+(in a function or in Constants):
 
 .. code-block:: python
 

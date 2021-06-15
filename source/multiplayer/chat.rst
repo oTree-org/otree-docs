@@ -12,7 +12,7 @@ In your template HTML, put:
 
 .. code-block:: html
 
-    {% chat %}
+    {{ chat }}
 
 This will make a chat room among players in the same Group,
 where each player's nickname is displayed as
@@ -25,13 +25,13 @@ You can specify a ``channel`` and/or ``nickname`` like this:
 
 .. code-block:: html
 
-    {% chat nickname="abc" channel="123" %}
+    {{ chat nickname="abc" channel="123" }}
 
 Nickname
 ''''''''
 
 ``nickname`` is the nickname that will be displayed for that user in the chat.
-A typical usage would be ``{% chat nickname=player.role %}``.
+A typical usage would be ``{{ chat nickname=player.role }}``.
 
 Channel
 '''''''
@@ -77,7 +77,7 @@ Then in the template:
 
 .. code-block:: html
 
-    {% chat nickname=nickname channel=player.id_in_group %}
+    {{ chat nickname=nickname channel=player.id_in_group }}
 
 Example: chat across rounds
 ```````````````````````````
@@ -87,7 +87,7 @@ of the game, you can do:
 
 .. code-block:: html
 
-    {% chat channel=group.id_in_subsession %}
+    {{ chat channel=group.id_in_subsession }}
 
 Example: chat between all groups in all rounds
 ``````````````````````````````````````````````
@@ -96,7 +96,7 @@ If you want everyone in the session to freely chat with each other, just do:
 
 .. code-block:: html
 
-    {% chat channel=1 %}
+    {{ chat channel=1 }}
 
 (The number 1 is not significant; all that matters is that it's the same for everyone.)
 
@@ -104,42 +104,10 @@ Advanced customization
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If you look at the page source code in your browser's inspector,
-you will see the following selectors are available:
-
-===========================     =====================================================
-Element                         CSS/jQuery selector
-===========================     =====================================================
-Entire chat widget              ``.otree-chat``
-Textbox to type a message       ``.otree-chat__input`` (note: ``__``, not ``_``)
-Button to submit a message      ``.otree-chat__btn-send``
-Div with all messages           ``.otree-chat__messages``
-Message                         ``.otree-chat__msg``
-Message's nickname              ``.otree-chat__nickname``
-Message's body text             ``.otree-chat__body``
-===========================     =====================================================
+you will see a bunch of classes starting with ``otree-chat__``.
 
 You can use CSS or JS to change the appearance or behavior of these elements
 (or hide them entirely).
-
-For example, to customize the style,
-just include some CSS after the ``{% chat %}`` element,
-e.g.:
-
-.. code-block:: html
-
-    {% chat %}
-
-    <style>
-        .otree-chat__messages {
-            height: 400px;
-        }
-        .otree-chat__nickname {
-            color: #0000FF;
-            font-weight: bold;
-        }
-    </style>
-
-Note that there are 2 underscores (``__``, not ``_``).
 
 You can also customize the appearance by putting it inside a ``<div>``
 and styling that parent ``<div>``. For example, to set the width:
@@ -147,16 +115,21 @@ and styling that parent ``<div>``. For example, to set the width:
 .. code-block:: html
 
     <div style="width: 400px">
-        {% chat %}
+        {{ chat }}
     </div>
 
 Multiple chats on a page
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can have multiple ``{% chat %}`` boxes on each page,
+You can have multiple ``{{ chat }}`` boxes on each page,
 so that a player can be in multiple channels simultaneously.
 
 Exporting CSV of chat logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The chat logs download link will appear on oTree's regular data export page.
+
+Chat between participants and experimenter
+------------------------------------------
+
+See :ref:`experimenter-chat`.

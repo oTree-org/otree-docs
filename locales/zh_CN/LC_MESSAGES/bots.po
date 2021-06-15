@@ -7,20 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 23:32+0800\n"
-"PO-Revision-Date: 2020-11-20 19:07+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"PO-Revision-Date: 2021-06-02 10:21+0800\n"
+"Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
+"Language: zh_CN\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: matrixlt <wangmatrixlt@gmail.com>\n"
-"Language-Team: \n"
-"Language: zh_CN\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/bots.rst:4
 msgid "Bots"
-msgstr "机器人（Bots）"
+msgstr "机器人"
 
 #: ../../source/bots.rst:6
 msgid ""
@@ -48,7 +49,7 @@ msgstr "将bots添加到你的应用中（参考下面的代码）"
 
 #: ../../source/bots.rst:20
 msgid "In your session config, set ``use_browser_bots=True``."
-msgstr "在你的session config中，设置 ``use_browser_bots=True``."
+msgstr "在你的session config中，设置 ``use_browser_bots=True``。"
 
 #: ../../source/bots.rst:21
 msgid ""
@@ -75,18 +76,22 @@ msgstr ""
 "改进生成的代码（比如加入 ``expect()`` 语句），阅读下面的部分。"
 
 #: ../../source/bots.rst:34
-msgid "If you are using a text editor, go to ``tests.py``."
-msgstr "如果你使用的是文本编辑器，前往 ``tests.py``."
+msgid ""
+"If you are using a text editor, go to ``tests.py``. See examples of how to "
+"define ``tests.py`` `here <https://github.com/oTree-org/otree>`__."
+msgstr ""
+"如果你使用的是文本编辑器，前往 ``tests.py``。参考 `这里 <https://github.com/"
+"oTree-org/otree>`__ 的例子来了解如何定义 ``tests.py``。"
 
-#: ../../source/bots.rst:37
+#: ../../source/bots.rst:38
 msgid "Submitting pages"
 msgstr "提交页面"
 
-#: ../../source/bots.rst:39
+#: ../../source/bots.rst:40
 msgid "You should make one ``yield`` per page submission. For example:"
 msgstr "你应当对每一个页面子任务创建一个 ``yield`` ，例如："
 
-#: ../../source/bots.rst:46
+#: ../../source/bots.rst:47
 msgid ""
 "Here, we first submit the ``Start`` page, which does not contain a form. The "
 "following page has 2 form fields, so we submit a dict."
@@ -94,7 +99,7 @@ msgstr ""
 "这里，我们首先提交 ``Start`` 页面，它不包含任何表单。下一个页面有2个表单字段，故"
 "我们提交一个字典。"
 
-#: ../../source/bots.rst:49
+#: ../../source/bots.rst:50
 msgid ""
 "The test system will raise an error if the bot submits invalid input for a "
 "page, or if it submits pages in the wrong order."
@@ -102,37 +107,37 @@ msgstr ""
 "测试系统会抛出一个错误如果机器人提交了不正确的输入，或是按照错误的顺序提交了页"
 "面。"
 
-#: ../../source/bots.rst:52
+#: ../../source/bots.rst:53
 msgid "You use ``if`` statements to play any player or round number. For example:"
 msgstr "你可以使用 ``if`` 语句来判断角色或者轮数。举例如下："
 
-#: ../../source/bots.rst:64
+#: ../../source/bots.rst:65
 msgid ""
 "Your ``if`` statements can depend on ``self.player``, ``self.group``, ``self."
 "round_number``, etc."
 msgstr ""
-"你的 ``if`` 语句可以依赖 ``self.player``, ``self.group``, ``self."
-"round_number``, 诸如此类。"
+"你的 ``if`` 语句可以依赖 ``self.player``，``self.group``，``self."
+"round_number``，诸如此类。"
 
-#: ../../source/bots.rst:67
+#: ../../source/bots.rst:68
 msgid "Ignore wait pages when writing bots."
 msgstr "编写bots时请忽略等待页面。"
 
-#: ../../source/bots.rst:70
+#: ../../source/bots.rst:71
 msgid "Rounds"
 msgstr "轮次"
 
-#: ../../source/bots.rst:72
+#: ../../source/bots.rst:73
 msgid ""
 "Your bot code should just play 1 round at a time. oTree will automatically "
 "execute it ``num_rounds`` times."
 msgstr "你的bot代码应当每次仅模拟一轮。oTree会自动将其执行 ``num_rounds`` 次。"
 
-#: ../../source/bots.rst:78
+#: ../../source/bots.rst:79
 msgid "expect()"
 msgstr "expect()"
 
-#: ../../source/bots.rst:82
+#: ../../source/bots.rst:83
 msgid ""
 "The ``expect()`` function was introduced in September 2019. Previously we "
 "recommended using ``assert`` statements, which are still OK but ``expect()`` "
@@ -141,73 +146,73 @@ msgstr ""
 "``expect()`` 函数在2019年12月被引入。在此之前我们推荐使用 ``assert`` 语句，这仍"
 "然可用，但是 ``expect()`` 可以更加清楚地报告错误。"
 
-#: ../../source/bots.rst:86
+#: ../../source/bots.rst:87
 msgid ""
 "You can use ``expect`` statements to ensure that your code is working as you "
 "expect."
 msgstr "你可以使用 ``expect`` 语句来确保你的代码如你期望地那样工作。"
 
-#: ../../source/bots.rst:88
+#: ../../source/bots.rst:89
 msgid "For example:"
 msgstr "例如："
 
-#: ../../source/bots.rst:99
+#: ../../source/bots.rst:100
 msgid ""
 "If ``self.player.num_apples`` is not 99, then you will be alerted with an error."
 msgstr "如果 ``self.player.num_apples`` 不是99，那么你就会被提示有一个错误。"
 
-#: ../../source/bots.rst:101
+#: ../../source/bots.rst:102
 msgid ""
 "You can also use expect with 3 arguments, like ``expect(self.player.budget, "
 "'<', 100)``. This will verify that ``self.player.budget`` is less than 100. You "
 "can use the following operators: ``'<'``, ``'<='``, ``'=='``, ``'>='``, "
 "``'>'``, ``'!='``, ``'in'``, ``'not in'``."
 msgstr ""
-"你也可以在expect中使用3个参数，如 ``expect(self.player.budget, '<', 100)``.这会"
-"验证 ``self.player.budget`` 比100小。你可以使用下面的这些运算符: ``'<'``, "
-"``'<='``, ``'=='``, ``'>='``, ``'>'``, ``'!='``, ``'in'``, ``'not in'``."
+"你也可以在expect中使用3个参数，如 ``expect(self.player.budget, '<', 100)``。这会"
+"验证 ``self.player.budget`` 比100小。你可以使用下面的这些运算符: ``'<'``，"
+"``'<='``，``'=='``，``'>='``，``'>'``，``'!='``，``'in'``，``'not in'``。"
 
-#: ../../source/bots.rst:114
+#: ../../source/bots.rst:115
 msgid "Testing form validation"
 msgstr "测试表单验证"
 
-#: ../../source/bots.rst:116
+#: ../../source/bots.rst:117
 msgid ""
 "If you use :ref:`form validation <form-validation>`, you should test that your "
 "app is correctly rejecting invalid input from the user, by using "
 "``SubmissionMustFail()``."
 msgstr ""
-"如果你使用了 :ref:`form validation <form-validation>`,你应当测试你的应用是否正确"
-"地防止了来自用户的错误输入，测试可通过 ``SubmissionMustFail()`` 进行。"
+"如果你使用了 :ref:`form validation <form-validation>`，你应当测试你的应用是否正"
+"确地防止了来自用户的错误输入，测试可通过 ``SubmissionMustFail()`` 进行。"
 
-#: ../../source/bots.rst:120
+#: ../../source/bots.rst:121
 msgid "For example, let's say you have this page:"
 msgstr "例如你的页面如下："
 
-#: ../../source/bots.rst:133
+#: ../../source/bots.rst:135
 msgid "Here is how to test that it is working properly:"
 msgstr "下面的代码测试了它是否正常工作："
 
-#: ../../source/bots.rst:142
+#: ../../source/bots.rst:144
 msgid ""
 "The bot will submit ``MyPage`` twice. If the first submission **succeeds**, an "
 "error will be raised, because it is not supposed to succeed."
 msgstr ""
-"Bot会提交 ``MyPage`` 两次。如果第一次提交 **成功**,那么一个错误会抛出，因为这本"
-"不应该成功。"
+"Bot会提交 ``MyPage`` 两次。如果第一次提交 **成功**，那么一个错误会被抛出，因为这"
+"本不应该成功。"
 
-#: ../../source/bots.rst:147
+#: ../../source/bots.rst:149
 msgid "Checking the HTML"
 msgstr "检查HTML"
 
-#: ../../source/bots.rst:149
+#: ../../source/bots.rst:151
 msgid ""
 "``self.html`` contains the HTML of the page you are about to submit. You can "
 "use this together with ``expect()``:"
 msgstr ""
 "``self.html`` 包含了你所要提交页面的HTML。你可以将其与 ``expect()`` 一起使用："
 
-#: ../../source/bots.rst:166
+#: ../../source/bots.rst:168
 msgid ""
 "``self.html`` is updated with the next page's HTML, after every ``yield`` "
 "statement. Linebreaks and extra spaces are ignored."
@@ -215,11 +220,11 @@ msgstr ""
 "``self.html`` 在每一个 ``yield`` 语句之后被更新为下一个页面的HTML。换行符与多余"
 "的空格会被忽略。"
 
-#: ../../source/bots.rst:170
+#: ../../source/bots.rst:172
 msgid "Automatic HTML checks"
 msgstr "自动HTML检查"
 
-#: ../../source/bots.rst:172
+#: ../../source/bots.rst:174
 msgid ""
 "An error will be raised if the bot is trying to submit form fields that are not "
 "actually found in the page's HTML, or if the page's HTML is missing a submit "
@@ -228,7 +233,7 @@ msgstr ""
 "如果bot试图提交一个在页面HTML实际上不存在的表单或者页面HTML缺少了提交按钮，一个"
 "错误会被抛出。"
 
-#: ../../source/bots.rst:175
+#: ../../source/bots.rst:177
 msgid ""
 "However, the bot system is not able to see fields and buttons that are added "
 "dynamically with JavaScript. In these cases, you should disable the HTML check "
@@ -237,30 +242,30 @@ msgstr ""
 "然而，bot系统并不能识别被JavaScript动态添加的字段和按钮。在这种情况下，你应当禁"
 "用HTML检查，即设置 ``check_html=False``。例如，修改下面的代码："
 
-#: ../../source/bots.rst:183
+#: ../../source/bots.rst:185
 msgid "to this:"
 msgstr "为："
 
-#: ../../source/bots.rst:190
+#: ../../source/bots.rst:192
 msgid ""
 "(If you used ``Submission`` without ``check_html=False``, the two code samples "
 "would be equivalent.)"
 msgstr ""
-"（如果你在 ``Submission`` 中不设置 ``check_html=False``, 那么两段代码是等价"
+"（如果你在 ``Submission`` 中不设置 ``check_html=False``，那么两段代码是等价"
 "的。）"
 
-#: ../../source/bots.rst:196
+#: ../../source/bots.rst:198
 msgid "Simulate a page timeout"
 msgstr "模拟页面超时"
 
-#: ../../source/bots.rst:198
+#: ../../source/bots.rst:200
 msgid "You can use ``Submission`` with ``timeout_happened=True``:"
 msgstr "你可以在 ``Submission`` 中设置 ``timeout_happened=True``:"
 
-#: ../../source/bots.rst:206
+#: ../../source/bots.rst:208
 msgid "Advanced features"
 msgstr "高级特性"
 
-#: ../../source/bots.rst:208
+#: ../../source/bots.rst:210
 msgid "See :ref:`bots_advanced`"
 msgstr "参见 :ref:`bots_advanced`"

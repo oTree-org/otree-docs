@@ -187,16 +187,15 @@ get_group_matrix()
 ~~~~~~~~~~~~~~~~~~
 
 Subsessions have a method called ``get_group_matrix()`` that
-return the structure of groups as a matrix, i.e. a list of lists,
-with each sublist being the players in a group, ordered by ``id_in_group``.
-
-The following lines are equivalent.
+return the structure of groups as a matrix, for example:
 
 .. code-block:: python
 
-    matrix = subsession.get_group_matrix()
-    # === is equivalent to ===
-    matrix = [group.get_players() for group in subsession.get_groups()]
+    [[1, 3, 5],
+     [7, 9, 11],
+     [2, 4, 6],
+     [8, 10, 12]]
+
 
 
 .. _set_group_matrix:
@@ -265,17 +264,19 @@ before players begin playing. So, if your shuffling logic needs to depend on
 something that happens after the session starts, you should do the
 shuffling in a wait page instead.
 
-Let's say you have defined a method on the subsession
-called ``do_my_shuffle()`` that uses ``set_group_matrix``, etc.
-
 You need to make a ``WaitPage`` with ``wait_for_all_groups=True``
 and put the shuffling code in ``after_all_players_arrive``:
 
 .. code-block:: python
 
     class ShuffleWaitPage(WaitPage):
+
         wait_for_all_groups = True
-        after_all_players_arrive = 'do_my_shuffle'
+
+        @staticmethod
+        def after_all_players_arrive(subsession):
+            subsession.group_randomly()
+            # etc...
 
 
 Group by arrival time

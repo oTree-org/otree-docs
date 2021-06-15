@@ -68,16 +68,8 @@ and ``id_in_group``, as well as methods like
 
 These built-in fields and methods are listed below.
 
-
 Subsession
 ----------
-
-session
-~~~~~~~
-
-The session this subsession belongs to.
-See :ref:`object_model`.
-
 
 round_number
 ~~~~~~~~~~~~
@@ -86,40 +78,6 @@ Gives the current round number.
 Only relevant if the app has multiple rounds
 (set in ``Constants.num_rounds``).
 See :ref:`rounds`.
-
-.. _creating_session:
-
-creating_session()
-~~~~~~~~~~~~~~~~~~
-
-``creating_session`` allows you to set initial values on fields on
-players, groups, participants, or the subsession.
-For example:
-
-.. code-block:: python
-
-    def creating_session(subsession):
-        for player in subsession.get_players():
-            player.payoff = c(10)
-
-More info on the section on :ref:`treatments <treatments>` and
-:ref:`group shuffling <shuffling>`.
-
-``creating_session`` is **not** run at the beginning of each round.
-It is run when you click the "create session" button, i.e. before anybody starts playing.
-If your app has multiple rounds, ``creating_session`` gets run multiple
-times consecutively:
-
-.. code-block:: python
-
-    def creating_session(subsession):
-        print('in creating_session', subsession.round_number)
-
-Will output all at once::
-
-    in creating_session 1
-    in creating_session 2
-    in creating_session 3
 
 
 get_groups()
@@ -144,16 +102,13 @@ Other subsession methods
 -   :ref:`in_rounds(first, last) <in_rounds>`
 -   :ref:`in_round(round_number) <in_rounds>`
 
-
 Group
 -----
 
-session/subsession
-~~~~~~~~~~~~~~~~~~
+round_number
+~~~~~~~~~~~~
 
-The session/subsession this group belongs to.
-See :ref:`object_model`.
-
+Gives the current round number.
 
 Other group methods
 ~~~~~~~~~~~~~~~~~~~
@@ -180,11 +135,10 @@ payoff
 ~~~~~~
 The player's payoff in this round. See :ref:`payoff`.
 
-session/subsession/group/participant
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+round_number
+~~~~~~~~~~~~
 
-The session/subsession/group/participant this player belongs to.
-See :ref:`object_model`.
+Gives the current round number.
 
 Other player methods
 ~~~~~~~~~~~~~~~~~~~~
@@ -251,7 +205,7 @@ define a string constant ``name_in_url`` with your desired name.
 
 Constants can be numbers, strings, booleans, lists, etc.
 But for more complex data types like dicts, lists of dicts, etc,
-you should instead define it in a subsession function. For example,
+you should instead define it in a function. For example,
 instead of defining a Constant called ``my_dict``, do this:
 
 .. code-block:: python
@@ -290,7 +244,7 @@ Then call it:
 About using random()
 --------------------
 
-Never generate random values outside of a method.
+Never generate random values outside of a function.
 For example, don't do this:
 
 .. code-block:: python
@@ -314,7 +268,7 @@ Or this:
 These won't work because they will change every time
 the server launches a new process.
 It may appear to work during testing but will eventually break.
-Instead, you should generate the random variables inside a method,
+Instead, you should generate the random variables inside a function,
 such as :ref:`creating_session` (and preferably not ``vars_for_template``,
 which gets re-executed if the user refreshes the page).
 

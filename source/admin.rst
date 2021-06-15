@@ -88,10 +88,6 @@ Another benefit of participant labels is that if the participant opens their sta
 they will be assigned back to the same participant (if you are using a room-wide or session-wide URL).
 This reduces duplicate participation.
 
-If you're using Prolific,
-you can add ``participant_label={{%PROLIFIC_PID%}}`` to your study URL.
-When the user clicks the link, Prolific will replace that with the participant's actual Prolific ID.
-
 Arrival order
 -------------
 
@@ -132,21 +128,19 @@ in your app, and display whatever variables were passed in ``vars_for_admin_repo
 
 .. code-block:: html
 
-
-
     <p>Here is the sorted list of payoffs in round {{ subsession.round_number }}</p>
 
     <ul>
-        {% for payoff in payoffs %}
+        {{ for payoff in payoffs }}
             <li>{{ payoff }}</li>
-        {% endfor %}
+        {{ endfor }}
     </ul>
 
 Notes:
 
 -   ``subsession``, ``session``, and ``Constants`` are passed to the template
     automatically.
--   ``admin_report.html`` does not need to use ``{% block %}`` or ``{% extends %}``  etc.
+-   ``admin_report.html`` does not need to use ``{{ block }}``.
     The above example is valid as the full contents of ``admin_report.html``.
 
 If one or more apps in your session have an ``admin_report.html``,
@@ -154,7 +148,7 @@ your admin page will have a "Reports" tab. Use the menu to select the app
 and the round number, to see the report for that subsession.
 
 Tip: if you are displaying the same chart in the admin report and participant pages,
-you can reuse ``admin_report.html`` in the participant template with an ``{% include %}``,
+you can reuse ``admin_report.html`` in the participant template with an ``{{ include }}``,
 and pass the variables like this:
 
 .. code-block:: python
@@ -163,34 +157,9 @@ and pass the variables like this:
 
         @staticmethod
         def vars_for_template(player):
-            return vars_for_admin_report(player.subsession)
+            subsession = player.subsession
+            return vars_for_admin_report(subsession)
 
-
-Kiosk Mode
-----------
-
-During a lab study you may want to restrict participants from doing things like:
-
--   Closing the browser window
--   Clicking the "back" button
--   Viewing the URL in the address bar
-
-You can restrict these things with "kiosk mode", a setting available in
-most web browsers.
-Consult your web browser's documentation for information on how to enable
-kiosk mode.
-
-
-Monitor sessions
-----------------
-
-The admin interface lets you monitor the live progress of your sessions.
-
-Payments page
--------------
-
-At the end of your session, you can open and print a page that lists all
-the participants and how much they should be paid.
 
 Export Data
 -----------
@@ -220,7 +189,9 @@ Use a ``yield`` for each row of data.
         # header row
         yield ['session', 'participant_code', 'round_number', 'id_in_group', 'payoff']
         for p in players:
-            yield [p.session.code, p.participant.code, p.round_number, p.id_in_group, p.payoff]
+            participant = p.participant
+            session = p.session
+            yield [session.code, participant.code, p.round_number, p.id_in_group, p.payoff]
 
 Once this function is defined, your custom data export will be available in the
 regular data export page.
@@ -231,3 +202,23 @@ Debug Info
 When oTree runs in ``DEBUG`` mode (i.e. when the environment variable
 ``OTREE_PRODUCTION`` is not set), debug information is displayed
 on the bottom of all screens.
+
+Payments
+--------
+
+If you define a :ref:`participant field <PARTICIPANT_FIELDS>` called `finished`,
+then you can set ``participant.finished = True`` when a participant finishes the session,
+and this will be displayed in various places such as the payments page.
+
+.. _experimenter-chat:
+
+Chat between participants and experimenter
+------------------------------------------
+
+To enable your participants to send you chat messages,
+consider using a software like `Papercups <https://github.com/papercups-io/papercups/blob/master/README.md>`__.
+Click on the "Deploy to Heroku" button for 1-click setup of your Papercups server.
+Fill out the required config vars and leave the others empty.
+``BACKEND_URL`` and ``REACT_APP_URL`` refer to your Papercups site, not your oTree site.
+Login to your site and copy the HTML embedding code to an includable template called ``papercups.html``.
+There is an example called "chat with experimenter" `here <https://www.otreehub.com/projects/otree-snippets/>`__.

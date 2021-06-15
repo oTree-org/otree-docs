@@ -28,28 +28,34 @@ The following variables are available in templates:
 Conditions ("if")
 ~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    oTree 3.x used two types of tags in templates: ``{{ }}`` and ``{% %}``.
+    Starting in oTree 5, however, you can forget about ``{% %}`` and just use ``{{ }}`` everywhere if you want.
+    The old format still works.
+
 .. code-block:: django
 
-    {% if player.is_winner %} you won! {% endif %}
+    {{ if player.is_winner }} you won! {{ endif }}
 
 With an 'else':
 
 .. code-block:: django
 
-    {% if some_number >= 0 %}
+    {{ if some_number >= 0 }}
         positive
-    {% else %}
+    {{ else }}
         negative
-    {% endif %}
+    {{ endif }}
 
 Loops ("for")
 ~~~~~~~~~~~~~
 
 .. code-block:: django
 
-    {% for item in some_list %}
+    {{ for item in some_list }}
         {{ item }}
-    {% endfor %}
+    {{ endfor }}
 
 Accessing items in a dict
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,9 +69,9 @@ Comments
 .. code-block:: django
 
 
-    {% comment %}
+    {{ comment }}
     this is a comment
-    {% endcomment %}
+    {{ endcomment }}
 
 
 Things you can't do
@@ -83,7 +89,7 @@ oTree templates are a mix of 2 languages:
 
 -   *HTML* (which uses angle brackets like ``<this>`` and ``</this>``.
 -   *Template tags*
-    (which use curly braces like ``{% this %}`` and ``{{ this }}``
+    (which use curly braces like ``{{ this }}`` and ``{{ this }}``
 
 In this example, let's say your template looks like this:
 
@@ -91,13 +97,13 @@ In this example, let's say your template looks like this:
 
     <p>Your payoff this round was {{ player.payoff }}.</p>
 
-    {% if subsession.round_number > 1 %}
+    {{ if subsession.round_number > 1 }}
         <p>
             Your payoff in the previous round was {{ last_round_payoff }}.
         </p>
-    {% endif %}
+    {{ endif }}
 
-    {% next_button %}
+    {{ next_button }}
 
 
 Step 1: oTree scans template tags, produces HTML (a.k.a. "server side")
@@ -171,7 +177,7 @@ Once you have stored the image, you can display it like this:
 
 .. code-block:: html
 
-    <img src="{% static "folder_name/puppy.jpg" %}"/>
+    <img src="{{ static 'folder_name/puppy.jpg' }}"/>
 
 
 Dynamic images
@@ -183,6 +189,7 @@ you can construct it in ``vars_for_template`` and pass it to the template, e.g.:
 
 .. code-block:: python
 
+    @staticmethod
     def vars_for_template(player):
         return dict(
             image_path='my_app/{}.png'.format(player.round_number)
@@ -192,7 +199,7 @@ Then in the template:
 
 .. code-block:: html
 
-    <img src="{% static image_path %}"/>
+    <img src="{{ static image_path }}"/>
 
 
 .. _includable:
@@ -202,7 +209,7 @@ Includable templates
 
 If you are copy-pasting the same content across many templates,
 it's better to create an includable template and reuse it with
-``{% include %}``.
+``{{ include }}``.
 
 For example, if your game has instructions that need to be repeated on every page,
 make a template called ``instructions.html``, and put the instructions there,
@@ -290,10 +297,11 @@ Passing data from Python to JavaScript (js_vars)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To pass data to JavaScript code in your template,
-define a method ``js_vars`` on your Page, for example:
+define a function ``js_vars`` on your Page, for example:
 
 .. code-block:: html
 
+    @staticmethod
     def js_vars(player):
         return dict(
             payoff=player.payoff,
@@ -387,3 +395,4 @@ Miscellaneous
 
 You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For example::
 ``{{ 0.1234|to2}}`` outputs 0.12.
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,18 +69,33 @@ msgid "Enter this command at the prompt:"
 msgstr ""
 
 #: ../../source/install-windows.rst:45
+msgid ""
+"This documentation is for oTree Lite. If you need maximum compatibility "
+"with existing oTree apps, switch to `this "
+"<https://otree.readthedocs.io/en/self/index.html>`__ documentation."
+msgstr ""
+
+#: ../../source/install-windows.rst:49
 msgid "Next steps"
 msgstr ""
 
-#: ../../source/install-windows.rst:47
+#: ../../source/install-windows.rst:51
 msgid ""
 "If you will use :ref:`oTree Studio <studio>` (recommended), go to "
 "`otreehub.com <https://www.otreehub.com/studio>`__."
 msgstr ""
 
-#: ../../source/install-windows.rst:49
+#: ../../source/install-windows.rst:53
 msgid ""
 "If you will use PyCharm or another text-based code editor, follow the "
 "steps :ref:`here <install-nostudio>`."
 msgstr ""
+
+#~ msgid ""
+#~ "This documentation is for oTree Lite."
+#~ " If you need maximum compatibility "
+#~ "with existing oTree apps, switch to "
+#~ "`this <https://otree.readthedocs.io/en/latest/index.html>`__ "
+#~ "documentation."
+#~ msgstr ""
 

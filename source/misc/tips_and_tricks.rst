@@ -24,7 +24,7 @@ If you need slightly different versions (e.g. different treatments),
 then you should use the techniques described in :ref:`treatments`,
 such as making 2 session configs that have a different
 ``'treatment'`` parameter,
-and then checking for ``self.session.config['treatment']`` in your app's code.
+and then checking for ``session.config['treatment']`` in your app's code.
 
 
 .. _many-fields:
@@ -84,13 +84,10 @@ Let's say your app has many fields that are almost the same, such as:
 This is quite complex; you should look for a way to simplify.
 
 Are the fields all displayed on separate pages? If so, consider converting
-this to a 10-round game with just one field. See the
-`real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
-sample game for an example of how to just have 1 page that gets looped over many rounds,
-varying the question that gets displayed with each round.
+this to a 10-round game with just one field.
 
 If that's not possible, then you can reduce the amount of repeated code
-by defining a method that returns a field:
+by defining a function that returns a field:
 
 .. code-block:: python
 
@@ -131,10 +128,108 @@ something like this:
 
     # etc...
 
-See the `quiz <https://github.com/oTree-org/oTree/tree/master/quiz>`__
-or `real effort <https://github.com/oTree-org/oTree/tree/master/real_effort>`__
-sample games for examples of how to just have 1 page that gets looped over many rounds,
-varying the question that gets displayed with each round.
+.. _duplicate_validation_methods:
+
+Avoid duplicated validation methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` methods,
+you can replace them with a single :ref:`error_message <error_message>` function.
+For example:
+
+.. code-block:: python
+
+    def quiz1_error_message(player, value):
+        if value != 42:
+            return 'Wrong answer'
+
+    def quiz2_error_message(player, value):
+        if value != 'Ottawa':
+            return 'Wrong answer'
+
+    def quiz3_error_message(player, value):
+        if value != 3.14:
+            return 'Wrong answer'
+
+    def quiz4_error_message(player, value):
+        if value != 'George Washington':
+            return 'Wrong answer'
+
+You can instead define this function on your page:
+
+.. code-block:: python
+
+    @staticmethod
+    def error_message(player, values):
+        solutions = dict(
+            quiz1=42,
+            quiz2='Ottawa',
+            quiz3='3.14',
+            quiz4='George Washington'
+        )
+
+        error_messages = dict()
+
+        for field_name in solutions:
+            if values[field_name] != solutions[field_name]:
+                error_messages[field_name] = 'Wrong answer'
+
+        return error_messages
+
+(Usually ``error_message`` is used to return a single error message as a string, but you can also return a dict.)
+
+.. _extract-page-method:
+
+Avoid duplicated page functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Any page function can be moved out of the page class, and into a top-level function.
+This is a handy way to share the same function across multiple pages.
+For example, let's say many pages need to have these 2 functions:
+
+.. code-block:: python
+
+    class Page1(Page):
+        @staticmethod
+        def is_displayed(player: Player):
+            participant = player.participant
+
+            return participant.expiry - time.time() > 0
+
+        @staticmethod
+        def get_timeout_seconds(player):
+            participant = player.participant
+            import time
+            return participant.expiry - time.time()
+
+You can move those functions before all the pages (remove the ``@staticmethod``),
+and then reference them wherever they need to be used:
+
+.. code-block:: python
+
+    def is_displayed1(player: Player):
+        participant = player.participant
+
+        return participant.expiry - time.time() > 0
+
+
+    def get_timeout_seconds1(player: Player):
+        participant = player.participant
+        import time
+
+        return participant.expiry - time.time()
+
+
+    class Page1(Page):
+        is_displayed = is_displayed1
+        get_timeout_seconds = get_timeout_seconds1
+
+
+    class Page2(Page):
+        is_displayed = is_displayed1
+        get_timeout_seconds = get_timeout_seconds1
+
+(In the sample games, ``after_all_players_arrive`` and ``live_method`` are frequently defined in this manner.)
 
 Improving code performance
 --------------------------
@@ -149,6 +244,7 @@ For example, this code has a redundant query because it asks the database
 
 .. code-block:: python
 
+    @staticmethod
     def vars_for_template(player):
         return dict(
             a=player.in_round(1).a,
@@ -163,6 +259,7 @@ It should be simplified to this:
 
 .. code-block:: python
 
+    @staticmethod
     def vars_for_template(player):
         round_1_player = player.in_round(1)
         return dict(
@@ -231,51 +328,3 @@ Then your pages could be simplified to:
 
 
 
-.. _duplicate_validation_methods:
-
-Avoid duplicated validation methods
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` methods,
-you can replace them with a single :ref:`error_message <error_message>` method.
-For example:
-
-.. code-block:: python
-
-    def quiz1_error_message(player, value):
-        if value != 42:
-            return 'Wrong answer'
-
-    def quiz2_error_message(player, value):
-        if value != 'Ottawa':
-            return 'Wrong answer'
-
-    def quiz3_error_message(player, value):
-        if value != 3.14:
-            return 'Wrong answer'
-
-    def quiz4_error_message(player, value):
-        if value != 'George Washington':
-            return 'Wrong answer'
-
-You can instead define this method on your page (not Player class):
-
-.. code-block:: python
-
-    def error_message(player, values):
-        solutions = dict(
-            quiz1=42,
-            quiz2='Ottawa',
-            quiz3='3.14',
-            quiz4='George Washington'
-        )
-
-        error_messages = dict()
-
-        for field_name in solutions:
-            if values[field_name] != solutions[field_name]:
-                error_messages[field_name] = 'Wrong answer'
-
-        return error_messages
-
-(Usually ``error_message`` is used to return a single error message as a string, but you can also return a dict.)

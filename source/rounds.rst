@@ -16,7 +16,7 @@ You can combine apps by setting your session config's ``app_sequence``.
 Passing data between apps
 -------------------------
 
-See :ref:`participant.vars <vars>` and :ref:`session.vars <session_vars>`.
+See :ref:`participant fields <vars>` and :ref:`session fields <session_vars>`.
 
 
 .. _rounds:
@@ -85,44 +85,54 @@ These methods work the same way for subsessions (e.g. ``subsession.in_all_rounds
 They also work the same way for groups, but it does not make sense to use them if you re-shuffle groups between rounds.
 
 .. _vars:
+.. _PARTICIPANT_FIELDS:
 
-participant.vars
-----------------
+Participant fields
+~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    As of March 2021, this is a new **optional** syntax for ``participant.vars``.
+    Instead of setting ``participant.vars['my_field'] = 1``,
+    you can now set ``participant.my_field = 1`` directly.
+    Just make sure to define ``PARTICIPANT_FIELDS`` first.
+    See `here <https://groups.google.com/g/otree/c/lbJg_ND5QkY>`__ for more info.
 
 If you want to access a participant's data from a previous app,
 you should store this data on the participant object,
 which persists across apps (see :ref:`participants_and_players`).
 (``in_all_rounds()`` only is useful when you need to access data from a previous
 round of the same app.)
-Put it in ``participant.vars``, which is a dict that can store any data.
-For example, you can set an attribute like this::
 
-    participant.vars['blah'] = [1, 2, 3]
+Go to settings and define ``PARTICIPANT_FIELDS``,
+which is a list of the names of fields you want to define on your participant.
 
-Later in the session (e.g. in a separate app),
-you can retrieve it like this::
+Then in your code, you can get and set any type of data on these fields:
 
-    participant.vars['blah']
-    # or try printing:
-    print('vars is', participant.vars)
+.. code-block:: python
 
+    participant.mylist = [1, 2, 3]
 
-You can test if ``'my_var'`` exists with ``if 'my_var' in participant.vars:``.
+(Internally, all participant fields are stored in a dict called ``participant.vars``.
+``participant.xyz`` is equivalent to ``participant.vars['xyz']``.)
 
-``participant.vars`` is not included in the Excel/CSV data export,
+Participant fields are not included in the Excel/CSV data export,
 or in the "Data" tab in the session admin. If you want that, you should either
 use :ref:`custom-export` or save ``str(participant.vars)`` into a ``LongStringField``.
-(The same concept applies for ``session.vars``.)
+(The same concept applies for session fields.)
 
 .. _session_vars:
 
-session.vars
-~~~~~~~~~~~~
+Session fields
+~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a new feature; see the note above about ``PARTICIPANT_FIELDS``.
 
 For global variables that are the same for all participants in the session,
-you can use ``session.vars``.
-This is a dict just like ``participant.vars``.
-
+add them to the ``SESSION_FIELDS``, which works the same as ``PARTICIPANT_FIELDS``.
+Internally, all session fields are stored in ``session.vars``.
 
 Variable number of rounds
 -------------------------
@@ -130,6 +140,6 @@ Variable number of rounds
 If you want a variable number of rounds, consider using :ref:`live`.
 
 Alternatively, you can set ``num_rounds`` to some high number, and then in your app, conditionally hide the
-``{% next_button %}`` element, so that the user cannot proceed to the next
+``{{ next_button }}`` element, so that the user cannot proceed to the next
 page, or use :ref:`app_after_this_page`. But note that having many rounds (e.g. more than 100)
 might cause performance problems, so test your app carefully.

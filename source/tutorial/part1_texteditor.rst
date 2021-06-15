@@ -22,7 +22,7 @@ Then in PyCharm, go to the folder ``my_simple_survey`` that was created.
 Define models
 -------------
 
-In ``app.py``, scroll to the line that says ``class Player(BasePlayer):``.
+In ``__init__.py``, scroll to the line that says ``class Player(BasePlayer):``.
 Here we define the columns for the Player table in the database.
 Let's add 2 fields:
 
@@ -50,38 +50,32 @@ Let's name the first page ``MyPage.html``, and put these contents inside:
 
 .. code-block:: html
 
-    {% extends "global/Page.html" %}
-
-    {% block title %}
+    {{ block title }}
         Enter your information
-    {% endblock %}
-
-    {% block content %}
+    {{ endblock }}
+    {{ block content }}
 
         Please enter the following information.
 
-        {% formfields %}
+        {{ formfields }}
 
-        {% next_button %}
+        {{ next_button }}
 
-    {% endblock %}
+    {{ endblock }}
 
 The second template will be called ``Results.html``.
 
 .. code-block:: html
 
-    {% extends "global/Page.html" %}
-
-    {% block title %}
+    {{ block title }}
         Results
-    {% endblock %}
-
-    {% block content %}
+    {{ endblock }}
+    {{ block content }}
 
         <p>Your name is {{ player.name }} and your age is {{ player.age }}.</p>
 
-        {% next_button %}
-    {% endblock %}
+        {{ next_button }}
+    {{ endblock }}
 
 
 Define pages

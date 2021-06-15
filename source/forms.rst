@@ -33,7 +33,7 @@ In your template, you can display the form with:
 
 .. code-block:: html
 
-    {% formfields %}
+    {{ formfields }}
 
 .. _form-validation:
 
@@ -104,11 +104,15 @@ You can do this for ``BooleanField``, ``StringField``, etc.:
         ]
     )
 
+You can get the human-readable label corresponding to the user's choice like this:
 
-After the field has been set, you can access the human-readable name
-using
-``get_FIELD_display``, like this:
-``player.get_level_display() # returns e.g. 'Medium'``.
+.. code-block:: python
+
+    player.get_field_display('cooperated')  # returns e.g. 'Defect'
+
+.. note::
+
+    ``get_field_display`` is new in oTree 5 (March 2021).
 
 Optional fields
 ~~~~~~~~~~~~~~~
@@ -129,7 +133,7 @@ for fixed (constant) values.
  
 If you want them to be determined dynamically
 (e.g. different from player to player),
-then you can instead define one of the below methods.
+then you can instead define one of the below functions.
 
 .. _FOO_choices:
 
@@ -201,7 +205,7 @@ Validating multiple fields together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's say your form has 3 number fields whose values must sum to 100.
-You can enforce this with the ``error_message`` method, which goes on the *page* (not the Player model):
+You can enforce this with the ``error_message`` function, which goes on the page:
 
 .. code-block:: python
 
@@ -219,7 +223,7 @@ You can enforce this with the ``error_message`` method, which goes on the *page*
 Notes:
 
 -   If a field was left blank (and you set ``blank=True``), its value here will be ``None``.
--   This method is only executed if there are no other errors in the form.
+-   This function is only executed if there are no other errors in the form.
 -   You can also return a dict that maps field names to error messages.
     This way, you don't need to write many repetitive FIELD_error_message methods
     (see :ref:`here <duplicate_validation_methods>`).
@@ -230,19 +234,17 @@ Determining form fields dynamically
 -----------------------------------
 
 If you need the list of form fields to be dynamic, instead of
-``form_fields`` you can define a method ``get_form_fields``:
+``form_fields`` you can define a function ``get_form_fields``:
 
 .. code-block:: python
 
+    @staticmethod
     def get_form_fields(player):
         if player.num_bids == 3:
             return ['bid_1', 'bid_2', 'bid_3']
         else:
             return ['bid_1', 'bid_2']
 
-But if you do this, you have to be sure to also include the same
-``{% formfield %}`` elements in your template. The easiest way is to use
-``{% formfields %}``.
 
 Widgets
 -------
@@ -251,22 +253,22 @@ You can set a model field's ``widget`` to ``RadioSelect`` or ``RadioSelectHorizo
 to be displayed with radio buttons, instead of a dropdown menu.
 
 
-{% formfield %}
+{{ formfield }}
 ---------------
 
 If you want to position the fields individually,
-instead of ``{% formfields %}`` you can use ``{% formfield %}``:
+instead of ``{{ formfields }}`` you can use ``{{ formfield }}``:
 
 .. code-block:: html
 
-    {% formfield 'bid' %}
+    {{ formfield 'bid' }}
 
 
 You can also put the ``label`` in directly in the template:
 
 .. code-block:: html
 
-    {% formfield 'bid' label="How much do you want to contribute?" %}
+    {{ formfield 'bid' label="How much do you want to contribute?" }}
 
 .. note::
 
@@ -277,14 +279,14 @@ You can also put the ``label`` in directly in the template:
 Customizing a field's appearance
 --------------------------------
 
-``{% formfields %}`` and ``{% formfield %}`` are easy to use because they automatically output
+``{{ formfields }}`` and ``{{ formfield }}`` are easy to use because they automatically output
 all necessary parts of a form field (the input, the label, and any error messages),
 with Bootstrap styling.
 
 However, if you want more control over the appearance and layout,
-you can use manual field rendering. Instead of ``{% formfield 'my_field' %}``,
+you can use manual field rendering. Instead of ``{{ formfield 'my_field' }}``,
 do ``{{ form.my_field }}``, to get just the input element.
-Just remember to also include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``.
+Just remember to also include ``{{ formfield_errors 'my_field' }}``.
 
 .. _radio-table:
 .. _subwidgets:
@@ -318,9 +320,9 @@ Instead, you should simply loop over the choices in the field as follows:
 
     <tr>
         <td>{{ form.offer_1.label }}</td>
-        {% for choice in form.offer_1 %}
+        {{ for choice in form.offer_1 }}
             <td>{{ choice }}</td>
-        {% endfor %}
+        {{ endfor }}
     </tr>
 
 If you have many fields with the same number of choices,
@@ -329,14 +331,14 @@ you can arrange them in a table:
 .. code-block:: html
 
     <table class="table">
-        {% for field in form %}
+        {{ for field in form }}
             <tr>
                 <th>{{ field.label }}</th>
-                {% for choice in field %}
+                {{ for choice in field }}
                     <td>{{ choice }}</td>
-                {% endfor %}
+                {{ endfor }}
             </tr>
-        {% endfor %}
+        {{ endfor }}
     </table>
 
 .. _raw_html:
@@ -344,7 +346,7 @@ you can arrange them in a table:
 Raw HTML widgets
 ----------------
 
-If ``{% formfields %}`` and :ref:`manual field rendering <manual-forms>`
+If ``{{ formfields }}`` and :ref:`manual field rendering <manual-forms>`
 don't give you the appearance you want,
 you can write your own widget in raw HTML.
 However, you will lose the convenient features handled
@@ -356,14 +358,18 @@ For example, if your ``form_fields`` includes ``my_field``,
 you can do ``<input name="my_field" type="checkbox" />``
 (some other common types are ``radio``, ``text``, ``number``, and ``range``).
 
-Second, you should usually include ``{% if form.my_field.errors %}{{ form.my_field.errors.0 }}{% endif %}``,
+Second, you should usually include ``{{ formfield_errors 'xyz' }}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
+
+.. note::
+
+    ``formfield_errors`` is new in oTree 5.0.5+.
 
 Raw HTML example: slider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want a slider, instead of ``{% formfields %}``,
+If you want a slider, instead of ``{{ formfields }}``,
 put HTML like this in your template:
 
 .. code-block:: html
@@ -373,15 +379,9 @@ put HTML like this in your template:
     </label>
 
     <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">Disagree</span>
-        </div>
-
+        <span class="input-group-text">Disagree</span>
         <input type="range" name="pizza" min="-2" max="2" step="1" class="form-range">
-
-        <div class="input-group-append">
-            <span class="input-group-text">Agree</span>
-        </div>
+        <span class="input-group-text">Agree</span>
     </div>
 
 If you want to show the current numeric value, or hide the knob until the slider is clicked,
@@ -417,6 +417,10 @@ hidden form field. For example:
 When the page is submitted, the value of your hidden input will be recorded
 in oTree like any other form field.
 
+If this isn't working, open your browser's JavaScript console,
+see if there are any errors, and use ``console.log()`` (JavaScript's equivalent of ``print()``)
+to trace the execution of your code line by line.
+
 Buttons
 -------
 
@@ -424,7 +428,7 @@ Button that submits the form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your page only contains 1 decision,
-you could omit the ``{% next_button %}``
+you could omit the ``{{ next_button }}``
 and instead have the user click on one of several buttons
 to go to the next page.
 
@@ -440,10 +444,8 @@ Then put this code in the template:
 .. code-block:: html
 
     <p>Do you wish to accept the offer?</p>
-    <div>
-        <button name="offer_accepted" value="True">Yes</button>
-        <button name="offer_accepted" value="False">No</button>
-    </div>
+    <button name="offer_accepted" value="True">Yes</button>
+    <button name="offer_accepted" value="False">No</button>
 
 You can use this technique for any type of field,
 not just ``BooleanField``.
@@ -489,6 +491,6 @@ Then, in the template:
 
 .. code-block:: html
 
-    {% formfield player.contribution label=contribution_label %}
+    {{ formfield player.contribution label=contribution_label }}
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.

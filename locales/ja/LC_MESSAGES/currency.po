@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,38 +25,44 @@ msgstr ""
 msgid ""
 "In many experiments, participants play for currency: either real money, "
 "or points. oTree supports both; you can switch from points to real money "
-"by setting ``USE_POINTS = False`` in ``settings.py``."
+"by setting ``USE_POINTS = False`` in your settings."
 msgstr ""
 
 #: ../../source/currency.rst:11
 msgid ""
-"In your Python code, you can indicate a currency amount with ``c()``, "
-"e.g. ``c(10)`` or ``c(0)``. It will still work just like a number (e.g. "
-"``c(1) + c(0.2) == c(1.2)``). The advantage is that when it's displayed "
-"to users, it will automatically be formatted as ``$1.20`` or ``1,20 €``, "
-"etc., depending on your ``REAL_WORLD_CURRENCY_CODE`` and "
-"``LANGUAGE_CODE`` settings."
+"You can write ``cu(42)`` to represent \"42 currency units\". It works "
+"just like a number (e.g. ``cu(0.1) + cu(0.2) == cu(0.3)``). The advantage"
+" is that when it's displayed to users, it will automatically be formatted"
+" as ``$0.30`` or ``0,30 €``, etc., depending on your "
+"``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings."
 msgstr ""
 
-#: ../../source/currency.rst:19
+#: ../../source/currency.rst:20
+msgid ""
+"``cu()`` is new in oTree 5. Previously, ``c()`` was used to denote "
+"currencies. Code that already uses ``c()`` will continue to work. More "
+"info `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__."
+msgstr ""
+
+#: ../../source/currency.rst:24
 msgid "Use ``CurrencyField`` to store currencies in the database. For example:"
 msgstr ""
 
-#: ../../source/currency.rst:27
+#: ../../source/currency.rst:32
 msgid "To make a list of currency amounts, use ``currency_range``:"
 msgstr ""
 
-#: ../../source/currency.rst:35
+#: ../../source/currency.rst:40
 msgid ""
-"In templates, instead of using the ``c()`` function, you should use the "
-"``|c`` filter. For example, ``{{ 20|c }}`` displays as ``20 points``."
+"In templates, instead of using the ``cu()`` function, you should use the "
+"``|cu`` filter. For example, ``{{ 20|cu }}`` displays as ``20 points``."
 msgstr ""
 
-#: ../../source/currency.rst:42
+#: ../../source/currency.rst:48
 msgid "payoffs"
 msgstr ""
 
-#: ../../source/currency.rst:44
+#: ../../source/currency.rst:50
 msgid ""
 "Each player has a ``payoff`` field. If your player makes money, you "
 "should store it in this field. ``participant.payoff`` automatically "
@@ -65,7 +71,7 @@ msgid ""
 "whole number."
 msgstr ""
 
-#: ../../source/currency.rst:50
+#: ../../source/currency.rst:56
 msgid ""
 "At the end of the experiment, a participant's total profit can be "
 "accessed by ``participant.payoff_plus_participation_fee()``; it is "
@@ -74,48 +80,48 @@ msgid ""
 "``session.config['participation_fee']``."
 msgstr ""
 
-#: ../../source/currency.rst:59
+#: ../../source/currency.rst:65
 msgid "Points (i.e. \"experimental currency\")"
 msgstr ""
 
-#: ../../source/currency.rst:61
+#: ../../source/currency.rst:67
 msgid ""
 "If you set ``USE_POINTS = True``, then currency amounts will be points "
-"instead of dollars/euros/etc. For example, ``c(10)`` is displayed as ``10"
-" points`` (or ``10 puntos``, etc.)"
+"instead of dollars/euros/etc. For example, ``cu(10)`` is displayed as "
+"``10 points`` (or ``10 puntos``, etc.)"
 msgstr ""
 
-#: ../../source/currency.rst:64
+#: ../../source/currency.rst:70
 msgid ""
 "You can decide the conversion rate to real money by adding a "
 "``real_world_currency_per_point`` entry to your session config."
 msgstr ""
 
-#: ../../source/currency.rst:68
+#: ../../source/currency.rst:74
 msgid "Converting points to real world currency"
 msgstr ""
 
-#: ../../source/currency.rst:70
+#: ../../source/currency.rst:76
 msgid ""
 "You can convert a points amount to money using the method "
 "``.to_real_world_currency``. For example:"
 msgstr ""
 
-#: ../../source/currency.rst:77
+#: ../../source/currency.rst:83
 msgid ""
 "(The ``session`` is necessary because different sessions can have "
 "different conversion rates)."
 msgstr ""
 
-#: ../../source/currency.rst:81
+#: ../../source/currency.rst:87
 msgid "Decimal places"
 msgstr ""
 
-#: ../../source/currency.rst:83
+#: ../../source/currency.rst:89
 msgid "Money amounts are displayed with 2 decimal places."
 msgstr ""
 
-#: ../../source/currency.rst:85
+#: ../../source/currency.rst:91
 msgid ""
 "On the other hand, points are integers. This means amounts will get "
 "rounded to whole numbers, like ``10`` divided by ``3`` is ``3``. So, we "
@@ -123,4 +129,31 @@ msgid ""
 "rounding error. For example, set the endowment of a game to 1000 points, "
 "rather than 100."
 msgstr ""
+
+#~ msgid ""
+#~ "You can write ``c(42)`` to represent "
+#~ "\"42 currency units\". It works just "
+#~ "like a number (e.g. ``c(0.1) + "
+#~ "c(0.2) == c(0.3)``). The advantage is"
+#~ " that when it's displayed to users,"
+#~ " it will automatically be formatted "
+#~ "as ``$0.30`` or ``0,30 €``, etc., "
+#~ "depending on your ``REAL_WORLD_CURRENCY_CODE`` "
+#~ "and ``LANGUAGE_CODE`` settings."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In templates, instead of using the "
+#~ "``c()`` function, you should use the "
+#~ "``|c`` filter. For example, ``{{ 20|c"
+#~ " }}`` displays as ``20 points``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you set ``USE_POINTS = True``, "
+#~ "then currency amounts will be points "
+#~ "instead of dollars/euros/etc. For example, "
+#~ "``c(10)`` is displayed as ``10 points``"
+#~ " (or ``10 puntos``, etc.)"
+#~ msgstr ""
 

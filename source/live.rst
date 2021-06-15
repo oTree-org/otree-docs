@@ -5,9 +5,10 @@ Live pages
 
 Live pages communicate with the server continuously
 and update in real time, enabling continuous time games.
-Live pages are a great fit for games with lots of fast iteration
-and interaction between users.
-However, they require JavaScript programming.
+Live pages are a great fit for games with lots of back-and-forth interaction
+between users.
+
+There are a bunch of examples `here <https://www.otreehub.com/projects/otree-more-demos/>`__.
 
 Sending data to the server
 --------------------------
@@ -27,12 +28,15 @@ was sent.
 
 .. code-block:: python
 
-    class MyPage(Page):
 
+    class MyPage(Page):
         @staticmethod
         def live_method(player, data):
             print('received a bid from', player.id_in_group, ':', data)
 
+
+If you are using oTree Studio, you must define a player function whose name
+starts with ``live_``.
 (Note, ``live_method`` on ``WaitPage`` is not yet supported.)
 
 Sending data to the page
@@ -89,15 +93,14 @@ Example: auction
 
 .. code-block:: python
 
-    class Auction(Page):
-        def live_method(player, data):
-            group = player.group
-            my_id = player.id_in_group
-            if bid > group.highest_bid:
-                group.highest_bid = data
-                group.highest_bidder = my_id
-                response = dict(id_in_group=my_id, bid=data)
-                return {0: response}
+    def live_method(player, data):
+        group = player.group
+        my_id = player.id_in_group
+        if bid > group.highest_bid:
+            group.highest_bid = data
+            group.highest_bidder = my_id
+            response = dict(id_in_group=my_id, bid=data)
+            return {0: response}
 
 .. code-block:: html
 
@@ -108,21 +111,20 @@ Example: auction
     </tr>
     </table>
     <input id="inputbox" type="number">
-    <button type="button" id="sendbutton">Send</button>
+    <button type="button" onclick="sendValue()">Send</button>
 
     <script>
 
       let history = document.getElementById('history');
       let inputbox = document.getElementById('inputbox');
-      let sendbutton = document.getElementById('sendbutton');
 
       function liveRecv(data) {
           history.innerHTML += '<tr><td>' + data.id_in_group + '</td><td>' + data.bid + '</td></tr>';
       }
 
-      sendbutton.onclick = function () {
-          liveSend(parseInt(inputbox.value));
-      };
+      function sendValue() {
+        liveSend(parseInt(inputbox.value));
+      }
 
     </script>
 
@@ -175,8 +177,14 @@ History
 By default, participants will not see messages that were sent before they arrived at the page.
 (And data will not be re-sent if they refresh the page.)
 If you want to save history, you should store it in the database.
-When a player loads the page, your JavaScript can call something like ``liveSend({'type': 'connect'})``,
+When a player loads the page, your JavaScript can call something like ``liveSend({})``,
 and you can configure your live_method to retrieve the history of the game from the database.
+
+ExtraModel
+----------
+
+Live pages are often used together with an :ref:`ExtraModel <ExtraModel>`,
+which allows you to store each individual message or action in the database.
 
 Keeping users on the page
 -------------------------
@@ -184,7 +192,7 @@ Keeping users on the page
 Let's say you require 10 messages to be sent before the users can proceed
 to the next page.
 
-First, you should omit the ``{% next_button %}``.
+First, you should omit the ``{{ next_button }}``.
 (Or use JS to hide it until the task is complete.)
 
 When the task is completed, you send a message:
@@ -197,8 +205,6 @@ When the task is completed, you send a message:
 
 
     class MyPage(Page):
-
-        @staticmethod
         def live_method(player, data):
             group = player.group
             group.num_messages += 1
@@ -220,74 +226,115 @@ Then in the template, automatically submit the page via JavaScript:
         // handle other types of messages here..
     }
 
-For security, you should use :ref:`error_message <error_message>`:
-
-.. code-block:: python
-
-    class MyPage(Page):
-        @staticmethod
-        def live_method(player, data):
-            ...
-
-        @staticmethod
-        def error_message(player, values):
-            if not player.group.game_finished:
-                return 'you need to stay until 10 messages are sent'
-
 By the way, using a similar technique, you could implement a custom
 wait page, e.g. one that lets you proceed after a certain timeout,
 even if not all players have arrived.
 
-.. _live-forms:
+General advice about live pages
+-------------------------------
 
-Form validation
----------------
+Here is some general advice (does not apply to all situations).
+We recommend implementing most of your logic in Python,
+and just using JavaScript to update the page's HTML, because:
 
-.. note::
+-   The JavaScript language can be quite tricky to use properly
+-   Your Python code runs on the server, which is centralized and reliable.
+    JavaScript runs on the clients, which can get out of sync with each other,
+    and data can get lost when the page is closed or reloaded.
+-   Because Python code runs on the server, it is more secure and cannot be viewed or modified
+    by participants.
 
-    If you have a form with multiple fields,
-    it may be simpler to use a regular page with ``form_model`` and ``form_fields``.
-    because then you have the convenience of ``{% formfields %}`` and ``error_message``,
-    etc.
+Example: tic-tac-toe
+~~~~~~~~~~~~~~~~~~~~
 
-Let's say your live page asks players to submit bids,
-and the maximum bid is 99.
-In a non-live page you would check this using :ref:`form-validation`.
-But with live pages, you must verify it inside the ``live_method``:
+Let's say you are implementing a game of tic-tac-toe.
+There are 2 types of messages your live_method can receive:
+
+1.   A user marks a square, so you need to notify the other player
+2.   A user loads (or reloads) the page, so you need to send them the current board layout.
+
+For situation 1, you should use a JavaScript event handler like ``onclick``, e.g. so when the user clicks on square 3,
+that move gets sent to the server:
+
+.. code-block:: javascript
+
+        liveSend({square: 3});
+
+For situation 2, it's good to put some code like this in your template, which sends an empty message
+to the server when the page loads:
+
+.. code-block:: javascript
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        liveSend({});
+    });
+
+The server handles these 2 situations with an "if" statement:
 
 .. code-block:: python
 
-    def live_method(player, bid):
-        if bid > 99:
-            # just an example.
-            # it's up to you to handle this message in your JavaScript code.
-            response = dict(type='error', message='Bid is too high')
-            return {player.id_in_group: response}
-        ...
+    def live_method(player, data):
+        group = player.group
 
-In addition, you can add attributes to the ``<input>`` element like ``max="99"``.
-(But note HTML code is not secure and can be modified by tech-savvy participants.)
-If you do this, you should also add ``form="liveform"``.
-This will exclude that ``<input>`` from the page's main form,
-so that when the user clicks the ``{% next_button %}``, the validation will not be triggered .
+        if 'square' in data:
+            # SITUATION 1
+            square = data['square']
 
-So, it looks like this:
+            # save_move should save the move into a group field.
+            # for example, if player 1 modifies square 3,
+            # that changes group.board from 'X O XX  O' to 'X OOXX  O'
+            save_move(group, square, player.id_in_group)
+            # so that we can highlight the square (and maybe say who made the move)
+            news = {'square': square, 'id_in_group': player.id_in_group}
+        else:
+            # SITUATION 2
+            news = {}
+        # get_state should contain the current state of the game, for example:
+        # {'board': 'X O XX  O', 'whose_turn': 2}
+        payload = get_state(group)
+        # .update just combines 2 dicts
+        payload.update(news)
+        return {0: payload}
+
+In situation 2 (the player loads the page), the client gets a message like:
 
 .. code-block:: javascript
 
-  <input id="whatever" type="number" max="99" required form="liveform">
+    {'board': 'X OOXX  O', 'whose_turn': 2}
 
-To trigger validation when the user submits the bid, use this
-(e.g. in your ``onclick`` handler):
+In situation 1, the player gets the update about the move that was just made, AND the current state.
 
 .. code-block:: javascript
 
-    let liveform = document.getElementById('liveform');
-    let isValid = liveform.reportValidity();
+    {'board': 'X OOXX  O', 'whose_turn': 2, 'square': square, 'id_in_group': player.id_in_group}
 
-``reportValidity()`` is a built-in JavaScript function that will show the user
-any errors in their form fields. It also returns a boolean
-that tells if the form is currently valid. You can use that to skip the ``liveSend``.
+The JavaScript code can be "dumb".
+It doesn't need to keep track of whose move it is; it just trusts the info it receives from the server.
+It can even redraw the board each time it receives a message.
+
+Your code will also need to validate user input. For example, if player 1 tries to move when it is actually player 2's
+turn, you need to block that. For reasons listed in the previous section, it's better to do this in your live_method than
+in JavaScript code.
+
+Summary
+~~~~~~~
+
+As illustrated above, the typical pattern for a live_method is like this::
+
+    if the user made an action:
+        state = (get the current state of the game)
+        if (action is illegal/invalid):
+            return
+        update the models based on the move.
+        news = (produce the feedback to send back to the user, or onward to other users)
+    else:
+        news = (nothing)
+    state = (get the current state of the game)
+    payload = (state combined with news)
+    return payload
+
+Note that we get the game's state twice. That's because the state changes when we update our models,
+so we need to refresh it.
 
 Troubleshooting
 ---------------
@@ -302,4 +349,5 @@ So, wait for ``DOMContentLoaded`` (or jQuery document.ready, etc):
     });
 
 Don't trigger ``liveSend`` when the user clicks the "next" button, since leaving the page might interrupt
-the ``liveSend``. At least wait to receive a response through ``liveRecv``.
+the ``liveSend``. Instead, have the user click a regular button that triggers a ``liveSend``, and
+then doing ``document.getElementById("form").submit();`` in your ``liveRecv``.

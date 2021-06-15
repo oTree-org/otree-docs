@@ -1,8 +1,11 @@
 .. _mturk:
 
 
-Mechanical Turk
-===============
+MTurk & Prolific
+````````````````
+
+MTurk
+=====
 
 Overview
 --------
@@ -19,7 +22,7 @@ Installation
 
 .. code-block::
 
-    pip3 install -U otree[mturk]
+    pip3 install -U "otree[mturk]"
 
 MTurk template
 --------------
@@ -197,16 +200,29 @@ Managing your HITs
 
 oTree provides the ability to approve/reject assignments,
 send bonuses, and expire HITs early.
-If you want to do anything beyond this
+
+If you want to do anything beyond this,
 (e.g. extend expiration date, interact with workers,
 send custom bonuses, etc), you will need to install the
-`MTurk command-line tools <https://aws.amazon.com/cli/>`__
-or use the 3rd party
-`Manage HITs Individually <https://manage-hits-individually.s3.amazonaws.com/v4.0/index.html#/credentials>`__
-tool.
+`MTurk command-line tools <https://aws.amazon.com/cli/>`__.
+
+However, there is a new project called `oTree HR <https://github.com/oTree-org/HR>`__
+that provides a friendlier visual interface to manage your HITs.
+Currently, it supports microbatching and a few other features, but we welcome contributions
+of new functionality.
 
 Misc notes
 ----------
 
 If you are publishing to MTurk using another service like TurkPrime,
 you may not need to follow the steps on this page.
+
+Prolific
+========
+
+If you're using Prolific, we recommend setting up `oTree HR <https://github.com/oTree-org/HR>`__,
+which will automatically handle start links, completion URLs, and payments.
+
+A more limited solution is to add ``participant_label={{%PROLIFIC_PID%}}``
+to your study URL. When the user clicks the link,
+Prolific will replace that with the participant's actual Prolific ID.

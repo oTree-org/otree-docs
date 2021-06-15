@@ -31,7 +31,7 @@ For example:
 
 In your templates, any translatable strings should be inside a ``trans`` tag, for example::
 
-    {% trans 'this is inside a trans tag' %}
+    {{ trans 'this is inside a trans tag' }}
 
 (blocktrans is not supported. If you want to translate large sections of text,
 put them in separate includable templates and use an `if` statement to decide which language

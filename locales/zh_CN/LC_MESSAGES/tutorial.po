@@ -5,18 +5,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  oTree\n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
-"PO-Revision-Date: 2020-10-23 22:01+0800\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"PO-Revision-Date: 2021-05-27 12:57+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/tutorial/intro.rst:2
 msgid "Tutorial"
@@ -27,10 +28,8 @@ msgid "This tutorial will cover the creation of several apps."
 msgstr "本教程包括几个应用的创建。"
 
 #: ../../source/tutorial/intro.rst:6
-msgid ""
-"First, you should be familiar with Python; we have a simple tutorial "
-"here: :ref:`python_tutorial`."
-msgstr "首先，你必须熟悉Python: :ref:`python_tutorial` 是一个简单的教程."
+msgid "First, you should be familiar with Python; we have a simple tutorial here: :ref:`python_tutorial`."
+msgstr "首先，你必须熟悉Python；:ref:`python_tutorial` 是一个简单的教程。"
 
 #: ../../source/tutorial/part1_studio.rst:4
 msgid "Part 1: Simple survey (for oTree Studio users)"
@@ -38,19 +37,18 @@ msgstr "第一部分：简单的调查问卷(适用于oTree Studio用户)"
 
 #: ../../source/tutorial/part1_studio.rst:6 ../../source/tutorial/part2.rst:4
 msgid ""
-"(A video of this tutorial is on `YouTube "
-"<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
+"(A video of this tutorial is on `YouTube <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/"
+"videos>`__ )"
 msgstr ""
-"(一个视频教程在这里 `YouTube "
-"<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
+"(一个视频教程在这里 `YouTube <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
 
-#: ../../source/tutorial/part1_studio.rst:10
-#: ../../source/tutorial/part1_texteditor.rst:4
+#: ../../source/tutorial/part1_studio.rst:10 ../../source/tutorial/part1_texteditor.rst:4
 msgid ""
-"Let's create a simple survey -- on the first page, we ask the participant"
-" for their name and age, then on the next page, display this info back to"
-" them."
-msgstr "我们来创建一个简单的问卷调查--在第一个页面上，将询问参与人的姓名与年龄，之后在第二个页面上，将此信息展示给参与人."
+"Let's create a simple survey -- on the first page, we ask the participant for their name and age, then "
+"on the next page, display this info back to them."
+msgstr ""
+"我们来创建一个简单的问卷调查——在第一个页面上，将询问参与人的姓名与年龄，之后在第二个页面上，将此信息展示"
+"给参与人。"
 
 #: ../../source/tutorial/part1_studio.rst:14
 msgid "Player model"
@@ -62,7 +60,7 @@ msgstr "在侧边栏，点击玩家模型。我们来添加两个字段："
 
 #: ../../source/tutorial/part1_studio.rst:19
 msgid "``name`` (``StringField``, meaning text characters)"
-msgstr "``name`` (``StringField``, 意为文本型数据)"
+msgstr "``name`` (``StringField``，意为文本型数据)"
 
 #: ../../source/tutorial/part1_studio.rst:20
 msgid "``age`` (``IntegerField``)"
@@ -72,24 +70,21 @@ msgstr "``age`` (``IntegerField``)"
 msgid "Pages"
 msgstr "页面"
 
-#: ../../source/tutorial/part1_studio.rst:26
-#: ../../source/tutorial/part1_texteditor.rst:42
+#: ../../source/tutorial/part1_studio.rst:26 ../../source/tutorial/part1_texteditor.rst:42
 msgid "This survey has 2 pages:"
 msgstr "此调查问卷包含2个页面："
 
-#: ../../source/tutorial/part1_studio.rst:28
-#: ../../source/tutorial/part1_texteditor.rst:44
+#: ../../source/tutorial/part1_studio.rst:28 ../../source/tutorial/part1_texteditor.rst:44
 msgid "Page 1: players enter their name and age"
 msgstr "页面1：玩家输入姓名与年龄"
 
-#: ../../source/tutorial/part1_studio.rst:29
-#: ../../source/tutorial/part1_texteditor.rst:45
+#: ../../source/tutorial/part1_studio.rst:29 ../../source/tutorial/part1_texteditor.rst:45
 msgid "Page 2: players see the data they entered on the previous page"
 msgstr "页面2：玩家看到他们在之前的页面输入的数据"
 
 #: ../../source/tutorial/part1_studio.rst:31
 msgid "So, create 2 pages in your ``page_sequence``: ``Survey`` and ``Results``."
-msgstr "所以，在你的 ``page_sequence`` 中创建2个页面：``Survey`` 与 ``Results``."
+msgstr "所以，在你的 ``page_sequence`` 中创建2个页面：``Survey`` 与 ``Results``。"
 
 #: ../../source/tutorial/part1_studio.rst:34
 msgid "Page 1"
@@ -97,18 +92,15 @@ msgstr "页面1"
 
 #: ../../source/tutorial/part1_studio.rst:36
 msgid ""
-"First let's define ``Survey``. This page contains a form, so set "
-"``form_model`` to ``player`` and for ``form_fields``, select ``name`` and"
-" ``age``."
+"First let's define ``Survey``. This page contains a form, so set ``form_model`` to ``player`` and for "
+"``form_fields``, select ``name`` and ``age``."
 msgstr ""
-"首先我们定义 ``Survey`` 页面.这个页面包含一个表单，将 ``form_model`` 设为 ``player`` 并在 "
-"``form_fields`` 中选中 ``name`` 与 ``age``."
+"首先我们定义 ``Survey`` 页面。这个页面包含一个表单，将 ``form_model`` 设为 ``player`` 并在 "
+"``form_fields`` 中选中 ``name`` 与 ``age``。"
 
 #: ../../source/tutorial/part1_studio.rst:39
-msgid ""
-"Then, set the template's title to ``Enter your information``, and set the"
-" content to:"
-msgstr "然后, 将模板的标题设为 ``Enter your information``, 并将内容设置如下:"
+msgid "Then, set the template's title to ``Enter your information``, and set the content to:"
+msgstr "然后，将模板的标题设为 ``Enter your information``，并将内容设置如下:"
 
 #: ../../source/tutorial/part1_studio.rst:51
 msgid "Page 2"
@@ -116,26 +108,23 @@ msgstr "页面2"
 
 #: ../../source/tutorial/part1_studio.rst:53
 msgid "Now we define ``Results``."
-msgstr "现在我们来定义 ``Results`` 页面."
+msgstr "现在我们来定义 ``Results`` 页面。"
 
 #: ../../source/tutorial/part1_studio.rst:55
-msgid ""
-"Set the template's ``title`` block to ``Results`` and set the ``content``"
-" block to:"
+msgid "Set the template's ``title`` block to ``Results`` and set the ``content`` block to:"
 msgstr "将模板的标题设为 ``Results`` 并将内容设定如下："
 
-#: ../../source/tutorial/part1_studio.rst:65
-#: ../../source/tutorial/part2.rst:186
+#: ../../source/tutorial/part1_studio.rst:65 ../../source/tutorial/part2.rst:186
 msgid "Define the session config"
 msgstr "定义session config"
 
 #: ../../source/tutorial/part1_studio.rst:67
 msgid ""
-"In the sidebar, go to \"Session Configs\", create a session config, and "
-"add your survey app to the ``app_sequence``."
-msgstr ""
-"在侧边栏中, 点击 \"Session Configs\", 创建一个 session config, 并将你的问卷调查应用添加进 "
+"In the sidebar, go to \"Session Configs\", create a session config, and add your survey app to the "
 "``app_sequence``."
+msgstr ""
+"在侧边栏中，点击 \"Session Configs\"，创建一个 session config，并将你的问卷调查应用添加进 "
+"``app_sequence``。"
 
 #: ../../source/tutorial/part1_studio.rst:71
 msgid "Download and run"
@@ -143,35 +132,32 @@ msgstr "下载与运行"
 
 #: ../../source/tutorial/part1_studio.rst:73
 msgid ""
-"Download the otreezip file and follow the instructions on how to install "
-"oTree and run the otreezip file."
+"Download the otreezip file and follow the instructions on how to install oTree and run the otreezip file."
 msgstr "下载otreezip文件，并按照提示按照otree即可运行这个otreezip文件。"
 
 #: ../../source/tutorial/part1_studio.rst:76
 msgid ""
-"If there are any problems, you can ask a question on the oTree "
-"`discussion group <https://groups.google.com/forum/#!forum/otree>`__."
+"If there are any problems, you can ask a question on the oTree `discussion group <https://groups.google."
+"com/forum/#!forum/otree>`__."
 msgstr ""
-"如果遇到任何问题，你可以在oTree `讨论组 "
-"<https://groups.google.com/forum/#!forum/otree>`__ 中提问."
+"如果遇到任何问题，你可以在oTree `讨论组 <https://groups.google.com/forum/#!forum/otree>`__ 中提问。"
 
 #: ../../source/tutorial/part1_texteditor.rst:2
 msgid "Part 1: Simple survey (for PyCharm users)"
 msgstr "第一部分：简单的调查问卷(适用于PyCharm用户)"
 
-#: ../../source/tutorial/part1_texteditor.rst:8
-#: ../../source/tutorial/part2.rst:20 ../../source/tutorial/part3.rst:16
+#: ../../source/tutorial/part1_texteditor.rst:8 ../../source/tutorial/part2.rst:20
+#: ../../source/tutorial/part3.rst:16
 msgid "Create the app"
 msgstr "创建应用"
 
 #: ../../source/tutorial/part1_texteditor.rst:10
 msgid ""
-"Use your command line to ``cd`` to the oTree project folder you created, "
-"(which contains a ``settings.py``). Assuming you named the folder "
-"``oTree``, you would do::"
+"Use your command line to ``cd`` to the oTree project folder you created, (which contains a ``settings."
+"py``). Assuming you named the folder ``oTree``, you would do::"
 msgstr ""
 "使用 ``cd`` 命令进入你创建的oTree项目文件夹，（文件夹中包含一个 ``settings.py`` 文件）。假设命名文件夹为 "
-"``oTree``,你应该使用下面的指令："
+"``oTree``，你应该使用下面的指令："
 
 #: ../../source/tutorial/part1_texteditor.rst:16
 msgid "Then, create the app::"
@@ -183,22 +169,20 @@ msgstr "然后在PyCharm中，前往刚刚创建的 ``my_simple_survey`` 文件�
 
 # Chris comment: Removed 'models.py'.
 #: ../../source/tutorial/part1_texteditor.rst:23
-#, fuzzy
 msgid "Define models"
-msgstr "定义models.py"
+msgstr "定义模型"
 
 #: ../../source/tutorial/part1_texteditor.rst:25
 msgid ""
-"In ``app.py``, scroll to the line that says ``class "
-"Player(BasePlayer):``. Here we define the columns for the Player table in"
-" the database. Let's add 2 fields:"
+"In ``__init__.py``, scroll to the line that says ``class Player(BasePlayer):``. Here we define the columns "
+"for the Player table in the database. Let's add 2 fields:"
 msgstr ""
-"打开 ``app.py`` 并找到含有 ``class Player(BasePlayer):`` "
-"的那行，在这里定义数据库中玩家表有哪些列。让我们添加下面两个字段："
+"打开 ``__init__.py`` 并找到含有 ``class Player(BasePlayer):`` 的那行，在这里定义数据库中玩家表有哪些列。让我们"
+"添加下面两个字段："
 
 #: ../../source/tutorial/part1_texteditor.rst:29
 msgid "``name`` (which is a ``StringField``, meaning text characters)"
-msgstr "``name`` (``StringField``, 意为文本型数据)"
+msgstr "``name`` (``StringField``，意为文本型数据)"
 
 #: ../../source/tutorial/part1_texteditor.rst:30
 msgid "``age`` (which is a positive integer field)"
@@ -210,136 +194,122 @@ msgstr "定义模板"
 
 #: ../../source/tutorial/part1_texteditor.rst:47
 msgid "So, let's make 2 HTML template files."
-msgstr ""
+msgstr "故我们先创建两个HTML模板文件。"
 
 #: ../../source/tutorial/part1_texteditor.rst:49
 msgid "Let's name the first page ``MyPage.html``, and put these contents inside:"
-msgstr "不妨将第一个页面命名为 ``MyPage.html`` ，填入内容如下："
+msgstr "不妨将第一个页面命名为 ``MyPage.html`` ，将下面的内容放入其中："
 
-#: ../../source/tutorial/part1_texteditor.rst:70
+#: ../../source/tutorial/part1_texteditor.rst:66
 msgid "The second template will be called ``Results.html``."
-msgstr "第二个模板命名为 ``Results.html``."
+msgstr "第二个模板命名为 ``Results.html``。"
 
 # Chris comment: removed pages.py
-#: ../../source/tutorial/part1_texteditor.rst:90
-#, fuzzy
+#: ../../source/tutorial/part1_texteditor.rst:82
 msgid "Define pages"
-msgstr "定义 pages.py"
+msgstr "定义页面"
 
-#: ../../source/tutorial/part1_texteditor.rst:92
-msgid ""
-"Now we define our pages, which contain the logic for how to display the "
-"HTML templates."
+#: ../../source/tutorial/part1_texteditor.rst:84
+msgid "Now we define our pages, which contain the logic for how to display the HTML templates."
 msgstr "现在定义页面，页面包含了如何显示HTML模板的控制逻辑。"
 
-# Chris comment: templates are now in the main folder, together with app.py
-#: ../../source/tutorial/part1_texteditor.rst:95
-#, fuzzy
+# Chris comment: templates are now in the main folder, together with __init__.py
+#: ../../source/tutorial/part1_texteditor.rst:87
 msgid ""
-"Since we have 2 templates, we need 2 ``Page`` classes. The names should "
-"match those of the templates (``MyPage`` and ``Results``)."
+"Since we have 2 templates, we need 2 ``Page`` classes. The names should match those of the templates "
+"(``MyPage`` and ``Results``)."
 msgstr ""
-"由于我们有两个模板，所以我们需要在 ``pages.py`` 定义2个 ``Page`` 类。类的名字应当与模板的名字匹配（``MyPage`` "
-"and ``Results``）。"
+"由于我们有2个模板，我们需要2个 ``Page`` 类。类的名字应当与模板的名字匹配（``MyPage`` 与 ``Results``）。"
 
-#: ../../source/tutorial/part1_texteditor.rst:99
+#: ../../source/tutorial/part1_texteditor.rst:91
 msgid ""
-"First let's define ``MyPage``. This page contains a form, so we need to "
-"define ``form_model`` and ``form_fields``."
-msgstr "首先定义 ``MyPage``.这个页面包含一个表单，我们需要定义 ``form_model`` 与 ``form_fields``."
+"First let's define ``MyPage``. This page contains a form, so we need to define ``form_model`` and "
+"``form_fields``."
+msgstr "首先定义 ``MyPage``。这个页面包含一个表单，我们需要定义 ``form_model`` 与 ``form_fields``。"
 
+#: ../../source/tutorial/part1_texteditor.rst:100
+msgid ""
+"Now we define ``Results``. This page doesn't have a form or any other special attributes, so we just "
+"write \"pass\"."
+msgstr "现在来定义 ``Results``。这一页面不含有表单或其他特殊属性，所以我们只需要写“pass”。"
+
+# Chris comment: removed pages.py
 #: ../../source/tutorial/part1_texteditor.rst:108
 msgid ""
-"Now we define ``Results``. This page doesn't have a form or any other "
-"special attributes, so we just write \"pass\"."
-msgstr "现在来定义 ``Results``. 这一页面不含有表单或其他特殊属性，所以我们只需要写“pass”。"
+"If there is already a ``WaitPage``, you can delete that, because WaitPages are only necessary for multi-"
+"player games."
+msgstr "如果已经有了一个 ``WaitPage``，你可以将其删除，因为等待页面仅在多人游戏下是必要的。"
 
 # Chris comment: removed pages.py
-#: ../../source/tutorial/part1_texteditor.rst:116
-#, fuzzy
+#: ../../source/tutorial/part1_texteditor.rst:111
 msgid ""
-"If there is already a ``WaitPage``, you can delete that, because "
-"WaitPages are only necessary for multi-player games."
-msgstr "如果 ``pages.py`` 已经含有一个 ``WaitPage``，你可以将其删除，因为等待页面仅在多人游戏下是必要的。"
+"Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. So, all in all, your pages "
+"should look like this:"
+msgstr "然后，设置 ``page_sequence`` 使得 ``MyPage`` 在 ``Results`` 之前。总之，你的页面应该像下面这样："
 
-# Chris comment: removed pages.py
-#: ../../source/tutorial/part1_texteditor.rst:119
-#, fuzzy
-msgid ""
-"Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. "
-"So, all in all, your pages should look like this:"
-msgstr ""
-"然后，设置 ``page_sequence`` 使得 ``MyPage`` 在 ``Results`` 之前.总之，``pages.py`` "
-"应该包含下面的内容："
-
-#: ../../source/tutorial/part1_texteditor.rst:140
+#: ../../source/tutorial/part1_texteditor.rst:132
 msgid "Define the session config in settings.py"
 msgstr "在settings.py中定义session config"
 
-#: ../../source/tutorial/part1_texteditor.rst:142
-msgid ""
-"Now we go to ``settings.py`` in the project's top folder and add an entry"
-" to ``SESSION_CONFIGS``."
+#: ../../source/tutorial/part1_texteditor.rst:134
+msgid "Now we go to ``settings.py`` in the project's top folder and add an entry to ``SESSION_CONFIGS``."
 msgstr "现在打开在项目文件夹最上方的 ``settings.py`` 并在 ``SESSION_CONFIGS`` 中增加一个条目。"
 
-#: ../../source/tutorial/part1_texteditor.rst:156
+#: ../../source/tutorial/part1_texteditor.rst:148
 msgid "Start the server"
 msgstr "启动服务器"
 
-#: ../../source/tutorial/part1_texteditor.rst:158
+#: ../../source/tutorial/part1_texteditor.rst:150
 msgid "Enter::"
 msgstr "输入："
 
-#: ../../source/tutorial/part1_texteditor.rst:162
+#: ../../source/tutorial/part1_texteditor.rst:154
 msgid "Then open your browser to ``http://localhost:8000`` to try out the survey."
 msgstr "然后打开你的浏览器，输入网站 ``http://localhost:8000`` 即可测试此调查问卷。"
 
-#: ../../source/tutorial/part1_texteditor.rst:166
+#: ../../source/tutorial/part1_texteditor.rst:158
 msgid "Fix any errors"
 msgstr "处理错误"
 
-#: ../../source/tutorial/part1_texteditor.rst:168
+#: ../../source/tutorial/part1_texteditor.rst:160
 msgid ""
-"If there is an error in your code, the command line will display a "
-"\"traceback\" (error message) that is formatted something like this::"
+"If there is an error in your code, the command line will display a \"traceback\" (error message) that is "
+"formatted something like this::"
 msgstr "如果你的代码中有错误，那么命令行会显示“traceback”（报错信息），一般格式如下："
 
-#: ../../source/tutorial/part1_texteditor.rst:191
+#: ../../source/tutorial/part1_texteditor.rst:183
 msgid ""
-"It's called a \"traceback\" because it traces the error down through the "
-"chain of code. Your first step should be to look at the last lines of the"
-" message. Specifically, find the file and line number of the last entry. "
-"In the above example, it's "
-"``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line 40``. So, go"
-" to that file & line number. Look for the problem mentioned at the last "
-"line of the traceback. In this example, it is ``IndentationError: "
-"expected an indented block`` (which indicates that the problem has to do "
-"with code indentation). Try to fix the error then run the command again."
+"It's called a \"traceback\" because it traces the error down through the chain of code. Your first step "
+"should be to look at the last lines of the message. Specifically, find the file and line number of the "
+"last entry. In the above example, it's ``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line "
+"40``. So, go to that file & line number. Look for the problem mentioned at the last line of the "
+"traceback. In this example, it is ``IndentationError: expected an indented block`` (which indicates that "
+"the problem has to do with code indentation). Try to fix the error then run the command again."
 msgstr ""
-"之所以称为“traceback”是因为它可以沿着代码调用链追踪错误。第一步你应当查看报错信息的最后一行。具体来说，在最后一条记录中找到文件名和行号。在上面的例子中，即"
-" ``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line "
-"40``.之后转到对应文件的对应行号。检查在traceback最后一行中提到的错误。在本例中，错误是 ``IndentationError: "
-"expected an indented block`` （这表明了问题应当与代码缩进有关）。尝试修复这个错误并重新运行之前的命令。"
+"之所以称为“traceback”是因为它可以沿着代码调用链追踪错误。第一步你应当查看报错信息的最后一行。具体来说，在"
+"最后一条记录中找到文件名和行号。在上面的例子中，即 ``\"C:\\oTree\\chris\\public_goods_simple\\models.py"
+"\", line 40``。之后转到对应文件的对应行号。检查在traceback最后一行中提到的错误。在本例中，错误是 "
+"``IndentationError: expected an indented block`` （这表明了问题应当与代码缩进有关）。尝试修复这个错误并重"
+"新运行之前的命令。"
 
-#: ../../source/tutorial/part1_texteditor.rst:201
+#: ../../source/tutorial/part1_texteditor.rst:193
 msgid ""
-"Sometimes the last line of the traceback refers to a file that is not "
-"part of your code. For example, in the below traceback, the last line "
-"refers to ``/site-packages/easymoney.py``, which is not part of my app, "
-"but rather an external package::"
+"Sometimes the last line of the traceback refers to a file that is not part of your code. For example, in "
+"the below traceback, the last line refers to ``/site-packages/easymoney.py``, which is not part of my "
+"app, but rather an external package::"
 msgstr ""
-"有些时候traceback的最后一行没有指向你代码的一部分。如下例中的traceback，最后一行指向 ``/site-"
-"packages/easymoney.py``，这并不是你的应用的一部分，而是一个外部的包："
+"有些时候traceback的最后一行没有指向你代码的一部分。如下例中的traceback，最后一行指向 ``/site-packages/"
+"easymoney.py``，这并不是你的应用的一部分，而是一个外部的包："
 
-#: ../../source/tutorial/part1_texteditor.rst:244
+#: ../../source/tutorial/part1_texteditor.rst:236
 msgid ""
-"In these situations, look to see if any of your code is contained in the "
-"traceback. Above we can see that the traceback goes through the file "
-"``/Users/chris/oTree/public_goods/pages.py``, which is part of my "
-"project. The bug is on line 108, as indicated."
+"In these situations, look to see if any of your code is contained in the traceback. Above we can see "
+"that the traceback goes through the file ``/Users/chris/oTree/public_goods/pages.py``, which is part of "
+"my project. The bug is on line 108, as indicated."
 msgstr ""
 "在这种情况下，查看是否你的代码的某部分被包含在traceback中。我们可以从上面的traceback中看出它包含了文件 "
-"``/Users/chris/oTree/public_goods/pages.py``,这一文件正是我们项目的一部分。而错误就在该文件的108行，如traceback所提示的一样。"
+"``/Users/chris/oTree/public_goods/pages.py``，这一文件正是我们项目的一部分。而错误就在该文件的108行，如"
+"traceback所提示的一样。"
 
 #: ../../source/tutorial/part2.rst:2
 msgid "Part 2: Public goods game"
@@ -347,35 +317,31 @@ msgstr "第二部分：公共品博弈"
 
 #: ../../source/tutorial/part2.rst:8
 msgid ""
-"We will now create a simple `public goods game "
-"<https://en.wikipedia.org/wiki/Public_goods_game>`__. The public goods "
-"game is a classic game in economics."
+"We will now create a simple `public goods game <https://en.wikipedia.org/wiki/Public_goods_game>`__. The "
+"public goods game is a classic game in economics."
 msgstr ""
-"我们现在创建一个简单的 `公共品博弈 <https://en.wikipedia.org/wiki/Public_goods_game>`__. "
-"公共品博弈是经济学中的经典博弈。"
+"我们现在创建一个简单的 `公共品博弈 <https://en.wikipedia.org/wiki/Public_goods_game>`__。公共品博弈是经济"
+"学中的经典博弈。"
 
 #: ../../source/tutorial/part2.rst:11
 msgid ""
-"This is a three player game where each player is initially endowed with "
-"100 points. Each player individually makes a decision about how many of "
-"their points they want to contribute to the group. The combined "
-"contributions are multiplied by 2, and then divided evenly three ways and"
-" redistributed back to the players."
-msgstr "这是一个三人游戏，每位玩家初始获得100点数。每位玩家独立决定为团队贡献出多少自己的点数。团队总贡献值将被乘以2并以均分的方式重新分配给三位玩家。"
+"This is a three player game where each player is initially endowed with 100 points. Each player "
+"individually makes a decision about how many of their points they want to contribute to the group. The "
+"combined contributions are multiplied by 2, and then divided evenly three ways and redistributed back to "
+"the players."
+msgstr ""
+"这是一个三人游戏，每位玩家初始获得100点数。每位玩家独立决定为团队贡献出多少自己的点数。团队总贡献值将被乘"
+"以2并以均分的方式重新分配给三位玩家。"
 
 #: ../../source/tutorial/part2.rst:15
 msgid ""
-"The full code for the app we will write is `here <https://github.com"
-"/oTree-org/oTree/tree/master/public_goods_simple>`__."
-msgstr ""
-"本应用的全部代码在 `这里 <https://github.com/oTree-"
-"org/oTree/tree/master/public_goods_simple>`__."
+"The full code for the app we will write is `here <https://github.com/oTree-org/oTree/tree/lite/"
+"public_goods_simple>`__."
+msgstr "本应用的全部代码在 `这里 <https://github.com/oTree-org/oTree/tree/lite/public_goods_simple>`__。"
 
 #: ../../source/tutorial/part2.rst:22
-msgid ""
-"Just as in the previous part of the tutorial, create another app, called "
-"``my_public_goods``."
-msgstr "正如教程的前一部分，创建另一个应用，起名为 ``my_public_goods``."
+msgid "Just as in the previous part of the tutorial, create another app, called ``my_public_goods``."
+msgstr "正如教程的前一部分，创建另一个应用，起名为 ``my_public_goods``。"
 
 #: ../../source/tutorial/part2.rst:26 ../../source/tutorial/part3.rst:21
 msgid "Constants"
@@ -386,22 +352,18 @@ msgid "Go to your app's Constants. (For more info, see :ref:`constants`.)"
 msgstr "设置本应用的常量（查看 :ref:`constants` 可获得更多信息）。"
 
 #: ../../source/tutorial/part2.rst:31
-msgid ""
-"Set ``players_per_group`` to 3. oTree will then automatically divide "
-"players into groups of 3."
-msgstr "设置 ``players_per_group`` 为3.oTree会自动将玩家分为3组。"
+msgid "Set ``players_per_group`` to 3. oTree will then automatically divide players into groups of 3."
+msgstr "设置 ``players_per_group`` 为3。oTree会自动将玩家分为若干个3人小组。"
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""
-"The endowment to each player is 1000 points. So, let's define "
-"``endowment`` and set it to a currency value of ``1000``."
+"The endowment to each player is 1000 points. So, let's define ``endowment`` and set it to a currency "
+"value of ``1000``."
 msgstr "每位玩家初始有1000点数。故定义 ``endowment`` 并将其设定为1000货币值。"
 
 #: ../../source/tutorial/part2.rst:35
-msgid ""
-"Each contribution is multiplied by 2. So define an integer constant "
-"called ``multiplier = 2``:"
-msgstr "团队贡献值将被乘以2.故定义一个整数常量 ``multiplier = 2``:"
+msgid "Each contribution is multiplied by 2. So define an integer constant called ``multiplier = 2``:"
+msgstr "团队贡献值将被乘以2。故定义一个整数常量 ``multiplier = 2``:"
 
 #: ../../source/tutorial/part2.rst:38
 msgid "Now we have the following constants:"
@@ -409,27 +371,28 @@ msgstr "我们就有了下面的常量："
 
 #: ../../source/tutorial/part2.rst:48
 msgid ""
-"After the game is played, what data points will we need about each "
-"player? It's important to record how much each person contributed. So, go"
-" to the Player model and define a ``contribution`` column:"
-msgstr "在游戏结束之后，我们需要关于玩家的何种数据？我们需要记录每位玩家的贡献值。故在玩家模型中定义 ``contribution`` 字段："
+"After the game is played, what data points will we need about each player? It's important to record how "
+"much each person contributed. So, go to the Player model and define a ``contribution`` column:"
+msgstr ""
+"在游戏结束之后，我们需要关于玩家的何种数据？我们需要记录每位玩家的贡献值。故在玩家模型中定义 "
+"``contribution`` 字段："
 
 #: ../../source/tutorial/part2.rst:62
 msgid ""
-"We also need to record the payoff the user makes at the end of the game, "
-"but we don't need to explicitly define a ``payoff`` field, because in "
-"oTree, the Player already contains a ``payoff`` column."
+"We also need to record the payoff the user makes at the end of the game, but we don't need to explicitly "
+"define a ``payoff`` field, because in oTree, the Player already contains a ``payoff`` column."
 msgstr ""
-"我们还需要记录玩家在游戏结束时的收益，不过我们无需显式地定义一个 ``payoff`` 字段，因为在oTree中，Player类已经包含了一个 "
-"``payoff`` 字段。"
+"我们还需要记录玩家在游戏结束时的收益，不过我们无需显式地定义一个 ``payoff`` 字段，因为在oTree中，Player类"
+"已经包含了一个 ``payoff`` 字段。"
 
 #: ../../source/tutorial/part2.rst:66
 msgid ""
-"What data points are we interested in recording about each group? We "
-"might be interested in knowing the total contributions to the group, and "
-"the individual share returned to each player. So, we define those 2 "
-"fields on the Group:"
-msgstr "我们对每一组的何种数据感兴趣？我们可能会对组内总贡献值感兴趣，以及返还给每位玩家的份额。故我们在Group类中定义下面两个字段："
+"What data points are we interested in recording about each group? We might be interested in knowing the "
+"total contributions to the group, and the individual share returned to each player. So, we define those "
+"2 fields on the Group:"
+msgstr ""
+"我们对每一组的何种数据感兴趣？我们可能会对组内总贡献值感兴趣，以及返还给每位玩家的份额。故我们在Group类中"
+"定义下面两个字段："
 
 #: ../../source/tutorial/part2.rst:81
 msgid "This game has 3 pages:"
@@ -453,14 +416,12 @@ msgstr "页面1：Contribute"
 
 #: ../../source/tutorial/part2.rst:90
 msgid ""
-"First let's define ``Contribute``. This page contains a form, so we need "
-"to define ``form_model`` and ``form_fields``. Specifically, this form "
-"should let you set the ``contribution`` field on the player. (For more "
-"info, see :ref:`forms`.)"
+"First let's define ``Contribute``. This page contains a form, so we need to define ``form_model`` and "
+"``form_fields``. Specifically, this form should let you set the ``contribution`` field on the player. "
+"(For more info, see :ref:`forms`.)"
 msgstr ""
-"首先我们来定义 ``Contribute``.这一页面包含一个表单，所以我们需要定义 ``form_model`` 与 "
-"``form_fields``.具体来说，这一表单让你能够设定玩家的 ``contribution`` 字段。（查看 :ref:`forms` "
-"以获得更多信息）"
+"首先我们来定义 ``Contribute``。这一页面包含一个表单，所以我们需要定义 ``form_model`` 与 ``form_fields``。"
+"具体来说，这一表单让你能够设定玩家的 ``contribution`` 字段。（查看 :ref:`forms` 以获得更多信息。）"
 
 #: ../../source/tutorial/part2.rst:102
 msgid "Now, we create the HTML template."
@@ -474,38 +435,31 @@ msgstr "设置 ``title`` 为 ``Contribute``， ``content`` 如下："
 msgid "Page 2: ResultsWaitPage"
 msgstr "页面2：ResultsWaitPage"
 
-# Chris comment: set_payoffs is now a function, not a method.
+# Chris comment: set_payoffs is now a function, not a method. And no more "self"
 #: ../../source/tutorial/part2.rst:124
-#, fuzzy
 msgid ""
-"When all players have completed the ``Contribute`` page, the players' "
-"payoffs can be calculated. Add a group function called ``set_payoffs``:"
+"When all players have completed the ``Contribute`` page, the players' payoffs can be calculated. Add a "
+"group function called ``set_payoffs``:"
 msgstr ""
-"当所有玩家都完成了 ``Contribute`` 页面，玩家的收益就会被计算。前往Group model并添加一个方法，命名为 "
-"``set_payoffs`` （注意此处 ``self`` 指本小组）："
+"当所有玩家都完成了 ``Contribute`` 页面，玩家的收益就会被计算。添加一个group函数，命名为 ``set_payoffs`` "
+"："
 
 #: ../../source/tutorial/part2.rst:138
 msgid ""
-"After a player makes a contribution, they cannot see the results page "
-"right away; they first need to wait for the other players to contribute. "
-"You therefore need to add a ``WaitPage``. Let's call it "
-"``ResultsWaitPage``. When a player arrives at a wait page, they must wait"
-" until all other players in the group have arrived. Then everyone can "
-"proceed to the next page. (For more info, see :ref:`wait_pages`)."
+"After a player makes a contribution, they cannot see the results page right away; they first need to "
+"wait for the other players to contribute. You therefore need to add a ``WaitPage``. Let's call it "
+"``ResultsWaitPage``. When a player arrives at a wait page, they must wait until all other players in the "
+"group have arrived. Then everyone can proceed to the next page. (For more info, see :ref:`wait_pages`)."
 msgstr ""
-"当玩家选择了贡献值后，并不能立刻看到结果页面；他们首先需要等待其他玩家选择贡献值。故你需要添加一个 ``WaitPage``.不妨将其命名为 "
-"``ResultsWaitPage``.当一位玩家到达等待页面之后，他必须等待组内其他玩家到达。之后所有人才能继续前往下一页面。（查看 "
-":ref:`wait_pages` 以获得更多信息）。"
+"当玩家选择了贡献值后，并不能立刻看到结果页面；他们首先需要等待其他玩家选择贡献值。故你需要添加一个 "
+"``WaitPage``。不妨将其命名为 ``ResultsWaitPage``。当一位玩家到达等待页面之后，他必须等待组内其他玩家到"
+"达。之后所有人才能继续前往下一页面。（查看 :ref:`wait_pages` 以获得更多信息）。"
 
 # Chris comment: set_payoffs is now a function, not a method.
 #: ../../source/tutorial/part2.rst:146
-#, fuzzy
-msgid ""
-"Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to "
-"trigger ``set_payoffs``:"
+msgid "Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to trigger ``set_payoffs``:"
 msgstr ""
-"在 ``ResultsWaitPage`` 中添加 ``after_all_players_arrive`` 方法，将其设置如下以触发 "
-"``set_payoffs`` 方法:"
+"在 ``ResultsWaitPage`` 中添加 ``after_all_players_arrive`` 字段，将其设置如下以触发函数 ``set_payoffs``:"
 
 #: ../../source/tutorial/part2.rst:154
 msgid "Page 3: Results"
@@ -524,20 +478,16 @@ msgid "Make sure your page_sequence is correct:"
 msgstr "确保你的page_sequence是正确的："
 
 #: ../../source/tutorial/part2.rst:188
-msgid ""
-"We add another session config with ``my_public_goods`` in the app "
-"sequence."
+msgid "We add another session config with ``my_public_goods`` in the app sequence."
 msgstr "我们在应用序列中添加另一个属于 ``my_public_goods`` 的session config。"
 
 #: ../../source/tutorial/part2.rst:192
 msgid "Run the code"
 msgstr "运行代码"
 
-#: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:250
-msgid ""
-"Load the project again then open your browser to "
-"``http://localhost:8000``."
-msgstr "载入你的项目并打开浏览器，网址为 ``http://localhost:8000``."
+#: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:252
+msgid "Load the project again then open your browser to ``http://localhost:8000``."
+msgstr "载入你的项目并打开浏览器，网址为 ``http://localhost:8000``。"
 
 #: ../../source/tutorial/part2.rst:199
 msgid "Troubleshoot with print()"
@@ -545,21 +495,22 @@ msgstr "使用print()解决问题"
 
 #: ../../source/tutorial/part2.rst:201
 msgid ""
-"I often read messages on programming forums like, \"My program is not "
-"working. I can't find the mistake, even though I have spent hours looking"
-" at my code\"."
-msgstr "我经常在编程论坛上看到下面这样的帖子，\"我的程序不能正常运行. 我找不到错误在哪, 尽管我已经花了数小时看我的代码\"."
+"I often read messages on programming forums like, \"My program is not working. I can't find the mistake, "
+"even though I have spent hours looking at my code\"."
+msgstr ""
+"我经常在编程论坛上看到下面这样的帖子，\"我的程序不能正常运行。我找不到错误在哪, 尽管我已经花了数小时看我"
+"的代码\"。"
 
 #: ../../source/tutorial/part2.rst:205
 msgid ""
-"The solution is not to re-read the code until you find an error; it's to "
-"interactively **test** your program."
+"The solution is not to re-read the code until you find an error; it's to interactively **test** your "
+"program."
 msgstr "解决方案并不是重读你的代码直到你发现错误为止，而是交互式地 **测试** 你的程序。"
 
 #: ../../source/tutorial/part2.rst:208
 msgid ""
-"The simplest way is using ``print()`` statements. If you don't learn this"
-" technique, you won't be able to program games effectively."
+"The simplest way is using ``print()`` statements. If you don't learn this technique, you won't be able "
+"to program games effectively."
 msgstr "最简单地方法就是利用 ``print()`` 语句。如果你没有学会这个技巧，那么你将不能高效地编程。"
 
 #: ../../source/tutorial/part2.rst:211
@@ -568,11 +519,12 @@ msgstr "你只需要像下面这样在你的代码中插入一行："
 
 #: ../../source/tutorial/part2.rst:217
 msgid ""
-"Put this line in the part of your code that's not working, such as the "
-"payoff method defined above. When you play the game in your browser and "
-"that code gets executed, your print statement will be displayed in your "
-"command prompt window (not in your web browser)."
-msgstr "将这一行代码插入到你代码无法正常工作的部分，如上面定义的payoff方法。当你在浏览器中进行游戏时，这行代码就会执行，你的print语句将会显示在命令行窗口中（不是你的浏览器中）"
+"Put this line in the part of your code that's not working, such as the payoff function defined above. "
+"When you play the game in your browser and that code gets executed, your print statement will be "
+"displayed in your command prompt window (not in your web browser)."
+msgstr ""
+"将这一行代码插入到你代码无法正常工作的部分，如上面定义的payoff函数。当你在浏览器中进行游戏时，这行代码就"
+"会执行，你的print语句将会显示在命令行窗口中（不是你的浏览器中）"
 
 #: ../../source/tutorial/part2.rst:223
 msgid "You can sprinkle lots of prints in your code"
@@ -584,32 +536,31 @@ msgstr "print语句没有显示在控制台窗口/日志中"
 
 #: ../../source/tutorial/part2.rst:245
 msgid ""
-"If you don't see the output of the print statement in your console "
-"window, that means that line is not getting executed! (Which is why it "
-"isn't working.)"
-msgstr "如果你在控制台窗口中没有看到print语句的输出，这意味着这行代码没有被执行！（也就是程序没有正常工作的原因）"
+"If you don't see the output of the print statement in your console window, that means that line is not "
+"getting executed! (Which is why it isn't working.)"
+msgstr ""
+"如果你在控制台窗口中没有看到print语句的输出，这意味着这行代码没有被执行！（也就是程序没有正常工作的原因）"
 
+# I think this is unchanged.
 #: ../../source/tutorial/part2.rst:248
 msgid ""
-"Maybe it's because your code is in some unreachable place like after a "
-"``return`` statement, or inside an \"if\" statement that is always "
-"``False``. Start putting print statements from the top of the method, "
-"then see where they stop getting displayed."
+"Maybe it's because your code is in some unreachable place like after a ``return`` statement, or inside "
+"an \"if\" statement that is always ``False``. Start putting print statements from the top of the "
+"function, then see where they stop getting displayed."
 msgstr ""
-"可能这是因为你的代码处于不可达的位置，如 ``return`` 语句的后面，或在一个总是返回 ``False`` "
-"的”if“语句中。尝试将一系列print语句从方法的开头开始向下放置，然后查看它们在何处停止了显示。"
+"可能这是因为你的代码处于不可达的位置，如 ``return`` 语句的后面，或在一个总是返回 ``False`` 的”if“语句中。"
+"尝试将一系列print语句从函数的开头开始向下放置，然后查看它们在何处停止了显示。"
 
+# method -> function
 #: ../../source/tutorial/part2.rst:252
 msgid ""
-"Or maybe your code is in a method that never gets called (executed). "
-"oTree's built-in methods such as ``creating_session`` and "
-"``before_next_page`` are automatically executed, but if you define a "
-"custom method such as ``set_payoffs``, you need to remember to call that "
-"function from a built-in method."
+"Or maybe your code is in a function that never gets called (executed). oTree's built-in methods such as "
+"``creating_session`` and ``before_next_page`` are automatically executed, but if you define a custom "
+"function such as ``set_payoffs``, you need to remember to call that function from a built-in function."
 msgstr ""
-"或者也可能你的代码在一个从未被调用（执行）的方法中。oTree的内置函数如 ``creating_session`` 与 "
-"``before_next_page`` 会被自动执行，但是如果你定义了一个自定义方法如 "
-"``set_payoffs``，你必须记得在某个内置方法中调用它。"
+"或者也可能你的代码在一个从未被调用（执行）的函数中。oTree的内置函数如 ``creating_session`` 与 "
+"``before_next_page`` 会被自动执行，但是如果你定义了一个自定义方法如 ``set_payoffs``，你必须记得在某个内置"
+"方法中调用它。"
 
 #: ../../source/tutorial/part3.rst:2
 msgid "Part 3: Trust game"
@@ -617,44 +568,35 @@ msgstr "第三部分：信任博弈"
 
 #: ../../source/tutorial/part3.rst:4
 msgid ""
-"Now let's create a 2-player `Trust game "
-"<https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,"
-" and learn some more features of oTree."
+"Now let's create a 2-player `Trust game <https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/"
+"Trust_Game>`__, and learn some more features of oTree."
 msgstr ""
-"现在我们来创建一个2人 `信任博弈 "
-"<https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,"
-" 并学习oTree的一些特性。"
+"现在我们来创建一个2人 `信任博弈 <https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/"
+"Trust_Game>`__，并学习oTree的一些特性。"
 
 #: ../../source/tutorial/part3.rst:7
 msgid ""
-"To start, Player 1 receives 10 points; Player 2 receives nothing. Player "
-"1 can send some or all of his points to Player 2. Before P2 receives "
-"these points they will be tripled. Once P2 receives the tripled points he"
-" can decide to send some or all of his points to P1."
-msgstr "开始时，玩家1获得10点数；玩家2无点数。玩家1可以将他点数的一部分或者全部给与玩家2。之后玩家2收到的点数会变为原来的3倍。当玩家2收到3倍的点数之后，他可以决定将部分或者全部的点数给予玩家1."
+"To start, Player 1 receives 10 points; Player 2 receives nothing. Player 1 can send some or all of his "
+"points to Player 2. Before P2 receives these points they will be tripled. Once P2 receives the tripled "
+"points he can decide to send some or all of his points to P1."
+msgstr ""
+"开始时，玩家1获得10点数；玩家2无点数。玩家1可以将他点数的一部分或者全部给与玩家2。之后玩家2收到的点数会变"
+"为原来的3倍。当玩家2收到3倍的点数之后，他可以决定将部分或者全部的点数给予玩家1。"
 
 #: ../../source/tutorial/part3.rst:12
-msgid ""
-"The completed app is `here <https://github.com/oTree-"
-"org/oTree/tree/master/trust_simple>`__."
-msgstr ""
-"应用完整的代码在 `这里 <https://github.com/oTree-"
-"org/oTree/tree/master/trust_simple>`__."
+msgid "The completed app is `here <https://github.com/oTree-org/oTree/tree/master/trust_simple>`__."
+msgstr "应用完整的代码在 `这里 <https://github.com/oTree-org/oTree/tree/master/trust_simple>`__。"
 
 #: ../../source/tutorial/part3.rst:18
-msgid ""
-"Just as in the previous part of the tutorial, create another app, called "
-"``my_trust``."
-msgstr "正如教程的前一部分，创建另一个应用，命名为 ``my_trust``."
+msgid "Just as in the previous part of the tutorial, create another app, called ``my_trust``."
+msgstr "正如教程的前一部分，创建另一个应用，命名为 ``my_trust``。"
 
 #: ../../source/tutorial/part3.rst:23
 msgid "Go to your app's Constants."
 msgstr "转到本应用的常量。"
 
 #: ../../source/tutorial/part3.rst:25
-msgid ""
-"First we define our app's constants. The endowment is 10 points and the "
-"donation gets tripled."
+msgid "First we define our app's constants. The endowment is 10 points and the donation gets tripled."
 msgstr "首先我们定义应用的常量。初始点数为10，并且捐赠会变为3倍。"
 
 #: ../../source/tutorial/part3.rst:40
@@ -663,9 +605,8 @@ msgstr "模型"
 
 #: ../../source/tutorial/part3.rst:42
 msgid ""
-"Then we add fields to player and group. There are 2 critical data points "
-"to record: the \"sent\" amount from P1, and the \"sent back\" amount from"
-" P2."
+"Then we add fields to player and group. There are 2 critical data points to record: the \"sent\" amount "
+"from P1, and the \"sent back\" amount from P2."
 msgstr "现在我们添加player与group的字段。这里有两种关键的数据需要记录：玩家1的”捐赠“值与玩家2的“返还”值。"
 
 #: ../../source/tutorial/part3.rst:46
@@ -674,34 +615,29 @@ msgstr "直觉上，你可能如下定义Player类中的字段："
 
 #: ../../source/tutorial/part3.rst:56
 msgid ""
-"The problem with this model is that ``sent_amount`` only applies to P1, "
-"and ``sent_back_amount`` only applies to P2. It does not make sense that "
-"P1 should have a field called ``sent_back_amount``. How can we make our "
-"data model more accurate?"
+"The problem with this model is that ``sent_amount`` only applies to P1, and ``sent_back_amount`` only "
+"applies to P2. It does not make sense that P1 should have a field called ``sent_back_amount``. How can "
+"we make our data model more accurate?"
 msgstr ""
 "此模型的问题在于， ``sent_amount`` 只对玩家1有意义， ``sent_back_amount`` 只对玩家2有意义。所以 "
 "``sent_back_amount`` 字段对于玩家1无意义。我们如何才能使得模型更加精确呢？"
 
 #: ../../source/tutorial/part3.rst:61
 msgid ""
-"We can do it by defining those fields at the ``Group`` level. This makes "
-"sense because each group has exactly 1 ``sent_amount`` and exactly 1 "
-"``sent_back_amount``:"
+"We can do it by defining those fields at the ``Group`` level. This makes sense because each group has "
+"exactly 1 ``sent_amount`` and exactly 1 ``sent_back_amount``:"
 msgstr ""
 "我们可以将这些字段定义到 ``Group`` 层级。这非常合理，因为每一小组恰好有一个 ``sent_amount`` 与一个 "
 "``sent_back_amount``:"
 
 # Chris comment: sent_back_amount_choices is now a function, not a method
 #: ../../source/tutorial/part3.rst:76
-#, fuzzy
 msgid ""
-"We also define a function called ``sent_back_amount_choices`` to populate"
-" the dropdown menu dynamically. This is the feature called "
-"``{field_name}_choices``, which is explained here: "
-":ref:`dynamic_validation`."
+"We also define a function called ``sent_back_amount_choices`` to populate the dropdown menu dynamically. "
+"This is the feature called ``{field_name}_choices``, which is explained here: :ref:`dynamic_validation`."
 msgstr ""
-"我们定义一个名为 ``sent_back_amount_choices`` 的方法为下拉菜单动态地添加数据。这一特性称为 "
-"``{field_name}_choices``, 在这里: :ref:`dynamic_validation` 被详细解释。"
+"我们定义一个名为 ``sent_back_amount_choices`` 的函数为下拉菜单动态地添加数据。这一特性称为 ``{field_name}"
+"_choices``，在这里: :ref:`dynamic_validation` 被详细解释。"
 
 #: ../../source/tutorial/part3.rst:90
 msgid "Define the templates and pages"
@@ -729,17 +665,15 @@ msgstr "Send页面"
 
 #: ../../source/tutorial/part3.rst:112
 msgid ""
-"We use :ref:`is_displayed` to only show this to P1; P2 skips the page. "
-"For more info on ``id_in_group``, see :ref:`groups`."
+"We use :ref:`is_displayed` to only show this to P1; P2 skips the page. For more info on ``id_in_group``, "
+"see :ref:`groups`."
 msgstr ""
-"我们使用 :ref:`is_displayed` 让此页面仅显示给玩家1；玩家2跳过此页面。获取更多 ``id_in_group`` "
-"的信息，可查看 :ref:`groups`."
+"我们使用 :ref:`is_displayed` 让此页面仅显示给玩家1；玩家2跳过此页面。获取更多 ``id_in_group`` 的信息，可"
+"查看 :ref:`groups`。"
 
 #: ../../source/tutorial/part3.rst:115
-msgid ""
-"For the template, set the ``title`` to ``Trust Game: Your Choice``, and "
-"``content`` to:"
-msgstr "将模板的 ``title`` 设为 ``Trust Game: Your Choice``, 并且将 ``content`` 设置如下："
+msgid "For the template, set the ``title`` to ``Trust Game: Your Choice``, and ``content`` to:"
+msgstr "将模板的 ``title`` 设为 ``Trust Game: Your Choice``，并且将 ``content`` 设置如下："
 
 #: ../../source/tutorial/part3.rst:130
 msgid "SendBack.html"
@@ -747,11 +681,11 @@ msgstr "SendBack.html"
 
 #: ../../source/tutorial/part3.rst:132
 msgid ""
-"This is the page that P2 sees to send money back. Set the ``title`` block"
-" to ``Trust Game: Your Choice``, and the ``content`` block to:"
+"This is the page that P2 sees to send money back. Set the ``title`` block to ``Trust Game: Your "
+"Choice``, and the ``content`` block to:"
 msgstr ""
-"这是玩家2需要查看的将钱返还的页面。将 ``title`` 设为 ``Trust Game: Your Choice``,并将 "
-"``content`` 设置如下："
+"这是玩家2需要查看的将钱返还的页面。将 ``title`` 设为 ``Trust Game: Your Choice``，并将 ``content`` 设置如"
+"下："
 
 #: ../../source/tutorial/part3.rst:148
 msgid "Here is the page code. Notes:"
@@ -759,70 +693,66 @@ msgstr "下面是页面的代码。请注意："
 
 #: ../../source/tutorial/part3.rst:150
 msgid ""
-"We use :ref:`vars_for_template` to pass the variable ``tripled_amount`` "
-"to the template. You cannot do calculations directly in the HTML code, so"
-" this number needs to be calculated in Python code and passed to the "
-"template."
+"We use :ref:`vars_for_template` to pass the variable ``tripled_amount`` to the template. You cannot do "
+"calculations directly in the HTML code, so this number needs to be calculated in Python code and passed "
+"to the template."
 msgstr ""
-"我们使用 :ref:`vars_for_template` 将变量 ``tripled_amount`` "
-"传递给模板。你不能直接在HTML代码中做计算，所以这一数字需要使用Python代码计算并传给模板。"
+"我们使用 :ref:`vars_for_template` 将变量 ``tripled_amount`` 传递给模板。你不能直接在HTML代码中做计算，所"
+"以这一数字需要使用Python代码计算并传给模板。"
 
-#: ../../source/tutorial/part3.rst:173
+#: ../../source/tutorial/part3.rst:175
 msgid "Results"
 msgstr "Results"
 
-#: ../../source/tutorial/part3.rst:175
+#: ../../source/tutorial/part3.rst:177
 #, python-format
 msgid ""
-"The results page needs to look slightly different for P1 vs. P2. So, we "
-"use the ``{% if %}`` statement to condition on the current player's "
-"``id_in_group``. Set the ``title`` block to ``Results``, and the content "
-"block to:"
+"The results page needs to look slightly different for P1 vs. P2. So, we use the ``{{ if }}`` statement "
+"to condition on the current player's ``id_in_group``. Set the ``title`` block to ``Results``, and the "
+"content block to:"
 msgstr ""
-"玩家1与玩家2所看到的结果页面有细微的不同。所以我们使用 ``{% if %}`` 语句来判断当前玩家的 ``id_in_group``.将 "
-"``title`` 设置为 ``Results``，并将内容部分设置如下："
+"玩家1与玩家2所看到的结果页面有细微的不同。所以我们使用 ``{{ if }}`` 语句来判断当前玩家的 "
+"``id_in_group``。将 ``title`` 设置为 ``Results``，并将内容部分设置如下："
 
-#: ../../source/tutorial/part3.rst:206
+#: ../../source/tutorial/part3.rst:208
 msgid "Wait pages and page sequence"
 msgstr "等待页面与页面序列"
 
-#: ../../source/tutorial/part3.rst:208
+#: ../../source/tutorial/part3.rst:210
 msgid "Add 2 wait pages:"
 msgstr "添加2个等待页面："
 
-#: ../../source/tutorial/part3.rst:210
+#: ../../source/tutorial/part3.rst:212
 msgid "``WaitForP1`` (P2 needs to wait while P1 decides how much to send)"
 msgstr "``WaitForP1`` (玩家2需要等待玩家1决定捐赠值)"
 
-#: ../../source/tutorial/part3.rst:211
-msgid ""
-"``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send "
-"back)"
+#: ../../source/tutorial/part3.rst:213
+msgid "``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send back)"
 msgstr "``ResultsWaitPage`` (玩家1需要等待玩家2决定返还值)"
 
-#: ../../source/tutorial/part3.rst:213
+# method->function
+#: ../../source/tutorial/part3.rst:215
 msgid ""
-"After the second wait page, we should calculate the payoffs. So, we "
-"define a method on the Group called ``set_payoffs``:"
-msgstr "在第二个等待页面之后，我们应当计算收益。所以我们在Group类中定义一个方法，命名为 ``set_payoffs``:"
+"After the second wait page, we should calculate the payoffs. So, we define a function called "
+"``set_payoffs``:"
+msgstr "在第二个等待页面之后，我们应当计算收益。所以我们定义一个函数，命名为 ``set_payoffs``:"
 
-#: ../../source/tutorial/part3.rst:224
+#: ../../source/tutorial/part3.rst:226
 msgid "Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:"
-msgstr "在 ``ResultsWaitPage``, 设置 ``after_all_players_arrive`` 使得方法被触发:"
+msgstr "在 ``ResultsWaitPage`` 中，设置 ``after_all_players_arrive``:"
 
-#: ../../source/tutorial/part3.rst:230
+#: ../../source/tutorial/part3.rst:232
 msgid "Make sure they are ordered correctly in the page_sequence:"
 msgstr "确保在page_sequence中页面顺序是正确的："
 
-#: ../../source/tutorial/part3.rst:243
+#: ../../source/tutorial/part3.rst:245
 msgid "Add an entry to your ``SESSION_CONFIGS``"
 msgstr "在 ``SESSION_CONFIGS`` 中增加一个条目"
 
-#: ../../source/tutorial/part3.rst:245
+#: ../../source/tutorial/part3.rst:247
 msgid "Create a session config with ``my_trust`` in the app sequence."
 msgstr "在应用序列中创建一个属于 ``my_trust`` 的session config。"
 
-#: ../../source/tutorial/part3.rst:248
+#: ../../source/tutorial/part3.rst:250
 msgid "Run the server"
 msgstr "运行服务器"
-

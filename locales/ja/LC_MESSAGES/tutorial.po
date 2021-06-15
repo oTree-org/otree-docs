@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 21:11+0800\n"
+"POT-Creation-Date: 2021-05-27 18:00-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -176,7 +176,7 @@ msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:25
 msgid ""
-"In ``app.py``, scroll to the line that says ``class "
+"In ``__init__.py``, scroll to the line that says ``class "
 "Player(BasePlayer):``. Here we define the columns for the Player table in"
 " the database. Let's add 2 fields:"
 msgstr ""
@@ -201,83 +201,83 @@ msgstr ""
 msgid "Let's name the first page ``MyPage.html``, and put these contents inside:"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:70
+#: ../../source/tutorial/part1_texteditor.rst:66
 msgid "The second template will be called ``Results.html``."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:90
+#: ../../source/tutorial/part1_texteditor.rst:82
 msgid "Define pages"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:92
+#: ../../source/tutorial/part1_texteditor.rst:84
 msgid ""
 "Now we define our pages, which contain the logic for how to display the "
 "HTML templates."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:95
+#: ../../source/tutorial/part1_texteditor.rst:87
 msgid ""
 "Since we have 2 templates, we need 2 ``Page`` classes. The names should "
 "match those of the templates (``MyPage`` and ``Results``)."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:99
+#: ../../source/tutorial/part1_texteditor.rst:91
 msgid ""
 "First let's define ``MyPage``. This page contains a form, so we need to "
 "define ``form_model`` and ``form_fields``."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:108
+#: ../../source/tutorial/part1_texteditor.rst:100
 msgid ""
 "Now we define ``Results``. This page doesn't have a form or any other "
 "special attributes, so we just write \"pass\"."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:116
+#: ../../source/tutorial/part1_texteditor.rst:108
 msgid ""
 "If there is already a ``WaitPage``, you can delete that, because "
 "WaitPages are only necessary for multi-player games."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:119
+#: ../../source/tutorial/part1_texteditor.rst:111
 msgid ""
 "Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. "
 "So, all in all, your pages should look like this:"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:140
+#: ../../source/tutorial/part1_texteditor.rst:132
 msgid "Define the session config in settings.py"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:142
+#: ../../source/tutorial/part1_texteditor.rst:134
 msgid ""
 "Now we go to ``settings.py`` in the project's top folder and add an entry"
 " to ``SESSION_CONFIGS``."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:156
+#: ../../source/tutorial/part1_texteditor.rst:148
 msgid "Start the server"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:158
+#: ../../source/tutorial/part1_texteditor.rst:150
 msgid "Enter::"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:162
+#: ../../source/tutorial/part1_texteditor.rst:154
 msgid "Then open your browser to ``http://localhost:8000`` to try out the survey."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:166
+#: ../../source/tutorial/part1_texteditor.rst:158
 msgid "Fix any errors"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:168
+#: ../../source/tutorial/part1_texteditor.rst:160
 msgid ""
 "If there is an error in your code, the command line will display a "
 "\"traceback\" (error message) that is formatted something like this::"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:191
+#: ../../source/tutorial/part1_texteditor.rst:183
 msgid ""
 "It's called a \"traceback\" because it traces the error down through the "
 "chain of code. Your first step should be to look at the last lines of the"
@@ -290,7 +290,7 @@ msgid ""
 "with code indentation). Try to fix the error then run the command again."
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:201
+#: ../../source/tutorial/part1_texteditor.rst:193
 msgid ""
 "Sometimes the last line of the traceback refers to a file that is not "
 "part of your code. For example, in the below traceback, the last line "
@@ -298,7 +298,7 @@ msgid ""
 "but rather an external package::"
 msgstr ""
 
-#: ../../source/tutorial/part1_texteditor.rst:244
+#: ../../source/tutorial/part1_texteditor.rst:236
 msgid ""
 "In these situations, look to see if any of your code is contained in the "
 "traceback. Above we can see that the traceback goes through the file "
@@ -329,7 +329,7 @@ msgstr ""
 #: ../../source/tutorial/part2.rst:15
 msgid ""
 "The full code for the app we will write is `here <https://github.com"
-"/oTree-org/oTree/tree/master/public_goods_simple>`__."
+"/oTree-org/oTree/tree/lite/public_goods_simple>`__."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:22
@@ -478,7 +478,7 @@ msgstr ""
 msgid "Run the code"
 msgstr ""
 
-#: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:250
+#: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:252
 msgid ""
 "Load the project again then open your browser to "
 "``http://localhost:8000``."
@@ -514,8 +514,8 @@ msgstr ""
 #: ../../source/tutorial/part2.rst:217
 msgid ""
 "Put this line in the part of your code that's not working, such as the "
-"payoff method defined above. When you play the game in your browser and "
-"that code gets executed, your print statement will be displayed in your "
+"payoff function defined above. When you play the game in your browser and"
+" that code gets executed, your print statement will be displayed in your "
 "command prompt window (not in your web browser)."
 msgstr ""
 
@@ -538,17 +538,17 @@ msgstr ""
 msgid ""
 "Maybe it's because your code is in some unreachable place like after a "
 "``return`` statement, or inside an \"if\" statement that is always "
-"``False``. Start putting print statements from the top of the method, "
+"``False``. Start putting print statements from the top of the function, "
 "then see where they stop getting displayed."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:252
 msgid ""
-"Or maybe your code is in a method that never gets called (executed). "
+"Or maybe your code is in a function that never gets called (executed). "
 "oTree's built-in methods such as ``creating_session`` and "
 "``before_next_page`` are automatically executed, but if you define a "
-"custom method such as ``set_payoffs``, you need to remember to call that "
-"function from a built-in method."
+"custom function such as ``set_payoffs``, you need to remember to call "
+"that function from a built-in function."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:2
@@ -688,60 +688,124 @@ msgid ""
 "template."
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:173
+#: ../../source/tutorial/part3.rst:175
 msgid "Results"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:175
-#, python-format
+#: ../../source/tutorial/part3.rst:177
 msgid ""
 "The results page needs to look slightly different for P1 vs. P2. So, we "
-"use the ``{% if %}`` statement to condition on the current player's "
+"use the ``{{ if }}`` statement to condition on the current player's "
 "``id_in_group``. Set the ``title`` block to ``Results``, and the content "
 "block to:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:206
+#: ../../source/tutorial/part3.rst:208
 msgid "Wait pages and page sequence"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:208
+#: ../../source/tutorial/part3.rst:210
 msgid "Add 2 wait pages:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:210
+#: ../../source/tutorial/part3.rst:212
 msgid "``WaitForP1`` (P2 needs to wait while P1 decides how much to send)"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:211
+#: ../../source/tutorial/part3.rst:213
 msgid ""
 "``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send "
 "back)"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:213
+#: ../../source/tutorial/part3.rst:215
 msgid ""
 "After the second wait page, we should calculate the payoffs. So, we "
-"define a method on the Group called ``set_payoffs``:"
+"define a function called ``set_payoffs``:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:224
+#: ../../source/tutorial/part3.rst:226
 msgid "Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:230
+#: ../../source/tutorial/part3.rst:232
 msgid "Make sure they are ordered correctly in the page_sequence:"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:243
+#: ../../source/tutorial/part3.rst:245
 msgid "Add an entry to your ``SESSION_CONFIGS``"
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:245
+#: ../../source/tutorial/part3.rst:247
 msgid "Create a session config with ``my_trust`` in the app sequence."
 msgstr ""
 
-#: ../../source/tutorial/part3.rst:248
+#: ../../source/tutorial/part3.rst:250
 msgid "Run the server"
 msgstr ""
+
+#~ msgid ""
+#~ "In ``app.py``, scroll to the line "
+#~ "that says ``class Player(BasePlayer):``. Here"
+#~ " we define the columns for the "
+#~ "Player table in the database. Let's "
+#~ "add 2 fields:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The full code for the app we "
+#~ "will write is `here <https://github.com"
+#~ "/oTree-org/oTree/tree/master/public_goods_simple>`__."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Put this line in the part of "
+#~ "your code that's not working, such "
+#~ "as the payoff method defined above. "
+#~ "When you play the game in your "
+#~ "browser and that code gets executed, "
+#~ "your print statement will be displayed"
+#~ " in your command prompt window (not"
+#~ " in your web browser)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Maybe it's because your code is in"
+#~ " some unreachable place like after a"
+#~ " ``return`` statement, or inside an "
+#~ "\"if\" statement that is always "
+#~ "``False``. Start putting print statements "
+#~ "from the top of the method, then"
+#~ " see where they stop getting "
+#~ "displayed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Or maybe your code is in a "
+#~ "method that never gets called "
+#~ "(executed). oTree's built-in methods "
+#~ "such as ``creating_session`` and "
+#~ "``before_next_page`` are automatically executed, "
+#~ "but if you define a custom method"
+#~ " such as ``set_payoffs``, you need to"
+#~ " remember to call that function from"
+#~ " a built-in method."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The results page needs to look "
+#~ "slightly different for P1 vs. P2. "
+#~ "So, we use the ``{% if %}`` "
+#~ "statement to condition on the current"
+#~ " player's ``id_in_group``. Set the "
+#~ "``title`` block to ``Results``, and the"
+#~ " content block to:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After the second wait page, we "
+#~ "should calculate the payoffs. So, we "
+#~ "define a method on the Group "
+#~ "called ``set_payoffs``:"
+#~ msgstr ""
 
