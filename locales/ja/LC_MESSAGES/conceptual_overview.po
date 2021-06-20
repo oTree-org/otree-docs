@@ -3,33 +3,36 @@
 # This file is distributed under the same license as the oTree package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree \n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-19 20:07+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-06-16 10:31+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../source/conceptual_overview.rst:4
 msgid "Conceptual overview"
-msgstr ""
+msgstr "コンセプト"
 
 #: ../../source/conceptual_overview.rst:7
 msgid "Sessions"
-msgstr ""
+msgstr "Sessions"
 
 #: ../../source/conceptual_overview.rst:9
 msgid ""
 "In oTree, a session is an event during which multiple participants take "
 "part in a series of tasks or games. An example of a session would be:"
 msgstr ""
+"oTreeにおけるセッションとは，複数の参加者が一連のタスクやゲームに参加するイ"
+"ベントのことです．セッションの例は以下の通りです．"
 
 #: ../../source/conceptual_overview.rst:12
 msgid ""
@@ -37,82 +40,99 @@ msgid ""
 "game, followed by a questionnaire. Participants get paid EUR 10.00 for "
 "showing up, plus their earnings from the games.\""
 msgstr ""
+"“多数の参加者が研究室に来て，公共財ゲームを行った後、アンケートを行います。"
+"参加者には，実験参加費として10ユーロが支払われ，それに加えてゲームの結果に応"
+"じた収益が支払われます。”"
 
 #: ../../source/conceptual_overview.rst:17
 msgid "Subsessions"
-msgstr ""
+msgstr "Subsessions"
 
 #: ../../source/conceptual_overview.rst:19
 msgid ""
-"A session is a series of subsessions; subsessions are the \"sections\" or"
-" \"modules\" that constitute a session. For example, if a session "
-"consists of a public goods game followed by a questionnaire, the public "
-"goods game would be subsession 1, and the questionnaire would be "
-"subsession 2. In turn, each subsession is a sequence of pages. For "
-"example, if you had a 4-page public goods game followed by a 2-page "
-"questionnaire:"
+"A session is a series of subsessions; subsessions are the \"sections\" or "
+"\"modules\" that constitute a session. For example, if a session consists "
+"of a public goods game followed by a questionnaire, the public goods game "
+"would be subsession 1, and the questionnaire would be subsession 2. In "
+"turn, each subsession is a sequence of pages. For example, if you had a 4-"
+"page public goods game followed by a 2-page questionnaire:"
 msgstr ""
+"セッションは一連のサブセッションの集まりであり，サブセッションとはセッション"
+"を構成する「セクション」または「モジュール」のことです．例えば，セッションが"
+"公共財ゲームとアンケートで構成されている場合，公共財ゲームがサブセッション"
+"1，アンケートがサブセッション2となります．また，各サブセッションは，一連の"
+"ページで構成されています。例えば，4ページの公共財ゲームの後に2ページのアン"
+"ケートがあったとします．"
 
 #: ../../source/conceptual_overview.rst:29
 msgid "If a game is repeated for multiple rounds, each round is a subsession."
 msgstr ""
+"ゲームが複数ラウンドに渡る繰り返しゲームである場合，各ラウンドはサブセッショ"
+"ンとなります．"
 
 #: ../../source/conceptual_overview.rst:32
 msgid "Groups"
-msgstr ""
+msgstr "Groups"
 
 #: ../../source/conceptual_overview.rst:34
 msgid ""
-"Each subsession can be further divided into groups of players; for "
-"example, you could have a subsession with 30 players, divided into 15 "
-"groups of 2 players each. (Note: groups can be shuffled between "
-"subsessions.)"
+"Each subsession can be further divided into groups of players; for example, "
+"you could have a subsession with 30 players, divided into 15 groups of 2 "
+"players each. (Note: groups can be shuffled between subsessions.)"
 msgstr ""
+"各サブセッションは，さらにプレーヤーのグループに分けることができます．例え"
+"ば，30人のプレーヤーがいるサブセッションを2人ずつの15のグループに分けること"
+"ができます．(注：サブセッション間でグループを入れ替えることができます)．"
 
 #: ../../source/conceptual_overview.rst:41
 msgid "Object hierarchy"
-msgstr ""
+msgstr "オブジェクトの階層性"
 
 #: ../../source/conceptual_overview.rst:43
 msgid "oTree's entities can be arranged into the following hierarchy::"
-msgstr ""
+msgstr "oTreeの構造は次のような階層に分けられます。"
 
 #: ../../source/conceptual_overview.rst:50
 msgid "A session is a series of subsessions"
-msgstr ""
+msgstr "セッションとは，一連のサブセッションのことです．"
 
 #: ../../source/conceptual_overview.rst:51
 msgid "A subsession contains multiple groups"
-msgstr ""
+msgstr "サブセッションには，複数のグループが含まれます．"
 
 #: ../../source/conceptual_overview.rst:52
 msgid "A group contains multiple players"
-msgstr ""
+msgstr "グループには，複数のプレイヤーが含まれます．"
 
 #: ../../source/conceptual_overview.rst:53
 msgid "Each player proceeds through multiple pages"
-msgstr ""
+msgstr "各プレイヤーは複数のページを進めることになります．"
 
 #: ../../source/conceptual_overview.rst:55
 msgid "You can access any higher-up object from a lower object:"
-msgstr ""
+msgstr "下位のオブジェクトから任意の上位のオブジェクトにアクセスできます．"
 
 #: ../../source/conceptual_overview.rst:70
 msgid "Participant"
-msgstr ""
+msgstr "Participant"
 
 #: ../../source/conceptual_overview.rst:72
 msgid ""
-"In oTree, the terms \"player\" and \"participant\" have distinct "
-"meanings. The relationship between participant and player is the same as "
-"the relationship between session and subsession:"
+"In oTree, the terms \"player\" and \"participant\" have distinct meanings. "
+"The relationship between participant and player is the same as the "
+"relationship between session and subsession:"
 msgstr ""
+"oTreeでは，”player “と “participant “では異なる意味があります．”player “と "
+"“participant “の関係は、セッションとサブセッションの関係と同じです。"
 
 #: ../../source/conceptual_overview.rst:79
 msgid ""
 "A player is an instance of a participant in one particular subsession. A "
-"player is like a temporary \"role\" played by a participant. A "
-"participant can be player 2 in the first subsession, player 1 in the next"
-" subsession, etc."
+"player is like a temporary \"role\" played by a participant. A participant "
+"can be player 2 in the first subsession, player 1 in the next subsession, "
+"etc."
 msgstr ""
-
+"“player”とは，ある特定のサブセッションの”participant”のインスタンスのことあ"
+"り，”participant”が演じる一時的な「役割」のようなものです。”participant”は，"
+"初のサブセッションではプレーヤー2、次のサブセッションではプレーヤー1、といっ"
+"た具合です。"

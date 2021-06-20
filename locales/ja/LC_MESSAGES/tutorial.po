@@ -3,51 +3,57 @@
 # This file is distributed under the same license as the oTree package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree \n"
+"Project-Id-Version: oTree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-27 18:00-0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-06-18 23:22+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../source/tutorial/intro.rst:2
 msgid "Tutorial"
-msgstr ""
+msgstr "チュートリアル"
 
 #: ../../source/tutorial/intro.rst:4
 msgid "This tutorial will cover the creation of several apps."
-msgstr ""
+msgstr "このチュートリアルではいくつかのアプリの作り方を紹介します．"
 
 #: ../../source/tutorial/intro.rst:6
 msgid ""
-"First, you should be familiar with Python; we have a simple tutorial "
-"here: :ref:`python_tutorial`."
+"First, you should be familiar with Python; we have a simple tutorial here: :ref:"
+"`python_tutorial`."
 msgstr ""
+"はじめに，Pythonに慣れる必要があります．簡単なチュートリアルをコチラ :ref:"
+"`python_tutorial` に用意しました．"
 
 #: ../../source/tutorial/part1_studio.rst:4
 msgid "Part 1: Simple survey (for oTree Studio users)"
-msgstr ""
+msgstr "その1：単純なサーベイ（oTree Studioユーザに向けて）"
 
 #: ../../source/tutorial/part1_studio.rst:6 ../../source/tutorial/part2.rst:4
 msgid ""
-"(A video of this tutorial is on `YouTube "
-"<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
+"(A video of this tutorial is on `YouTube <https://www.youtube.com/channel/"
+"UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
 msgstr ""
+"（`YouTube <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
+"でのビデオチュートリアルもあります(英語です)．）"
 
 #: ../../source/tutorial/part1_studio.rst:10
 #: ../../source/tutorial/part1_texteditor.rst:4
 msgid ""
-"Let's create a simple survey -- on the first page, we ask the participant"
-" for their name and age, then on the next page, display this info back to"
-" them."
+"Let's create a simple survey -- on the first page, we ask the participant for "
+"their name and age, then on the next page, display this info back to them."
 msgstr ""
+"まずは簡単な調査を作りましょう．最初のページでは実験参加者に名前と年齢を尋ねま"
+"す，そして次のページでは，その入力結果を表示しましょう．"
 
 #: ../../source/tutorial/part1_studio.rst:14
 msgid "Player model"
@@ -56,14 +62,15 @@ msgstr ""
 #: ../../source/tutorial/part1_studio.rst:16
 msgid "In the sidebar, go to the Player model. Let's add 2 fields:"
 msgstr ""
+"サイドバーでPlayer modelを選択してください．2つのフィールドを追加しましょう．"
 
 #: ../../source/tutorial/part1_studio.rst:19
 msgid "``name`` (``StringField``, meaning text characters)"
-msgstr ""
+msgstr "``name`` (``StringField``, はテキストの文字列を意味します)"
 
 #: ../../source/tutorial/part1_studio.rst:20
 msgid "``age`` (``IntegerField``)"
-msgstr ""
+msgstr "``age`` (``IntegerField``, 整数値)"
 
 #: ../../source/tutorial/part1_studio.rst:24 ../../source/tutorial/part2.rst:79
 msgid "Pages"
@@ -72,17 +79,17 @@ msgstr ""
 #: ../../source/tutorial/part1_studio.rst:26
 #: ../../source/tutorial/part1_texteditor.rst:42
 msgid "This survey has 2 pages:"
-msgstr ""
+msgstr "この調査では2ページを用意します．"
 
 #: ../../source/tutorial/part1_studio.rst:28
 #: ../../source/tutorial/part1_texteditor.rst:44
 msgid "Page 1: players enter their name and age"
-msgstr ""
+msgstr "1ページ目：プレイヤーが名前と年齢を入力します．"
 
 #: ../../source/tutorial/part1_studio.rst:29
 #: ../../source/tutorial/part1_texteditor.rst:45
 msgid "Page 2: players see the data they entered on the previous page"
-msgstr ""
+msgstr "2ページ目：プレイヤーが1ページ目に入力した内容を確認します．"
 
 #: ../../source/tutorial/part1_studio.rst:31
 msgid "So, create 2 pages in your ``page_sequence``: ``Survey`` and ``Results``."
@@ -90,100 +97,103 @@ msgstr ""
 
 #: ../../source/tutorial/part1_studio.rst:34
 msgid "Page 1"
-msgstr ""
+msgstr "1ページ目"
 
 #: ../../source/tutorial/part1_studio.rst:36
 msgid ""
-"First let's define ``Survey``. This page contains a form, so set "
-"``form_model`` to ``player`` and for ``form_fields``, select ``name`` and"
-" ``age``."
+"First let's define ``Survey``. This page contains a form, so set ``form_model`` "
+"to ``player`` and for ``form_fields``, select ``name`` and ``age``."
 msgstr ""
 
 #: ../../source/tutorial/part1_studio.rst:39
 msgid ""
-"Then, set the template's title to ``Enter your information``, and set the"
-" content to:"
+"Then, set the template's title to ``Enter your information``, and set the "
+"content to:"
 msgstr ""
 
 #: ../../source/tutorial/part1_studio.rst:51
 msgid "Page 2"
-msgstr ""
+msgstr "2ページ目"
 
 #: ../../source/tutorial/part1_studio.rst:53
 msgid "Now we define ``Results``."
-msgstr ""
+msgstr "続いて， ``Results``を定義します．"
 
 #: ../../source/tutorial/part1_studio.rst:55
 msgid ""
-"Set the template's ``title`` block to ``Results`` and set the ``content``"
-" block to:"
+"Set the template's ``title`` block to ``Results`` and set the ``content`` block "
+"to:"
 msgstr ""
 
-#: ../../source/tutorial/part1_studio.rst:65
-#: ../../source/tutorial/part2.rst:186
+#: ../../source/tutorial/part1_studio.rst:65 ../../source/tutorial/part2.rst:186
 msgid "Define the session config"
 msgstr ""
 
 #: ../../source/tutorial/part1_studio.rst:67
 msgid ""
-"In the sidebar, go to \"Session Configs\", create a session config, and "
-"add your survey app to the ``app_sequence``."
+"In the sidebar, go to \"Session Configs\", create a session config, and add "
+"your survey app to the ``app_sequence``."
 msgstr ""
 
 #: ../../source/tutorial/part1_studio.rst:71
 msgid "Download and run"
-msgstr ""
+msgstr "ダウンロードと実行"
 
 #: ../../source/tutorial/part1_studio.rst:73
 msgid ""
-"Download the otreezip file and follow the instructions on how to install "
-"oTree and run the otreezip file."
+"Download the otreezip file and follow the instructions on how to install oTree "
+"and run the otreezip file."
 msgstr ""
+"otreezipファイルをダウンロードし，指示に従ってoTreeをインストールした上で，"
+"otreezipファイルを実行してください．"
 
 #: ../../source/tutorial/part1_studio.rst:76
 msgid ""
-"If there are any problems, you can ask a question on the oTree "
-"`discussion group <https://groups.google.com/forum/#!forum/otree>`__."
+"If there are any problems, you can ask a question on the oTree `discussion "
+"group <https://groups.google.com/forum/#!forum/otree>`__."
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:2
 msgid "Part 1: Simple survey (for PyCharm users)"
-msgstr ""
+msgstr "その1：単純なサーベイ（PyCharmなどのエディタユーザに向けて）"
 
-#: ../../source/tutorial/part1_texteditor.rst:8
-#: ../../source/tutorial/part2.rst:20 ../../source/tutorial/part3.rst:16
+#: ../../source/tutorial/part1_texteditor.rst:8 ../../source/tutorial/part2.rst:20
+#: ../../source/tutorial/part3.rst:16
 msgid "Create the app"
-msgstr ""
+msgstr "アプリの作成"
 
 #: ../../source/tutorial/part1_texteditor.rst:10
 msgid ""
-"Use your command line to ``cd`` to the oTree project folder you created, "
-"(which contains a ``settings.py``). Assuming you named the folder "
-"``oTree``, you would do::"
+"Use your command line to ``cd`` to the oTree project folder you created, (which "
+"contains a ``settings.py``). Assuming you named the folder ``oTree``, you would "
+"do::"
 msgstr ""
+"コマンドラインを使って，作成したoTreeプロジェクトのフォルダ（``settings.py`` が"
+"含まれている）に ``cd`` を入力します．フォルダの名前を ``oTree`` としたとする"
+"と、以下のようになります。"
 
 #: ../../source/tutorial/part1_texteditor.rst:16
 msgid "Then, create the app::"
-msgstr ""
+msgstr "次に，アプリを作成します．"
 
 #: ../../source/tutorial/part1_texteditor.rst:20
 msgid "Then in PyCharm, go to the folder ``my_simple_survey`` that was created."
-msgstr ""
+msgstr "次にPyCharmで，作成された ``my_simple_survey`` フォルダに移動します．"
 
 #: ../../source/tutorial/part1_texteditor.rst:23
 msgid "Define models"
-msgstr ""
+msgstr "modelsの定義"
 
 #: ../../source/tutorial/part1_texteditor.rst:25
 msgid ""
-"In ``__init__.py``, scroll to the line that says ``class "
-"Player(BasePlayer):``. Here we define the columns for the Player table in"
-" the database. Let's add 2 fields:"
+"In ``__init__.py``, scroll to the line that says ``class Player(BasePlayer):``. "
+"Here we define the columns for the Player table in the database. Let's add 2 "
+"fields:"
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:29
 msgid "``name`` (which is a ``StringField``, meaning text characters)"
-msgstr ""
+msgstr "``name`` (これは ``StringField``でテキスト文字を意味します．)"
 
 #: ../../source/tutorial/part1_texteditor.rst:30
 msgid "``age`` (which is a positive integer field)"
@@ -191,58 +201,64 @@ msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:40
 msgid "Define the template"
-msgstr ""
+msgstr "テンプレートの定義"
 
 #: ../../source/tutorial/part1_texteditor.rst:47
 msgid "So, let's make 2 HTML template files."
-msgstr ""
+msgstr "続いて，2つのHTMLテンプレートファイルを作成しましょう．"
 
 #: ../../source/tutorial/part1_texteditor.rst:49
 msgid "Let's name the first page ``MyPage.html``, and put these contents inside:"
 msgstr ""
+"最初のページを``MyPage.html``という名前にして，その中にこれらのコンテンツを入れ"
+"てみましょう．"
 
 #: ../../source/tutorial/part1_texteditor.rst:66
 msgid "The second template will be called ``Results.html``."
-msgstr ""
+msgstr "2つ目のテンプレートは``Results.html``と呼ばれます．"
 
 #: ../../source/tutorial/part1_texteditor.rst:82
 msgid "Define pages"
-msgstr ""
+msgstr "pagesの定義"
 
 #: ../../source/tutorial/part1_texteditor.rst:84
 msgid ""
-"Now we define our pages, which contain the logic for how to display the "
-"HTML templates."
+"Now we define our pages, which contain the logic for how to display the HTML "
+"templates."
 msgstr ""
+"次に，ページを定義します．ページには，HTMLテンプレートを表示するためのロジックが"
+"含まれています．"
 
 #: ../../source/tutorial/part1_texteditor.rst:87
 msgid ""
-"Since we have 2 templates, we need 2 ``Page`` classes. The names should "
-"match those of the templates (``MyPage`` and ``Results``)."
+"Since we have 2 templates, we need 2 ``Page`` classes. The names should match "
+"those of the templates (``MyPage`` and ``Results``)."
 msgstr ""
+"テンプレートが2つあるので，2つの``Page`` クラスが必要になります．名前はテンプ"
+"レート（``MyPage``と``Results``）と一致する必要があります。"
 
 #: ../../source/tutorial/part1_texteditor.rst:91
 msgid ""
-"First let's define ``MyPage``. This page contains a form, so we need to "
-"define ``form_model`` and ``form_fields``."
+"First let's define ``MyPage``. This page contains a form, so we need to define "
+"``form_model`` and ``form_fields``."
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:100
 msgid ""
-"Now we define ``Results``. This page doesn't have a form or any other "
-"special attributes, so we just write \"pass\"."
+"Now we define ``Results``. This page doesn't have a form or any other special "
+"attributes, so we just write \"pass\"."
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:108
 msgid ""
-"If there is already a ``WaitPage``, you can delete that, because "
-"WaitPages are only necessary for multi-player games."
+"If there is already a ``WaitPage``, you can delete that, because WaitPages are "
+"only necessary for multi-player games."
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:111
 msgid ""
-"Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. "
-"So, all in all, your pages should look like this:"
+"Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. So, all "
+"in all, your pages should look like this:"
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:132
@@ -251,8 +267,8 @@ msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:134
 msgid ""
-"Now we go to ``settings.py`` in the project's top folder and add an entry"
-" to ``SESSION_CONFIGS``."
+"Now we go to ``settings.py`` in the project's top folder and add an entry to "
+"``SESSION_CONFIGS``."
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:148
@@ -273,37 +289,36 @@ msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:160
 msgid ""
-"If there is an error in your code, the command line will display a "
-"\"traceback\" (error message) that is formatted something like this::"
+"If there is an error in your code, the command line will display a \"traceback"
+"\" (error message) that is formatted something like this::"
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:183
 msgid ""
-"It's called a \"traceback\" because it traces the error down through the "
-"chain of code. Your first step should be to look at the last lines of the"
-" message. Specifically, find the file and line number of the last entry. "
-"In the above example, it's "
-"``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line 40``. So, go"
-" to that file & line number. Look for the problem mentioned at the last "
-"line of the traceback. In this example, it is ``IndentationError: "
-"expected an indented block`` (which indicates that the problem has to do "
-"with code indentation). Try to fix the error then run the command again."
+"It's called a \"traceback\" because it traces the error down through the chain "
+"of code. Your first step should be to look at the last lines of the message. "
+"Specifically, find the file and line number of the last entry. In the above "
+"example, it's ``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line "
+"40``. So, go to that file & line number. Look for the problem mentioned at the "
+"last line of the traceback. In this example, it is ``IndentationError: expected "
+"an indented block`` (which indicates that the problem has to do with code "
+"indentation). Try to fix the error then run the command again."
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:193
 msgid ""
-"Sometimes the last line of the traceback refers to a file that is not "
-"part of your code. For example, in the below traceback, the last line "
-"refers to ``/site-packages/easymoney.py``, which is not part of my app, "
-"but rather an external package::"
+"Sometimes the last line of the traceback refers to a file that is not part of "
+"your code. For example, in the below traceback, the last line refers to ``/site-"
+"packages/easymoney.py``, which is not part of my app, but rather an external "
+"package::"
 msgstr ""
 
 #: ../../source/tutorial/part1_texteditor.rst:236
 msgid ""
 "In these situations, look to see if any of your code is contained in the "
-"traceback. Above we can see that the traceback goes through the file "
-"``/Users/chris/oTree/public_goods/pages.py``, which is part of my "
-"project. The bug is on line 108, as indicated."
+"traceback. Above we can see that the traceback goes through the file ``/Users/"
+"chris/oTree/public_goods/pages.py``, which is part of my project. The bug is on "
+"line 108, as indicated."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:2
@@ -312,24 +327,23 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:8
 msgid ""
-"We will now create a simple `public goods game "
-"<https://en.wikipedia.org/wiki/Public_goods_game>`__. The public goods "
-"game is a classic game in economics."
+"We will now create a simple `public goods game <https://en.wikipedia.org/wiki/"
+"Public_goods_game>`__. The public goods game is a classic game in economics."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:11
 msgid ""
-"This is a three player game where each player is initially endowed with "
-"100 points. Each player individually makes a decision about how many of "
-"their points they want to contribute to the group. The combined "
-"contributions are multiplied by 2, and then divided evenly three ways and"
-" redistributed back to the players."
+"This is a three player game where each player is initially endowed with 100 "
+"points. Each player individually makes a decision about how many of their "
+"points they want to contribute to the group. The combined contributions are "
+"multiplied by 2, and then divided evenly three ways and redistributed back to "
+"the players."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:15
 msgid ""
-"The full code for the app we will write is `here <https://github.com"
-"/oTree-org/oTree/tree/lite/public_goods_simple>`__."
+"The full code for the app we will write is `here <https://github.com/oTree-org/"
+"oTree/tree/lite/public_goods_simple>`__."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:22
@@ -348,20 +362,20 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:31
 msgid ""
-"Set ``players_per_group`` to 3. oTree will then automatically divide "
-"players into groups of 3."
+"Set ``players_per_group`` to 3. oTree will then automatically divide players "
+"into groups of 3."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""
-"The endowment to each player is 1000 points. So, let's define "
-"``endowment`` and set it to a currency value of ``1000``."
+"The endowment to each player is 1000 points. So, let's define ``endowment`` and "
+"set it to a currency value of ``1000``."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:35
 msgid ""
-"Each contribution is multiplied by 2. So define an integer constant "
-"called ``multiplier = 2``:"
+"Each contribution is multiplied by 2. So define an integer constant called "
+"``multiplier = 2``:"
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:38
@@ -370,24 +384,23 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:48
 msgid ""
-"After the game is played, what data points will we need about each "
-"player? It's important to record how much each person contributed. So, go"
-" to the Player model and define a ``contribution`` column:"
+"After the game is played, what data points will we need about each player? It's "
+"important to record how much each person contributed. So, go to the Player "
+"model and define a ``contribution`` column:"
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:62
 msgid ""
-"We also need to record the payoff the user makes at the end of the game, "
-"but we don't need to explicitly define a ``payoff`` field, because in "
-"oTree, the Player already contains a ``payoff`` column."
+"We also need to record the payoff the user makes at the end of the game, but we "
+"don't need to explicitly define a ``payoff`` field, because in oTree, the "
+"Player already contains a ``payoff`` column."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:66
 msgid ""
-"What data points are we interested in recording about each group? We "
-"might be interested in knowing the total contributions to the group, and "
-"the individual share returned to each player. So, we define those 2 "
-"fields on the Group:"
+"What data points are we interested in recording about each group? We might be "
+"interested in knowing the total contributions to the group, and the individual "
+"share returned to each player. So, we define those 2 fields on the Group:"
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:81
@@ -412,10 +425,10 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:90
 msgid ""
-"First let's define ``Contribute``. This page contains a form, so we need "
-"to define ``form_model`` and ``form_fields``. Specifically, this form "
-"should let you set the ``contribution`` field on the player. (For more "
-"info, see :ref:`forms`.)"
+"First let's define ``Contribute``. This page contains a form, so we need to "
+"define ``form_model`` and ``form_fields``. Specifically, this form should let "
+"you set the ``contribution`` field on the player. (For more info, see :ref:"
+"`forms`.)"
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:102
@@ -432,24 +445,24 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:124
 msgid ""
-"When all players have completed the ``Contribute`` page, the players' "
-"payoffs can be calculated. Add a group function called ``set_payoffs``:"
+"When all players have completed the ``Contribute`` page, the players' payoffs "
+"can be calculated. Add a group function called ``set_payoffs``:"
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:138
 msgid ""
-"After a player makes a contribution, they cannot see the results page "
-"right away; they first need to wait for the other players to contribute. "
-"You therefore need to add a ``WaitPage``. Let's call it "
-"``ResultsWaitPage``. When a player arrives at a wait page, they must wait"
-" until all other players in the group have arrived. Then everyone can "
-"proceed to the next page. (For more info, see :ref:`wait_pages`)."
+"After a player makes a contribution, they cannot see the results page right "
+"away; they first need to wait for the other players to contribute. You "
+"therefore need to add a ``WaitPage``. Let's call it ``ResultsWaitPage``. When a "
+"player arrives at a wait page, they must wait until all other players in the "
+"group have arrived. Then everyone can proceed to the next page. (For more info, "
+"see :ref:`wait_pages`)."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:146
 msgid ""
-"Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to "
-"trigger ``set_payoffs``:"
+"Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to trigger "
+"``set_payoffs``:"
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:154
@@ -470,8 +483,7 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:188
 msgid ""
-"We add another session config with ``my_public_goods`` in the app "
-"sequence."
+"We add another session config with ``my_public_goods`` in the app sequence."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:192
@@ -480,8 +492,7 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:252
 msgid ""
-"Load the project again then open your browser to "
-"``http://localhost:8000``."
+"Load the project again then open your browser to ``http://localhost:8000``."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:199
@@ -490,9 +501,8 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:201
 msgid ""
-"I often read messages on programming forums like, \"My program is not "
-"working. I can't find the mistake, even though I have spent hours looking"
-" at my code\"."
+"I often read messages on programming forums like, \"My program is not working. "
+"I can't find the mistake, even though I have spent hours looking at my code\"."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:205
@@ -503,8 +513,8 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:208
 msgid ""
-"The simplest way is using ``print()`` statements. If you don't learn this"
-" technique, you won't be able to program games effectively."
+"The simplest way is using ``print()`` statements. If you don't learn this "
+"technique, you won't be able to program games effectively."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:211
@@ -513,10 +523,10 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:217
 msgid ""
-"Put this line in the part of your code that's not working, such as the "
-"payoff function defined above. When you play the game in your browser and"
-" that code gets executed, your print statement will be displayed in your "
-"command prompt window (not in your web browser)."
+"Put this line in the part of your code that's not working, such as the payoff "
+"function defined above. When you play the game in your browser and that code "
+"gets executed, your print statement will be displayed in your command prompt "
+"window (not in your web browser)."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:223
@@ -529,26 +539,25 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:245
 msgid ""
-"If you don't see the output of the print statement in your console "
-"window, that means that line is not getting executed! (Which is why it "
-"isn't working.)"
+"If you don't see the output of the print statement in your console window, that "
+"means that line is not getting executed! (Which is why it isn't working.)"
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:248
 msgid ""
 "Maybe it's because your code is in some unreachable place like after a "
-"``return`` statement, or inside an \"if\" statement that is always "
-"``False``. Start putting print statements from the top of the function, "
-"then see where they stop getting displayed."
+"``return`` statement, or inside an \"if\" statement that is always ``False``. "
+"Start putting print statements from the top of the function, then see where "
+"they stop getting displayed."
 msgstr ""
 
 #: ../../source/tutorial/part2.rst:252
 msgid ""
-"Or maybe your code is in a function that never gets called (executed). "
-"oTree's built-in methods such as ``creating_session`` and "
-"``before_next_page`` are automatically executed, but if you define a "
-"custom function such as ``set_payoffs``, you need to remember to call "
-"that function from a built-in function."
+"Or maybe your code is in a function that never gets called (executed). oTree's "
+"built-in methods such as ``creating_session`` and ``before_next_page`` are "
+"automatically executed, but if you define a custom function such as "
+"``set_payoffs``, you need to remember to call that function from a built-in "
+"function."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:2
@@ -557,23 +566,23 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:4
 msgid ""
-"Now let's create a 2-player `Trust game "
-"<https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,"
-" and learn some more features of oTree."
+"Now let's create a 2-player `Trust game <https://en.wikibooks.org/wiki/"
+"Bestiary_of_Behavioral_Economics/Trust_Game>`__, and learn some more features "
+"of oTree."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:7
 msgid ""
-"To start, Player 1 receives 10 points; Player 2 receives nothing. Player "
-"1 can send some or all of his points to Player 2. Before P2 receives "
-"these points they will be tripled. Once P2 receives the tripled points he"
-" can decide to send some or all of his points to P1."
+"To start, Player 1 receives 10 points; Player 2 receives nothing. Player 1 can "
+"send some or all of his points to Player 2. Before P2 receives these points "
+"they will be tripled. Once P2 receives the tripled points he can decide to send "
+"some or all of his points to P1."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:12
 msgid ""
-"The completed app is `here <https://github.com/oTree-"
-"org/oTree/tree/master/trust_simple>`__."
+"The completed app is `here <https://github.com/oTree-org/oTree/tree/master/"
+"trust_simple>`__."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:18
@@ -598,9 +607,8 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:42
 msgid ""
-"Then we add fields to player and group. There are 2 critical data points "
-"to record: the \"sent\" amount from P1, and the \"sent back\" amount from"
-" P2."
+"Then we add fields to player and group. There are 2 critical data points to "
+"record: the \"sent\" amount from P1, and the \"sent back\" amount from P2."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:46
@@ -609,25 +617,24 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:56
 msgid ""
-"The problem with this model is that ``sent_amount`` only applies to P1, "
-"and ``sent_back_amount`` only applies to P2. It does not make sense that "
-"P1 should have a field called ``sent_back_amount``. How can we make our "
-"data model more accurate?"
+"The problem with this model is that ``sent_amount`` only applies to P1, and "
+"``sent_back_amount`` only applies to P2. It does not make sense that P1 should "
+"have a field called ``sent_back_amount``. How can we make our data model more "
+"accurate?"
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:61
 msgid ""
-"We can do it by defining those fields at the ``Group`` level. This makes "
-"sense because each group has exactly 1 ``sent_amount`` and exactly 1 "
+"We can do it by defining those fields at the ``Group`` level. This makes sense "
+"because each group has exactly 1 ``sent_amount`` and exactly 1 "
 "``sent_back_amount``:"
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:76
 msgid ""
-"We also define a function called ``sent_back_amount_choices`` to populate"
-" the dropdown menu dynamically. This is the feature called "
-"``{field_name}_choices``, which is explained here: "
-":ref:`dynamic_validation`."
+"We also define a function called ``sent_back_amount_choices`` to populate the "
+"dropdown menu dynamically. This is the feature called ``{field_name}_choices``, "
+"which is explained here: :ref:`dynamic_validation`."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:90
@@ -656,8 +663,8 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:112
 msgid ""
-"We use :ref:`is_displayed` to only show this to P1; P2 skips the page. "
-"For more info on ``id_in_group``, see :ref:`groups`."
+"We use :ref:`is_displayed` to only show this to P1; P2 skips the page. For more "
+"info on ``id_in_group``, see :ref:`groups`."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:115
@@ -672,8 +679,8 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:132
 msgid ""
-"This is the page that P2 sees to send money back. Set the ``title`` block"
-" to ``Trust Game: Your Choice``, and the ``content`` block to:"
+"This is the page that P2 sees to send money back. Set the ``title`` block to "
+"``Trust Game: Your Choice``, and the ``content`` block to:"
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:148
@@ -682,10 +689,9 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:150
 msgid ""
-"We use :ref:`vars_for_template` to pass the variable ``tripled_amount`` "
-"to the template. You cannot do calculations directly in the HTML code, so"
-" this number needs to be calculated in Python code and passed to the "
-"template."
+"We use :ref:`vars_for_template` to pass the variable ``tripled_amount`` to the "
+"template. You cannot do calculations directly in the HTML code, so this number "
+"needs to be calculated in Python code and passed to the template."
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:175
@@ -694,10 +700,9 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:177
 msgid ""
-"The results page needs to look slightly different for P1 vs. P2. So, we "
-"use the ``{{ if }}`` statement to condition on the current player's "
-"``id_in_group``. Set the ``title`` block to ``Results``, and the content "
-"block to:"
+"The results page needs to look slightly different for P1 vs. P2. So, we use the "
+"``{{ if }}`` statement to condition on the current player's ``id_in_group``. "
+"Set the ``title`` block to ``Results``, and the content block to:"
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:208
@@ -714,14 +719,13 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:213
 msgid ""
-"``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send "
-"back)"
+"``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send back)"
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:215
 msgid ""
-"After the second wait page, we should calculate the payoffs. So, we "
-"define a function called ``set_payoffs``:"
+"After the second wait page, we should calculate the payoffs. So, we define a "
+"function called ``set_payoffs``:"
 msgstr ""
 
 #: ../../source/tutorial/part3.rst:226
@@ -743,69 +747,3 @@ msgstr ""
 #: ../../source/tutorial/part3.rst:250
 msgid "Run the server"
 msgstr ""
-
-#~ msgid ""
-#~ "In ``app.py``, scroll to the line "
-#~ "that says ``class Player(BasePlayer):``. Here"
-#~ " we define the columns for the "
-#~ "Player table in the database. Let's "
-#~ "add 2 fields:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The full code for the app we "
-#~ "will write is `here <https://github.com"
-#~ "/oTree-org/oTree/tree/master/public_goods_simple>`__."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Put this line in the part of "
-#~ "your code that's not working, such "
-#~ "as the payoff method defined above. "
-#~ "When you play the game in your "
-#~ "browser and that code gets executed, "
-#~ "your print statement will be displayed"
-#~ " in your command prompt window (not"
-#~ " in your web browser)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Maybe it's because your code is in"
-#~ " some unreachable place like after a"
-#~ " ``return`` statement, or inside an "
-#~ "\"if\" statement that is always "
-#~ "``False``. Start putting print statements "
-#~ "from the top of the method, then"
-#~ " see where they stop getting "
-#~ "displayed."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Or maybe your code is in a "
-#~ "method that never gets called "
-#~ "(executed). oTree's built-in methods "
-#~ "such as ``creating_session`` and "
-#~ "``before_next_page`` are automatically executed, "
-#~ "but if you define a custom method"
-#~ " such as ``set_payoffs``, you need to"
-#~ " remember to call that function from"
-#~ " a built-in method."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The results page needs to look "
-#~ "slightly different for P1 vs. P2. "
-#~ "So, we use the ``{% if %}`` "
-#~ "statement to condition on the current"
-#~ " player's ``id_in_group``. Set the "
-#~ "``title`` block to ``Results``, and the"
-#~ " content block to:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "After the second wait page, we "
-#~ "should calculate the payoffs. So, we "
-#~ "define a method on the Group "
-#~ "called ``set_payoffs``:"
-#~ msgstr ""
-
