@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/install-linux.rst:6
 msgid "Installing oTree (Linux)"
-msgstr ""
+msgstr "LinuxにoTreeをインストールする"
 
 #: ../../source/install-linux.rst:8
 msgid ""
@@ -27,16 +27,22 @@ msgid ""
 "the latest Python 3.X using your system's package manager, then follow "
 "the rest of the MacOS installation instructions."
 msgstr ""
+"もし開発のためLinux PCにoTreeをインストールする場合は、最新のPython3.Xを"
+"使用しているシステムパッケージマネージャを使ってインストールし、その後は"
+"MacOS向けのインストール手順に従ってください。"
 
 #: ../../source/install-linux.rst:12
 msgid ""
 "If you're setting up a Linux production server, see the :ref:`Linux "
 "server setup <server-ubuntu>` section."
 msgstr ""
+"もしLinuxで本番サーバーを立ち上げる場合は、:ref:`Linux "
+"サーバー設定 <server-ubuntu>` の章をご覧ください。"
 
 #: ../../source/install-linux.rst:15
 msgid ""
 "If ``Twisted`` fails to compile, install the ``python-dev`` package (e.g."
 " through ``apt-get``)."
 msgstr ""
-
+"もし``Twisted``のコンパイルに失敗する場合は、``python-dev``パッケージを"
+"（例えば``apt-get``などで）インストールしてください。"

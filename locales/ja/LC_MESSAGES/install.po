@@ -19,17 +19,17 @@ msgstr ""
 
 #: ../../source/install.rst:5
 msgid "Installing oTree"
-msgstr ""
+msgstr "oTreeのインストール"
 
 #: ../../source/install.rst:7
 msgid ":ref:`Windows <install-windows>`"
-msgstr ""
+msgstr ":ref:`Windows <install-windows>`"
 
 #: ../../source/install.rst:8
 msgid ":ref:`MacOS <install-macos>`"
-msgstr ""
+msgstr ":ref:`MacOS <install-macos>`"
 
 #: ../../source/install.rst:9
 msgid ":ref:`Linux <install-linux>`"
-msgstr ""
+msgstr ":ref:`Linux <install-linux>`"
 
