@@ -21,6 +21,5 @@ To generate new .po files after an update to the English version, run:
 		
 ```
 sphinx-build -b gettext source build/gettext
-sphinx-intl update -p build/gettext -l ja  # japanese
-sphinx-intl update -p build/gettext -l zh_CN  # chinese
+sphinx-intl update -p build/gettext -l zh_CN -l ja 
 ```
