@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../source/index.rst:10
 msgid "oTree"
-msgstr ""
+msgstr "oTree"
 
 #: ../../source/index.rst:15
 msgid "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
-msgstr ""
+msgstr "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | 日本語 <https://otree.readthedocs.io/ja/latest/index.html>`__"
 
 #: ../../source/index.rst:18
 msgid "Live demos"
-msgstr ""
+msgstr "デモ"
 
 #: ../../source/index.rst:20
 msgid "https://www.otreehub.com/projects/?featured=1"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../source/index.rst:24
 msgid "Homepage"
-msgstr ""
+msgstr "トップページ"
 
 #: ../../source/index.rst:26
 msgid "http://www.otree.org/"
@@ -43,41 +43,44 @@ msgstr ""
 
 #: ../../source/index.rst:30
 msgid "About"
-msgstr ""
+msgstr "oTreeとは？"
 
 #: ../../source/index.rst:32
 msgid "oTree is a framework based on Python that lets you build:"
-msgstr ""
+msgstr "oTreeはPythonで書かれたフレームワークで、次のようなものを作ることができます："
 
 #: ../../source/index.rst:34
 msgid ""
 "Multiplayer strategy games, like the prisoner's dilemma, public goods "
 "game, and auctions"
-msgstr ""
+msgstr "囚人のジレンマ、公共財供給ゲーム、オークションのような、複数プレイヤーの戦略ゲーム"
 
 #: ../../source/index.rst:35
 msgid ""
 "Controlled behavioral experiments in economics, psychology, and related "
 "fields"
-msgstr ""
+msgstr "経済学、心理学、およびその他の分野における、制御された行動実験"
 
 #: ../../source/index.rst:36
 msgid "Surveys and quizzes"
-msgstr ""
+msgstr "アンケート調査やクイズ"
 
 #: ../../source/index.rst:39
 msgid "Support"
-msgstr ""
+msgstr "サポート"
 
 #: ../../source/index.rst:41
 msgid ""
 "For help, post to our Google Groups `forum "
 "<https://groups.google.com/forum/#!forum/otree>`__."
 msgstr ""
+"質問がある場合は、oTreeのGoogle Groups `forum "
+"<https://groups.google.com/forum/#!forum/otree>`__"
+"に投稿してください。"
 
 #: ../../source/index.rst:44
 msgid "Contents:"
-msgstr ""
+msgstr "目次："
 
 #: ../../source/index.rst:74
 msgid "Indices and tables"
@@ -94,10 +97,3 @@ msgstr ""
 #: ../../source/index.rst:78
 msgid ":ref:`search`"
 msgstr ""
-
-#~ msgid ""
-#~ "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
-#~ " | `日本語 <https://github.com/oTree-org/otree-"
-#~ "docs/blob/master/README.md>`__"
-#~ msgstr ""
-
