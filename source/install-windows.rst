@@ -20,7 +20,7 @@ If the below steps don't work for you, please email chris@otree.org with details
 Step 1: Install Python
 ----------------------
 
-Download and install `Python <https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__.
+Download and install `Python <https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe>`__.
 
 Check the box to add Python to PATH:
 
@@ -39,11 +39,6 @@ Enter this command at the prompt:
 .. code-block:: bash
 
     pip3 install -U otree
-
-.. note::
-
-    This documentation is for oTree Lite. If you need maximum compatibility with existing oTree apps,
-    switch to `this <https://otree.readthedocs.io/en/self/index.html>`__ documentation.
 
 Next steps
 ----------
