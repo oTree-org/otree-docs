@@ -80,10 +80,10 @@ msgstr "次のステップ"
 #: ../../source/install-macos.rst:41
 msgid ""
 "If you will use :ref:`oTree Studio <studio>` (recommended), go to "
-"`otreehub.com <https://www.otreehub.com/studio>`__."
+"`otreehub.com <https://www.otreehub.com>`__."
 msgstr ""
 "もしあなたが :ref:`oTree Studio <studio>` を使っているのであれば（おすす"
-"めします），`otreehub.com <https://www.otreehub.com/studio>`__ へ飛んでく"
+"めします），`otreehub.com <https://www.otreehub.com>`__ へ飛んでく"
 "ださい．"
 
 #: ../../source/install-macos.rst:43

@@ -95,10 +95,10 @@ msgstr "后续步骤"
 #: ../../source/install-windows.rst:51
 msgid ""
 "If you will use :ref:`oTree Studio <studio>` (recommended), go to "
-"`otreehub.com <https://www.otreehub.com/studio>`__."
+"`otreehub.com <https://www.otreehub.com>`__."
 msgstr ""
 "如果你想使用 :ref:`oTree Studio <studio>` (推荐)，参考 `otreehub.com "
-"<https://www.otreehub.com/studio>`__。"
+"<https://www.otreehub.com>`__。"
 
 #: ../../source/install-windows.rst:53
 msgid ""

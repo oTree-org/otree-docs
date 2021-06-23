@@ -39,6 +39,6 @@ Next steps
 ----------
 
 -   If you will use :ref:`oTree Studio <studio>` (recommended),
-    go to `otreehub.com <https://www.otreehub.com/studio>`__.
+    go to `otreehub.com <https://www.otreehub.com>`__.
 -   If you will use PyCharm or another text-based code editor,
     follow the steps :ref:`here <install-nostudio>`.
