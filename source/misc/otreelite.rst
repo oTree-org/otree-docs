@@ -25,6 +25,7 @@ Other advantages of oTree Lite:
 For the curious people who want to delve into oTree's internal source code,
 you will have an easier time navigating oTree Lite.
 
+
 .. _lite_vs_mainline:
 
 How can I ensure I stay on oTree 3.x?
@@ -44,8 +45,15 @@ For Heroku, use one of the following formats in your ``requirements.txt``
     otree==3.3.7
 
 
-Compatibility
--------------
+Upgrading
+---------
+
+.. note::
+
+    I have set up a live chat on
+    `Discord <https://discord.gg/ugKU2teKjZ>`__ to assist people
+    upgrading from previous versions of oTree to oTree Lite.
+
 
 oTree Lite is generally compatible with previous oTree apps.
 However, you will probably see small things that changed, especially in how forms and templates are rendered.

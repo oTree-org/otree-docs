@@ -18,6 +18,13 @@ In fact, the ``self`` keyword has been eliminated entirely
 They both have access to the same features. The models.py format will continue to be fully supported
 and get access to the newest features.
 
+.. note::
+
+    I have set up a live chat on
+    `Discord <https://discord.gg/ugKU2teKjZ>`__ to assist people
+    upgrading from the self format to the no-self format.
+
+
 About the new format
 --------------------
 

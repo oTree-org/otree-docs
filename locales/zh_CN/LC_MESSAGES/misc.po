@@ -532,8 +532,8 @@ msgid ""
 msgstr "REST API是一个在你的服务器上被设计用来被其他程序使用的URL，而不是用于在浏览器中手动打开的。"
 
 #: ../../source/misc/rest_api.rst:12
-msgid "One project that uses the REST API a lot is `oTree HR <https://github.com/oTree-org/HR>`__."
-msgstr "一个使用了很多REST API的项目是 `oTree HR <https://github.com/oTree-org/HR>`__。"
+msgid "One project that uses the REST API a lot is `oTree HR <https://otree-hr.herokuapp.com/>`__."
+msgstr "一个使用了很多REST API的项目是 `oTree HR <https://otree-hr.herokuapp.com/>`__。"
 
 #: ../../source/misc/rest_api.rst:16
 msgid "As of March 2021, there have been some breaking changes to the REST API."

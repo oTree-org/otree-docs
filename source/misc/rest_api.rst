@@ -9,7 +9,7 @@ oTree has a REST API that enables external programs
 A REST API is just a URL on your server that is designed to be accessed by programs,
 rather than being opened manually in a web browser.
 
-One project that uses the REST API a lot is `oTree HR <https://github.com/oTree-org/HR>`__.
+One project that uses the REST API a lot is `oTree HR <https://otree-hr.herokuapp.com/>`__.
 
 .. warning::
 
