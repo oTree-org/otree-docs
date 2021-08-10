@@ -54,7 +54,7 @@ oTree's entities can be arranged into the following hierarchy::
 
 You can access any higher-up object from a lower object:
 
-.. code-block::python
+.. code-block:: python
 
     player.group
     player.subsession

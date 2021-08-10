@@ -265,7 +265,7 @@ like this:
         def before_next_page(player, timeout_happened):
             participant = player.participant
 
-            if player.timeout_happened:
+            if timeout_happened:
                 player.contribution = cu(100)
                 participant.is_dropout = True
 
