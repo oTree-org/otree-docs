@@ -56,9 +56,9 @@ You can access any higher-up object from a lower object:
 
 .. code-block:: python
 
+    player.participant
     player.group
     player.subsession
-    player.participant
     player.session
     group.subsession
     group.session

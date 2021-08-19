@@ -491,6 +491,6 @@ Then, in the template:
 
 .. code-block:: html
 
-    {{ formfield player.contribution label=contribution_label }}
+    {{ formfield 'contribution' label=contribution_label }}
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.

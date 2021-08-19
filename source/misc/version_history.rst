@@ -1,6 +1,18 @@
 Version history
 ```````````````
 
+Version 5.3
+===========
+
+-   Bugfix to deleting sessions in devserver
+-   ``{{ static }}`` tag checks that the file exists
+-   In SessionData tab, fix the "next round"/"previous round" icons on Mac
+-   Fix to currency formatting in Japanese/Korean/Turkish currency (numbers were displayed with a decimal when there should be none)
+-   allow error_message to be run on non-form pages (e.g. live pages)
+-   Better error reporting when an invalid value is passed to ``js_vars``
+-   Minor fixes & improvements
+
+
 Version 5.2
 ===========
 
