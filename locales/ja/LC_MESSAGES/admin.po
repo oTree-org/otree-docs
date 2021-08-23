@@ -91,11 +91,11 @@ msgstr ""
 
 #: ../../source/admin.rst:35
 msgid "Start links"
-msgstr "実験開始のリンク"
+msgstr "スタートリンク"
 
 #: ../../source/admin.rst:37
 msgid "There are multiple types of start links you can use."
-msgstr "スタートリンクには複数の種類があります．"
+msgstr "スタートリンク(実験に参加するためのリンク)には複数の種類があります．"
 
 #: ../../source/admin.rst:40
 msgid "Rooms"
@@ -155,7 +155,7 @@ msgstr ""
 
 #: ../../source/admin.rst:73
 msgid "Participant labels"
-msgstr ""
+msgstr "参加者ラベル"
 
 #: ../../source/admin.rst:75
 msgid ""
@@ -164,6 +164,9 @@ msgid ""
 "identify them, e.g. by name, ID number, or computer workstation. For "
 "example::"
 msgstr ""
+":ref:`room <rooms>` の使用にかかわらず、 ``participant_label`` を識別子として各参加者の開始URLに加えることができます。"
+"例えば、名前や、ID、コンピュータ名等です。"
+"例："
 
 #: ../../source/admin.rst:82
 msgid ""
@@ -171,6 +174,8 @@ msgid ""
 "that participant in the oTree admin interface and the payments page, "
 "etc. You can also access it from your code as ``participant.label``."
 msgstr ""
+"oTreeはこの参加者ラベルを記録し、oTreeの管理画面や支払いページ等で参加者を識別できるようにします。"
+"また、コード上で ``participant_label`` としてアクセスすることができます。"
 
 #: ../../source/admin.rst:87
 msgid ""
@@ -179,72 +184,84 @@ msgid ""
 "participant (if you are using a room-wide or session-wide URL). This "
 "reduces duplicate participation."
 msgstr ""
+"また、参加者ラベルを利用することで、セッションワイドリンクを同じ参加者が2回開いてしまっても、重複して参加することを防ぐことができます。"
 
 #: ../../source/admin.rst:92
 msgid "Arrival order"
-msgstr ""
+msgstr "到着順序"
 
 #: ../../source/admin.rst:94
 msgid ""
 "oTree will assign the first person who arrives to be P1, the second to "
 "be P2, etc., unless you are using single-use links."
 msgstr ""
+"oTreeは、単体リンクを利用している場合を除き、最初にページを開いた人からP1、P2と参加者にIDを割り当てていきます。"
 
 #: ../../source/admin.rst:100
 msgid "Customizing the admin interface (admin reports)"
-msgstr ""
+msgstr "管理画面のカスタマイズ(管理レポート)"
 
 #: ../../source/admin.rst:102
 msgid ""
 "You can add a custom tab to a session's admin page with any content you "
 "want; for example:"
-msgstr ""
+msgstr "セッションの管理画面で、必要なコンテンツを含むページを追加できます。"
+"例："
 
 #: ../../source/admin.rst:105
 msgid "A chart/graph with the game's results"
 msgstr ""
+"ゲームの結果を示すチャート/グラフ"
 
 #: ../../source/admin.rst:106
 msgid "A custom payments page that is different from oTree's built-in one"
 msgstr ""
+"独自にカスタマイズした支払いページ"
 
 #: ../../source/admin.rst:108
 msgid "Here is a screenshot:"
-msgstr ""
+msgstr "スクリーンショット"
 
 #: ../../source/admin.rst:113
 msgid ""
 "Here is a trivial example, where we add an admin report that displays a "
 "sorted list of payoffs for a given round."
 msgstr ""
+"ここで、特定のラウンドの利得のソート済みのリストを表示する管理レポートを追加する簡単な例を示します。"
 
 #: ../../source/admin.rst:116
 msgid ""
 "First, define a function ``vars_for_admin_report``. This works the same "
 "way as :ref:`vars_for_template`. For example:"
 msgstr ""
+"まず、関数 ``vars_for_template`` と同様の働きをする関数 ``vars_for_admin_report`` を定義します。"
+"例："
 
 #: ../../source/admin.rst:126
 msgid ""
 "Then create an includable template ``admin_report.html`` in your app, "
 "and display whatever variables were passed in ``vars_for_admin_report``:"
 msgstr ""
+"次に、アプリ内に組み込み可能なテンプレート ``admin_report.html`` を作成します。"
+"そして、 ``vars_for_admin_report`` で渡された変数を表示します。"
+"例："
 
 #: ../../source/admin.rst:139
 msgid "Notes:"
-msgstr ""
+msgstr "注意"
 
 #: ../../source/admin.rst:141
 msgid ""
 "``subsession``, ``session``, and ``Constants`` are passed to the "
 "template automatically."
-msgstr ""
+msgstr "``subsession`` 、 ``session`` 、 ``Constants`` は自動的にテンプレートに渡されます。"
 
 #: ../../source/admin.rst:143
 msgid ""
 "``admin_report.html`` does not need to use ``{{ block }}``. The above "
 "example is valid as the full contents of ``admin_report.html``."
-msgstr ""
+msgstr "``admin_report.html`` において、 ``{{ block }}`` を使用する必要はありません。"
+"上記の例は、 ``admin_report.html`` の完全な内容として有効です。"
 
 #: ../../source/admin.rst:146
 msgid ""
@@ -252,6 +269,8 @@ msgid ""
 "admin page will have a \"Reports\" tab. Use the menu to select the app "
 "and the round number, to see the report for that subsession."
 msgstr ""
+"セッション内の1つ以上のアプリが ``admin_report.html`` を持つ場合、管理画面に \"レポート\" タブが表示されます。"
+"メニューからアプリとラウンドを指定し、サブセッションのレポートを表示してください。"
 
 #: ../../source/admin.rst:150
 msgid ""
@@ -260,16 +279,20 @@ msgid ""
 "participant template with an ``{{ include }}``, and pass the variables "
 "like this:"
 msgstr ""
+"Tip：管理レポートと参加者ページに同じグラフを表示している場合は、"
+" ``{{ include }}`` を用いることで、参加者ページ用のテンプレートで ``admin_report.html`` を再利用できます。"
+"そして、変数については以下の例のように渡すことができます。"
+
 
 #: ../../source/admin.rst:165
 msgid "Export Data"
-msgstr ""
+msgstr "データのエクスポート"
 
 #: ../../source/admin.rst:167
 msgid ""
 "In the admin interface, click on \"Data\" to download your data as CSV "
 "or Excel."
-msgstr ""
+msgstr "管理画面で、 \"Data\" をクリックすることで、CSVまたはExcelデータとしてダウンロードできます。"
 
 #: ../../source/admin.rst:170
 msgid ""
@@ -280,10 +303,14 @@ msgid ""
 "things, such as how much time each participant spends on wait pages in "
 "total."
 msgstr ""
+"これは、ユーザーがすべてのページを完了した正確な時間である \"page times\ もエクスポートできます。"
+":download:`このPythonスクリプト <_static/pagetimes.py>` は各ページに費やされた時間を表にすることができます。"
+"このスクリプトを変更して、各参加者が待機ページに費やした合計時間などを計算することもできます。"
+
 
 #: ../../source/admin.rst:178
 msgid "Custom data exports"
-msgstr ""
+msgstr "カスタムデータのエクスポート"
 
 #: ../../source/admin.rst:180
 msgid ""
@@ -293,16 +320,21 @@ msgid ""
 "``players`` is a queryset of all the players in the database. Use a "
 "``yield`` for each row of data."
 msgstr ""
+"アプリ用に独自にカスタムしたデータのエクスポートを作成できます。"
+"oTree Studioで、 \"Player\" モデルに移動し、下部にある \"custom_export\" をクリックします。（テキストエディタを使用する場合は、以下の関数を定義します。）"
+"引数 ``players`` は、データベース内のすべてのプレーヤーのクエリセットです。"
+"データの各行について、``yield`` を使用していください。"
 
 #: ../../source/admin.rst:196
 msgid ""
 "Once this function is defined, your custom data export will be available "
 "in the regular data export page."
 msgstr ""
+"この関数を定義すると、カスタムデータのエクスポートが、通常のデータエクスポートページで利用できるようになります。"
 
 #: ../../source/admin.rst:200
 msgid "Debug Info"
-msgstr ""
+msgstr "デバッグ情報"
 
 #: ../../source/admin.rst:202
 msgid ""
@@ -310,10 +342,11 @@ msgid ""
 "``OTREE_PRODUCTION`` is not set), debug information is displayed on the "
 "bottom of all screens."
 msgstr ""
+"oTreeが ``DEBUG`` モードで実行されている場合（環境変数 ``OTREE_PRODUCTION`` が設定されていない場合 ）、デバッグ情報がすべての画面の下部に表示されます。"
 
 #: ../../source/admin.rst:207
 msgid "Payments"
-msgstr ""
+msgstr "支払い"
 
 #: ../../source/admin.rst:209
 msgid ""
@@ -322,10 +355,13 @@ msgid ""
 "participant finishes the session, and this will be displayed in various "
 "places such as the payments page."
 msgstr ""
+"もし、あなたが `finished` という :ref:`参加者フィールド <PARTICIPANT_FIELDS>` を定義するのであれば、"
+"参加者がセッションを終えるときに、 ``participant.finished = True`` に設定することでできます。そして、これは支払いページのようなさまざまな場所に"
+"表示されます。"
 
 #: ../../source/admin.rst:216
 msgid "Chat between participants and experimenter"
-msgstr ""
+msgstr "参加者と実験者間のチャット"
 
 #: ../../source/admin.rst:218
 msgid ""
@@ -339,3 +375,8 @@ msgid ""
 "html``. There is an example called \"chat with experimenter\" `here "
 "<https://www.otreehub.com/projects/otree-snippets/>`__."
 msgstr ""
+"参加者がチャットメッセージを送信できるようにするには、 `Papercups <https://github.com/papercups-io/papercups/blob/master/README.md>`__ のようなソフトウェアの使用を検討してください。"
+"Papercupsサーバーをワンクリックでセットアップするには、 \"[Deploy toHeroku]\" ボタンをクリックし、必要な構成変数のみを入力してください。"
+"そして、oTreeサイトではなく、Papercupsのサイトである、 ``BACKEND_URL`` や ``REACT_APP_URL`` を参照してください。"
+"サイトにログインし、papercups.htmlという名前のテンプレートにHTML埋め込みコードをコピーします。"
+"また、`このページ <https://www.otreehub.com/projects/otree-snippets/>`__ に\"実験者とチャット\" を行うことができるアプリの例があります。"
