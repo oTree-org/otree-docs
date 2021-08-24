@@ -78,12 +78,6 @@ oTree will automatically execute it ``num_rounds`` times.
 expect()
 ~~~~~~~~
 
-.. note::
-
-    The ``expect()`` function was introduced in September 2019.
-    Previously we recommended using ``assert`` statements, which are still OK
-    but ``expect()`` can report errors more clearly.
-
 You can use ``expect`` statements to ensure that your code is working as you expect.
 
 For example:
