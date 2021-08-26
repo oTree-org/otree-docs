@@ -19,40 +19,42 @@ msgstr ""
 
 #: ../../source/rounds.rst:2
 msgid "Apps & rounds"
-msgstr ""
+msgstr "アプリケーションとラウンド"
 
 #: ../../source/rounds.rst:5
 msgid "Apps"
-msgstr ""
+msgstr "アプリケーション"
 
 #: ../../source/rounds.rst:7
 msgid ""
 "An oTree app is a folder containing Python and HTML code. A project "
 "contains multiple apps. A session is basically a sequence of apps that "
 "are played one after the other."
-msgstr ""
+msgstr "oTreeアプリケーションはPythonおよびHTMLコードを含むフォルダとして構成されます。"
+"一つのプロジェクト内で複数のアプリケーションを含むことができます。"
+"セッションは基本的に、次々に実行される一連のアプリケーションを表します。"
 
 #: ../../source/rounds.rst:12
 msgid "Combining apps"
-msgstr ""
+msgstr "アプリケーションの組合わせ"
 
 #: ../../source/rounds.rst:14
 msgid "You can combine apps by setting your session config's ``app_sequence``."
-msgstr ""
+msgstr "セッション構成 ``app_sequence`` を設定することで、アプリケーションを組み合わせることができます。"
 
 #: ../../source/rounds.rst:17
 msgid "Passing data between apps"
-msgstr ""
+msgstr "アプリケーション間のデータ受け渡し"
 
 #: ../../source/rounds.rst:19
 msgid ""
 "See :ref:`participant fields <vars>` and :ref:`session fields "
 "<session_vars>`."
-msgstr ""
+msgstr ":ref:`Participant fields <vars>` と :ref:`session fields <session_vars>` を参照してください。"
 
 #: ../../source/rounds.rst:25
 msgid "Rounds"
-msgstr ""
+msgstr "ラウンド"
 
 #: ../../source/rounds.rst:27
 msgid ""
@@ -61,22 +63,25 @@ msgid ""
 "``app_sequence`` is ``['app1', 'app2']``, where ``app1`` has ``num_rounds"
 " = 3`` and ``app2`` has ``num_rounds = 1``, then your sessions will "
 "contain 4 subsessions."
-msgstr ""
+msgstr "``Constants.num_rounds`` に値を設定することで、実行するラウンド数を設定できます。"
+"例えば、 ``app_sequence`` が ``['app1', 'app2']`` として設定されており、 ``app1`` が ``num_rounds = 3`` に、``app2`` が ``num_rounds = 1`` " 
+"に設定されている場合は、合わせて4つのセッションが実行されます。"
 
 #: ../../source/rounds.rst:34
 msgid "Round numbers"
-msgstr ""
+msgstr "ラウンド数"
 
 #: ../../source/rounds.rst:36
 msgid ""
 "You can get the current round number with ``player.round_number`` (this "
 "attribute is present on subsession, group, and player objects). Round "
 "numbers start from 1."
-msgstr ""
+msgstr "``player.round_number`` で現在のラウンド数を参照できます。(この要素はsubsession、group、playerオブジェクトが保持しています。)"
+"ラウンド数は1から数えられます。"
 
 #: ../../source/rounds.rst:43
 msgid "Passing data between rounds or apps"
-msgstr ""
+msgstr "ラウンドとアプリケーション間のデータの受け渡し"
 
 #: ../../source/rounds.rst:45
 msgid ""
@@ -85,78 +90,88 @@ msgid ""
 "round 2, if you try to access ``player.my_field``, you will find its "
 "value is ``None``. This is because the ``Player`` objects in round 1 are "
 "separate from ``Player`` objects in round 2."
-msgstr ""
+msgstr "それぞれのラウンドは個別の ``Group`` 、 ``Player`` オブジェクトを保持します。"
+"例えば、ラウンド１で ``player.my_field = True`` に設定した場合、ラウンド２で ``player.my_field`` "
+"の値を参照しようとしても ``None`` が返ってきます。"
+"これはラウンドによって個別に ``Player`` オブジェクトが作成されるためです。"
 
 #: ../../source/rounds.rst:52
 msgid ""
 "To access data from a previous round or app, you can use one of the "
 "techniques described below."
 msgstr ""
+"過去のラウンドやアプリケーションからのデータにアクセスするために、以下のいずれかの方法でアクセスすることができます。"
+""
 
 #: ../../source/rounds.rst:56
 msgid "in_rounds, in_previous_rounds, in_round, etc."
-msgstr ""
+msgstr "in_rounds、 in_previous_rounds、 in_round など"
 
 #: ../../source/rounds.rst:58
 msgid "Player, group, and subsession objects have the following methods:"
-msgstr ""
+msgstr "Player、Group、subsessionオブジェクトは次のメソッドを持ちます。"
 
 #: ../../source/rounds.rst:60
 msgid "in_previous_rounds()"
-msgstr ""
+msgstr "in_previous_rounds()"
 
 #: ../../source/rounds.rst:61
 msgid "in_all_rounds()"
-msgstr ""
+msgstr "in_all_rounds()"
 
 #: ../../source/rounds.rst:62
 msgid "in_rounds()"
-msgstr ""
+msgstr "in_rounds()"
 
 #: ../../source/rounds.rst:63
 msgid "in_round()"
-msgstr ""
+msgstr "in_round()"
 
 #: ../../source/rounds.rst:65
 msgid ""
 "For example, if you are in the last round of a 10-round game, "
 "``player.in_previous_rounds()`` will return a list with 9 player objects,"
 " which represent the current participant in all previous rounds."
-msgstr ""
+msgstr "例えば、もし10ラウンドのゲームの最後に、 ``player.in_previous_rounds()`` を呼び出すと、"
+"過去の9ラウンド分の同じ参加者のPlayerオブジェクトのデータが返されます。"
+
 
 #: ../../source/rounds.rst:69
 msgid ""
 "``player.in_all_rounds()`` is almost the same but the list will have 10 "
 "objects, because it includes the current round's player."
-msgstr ""
+msgstr "``player.in_all_rounds()`` はほとんど同じですが、現在のラウンドも含めて10このオブジェクトを返します。"
 
 #: ../../source/rounds.rst:72
 msgid ""
 "``player.in_rounds(m, n)`` returns a list of players representing the "
 "same participant from rounds ``m`` to ``n``."
-msgstr ""
+msgstr "``player.in_rounds(m, n)`` はラウンド ``m`` からラウンド ``n`` までの同じ参加者のPlayerのリストを返します。"
 
 #: ../../source/rounds.rst:74
 msgid ""
 "``player.in_round(m)`` returns just the player in round ``m``. For "
 "example, to get the player's payoff in the previous round, you would do:"
-msgstr ""
+msgstr "``player.in_round(m)`` はラウンド ``m`` のPlayerデータを返します。"
+""例えば、前のラウンドの参加者の利得が知りたい場合は、次のようにします。""
+
 
 #: ../../source/rounds.rst:83
 msgid ""
 "These methods work the same way for subsessions (e.g. "
 "``subsession.in_all_rounds()``)."
-msgstr ""
+msgstr "これらの関数はsubsessionでも同じように機能します。（例： ``subsession.in_all_rounds()``）"
 
 #: ../../source/rounds.rst:85
 msgid ""
 "They also work the same way for groups, but it does not make sense to use"
 " them if you re-shuffle groups between rounds."
-msgstr ""
+msgstr "これらはGroupに対しても同じように機能しますが、ラウンド間でグループがシャッフルされる場合は、"
+"使用しても正しい結果を得ることはできません。"
 
 #: ../../source/rounds.rst:91
 msgid "Participant fields"
-msgstr ""
+msgstr "Participant fields"
 
 #: ../../source/rounds.rst:95
 msgid ""
@@ -165,7 +180,9 @@ msgid ""
 " 1``, you can now set ``participant.my_field = 1`` directly. Just make "
 "sure to define ``PARTICIPANT_FIELDS`` first. See `here "
 "<https://groups.google.com/g/otree/c/lbJg_ND5QkY>`__ for more info."
-msgstr ""
+msgstr "2021年の3月に、新しく追加された ``participant.vars`` ための新しい**オプションの**構文です。"
+"``participant.vars['my_field'] = 1`` を設定する代わりに、 ``participant.my_field = 1`` として、設定することができます。"
+"必ず、 ``PARTICIPANT_FIELDS`` を最初に定義してください。詳細は、 `こちら <https://groups.google.com/g/otree/c/lbJg_ND5QkY>`__ をご覧ください。"
 
 #: ../../source/rounds.rst:101
 msgid ""
@@ -174,24 +191,27 @@ msgid ""
 "apps (see :ref:`participants_and_players`). (``in_all_rounds()`` only is "
 "useful when you need to access data from a previous round of the same "
 "app.)"
-msgstr ""
+msgstr "前のアプリケーションの参加者のデータにアクセスしたいのなら、participantオブジェクトにアクセスしたいデータをあらかじめ保存しておく必要があります。"
+"このオブジェクトはアプリケーション間で保存されます。（ :ref:`Participantを参照 <participants_and_players>` ）"
+"（ ``in_all_rounds()`` は、同じアプリケーションの前のラウンドのデータにアクセスする必要があるときのみ有効です。）"
 
 #: ../../source/rounds.rst:107
 msgid ""
 "Go to settings and define ``PARTICIPANT_FIELDS``, which is a list of the "
 "names of fields you want to define on your participant."
-msgstr ""
+msgstr "実験の参加者に定義したいフィールドの名前のリストである、 ``PARTICIPANT_FIELDS`` を定義し、設定してください。"
 
 #: ../../source/rounds.rst:110
 msgid "Then in your code, you can get and set any type of data on these fields:"
-msgstr ""
+msgstr "すると、コード上でこれらのフィールドに任意のタイプのデータの取得や設定ができます。"
 
 #: ../../source/rounds.rst:116
 msgid ""
 "(Internally, all participant fields are stored in a dict called "
 "``participant.vars``. ``participant.xyz`` is equivalent to "
 "``participant.vars['xyz']``.)"
-msgstr ""
+msgstr "内部的には、すべての参加者のデータは ``participant.vars`` という辞書型リストに保存されています。"
+"また、 ``participant.xyz`` は ``participant.vars['xyz']`` と同等です。"
 
 #: ../../source/rounds.rst:119
 msgid ""
@@ -199,15 +219,17 @@ msgid ""
 "the \"Data\" tab in the session admin. If you want that, you should "
 "either use :ref:`custom-export` or save ``str(participant.vars)`` into a "
 "``LongStringField``. (The same concept applies for session fields.)"
-msgstr ""
+msgstr "Participant fields は Excel/CSV のエクスポートデータやセッション管理者の \"Data\" タブの中のデータは含んでいません。"
+"もし、そのデータを利用したいなら、:ref:`カスタムエクスポート <custom-export>` を利用するか、 ``LongStringField`` に、 ``str(participant.vars)`` を保存してください。"
+"（session fieldsにも同じことが言えます。）"
 
 #: ../../source/rounds.rst:127
 msgid "Session fields"
-msgstr ""
+msgstr "session fields"
 
 #: ../../source/rounds.rst:131
 msgid "This is a new feature; see the note above about ``PARTICIPANT_FIELDS``."
-msgstr ""
+msgstr "これは新機能です。 ``PARTICIPANT_FIELDS`` についての上記の注意を確認してください。"
 
 #: ../../source/rounds.rst:133
 msgid ""
@@ -215,15 +237,17 @@ msgid ""
 "session, add them to the ``SESSION_FIELDS``, which works the same as "
 "``PARTICIPANT_FIELDS``. Internally, all session fields are stored in "
 "``session.vars``."
-msgstr ""
+msgstr "セッション中のすべての参加者で共通のグローバル変数を利用するために、 ``SESSION_FIELDS`` を追加してください。"
+"それは、 ``PARTICIPANT_FIELDS`` と同じように働きます。"
+"内部的には、全ての session fields は ``session.vars`` に保存されます。"
 
 #: ../../source/rounds.rst:138
 msgid "Variable number of rounds"
-msgstr ""
+msgstr "ラウンド数を可変にする"
 
 #: ../../source/rounds.rst:140
 msgid "If you want a variable number of rounds, consider using :ref:`live`."
-msgstr ""
+msgstr "もし、ラウンドを可変にしたいなら、:ref:`ライブページ <live>` の利用を検討してください。"
 
 #: ../../source/rounds.rst:142
 msgid ""
@@ -232,7 +256,9 @@ msgid ""
 "that the user cannot proceed to the next page, or use "
 ":ref:`app_after_this_page`. But note that having many rounds (e.g. more "
 "than 100) might cause performance problems, so test your app carefully."
-msgstr ""
+msgstr "代わりに、 ``num_rounds`` を高い値に設定してから、プログラム内である条件で ``{{ next_button }}`` を非表示にして、"
+"先のラウンドへ進めなくするか、 :ref:`app_after_this_page` を使う方法もあります。ただし、ラウンド数が増えると(例えば、100以上)、パフォーマンスに問題が生じる可能性があります。"
+"注意して、テストしてください。"
 
 #~ msgid ""
 #~ "See :ref:`participant.vars <vars>` and "
