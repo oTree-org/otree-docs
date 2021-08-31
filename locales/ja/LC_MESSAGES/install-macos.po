@@ -39,7 +39,7 @@ msgstr ""
 "org/10.1016/j.jbef.2015.12.001>`__ (Citation: Chen, D.L., Schonger, M., "
 "Wickens, C., 2016. oTree - An open-source platform for laboratory, "
 "online and field experiments. Journal of Behavioral and Experimental "
-"Finance, vol 9: 88-97)を引用する必要があります．"
+"Finance, vol 9: 88-97) を引用する必要があります．"
 
 #: ../../source/install-macos.rst:18
 msgid ""

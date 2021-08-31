@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/live.rst:4
 msgid "Live pages"
-msgstr ""
+msgstr "ライブページ"
 
 #: ../../source/live.rst:6
 msgid ""
@@ -27,16 +27,19 @@ msgid ""
 "time, enabling continuous time games. Live pages are a great fit for "
 "games with lots of back-and-forth interaction between users."
 msgstr ""
+"ライブページは、サーバーと継続的に通信し、リアルタイムに更新されるため、連続した時間のゲームが可能です。"
+"ライブページは、ユーザー同士のやりとりが多いゲームに向いています。"
 
 #: ../../source/live.rst:11
 msgid ""
 "There are a bunch of examples `here <https://www.otreehub.com/projects"
 "/otree-more-demos/>`__."
 msgstr ""
+"`こちら <https://www.otreehub.com/projects/otree-more-demos/>`__ で多くの例を確認できます。"
 
 #: ../../source/live.rst:14
 msgid "Sending data to the server"
-msgstr ""
+msgstr "サーバーへのデータ送信"
 
 #: ../../source/live.rst:16
 msgid ""
@@ -44,12 +47,15 @@ msgid ""
 "whenever you want to send data to the server. For example, to submit a "
 "bid of 99 on behalf of the user, call:"
 msgstr ""
+"テンプレートのJavaScriptコードでは、サーバーにデータを送信したいときに ``liveSend()`` 関数を呼び出します。"
+"例えば、ユーザーに代わって 99 の入札を行う場合は、次のように呼び出します:"
 
 #: ../../source/live.rst:25
 msgid ""
 "Define a function that will receive this message. Its argument is "
 "whatever data was sent."
 msgstr ""
+"このメッセージを受信する関数を定義します。この関数の引数は、送信されたデータです。"
 
 #: ../../source/live.rst:38
 msgid ""
@@ -57,10 +63,12 @@ msgid ""
 "name starts with ``live_``. (Note, ``live_method`` on ``WaitPage`` is not"
 " yet supported.)"
 msgstr ""
+"oTree Studio を使用している場合は、名前が ``live_`` で始まるプレイヤー関数を定義する必要があります。"
+"(なお、 ``WaitPage`` の ``live_method`` はまだサポートされていません。)"
 
 #: ../../source/live.rst:43
 msgid "Sending data to the page"
-msgstr ""
+msgstr "ページへのデータ送信"
 
 #: ../../source/live.rst:45
 msgid ""
@@ -68,56 +76,66 @@ msgid ""
 " receive a message. For example, here is a method that simply sends "
 "\"thanks\" to whoever sends a message."
 msgstr ""
+"データを送り返すには、メッセージを受け取るプレイヤーの ID をキーにした辞書型を返します。"
+"例えば、メッセージを送ってきた人に \"thanks\" と送るメソッドは以下の通りです:"
 
 #: ../../source/live.rst:55
 msgid ""
 "To send to multiple players, use their ``id_in_group``. For example, this"
 " forwards every message to players 2 and 3:"
 msgstr ""
+"複数のプレイヤーに送信するには、そのプレイヤーの ``id_in_group`` を使用します。"
+"例えば、このメソッドはすべてのメッセージをプレイヤー2とプレイヤー3に転送します:"
 
 #: ../../source/live.rst:63
 msgid ""
 "To broadcast it to the whole group, use ``0`` (special case since it is "
 "not an actual ``id_in_group``)."
 msgstr ""
+"グループ全体に送信する場合は、 ``0`` を使用します（実際の ``id_in_group`` ではないため、特殊なケースです）。"
 
 #: ../../source/live.rst:71
 msgid ""
 "In your JavaScript, define a function ``liveRecv``. This will be "
 "automatically called each time a message is received from the server."
 msgstr ""
+"JavaScript で、 ``liveRecv`` 関数を定義します。"
+"この関数は、サーバーからメッセージを受信するたびに自動的に呼び出されます。"
 
 #: ../../source/live.rst:82
 msgid "Example: auction"
-msgstr ""
+msgstr "例: オークション"
 
 #: ../../source/live.rst:131
 msgid "(Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)"
-msgstr ""
+msgstr "(注: JavaScriptでは ``data.id_in_group == data['id_in_group']`` となります。)"
 
 #: ../../source/live.rst:134
 msgid "Data"
-msgstr ""
+msgstr "データ"
 
 #: ../../source/live.rst:136
 msgid ""
 "The data you send and receive can be any data type (as long as it is JSON"
 " serializable). For example these are all valid:"
 msgstr ""
+"送受信するデータは、どのようなデータタイプでも問題ありません。(JSONにシリアライズできるものであれば) "
+"例えば、これらはすべて有効です:"
 
 #: ../../source/live.rst:146
 msgid ""
 "The most versatile type of data is a dict, since it allows you to include"
 " multiple pieces of metadata, in particular what type of message it is:"
 msgstr ""
+"最も汎用性の高いデータタイプは辞書型です。複数のメタデータ、特にメッセージの種類を含めることができるからです:"
 
 #: ../../source/live.rst:155
 msgid "Then you can use ``if`` statements to process different types of messages:"
-msgstr ""
+msgstr "``if`` 文を使って異なるタイプのメッセージを処理することができます:"
 
 #: ../../source/live.rst:175
 msgid "History"
-msgstr ""
+msgstr "履歴"
 
 #: ../../source/live.rst:177
 msgid ""
@@ -128,10 +146,16 @@ msgid ""
 "``liveSend({})``, and you can configure your live_method to retrieve the "
 "history of the game from the database."
 msgstr ""
+"デフォルトでは、参加者がページに到着する前に送信されたメッセージは表示されません。"
+"(また、ページを更新してもデータは再送信されません。)"
+"履歴を保存したい場合は、データベースに保存する必要があります。"
+"プレイヤーがページを読み込んだときに、JavaScript で ``liveSend({})`` のように呼び出し、"
+"データベースからゲームの履歴を取得するように live_method を設計することができます。"
+
 
 #: ../../source/live.rst:184
 msgid "ExtraModel"
-msgstr ""
+msgstr "エクストラモデル"
 
 #: ../../source/live.rst:186
 msgid ""
@@ -139,6 +163,8 @@ msgid ""
 "<ExtraModel>`, which allows you to store each individual message or "
 "action in the database."
 msgstr ""
+"ライブページは、個々のメッセージやアクションをデータベースに保存することができる "
+":ref:`エクストラモデル <ExtraModel>` と一緒に使用されることが多いです。"
 
 #: ../../source/live.rst:190
 msgid "Keeping users on the page"
@@ -149,20 +175,22 @@ msgid ""
 "Let's say you require 10 messages to be sent before the users can proceed"
 " to the next page."
 msgstr ""
+"ユーザーが次のページに進む前に、10通のメッセージを送信する必要があるとします。"
 
 #: ../../source/live.rst:195
 msgid ""
 "First, you should omit the ``{{ next_button }}``. (Or use JS to hide it "
 "until the task is complete.)"
 msgstr ""
+"まず、 ``{{ next_button }}`` を削除します。(または JS を使ってタスクが完了するまで非表示にします。)"
 
 #: ../../source/live.rst:198
 msgid "When the task is completed, you send a message:"
-msgstr ""
+msgstr "タスクが完了したら、メッセージを送信します:"
 
 #: ../../source/live.rst:216
 msgid "Then in the template, automatically submit the page via JavaScript:"
-msgstr ""
+msgstr "そして、テンプレートでは、JavaScript でページを自動送信します:"
 
 #: ../../source/live.rst:229
 msgid ""
@@ -170,10 +198,12 @@ msgid ""
 "page, e.g. one that lets you proceed after a certain timeout, even if not"
 " all players have arrived."
 msgstr ""
+"また、同様のテクニックを使って、独自の待ち受けページを実装することができます。"
+"例えば、一定のタイムアウト後に、すべてのプレーヤーが到着していなくても、続行できるようなページです。"
 
 #: ../../source/live.rst:234
 msgid "General advice about live pages"
-msgstr ""
+msgstr "ライブページに関する一般的なアドバイス"
 
 #: ../../source/live.rst:236
 msgid ""
@@ -181,10 +211,13 @@ msgid ""
 "recommend implementing most of your logic in Python, and just using "
 "JavaScript to update the page's HTML, because:"
 msgstr ""
+"ここでは、一般的なアドバイスを紹介します (すべての状況に当てはまるわけではありません)。"
+"ロジックのほとんどを Python で実装し、JavaScript はページの HTML を更新するためにを使用することをお勧めします。"
+"理由は以下の通りです:"
 
 #: ../../source/live.rst:240
 msgid "The JavaScript language can be quite tricky to use properly"
-msgstr ""
+msgstr "JavaScript は適切に使用するのが難しい言語である。"
 
 #: ../../source/live.rst:241
 msgid ""
@@ -192,32 +225,39 @@ msgid ""
 "JavaScript runs on the clients, which can get out of sync with each "
 "other, and data can get lost when the page is closed or reloaded."
 msgstr ""
+"Python のコードはサーバー上で実行され、集中管理されていて信頼性が高い。"
+"JavaScript はクライアント上で実行されるが、クライアントは互いに同期が取れず、"
+"ページを閉じたりリロードしたりするとデータが失われる可能性がある。"
 
 #: ../../source/live.rst:244
 msgid ""
 "Because Python code runs on the server, it is more secure and cannot be "
 "viewed or modified by participants."
 msgstr ""
+"Python のコードはサーバー上で実行されるため、より安全で、参加者が見たり変更したりすることができない。"
 
 #: ../../source/live.rst:248
 msgid "Example: tic-tac-toe"
-msgstr ""
+msgstr "例: 三目並べ"
 
 #: ../../source/live.rst:250
 msgid ""
 "Let's say you are implementing a game of tic-tac-toe. There are 2 types "
 "of messages your live_method can receive:"
 msgstr ""
+"三目並べのゲームを実装するとしましょう。"
+"live_method が受け取るメッセージには2種類あります:"
 
 #: ../../source/live.rst:253
 msgid "A user marks a square, so you need to notify the other player"
-msgstr ""
+msgstr "ユーザーがマスをマークしたときに、他のプレイヤーに通知する必要がある"
 
 #: ../../source/live.rst:254
 msgid ""
 "A user loads (or reloads) the page, so you need to send them the current "
 "board layout."
 msgstr ""
+"ユーザーがページをロード (またはリロード) したときに、現在のボードレイアウトを送信する必要がある"
 
 #: ../../source/live.rst:256
 msgid ""
@@ -225,28 +265,34 @@ msgid ""
 "``onclick``, e.g. so when the user clicks on square 3, that move gets "
 "sent to the server:"
 msgstr ""
+"1\. については、 ``onclick`` などの JavaScript のイベントハンドラを使用して、"
+"ユーザが 3 のマスをクリックすると、その動きがサーバに送られるようにします:"
 
 #: ../../source/live.rst:263
 msgid ""
 "For situation 2, it's good to put some code like this in your template, "
 "which sends an empty message to the server when the page loads:"
 msgstr ""
+"2\. については、テンプレートに次のようなコードを入れて、"
+"ページが読み込まれたときに、サーバーに空のメッセージを送るのが良いでしょう:"
 
 #: ../../source/live.rst:272
 msgid "The server handles these 2 situations with an \"if\" statement:"
-msgstr ""
+msgstr "サーバーはこの2つの状況を ``if`` 文で処理します:"
 
 #: ../../source/live.rst:299
 msgid ""
 "In situation 2 (the player loads the page), the client gets a message "
 "like:"
 msgstr ""
+"2\. (プレーヤーがページを読み込む状況) では、クライアントは次のようなメッセージを受け取ります:"
 
 #: ../../source/live.rst:305
 msgid ""
 "In situation 1, the player gets the update about the move that was just "
 "made, AND the current state."
 msgstr ""
+"1\. では、プレイヤーは先ほどの動きに関する更新情報と、現在の状態を取得します。"
 
 #: ../../source/live.rst:311
 msgid ""
@@ -254,6 +300,8 @@ msgid ""
 "whose move it is; it just trusts the info it receives from the server. It"
 " can even redraw the board each time it receives a message."
 msgstr ""
+"JavaScript のコードは、誰の一手なのかを把握する必要はなく、サーバーから受け取った情報を信頼するだけでいいのです。"
+"メッセージを受け取るたびに盤面を描き直すこともできます。"
 
 #: ../../source/live.rst:315
 msgid ""
@@ -262,24 +310,29 @@ msgid ""
 "that. For reasons listed in the previous section, it's better to do this "
 "in your live_method than in JavaScript code."
 msgstr ""
+"あなたのコードは、ユーザーの入力を検証する必要もあります。"
+"例えば、実際にはプレイヤー2の番なのにプレイヤー1が動こうとした場合、それをブロックする必要があります。"
+"前のセクションで述べた理由から、 JavaScript のコードではなく、 live_method で実装するのが良いでしょう。"
 
 #: ../../source/live.rst:320
 msgid "Summary"
-msgstr ""
+msgstr "要約"
 
 #: ../../source/live.rst:322
 msgid "As illustrated above, the typical pattern for a live_method is like this::"
-msgstr ""
+msgstr "これまで説明してきたように、 live_method の典型的なパターンは次のようなものです:"
 
 #: ../../source/live.rst:336
 msgid ""
 "Note that we get the game's state twice. That's because the state changes"
 " when we update our models, so we need to refresh it."
 msgstr ""
+"ゲームの状態を2回取得していることに注意してください。"
+"モデルを更新するとゲームの状態が変化するため、再度ゲームの状態を取得しています。"
 
 #: ../../source/live.rst:340
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
 #: ../../source/live.rst:341
 msgid ""
@@ -287,6 +340,8 @@ msgid ""
 "get an error like ``liveSend is not defined``. So, wait for "
 "``DOMContentLoaded`` (or jQuery document.ready, etc):"
 msgstr ""
+"ページの読み込みが終わる前に ``liveSend`` を呼び出すと、 ``liveSend is not defined`` などのエラーが発生します。"
+"そのため、 ``DOMContentLoaded`` (または jQuery の document.ready など) を待つようにします:"
 
 #: ../../source/live.rst:351
 msgid ""
@@ -296,6 +351,10 @@ msgid ""
 "doing ``document.getElementById(\"form\").submit();`` in your "
 "``liveRecv``."
 msgstr ""
+"ユーザーが 「次へ」 ボタンをクリックしたときには、 ``liveSend`` を実行しないでください。"
+"ページを離れると、 ``liveSend`` が中断される可能性があります。"
+"代わりに、ユーザーに ``liveSend`` を実行する通常のボタンをクリックしてもらい、"
+"``liveRecv`` で ``document.getElementById(\"form\").submit();`` を実行するようにします。"
 
 #~ msgid ""
 #~ "Live pages communicate with the server"
