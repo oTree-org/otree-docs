@@ -378,11 +378,19 @@ put HTML like this in your template:
         Pizza is the best food:
     </label>
 
-    <div class="input-group">
-        <span class="input-group-text">Disagree</span>
-        <input type="range" name="pizza" min="-2" max="2" step="1" class="form-range">
-        <span class="input-group-text">Agree</span>
+    <div style="display: flex">
+        Disagree
+        &nbsp;
+        <input type="range" name="pizza" min="-2" max="2" step="1" style="flex: 1">
+        &nbsp;
+        Agree
     </div>
+
+..  the previous input-group-text solution apparently worked on the first version of oTree 5,
+    but as at 5.3.0 it splits across lines.
+    we use flex because:
+    (1) it aligns the slider with the text vertically
+    (2) it gives full-width which looks nice
 
 If you want to show the current numeric value, or hide the knob until the slider is clicked,
 you could do that with JavaScript,
