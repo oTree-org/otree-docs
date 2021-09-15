@@ -108,11 +108,11 @@ You can get the human-readable label corresponding to the user's choice like thi
 
 .. code-block:: python
 
-    player.get_field_display('cooperated')  # returns e.g. 'Defect'
+    player.field_display('cooperated')  # returns e.g. 'Defect'
 
 .. note::
 
-    ``get_field_display`` is new in oTree 5 (March 2021).
+    ``field_display`` is new in oTree 5.4 (August 2021).
 
 Optional fields
 ~~~~~~~~~~~~~~~

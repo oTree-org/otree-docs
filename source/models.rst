@@ -274,3 +274,32 @@ which gets re-executed if the user refreshes the page).
 
 If you want to set your own random seed, don't use the ``random.seed()`` function.
 Instead, generate an instance of ``random.Random`` as described `here <https://stackoverflow.com/a/37356024>`__
+
+.. _field_maybe_none:
+
+field_maybe_none
+----------------
+
+If you access a field whose value is ``None``, oTree will raise a ``TypeError``.
+This is designed to catch situations where a user forgot to assign a value to that field,
+or forgot to include it in ``form_fields``.
+
+However, sometimes you need to intentionally access a field whose value may be ``None``.
+To do this, use ``field_maybe_none``, which will suppress the error:
+
+.. code-block:: python
+
+    # instead of player.abc, do:
+    abc = player.field_maybe_none('abc')
+    # also works on group and subsession
+
+.. note::
+
+    ``field_maybe_none`` is new in oTree 5.4 (August 2021).
+
+An alternative solution is to assign an initial value to the field so that its value is never ``None``:
+
+.. code-block:: python
+
+    abc = models.BooleanField(initial=False)
+    xyz = models.StringField(initial='')

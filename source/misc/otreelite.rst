@@ -20,7 +20,7 @@ Other advantages of oTree Lite:
 -   Fewer dependencies such as Twisted that cause installation problems for some people
 -   Compatible with more versions of Python
 -   No need for Redis or second dyno
--   I also expect it to eventually run much faster, once I start performance tuning it.
+-   Better performance
 
 For the curious people who want to delve into oTree's internal source code,
 you will have an easier time navigating oTree Lite.
@@ -135,15 +135,7 @@ Misc
 -   Translating an app to multiple languages works differently. See :ref:`i18n`.
 -   If you try to access a Player/Group/Subsession field whose value is still ``None``,
     oTree will raise an error. You can override this behavior by setting the initial value of the field
-    to something other than ``None``, or by catching the exception:
-
-.. code-block:: python
-
-    try:
-      xyz = player.xyz
-    except TypeError:
-      xyz = None
-
+    to something other than ``None``, or by using :ref:`field_maybe_none`.
 
 Django
 ~~~~~~
