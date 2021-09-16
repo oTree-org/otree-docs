@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../source/misc/advanced.rst:2
 msgid "Advanced features"
-msgstr ""
+msgstr "高度な機能"
 
 #: ../../source/misc/advanced.rst:4 ../../source/misc/bots_advanced.rst:6
 msgid "These are advanced features that are mostly unsupported in oTree Studio."
-msgstr ""
+msgstr "これらの機能の多くはは oTree スタジオにおいて、サポートされていません。"
 
 #: ../../source/misc/advanced.rst:9
 msgid "ExtraModel"
-msgstr ""
+msgstr "ExtraModel"
 
 #: ../../source/misc/advanced.rst:11
 msgid ""
@@ -35,89 +35,93 @@ msgid ""
 " points about a single player. For example, a list of bids, or a list of "
 "stimuli and reaction times. They are frequently used together with "
 ":ref:`live`."
-msgstr ""
+msgstr "ExtraModel は1人の参加者に関して多くのデータを保存する必要がある場合に役立ちます。"
+"たとえば、入札のリストや反応時間のリスト等です。それらは :ref:`ライブページ <live>` とともに頻繁に使用されます。"
 
 #: ../../source/misc/advanced.rst:15
 msgid ""
 "There are a bunch of examples `here <https://www.otreehub.com/projects"
 "/otree-more-demos/>`__."
-msgstr ""
+msgstr "`ここに多くの例があります。 <https://www.otreehub.com/projects/otree-more-demos/>`__ "
 
 #: ../../source/misc/advanced.rst:17
 msgid "An ExtraModel should link to another model:"
-msgstr ""
+msgstr "ExtraModel は他のモデルとリンクする必要があります。"
 
 #: ../../source/misc/advanced.rst:25
 msgid "Each time the user makes a bid, you store it in the database:"
-msgstr ""
+msgstr "参加者が入札するたびに、データベースに保存されます。"
 
 #: ../../source/misc/advanced.rst:31
 msgid "Later, you can retrieve the list of a player's bids:"
-msgstr ""
+msgstr "そして、参加者の入札のリストを取得できます。"
 
 #: ../../source/misc/advanced.rst:37
 msgid "An ExtraModel can have multiple links:"
-msgstr ""
+msgstr "ExtraModel は複数のリンクを保持することができます。"
 
 #: ../../source/misc/advanced.rst:48
 msgid "Then you can query it in various ways:"
-msgstr ""
+msgstr "そして、さまざまな方法でクエリを実行できます。"
 
 #: ../../source/misc/advanced.rst:55
 msgid "For more complex filters and sorting, you should use list operations:"
-msgstr ""
+msgstr "より複雑なフィルタやソートのためには、リスト操作を使う必要があります。"
 
 #: ../../source/misc/advanced.rst:61
 msgid ""
 "See the example psychology games such as the Stroop task, which show how "
 "to generate ExtraModel data from each row of a CSV spreadsheet."
-msgstr ""
+msgstr "CSVスプレッドシートの各行からExtraModelデータを生成する方法を示している、Stroopタスクなどの心理学ゲームの例を参照してください。"
 
 #: ../../source/misc/advanced.rst:65
 msgid "Templates"
-msgstr ""
+msgstr "テンプレート"
 
 #: ../../source/misc/advanced.rst:68
 msgid "template_name"
-msgstr ""
+msgstr "template_name"
 
 #: ../../source/misc/advanced.rst:70
 msgid ""
 "If the template needs to have a different name from your page class (e.g."
 " you are sharing the same template for multiple pages), set "
 "``template_name``. Example:"
-msgstr ""
+msgstr "テンプレートの名前をページクラスとは異なるものにする必要がある場合（たとえば、複数のページで同じテンプレートを共有している場合）、 ``template_name`` を設定します。例："
 
 #: ../../source/misc/advanced.rst:82
 msgid "CSS/JS and base templates"
-msgstr ""
+msgstr "CSS/JS とベーステンプレート"
 
 #: ../../source/misc/advanced.rst:84
 msgid ""
 "To include the same JS/CSS in all pages of an app, either put it in a "
-"ref:`static file <staticfiles>` or put it in an includable template."
-msgstr ""
+":ref:`static file <staticfiles>` or put it in an includable template."
+msgstr "アプリのすべてのページに同じ JS / CSS を含めるには、 :ref:`静的ファイル <staticfiles>` にテンプレートを配置するか、"
+"includable template にテンプレートを配置する必要があります。"
 
 #: ../../source/misc/advanced.rst:90
 msgid "Static files"
-msgstr ""
+msgstr "静的ファイル"
 
 #: ../../source/misc/advanced.rst:92
 msgid ""
 "Here is how to include images (or any other static file like .css, .js, "
 "etc.) in your pages."
-msgstr ""
+msgstr "ページに画像（または.css、.jsなどの他の静的ファイル）を含める方法は次のとおりです。"
 
 #: ../../source/misc/advanced.rst:94
 msgid ""
 "At the root of your oTree project, there is a ``_static/`` folder. Put a "
 "file there, for example ``puppy.jpg``. Then, in your template, you can "
 "get the URL to that file with ``{{ static 'puppy.jpg' }}``."
-msgstr ""
+msgstr "oTreeプロジェクトのルートには、"
+" ``_static/`` フォルダがあります。たとえば、そこに ``puppy.jpg`` のようなファイルを配置します。"
+"テンプレートで、 ``{{ static 'puppy.jpg' }}`` を使用してそのファイルへのURLを取得することができます。"
 
 #: ../../source/misc/advanced.rst:99
 msgid "To display an image, use the ``<img>`` tag, like this:"
-msgstr ""
+msgstr "画像を表示するには、次のような ``<img>`` タグを使用します。"
 
 #: ../../source/misc/advanced.rst:105
 msgid ""
@@ -125,49 +129,54 @@ msgid ""
 "better to make a subfolder with the name of your app, and save it as "
 "``_static/your_app_name/puppy.jpg``, to keep files organized and prevent "
 "name conflicts."
-msgstr ""
+msgstr "上記で画像を ``_static/puppy.jpg`` に保存しましたが、"
+"実際には、ファイル名の競合を防ぐために、"
+"アプリの名前でサブフォルダーを作成し、 ``_static/アプリ名/puppy.jpg`` として保存することをおすすめします。"
 
 #: ../../source/misc/advanced.rst:110
 msgid "Then your HTML code becomes:"
-msgstr ""
+msgstr "次に、HTMLコードは次のようになります。"
 
 #: ../../source/misc/advanced.rst:116
 msgid ""
 "(If you prefer, you can also put static files inside your app folder, in "
 "a subfolder called ``static/your_app_name``.)"
-msgstr ""
+msgstr "（必要に応じて、静的ファイルをアプリフォルダー内のサブフォルダー  ``static/your_app_name`` に配置することもできます）"
 
 #: ../../source/misc/advanced.rst:119
 msgid ""
 "If a static file is not updating even after you changed it, this is "
 "because your browser cached the file. Do a full page reload (usually "
 "Ctrl+F5)"
-msgstr ""
+msgstr "静的ファイルを変更しても更新されない場合は、ブラウザがファイルをキャッシュしていることが考えられます。ページ全体をリロードすることで解決する可能性があります。（通常はCtrl + F5）"
 
 #: ../../source/misc/advanced.rst:123
 msgid ""
 "If you have videos or high-resolution images, it's preferable to store "
 "them somewhere online and reference them by URL because the large file "
 "size can make uploading your .otreezip file much slower."
-msgstr ""
+msgstr "ビデオや高解像度の画像がある場合は、"
+"オンライン上に保存し、URLで参照することをお勧めします。"
+"ファイルサイズが大きいと .otreezip ファイルのアップロードが非常に遅くなる可能性があるためです。"
 
 #: ../../source/misc/advanced.rst:130
 msgid "Wait pages"
-msgstr ""
+msgstr "Wait page"
 
 #: ../../source/misc/advanced.rst:135
 msgid "Custom wait page template"
-msgstr ""
+msgstr "カスタム wait page テンプレート"
 
 #: ../../source/misc/advanced.rst:137
 msgid ""
 "You can make a custom wait page template. For example, save this to "
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
-msgstr ""
+msgstr "カスタム wait page テンプレートを作成できます。"
+"たとえば、これを ``your_app_name/templates/your_app_name/MyWaitPage.html`` に保存します。"
 
 #: ../../source/misc/advanced.rst:150
 msgid "Then tell your wait page to use this template:"
-msgstr ""
+msgstr "次に、wait page にこのテンプレートを使用するように指示します。"
 
 #: ../../source/misc/advanced.rst:157
 msgid ""
@@ -175,25 +184,29 @@ msgid ""
 "``body_text`` and ``title_text`` attributes are just shorthand for "
 "setting ``vars_for_template``; the following 2 code snippets are "
 "equivalent:"
-msgstr ""
+msgstr "そして、通常の方法で ``vars_for_template`` を使用できます。"
+"実際、 ``body_text`` と ``title_text`` 属性は、 ``vars_for_template`` の設定のための省略形にすぎません。次の2つのコードは同等です。"
 
 #: ../../source/misc/advanced.rst:175
 msgid ""
 "If you want to apply your custom wait page template globally, save it to "
 "``_templates/global/WaitPage.html``. oTree will then automatically use it"
 " everywhere instead of the built-in wait page."
-msgstr ""
+msgstr "カスタム wait page テンプレートをグローバルに適用する場合は、"
+" ``_templates/global/WaitPage.html`` テンプレートを保存することで、"
+"oTreeは組み込みの wait page ではなく、カスタム wait page を使うように設定されます。"
 
 #: ../../source/misc/advanced.rst:181
 msgid "Currency"
-msgstr ""
+msgstr "通貨"
 
 #: ../../source/misc/advanced.rst:183
 msgid ""
 "To customize the name \"points\" to something else like \"tokens\" or "
 "\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
 "'tokens'``."
-msgstr ""
+msgstr "\"points\" の名前を \"tokens\" や \"credits\" のような他の名前にカスタマイズするためには、"
+" ``POINTS_CUSTOM_NAME`` を設定します。例えば、 ``POINTS_CUSTOM_NAME = 'tokens'`` "
 
 #: ../../source/misc/advanced.rst:186
 msgid ""
@@ -201,161 +214,166 @@ msgid ""
 "amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
 "extra decimal places show up but are always 0, then you should reset the "
 "database."
-msgstr ""
+msgstr "``REAL_WORLD_CURRENCY_DECIMAL_PLACES`` を設定すると、実際の通貨金額の小数点以下の桁数を変更できます。"
+"小数点以下の桁数が表示されても、常に0である場合は、データベースをリセットする必要があります。"
 
 #: ../../source/misc/advanced.rst:192
 msgid "Reading CSV or other files"
-msgstr ""
+msgstr "CSVやその他のファイル読み込み"
 
 #: ../../source/misc/advanced.rst:194
 msgid ""
 "Store yourfile.csv in your app folder. Then put this code anywhere you "
 "want to read the file (in a function or in Constants):"
-msgstr ""
+msgstr "アプリケーションフォルダに CSVファイルを配置します。そして、 このコードをファイル読み取り処理を行いたい場所（Constantsや関数内）に配置します。"
 
 #: ../../source/misc/advanced.rst:204
 msgid ""
 "If it's not CSV and you just want to read the file contents as a string, "
 "this gets simplified to:"
-msgstr ""
+msgstr "CSVではなく、ファイルの内容を文字列として読み取りたい場合は、次のように簡略化できます。"
 
 #: ../../source/misc/bots_advanced.rst:4
 msgid "Bots: advanced features"
-msgstr ""
+msgstr "ボット：高度な機能"
 
 #: ../../source/misc/bots_advanced.rst:11
 msgid "Command line bots"
-msgstr ""
+msgstr "コマンドラインボット"
 
 #: ../../source/misc/bots_advanced.rst:13
 msgid ""
 "An alternative to running bots in your web browser is to run them in the "
 "command line. Command line bots run faster and require less setup."
-msgstr ""
+msgstr "Webブラウザーでボットを実行する代わりに、コマンドラインでボットを実行することもできます。"
+"コマンドラインボットはより高速に実行され、セットアップも少なくて済みます。"
 
 #: ../../source/misc/bots_advanced.rst:16
 #: ../../source/misc/bots_advanced.rst:51
 msgid "Run this::"
-msgstr ""
+msgstr "これを実行します。"
 
 #: ../../source/misc/bots_advanced.rst:20
 msgid ""
 "To test with a specific number of participants (otherwise it will default"
 " to ``num_demo_participants``)::"
-msgstr ""
+msgstr "特定の数の参加者でテストするには（それ以外の場合はデフォルトで ``num_demo_participants`` ）："
 
 #: ../../source/misc/bots_advanced.rst:25
 msgid "To run tests for all session configs::"
-msgstr ""
+msgstr "すべてのセッション構成のテストを実行するには："
 
 #: ../../source/misc/bots_advanced.rst:30
 msgid "Exporting data"
-msgstr ""
+msgstr "データのエクスポート"
 
 #: ../../source/misc/bots_advanced.rst:32
 msgid "Use the ``--export`` flag to export the results to a CSV file::"
-msgstr ""
+msgstr "``--export`` フラグを使用して、結果をCSVファイルにエクスポートします。"
 
 #: ../../source/misc/bots_advanced.rst:36
 msgid "To specify the folder where the data is saved, do::"
-msgstr ""
+msgstr "データが保存されるフォルダを指定するには、次の手順を実行します。"
 
 #: ../../source/misc/bots_advanced.rst:42
 msgid "Command-line browser bots"
-msgstr ""
+msgstr "コマンドラインブラウザボット"
 
 #: ../../source/misc/bots_advanced.rst:44
 msgid ""
 "You can launch browser bots from the command line, using ``otree "
 "browser_bots``."
-msgstr ""
+msgstr "``otree browser_bots`` を使用して、コマンドラインからブラウザボットを起動できます。"
 
 #: ../../source/misc/bots_advanced.rst:46
 msgid ""
 "Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in "
 "``settings.py`` (more info below)."
-msgstr ""
+msgstr "Google Chromeがインストールされていることを確認するか、 ``BROWSER_COMMAND`` を ``settings.py`` で設定してください。（下記詳細）。"
 
 #: ../../source/misc/bots_advanced.rst:48
 msgid "Set ``OTREE_REST_KEY`` env var as described in :ref:`rest`."
-msgstr ""
+msgstr ":ref:`rest` の説明に従って、環境変数 ``OTREE_REST_KEY`` を設定します。"
 
 #: ../../source/misc/bots_advanced.rst:49
 msgid "Run your server"
-msgstr ""
+msgstr "サーバを実行する。"
 
 #: ../../source/misc/bots_advanced.rst:50
 msgid "Close all Chrome windows."
-msgstr ""
+msgstr "すべてのChromeウィンドウを閉じます。"
 
 #: ../../source/misc/bots_advanced.rst:55
 msgid ""
 "This will launch several Chrome tabs and run the bots. When finished, the"
 " tabs will close, and you will see a report in your terminal window."
-msgstr ""
+msgstr "これにより、いくつかのChromeタブが起動し、ボットが実行されます。終了すると、タブが閉じ、ターミナルにレポートが表示されます。"
 
 #: ../../source/misc/bots_advanced.rst:59
 msgid ""
 "If Chrome doesn't close windows properly, make sure you closed all Chrome"
 " windows prior to launching the command."
-msgstr ""
+msgstr "Chromeでウィンドウが正しく閉じられない場合は、コマンドを起動する前に、必ずすべてのChromeウィンドウを閉じてください。"
 
 #: ../../source/misc/bots_advanced.rst:63
 msgid "Command-line browser bots on a remote server (e.g. Heroku)"
-msgstr ""
+msgstr "リモートサーバー（Herokuなど）上のコマンドラインブラウザボット"
 
 #: ../../source/misc/bots_advanced.rst:65
 msgid ""
 "If the server is running on a host/port other than the usual "
 "``http://localhost:8000``, you need to pass ``--server-url``. For "
 "example, if it's on Heroku, you would do like this::"
-msgstr ""
+msgstr "サーバーが通常の ``http://localhost:8000`` 以外のホスト/ポートで実行されている場合は、"
+" ``--server-url`` を渡す必要があります。例えば、Herokuにある場合は、次のようにします。"
 
 #: ../../source/misc/bots_advanced.rst:73
 msgid "Choosing session configs and sizes"
-msgstr ""
+msgstr "セッションの構成とサイズの選択"
 
 #: ../../source/misc/bots_advanced.rst:75
 msgid "You can specify the number of participants::"
-msgstr ""
+msgstr "参加者の数を指定できます。"
 
 #: ../../source/misc/bots_advanced.rst:79
 msgid "To test all session configs, just run this::"
-msgstr ""
+msgstr "次のコマンドを実行することですべてのセッション構成をテストすることができます。"
 
 #: ../../source/misc/bots_advanced.rst:85
 msgid "Browser bots: misc notes"
-msgstr ""
+msgstr "ブラウザボット：その他の注意"
 
 #: ../../source/misc/bots_advanced.rst:87
 msgid ""
 "You can use a browser other than Chrome by setting ``BROWSER_COMMAND`` in"
 " ``settings.py``. Then, oTree will open the browser by doing something "
 "like ``subprocess.Popen(settings.BROWSER_COMMAND)``."
-msgstr ""
+msgstr "``settings.py`` で ``BROWSER_COMMAND`` を設定することで 、Chrome以外のブラウザを使用できます。"
+"そして、oTreeは ``subprocess.Popen(settings.BROWSER_COMMAND)`` のようなコマンドを実行してブラウザを開きます。"
 
 #: ../../source/misc/bots_advanced.rst:94
 msgid "Test cases"
-msgstr ""
+msgstr "テストケース"
 
 #: ../../source/misc/bots_advanced.rst:96
 msgid ""
 "You can define an attribute ``cases`` on your PlayerBot class that lists "
 "different test cases. For example, in a public goods game, you may want "
 "to test 3 scenarios:"
-msgstr ""
+msgstr "さまざまなテストケースのリストである、属性 ``cases`` をPlayerBotクラスに定義できます。"
+"たとえば、公共財ゲームでは、次の3つのシナリオをテストすることができます。"
 
 #: ../../source/misc/bots_advanced.rst:100
 msgid "All players contribute half their endowment"
-msgstr ""
+msgstr "すべてのプレーヤーが財産の半分を寄付するケース"
 
 #: ../../source/misc/bots_advanced.rst:101
 msgid "All players contribute nothing"
-msgstr ""
+msgstr "すべてのプレイヤーが何も寄付しないケース"
 
 #: ../../source/misc/bots_advanced.rst:102
 msgid "All players contribute their entire endowment (100 points)"
-msgstr ""
+msgstr "すべてのプレイヤーが全財産（100ポイント）を寄付するケース"
 
 #: ../../source/misc/bots_advanced.rst:104
 msgid ""
@@ -363,84 +381,89 @@ msgid ""
 "respectively, and put them in ``cases``. Then, oTree will execute the bot"
 " 3 times, once for each test case. Each time, a different value from "
 "``cases`` will be assigned to ``self.case`` in the bot."
-msgstr ""
+msgstr "これらの3つのテストケースをそれぞれ \"basic\" 、 \"min\" 、 \"max\" と呼び、"
+" ``cases`` に格納します。次に、oTreeは各テストケースに対して1回ずつ、計3回ボットを実行します。"
+"毎回 、 ``cases`` から様々な値がボットの ``self.case`` に割り当てられます。"
 
 #: ../../source/misc/bots_advanced.rst:109
 msgid "For example:"
-msgstr ""
+msgstr "例："
 
 #: ../../source/misc/bots_advanced.rst:148
 msgid ""
 "If you use cases, it's better to use :ref:`cli-bots` since browser bots "
 "will only execute a single case."
-msgstr ""
+msgstr "ユースケースを使用する場合、ブラウザボットは単一のケースしか実行しないため、 :ref:`コマンドラインボット <cli-bots>` を使用することをおすすめします。"
 
 #: ../../source/misc/bots_advanced.rst:150
 msgid ""
 "``cases`` needs to be a list, but it can contain any data type, such as "
 "strings, integers, or even dictionaries. Here is a trust game bot that "
 "uses dictionaries as cases."
-msgstr ""
+msgstr "``cases`` はリストである必要がありますが、文字列、整数、さらには辞書など、任意のデータ型を格納することができます。"
+"下記のコードは、辞書をケースとして使用する、 trust ゲームのためのボットです。"
 
 #: ../../source/misc/bots_advanced.rst:188
 msgid "error_fields"
-msgstr ""
+msgstr "error_fields"
 
 #: ../../source/misc/bots_advanced.rst:190
 msgid ""
 "When using ``SubmissionMustFail`` on forms with multiple fields, you can "
 "use ``error_fields`` for extra thoroughness."
-msgstr ""
+msgstr "複数のフィールドを持つフォームで ``SubmissionMustFail`` を使用する場合は、 ``error_fields`` を使用することができます。"
 
 #: ../../source/misc/bots_advanced.rst:193
 msgid ""
 "For example, let's say we a submit a valid ``age``, but an invalid "
 "``weight`` and ``height``:"
-msgstr ""
+msgstr "例えば、 ``age`` で有効な送信がなされ、 ``weight`` や ``height`` が無効な送信であったとします。"
 
 #: ../../source/misc/bots_advanced.rst:207
 msgid ""
 "What's missing is that the bot system doesn't tell us exactly *why* the "
 "submission fails. Is it an invalid ``weight``, ``height``, or both? "
 "``error_fields`` can resolve the ambiguity:"
-msgstr ""
+msgstr "ボットシステムは送信が失敗する理由を正確に教えてくれません。"
+"``weight`` と ``height`` のどちらが無効なのか、またはその両方が無効であるのか、 ``error_fields`` はそのあいまいさを解決できます："
 
 #: ../../source/misc/bots_advanced.rst:223
 msgid ""
 "This will verify that ``weight`` and ``height`` contained errors, but "
 "``age`` did not."
-msgstr ""
+msgstr "これにより`` weight`` と ``height`` にエラーが含まれていることが確認されますが、 ``age`` は含まれていません。"
 
 #: ../../source/misc/bots_advanced.rst:226
 msgid ""
 "If :ref:`error_message <error_message>` returns an error, then "
 "``error_fields`` will be ``['__all__']``."
-msgstr ""
+msgstr ":ref:`error_message <error_message>` がエラーを返す場合、 ``error_fields`` は ``['__all__']`` になります。"
 
 #: ../../source/misc/bots_advanced.rst:230
 msgid "Misc note"
-msgstr ""
+msgstr "その他の注意"
 
 #: ../../source/misc/bots_advanced.rst:232
 msgid ""
 "In bots, it is risky to assign ``player = self.player`` (or ``participant"
 " = self.participant``, etc), even though that kind of code is encouraged "
 "elsewhere."
-msgstr ""
+msgstr "ボットでは、その種のコードが他の場所で推奨されている場合でも、``player = self.player`` （または、 ``participant = self.participant`` 等）"
+"を割り当てるのは危険です。
 
 #: ../../source/misc/bots_advanced.rst:236
 msgid "Because if there is a ``yield`` in between, the data can be stale:"
-msgstr ""
+msgstr "``yield`` の間にある場合、データが古くなる可能性があるためです。"
 
 #: ../../source/misc/bots_advanced.rst:247
 msgid ""
 "It's safer to use ``self.player.money_left`` directly, because doing "
 "``self.player`` gets the most recent data from the database."
-msgstr ""
+msgstr "実行中の ``self.player`` がデータベースから最新のデータを取得するため、 ``self.player.money_left`` を直接使用する方が安全です。"
 
 #: ../../source/misc/bots_advanced.rst:251
 msgid "Live pages"
-msgstr ""
+msgstr "ライブページ"
 
 #: ../../source/misc/bots_advanced.rst:253
 msgid ""
@@ -450,23 +473,27 @@ msgid ""
 "The argument ``method`` simulates the live method on your Player model. "
 "For example, ``method(3, 'hello')`` calls the live method on Player 3 "
 "with ``data`` set to ``'hello'``. For example:"
-msgstr ""
+msgstr "ボットでライブページをテストするために、 ``tests.py`` で最上位関数として ``call_live_method`` を定義します。"
+"（oTree Studioでは使用できません。）"
+"この関数は ``live_method`` への呼び出しシーケンスをシミュレートします。"
+"引数 ``method`` は、Playerクラスのライブメソッドをシミュレートします。例えば、"
+" ``method(3, 'hello')`` プレーヤー3のliveメソッドを呼び出し、``data`` に ``'hello'`` を設定します。例："
 
 #: ../../source/misc/bots_advanced.rst:269
 msgid "``kwargs`` contains at least the following parameters."
-msgstr ""
+msgstr "``kwargs`` には少なくとも以下のパラメータが含まれます。"
 
 #: ../../source/misc/bots_advanced.rst:271
 msgid "``case`` as described in :ref:`cases`."
-msgstr ""
+msgstr "``case`` :ref:`テストケース <cases>` を参照。"
 
 #: ../../source/misc/bots_advanced.rst:272
 msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
-msgstr ""
+msgstr "``page_class`` ：現在のページクラス。例えば、 ``pages.MyPage`` "
 
 #: ../../source/misc/bots_advanced.rst:273
 msgid "``round_number``"
-msgstr ""
+msgstr "``round_number``"
 
 #: ../../source/misc/bots_advanced.rst:275
 msgid ""
@@ -474,45 +501,47 @@ msgid ""
 "in the group arrives on a page with ``live_method``. (Other bots may be "
 "on previous pages at that point, unless you restrict this with a "
 "WaitPage.)"
-msgstr ""
+msgstr "``call_live_method`` はグループ内で最速のボットが ``live_method`` を持つページに遷移すると"
+"自動的に実行されます。"
+"（WaitPage でこれを制限しない限り、他のボットはその時点で前のページにある可能性があります。）"
 
 #: ../../source/misc/intro.rst:2
 msgid "Miscellaneous"
-msgstr ""
+msgstr "その他"
 
 #: ../../source/misc/rest_api.rst:4
 msgid "REST"
-msgstr ""
+msgstr "REST"
 
 #: ../../source/misc/rest_api.rst:6
 msgid ""
 "oTree has a REST API that enables external programs (such as other "
 "websites) to communicate with oTree."
-msgstr ""
+msgstr "oTreeには、外部プログラム（他のWebサイトなど）がoTreeと通信できるようにする REST API があります。"
 
 #: ../../source/misc/rest_api.rst:9
 msgid ""
 "A REST API is just a URL on your server that is designed to be accessed "
 "by programs, rather than being opened manually in a web browser."
-msgstr ""
+msgstr "REST APIは、プログラムからアクセスできるように設計されたサーバー上の単なるURLです。"
 
 #: ../../source/misc/rest_api.rst:12
 msgid ""
 "One project that uses the REST API a lot is `oTree HR <https://github.com"
 "/oTree-org/HR>`__."
-msgstr ""
+msgstr "REST APIを頻繁に使用するプロジェクトの1つは、 `oTree HR <https://github.com/oTree-org/HR>`__ です。"
 
 #: ../../source/misc/rest_api.rst:16
 msgid "As of March 2021, there have been some breaking changes to the REST API."
-msgstr ""
+msgstr "2021年3月の時点で、RESTAPIにいくつかの重大な変更がありました。"
 
 #: ../../source/misc/rest_api.rst:21
 msgid "Setup"
-msgstr ""
+msgstr "セットアップ"
 
 #: ../../source/misc/rest_api.rst:25
 msgid "*\"Where should I put this code?\"*"
-msgstr ""
+msgstr "「このコードはどこに配置すればいいですか」"
 
 #: ../../source/misc/rest_api.rst:27
 msgid ""
@@ -523,146 +552,153 @@ msgid ""
 " other server uses. The examples on this page use Python, but it's simple"
 " to make HTTP requests using any programming language, or tools like "
 "webhooks or cURL."
-msgstr ""
+msgstr "このコードは、oTreeプロジェクトフォルダー内に配置する必要はありません。"
+"REST APIのポイントは、外部プログラムとサーバーがインターネットを介してoTreeと通信できるようにすることであるため、"
+"このコードを他のプログラムに配置する必要があります。これは、他のサーバーが使用する言語を使用しなければならないことも意味します。"
+"このページの例ではPythonを使用していますが、"
+"WebhookやcURLなどのツールの利用や他の言語によってHTTPリクエストを作成するのも簡単です。"
 
 #: ../../source/misc/rest_api.rst:62
 msgid "\"oTree version\" endpoint"
-msgstr ""
+msgstr "\"oTree version\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:66 ../../source/misc/rest_api.rst:83
 #: ../../source/misc/rest_api.rst:102
 msgid "New beta feature as of March 2021."
-msgstr ""
+msgstr "2021年3月現在の新しいベータ機能。"
 
 #: ../../source/misc/rest_api.rst:68
 msgid "GET URL: ``/api/otree_version/``"
-msgstr ""
+msgstr "GET URL： ``/api/otree_version/`` "
 
 #: ../../source/misc/rest_api.rst:71 ../../source/misc/rest_api.rst:90
 #: ../../source/misc/rest_api.rst:107 ../../source/misc/rest_api.rst:140
 #: ../../source/misc/rest_api.rst:179 ../../source/misc/rest_api.rst:204
 #: ../../source/misc/rest_api.rst:219 ../../source/misc/rest_api.rst:236
 msgid "Example"
-msgstr ""
+msgstr "例："
 
 #: ../../source/misc/rest_api.rst:79
 msgid "\"Session configs\" endpoint"
-msgstr ""
+msgstr "\"Session configs\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:85
 msgid "GET URL: ``/api/session_configs/``"
-msgstr ""
+msgstr "GET URL： ``/api/session_configs/`` "
 
 #: ../../source/misc/rest_api.rst:87
 msgid ""
 "Returns the list of all your session configs, as dicts with all their "
 "properties."
-msgstr ""
+msgstr "すべてのセッション構成のリストをすべてのプロパティを含む辞書型として返します。"
 
 #: ../../source/misc/rest_api.rst:98
 msgid "\"Rooms\" endpoint"
-msgstr ""
+msgstr "\"Rooms\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:104
 msgid "GET URL: ``/api/rooms/``"
-msgstr ""
+msgstr "GET URL： ``/api/rooms/`` "
 
 #: ../../source/misc/rest_api.rst:114
 msgid ""
 "Example output (note it includes ``session_code`` if there is currently a"
 " session in the room):"
-msgstr ""
+msgstr "出力例（現在、roomにセッションがある場合、 ``session_code`` が含まれているかについて注意してください）："
 
 #: ../../source/misc/rest_api.rst:126
 msgid "\"Create sessions\" endpoint"
-msgstr ""
+msgstr "\"Create sessions\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:128
 msgid "POST URL: ``/api/sessions/``"
-msgstr ""
+msgstr "POST URL： ``/api/sessions/``"
 
 #: ../../source/misc/rest_api.rst:130
 msgid ""
 "Here are some examples of how the \"create sessions\" endpoint can be "
 "used:"
-msgstr ""
+msgstr "\"create sessions\" エンドポイントの使用例を次に示します。"
 
 #: ../../source/misc/rest_api.rst:132
 msgid "Other websites can create oTree sessions automatically"
-msgstr ""
+msgstr "他のウェブサイトはoTreeセッションの自動生成"
 
 #: ../../source/misc/rest_api.rst:133
 msgid ""
 "You can make a fancier alternative to oTree's :ref:`edit_config` "
 "interface (e.g. with sliders and visual widgets)"
-msgstr ""
+msgstr "oTreeの :ref:`セッションの構成 <edit_config>` インターフェイスの代替手段の作成（例：スライダーやビジュアルウィジェットなどの使用）"
 
 #: ../../source/misc/rest_api.rst:135
 msgid "Process that will create new oTree sessions on some fixed schedule"
-msgstr ""
+msgstr "一定期間ごとの新しいoTreeセッションの作成"
 
 #: ../../source/misc/rest_api.rst:136
 msgid ""
 "Command line script to create customized sessions (if ``otree "
 "create_session`` is not sufficient)"
-msgstr ""
+msgstr "カスタマイズされたセッションを作成するためのコマンドラインスクリプト（ ``otree create_session`` で十分でなければ）"
 
 #: ../../source/misc/rest_api.rst:155 ../../source/misc/rest_api.rst:250
 msgid "Parameters"
-msgstr ""
+msgstr "パラメーター"
 
 #: ../../source/misc/rest_api.rst:157
 msgid "``session_config_name`` (required)"
-msgstr ""
+msgstr "``session_config_name`` （必須）"
 
 #: ../../source/misc/rest_api.rst:158
 msgid "``num_participants`` (required)"
-msgstr ""
+msgstr "``num_participants`` （必須）"
 
 #: ../../source/misc/rest_api.rst:159
 msgid ""
 "``modified_session_config_fields``: an optional dict of session config "
 "parameters, as discussed in :ref:`edit_config`."
-msgstr ""
+msgstr "``modified_session_config_fields``: :ref:`セッションの構成 <edit_config>` で説明されているように、"
+"セッション構成パラメーターのオプションの辞書型リスト 。"
 
 #: ../../source/misc/rest_api.rst:161
 msgid "``room_name`` if you want to create the session in a room."
-msgstr ""
+msgstr "roomでセッションを作成する場合は、 ``room_name``"
 
 #: ../../source/misc/rest_api.rst:166
 msgid "\"Get session data\" endpoint"
-msgstr ""
+msgstr "\"Get session data\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:170
 msgid ""
 "New feature as of March 2021. In beta until we get sufficient user "
 "feedback."
-msgstr ""
+msgstr "2021年3月現在の新機能。十分なユーザーフィードバックが得られるまでベータ版です。"
 
 #: ../../source/misc/rest_api.rst:173
 msgid "GET URL: ``/api/sessions/{code}``"
-msgstr ""
+msgstr "GET URL: ``/api/sessions/{code}``"
 
 #: ../../source/misc/rest_api.rst:175
 msgid ""
 "This API retrieves data about a session and its participants. If "
 "``participant_labels`` is omitted, it returns data for all participants."
-msgstr ""
+msgstr "このAPIは、セッションとその参加者に関するデータを取得します。"
+" ``participant_labels`` を省略した場合、すべての参加者のデータを返します。"
 
 #: ../../source/misc/rest_api.rst:189
 msgid "\"Session vars\" endpoint"
-msgstr ""
+msgstr "\"Session vars\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:193
 msgid ""
 "As of April 2021, this endpoint requires you to pass a session code as a "
 "path parameter. If the session is in a room, you can get the session code"
 " with the ``rooms`` endpoint."
-msgstr ""
+msgstr "2021年4月の時点で、このエンドポイントでは、パスのパラメータとしてセッションコードを渡す必要があります。"
+"room内にセッションがある場合は、 ``rooms`` エンドポイントでセッションコードを取得できます。"
 
 #: ../../source/misc/rest_api.rst:196
 msgid "POST URL: ``/api/session_vars/{session_code}``"
-msgstr ""
+msgstr "POST URL: ``/api/session_vars/{session_code}``"
 
 #: ../../source/misc/rest_api.rst:198
 msgid ""
@@ -670,110 +706,118 @@ msgid ""
 "input. For example, if the experimenter does a lottery drawing in the "
 "middle of the experiment, they can input the result by running a script "
 "like the one below."
-msgstr ""
+msgstr "このエンドポイントでは、 ``session.vars`` を設定できます。1つの用途は実験者の入力です。"
+"例えば、実験の途中で抽選を行った場合、以下のようなスクリプトを実行して結果を入力することができます。"
 
 #: ../../source/misc/rest_api.rst:212
 msgid "\"Participant vars\" endpoint"
-msgstr ""
+msgstr "\"Participant vars\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:214
 msgid "POST URL: ``/api/participant_vars/{participant_code}``"
-msgstr ""
+msgstr "POST URL: ``/api/participant_vars/{participant_code}``"
 
 #: ../../source/misc/rest_api.rst:216
 msgid ""
 "Pass information about a participant to oTree, via web services / "
 "webhooks."
-msgstr ""
+msgstr "WebサービスやWebhookを介して、参加者に関する情報をoTreeに渡します。"
 
 #: ../../source/misc/rest_api.rst:228
 msgid "\"Participant vars for room\" endpoint"
-msgstr ""
+msgstr "\"Participant vars for room\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:230
 msgid "POST URL: ``/api/participant_vars/``"
-msgstr ""
+msgstr "POST URL: ``/api/participant_vars/``"
 
 #: ../../source/misc/rest_api.rst:232
 msgid ""
 "Similar to the other \"participant vars\" endpoint, but this one can be "
 "used when you don't have the participant's code. Instead, you identify "
 "the participant by the room name and their participant label."
-msgstr ""
+msgstr "他の \"participant vars\" エンドポイントと同様ですが、"
+"参加者のコードがない場合にも使用できます。参加者のコードの代わりに、room名と参加者ラベルで参加者を識別します。"
 
 #: ../../source/misc/rest_api.rst:252
 msgid "``room_name`` (required)"
-msgstr ""
+msgstr "``room_name`` (必須)"
 
 #: ../../source/misc/rest_api.rst:253
 msgid "``participant_label`` (required)"
-msgstr ""
+msgstr "``participant_label`` （必須）"
 
 #: ../../source/misc/rest_api.rst:254
 msgid ""
 "``vars`` (required): a dict of participant vars to add. Values can be any"
 " JSON-serializable data type, even nested dicts/lists."
-msgstr ""
+msgstr "``vars`` （必須）：追加するparticipant varsの辞書型。"
+"値はネストされた辞書型やリストであっても、JSONでシリアル化可能な任意のデータ型にすることができます。"
 
 #: ../../source/misc/rest_api.rst:257
 msgid ""
 "You will need to give participants a link with a ``participant_label``, "
 "although this does not need to come from a ``participant_label_file``."
-msgstr ""
+msgstr "``participant_label_file`` から取得する必要はありませんが、"
+"参加者に ``participant_label`` とともにリンクを与える必要があります。"
 
 #: ../../source/misc/rest_api.rst:261
 msgid "Authentication"
-msgstr ""
+msgstr "認証"
 
 #: ../../source/misc/rest_api.rst:263
 msgid ""
 "If you have set your auth level to DEMO or STUDY, you must authenticate "
 "your REST API requests."
-msgstr ""
+msgstr "認証レベルをDEMOまたはSTUDYに設定している場合は、REST APIリクエストを認証する必要があります。"
 
 #: ../../source/misc/rest_api.rst:266
 msgid ""
 "Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the "
 "server. Set it to some secret value."
-msgstr ""
+msgstr "サーバー上に環境変数（つまり、Heroku config var） ``OTREE_REST_KEY`` を作成してください。"
+"値を秘密の値として設定して下さい。"
 
 #: ../../source/misc/rest_api.rst:269
 msgid ""
 "When you make a request, add that key as an HTTP header called ``otree-"
 "rest-key``. If following the :ref:`setup example <rest-setup>` above, you"
 " would set the ``REST_KEY`` variable."
-msgstr ""
+msgstr "リクエストを行うときは、そのキーを ``otree-rest-key`` と呼ばれるHTTPヘッダーとして追加してください。"
+"上記の :ref:`設定例 <rest-setup>` に従う場合は、 ``REST_KEY`` 変数を設定します。"
 
 #: ../../source/misc/rest_api.rst:273
 msgid "Demo & testing"
-msgstr ""
+msgstr "デモとテスト"
 
 #: ../../source/misc/rest_api.rst:275
 msgid ""
 "For convenience during development, you can generate fake vars to "
 "simulate data that, in a real session, will come from the REST API."
-msgstr ""
+msgstr "開発を快適にするために、偽の変数を生成し、実際のセッションでREST APIから取得されるデータをシミュレートできます。"
 
 #: ../../source/misc/rest_api.rst:278
 msgid ""
 "In your session config, add the parameter ``mock_exogenous_data=True`` "
 "(We call it **exogenous** data because it originates outside oTree.)"
-msgstr ""
+msgstr "セッション構成で、パラメーター ``mock_exogenous_data=True`` を追加してください。"
+"（oTreeの外部で発生するため、「exogenous」データと呼んでいます。）"
 
 #: ../../source/misc/rest_api.rst:281
 msgid ""
 "Then define a function with the same name (``mock_exogenous_data``) in "
 "your project's shared_out.py (if you are using a text editor, you may "
 "need to create that file)."
-msgstr ""
+msgstr "次に、プロジェクトのshared_out.pyで 同じ名前（ ``mock_exogenous_data`` ）の関数を定義します。"
+"（テキストエディターを使用している場合は、そのファイルを作成する必要があるかもしれません。）"
 
 #: ../../source/misc/rest_api.rst:285
 msgid "Here's an example:"
-msgstr ""
+msgstr "例："
 
 #: ../../source/misc/rest_api.rst:294
 msgid "You can also set participant labels here."
-msgstr ""
+msgstr "ここで参加者ラベルを設定することもできます。"
 
 #: ../../source/misc/rest_api.rst:296
 msgid ""
@@ -781,21 +825,23 @@ msgid ""
 "``mock_exogenous_data()`` will automatically be run after "
 "``creating_session``. However, it will not be run if the session is "
 "created in a room."
-msgstr ""
+msgstr "デモモードまたはボットを使用してセッションを実行すると、"
+" ``mock_exogenous_data()`` は ``creating_session`` の後、自動的に実行されます。"
+"ただし、セッションがroomで作成されている場合は実行されません。"
 
 #: ../../source/misc/rest_api.rst:300
 msgid ""
 "If you have multiple session configs that require different exogenous "
 "data, you can branch like this:"
-msgstr ""
+msgstr "異なるexogenousデータを必要とする複数のセッション構成がある場合は、次のように分岐できます。"
 
 #: ../../source/misc/tips_and_tricks.rst:2
 msgid "Tips and tricks"
-msgstr ""
+msgstr "ヒントとコツ"
 
 #: ../../source/misc/tips_and_tricks.rst:5
 msgid "Preventing code duplication"
-msgstr ""
+msgstr "コードの重複の防止"
 
 #: ../../source/misc/tips_and_tricks.rst:7
 msgid ""
@@ -804,22 +850,26 @@ msgid ""
 "out how to avoid copy-pasting code, you will see that having your code in"
 " only one place usually saves you a lot of effort later when you need to "
 "change the design of your code or fix bugs."
-msgstr ""
+msgstr "可能な限り、同じコードを複数の場所にコピーして貼り付けるべきではありません。"
+"工夫が必要な場合もありますが、"
+"コードを1か所にまとめることで、コードのデザインの変更やバグの修正をしたりする必要があるときに、"
+"通常は多くの労力を節約できます。"
 
 #: ../../source/misc/tips_and_tricks.rst:14
 msgid "Below are some techniques to achieve code reuse."
-msgstr ""
+msgstr "以下は、コードの再利用を実現するためのいくつかの手法です。"
 
 #: ../../source/misc/tips_and_tricks.rst:17
 msgid "Don't make multiple copies of your app"
-msgstr ""
+msgstr "アプリのコピーを複数作成しないでください"
 
 #: ../../source/misc/tips_and_tricks.rst:19
 msgid ""
 "If possible, you should avoid copying an app's folder to make a slightly "
 "different version, because then you have duplicated code that is harder "
 "to maintain."
-msgstr ""
+msgstr "可能であれば、アプリのフォルダーをコピーしてわずかに異なるバージョンを作成することは避けてください。"
+"コードが重複しているため、保守が困難になります。"
 
 #: ../../source/misc/tips_and_tricks.rst:22
 msgid ""
@@ -828,67 +878,74 @@ msgid ""
 "techniques described in :ref:`treatments`, such as making 2 session "
 "configs that have a different ``'treatment'`` parameter, and then "
 "checking for ``session.config['treatment']`` in your app's code."
-msgstr ""
+msgstr "複数のラウンドを用意したいだけなら、 ``num_rounds`` を設定することで解決できます。
+"また、わずかに異なるバージョン（たとえば、異なる処理）が必要な場合は、"
+"異なる ``'treatment'`` パラメーターを持つ2つのセッション構成を作成し、"
+"コード上で ``session.config['treatment']`` についてチェックするなど、"
+" :ref:`treatments` で説明されている手法を使用する必要があります。"
 
 #: ../../source/misc/tips_and_tricks.rst:33
 msgid "How to make many fields"
-msgstr ""
+msgstr "多くのフィールドを作成する方法"
 
 #: ../../source/misc/tips_and_tricks.rst:35
 msgid "Let's say your app has many fields that are almost the same, such as:"
-msgstr ""
+msgstr "アプリに、次のようなほぼ同じフィールドが多数あるとします。"
 
 #: ../../source/misc/tips_and_tricks.rst:84
 msgid "This is quite complex; you should look for a way to simplify."
-msgstr ""
+msgstr "これは非常に複雑です。単純化する方法を探す必要があります。"
 
 #: ../../source/misc/tips_and_tricks.rst:86
 msgid ""
 "Are the fields all displayed on separate pages? If so, consider "
 "converting this to a 10-round game with just one field."
-msgstr ""
+msgstr "フィールドはすべて別々のページに表示されていますか？そうであれば、1つのフィールドだけ用意し、10ラウンドのゲームに変換することを検討してください。"
 
 #: ../../source/misc/tips_and_tricks.rst:89
 msgid ""
 "If that's not possible, then you can reduce the amount of repeated code "
 "by defining a function that returns a field:"
-msgstr ""
+msgstr "それが不可能な場合は、フィールドを返す関数を定義することで、繰り返されるコードの量を減らすことができます。"
 
 #: ../../source/misc/tips_and_tricks.rst:110
 msgid "Prevent duplicate pages by using multiple rounds"
-msgstr ""
+msgstr "複数のラウンドを使用してページの重複を防止"
 
 #: ../../source/misc/tips_and_tricks.rst:112
 msgid ""
 "If you have many many pages that are almost the same, consider just "
 "having 1 page and looping it for multiple rounds. One sign that your code"
 " can be simplified is if it looks something like this:"
-msgstr ""
+msgstr "ほぼ同じページが多数ある場合は、1ページだけを作成し、"
+"それを複数のラウンドでループさせることを検討してください。"
+"次のような場合、コードを簡略化できる可能性があります。"
 
 #: ../../source/misc/tips_and_tricks.rst:134
 msgid "Avoid duplicated validation methods"
-msgstr ""
+msgstr "検証方法の重複を避ける"
 
 #: ../../source/misc/tips_and_tricks.rst:136
 msgid ""
 "If you have many repetitive :ref:`FIELD_error_message "
 "<FOO_error_message>` methods, you can replace them with a single "
 ":ref:`error_message <error_message>` function. For example:"
-msgstr ""
+msgstr "多くの繰り返される :ref:`FIELD_error_message <FOO_error_message>` メソッドがある場合は、"
+"それらを単一の :ref:`error_message <error_message>` 関数に置き換えることができます。例："
 
 #: ../../source/misc/tips_and_tricks.rst:158
 msgid "You can instead define this function on your page:"
-msgstr ""
+msgstr "代わりに、ページでこの関数を定義することもできます。"
 
 #: ../../source/misc/tips_and_tricks.rst:179
 msgid ""
 "(Usually ``error_message`` is used to return a single error message as a "
 "string, but you can also return a dict.)"
-msgstr ""
+msgstr "（通常 ``error_message`` は、単一のエラーメッセージを文字列として返すために使用されますが、辞書型を返すこともできます。）"
 
 #: ../../source/misc/tips_and_tricks.rst:184
 msgid "Avoid duplicated page functions"
-msgstr ""
+msgstr "ページ関数の重複を避ける"
 
 #: ../../source/misc/tips_and_tricks.rst:186
 msgid ""
@@ -896,24 +953,25 @@ msgid ""
 "level function. This is a handy way to share the same function across "
 "multiple pages. For example, let's say many pages need to have these 2 "
 "functions:"
-msgstr ""
+msgstr "すべてのページ関数は、ページクラスから最上位の関数に移動できます。"
+"これは、同じ関数を複数のページで共有するための便利な方法です。たとえば、多くのページに次の2つの関数が必要だとします。："
 
 #: ../../source/misc/tips_and_tricks.rst:205
 msgid ""
 "You can move those functions before all the pages (remove the "
 "``@staticmethod``), and then reference them wherever they need to be "
 "used:"
-msgstr ""
+msgstr "これらの関数をすべてのページの前に移動させ（ ``@staticmethod`` を削除）、使用する必要があるどこからでも参照することができます。"
 
 #: ../../source/misc/tips_and_tricks.rst:232
 msgid ""
 "(In the sample games, ``after_all_players_arrive`` and ``live_method`` "
 "are frequently defined in this manner.)"
-msgstr ""
+msgstr "（サンプルゲームで、 ``after_all_players_arrive`` と ``live_method`` は、このように定義されることが多いです。）"
 
 #: ../../source/misc/tips_and_tricks.rst:235
 msgid "Improving code performance"
-msgstr ""
+msgstr "コードパフォーマンスの向上"
 
 #: ../../source/misc/tips_and_tricks.rst:237
 msgid ""
@@ -921,67 +979,69 @@ msgid ""
 "``get_player_by_id()``, ``in_*_rounds()``, ``get_others_in_group()``, or "
 "any other methods that return a player or list of players. These methods "
 "all require a database query, which can be slow."
-msgstr ""
+msgstr "``get_players()`` 、 ``get_player_by_id()`` 、 ``in_*_rounds()`` 、 ``get_others_in_group()`` のようなプレイヤーのリストやプレイヤーを返す関数の過剰な使用を避けるべきです。
+get_players()、get_player_by_id()、in_*_rounds()、 "
+"これらのメソッドはすべてデータベースクエリを必要としますが、処理に時間がかかる場合があります。"
 
 #: ../../source/misc/tips_and_tricks.rst:242
 msgid ""
 "For example, this code has a redundant query because it asks the database"
 " 5 times for the exact same player:"
-msgstr ""
+msgstr "たとえば、このコードはデータベースにまったく同じプレーヤーを5回要求するため、冗長なクエリが発生してしまいます。"
 
 #: ../../source/misc/tips_and_tricks.rst:258
 msgid "It should be simplified to this:"
-msgstr ""
+msgstr "これは次のように簡略化する必要があります。"
 
 #: ../../source/misc/tips_and_tricks.rst:274
 msgid "As an added benefit, this usually makes the code more readable."
-msgstr ""
+msgstr "さらに、コードをより読みやすくすることも期待できます。"
 
 #: ../../source/misc/tips_and_tricks.rst:277
 msgid "Use BooleanField instead of StringField, where possible"
-msgstr ""
+msgstr "可能であれば、StringFieldの代わりにBooleanFieldを使用してください"
 
 #: ../../source/misc/tips_and_tricks.rst:279
 msgid ""
 "Many ``StringFields`` should be broken down into ``BooleanFields``, "
 "especially if they only have 2 distinct values."
-msgstr ""
+msgstr "特に、2つの異なる値しかない場合は、多くの ``StringFields`` は ``BooleanFields`` に分解されるべきです。"
 
 #: ../../source/misc/tips_and_tricks.rst:282
 msgid "Suppose you have a field called ``treatment``:"
-msgstr ""
+msgstr "``treatment`` という次のフィールドがあるとします。"
 
 #: ../../source/misc/tips_and_tricks.rst:288
 msgid "And let's say ``treatment`` it can only have 4 different values:"
-msgstr ""
+msgstr "そして、 ``treatment`` は4つの異なる値しか持っていないとします。"
 
 #: ../../source/misc/tips_and_tricks.rst:290
 msgid "``high_income_high_tax``"
-msgstr ""
+msgstr "``high_income_high_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:291
 msgid "``high_income_low_tax``"
-msgstr ""
+msgstr "``high_income_low_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:292
 msgid "``low_income_high_tax``"
-msgstr ""
+msgstr "``low_income_high_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:293
 msgid "``low_income_low_tax``"
-msgstr ""
+msgstr "``low_income_low_tax``"
 
 #: ../../source/misc/tips_and_tricks.rst:295
 msgid "In your pages, you might use it like this:"
-msgstr ""
+msgstr "そのままの場合、ページでは次のように記述しなければなりません。"
 
 #: ../../source/misc/tips_and_tricks.rst:310
 msgid "It would be much better to break this to 2 separate BooleanFields::"
-msgstr ""
+msgstr "そして、フィールドを2つの別々のBooleanFieldsに分割することを推奨します："
 
 #: ../../source/misc/tips_and_tricks.rst:315
 msgid "Then your pages could be simplified to:"
-msgstr ""
+msgstr "最終的に、ページを次のように簡略化できます。"
 
 #~ msgid ""
 #~ "At the root of your oTree project,"
