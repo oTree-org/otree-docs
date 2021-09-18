@@ -134,8 +134,7 @@ Misc
     To preserve the previous behavior, you should pass ``objects=True``, like ``.get_group_matrix(objects=True)``.
 -   Translating an app to multiple languages works differently. See :ref:`i18n`.
 -   If you try to access a Player/Group/Subsession field whose value is still ``None``,
-    oTree will raise an error. You can override this behavior by setting the initial value of the field
-    to something other than ``None``, or by using :ref:`field_maybe_none`.
+    oTree will raise an error. More details here: :ref:`field_maybe_none`.
 
 Django
 ~~~~~~

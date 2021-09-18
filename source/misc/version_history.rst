@@ -5,10 +5,10 @@ Version 5.4
 ===========
 
 -   PARTICIPANT_FIELDS are now included in data export
+-   :ref:`field_maybe_none`
 -   Radio buttons can now be accessed by numeric index, e.g. ``{{ form.my_field.0 }}``.
 -   Bugfix with numpy data types assigned to model fields
 -   Misc improvements and fixes
-
 
 Version 5.3
 ===========

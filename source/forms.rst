@@ -362,10 +362,6 @@ Second, you should usually include ``{{ formfield_errors 'xyz' }}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
 
-.. note::
-
-    ``formfield_errors`` is new in oTree 5.0.5+.
-
 Raw HTML example: slider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
