@@ -104,5 +104,5 @@ msgstr ""
 
 #: ../../source/index.rst:82
 msgid "(Thank you to contributors)"
-msgstr ""
+msgstr "日本語訳：生駒 昭繁"
 
