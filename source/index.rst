@@ -79,3 +79,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+(Thank you to contributors)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -347,44 +347,25 @@ msgstr ""
 msgid "Miscellaneous topics"
 msgstr ""
 
-#: ../../source/models.rst:220
-msgid "Defining your own methods"
-msgstr ""
-
 #: ../../source/models.rst:222
-msgid ""
-"In addition to the methods listed on this page, you can define your own. "
-"Just remember to *use* them somewhere! Just defining them with ``def`` "
-"has no effect."
-msgstr ""
-
-#: ../../source/models.rst:227
-msgid "For example:"
-msgstr ""
-
-#: ../../source/models.rst:235
-msgid "Then call it:"
-msgstr ""
-
-#: ../../source/models.rst:245
 msgid "About using random()"
 msgstr ""
 
-#: ../../source/models.rst:247
+#: ../../source/models.rst:224
 msgid ""
 "Never generate random values outside of a function. For example, don't do"
 " this:"
 msgstr ""
 
-#: ../../source/models.rst:255
+#: ../../source/models.rst:232
 msgid "If it changes randomly, it isn't a constant."
 msgstr ""
 
-#: ../../source/models.rst:257
+#: ../../source/models.rst:234
 msgid "Or this:"
 msgstr ""
 
-#: ../../source/models.rst:268
+#: ../../source/models.rst:245
 msgid ""
 "These won't work because they will change every time the server launches "
 "a new process. It may appear to work during testing but will eventually "
@@ -394,7 +375,7 @@ msgid ""
 "page)."
 msgstr ""
 
-#: ../../source/models.rst:275
+#: ../../source/models.rst:252
 msgid ""
 "If you want to set your own random seed, don't use the ``random.seed()`` "
 "function. Instead, generate an instance of ``random.Random`` as described"
@@ -418,5 +399,22 @@ msgstr ""
 #~ "(and preferably not ``vars_for_template``, "
 #~ "which gets re-executed if the user"
 #~ " refreshes the page)."
+#~ msgstr ""
+
+#~ msgid "Defining your own methods"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In addition to the methods listed "
+#~ "on this page, you can define your"
+#~ " own. Just remember to *use* them "
+#~ "somewhere! Just defining them with "
+#~ "``def`` has no effect."
+#~ msgstr ""
+
+#~ msgid "For example:"
+#~ msgstr ""
+
+#~ msgid "Then call it:"
 #~ msgstr ""
 

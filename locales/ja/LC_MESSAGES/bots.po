@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,30 +123,23 @@ msgstr ""
 msgid "expect()"
 msgstr ""
 
-#: ../../source/bots.rst:83
-msgid ""
-"The ``expect()`` function was introduced in September 2019. Previously we"
-" recommended using ``assert`` statements, which are still OK but "
-"``expect()`` can report errors more clearly."
-msgstr ""
-
-#: ../../source/bots.rst:87
+#: ../../source/bots.rst:81
 msgid ""
 "You can use ``expect`` statements to ensure that your code is working as "
 "you expect."
 msgstr ""
 
-#: ../../source/bots.rst:89
+#: ../../source/bots.rst:83
 msgid "For example:"
 msgstr ""
 
-#: ../../source/bots.rst:100
+#: ../../source/bots.rst:92
 msgid ""
 "If ``self.player.num_apples`` is not 99, then you will be alerted with an"
 " error."
 msgstr ""
 
-#: ../../source/bots.rst:102
+#: ../../source/bots.rst:94
 msgid ""
 "You can also use expect with 3 arguments, like "
 "``expect(self.player.budget, '<', 100)``. This will verify that "
@@ -155,60 +148,60 @@ msgid ""
 "``'in'``, ``'not in'``."
 msgstr ""
 
-#: ../../source/bots.rst:115
+#: ../../source/bots.rst:107
 msgid "Testing form validation"
 msgstr ""
 
-#: ../../source/bots.rst:117
+#: ../../source/bots.rst:109
 msgid ""
 "If you use :ref:`form validation <form-validation>`, you should test that"
 " your app is correctly rejecting invalid input from the user, by using "
 "``SubmissionMustFail()``."
 msgstr ""
 
-#: ../../source/bots.rst:121
+#: ../../source/bots.rst:113
 msgid "For example, let's say you have this page:"
 msgstr ""
 
-#: ../../source/bots.rst:135
+#: ../../source/bots.rst:127
 msgid "Here is how to test that it is working properly:"
 msgstr ""
 
-#: ../../source/bots.rst:144
+#: ../../source/bots.rst:134
 msgid ""
 "The bot will submit ``MyPage`` twice. If the first submission "
 "**succeeds**, an error will be raised, because it is not supposed to "
 "succeed."
 msgstr ""
 
-#: ../../source/bots.rst:149
+#: ../../source/bots.rst:139
 msgid "Checking the HTML"
 msgstr ""
 
-#: ../../source/bots.rst:151
+#: ../../source/bots.rst:141
 msgid ""
 "``self.html`` contains the HTML of the page you are about to submit. You "
 "can use this together with ``expect()``:"
 msgstr ""
 
-#: ../../source/bots.rst:168
+#: ../../source/bots.rst:156
 msgid ""
 "``self.html`` is updated with the next page's HTML, after every ``yield``"
 " statement. Linebreaks and extra spaces are ignored."
 msgstr ""
 
-#: ../../source/bots.rst:172
+#: ../../source/bots.rst:160
 msgid "Automatic HTML checks"
 msgstr ""
 
-#: ../../source/bots.rst:174
+#: ../../source/bots.rst:162
 msgid ""
 "An error will be raised if the bot is trying to submit form fields that "
 "are not actually found in the page's HTML, or if the page's HTML is "
 "missing a submit button."
 msgstr ""
 
-#: ../../source/bots.rst:177
+#: ../../source/bots.rst:165
 msgid ""
 "However, the bot system is not able to see fields and buttons that are "
 "added dynamically with JavaScript. In these cases, you should disable the"
@@ -216,32 +209,40 @@ msgid ""
 "example, change this:"
 msgstr ""
 
-#: ../../source/bots.rst:185
+#: ../../source/bots.rst:173
 msgid "to this:"
 msgstr ""
 
-#: ../../source/bots.rst:192
+#: ../../source/bots.rst:179
 msgid ""
 "(If you used ``Submission`` without ``check_html=False``, the two code "
 "samples would be equivalent.)"
 msgstr ""
 
-#: ../../source/bots.rst:198
+#: ../../source/bots.rst:185
 msgid "Simulate a page timeout"
 msgstr ""
 
-#: ../../source/bots.rst:200
+#: ../../source/bots.rst:187
 msgid "You can use ``Submission`` with ``timeout_happened=True``:"
 msgstr ""
 
-#: ../../source/bots.rst:208
+#: ../../source/bots.rst:194
 msgid "Advanced features"
 msgstr ""
 
-#: ../../source/bots.rst:210
+#: ../../source/bots.rst:196
 msgid "See :ref:`bots_advanced`"
 msgstr ""
 
 #~ msgid "If you are using a text editor, go to ``tests.py``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The ``expect()`` function was introduced "
+#~ "in September 2019. Previously we "
+#~ "recommended using ``assert`` statements, which"
+#~ " are still OK but ``expect()`` can"
+#~ " report errors more clearly."
 #~ msgstr ""
 

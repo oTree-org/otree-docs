@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,30 +151,30 @@ msgid ""
 "participant to realistically read the whole page."
 msgstr ""
 
-#: ../../source/timeouts.rst:158
+#: ../../source/timeouts.rst:160
 msgid ""
 "The default text on the timer says \"Time left to complete this page:\". "
 "But if your timeout spans multiple pages, you should word it more "
 "accurately, by setting ``timer_text``:"
 msgstr ""
 
-#: ../../source/timeouts.rst:174
+#: ../../source/timeouts.rst:176
 msgid "Customizing the timer"
 msgstr ""
 
-#: ../../source/timeouts.rst:177
+#: ../../source/timeouts.rst:179
 msgid "Hiding the timer"
 msgstr ""
 
-#: ../../source/timeouts.rst:179
+#: ../../source/timeouts.rst:181
 msgid "If you want to hide the timer, use this CSS:"
 msgstr ""
 
-#: ../../source/timeouts.rst:190
+#: ../../source/timeouts.rst:192
 msgid "Changing the timer's behavior"
 msgstr ""
 
-#: ../../source/timeouts.rst:192
+#: ../../source/timeouts.rst:194
 msgid ""
 "The timer's functionality is provided by `jQuery Countdown "
 "<http://hilios.github.io/jQuery.countdown/documentation.html>`__. You can"
@@ -182,7 +182,7 @@ msgid ""
 "jQuery's ``.on()`` and ``off()``."
 msgstr ""
 
-#: ../../source/timeouts.rst:197
+#: ../../source/timeouts.rst:199
 msgid ""
 "oTree sets handlers for the events ``update.countdown`` and "
 "``finish.countdown``, so if you want to modify those, you can detach them"
@@ -190,39 +190,38 @@ msgid ""
 " element is ``.otree-timer__time-left``."
 msgstr ""
 
-#: ../../source/timeouts.rst:202
+#: ../../source/timeouts.rst:204
 msgid "For example, to hide the timer until there is only 10 seconds left,"
 msgstr ""
 
-#: ../../source/timeouts.rst:222
+#: ../../source/timeouts.rst:224
 msgid ""
 "To avoid copy-pasting this code on every page, put it in an includable "
 "template."
 msgstr ""
 
-#: ../../source/timeouts.rst:224
+#: ../../source/timeouts.rst:226
 msgid ""
-"Note: even if you turn off the ``finish.countdown`` event handler from "
-"submitting the page, if you are running the timeoutworker, the page will "
-"be submitted on the server side. So, instead you should use the technique"
-" described in :ref:`soft-timeout`."
-msgstr ""
-
-#: ../../source/timeouts.rst:231
-msgid "Timeout that doesn't submit the page"
+"Note: even if you turn off the ``finish.countdown`` event handler, the "
+"page will still be submitted on the server side. So, instead you should "
+"use the technique described in :ref:`soft-timeout`."
 msgstr ""
 
 #: ../../source/timeouts.rst:233
+msgid "Timeout that doesn't submit the page"
+msgstr ""
+
+#: ../../source/timeouts.rst:235
 msgid ""
 "If you just want a soft timeout, you don't need to use the built-in timer"
 " at all. Instead, make your own with JavaScript, for example:"
 msgstr ""
 
-#: ../../source/timeouts.rst:246
+#: ../../source/timeouts.rst:248
 msgid "Minimum time on page"
 msgstr ""
 
-#: ../../source/timeouts.rst:248
+#: ../../source/timeouts.rst:250
 msgid ""
 "If you want to require the user to spend *at least* a certain amount of "
 "time on a page, you can use some simple JavaScript: hide the next button "
@@ -243,5 +242,15 @@ msgstr ""
 #~ " and it could be stored in "
 #~ "``session.vars`` if it's the same for"
 #~ " everyone in the session.)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note: even if you turn off the "
+#~ "``finish.countdown`` event handler from "
+#~ "submitting the page, if you are "
+#~ "running the timeoutworker, the page will"
+#~ " be submitted on the server side. "
+#~ "So, instead you should use the "
+#~ "technique described in :ref:`soft-timeout`."
 #~ msgstr ""
 

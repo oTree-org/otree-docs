@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,78 +22,87 @@ msgid "oTree"
 msgstr "oTree"
 
 #: ../../source/index.rst:15
-msgid "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
-msgstr "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | 日本語 <https://otree.readthedocs.io/ja/latest/index.html>`__"
+#, fuzzy
+msgid ""
+"`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 "
+"<https://otree.readthedocs.io/ja/latest/index.html>`__"
+msgstr ""
+"`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | 日本語 "
+"<https://otree.readthedocs.io/ja/latest/index.html>`__"
 
-#: ../../source/index.rst:18
+#: ../../source/index.rst:20
 msgid "Live demos"
 msgstr "デモ"
 
-#: ../../source/index.rst:20
+#: ../../source/index.rst:22
 msgid "https://www.otreehub.com/projects/?featured=1"
 msgstr ""
 
-#: ../../source/index.rst:24
+#: ../../source/index.rst:26
 msgid "Homepage"
 msgstr "トップページ"
 
-#: ../../source/index.rst:26
+#: ../../source/index.rst:28
 msgid "http://www.otree.org/"
 msgstr ""
 
-#: ../../source/index.rst:30
+#: ../../source/index.rst:32
 msgid "About"
 msgstr "oTreeとは？"
 
-#: ../../source/index.rst:32
+#: ../../source/index.rst:34
 msgid "oTree is a framework based on Python that lets you build:"
 msgstr "oTreeはPythonで書かれたフレームワークで、次のようなものを作ることができます："
 
-#: ../../source/index.rst:34
+#: ../../source/index.rst:36
 msgid ""
 "Multiplayer strategy games, like the prisoner's dilemma, public goods "
 "game, and auctions"
 msgstr "囚人のジレンマ、公共財供給ゲーム、オークションのような、複数プレイヤーの戦略ゲーム"
 
-#: ../../source/index.rst:35
+#: ../../source/index.rst:37
 msgid ""
 "Controlled behavioral experiments in economics, psychology, and related "
 "fields"
 msgstr "経済学、心理学、およびその他の分野における、制御された行動実験"
 
-#: ../../source/index.rst:36
+#: ../../source/index.rst:38
 msgid "Surveys and quizzes"
 msgstr "アンケート調査やクイズ"
 
-#: ../../source/index.rst:39
+#: ../../source/index.rst:41
 msgid "Support"
 msgstr "サポート"
 
-#: ../../source/index.rst:41
+#: ../../source/index.rst:43
 msgid ""
 "For help, post to our Google Groups `forum "
 "<https://groups.google.com/forum/#!forum/otree>`__."
 msgstr ""
 "質問がある場合は、oTreeのGoogle Groups `forum "
-"<https://groups.google.com/forum/#!forum/otree>`__"
-"に投稿してください。"
+"<https://groups.google.com/forum/#!forum/otree>`__に投稿してください。"
 
-#: ../../source/index.rst:44
+#: ../../source/index.rst:46
 msgid "Contents:"
 msgstr "目次："
 
-#: ../../source/index.rst:74
+#: ../../source/index.rst:76
 msgid "Indices and tables"
 msgstr ""
 
-#: ../../source/index.rst:76
+#: ../../source/index.rst:78
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../source/index.rst:77
+#: ../../source/index.rst:79
 msgid ":ref:`modindex`"
 msgstr ""
 
-#: ../../source/index.rst:78
+#: ../../source/index.rst:80
 msgid ":ref:`search`"
 msgstr ""
+
+#: ../../source/index.rst:82
+msgid "(Thank you to contributors)"
+msgstr ""
+
