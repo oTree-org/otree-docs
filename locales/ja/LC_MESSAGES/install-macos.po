@@ -35,7 +35,7 @@ msgid ""
 "experiments. Journal of Behavioral and Experimental Finance, vol 9: "
 "88-97)"
 msgstr ""
-"もしoTreeを使って実施した研究を出版する時には，`この論文 <http://dx.doi."
+"oTree を使って実施した研究を発表する時には，`この論文 <http://dx.doi."
 "org/10.1016/j.jbef.2015.12.001>`__ (Citation: Chen, D.L., Schonger, M., "
 "Wickens, C., 2016. oTree - An open-source platform for laboratory, "
 "online and field experiments. Journal of Behavioral and Experimental "
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../source/install-macos.rst:21
 msgid "Step 1: Install Python"
-msgstr "ステップ1：Pythonをインストールする"
+msgstr "ステップ1: Pythonをインストールする"
 
 #: ../../source/install-macos.rst:23
 msgid ""
@@ -63,11 +63,11 @@ msgstr ""
 
 #: ../../source/install-macos.rst:24
 msgid "In Finder, search for and open the \"Terminal\" app:"
-msgstr "Finderで「Terminal」アプリを検索して開きます．"
+msgstr "Finder で \"Terminal\" アプリを検索して開きます．"
 
 #: ../../source/install-macos.rst:29
 msgid "Step 2: Install oTree"
-msgstr "ステップ2：oTreeをインストールする"
+msgstr "ステップ2: oTreeをインストールする"
 
 #: ../../source/install-macos.rst:31
 msgid "Enter this command at the prompt:"

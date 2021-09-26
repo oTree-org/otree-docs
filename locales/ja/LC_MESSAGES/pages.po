@@ -19,25 +19,26 @@ msgstr ""
 
 #: ../../source/pages.rst:4
 msgid "Pages"
-msgstr ""
+msgstr "ページ"
 
 #: ../../source/pages.rst:6
 msgid "Each page that your participants see is defined by a ``Page``."
-msgstr ""
+msgstr "参加者に表示される各ページは、 ``Page`` によって定義されます。"
 
 #: ../../source/pages.rst:8
 msgid "Your ``page_sequence`` gives the order of the pages."
-msgstr ""
+msgstr "ページの順序は ``page_sequence`` で指定します。"
 
 #: ../../source/pages.rst:10
 msgid ""
 "If your game has multiple rounds, this sequence will be repeated (see "
 ":ref:`rounds`)."
 msgstr ""
+"ゲームに複数のラウンドがある場合は、この順序が繰り返されます (:ref:`rounds` 参照)。"
 
 #: ../../source/pages.rst:12
 msgid "A ``Page`` can have any of the following methods and attributes."
-msgstr ""
+msgstr "``Page`` は以下のようなメソッドや属性を持つことができます。"
 
 #: ../../source/pages.rst:17
 msgid "is_displayed()"
@@ -49,20 +50,23 @@ msgid ""
 "shown, and False if the page should be skipped. If omitted, the page will"
 " be shown."
 msgstr ""
+"ページを表示すべき場合には ``True`` を、ページをスキップすべき場合には ``False`` を返すように"
+"この関数を定義します。この関数が省略された場合は、そのページは表示されます。"
 
 #: ../../source/pages.rst:23
 msgid "For example, to only show the page to P2 in each group:"
-msgstr ""
+msgstr "例えば、各グループの P2 にだけページを表示する場合は以下のようになります:"
 
 #: ../../source/pages.rst:31
 msgid "Or only show the page in round 1:"
-msgstr ""
+msgstr "また、ラウンド 1 だけページを表示する場合は以下のようになります:"
 
 #: ../../source/pages.rst:39
 msgid ""
 "If you need to repeat the same rule for many pages, use "
 ":ref:`app_after_this_page`."
 msgstr ""
+"多くのページで同じルールを繰り返す必要がある場合は、 :ref:`app_after_this_page` を使用してください。"
 
 #: ../../source/pages.rst:44
 msgid "vars_for_template()"
@@ -70,11 +74,11 @@ msgstr ""
 
 #: ../../source/pages.rst:46
 msgid "Use this to pass variables to the template. Example:"
-msgstr ""
+msgstr "テンプレートに変数を渡す場合に使用します。例えば、次のようにします:"
 
 #: ../../source/pages.rst:58
 msgid "Then in the template you can access ``a`` and ``b`` like this:"
-msgstr ""
+msgstr "このとき、テンプレートでは次のように ``a`` と ``b`` にアクセスできます:"
 
 #: ../../source/pages.rst:64
 msgid ""
@@ -83,10 +87,12 @@ msgid ""
 "``Constants``. You can access them in the template like this: ``{{ "
 "Constants.blah }}`` or ``{{ player.blah }}``."
 msgstr ""
+"oTree は自動的に ``player``, ``group``, ``subsession``, ``participant``, ``session``, ``Constants`` をテンプレートに渡します。"
+"これらはテンプレート内で ``{{ Constants.blah }}`` や ``{{ player.blah }}`` のようにアクセスできます。"
 
 #: ../../source/pages.rst:68
 msgid "If the user refreshes the page, ``vars_for_template`` gets re-executed."
-msgstr ""
+msgstr "ユーザーがページを更新すると、 ``vars_for_template`` は再実行されます。"
 
 #: ../../source/pages.rst:73
 msgid "before_next_page()"
@@ -97,16 +103,18 @@ msgid ""
 "Here you define any code that should be executed after form validation, "
 "before the player proceeds to the next page."
 msgstr ""
+"ここでは、フォームの検証後、プレーヤーが次のページに進む前に実行されるコードを定義します。"
 
 #: ../../source/pages.rst:78
 msgid ""
 "If the page is skipped with ``is_displayed``, then ``before_next_page`` "
 "will be skipped as well."
 msgstr ""
+"``is_displayed`` でページがスキップされた場合は、 ``before_next_page`` もスキップされます。"
 
 #: ../../source/pages.rst:81
 msgid "Example:"
-msgstr ""
+msgstr "例:"
 
 #: ../../source/pages.rst:91
 msgid "timeout_seconds"
@@ -114,7 +122,7 @@ msgstr ""
 
 #: ../../source/pages.rst:93
 msgid "See :ref:`timeouts`"
-msgstr ""
+msgstr ":ref:`timeouts` を参照"
 
 #: ../../source/pages.rst:96
 msgid "Wait pages"
@@ -122,17 +130,19 @@ msgstr ""
 
 #: ../../source/pages.rst:98
 msgid "See :ref:`wait_pages`"
-msgstr ""
+msgstr ":ref:`wait_pages` を参照"
 
 #: ../../source/pages.rst:101
 msgid "Randomizing page sequence"
-msgstr ""
+msgstr "ページ順序のランダム化"
 
 #: ../../source/pages.rst:103
 msgid ""
 "You can randomize the order of pages using rounds. An example is `here "
 "<https://www.otreehub.com/projects/otree-snippets/>`__."
 msgstr ""
+"ラウンドを使ってページの順番をランダムにすることができます。 "
+"`こちら <https://www.otreehub.com/projects/otree-snippets/>`__ で例を確認できます。"
 
 #: ../../source/pages.rst:109
 msgid "app_after_this_page"
@@ -143,6 +153,8 @@ msgid ""
 "To skip entire apps, you can define ``app_after_this_page``. For example,"
 " to skip to the next app, you would do:"
 msgstr ""
+"アプリ全体をスキップするには、 ``app_after_this_page`` を定義します。"
+"例えば、次のアプリにスキップするには、次のようにします:"
 
 #: ../../source/pages.rst:121
 msgid ""
@@ -151,12 +163,17 @@ msgid ""
 "``upcoming_apps[-1]``. Or you could just return a hardcoded string (as "
 "long as that string is in ``upcoming_apps``):"
 msgstr ""
+"``upcoming_apps`` は、 ``app_sequence`` (文字列のリスト) の残りの部分です。"
+"したがって、最後のアプリにスキップするには、 ``upcoming_apps[-1]`` を返すようにします。"
+"また、ハードコードされた文字列を返すこともできます "
+"(ただし、その文字列が ``upcoming_apps`` に含まれている必要があります):"
 
 #: ../../source/pages.rst:134
 msgid ""
 "If this function doesn't return anything, the player proceeds to the next"
 " page as usual."
 msgstr ""
+"この関数が何も返さなかった場合、プレーヤーは通常通り次のページに進みます。"
 
 #~ msgid ""
 #~ "You can define this method to "

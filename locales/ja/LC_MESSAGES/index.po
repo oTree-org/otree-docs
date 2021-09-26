@@ -47,7 +47,7 @@ msgstr "oTreeとは？"
 
 #: ../../source/index.rst:32
 msgid "oTree is a framework based on Python that lets you build:"
-msgstr "oTreeはPythonで書かれたフレームワークで、次のようなものを作ることができます："
+msgstr "oTree は Python で書かれたフレームワークで、次のようなものを作ることができます:"
 
 #: ../../source/index.rst:34
 msgid ""
@@ -74,13 +74,13 @@ msgid ""
 "For help, post to our Google Groups `forum "
 "<https://groups.google.com/forum/#!forum/otree>`__."
 msgstr ""
-"質問がある場合は、oTreeのGoogle Groups `forum "
+"質問がある場合は、oTree の Google Groups `forum "
 "<https://groups.google.com/forum/#!forum/otree>`__ "
 "に投稿してください。"
 
 #: ../../source/index.rst:44
 msgid "Contents:"
-msgstr "目次："
+msgstr "目次:"
 
 #: ../../source/index.rst:74
 msgid "Indices and tables"

@@ -135,7 +135,7 @@ msgid ""
 "(The ``session`` is necessary because different sessions can have "
 "different conversion rates)."
 msgstr ""
-"(セッションが異なると変換率も異なるため、 ``session`` は必要です。)"
+"(セッションが異なると変換率も異なるため、 ``session`` が必要になります。)"
 
 #: ../../source/currency.rst:87
 msgid "Decimal places"

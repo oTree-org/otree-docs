@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/server/adhoc.rst:4
 msgid "Configure your computer to be a server (advanced)"
-msgstr ""
+msgstr "コンピュータをサーバとして設定する (高度な設定)"
 
 #: ../../source/server/adhoc.rst:8
 msgid ""
@@ -27,6 +27,8 @@ msgid ""
 "described on the server setup pages for Windows/Mac (see :ref:`here "
 "<server>`)."
 msgstr ""
+"このページは、 Windows/Mac 用の :ref:`サーバ設定 <server>` のページ"
+"で説明されているように、oTree サーバがすでにインストールされていることを前提としています。"
 
 #: ../../source/server/adhoc.rst:12
 msgid ""
@@ -34,6 +36,8 @@ msgid ""
 " your university network) and don't need access from the internet, you "
 "can follow the below steps to use your own computer as a server."
 msgstr ""
+"インターネットからのアクセスを必要とせず、ローカルネットワーク (大学のネットワークなど) 上の"
+"デバイスを使って研究を行う場合は、以下の手順で自身のコンピュータをサーバとして使用することができます。"
 
 #: ../../source/server/adhoc.rst:17
 msgid "Windows"
@@ -41,45 +45,46 @@ msgstr ""
 
 #: ../../source/server/adhoc.rst:20
 msgid "Create a firewall rule (Windows only)"
-msgstr ""
+msgstr "ファイアウォールルールの作成 (Windowsのみ)"
 
 #: ../../source/server/adhoc.rst:22
 msgid ""
 "You need to allow other computers to connect to oTree through your "
 "firewall."
 msgstr ""
+"他のコンピュータが oTree に接続できるようにファイアウォールの通過を許可する必要があります。"
 
 #: ../../source/server/adhoc.rst:24
 msgid "Open the Windows Firewall"
-msgstr ""
+msgstr "Windows Defender ファイアウォールを開きます"
 
 #: ../../source/server/adhoc.rst:25
 msgid "Go to \"Inbound Rules\""
-msgstr ""
+msgstr "\"受信の規則\" に移動します"
 
 #: ../../source/server/adhoc.rst:26
 msgid "Click \"New Rule\""
-msgstr ""
+msgstr "\"新しい規則\" をクリックします"
 
 #: ../../source/server/adhoc.rst:27
 msgid "Select \"Port\" to make a port rule"
-msgstr ""
+msgstr "ポートルールを作成するために \"ポート\" を選択します"
 
 #: ../../source/server/adhoc.rst:28
 msgid "Under \"Specific local ports\", enter 80 and 8000"
-msgstr ""
+msgstr "\"特定のローカルポート\" に 80 と 8000 を入力します"
 
 #: ../../source/server/adhoc.rst:29
 msgid "Select \"Allow the connection\""
-msgstr ""
+msgstr "\"接続を許可する\" を選択します"
 
 #: ../../source/server/adhoc.rst:30
 msgid "Click \"next\" then choose a name for your rule (e.g. \"oTree\")."
-msgstr ""
+msgstr "\"次へ\" を選択し、ルールの名前を決めます (例: \"oTree\")"
 
 #: ../../source/server/adhoc.rst:33
 msgid "Find your IP address (Windows)"
-msgstr ""
+msgstr "IP アドレスの確認 (Windows)"
 
 #: ../../source/server/adhoc.rst:35
 msgid ""
@@ -87,6 +92,9 @@ msgid ""
 "entry ``IPv4 Address``. Maybe it will look something like ``10.0.1.3``, "
 "or could also start with 172 or 192."
 msgstr ""
+"PowerShell または コマンドプロンプトを開き、 ``ipconfig`` と入力します。 "
+"``IPv4 アドレス`` という項目を探します。 "
+"``10.0.1.3`` のようになっている場合もあれば、172 や 192 で始まる場合もあります。"
 
 #: ../../source/server/adhoc.rst:40
 msgid "MacOS"
@@ -94,7 +102,7 @@ msgstr ""
 
 #: ../../source/server/adhoc.rst:43
 msgid "Find your IP address (MacOS)"
-msgstr ""
+msgstr "IP アドレスの確認 (MacOS)"
 
 #: ../../source/server/adhoc.rst:45
 msgid ""
@@ -103,16 +111,21 @@ msgid ""
 "\"Advanced\" > \"TCP/IP\" to view your IP address. Maybe it will look "
 "something like ``10.0.1.3``, or could also start with 172 or 192."
 msgstr ""
+"\"システム環境設定\" > \"ネットワーク\" に移動し、使用しているネットワークを選択します。"
+"お使いの macOS のバージョンによっては、 \"詳細\" > \"TCP/IP\" をクリックしないと "
+"IP アドレスが表示されない場合があります。 "
+"``10.0.1.3`` のようになっている場合もあれば、172 や 192 で始まる場合もあります。"
 
 #: ../../source/server/adhoc.rst:51
 msgid "Run the server"
-msgstr ""
+msgstr "サーバの起動"
 
 #: ../../source/server/adhoc.rst:53
 msgid ""
 "Start the server with your IP address and port 8000, e.g. ``otree "
 "devserver 10.0.1.3:8000``."
 msgstr ""
+"``otree devserver 10.0.1.3:8000`` のようにして、 IP アドレスとポート 8000 でサーバを起動します。"
 
 #: ../../source/server/adhoc.rst:58
 msgid ""
@@ -120,6 +133,9 @@ msgid ""
 "steps working, you should switch to using the production server ``otree "
 "prodserver``."
 msgstr ""
+"ここでは ``devserver`` を一時的に使用しています。"
+"ここまでの手順で動作するようになったら、本番用サーバである ``otree prodserver`` "
+"の使用に切り替えてください。"
 
 #: ../../source/server/adhoc.rst:62
 msgid ""
@@ -127,10 +143,12 @@ msgid ""
 "``:8000``, e.g. ``10.0.1.3:8000`` and you should be able to load the "
 "oTree demo page."
 msgstr ""
+"クライアント端末のブラウザで ``10.0.1.3:8000`` のように、IPアドレスの後に ``:8000`` "
+"を付けたアドレスに接続すると、 oTree のデモページを読み込むことができるはずです。"
 
 #: ../../source/server/adhoc.rst:66
 msgid "Make sure your IP address doesn't change"
-msgstr ""
+msgstr "IP アドレスが変更されていないか確認する"
 
 #: ../../source/server/adhoc.rst:68
 msgid ""
@@ -139,16 +157,22 @@ msgid ""
 "changes unpredictably, you can ask your IT department to add a rule on "
 "their DHCP server to always assign the same IP to your computer."
 msgstr ""
+"ほとんどの大学のネットワークでは、あなたが同じネットワークに接続している限り、"
+"あなたの内部 IP アドレスは通常変わりません。 IP アドレスが変化してしまう場合には、 "
+"IT 部門に依頼して、 あなたのコンピュータに常に同じ IP を割り当てるように、"
+"DHCP サーバにルールを追加してもらうことで対処できます。"
 
 #: ../../source/server/heroku.rst:4
 msgid "Basic Server Setup (Heroku)"
-msgstr ""
+msgstr "サーバの基本設定 (Heroku)"
 
 #: ../../source/server/heroku.rst:6
 msgid ""
 "`Heroku <https://www.heroku.com/>`__ is a commercial cloud hosting "
 "provider. It is the simplest way to deploy oTree."
 msgstr ""
+"`Heroku <https://www.heroku.com/>`__ は商用のクラウドホスティングプロバイダです。"
+"oTree を導入する最もシンプルな方法です。"
 
 #: ../../source/server/heroku.rst:9
 msgid ""
@@ -160,10 +184,15 @@ msgid ""
 "of the monthly cost. Often this means you can run a study for just a few "
 "dollars."
 msgstr ""
+"Heroku の無料プランは、アプリのテストには十分ですが、研究を開始する準備ができたら、"
+"より多くのトラフィックを処理できる有料サーバにアップグレードする必要があります。"
+"しかし、 Heroku は、実際に使用した時間分だけ支払うので、かなり安価です。"
+"1 日だけ試験を行う場合、 dyno やアドオンをオフにすれば、"
+"月額費用の 1/30 で済みます。多くの場合、わずか数ドルで試験を行うことができるのです。"
 
 #: ../../source/server/heroku.rst:18
 msgid "Heroku setup"
-msgstr ""
+msgstr "Heroku のセットアップ"
 
 #: ../../source/server/heroku.rst:20
 msgid ""
@@ -171,10 +200,13 @@ msgid ""
 "<https://www.otreehub.com/>`__, which automates your Heroku setup. It's "
 "free for public projects."
 msgstr ""
+"Heroku へのデプロイには、Heroku のセットアップを自動化する `oTree Hub "
+"<https://www.otreehub.com/>`__ を使うことをお勧めします。"
+"パブリックプロジェクトであれば無料で利用できます。"
 
 #: ../../source/server/heroku.rst:25
 msgid "oTree Hub also offers error/performance monitoring and a Sentry service."
-msgstr ""
+msgstr "oTree Hub は、エラーやパフォーマンスの監視や Sentry サービスも提供しています。"
 
 #: ../../source/server/heroku.rst:27
 msgid ""
@@ -184,10 +216,15 @@ msgid ""
 "#heroku-setup-option-2>`__ However, you are more likely to run into "
 "issues this way and I am not able to provide much support.)"
 msgstr ""
+"(コマンドラインと git を使った古いデプロイ方法は "
+"`こちら <https://github.com/oTree-org/otree-"
+"docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/source/server/heroku.rst"
+"#heroku-setup-option-2>`__ です。 しかし、この方法では問題が発生する可能性が高く、"
+"あまりサポートできません。)"
 
 #: ../../source/server/heroku.rst:35
 msgid "Server performance"
-msgstr ""
+msgstr "サーバのパフォーマンス"
 
 #: ../../source/server/heroku.rst:37
 msgid ""
@@ -195,6 +232,9 @@ msgid ""
 " and database. What tier you need depends on how much traffic your app "
 "will get, and how it is coded."
 msgstr ""
+"Heroku では、 dyno やデータベースなどのリソースに対して、"
+"さまざまなパフォーマンス層を提供しています。"
+"どの層が必要かは、アプリのトラフィック量やコードの書き方によって異なります。"
 
 #: ../../source/server/heroku.rst:40
 msgid ""
@@ -202,18 +242,21 @@ msgid ""
 "affect performance. oTree Hub's Pro plan has a \"monitor\" section that "
 "will analyze your logs to identify performance issues."
 msgstr ""
+"パフォーマンスに影響を与える要因は多岐にわたるため、パフォーマンスは複雑なテーマです。"
+"oTree Hub の Pro プランには、パフォーマンスの問題を特定するためにログを分析する "
+"\"monitor\" セクションがあります。"
 
 #: ../../source/server/heroku.rst:44
 msgid "General tips:"
-msgstr ""
+msgstr "一般的なヒント:"
 
 #: ../../source/server/heroku.rst:46
 msgid "Upgrade oTree to the latest version"
-msgstr ""
+msgstr "oTree を最新バージョンにアップグレードする"
 
 #: ../../source/server/heroku.rst:47
 msgid "Use browser bots to stress-test your app."
-msgstr ""
+msgstr "ブラウザボットを使用して、アプリのストレステストを行う"
 
 #: ../../source/server/heroku.rst:48
 msgid ""
@@ -222,18 +265,26 @@ msgid ""
 "your dyno load stays above 1, then you should get a faster dyno. (But "
 "don't run more than 1 web dyno.)"
 msgstr ""
+"高い層の dyno では、Heroku は \"Metrics\" タブを提供しています。 "
+"\"Dyno load\" を見てください。ユーザがページの読み込みに時間がかかっているのに、 "
+"dyno load が 1 以上を維持している場合は、より高速な dyno を導入する必要があります。 "
+"(ただし、1 つ以上の Web dyno を実行しないでください。)"
 
 #: ../../source/server/heroku.rst:51
 msgid ""
 "If your dyno load stays under 1 but page load times are still slow, the "
 "bottleneck might be something else like your Postgres database."
 msgstr ""
+"dyno load が 1 未満でもページロード時間が遅い場合、"
+"ボトルネックは Postgres データベースなど他にある可能性があります。"
 
 #: ../../source/server/heroku.rst:53
 msgid ""
 "RAM usage should never go above the limit. If that is happening, contact "
 "chris@otree.org."
 msgstr ""
+"RAM の使用量が制限値を超えることはありません。もしそうなっている場合は、 "
+"chris@otree.org まで連絡してください。"
 
 #: ../../source/server/heroku.rst:55
 msgid ""
@@ -244,70 +295,77 @@ msgid ""
 "Consider adapting these games to use :ref:`live`, which will result in "
 "much faster performance."
 msgstr ""
+"最も負荷の高いセッションは、 (1)ラウンド数が多い、(2)プレイヤーが各ページに数秒しか滞在しない、"
+"(3)多くのプレイヤーが同時にプレイしている、が組み合わさったセッションです。"
+"これらのセッションでは、1秒あたりのページリクエスト数が多いため、サーバーに負荷がかかります。"
+"このようなゲームでは :ref:`live` を使用することで、より高速なパフォーマンスを実現することができます。"
 
 #: ../../source/server/intro.rst:4
 msgid "Server setup"
-msgstr ""
+msgstr "サーバ設定"
 
 #: ../../source/server/intro.rst:6
 msgid ""
 "If you are just testing your app on your personal computer, you can use "
 "``otree devserver``. You don't need a full server setup."
 msgstr ""
+"個人のパソコンでアプリをテストするだけなら、 "
+"``otree devserver`` を使うことができます。完全なサーバ設定は必要ありません。"
 
 #: ../../source/server/intro.rst:9
 msgid ""
 "However, when you want to share your app with an audience, you must use a"
 " web server."
 msgstr ""
+"しかし、自分のアプリを誰かと共有したい場合は、ウェブサーバを使用する必要があります。"
 
 #: ../../source/server/intro.rst:12
 msgid "Choose which option you need:"
-msgstr ""
+msgstr "必要なオプションを選択してください:"
 
 #: ../../source/server/intro.rst:14
 msgid "**You want to launch your app to users on the internet**"
-msgstr ""
+msgstr "**インターネット上のユーザにアプリを公開したい場合**"
 
 #: ../../source/server/intro.rst:16
 msgid "Use :ref:`Heroku <heroku>`."
-msgstr ""
+msgstr ":ref:`Heroku <heroku>` を使用します。"
 
 #: ../../source/server/intro.rst:18
 msgid "**You want the easiest setup**"
-msgstr ""
+msgstr "**最も簡単な設定を使用したい場合**"
 
 #: ../../source/server/intro.rst:20
 msgid "Again, we recommend :ref:`Heroku <heroku>`."
-msgstr ""
+msgstr "ここでも、 :ref:`Heroku <heroku>` をお勧めします。"
 
 #: ../../source/server/intro.rst:22
 msgid "**You want to use your own computer as a server on your local network**"
-msgstr ""
+msgstr "**自分のコンピュータをローカルネットワーク上のサーバとして使用したい場合**"
 
 #: ../../source/server/intro.rst:24
 msgid "e.g. running a lab study or field study. Follow these steps:"
-msgstr ""
+msgstr "例えば、実験室での研究やフィールドワークを行う場合など。この場合は、以下の手順に従ってください:"
 
 #: ../../source/server/intro.rst:27
 msgid ":ref:`Conventional installation <server-windows>`"
-msgstr ""
+msgstr ":ref:`従来の方法でのインストール <server-windows>`"
 
 #: ../../source/server/intro.rst:28
 msgid "Set up your PC as an :ref:`ad-hoc server <server-adhoc>`"
-msgstr ""
+msgstr "自身の PC を :ref:`ad-hoc server <server-adhoc>` として設定"
 
 #: ../../source/server/intro.rst:31
 msgid "**You want to set up a dedicated Linux server**"
-msgstr ""
+msgstr "**専用のLinuxサーバーを立ち上げたい場合**"
 
 #: ../../source/server/intro.rst:33
 msgid ":ref:`Ubuntu Linux <server-ubuntu>` instructions."
-msgstr ""
+msgstr ":ref:`Ubuntu Linux <server-ubuntu>` に説明があります。"
 
 #: ../../source/server/server-windows.rst:4
 msgid "Windows Server (advanced)"
-msgstr ""
+msgstr "Windows Server (高度な設定)"
 
 #: ../../source/server/server-windows.rst:6
 msgid ""
@@ -316,6 +374,9 @@ msgid ""
 "setup as described below, which is necessary for sharing your app with an"
 " audience."
 msgstr ""
+"個人のコンピュータでアプリをテストするだけなら、 "
+"``otree zipserver`` や ``otree devserver`` を使うことができます。"
+"アプリを公開するために必要な、後述のような完全なサーバ設定は必要ありません。"
 
 #: ../../source/server/server-windows.rst:10
 msgid ""
@@ -323,20 +384,23 @@ msgid ""
 "servers. If you would like an easier and quicker way, we recommend using "
 ":ref:`Heroku <heroku>`."
 msgstr ""
+"ここでは、Web サーバの設定に慣れている方を対象としています。"
+"もっと簡単に早く済ませたいという方には、 :ref:`Heroku <heroku>` の利用をお勧めします。"
 
 #: ../../source/server/server-windows.rst:17
 msgid "Why do I need to install server software?"
-msgstr ""
+msgstr "サーバソフトをインストールする必要がある理由"
 
 #: ../../source/server/server-windows.rst:19
 msgid ""
 "oTree's development setup (``devserver``) is not designed for running "
 "actual studies."
 msgstr ""
+"oTree の開発用セットアップ (``devserver``) は、実際の研究を行うためのものではありません。"
 
 #: ../../source/server/server-windows.rst:24 ../../source/server/ubuntu.rst:40
 msgid "Database (Postgres)"
-msgstr ""
+msgstr "データベース (Postgres)"
 
 #: ../../source/server/server-windows.rst:26 ../../source/server/ubuntu.rst:42
 msgid ""
@@ -344,6 +408,8 @@ msgid ""
 "``DATABASE_URL`` env var, for example: to "
 "``postgres://postgres@localhost/django_db``"
 msgstr ""
+"Postgres と psycopg2 をインストールして、新しいデータベースを作成し、 "
+"``DATABASE_URL`` 環境変数を設定してください (例: `postgres://postgres@localhost/django_db`` )。"
 
 #: ../../source/server/server-windows.rst:30
 msgid "resetdb"
@@ -354,42 +420,47 @@ msgid ""
 "If all the above steps went well, you should be able to run ``otree "
 "resetdb``."
 msgstr ""
+"上記の手順がすべてうまくいっていれば、 ``otree resetdb`` を実行できるはずです。"
 
 #: ../../source/server/server-windows.rst:35
 msgid "Run the production server"
-msgstr ""
+msgstr "本番用サーバの実行"
 
 #: ../../source/server/server-windows.rst:37 ../../source/server/ubuntu.rst:19
 msgid "Run::"
-msgstr ""
+msgstr "以下を実行します::"
 
 #: ../../source/server/server-windows.rst:41
 msgid ""
 "See :ref:`here <prodserver>` for full instructions. The steps are "
 "essentially the same as on Linux."
 msgstr ""
+"詳しい手順は :ref:`こちら <prodserver>` を参照してください。"
+"手順は基本的に Linux と同じです。"
 
 #: ../../source/server/server-windows.rst:45
 msgid "Set environment variables"
-msgstr ""
+msgstr "環境変数の設定"
 
 #: ../../source/server/server-windows.rst:47
 msgid ""
 "You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and "
 "``OTREE_AUTH_LEVEL``."
 msgstr ""
+"``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, ``OTREE_AUTH_LEVEL`` "
+"を設定します。"
 
 #: ../../source/server/server-windows.rst:50
 msgid "Allow other computers to connect"
-msgstr ""
+msgstr "他のコンピュータの接続を許可する"
 
 #: ../../source/server/server-windows.rst:52
 msgid "See instructions :ref:`here <server-adhoc>`."
-msgstr ""
+msgstr ":ref:`こちら <server-adhoc>` を参照してください。"
 
 #: ../../source/server/ubuntu.rst:4
 msgid "Ubuntu Linux Server"
-msgstr ""
+msgstr "Ubuntu Linux サーバ"
 
 #: ../../source/server/ubuntu.rst:6
 msgid ""
@@ -397,76 +468,86 @@ msgid ""
 "instructions :ref:`here <heroku>`), or to use their own personal computer"
 " as a temporary server (see :ref:`here <server-adhoc>`)."
 msgstr ""
+"oTree を初めてお使いになる方には、 Heroku にデプロイするか (手順は :ref:`こちら <heroku>`)、"
+"ご自身のコンピュータを一時的なサーバとしてお使いになることをお勧めしています (手順は :ref:`こちら <server-adhoc>` )。"
 
 #: ../../source/server/ubuntu.rst:10
 msgid ""
 "However, you may prefer to run oTree on a proper Linux server. Reasons "
 "may include:"
 msgstr ""
+"しかし、oTree を Linux サーバで運用したい場合もあります。理由は以下のようなものが考えられます:"
 
 #: ../../source/server/ubuntu.rst:12
 msgid "Your lab doesn't have internet"
-msgstr ""
+msgstr "実験室にインターネットがない"
 
 #: ../../source/server/ubuntu.rst:13
 msgid "You want full control over server configuration"
-msgstr ""
+msgstr "サーバの設定を完全にコントロールしたい"
 
 #: ../../source/server/ubuntu.rst:14
 msgid "You want better performance (local servers have less latency)"
 msgstr ""
+"パフォーマンスを向上させたい (ローカルサーバは遅延が少ない)"
 
 #: ../../source/server/ubuntu.rst:17
 msgid "Install apt-get packages"
-msgstr ""
+msgstr "apt-get パッケージのインストール"
 
 #: ../../source/server/ubuntu.rst:24
 msgid "Create a virtualenv"
-msgstr ""
+msgstr "virtualenv の作成"
 
 #: ../../source/server/ubuntu.rst:26
 msgid "It's a best practice to use a virtualenv::"
-msgstr ""
+msgstr "virtualenv を使用するには以下を実行します::"
 
 #: ../../source/server/ubuntu.rst:30
 msgid ""
 "To activate this venv every time you start your shell, put this in your "
 "``.bashrc`` or ``.profile``::"
 msgstr ""
+"シェルを起動するたびにこの venv を有効にするには、 "
+"``.bashrc`` もしくは ``.profile`` に以下を記述します::"
 
 #: ../../source/server/ubuntu.rst:34
 msgid ""
 "Once your virtualenv is active, you will see ``(venv_otree)`` at the "
 "beginning of your prompt."
 msgstr ""
+"virtualenv が有効になると、プロンプトの先頭に ``(venv_otree)`` と表示されます。"
 
 #: ../../source/server/ubuntu.rst:46
 msgid "Reset the database on the server"
-msgstr ""
+msgstr "サーバ上のデータベースをリセットする"
 
 #: ../../source/server/ubuntu.rst:48
 msgid ""
 "``cd`` to the folder containing your oTree project. Install the "
 "requirements and reset the database::"
 msgstr ""
+"oTree プロジェクトが入っているフォルダに ``cd`` で移動します。"
+"必要なものをインストールし、データベースをリセットします。"
 
 #: ../../source/server/ubuntu.rst:58
 msgid "Running the server"
-msgstr ""
+msgstr "サーバの実行"
 
 #: ../../source/server/ubuntu.rst:61
 msgid "Testing the production server"
-msgstr ""
+msgstr "本番用サーバのテスト"
 
 #: ../../source/server/ubuntu.rst:63
 msgid "From your project folder, run::"
-msgstr ""
+msgstr "プロジェクトフォルダから、以下を実行します::"
 
 #: ../../source/server/ubuntu.rst:67
 msgid ""
 "Then navigate in your browser to your server's IP/hostname followed by "
 "``:8000``."
 msgstr ""
+"そして、サーバの IP アドレスもしくはホスト名に ``:8000`` を付けてブラウザに入力します。"
 
 #: ../../source/server/ubuntu.rst:70
 msgid ""
@@ -475,30 +556,38 @@ msgid ""
 "permission, so let's use sudo, but add some extra args to preserve "
 "environment variables like ``PATH``, ``DATABASE_URL``, etc::"
 msgstr ""
+"Nginx や Apache のようなリバースプロキシを使用していない場合は、"
+"ポート 80 で直接 oTree を実行したいと思うでしょう。"
+"この場合、スーパーユーザの権限が必要なので、 sudo を使用します。"
+"ただし、 ``PATH`` や ``DATABASE_URL`` などの環境変数を保持するために、"
+"いくつかの引数を追加する必要があります::"
 
 #: ../../source/server/ubuntu.rst:78
 msgid ""
 "Try again to open your browser; this time, you don't need to append :80 "
 "to the URL, because that is the default HTTP port."
 msgstr ""
+"もう一度、ブラウザで開いてみてください。"
+"今回は URL に :80 を追加する必要はありません。これはデフォルトの HTTP ポートだからです。"
 
 #: ../../source/server/ubuntu.rst:81
 msgid ""
 "Unlike ``devserver``, ``prodserver`` does not restart automatically when "
 "your files are changed."
 msgstr ""
+"``prodserver`` は、 ``devserver`` と異なり、ファイルが変更されても自動的に再起動しません。"
 
 #: ../../source/server/ubuntu.rst:85
 msgid "Set remaining environment variables"
-msgstr ""
+msgstr "残りの環境変数の設定"
 
 #: ../../source/server/ubuntu.rst:87
 msgid "Add these in the same place where you set ``DATABASE_URL``::"
-msgstr ""
+msgstr "``DATABASE_URL`` を設定したのと同じ場所に以下をを追加します::"
 
 #: ../../source/server/ubuntu.rst:94
 msgid "(Optional) Process control system"
-msgstr ""
+msgstr "(オプション) プロセスコントロールシステム"
 
 #: ../../source/server/ubuntu.rst:96
 msgid ""
@@ -507,6 +596,9 @@ msgid ""
 "restart your processes in case they crash, keep it running if you log "
 "out, etc."
 msgstr ""
+"上記の説明に従って、サーバーが動作するようになったら、 Supervisord や Circus のような"
+"プロセス制御システムを使用することをお勧めします。"
+"これは、プロセスがクラッシュした場合に再起動したり、ログアウトしても実行し続けるなどの機能を持っています。"
 
 #: ../../source/server/ubuntu.rst:103
 msgid "Circus"
@@ -517,22 +609,23 @@ msgid ""
 "Install Circus, then create a ``circus.ini`` in your project folder, with"
 " the following content::"
 msgstr ""
+"Circus をインストールして、プロジェクトフォルダに以下の内容の ``circus.ini`` を作成します::"
 
 #: ../../source/server/ubuntu.rst:114
 msgid "Then run::"
-msgstr ""
+msgstr "そして、以下を実行します::"
 
 #: ../../source/server/ubuntu.rst:118
 msgid "If this is working properly, you can start it as a daemon::"
-msgstr ""
+msgstr "これが正常に動作していれば、デーモンとして起動することができます::"
 
 #: ../../source/server/ubuntu.rst:123
 msgid "To stop circus, run::"
-msgstr ""
+msgstr "Circus を停止するには、以下を実行します::"
 
 #: ../../source/server/ubuntu.rst:128
 msgid "(Optional) Apache, Nginx, etc."
-msgstr ""
+msgstr "(オプション) Apache, Nginx など"
 
 #: ../../source/server/ubuntu.rst:130
 msgid ""
@@ -540,30 +633,37 @@ msgid ""
 "must be run with an ASGI server. However, you still might want to use "
 "Apache/Nginx as a reverse proxy, for the following reasons:"
 msgstr ""
+"oTree は ASGIサーバで動作させる必要があるため、 Apache や Nginx をプライマリWebサーバとして"
+"使用することはできません。しかし、以下のような理由で、 Apache/Nginx を"
+"リバースプロキシとして使用したい場合があります::"
 
 #: ../../source/server/ubuntu.rst:134
 msgid ""
 "You are trying to optimize serving of static files (though oTree uses "
 "Whitenoise, which is already fairly efficient)"
 msgstr ""
+"静的ファイルの提供を最適化しようとしている "
+"(ただし、oTree は Whitenoise を使用しており、すでにかなり効率的である)"
 
 #: ../../source/server/ubuntu.rst:136
 msgid "You need to host other websites on the same server"
-msgstr ""
+msgstr "同じサーバで他の Web サイトをホストする必要がある"
 
 #: ../../source/server/ubuntu.rst:137
 msgid "You need features like SSL or proxy buffering"
-msgstr ""
+msgstr "SSL やプロキシ・バッファリングなどの機能が必要である"
 
 #: ../../source/server/ubuntu.rst:139
 msgid ""
 "If you set up a reverse proxy, make sure to enable not only HTTP traffic "
 "but also websockets."
 msgstr ""
+"リバースプロキシを設定する場合は、 HTTP トラフィックだけでなく、"
+"ウェブソケットも有効にするようにしてください。"
 
 #: ../../source/server/ubuntu.rst:143
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
 #: ../../source/server/ubuntu.rst:145
 msgid ""
@@ -571,10 +671,13 @@ msgid ""
 "reloads, it might be caused by another oTree instance that didn't shut "
 "down. Try stopping oTree and reload again."
 msgstr ""
+"ページをリロードするたびにランダムに変更されるなど、奇妙な動作が発生する場合、"
+"シャットダウンしなかった別の oTree インスタンスが原因である可能性があります。 "
+"oTree を停止して再度リロードしてみてください。"
 
 #: ../../source/server/ubuntu.rst:151
 msgid "Sharing a server with other oTree users"
-msgstr ""
+msgstr "他の oTree ユーザとサーバを共有する"
 
 #: ../../source/server/ubuntu.rst:153
 msgid ""
@@ -582,6 +685,8 @@ msgid ""
 " that the code and databases are kept separate, so they don't conflict "
 "with each other."
 msgstr ""
+"他の oTree ユーザとサーバを共有することができます。"
+"ただし、コードとデータベースがお互いに競合しないように、別々に管理する必要があります。"
 
 #: ../../source/server/ubuntu.rst:157
 msgid ""
@@ -589,22 +694,28 @@ msgid ""
 "using oTree. Then each person should follow the same steps described "
 "above, but in some cases name things differently to avoid clashes:"
 msgstr ""
+"サーバ上では、oTree を使用する人ごとに異なる Unix ユーザを作成する必要があります。"
+"その後、各人は上述と同じ手順を踏むことになりますが、クラッシュを回避するために"
+"場合によっては異なる名前をつけることになります:"
 
 #: ../../source/server/ubuntu.rst:161
 msgid "Create a virtualenv in their home directory"
-msgstr ""
+msgstr "各人のホームディレクトリに virtualenv を作成"
 
 #: ../../source/server/ubuntu.rst:162
 msgid ""
 "Create a different Postgres database, as described earlier, and set this "
 "in the DATABASE_URL env var."
 msgstr ""
+"先に述べたように、異なる Postgres データベースを作成し、これを DATABASE_URL 環境変数に設定"
 
 #: ../../source/server/ubuntu.rst:165
 msgid ""
 "Once these steps are done, the second user can push code to the server, "
 "then run ``otree resetdb``."
 msgstr ""
+"これらの手順が完了したら、2人目のユーザはコードをサーバにアップロードしてから "
+"``otree resetdb`` を実行します。"
 
 #: ../../source/server/ubuntu.rst:168
 msgid ""
@@ -614,6 +725,10 @@ msgid ""
 "the same time, then you would need to run the server on multiple ports, "
 "e.g. ``8000``, ``8001``, etc."
 msgstr ""
+"複数の人が同時に実験を行う必要がない場合は、 ``otree prodserver 80`` を使って、"
+"各ユーザが交代で 80 番ポートでサーバを動かすことができます。"
+"しかし、複数の人が同時に実験を行う必要がある場合は、 ``8000`` や ``8001`` など"
+"複数のポートでサーバを動かす必要があります。"
 
 #~ msgid ""
 #~ "If you want, you can use Postgres"

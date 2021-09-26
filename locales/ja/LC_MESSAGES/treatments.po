@@ -19,13 +19,15 @@ msgstr ""
 
 #: ../../source/treatments.rst:5
 msgid "Treatments"
-msgstr ""
+msgstr "トリートメント"
 
 #: ../../source/treatments.rst:7
 msgid ""
 "To assign participants to different treatment groups, you can use "
 "``creating_session``. For example:"
 msgstr ""
+"参加者を異なるトリートメントグループに割り当てるには、 "
+"``creating_session`` を使用します。例えば、以下のようになります:"
 
 #: ../../source/treatments.rst:21
 msgid ""
@@ -33,16 +35,21 @@ msgid ""
 "``BooleanField`` in ``Group`` and change the above code to use "
 "``get_groups()`` and ``group.time_pressure``)."
 msgstr ""
+"グループレベルでトリートメントを割り当てることもできます "
+"(``BooleanField`` を ``Group`` に入れて、上記のコードを "
+"``get_groups()`` と ``group.time_pressure`` を使うように変更します)。"
 
 #: ../../source/treatments.rst:24
 msgid ""
 "``creating_session`` is run immediately when you click the \"create "
 "session\" button, even if the app is not first in the ``app_sequence``."
 msgstr ""
+"``creating_session`` は、アプリが ``app_sequence`` の先頭でなくても、 "
+"\"create session\" ボタンをクリックするとすぐに実行されます。"
 
 #: ../../source/treatments.rst:28
 msgid "Treatment groups & multiple rounds"
-msgstr ""
+msgstr "トリートメントグループと複数ラウンド"
 
 #: ../../source/treatments.rst:30
 msgid ""
@@ -51,10 +58,13 @@ msgid ""
 "executed for each round independently. To prevent this, set it on the "
 "participant, rather than the player:"
 msgstr ""
+"ゲームに複数のラウンドがある場合、 ``creating_session`` が各ラウンドで独立して実行されるため、"
+"プレーヤーはラウンドごとに異なるトリートメントを受ける可能性があります。"
+"これを防ぐには、 player ではなく、 participant に設定します:"
 
 #: ../../source/treatments.rst:43
 msgid "Balanced treatment groups"
-msgstr ""
+msgstr "バランスの取れたトリートメントグループ"
 
 #: ../../source/treatments.rst:45
 msgid ""
@@ -62,6 +72,9 @@ msgid ""
 "you may end up with an imbalance. To solve this, you can use "
 "``itertools.cycle``:"
 msgstr ""
+"上記のコードでは、各プレーヤーごとに独立して無作為抽出を行っているため、"
+"バランスが悪くなってしまうことがあります。これを解決するためには、 "
+"``itertools.cycle`` を使用します:"
 
 #: ../../source/treatments.rst:61
 msgid "Choosing which treatment to play"
@@ -76,10 +89,15 @@ msgid ""
 " You can create 2 session configs that are the same, except for one "
 "parameter (in oTree Studio, add a \"custom parameter\"):"
 msgstr ""
+"ライブ実験では、プレーヤーにランダムなトリートメントを与えたいことがよくあります。"
+"しかし、ゲームをテストする際には、どちらのトリートメントを実行するかを明示的に選択することが有用な場合があります。"
+"例えば、上記の例でゲームを開発していて、同僚に両方のトリートメントを見せたいとします。 "
+"1 つのパラメータを除いて、同じ内容の 2 つのセッションコンフィグを作成することができます "
+"(oTree Studio では、 \"custom parameter\" を追加します):"
 
 #: ../../source/treatments.rst:87
 msgid "Then in your code you can get the current session's treatment with:"
-msgstr ""
+msgstr "そうすれば、コードの中で、現在のセッションのトリートメントを次のようにして取得することができます:"
 
 #: ../../source/treatments.rst:93
 msgid ""
@@ -87,16 +105,20 @@ msgid ""
 "``if 'time_pressure' in session.config:``; if yes, then use that; if no, "
 "then choose it randomly."
 msgstr ""
+"これを無作為化の方法と組み合わせることもできます。 "
+"``if 'time_pressure' in session.config:`` をチェックし、"
+"含まれていればそれを使用し、含まれていなければランダムに選択します。"
 
 #: ../../source/treatments.rst:100
 msgid "Configure sessions"
-msgstr ""
+msgstr "セッションの設定"
 
 #: ../../source/treatments.rst:102
 msgid ""
 "You can make your session configurable, so that you can adjust the game's"
 " parameters in the admin interface."
 msgstr ""
+"管理画面でゲームのパラメータを調整できるように、セッションを設定できます。"
 
 #: ../../source/treatments.rst:108
 msgid ""
@@ -105,32 +127,41 @@ msgid ""
 "``Constants.num_apples``. But to make it configurable, you can instead "
 "define it in your session config. For example:"
 msgstr ""
+"例えば、 ``num_apples`` というパラメータがあるとします。"
+"通常の方法では、 ``Constants.num_apples`` のように ``Constants`` に定義します。"
+"しかし、これをセッションごとに変更可能にするために、代わりにセッションコンフィグで定義することができます。"
+"例えば、以下のようになります:"
 
 #: ../../source/treatments.rst:124
 msgid ""
 "When you create a session in the admin interface, there will be a text "
 "box to change this number. You can also add help text with ``'doc'``:"
 msgstr ""
+"管理画面でセッションを作成すると、この数値を変更するためのテキストボックスが表示されます。"
+"また、 ``'doc'`` でヘルプテキストを追加することもできます:"
 
 #: ../../source/treatments.rst:141
 msgid "In your app's code, you can do ``session.config['num_apples']``."
-msgstr ""
+msgstr "アプリのコードでは、 ``session.config['num_apples']`` でアクセスできます。"
 
 #: ../../source/treatments.rst:143
 msgid "Notes:"
-msgstr ""
+msgstr "注意:"
 
 #: ../../source/treatments.rst:145
 msgid ""
 "For a parameter to be configurable, its value must be a number, boolean, "
 "or string."
 msgstr ""
+"パラメータをセッションコンフィグで定義するには、その値が数値、ブール値、文字列のいずれかでなければなりません。"
 
 #: ../../source/treatments.rst:146
 msgid ""
 "On the \"Demo\" section of the admin, sessions are not configurable. It's"
 " only available when creating a session in \"Sessions\" or \"Rooms\"."
 msgstr ""
+"管理画面の \"Demo\" セクションでは、セッションの設定はできません。 "
+"\"Sessions\" もしくは \"Rooms\" でセッションを作成するときにのみ有効です。"
 
 #~ msgid ""
 #~ "You can also assign treatments at "

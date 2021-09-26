@@ -194,7 +194,7 @@ msgid ""
 " your app is correctly rejecting invalid input from the user, by using "
 "``SubmissionMustFail()``."
 msgstr ""
-":ref:`フォーム検証 <form-validation>` を使用している場合には、 ``SubmissionMustFail()`` を使用して、"
+":ref:`フォームの検証 <form-validation>` を使用している場合には、 ``SubmissionMustFail()`` を使用して、"
 "アプリがユーザーからの無効な入力を正しく拒否しているかどうかをテストする必要があります。"
 
 #: ../../source/bots.rst:121
@@ -215,14 +215,14 @@ msgstr ""
 
 #: ../../source/bots.rst:149
 msgid "Checking the HTML"
-msgstr "HTMLの確認"
+msgstr "HTML のチェック"
 
 #: ../../source/bots.rst:151
 msgid ""
 "``self.html`` contains the HTML of the page you are about to submit. You "
 "can use this together with ``expect()``:"
 msgstr ""
-"``self.html`` には、これから送信しようとしているページのHTMLが格納されています。"
+"``self.html`` には、これから送信しようとしているページの HTML が格納されています。"
 "これは ``expect()`` と一緒に使用することができます:"
 
 #: ../../source/bots.rst:168
@@ -230,12 +230,12 @@ msgid ""
 "``self.html`` is updated with the next page's HTML, after every ``yield``"
 " statement. Linebreaks and extra spaces are ignored."
 msgstr ""
-"``self.html`` は、 ``yield`` 文の実行後に次のページのHTMLで更新されます。"
+"``self.html`` は、 ``yield`` 文の実行後に次のページの HTML で更新されます。"
 "改行や余分なスペースは無視されます。"
 
 #: ../../source/bots.rst:172
 msgid "Automatic HTML checks"
-msgstr "HTMLの自動チェック"
+msgstr "HTML の自動チェック"
 
 #: ../../source/bots.rst:174
 msgid ""
@@ -243,8 +243,8 @@ msgid ""
 "are not actually found in the page's HTML, or if the page's HTML is "
 "missing a submit button."
 msgstr ""
-"ボットが、ページのHTMLに実際にはないフォームを送信しようとしたり、"
-"ページのHTMLに送信ボタンがないのに送信しようとする場合、エラーが発生します。"
+"ボットが、ページの HTML に実際にはないフォームを送信しようとしたり、"
+"ページの HTML に送信ボタンがないのに送信しようとする場合、エラーが発生します。"
 
 #: ../../source/bots.rst:177
 msgid ""
@@ -254,7 +254,7 @@ msgid ""
 "example, change this:"
 msgstr ""
 "ただし、JavaScriptで動的に追加されたフィールドやボタンは、ボットシステムでは確認できません。"
-"このような場合には、``Submission`` で ``check_html=False`` を指定して、HTMLチェックを無効にしてください。"
+"このような場合には、``Submission`` で ``check_html=False`` を指定して、HTML チェックを無効にしてください。"
 "例えば、以下を:"
 
 #: ../../source/bots.rst:185
