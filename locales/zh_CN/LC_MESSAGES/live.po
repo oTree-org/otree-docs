@@ -309,6 +309,3 @@ msgstr ""
 "``liveSend``。相反的，应当让用户点击一个普通按钮时触发 ``liveSend``，然后在 ``liveRecv`` 中使用 "
 "``document.getElementById(\"form\").submit();``。"
 
-#~ msgid "(Note, ``live_method`` on ``WaitPage`` is not yet supported.)"
-#~ msgstr "（注意，在 ``WaitPage`` 中的 ``live_method`` 尚未支持。）"
-

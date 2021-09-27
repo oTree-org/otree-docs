@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-09-26 22:14-0400\n"
 "PO-Revision-Date: 2021-06-01 13:03+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -247,18 +247,3 @@ msgid ""
 "If you just want a soft timeout, you don't need to use the built-in timer"
 " at all. Instead, make your own with JavaScript, for example:"
 msgstr "如果你只是想用温和的超时，那么你根本不需要内置的计时器。你应该使用JavaScript创建自己的超时，例如："
-
-#: ../../source/timeouts.rst:248
-msgid "Minimum time on page"
-msgstr "最小页面停留时间"
-
-#: ../../source/timeouts.rst:250
-msgid ""
-"If you want to require the user to spend *at least* a certain amount of "
-"time on a page, you can use some simple JavaScript: hide the next button "
-"(use the ``.otree-btn-next`` selector), then use ``setTimeout`` to re-"
-"display it after a certain amount of time."
-msgstr ""
-"如果你想让用户在页面上 *至少* 花上一定量的时间，你可以使用一些简单的JavaScript：隐藏下一步按钮（使用 ``.otree-btn-"
-"next`` 选择器），然后使用 ``setTimeout`` 来在一段时间后重新显示按钮。"
-

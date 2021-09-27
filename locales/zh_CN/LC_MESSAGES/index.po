@@ -101,7 +101,3 @@ msgstr ""
 #: ../../source/index.rst:82
 msgid "(Thank you to contributors)"
 msgstr "中文文档由matrixlt翻译 <https://github.com/matrixlt>"
-
-#~ msgid "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__"
-#~ msgstr ""
-

@@ -478,6 +478,3 @@ msgid ""
 ":ref:`dynamic_validation`."
 msgstr "如果你想使用这个技巧，你可能也想使用 :ref:`dynamic_validation`。"
 
-#~ msgid "``formfield_errors`` is new in oTree 5.0.5+."
-#~ msgstr "``formfield_errors`` 在 oTree 5.0.5+ 中新引入。"
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,32 +33,30 @@ msgid ""
 "for laboratory, online and field experiments. Journal of Behavioral and "
 "Experimental Finance, vol 9: 88-97)"
 msgstr ""
-"oTree を使用した研究を発表する場合には、`この論文"
-" <http://dx.doi.org/10.1016/j.jbef.2015.12.001>`__ "
-"(Citation: Chen, D.L., Schonger, M., Wickens, C., 2016. oTree - An "
-"open-source platform for laboratory, online and field experiments. "
-"Journal of Behavioral and Experimental Finance, vol 9: 88-97) "
-"を引用する必要があります。"
+"oTree を使用した研究を発表する場合には、`この論文 "
+"<http://dx.doi.org/10.1016/j.jbef.2015.12.001>`__ (Citation: Chen, D.L., "
+"Schonger, M., Wickens, C., 2016. oTree - An open-source platform for "
+"laboratory, online and field experiments. Journal of Behavioral and "
+"Experimental Finance, vol 9: 88-97) を引用する必要があります。"
 
 #: ../../source/install-windows.rst:18
 msgid ""
 "If the below steps don't work for you, please email chris@otree.org with "
 "details."
-msgstr ""
-"以下の手順でうまくいかない場合は、詳細を chris@otree.org までご連絡ください。"
+msgstr "以下の手順でうまくいかない場合は、詳細を chris@otree.org までご連絡ください。"
 
 #: ../../source/install-windows.rst:21
 msgid "Step 1: Install Python"
 msgstr "ステップ1: Pythonのインストール"
 
 #: ../../source/install-windows.rst:23
+#, fuzzy
 msgid ""
 "Download and install `Python "
-"<https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__."
+"<https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe>`__."
 msgstr ""
 "`Python "
-"<https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__"
-"をダウンロードし、インストールしてください。"
+"<https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__をダウンロードし、インストールしてください。"
 
 #: ../../source/install-windows.rst:25
 msgid "Check the box to add Python to PATH:"
@@ -72,50 +70,26 @@ msgstr "ステップ2: oTreeのインストール"
 msgid ""
 "Go to the folder where you want to store your oTree project. Then click "
 "the \"File\" menu and open PowerShell:"
-msgstr ""
-"oTreeのプロジェクトを保存したいフォルダに移動し、"
-"\"ファイル\" メニューをクリックしてPowerShellを開いてください："
+msgstr "oTreeのプロジェクトを保存したいフォルダに移動し、\"ファイル\" メニューをクリックしてPowerShellを開いてください："
 
 #: ../../source/install-windows.rst:37
 msgid "Enter this command at the prompt:"
 msgstr "次のコマンドをプロンプトに入力してください："
 
-#: ../../source/install-windows.rst:45
-msgid ""
-"This documentation is for oTree Lite. If you need maximum compatibility "
-"with existing oTree apps, switch to `this "
-"<https://otree.readthedocs.io/en/self/index.html>`__ documentation."
-msgstr ""
-"このドキュメントはoTree Liteのものです。もし既存のoTreeアプリとの互換性を最大限"
-"保つ必要がある場合は、`こちら "
-"<https://otree.readthedocs.io/en/self/index.html>`__ のドキュメントを"
-"参照してください。"
-
-#: ../../source/install-windows.rst:49
+#: ../../source/install-windows.rst:44
 msgid "Next steps"
 msgstr "次のステップ"
 
-#: ../../source/install-windows.rst:51
+#: ../../source/install-windows.rst:46
 msgid ""
 "If you will use :ref:`oTree Studio <studio>` (recommended), go to "
 "`otreehub.com <https://www.otreehub.com>`__."
 msgstr ""
-"もし :ref:`oTree Studio <studio>` を使いたい場合は(推奨)、"
-"`otreehub.com <https://www.otreehub.com>`__ にアクセスしてください。"
+"もし :ref:`oTree Studio <studio>` を使いたい場合は(推奨)、`otreehub.com "
+"<https://www.otreehub.com>`__ にアクセスしてください。"
 
-#: ../../source/install-windows.rst:53
+#: ../../source/install-windows.rst:48
 msgid ""
 "If you will use PyCharm or another text-based code editor, follow the "
 "steps :ref:`here <install-nostudio>`."
-msgstr ""
-"もしPyCharmもしくは他のテキストエディタを使う場合は、"
-":ref:`こちら <install-nostudio>` をご覧ください。"
-
-#~ msgid ""
-#~ "This documentation is for oTree Lite."
-#~ " If you need maximum compatibility "
-#~ "with existing oTree apps, switch to "
-#~ "`this <https://otree.readthedocs.io/en/latest/index.html>`__ "
-#~ "documentation."
-#~ msgstr ""
-
+msgstr "もしPyCharmもしくは他のテキストエディタを使う場合は、:ref:`こちら <install-nostudio>` をご覧ください。"

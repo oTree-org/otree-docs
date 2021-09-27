@@ -252,14 +252,3 @@ msgstr "高级特性"
 #: ../../source/bots.rst:196
 msgid "See :ref:`bots_advanced`"
 msgstr "参见 :ref:`bots_advanced`"
-
-#~ msgid ""
-#~ "The ``expect()`` function was introduced "
-#~ "in September 2019. Previously we "
-#~ "recommended using ``assert`` statements, which"
-#~ " are still OK but ``expect()`` can"
-#~ " report errors more clearly."
-#~ msgstr ""
-#~ "``expect()`` 函数在2019年12月被引入。在此之前我们推荐使用 ``assert`` "
-#~ "语句，这仍然可用，但是 ``expect()`` 可以更加清楚地报告错误。"
-

@@ -394,21 +394,3 @@ msgid ""
 msgstr ""
 "如果你想使用自己的随机种子，不要用 ``random.seed()`` 函数。而应当生成 ``random.Random`` 的实例，如在 `这里"
 " <https://stackoverflow.com/a/37356024>`__ 所描述的"
-
-#~ msgid "Defining your own methods"
-#~ msgstr "定义你自己的方法"
-
-#~ msgid ""
-#~ "In addition to the methods listed "
-#~ "on this page, you can define your"
-#~ " own. Just remember to *use* them "
-#~ "somewhere! Just defining them with "
-#~ "``def`` has no effect."
-#~ msgstr "除了本页列出的方法，你可以定义自己的方法。只需记住在某处 *调用* 它们！仅仅用 ``def`` 定义它们是没有任何作用的。"
-
-#~ msgid "For example:"
-#~ msgstr "举例来说："
-
-#~ msgid "Then call it:"
-#~ msgstr "然后如下调用："
-

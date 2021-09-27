@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,9 +25,7 @@ msgstr "ボット"
 msgid ""
 "Bots simulate participants playing your app. They click through each "
 "page, fill out forms, and make sure that everything works properly."
-msgstr ""
-"ボットはアプリへの参加者をシミュレートします。ボットが、各ページをクリックしたり、"
-"フォームに入力したりすることで、あなたのアプリが正常に動作することを確認できます。"
+msgstr "ボットはアプリへの参加者をシミュレートします。ボットが、各ページをクリックしたり、フォームに入力したりすることで、あなたのアプリが正常に動作することを確認できます。"
 
 #: ../../source/bots.rst:9
 msgid ""
@@ -36,9 +34,8 @@ msgid ""
 "your bot code for you, so the whole process (writing and running bots) "
 "involves barely any effort."
 msgstr ""
-"この機能を使うことで、oTreeがアプリを自動的にテストしてくれます。"
-"また、oTree Studioでは、ボットのコードを設計することもできますので、ボットの作成から実行まで、"
-"ほとんど手間がかかりません。"
+"この機能を使うことで、oTreeがアプリを自動的にテストしてくれます。また、oTree "
+"Studioでは、ボットのコードを設計することもできますので、ボットの作成から実行まで、ほとんど手間がかかりません。"
 
 #: ../../source/bots.rst:17
 msgid "Running bots"
@@ -56,9 +53,7 @@ msgstr "セッションコンフィグで、 ``use_browser_bots=True`` を設定
 msgid ""
 "Run your server and create a session. The pages will auto-play with "
 "browser bots, once the start links are opened."
-msgstr ""
-"サーバを起動し、セッションを作成します。スタートリンクが開かれると、"
-"ブラウザ上でボットが自動的にページを実行します。"
+msgstr "サーバを起動し、セッションを作成します。スタートリンクが開かれると、ブラウザ上でボットが自動的にページを実行します。"
 
 #: ../../source/bots.rst:23
 msgid "If using Heroku, make sure the second dyno is enabled."
@@ -75,18 +70,17 @@ msgid ""
 "generated (such as adding ``expect()`` statements), read the below "
 "sections."
 msgstr ""
-"oTree Studioで、アプリの「テスト」セクションに移動します。"
-"ボタンをクリックすると、ボットのコードが自動生成されます。"
-"生成されたコードを改良したい場合（例えば、 ``expect()`` ステートメントの追加など）は、"
-"以下のセクションをお読みください。"
+"oTree "
+"Studioで、アプリの「テスト」セクションに移動します。ボタンをクリックすると、ボットのコードが自動生成されます。生成されたコードを改良したい場合（例えば、"
+" ``expect()`` ステートメントの追加など）は、以下のセクションをお読みください。"
 
 #: ../../source/bots.rst:34
 msgid ""
 "If you are using a text editor, go to ``tests.py``. See examples of how "
 "to define ``tests.py`` `here <https://github.com/oTree-org/otree>`__."
 msgstr ""
-"テキストエディタをお使いの場合は、``tests.py`` にアクセスしてください。 "
-"``tests.py`` の例は `こちら <https://github.com/oTree-org/otree>`__。"
+"テキストエディタをお使いの場合は、``tests.py`` にアクセスしてください。 ``tests.py`` の例は `こちら "
+"<https://github.com/oTree-org/otree>`__。"
 
 #: ../../source/bots.rst:38
 msgid "Submitting pages"
@@ -101,16 +95,14 @@ msgid ""
 "Here, we first submit the ``Start`` page, which does not contain a form. "
 "The following page has 2 form fields, so we submit a dict."
 msgstr ""
-"ここでは、まず、フォームを含まない ``Start`` ページを送信しています。"
-"次のページには2つのフォームフィールドがあるので、辞書型を送信しています。"
+"ここでは、まず、フォームを含まない ``Start`` "
+"ページを送信しています。次のページには2つのフォームフィールドがあるので、辞書型を送信しています。"
 
 #: ../../source/bots.rst:50
 msgid ""
 "The test system will raise an error if the bot submits invalid input for "
 "a page, or if it submits pages in the wrong order."
-msgstr ""
-"このテストのシステムでは、ボットがページに対して無効な入力をした場合や、"
-"間違った順序でページを送信した場合には、エラーが発生します。"
+msgstr "このテストのシステムでは、ボットがページに対して無効な入力をした場合や、間違った順序でページを送信した場合には、エラーが発生します。"
 
 #: ../../source/bots.rst:53
 msgid "You use ``if`` statements to play any player or round number. For example:"
@@ -137,41 +129,30 @@ msgid ""
 "Your bot code should just play 1 round at a time. oTree will "
 "automatically execute it ``num_rounds`` times."
 msgstr ""
-"ボットのコードは、一度に1ラウンドだけ実行するように記述します。"
-"oTreeはそのコードに書かれた動作を ``num_rounds`` 回自動的に実行します。"
+"ボットのコードは、一度に1ラウンドだけ実行するように記述します。oTreeはそのコードに書かれた動作を ``num_rounds`` "
+"回自動的に実行します。"
 
 #: ../../source/bots.rst:79
 msgid "expect()"
 msgstr "expect()"
 
-#: ../../source/bots.rst:83
-msgid ""
-"The ``expect()`` function was introduced in September 2019. Previously we"
-" recommended using ``assert`` statements, which are still OK but "
-"``expect()`` can report errors more clearly."
-msgstr ""
-"``expect()`` 関数は2019年9月に導入された関数です。"
-"これまでは ``assert`` 文の使用を推奨しおり、これでも問題ありませんが、"
-"``expect()`` 関数の方がより明確にエラーを報告することができます。"
-
-#: ../../source/bots.rst:87
+#: ../../source/bots.rst:81
 msgid ""
 "You can use ``expect`` statements to ensure that your code is working as "
 "you expect."
-msgstr ""
-"``expect()`` 関数を使用することで、コードが期待通りに動作していることを確認できます。"
+msgstr "``expect()`` 関数を使用することで、コードが期待通りに動作していることを確認できます。"
 
-#: ../../source/bots.rst:89
+#: ../../source/bots.rst:83
 msgid "For example:"
 msgstr "例えば、以下のように使用できます:"
 
-#: ../../source/bots.rst:100
+#: ../../source/bots.rst:92
 msgid ""
 "If ``self.player.num_apples`` is not 99, then you will be alerted with an"
 " error."
 msgstr "``self.player.num_apples`` が99でない場合は、エラーで警告されます。"
 
-#: ../../source/bots.rst:102
+#: ../../source/bots.rst:94
 msgid ""
 "You can also use expect with 3 arguments, like "
 "``expect(self.player.budget, '<', 100)``. This will verify that "
@@ -179,111 +160,103 @@ msgid ""
 "operators: ``'<'``, ``'<='``, ``'=='``, ``'>='``, ``'>'``, ``'!='``, "
 "``'in'``, ``'not in'``."
 msgstr ""
-"``expect(self.player.budget, '<', 100)`` のように、3つの引数を指定できます。"
-"この例では、 ``self.player.budget`` が100より小さいことを検証しています。"
-"次の演算子を使うことができます: ``'<'``, ``'<='``, ``'=='``, ``'>='``, ``'>'``, ``'!='``, "
-"``'in'``, ``'not in'``"
+"``expect(self.player.budget, '<', 100)`` のように、3つの引数を指定できます。この例では、 "
+"``self.player.budget`` が100より小さいことを検証しています。次の演算子を使うことができます: ``'<'``, "
+"``'<='``, ``'=='``, ``'>='``, ``'>'``, ``'!='``, ``'in'``, ``'not in'``"
 
-#: ../../source/bots.rst:115
+#: ../../source/bots.rst:107
 msgid "Testing form validation"
 msgstr "フォーム検証のテスト"
 
-#: ../../source/bots.rst:117
+#: ../../source/bots.rst:109
 msgid ""
 "If you use :ref:`form validation <form-validation>`, you should test that"
 " your app is correctly rejecting invalid input from the user, by using "
 "``SubmissionMustFail()``."
 msgstr ""
-":ref:`フォームの検証 <form-validation>` を使用している場合には、 ``SubmissionMustFail()`` を使用して、"
-"アプリがユーザーからの無効な入力を正しく拒否しているかどうかをテストする必要があります。"
+":ref:`フォームの検証 <form-validation>` を使用している場合には、 ``SubmissionMustFail()`` "
+"を使用して、アプリがユーザーからの無効な入力を正しく拒否しているかどうかをテストする必要があります。"
 
-#: ../../source/bots.rst:121
+#: ../../source/bots.rst:113
 msgid "For example, let's say you have this page:"
 msgstr "例えば、このようなページがあるとします:"
 
-#: ../../source/bots.rst:135
+#: ../../source/bots.rst:127
 msgid "Here is how to test that it is working properly:"
 msgstr "以下のようにして、正常に動作しているかどうかを確認することができます:"
 
-#: ../../source/bots.rst:144
+#: ../../source/bots.rst:134
 msgid ""
 "The bot will submit ``MyPage`` twice. If the first submission "
 "**succeeds**, an error will be raised, because it is not supposed to "
 "succeed."
-msgstr ""
-"このボットは ``MyPage`` を2回送信します。1回目の送信が **成功** してしまった場合、エラーが発生するようになっています。"
+msgstr "このボットは ``MyPage`` を2回送信します。1回目の送信が **成功** してしまった場合、エラーが発生するようになっています。"
 
-#: ../../source/bots.rst:149
+#: ../../source/bots.rst:139
 msgid "Checking the HTML"
 msgstr "HTML のチェック"
 
-#: ../../source/bots.rst:151
+#: ../../source/bots.rst:141
 msgid ""
 "``self.html`` contains the HTML of the page you are about to submit. You "
 "can use this together with ``expect()``:"
 msgstr ""
-"``self.html`` には、これから送信しようとしているページの HTML が格納されています。"
-"これは ``expect()`` と一緒に使用することができます:"
+"``self.html`` には、これから送信しようとしているページの HTML が格納されています。これは ``expect()`` "
+"と一緒に使用することができます:"
 
-#: ../../source/bots.rst:168
+#: ../../source/bots.rst:156
 msgid ""
 "``self.html`` is updated with the next page's HTML, after every ``yield``"
 " statement. Linebreaks and extra spaces are ignored."
-msgstr ""
-"``self.html`` は、 ``yield`` 文の実行後に次のページの HTML で更新されます。"
-"改行や余分なスペースは無視されます。"
+msgstr "``self.html`` は、 ``yield`` 文の実行後に次のページの HTML で更新されます。改行や余分なスペースは無視されます。"
 
-#: ../../source/bots.rst:172
+#: ../../source/bots.rst:160
 msgid "Automatic HTML checks"
 msgstr "HTML の自動チェック"
 
-#: ../../source/bots.rst:174
+#: ../../source/bots.rst:162
 msgid ""
 "An error will be raised if the bot is trying to submit form fields that "
 "are not actually found in the page's HTML, or if the page's HTML is "
 "missing a submit button."
 msgstr ""
-"ボットが、ページの HTML に実際にはないフォームを送信しようとしたり、"
-"ページの HTML に送信ボタンがないのに送信しようとする場合、エラーが発生します。"
+"ボットが、ページの HTML に実際にはないフォームを送信しようとしたり、ページの HTML "
+"に送信ボタンがないのに送信しようとする場合、エラーが発生します。"
 
-#: ../../source/bots.rst:177
+#: ../../source/bots.rst:165
 msgid ""
 "However, the bot system is not able to see fields and buttons that are "
 "added dynamically with JavaScript. In these cases, you should disable the"
 " HTML check by using ``Submission`` with ``check_html=False``. For "
 "example, change this:"
 msgstr ""
-"ただし、JavaScriptで動的に追加されたフィールドやボタンは、ボットシステムでは確認できません。"
-"このような場合には、``Submission`` で ``check_html=False`` を指定して、HTML チェックを無効にしてください。"
-"例えば、以下を:"
+"ただし、JavaScriptで動的に追加されたフィールドやボタンは、ボットシステムでは確認できません。このような場合には、``Submission``"
+" で ``check_html=False`` を指定して、HTML チェックを無効にしてください。例えば、以下を:"
 
-#: ../../source/bots.rst:185
+#: ../../source/bots.rst:173
 msgid "to this:"
 msgstr "次のように変更します:"
 
-#: ../../source/bots.rst:192
+#: ../../source/bots.rst:179
 msgid ""
 "(If you used ``Submission`` without ``check_html=False``, the two code "
 "samples would be equivalent.)"
 msgstr ""
-"( ``check_html=False`` を指定せずに ``Submission`` を使用した場合、2つのコードサンプルは同等のものになります。)"
+"( ``check_html=False`` を指定せずに ``Submission`` "
+"を使用した場合、2つのコードサンプルは同等のものになります。)"
 
-#: ../../source/bots.rst:198
+#: ../../source/bots.rst:185
 msgid "Simulate a page timeout"
 msgstr "ページタイムアウトのシミュレート"
 
-#: ../../source/bots.rst:200
+#: ../../source/bots.rst:187
 msgid "You can use ``Submission`` with ``timeout_happened=True``:"
 msgstr "``Submission`` では ``timeout_happened=True`` を指定できます:"
 
-#: ../../source/bots.rst:208
+#: ../../source/bots.rst:194
 msgid "Advanced features"
 msgstr "高度な機能"
 
-#: ../../source/bots.rst:210
+#: ../../source/bots.rst:196
 msgid "See :ref:`bots_advanced`"
 msgstr ":ref:`bots_advanced` を参照してください。"
-
-#~ msgid "If you are using a text editor, go to ``tests.py``."
-#~ msgstr ""
-

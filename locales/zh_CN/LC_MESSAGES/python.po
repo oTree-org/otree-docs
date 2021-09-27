@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../source/python.rst:4
 msgid "About Python"
-msgstr ""
+msgstr "Python 教程"
 
 #: ../../source/python.rst:6
 msgid ""
@@ -59,7 +59,3 @@ msgstr ""
 "**出处**:本页的教程摘录自 `Learn Python in Y Minutes "
 "<https://learnxinyminutes.com/docs/python/>`__，并使用相同的 `许可证 "
 "<https://creativecommons.org/licenses/by-sa/3.0/deed.en_US>`__ 发布。"
-
-#~ msgid "Python tutorial"
-#~ msgstr "Python 教程"
-

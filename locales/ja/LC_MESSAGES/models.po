@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,14 +23,17 @@ msgstr "モデル"
 
 #: ../../source/models.rst:4
 msgid "An oTree app has 3 data models: Subsession, Group, and Player."
-msgstr "oTree アプリには 3 つのデータモデル「サブセッション(Subsession)、グループ(Group)、プレーヤー(Player)」があります。"
+msgstr ""
+"oTree アプリには 3 "
+"つのデータモデル「サブセッション(Subsession)、グループ(Group)、プレーヤー(Player)」があります。"
 
 #: ../../source/models.rst:6
 msgid ""
 "A player is part of a group, which is part of a subsession. See "
 ":ref:`conceptual_overview`."
 msgstr ""
-"プレーヤーはグループの一部であり、グループはサブセッションの一部です。詳しくは :ref:`conceptual_overview` を参照してください。"
+"プレーヤーはグループの一部であり、グループはサブセッションの一部です。詳しくは :ref:`conceptual_overview` "
+"を参照してください。"
 
 #: ../../source/models.rst:9
 msgid "Let's say you want your experiment to generate data that looks like this::"
@@ -44,9 +47,7 @@ msgstr "上記のテーブル構造を定義する方法は以下の通りです
 msgid ""
 "So, a **model** is essentially a database table. And a **field** is a "
 "column in a table."
-msgstr ""
-"つまり、 **モデル** とは基本的にデータベースのテーブルです。"
-"そして、 **フィールド** とはテーブルの列のことです。"
+msgstr "つまり、 **モデル** とは基本的にデータベースのテーブルです。そして、 **フィールド** とはテーブルの列のことです。"
 
 #: ../../source/models.rst:31
 msgid "Fields"
@@ -80,8 +81,7 @@ msgstr "``StringField`` (文字列用)"
 msgid ""
 "``LongStringField`` (for long text strings; its form widget is a multi-"
 "line textarea)"
-msgstr ""
-"``LongStringField`` (長い文字列用; このフィールドのフォームウィジェットは複数行のテキストエリアになります)"
+msgstr "``LongStringField`` (長い文字列用; このフィールドのフォームウィジェットは複数行のテキストエリアになります)"
 
 #: ../../source/models.rst:45
 msgid "Initial/default value"
@@ -99,7 +99,9 @@ msgstr "最小値、最大値、選択肢"
 msgid ""
 "For info on how to set a field's ``min``, ``max``, or ``choices``, see "
 ":ref:`form-validation`."
-msgstr "フィールドの最小値 (``min``), 最大値 (``max``), 選択肢 (``choices``) を設定する方法は :ref:`form-validation` を参照してください。"
+msgstr ""
+"フィールドの最小値 (``min``), 最大値 (``max``), 選択肢 (``choices``) を設定する方法は :ref"
+":`form-validation` を参照してください。"
 
 #: ../../source/models.rst:62
 msgid "Built-in fields and methods"
@@ -111,9 +113,9 @@ msgid ""
 "example, ``Player`` has fields called ``payoff`` and ``id_in_group``, as "
 "well as methods like ``in_all_rounds()`` and ``get_others_in_group()``."
 msgstr ""
-"プレーヤー、グループ、サブセッションには、いくつかの定義済みフィールドがあります。"
-"たとえば、 ``Player`` には ``payoff`` と ``id_in_group`` というフィールドがあり、 "
-"``in_all_rounds()`` や ``get_others_in_group()`` などのメソッドがあります。"
+"プレーヤー、グループ、サブセッションには、いくつかの定義済みフィールドがあります。たとえば、 ``Player`` には ``payoff`` と"
+" ``id_in_group`` というフィールドがあり、 ``in_all_rounds()`` や "
+"``get_others_in_group()`` などのメソッドがあります。"
 
 #: ../../source/models.rst:69
 msgid "These built-in fields and methods are listed below."
@@ -133,8 +135,8 @@ msgid ""
 "Gives the current round number. Only relevant if the app has multiple "
 "rounds (set in ``Constants.num_rounds``). See :ref:`rounds`."
 msgstr ""
-"現在のラウンド数を返します。アプリが複数のラウンドを持っている場合 (``Constants.num_rounds`` で設定) にのみ関係します。"
-"詳しくは :ref:`rounds` を参照してください。"
+"現在のラウンド数を返します。アプリが複数のラウンドを持っている場合 (``Constants.num_rounds`` で設定) "
+"にのみ関係します。詳しくは :ref:`rounds` を参照してください。"
 
 #: ../../source/models.rst:84
 msgid "get_groups()"
@@ -232,9 +234,7 @@ msgstr ""
 msgid ""
 "Automatically assigned integer starting from 1. In multiplayer games, "
 "indicates whether this is player 1, player 2, etc."
-msgstr ""
-"自動的に割り当てられる1から始まる整数。"
-"マルチプレーヤーゲームでは、このフィールドがプレーヤー1なのか、プレーヤー2なのか、などを示す。"
+msgstr "自動的に割り当てられる1から始まる整数。マルチプレーヤーゲームでは、このフィールドがプレーヤー1なのか、プレーヤー2なのか、などを示す。"
 
 #: ../../source/models.rst:135
 msgid "payoff"
@@ -296,8 +296,7 @@ msgstr ""
 msgid ""
 "The participant's ID in the session. This is the same as the player's "
 "``id_in_subsession``."
-msgstr ""
-"セッション内の参加者のID。このフィールドは、プレーヤーの ``id_in_subsession`` と同じです。"
+msgstr "セッション内の参加者のID。このフィールドは、プレーヤーの ``id_in_subsession`` と同じです。"
 
 #: ../../source/models.rst:181
 msgid "Other participant attributes and methods"
@@ -327,8 +326,7 @@ msgstr ""
 msgid ""
 "``Constants`` is the recommended place to put your app's parameters and "
 "constants that do not vary from player to player."
-msgstr ""
-"``Constants`` は、アプリのパラメータやプレーヤーごとに変化することがない定数を定義するために推奨される場所です。"
+msgstr "``Constants`` は、アプリのパラメータやプレーヤーごとに変化することがない定数を定義するために推奨される場所です。"
 
 #: ../../source/models.rst:197
 msgid "Here are the built-in constants:"
@@ -346,8 +344,7 @@ msgstr "``num_rounds`` (:ref:`rounds` に詳細を記載)"
 msgid ""
 "if you don't want your app's real name to be displayed in URLs, define a "
 "string constant ``name_in_url`` with your desired name."
-msgstr ""
-"アプリの実名を URL に表示したくない場合は、文字列定数 ``name_in_url`` に任意の名前を定義します。"
+msgstr "アプリの実名を URL に表示したくない場合は、文字列定数 ``name_in_url`` に任意の名前を定義します。"
 
 #: ../../source/models.rst:206
 msgid ""
@@ -356,55 +353,32 @@ msgid ""
 "define it in a function. For example, instead of defining a Constant "
 "called ``my_dict``, do this:"
 msgstr ""
-"定数には、数字、文字列、ブーリアン、リストなどを定義できます。"
-"しかし、辞書型や辞書型のリストなど、より複雑なデータタイプの場合は、代わりに関数の中で定義する必要があります。"
-"例えば、 ``my_dict`` という定数を定義する代わりに、次のようにします:"
+"定数には、数字、文字列、ブーリアン、リストなどを定義できます。しかし、辞書型や辞書型のリストなど、より複雑なデータタイプの場合は、代わりに関数の中で定義する必要があります。例えば、"
+" ``my_dict`` という定数を定義する代わりに、次のようにします:"
 
 #: ../../source/models.rst:217
 msgid "Miscellaneous topics"
 msgstr "その他のトピック"
 
-#: ../../source/models.rst:220
-msgid "Defining your own methods"
-msgstr "独自のメソッドの定義"
-
 #: ../../source/models.rst:222
-msgid ""
-"In addition to the methods listed on this page, you can define your own. "
-"Just remember to *use* them somewhere! Just defining them with ``def`` "
-"has no effect."
-msgstr ""
-"このページに掲載されているメソッドに加えて、独自のメソッドを定義することができます。"
-"ただし、どこかで **使う** ことを忘れないでください。 ``def`` で定義しただけでは何の効果もありません。"
-
-#: ../../source/models.rst:227
-msgid "For example:"
-msgstr "例:"
-
-#: ../../source/models.rst:235
-msgid "Then call it:"
-msgstr "上で定義したメソッドを呼び出します:"
-
-#: ../../source/models.rst:245
 msgid "About using random()"
 msgstr "random() の使用について"
 
-#: ../../source/models.rst:247
+#: ../../source/models.rst:224
 msgid ""
 "Never generate random values outside of a function. For example, don't do"
 " this:"
-msgstr ""
-"関数の外で乱数を生成してはいけません。例えば、以下のようなことはしないでください:"
+msgstr "関数の外で乱数を生成してはいけません。例えば、以下のようなことはしないでください:"
 
-#: ../../source/models.rst:255
+#: ../../source/models.rst:232
 msgid "If it changes randomly, it isn't a constant."
 msgstr "ランダムに変化するなら、それは定数ではありません。"
 
-#: ../../source/models.rst:257
+#: ../../source/models.rst:234
 msgid "Or this:"
 msgstr "以下のようなこともしないでください:"
 
-#: ../../source/models.rst:268
+#: ../../source/models.rst:245
 msgid ""
 "These won't work because they will change every time the server launches "
 "a new process. It may appear to work during testing but will eventually "
@@ -413,36 +387,17 @@ msgid ""
 "``vars_for_template``, which gets re-executed if the user refreshes the "
 "page)."
 msgstr ""
-"これらは、サーバーが新しいプロセスを起動するたびに変更されるため、動作しません。"
-"テスト中はうまくいっているように見えても、実際は壊れてしまいます。"
-"代わりに、 :ref:`creating_session` のような関数の中でランダムな変数を生成するべきです。"
-"(ユーザーがページを更新すると再実行されてしまう ``vars_for_template`` では好ましくありません。)"
+"これらは、サーバーが新しいプロセスを起動するたびに変更されるため、動作しません。テスト中はうまくいっているように見えても、実際は壊れてしまいます。代わりに、"
+" :ref:`creating_session` "
+"のような関数の中でランダムな変数を生成するべきです。(ユーザーがページを更新すると再実行されてしまう ``vars_for_template`` "
+"では好ましくありません。)"
 
-#: ../../source/models.rst:275
+#: ../../source/models.rst:252
 msgid ""
 "If you want to set your own random seed, don't use the ``random.seed()`` "
 "function. Instead, generate an instance of ``random.Random`` as described"
 " `here <https://stackoverflow.com/a/37356024>`__"
 msgstr ""
-"独自の乱数シードを設定したい場合に、 ``random.seed()`` 関数を使用しないでください。"
-"代わりに、 `こちら <https://stackoverflow.com/a/37356024>`__ で説明されているように ``random.Random`` のインスタンスを生成してください。"
-
-#~ msgid ""
-#~ "Never generate random values outside of"
-#~ " a method. For example, don't do "
-#~ "this:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "These won't work because they will "
-#~ "change every time the server launches"
-#~ " a new process. It may appear "
-#~ "to work during testing but will "
-#~ "eventually break. Instead, you should "
-#~ "generate the random variables inside a"
-#~ " method, such as :ref:`creating_session` "
-#~ "(and preferably not ``vars_for_template``, "
-#~ "which gets re-executed if the user"
-#~ " refreshes the page)."
-#~ msgstr ""
-
+"独自の乱数シードを設定したい場合に、 ``random.seed()`` 関数を使用しないでください。代わりに、 `こちら "
+"<https://stackoverflow.com/a/37356024>`__ で説明されているように ``random.Random`` "
+"のインスタンスを生成してください。"
