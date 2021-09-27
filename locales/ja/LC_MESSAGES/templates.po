@@ -311,7 +311,7 @@ msgid ""
 "You can put JavaScript and CSS anywhere just by using the usual "
 "``<script></script>`` or ``<style></style>``, anywhere in your template."
 msgstr ""
-"JavaScript や CSS は ``<script></script>`` や ``<style></style>``を使うことで、"
+"JavaScript や CSS は ``<script></script>`` や ``<style></style>`` を使うことで、"
 "テンプレート内のどこにでも置くことができます。"
 
 #: ../../source/templates.rst:246

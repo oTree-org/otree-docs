@@ -23,7 +23,7 @@ msgstr "モデル"
 
 #: ../../source/models.rst:4
 msgid "An oTree app has 3 data models: Subsession, Group, and Player."
-msgstr "oTree アプリには 3 つのデータモデル「サブセッション(Subsession)、グループ(Gropu)、プレーヤー(Player)」があります。"
+msgstr "oTree アプリには 3 つのデータモデル「サブセッション(Subsession)、グループ(Group)、プレーヤー(Player)」があります。"
 
 #: ../../source/models.rst:6
 msgid ""

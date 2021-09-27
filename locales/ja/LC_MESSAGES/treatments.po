@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../source/treatments.rst:5
 msgid "Treatments"
-msgstr "トリートメント"
+msgstr "処理の割り当て"
 
 #: ../../source/treatments.rst:7
 msgid ""
 "To assign participants to different treatment groups, you can use "
 "``creating_session``. For example:"
 msgstr ""
-"参加者を異なるトリートメントグループに割り当てるには、 "
-"``creating_session`` を使用します。例えば、以下のようになります:"
+"参加者ごとに異なる処理を割り当てるには、 "
+"``creating_session`` を使用します。例えば、次のようにします:"
 
 #: ../../source/treatments.rst:21
 msgid ""
@@ -35,7 +35,7 @@ msgid ""
 "``BooleanField`` in ``Group`` and change the above code to use "
 "``get_groups()`` and ``group.time_pressure``)."
 msgstr ""
-"グループレベルでトリートメントを割り当てることもできます "
+"グループレベルで異なる処理を割り当てることもできます "
 "(``BooleanField`` を ``Group`` に入れて、上記のコードを "
 "``get_groups()`` と ``group.time_pressure`` を使うように変更します)。"
 
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../source/treatments.rst:28
 msgid "Treatment groups & multiple rounds"
-msgstr "トリートメントグループと複数ラウンド"
+msgstr "複数ラウンドにまたがる処理"
 
 #: ../../source/treatments.rst:30
 msgid ""
@@ -59,12 +59,12 @@ msgid ""
 "participant, rather than the player:"
 msgstr ""
 "ゲームに複数のラウンドがある場合、 ``creating_session`` が各ラウンドで独立して実行されるため、"
-"プレーヤーはラウンドごとに異なるトリートメントを受ける可能性があります。"
+"プレーヤーはラウンドごとに異なる処理を受ける可能性があります。"
 "これを防ぐには、 player ではなく、 participant に設定します:"
 
 #: ../../source/treatments.rst:43
 msgid "Balanced treatment groups"
-msgstr "バランスの取れたトリートメントグループ"
+msgstr "バランスの取れた処理"
 
 #: ../../source/treatments.rst:45
 msgid ""
@@ -72,13 +72,13 @@ msgid ""
 "you may end up with an imbalance. To solve this, you can use "
 "``itertools.cycle``:"
 msgstr ""
-"上記のコードでは、各プレーヤーごとに独立して無作為抽出を行っているため、"
+"上記のコードでは、プレーヤーごとに独立して無作為抽出を行っているため、"
 "バランスが悪くなってしまうことがあります。これを解決するためには、 "
 "``itertools.cycle`` を使用します:"
 
 #: ../../source/treatments.rst:61
 msgid "Choosing which treatment to play"
-msgstr ""
+msgstr "実行する処理の選択"
 
 #: ../../source/treatments.rst:63
 msgid ""
@@ -89,15 +89,15 @@ msgid ""
 " You can create 2 session configs that are the same, except for one "
 "parameter (in oTree Studio, add a \"custom parameter\"):"
 msgstr ""
-"ライブ実験では、プレーヤーにランダムなトリートメントを与えたいことがよくあります。"
-"しかし、ゲームをテストする際には、どちらのトリートメントを実行するかを明示的に選択することが有用な場合があります。"
-"例えば、上記の例でゲームを開発していて、同僚に両方のトリートメントを見せたいとします。 "
-"1 つのパラメータを除いて、同じ内容の 2 つのセッションコンフィグを作成することができます "
+"ライブ実験では、プレーヤーにランダムな処理を施したいことがよくあります。"
+"しかし、ゲームをテストする際には、どちらの処理を実行するかを明示的に選択することが有用な場合があります。"
+"例えば、上記の例でゲームを開発していて、同僚に両方の処理を見せたいとします。 "
+"1つのパラメータを除いて、同じ内容の2つのセッションコンフィグを作成することができます "
 "(oTree Studio では、 \"custom parameter\" を追加します):"
 
 #: ../../source/treatments.rst:87
 msgid "Then in your code you can get the current session's treatment with:"
-msgstr "そうすれば、コードの中で、現在のセッションのトリートメントを次のようにして取得することができます:"
+msgstr "そうすれば、コードの中で、現在のセッションの処理を次のようにして取得することができます:"
 
 #: ../../source/treatments.rst:93
 msgid ""

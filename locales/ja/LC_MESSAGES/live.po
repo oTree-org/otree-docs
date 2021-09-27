@@ -168,7 +168,7 @@ msgstr ""
 
 #: ../../source/live.rst:190
 msgid "Keeping users on the page"
-msgstr ""
+msgstr "ユーザをページに留めておく方法"
 
 #: ../../source/live.rst:192
 msgid ""
