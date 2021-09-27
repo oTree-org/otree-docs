@@ -303,7 +303,7 @@ msgstr "デフォルトでは、各ラウンドで、"
 msgid ""
 "This means that by default, the groups are the same in each round, and "
 "even between apps that have the same ``players_per_group``."
-msgstr "これは、デフォルトではグループは各ラウンドや、同じ ``players_per_group`` を持っているアプリ間でも同じであることを意味します。
+msgstr "これは、デフォルトではグループは各ラウンドや、同じ ``players_per_group`` を持っているアプリ間でも同じであることを意味します。"
 
 #: ../../source/multiplayer/groups.rst:114
 msgid "If you want to rearrange groups, you can use the below techniques."
@@ -383,7 +383,7 @@ msgid ""
 msgstr "``set_group_matrix()`` は、グループ構造を任意の方法で変更できます。"
 "まず、 ``get_players()`` を使用して、プレーヤーのリストを取得するか、"
 " ``get_group_matrix()`` を使用して既存のグループ行列を取得します。"
-"行列を作成し、それを ``set_group_matrix()`` に渡します。""
+"行列を作成し、それを ``set_group_matrix()`` に渡します。"
 
 #: ../../source/multiplayer/groups.rst:229
 msgid ""
@@ -604,7 +604,7 @@ msgid ""
 "If ``group_by_arrival_time = True``, then in ``creating_session``, all "
 "players will initially be in the same group. Groups are only created \"on"
 " the fly\" as players arrive at the wait page."
-msgstr ""``group_by_arrival_time = True`` の場合、すべてのプレーヤーが最初は同じグループに属します。"
+msgstr "``group_by_arrival_time = True`` の場合、すべてのプレーヤーが最初は同じグループに属します。"
 "グループは、プレーヤーがWaitPageに到着したときに \"on the fly\" で作成されます。"
 
 #: ../../source/multiplayer/waitpages.rst:132
