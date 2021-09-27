@@ -108,11 +108,11 @@ You can get the human-readable label corresponding to the user's choice like thi
 
 .. code-block:: python
 
-    player.get_field_display('cooperated')  # returns e.g. 'Defect'
+    player.field_display('cooperated')  # returns e.g. 'Defect'
 
 .. note::
 
-    ``get_field_display`` is new in oTree 5 (March 2021).
+    ``field_display`` is new in oTree 5.4 (August 2021).
 
 Optional fields
 ~~~~~~~~~~~~~~~
@@ -362,10 +362,6 @@ Second, you should usually include ``{{ formfield_errors 'xyz' }}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
 
-.. note::
-
-    ``formfield_errors`` is new in oTree 5.0.5+.
-
 Raw HTML example: slider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -378,11 +374,19 @@ put HTML like this in your template:
         Pizza is the best food:
     </label>
 
-    <div class="input-group">
-        <span class="input-group-text">Disagree</span>
-        <input type="range" name="pizza" min="-2" max="2" step="1" class="form-range">
-        <span class="input-group-text">Agree</span>
+    <div style="display: flex">
+        Disagree
+        &nbsp;
+        <input type="range" name="pizza" min="-2" max="2" step="1" style="flex: 1">
+        &nbsp;
+        Agree
     </div>
+
+..  the previous input-group-text solution apparently worked on the first version of oTree 5,
+    but as at 5.3.0 it splits across lines.
+    we use flex because:
+    (1) it aligns the slider with the text vertically
+    (2) it gives full-width which looks nice
 
 If you want to show the current numeric value, or hide the knob until the slider is clicked,
 you could do that with JavaScript,

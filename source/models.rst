@@ -216,29 +216,6 @@ instead of defining a Constant called ``my_dict``, do this:
 Miscellaneous topics
 ====================
 
-Defining your own methods
--------------------------
-
-In addition to the methods listed on this page,
-you can define your own.
-Just remember to *use* them somewhere!
-Just defining them with ``def`` has no effect.
-
-For example:
-
-.. code-block:: python
-
-    def set_payoffs(group):
-        print('in set_payoffs')
-        # etc ...
-
-Then call it:
-
-.. code-block:: python
-
-    class MyWaitPage(WaitPage):
-        after_all_players_arrive = 'set_payoffs'
-
 .. _how_otree_executes_code:
 
 About using random()

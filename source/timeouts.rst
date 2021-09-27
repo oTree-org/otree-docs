@@ -111,7 +111,7 @@ When the user clicks the "next" button, ``before_next_page`` will be executed:
     class Start(Page):
 
         @staticmethod
-        def before_next_page(player):
+        def before_next_page(player, timeout_happened):
             participant = player.participant
             import time
 
@@ -144,11 +144,13 @@ for the participant to realistically read the whole page.
 .. code-block:: python
 
 
+    def get_timeout_seconds(player):
+        participant = player.participant
+        import time
+        return participant.expiry - time.time()
+
     class Page1(Page):
-        def get_timeout_seconds(player):
-            participant = player.participant
-            import time
-            return participant.expiry - time.time()
+        get_timeout_seconds = get_timeout_seconds
 
         @staticmethod
         def is_displayed(player):
@@ -221,9 +223,9 @@ For example, to hide the timer until there is only 10 seconds left,
 
 To avoid copy-pasting this code on every page, put it in an includable template.
 
-Note: even if you turn off the ``finish.countdown`` event handler from submitting
-the page, if you are running the timeoutworker, the page will be submitted on the server
-side. So, instead you should use the technique described in :ref:`soft-timeout`.
+Note: even if you turn off the ``finish.countdown`` event handler,
+the page will still be submitted on the server side.
+So, instead you should use the technique described in :ref:`soft-timeout`.
 
 .. _soft-timeout:
 
@@ -241,11 +243,3 @@ timer at all. Instead, make your own with JavaScript, for example:
         },
         60*1000 // 60 seconds
     );
-
-Minimum time on page
-~~~~~~~~~~~~~~~~~~~~
-
-If you want to require the user to spend *at least* a certain amount of time
-on a page, you can use some simple JavaScript: hide the next button
-(use the ``.otree-btn-next`` selector),
-then use ``setTimeout`` to re-display it after a certain amount of time.

@@ -142,24 +142,24 @@ For the following example, assume that ``players_per_group = 3``, and that there
 
     def creating_session(subsession):
         print(subsession.get_group_matrix()) # outputs the following:
-        # [[<Player  1>, <Player  2>, <Player  3>],
-        #  [<Player  4>, <Player  5>, <Player  6>],
-        #  [<Player  7>, <Player  8>, <Player  9>],
-        #  [<Player 10>, <Player 11>, <Player 12>]]
+        # [[1, 2, 3],
+        #  [4, 5, 6],
+        #  [7, 8, 9],
+        #  [10, 11, 12]]
 
         subsession.group_randomly(fixed_id_in_group=True)
         print(subsession.get_group_matrix()) # outputs the following:
-        # [[<Player  1>, <Player  8>, <Player 12>],
-        #  [<Player 10>, <Player  5>, <Player  3>],
-        #  [<Player  4>, <Player  2>, <Player  6>],
-        #  [<Player  7>, <Player 11>, <Player  9>]]
+        # [[1, 8, 12],
+        #  [10, 5, 3],
+        #  [4, 2, 6],
+        #  [7, 11, 9]]
 
         subsession.group_randomly()
         print(subsession.get_group_matrix()) # outputs the following:
-        # [[<Player  8>, <Player 10>, <Player  3>],
-        #  [<Player  4>, <Player 11>, <Player  2>],
-        #  [<Player  9>, <Player  1>, <Player  6>],
-        #  [<Player 12>, <Player  5>, <Player  7>]]
+        # [[8, 10, 3],
+        #  [4, 11, 2],
+        #  [9, 1, 6],
+        #  [12, 5, 7]]
 
 .. _group_like_round:
 
@@ -218,10 +218,10 @@ Make your matrix then pass it to ``set_group_matrix()``:
 
         # now the 'matrix' variable looks like this,
         # but it hasn't been saved yet!
-        # [[<Player  3>, <Player  2>, <Player  1>],
-        #  [<Player  6>, <Player  5>, <Player  4>],
-        #  [<Player  9>, <Player  8>, <Player  7>],
-        #  [<Player 12>, <Player 11>, <Player 10>]]
+        # [[3, 2, 1],
+        #  [6, 5, 4],
+        #  [9, 8, 7],
+        #  [12, 11, 10]]
 
         # save it
         subsession.set_group_matrix(matrix)
@@ -240,10 +240,10 @@ For example:
 
         print(subsession.get_group_matrix()) # will output this:
 
-        # [[<Player  1>, <Player  3>, <Player  5>],
-        #  [<Player  7>, <Player  9>, <Player 11>],
-        #  [<Player  2>, <Player  4>, <Player  6>],
-        #  [<Player  8>, <Player 10>, <Player 12>]]
+        # [[1, 3, 5],
+        #  [7, 9, 11],
+        #  [2, 4, 6],
+        #  [8, 10, 12]]
 
 To check if your group shuffling worked correctly,
 open your browser to the "Results" tab of your session,
