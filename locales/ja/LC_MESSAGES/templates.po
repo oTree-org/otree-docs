@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,43 +19,43 @@ msgstr ""
 
 #: ../../source/templates.rst:4
 msgid "Templates"
-msgstr ""
+msgstr "テンプレート"
 
 #: ../../source/templates.rst:7
 msgid "Template syntax"
-msgstr ""
+msgstr "テンプレートの構文"
 
 #: ../../source/templates.rst:10
 msgid "Variables"
-msgstr ""
+msgstr "変数"
 
 #: ../../source/templates.rst:12
 msgid "You can display a variable like this:"
-msgstr ""
+msgstr "以下ようにして変数を表示することができます:"
 
 #: ../../source/templates.rst:18
 msgid "The following variables are available in templates:"
-msgstr ""
+msgstr "テンプレートでは、以下の変数が使用できます:"
 
 #: ../../source/templates.rst:20
 msgid "``player``: the player currently viewing the page"
-msgstr ""
+msgstr "``player``: 現在ページを見ているプレーヤー"
 
 #: ../../source/templates.rst:21
 msgid "``group``: the group the current player belongs to"
-msgstr ""
+msgstr "``group``: 現在のプレーヤーが所属しているグループ"
 
 #: ../../source/templates.rst:22
 msgid "``subsession``: the subsession the current player belongs to"
-msgstr ""
+msgstr "``subsession``: 現在のプレーヤーが所属しているサブセッション"
 
 #: ../../source/templates.rst:23
 msgid "``participant``: the participant the current player belongs to"
-msgstr ""
+msgstr "``participant``: 現在のプレーヤーが所属している参加者"
 
 #: ../../source/templates.rst:24
 msgid "``session``: the current session"
-msgstr ""
+msgstr "``session``: 現在のセッション"
 
 #: ../../source/templates.rst:25
 msgid "``Constants``"
@@ -63,11 +63,11 @@ msgstr ""
 
 #: ../../source/templates.rst:26
 msgid "Any variables you passed with :ref:`vars_for_template`."
-msgstr ""
+msgstr ":ref:`vars_for_template` で渡した変数"
 
 #: ../../source/templates.rst:29
 msgid "Conditions (\"if\")"
-msgstr ""
+msgstr "条件文 (\"if\")"
 
 #: ../../source/templates.rst:33
 #, python-format
@@ -76,113 +76,126 @@ msgid ""
 "Starting in oTree 5, however, you can forget about ``{% %}`` and just use"
 " ``{{ }}`` everywhere if you want. The old format still works."
 msgstr ""
+"oTree 3.x では、テンプレートに ``{{ }}`` と ``{% %}`` の 2 種類のタグを使用していました。しかし、 oTree "
+"5 からは、 ``{% %}`` を使用する必要はなく、 ``{{ }}`` をどこでも使用することができます。以前の形式でも動作します。"
 
 #: ../../source/templates.rst:41
 msgid "With an 'else':"
-msgstr ""
+msgstr "'else' を付けた例:"
 
 #: ../../source/templates.rst:52
 msgid "Loops (\"for\")"
-msgstr ""
+msgstr "ループ (\"for\")"
 
 #: ../../source/templates.rst:61
 msgid "Accessing items in a dict"
-msgstr ""
+msgstr "辞書型内のアイテムへのアクセス"
 
 #: ../../source/templates.rst:63
 msgid ""
 "Whereas in Python code you do ``my_dict['foo']``, in a template you would"
 " do ``{{ my_dict.foo }}``."
 msgstr ""
+"Python のコードでは ``my_dict['foo']`` でアクセスしますが、テンプレートでは ``{{ my_dict.foo }}``"
+" でアクセスします。"
 
 #: ../../source/templates.rst:67
 msgid "Comments"
-msgstr ""
+msgstr "コメント"
 
-#: ../../source/templates.rst:78
+#: ../../source/templates.rst:81
 msgid "Things you can't do"
-msgstr ""
+msgstr "できないこと"
 
-#: ../../source/templates.rst:80
+#: ../../source/templates.rst:83
 msgid ""
 "The template language is just for displaying values. You can't do math "
 "(``+``, ``*``, ``/``, ``-``) or otherwise modify numbers, lists, strings,"
 " etc. For that, you should use :ref:`vars_for_template`."
 msgstr ""
+"テンプレート言語は値を表示するだけのものです。演算 (``+``, ``*``, ``/``, ``-``) "
+"や数値、リスト、文字列などの変更はできません。そのようなことをしたい場合には、 :ref:`vars_for_template` "
+"を使用してください。"
 
-#: ../../source/templates.rst:86
+#: ../../source/templates.rst:89
 msgid "How templates work: an example"
-msgstr ""
-
-#: ../../source/templates.rst:88
-msgid "oTree templates are a mix of 2 languages:"
-msgstr ""
-
-#: ../../source/templates.rst:90
-msgid "*HTML* (which uses angle brackets like ``<this>`` and ``</this>``."
-msgstr ""
+msgstr "テンプレートの仕組み: 例"
 
 #: ../../source/templates.rst:91
-msgid ""
-"*Template tags* (which use curly braces like ``{{ this }}`` and ``{{ this"
-" }}``"
-msgstr ""
+msgid "oTree templates are a mix of 2 languages:"
+msgstr "oTree のテンプレートは 2 つの言語が混在しています:"
+
+#: ../../source/templates.rst:93
+#, fuzzy
+msgid "*HTML* (which uses angle brackets like ``<this>`` and ``</this>``)."
+msgstr "*HTML* (``<this>`` や ``</this>`` のような山括弧を使います)"
 
 #: ../../source/templates.rst:94
+#, fuzzy
+msgid "*Template tags* (which use curly braces like ``{{ this }}``)"
+msgstr "*テンプレートタグ*（``{{ this }}`` や ``{{ this }}`` のような中括弧を使用します)"
+
+#: ../../source/templates.rst:97
 msgid "In this example, let's say your template looks like this:"
-msgstr ""
+msgstr "この例では、テンプレートが次のようになっているとします:"
 
-#: ../../source/templates.rst:110
+#: ../../source/templates.rst:113
 msgid "Step 1: oTree scans template tags, produces HTML (a.k.a. \"server side\")"
-msgstr ""
+msgstr "ステップ 1: oTree はテンプレートタグをスキャンし、 HTML を生成します (\"サーバサイド\")"
 
-#: ../../source/templates.rst:112
+#: ../../source/templates.rst:115
 msgid ""
 "oTree uses the current values of the variables to convert the above "
 "template tags to plain HTML, like this:"
-msgstr ""
+msgstr "oTree は、変数の現在の値を使って、上記のテンプレートタグを次のようなプレーンな HTML に変換します:"
 
-#: ../../source/templates.rst:128
+#: ../../source/templates.rst:131
 msgid ""
 "Step 2: Browser scans HTML tags, produces a webpage (a.k.a. \"client "
 "side\")"
-msgstr ""
+msgstr "ステップ 2: ブラウザが HTML タグをスキャンし、ウェブページを作成する (\"クライアントサイド\")"
 
-#: ../../source/templates.rst:130
+#: ../../source/templates.rst:133
 msgid ""
 "The oTree server then sends this HTML to the user's computer, where their"
 " web browser can read the code and display it as a formatted web page:"
 msgstr ""
-
-#: ../../source/templates.rst:136
-msgid "Note that the browser never sees the template tags."
-msgstr ""
+"oTree サーバは、この HTML "
+"をユーザのコンピュータに送信し、ユーザのウェブブラウザがコードを読み取って、フォーマットされたウェブページとして表示します:"
 
 #: ../../source/templates.rst:139
-msgid "The key point"
-msgstr ""
+msgid "Note that the browser never sees the template tags."
+msgstr "そのため、ブラウザはテンプレートタグを直接読み取ることはありません。"
 
-#: ../../source/templates.rst:141
+#: ../../source/templates.rst:142
+msgid "The key point"
+msgstr "キーポイント"
+
+#: ../../source/templates.rst:144
 msgid ""
 "If one of your pages doesn't look the way you want, you can isolate which"
 " of the above steps went wrong. In your browser, right-click and \"view "
 "source\". (Note: \"view source\" may not work in split-screen mode.)"
 msgstr ""
+"もし、あるページが思い通りに表示されない場合は、上記のどのステップで間違っていたのか切り分けることができます。ブラウザで右クリックして "
+"\"ページのソースを表示\" を選択してください。 (注: 画面分割モードでは \"ページのソースを表示\" が機能しない場合があります。)"
 
-#: ../../source/templates.rst:146
+#: ../../source/templates.rst:149
 msgid ""
 "You can then see the pure HTML that was generated (along with any "
 "JavaScript or CSS)."
-msgstr ""
+msgstr "すると、生成された HTML (JavaScript や CSS も含む) を見ることができます。"
 
-#: ../../source/templates.rst:149
+#: ../../source/templates.rst:152
 msgid ""
 "If the HTML code doesn't look the way you expect, then something went "
 "wrong on the server side. Look for mistakes in your ``vars_for_template``"
 " or your template tags."
 msgstr ""
+"HTML コードが期待通りに表示されない場合は、サーバ側で何か問題が発生しています。 ``vars_for_template`` "
+"やテンプレートタグに間違いがないか確認してください。"
 
-#: ../../source/templates.rst:152
+#: ../../source/templates.rst:155
 msgid ""
 "If there was no error in generating the HTML code, then it is probably an"
 " issue with how you are using HTML (or JavaScript) syntax. Try pasting "
@@ -190,88 +203,107 @@ msgid ""
 "template tags, and edit it until it produces the right output. Then put "
 "the template tags back in, to make it dynamic again."
 msgstr ""
+"HTML コードの生成にエラーがなかった場合は、 HTML (または JavaScript) の構文に問題があると考えられます。問題のある部分の "
+"HTML "
+"をテンプレートタグなしでテンプレートに貼り直し、正しい出力が得られるまで編集してみてください。その後、テンプレートタグを元に戻して、再び動的にしてください。"
 
-#: ../../source/templates.rst:161
+#: ../../source/templates.rst:164
 msgid "Images (static files)"
-msgstr ""
+msgstr "画像 (静的ファイル)"
 
-#: ../../source/templates.rst:163
+#: ../../source/templates.rst:166
 msgid ""
 "The simplest way to include images, video, 3rd party JS/CSS libraries, "
 "and other static files in your project is to host them online, for "
 "example on Dropbox, Imgur, YouTube, etc."
 msgstr ""
+"画像、動画、サードパーティの JS/CSS ライブラリ、その他の静的ファイルをプロジェクトに使用する最も簡単な方法は、 Dropbox, "
+"Imgur, YouTube などのオンラインサービスを利用することです。"
 
-#: ../../source/templates.rst:166
+#: ../../source/templates.rst:169
 msgid ""
 "Then, put its URL in an <img> or <video> tag in your template, for "
 "example:"
-msgstr ""
+msgstr "そして、その URL を <img> や <video> タグでテンプレートに記述します:"
 
-#: ../../source/templates.rst:172
+#: ../../source/templates.rst:175
 msgid ""
 "You can also store images directly in your project. (but note that large "
 "file sizes can affect performance). oTree Studio has an image upload "
 "tool. (If you are using a text editor, see :ref:`here <staticfiles>`.) "
 "Once you have stored the image, you can display it like this:"
 msgstr ""
+"また、プロジェクトに直接画像を保存することもできます。 (ただし、ファイルサイズが大きいとパフォーマンスに影響するので注意が必要です)。 "
+"oTree Studio には、画像アップロードツールがあります。 (テキストエディタを使用している場合は、 :ref:`こちら "
+"<staticfiles>` を参照してください。) 画像を保存したら、次のようにすることで表示することができます:"
 
-#: ../../source/templates.rst:184
+#: ../../source/templates.rst:187
 msgid "Dynamic images"
-msgstr ""
+msgstr "動的な画像表示"
 
-#: ../../source/templates.rst:186
+#: ../../source/templates.rst:189
 msgid ""
 "If you need to show different images depending on the context (like "
 "showing a different image each round), you can construct it in "
 "``vars_for_template`` and pass it to the template, e.g.:"
 msgstr ""
+"文脈に応じて異なる画像を表示する必要がある場合 (ラウンド毎に異なる画像を表示するなど)、 ``vars_for_template`` "
+"で使用する画像のパスを構築し、テンプレートに渡すことができます:"
 
-#: ../../source/templates.rst:198
+#: ../../source/templates.rst:201
 msgid "Then in the template:"
-msgstr ""
+msgstr "そして、テンプレートの中では次のようにします:"
 
-#: ../../source/templates.rst:208
+#: ../../source/templates.rst:211
 msgid "Includable templates"
-msgstr ""
+msgstr "インクルード可能なテンプレート"
 
-#: ../../source/templates.rst:210
+#: ../../source/templates.rst:213
 msgid ""
 "If you are copy-pasting the same content across many templates, it's "
 "better to create an includable template and reuse it with ``{{ include "
 "}}``."
 msgstr ""
+"多くのテンプレートに同じ内容をコピーペーストする場合は、インクルード可能なテンプレートを作成し、 ``{{ include }}`` "
+"で再利用するのがよいでしょう。"
 
-#: ../../source/templates.rst:214
+#: ../../source/templates.rst:217
 msgid ""
 "For example, if your game has instructions that need to be repeated on "
 "every page, make a template called ``instructions.html``, and put the "
 "instructions there, for example:"
 msgstr ""
+"例えば、ゲームの説明がすべてのページで繰り返し表示される必要がある場合、 ``instructions.html`` "
+"というテンプレートを作成し、そこに説明を書く方法があります:"
 
-#: ../../source/templates.rst:232
+#: ../../source/templates.rst:235
 msgid ""
 "If you are using oTree Studio, click the button to include a template. "
 "Otherwise, create the file in your ``templates`` folder, and see the "
 "sample games for examples of how to include the template (e.g. "
 "``instructions_template``)."
 msgstr ""
-
-#: ../../source/templates.rst:238
-msgid "JavaScript and CSS"
-msgstr ""
+"oTree Studio を使用している場合は、ボタンをクリックしてテンプレートをインクルードします。それ以外の場合は、 "
+"``templates`` フォルダにファイルを作成し、サンプルゲームのテンプレートの入れ方の例 ( "
+"``instructions_template`` ) を参照してください。"
 
 #: ../../source/templates.rst:241
-msgid "Where to put JavaScript/CSS code"
-msgstr ""
+msgid "JavaScript and CSS"
+msgstr "JavaScript, CSS"
 
-#: ../../source/templates.rst:243
+#: ../../source/templates.rst:244
+msgid "Where to put JavaScript/CSS code"
+msgstr "JavaScript/CSS コードの設置場所"
+
+#: ../../source/templates.rst:246
 msgid ""
 "You can put JavaScript and CSS anywhere just by using the usual "
 "``<script></script>`` or ``<style></style>``, anywhere in your template."
 msgstr ""
+"JavaScript や CSS は ``<script></script>`` や ``<style></style>`` "
+"を使うことで、テンプレート内のどこにでも置くことができます。"
 
-#: ../../source/templates.rst:246
+#: ../../source/templates.rst:249
 msgid ""
 "If you have a lot of scripts/styles, you can put them in separate blocks "
 "outside of ``content``: ``scripts`` and ``styles``. It's not mandatory to"
@@ -279,135 +311,144 @@ msgid ""
 "loaded in the correct order (CSS, then your page content, then "
 "JavaScript)."
 msgstr ""
+"たくさんのスクリプトやスタイルシートがある場合は、 ``content`` ブロックの外にある ``scripts`` や ``styles`` "
+"ブロックに入れることができます。これは必須ではありませんが、コードを整理し、正しい順序で読み込まれるようにすることができます "
+"(CSS、ページコンテンツ、JavaScriptの順)。"
 
-#: ../../source/templates.rst:254
+#: ../../source/templates.rst:257
 msgid "Customizing the theme"
-msgstr ""
+msgstr "テーマのカスタマイズ"
 
-#: ../../source/templates.rst:256
+#: ../../source/templates.rst:259
 msgid ""
 "If you want to customize the appearance of an oTree element, here is the "
 "list of CSS selectors:"
-msgstr ""
+msgstr "oTree 要素の見た目をカスタマイズしたい場合、以下のリストにある CSS セレクタをカスタマイズします:"
 
-#: ../../source/templates.rst:260
+#: ../../source/templates.rst:263
 msgid "Element"
-msgstr ""
+msgstr "要素"
 
-#: ../../source/templates.rst:260
+#: ../../source/templates.rst:263
 msgid "CSS/jQuery selector"
-msgstr ""
+msgstr "CSS/jQuery セレクタ"
 
-#: ../../source/templates.rst:262
+#: ../../source/templates.rst:265
 msgid "Page body"
-msgstr ""
+msgstr "ページ本文"
 
-#: ../../source/templates.rst:262
+#: ../../source/templates.rst:265
 msgid "``.otree-body``"
 msgstr ""
 
-#: ../../source/templates.rst:263
+#: ../../source/templates.rst:266
 msgid "Page title"
-msgstr ""
+msgstr "ページタイトル"
 
-#: ../../source/templates.rst:263
+#: ../../source/templates.rst:266
 msgid "``.otree-title``"
 msgstr ""
 
-#: ../../source/templates.rst:264
+#: ../../source/templates.rst:267
 msgid "Wait page (entire dialog)"
-msgstr ""
+msgstr "待機ページ (ダイアログ全体)"
 
-#: ../../source/templates.rst:264
+#: ../../source/templates.rst:267
 msgid "``.otree-wait-page``"
 msgstr ""
 
-#: ../../source/templates.rst:265
+#: ../../source/templates.rst:268
 msgid "Wait page dialog title"
-msgstr ""
+msgstr "待機ページのダイアログタイトル"
 
-#: ../../source/templates.rst:265
+#: ../../source/templates.rst:268
 msgid "``.otree-wait-page__title`` (note: ``__``, not ``_``)"
 msgstr ""
 
-#: ../../source/templates.rst:266
+#: ../../source/templates.rst:269
 msgid "Wait page dialog body"
-msgstr ""
+msgstr "待機ページのダイアログ本文"
 
-#: ../../source/templates.rst:266
+#: ../../source/templates.rst:269
 msgid "``.otree-wait-page__body``"
 msgstr ""
 
-#: ../../source/templates.rst:267
+#: ../../source/templates.rst:270
 msgid "Timer"
-msgstr ""
+msgstr "タイマー"
 
-#: ../../source/templates.rst:267
+#: ../../source/templates.rst:270
 msgid "``.otree-timer``"
 msgstr ""
 
-#: ../../source/templates.rst:268
+#: ../../source/templates.rst:271
 msgid "Next button"
-msgstr ""
+msgstr "次へボタン"
 
-#: ../../source/templates.rst:268
+#: ../../source/templates.rst:271
 msgid "``.otree-btn-next``"
 msgstr ""
 
-#: ../../source/templates.rst:269
+#: ../../source/templates.rst:272
 msgid "Form errors alert"
-msgstr ""
+msgstr "フォームエラーの警告"
 
-#: ../../source/templates.rst:269
+#: ../../source/templates.rst:272
 msgid "``.otree-form-errors``"
 msgstr ""
 
-#: ../../source/templates.rst:272
+#: ../../source/templates.rst:275
 msgid ""
 "For example, to change the page width, put CSS in your base template like"
 " this:"
-msgstr ""
+msgstr "例えば、ページの幅を変更するには、ベースとなるテンプレートに以下のような CSS を記述します:"
 
-#: ../../source/templates.rst:282
+#: ../../source/templates.rst:285
 msgid ""
 "To get more info, in your browser, right-click the element you want to "
 "modify and select \"Inspect\". Then you can navigate to see the different"
 " elements and try modifying their styles:"
 msgstr ""
+"より詳細な情報を得るためには、ブラウザで修正したい要素を右クリックし、 \"検証\" "
+"を選択します。すると、さまざまな要素が表示され、そのスタイルを変更することができます:"
 
-#: ../../source/templates.rst:288
+#: ../../source/templates.rst:291
 msgid ""
 "When possible, use one of the official selectors above. Don't use any "
 "selector that starts with ``_otree``, and don't select based on Bootstrap"
 " classes like ``btn-primary`` or ``card``, because those are unstable."
 msgstr ""
+"可能な限り、上記の公式セレクタのいずれかを使用してください。 ``_otree`` で始まるセレクタは使わないでください。また、 ``btn-"
+"primary`` や ``card`` のような Bootstrap のクラスは選択しないでください。"
 
-#: ../../source/templates.rst:297
+#: ../../source/templates.rst:300
 msgid "Passing data from Python to JavaScript (js_vars)"
-msgstr ""
+msgstr "Python から JavaScript へのデータの受け渡し (js_vars)"
 
-#: ../../source/templates.rst:299
+#: ../../source/templates.rst:302
 msgid ""
 "To pass data to JavaScript code in your template, define a function "
 "``js_vars`` on your Page, for example:"
-msgstr ""
+msgstr "テンプレート内の JavaScript コードにデータを渡すには、Pageに ``js_vars`` 関数を定義します:"
 
-#: ../../source/templates.rst:310
+#: ../../source/templates.rst:313
 msgid "Then, in your template, you can refer to these variables:"
-msgstr ""
+msgstr "そして、テンプレートの中で、これらの変数を参照することができます:"
 
-#: ../../source/templates.rst:320
+#: ../../source/templates.rst:323
 msgid "Bootstrap"
 msgstr ""
 
-#: ../../source/templates.rst:322
+#: ../../source/templates.rst:325
 msgid ""
 "oTree comes with `Bootstrap "
 "<https://getbootstrap.com/docs/5.0/components/alerts/>`__, a popular "
 "library for customizing a website's user interface."
 msgstr ""
+"oTreeには、ウェブサイトのユーザーインターフェースをカスタマイズするための人気ライブラリである `Bootstrap "
+"<https://getbootstrap.com/docs/5.0/components/alerts/>`__ が搭載されています。"
 
-#: ../../source/templates.rst:325
+#: ../../source/templates.rst:328
 msgid ""
 "You can use it if you want a `custom style "
 "<http://getbootstrap.com/css/>`__, or a `specific component "
@@ -418,110 +459,108 @@ msgid ""
 "`collapsible text "
 "<https://getbootstrap.com/docs/5.0/components/collapse/>`__."
 msgstr ""
+"`カスタムスタイル <http://getbootstrap.com/css/>`__ や、テーブル、アラート、プログレスバー、ラベルなどの "
+"`特定のコンポーネント <http://getbootstrap.com/components/>`__ を必要な場合に使用することができます。 "
+"`ポップオーバー <https://getbootstrap.com/docs/5.0/components/popovers/>`__, "
+"`モーダル <https://getbootstrap.com/docs/5.0/components/modal/>`__, "
+"`折り畳み可能なテキスト <https://getbootstrap.com/docs/5.0/components/collapse/>`__ "
+"などの要素を使って、動的なページを作ることもできます。"
 
-#: ../../source/templates.rst:332
+#: ../../source/templates.rst:335
 msgid ""
 "To use Bootstrap, usually you add a ``class=`` attribute to your HTML "
 "element."
-msgstr ""
+msgstr "Bootstrap を使用するには、HTML の要素に ``class=`` 属性を追加します。"
 
-#: ../../source/templates.rst:335
+#: ../../source/templates.rst:338
 msgid "For example, the following HTML will create a \"Success\" alert:"
-msgstr ""
+msgstr "例えば、以下の HTML は \"成功\" のアラートを作成します:"
 
-#: ../../source/templates.rst:342
+#: ../../source/templates.rst:345
 msgid "Mobile devices"
-msgstr ""
+msgstr "モバイルデバイス"
 
-#: ../../source/templates.rst:344
+#: ../../source/templates.rst:347
 msgid ""
 "Bootstrap tries to show a \"mobile friendly\" version when viewed on a "
 "smartphone or tablet."
-msgstr ""
+msgstr "Bootstrap は、スマートフォンやタブレットで見たときにモバイル対応のバージョンを表示しようとします。"
 
-#: ../../source/templates.rst:349
+#: ../../source/templates.rst:352
 msgid "Charts"
-msgstr ""
+msgstr "グラフ"
 
-#: ../../source/templates.rst:351
+#: ../../source/templates.rst:354
 msgid ""
 "You can use any HTML/JavaScript library for adding charts to your app. A "
 "good option is `HighCharts <http://www.highcharts.com/demo>`__, to draw "
 "pie charts, line graphs, bar charts, time series, etc."
 msgstr ""
+"アプリにグラフを追加するには、任意の HTML/JavaScript "
+"ライブラリを使用できます。円グラフ、折れ線グラフ、棒グラフ、時系列グラフなどを描画するには、 `HighCharts "
+"<http://www.highcharts.com/demo>`__ が適しています。"
 
-#: ../../source/templates.rst:355
+#: ../../source/templates.rst:358
 msgid "First, include the HighCharts JavaScript::"
-msgstr ""
+msgstr "まず、HighCharts の JavaScript をインクルードします::"
 
-#: ../../source/templates.rst:360
+#: ../../source/templates.rst:363
 msgid ""
 "Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__ and "
 "find the chart type that you want to make. Then click \"edit in "
 "JSFiddle\" to edit it to your liking, using hardcoded data."
 msgstr ""
+"HighCharts の `デモサイト <http://www.highcharts.com/demo>`__ "
+"にアクセスし、作りたい種類のグラフを探します。そして、 \"Edit in JSFiddle\" "
+"をクリックして、ソースコードのデータを書き換えて編集します。"
 
-#: ../../source/templates.rst:365
+#: ../../source/templates.rst:368
 msgid ""
 "Then, copy-paste the JS and HTML into your template, and load the page. "
 "If you don't see your chart, it may be because your HTML is missing the "
 "``<div>`` that your JS code is trying to insert the chart into."
 msgstr ""
+"そして、その JS と HTML "
+"をテンプレートにコピーペーストして、ページを読み込みます。グラフが表示されない場合は、JSコードがチャートを挿入しようとする ``<div>`` "
+"がHTMLに含まれていないことが原因かもしれません。"
 
-#: ../../source/templates.rst:370
+#: ../../source/templates.rst:373
 msgid ""
 "Once your chart is loading properly, you can replace the hardcoded data "
 "like ``series`` and ``categories`` with dynamically generated variables."
 msgstr ""
+"グラフが正しく読み込まれたら、 ``series`` や ``categories`` "
+"などのソースコードに書き込まれたデータを、動的に生成された変数に置き換えることができます。"
 
-#: ../../source/templates.rst:373
+#: ../../source/templates.rst:376
 msgid "For example, change this::"
-msgstr ""
+msgstr "例えば、以下のコードがあるとします::"
 
-#: ../../source/templates.rst:383
+#: ../../source/templates.rst:386
 msgid "To this::"
-msgstr ""
+msgstr "これを以下のように変更できます::"
 
-#: ../../source/templates.rst:388
+#: ../../source/templates.rst:391
 msgid ""
 "...where ``highcharts_series`` is a variable you defined in :ref:`js_vars"
 " <js_vars>`."
-msgstr ""
+msgstr "ここで ``highcharts_series`` は :ref:`js_vars <js_vars>` で定義した変数です。"
 
-#: ../../source/templates.rst:390
+#: ../../source/templates.rst:393
 msgid ""
 "If your chart is not loading, click \"View Source\" in your browser and "
 "check if there is something wrong with the data you dynamically "
 "generated."
-msgstr ""
+msgstr "グラフが読み込まれない場合は、ブラウザの \"ページのソースを表示\" をクリックして、動的に生成したデータに何か問題がないか確認してください。"
 
-#: ../../source/templates.rst:394
+#: ../../source/templates.rst:397
 msgid "Miscellaneous"
-msgstr ""
+msgstr "その他"
 
-#: ../../source/templates.rst:396
+#: ../../source/templates.rst:399
 msgid ""
 "You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For"
 " example:: ``{{ 0.1234|to2}}`` outputs 0.12."
 msgstr ""
-
-#~ msgid ""
-#~ "*Template tags* (which use curly braces"
-#~ " like ``{% this %}`` and ``{{ "
-#~ "this }}``"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you are copy-pasting the same"
-#~ " content across many templates, it's "
-#~ "better to create an includable template"
-#~ " and reuse it with ``{% include "
-#~ "%}``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "To pass data to JavaScript code in"
-#~ " your template, define a method "
-#~ "``js_vars`` on your Page, for example:"
-#~ msgstr ""
-
+"``to2``, ``to1``, or ``to0`` フィルタを使って、数字を丸めることができます。例えば ``{{ "
+"0.1234|to2}}`` とすれば 0.12 が表示されます。"

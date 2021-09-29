@@ -78,19 +78,11 @@ oTree will automatically execute it ``num_rounds`` times.
 expect()
 ~~~~~~~~
 
-.. note::
-
-    The ``expect()`` function was introduced in September 2019.
-    Previously we recommended using ``assert`` statements, which are still OK
-    but ``expect()`` can report errors more clearly.
-
 You can use ``expect`` statements to ensure that your code is working as you expect.
 
 For example:
 
 .. code-block:: python
-
-    from otree.api import expect
 
     expect(self.player.num_apples, 100)
     yield pages.Eat, dict(apples_eaten=1)
@@ -136,8 +128,6 @@ Here is how to test that it is working properly:
 
 .. code-block:: python
 
-    from otree.api import SubmissionMustFail
-
     yield SubmissionMustFail(pages.MyPage, dict(int1=99, int2=0))
     yield pages.MyPage, dict(int1=99, int2=1)
 
@@ -152,8 +142,6 @@ Checking the HTML
 You can use this together with ``expect()``:
 
 .. code-block:: python
-
-    from otree.api import expect
 
     if self.player.id_in_group == 1:
         expect(self.player.is_winner, True)
@@ -186,7 +174,6 @@ to this:
 
 .. code-block:: python
 
-    from otree.api import Submission
     yield Submission(pages.MyPage, dict(foo=99), check_html=False)
 
 (If you used ``Submission`` without ``check_html=False``,
@@ -201,7 +188,6 @@ You can use ``Submission`` with ``timeout_happened=True``:
 
 .. code-block:: python
 
-    from otree.api import Submission
     yield Submission(pages.MyPage, dict(foo=99), timeout_happened=True)
 
 Advanced features

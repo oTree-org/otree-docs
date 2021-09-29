@@ -5,19 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: 2021-05-25 11:26+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
 
 #: ../../source/models.rst:2
 msgid "Models"
@@ -29,10 +28,9 @@ msgstr "一个oTree应用有3个数据模型：子会话，小组与玩家。"
 
 #: ../../source/models.rst:6
 msgid ""
-"A player is part of a group, which is part of a subsession. See :ref:"
-"`conceptual_overview`."
-msgstr ""
-"玩家是小组的一部分，小组是子会话的一部分。参考 :ref:`conceptual_overview`。"
+"A player is part of a group, which is part of a subsession. See "
+":ref:`conceptual_overview`."
+msgstr "玩家是小组的一部分，小组是子会话的一部分。参考 :ref:`conceptual_overview`。"
 
 #: ../../source/models.rst:9
 msgid "Let's say you want your experiment to generate data that looks like this::"
@@ -44,10 +42,9 @@ msgstr "下面的代码展示了如何定义上面的表结构："
 
 #: ../../source/models.rst:27
 msgid ""
-"So, a **model** is essentially a database table. And a **field** is a column in "
-"a table."
-msgstr ""
-"所以，一个 **模型** 实际上就是一张数据库表。一个 **字段** 就是表中的一列。"
+"So, a **model** is essentially a database table. And a **field** is a "
+"column in a table."
+msgstr "所以，一个 **模型** 实际上就是一张数据库表。一个 **字段** 就是表中的一列。"
 
 #: ../../source/models.rst:31
 msgid "Fields"
@@ -79,8 +76,8 @@ msgstr "``StringField`` (表示字符串)"
 
 #: ../../source/models.rst:41
 msgid ""
-"``LongStringField`` (for long text strings; its form widget is a multi-line "
-"textarea)"
+"``LongStringField`` (for long text strings; its form widget is a multi-"
+"line textarea)"
 msgstr "``LongStringField`` (表示长字符串; 它的表单控件是一个多行文本框)"
 
 #: ../../source/models.rst:45
@@ -97,10 +94,9 @@ msgstr "最小值，最大值，可选项"
 
 #: ../../source/models.rst:58
 msgid ""
-"For info on how to set a field's ``min``, ``max``, or ``choices``, see :ref:"
-"`form-validation`."
-msgstr ""
-"如何设置字段的 ``min``，``max``， 或 ``choices``，参考 :ref:`form-validation`。"
+"For info on how to set a field's ``min``, ``max``, or ``choices``, see "
+":ref:`form-validation`."
+msgstr "如何设置字段的 ``min``，``max``， 或 ``choices``，参考 :ref:`form-validation`。"
 
 #: ../../source/models.rst:62
 msgid "Built-in fields and methods"
@@ -108,12 +104,12 @@ msgstr "内置字段与方法"
 
 #: ../../source/models.rst:64
 msgid ""
-"Player, group, and subsession already have some predefined fields. For example, "
-"``Player`` has fields called ``payoff`` and ``id_in_group``, as well as methods "
-"like ``in_all_rounds()`` and ``get_others_in_group()``."
+"Player, group, and subsession already have some predefined fields. For "
+"example, ``Player`` has fields called ``payoff`` and ``id_in_group``, as "
+"well as methods like ``in_all_rounds()`` and ``get_others_in_group()``."
 msgstr ""
-"玩家，小组与子会话有一些预定义的字段。举例来说， ``Player`` 有 ``payoff`` 与 "
-"``id_in_group`` 字段， ``in_all_rounds()`` 与 ``get_others_in_group()`` 方法。"
+"玩家，小组与子会话有一些预定义的字段。举例来说， ``Player`` 有 ``payoff`` 与 ``id_in_group`` 字段， "
+"``in_all_rounds()`` 与 ``get_others_in_group()`` 方法。"
 
 #: ../../source/models.rst:69
 msgid "These built-in fields and methods are listed below."
@@ -130,11 +126,9 @@ msgstr "round_number"
 
 #: ../../source/models.rst:77
 msgid ""
-"Gives the current round number. Only relevant if the app has multiple rounds "
-"(set in ``Constants.num_rounds``). See :ref:`rounds`."
-msgstr ""
-"给出当前是第几轮。仅在应用有多轮时有意义（轮数由 ``Constants.num_rounds`` 设"
-"置 ）。参考 :ref:`rounds`。"
+"Gives the current round number. Only relevant if the app has multiple "
+"rounds (set in ``Constants.num_rounds``). See :ref:`rounds`."
+msgstr "给出当前是第几轮。仅在应用有多轮时有意义（轮数由 ``Constants.num_rounds`` 设置 ）。参考 :ref:`rounds`。"
 
 #: ../../source/models.rst:84
 msgid "get_groups()"
@@ -230,11 +224,9 @@ msgstr "id_in_group"
 
 #: ../../source/models.rst:131
 msgid ""
-"Automatically assigned integer starting from 1. In multiplayer games, indicates "
-"whether this is player 1, player 2, etc."
-msgstr ""
-"自动被赋值为从1开始的正整数。在多人游戏中，表示哪位是玩家1，哪位是玩家2，诸如此"
-"类。"
+"Automatically assigned integer starting from 1. In multiplayer games, "
+"indicates whether this is player 1, player 2, etc."
+msgstr "自动被赋值为从1开始的正整数。在多人游戏中，表示哪位是玩家1，哪位是玩家2，诸如此类。"
 
 #: ../../source/models.rst:135
 msgid "payoff"
@@ -342,85 +334,63 @@ msgstr "``num_rounds`` (见 :ref:`rounds` )"
 
 #: ../../source/models.rst:202
 msgid ""
-"if you don't want your app's real name to be displayed in URLs, define a string "
-"constant ``name_in_url`` with your desired name."
-msgstr ""
-"如果你不想让自己应用的真实名字被显示在URL中，那么可以定义一个字符串常量 "
-"``name_in_url`` 并赋予你想显示的名字。"
+"if you don't want your app's real name to be displayed in URLs, define a "
+"string constant ``name_in_url`` with your desired name."
+msgstr "如果你不想让自己应用的真实名字被显示在URL中，那么可以定义一个字符串常量 ``name_in_url`` 并赋予你想显示的名字。"
 
 # method->function?
 #: ../../source/models.rst:206
 msgid ""
-"Constants can be numbers, strings, booleans, lists, etc. But for more complex "
-"data types like dicts, lists of dicts, etc, you should instead define it in a "
-"function. For example, instead of defining a Constant called ``my_dict``, do "
-"this:"
+"Constants can be numbers, strings, booleans, lists, etc. But for more "
+"complex data types like dicts, lists of dicts, etc, you should instead "
+"define it in a function. For example, instead of defining a Constant "
+"called ``my_dict``, do this:"
 msgstr ""
-"常量可以是数字，字符串，布尔值，列表等等类型。但对于更复杂的数据类型如字典，字典"
-"的列表等等，你应当在子会话方法中定义，而不是在常量中。举例来说，不要在常量中定"
-"义 ``my_dict`` ，而应当使用如下代码："
+"常量可以是数字，字符串，布尔值，列表等等类型。但对于更复杂的数据类型如字典，字典的列表等等，你应当在子会话方法中定义，而不是在常量中。举例来说，不要在常量中定义"
+" ``my_dict`` ，而应当使用如下代码："
 
 #: ../../source/models.rst:217
 msgid "Miscellaneous topics"
 msgstr "杂项"
 
-#: ../../source/models.rst:220
-msgid "Defining your own methods"
-msgstr "定义你自己的方法"
-
 #: ../../source/models.rst:222
-msgid ""
-"In addition to the methods listed on this page, you can define your own. Just "
-"remember to *use* them somewhere! Just defining them with ``def`` has no effect."
-msgstr ""
-"除了本页列出的方法，你可以定义自己的方法。只需记住在某处 *调用* 它们！仅仅用 "
-"``def`` 定义它们是没有任何作用的。"
-
-#: ../../source/models.rst:227
-msgid "For example:"
-msgstr "举例来说："
-
-#: ../../source/models.rst:235
-msgid "Then call it:"
-msgstr "然后如下调用："
-
-#: ../../source/models.rst:245
 msgid "About using random()"
 msgstr "关于使用 random()"
 
 # method->function
-#: ../../source/models.rst:247
+#: ../../source/models.rst:224
 msgid ""
-"Never generate random values outside of a function. For example, don't do this:"
+"Never generate random values outside of a function. For example, don't do"
+" this:"
 msgstr "永远不要在函数外部生成随机值。举例来说，不要写下面这样的代码："
 
-#: ../../source/models.rst:255
+#: ../../source/models.rst:232
 msgid "If it changes randomly, it isn't a constant."
 msgstr "如果它随机变化，它就不算一个常量。"
 
-#: ../../source/models.rst:257
+#: ../../source/models.rst:234
 msgid "Or this:"
 msgstr "或者这样的代码："
 
 # probably method->function
-#: ../../source/models.rst:268
+#: ../../source/models.rst:245
 msgid ""
-"These won't work because they will change every time the server launches a new "
-"process. It may appear to work during testing but will eventually break. "
-"Instead, you should generate the random variables inside a function, such as :"
-"ref:`creating_session` (and preferably not ``vars_for_template``, which gets re-"
-"executed if the user refreshes the page)."
+"These won't work because they will change every time the server launches "
+"a new process. It may appear to work during testing but will eventually "
+"break. Instead, you should generate the random variables inside a "
+"function, such as :ref:`creating_session` (and preferably not "
+"``vars_for_template``, which gets re-executed if the user refreshes the "
+"page)."
 msgstr ""
-"上述代码不会正常工作，因为随机值在服务器启动一个新进程时会改变。这可能在测试时工"
-"作正常，但最终会出现错误。相反的，你应该在函数内部生成随机值，如 :ref:"
-"`creating_session` 中（尽量不要在 ``vars_for_template`` 中，因为这一函数在用户刷"
-"新页面时会重新执行）。"
+"上述代码不会正常工作，因为随机值在服务器启动一个新进程时会改变。这可能在测试时工作正常，但最终会出现错误。相反的，你应该在函数内部生成随机值，如 "
+":ref:`creating_session` 中（尽量不要在 ``vars_for_template`` "
+"中，因为这一函数在用户刷新页面时会重新执行）。"
 
-#: ../../source/models.rst:275
+#: ../../source/models.rst:252
 msgid ""
 "If you want to set your own random seed, don't use the ``random.seed()`` "
-"function. Instead, generate an instance of ``random.Random`` as described `here "
-"<https://stackoverflow.com/a/37356024>`__"
+"function. Instead, generate an instance of ``random.Random`` as described"
+" `here <https://stackoverflow.com/a/37356024>`__"
 msgstr ""
-"如果你想使用自己的随机种子，不要用 ``random.seed()`` 函数。而应当生成 ``random."
-"Random`` 的实例，如在 `这里 <https://stackoverflow.com/a/37356024>`__ 所描述的"
+"如果你想使用自己的随机种子，不要用 ``random.seed()`` 函数。而应当生成 ``random.Random`` 的实例，如在 `这里"
+" <https://stackoverflow.com/a/37356024>`__ 所描述的"

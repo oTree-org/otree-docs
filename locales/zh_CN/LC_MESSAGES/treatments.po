@@ -162,13 +162,3 @@ msgid ""
 msgstr ""
 "在管理员界面的“Demo”部分，会话是不可配置的。它仅在 \"Sessions\" 或 "
 "\"Rooms\" 中创建会话时可用。"
-
-#~ msgid ""
-#~ "Then elsewhere in your code, you can access the participant's color "
-#~ "with ``participant.color``."
-#~ msgstr ""
-#~ "然后在你的代码的任何地方，你都可以通过 ``participant.color`` 获取参与"
-#~ "人的颜色。"
-
-#~ msgid "For more on vars, see :ref:`vars`."
-#~ msgstr "获取有关vars的更多信息，参见 :ref:`vars`."

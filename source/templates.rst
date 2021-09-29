@@ -69,9 +69,12 @@ Comments
 .. code-block:: django
 
 
-    {{ comment }}
-    this is a comment
-    {{ endcomment }}
+    {# this is a comment #}
+
+    {#
+        this is a
+        multiline comment
+    #}
 
 
 Things you can't do
@@ -87,9 +90,9 @@ How templates work: an example
 
 oTree templates are a mix of 2 languages:
 
--   *HTML* (which uses angle brackets like ``<this>`` and ``</this>``.
+-   *HTML* (which uses angle brackets like ``<this>`` and ``</this>``).
 -   *Template tags*
-    (which use curly braces like ``{{ this }}`` and ``{{ this }}``
+    (which use curly braces like ``{{ this }}``)
 
 In this example, let's say your template looks like this:
 

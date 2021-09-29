@@ -5,19 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2021-09-26 22:14-0400\n"
 "PO-Revision-Date: 2021-06-01 13:03+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/timeouts.rst:4
 msgid "Timeouts"
@@ -46,14 +45,13 @@ msgid ""
 "this does not occur if you are running the development server "
 "(``zipserver`` or ``devserver``)."
 msgstr ""
-"如果你在生产服务器(``prodserver``)上运行，那么页面总会被提交，即使用户关"
-"掉了浏览器。然而，如果你在开发服务器上(``zipserver`` or ``devserver``)运"
-"行，这将不会发生。"
+"如果你在生产服务器(``prodserver``)上运行，那么页面总会被提交，即使用户关掉了浏览器。然而，如果你在开发服务器上(``zipserver``"
+" or ``devserver``)运行，这将不会发生。"
 
 #: ../../source/timeouts.rst:28
 msgid ""
-"If you need the timeout to be dynamically determined, use :ref:"
-"`get_timeout_seconds`."
+"If you need the timeout to be dynamically determined, use "
+":ref:`get_timeout_seconds`."
 msgstr "如果你需要超时能够被动态决定，使用 :ref:`get_timeout_seconds`。"
 
 #: ../../source/timeouts.rst:33
@@ -82,11 +80,9 @@ msgstr "举例来说："
 
 #: ../../source/timeouts.rst:67
 msgid ""
-"Or, using a custom session config parameter (see :ref:"
-"`session_config_treatments`)."
-msgstr ""
-"或者使用定制的session config参数 (参见 :ref:"
-"`session_config_treatments`)。"
+"Or, using a custom session config parameter (see "
+":ref:`session_config_treatments`)."
+msgstr "或者使用定制的session config参数 (参见 :ref:`session_config_treatments`)。"
 
 #: ../../source/timeouts.rst:78
 msgid "Advanced techniques"
@@ -99,31 +95,26 @@ msgstr "因超时提交的表单"
 #: ../../source/timeouts.rst:85
 msgid ""
 "If a form is auto-submitted because of a timeout, oTree will try to save "
-"whichever fields were filled out at the time of submission. If a field "
-"in the form has an error because it is missing or invalid, it will be "
-"set to ``0`` for numeric fields, ``False`` for boolean fields, and the "
-"empty string ``''`` for string fields."
+"whichever fields were filled out at the time of submission. If a field in"
+" the form has an error because it is missing or invalid, it will be set "
+"to ``0`` for numeric fields, ``False`` for boolean fields, and the empty "
+"string ``''`` for string fields."
 msgstr ""
-"如果表单由于超时被自动提交，oTree会试着保存表单在提交时字段所填入的内容。"
-"如果表单中的字段中有一个错误如缺失或非法，oTree会自动对数值字段填入 "
-"``0`` ，布尔字段填入 ``False`` ，字符串字段填入 ``''`` 。"
+"如果表单由于超时被自动提交，oTree会试着保存表单在提交时字段所填入的内容。如果表单中的字段中有一个错误如缺失或非法，oTree会自动对数值字段填入"
+" ``0`` ，布尔字段填入 ``False`` ，字符串字段填入 ``''`` 。"
 
 #: ../../source/timeouts.rst:91
 msgid ""
 "If you want to discard the auto-submitted values, you can just check if "
 "``timeout_happened``, and if so, overwrite the values."
-msgstr ""
-"如果你想要舍弃这些自动提交的值，你可以检查 ``timeout_happened`` ，如果需"
-"要的话，你可以覆写这些值。"
+msgstr "如果你想要舍弃这些自动提交的值，你可以检查 ``timeout_happened`` ，如果需要的话，你可以覆写这些值。"
 
 # method->function
 #: ../../source/timeouts.rst:94
 msgid ""
 "If the ``error_message()`` function fails, then the whole form might be "
 "invalid, so the whole form will be discarded."
-msgstr ""
-"如果 ``error_message()`` 函数失败了，那么整个表单可能是非法的，故整个表单"
-"都会被舍弃。"
+msgstr "如果 ``error_message()`` 函数失败了，那么整个表单可能是非法的，故整个表单都会被舍弃。"
 
 #: ../../source/timeouts.rst:98
 msgid "Timeouts that span multiple pages"
@@ -131,25 +122,23 @@ msgstr "跨越多个页面的超时"
 
 #: ../../source/timeouts.rst:100
 msgid ""
-"You can use ``get_timeout_seconds`` to create timeouts that span "
-"multiple pages, or even the entire session. The trick is to define a "
-"fixed \"expiration time\", and then on each page, make "
-"``get_timeout_seconds`` return the number of seconds until that "
-"expiration time."
+"You can use ``get_timeout_seconds`` to create timeouts that span multiple"
+" pages, or even the entire session. The trick is to define a fixed "
+"\"expiration time\", and then on each page, make ``get_timeout_seconds`` "
+"return the number of seconds until that expiration time."
 msgstr ""
-"你可以使用 ``get_timeout_seconds`` 来创建跨越多个页面甚至是整个会话的超"
-"时。技巧是定义一个固定的\"到期时间\"，然后在每个页面上，让 "
-"``get_timeout_seconds`` 返回当前时间到到期时间的秒数。"
+"你可以使用 ``get_timeout_seconds`` "
+"来创建跨越多个页面甚至是整个会话的超时。技巧是定义一个固定的\"到期时间\"，然后在每个页面上，让 ``get_timeout_seconds``"
+" 返回当前时间到到期时间的秒数。"
 
 #: ../../source/timeouts.rst:105
 msgid ""
 "First, choose a place to start the timer. This could be a page called "
-"\"Start\" that displays text like \"Press the button when you're ready "
-"to start\". When the user clicks the \"next\" button, "
-"``before_next_page`` will be executed:"
+"\"Start\" that displays text like \"Press the button when you're ready to"
+" start\". When the user clicks the \"next\" button, ``before_next_page`` "
+"will be executed:"
 msgstr ""
-"首先，选择开始计时器的地方。这可以是一个名为\"开始\"的页面，显示如\"准备"
-"好开始后按下按钮\"的文本。当用户点击\"下一页\"按钮后， "
+"首先，选择开始计时器的地方。这可以是一个名为\"开始\"的页面，显示如\"准备好开始后按下按钮\"的文本。当用户点击\"下一页\"按钮后， "
 "``before_next_page`` 会被执行："
 
 # "session.vars" -> "session field"
@@ -159,16 +148,14 @@ msgid ""
 "``creating_session``, and it could be stored in a session field if it's "
 "the same for everyone in the session.)"
 msgstr ""
-"（你也可以在 ``after_all_players_arrive`` 或 ``creating_session`` 中启动"
-"计时器，并将到期时间存储在 会话字段中，如果它对会话中的所有人都相同的"
-"话。）"
+"（你也可以在 ``after_all_players_arrive`` 或 ``creating_session`` "
+"中启动计时器，并将到期时间存储在 会话字段中，如果它对会话中的所有人都相同的话。）"
 
 #: ../../source/timeouts.rst:124
 msgid ""
-"Then, each page's ``get_timeout_seconds`` should be the number of "
-"seconds until that expiration time:"
-msgstr ""
-"然后，每个页面的 ``get_timeout_seconds`` 应当为直到到期时间的秒数："
+"Then, each page's ``get_timeout_seconds`` should be the number of seconds"
+" until that expiration time:"
+msgstr "然后，每个页面的 ``get_timeout_seconds`` 应当为直到到期时间的秒数："
 
 #: ../../source/timeouts.rst:137
 msgid ""
@@ -179,102 +166,84 @@ msgid ""
 "``is_displayed`` to skip the page if there's not enough time for the "
 "participant to realistically read the whole page."
 msgstr ""
-"当时间耗尽后， ``get_timeout_seconds`` 会返回0或者一个负数，这会导致页面"
-"立即被加载并自动提交。这意味着所有剩余页面会快速闪过参与者的屏幕，这通常"
-"不是想要的结果。所以你应该使用 ``is_displayed`` 来跳过这些页面，如果实际"
-"上参与者已经没有时间阅读这些页面。"
+"当时间耗尽后， ``get_timeout_seconds`` "
+"会返回0或者一个负数，这会导致页面立即被加载并自动提交。这意味着所有剩余页面会快速闪过参与者的屏幕，这通常不是想要的结果。所以你应该使用 "
+"``is_displayed`` 来跳过这些页面，如果实际上参与者已经没有时间阅读这些页面。"
 
-#: ../../source/timeouts.rst:158
+#: ../../source/timeouts.rst:160
 msgid ""
 "The default text on the timer says \"Time left to complete this page:\". "
 "But if your timeout spans multiple pages, you should word it more "
 "accurately, by setting ``timer_text``:"
 msgstr ""
-"计时器的默认文本是\"完成此页面的剩余时间为：\"。但是如果你的计时器是跨越"
-"多个页面的，你应当通过设定 ``timer_text`` 让其表达得更准确一些:"
+"计时器的默认文本是\"完成此页面的剩余时间为：\"。但是如果你的计时器是跨越多个页面的，你应当通过设定 ``timer_text`` "
+"让其表达得更准确一些:"
 
-#: ../../source/timeouts.rst:174
+#: ../../source/timeouts.rst:176
 msgid "Customizing the timer"
 msgstr "自定义计时器"
 
-#: ../../source/timeouts.rst:177
+#: ../../source/timeouts.rst:179
 msgid "Hiding the timer"
 msgstr "隐藏计时器"
 
-#: ../../source/timeouts.rst:179
+#: ../../source/timeouts.rst:181
 msgid "If you want to hide the timer, use this CSS:"
 msgstr "如果你希望隐藏计时器，使用下面的CSS："
 
-#: ../../source/timeouts.rst:190
+#: ../../source/timeouts.rst:192
 msgid "Changing the timer's behavior"
 msgstr "改变计时器的行为"
 
-#: ../../source/timeouts.rst:192
+#: ../../source/timeouts.rst:194
 msgid ""
-"The timer's functionality is provided by `jQuery Countdown <http://"
-"hilios.github.io/jQuery.countdown/documentation.html>`__. You can change "
-"its behavior by attaching and removing event handlers with jQuery's ``."
-"on()`` and ``off()``."
+"The timer's functionality is provided by `jQuery Countdown "
+"<http://hilios.github.io/jQuery.countdown/documentation.html>`__. You can"
+" change its behavior by attaching and removing event handlers with "
+"jQuery's ``.on()`` and ``off()``."
 msgstr ""
-"计时器的功能由 `jQuery Countdown <http://hilios.github.io/jQuery."
-"countdown/documentation.html>`__ 提供。你可以通过jQuery的 ``.on()`` 和 "
-"``off()`` 添加和去除事件处理器来改变它的行为。"
+"计时器的功能由 `jQuery Countdown "
+"<http://hilios.github.io/jQuery.countdown/documentation.html>`__ "
+"提供。你可以通过jQuery的 ``.on()`` 和 ``off()`` 添加和去除事件处理器来改变它的行为。"
 
-#: ../../source/timeouts.rst:197
+#: ../../source/timeouts.rst:199
 msgid ""
-"oTree sets handlers for the events ``update.countdown`` and ``finish."
-"countdown``, so if you want to modify those, you can detach them with "
-"``off()``, and/or add your own handler with ``on()``. The countdown "
-"element is ``.otree-timer__time-left``."
+"oTree sets handlers for the events ``update.countdown`` and "
+"``finish.countdown``, so if you want to modify those, you can detach them"
+" with ``off()``, and/or add your own handler with ``on()``. The countdown"
+" element is ``.otree-timer__time-left``."
 msgstr ""
-"oTree为 ``update.countdown`` 和 ``finish.countdown`` 设置了事件处理器，故"
-"如果你想要更改它们，你可以使用 ``off()`` 解除它们，并/或通过 ``on()`` 添"
-"加你自己的事件处理器。倒计时元素为 ``.otree-timer__time-left``。"
+"oTree为 ``update.countdown`` 和 ``finish.countdown`` "
+"设置了事件处理器，故如果你想要更改它们，你可以使用 ``off()`` 解除它们，并/或通过 ``on()`` "
+"添加你自己的事件处理器。倒计时元素为 ``.otree-timer__time-left``。"
 
-#: ../../source/timeouts.rst:202
+#: ../../source/timeouts.rst:204
 msgid "For example, to hide the timer until there is only 10 seconds left,"
 msgstr "例如，隐藏计时器直到还剩10秒，"
 
-#: ../../source/timeouts.rst:222
+#: ../../source/timeouts.rst:224
 msgid ""
 "To avoid copy-pasting this code on every page, put it in an includable "
 "template."
 msgstr "为了避免将此代码复制到每一个页面上，将其放在一个可包含的模板中。"
 
-#: ../../source/timeouts.rst:224
+#: ../../source/timeouts.rst:226
+#, fuzzy
 msgid ""
-"Note: even if you turn off the ``finish.countdown`` event handler from "
-"submitting the page, if you are running the timeoutworker, the page will "
-"be submitted on the server side. So, instead you should use the "
-"technique described in :ref:`soft-timeout`."
+"Note: even if you turn off the ``finish.countdown`` event handler, the "
+"page will still be submitted on the server side. So, instead you should "
+"use the technique described in :ref:`soft-timeout`."
 msgstr ""
-"注意：即使你关闭 ``finish.countdown`` 事件处理器来避免提交页面，如果你仍"
-"运行着timeoutworker，页面仍会在服务器端被提交。所以你应当使用 :ref:`soft-"
+"注意：即使你关闭 ``finish.countdown`` "
+"事件处理器来避免提交页面，如果你仍运行着timeoutworker，页面仍会在服务器端被提交。所以你应当使用 :ref:`soft-"
 "timeout` 中的技巧而不是这样做。"
 
-#: ../../source/timeouts.rst:231
+#: ../../source/timeouts.rst:233
 msgid "Timeout that doesn't submit the page"
 msgstr "不会提交页面的超时"
 
-#: ../../source/timeouts.rst:233
+#: ../../source/timeouts.rst:235
 msgid ""
-"If you just want a soft timeout, you don't need to use the built-in "
-"timer at all. Instead, make your own with JavaScript, for example:"
-msgstr ""
-"如果你只是想用温和的超时，那么你根本不需要内置的计时器。你应该使用"
-"JavaScript创建自己的超时，例如："
-
-#: ../../source/timeouts.rst:246
-msgid "Minimum time on page"
-msgstr "最小页面停留时间"
-
-#: ../../source/timeouts.rst:248
-msgid ""
-"If you want to require the user to spend *at least* a certain amount of "
-"time on a page, you can use some simple JavaScript: hide the next button "
-"(use the ``.otree-btn-next`` selector), then use ``setTimeout`` to re-"
-"display it after a certain amount of time."
-msgstr ""
-"如果你想让用户在页面上 *至少* 花上一定量的时间，你可以使用一些简单的"
-"JavaScript：隐藏下一步按钮（使用 ``.otree-btn-next`` 选择器），然后使用 "
-"``setTimeout`` 来在一段时间后重新显示按钮。"
+"If you just want a soft timeout, you don't need to use the built-in timer"
+" at all. Instead, make your own with JavaScript, for example:"
+msgstr "如果你只是想用温和的超时，那么你根本不需要内置的计时器。你应该使用JavaScript创建自己的超时，例如："

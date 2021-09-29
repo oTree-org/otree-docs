@@ -19,63 +19,67 @@ msgstr ""
 
 #: ../../source/rooms.rst:4
 msgid "Rooms"
-msgstr ""
+msgstr "ルーム"
 
 #: ../../source/rooms.rst:6
 msgid "oTree lets you configure \"rooms\", which provide:"
-msgstr ""
+msgstr "oTreeでは \"ルーム\" を設定することができます。次の機能を提供します:"
 
 #: ../../source/rooms.rst:8
 msgid ""
 "Links that you can assign to participants or lab computers, which stay "
 "constant across sessions"
 msgstr ""
+"参加者や実験室のコンピューターに割り当てることができるリンク (セッションを跨いで同じリンクを使用できます)"
 
 #: ../../source/rooms.rst:10
 msgid ""
 "A \"waiting room\" that lets you see which participants are currently "
 "waiting to start a session."
 msgstr ""
+"セッション開始を待っている参加者を確認できる \"待機部屋\" "
 
 #: ../../source/rooms.rst:11
 msgid ""
 "Short links that are easy for participants to type, good for quick live "
 "demos."
 msgstr ""
+"参加者が簡単に入力できる短いリンク (短時間のライブデモに適しています)"
 
 #: ../../source/rooms.rst:13
 msgid "Here is a screenshot:"
-msgstr ""
+msgstr "以下がスクリーンショットです:"
 
 #: ../../source/rooms.rst:19
 msgid "Creating rooms"
-msgstr ""
+msgstr "ルームの作成"
 
 #: ../../source/rooms.rst:21
 msgid ""
 "You can create multiple rooms -- say, for for different classes you "
 "teach, or different labs you manage."
 msgstr ""
+"複数の部屋を作成することができます。例えば、教えるクラスごとや管理する実験室ごとに部屋を作成することができます。"
 
 #: ../../source/rooms.rst:25
 msgid "If using oTree Studio"
-msgstr ""
+msgstr "oTree Studio を使用している場合"
 
 #: ../../source/rooms.rst:27
 msgid "In the sidebar, go to \"Settings\" and then add a room at the bottom."
-msgstr ""
+msgstr "サイドバーの \"Settings\" にアクセスし、一番下にある部屋を追加します。"
 
 #: ../../source/rooms.rst:30
 msgid "If using PyCharm"
-msgstr ""
+msgstr "PyCharm を使用している場合"
 
 #: ../../source/rooms.rst:32
 msgid "Go to your ``settings.py`` and set ``ROOMS``."
-msgstr ""
+msgstr "``settings.py`` の ``ROOMS`` を設定してください。"
 
 #: ../../source/rooms.rst:34
 msgid "For example:"
-msgstr ""
+msgstr "例:"
 
 #: ../../source/rooms.rst:51
 msgid ""
@@ -83,30 +87,36 @@ msgid ""
 "``participant_label_file`` which is a relative (or absolute) path to a "
 "text file with the participant labels."
 msgstr ""
+"参加者ラベル (下記参照) を使用している場合は、参加者ラベルのテキストファイルへの"
+"相対パス (もしくは絶対パス) を ``participant_label_file`` に設定する必要があります。"
 
 #: ../../source/rooms.rst:56
 msgid "Configuring a room"
-msgstr ""
+msgstr "部屋の設定"
 
 #: ../../source/rooms.rst:59
 msgid "Participant labels"
-msgstr ""
+msgstr "参加者ラベル"
 
 #: ../../source/rooms.rst:61
 msgid ""
 "This is the \"guest list\" for the room. It should contain one "
 "participant label per line. For example::"
 msgstr ""
+"参加者ラベルはルームの \"ゲストリスト\" です。1行に1つの参加者ラベルが含まれています。"
+"例えば、以下のようになります::"
 
 #: ../../source/rooms.rst:75
 msgid ""
 "If you don't specify participant labels, then anyone can join as long as "
 "they know the room-wide URL. See :ref:`no-participant-labels`."
 msgstr ""
+"参加者ラベルを指定していない場合は、ルーム URL を知っていれば誰でも参加できます。"
+"詳しくは :ref:`no-participant-labels` を参照してください。"
 
 #: ../../source/rooms.rst:80
 msgid "use_secure_urls (optional)"
-msgstr ""
+msgstr "use_secure_urls (オプション)"
 
 #: ../../source/rooms.rst:82
 msgid ""
@@ -114,6 +124,8 @@ msgid ""
 "``participant_label_file``. For example, without secure URLs, your start "
 "URLs would look something like this::"
 msgstr ""
+"この設定は ``participant_label_file`` に追加のセキュリティを提供します。"
+"例えば、セキュア URL を使用しない場合、開始 URL は以下のようになります::"
 
 #: ../../source/rooms.rst:89
 msgid ""
@@ -122,54 +134,62 @@ msgid ""
 "However, if you use ``use_secure_urls``, each URL gets a unique code like"
 " this::"
 msgstr ""
+"もし Student1 に悪意があるなら、自分の URL の participant_label を "
+"\"Student1\" から \"Student2\" に変更して、Student2 になりすますかもしれません。"
+"しかし、 ``use_secure_urls`` を使用すると、各URL には以下のようなユニークなコードが付与されます::"
 
 #: ../../source/rooms.rst:98
 msgid "Then, Student1 can't impersonate Student2 without the secret code."
-msgstr ""
+msgstr "このとき、Student1 はユニークコードを知らなければ Student2 になりすますことができません。"
 
 #: ../../source/rooms.rst:101
 msgid "Using rooms"
-msgstr ""
+msgstr "ルームの使用"
 
 #: ../../source/rooms.rst:103
 msgid ""
 "In the admin interface, click \"Rooms\" in the header bar, and click the "
 "room you created. Scroll down to the section with the participant URLs."
 msgstr ""
+"管理画面のヘッダーバーにある \"Rooms\" をクリックして、作成したルームをクリックします。"
+"参加者の URL が記載されているセクションまでスクロールダウンします。"
 
 #: ../../source/rooms.rst:108
 msgid "If you have a participant_label_file"
-msgstr ""
+msgstr "participant_label_file がある場合"
 
 #: ../../source/rooms.rst:110
 msgid ""
 "In the room's admin page, monitor which participants are present, and "
 "when you are ready, create a session for the desired number of people."
 msgstr ""
+"ルームの管理画面で、どの参加者が参加しているかをモニターし、準備ができたら希望の人数分のセッションを作成します。"
 
 #: ../../source/rooms.rst:113
 msgid "You can either use the participant-specific URLs, or the room-wide URL."
-msgstr ""
+msgstr "参加者専用 URL を使うか、ルーム URL のどちらかを使うことができます。"
 
 #: ../../source/rooms.rst:115
 msgid ""
 "The participant-specific URLs already contain the participant label. For "
 "example::"
 msgstr ""
+"参加者専用の URL には、すでに参加者ラベルが含まれています。例えば、以下のようになります::"
 
 #: ../../source/rooms.rst:120
 msgid "The room-wide URL does not contain it::"
-msgstr ""
+msgstr "ルーム URL には参加者ラベルは含まれていません::"
 
 #: ../../source/rooms.rst:124
 msgid ""
 "So, if you use room-wide URLs, participants will be required to enter "
 "their participant label:"
 msgstr ""
+"そのため、ルーム URL を使用する場合、参加者は参加者ラベルを入力する必要があります:"
 
 #: ../../source/rooms.rst:132
 msgid "If you don't have a participant_label_file"
-msgstr ""
+msgstr "participant_label_file がない場合"
 
 #: ../../source/rooms.rst:134
 msgid ""
@@ -177,6 +197,8 @@ msgid ""
 "admin page, check how many people are present, and create a session for "
 "the desired number of people."
 msgstr ""
+"各参加者にルームの URL を開いてもらいます。その後、ルームの管理ページで、"
+"何人の参加者がいるかを確認し、希望の人数分のセッションを作成してください。"
 
 #: ../../source/rooms.rst:138
 msgid ""
@@ -184,10 +206,12 @@ msgid ""
 "participant labels, because someone could play twice by opening the URL "
 "in 2 different browsers."
 msgstr ""
+"このオプションは簡単ですが、参加者ラベルを使用するよりも信頼性が低くなります。"
+"理由は、誰かが 2 つの異なるブラウザで URL を開くことで 2 回プレイできるからです。"
 
 #: ../../source/rooms.rst:142
 msgid "Reusing for multiple sessions"
-msgstr ""
+msgstr "複数セッションへの再利用"
 
 #: ../../source/rooms.rst:144
 msgid ""
@@ -195,16 +219,20 @@ msgid ""
 "set them as the browser's home page (using either room-wide or "
 "participant-specific URLs)."
 msgstr ""
+"ルームのURLは、セッション間で再利用できるように設計されています。"
+"実験室では、ブラウザのホームページとして設定することができます "
+"(ルーム URL または 参加者専用 URL を使用できます)。"
 
 #: ../../source/rooms.rst:148
 msgid ""
 "In classroom experiments, you can give each student their URL that they "
 "can use through the semester."
 msgstr ""
+"教室での実験では、各生徒に固有の URL を与えて、それを学期を通して使用することができます。"
 
 #: ../../source/rooms.rst:152
 msgid "What if not all participants show up?"
-msgstr ""
+msgstr "参加者全員が来ない場合"
 
 #: ../../source/rooms.rst:154
 msgid ""
@@ -213,22 +241,28 @@ msgid ""
 "participants to manually enter their participant label. Participants are "
 "only counted as present after they enter their participant label."
 msgstr ""
+"実験室での実験で、参加者の数が予測できない場合は、ルーム URL を使用し、"
+"参加者に参加者ラベルを手動で入力してもらうことを検討しましょう。"
+"参加者は、参加者ラベルを入力して初めて出席者としてカウントされます。"
 
 #: ../../source/rooms.rst:158
 msgid ""
 "Or, you can open the browsers to participant-specific URLs, but before "
 "creating the session, close the browsers on unattended computers."
 msgstr ""
+"あるいは、ブラウザで参加者専用 URL を開きますが、"
+"セッションを作成する前に、無人のコンピュータのブラウザを閉じておくこともできます。"
 
 #: ../../source/rooms.rst:161
 msgid ""
 "Participants can join after the session has been created, as long as "
 "there are spots remaining."
 msgstr ""
+"参加者は、セッションが作成された後でも、参加枠が残っていれば参加することができます。"
 
 #: ../../source/rooms.rst:164
 msgid "Pre-assigning participants to labels"
-msgstr ""
+msgstr "参加者ラベルへの事前割り当て"
 
 #: ../../source/rooms.rst:166
 msgid ""
@@ -236,22 +270,28 @@ msgid ""
 "to arrive is participant 1. However, in some situations this may be "
 "undesirable, for example:"
 msgstr ""
+"oTree では、到着時間に基づいて参加者を割り当てています。"
+"しかし、状況によっては、これが望ましくない場合があります。"
+"例えば、次のような場合です:"
 
 #: ../../source/rooms.rst:169
 msgid ""
 "You want your participant labels to line up with the oTree IDs, in a "
 "fixed order, e.g. so that LAB29 will always be participant 29."
 msgstr ""
+"参加者ラベルを oTree の ID と同じ順序で並べたい場合。"
+"例えば、LAB29 が常に参加者 29 になるようにしたい場合。"
 
 #: ../../source/rooms.rst:171
 msgid ""
 "You want Alice/Bob/Charlie to always be participants 1/2/3, so that they "
 "get grouped to play together."
 msgstr ""
+"Alice/Bob/Charlie が常に参加者 1/2/3 になるようにグループ化して一緒にプレイさせたい場合"
 
 #: ../../source/rooms.rst:174
 msgid "Just assign those participant labels in ``creating_session``:"
-msgstr ""
+msgstr "参加者ラベルを ``creating_session`` に割り当ててください:"
 
 #: ../../source/rooms.rst:183
 msgid ""
@@ -260,12 +300,15 @@ msgid ""
 " necessary so that clicking a start link twice assigns back to the same "
 "participant.)"
 msgstr ""
+"誰かが ``participant_label=alice`` と書かれた開始リンクを開いた場合、"
+"oTree はそのセッションの参加者が既にそのラベルを持っているかどうかをチェックします。 "
+"(これにより、開始リンクを再びクリックすると同じ参加者として戻ることができます。)"
 
 #: ../../source/rooms.rst:188
 msgid "Passing data about a participant into oTree"
-msgstr ""
+msgstr "参加者に関するデータをoTreeに渡す方法"
 
 #: ../../source/rooms.rst:190
 msgid "See :ref:`participant_vars_rest`."
-msgstr ""
+msgstr ":ref:`participant_vars_rest` を参照"
 

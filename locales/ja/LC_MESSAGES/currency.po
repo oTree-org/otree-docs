@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/currency.rst:4
 msgid "Currency"
-msgstr ""
+msgstr "通貨 (Currency)"
 
 #: ../../source/currency.rst:6
 msgid ""
@@ -27,6 +27,9 @@ msgid ""
 "or points. oTree supports both; you can switch from points to real money "
 "by setting ``USE_POINTS = False`` in your settings."
 msgstr ""
+"多くの実験では、参加者は通貨を求めてプレイします。"
+"oTree では通貨として、実世界の通貨、もしくはポイントを設定することができます。"
+"設定で ``USE_POINTS = False`` と設定することで、ポイントから実世界の通貨に切り替えることができます。"
 
 #: ../../source/currency.rst:11
 msgid ""
@@ -36,6 +39,9 @@ msgid ""
 " as ``$0.30`` or ``0,30 €``, etc., depending on your "
 "``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings."
 msgstr ""
+"``cu(42)`` は \"42 通貨単位\" を表します。これは数字と同じように扱うことができます (例: ``cu(0.1) + cu(0.2) == cu(0.3)``)。"
+"この機能の利点は、ユーザーに表示されるときに ``REAL_WORLD_CURRENCY_CODE`` や ``LANGUAGE_CODE`` の設定に応じて、"
+"自動的に ``$0.30`` や ``0,30 €`` などの形式に変換されることです。"
 
 #: ../../source/currency.rst:20
 msgid ""
@@ -43,24 +49,28 @@ msgid ""
 "currencies. Code that already uses ``c()`` will continue to work. More "
 "info `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__."
 msgstr ""
+"``cu()`` は oTree 5 の新機能です。これまでは、通貨を表すために ``c()`` を使用していました。"
+"すでに ``c()`` を使用しているコードは引き続き使用できます。詳細は `こちら <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__ をご覧ください。"
 
 #: ../../source/currency.rst:24
 msgid "Use ``CurrencyField`` to store currencies in the database. For example:"
-msgstr ""
+msgstr "データベースに通貨を格納するには ``CurrencyField`` を使用します。例えば、以下のようになります:"
 
 #: ../../source/currency.rst:32
 msgid "To make a list of currency amounts, use ``currency_range``:"
-msgstr ""
+msgstr "通貨の金額のリストを作るには ``currency_range`` を使用します:"
 
 #: ../../source/currency.rst:40
 msgid ""
 "In templates, instead of using the ``cu()`` function, you should use the "
 "``|cu`` filter. For example, ``{{ 20|cu }}`` displays as ``20 points``."
 msgstr ""
+"テンプレートでは ``cu()`` 関数を使う代わりに、 ``|cu`` フィルターを使用します。"
+"例えば、 ``{{ 20|cu }}`` は ``20 ポイント`` と表示されます。"
 
 #: ../../source/currency.rst:48
 msgid "payoffs"
-msgstr ""
+msgstr "利得 (payoff)"
 
 #: ../../source/currency.rst:50
 msgid ""
@@ -70,6 +80,10 @@ msgid ""
 "``participant.payoff`` directly, e.g. to round the final payoff to a "
 "whole number."
 msgstr ""
+"各プレイヤーは、 ``payoff`` フィールドを持っています。"
+"プレイヤーがお金を稼いだ場合は、このフィールドに格納する必要があります。"
+"``participant.payoff`` には、すべてのサブセッションからの利得の合計が自動的に格納されます。"
+"最終的な利得を整数に丸めるなどしたい場合には、 ``participant.payoff`` を直接変更することができます。"
 
 #: ../../source/currency.rst:56
 msgid ""
@@ -79,10 +93,13 @@ msgid ""
 "(if ``USE_POINTS`` is ``True``), and then adding "
 "``session.config['participation_fee']``."
 msgstr ""
+"実験の最後に、ある参加者の利益の合計にアクセスするには、 ``participant.payoff_plus_participation_fee()`` を使用します。"
+"この関数は、 ``participant.payoff`` を実世界の通貨単位に変換し (``USE_POINTS`` が ``True`` の場合)、"
+"``session.config['participation_fee']`` を加えた金額を計算します。"
 
 #: ../../source/currency.rst:65
 msgid "Points (i.e. \"experimental currency\")"
-msgstr ""
+msgstr "ポイント (\"実験用通貨\")"
 
 #: ../../source/currency.rst:67
 msgid ""
@@ -90,36 +107,43 @@ msgid ""
 "instead of dollars/euros/etc. For example, ``cu(10)`` is displayed as "
 "``10 points`` (or ``10 puntos``, etc.)"
 msgstr ""
+"``USE_POINTS = True`` と設定すると、通貨の金額がドルやユーロなどではなく、ポイントになります。"
+"例えば、 ``cu(10)`` は ``10 ポイント`` と表示されます。"
 
 #: ../../source/currency.rst:70
 msgid ""
 "You can decide the conversion rate to real money by adding a "
 "``real_world_currency_per_point`` entry to your session config."
 msgstr ""
+"``real_world_currency_per_point`` エントリをセッションコンフィグに追加することで、"
+"ポイントから実世界の通貨への変換率を決めることができます。"
 
 #: ../../source/currency.rst:74
 msgid "Converting points to real world currency"
-msgstr ""
+msgstr "ポイントから実世界の通貨への変換"
 
 #: ../../source/currency.rst:76
 msgid ""
 "You can convert a points amount to money using the method "
 "``.to_real_world_currency``. For example:"
 msgstr ""
+"ポイントを実世界の通貨に変換するには、 ``.to_real_world_currency`` メソッドを使用します。"
+"例えば、以下のようになります:"
 
 #: ../../source/currency.rst:83
 msgid ""
 "(The ``session`` is necessary because different sessions can have "
 "different conversion rates)."
 msgstr ""
+"(セッションが異なると変換率も異なるため、 ``session`` が必要になります。)"
 
 #: ../../source/currency.rst:87
 msgid "Decimal places"
-msgstr ""
+msgstr "小数点以下の表示"
 
 #: ../../source/currency.rst:89
 msgid "Money amounts are displayed with 2 decimal places."
-msgstr ""
+msgstr "金額は小数点以下2桁で表示されます。"
 
 #: ../../source/currency.rst:91
 msgid ""
@@ -129,31 +153,6 @@ msgid ""
 "rounding error. For example, set the endowment of a game to 1000 points, "
 "rather than 100."
 msgstr ""
-
-#~ msgid ""
-#~ "You can write ``c(42)`` to represent "
-#~ "\"42 currency units\". It works just "
-#~ "like a number (e.g. ``c(0.1) + "
-#~ "c(0.2) == c(0.3)``). The advantage is"
-#~ " that when it's displayed to users,"
-#~ " it will automatically be formatted "
-#~ "as ``$0.30`` or ``0,30 €``, etc., "
-#~ "depending on your ``REAL_WORLD_CURRENCY_CODE`` "
-#~ "and ``LANGUAGE_CODE`` settings."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "In templates, instead of using the "
-#~ "``c()`` function, you should use the "
-#~ "``|c`` filter. For example, ``{{ 20|c"
-#~ " }}`` displays as ``20 points``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you set ``USE_POINTS = True``, "
-#~ "then currency amounts will be points "
-#~ "instead of dollars/euros/etc. For example, "
-#~ "``c(10)`` is displayed as ``10 points``"
-#~ " (or ``10 puntos``, etc.)"
-#~ msgstr ""
-
+"一方、ポイントは整数です。つまり、 ``10÷3`` は ``3`` になるように、金額は整数に丸められます。"
+"そのため、丸め誤差が気にならない程度にポイントの規模を大きくすることをお勧めします。"
+"例えば、ゲームの資金を 100 ポイントではなく、1000 ポイントに設定します。"

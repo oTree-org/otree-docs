@@ -12,7 +12,9 @@
     .. image:: _static/splash.png
         :align: center
 
-`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__
+`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 <https://otree.readthedocs.io/ja/latest/index.html>`__
+
+
 
 Live demos
 ^^^^^^^^^^
@@ -77,3 +79,4 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+(Thank you to contributors)

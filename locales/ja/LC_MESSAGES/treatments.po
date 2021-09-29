@@ -19,13 +19,15 @@ msgstr ""
 
 #: ../../source/treatments.rst:5
 msgid "Treatments"
-msgstr ""
+msgstr "処理の割り当て"
 
 #: ../../source/treatments.rst:7
 msgid ""
 "To assign participants to different treatment groups, you can use "
 "``creating_session``. For example:"
 msgstr ""
+"参加者ごとに異なる処理を割り当てるには、 "
+"``creating_session`` を使用します。例えば、次のようにします:"
 
 #: ../../source/treatments.rst:21
 msgid ""
@@ -33,16 +35,21 @@ msgid ""
 "``BooleanField`` in ``Group`` and change the above code to use "
 "``get_groups()`` and ``group.time_pressure``)."
 msgstr ""
+"グループレベルで異なる処理を割り当てることもできます "
+"(``BooleanField`` を ``Group`` に入れて、上記のコードを "
+"``get_groups()`` と ``group.time_pressure`` を使うように変更します)。"
 
 #: ../../source/treatments.rst:24
 msgid ""
 "``creating_session`` is run immediately when you click the \"create "
 "session\" button, even if the app is not first in the ``app_sequence``."
 msgstr ""
+"``creating_session`` は、アプリが ``app_sequence`` の先頭でなくても、 "
+"\"create session\" ボタンをクリックするとすぐに実行されます。"
 
 #: ../../source/treatments.rst:28
 msgid "Treatment groups & multiple rounds"
-msgstr ""
+msgstr "複数ラウンドにまたがる処理"
 
 #: ../../source/treatments.rst:30
 msgid ""
@@ -51,10 +58,13 @@ msgid ""
 "executed for each round independently. To prevent this, set it on the "
 "participant, rather than the player:"
 msgstr ""
+"ゲームに複数のラウンドがある場合、 ``creating_session`` が各ラウンドで独立して実行されるため、"
+"プレーヤーはラウンドごとに異なる処理を受ける可能性があります。"
+"これを防ぐには、 player ではなく、 participant に設定します:"
 
 #: ../../source/treatments.rst:43
 msgid "Balanced treatment groups"
-msgstr ""
+msgstr "バランスの取れた処理"
 
 #: ../../source/treatments.rst:45
 msgid ""
@@ -62,10 +72,13 @@ msgid ""
 "you may end up with an imbalance. To solve this, you can use "
 "``itertools.cycle``:"
 msgstr ""
+"上記のコードでは、プレーヤーごとに独立して無作為抽出を行っているため、"
+"バランスが悪くなってしまうことがあります。これを解決するためには、 "
+"``itertools.cycle`` を使用します:"
 
 #: ../../source/treatments.rst:61
 msgid "Choosing which treatment to play"
-msgstr ""
+msgstr "実行する処理の選択"
 
 #: ../../source/treatments.rst:63
 msgid ""
@@ -76,10 +89,15 @@ msgid ""
 " You can create 2 session configs that are the same, except for one "
 "parameter (in oTree Studio, add a \"custom parameter\"):"
 msgstr ""
+"ライブ実験では、プレーヤーにランダムな処理を施したいことがよくあります。"
+"しかし、ゲームをテストする際には、どちらの処理を実行するかを明示的に選択することが有用な場合があります。"
+"例えば、上記の例でゲームを開発していて、同僚に両方の処理を見せたいとします。 "
+"1つのパラメータを除いて、同じ内容の2つのセッションコンフィグを作成することができます "
+"(oTree Studio では、 \"custom parameter\" を追加します):"
 
 #: ../../source/treatments.rst:87
 msgid "Then in your code you can get the current session's treatment with:"
-msgstr ""
+msgstr "そうすれば、コードの中で、現在のセッションの処理を次のようにして取得することができます:"
 
 #: ../../source/treatments.rst:93
 msgid ""
@@ -87,16 +105,20 @@ msgid ""
 "``if 'time_pressure' in session.config:``; if yes, then use that; if no, "
 "then choose it randomly."
 msgstr ""
+"これを無作為化の方法と組み合わせることもできます。 "
+"``if 'time_pressure' in session.config:`` をチェックし、"
+"含まれていればそれを使用し、含まれていなければランダムに選択します。"
 
 #: ../../source/treatments.rst:100
 msgid "Configure sessions"
-msgstr ""
+msgstr "セッションの設定"
 
 #: ../../source/treatments.rst:102
 msgid ""
 "You can make your session configurable, so that you can adjust the game's"
 " parameters in the admin interface."
 msgstr ""
+"管理画面でゲームのパラメータを調整できるように、セッションを設定できます。"
 
 #: ../../source/treatments.rst:108
 msgid ""
@@ -105,96 +127,38 @@ msgid ""
 "``Constants.num_apples``. But to make it configurable, you can instead "
 "define it in your session config. For example:"
 msgstr ""
+"例えば、 ``num_apples`` というパラメータがあるとします。"
+"通常の方法では、 ``Constants.num_apples`` のように ``Constants`` に定義します。"
+"しかし、これをセッションごとに変更可能にするために、代わりにセッションコンフィグで定義することができます。"
+"例えば、以下のようになります:"
 
 #: ../../source/treatments.rst:124
 msgid ""
 "When you create a session in the admin interface, there will be a text "
 "box to change this number. You can also add help text with ``'doc'``:"
 msgstr ""
+"管理画面でセッションを作成すると、この数値を変更するためのテキストボックスが表示されます。"
+"また、 ``'doc'`` でヘルプテキストを追加することもできます:"
 
 #: ../../source/treatments.rst:141
 msgid "In your app's code, you can do ``session.config['num_apples']``."
-msgstr ""
+msgstr "アプリのコードでは、 ``session.config['num_apples']`` でアクセスできます。"
 
 #: ../../source/treatments.rst:143
 msgid "Notes:"
-msgstr ""
+msgstr "注意:"
 
 #: ../../source/treatments.rst:145
 msgid ""
 "For a parameter to be configurable, its value must be a number, boolean, "
 "or string."
 msgstr ""
+"パラメータをセッションコンフィグで定義するには、その値が数値、ブール値、文字列のいずれかでなければなりません。"
 
 #: ../../source/treatments.rst:146
 msgid ""
 "On the \"Demo\" section of the admin, sessions are not configurable. It's"
 " only available when creating a session in \"Sessions\" or \"Rooms\"."
 msgstr ""
-
-#~ msgid ""
-#~ "You can also assign treatments at "
-#~ "the group level (put the ``StringField``"
-#~ " in ``Group`` and change the above"
-#~ " code to use ``get_groups()`` and "
-#~ "``group.color``)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If your game has multiple rounds, "
-#~ "a player could have different colors "
-#~ "in different rounds, because "
-#~ "``creating_session`` gets executed for each"
-#~ " round independently. To prevent this, "
-#~ "set it on the participant, rather "
-#~ "than the player:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Then elsewhere in your code, you "
-#~ "can access the participant's color with"
-#~ " ``participant.vars['color']``."
-#~ msgstr ""
-
-#~ msgid "For more on vars, see :ref:`vars`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The above code makes a random "
-#~ "drawing independently for each player, "
-#~ "so you may end up with an "
-#~ "imbalance between \"blue\" and \"red\". "
-#~ "To solve this, you can use "
-#~ "``itertools.cycle``:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "In a live experiment, you often "
-#~ "want to give a player a random "
-#~ "treatment. But when you are testing "
-#~ "your game, it is often useful to"
-#~ " choose explicitly which treatment to "
-#~ "play. Let's say you are developing "
-#~ "the game from the above example "
-#~ "and want to show your colleagues "
-#~ "both treatments (red and blue). You "
-#~ "can create 2 session configs that "
-#~ "are the same, except for ``color`` "
-#~ "(in oTree Studio, add a \"custom "
-#~ "parameter\"):"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Then in your code you can get "
-#~ "the current session's color with "
-#~ "``session.config['color'].``"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You can even combine this with the"
-#~ " randomization approach. You can check "
-#~ "``if 'color' in session.config:``; if "
-#~ "yes, then use that color; if no,"
-#~ " then choose it randomly."
-#~ msgstr ""
-
+"管理画面の \"Demo\" セクションでは、セッションの設定はできません。 "
+"\"Sessions\" もしくは \"Rooms\" でセッションを作成するときにのみ有効です。"

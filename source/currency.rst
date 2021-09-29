@@ -33,7 +33,7 @@ To make a list of currency amounts, use ``currency_range``:
 
 .. code-block:: python
 
-    currency_range(cu(0), cu(0.10), cu(0.02))
+    currency_range(0, 0.10, 0.02)
     # this gives:
     # [$0.00, $0.02, $0.04, $0.06, $0.08, $0.10]
 

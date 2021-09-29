@@ -177,33 +177,3 @@ msgstr ""
 "オンラインで見つかる可能性のあるコードの中には、oTreeの内部関数にアクセスし、それらを \"ハック\" して処理を行っているものもあります。"
 "これらのコードは革新的な機能を提供していることもありますが、oTreeの内部コードはリリースごとに変わるため、アップグレード時に問題が発生"
 "する可能性が高いことに注意してください。"
-
-#~ msgid ""
-#~ "(If you are not using version 3.8"
-#~ " of Python, edit the above command"
-#~ " appropriately.)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**If you see a ``models.py`` in "
-#~ "each folder, then to the documentation"
-#~ " here:** `https://otree.readthedocs.io/en/self/ "
-#~ "<https://otree.readthedocs.io/en/self/>`__"
-#~ msgstr ""
-
-#~ msgid "About this documentation"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you are using a text editor "
-#~ "to write your oTree code, remember "
-#~ "to add ``@staticmethod`` before all page"
-#~ " methods, like ``is_displayed``, "
-#~ "``vars_for_template``, ``before_next_page``, etc. "
-#~ "They are sometimes omitted from this "
-#~ "documentation for brevity."
-#~ msgstr ""
-
-#~ msgid "This will help your editor provide better autocompletion."
-#~ msgstr ""
-
