@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-26 22:14-0400\n"
+"POT-Creation-Date: 2021-05-19 17:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,23 +19,23 @@ msgstr ""
 
 #: ../../source/timeouts.rst:4
 msgid "Timeouts"
-msgstr ""
+msgstr "タイムアウト"
 
 #: ../../source/timeouts.rst:7
 msgid "Basics"
-msgstr ""
+msgstr "基本"
 
 #: ../../source/timeouts.rst:12
 msgid "timeout_seconds"
-msgstr ""
+msgstr "timeout_seconds"
 
 #: ../../source/timeouts.rst:14
 msgid "To set a time limit on your page, add ``timeout_seconds``:"
-msgstr ""
+msgstr "ページに時間制限を設定するには、次のように ``timeout_seconds`` を追加します。："
 
 #: ../../source/timeouts.rst:21
 msgid "After the time runs out, the page auto-submits."
-msgstr ""
+msgstr "設定した時間が経過すると、自動的にページが遷移します。"
 
 #: ../../source/timeouts.rst:23
 msgid ""
@@ -43,49 +43,50 @@ msgid ""
 "always submit, even if the user closes their browser window. However, "
 "this does not occur if you are running the development server "
 "(``zipserver`` or ``devserver``)."
-msgstr ""
+msgstr "本番サーバー（ ``prodserver`` ）で実行している場合、ユーザーがブラウザーウィンドウを閉じたとしても"
+"ページは常に送信されます。ただし、開発サーバー（ ``zipserver`` 、 ``devserver`` ）を実行している場合、これは発生しません。"
 
 #: ../../source/timeouts.rst:28
 msgid ""
 "If you need the timeout to be dynamically determined, use "
 ":ref:`get_timeout_seconds`."
-msgstr ""
+msgstr "タイムアウト時間を動的に設定したい場合は、 :ref:`get_timeout_seconds` を使用します。"
 
 #: ../../source/timeouts.rst:33
 msgid "timeout_happened"
-msgstr ""
+msgstr "timeout_happened"
 
 #: ../../source/timeouts.rst:35
 msgid "You can check if the page was submitted by timeout:"
-msgstr ""
+msgstr "ページがタイムアウトまでに送信されたかどうかを確認できます。"
 
 #: ../../source/timeouts.rst:51
 msgid "get_timeout_seconds"
-msgstr ""
+msgstr "get_timeout_seconds"
 
 #: ../../source/timeouts.rst:53
 msgid ""
 "This is a more flexible alternative to ``timeout_seconds``, so that you "
 "can make the timeout depend on ``player``, ``player.session``, etc."
-msgstr ""
+msgstr "``timeout_seconds`` よりも柔軟に設定できます。例えば、タイムアウト時間が ``player`` や ``player.session`` に依存する場合等に有効です。"
 
 #: ../../source/timeouts.rst:56
 msgid "For example:"
-msgstr ""
+msgstr "例："
 
 #: ../../source/timeouts.rst:67
 msgid ""
 "Or, using a custom session config parameter (see "
 ":ref:`session_config_treatments`)."
-msgstr ""
+msgstr "また、カスタムセッション構成パラメーターを使用することもできます。（ :ref:`session_config_treatments` を参照）。"
 
 #: ../../source/timeouts.rst:78
 msgid "Advanced techniques"
-msgstr ""
+msgstr "高度な技術"
 
 #: ../../source/timeouts.rst:83
 msgid "Forms submitted by timeout"
-msgstr ""
+msgstr "タイムアウトによって送信されたフォーム"
 
 #: ../../source/timeouts.rst:85
 msgid ""
@@ -94,23 +95,24 @@ msgid ""
 " the form has an error because it is missing or invalid, it will be set "
 "to ``0`` for numeric fields, ``False`` for boolean fields, and the empty "
 "string ``''`` for string fields."
-msgstr ""
+msgstr "タイムアウトのためにフォームが自動送信された場合、oTreeは送信時に入力されたフィールドを保存しようとします。"
+"ただし、フォームへの入力が終わっておらず、内容が欠落しているか無効であるためにエラーが発生した場合、数値フィールドには ``0`` 、ブールフィールドには ``False`` 、および文字列フィールドには空の文字列 ``''`` が設定されます。"
 
 #: ../../source/timeouts.rst:91
 msgid ""
 "If you want to discard the auto-submitted values, you can just check if "
 "``timeout_happened``, and if so, overwrite the values."
-msgstr ""
+msgstr "タイムアウトによって自動送信された値を破棄したい場合は、 ``timeout_happened`` を確認することによって破棄するかどうかを決定できます。"
 
 #: ../../source/timeouts.rst:94
 msgid ""
 "If the ``error_message()`` function fails, then the whole form might be "
 "invalid, so the whole form will be discarded."
-msgstr ""
+msgstr "``error_message()`` 関数が失敗した場合、フォームの情報が無効である可能性があるため、そのフォームの情報は破棄されます。"
 
 #: ../../source/timeouts.rst:98
 msgid "Timeouts that span multiple pages"
-msgstr ""
+msgstr "複数のページにまたがるタイムアウト"
 
 #: ../../source/timeouts.rst:100
 msgid ""
@@ -118,7 +120,8 @@ msgid ""
 " pages, or even the entire session. The trick is to define a fixed "
 "\"expiration time\", and then on each page, make ``get_timeout_seconds`` "
 "return the number of seconds until that expiration time."
-msgstr ""
+msgstr "複数のページ、またはセッション全体にまたがるタイムアウト処理を設定するために ``get_timeout_seconds`` を使用できます。"
+"方法は、固定の \"有効期限\" を定義し、各ページで ``get_timeout_seconds`` を作成し、その有効期限までの秒数を返すようにすることです。"
 
 #: ../../source/timeouts.rst:105
 msgid ""
@@ -126,20 +129,22 @@ msgid ""
 "\"Start\" that displays text like \"Press the button when you're ready to"
 " start\". When the user clicks the \"next\" button, ``before_next_page`` "
 "will be executed:"
-msgstr ""
+msgstr "まず、タイマーを開始する場所を選択します。"
+"これは、 \"開始する準備ができたらボタンを押してください\" などのテキストを表示するページが好ましいです。"
+"ユーザーが「次へ」ボタンをクリックすると、 ``before_next_page`` が実行されます。"
 
 #: ../../source/timeouts.rst:121
 msgid ""
 "(You could also start the timer in ``after_all_players_arrive`` or "
 "``creating_session``, and it could be stored in a session field if it's "
 "the same for everyone in the session.)"
-msgstr ""
+msgstr "（ ``after_all_players_arrive`` または ``creating_session`` でタイマーを開始することもできます。セッションの全員で同じ場合は、セッションフィールドに保存できます。）"
 
 #: ../../source/timeouts.rst:124
 msgid ""
 "Then, each page's ``get_timeout_seconds`` should be the number of seconds"
 " until that expiration time:"
-msgstr ""
+msgstr "次に、各ページの ``get_timeout_seconds`` は、その有効期限までの秒数である必要があります。"
 
 #: ../../source/timeouts.rst:137
 msgid ""
@@ -149,70 +154,106 @@ msgid ""
 "participant's screen, which is usually undesired. So, you should use "
 "``is_displayed`` to skip the page if there's not enough time for the "
 "participant to realistically read the whole page."
-msgstr ""
+msgstr "タイムアウトになると、 ``get_timeout_seconds`` は0または負の値が返します。"
+"これにより、ページが読み込まれ、すぐに自動送信されます。これは、残りのすべてのページが参加者の画面で自動ですばやく遷移していくことを意味しますが、"
+"これは画面がちかちかするので通常は望ましくありません。したがって、参加者がページ全体を実際に読むのに十分な時間がない場合は、 ``is_displayed`` を使用してページをスキップするのが望ましいです。"
 
-#: ../../source/timeouts.rst:160
+#: ../../source/timeouts.rst:158
 msgid ""
 "The default text on the timer says \"Time left to complete this page:\". "
 "But if your timeout spans multiple pages, you should word it more "
 "accurately, by setting ``timer_text``:"
-msgstr ""
+msgstr "タイマーのデフォルトのテキストには、「このページを完了するまでの残り時間：」と表示されます。"
+"ただし、タイムアウトが複数のページにまたがる場合は、 ``timer_text`` を次のように設定して、より正確に表現する必要があります。"
 
-#: ../../source/timeouts.rst:176
+#: ../../source/timeouts.rst:174
 msgid "Customizing the timer"
-msgstr ""
+msgstr "タイマーのカスタマイズ"
+
+#: ../../source/timeouts.rst:177
+msgid "Hiding the timer"
+msgstr "タイマーを隠す"
 
 #: ../../source/timeouts.rst:179
-msgid "Hiding the timer"
-msgstr ""
-
-#: ../../source/timeouts.rst:181
 msgid "If you want to hide the timer, use this CSS:"
-msgstr ""
+msgstr "タイマーを非表示にする場合は、次のCSSを使用します。"
+
+#: ../../source/timeouts.rst:190
+msgid "Changing the timer's behavior"
+msgstr "タイマーの動作を変更する"
 
 #: ../../source/timeouts.rst:192
-msgid "Changing the timer's behavior"
-msgstr ""
-
-#: ../../source/timeouts.rst:194
 msgid ""
 "The timer's functionality is provided by `jQuery Countdown "
 "<http://hilios.github.io/jQuery.countdown/documentation.html>`__. You can"
 " change its behavior by attaching and removing event handlers with "
 "jQuery's ``.on()`` and ``off()``."
-msgstr ""
+msgstr "タイマーの機能は、 `jQuery Countdown <http://hilios.github.io/jQuery.countdown/documentation.html>`__ によって提供されます。"
+"あなたはjQueryの ``.on()`` と ``off()`` にイベントハンドラを新しくアタッチすることにより、その動作を変更することができます。"
 
-#: ../../source/timeouts.rst:199
+#: ../../source/timeouts.rst:197
 msgid ""
 "oTree sets handlers for the events ``update.countdown`` and "
 "``finish.countdown``, so if you want to modify those, you can detach them"
 " with ``off()``, and/or add your own handler with ``on()``. The countdown"
 " element is ``.otree-timer__time-left``."
-msgstr ""
+msgstr "oTreeは ``update.countdown`` と ``finish.countdown`` イベントのハンドラーを設定するため、それらを変更する場合は、"
+" ``off()`` でハンドラを取り除いたり、 ``on()`` で独自のハンドラーを追加したりできます。カウントダウン要素は ``.otree-timer__time-left`` です。"
 
-#: ../../source/timeouts.rst:204
+#: ../../source/timeouts.rst:202
 msgid "For example, to hide the timer until there is only 10 seconds left,"
-msgstr ""
+msgstr "たとえば、残り10秒になるまでタイマーを非表示にするには、"
 
-#: ../../source/timeouts.rst:224
+#: ../../source/timeouts.rst:222
 msgid ""
 "To avoid copy-pasting this code on every page, put it in an includable "
 "template."
-msgstr ""
+msgstr "このコードがすべてのページに適用されることを避けるには、 includable template にコードを配置します。"
 
-#: ../../source/timeouts.rst:226
+#: ../../source/timeouts.rst:224
 msgid ""
-"Note: even if you turn off the ``finish.countdown`` event handler, the "
-"page will still be submitted on the server side. So, instead you should "
-"use the technique described in :ref:`soft-timeout`."
-msgstr ""
+"Note: even if you turn off the ``finish.countdown`` event handler from "
+"submitting the page, if you are running the timeoutworker, the page will "
+"be submitted on the server side. So, instead you should use the technique"
+" described in :ref:`soft-timeout`."
+msgstr "注： ``finish.countdown`` イベントハンドラーによるページの送信をオフにしても、timeoutworkerを実行している場合、"
+"ページはサーバー側で送信されます。したがって、代わりに、 :ref:`soft-timeout` で説明されている手法を使用する必要があります。"
+
+#: ../../source/timeouts.rst:231
+msgid "Timeout that doesn't submit the page"
+msgstr "ページを送信しないタイムアウト"
 
 #: ../../source/timeouts.rst:233
-msgid "Timeout that doesn't submit the page"
-msgstr ""
-
-#: ../../source/timeouts.rst:235
 msgid ""
 "If you just want a soft timeout, you don't need to use the built-in timer"
 " at all. Instead, make your own with JavaScript, for example:"
-msgstr ""
+msgstr "ページを送信しないタイムアウトが必要な場合は、組み込みのタイマーを使用する必要はまったくありません。代わりに、JavaScriptを使用して独自のものを作成します。次に例を示します。"
+
+#: ../../source/timeouts.rst:246
+msgid "Minimum time on page"
+msgstr "ページの最小滞在時間"
+
+#: ../../source/timeouts.rst:248
+msgid ""
+"If you want to require the user to spend *at least* a certain amount of "
+"time on a page, you can use some simple JavaScript: hide the next button "
+"(use the ``.otree-btn-next`` selector), then use ``setTimeout`` to re-"
+"display it after a certain amount of time."
+msgstr "ユーザーにページで少なくとも一定の時間滞在してもらいたい場合は、"
+"いくつかの簡単なJavaScriptを使用できます。次のページへ遷移するためのボタンを非表示にし、（ ``.otree-btn-next`` セレクターを使用）、一定の時間後にそれを再表示するために ``setTimeout`` を使用します。"
+
+#~ msgid ""
+#~ "If the ``error_message()`` method fails, "
+#~ "then the whole form might be "
+#~ "invalid, so the whole form will be"
+#~ " discarded."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(You could also start the timer in"
+#~ " ``after_all_players_arrive`` or ``creating_session``,"
+#~ " and it could be stored in "
+#~ "``session.vars`` if it's the same for"
+#~ " everyone in the session.)"
+#~ msgstr ""
+
