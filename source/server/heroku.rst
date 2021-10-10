@@ -50,7 +50,7 @@ General tips:
     then you should get a faster dyno. (But don't run more than 1 web dyno.)
 -   If your dyno load stays under 1 but page load times are still slow,
     the bottleneck might be something else like your Postgres database.
--   RAM usage should never go above the limit. If that is happening, contact chris@otree.org.
+
 
 The most demanding sessions are the ones with a combination of (1) many rounds, (2) players
 spending just a few seconds on each page, and (3) many players playing concurrently,

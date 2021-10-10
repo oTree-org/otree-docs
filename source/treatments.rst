@@ -13,7 +13,7 @@ can use ``creating_session``. For example:
         time_pressure = models.BooleanField()
 
     def creating_session(subsession):
-        # randomize to treatments
+        import random
         for player in subsession.get_players():
             player.time_pressure = random.choice([True, False])
             print('set time_pressure to', player.time_pressure)

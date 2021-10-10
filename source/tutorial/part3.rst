@@ -81,9 +81,9 @@ dropdown menu dynamically. This is the feature called
 
     def sent_back_amount_choices(group):
         return currency_range(
-            cu(0),
+            0,
             group.sent_amount * Constants.multiplication_factor,
-            cu(1)
+            1
         )
 
 Define the templates and pages

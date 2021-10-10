@@ -108,6 +108,7 @@ You can get the human-readable label corresponding to the user's choice like thi
 
 .. code-block:: python
 
+    player.cooperated  # returns e.g. False
     player.field_display('cooperated')  # returns e.g. 'Defect'
 
 .. note::
@@ -288,6 +289,28 @@ you can use manual field rendering. Instead of ``{{ formfield 'my_field' }}``,
 do ``{{ form.my_field }}``, to get just the input element.
 Just remember to also include ``{{ formfield_errors 'my_field' }}``.
 
+Example: Radio buttons arranged like a slider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+    class Player(BasePlayer):
+        pizza = models.IntegerField(
+            widget=widgets.RadioSelect,
+            choices=[-3, -2, -1, 0, 1, 2, 3]
+        )
+
+.. code-block:: html
+
+    <p>How much do you like pizza?</p>
+    <p>
+        Least &nbsp;
+        {{ for choice in form.pizza }}
+            {{ choice }}
+        {{ endfor }}
+        &nbsp; Most
+    </p>
+
 .. _radio-table:
 .. _subwidgets:
 
@@ -362,35 +385,6 @@ Second, you should usually include ``{{ formfield_errors 'xyz' }}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
 
-Raw HTML example: slider
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you want a slider, instead of ``{{ formfields }}``,
-put HTML like this in your template:
-
-.. code-block:: html
-
-    <label class="col-form-label">
-        Pizza is the best food:
-    </label>
-
-    <div style="display: flex">
-        Disagree
-        &nbsp;
-        <input type="range" name="pizza" min="-2" max="2" step="1" style="flex: 1">
-        &nbsp;
-        Agree
-    </div>
-
-..  the previous input-group-text solution apparently worked on the first version of oTree 5,
-    but as at 5.3.0 it splits across lines.
-    we use flex because:
-    (1) it aligns the slider with the text vertically
-    (2) it gives full-width which looks nice
-
-If you want to show the current numeric value, or hide the knob until the slider is clicked,
-you could do that with JavaScript,
-but consider using the ``RadioSelectHorizontal`` widget instead.
 
 Raw HTML example: custom user interface with JavaScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -407,16 +401,16 @@ hidden form field. For example:
 .. code-block:: python
 
     # Player class
-    num_clicks = models.IntegerField()
+    contribution = models.IntegerField()
 
     # page
-    form_fields = ['num_clicks']
+    form_fields = ['contribution']
 
     # HTML
-    <input type="hidden" name="num_clicks" id="num_clicks" />
+    <input type="hidden" name="contribution" id="contribution" />
 
     # JavaScript
-    document.getElementById('num_clicks').value = 42;
+    document.getElementById('contribution').value = 42;
 
 When the page is submitted, the value of your hidden input will be recorded
 in oTree like any other form field.

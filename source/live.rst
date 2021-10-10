@@ -93,13 +93,13 @@ Example: auction
 
 .. code-block:: python
 
-    def live_method(player, data):
+    def live_method(player, bid):
         group = player.group
         my_id = player.id_in_group
         if bid > group.highest_bid:
-            group.highest_bid = data
+            group.highest_bid = bid
             group.highest_bidder = my_id
-            response = dict(id_in_group=my_id, bid=data)
+            response = dict(id_in_group=my_id, bid=bid)
             return {0: response}
 
 .. code-block:: html

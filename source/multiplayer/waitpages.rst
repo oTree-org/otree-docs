@@ -155,6 +155,7 @@ It assumes that in a previous app, you assigned ``participant.category`` to each
 
 .. code-block:: python
 
+    # note: this function goes at the module level, not inside the WaitPage.
     def group_by_arrival_time_method(subsession, waiting_players):
         print('in group_by_arrival_time_method')
         m_players = [p for p in waiting_players if p.participant.category == 'M']

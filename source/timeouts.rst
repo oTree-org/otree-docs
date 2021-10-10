@@ -212,7 +212,7 @@ For example, to hide the timer until there is only 10 seconds left,
     </style>
 
     <script>
-        $(function () {
+        document.addEventListener("DOMContentLoaded", function (event) {
             $('.otree-timer__time-left').on('update.countdown', function (event) {
                 if (event.offset.totalSeconds === 10) {
                     $('.otree-timer').show();
