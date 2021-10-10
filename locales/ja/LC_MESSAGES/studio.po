@@ -19,26 +19,27 @@ msgstr ""
 
 #: ../../source/studio.rst:6
 msgid "oTree Studio"
-msgstr ""
+msgstr "oTree Studio"
 
 #: ../../source/studio.rst:8
 msgid ""
 "`oTree Studio <https://www.otreehub.com/studio>`__ is a point-and-click "
 "interface for building oTree apps. It is free to use for small/medium "
 "sized projects."
-msgstr ""
+msgstr "`oTree Studio <https://www.otreehub.com/studio>`__ を利用することで、oTreeアプリをクリック操作によって構築できます。"
+"中小規模のプロジェクトでは無料で使用できます。"
 
 #: ../../source/studio.rst:12
 msgid ""
 "We recommend using oTree Studio instead of a text editor (like PyCharm), "
 "because it makes learning oTree much easier and prevents many common "
 "mistakes."
-msgstr ""
+msgstr "テキストエディタ（PyCharmなど）ではなく、oTree Studioを使用することをおすすめします。oTree Studio によって、oTreeの学習がはるかに簡単になり、多くの一般的な間違いを防ぐことができます。"
 
 #: ../../source/studio.rst:16
 msgid ""
 "Here are some `YouTube videos "
 "<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
 "about oTree Studio."
-msgstr ""
+msgstr "oTreeStudioに関するいくつかの `YouTube動画 <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ があります。"
 
