@@ -332,7 +332,7 @@ Then your pages could be simplified to:
 field_maybe_none
 ----------------
 
-If you access a field whose value is ``None``, oTree will raise a ``TypeError``.
+If you access a Player/Group/Subsession field whose value is ``None``, oTree will raise a ``TypeError``.
 This is designed to catch situations where a user forgot to assign a value to that field,
 or forgot to include it in ``form_fields``.
 

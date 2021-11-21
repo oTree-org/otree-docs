@@ -9,9 +9,6 @@ can use ``creating_session``. For example:
 
 .. code-block:: python
 
-    class Player(BasePlayer):
-        time_pressure = models.BooleanField()
-
     def creating_session(subsession):
         import random
         for player in subsession.get_players():

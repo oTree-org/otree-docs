@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 18:00-0600\n"
+"POT-Creation-Date: 2021-09-20 21:57-0400\n"
 "PO-Revision-Date: 2021-06-18 23:22+0900\n"
+"Last-Translator: \n"
+"Language: ja\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: ja\n"
-"X-Generator: Poedit 3.0\n"
 
 #: ../../source/tutorial/intro.rst:2
 msgid "Tutorial"
@@ -28,11 +28,16 @@ msgstr "このチュートリアルではいくつかのアプリの作り方を
 
 #: ../../source/tutorial/intro.rst:6
 msgid ""
-"First, you should be familiar with Python; we have a simple tutorial here: :ref:"
-"`python_tutorial`."
+"First, you should be familiar with Python; we have a simple tutorial "
+"here: :ref:`python_tutorial`."
+msgstr "はじめに，Pythonに慣れる必要があります．簡単なチュートリアルをコチラ :ref:`python_tutorial` に用意しました．"
+
+#: ../../source/tutorial/intro.rst:10
+msgid ""
+"In addition to this tutorial, you should check out oTree Hub's `featured "
+"apps <https://www.otreehub.com/projects/?featured=1>`__ section. Find an "
+"app that is similar to what you want to build, and learn by example."
 msgstr ""
-"はじめに，Pythonに慣れる必要があります．簡単なチュートリアルをコチラ :ref:"
-"`python_tutorial` に用意しました．"
 
 #: ../../source/tutorial/part1_studio.rst:4
 msgid "Part 1: Simple survey (for oTree Studio users)"
@@ -40,20 +45,20 @@ msgstr "その1：簡単なアンケート（oTree Studioユーザに向けて�
 
 #: ../../source/tutorial/part1_studio.rst:6 ../../source/tutorial/part2.rst:4
 msgid ""
-"(A video of this tutorial is on `YouTube <https://www.youtube.com/channel/"
-"UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
+"(A video of this tutorial is on `YouTube "
+"<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
 msgstr ""
-"（`YouTube <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
+"（`YouTube "
+"<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
 "でのビデオチュートリアルもあります(英語です)．）"
 
 #: ../../source/tutorial/part1_studio.rst:10
 #: ../../source/tutorial/part1_texteditor.rst:4
 msgid ""
-"Let's create a simple survey -- on the first page, we ask the participant for "
-"their name and age, then on the next page, display this info back to them."
-msgstr ""
-"まずは簡単なアンケートを作りましょう。最初のページでは実験参加者に名前と年齢を尋ねま"
-"す。次のページでその入力結果を表示しましょう。"
+"Let's create a simple survey -- on the first page, we ask the participant"
+" for their name and age, then on the next page, display this info back to"
+" them."
+msgstr "まずは簡単なアンケートを作りましょう。最初のページでは実験参加者に名前と年齢を尋ねます。次のページでその入力結果を表示しましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:14
 msgid "Player model"
@@ -61,8 +66,7 @@ msgstr "player model"
 
 #: ../../source/tutorial/part1_studio.rst:16
 msgid "In the sidebar, go to the Player model. Let's add 2 fields:"
-msgstr ""
-"サイドバーでPlayer modelを選択してください。2つのフィールドを追加しましょう。"
+msgstr "サイドバーでPlayer modelを選択してください。2つのフィールドを追加しましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:19
 msgid "``name`` (``StringField``, meaning text characters)"
@@ -101,14 +105,17 @@ msgstr "1ページ目"
 
 #: ../../source/tutorial/part1_studio.rst:36
 msgid ""
-"First let's define ``Survey``. This page contains a form, so set ``form_model`` "
-"to ``player`` and for ``form_fields``, select ``name`` and ``age``."
-msgstr "まず、 ``Survey`` を定義しましょう。このページにはフォームが含まれているため、 ``player`` に ``form_model`` を設定し、 ``form_fields`` のために ``name`` と ``age`` を選択してください。
+"First let's define ``Survey``. This page contains a form, so set "
+"``form_model`` to ``player`` and for ``form_fields``, select ``name`` and"
+" ``age``."
+msgstr ""
+"まず、 ``Survey`` を定義しましょう。このページにはフォームが含まれているため、 ``player`` に ``form_model``"
+" を設定し、 ``form_fields`` のために ``name`` と ``age`` を選択してください"
 
 #: ../../source/tutorial/part1_studio.rst:39
 msgid ""
-"Then, set the template's title to ``Enter your information``, and set the "
-"content to:"
+"Then, set the template's title to ``Enter your information``, and set the"
+" content to:"
 msgstr "次に、テンプレートのタイトルを ``Enter your information`` に設定し、コンテンツを次のように設定します。"
 
 #: ../../source/tutorial/part1_studio.rst:51
@@ -121,19 +128,22 @@ msgstr "続いて， ``Results`` を定義します．"
 
 #: ../../source/tutorial/part1_studio.rst:55
 msgid ""
-"Set the template's ``title`` block to ``Results`` and set the ``content`` block "
-"to:"
+"Set the template's ``title`` block to ``Results`` and set the ``content``"
+" block to:"
 msgstr "テンプレートの ``title`` ブロックを ``Results`` にセットし、 ``content`` ブロックを次のように設定します。"
 
-#: ../../source/tutorial/part1_studio.rst:65 ../../source/tutorial/part2.rst:186
+#: ../../source/tutorial/part1_studio.rst:65
+#: ../../source/tutorial/part2.rst:186
 msgid "Define the session config"
 msgstr "セッション構成の定義"
 
 #: ../../source/tutorial/part1_studio.rst:67
 msgid ""
-"In the sidebar, go to \"Session Configs\", create a session config, and add "
-"your survey app to the ``app_sequence``."
-msgstr "サイドバーで \"Session Configs\" に移動し、セッション構成を作成して、 ``app_sequence`` にアンケートアプリを追加します。"
+"In the sidebar, go to \"Session Configs\", create a session config, and "
+"add your survey app to the ``app_sequence``."
+msgstr ""
+"サイドバーで \"Session Configs\" に移動し、セッション構成を作成して、 ``app_sequence`` "
+"にアンケートアプリを追加します。"
 
 #: ../../source/tutorial/part1_studio.rst:71
 msgid "Download and run"
@@ -141,36 +151,35 @@ msgstr "ダウンロードと実行"
 
 #: ../../source/tutorial/part1_studio.rst:73
 msgid ""
-"Download the otreezip file and follow the instructions on how to install oTree "
-"and run the otreezip file."
-msgstr ""
-"otreezipファイルをダウンロードし，指示に従ってoTreeをインストールした上で，"
-"otreezipファイルを解凍してください．"
+"Download the otreezip file and follow the instructions on how to install "
+"oTree and run the otreezip file."
+msgstr "otreezipファイルをダウンロードし，指示に従ってoTreeをインストールした上で，otreezipファイルを解凍してください．"
 
 #: ../../source/tutorial/part1_studio.rst:76
 msgid ""
-"If there are any problems, you can ask a question on the oTree `discussion "
-"group <https://groups.google.com/forum/#!forum/otree>`__."
-msgstr "問題がある場合は、 `oTreeのグループ <https://groups.google.com/forum/#!forum/otree>`__ で質問できます。"
+"If there are any problems, you can ask a question on the oTree "
+"`discussion group <https://groups.google.com/forum/#!forum/otree>`__."
+msgstr ""
+"問題がある場合は、 `oTreeのグループ <https://groups.google.com/forum/#!forum/otree>`__ "
+"で質問できます。"
 
 #: ../../source/tutorial/part1_texteditor.rst:2
 msgid "Part 1: Simple survey (for PyCharm users)"
 msgstr "その1：簡単なアンケート（PyCharmなどのエディタユーザに向けて）"
 
-#: ../../source/tutorial/part1_texteditor.rst:8 ../../source/tutorial/part2.rst:20
-#: ../../source/tutorial/part3.rst:16
+#: ../../source/tutorial/part1_texteditor.rst:8
+#: ../../source/tutorial/part2.rst:20 ../../source/tutorial/part3.rst:16
 msgid "Create the app"
 msgstr "アプリの作成"
 
 #: ../../source/tutorial/part1_texteditor.rst:10
 msgid ""
-"Use your command line to ``cd`` to the oTree project folder you created, (which "
-"contains a ``settings.py``). Assuming you named the folder ``oTree``, you would "
-"do::"
+"Use your command line to ``cd`` to the oTree project folder you created, "
+"(which contains a ``settings.py``). Assuming you named the folder "
+"``oTree``, you would do::"
 msgstr ""
-"コマンドラインで ``cd`` コマンドによって、作成したoTreeプロジェクトのフォルダ（ ``settings.py`` が"
-"含まれている）に移動してください。フォルダの名前を ``oTree`` としたとする"
-"と、以下のようになります。"
+"コマンドラインで ``cd`` コマンドによって、作成したoTreeプロジェクトのフォルダ（ ``settings.py`` "
+"が含まれている）に移動してください。フォルダの名前を ``oTree`` としたとすると、以下のようになります。"
 
 #: ../../source/tutorial/part1_texteditor.rst:16
 msgid "Then, create the app::"
@@ -186,10 +195,12 @@ msgstr "modelsの定義"
 
 #: ../../source/tutorial/part1_texteditor.rst:25
 msgid ""
-"In ``__init__.py``, scroll to the line that says ``class Player(BasePlayer):``. "
-"Here we define the columns for the Player table in the database. Let's add 2 "
-"fields:"
-msgstr "``__init__.py`` で、 ``class Player(BasePlayer):`` という行までスクロールします。ここでは、データベース内のPlayerテーブルの列を定義します。2つのフィールドを追加しましょう："
+"In ``__init__.py``, scroll to the line that says ``class "
+"Player(BasePlayer):``. Here we define the columns for the Player table in"
+" the database. Let's add 2 fields:"
+msgstr ""
+"``__init__.py`` で、 ``class Player(BasePlayer):`` "
+"という行までスクロールします。ここでは、データベース内のPlayerテーブルの列を定義します。2つのフィールドを追加しましょう："
 
 #: ../../source/tutorial/part1_texteditor.rst:29
 msgid "``name`` (which is a ``StringField``, meaning text characters)"
@@ -209,9 +220,7 @@ msgstr "続いて、2つのHTMLテンプレートファイルを作成しまし�
 
 #: ../../source/tutorial/part1_texteditor.rst:49
 msgid "Let's name the first page ``MyPage.html``, and put these contents inside:"
-msgstr ""
-"最初のページを ``MyPage.html`` という名前にして、その中にこれらのコンテンツを入れ"
-"てみましょう．"
+msgstr "最初のページを ``MyPage.html`` という名前にして、その中にこれらのコンテンツを入れてみましょう．"
 
 #: ../../source/tutorial/part1_texteditor.rst:66
 msgid "The second template will be called ``Results.html``."
@@ -223,43 +232,45 @@ msgstr "ページの定義"
 
 #: ../../source/tutorial/part1_texteditor.rst:84
 msgid ""
-"Now we define our pages, which contain the logic for how to display the HTML "
-"templates."
-msgstr ""
-"次に、ページを定義します．ページには、HTMLテンプレートを表示するためのロジックが"
-"含まれています．"
+"Now we define our pages, which contain the logic for how to display the "
+"HTML templates."
+msgstr "次に、ページを定義します．ページには、HTMLテンプレートを表示するためのロジックが含まれています．"
 
 #: ../../source/tutorial/part1_texteditor.rst:87
 msgid ""
-"Since we have 2 templates, we need 2 ``Page`` classes. The names should match "
-"those of the templates (``MyPage`` and ``Results``)."
+"Since we have 2 templates, we need 2 ``Page`` classes. The names should "
+"match those of the templates (``MyPage`` and ``Results``)."
 msgstr ""
-"テンプレートが2つあるので、2つの ``Page`` クラスが必要になります．名前はテンプ"
-"レート名（ ``MyPage`` と ``Results`` ）と一致する必要があります。"
+"テンプレートが2つあるので、2つの ``Page`` クラスが必要になります．名前はテンプレート名（ ``MyPage`` と "
+"``Results`` ）と一致する必要があります。"
 
 #: ../../source/tutorial/part1_texteditor.rst:91
 msgid ""
-"First let's define ``MyPage``. This page contains a form, so we need to define "
-"``form_model`` and ``form_fields``."
-msgstr "まず、 ``MyPage`` を定義しましょう。このページにはフォームが含まれているため、 ``form_model`` と ``form_fields`` を定義する必要があります。"
+"First let's define ``MyPage``. This page contains a form, so we need to "
+"define ``form_model`` and ``form_fields``."
+msgstr ""
+"まず、 ``MyPage`` を定義しましょう。このページにはフォームが含まれているため、 ``form_model`` と "
+"``form_fields`` を定義する必要があります。"
 
 #: ../../source/tutorial/part1_texteditor.rst:100
 msgid ""
-"Now we define ``Results``. This page doesn't have a form or any other special "
-"attributes, so we just write \"pass\"."
+"Now we define ``Results``. This page doesn't have a form or any other "
+"special attributes, so we just write \"pass\"."
 msgstr "次に、 ``Results`` を定義します。このページにはフォームやその他の特別な属性がないため、 \"pass\" とだけ記述します。"
 
 #: ../../source/tutorial/part1_texteditor.rst:108
 msgid ""
-"If there is already a ``WaitPage``, you can delete that, because WaitPages are "
-"only necessary for multi-player games."
-msgstr  "``WaitPage`` はマルチプレイヤーゲームにのみ必要であるため、 ``WaitPage`` がすでに存在する場合は削除できます。"
+"If there is already a ``WaitPage``, you can delete that, because "
+"WaitPages are only necessary for multi-player games."
+msgstr "``WaitPage`` はマルチプレイヤーゲームにのみ必要であるため、 ``WaitPage`` がすでに存在する場合は削除できます。"
 
 #: ../../source/tutorial/part1_texteditor.rst:111
 msgid ""
-"Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. So, all "
-"in all, your pages should look like this:"
-msgstr "次に、 ``page_sequence`` を ``MyPage`` 、 ``Results`` の順に設定します。したがって、全体としてページは次のようになります。"
+"Then, set your ``page_sequence`` to ``MyPage`` followed by ``Results``. "
+"So, all in all, your pages should look like this:"
+msgstr ""
+"次に、 ``page_sequence`` を ``MyPage`` 、 ``Results`` "
+"の順に設定します。したがって、全体としてページは次のようになります。"
 
 #: ../../source/tutorial/part1_texteditor.rst:132
 msgid "Define the session config in settings.py"
@@ -267,9 +278,11 @@ msgstr "settings.pyでセッション構成を定義"
 
 #: ../../source/tutorial/part1_texteditor.rst:134
 msgid ""
-"Now we go to ``settings.py`` in the project's top folder and add an entry to "
-"``SESSION_CONFIGS``."
-msgstr "次に プロジェクトの最上位フォルダーに移動し、その中の ``settings.py`` に ``SESSION_CONFIGS`` のエントリを追加します。"
+"Now we go to ``settings.py`` in the project's top folder and add an entry"
+" to ``SESSION_CONFIGS``."
+msgstr ""
+"次に プロジェクトの最上位フォルダーに移動し、その中の ``settings.py`` に ``SESSION_CONFIGS`` "
+"のエントリを追加します。"
 
 #: ../../source/tutorial/part1_texteditor.rst:148
 msgid "Start the server"
@@ -289,43 +302,48 @@ msgstr "エラーを修正する"
 
 #: ../../source/tutorial/part1_texteditor.rst:160
 msgid ""
-"If there is an error in your code, the command line will display a \"traceback"
-"\" (error message) that is formatted something like this::"
+"If there is an error in your code, the command line will display a "
+"\"traceback\" (error message) that is formatted something like this::"
 msgstr "コードにエラーがある場合、コマンドラインは次のような形式の「トレースバック」（エラーメッセージ）を表示します。"
 
 #: ../../source/tutorial/part1_texteditor.rst:183
 msgid ""
-"It's called a \"traceback\" because it traces the error down through the chain "
-"of code. Your first step should be to look at the last lines of the message. "
-"Specifically, find the file and line number of the last entry. In the above "
-"example, it's ``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line "
-"40``. So, go to that file & line number. Look for the problem mentioned at the "
-"last line of the traceback. In this example, it is ``IndentationError: expected "
-"an indented block`` (which indicates that the problem has to do with code "
-"indentation). Try to fix the error then run the command again."
-msgstr "これは、コード全体でエラーを追跡するため、「トレースバック」と呼ばれます。"
-"最初のステップは、メッセージの最後の行を確認することです。具体的には、最後のエントリのファイルと行番号を見つけます。上記の例では、 ``"C:\oTree\chris\public_goods_simple\models.py", line 40`` です。"
-"したがって、そのファイルのその行番号の部分に移動します。"
-"そして、トレースバックの最後の行に記載されている問題を探します。この例では、 ``IndentationError: expected an indented block`` です（これは、問題がコードのインデントに関係していることを示しています）。"
-"エラーを修正してから、コマンドを再実行してください。"
+"It's called a \"traceback\" because it traces the error down through the "
+"chain of code. Your first step should be to look at the last lines of the"
+" message. Specifically, find the file and line number of the last entry. "
+"In the above example, it's "
+"``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line 40``. So, go"
+" to that file & line number. Look for the problem mentioned at the last "
+"line of the traceback. In this example, it is ``IndentationError: "
+"expected an indented block`` (which indicates that the problem has to do "
+"with code indentation). Try to fix the error then run the command again."
+msgstr ""
+"これは、コード全体でエラーを追跡するため、「トレースバック」と呼ばれます。最初のステップは、メッセージの最後の行を確認することです。具体的には、最後のエントリのファイルと行番号を見つけます。上記の例では、"
+" ``\"C:\\oTree\\chris\\public_goods_simple\\models.py\", line 40`` "
+"です。したがって、そのファイルのその行番号の部分に移動します。そして、トレースバックの最後の行に記載されている問題を探します。この例では、 "
+"``IndentationError: expected an indented block`` "
+"です（これは、問題がコードのインデントに関係していることを示しています）。エラーを修正してから、コマンドを再実行してください。"
 
 #: ../../source/tutorial/part1_texteditor.rst:193
 msgid ""
-"Sometimes the last line of the traceback refers to a file that is not part of "
-"your code. For example, in the below traceback, the last line refers to ``/site-"
-"packages/easymoney.py``, which is not part of my app, but rather an external "
-"package::"
-msgstr "トレースバックの最後の行が、コードの一部ではないファイルを参照している場合があります。たとえば、以下のトレースバックでは、"
-"最後の行は ``/site-packages/easymoney.py`` を参照しています。これは外部パッケージです。"
+"Sometimes the last line of the traceback refers to a file that is not "
+"part of your code. For example, in the below traceback, the last line "
+"refers to ``/site-packages/easymoney.py``, which is not part of my app, "
+"but rather an external package::"
+msgstr ""
+"トレースバックの最後の行が、コードの一部ではないファイルを参照している場合があります。たとえば、以下のトレースバックでは、最後の行は "
+"``/site-packages/easymoney.py`` を参照しています。これは外部パッケージです。"
 
 #: ../../source/tutorial/part1_texteditor.rst:236
 msgid ""
 "In these situations, look to see if any of your code is contained in the "
-"traceback. Above we can see that the traceback goes through the file ``/Users/"
-"chris/oTree/public_goods/pages.py``, which is part of my project. The bug is on "
-"line 108, as indicated."
-msgstr "このような状況では、コードのいずれかがトレースバックに含まれているかどうかを確認してください。"
-"上記では、トレースバックが自分のプロジェクトの一部であるファイル ``/Users/chris/oTree/public_goods/pages.py`` を通過していることがわかります。トレースバックで示されているように、バグは108行目にあります。"
+"traceback. Above we can see that the traceback goes through the file "
+"``/Users/chris/oTree/public_goods/pages.py``, which is part of my "
+"project. The bug is on line 108, as indicated."
+msgstr ""
+"このような状況では、コードのいずれかがトレースバックに含まれているかどうかを確認してください。上記では、トレースバックが自分のプロジェクトの一部であるファイル"
+" ``/Users/chris/oTree/public_goods/pages.py`` "
+"を通過していることがわかります。トレースバックで示されているように、バグは108行目にあります。"
 
 #: ../../source/tutorial/part2.rst:2
 msgid "Part 2: Public goods game"
@@ -333,24 +351,29 @@ msgstr "その2：公共財ゲーム"
 
 #: ../../source/tutorial/part2.rst:8
 msgid ""
-"We will now create a simple `public goods game <https://en.wikipedia.org/wiki/"
-"Public_goods_game>`__. The public goods game is a classic game in economics."
-msgstr "ここで、 `公共財ゲーム game <https://en.wikipedia.org/wiki/Public_goods_game>`__ を作成します。公共財ゲームは経済学の古典的なゲームです。"
+"We will now create a simple `public goods game "
+"<https://en.wikipedia.org/wiki/Public_goods_game>`__. The public goods "
+"game is a classic game in economics."
+msgstr ""
+"ここで、 `公共財ゲーム game <https://en.wikipedia.org/wiki/Public_goods_game>`__ "
+"を作成します。公共財ゲームは経済学の古典的なゲームです。"
 
 #: ../../source/tutorial/part2.rst:11
 msgid ""
-"This is a three player game where each player is initially endowed with 100 "
-"points. Each player individually makes a decision about how many of their "
-"points they want to contribute to the group. The combined contributions are "
-"multiplied by 2, and then divided evenly three ways and redistributed back to "
-"the players."
+"This is a three player game where each player is initially endowed with "
+"100 points. Each player individually makes a decision about how many of "
+"their points they want to contribute to the group. The combined "
+"contributions are multiplied by 2, and then divided evenly three ways and"
+" redistributed back to the players."
 msgstr "これは3人用のゲームで、各プレーヤーには最初に100ポイントが与えられます。各プレイヤーは、グループに貢献したいポイントの数を個別に決定します。合計された貢献は2倍され、次に3つの方法で均等に分割され、プレーヤーに再分配されます。"
 
 #: ../../source/tutorial/part2.rst:15
 msgid ""
-"The full code for the app we will write is `here <https://github.com/oTree-org/"
-"oTree/tree/lite/public_goods_simple>`__."
-msgstr "私たちが書くアプリの完全なコードは `ここ <https://github.com/oTree-org/oTree/tree/lite/public_goods_simple>`__ にあります。"
+"The full code for the app we will write is `here <https://github.com"
+"/oTree-org/oTree/tree/lite/public_goods_simple>`__."
+msgstr ""
+"私たちが書くアプリの完全なコードは `ここ <https://github.com/oTree-"
+"org/oTree/tree/lite/public_goods_simple>`__ にあります。"
 
 #: ../../source/tutorial/part2.rst:22
 msgid ""
@@ -368,20 +391,20 @@ msgstr "アプリの定数に移動します。（詳細については、 :ref:
 
 #: ../../source/tutorial/part2.rst:31
 msgid ""
-"Set ``players_per_group`` to 3. oTree will then automatically divide players "
-"into groups of 3."
+"Set ``players_per_group`` to 3. oTree will then automatically divide "
+"players into groups of 3."
 msgstr "``players_per_group`` を3に設定します。oTreeはプレーヤーを自動的に3つのグループに分割します。"
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""
-"The endowment to each player is 1000 points. So, let's define ``endowment`` and "
-"set it to a currency value of ``1000``."
+"The endowment to each player is 1000 points. So, let's define "
+"``endowment`` and set it to a currency value of ``1000``."
 msgstr "各プレイヤーへの寄付は1000ポイントです。それでは、 ``endowment`` を定義してその値を `1000` に設定しましょう。"
 
 #: ../../source/tutorial/part2.rst:35
 msgid ""
-"Each contribution is multiplied by 2. So define an integer constant called "
-"``multiplier = 2``:"
+"Each contribution is multiplied by 2. So define an integer constant "
+"called ``multiplier = 2``:"
 msgstr "各寄与は2倍されます。したがって、 ``multiplier = 2`` と呼ばれる整数の定数を定義します。"
 
 #: ../../source/tutorial/part2.rst:38
@@ -390,23 +413,28 @@ msgstr "定数は次のようになります。"
 
 #: ../../source/tutorial/part2.rst:48
 msgid ""
-"After the game is played, what data points will we need about each player? It's "
-"important to record how much each person contributed. So, go to the Player "
-"model and define a ``contribution`` column:"
-msgstr "ゲームがプレイされた後、各プレーヤーについてそれぞれがどれだけ貢献したかを記録することが重要です。したがって、Playerモデルに移動し、 ``contribution`` を定義します。"
+"After the game is played, what data points will we need about each "
+"player? It's important to record how much each person contributed. So, go"
+" to the Player model and define a ``contribution`` column:"
+msgstr ""
+"ゲームがプレイされた後、各プレーヤーについてそれぞれがどれだけ貢献したかを記録することが重要です。したがって、Playerモデルに移動し、 "
+"``contribution`` を定義します。"
 
 #: ../../source/tutorial/part2.rst:62
 msgid ""
-"We also need to record the payoff the user makes at the end of the game, but we "
-"don't need to explicitly define a ``payoff`` field, because in oTree, the "
-"Player already contains a ``payoff`` column."
-msgstr "また、ゲームの終了時にユーザーが行う利得を記録する必要がありますが、oTreeではプレーヤーにすでに ``payoff`` フィールドが定義されているため、フィールドを明示的に定義する必要はありません。"
+"We also need to record the payoff the user makes at the end of the game, "
+"but we don't need to explicitly define a ``payoff`` field, because in "
+"oTree, the Player already contains a ``payoff`` column."
+msgstr ""
+"また、ゲームの終了時にユーザーが行う利得を記録する必要がありますが、oTreeではプレーヤーにすでに ``payoff`` "
+"フィールドが定義されているため、フィールドを明示的に定義する必要はありません。"
 
 #: ../../source/tutorial/part2.rst:66
 msgid ""
-"What data points are we interested in recording about each group? We might be "
-"interested in knowing the total contributions to the group, and the individual "
-"share returned to each player. So, we define those 2 fields on the Group:"
+"What data points are we interested in recording about each group? We "
+"might be interested in knowing the total contributions to the group, and "
+"the individual share returned to each player. So, we define those 2 "
+"fields on the Group:"
 msgstr "各グループについて、グループへの貢献の合計と、各プレーヤーに返される個々のシェアを知りたい場合は、グループでこれら2つのフィールドを定義します。"
 
 #: ../../source/tutorial/part2.rst:81
@@ -431,12 +459,14 @@ msgstr "ページ1：寄付"
 
 #: ../../source/tutorial/part2.rst:90
 msgid ""
-"First let's define ``Contribute``. This page contains a form, so we need to "
-"define ``form_model`` and ``form_fields``. Specifically, this form should let "
-"you set the ``contribution`` field on the player. (For more info, see :ref:"
-"`forms`.)"
-msgstr "まず、 ``Contribute`` を定義しましょう。このページにはフォームが含まれているため、"
-" ``form_model`` と ``form_fields`` を定義する必要があります。具体的には、このフォームで ``contribution`` を設定します。（詳細については、 :ref:`forms` を参照してください。）"
+"First let's define ``Contribute``. This page contains a form, so we need "
+"to define ``form_model`` and ``form_fields``. Specifically, this form "
+"should let you set the ``contribution`` field on the player. (For more "
+"info, see :ref:`forms`.)"
+msgstr ""
+"まず、 ``Contribute`` を定義しましょう。このページにはフォームが含まれているため、 ``form_model`` と "
+"``form_fields`` を定義する必要があります。具体的には、このフォームで ``contribution`` "
+"を設定します。（詳細については、 :ref:`forms` を参照してください。）"
 
 #: ../../source/tutorial/part2.rst:102
 msgid "Now, we create the HTML template."
@@ -452,27 +482,33 @@ msgstr "ページ2：ResultsWaitPage"
 
 #: ../../source/tutorial/part2.rst:124
 msgid ""
-"When all players have completed the ``Contribute`` page, the players' payoffs "
-"can be calculated. Add a group function called ``set_payoffs``:"
-msgstr "すべてのプレイヤーが ``Contribute`` ページを完了すると、プレイヤーの利得を計算できます。 ``set_payoffs`` と呼ばれるグループ関数を追加します："
+"When all players have completed the ``Contribute`` page, the players' "
+"payoffs can be calculated. Add a group function called ``set_payoffs``:"
+msgstr ""
+"すべてのプレイヤーが ``Contribute`` ページを完了すると、プレイヤーの利得を計算できます。 ``set_payoffs`` "
+"と呼ばれるグループ関数を追加します："
 
 #: ../../source/tutorial/part2.rst:138
 msgid ""
-"After a player makes a contribution, they cannot see the results page right "
-"away; they first need to wait for the other players to contribute. You "
-"therefore need to add a ``WaitPage``. Let's call it ``ResultsWaitPage``. When a "
-"player arrives at a wait page, they must wait until all other players in the "
-"group have arrived. Then everyone can proceed to the next page. (For more info, "
-"see :ref:`wait_pages`)."
-msgstr "プレイヤーが寄付した後、他のプレイヤーが寄付し終わるのを待つ必要があります。"
-"したがって、 ``WaitPage`` を追加する必要があります。それを ``ResultsWaitPage`` と呼びましょう。プレーヤーがWaitPageに到着すると、"
-"グループ内の他のすべてのプレーヤーが到着するまで待機する必要があります。（詳細については、 :ref:`wait_pages` を参照してください）。"
+"After a player makes a contribution, they cannot see the results page "
+"right away; they first need to wait for the other players to contribute. "
+"You therefore need to add a ``WaitPage``. Let's call it "
+"``ResultsWaitPage``. When a player arrives at a wait page, they must wait"
+" until all other players in the group have arrived. Then everyone can "
+"proceed to the next page. (For more info, see :ref:`wait_pages`)."
+msgstr ""
+"プレイヤーが寄付した後、他のプレイヤーが寄付し終わるのを待つ必要があります。したがって、 ``WaitPage`` "
+"を追加する必要があります。それを ``ResultsWaitPage`` "
+"と呼びましょう。プレーヤーがWaitPageに到着すると、グループ内の他のすべてのプレーヤーが到着するまで待機する必要があります。（詳細については、"
+" :ref:`wait_pages` を参照してください）。"
 
 #: ../../source/tutorial/part2.rst:146
 msgid ""
-"Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to trigger "
-"``set_payoffs``:"
-msgstr "``ResultsWaitPage`` に ``after_all_players_arrive`` を追加し、 ``set_payoffs`` にトリガーするように設定します。"
+"Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to "
+"trigger ``set_payoffs``:"
+msgstr ""
+"``ResultsWaitPage`` に ``after_all_players_arrive`` を追加し、 ``set_payoffs`` "
+"にトリガーするように設定します。"
 
 #: ../../source/tutorial/part2.rst:154
 msgid "Page 3: Results"
@@ -492,7 +528,8 @@ msgstr "以下のように設定します。"
 
 #: ../../source/tutorial/part2.rst:188
 msgid ""
-"We add another session config with ``my_public_goods`` in the app sequence."
+"We add another session config with ``my_public_goods`` in the app "
+"sequence."
 msgstr "アプリシーケンスに ``my_public_goods`` のための別のセッション構成を追加します。"
 
 #: ../../source/tutorial/part2.rst:192
@@ -501,7 +538,8 @@ msgstr "コードの実行"
 
 #: ../../source/tutorial/part2.rst:194 ../../source/tutorial/part3.rst:252
 msgid ""
-"Load the project again then open your browser to ``http://localhost:8000``."
+"Load the project again then open your browser to "
+"``http://localhost:8000``."
 msgstr "プロジェクトを再度ロードしてから、ブラウザを開いて ``http://localhost:8000`` に接続してください。"
 
 #: ../../source/tutorial/part2.rst:199
@@ -510,8 +548,9 @@ msgstr "print()のトラブルシューティング"
 
 #: ../../source/tutorial/part2.rst:201
 msgid ""
-"I often read messages on programming forums like, \"My program is not working. "
-"I can't find the mistake, even though I have spent hours looking at my code\"."
+"I often read messages on programming forums like, \"My program is not "
+"working. I can't find the mistake, even though I have spent hours looking"
+" at my code\"."
 msgstr "プログラミングフォーラムで、「プログラムが機能していません。コードを何時間も見ても、間違いを見つけることができません」などのメッセージをよく読んでいます。"
 
 #: ../../source/tutorial/part2.rst:205
@@ -522,9 +561,11 @@ msgstr "解決策は、エラーが見つかるまでコードを再読み込み
 
 #: ../../source/tutorial/part2.rst:208
 msgid ""
-"The simplest way is using ``print()`` statements. If you don't learn this "
-"technique, you won't be able to program games effectively."
-msgstr "最も簡単な方法は、 ``print()`` ステートメントを使用することです。このテクニックを学ばないと、ゲームを効果的にプログラムすることができません。"
+"The simplest way is using ``print()`` statements. If you don't learn this"
+" technique, you won't be able to program games effectively."
+msgstr ""
+"最も簡単な方法は、 ``print()`` "
+"ステートメントを使用することです。このテクニックを学ばないと、ゲームを効果的にプログラムすることができません。"
 
 #: ../../source/tutorial/part2.rst:211
 msgid "You just need to insert a line in your code like this:"
@@ -532,12 +573,11 @@ msgstr "次のようにコードに行を挿入する必要があります。"
 
 #: ../../source/tutorial/part2.rst:217
 msgid ""
-"Put this line in the part of your code that's not working, such as the payoff "
-"function defined above. When you play the game in your browser and that code "
-"gets executed, your print statement will be displayed in your command prompt "
-"window (not in your web browser)."
-msgstr "上で定義したペイオフ関数など、機能していないコードの部分にこの行を配置します。ブラウザでゲームをプレイし、"
-"そのコードが実行されると、print命令による出力がコマンドプロンプトウィンドウに表示されます（Webブラウザでは表示されません）。"
+"Put this line in the part of your code that's not working, such as the "
+"payoff function defined above. When you play the game in your browser and"
+" that code gets executed, your print statement will be displayed in your "
+"command prompt window (not in your web browser)."
+msgstr "上で定義したペイオフ関数など、機能していないコードの部分にこの行を配置します。ブラウザでゲームをプレイし、そのコードが実行されると、print命令による出力がコマンドプロンプトウィンドウに表示されます（Webブラウザでは表示されません）。"
 
 #: ../../source/tutorial/part2.rst:223
 msgid "You can sprinkle lots of prints in your code"
@@ -549,27 +589,32 @@ msgstr "printによる出力がコンソール/ログに表示されない"
 
 #: ../../source/tutorial/part2.rst:245
 msgid ""
-"If you don't see the output of the print statement in your console window, that "
-"means that line is not getting executed! (Which is why it isn't working.)"
+"If you don't see the output of the print statement in your console "
+"window, that means that line is not getting executed! (Which is why it "
+"isn't working.)"
 msgstr "コンソールウィンドウにprintの出力が表示されない場合は、その行が実行されていないことを意味します。（これが機能しない理由です。）"
 
 #: ../../source/tutorial/part2.rst:248
 msgid ""
 "Maybe it's because your code is in some unreachable place like after a "
-"``return`` statement, or inside an \"if\" statement that is always ``False``. "
-"Start putting print statements from the top of the function, then see where "
-"they stop getting displayed."
-msgstr "おそらく、コードが ``return`` の後などの到達できない場所にあるか、常に ``False`` である「if」文内にあることが考えられます。関数の先頭からprintを配置していくことで、表示されなくなる場所が分かります。"
+"``return`` statement, or inside an \"if\" statement that is always "
+"``False``. Start putting print statements from the top of the function, "
+"then see where they stop getting displayed."
+msgstr ""
+"おそらく、コードが ``return`` の後などの到達できない場所にあるか、常に ``False`` "
+"である「if」文内にあることが考えられます。関数の先頭からprintを配置していくことで、表示されなくなる場所が分かります。"
 
 #: ../../source/tutorial/part2.rst:252
 msgid ""
-"Or maybe your code is in a function that never gets called (executed). oTree's "
-"built-in methods such as ``creating_session`` and ``before_next_page`` are "
-"automatically executed, but if you define a custom function such as "
-"``set_payoffs``, you need to remember to call that function from a built-in "
-"function."
-msgstr "または、コードが呼び出される（実行される）ことのない関数に含まれている可能性があります。 ``creating_session`` や ``before_next_page`` のようなoTreeに組み込まれている関数は自動的に実行されますが、"
-" ``set_payoffs`` のようなカスタム関数を定義する場合、その関数を呼び出さなければならないことを覚えておく必要があります。"
+"Or maybe your code is in a function that never gets called (executed). "
+"oTree's built-in methods such as ``creating_session`` and "
+"``before_next_page`` are automatically executed, but if you define a "
+"custom function such as ``set_payoffs``, you need to remember to call "
+"that function from a built-in function."
+msgstr ""
+"または、コードが呼び出される（実行される）ことのない関数に含まれている可能性があります。 ``creating_session`` や "
+"``before_next_page`` のようなoTreeに組み込まれている関数は自動的に実行されますが、 ``set_payoffs`` "
+"のようなカスタム関数を定義する場合、その関数を呼び出さなければならないことを覚えておく必要があります。"
 
 #: ../../source/tutorial/part3.rst:2
 msgid "Part 3: Trust game"
@@ -577,25 +622,29 @@ msgstr "パート3：信頼ゲーム"
 
 #: ../../source/tutorial/part3.rst:4
 msgid ""
-"Now let's create a 2-player `Trust game <https://en.wikibooks.org/wiki/"
-"Bestiary_of_Behavioral_Economics/Trust_Game>`__, and learn some more features "
-"of oTree."
-msgstr "それでは、2人用の `信頼ゲーム <https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__ を作成し、oTreeのいくつかの機能を学びましょう。"
+"Now let's create a 2-player `Trust game "
+"<https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,"
+" and learn some more features of oTree."
+msgstr ""
+"それでは、2人用の `信頼ゲーム "
+"<https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__"
+" を作成し、oTreeのいくつかの機能を学びましょう。"
 
 #: ../../source/tutorial/part3.rst:7
 msgid ""
-"To start, Player 1 receives 10 points; Player 2 receives nothing. Player 1 can "
-"send some or all of his points to Player 2. Before P2 receives these points "
-"they will be tripled. Once P2 receives the tripled points he can decide to send "
-"some or all of his points to P1."
-msgstr "まず、プレーヤー1（P1）は10ポイントを獲得します。プレーヤー2（P2）は何も受け取りません。P1は、ポイントの一部またはすべてをP2に送信できます。"
-"P2がこれらのポイントを受け取る前に、ポイントは3倍になります。P2が3倍のポイントを受け取ると、ポイントの一部またはすべてをP1に送信することを決定できます。"
+"To start, Player 1 receives 10 points; Player 2 receives nothing. Player "
+"1 can send some or all of his points to Player 2. Before P2 receives "
+"these points they will be tripled. Once P2 receives the tripled points he"
+" can decide to send some or all of his points to P1."
+msgstr "まず、プレーヤー1（P1）は10ポイントを獲得します。プレーヤー2（P2）は何も受け取りません。P1は、ポイントの一部またはすべてをP2に送信できます。P2がこれらのポイントを受け取る前に、ポイントは3倍になります。P2が3倍のポイントを受け取ると、ポイントの一部またはすべてをP1に送信することを決定できます。"
 
 #: ../../source/tutorial/part3.rst:12
 msgid ""
-"The completed app is `here <https://github.com/oTree-org/oTree/tree/master/"
-"trust_simple>`__."
-msgstr "完成したアプリは `コチラ <https://github.com/oTree-org/oTree/tree/master/trust_simple>`__ です。"
+"The completed app is `here <https://github.com/oTree-"
+"org/oTree/tree/master/trust_simple>`__."
+msgstr ""
+"完成したアプリは `コチラ <https://github.com/oTree-"
+"org/oTree/tree/master/trust_simple>`__ です。"
 
 #: ../../source/tutorial/part3.rst:18
 msgid ""
@@ -619,8 +668,9 @@ msgstr "モデル"
 
 #: ../../source/tutorial/part3.rst:42
 msgid ""
-"Then we add fields to player and group. There are 2 critical data points to "
-"record: the \"sent\" amount from P1, and the \"sent back\" amount from P2."
+"Then we add fields to player and group. There are 2 critical data points "
+"to record: the \"sent\" amount from P1, and the \"sent back\" amount from"
+" P2."
 msgstr "次に、プレーヤーとグループにフィールドを追加します。記録する2つの重要なデータポイントがあります。P1からの「送信」量とP2からの「返送」量です。"
 
 #: ../../source/tutorial/part3.rst:46
@@ -629,27 +679,34 @@ msgstr "あなたは直観的に、次のようにプレーヤーのフィール
 
 #: ../../source/tutorial/part3.rst:56
 msgid ""
-"The problem with this model is that ``sent_amount`` only applies to P1, and "
-"``sent_back_amount`` only applies to P2. It does not make sense that P1 should "
-"have a field called ``sent_back_amount``. How can we make our data model more "
-"accurate?"
-msgstr "このモデルの問題は ``sent_amount`` は、P1にのみ適用され、 ``sent_back_amount`` はP2にのみ適用されるということです。"
-"P1は、 ``sent_back_amount`` というフィールドが必要ありません。データモデルをより正確にするにはどうすればよいですか？"
+"The problem with this model is that ``sent_amount`` only applies to P1, "
+"and ``sent_back_amount`` only applies to P2. It does not make sense that "
+"P1 should have a field called ``sent_back_amount``. How can we make our "
+"data model more accurate?"
+msgstr ""
+"このモデルの問題は ``sent_amount`` は、P1にのみ適用され、 ``sent_back_amount`` "
+"はP2にのみ適用されるということです。P1は、 ``sent_back_amount`` "
+"というフィールドが必要ありません。データモデルをより正確にするにはどうすればよいですか？"
 
 #: ../../source/tutorial/part3.rst:61
 msgid ""
-"We can do it by defining those fields at the ``Group`` level. This makes sense "
-"because each group has exactly 1 ``sent_amount`` and exactly 1 "
+"We can do it by defining those fields at the ``Group`` level. This makes "
+"sense because each group has exactly 1 ``sent_amount`` and exactly 1 "
 "``sent_back_amount``:"
-msgstr "これらのフィールドを ``Group`` レベルで定義することでそれを行うことができます。各グループには正確に1 ``sent_amount`` と正確に1 ``sent_back_amount`` があるため、これは理にかなっています。"
+msgstr ""
+"これらのフィールドを ``Group`` レベルで定義することでそれを行うことができます。各グループには正確に1 ``sent_amount`` "
+"と正確に1 ``sent_back_amount`` があるため、これは理にかなっています。"
 
 #: ../../source/tutorial/part3.rst:76
 msgid ""
-"We also define a function called ``sent_back_amount_choices`` to populate the "
-"dropdown menu dynamically. This is the feature called ``{field_name}_choices``, "
-"which is explained here: :ref:`dynamic_validation`."
-msgstr "``sent_back_amount_choices`` という、ドロップダウンメニューに動的にデータを入力するために呼び出される関数も定義します。"
-"これは ``{field_name}_choices`` と呼ばれる機能であり、 :ref:`dynamic_validation` で説明されています。"
+"We also define a function called ``sent_back_amount_choices`` to populate"
+" the dropdown menu dynamically. This is the feature called "
+"``{field_name}_choices``, which is explained here: "
+":ref:`dynamic_validation`."
+msgstr ""
+"``sent_back_amount_choices`` "
+"という、ドロップダウンメニューに動的にデータを入力するために呼び出される関数も定義します。これは ``{field_name}_choices``"
+" と呼ばれる機能であり、 :ref:`dynamic_validation` で説明されています。"
 
 #: ../../source/tutorial/part3.rst:90
 msgid "Define the templates and pages"
@@ -677,15 +734,19 @@ msgstr "送信ページ"
 
 #: ../../source/tutorial/part3.rst:112
 msgid ""
-"We use :ref:`is_displayed` to only show this to P1; P2 skips the page. For more "
-"info on ``id_in_group``, see :ref:`groups`."
-msgstr ":ref:`is_displayed` を使用して、これをP1にのみこのページを表示します。P2はページをスキップします。 ``id_in_group`` の詳細については :ref:`groups` を参照してください。"
+"We use :ref:`is_displayed` to only show this to P1; P2 skips the page. "
+"For more info on ``id_in_group``, see :ref:`groups`."
+msgstr ""
+":ref:`is_displayed` を使用して、これをP1にのみこのページを表示します。P2はページをスキップします。 "
+"``id_in_group`` の詳細については :ref:`groups` を参照してください。"
 
 #: ../../source/tutorial/part3.rst:115
 msgid ""
 "For the template, set the ``title`` to ``Trust Game: Your Choice``, and "
 "``content`` to:"
-msgstr "テンプレートの場合、 ``title`` を ``Trust Game: Your Choice`` に設定します。そして ``content`` を次のようにします。"
+msgstr ""
+"テンプレートの場合、 ``title`` を ``Trust Game: Your Choice`` に設定します。そして ``content``"
+" を次のようにします。"
 
 #: ../../source/tutorial/part3.rst:130
 msgid "SendBack.html"
@@ -693,9 +754,11 @@ msgstr "返送ページ"
 
 #: ../../source/tutorial/part3.rst:132
 msgid ""
-"This is the page that P2 sees to send money back. Set the ``title`` block to "
-"``Trust Game: Your Choice``, and the ``content`` block to:"
-msgstr "これは、P2が送金するために表示するページです。 ``title`` ブロックを ``Trust Game: Your Choice`` に設定し、 ``content`` ブロックを次のように設定します。"
+"This is the page that P2 sees to send money back. Set the ``title`` block"
+" to ``Trust Game: Your Choice``, and the ``content`` block to:"
+msgstr ""
+"これは、P2が送金するために表示するページです。 ``title`` ブロックを ``Trust Game: Your Choice`` "
+"に設定し、 ``content`` ブロックを次のように設定します。"
 
 #: ../../source/tutorial/part3.rst:148
 msgid "Here is the page code. Notes:"
@@ -703,10 +766,13 @@ msgstr "注意："
 
 #: ../../source/tutorial/part3.rst:150
 msgid ""
-"We use :ref:`vars_for_template` to pass the variable ``tripled_amount`` to the "
-"template. You cannot do calculations directly in the HTML code, so this number "
-"needs to be calculated in Python code and passed to the template."
-msgstr ":ref:`vars_for_template` を使用して、変数 ``tripled_amount`` をテンプレートに渡します。HTMLコードで直接計算することはできないため、この数値はPythonコードで計算し、テンプレートに渡す必要があります。"
+"We use :ref:`vars_for_template` to pass the variable ``tripled_amount`` "
+"to the template. You cannot do calculations directly in the HTML code, so"
+" this number needs to be calculated in Python code and passed to the "
+"template."
+msgstr ""
+":ref:`vars_for_template` を使用して、変数 ``tripled_amount`` "
+"をテンプレートに渡します。HTMLコードで直接計算することはできないため、この数値はPythonコードで計算し、テンプレートに渡す必要があります。"
 
 #: ../../source/tutorial/part3.rst:175
 msgid "Results"
@@ -714,11 +780,14 @@ msgstr "結果"
 
 #: ../../source/tutorial/part3.rst:177
 msgid ""
-"The results page needs to look slightly different for P1 vs. P2. So, we use the "
-"``{{ if }}`` statement to condition on the current player's ``id_in_group``. "
-"Set the ``title`` block to ``Results``, and the content block to:"
-msgstr "結果ページは、P1とP2で少し異なって見える必要があります。"
-"したがって、``{{ if }}`` ステートメントを使用して、 ``id_in_group`` による条件を付けます。 ``title`` ブロックを ``Results`` に設定し、 ``content`` ブロックを次のように設定します。"
+"The results page needs to look slightly different for P1 vs. P2. So, we "
+"use the ``{{ if }}`` statement to condition on the current player's "
+"``id_in_group``. Set the ``title`` block to ``Results``, and the content "
+"block to:"
+msgstr ""
+"結果ページは、P1とP2で少し異なって見える必要があります。したがって、``{{ if }}`` ステートメントを使用して、 "
+"``id_in_group`` による条件を付けます。 ``title`` ブロックを ``Results`` に設定し、 ``content``"
+" ブロックを次のように設定します。"
 
 #: ../../source/tutorial/part3.rst:208
 msgid "Wait pages and page sequence"
@@ -734,13 +803,14 @@ msgstr "``WaitForP1`` （P1が送信する量を決定する間、P2は待機す
 
 #: ../../source/tutorial/part3.rst:213
 msgid ""
-"``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send back)"
+"``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send "
+"back)"
 msgstr "``ResultsWaitPage`` （P2が返送する金額を決定する間、P1は待機する必要があります）"
 
 #: ../../source/tutorial/part3.rst:215
 msgid ""
-"After the second wait page, we should calculate the payoffs. So, we define a "
-"function called ``set_payoffs``:"
+"After the second wait page, we should calculate the payoffs. So, we "
+"define a function called ``set_payoffs``:"
 msgstr "2番目のWaitPageの後、利得を計算する必要があります。したがって、次の関数 ``set_payoffs`` を定義します。"
 
 #: ../../source/tutorial/part3.rst:226
@@ -762,3 +832,4 @@ msgstr "アプリシーケンスで ``my_trust`` セッション構成を作成�
 #: ../../source/tutorial/part3.rst:250
 msgid "Run the server"
 msgstr "サーバーを実行します"
+

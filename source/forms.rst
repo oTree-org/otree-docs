@@ -271,9 +271,7 @@ You can also put the ``label`` in directly in the template:
 
     {{ formfield 'bid' label="How much do you want to contribute?" }}
 
-.. note::
-
-    The previous syntax of ``{% formfield player.bid %}`` is still supported.
+The previous syntax of ``{% formfield player.bid %}`` is still supported.
 
 .. _manual-forms:
 
@@ -294,15 +292,14 @@ Example: Radio buttons arranged like a slider
 
 .. code-block:: python
 
-    class Player(BasePlayer):
-        pizza = models.IntegerField(
-            widget=widgets.RadioSelect,
-            choices=[-3, -2, -1, 0, 1, 2, 3]
-        )
+    pizza = models.IntegerField(
+        widget=widgets.RadioSelect,
+        choices=[-3, -2, -1, 0, 1, 2, 3]
+    )
 
 .. code-block:: html
 
-    <p>How much do you like pizza?</p>
+    <p>Choose the point on the scale that represents how much you like pizza:</p>
     <p>
         Least &nbsp;
         {{ for choice in form.pizza }}
