@@ -46,10 +46,6 @@ in the group and subsession.
 Roles
 -----
 
-.. note::
-
-    New as of January 2021
-
 If each group has multiple roles, such as buyer/seller, principal/agent, etc.,
 you can define them in Constants. Make their names end with ``_role``:
 
@@ -91,7 +87,6 @@ You can also use ``group.get_player_by_role()``, which is similar to ``get_playe
 If you want to switch players' roles,
 you should rearrange the groups, using ``group.set_players()``, ``subsession.group_randomly()``,
 etc.
-
 
 .. _shuffling:
 

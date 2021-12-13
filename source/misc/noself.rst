@@ -217,11 +217,3 @@ Misc notes
 -   You can optionally add a type hint to your function signatures. For example,
     change ``def xyz(player)`` to ``def xyz(player: Player)``. If you use PyCharm or VS Code,
     that will mean you get better autocompletion.
--   If your apps are big and you want to split the code between several files like
-    ``models.py`` and ``pages.py``, that should work fine.
-    Just put this in your ``__init__.py``:
-
-.. code-block:: python
-
-    from .models import *
-    from .pages import *

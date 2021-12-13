@@ -61,6 +61,8 @@ For more complex filters and sorting, you should use list operations:
 See the example psychology games such as the Stroop task,
 which show how to generate ExtraModel data from each row of a CSV spreadsheet.
 
+To export your ExtraModel data to CSV/Excel, use :ref:`custom-export`.
+
 Templates
 ---------
 
