@@ -1,6 +1,11 @@
 Version history
 ```````````````
 
+Version 5.6
+===========
+
+-   Added access to form inputs through JavaScript.
+
 Version 5.4
 ===========
 
