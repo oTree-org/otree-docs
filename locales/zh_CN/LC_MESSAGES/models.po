@@ -127,8 +127,8 @@ msgstr "round_number"
 #: ../../source/models.rst:77
 msgid ""
 "Gives the current round number. Only relevant if the app has multiple "
-"rounds (set in ``Constants.num_rounds``). See :ref:`rounds`."
-msgstr "给出当前是第几轮。仅在应用有多轮时有意义（轮数由 ``Constants.num_rounds`` 设置 ）。参考 :ref:`rounds`。"
+"rounds (set in ``C.NUM_ROUNDS``). See :ref:`rounds`."
+msgstr "给出当前是第几轮。仅在应用有多轮时有意义（轮数由 ``C.NUM_ROUNDS`` 设置 ）。参考 :ref:`rounds`。"
 
 #: ../../source/models.rst:84
 msgid "get_groups()"
@@ -325,18 +325,18 @@ msgid "Here are the built-in constants:"
 msgstr "下面是内置的常量："
 
 #: ../../source/models.rst:199
-msgid "``players_per_group`` (described in :ref:`groups`)"
-msgstr "``players_per_group`` (见 :ref:`groups` )"
+msgid "``PLAYERS_PER_GROUP`` (described in :ref:`groups`)"
+msgstr "``PLAYERS_PER_GROUP`` (见 :ref:`groups` )"
 
 #: ../../source/models.rst:200
-msgid "``num_rounds`` (described in :ref:`rounds`)"
-msgstr "``num_rounds`` (见 :ref:`rounds` )"
+msgid "``NUM_ROUNDS`` (described in :ref:`rounds`)"
+msgstr "``NUM_ROUNDS`` (见 :ref:`rounds` )"
 
 #: ../../source/models.rst:202
 msgid ""
 "if you don't want your app's real name to be displayed in URLs, define a "
-"string constant ``name_in_url`` with your desired name."
-msgstr "如果你不想让自己应用的真实名字被显示在URL中，那么可以定义一个字符串常量 ``name_in_url`` 并赋予你想显示的名字。"
+"string constant ``NAME_IN_URL`` with your desired name."
+msgstr "如果你不想让自己应用的真实名字被显示在URL中，那么可以定义一个字符串常量 ``NAME_IN_URL`` 并赋予你想显示的名字。"
 
 # method->function?
 #: ../../source/models.rst:206

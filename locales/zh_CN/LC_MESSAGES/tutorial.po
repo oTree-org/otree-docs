@@ -386,9 +386,9 @@ msgstr "设置本应用的常量（查看 :ref:`constants` 可获得更多信息
 
 #: ../../source/tutorial/part2.rst:31
 msgid ""
-"Set ``players_per_group`` to 3. oTree will then automatically divide "
+"Set ``PLAYERS_PER_GROUP`` to 3. oTree will then automatically divide "
 "players into groups of 3."
-msgstr "设置 ``players_per_group`` 为3。oTree会自动将玩家分为若干个3人小组。"
+msgstr "设置 ``PLAYERS_PER_GROUP`` 为3。oTree会自动将玩家分为若干个3人小组。"
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""

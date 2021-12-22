@@ -29,9 +29,9 @@ donation gets tripled.
 .. code-block:: python
 
     class Constants(BaseConstants):
-        name_in_url = 'my_trust'
-        players_per_group = 2
-        num_rounds = 1
+        NAME_IN_URL = 'my_trust'
+        PLAYERS_PER_GROUP = 2
+        NUM_ROUNDS = 1
 
         endowment = cu(10)
         multiplication_factor = 3
@@ -82,7 +82,7 @@ dropdown menu dynamically. This is the feature called
     def sent_back_amount_choices(group):
         return currency_range(
             0,
-            group.sent_amount * Constants.multiplication_factor,
+            group.sent_amount * C.MULTIPLICATION_FACTOR,
             1
         )
 
@@ -118,7 +118,7 @@ and ``content`` to:
 .. code-block:: django
 
     <p>
-    You are Participant A. Now you have {{Constants.endowment}}.
+    You are Participant A. Now you have {{C.ENDOWMENT}}.
     </p>
 
     {{ formfields }}
@@ -168,7 +168,7 @@ Here is the page code. Notes:
             group = player.group
 
             return dict(
-                tripled_amount=group.sent_amount * Constants.multiplication_factor
+                tripled_amount=group.sent_amount * C.MULTIPLICATION_FACTOR
             )
 
 Results
@@ -220,8 +220,8 @@ So, we define a function called ``set_payoffs``:
     def set_payoffs(group):
         p1 = group.get_player_by_id(1)
         p2 = group.get_player_by_id(2)
-        p1.payoff = Constants.endowment - group.sent_amount + group.sent_back_amount
-        p2.payoff = group.sent_amount * Constants.multiplication_factor - group.sent_back_amount
+        p1.payoff = C.ENDOWMENT - group.sent_amount + group.sent_back_amount
+        p2.payoff = group.sent_amount * C.MULTIPLICATION_FACTOR - group.sent_back_amount
 
 Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:
 

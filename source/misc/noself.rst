@@ -49,7 +49,7 @@ Here is an example of an __init__.py in the "no self" format (with the dictator 
     class Player(BasePlayer):
         kept = models.CurrencyField(
             min=0,
-            max=Constants.endowment,
+            max=C.ENDOWMENT,
             label="I will keep",
         )
 
@@ -59,7 +59,7 @@ Here is an example of an __init__.py in the "no self" format (with the dictator 
         player1 = group.get_player_by_id(1)
         player2 = group.get_player_by_id(2)
         player1.payoff = group.kept
-        player2.payoff = Constants.endowment - group.kept
+        player2.payoff = C.ENDOWMENT - group.kept
 
 
     # PAGES
@@ -84,7 +84,7 @@ Here is an example of an __init__.py in the "no self" format (with the dictator 
         def vars_for_template(player):
             group = player.group
 
-            return dict(payoff=player.payoff, offer=Constants.endowment - group.kept)
+            return dict(payoff=player.payoff, offer=C.ENDOWMENT - group.kept)
 
 
 So, what has changed?

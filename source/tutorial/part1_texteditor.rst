@@ -224,7 +224,7 @@ which is not part of my app, but rather an external package::
     File "/usr/local/lib/python3.5/site-packages/otree/pages/abstract.py" in resolve_vars_for_template
       212.         context.update(player.vars_for_template() or {})
     File "/Users/chris/oTree/public_goods/pages.py" in vars_for_template
-      108.             'total_payoff': player.player.payoff + Constants.fixed_pay}
+      108.             'total_payoff': player.player.payoff + C.FIXED_PAY}
     File "/usr/local/lib/python3.5/site-packages/easymoney.py" in <lambda>
       36.     return lambda player, other, context=None: player.__class__(method(player, _to_decimal(other)))
     File "/usr/local/lib/python3.5/site-packages/easymoney.py" in _to_decimal

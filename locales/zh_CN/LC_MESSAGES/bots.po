@@ -125,8 +125,8 @@ msgstr "轮次"
 #: ../../source/bots.rst:73
 msgid ""
 "Your bot code should just play 1 round at a time. oTree will "
-"automatically execute it ``num_rounds`` times."
-msgstr "你的bot代码应当每次仅模拟一轮。oTree会自动将其执行 ``num_rounds`` 次。"
+"automatically execute it ``NUM_ROUNDS`` times."
+msgstr "你的bot代码应当每次仅模拟一轮。oTree会自动将其执行 ``NUM_ROUNDS`` 次。"
 
 #: ../../source/bots.rst:79
 msgid "expect()"

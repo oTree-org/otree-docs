@@ -19,7 +19,7 @@ Don't make multiple copies of your app
 If possible, you should avoid copying an app's folder to make a slightly different version, because then you have
 duplicated code that is harder to maintain.
 
-If you need multiple rounds, set ``num_rounds``.
+If you need multiple rounds, set ``NUM_ROUNDS``.
 If you need slightly different versions (e.g. different treatments),
 then you should use the techniques described in :ref:`treatments`,
 such as making 2 session configs that have a different

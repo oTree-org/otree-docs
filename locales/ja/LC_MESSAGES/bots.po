@@ -127,9 +127,9 @@ msgstr "ラウンド"
 #: ../../source/bots.rst:73
 msgid ""
 "Your bot code should just play 1 round at a time. oTree will "
-"automatically execute it ``num_rounds`` times."
+"automatically execute it ``NUM_ROUNDS`` times."
 msgstr ""
-"ボットのコードは、一度に1ラウンドだけ実行するように記述します。oTreeはそのコードに書かれた動作を ``num_rounds`` "
+"ボットのコードは、一度に1ラウンドだけ実行するように記述します。oTreeはそのコードに書かれた動作を ``NUM_ROUNDS`` "
 "回自動的に実行します。"
 
 #: ../../source/bots.rst:79

@@ -84,7 +84,7 @@ players will be grouped in the order they arrive at that wait page:
     class MyWaitPage(WaitPage):
         group_by_arrival_time = True
 
-For example, if ``players_per_group = 2``, the first 2 players to arrive
+For example, if ``PLAYERS_PER_GROUP = 2``, the first 2 players to arrive
 at the wait page will be grouped together, then the next 2 players, and so on.
 
 This is useful in sessions where some participants

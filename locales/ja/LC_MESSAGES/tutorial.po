@@ -391,9 +391,9 @@ msgstr "アプリの定数に移動します。（詳細については、 :ref:
 
 #: ../../source/tutorial/part2.rst:31
 msgid ""
-"Set ``players_per_group`` to 3. oTree will then automatically divide "
+"Set ``PLAYERS_PER_GROUP`` to 3. oTree will then automatically divide "
 "players into groups of 3."
-msgstr "``players_per_group`` を3に設定します。oTreeはプレーヤーを自動的に3つのグループに分割します。"
+msgstr "``PLAYERS_PER_GROUP`` を3に設定します。oTreeはプレーヤーを自動的に3つのグループに分割します。"
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""

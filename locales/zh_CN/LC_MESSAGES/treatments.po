@@ -130,7 +130,7 @@ msgid ""
 "your session config. For example:"
 msgstr ""
 "举例来说，假定你有一个“num_apple”参数。通常的方法是将其定义在 "
-"``Constants`` 中，如 ``Constants.num_apples``。但是要使其可配置，你可以将"
+"``Constants`` 中，如 ``C.NUM_APPLES``。但是要使其可配置，你可以将"
 "其定义在你的session config中。例如："
 
 #: ../../source/treatments.rst:124

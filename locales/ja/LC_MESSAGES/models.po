@@ -133,9 +133,9 @@ msgstr ""
 #: ../../source/models.rst:77
 msgid ""
 "Gives the current round number. Only relevant if the app has multiple "
-"rounds (set in ``Constants.num_rounds``). See :ref:`rounds`."
+"rounds (set in ``C.NUM_ROUNDS``). See :ref:`rounds`."
 msgstr ""
-"現在のラウンド数を返します。アプリが複数のラウンドを持っている場合 (``Constants.num_rounds`` で設定) "
+"現在のラウンド数を返します。アプリが複数のラウンドを持っている場合 (``C.NUM_ROUNDS`` で設定) "
 "にのみ関係します。詳しくは :ref:`rounds` を参照してください。"
 
 #: ../../source/models.rst:84
@@ -333,18 +333,18 @@ msgid "Here are the built-in constants:"
 msgstr "組み込みの定数を以下に示します:"
 
 #: ../../source/models.rst:199
-msgid "``players_per_group`` (described in :ref:`groups`)"
-msgstr "``players_per_group`` (:ref:`groups` に詳細を記載)"
+msgid "``PLAYERS_PER_GROUP`` (described in :ref:`groups`)"
+msgstr "``PLAYERS_PER_GROUP`` (:ref:`groups` に詳細を記載)"
 
 #: ../../source/models.rst:200
-msgid "``num_rounds`` (described in :ref:`rounds`)"
-msgstr "``num_rounds`` (:ref:`rounds` に詳細を記載)"
+msgid "``NUM_ROUNDS`` (described in :ref:`rounds`)"
+msgstr "``NUM_ROUNDS`` (:ref:`rounds` に詳細を記載)"
 
 #: ../../source/models.rst:202
 msgid ""
 "if you don't want your app's real name to be displayed in URLs, define a "
-"string constant ``name_in_url`` with your desired name."
-msgstr "アプリの実名を URL に表示したくない場合は、文字列定数 ``name_in_url`` に任意の名前を定義します。"
+"string constant ``NAME_IN_URL`` with your desired name."
+msgstr "アプリの実名を URL に表示したくない場合は、文字列定数 ``NAME_IN_URL`` に任意の名前を定義します。"
 
 #: ../../source/models.rst:206
 msgid ""

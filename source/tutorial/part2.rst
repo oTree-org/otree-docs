@@ -28,7 +28,7 @@ Constants
 Go to your app's Constants.
 (For more info, see :ref:`constants`.)
 
--   Set ``players_per_group`` to 3.
+-   Set ``PLAYERS_PER_GROUP`` to 3.
     oTree will then automatically divide players into groups of 3.
 -   The endowment to each player is 1000 points. So, let's define
     ``endowment`` and set it to a currency value of ``1000``.
@@ -39,8 +39,8 @@ Now we have the following constants:
 
 .. code-block:: Python
 
-    players_per_group = 3
-    num_rounds = 1
+    PLAYERS_PER_GROUP = 3
+    NUM_ROUNDS = 1
     endowment = cu(1000)
     multiplier = 2
 
@@ -55,7 +55,7 @@ So, go to the Player model and define a ``contribution`` column:
     class Player(BasePlayer):
         contribution = models.CurrencyField(
             min=0,
-            max=Constants.endowment,
+            max=C.ENDOWMENT,
             label="How much will you contribute?"
         )
 
@@ -108,9 +108,9 @@ and the ``content`` block to:
 
     <p>
         This is a public goods game with
-        {{ Constants.players_per_group }} players per group,
-        an endowment of {{ Constants.endowment }},
-        and a multiplier of {{ Constants.multiplier }}.
+        {{ C.PLAYERS_PER_GROUP }} players per group,
+        an endowment of {{ C.ENDOWMENT }},
+        and a multiplier of {{ C.MULTIPLIER }}.
     </p>
 
     {{ formfields }}
@@ -131,9 +131,9 @@ Add a group function called ``set_payoffs``:
         players = group.get_players()
         contributions = [p.contribution for p in players]
         group.total_contribution = sum(contributions)
-        group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
+        group.individual_share = group.total_contribution * C.MULTIPLIER / C.PLAYERS_PER_GROUP
         for player in players:
-            player.payoff = Constants.endowment - player.contribution + group.individual_share
+            player.payoff = C.ENDOWMENT - player.contribution + group.individual_share
 
 After a player makes a
 contribution, they cannot see the results page right away; they first
@@ -159,7 +159,7 @@ Set the template's content to:
 .. code-block:: html
 
     <p>
-        You started with an endowment of {{ Constants.endowment }},
+        You started with an endowment of {{ C.ENDOWMENT }},
         of which you contributed {{ player.contribution }}.
         Your group contributed {{ group.total_contribution }},
         resulting in an individual share of {{ group.individual_share }}.
@@ -228,12 +228,12 @@ You can sprinkle lots of prints in your code
     contributions = [p.contribution for p in players]
     print('contributions:', contributions)
     group.total_contribution = sum(contributions)
-    group.individual_share = group.total_contribution * Constants.multiplier / Constants.players_per_group
+    group.individual_share = group.total_contribution * C.MULTIPLIER / C.PLAYERS_PER_GROUP
     print('individual share', group.individual_share)
     if group.individual_share > 100:
         print('inside if statement')
         for player in players:
-            player.payoff = Constants.endowment - p.contribution + group.individual_share
+            player.payoff = C.ENDOWMENT - p.contribution + group.individual_share
             print('payoff after', p.payoff)
 
 

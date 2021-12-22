@@ -85,10 +85,10 @@ msgid ""
 "oTree automatically passes the following objects to the template: "
 "``player``, ``group``, ``subsession``, ``participant``, ``session``, and "
 "``Constants``. You can access them in the template like this: ``{{ "
-"Constants.blah }}`` or ``{{ player.blah }}``."
+"C.BLAH }}`` or ``{{ player.blah }}``."
 msgstr ""
 "oTree は自動的に ``player``, ``group``, ``subsession``, ``participant``, ``session``, ``Constants`` をテンプレートに渡します。"
-"これらはテンプレート内で ``{{ Constants.blah }}`` や ``{{ player.blah }}`` のようにアクセスできます。"
+"これらはテンプレート内で ``{{ C.BLAH }}`` や ``{{ player.blah }}`` のようにアクセスできます。"
 
 #: ../../source/pages.rst:68
 msgid "If the user refreshes the page, ``vars_for_template`` gets re-executed."

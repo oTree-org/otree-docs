@@ -24,9 +24,9 @@ See :ref:`participant fields <vars>` and :ref:`session fields <session_vars>`.
 Rounds
 ======
 
-You can make a game run for multiple rounds by setting ``Constants.num_rounds``.
+You can make a game run for multiple rounds by setting ``C.NUM_ROUNDS``.
 For example, if your session config's ``app_sequence`` is ``['app1', 'app2']``,
-where ``app1`` has ``num_rounds = 3`` and ``app2`` has ``num_rounds = 1``,
+where ``app1`` has ``NUM_ROUNDS = 3`` and ``app2`` has ``NUM_ROUNDS = 1``,
 then your sessions will contain 4 subsessions.
 
 
@@ -139,7 +139,7 @@ Variable number of rounds
 
 If you want a variable number of rounds, consider using :ref:`live`.
 
-Alternatively, you can set ``num_rounds`` to some high number, and then in your app, conditionally hide the
+Alternatively, you can set ``NUM_ROUNDS`` to some high number, and then in your app, conditionally hide the
 ``{{ next_button }}`` element, so that the user cannot proceed to the next
 page, or use :ref:`app_after_this_page`. But note that having many rounds (e.g. more than 100)
 might cause performance problems, so test your app carefully.

@@ -76,7 +76,7 @@ round_number
 
 Gives the current round number.
 Only relevant if the app has multiple rounds
-(set in ``Constants.num_rounds``).
+(set in ``C.NUM_ROUNDS``).
 See :ref:`rounds`.
 
 
@@ -196,12 +196,12 @@ to player.
 
 Here are the built-in constants:
 
--  ``players_per_group`` (described in :ref:`groups`)
--  ``num_rounds`` (described in :ref:`rounds`)
+-  ``PLAYERS_PER_GROUP`` (described in :ref:`groups`)
+-  ``NUM_ROUNDS`` (described in :ref:`rounds`)
 
 if you don't want your app's real name
 to be displayed in URLs,
-define a string constant ``name_in_url`` with your desired name.
+define a string constant ``NAME_IN_URL`` with your desired name.
 
 Constants can be numbers, strings, booleans, lists, etc.
 But for more complex data types like dicts, lists of dicts, etc,

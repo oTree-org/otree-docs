@@ -187,9 +187,9 @@ msgstr "マルチプレイヤーゲームでは、プレイヤーをグループ
 #: ../../source/multiplayer/groups.rst:11
 msgid ""
 "To set the group size, go to your app's Constants and set "
-"``players_per_group``. For example, for a 2-player game, set "
-"``players_per_group = 2``."
-msgstr "グループサイズを設定するには、Constants の ``players_per_group`` を設定します。たとえば、2人用のゲームの場合、 ``players_per_group = 2`` を設定します。"
+"``PLAYERS_PER_GROUP``. For example, for a 2-player game, set "
+"``PLAYERS_PER_GROUP = 2``."
+msgstr "グループサイズを設定するには、Constants の ``PLAYERS_PER_GROUP`` を設定します。たとえば、2人用のゲームの場合、 ``PLAYERS_PER_GROUP = 2`` を設定します。"
 
 #: ../../source/multiplayer/groups.rst:15
 msgid ""
@@ -288,12 +288,12 @@ msgstr "固定マッチング"
 #: ../../source/multiplayer/groups.rst:106
 msgid ""
 "By default, in each round, players are split into groups of "
-"``Constants.players_per_group``. They are grouped sequentially -- for "
+"``C.PLAYERS_PER_GROUP``. They are grouped sequentially -- for "
 "example, if there are 2 players per group, then P1 and P2 would be "
 "grouped together, and so would P3 and P4, and so on. ``id_in_group`` is "
 "also assigned sequentially within each group."
 msgstr "デフォルトでは、各ラウンドで、"
-"プレーヤーは ``Constants.players_per_group`` 人で構成されたグループに分割されます。"
+"プレーヤーは ``C.PLAYERS_PER_GROUP`` 人で構成されたグループに分割されます。"
 "それらは順番にグループ化されます。"
 "たとえば、グループごとに2人のプレーヤーがいる場合、"
 "P1とP2は一緒にグループ化され、P3とP4も同様にグループ化されます。 "
@@ -302,8 +302,8 @@ msgstr "デフォルトでは、各ラウンドで、"
 #: ../../source/multiplayer/groups.rst:111
 msgid ""
 "This means that by default, the groups are the same in each round, and "
-"even between apps that have the same ``players_per_group``."
-msgstr "これは、デフォルトではグループは各ラウンドや、同じ ``players_per_group`` を持っているアプリ間でも同じであることを意味します。"
+"even between apps that have the same ``PLAYERS_PER_GROUP``."
+msgstr "これは、デフォルトではグループは各ラウンドや、同じ ``PLAYERS_PER_GROUP`` を持っているアプリ間でも同じであることを意味します。"
 
 #: ../../source/multiplayer/groups.rst:114
 msgid "If you want to rearrange groups, you can use the below techniques."
@@ -338,9 +338,9 @@ msgstr "これにより、プレイヤーはラウンドごとにランダムに
 
 #: ../../source/multiplayer/groups.rst:139
 msgid ""
-"For the following example, assume that ``players_per_group = 3``, and "
+"For the following example, assume that ``PLAYERS_PER_GROUP = 3``, and "
 "that there are 12 participants in the session:"
-msgstr "次の例では、セッションに12人の参加者がおり、 ``players_per_group = 3`` であると仮定します。"
+msgstr "次の例では、セッションに12人の参加者がおり、 ``PLAYERS_PER_GROUP = 3`` であると仮定します。"
 
 #: ../../source/multiplayer/groups.rst:167
 msgid "group_like_round()"
@@ -529,10 +529,10 @@ msgstr "WaitPageで ``group_by_arrival_time = True`` に設定すると、プレ
 
 #: ../../source/multiplayer/waitpages.rst:87
 msgid ""
-"For example, if ``players_per_group = 2``, the first 2 players to arrive "
+"For example, if ``PLAYERS_PER_GROUP = 2``, the first 2 players to arrive "
 "at the wait page will be grouped together, then the next 2 players, and "
 "so on."
-msgstr "たとえば、 ``players_per_group = 2`` の場合、待機ページに到着した最初の2人のプレーヤーがグループ化され、次に到着した2人のプレーヤーが別のグループに編成されます。"
+msgstr "たとえば、 ``PLAYERS_PER_GROUP = 2`` の場合、待機ページに到着した最初の2人のプレーヤーがグループ化され、次に到着した2人のプレーヤーが別のグループに編成されます。"
 
 #: ../../source/multiplayer/waitpages.rst:90
 msgid ""

@@ -63,7 +63,7 @@ Then in the template you can access ``a`` and ``b`` like this:
 
 oTree automatically passes the following objects to the template:
 ``player``, ``group``, ``subsession``, ``participant``, ``session``, and ``Constants``.
-You can access them in the template like this: ``{{ Constants.blah }}`` or ``{{ player.blah }}``.
+You can access them in the template like this: ``{{ C.BLAH }}`` or ``{{ player.blah }}``.
 
 If the user refreshes the page, ``vars_for_template`` gets re-executed.
 

@@ -918,13 +918,13 @@ msgstr "可能であれば、アプリのフォルダーをコピーしてわず
 
 #: ../../source/misc/tips_and_tricks.rst:22
 msgid ""
-"If you need multiple rounds, set ``num_rounds``. If you need slightly "
+"If you need multiple rounds, set ``NUM_ROUNDS``. If you need slightly "
 "different versions (e.g. different treatments), then you should use the "
 "techniques described in :ref:`treatments`, such as making 2 session "
 "configs that have a different ``'treatment'`` parameter, and then "
 "checking for ``session.config['treatment']`` in your app's code."
 msgstr ""
-"複数のラウンドを用意したいだけなら、 ``num_rounds`` "
+"複数のラウンドを用意したいだけなら、 ``NUM_ROUNDS`` "
 "を設定することで解決できますまた、わずかに異なるバージョン（たとえば、異なる処理）が必要な場合は、異なる ``'treatment'`` "
 "パラメーターを持つ2つのセッション構成を作成し、コード上で ``session.config['treatment']`` "
 "についてチェックするなど、 :ref:`treatments` で説明されている手法を使用する必要があります。"

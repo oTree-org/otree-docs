@@ -876,13 +876,13 @@ msgstr "你应当尽可能避免复制你的应用文件夹来创建一个有细
 
 #: ../../source/misc/tips_and_tricks.rst:22
 msgid ""
-"If you need multiple rounds, set ``num_rounds``. If you need slightly "
+"If you need multiple rounds, set ``NUM_ROUNDS``. If you need slightly "
 "different versions (e.g. different treatments), then you should use the "
 "techniques described in :ref:`treatments`, such as making 2 session "
 "configs that have a different ``'treatment'`` parameter, and then "
 "checking for ``session.config['treatment']`` in your app's code."
 msgstr ""
-"如果你需要多轮游戏，可通过设置 ``num_rounds`` 来实现。如果你需要略微不同的版本（例如不同的实验组），那么你应当使用 "
+"如果你需要多轮游戏，可通过设置 ``NUM_ROUNDS`` 来实现。如果你需要略微不同的版本（例如不同的实验组），那么你应当使用 "
 ":ref:`treatments` 中所描述的技巧，比如创建两个session config在其中设置不同的 ``'treatment'`` "
 "参数，并在你的代码中检查 ``session.config['treatment']`` 来进行区分。"
 

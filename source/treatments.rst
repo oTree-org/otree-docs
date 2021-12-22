@@ -104,7 +104,7 @@ so that you can adjust the game's parameters in the admin interface.
 
 For example, let's say you have a "num_apples" parameter.
 The usual approach would be to define it in ``Constants``,
-e.g. ``Constants.num_apples``.
+e.g. ``C.NUM_APPLES``.
 But to make it configurable, you can instead define it in your session config.
 For example:
 

@@ -186,11 +186,11 @@ msgstr ""
 
 #: ../../source/multiplayer/groups.rst:11
 msgid ""
-"To set the group size, go to your app's Constants and set ``players_per_group``. For "
-"example, for a 2-player game, set ``players_per_group = 2``."
+"To set the group size, go to your app's Constants and set ``PLAYERS_PER_GROUP``. For "
+"example, for a 2-player game, set ``PLAYERS_PER_GROUP = 2``."
 msgstr ""
-"要设置每组的人数，前往Constants并设置 ``players_per_group`` 变量即可。举例来说，对于2人游戏，"
-"设置 ``players_per_group = 2``。"
+"要设置每组的人数，前往Constants并设置 ``PLAYERS_PER_GROUP`` 变量即可。举例来说，对于2人游戏，"
+"设置 ``PLAYERS_PER_GROUP = 2``。"
 
 #: ../../source/multiplayer/groups.rst:15
 msgid ""
@@ -292,22 +292,22 @@ msgstr "固定配对"
 
 #: ../../source/multiplayer/groups.rst:106
 msgid ""
-"By default, in each round, players are split into groups of ``Constants.players_per_group``. "
+"By default, in each round, players are split into groups of ``C.PLAYERS_PER_GROUP``. "
 "They are grouped sequentially -- for example, if there are 2 players per group, then P1 and "
 "P2 would be grouped together, and so would P3 and P4, and so on. ``id_in_group`` is also "
 "assigned sequentially within each group."
 msgstr ""
-"默认情况下，每一轮中，玩家被分为数个小组，每组人数为 ``Constants.players_per_group``。分组是"
+"默认情况下，每一轮中，玩家被分为数个小组，每组人数为 ``C.PLAYERS_PER_GROUP``。分组是"
 "按照顺序进行的——举例来说，如果2人一组，那么玩家1与玩家2就会被分为一组，然后是玩家3与玩家4被分"
 "为一组，以此类推。 ``id_in_group`` 也在每组中被顺序分配。"
 
 #: ../../source/multiplayer/groups.rst:111
 msgid ""
 "This means that by default, the groups are the same in each round, and even between apps "
-"that have the same ``players_per_group``."
+"that have the same ``PLAYERS_PER_GROUP``."
 msgstr ""
 "这意味着默认情况下，每一轮中分组是相同的，甚至在不同应用之间均有相同的 "
-"``players_per_group``。"
+"``PLAYERS_PER_GROUP``。"
 
 #: ../../source/multiplayer/groups.rst:114
 msgid "If you want to rearrange groups, you can use the below techniques."
@@ -343,9 +343,9 @@ msgstr "下面的代码让玩家在每一轮之间随机组队，但是保持 ``
 
 #: ../../source/multiplayer/groups.rst:139
 msgid ""
-"For the following example, assume that ``players_per_group = 3``, and that there are 12 "
+"For the following example, assume that ``PLAYERS_PER_GROUP = 3``, and that there are 12 "
 "participants in the session:"
-msgstr "下面的例子中，假定 ``players_per_group = 3``，并且会话中共有12名参与者："
+msgstr "下面的例子中，假定 ``PLAYERS_PER_GROUP = 3``，并且会话中共有12名参与者："
 
 #: ../../source/multiplayer/groups.rst:167
 msgid "group_like_round()"
@@ -546,10 +546,10 @@ msgstr ""
 
 #: ../../source/multiplayer/waitpages.rst:87
 msgid ""
-"For example, if ``players_per_group = 2``, the first 2 players to arrive at the wait page "
+"For example, if ``PLAYERS_PER_GROUP = 2``, the first 2 players to arrive at the wait page "
 "will be grouped together, then the next 2 players, and so on."
 msgstr ""
-"举例来说，假设 ``players_per_group = 2``,那么首先到达等待页面的2位玩家将会被分为一组，然后接"
+"举例来说，假设 ``PLAYERS_PER_GROUP = 2``,那么首先到达等待页面的2位玩家将会被分为一组，然后接"
 "下来2名玩家一组，以此类推。"
 
 #: ../../source/multiplayer/waitpages.rst:90

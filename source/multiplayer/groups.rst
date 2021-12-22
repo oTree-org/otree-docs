@@ -9,8 +9,8 @@ where players don't actually interact with each other,
 then see :ref:`treatments`.)
 
 To set the group size, go to your app's Constants and set
-``players_per_group``. For example, for a 2-player game,
-set ``players_per_group = 2``.
+``PLAYERS_PER_GROUP``. For example, for a 2-player game,
+set ``PLAYERS_PER_GROUP = 2``.
 
 If all players should be in the same group,
 or if it's a single-player game, set it to ``None``:
@@ -67,7 +67,7 @@ You can use this to show each role different content, e.g.:
 
         @staticmethod
         def is_displayed(player):
-            return player.role == Constants.agent_role
+            return player.role == C.AGENT_ROLE
 
 In a template:
 
@@ -80,8 +80,8 @@ You can also use ``group.get_player_by_role()``, which is similar to ``get_playe
 .. code-block:: python
 
     def set_payoffs(group):
-        principal = group.get_player_by_role(Constants.principal_role)
-        agent = group.get_player_by_role(Constants.agent_role)
+        principal = group.get_player_by_role(C.PRINCIPAL_ROLE)
+        agent = group.get_player_by_role(C.AGENT_ROLE)
         # ...
 
 If you want to switch players' roles,
@@ -98,13 +98,13 @@ Group matching
 Fixed matching
 ~~~~~~~~~~~~~~
 
-By default, in each round, players are split into groups of ``Constants.players_per_group``.
+By default, in each round, players are split into groups of ``C.PLAYERS_PER_GROUP``.
 They are grouped sequentially -- for example, if there are 2 players per group,
 then P1 and P2 would be grouped together, and so would P3 and P4, and so on.
 ``id_in_group`` is also assigned sequentially within each group.
 
 This means that by default, the groups are the same in each round,
-and even between apps that have the same ``players_per_group``.
+and even between apps that have the same ``PLAYERS_PER_GROUP``.
 
 If you want to rearrange groups, you can use the below techniques.
 
@@ -131,7 +131,7 @@ This will group players randomly each round, but keep ``id_in_group`` fixed:
     def creating_session(subsession):
         subsession.group_randomly(fixed_id_in_group=True)
 
-For the following example, assume that ``players_per_group = 3``, and that there are 12 participants in the session:
+For the following example, assume that ``PLAYERS_PER_GROUP = 3``, and that there are 12 participants in the session:
 
 .. code-block:: python
 
