@@ -8,8 +8,8 @@ You can divide players into groups for multiplayer games.
 where players don't actually interact with each other,
 then see :ref:`treatments`.)
 
-To set the group size, go to your app's Constants and set
-``PLAYERS_PER_GROUP``. For example, for a 2-player game,
+To set the group size, set
+``C.PLAYERS_PER_GROUP``. For example, for a 2-player game,
 set ``PLAYERS_PER_GROUP = 2``.
 
 If all players should be in the same group,
@@ -47,7 +47,7 @@ Roles
 -----
 
 If each group has multiple roles, such as buyer/seller, principal/agent, etc.,
-you can define them in Constants. Make their names end with ``_ROLE``:
+you can define them in constants. Make their names end with ``_ROLE``:
 
 .. code-block:: python
 

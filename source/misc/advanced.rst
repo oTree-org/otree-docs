@@ -190,24 +190,3 @@ You can change the number of decimal places in real world currency amounts
 with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``.
 If the extra decimal places show up but are always 0,
 then you should reset the database.
-
-Reading CSV or other files
---------------------------
-
-Store yourfile.csv in your app folder.
-Then put this code anywhere you want to read the file
-(in a function or in Constants):
-
-.. code-block:: python
-
-    import csv
-    with open('yourapp/yourfile.csv', encoding='utf-8') as file:
-        rows = list(csv.DictReader(file))
-
-If it's not CSV and you just want to read the file contents as a string,
-this gets simplified to:
-
-.. code-block:: python
-
-    with open('yourapp/yourfile.txt', encoding='utf-8') as file:
-        txt = file.read()

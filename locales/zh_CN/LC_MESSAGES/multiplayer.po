@@ -186,7 +186,7 @@ msgstr ""
 
 #: ../../source/multiplayer/groups.rst:11
 msgid ""
-"To set the group size, go to your app's Constants and set ``PLAYERS_PER_GROUP``. For "
+"To set the group size, set ``C.PLAYERS_PER_GROUP``. For "
 "example, for a 2-player game, set ``PLAYERS_PER_GROUP = 2``."
 msgstr ""
 "要设置每组的人数，前往Constants并设置 ``PLAYERS_PER_GROUP`` 变量即可。举例来说，对于2人游戏，"
@@ -252,7 +252,7 @@ msgstr "在2021年1月新引入"
 #: ../../source/multiplayer/groups.rst:53
 msgid ""
 "If each group has multiple roles, such as buyer/seller, principal/agent, etc., you can "
-"define them in Constants. Make their names end with ``_ROLE``:"
+"define them in constants. Make their names end with ``_ROLE``:"
 msgstr ""
 "如果每一组中均有多种角色，如买家/卖家，委托人/代理人，诸如此类，你可以将它们定义在常量中。变"
 "量名以 ``_ROLE`` 结尾："

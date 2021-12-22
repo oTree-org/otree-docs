@@ -386,7 +386,7 @@ msgid "Constants"
 msgstr "定数"
 
 #: ../../source/tutorial/part2.rst:28
-msgid "Go to your app's Constants. (For more info, see :ref:`constants`.)"
+msgid "Go to your app's constants class (``C``). (For more info, see :ref:`constants`.)"
 msgstr "アプリの定数に移動します。（詳細については、 :ref:`constants` を参照してください。）"
 
 #: ../../source/tutorial/part2.rst:31
@@ -653,7 +653,7 @@ msgid ""
 msgstr "チュートリアルの前の部分と同じように、 ``my_trust`` と呼ばれる別のアプリを作成します。"
 
 #: ../../source/tutorial/part3.rst:23
-msgid "Go to your app's Constants."
+msgid "Go to your app's constants class (``C``)."
 msgstr "アプリのConstantsに移動します。"
 
 #: ../../source/tutorial/part3.rst:25

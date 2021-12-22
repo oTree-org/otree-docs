@@ -25,15 +25,15 @@ Just as in the previous part of the tutorial, create another app, called ``my_pu
 Constants
 ---------
 
-Go to your app's Constants.
+Go to your app's constants class (``C``).
 (For more info, see :ref:`constants`.)
 
 -   Set ``PLAYERS_PER_GROUP`` to 3.
     oTree will then automatically divide players into groups of 3.
 -   The endowment to each player is 1000 points. So, let's define
-    ``endowment`` and set it to a currency value of ``1000``.
+    ``ENDOWMENT`` and set it to a currency value of ``1000``.
 -   Each contribution is multiplied by 2. So define an integer
-    constant called ``multiplier = 2``:
+    constant called ``MULTIPLIER = 2``:
 
 Now we have the following constants:
 
@@ -41,8 +41,8 @@ Now we have the following constants:
 
     PLAYERS_PER_GROUP = 3
     NUM_ROUNDS = 1
-    endowment = cu(1000)
-    multiplier = 2
+    ENDOWMENT = cu(1000)
+    MULTIPLIER = 2
 
 
 After the game is played,

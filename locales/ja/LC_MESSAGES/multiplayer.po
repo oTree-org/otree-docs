@@ -186,8 +186,8 @@ msgstr "マルチプレイヤーゲームでは、プレイヤーをグループ
 
 #: ../../source/multiplayer/groups.rst:11
 msgid ""
-"To set the group size, go to your app's Constants and set "
-"``PLAYERS_PER_GROUP``. For example, for a 2-player game, set "
+"To set the group size, set "
+"``C.PLAYERS_PER_GROUP``. For example, for a 2-player game, set "
 "``PLAYERS_PER_GROUP = 2``."
 msgstr "グループサイズを設定するには、Constants の ``PLAYERS_PER_GROUP`` を設定します。たとえば、2人用のゲームの場合、 ``PLAYERS_PER_GROUP = 2`` を設定します。"
 
@@ -250,7 +250,7 @@ msgstr "2021年1月現在の新要素"
 #: ../../source/multiplayer/groups.rst:53
 msgid ""
 "If each group has multiple roles, such as buyer/seller, principal/agent, "
-"etc., you can define them in Constants. Make their names end with "
+"etc., you can define them in constants. Make their names end with "
 "``_ROLE``:"
 msgstr "各グループに購入者/販売者、プリンシパル/エージェントなどの複数の役割がある場合は、定数でそれらを定義できます。名前を ``_ROLE`` で終わらせます："
 

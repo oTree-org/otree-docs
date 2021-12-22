@@ -20,7 +20,7 @@ Just as in the previous part of the tutorial, create another app, called ``my_tr
 Constants
 ---------
 
-Go to your app's Constants.
+Go to your app's constants class (``C``).
 
 First we define our app's constants. The endowment is 10 points and the
 donation gets tripled.

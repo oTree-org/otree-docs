@@ -381,7 +381,7 @@ msgid "Constants"
 msgstr "常量"
 
 #: ../../source/tutorial/part2.rst:28
-msgid "Go to your app's Constants. (For more info, see :ref:`constants`.)"
+msgid "Go to your app's constants class (``C``). (For more info, see :ref:`constants`.)"
 msgstr "设置本应用的常量（查看 :ref:`constants` 可获得更多信息）。"
 
 #: ../../source/tutorial/part2.rst:31
@@ -645,7 +645,7 @@ msgid ""
 msgstr "正如教程的前一部分，创建另一个应用，命名为 ``my_trust``。"
 
 #: ../../source/tutorial/part3.rst:23
-msgid "Go to your app's Constants."
+msgid "Go to your app's constants class (``C``)."
 msgstr "转到本应用的常量。"
 
 #: ../../source/tutorial/part3.rst:25
