@@ -84,10 +84,10 @@ msgstr "このとき、テンプレートでは次のように ``a`` と ``b`` �
 msgid ""
 "oTree automatically passes the following objects to the template: "
 "``player``, ``group``, ``subsession``, ``participant``, ``session``, and "
-"``Constants``. You can access them in the template like this: ``{{ "
+"``C``. You can access them in the template like this: ``{{ "
 "C.BLAH }}`` or ``{{ player.blah }}``."
 msgstr ""
-"oTree は自動的に ``player``, ``group``, ``subsession``, ``participant``, ``session``, ``Constants`` をテンプレートに渡します。"
+"oTree は自動的に ``player``, ``group``, ``subsession``, ``participant``, ``session``, ``C`` をテンプレートに渡します。"
 "これらはテンプレート内で ``{{ C.BLAH }}`` や ``{{ player.blah }}`` のようにアクセスできます。"
 
 #: ../../source/pages.rst:68

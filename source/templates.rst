@@ -22,7 +22,7 @@ The following variables are available in templates:
 -   ``subsession``: the subsession the current player belongs to
 -   ``participant``: the participant the current player belongs to
 -   ``session``: the current session
--   ``Constants``
+-   ``C``
 -   Any variables you passed with :ref:`vars_for_template`.
 
 Conditions ("if")

@@ -190,7 +190,7 @@ Other participant attributes and methods
 Constants
 ---------
 
-``Constants`` is the recommended place to put your app's
+``C`` is the recommended place to put your app's
 parameters and constants that do not vary from player
 to player.
 

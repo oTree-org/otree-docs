@@ -220,9 +220,9 @@ msgstr "注意："
 
 #: ../../source/admin.rst:141
 msgid ""
-"``subsession``, ``session``, and ``Constants`` are passed to the template"
+"``subsession``, ``session``, and ``C`` are passed to the template"
 " automatically."
-msgstr "``subsession``，``session`` 与 ``Constants`` 会被自动传递给模板。"
+msgstr "``subsession``，``session`` 与 ``C`` 会被自动传递给模板。"
 
 # "extends doesn't exist anymore"
 #: ../../source/admin.rst:143

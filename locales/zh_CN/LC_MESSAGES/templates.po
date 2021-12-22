@@ -59,8 +59,8 @@ msgid "``session``: the current session"
 msgstr "``session``: 当前会话"
 
 #: ../../source/templates.rst:25
-msgid "``Constants``"
-msgstr "``Constants``"
+msgid "``C``"
+msgstr "``C``"
 
 #: ../../source/templates.rst:26
 msgid "Any variables you passed with :ref:`vars_for_template`."

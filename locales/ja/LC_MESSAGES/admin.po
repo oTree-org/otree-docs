@@ -252,9 +252,9 @@ msgstr "注意"
 
 #: ../../source/admin.rst:141
 msgid ""
-"``subsession``, ``session``, and ``Constants`` are passed to the "
+"``subsession``, ``session``, and ``C`` are passed to the "
 "template automatically."
-msgstr "``subsession`` 、 ``session`` 、 ``Constants`` は自動的にテンプレートに渡されます。"
+msgstr "``subsession`` 、 ``session`` 、 ``C`` は自動的にテンプレートに渡されます。"
 
 #: ../../source/admin.rst:143
 msgid ""

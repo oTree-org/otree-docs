@@ -324,9 +324,9 @@ msgstr ""
 
 #: ../../source/models.rst:193
 msgid ""
-"``Constants`` is the recommended place to put your app's parameters and "
+"``C`` is the recommended place to put your app's parameters and "
 "constants that do not vary from player to player."
-msgstr "``Constants`` は、アプリのパラメータやプレーヤーごとに変化することがない定数を定義するために推奨される場所です。"
+msgstr "``C`` は、アプリのパラメータやプレーヤーごとに変化することがない定数を定義するために推奨される場所です。"
 
 #: ../../source/models.rst:197
 msgid "Here are the built-in constants:"

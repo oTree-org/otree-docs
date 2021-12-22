@@ -138,7 +138,7 @@ in your app, and display whatever variables were passed in ``vars_for_admin_repo
 
 Notes:
 
--   ``subsession``, ``session``, and ``Constants`` are passed to the template
+-   ``subsession``, ``session``, and ``C`` are passed to the template
     automatically.
 -   ``admin_report.html`` does not need to use ``{{ block }}``.
     The above example is valid as the full contents of ``admin_report.html``.

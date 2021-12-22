@@ -125,12 +125,12 @@ msgstr "你可以使你的会话可配置，这样你就可以在管理员界面
 #: ../../source/treatments.rst:108
 msgid ""
 "For example, let's say you have a \"num_apples\" parameter. The usual "
-"approach would be to define it in ``Constants``, e.g. ``Constants."
+"approach would be to define it in ``C``, e.g. ``Constants."
 "num_apples``. But to make it configurable, you can instead define it in "
 "your session config. For example:"
 msgstr ""
 "举例来说，假定你有一个“num_apple”参数。通常的方法是将其定义在 "
-"``Constants`` 中，如 ``C.NUM_APPLES``。但是要使其可配置，你可以将"
+"``C`` 中，如 ``C.NUM_APPLES``。但是要使其可配置，你可以将"
 "其定义在你的session config中。例如："
 
 #: ../../source/treatments.rst:124

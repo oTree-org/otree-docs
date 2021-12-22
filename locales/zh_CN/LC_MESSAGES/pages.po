@@ -85,11 +85,11 @@ msgstr "在模板中你就可以像下面这样访问 ``a`` 与 ``b`` ："
 msgid ""
 "oTree automatically passes the following objects to the template: "
 "``player``, ``group``, ``subsession``, ``participant``, ``session``, and "
-"``Constants``. You can access them in the template like this: ``{{ Constants."
+"``C``. You can access them in the template like this: ``{{ Constants."
 "blah }}`` or ``{{ player.blah }}``."
 msgstr ""
 "oTree自动将下面的对象传递给模板： ``player``，``group``，``subsession``，"
-"``participant``，``session`` 与 ``Constants``。你可以像这样： ``{{ Constants."
+"``participant``，``session`` 与 ``C``。你可以像这样： ``{{ Constants."
 "blah }}`` 或 ``{{ player.blah }}`` 在模板中访问它们。"
 
 #: ../../source/pages.rst:68

@@ -58,7 +58,7 @@ msgid "``session``: the current session"
 msgstr "``session``: 現在のセッション"
 
 #: ../../source/templates.rst:25
-msgid "``Constants``"
+msgid "``C``"
 msgstr ""
 
 #: ../../source/templates.rst:26

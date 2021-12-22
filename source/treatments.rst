@@ -103,7 +103,7 @@ so that you can adjust the game's parameters in the admin interface.
     :align: center
 
 For example, let's say you have a "num_apples" parameter.
-The usual approach would be to define it in ``Constants``,
+The usual approach would be to define it in ``C``,
 e.g. ``C.NUM_APPLES``.
 But to make it configurable, you can instead define it in your session config.
 For example:
