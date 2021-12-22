@@ -47,15 +47,15 @@ Roles
 -----
 
 If each group has multiple roles, such as buyer/seller, principal/agent, etc.,
-you can define them in Constants. Make their names end with ``_role``:
+you can define them in Constants. Make their names end with ``_ROLE``:
 
 .. code-block:: python
 
-    class Constants(BaseConstants):
+    class C(BaseConstants):
         ...
 
-        principal_role = 'Principal'
-        agent_role = 'Agent
+        PRINCIPAL_ROLE = 'Principal'
+        AGENT_ROLE = 'Agent
 
 oTree will then automatically assign each ``role`` to a different player
 (sequentially according to ``id_in_group``).

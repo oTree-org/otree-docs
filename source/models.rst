@@ -226,8 +226,8 @@ For example, don't do this:
 
 .. code-block:: python
 
-    class Constants(BaseConstants):
-        p = random.randint(1, 10) # wrong
+    class C(BaseConstants):
+        P = random.randint(1, 10) # wrong
 
 If it changes randomly, it isn't a constant.
 

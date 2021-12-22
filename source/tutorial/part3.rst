@@ -28,13 +28,13 @@ donation gets tripled.
 
 .. code-block:: python
 
-    class Constants(BaseConstants):
+    class C(BaseConstants):
         NAME_IN_URL = 'my_trust'
         PLAYERS_PER_GROUP = 2
         NUM_ROUNDS = 1
 
-        endowment = cu(10)
-        multiplication_factor = 3
+        ENDOWMENT = cu(10)
+        MULTIPLICATION_FACTOR = 3
 
 Models
 ------

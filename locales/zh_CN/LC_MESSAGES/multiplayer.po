@@ -252,10 +252,10 @@ msgstr "在2021年1月新引入"
 #: ../../source/multiplayer/groups.rst:53
 msgid ""
 "If each group has multiple roles, such as buyer/seller, principal/agent, etc., you can "
-"define them in Constants. Make their names end with ``_role``:"
+"define them in Constants. Make their names end with ``_ROLE``:"
 msgstr ""
 "如果每一组中均有多种角色，如买家/卖家，委托人/代理人，诸如此类，你可以将它们定义在常量中。变"
-"量名以 ``_role`` 结尾："
+"量名以 ``_ROLE`` 结尾："
 
 #: ../../source/multiplayer/groups.rst:64
 msgid ""

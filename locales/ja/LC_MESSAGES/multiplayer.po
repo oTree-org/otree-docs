@@ -251,8 +251,8 @@ msgstr "2021年1月現在の新要素"
 msgid ""
 "If each group has multiple roles, such as buyer/seller, principal/agent, "
 "etc., you can define them in Constants. Make their names end with "
-"``_role``:"
-msgstr "各グループに購入者/販売者、プリンシパル/エージェントなどの複数の役割がある場合は、定数でそれらを定義できます。名前を ``_role`` で終わらせます："
+"``_ROLE``:"
+msgstr "各グループに購入者/販売者、プリンシパル/エージェントなどの複数の役割がある場合は、定数でそれらを定義できます。名前を ``_ROLE`` で終わらせます："
 
 #: ../../source/multiplayer/groups.rst:64
 msgid ""
