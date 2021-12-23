@@ -3,7 +3,7 @@
 The new no-self format
 ======================
 
-As of Jan 2021, there is a new optional format for oTree apps.
+Since 2021, there has been a new optional format for oTree apps.
 It replaces ``models.py`` and ``pages.py`` with a single ``__init__.py``.
 
 The new format unifies oTree's syntax.
@@ -20,10 +20,7 @@ and get access to the newest features.
 
 .. note::
 
-    I have set up a live chat on
-    `Discord <https://discord.gg/ugKU2teKjZ>`__ to assist people
-    upgrading from the self format to the no-self format.
-
+    In January 2022, constants changed format also. See :ref:`newconstants`
 
 About the new format
 --------------------

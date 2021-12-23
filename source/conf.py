@@ -42,6 +42,7 @@ if 'gettext' in sys.argv:
     exclude_patterns = [
         'misc/otreelite.rst',
         'misc/noself.rst',
+        'misc/newconstants.rst',
         'misc/version_history.rst',
         'misc/internationalization.rst',
         'misc/django.rst',
