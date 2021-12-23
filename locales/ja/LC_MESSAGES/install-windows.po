@@ -50,13 +50,11 @@ msgid "Step 1: Install Python"
 msgstr "ステップ1: Pythonのインストール"
 
 #: ../../source/install-windows.rst:23
-#, fuzzy
 msgid ""
 "Download and install `Python "
 "<https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe>`__."
 msgstr ""
-"`Python "
-"<https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__をダウンロードし、インストールしてください。"
+"`Python <https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe>`__ をダウンロードし、インストールしてください。"
 
 #: ../../source/install-windows.rst:25
 msgid "Check the box to add Python to PATH:"

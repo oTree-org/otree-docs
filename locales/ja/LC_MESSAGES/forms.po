@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,80 +112,79 @@ msgid ""
 "like this:"
 msgstr "次のようにすることで、人間にとって読みやすい形でユーザの選択を取得することができます。"
 
-#: ../../source/forms.rst:115
-#, fuzzy
+#: ../../source/forms.rst:116
 msgid "``field_display`` is new in oTree 5.4 (August 2021)."
-msgstr "``get_field_display`` はoTree 5 (2021年3月) からの新機能です。"
+msgstr "``field_display`` はoTree 5 (2021年3月) からの新機能です。"
 
-#: ../../source/forms.rst:118
+#: ../../source/forms.rst:119
 msgid "Optional fields"
 msgstr "任意の入力フォーム"
 
-#: ../../source/forms.rst:120
+#: ../../source/forms.rst:121
 msgid "If a field is optional, you can use ``blank=True`` like this:"
 msgstr "フォームへの入力が任意である場合、 ``blank=True`` を下記のように使います。："
 
-#: ../../source/forms.rst:129
+#: ../../source/forms.rst:130
 msgid "Dynamic form field validation"
 msgstr "動的なフォームの検証"
 
-#: ../../source/forms.rst:131
+#: ../../source/forms.rst:132
 msgid ""
 "The ``min``, ``max``, and ``choices`` described above are only for fixed "
 "(constant) values."
 msgstr "``min``　、 ``max`` 、 ``choices`` は固定値限定です。"
 
-#: ../../source/forms.rst:134
+#: ../../source/forms.rst:135
 msgid ""
 "If you want them to be determined dynamically (e.g. different from player"
 " to player), then you can instead define one of the below functions."
 msgstr "動的に検証したい場合（例えば、プレイヤーごとに入力できる値の範囲が異なる）は、代わりに下記の関数を定義してください。"
 
-#: ../../source/forms.rst:141
+#: ../../source/forms.rst:142
 msgid "{field_name}_choices()"
 msgstr "{field_name}_choices()"
 
-#: ../../source/forms.rst:143
+#: ../../source/forms.rst:144
 msgid ""
 "Like setting ``choices=``, this will set the choices for the form field "
 "(e.g. the dropdown menu or radio buttons)."
 msgstr "``choices=`` で設定することで、フォームの選択肢を設定できます。"
 
-#: ../../source/forms.rst:147
+#: ../../source/forms.rst:148
 msgid "Example:"
 msgstr "例："
 
-#: ../../source/forms.rst:164
+#: ../../source/forms.rst:165
 msgid "{field_name}_max()"
 msgstr "{field_name}_max()"
 
-#: ../../source/forms.rst:166
+#: ../../source/forms.rst:167
 msgid ""
 "The dynamic alternative to setting ``max=`` in the model field. For "
 "example:"
 msgstr "``max=`` を動的に設定したい場合の手段として用いることができます。例："
 
-#: ../../source/forms.rst:179
+#: ../../source/forms.rst:180
 msgid "{field_name}_min()"
 msgstr "{field_name}_min()"
 
-#: ../../source/forms.rst:181
+#: ../../source/forms.rst:182
 msgid "The dynamic alternative to setting ``min=`` on the model field."
 msgstr "``min=`` を動的に設定したい場合の手段として用いることができます。"
 
-#: ../../source/forms.rst:186
+#: ../../source/forms.rst:187
 msgid "{field_name}_error_message()"
 msgstr "{field_name}_error_message()"
 
-#: ../../source/forms.rst:188
+#: ../../source/forms.rst:189
 msgid "This is the most flexible method for validating a field."
 msgstr "これは最も柔軟にフォームの検証ができる方法です。"
 
-#: ../../source/forms.rst:205
+#: ../../source/forms.rst:206
 msgid "Validating multiple fields together"
 msgstr "複数フォームの検証"
 
-#: ../../source/forms.rst:207
+#: ../../source/forms.rst:208
 msgid ""
 "Let's say your form has 3 number fields whose values must sum to 100. You"
 " can enforce this with the ``error_message`` function, which goes on the "
@@ -194,21 +193,21 @@ msgstr ""
 "3つの数値を入力するフォームがあり、その値の合計が100にならなければならないとします。その場合、ページクラスに "
 "``error_message`` 関数を下記のように設定することで検証できます。"
 
-#: ../../source/forms.rst:223
+#: ../../source/forms.rst:224
 msgid "Notes:"
 msgstr "注意"
 
-#: ../../source/forms.rst:225
+#: ../../source/forms.rst:226
 msgid ""
 "If a field was left blank (and you set ``blank=True``), its value here "
 "will be ``None``."
 msgstr "フォームが空欄でもよい場合（``blank=True`` に設定した場合）、値は ``None`` となります。"
 
-#: ../../source/forms.rst:226
+#: ../../source/forms.rst:227
 msgid "This function is only executed if there are no other errors in the form."
 msgstr "この関数はフォームに他のエラーがない場合にのみ実行されます。"
 
-#: ../../source/forms.rst:227
+#: ../../source/forms.rst:228
 msgid ""
 "You can also return a dict that maps field names to error messages. This "
 "way, you don't need to write many repetitive FIELD_error_message methods "
@@ -217,11 +216,11 @@ msgstr ""
 "エラーメッセージにフィールドをマップすることもでき、FIELD_error_message methods メソッドを :ref:`このように "
 "<duplicate_validation_methods>` 繰り返す必要がありません。"
 
-#: ../../source/forms.rst:234
+#: ../../source/forms.rst:235
 msgid "Determining form fields dynamically"
 msgstr "動的なフォームフィールドの決定"
 
-#: ../../source/forms.rst:236
+#: ../../source/forms.rst:237
 msgid ""
 "If you need the list of form fields to be dynamic, instead of "
 "``form_fields`` you can define a function ``get_form_fields``:"
@@ -229,11 +228,11 @@ msgstr ""
 "動的なフォームフィールドのリストが必要な時、 ``form_fields`` の代わりに ``get_form_fields`` "
 "関数を定義できます。"
 
-#: ../../source/forms.rst:250
+#: ../../source/forms.rst:251
 msgid "Widgets"
 msgstr "Widgets"
 
-#: ../../source/forms.rst:252
+#: ../../source/forms.rst:253
 msgid ""
 "You can set a model field's ``widget`` to ``RadioSelect`` or "
 "``RadioSelectHorizontal`` if you want choices to be displayed with radio "
@@ -242,11 +241,11 @@ msgstr ""
 "ドロップダウンメニューの代わりに、ラジオボタンを使いたい場合は、modelの ``widget`` を ``RadioSelect`` または "
 "``RadioSelectHorizontal`` に設定して下さい。"
 
-#: ../../source/forms.rst:257
+#: ../../source/forms.rst:258
 msgid "{{ formfield }}"
 msgstr "{{ formfield }}"
 
-#: ../../source/forms.rst:259
+#: ../../source/forms.rst:260
 msgid ""
 "If you want to position the fields individually, instead of ``{{ "
 "formfields }}`` you can use ``{{ formfield }}``:"
@@ -254,20 +253,20 @@ msgstr ""
 "フォームを個別に配置したい場合は、 ``{{ formfields }}`` の代わりに、 ``{{ formfield }}`` "
 "を使うことができます。："
 
-#: ../../source/forms.rst:267
+#: ../../source/forms.rst:268
 msgid "You can also put the ``label`` in directly in the template:"
 msgstr "テンプレート内で直接 ``label`` を配置することもできます。"
 
-#: ../../source/forms.rst:275
+#: ../../source/forms.rst:274
 #, python-format
 msgid "The previous syntax of ``{% formfield player.bid %}`` is still supported."
 msgstr "過去のバージョンでの構文 ``{% formfield player.bid %}`` は引き続きサポートされます。"
 
-#: ../../source/forms.rst:280
+#: ../../source/forms.rst:279
 msgid "Customizing a field's appearance"
 msgstr "フォームの外観のカスタマイズ"
 
-#: ../../source/forms.rst:282
+#: ../../source/forms.rst:281
 msgid ""
 "``{{ formfields }}`` and ``{{ formfield }}`` are easy to use because they"
 " automatically output all necessary parts of a form field (the input, the"
@@ -276,7 +275,7 @@ msgstr ""
 "自動的にフォームフィールドに必要なすべてのパーツ（入力、ラベル、エラーメッセージ）を出力できるので、 ``{{ formfields }}`` と"
 " ``{{ formfield }}`` が使いやすいです。"
 
-#: ../../source/forms.rst:286
+#: ../../source/forms.rst:285
 msgid ""
 "However, if you want more control over the appearance and layout, you can"
 " use manual field rendering. Instead of ``{{ formfield 'my_field' }}``, "
@@ -287,47 +286,51 @@ msgstr ""
 "}}`` の代わりに、 ``{{ form.my_field }}`` を実行することで、入力要素のみを取得することができます。また、 ``{{ "
 "formfield_errors 'my_field' }}`` を含むことも忘れないでください。"
 
-#: ../../source/forms.rst:295
+#: ../../source/forms.rst:291
+msgid "Example: Radio buttons arranged like a slider"
+msgstr ""
+
+#: ../../source/forms.rst:315
 msgid "Example: Radio buttons in tables and other custom layouts"
 msgstr "例：表やそのほかのカスタムレイアウト中のラジオボタン"
 
-#: ../../source/forms.rst:297
+#: ../../source/forms.rst:317
 msgid "Let's say you have a set of ``IntegerField`` in your model:"
 msgstr "model 内に ``IntegerField`` のセットがあるとする。"
 
-#: ../../source/forms.rst:308
+#: ../../source/forms.rst:328
 msgid ""
 "And you'd like to present them as a likert scale, where each option is in"
 " a separate column."
 msgstr "各選択肢が別々の列にある、リッカート尺度としてそれらを提示します。"
 
-#: ../../source/forms.rst:311
+#: ../../source/forms.rst:331
 msgid ""
 "(First, try to reduce the code duplication in your model by following the"
 " instructions in :ref:`many-fields`.)"
 msgstr "（まず、 :ref:`多くのフィールドの作成方法  <many-fields>` の手順に従い、model内のコードの重複を減らしてください。）"
 
-#: ../../source/forms.rst:314
+#: ../../source/forms.rst:334
 msgid ""
 "Because the options must be in separate table cells, the ordinary "
 "``RadioSelectHorizontal`` widget will not work here."
 msgstr "選択肢は表のセルで区切られており、通常の ``RadioSelectHorizontal`` は機能しません。"
 
-#: ../../source/forms.rst:317
+#: ../../source/forms.rst:337
 msgid "Instead, you should simply loop over the choices in the field as follows:"
 msgstr "代わりに、次のようにフィールドの選択肢をループさせてください。"
 
-#: ../../source/forms.rst:328
+#: ../../source/forms.rst:348
 msgid ""
 "If you have many fields with the same number of choices, you can arrange "
 "them in a table:"
 msgstr "同数の選択肢を持つフィールドが多くある場合は、それらを表に配置できます。"
 
-#: ../../source/forms.rst:347
+#: ../../source/forms.rst:367
 msgid "Raw HTML widgets"
 msgstr "独自のHTMLウィジェット"
 
-#: ../../source/forms.rst:349
+#: ../../source/forms.rst:369
 msgid ""
 "If ``{{ formfields }}`` and :ref:`manual field rendering <manual-forms>` "
 "don't give you the appearance you want, you can write your own widget in "
@@ -338,7 +341,7 @@ msgstr ""
 "``{{ formfields }}`` や :ref:`手動のフィールドレンダリング <manual-forms>` "
 "を利用しても理想の外観にならないとき、HTMLの生コード上でウィジェットを記述できます。ただし、oTreeによって提供される便利な機能を利用することはできません。例えば、フォームにエラーが発生したり、ページがリロードされたときに、ユーザが入力した情報は消去されてしまう可能性があります。"
 
-#: ../../source/forms.rst:356
+#: ../../source/forms.rst:376
 msgid ""
 "First, add an ``<input>`` element. For example, if your ``form_fields`` "
 "includes ``my_field``, you can do ``<input name=\"my_field\" "
@@ -349,7 +352,7 @@ msgstr ""
 "``<input name=\"my_field\" type=\"checkbox\" />`` を実行することができます。（他にも、 "
 "``radio`` 、 ``text`` 、 ``number`` 、 ``range`` がああります。）"
 
-#: ../../source/forms.rst:361
+#: ../../source/forms.rst:381
 msgid ""
 "Second, you should usually include ``{{ formfield_errors 'xyz' }}``, so "
 "that if the participant submits an incorrect or missing value), they can "
@@ -358,30 +361,11 @@ msgstr ""
 "次に、参加者が誤った値を入力してしまった場合に、エラーメッセージが表示されるように、 ``{{ formfield_errors 'xyz' "
 "}}`` を含める必要があります。"
 
-#: ../../source/forms.rst:366
-msgid "Raw HTML example: slider"
-msgstr "HTMLコードの例：スライダー"
-
-#: ../../source/forms.rst:368
-msgid ""
-"If you want a slider, instead of ``{{ formfields }}``, put HTML like this"
-" in your template:"
-msgstr "``{{ formfields }}`` の代わりにスライダーを追加したい場合、テンプレート内に下記のようなHTMLコードを追加してください。"
-
-#: ../../source/forms.rst:391
-msgid ""
-"If you want to show the current numeric value, or hide the knob until the"
-" slider is clicked, you could do that with JavaScript, but consider using"
-" the ``RadioSelectHorizontal`` widget instead."
-msgstr ""
-"現在の数値を表示したり、スライダーがクリックされるまでノブを非表示にしたい場合は、JavaScriptで設定することもできます。ただし、 "
-"``RadioSelectHorizontal`` の利用も検討してください。"
-
-#: ../../source/forms.rst:396
+#: ../../source/forms.rst:387
 msgid "Raw HTML example: custom user interface with JavaScript"
 msgstr "HTMLコードの例：JavaScriptを用いたカスタムユーザインタフェース"
 
-#: ../../source/forms.rst:398
+#: ../../source/forms.rst:389
 msgid ""
 "Let's say you don't want users to fill out form fields, but instead "
 "interact with some sort of visual app, like a clicking on a chart or "
@@ -389,19 +373,19 @@ msgid ""
 " they spent on part of the page, how many times they clicked, etc."
 msgstr "ユーザがフォームフィールに入力するのではなく、チャートのクリックやグラフィカルなゲームの操作等、ある種のビジュアルアプリを操作するとします。または、ページの一部に費やした時間やクリックした回数等、データを追加で記録したいとします。"
 
-#: ../../source/forms.rst:403
+#: ../../source/forms.rst:394
 msgid ""
 "First, build your interface using HTML and JavaScript. Then use "
 "JavaScript to write the results into a hidden form field. For example:"
 msgstr "まず、HTMLやJavaScriptを利用するインタフェースを構成してください。次に、JavaScriptを利用して非表示のフォームに結果を書き出します。例："
 
-#: ../../source/forms.rst:421
+#: ../../source/forms.rst:412
 msgid ""
 "When the page is submitted, the value of your hidden input will be "
 "recorded in oTree like any other form field."
 msgstr "ページが送信されると、非表示のフォームに書き出された値が、ほかのフォームのようにoTreeに記録されます。"
 
-#: ../../source/forms.rst:424
+#: ../../source/forms.rst:415
 msgid ""
 "If this isn't working, open your browser's JavaScript console, see if "
 "there are any errors, and use ``console.log()`` (JavaScript's equivalent "
@@ -410,22 +394,22 @@ msgstr ""
 "これが機能しない場合は、利用しているブラウザのJavaScriptコンソールを開き、エラーが出ていないか確認してください。そして、 "
 "``console.log()`` （ ``print()`` に相当する命令）を利用して、コードの実行をトレースすることをおすすめします。"
 
-#: ../../source/forms.rst:429
+#: ../../source/forms.rst:420
 msgid "Buttons"
 msgstr "ボタン"
 
-#: ../../source/forms.rst:432
+#: ../../source/forms.rst:423
 msgid "Button that submits the form"
 msgstr "フォームを送信するボタン"
 
-#: ../../source/forms.rst:434
+#: ../../source/forms.rst:425
 msgid ""
 "If your page only contains 1 decision, you could omit the ``{{ "
 "next_button }}`` and instead have the user click on one of several "
 "buttons to go to the next page."
 msgstr "``{{ next_button }}`` を省略し、代わりにいくつかのボタンの一つをクリックして、次のページへ遷移させることができます。"
 
-#: ../../source/forms.rst:439
+#: ../../source/forms.rst:430
 msgid ""
 "For example, let's say your Player model has ``offer_accepted = "
 "models.BooleanField()``, and rather than a radio button you'd like to "
@@ -434,7 +418,7 @@ msgstr ""
 "例えば、Playerクラスが ``offer_accepted = models.BooleanField()`` "
 "を持っており、ラジオボタンではなく、下記のようなボタンを表示したいとします。"
 
-#: ../../source/forms.rst:445
+#: ../../source/forms.rst:436
 msgid ""
 "First, put ``offer_accepted`` in your Page's ``form_fields`` as usual. "
 "Then put this code in the template:"
@@ -442,41 +426,41 @@ msgstr ""
 "まず、ページの  ``form_fields`` に ``offer_accepted`` "
 "を設定して下さい。次に、テンプレートにこのコードを記入してください。"
 
-#: ../../source/forms.rst:454
+#: ../../source/forms.rst:445
 msgid ""
 "You can use this technique for any type of field, not just "
 "``BooleanField``."
 msgstr "この手法は ``BooleanField`` だけでなく、任意のタイプのフィールドに利用できます。"
 
-#: ../../source/forms.rst:458
+#: ../../source/forms.rst:449
 msgid "Button that doesn't submit the form"
 msgstr "フォームの送信以外の目的で利用するボタン"
 
-#: ../../source/forms.rst:460
+#: ../../source/forms.rst:451
 msgid ""
 "If the button has some purpose other than submitting the form, add "
 "``type=\"button\"``:"
 msgstr "フォームの送信以外の目的があるとき、 ``type=\"button\"`` を追加します。"
 
-#: ../../source/forms.rst:475
+#: ../../source/forms.rst:466
 msgid "Miscellaneous & advanced"
 msgstr "その他、高度な設定"
 
-#: ../../source/forms.rst:478
+#: ../../source/forms.rst:469
 msgid "Form fields with dynamic labels"
 msgstr "動的ラベル付きフォームフィールド"
 
-#: ../../source/forms.rst:480
+#: ../../source/forms.rst:471
 msgid ""
 "If the label should contain a variable, you can construct the string in "
 "your page:"
 msgstr "\"ラベルに変数が含まれる場合、ページに文字列を作成できます"
 
-#: ../../source/forms.rst:494
+#: ../../source/forms.rst:485
 msgid "Then, in the template:"
 msgstr "次に、テンプレートで："
 
-#: ../../source/forms.rst:500
+#: ../../source/forms.rst:491
 msgid ""
 "If you use this technique, you may also want to use "
 ":ref:`dynamic_validation`."

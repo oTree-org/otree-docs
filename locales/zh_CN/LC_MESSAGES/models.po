@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: 2021-05-25 11:26+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -316,8 +316,8 @@ msgstr "常量"
 
 #: ../../source/models.rst:193
 msgid ""
-"``C`` is the recommended place to put your app's parameters and "
-"constants that do not vary from player to player."
+"``C`` is the recommended place to put your app's parameters and constants"
+" that do not vary from player to player."
 msgstr "``C`` 是推荐存放应用的参数或是玩家之间没有区别的常量的地方。"
 
 #: ../../source/models.rst:197
@@ -385,12 +385,3 @@ msgstr ""
 "上述代码不会正常工作，因为随机值在服务器启动一个新进程时会改变。这可能在测试时工作正常，但最终会出现错误。相反的，你应该在函数内部生成随机值，如 "
 ":ref:`creating_session` 中（尽量不要在 ``vars_for_template`` "
 "中，因为这一函数在用户刷新页面时会重新执行）。"
-
-#: ../../source/models.rst:252
-msgid ""
-"If you want to set your own random seed, don't use the ``random.seed()`` "
-"function. Instead, generate an instance of ``random.Random`` as described"
-" `here <https://stackoverflow.com/a/37356024>`__"
-msgstr ""
-"如果你想使用自己的随机种子，不要用 ``random.seed()`` 函数。而应当生成 ``random.Random`` 的实例，如在 `这里"
-" <https://stackoverflow.com/a/37356024>`__ 所描述的"

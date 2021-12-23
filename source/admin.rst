@@ -4,7 +4,7 @@ Admin
 oTree's admin interface lets you create, monitor,
 and export data from sessions.
 
-Open your browser to *http://localhost:8000/* or whatever you server's URL is.
+Open your browser to ``localhost:8000`` or whatever you server's URL is.
 
 .. _AUTH_LEVEL:
 

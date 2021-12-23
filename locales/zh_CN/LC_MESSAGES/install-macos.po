@@ -52,13 +52,12 @@ msgid "Step 1: Install Python"
 msgstr "步骤1：安装Python"
 
 #: ../../source/install-macos.rst:23
-#, fuzzy
 msgid ""
 "Download and install `Python "
 "<https://www.python.org/ftp/python/3.9.5/python-3.9.5-macos11.pkg>`__"
 msgstr ""
 "下载并安装 `Python "
-"<https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__"
+"<https://www.python.org/ftp/python/3.9.5/python-3.9.5-macos11.pkg>`__"
 
 #: ../../source/install-macos.rst:24
 msgid "In Finder, search for and open the \"Terminal\" app:"

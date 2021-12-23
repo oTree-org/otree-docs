@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,15 +76,19 @@ msgid ""
 "to generate ExtraModel data from each row of a CSV spreadsheet."
 msgstr "CSVスプレッドシートの各行からExtraModelデータを生成する方法を示している、Stroopタスクなどの心理学ゲームの例を参照してください。"
 
-#: ../../source/misc/advanced.rst:65
+#: ../../source/misc/advanced.rst:64
+msgid "To export your ExtraModel data to CSV/Excel, use :ref:`custom-export`."
+msgstr ""
+
+#: ../../source/misc/advanced.rst:67
 msgid "Templates"
 msgstr "テンプレート"
 
-#: ../../source/misc/advanced.rst:68
+#: ../../source/misc/advanced.rst:70
 msgid "template_name"
 msgstr "template_name"
 
-#: ../../source/misc/advanced.rst:70
+#: ../../source/misc/advanced.rst:72
 msgid ""
 "If the template needs to have a different name from your page class (e.g."
 " you are sharing the same template for multiple pages), set "
@@ -93,11 +97,11 @@ msgstr ""
 "テンプレートの名前をページクラスとは異なるものにする必要がある場合（たとえば、複数のページで同じテンプレートを共有している場合）、 "
 "``template_name`` を設定します。例："
 
-#: ../../source/misc/advanced.rst:82
+#: ../../source/misc/advanced.rst:84
 msgid "CSS/JS and base templates"
 msgstr "CSS/JS とベーステンプレート"
 
-#: ../../source/misc/advanced.rst:84
+#: ../../source/misc/advanced.rst:86
 msgid ""
 "To include the same JS/CSS in all pages of an app, either put it in a "
 ":ref:`static file <staticfiles>` or put it in an includable template."
@@ -105,17 +109,17 @@ msgstr ""
 "アプリのすべてのページに同じ JS / CSS を含めるには、 :ref:`静的ファイル <staticfiles>` "
 "にテンプレートを配置するか、includable template にテンプレートを配置する必要があります。"
 
-#: ../../source/misc/advanced.rst:90
+#: ../../source/misc/advanced.rst:92
 msgid "Static files"
 msgstr "静的ファイル"
 
-#: ../../source/misc/advanced.rst:92
+#: ../../source/misc/advanced.rst:94
 msgid ""
 "Here is how to include images (or any other static file like .css, .js, "
 "etc.) in your pages."
 msgstr "ページに画像（または.css、.jsなどの他の静的ファイル）を含める方法は次のとおりです。"
 
-#: ../../source/misc/advanced.rst:94
+#: ../../source/misc/advanced.rst:96
 msgid ""
 "At the root of your oTree project, there is a ``_static/`` folder. Put a "
 "file there, for example ``puppy.jpg``. Then, in your template, you can "
@@ -125,11 +129,11 @@ msgstr ""
 "のようなファイルを配置します。テンプレートで、 ``{{ static 'puppy.jpg' }}`` "
 "を使用してそのファイルへのURLを取得することができます。"
 
-#: ../../source/misc/advanced.rst:99
+#: ../../source/misc/advanced.rst:101
 msgid "To display an image, use the ``<img>`` tag, like this:"
 msgstr "画像を表示するには、次のような ``<img>`` タグを使用します。"
 
-#: ../../source/misc/advanced.rst:105
+#: ../../source/misc/advanced.rst:107
 msgid ""
 "Above we saved our image in ``_static/puppy.jpg``, But actually it's "
 "better to make a subfolder with the name of your app, and save it as "
@@ -140,17 +144,17 @@ msgstr ""
 "に保存しましたが、実際には、ファイル名の競合を防ぐために、アプリの名前でサブフォルダーを作成し、 "
 "``_static/アプリ名/puppy.jpg`` として保存することをおすすめします。"
 
-#: ../../source/misc/advanced.rst:110
+#: ../../source/misc/advanced.rst:112
 msgid "Then your HTML code becomes:"
 msgstr "次に、HTMLコードは次のようになります。"
 
-#: ../../source/misc/advanced.rst:116
+#: ../../source/misc/advanced.rst:118
 msgid ""
 "(If you prefer, you can also put static files inside your app folder, in "
 "a subfolder called ``static/your_app_name``.)"
 msgstr "（必要に応じて、静的ファイルをアプリフォルダー内のサブフォルダー  ``static/your_app_name`` に配置することもできます）"
 
-#: ../../source/misc/advanced.rst:119
+#: ../../source/misc/advanced.rst:121
 msgid ""
 "If a static file is not updating even after you changed it, this is "
 "because your browser cached the file. Do a full page reload (usually "
@@ -159,7 +163,7 @@ msgstr ""
 "静的ファイルを変更しても更新されない場合は、ブラウザがファイルをキャッシュしていることが考えられます。ページ全体をリロードすることで解決する可能性があります。（通常はCtrl"
 " + F5）"
 
-#: ../../source/misc/advanced.rst:123
+#: ../../source/misc/advanced.rst:125
 msgid ""
 "If you have videos or high-resolution images, it's preferable to store "
 "them somewhere online and reference them by URL because the large file "
@@ -168,15 +172,15 @@ msgstr ""
 "ビデオや高解像度の画像がある場合は、オンライン上に保存し、URLで参照することをお勧めします。ファイルサイズが大きいと .otreezip "
 "ファイルのアップロードが非常に遅くなる可能性があるためです。"
 
-#: ../../source/misc/advanced.rst:130
+#: ../../source/misc/advanced.rst:132
 msgid "Wait pages"
 msgstr "Wait page"
 
-#: ../../source/misc/advanced.rst:135
+#: ../../source/misc/advanced.rst:137
 msgid "Custom wait page template"
 msgstr "カスタム wait page テンプレート"
 
-#: ../../source/misc/advanced.rst:137
+#: ../../source/misc/advanced.rst:139
 msgid ""
 "You can make a custom wait page template. For example, save this to "
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
@@ -184,11 +188,11 @@ msgstr ""
 "カスタム wait page テンプレートを作成できます。たとえば、これを "
 "``your_app_name/templates/your_app_name/MyWaitPage.html`` に保存します。"
 
-#: ../../source/misc/advanced.rst:151
+#: ../../source/misc/advanced.rst:153
 msgid "Then tell your wait page to use this template:"
 msgstr "次に、wait page にこのテンプレートを使用するように指示します。"
 
-#: ../../source/misc/advanced.rst:158
+#: ../../source/misc/advanced.rst:160
 msgid ""
 "Then you can use ``vars_for_template`` in the usual way. Actually, the "
 "``body_text`` and ``title_text`` attributes are just shorthand for "
@@ -198,7 +202,7 @@ msgstr ""
 "そして、通常の方法で ``vars_for_template`` を使用できます。実際、 ``body_text`` と "
 "``title_text`` 属性は、 ``vars_for_template`` の設定のための省略形にすぎません。次の2つのコードは同等です。"
 
-#: ../../source/misc/advanced.rst:176
+#: ../../source/misc/advanced.rst:178
 msgid ""
 "If you want to apply your custom wait page template globally, save it to "
 "``_templates/global/WaitPage.html``. oTree will then automatically use it"
@@ -207,11 +211,11 @@ msgstr ""
 "カスタム wait page テンプレートをグローバルに適用する場合は、 ``_templates/global/WaitPage.html`` "
 "テンプレートを保存することで、oTreeは組み込みの wait page ではなく、カスタム wait page を使うように設定されます。"
 
-#: ../../source/misc/advanced.rst:182
+#: ../../source/misc/advanced.rst:184
 msgid "Currency"
 msgstr "通貨"
 
-#: ../../source/misc/advanced.rst:184
+#: ../../source/misc/advanced.rst:186
 msgid ""
 "To customize the name \"points\" to something else like \"tokens\" or "
 "\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
@@ -220,7 +224,7 @@ msgstr ""
 "\"points\" の名前を \"tokens\" や \"credits\" のような他の名前にカスタマイズするためには、 "
 "``POINTS_CUSTOM_NAME`` を設定します。例えば、 ``POINTS_CUSTOM_NAME = 'tokens'`` "
 
-#: ../../source/misc/advanced.rst:187
+#: ../../source/misc/advanced.rst:189
 msgid ""
 "You can change the number of decimal places in real world currency "
 "amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
@@ -229,24 +233,6 @@ msgid ""
 msgstr ""
 "``REAL_WORLD_CURRENCY_DECIMAL_PLACES`` "
 "を設定すると、実際の通貨金額の小数点以下の桁数を変更できます。小数点以下の桁数が表示されても、常に0である場合は、データベースをリセットする必要があります。"
-
-#: ../../source/misc/advanced.rst:193
-msgid "Reading CSV or other files"
-msgstr "CSVやその他のファイル読み込み"
-
-#: ../../source/misc/advanced.rst:195
-msgid ""
-"Store yourfile.csv in your app folder. Then put this code anywhere you "
-"want to read the file (in a function or in Constants):"
-msgstr ""
-"アプリケーションフォルダに CSVファイルを配置します。そして、 "
-"このコードをファイル読み取り処理を行いたい場所（Constantsや関数内）に配置します。"
-
-#: ../../source/misc/advanced.rst:205
-msgid ""
-"If it's not CSV and you just want to read the file contents as a string, "
-"this gets simplified to:"
-msgstr "CSVではなく、ファイルの内容を文字列として読み取りたい場合は、次のように簡略化できます。"
 
 #: ../../source/misc/bots_advanced.rst:4
 msgid "Bots: advanced features"
@@ -561,7 +547,6 @@ msgid ""
 msgstr "REST APIは、プログラムからアクセスできるように設計されたサーバー上の単なるURLです。"
 
 #: ../../source/misc/rest_api.rst:12
-#, fuzzy
 msgid ""
 "One project that uses the REST API a lot is `oTree HR <https://otree-"
 "hr.herokuapp.com/>`__."
@@ -1096,10 +1081,10 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:335
 msgid ""
-"If you access a Player/Group/Subsession field whose value is ``None``, oTree will raise a "
-"``TypeError``. This is designed to catch situations where a user forgot "
-"to assign a value to that field, or forgot to include it in "
-"``form_fields``."
+"If you access a Player/Group/Subsession field whose value is ``None``, "
+"oTree will raise a ``TypeError``. This is designed to catch situations "
+"where a user forgot to assign a value to that field, or forgot to include"
+" it in ``form_fields``."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:339
@@ -1118,3 +1103,4 @@ msgid ""
 "An alternative solution is to assign an initial value to the field so "
 "that its value is never ``None``:"
 msgstr ""
+

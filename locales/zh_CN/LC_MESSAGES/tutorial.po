@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: 2021-05-27 12:57+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -381,7 +381,9 @@ msgid "Constants"
 msgstr "常量"
 
 #: ../../source/tutorial/part2.rst:28
-msgid "Go to your app's constants class (``C``). (For more info, see :ref:`constants`.)"
+msgid ""
+"Go to your app's constants class (``C``). (For more info, see "
+":ref:`constants`.)"
 msgstr "设置本应用的常量（查看 :ref:`constants` 可获得更多信息）。"
 
 #: ../../source/tutorial/part2.rst:31
@@ -393,14 +395,14 @@ msgstr "设置 ``PLAYERS_PER_GROUP`` 为3。oTree会自动将玩家分为若干�
 #: ../../source/tutorial/part2.rst:33
 msgid ""
 "The endowment to each player is 1000 points. So, let's define "
-"``endowment`` and set it to a currency value of ``1000``."
-msgstr "每位玩家初始有1000点数。故定义 ``endowment`` 并将其设定为1000货币值。"
+"``ENDOWMENT`` and set it to a currency value of ``1000``."
+msgstr "每位玩家初始有1000点数。故定义 ``ENDOWMENT`` 并将其设定为1000货币值。"
 
 #: ../../source/tutorial/part2.rst:35
 msgid ""
 "Each contribution is multiplied by 2. So define an integer constant "
-"called ``multiplier = 2``:"
-msgstr "团队贡献值将被乘以2。故定义一个整数常量 ``multiplier = 2``:"
+"called ``MULTIPLIER = 2``:"
+msgstr "团队贡献值将被乘以2。故定义一个整数常量 ``MULTIPLIER = 2``:"
 
 #: ../../source/tutorial/part2.rst:38
 msgid "Now we have the following constants:"

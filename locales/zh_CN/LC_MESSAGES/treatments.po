@@ -5,19 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 18:05-0600\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: 2021-06-01 12:50+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/treatments.rst:5
 msgid "Treatments"
@@ -28,137 +27,127 @@ msgstr "实验组"
 msgid ""
 "To assign participants to different treatment groups, you can use "
 "``creating_session``. For example:"
-msgstr ""
-"为将参与人分配至不同的实验组，你可以使用 ``creating_session``。举例来说:"
+msgstr "为将参与人分配至不同的实验组，你可以使用 ``creating_session``。举例来说:"
 
-#: ../../source/treatments.rst:21
+#: ../../source/treatments.rst:18
 msgid ""
 "You can also assign treatments at the group level (put the "
 "``BooleanField`` in ``Group`` and change the above code to use "
 "``get_groups()`` and ``group.time_pressure``)."
 msgstr ""
-"你也可以将实验组设为小组级别（将 ``BooleanField`` 加入 ``Group`` 并将上面"
-"的代码改为使用 ``get_groups()`` 与 ``group.time_pressure``）。"
+"你也可以将实验组设为小组级别（将 ``BooleanField`` 加入 ``Group`` 并将上面的代码改为使用 "
+"``get_groups()`` 与 ``group.time_pressure``）。"
 
-#: ../../source/treatments.rst:24
+#: ../../source/treatments.rst:21
 msgid ""
 "``creating_session`` is run immediately when you click the \"create "
 "session\" button, even if the app is not first in the ``app_sequence``."
 msgstr ""
-"``creating_session`` 会在你点击\"create session\"按钮后立刻执行，即使应用"
-"不在 ``app_sequence`` 的首位。"
+"``creating_session`` 会在你点击\"create session\"按钮后立刻执行，即使应用不在 "
+"``app_sequence`` 的首位。"
 
-#: ../../source/treatments.rst:28
+#: ../../source/treatments.rst:25
 msgid "Treatment groups & multiple rounds"
 msgstr "实验组与多轮次"
 
 # removed 'color'
-#: ../../source/treatments.rst:30
+#: ../../source/treatments.rst:27
 msgid ""
 "If your game has multiple rounds, a player could have different "
 "treatments in different rounds, because ``creating_session`` gets "
 "executed for each round independently. To prevent this, set it on the "
 "participant, rather than the player:"
 msgstr ""
-"如果你的游戏有很多轮，一位玩家可以在不同轮处于不同实验组，因为 "
-"``creating_session`` 会在每一轮独立地执行。为了避免这种情况，将其设置在参"
-"与人上，而不是玩家上："
+"如果你的游戏有很多轮，一位玩家可以在不同轮处于不同实验组，因为 ``creating_session`` "
+"会在每一轮独立地执行。为了避免这种情况，将其设置在参与人上，而不是玩家上："
 
-#: ../../source/treatments.rst:43
+#: ../../source/treatments.rst:40
 msgid "Balanced treatment groups"
 msgstr "平衡实验组"
 
 # removed 'color'
-#: ../../source/treatments.rst:45
+#: ../../source/treatments.rst:42
 msgid ""
 "The above code makes a random drawing independently for each player, so "
-"you may end up with an imbalance. To solve this, you can use ``itertools."
-"cycle``:"
-msgstr ""
-"上面的代码对每个玩家都进行随机分配，故你最终可能得到一个不平衡的分组。为"
-"解决此问题，你可以使用 ``itertools.cycle``:"
+"you may end up with an imbalance. To solve this, you can use "
+"``itertools.cycle``:"
+msgstr "上面的代码对每个玩家都进行随机分配，故你最终可能得到一个不平衡的分组。为解决此问题，你可以使用 ``itertools.cycle``:"
 
-#: ../../source/treatments.rst:61
+#: ../../source/treatments.rst:58
 msgid "Choosing which treatment to play"
 msgstr "选择特定实验组进行游戏"
 
 # removed 'color'
-#: ../../source/treatments.rst:63
+#: ../../source/treatments.rst:60
 msgid ""
-"In a live experiment, you often want to give a player a random "
-"treatment. But when you are testing your game, it is often useful to "
-"choose explicitly which treatment to play. Let's say you are developing "
-"the game from the above example and want to show your colleagues both "
-"treatments. You can create 2 session configs that are the same, except "
-"for one parameter (in oTree Studio, add a \"custom parameter\"):"
+"In a live experiment, you often want to give a player a random treatment."
+" But when you are testing your game, it is often useful to choose "
+"explicitly which treatment to play. Let's say you are developing the game"
+" from the above example and want to show your colleagues both treatments."
+" You can create 2 session configs that are the same, except for one "
+"parameter (in oTree Studio, add a \"custom parameter\"):"
 msgstr ""
-"在实际实验中，你一般会随机将玩家分配到实验组。但是当你测试你的游戏时，常"
-"常需要显式指定某一实验组进行游戏。假定你在基于上面的例子开发游戏，并想向"
-"你的同学展示两个实验组。你可以创建2个除了某一参数外完全相同的session "
-"config（在oTree Studio中，添加一个\"custom parameter\"）："
+"在实际实验中，你一般会随机将玩家分配到实验组。但是当你测试你的游戏时，常常需要显式指定某一实验组进行游戏。假定你在基于上面的例子开发游戏，并想向你的同学展示两个实验组。你可以创建2个除了某一参数外完全相同的session"
+" config（在oTree Studio中，添加一个\"custom parameter\"）："
 
 # removed 'color'
-#: ../../source/treatments.rst:87
+#: ../../source/treatments.rst:84
 msgid "Then in your code you can get the current session's treatment with:"
 msgstr "然后在你的代码中，你可以通过下面的方法获当前会话的实验组："
 
 # removed 'color'
-#: ../../source/treatments.rst:93
+#: ../../source/treatments.rst:90
 msgid ""
 "You can even combine this with the randomization approach. You can check "
 "``if 'time_pressure' in session.config:``; if yes, then use that; if no, "
 "then choose it randomly."
 msgstr ""
-"你甚至可以将此与随机化方法结合起来。你可以检查 ``if 'time_pressure' in "
-"session.config:`` ；如果是，那就使用它；如果否，就随机选择一个。"
+"你甚至可以将此与随机化方法结合起来。你可以检查 ``if 'time_pressure' in session.config:`` "
+"；如果是，那就使用它；如果否，就随机选择一个。"
 
-#: ../../source/treatments.rst:100
+#: ../../source/treatments.rst:97
 msgid "Configure sessions"
 msgstr "配置会话"
 
-#: ../../source/treatments.rst:102
+#: ../../source/treatments.rst:99
 msgid ""
-"You can make your session configurable, so that you can adjust the "
-"game's parameters in the admin interface."
+"You can make your session configurable, so that you can adjust the game's"
+" parameters in the admin interface."
 msgstr "你可以使你的会话可配置，这样你就可以在管理员界面调整游戏的参数。"
 
-#: ../../source/treatments.rst:108
+#: ../../source/treatments.rst:105
 msgid ""
 "For example, let's say you have a \"num_apples\" parameter. The usual "
-"approach would be to define it in ``C``, e.g. ``Constants."
-"num_apples``. But to make it configurable, you can instead define it in "
-"your session config. For example:"
+"approach would be to define it in ``C``, e.g. ``C.NUM_APPLES``. But to "
+"make it configurable, you can instead define it in your session config. "
+"For example:"
 msgstr ""
-"举例来说，假定你有一个“num_apple”参数。通常的方法是将其定义在 "
-"``C`` 中，如 ``C.NUM_APPLES``。但是要使其可配置，你可以将"
-"其定义在你的session config中。例如："
+"举例来说，假定你有一个“num_apples”参数。通常的方法是将其定义在 ``C`` 中，如 "
+"``C.NUM_APPLES``。但是要使其可配置，你可以将其定义在你的session config中。例如："
 
-#: ../../source/treatments.rst:124
+#: ../../source/treatments.rst:121
 msgid ""
 "When you create a session in the admin interface, there will be a text "
 "box to change this number. You can also add help text with ``'doc'``:"
-msgstr ""
-"当你在管理员界面创建会话的时候，就会有一个文本框可改变这一值。你也可以使"
-"用 ``'doc'`` 添加帮助信息："
+msgstr "当你在管理员界面创建会话的时候，就会有一个文本框可改变这一值。你也可以使用 ``'doc'`` 添加帮助信息："
 
-#: ../../source/treatments.rst:141
+#: ../../source/treatments.rst:138
 msgid "In your app's code, you can do ``session.config['num_apples']``."
 msgstr "在你的代码中，可使用 ``session.config['num_apples']``。"
 
-#: ../../source/treatments.rst:143
+#: ../../source/treatments.rst:140
 msgid "Notes:"
 msgstr "注意："
 
-#: ../../source/treatments.rst:145
+#: ../../source/treatments.rst:142
 msgid ""
 "For a parameter to be configurable, its value must be a number, boolean, "
 "or string."
 msgstr "对于一个可配置的参数，它的值必须是数值，布尔类型或字符串。"
 
-#: ../../source/treatments.rst:146
+#: ../../source/treatments.rst:143
 msgid ""
-"On the \"Demo\" section of the admin, sessions are not configurable. "
-"It's only available when creating a session in \"Sessions\" or \"Rooms\"."
-msgstr ""
-"在管理员界面的“Demo”部分，会话是不可配置的。它仅在 \"Sessions\" 或 "
-"\"Rooms\" 中创建会话时可用。"
+"On the \"Demo\" section of the admin, sessions are not configurable. It's"
+" only available when creating a session in \"Sessions\" or \"Rooms\"."
+msgstr "在管理员界面的“Demo”部分，会话是不可配置的。它仅在 \"Sessions\" 或 \"Rooms\" 中创建会话时可用。"
+

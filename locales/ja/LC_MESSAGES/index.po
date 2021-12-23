@@ -22,7 +22,6 @@ msgid "oTree"
 msgstr "oTree"
 
 #: ../../source/index.rst:15
-#, fuzzy
 msgid ""
 "`中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 "
 "<https://otree.readthedocs.io/ja/latest/index.html>`__"

@@ -52,13 +52,11 @@ msgid "Step 1: Install Python"
 msgstr "ステップ1: Pythonをインストールする"
 
 #: ../../source/install-macos.rst:23
-#, fuzzy
 msgid ""
 "Download and install `Python "
 "<https://www.python.org/ftp/python/3.9.5/python-3.9.5-macos11.pkg>`__"
 msgstr ""
-"`Python "
-"<https://www.python.org/ftp/python/3.7.3/python-3.7.3-macosx10.6.pkg>`__ "
+"`Python <https://www.python.org/ftp/python/3.9.5/python-3.9.5-macos11.pkg>`__ "
 "をダウンロードして，インストールしてください．"
 
 #: ../../source/install-macos.rst:24

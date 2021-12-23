@@ -51,13 +51,12 @@ msgid "Step 1: Install Python"
 msgstr "步骤1：安装Python"
 
 #: ../../source/install-windows.rst:23
-#, fuzzy
 msgid ""
 "Download and install `Python "
 "<https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe>`__."
 msgstr ""
 "下载并安装 `Python "
-"<https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe>`__。"
+"<https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe>`__。"
 
 #: ../../source/install-windows.rst:25
 msgid "Check the box to add Python to PATH:"

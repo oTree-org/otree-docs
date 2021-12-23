@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: 2021-06-07 11:52+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -74,45 +74,48 @@ msgid ""
 "to generate ExtraModel data from each row of a CSV spreadsheet."
 msgstr "参考心理学实验的例子，如斯特鲁普测试，它们展示了如何从CSV表格中的每一行中生成附加模型的数据。"
 
-#: ../../source/misc/advanced.rst:65
+#: ../../source/misc/advanced.rst:64
+msgid "To export your ExtraModel data to CSV/Excel, use :ref:`custom-export`."
+msgstr ""
+
+#: ../../source/misc/advanced.rst:67
 msgid "Templates"
 msgstr "模板"
 
-#: ../../source/misc/advanced.rst:68
+#: ../../source/misc/advanced.rst:70
 msgid "template_name"
 msgstr "template_name"
 
-#: ../../source/misc/advanced.rst:70
+#: ../../source/misc/advanced.rst:72
 msgid ""
 "If the template needs to have a different name from your page class (e.g."
 " you are sharing the same template for multiple pages), set "
 "``template_name``. Example:"
 msgstr "如果模板需要有一个与你的页面类不同的名字（例如你在不同的页面中共享同一模板），设置 ``template_name`` 即可。例如："
 
-#: ../../source/misc/advanced.rst:82
+#: ../../source/misc/advanced.rst:84
 msgid "CSS/JS and base templates"
 msgstr "CSS/JS 与基模板"
 
-#: ../../source/misc/advanced.rst:84
-#, fuzzy
+#: ../../source/misc/advanced.rst:86
 msgid ""
 "To include the same JS/CSS in all pages of an app, either put it in a "
 ":ref:`static file <staticfiles>` or put it in an includable template."
 msgstr ""
-"为将相同的JS/CSS包含在一个应用的所有页面中，可将其放入一个 ref:`static file <staticfiles>` "
+"为将相同的JS/CSS包含在一个应用的所有页面中，可将其放入一个 :ref:`static file <staticfiles>` "
 "中，也可将其放入一个可包含的模板。"
 
-#: ../../source/misc/advanced.rst:90
+#: ../../source/misc/advanced.rst:92
 msgid "Static files"
 msgstr "静态文件"
 
-#: ../../source/misc/advanced.rst:92
+#: ../../source/misc/advanced.rst:94
 msgid ""
 "Here is how to include images (or any other static file like .css, .js, "
 "etc.) in your pages."
 msgstr "下面说明了如何在页面中包含图片（或任何静态文件如.css, .js，等等）。"
 
-#: ../../source/misc/advanced.rst:94
+#: ../../source/misc/advanced.rst:96
 msgid ""
 "At the root of your oTree project, there is a ``_static/`` folder. Put a "
 "file there, for example ``puppy.jpg``. Then, in your template, you can "
@@ -121,11 +124,11 @@ msgstr ""
 "在你的oTree项目的根文件夹中，有一个 ``_static/`` 文件夹。将文件放在这里，例如 "
 "``puppy.jpg``.然后，在你的模板中，你可以通过 ``{{ static 'puppy.jpg' }}`` 获取文件的URL。"
 
-#: ../../source/misc/advanced.rst:99
+#: ../../source/misc/advanced.rst:101
 msgid "To display an image, use the ``<img>`` tag, like this:"
 msgstr "要显示图片，使用 ``<img>`` 标签，如："
 
-#: ../../source/misc/advanced.rst:105
+#: ../../source/misc/advanced.rst:107
 msgid ""
 "Above we saved our image in ``_static/puppy.jpg``, But actually it's "
 "better to make a subfolder with the name of your app, and save it as "
@@ -135,39 +138,39 @@ msgstr ""
 "上面我们将文件保存在 ``_static/puppy.jpg``,但是实际上更好的做法是创建一个子文件夹，起名为你应用的名字，并存为 "
 "``_static/your_app_name/puppy.jpg`` ，这使得文件组织有条理，并避免了名字冲突。"
 
-#: ../../source/misc/advanced.rst:110
+#: ../../source/misc/advanced.rst:112
 msgid "Then your HTML code becomes:"
 msgstr "此时你的HTML代码变为："
 
-#: ../../source/misc/advanced.rst:116
+#: ../../source/misc/advanced.rst:118
 msgid ""
 "(If you prefer, you can also put static files inside your app folder, in "
 "a subfolder called ``static/your_app_name``.)"
 msgstr "（如果你愿意的话，你也可以将静态文件放入你的应用文件夹，在子文件夹 ``static/your_app_name`` 中。）"
 
-#: ../../source/misc/advanced.rst:119
+#: ../../source/misc/advanced.rst:121
 msgid ""
 "If a static file is not updating even after you changed it, this is "
 "because your browser cached the file. Do a full page reload (usually "
 "Ctrl+F5)"
 msgstr "如果静态文件在你更改了之后仍不改变，这是因为你的浏览器缓存了这个文件。重载整个页面即可（通常快捷键是 Ctrl+F5）"
 
-#: ../../source/misc/advanced.rst:123
+#: ../../source/misc/advanced.rst:125
 msgid ""
 "If you have videos or high-resolution images, it's preferable to store "
 "them somewhere online and reference them by URL because the large file "
 "size can make uploading your .otreezip file much slower."
 msgstr "如果你需要视频或者高解析度的图片，更好的做法是将其存储在线上别的地方并使用URL进行引用。因为大文件使得上传 .otreezip文件非常缓慢。"
 
-#: ../../source/misc/advanced.rst:130
+#: ../../source/misc/advanced.rst:132
 msgid "Wait pages"
 msgstr "等待页面"
 
-#: ../../source/misc/advanced.rst:135
+#: ../../source/misc/advanced.rst:137
 msgid "Custom wait page template"
 msgstr "自定义等待页面模板"
 
-#: ../../source/misc/advanced.rst:137
+#: ../../source/misc/advanced.rst:139
 msgid ""
 "You can make a custom wait page template. For example, save this to "
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
@@ -175,11 +178,11 @@ msgstr ""
 "你可以自定义等待页面模板。例如，存为 \n"
 "``your_app_name/templates/your_app_name/MyWaitPage.html``:"
 
-#: ../../source/misc/advanced.rst:151
+#: ../../source/misc/advanced.rst:153
 msgid "Then tell your wait page to use this template:"
 msgstr "然后在等待页面中使用这一模板："
 
-#: ../../source/misc/advanced.rst:158
+#: ../../source/misc/advanced.rst:160
 msgid ""
 "Then you can use ``vars_for_template`` in the usual way. Actually, the "
 "``body_text`` and ``title_text`` attributes are just shorthand for "
@@ -189,7 +192,7 @@ msgstr ""
 "此时你可以如寻常一样使用 ``vars_for_template`` 。实际上， ``body_text`` 与 ``title_text`` "
 "属性就是设置 ``vars_for_template`` 的简略方式；下面两段代码是等价的："
 
-#: ../../source/misc/advanced.rst:176
+#: ../../source/misc/advanced.rst:178
 msgid ""
 "If you want to apply your custom wait page template globally, save it to "
 "``_templates/global/WaitPage.html``. oTree will then automatically use it"
@@ -198,11 +201,11 @@ msgstr ""
 "如果你想全局应用你的自定义等待页面模板，将其保存在 "
 "``_templates/global/WaitPage.html``.oTree将自动地在所有地方使用它替换内置的等待页面。"
 
-#: ../../source/misc/advanced.rst:182
+#: ../../source/misc/advanced.rst:184
 msgid "Currency"
 msgstr "货币"
 
-#: ../../source/misc/advanced.rst:184
+#: ../../source/misc/advanced.rst:186
 msgid ""
 "To customize the name \"points\" to something else like \"tokens\" or "
 "\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
@@ -211,7 +214,7 @@ msgstr ""
 "为将\"points\"自定义为别的名字如\"tokens\" 或 \"credits\", 设置 ``POINTS_CUSTOM_NAME`` "
 "，例如 ``POINTS_CUSTOM_NAME = 'tokens'``."
 
-#: ../../source/misc/advanced.rst:187
+#: ../../source/misc/advanced.rst:189
 msgid ""
 "You can change the number of decimal places in real world currency "
 "amounts with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the "
@@ -220,23 +223,6 @@ msgid ""
 msgstr ""
 "你可以改变真实世界货币的小数位数，通过设置 "
 "``REAL_WORLD_CURRENCY_DECIMAL_PLACES``。如果额外的小数位数显示出来但总是0，那么你应当重置数据库。"
-
-#: ../../source/misc/advanced.rst:193
-msgid "Reading CSV or other files"
-msgstr "读入CSV或其他文件"
-
-# Chris comment: I removed the mention of models.py.
-#: ../../source/misc/advanced.rst:195
-msgid ""
-"Store yourfile.csv in your app folder. Then put this code anywhere you "
-"want to read the file (in a function or in Constants):"
-msgstr "将yourfile.csv存储在你的应用文件夹中。然后将下面的代码放在你想要读文件的任何地方（在函数中或者常量中）："
-
-#: ../../source/misc/advanced.rst:205
-msgid ""
-"If it's not CSV and you just want to read the file contents as a string, "
-"this gets simplified to:"
-msgstr "如果文件不是CSV格式并且你想读入文件内容为一个字符串，代码简化为："
 
 #: ../../source/misc/bots_advanced.rst:4
 msgid "Bots: advanced features"
@@ -1049,10 +1035,10 @@ msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:335
 msgid ""
-"If you access a Player/Group/Subsession field whose value is ``None``, oTree will raise a "
-"``TypeError``. This is designed to catch situations where a user forgot "
-"to assign a value to that field, or forgot to include it in "
-"``form_fields``."
+"If you access a Player/Group/Subsession field whose value is ``None``, "
+"oTree will raise a ``TypeError``. This is designed to catch situations "
+"where a user forgot to assign a value to that field, or forgot to include"
+" it in ``form_fields``."
 msgstr ""
 
 #: ../../source/misc/tips_and_tricks.rst:339
@@ -1071,4 +1057,3 @@ msgid ""
 "An alternative solution is to assign an initial value to the field so "
 "that its value is never ``None``:"
 msgstr ""
-

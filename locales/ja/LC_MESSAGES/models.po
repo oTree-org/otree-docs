@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,8 +135,8 @@ msgid ""
 "Gives the current round number. Only relevant if the app has multiple "
 "rounds (set in ``C.NUM_ROUNDS``). See :ref:`rounds`."
 msgstr ""
-"現在のラウンド数を返します。アプリが複数のラウンドを持っている場合 (``C.NUM_ROUNDS`` で設定) "
-"にのみ関係します。詳しくは :ref:`rounds` を参照してください。"
+"現在のラウンド数を返します。アプリが複数のラウンドを持っている場合 (``C.NUM_ROUNDS`` で設定) にのみ関係します。詳しくは "
+":ref:`rounds` を参照してください。"
 
 #: ../../source/models.rst:84
 msgid "get_groups()"
@@ -242,7 +242,7 @@ msgstr ""
 
 #: ../../source/models.rst:136
 msgid "The player's payoff in this round. See :ref:`payoff`."
-msgstr "このラウンドでのプレイヤーの利得。詳しくは ``payoff`` を参照。"
+msgstr "このラウンドでのプレイヤーの利得。詳しくは :ref:`payoff` を参照。"
 
 #: ../../source/models.rst:144
 msgid "Other player methods"
@@ -324,8 +324,8 @@ msgstr ""
 
 #: ../../source/models.rst:193
 msgid ""
-"``C`` is the recommended place to put your app's parameters and "
-"constants that do not vary from player to player."
+"``C`` is the recommended place to put your app's parameters and constants"
+" that do not vary from player to player."
 msgstr "``C`` は、アプリのパラメータやプレーヤーごとに変化することがない定数を定義するために推奨される場所です。"
 
 #: ../../source/models.rst:197
@@ -391,13 +391,3 @@ msgstr ""
 " :ref:`creating_session` "
 "のような関数の中でランダムな変数を生成するべきです。(ユーザーがページを更新すると再実行されてしまう ``vars_for_template`` "
 "では好ましくありません。)"
-
-#: ../../source/models.rst:252
-msgid ""
-"If you want to set your own random seed, don't use the ``random.seed()`` "
-"function. Instead, generate an instance of ``random.Random`` as described"
-" `here <https://stackoverflow.com/a/37356024>`__"
-msgstr ""
-"独自の乱数シードを設定したい場合に、 ``random.seed()`` 関数を使用しないでください。代わりに、 `こちら "
-"<https://stackoverflow.com/a/37356024>`__ で説明されているように ``random.Random`` "
-"のインスタンスを生成してください。"

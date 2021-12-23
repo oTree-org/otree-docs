@@ -126,14 +126,12 @@ msgid "oTree templates are a mix of 2 languages:"
 msgstr "oTree のテンプレートは 2 つの言語が混在しています:"
 
 #: ../../source/templates.rst:93
-#, fuzzy
 msgid "*HTML* (which uses angle brackets like ``<this>`` and ``</this>``)."
 msgstr "*HTML* (``<this>`` や ``</this>`` のような山括弧を使います)"
 
 #: ../../source/templates.rst:94
-#, fuzzy
 msgid "*Template tags* (which use curly braces like ``{{ this }}``)"
-msgstr "*テンプレートタグ*（``{{ this }}`` や ``{{ this }}`` のような中括弧を使用します)"
+msgstr "テンプレートタグ（``{{ this }}`` のような中括弧を使用します)"
 
 #: ../../source/templates.rst:97
 msgid "In this example, let's say your template looks like this:"

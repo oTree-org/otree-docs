@@ -5,32 +5,35 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-24 09:30-0600\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: 2021-06-04 00:54+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.3\n"
 
 #: ../../source/server/adhoc.rst:4
 msgid "Configure your computer to be a server (advanced)"
 msgstr "将你的电脑配置为服务器（高级）"
 
 #: ../../source/server/adhoc.rst:8
-msgid "This page assumes you have already installed the oTree server, as described on the server setup pages for Windows/Mac (see :ref:`here <server>`)."
+msgid ""
+"This page assumes you have already installed the oTree server, as "
+"described on the server setup pages for Windows/Mac (see :ref:`here "
+"<server>`)."
 msgstr "本页面假设你已经安装了oTree服务器，按照Windows/Mac服务器安装页面所描述的(参见 :ref:`这里 <server>`)。"
 
 #: ../../source/server/adhoc.rst:12
 msgid ""
-"If you will be running your study with devices on the local network (e.g. your university network) and don't need access from the internet, you can follow the below "
-"steps to use your own computer as a server."
+"If you will be running your study with devices on the local network (e.g."
+" your university network) and don't need access from the internet, you "
+"can follow the below steps to use your own computer as a server."
 msgstr "如果你将使用局域网中的设备运行你的研究（例如你所在大学的网络）就无需连接到互联网，你可以按照下面的步骤将你自己的电脑作为服务器。"
 
 #: ../../source/server/adhoc.rst:17
@@ -42,7 +45,9 @@ msgid "Create a firewall rule (Windows only)"
 msgstr "创建防火墙规则（仅适用于Windows）"
 
 #: ../../source/server/adhoc.rst:22
-msgid "You need to allow other computers to connect to oTree through your firewall."
+msgid ""
+"You need to allow other computers to connect to oTree through your "
+"firewall."
 msgstr "你需要允许其他电脑通过你的防火墙以连接到oTree。"
 
 #: ../../source/server/adhoc.rst:24
@@ -79,9 +84,12 @@ msgstr "确定你的IP地址（Windows）"
 
 #: ../../source/server/adhoc.rst:35
 msgid ""
-"Open PowerShell or Command Prompt and enter ``ipconfig``. Look for the entry ``IPv4 Address``. Maybe it will look something like ``10.0.1.3``, or could also start "
-"with 172 or 192."
-msgstr "打开PowerShell或命令提示符并输入 ``ipconfig``。查看条目 ``IPv4 Address``。它看起来可能如 ``10.0.1.3``，或以172或192开头。"
+"Open PowerShell or Command Prompt and enter ``ipconfig``. Look for the "
+"entry ``IPv4 Address``. Maybe it will look something like ``10.0.1.3``, "
+"or could also start with 172 or 192."
+msgstr ""
+"打开PowerShell或命令提示符并输入 ``ipconfig``。查看条目 ``IPv4 Address``。它看起来可能如 "
+"``10.0.1.3``，或以172或192开头。"
 
 #: ../../source/server/adhoc.rst:40
 msgid "MacOS"
@@ -93,25 +101,36 @@ msgstr "确定你的IP地址 (MacOS)"
 
 #: ../../source/server/adhoc.rst:45
 msgid ""
-"Go to \"System Preferences\" > \"Network\", and select the network you're using. Depending on your version of macOS, you may have to click \"Advanced\" > \"TCP/IP\" "
-"to view your IP address. Maybe it will look something like ``10.0.1.3``, or could also start with 172 or 192."
+"Go to \"System Preferences\" > \"Network\", and select the network you're"
+" using. Depending on your version of macOS, you may have to click "
+"\"Advanced\" > \"TCP/IP\" to view your IP address. Maybe it will look "
+"something like ``10.0.1.3``, or could also start with 172 or 192."
 msgstr ""
-"前往“系统设置” > \"网络\"，并选择你在使用的网络。根据macOS的版本，你可能会点击“高级” > \"TCP/IP\"来查看你的IP地址。它看起来可能如 ``10.0.1.3``，或以172或192开头。"
+"前往“系统设置” > \"网络\"，并选择你在使用的网络。根据macOS的版本，你可能会点击“高级” > "
+"\"TCP/IP\"来查看你的IP地址。它看起来可能如 ``10.0.1.3``，或以172或192开头。"
 
 #: ../../source/server/adhoc.rst:51
 msgid "Run the server"
 msgstr "运行服务器"
 
 #: ../../source/server/adhoc.rst:53
-msgid "Start the server with your IP address and port 8000, e.g. ``otree devserver 10.0.1.3:8000``."
+msgid ""
+"Start the server with your IP address and port 8000, e.g. ``otree "
+"devserver 10.0.1.3:8000``."
 msgstr "使用你的IP地址和8000端口启动服务器，例如 ``otree devserver 10.0.1.3:8000``。"
 
 #: ../../source/server/adhoc.rst:58
-msgid "We are just using ``devserver`` as a temporary step. Once you have these steps working, you should switch to using the production server ``otree prodserver``."
+msgid ""
+"We are just using ``devserver`` as a temporary step. Once you have these "
+"steps working, you should switch to using the production server ``otree "
+"prodserver``."
 msgstr "使用 ``devserver`` 仅为一个临时的步骤。一旦这些步骤正常工作，你应当转而使用生产服务器 ``otree prodserver``。"
 
 #: ../../source/server/adhoc.rst:62
-msgid "On the client device's browser, connect to the IP address followed by ``:8000``, e.g. ``10.0.1.3:8000`` and you should be able to load the oTree demo page."
+msgid ""
+"On the client device's browser, connect to the IP address followed by "
+"``:8000``, e.g. ``10.0.1.3:8000`` and you should be able to load the "
+"oTree demo page."
 msgstr "在客户端的浏览器上，连接至IP地址加上 ``:8000``，例如 ``10.0.1.3:8000`` ，oTree页面应当就能够加载出来。"
 
 #: ../../source/server/adhoc.rst:66
@@ -120,112 +139,123 @@ msgstr "确保你的IP地址不会改变"
 
 #: ../../source/server/adhoc.rst:68
 msgid ""
-"In most university networks, your internal IP address will generally stay the same, as long as you stay connected to the same network. If it changes unpredictably, "
-"you can ask your IT department to add a rule on their DHCP server to always assign the same IP to your computer."
-msgstr ""
-"在大多数大学网络中，你的内网IP地址一般保持不变，只要一直连接同一个网络。如果出乎意料地改变了，你可以请求IT部门在他们的DHCP服务器上添加一条规则总是将相同的IP分配给你的"
-"电脑。"
+"In most university networks, your internal IP address will generally stay"
+" the same, as long as you stay connected to the same network. If it "
+"changes unpredictably, you can ask your IT department to add a rule on "
+"their DHCP server to always assign the same IP to your computer."
+msgstr "在大多数大学网络中，你的内网IP地址一般保持不变，只要一直连接同一个网络。如果出乎意料地改变了，你可以请求IT部门在他们的DHCP服务器上添加一条规则总是将相同的IP分配给你的电脑。"
 
 #: ../../source/server/heroku.rst:4
 msgid "Basic Server Setup (Heroku)"
 msgstr "基本服务器设置（Heroku）"
 
 #: ../../source/server/heroku.rst:6
-msgid "`Heroku <https://www.heroku.com/>`__ is a commercial cloud hosting provider. It is the simplest way to deploy oTree."
+msgid ""
+"`Heroku <https://www.heroku.com/>`__ is a commercial cloud hosting "
+"provider. It is the simplest way to deploy oTree."
 msgstr "`Heroku <https://www.heroku.com/>`__ 是一家商业云主机提供商。这是部署oTree的最简单的方法。"
 
 #: ../../source/server/heroku.rst:9
 msgid ""
-"The Heroku free plan is sufficient for testing your app, but once you are ready to launch a study, you should upgrade to a paid server, which can handle more traffic. "
-"However, Heroku is quite inexpensive, because you only pay for the time you actually use it. If you run a study for only 1 day, you can turn off your dynos and "
-"addons, and then you only pay 1/30 of the monthly cost. Often this means you can run a study for just a few dollars."
-msgstr ""
-"Heroku的免费服务器足够测试应用使用，但一旦你准备开始真正的实验，你应当将其升级为付费服务器，这样可以处理更多的通信。不过，Heroku并不昂贵，因为你只需要为你实际使用的时"
-"间付费。如果你的实验只持续1天，你可以在其他时候关闭你的服务器和附加服务，这样你只需支付月费的1/30。通常这意味着你可以花几美元做一次实验。"
+"The Heroku free plan is sufficient for testing your app, but once you are"
+" ready to launch a study, you should upgrade to a paid server, which can "
+"handle more traffic. However, Heroku is quite inexpensive, because you "
+"only pay for the time you actually use it. If you run a study for only 1 "
+"day, you can turn off your dynos and addons, and then you only pay 1/30 "
+"of the monthly cost. Often this means you can run a study for just a few "
+"dollars."
+msgstr "Heroku的免费服务器足够测试应用使用，但一旦你准备开始真正的实验，你应当将其升级为付费服务器，这样可以处理更多的通信。不过，Heroku并不昂贵，因为你只需要为你实际使用的时间付费。如果你的实验只持续1天，你可以在其他时候关闭你的服务器和附加服务，这样你只需支付月费的1/30。通常这意味着你可以花几美元做一次实验。"
 
 #: ../../source/server/heroku.rst:18
 msgid "Heroku setup"
 msgstr "Heroku设置"
 
 #: ../../source/server/heroku.rst:20
-msgid "The recommended way to deploy to Heroku is to use `oTree Hub <https://www.otreehub.com/>`__, which automates your Heroku setup. It's free for public projects."
-msgstr "部署至Heroku推荐方法是使用 `oTree Hub <https://www.otreehub.com/>`__，这将自动完成Heroku的设置。这对于公共项目是免费的。"
+msgid ""
+"The recommended way to deploy to Heroku is to use `oTree Hub "
+"<https://www.otreehub.com/>`__, which automates your Heroku setup. It's "
+"free for public projects."
+msgstr ""
+"部署至Heroku推荐方法是使用 `oTree Hub "
+"<https://www.otreehub.com/>`__，这将自动完成Heroku的设置。这对于公共项目是免费的。"
 
 #: ../../source/server/heroku.rst:25
 msgid "oTree Hub also offers error/performance monitoring and a Sentry service."
 msgstr "oTree Hub 还提供错误/性能监控和Sentry服务。"
 
-#: ../../source/server/heroku.rst:27
-msgid ""
-"(The old instructions for deploying through the command line and git are `here <https://github.com/oTree-org/otree-docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/"
-"source/server/heroku.rst#heroku-setup-option-2>`__ However, you are more likely to run into issues this way and I am not able to provide much support.)"
-msgstr ""
-"（通过命令行和git进行部署的旧说明在 `这里 <https://github.com/oTree-org/otree-docs/blob/143a6ab7b61d54ec2be1a8bc09515d78e0b07c71/source/server/heroku.rst#heroku-setup-"
-"option-2>`__ 然而，你很可能在使用这种方式时遇到问题并且我无法提供很多支持。）"
-
-#: ../../source/server/heroku.rst:35
+#: ../../source/server/heroku.rst:30
 msgid "Server performance"
 msgstr "服务器性能"
 
-#: ../../source/server/heroku.rst:37
+#: ../../source/server/heroku.rst:32
 msgid ""
-"Heroku offers different performance tiers for resources such as your dyno and database. What tier you need depends on how much traffic your app will get, and how it "
-"is coded."
+"Heroku offers different performance tiers for resources such as your dyno"
+" and database. What tier you need depends on how much traffic your app "
+"will get, and how it is coded."
 msgstr "Heroku提供不同的性能等级的资源，如服务器和数据库。你需要何种等级的性能取决于你应用的通信流量以及它是如何编写的。"
 
-#: ../../source/server/heroku.rst:40
+#: ../../source/server/heroku.rst:35
 msgid ""
-"Performance is a complicated subject since there are many factors that affect performance. oTree Hub's Pro plan has a \"monitor\" section that will analyze your logs "
-"to identify performance issues."
+"Performance is a complicated subject since there are many factors that "
+"affect performance. oTree Hub's Pro plan has a \"monitor\" section that "
+"will analyze your logs to identify performance issues."
 msgstr "性能是很复杂的事情因为其影响因素众多。 oTree Hub的Pro订阅提供一个\"monitor\"模块，用来分析你的日志以发现性能问题。"
 
-#: ../../source/server/heroku.rst:44
+#: ../../source/server/heroku.rst:39
 msgid "General tips:"
 msgstr "一般的建议："
 
-#: ../../source/server/heroku.rst:46
+#: ../../source/server/heroku.rst:41
 msgid "Upgrade oTree to the latest version"
 msgstr "将oTree升级至最新版本"
 
-#: ../../source/server/heroku.rst:47
+#: ../../source/server/heroku.rst:42
 msgid "Use browser bots to stress-test your app."
 msgstr "使用浏览器bot来对你的应用进行压力测试。"
 
-#: ../../source/server/heroku.rst:48
+#: ../../source/server/heroku.rst:43
 msgid ""
-"With the higher dyno tiers, Heroku provides a \"Metrics\" tab. Look at \"Dyno load\". If users are experiencing slow page load times and your your dyno load stays "
-"above 1, then you should get a faster dyno. (But don't run more than 1 web dyno.)"
+"With the higher dyno tiers, Heroku provides a \"Metrics\" tab. Look at "
+"\"Dyno load\". If users are experiencing slow page load times and your "
+"your dyno load stays above 1, then you should get a faster dyno. (But "
+"don't run more than 1 web dyno.)"
 msgstr ""
-"在较高等级服务器中，Heroku提供一个\"Metrics\"页面。可查看\"Dyno load\"。如果用户认为页面加载速度慢并且你的dyno load持续大于1，那么你应当使用更快的服务器。（但不要运行"
-"超过1个web服务器。）"
+"在较高等级服务器中，Heroku提供一个\"Metrics\"页面。可查看\"Dyno load\"。如果用户认为页面加载速度慢并且你的dyno "
+"load持续大于1，那么你应当使用更快的服务器。（但不要运行超过1个web服务器。）"
 
-#: ../../source/server/heroku.rst:51
-msgid "If your dyno load stays under 1 but page load times are still slow, the bottleneck might be something else like your Postgres database."
+#: ../../source/server/heroku.rst:46
+msgid ""
+"If your dyno load stays under 1 but page load times are still slow, the "
+"bottleneck might be something else like your Postgres database."
 msgstr "如果你的dyno load持续小于1但是页面加载时间仍很慢，那么瓶颈可能是其他因素如Postgres数据库。"
 
-#: ../../source/server/heroku.rst:53
-msgid "RAM usage should never go above the limit. If that is happening, contact chris@otree.org."
-msgstr "RAM使用应当不可能超过限制。如果真的发生了，请联系chris@otree.org."
-
-#: ../../source/server/heroku.rst:55
+#: ../../source/server/heroku.rst:50
 msgid ""
-"The most demanding sessions are the ones with a combination of (1) many rounds, (2) players spending just a few seconds on each page, and (3) many players playing "
-"concurrently, because these sessions have a high number of page requests per second, which can overload the server. Consider adapting these games to use :ref:`live`, "
-"which will result in much faster performance."
+"The most demanding sessions are the ones with a combination of (1) many "
+"rounds, (2) players spending just a few seconds on each page, and (3) "
+"many players playing concurrently, because these sessions have a high "
+"number of page requests per second, which can overload the server. "
+"Consider adapting these games to use :ref:`live`, which will result in "
+"much faster performance."
 msgstr ""
-"性能要求最高的场景是下面这些的组合 (1) 多个轮次， (2) 玩家在每个页面上仅花费几秒时间， (3) 多个玩家同时进行游戏，因为这些场景会导致每秒页面请求数很高，这会使服务器过"
-"载。考虑使用 :ref:`live` 改写这些游戏，这会使得性能大幅提高。"
+"性能要求最高的场景是下面这些的组合 (1) 多个轮次， (2) 玩家在每个页面上仅花费几秒时间， (3) "
+"多个玩家同时进行游戏，因为这些场景会导致每秒页面请求数很高，这会使服务器过载。考虑使用 :ref:`live` "
+"改写这些游戏，这会使得性能大幅提高。"
 
 #: ../../source/server/intro.rst:4
 msgid "Server setup"
 msgstr "服务器设置"
 
 #: ../../source/server/intro.rst:6
-msgid "If you are just testing your app on your personal computer, you can use ``otree devserver``. You don't need a full server setup."
+msgid ""
+"If you are just testing your app on your personal computer, you can use "
+"``otree devserver``. You don't need a full server setup."
 msgstr "如果你只是想在你的电脑上测试你的应用，你可以使用 ``otree devserver``。你不需要完整的服务器设置。"
 
 #: ../../source/server/intro.rst:9
-msgid "However, when you want to share your app with an audience, you must use a web server."
+msgid ""
+"However, when you want to share your app with an audience, you must use a"
+" web server."
 msgstr "然而，如果你希望与他人分享你的应用，你必须使用web服务器。"
 
 #: ../../source/server/intro.rst:12
@@ -278,13 +308,19 @@ msgstr "Windows服务器（高级）"
 
 #: ../../source/server/server-windows.rst:6
 msgid ""
-"If you are just testing your app on your personal computer, you can use ``otree zipserver`` or ``otree devserver``. You don't need a full server setup as described "
-"below, which is necessary for sharing your app with an audience."
-msgstr "如果你只是在你的个人电脑上测试你的应用，你可以使用 ``otree zipserver`` 或 ``otree devserver``。你不需要上述完整的服务器设置，但这对与他人分享你的应用是必须的。"
+"If you are just testing your app on your personal computer, you can use "
+"``otree zipserver`` or ``otree devserver``. You don't need a full server "
+"setup as described below, which is necessary for sharing your app with an"
+" audience."
+msgstr ""
+"如果你只是在你的个人电脑上测试你的应用，你可以使用 ``otree zipserver`` 或 ``otree "
+"devserver``。你不需要上述完整的服务器设置，但这对与他人分享你的应用是必须的。"
 
 #: ../../source/server/server-windows.rst:10
 msgid ""
-"This section is for people who are experienced with setting up web servers. If you would like an easier and quicker way, we recommend using :ref:`Heroku <heroku>`."
+"This section is for people who are experienced with setting up web "
+"servers. If you would like an easier and quicker way, we recommend using "
+":ref:`Heroku <heroku>`."
 msgstr "此部分适用于对设置web服务器有经验的人。如果你想要更简单和快速的方式，我们推荐使用 :ref:`Heroku <heroku>`。"
 
 #: ../../source/server/server-windows.rst:17
@@ -292,7 +328,9 @@ msgid "Why do I need to install server software?"
 msgstr "为什么我需要安装服务器软件？"
 
 #: ../../source/server/server-windows.rst:19
-msgid "oTree's development setup (``devserver``) is not designed for running actual studies."
+msgid ""
+"oTree's development setup (``devserver``) is not designed for running "
+"actual studies."
 msgstr "oTree的开发服务器 (``devserver``) 并非被设计用于运行实际的实验。"
 
 #: ../../source/server/server-windows.rst:24 ../../source/server/ubuntu.rst:40
@@ -300,15 +338,22 @@ msgid "Database (Postgres)"
 msgstr "数据库 (Postgres)"
 
 #: ../../source/server/server-windows.rst:26 ../../source/server/ubuntu.rst:42
-msgid "Install Postgres and psycopg2, create a new database and set the ``DATABASE_URL`` env var, for example: to ``postgres://postgres@localhost/django_db``"
-msgstr "安装Postgres 与 psycopg2，创建一个新数据库并设置 ``DATABASE_URL`` 环境变量，例如设为 ``postgres://postgres@localhost/django_db``"
+msgid ""
+"Install Postgres and psycopg2, create a new database and set the "
+"``DATABASE_URL`` env var, for example: to "
+"``postgres://postgres@localhost/django_db``"
+msgstr ""
+"安装Postgres 与 psycopg2，创建一个新数据库并设置 ``DATABASE_URL`` 环境变量，例如设为 "
+"``postgres://postgres@localhost/django_db``"
 
 #: ../../source/server/server-windows.rst:30
 msgid "resetdb"
 msgstr "resetdb"
 
 #: ../../source/server/server-windows.rst:32
-msgid "If all the above steps went well, you should be able to run ``otree resetdb``."
+msgid ""
+"If all the above steps went well, you should be able to run ``otree "
+"resetdb``."
 msgstr "如果上述步骤正确进行，你应当可以运行 ``otree resetdb``。"
 
 #: ../../source/server/server-windows.rst:35
@@ -320,7 +365,9 @@ msgid "Run::"
 msgstr "运行："
 
 #: ../../source/server/server-windows.rst:41
-msgid "See :ref:`here <prodserver>` for full instructions. The steps are essentially the same as on Linux."
+msgid ""
+"See :ref:`here <prodserver>` for full instructions. The steps are "
+"essentially the same as on Linux."
 msgstr "完整的说明见 :ref:`这里 <prodserver>` 。步骤与Linux上的完全一样。"
 
 #: ../../source/server/server-windows.rst:45
@@ -328,8 +375,12 @@ msgid "Set environment variables"
 msgstr "设置环境变量"
 
 #: ../../source/server/server-windows.rst:47
-msgid "You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and ``OTREE_AUTH_LEVEL``."
-msgstr "你应当设置 ``OTREE_ADMIN_PASSWORD``，``OTREE_PRODUCTION`` 与 ``OTREE_AUTH_LEVEL``。"
+msgid ""
+"You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and "
+"``OTREE_AUTH_LEVEL``."
+msgstr ""
+"你应当设置 ``OTREE_ADMIN_PASSWORD``，``OTREE_PRODUCTION`` 与 "
+"``OTREE_AUTH_LEVEL``。"
 
 #: ../../source/server/server-windows.rst:50
 msgid "Allow other computers to connect"
@@ -345,12 +396,17 @@ msgstr "Ubuntu Linux 服务器"
 
 #: ../../source/server/ubuntu.rst:6
 msgid ""
-"We typically recommend newcomers to oTree to deploy to Heroku (see instructions :ref:`here <heroku>`), or to use their own personal computer as a temporary server "
-"(see :ref:`here <server-adhoc>`)."
-msgstr "我们一般推荐入门者将oTree部署至Heroku (参见 :ref:`这里 <heroku>` )，或者使用自己的个人电脑作为临时服务器（参见 :ref:`这里 <server-adhoc>`）。"
+"We typically recommend newcomers to oTree to deploy to Heroku (see "
+"instructions :ref:`here <heroku>`), or to use their own personal computer"
+" as a temporary server (see :ref:`here <server-adhoc>`)."
+msgstr ""
+"我们一般推荐入门者将oTree部署至Heroku (参见 :ref:`这里 <heroku>` )，或者使用自己的个人电脑作为临时服务器（参见 "
+":ref:`这里 <server-adhoc>`）。"
 
 #: ../../source/server/ubuntu.rst:10
-msgid "However, you may prefer to run oTree on a proper Linux server. Reasons may include:"
+msgid ""
+"However, you may prefer to run oTree on a proper Linux server. Reasons "
+"may include:"
 msgstr "然而，你可能更想将oTree运行在一个适当的Linux服务器上。原因可能包括："
 
 #: ../../source/server/ubuntu.rst:12
@@ -378,11 +434,15 @@ msgid "It's a best practice to use a virtualenv::"
 msgstr "使用virtualenv的最佳实践是："
 
 #: ../../source/server/ubuntu.rst:30
-msgid "To activate this venv every time you start your shell, put this in your ``.bashrc`` or ``.profile``::"
+msgid ""
+"To activate this venv every time you start your shell, put this in your "
+"``.bashrc`` or ``.profile``::"
 msgstr "为在每次打开shell时激活此venv，将此放到你的 ``.bashrc`` 或 ``.profile`` 中:"
 
 #: ../../source/server/ubuntu.rst:34
-msgid "Once your virtualenv is active, you will see ``(venv_otree)`` at the beginning of your prompt."
+msgid ""
+"Once your virtualenv is active, you will see ``(venv_otree)`` at the "
+"beginning of your prompt."
 msgstr "一旦你的virtualenv被激活，你会看见 ``(venv_otree)`` 显示在命令行的开头。"
 
 #: ../../source/server/ubuntu.rst:46
@@ -390,7 +450,9 @@ msgid "Reset the database on the server"
 msgstr "在服务器上重置数据库"
 
 #: ../../source/server/ubuntu.rst:48
-msgid "``cd`` to the folder containing your oTree project. Install the requirements and reset the database::"
+msgid ""
+"``cd`` to the folder containing your oTree project. Install the "
+"requirements and reset the database::"
 msgstr "``cd`` 到包含oTree项目的文件夹。安装依赖并重置数据库："
 
 #: ../../source/server/ubuntu.rst:58
@@ -406,23 +468,32 @@ msgid "From your project folder, run::"
 msgstr "在你的项目文件夹，运行："
 
 #: ../../source/server/ubuntu.rst:67
-msgid "Then navigate in your browser to your server's IP/hostname followed by ``:8000``."
+msgid ""
+"Then navigate in your browser to your server's IP/hostname followed by "
+"``:8000``."
 msgstr "然后在浏览器中导航至你的服务器的IP/主机名并以 ``:8000`` 结尾。"
 
 #: ../../source/server/ubuntu.rst:70
 msgid ""
-"If you're not using a reverse proxy like Nginx or Apache, you probably want to run oTree directly on port 80. This requires superuser permission, so let's use sudo, "
-"but add some extra args to preserve environment variables like ``PATH``, ``DATABASE_URL``, etc::"
+"If you're not using a reverse proxy like Nginx or Apache, you probably "
+"want to run oTree directly on port 80. This requires superuser "
+"permission, so let's use sudo, but add some extra args to preserve "
+"environment variables like ``PATH``, ``DATABASE_URL``, etc::"
 msgstr ""
-"如果你没有使用反向代理如Nginx 或 Apache，你可能想直接将oTree运行在80端口上。这需要超级管理员权限，所以要使用sudo，但需添加一下额外的参数来保存环境变量如 ``PATH``，"
-"``DATABASE_URL``，等等:"
+"如果你没有使用反向代理如Nginx 或 "
+"Apache，你可能想直接将oTree运行在80端口上。这需要超级管理员权限，所以要使用sudo，但需添加一下额外的参数来保存环境变量如 "
+"``PATH``，``DATABASE_URL``，等等:"
 
 #: ../../source/server/ubuntu.rst:78
-msgid "Try again to open your browser; this time, you don't need to append :80 to the URL, because that is the default HTTP port."
+msgid ""
+"Try again to open your browser; this time, you don't need to append :80 "
+"to the URL, because that is the default HTTP port."
 msgstr "再打开你的浏览器；这一次，你无需在URL后添加 :80 ，因为这是HTTP默认的端口。"
 
 #: ../../source/server/ubuntu.rst:81
-msgid "Unlike ``devserver``, ``prodserver`` does not restart automatically when your files are changed."
+msgid ""
+"Unlike ``devserver``, ``prodserver`` does not restart automatically when "
+"your files are changed."
 msgstr "区别于 ``devserver``，``prodserver`` 不会在你的文件改变时自动重启。"
 
 #: ../../source/server/ubuntu.rst:85
@@ -439,16 +510,22 @@ msgstr "(可选) 进程控制系统"
 
 #: ../../source/server/ubuntu.rst:96
 msgid ""
-"Once the server is working as described above, it's a good practice to use a process control system like Supervisord or Circus. This will restart your processes in "
-"case they crash, keep it running if you log out, etc."
-msgstr "一旦服务器如上正常工作，使用如 Supervisord 或 Circus 这样的进程管理系统是一个好的实践。这会自动重启你的进程无论它是如何崩溃的，并在你登出时保持运行，等等。"
+"Once the server is working as described above, it's a good practice to "
+"use a process control system like Supervisord or Circus. This will "
+"restart your processes in case they crash, keep it running if you log "
+"out, etc."
+msgstr ""
+"一旦服务器如上正常工作，使用如 Supervisord 或 Circus "
+"这样的进程管理系统是一个好的实践。这会自动重启你的进程无论它是如何崩溃的，并在你登出时保持运行，等等。"
 
 #: ../../source/server/ubuntu.rst:103
 msgid "Circus"
 msgstr "Circus"
 
 #: ../../source/server/ubuntu.rst:105
-msgid "Install Circus, then create a ``circus.ini`` in your project folder, with the following content::"
+msgid ""
+"Install Circus, then create a ``circus.ini`` in your project folder, with"
+" the following content::"
 msgstr "安装 Circus，然后在你的项目文件夹创建一个 ``circus.ini`` ，内容如下："
 
 #: ../../source/server/ubuntu.rst:114
@@ -469,12 +546,17 @@ msgstr "(可选) Apache, Nginx, 等等"
 
 #: ../../source/server/ubuntu.rst:130
 msgid ""
-"You cannot use Apache or Nginx as your primary web server, because oTree must be run with an ASGI server. However, you still might want to use Apache/Nginx as a "
-"reverse proxy, for the following reasons:"
-msgstr "你不能使用 Apache 或 Nginx 作为你的首选web服务器，因为oTree必须使用ASGI服务器运行。然而，你仍可以使用Apache/Nginx作为反向代理，出于下面这些原因："
+"You cannot use Apache or Nginx as your primary web server, because oTree "
+"must be run with an ASGI server. However, you still might want to use "
+"Apache/Nginx as a reverse proxy, for the following reasons:"
+msgstr ""
+"你不能使用 Apache 或 Nginx "
+"作为你的首选web服务器，因为oTree必须使用ASGI服务器运行。然而，你仍可以使用Apache/Nginx作为反向代理，出于下面这些原因："
 
 #: ../../source/server/ubuntu.rst:134
-msgid "You are trying to optimize serving of static files (though oTree uses Whitenoise, which is already fairly efficient)"
+msgid ""
+"You are trying to optimize serving of static files (though oTree uses "
+"Whitenoise, which is already fairly efficient)"
 msgstr "你试图优化静态文件的速度（尽管oTree使用了Whitenoise，已经相当高效率了）"
 
 #: ../../source/server/ubuntu.rst:136
@@ -486,7 +568,9 @@ msgid "You need features like SSL or proxy buffering"
 msgstr "你需要类似SSL或代理缓存的特性"
 
 #: ../../source/server/ubuntu.rst:139
-msgid "If you set up a reverse proxy, make sure to enable not only HTTP traffic but also websockets."
+msgid ""
+"If you set up a reverse proxy, make sure to enable not only HTTP traffic "
+"but also websockets."
 msgstr "如果你设置了反向代理，确保其不仅代理了HTTP通信还代理了websocket。"
 
 #: ../../source/server/ubuntu.rst:143
@@ -496,8 +580,9 @@ msgstr "故障排除"
 # no more redis
 #: ../../source/server/ubuntu.rst:145
 msgid ""
-"If you get strange behavior, such as random changes each time the page reloads, it might be caused by another oTree instance that didn't shut down. Try stopping oTree "
-"and reload again."
+"If you get strange behavior, such as random changes each time the page "
+"reloads, it might be caused by another oTree instance that didn't shut "
+"down. Try stopping oTree and reload again."
 msgstr "如果你遇到了奇怪的程序行为，如每次页面重载时会随机变化，这可能是另一个未被关闭的oTree实例导致的。试着停止oTree并再一次重载。"
 
 #: ../../source/server/ubuntu.rst:151
@@ -505,13 +590,17 @@ msgid "Sharing a server with other oTree users"
 msgstr "与其他oTree用户共享服务器"
 
 #: ../../source/server/ubuntu.rst:153
-msgid "You can share a server with other oTree users; you just have to make sure that the code and databases are kept separate, so they don't conflict with each other."
+msgid ""
+"You can share a server with other oTree users; you just have to make sure"
+" that the code and databases are kept separate, so they don't conflict "
+"with each other."
 msgstr "你可以与其他oTree用户共享服务器；你只需确保代码与数据库保持隔离，这样就不会相互冲突。"
 
 #: ../../source/server/ubuntu.rst:157
 msgid ""
-"On the server you should create a different Unix user for each person using oTree. Then each person should follow the same steps described above, but in some cases "
-"name things differently to avoid clashes:"
+"On the server you should create a different Unix user for each person "
+"using oTree. Then each person should follow the same steps described "
+"above, but in some cases name things differently to avoid clashes:"
 msgstr "在服务器上你应当为每一个使用oTree的人创建一个不同的Unix用户。然后每个人应当按照上面所描述的同样的步骤操作，但是在某些情况下应当使用不同的名字以避免冲突："
 
 #: ../../source/server/ubuntu.rst:161
@@ -519,17 +608,24 @@ msgid "Create a virtualenv in their home directory"
 msgstr "在home目录下创建一个virtualenv"
 
 #: ../../source/server/ubuntu.rst:162
-msgid "Create a different Postgres database, as described earlier, and set this in the DATABASE_URL env var."
+msgid ""
+"Create a different Postgres database, as described earlier, and set this "
+"in the DATABASE_URL env var."
 msgstr "创建一个不同的Postgres数据库，如之前所述，并将此设置在DATABASE_URL环境变量中。"
 
 #: ../../source/server/ubuntu.rst:165
-msgid "Once these steps are done, the second user can push code to the server, then run ``otree resetdb``."
+msgid ""
+"Once these steps are done, the second user can push code to the server, "
+"then run ``otree resetdb``."
 msgstr "一旦完成这些步骤，第二位用户就可以将代码推送至服务器，并运行 ``otree resetdb``。"
 
 #: ../../source/server/ubuntu.rst:168
 msgid ""
-"If you don't need multiple people to run experiments simultaneously, then each user can take turns running the server on port 80 with ``otree prodserver 80``. "
-"However, if multiple people need to run experiments at the same time, then you would need to run the server on multiple ports, e.g. ``8000``, ``8001``, etc."
+"If you don't need multiple people to run experiments simultaneously, then"
+" each user can take turns running the server on port 80 with ``otree "
+"prodserver 80``. However, if multiple people need to run experiments at "
+"the same time, then you would need to run the server on multiple ports, "
+"e.g. ``8000``, ``8001``, etc."
 msgstr ""
-"如果不需要多人同时运行实验，那么每位用户可以轮流将服务器运行在80端口上，使用 ``otree prodserver 80`` 命令。然而，如果多人需要同时运行实验，那么你需要将服务器运行在不同"
-"的端口上，例如 ``8000``，``8001``，等等。"
+"如果不需要多人同时运行实验，那么每位用户可以轮流将服务器运行在80端口上，使用 ``otree prodserver 80`` "
+"命令。然而，如果多人需要同时运行实验，那么你需要将服务器运行在不同的端口上，例如 ``8000``，``8001``，等等。"

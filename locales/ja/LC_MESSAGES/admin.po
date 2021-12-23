@@ -32,10 +32,10 @@ msgstr ""
 
 #: ../../source/admin.rst:7
 msgid ""
-"Open your browser to *http://localhost:8000/* or whatever you server's "
+"Open your browser to ``localhost:8000`` or whatever you server's "
 "URL is."
 msgstr ""
-"ブラウザを開いて，*http://localhost:8000/*またはあなたのサーバーのURLを入"
+"ブラウザを開いて，``localhost:8000``またはあなたのサーバーのURLを入"
 "力します．"
 
 #: ../../source/admin.rst:12
@@ -234,7 +234,7 @@ msgid ""
 "First, define a function ``vars_for_admin_report``. This works the same "
 "way as :ref:`vars_for_template`. For example:"
 msgstr ""
-"まず、関数 ``vars_for_template`` と同様の働きをする関数 ``vars_for_admin_report`` を定義します。"
+"まず、関数 :ref:`vars_for_template` と同様の働きをする関数 ``vars_for_admin_report`` を定義します。"
 "例："
 
 #: ../../source/admin.rst:126

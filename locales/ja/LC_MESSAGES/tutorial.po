@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-20 21:57-0400\n"
+"POT-Creation-Date: 2021-12-23 07:28-0500\n"
 "PO-Revision-Date: 2021-06-18 23:22+0900\n"
 "Last-Translator: \n"
 "Language: ja\n"
@@ -386,7 +386,9 @@ msgid "Constants"
 msgstr "定数"
 
 #: ../../source/tutorial/part2.rst:28
-msgid "Go to your app's constants class (``C``). (For more info, see :ref:`constants`.)"
+msgid ""
+"Go to your app's constants class (``C``). (For more info, see "
+":ref:`constants`.)"
 msgstr "アプリの定数に移動します。（詳細については、 :ref:`constants` を参照してください。）"
 
 #: ../../source/tutorial/part2.rst:31
@@ -398,14 +400,14 @@ msgstr "``PLAYERS_PER_GROUP`` を3に設定します。oTreeはプレーヤー�
 #: ../../source/tutorial/part2.rst:33
 msgid ""
 "The endowment to each player is 1000 points. So, let's define "
-"``endowment`` and set it to a currency value of ``1000``."
-msgstr "各プレイヤーへの寄付は1000ポイントです。それでは、 ``endowment`` を定義してその値を `1000` に設定しましょう。"
+"``ENDOWMENT`` and set it to a currency value of ``1000``."
+msgstr "各プレイヤーへの寄付は1000ポイントです。それでは、 ``ENDOWMENT`` を定義してその値を `1000` に設定しましょう。"
 
 #: ../../source/tutorial/part2.rst:35
 msgid ""
 "Each contribution is multiplied by 2. So define an integer constant "
-"called ``multiplier = 2``:"
-msgstr "各寄与は2倍されます。したがって、 ``multiplier = 2`` と呼ばれる整数の定数を定義します。"
+"called ``MULTIPLIER = 2``:"
+msgstr "各寄与は2倍されます。したがって、 ``MULTIPLIER = 2`` と呼ばれる整数の定数を定義します。"
 
 #: ../../source/tutorial/part2.rst:38
 msgid "Now we have the following constants:"

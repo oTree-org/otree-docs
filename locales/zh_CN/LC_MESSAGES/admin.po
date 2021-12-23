@@ -30,9 +30,9 @@ msgstr "oTree的管理员界面允许你创建会话，监控会话，并从会�
 
 #: ../../source/admin.rst:7
 msgid ""
-"Open your browser to *http://localhost:8000/* or whatever you server's "
+"Open your browser to ``localhost:8000`` or whatever you server's "
 "URL is."
-msgstr "打开你的浏览器，网址为 *http://localhost:8000/* 或你的服务器的URL。"
+msgstr "打开你的浏览器，网址为 ``localhost:8000`` 或你的服务器的URL。"
 
 #: ../../source/admin.rst:12
 msgid "Password protection"
