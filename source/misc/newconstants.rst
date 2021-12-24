@@ -34,6 +34,8 @@ run::
 
 This command requires oTree 5.4 (September 2021) or higher.
 
+Starting with oTree 5.7, newly created apps use this new all-caps format.
+
 Using the new constants format is not mandatory, but is recommended so that you can be consistent with the documentation
 and latest code samples. The previous format will continue to work fine.
 
