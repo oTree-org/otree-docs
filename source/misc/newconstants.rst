@@ -28,9 +28,13 @@ To this:
 Then to reference a constant, do ``C.NUM_ROUNDS`` or ``C.XYZ``.
 
 If you want to update your existing projects to the new format,
-run ``otree upcase_constants`` (requires oTree 5.4 (September 2021) or higher).
+run::
 
-It's not mandatory, but is recommended so that you can be consistent with the documentation
+    otree upcase_constants
+
+This command requires oTree 5.4 (September 2021) or higher.
+
+Using the new constants format is not mandatory, but is recommended so that you can be consistent with the documentation
 and latest code samples. The previous format will continue to work fine.
 
 The purpose of the change is to harmonize oTree's code style,
@@ -40,3 +44,6 @@ you know that ALL_CAPS is the convention for defining constants.)
 
 If you use oTree Studio, your code has already been automatically upgraded to the new format.
 If you haven't upgraded oTree recently, run ``pip3 install -U otree``.
+
+If you are running an old version of oTree and try to run a project written with the new format,
+you will get the error ``Constants class is missing`` when trying to start the server.
