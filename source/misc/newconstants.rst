@@ -30,9 +30,8 @@ Then to reference a constant, do ``C.NUM_ROUNDS`` or ``C.XYZ``.
 If you want to update your existing projects to the new format,
 run::
 
+    pip3 install -U otree
     otree upcase_constants
-
-This command requires oTree 5.4 (September 2021) or higher.
 
 Starting with oTree 5.7, newly created apps use this new all-caps format.
 

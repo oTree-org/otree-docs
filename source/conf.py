@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'oTree'
-copyright = '2020, oTree team'
+copyright = 'oTree team'
 author = 'oTree team'
 
 
