@@ -3,6 +3,18 @@
 2022 Constants format change
 ============================
 
+Super short version
+-------------------
+
+To ensure your code is following the latest format, run this::
+
+    pip3 install -U otree
+    otree upcase_constants
+
+
+Details
+-------
+
 As of January 2022, there is a new format for constants.
 
 It changes from this:
@@ -28,10 +40,7 @@ To this:
 Then to reference a constant, do ``C.NUM_ROUNDS`` or ``C.XYZ``.
 
 If you want to update your existing projects to the new format,
-run::
-
-    pip3 install -U otree
-    otree upcase_constants
+run the commands at the top of this page.
 
 Starting with oTree 5.7, newly created apps use this new all-caps format.
 
@@ -43,8 +52,14 @@ especially in preparation for upcoming features.
 (Also, if you have prior experience in Python,
 you know that ALL_CAPS is the convention for defining constants.)
 
-If you use oTree Studio, your code has already been automatically upgraded to the new format.
-If you haven't upgraded oTree recently, run ``pip3 install -U otree``.
-
 If you are running an old version of oTree and try to run a project written with the new format,
 you will get the error ``Constants class is missing`` when trying to start the server.
+
+For oTree Studio users
+----------------------
+
+Your code has already been updated.
+
+If you haven't updated oTree recently, just run::
+
+    pip3 install -U otree

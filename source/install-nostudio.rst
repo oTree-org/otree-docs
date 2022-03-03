@@ -49,21 +49,6 @@ You should see the oTree demo site.
 
 To stop the server, press ``Control + C`` at your command line.
 
-.. _pycharm:
-
-Install a text editor
----------------------
-
-Install a text editor like `PyCharm <https://www.jetbrains.com/pycharm/download/>`__
-for editing your Python files.
-See the PyCharm documentation on how to configure your interpreter so that you get
-code completion.
-
-Then launch the text editor and open your entire project folder.
-
-.. _upgrade:
-.. _upgrade-otree-core:
-
 About @staticmethod, etc.
 -------------------------
 

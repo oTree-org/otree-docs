@@ -199,7 +199,7 @@ First, then install oTree Lite::
 Run::
 
     otree remove_self
-
+    otree upcase_constants
 
 Note this command pretty aggressively converts all your model methods to functions,
 e.g. changing ``player.foo()`` to ``foo(player)``.
