@@ -49,6 +49,10 @@ You should see the oTree demo site.
 
 To stop the server, press ``Control + C`` at your command line.
 
+To create a new app, run ``otree startapp your_app_name``.
+
+Session configs are defined in ``settings.py``.
+
 About @staticmethod, etc.
 -------------------------
 

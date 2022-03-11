@@ -1,7 +1,7 @@
 .. _tutorial-studio:
 
-Part 1: Simple survey (for oTree Studio users)
-==============================================
+Part 1: Simple survey
+=====================
 
 (A video of this tutorial is on
 `YouTube <https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__

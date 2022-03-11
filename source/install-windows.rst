@@ -45,5 +45,4 @@ Next steps
 
 -   If you will use :ref:`oTree Studio <studio>` (recommended),
     go to `otreehub.com <https://www.otreehub.com>`__.
--   If you are experienced in programming and want to use a text editor,
-    follow the steps :ref:`here <install-nostudio>`.
+-   If you are experienced in Python and are comfortable with resolving programming errors on your own, you can use oTree with a :ref:`text editor <install-nostudio>`.
