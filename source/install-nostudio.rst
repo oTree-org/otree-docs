@@ -9,12 +9,6 @@ Note: it's recommended to use `oTree Studio <https://www.otreehub.com/studio>`__
 since it is specifically designed for building oTree apps.
 You can easily switch to using a text editor later, by downloading your code.
 
-.. note::
-
-    You should first install oTree for
-    :ref:`Windows <install-windows>` or
-    :ref:`Mac <install-macos>`.
-
 Run oTree
 ---------
 

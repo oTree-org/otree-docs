@@ -11,10 +11,6 @@ rather than being opened manually in a web browser.
 
 One project that uses the REST API a lot is `oTree HR <https://otree-hr.herokuapp.com/>`__.
 
-.. warning::
-
-    As of March 2021, there have been some breaking changes to the REST API.
-
 .. _rest-setup:
 
 Setup
@@ -108,7 +104,7 @@ Example
 
 .. code-block:: python
 
-    data = call_api(GET, 'session_configs')
+    data = call_api(GET, 'rooms')
     pprint(data)
 
 Example output (note it includes ``session_code`` if there is currently a session in the room):
