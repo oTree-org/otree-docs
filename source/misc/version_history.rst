@@ -1,6 +1,13 @@
 Version history
 ```````````````
 
+Version 5.8
+===========
+
+-   Better dropout detection with group_by_arrival_time; see `here <https://groups.google.com/g/otree/c/XsFMNoZR7PY>`__.
+-   Python 3.10 support
+-   Fix various websocket-related errors such as ConnectionClosedOK, IncompleteReadError, ClientDisconnect that tend to happen intermittently, especially with browser bots.
+
 Version 5.6
 ===========
 
