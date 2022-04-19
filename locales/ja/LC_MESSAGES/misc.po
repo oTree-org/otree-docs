@@ -95,7 +95,7 @@ msgid ""
 "``template_name``. Example:"
 msgstr ""
 "テンプレートの名前をページクラスとは異なるものにする必要がある場合（たとえば、複数のページで同じテンプレートを共有している場合）、 "
-"``template_name`` を設定します。例："
+"``template_name`` を設定します。例: "
 
 #: ../../source/misc/advanced.rst:84
 msgid "CSS/JS and base templates"
@@ -236,7 +236,7 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:4
 msgid "Bots: advanced features"
-msgstr "ボット：高度な機能"
+msgstr "ボット: 高度な機能"
 
 #: ../../source/misc/bots_advanced.rst:11
 msgid "Command line bots"
@@ -257,11 +257,11 @@ msgstr "これを実行します。"
 msgid ""
 "To test with a specific number of participants (otherwise it will default"
 " to ``num_demo_participants``)::"
-msgstr "特定の数の参加者でテストするには（それ以外の場合はデフォルトで ``num_demo_participants`` ）："
+msgstr "特定の数の参加者でテストするには（それ以外の場合はデフォルトで ``num_demo_participants`` ）: "
 
 #: ../../source/misc/bots_advanced.rst:25
 msgid "To run tests for all session configs::"
-msgstr "すべてのセッション構成のテストを実行するには："
+msgstr "すべてのセッション構成のテストを実行するには: "
 
 #: ../../source/misc/bots_advanced.rst:30
 msgid "Exporting data"
@@ -344,7 +344,7 @@ msgstr "次のコマンドを実行することですべてのセッション構
 
 #: ../../source/misc/bots_advanced.rst:85
 msgid "Browser bots: misc notes"
-msgstr "ブラウザボット：その他の注意"
+msgstr "ブラウザボット: その他の注意"
 
 #: ../../source/misc/bots_advanced.rst:87
 msgid ""
@@ -394,7 +394,7 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:109
 msgid "For example:"
-msgstr "例："
+msgstr "例: "
 
 #: ../../source/misc/bots_advanced.rst:148
 msgid ""
@@ -439,7 +439,7 @@ msgid ""
 "``error_fields`` can resolve the ambiguity:"
 msgstr ""
 "ボットシステムは送信が失敗する理由を正確に教えてくれません。``weight`` と ``height`` "
-"のどちらが無効なのか、またはその両方が無効であるのか、 ``error_fields`` はそのあいまいさを解決できます："
+"のどちらが無効なのか、またはその両方が無効であるのか、 ``error_fields`` はそのあいまいさを解決できます: "
 
 #: ../../source/misc/bots_advanced.rst:223
 msgid ""
@@ -497,7 +497,7 @@ msgstr ""
 "を定義します。（oTree Studioでは使用できません。）この関数は ``live_method`` "
 "への呼び出しシーケンスをシミュレートします。引数 ``method`` は、Playerクラスのライブメソッドをシミュレートします。例えば、 "
 "``method(3, 'hello')`` プレーヤー3のliveメソッドを呼び出し、``data`` に ``'hello'`` "
-"を設定します。例："
+"を設定します。例: "
 
 #: ../../source/misc/bots_advanced.rst:269
 msgid "``kwargs`` contains at least the following parameters."
@@ -509,7 +509,7 @@ msgstr "``case`` :ref:`テストケース <cases>` を参照。"
 
 #: ../../source/misc/bots_advanced.rst:272
 msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
-msgstr "``page_class`` ：現在のページクラス。例えば、 ``pages.MyPage`` "
+msgstr "``page_class`` : 現在のページクラス。例えば、 ``pages.MyPage`` "
 
 #: ../../source/misc/bots_advanced.rst:273
 msgid "``round_number``"
@@ -586,14 +586,14 @@ msgstr "2021年3月現在の新しいベータ機能。"
 
 #: ../../source/misc/rest_api.rst:64
 msgid "GET URL: ``/api/otree_version/``"
-msgstr "GET URL： ``/api/otree_version/`` "
+msgstr "GET URL:  ``/api/otree_version/`` "
 
 #: ../../source/misc/rest_api.rst:67 ../../source/misc/rest_api.rst:86
 #: ../../source/misc/rest_api.rst:103 ../../source/misc/rest_api.rst:136
 #: ../../source/misc/rest_api.rst:175 ../../source/misc/rest_api.rst:200
 #: ../../source/misc/rest_api.rst:215 ../../source/misc/rest_api.rst:232
 msgid "Example"
-msgstr "例："
+msgstr "例: "
 
 #: ../../source/misc/rest_api.rst:75
 msgid "\"Session configs\" endpoint"
@@ -601,7 +601,7 @@ msgstr "\"Session configs\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:81
 msgid "GET URL: ``/api/session_configs/``"
-msgstr "GET URL： ``/api/session_configs/`` "
+msgstr "GET URL:  ``/api/session_configs/`` "
 
 #: ../../source/misc/rest_api.rst:83
 msgid ""
@@ -615,13 +615,13 @@ msgstr "\"Rooms\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:100
 msgid "GET URL: ``/api/rooms/``"
-msgstr "GET URL： ``/api/rooms/`` "
+msgstr "GET URL:  ``/api/rooms/`` "
 
 #: ../../source/misc/rest_api.rst:110
 msgid ""
 "Example output (note it includes ``session_code`` if there is currently a"
 " session in the room):"
-msgstr "出力例（現在、roomにセッションがある場合、 ``session_code`` が含まれているかについて注意してください）："
+msgstr "出力例（現在、roomにセッションがある場合、 ``session_code`` が含まれているかについて注意してください）: "
 
 #: ../../source/misc/rest_api.rst:122
 msgid "\"Create sessions\" endpoint"
@@ -629,7 +629,7 @@ msgstr "\"Create sessions\" エンドポイント"
 
 #: ../../source/misc/rest_api.rst:124
 msgid "POST URL: ``/api/sessions/``"
-msgstr "POST URL： ``/api/sessions/``"
+msgstr "POST URL:  ``/api/sessions/``"
 
 #: ../../source/misc/rest_api.rst:126
 msgid ""
@@ -647,7 +647,7 @@ msgid ""
 "interface (e.g. with sliders and visual widgets)"
 msgstr ""
 "oTreeの :ref:`セッションの構成 <edit_config>` "
-"インターフェイスの代替手段の作成（例：スライダーやビジュアルウィジェットなどの使用）"
+"インターフェイスの代替手段の作成（例: スライダーやビジュアルウィジェットなどの使用）"
 
 #: ../../source/misc/rest_api.rst:131
 msgid "Process that will create new oTree sessions on some fixed schedule"
@@ -776,7 +776,7 @@ msgid ""
 "``vars`` (required): a dict of participant vars to add. Values can be any"
 " JSON-serializable data type, even nested dicts/lists."
 msgstr ""
-"``vars`` （必須）：追加するparticipant "
+"``vars`` （必須）: 追加するparticipant "
 "varsの辞書型。値はネストされた辞書型やリストであっても、JSONでシリアル化可能な任意のデータ型にすることができます。"
 
 #: ../../source/misc/rest_api.rst:253
@@ -843,7 +843,7 @@ msgstr ""
 
 #: ../../source/misc/rest_api.rst:281
 msgid "Here's an example:"
-msgstr "例："
+msgstr "例: "
 
 #: ../../source/misc/rest_api.rst:290
 msgid "You can also set participant labels here."
@@ -957,7 +957,7 @@ msgid ""
 msgstr ""
 "多くの繰り返される :ref:`FIELD_error_message <FOO_error_message>` "
 "メソッドがある場合は、それらを単一の :ref:`error_message <error_message>` "
-"関数に置き換えることができます。例："
+"関数に置き換えることができます。例: "
 
 #: ../../source/misc/tips_and_tricks.rst:158
 msgid "You can instead define this function on your page:"
@@ -979,7 +979,7 @@ msgid ""
 "level function. This is a handy way to share the same function across "
 "multiple pages. For example, let's say many pages need to have these 2 "
 "functions:"
-msgstr "すべてのページ関数は、ページクラスから最上位の関数に移動できます。これは、同じ関数を複数のページで共有するための便利な方法です。たとえば、多くのページに次の2つの関数が必要だとします。："
+msgstr "すべてのページ関数は、ページクラスから最上位の関数に移動できます。これは、同じ関数を複数のページで共有するための便利な方法です。たとえば、多くのページに次の2つの関数が必要だとします。: "
 
 #: ../../source/misc/tips_and_tricks.rst:205
 msgid ""
@@ -1065,7 +1065,7 @@ msgstr "そのままの場合、ページでは次のように記述しなけれ
 
 #: ../../source/misc/tips_and_tricks.rst:310
 msgid "It would be much better to break this to 2 separate BooleanFields::"
-msgstr "そして、フィールドを2つの別々のBooleanFieldsに分割することを推奨します："
+msgstr "そして、フィールドを2つの別々のBooleanFieldsに分割することを推奨します: "
 
 #: ../../source/misc/tips_and_tricks.rst:315
 msgid "Then your pages could be simplified to:"

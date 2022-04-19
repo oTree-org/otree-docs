@@ -24,13 +24,13 @@ msgstr "チュートリアル"
 
 #: ../../source/tutorial/intro.rst:4
 msgid "This tutorial will cover the creation of several apps."
-msgstr "このチュートリアルではいくつかのアプリの作り方を紹介します．"
+msgstr "このチュートリアルではいくつかのアプリの作り方を紹介します。"
 
 #: ../../source/tutorial/intro.rst:6
 msgid ""
 "First, you should be familiar with Python; we have a simple tutorial "
 "here: :ref:`python_tutorial`."
-msgstr "はじめに，Pythonに慣れる必要があります．簡単なチュートリアルをコチラ :ref:`python_tutorial` に用意しました．"
+msgstr "はじめに、Pythonに慣れる必要があります。簡単なチュートリアルをコチラ :ref:`python_tutorial` に用意しました。"
 
 #: ../../source/tutorial/intro.rst:10
 msgid ""
@@ -42,7 +42,7 @@ msgstr ""
 #: ../../source/tutorial/part1_studio.rst:4
 #, fuzzy
 msgid "Part 1: Simple survey"
-msgstr "その1：簡単なアンケート（PyCharmなどのエディタユーザに向けて）"
+msgstr "その1: 簡単なアンケート（PyCharmなどのエディタユーザに向けて）"
 
 #: ../../source/tutorial/part1_studio.rst:6 ../../source/tutorial/part2.rst:4
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "（`YouTube "
 "<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
-"でのビデオチュートリアルもあります(英語です)．）"
+"でのビデオチュートリアルもあります(英語です)。）"
 
 #: ../../source/tutorial/part1_studio.rst:10
 msgid ""
@@ -70,11 +70,11 @@ msgstr "サイドバーでPlayer modelを選択してください。2つのフ�
 
 #: ../../source/tutorial/part1_studio.rst:19
 msgid "``name`` (``StringField``, meaning text characters)"
-msgstr "``name`` (``StringField`` ：テキストの文字列を意味します。)"
+msgstr "``name`` (``StringField`` : テキストの文字列を意味します。)"
 
 #: ../../source/tutorial/part1_studio.rst:20
 msgid "``age`` (``IntegerField``)"
-msgstr "``age`` (``IntegerField`` ：整数値)"
+msgstr "``age`` (``IntegerField`` : 整数値)"
 
 #: ../../source/tutorial/part1_studio.rst:24 ../../source/tutorial/part2.rst:81
 msgid "Pages"
@@ -82,15 +82,15 @@ msgstr "ページ"
 
 #: ../../source/tutorial/part1_studio.rst:26
 msgid "This survey has 2 pages:"
-msgstr "この調査では2ページを用意します．"
+msgstr "この調査では2ページを用意します。"
 
 #: ../../source/tutorial/part1_studio.rst:28
 msgid "Page 1: players enter their name and age"
-msgstr "1ページ目：プレイヤーが名前と年齢を入力します．"
+msgstr "1ページ目: プレイヤーが名前と年齢を入力します。"
 
 #: ../../source/tutorial/part1_studio.rst:29
 msgid "Page 2: players see the data they entered on the previous page"
-msgstr "2ページ目：プレイヤーが1ページ目に入力した内容を確認します．"
+msgstr "2ページ目: プレイヤーが1ページ目に入力した内容を確認します。"
 
 #: ../../source/tutorial/part1_studio.rst:31
 msgid "So, create 2 pages in your ``page_sequence``: ``Survey`` and ``Results``."
@@ -121,7 +121,7 @@ msgstr "2ページ目"
 
 #: ../../source/tutorial/part1_studio.rst:53
 msgid "Now we define ``Results``."
-msgstr "続いて， ``Results`` を定義します．"
+msgstr "続いて、 ``Results`` を定義します。"
 
 #: ../../source/tutorial/part1_studio.rst:55
 msgid ""
@@ -150,7 +150,7 @@ msgstr "ダウンロードと実行"
 msgid ""
 "Download the otreezip file and follow the instructions on how to install "
 "oTree and run the otreezip file."
-msgstr "otreezipファイルをダウンロードし，指示に従ってoTreeをインストールした上で，otreezipファイルを解凍してください．"
+msgstr "otreezipファイルをダウンロードし、指示に従ってoTreeをインストールした上で、otreezipファイルを解凍してください。"
 
 #: ../../source/tutorial/part1_studio.rst:76
 msgid ""
@@ -162,7 +162,7 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:2
 msgid "Part 2: Public goods game"
-msgstr "その2：公共財ゲーム"
+msgstr "その2: 公共財ゲーム"
 
 #: ../../source/tutorial/part2.rst:8
 msgid ""
@@ -264,23 +264,23 @@ msgstr "各グループについて、グループへの貢献の合計と、各
 
 #: ../../source/tutorial/part2.rst:83
 msgid "This game has 3 pages:"
-msgstr "このゲームは3ページあります："
+msgstr "このゲームは3ページあります: "
 
 #: ../../source/tutorial/part2.rst:85
 msgid "Page 1: players decide how much to contribute"
-msgstr "ページ1：プレイヤーは寄付する金額を決定します"
+msgstr "ページ1: プレイヤーは寄付する金額を決定します"
 
 #: ../../source/tutorial/part2.rst:86
 msgid "Page 2: Wait page: players wait for others in their group"
-msgstr "ページ2：待機ページ：プレーヤーはグループ内の他のユーザーの操作が終わるまで待機します"
+msgstr "ページ2: 待機ページ: プレーヤーはグループ内の他のユーザーの操作が終わるまで待機します"
 
 #: ../../source/tutorial/part2.rst:87
 msgid "Page 3: players are told the results"
-msgstr "ページ3：プレイヤーに結果が通知されます"
+msgstr "ページ3: プレイヤーに結果が通知されます"
 
 #: ../../source/tutorial/part2.rst:90
 msgid "Page 1: Contribute"
-msgstr "ページ1：寄付"
+msgstr "ページ1: 寄付"
 
 #: ../../source/tutorial/part2.rst:92
 msgid ""
@@ -303,7 +303,7 @@ msgstr "``title`` ブロックを ``Contribute`` に設定し、 ``content`` ブ
 
 #: ../../source/tutorial/part2.rst:124
 msgid "Page 2: ResultsWaitPage"
-msgstr "ページ2：ResultsWaitPage"
+msgstr "ページ2: ResultsWaitPage"
 
 #: ../../source/tutorial/part2.rst:126
 msgid ""
@@ -311,7 +311,7 @@ msgid ""
 "payoffs can be calculated. Add a group function called ``set_payoffs``:"
 msgstr ""
 "すべてのプレイヤーが ``Contribute`` ページを完了すると、プレイヤーの利得を計算できます。 ``set_payoffs`` "
-"と呼ばれるグループ関数を追加します："
+"と呼ばれるグループ関数を追加します: "
 
 #: ../../source/tutorial/part2.rst:140
 msgid ""
@@ -337,7 +337,7 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:156
 msgid "Page 3: Results"
-msgstr "ページ3：結果"
+msgstr "ページ3: 結果"
 
 #: ../../source/tutorial/part2.rst:158
 msgid "Now we create a page called ``Results``. Set the template's content to:"
@@ -443,7 +443,7 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:2
 msgid "Part 3: Trust game"
-msgstr "パート3：信頼ゲーム"
+msgstr "パート3: 信頼ゲーム"
 
 #: ../../source/tutorial/part3.rst:4
 msgid ""
@@ -497,7 +497,7 @@ msgstr "次に、プレーヤーとグループにフィールドを追加しま
 
 #: ../../source/tutorial/part3.rst:46
 msgid "Your first instinct may be to define the fields on the Player like this:"
-msgstr "あなたは直観的に、次のようにプレーヤーのフィールドを定義してしまうかもしれません："
+msgstr "あなたは直観的に、次のようにプレーヤーのフィールドを定義してしまうかもしれません: "
 
 #: ../../source/tutorial/part3.rst:56
 msgid ""
@@ -536,7 +536,7 @@ msgstr "テンプレートとページを定義する"
 
 #: ../../source/tutorial/part3.rst:92
 msgid "We need 3 pages:"
-msgstr "3ページ必要です："
+msgstr "3ページ必要です: "
 
 #: ../../source/tutorial/part3.rst:94
 msgid "P1's \"Send\" page"
@@ -584,7 +584,7 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:148
 msgid "Here is the page code. Notes:"
-msgstr "注意："
+msgstr "注意: "
 
 #: ../../source/tutorial/part3.rst:150
 msgid ""
@@ -656,7 +656,7 @@ msgid "Run the server"
 msgstr "サーバーを実行します"
 
 #~ msgid "Part 1: Simple survey (for oTree Studio users)"
-#~ msgstr "その1：簡単なアンケート（oTree Studioユーザに向けて）"
+#~ msgstr "その1: 簡単なアンケート（oTree Studioユーザに向けて）"
 
 #~ msgid ""
 #~ "Use your command line to ``cd`` to"
@@ -670,12 +670,12 @@ msgstr "サーバーを実行します"
 #~ "としたとすると、以下のようになります。"
 
 #~ msgid "Then, create the app::"
-#~ msgstr "次に，アプリを作成します。"
+#~ msgstr "次に、アプリを作成します。"
 
 #~ msgid ""
 #~ "Then in PyCharm, go to the folder"
 #~ " ``my_simple_survey`` that was created."
-#~ msgstr "次にPyCharm上で、作成された ``my_simple_survey`` フォルダに移動します．"
+#~ msgstr "次にPyCharm上で、作成された ``my_simple_survey`` フォルダに移動します。"
 
 #~ msgid "Define models"
 #~ msgstr "modelsの定義"
@@ -688,10 +688,10 @@ msgstr "サーバーを実行します"
 #~ " add 2 fields:"
 #~ msgstr ""
 #~ "``__init__.py`` で、 ``class Player(BasePlayer):`` "
-#~ "という行までスクロールします。ここでは、データベース内のPlayerテーブルの列を定義します。2つのフィールドを追加しましょう："
+#~ "という行までスクロールします。ここでは、データベース内のPlayerテーブルの列を定義します。2つのフィールドを追加しましょう: "
 
 #~ msgid "``name`` (which is a ``StringField``, meaning text characters)"
-#~ msgstr "``name`` (これは ``StringField`` でテキスト文字を意味します．)"
+#~ msgstr "``name`` (これは ``StringField`` でテキスト文字を意味します。)"
 
 #~ msgid "``age`` (which is a positive integer field)"
 #~ msgstr "``age`` （これは正の整数値です）"
@@ -700,13 +700,13 @@ msgstr "サーバーを実行します"
 #~ msgstr "テンプレートの定義"
 
 #~ msgid "So, let's make 2 HTML template files."
-#~ msgstr "続いて、2つのHTMLテンプレートファイルを作成しましょう．"
+#~ msgstr "続いて、2つのHTMLテンプレートファイルを作成しましょう。"
 
 #~ msgid ""
 #~ "Let's name the first page "
 #~ "``MyPage.html``, and put these contents "
 #~ "inside:"
-#~ msgstr "最初のページを ``MyPage.html`` という名前にして、その中にこれらのコンテンツを入れてみましょう．"
+#~ msgstr "最初のページを ``MyPage.html`` という名前にして、その中にこれらのコンテンツを入れてみましょう。"
 
 #~ msgid "The second template will be called ``Results.html``."
 #~ msgstr "2つ目のテンプレートは ``Results.html`` とします。"
@@ -718,7 +718,7 @@ msgstr "サーバーを実行します"
 #~ "Now we define our pages, which "
 #~ "contain the logic for how to "
 #~ "display the HTML templates."
-#~ msgstr "次に、ページを定義します．ページには、HTMLテンプレートを表示するためのロジックが含まれています．"
+#~ msgstr "次に、ページを定義します。ページには、HTMLテンプレートを表示するためのロジックが含まれています。"
 
 #~ msgid ""
 #~ "Since we have 2 templates, we need"
@@ -726,7 +726,7 @@ msgstr "サーバーを実行します"
 #~ " match those of the templates "
 #~ "(``MyPage`` and ``Results``)."
 #~ msgstr ""
-#~ "テンプレートが2つあるので、2つの ``Page`` クラスが必要になります．名前はテンプレート名（ "
+#~ "テンプレートが2つあるので、2つの ``Page`` クラスが必要になります。名前はテンプレート名（ "
 #~ "``MyPage`` と ``Results`` ）と一致する必要があります。"
 
 #~ msgid ""
@@ -775,7 +775,7 @@ msgstr "サーバーを実行します"
 #~ msgstr "サーバの起動"
 
 #~ msgid "Enter::"
-#~ msgstr "以下のコマンドを入力："
+#~ msgstr "以下のコマンドを入力: "
 
 #~ msgid ""
 #~ "Then open your browser to "

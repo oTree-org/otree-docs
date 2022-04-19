@@ -60,7 +60,7 @@ msgstr ""
 
 #: ../../source/install-windows.rst:25
 msgid "Check the box to add Python to PATH:"
-msgstr "ボックスをチェックし、PythonをPATHに追加してください："
+msgstr "ボックスをチェックし、PythonをPATHに追加してください: "
 
 #: ../../source/install-windows.rst:30
 msgid "Step 2: Install oTree"
@@ -70,11 +70,11 @@ msgstr "ステップ2: oTreeのインストール"
 msgid ""
 "Go to the folder where you want to store your oTree project. Then click "
 "the \"File\" menu and open PowerShell:"
-msgstr "oTreeのプロジェクトを保存したいフォルダに移動し、\"ファイル\" メニューをクリックしてPowerShellを開いてください："
+msgstr "oTreeのプロジェクトを保存したいフォルダに移動し、\"ファイル\" メニューをクリックしてPowerShellを開いてください: "
 
 #: ../../source/install-windows.rst:37
 msgid "Enter this command at the prompt:"
-msgstr "次のコマンドをプロンプトに入力してください："
+msgstr "次のコマンドをプロンプトに入力してください: "
 
 #: ../../source/install-windows.rst:44
 msgid "Next steps"

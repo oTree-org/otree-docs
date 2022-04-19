@@ -28,7 +28,7 @@ msgid ""
 "for building oTree apps. You can easily switch to using a text editor "
 "later, by downloading your code."
 msgstr ""
-"注意：oTreeアプリケーションを構築するために特化した設計であるため、 `oTree Studio "
+"注意: oTreeアプリケーションを構築するために特化した設計であるため、 `oTree Studio "
 "<https://www.otreehub.com/studio>`__ "
 "を使うことをお勧めします。コードをダウンロードし、簡単にテキストエディターに切り替えることができます。"
 
@@ -38,7 +38,7 @@ msgstr "oTreeの実行"
 
 #: ../../source/install-nostudio.rst:15
 msgid "If you're on MacOS, run::"
-msgstr "MacOSを利用している場合："
+msgstr "MacOSを利用している場合: "
 
 #: ../../source/install-nostudio.rst:19
 msgid ""
@@ -123,7 +123,7 @@ msgstr "PyCharm、VS Code、またはほかのIDEを利用している場合は�
 
 #: ../../source/install-nostudio.rst:60
 msgid "For example:"
-msgstr "例："
+msgstr "例: "
 
 #: ../../source/install-nostudio.rst:68
 msgid "Or:"

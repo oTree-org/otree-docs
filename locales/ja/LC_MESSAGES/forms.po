@@ -58,7 +58,7 @@ msgstr "最大値、最小値"
 
 #: ../../source/forms.rst:46
 msgid "To require an integer to be between 12 and 24:"
-msgstr "例：12から24までの整数が必要な時"
+msgstr "例: 12から24までの整数が必要な時"
 
 #: ../../source/forms.rst:52
 msgid "If the max/min are not fixed, you should use :ref:`FOO_max`"
@@ -80,7 +80,7 @@ msgid ""
 "``widget`` to ``RadioSelect`` or ``RadioSelectHorizontal``:"
 msgstr ""
 "ダ六腑ダウンの代わりにラジオボタンを使いたい場合は、 ``widget`` に ``RadioSelect`` か "
-"``RadioSelectHorizontal`` を設定して下さい。："
+"``RadioSelectHorizontal`` を設定して下さい。: "
 
 #: ../../source/forms.rst:78
 msgid ""
@@ -92,7 +92,7 @@ msgstr "選択肢を動的に設定したい場合は、 :ref:`FOO_choices` を�
 msgid ""
 "You can also set display names for each choice by making a list of "
 "[value, display] pairs:"
-msgstr "[value, display]のペアをリストに設定することで、選択肢に対応する表示名を設定することができます。："
+msgstr "[value, display]のペアをリストに設定することで、選択肢に対応する表示名を設定することができます。: "
 
 #: ../../source/forms.rst:93
 msgid ""
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ../../source/forms.rst:96
 msgid "You can do this for ``BooleanField``, ``StringField``, etc.:"
-msgstr "``BooleanField`` や ``StringField`` 等を使いたい場合は、下記のように記述します。："
+msgstr "``BooleanField`` や ``StringField`` 等を使いたい場合は、下記のように記述します。: "
 
 #: ../../source/forms.rst:107
 msgid ""
@@ -122,7 +122,7 @@ msgstr "任意の入力フォーム"
 
 #: ../../source/forms.rst:121
 msgid "If a field is optional, you can use ``blank=True`` like this:"
-msgstr "フォームへの入力が任意である場合、 ``blank=True`` を下記のように使います。："
+msgstr "フォームへの入力が任意である場合、 ``blank=True`` を下記のように使います。: "
 
 #: ../../source/forms.rst:130
 msgid "Dynamic form field validation"
@@ -152,7 +152,7 @@ msgstr "``choices=`` で設定することで、フォームの選択肢を設�
 
 #: ../../source/forms.rst:148
 msgid "Example:"
-msgstr "例："
+msgstr "例: "
 
 #: ../../source/forms.rst:165
 msgid "{field_name}_max()"
@@ -162,7 +162,7 @@ msgstr "{field_name}_max()"
 msgid ""
 "The dynamic alternative to setting ``max=`` in the model field. For "
 "example:"
-msgstr "``max=`` を動的に設定したい場合の手段として用いることができます。例："
+msgstr "``max=`` を動的に設定したい場合の手段として用いることができます。例: "
 
 #: ../../source/forms.rst:180
 msgid "{field_name}_min()"
@@ -251,7 +251,7 @@ msgid ""
 "formfields }}`` you can use ``{{ formfield }}``:"
 msgstr ""
 "フォームを個別に配置したい場合は、 ``{{ formfields }}`` の代わりに、 ``{{ formfield }}`` "
-"を使うことができます。："
+"を使うことができます。: "
 
 #: ../../source/forms.rst:268
 msgid "You can also put the ``label`` in directly in the template:"
@@ -292,7 +292,7 @@ msgstr ""
 
 #: ../../source/forms.rst:315
 msgid "Example: Radio buttons in tables and other custom layouts"
-msgstr "例：表やそのほかのカスタムレイアウト中のラジオボタン"
+msgstr "例: 表やそのほかのカスタムレイアウト中のラジオボタン"
 
 #: ../../source/forms.rst:317
 msgid "Let's say you have a set of ``IntegerField`` in your model:"
@@ -363,7 +363,7 @@ msgstr ""
 
 #: ../../source/forms.rst:387
 msgid "Raw HTML example: custom user interface with JavaScript"
-msgstr "HTMLコードの例：JavaScriptを用いたカスタムユーザインタフェース"
+msgstr "HTMLコードの例: JavaScriptを用いたカスタムユーザインタフェース"
 
 #: ../../source/forms.rst:389
 msgid ""
@@ -377,7 +377,7 @@ msgstr "ユーザがフォームフィールに入力するのではなく、チ
 msgid ""
 "First, build your interface using HTML and JavaScript. Then use "
 "JavaScript to write the results into a hidden form field. For example:"
-msgstr "まず、HTMLやJavaScriptを利用するインタフェースを構成してください。次に、JavaScriptを利用して非表示のフォームに結果を書き出します。例："
+msgstr "まず、HTMLやJavaScriptを利用するインタフェースを構成してください。次に、JavaScriptを利用して非表示のフォームに結果を書き出します。例: "
 
 #: ../../source/forms.rst:412
 msgid ""
@@ -472,7 +472,7 @@ msgstr "\"ラベルに変数が含まれる場合、ページに文字列を作�
 
 #: ../../source/forms.rst:514
 msgid "Then, in the template:"
-msgstr "次に、テンプレートで："
+msgstr "次に、テンプレートで: "
 
 #: ../../source/forms.rst:520
 msgid ""

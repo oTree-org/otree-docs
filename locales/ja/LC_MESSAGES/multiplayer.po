@@ -50,7 +50,7 @@ msgstr "ニックネームとチャットルームのメンバーをカスタマ
 
 #: ../../source/multiplayer/chat.rst:24
 msgid "You can specify a ``channel`` and/or ``nickname`` like this:"
-msgstr "あなたは ``channel`` および/または ``nickname``  をこのように指定できます："
+msgstr "あなたは ``channel`` および/または ``nickname``  をこのように指定できます: "
 
 #: ../../source/multiplayer/chat.rst:31
 msgid "Nickname"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../../source/multiplayer/chat.rst:49
 msgid "Example: chat by role"
-msgstr "例：役割ごとのチャット"
+msgstr "例: 役割ごとのチャット"
 
 #: ../../source/multiplayer/chat.rst:51
 msgid ""
@@ -99,15 +99,15 @@ msgstr "これは、グループ内のコミュニケーションの代わりに
 
 #: ../../source/multiplayer/chat.rst:64
 msgid "In the page:"
-msgstr "ページ内："
+msgstr "ページ内: "
 
 #: ../../source/multiplayer/chat.rst:76
 msgid "Then in the template:"
-msgstr "テンプレート内："
+msgstr "テンプレート内: "
 
 #: ../../source/multiplayer/chat.rst:83
 msgid "Example: chat across rounds"
-msgstr "例：ラウンドの違いに関係なくチャットする"
+msgstr "例: ラウンドの違いに関係なくチャットする"
 
 #: ../../source/multiplayer/chat.rst:85
 msgid ""
@@ -117,7 +117,7 @@ msgstr "現在別のラウンドにいるプレーヤーとチャットする必
 
 #: ../../source/multiplayer/chat.rst:93
 msgid "Example: chat between all groups in all rounds"
-msgstr "例：すべてのラウンドのすべてのグループ間でチャット"
+msgstr "例: すべてのラウンドのすべてのグループ間でチャット"
 
 #: ../../source/multiplayer/chat.rst:95
 msgid ""
@@ -153,7 +153,7 @@ msgid ""
 "and styling that parent ``<div>``. For example, to set the width:"
 msgstr ""
 "``<div>`` の中にコードを挿入し、その親 の``<div>`` "
-"をスタイリングすることで、外観をカスタマイズすることもできます。たとえば、幅を設定するには："
+"をスタイリングすることで、外観をカスタマイズすることもできます。たとえば、幅を設定するには: "
 
 #: ../../source/multiplayer/chat.rst:122
 msgid "Multiple chats on a page"
@@ -260,7 +260,7 @@ msgid ""
 "``_ROLE``:"
 msgstr ""
 "各グループに購入者/販売者、プリンシパル/エージェントなどの複数の役割がある場合は、定数でそれらを定義できます。名前を ``_ROLE`` "
-"で終わらせます："
+"で終わらせます: "
 
 #: ../../source/multiplayer/groups.rst:60
 msgid ""
@@ -269,11 +269,11 @@ msgid ""
 "each role different content, e.g.:"
 msgstr ""
 "次に、oTreeはそれぞれの ``role`` を異なるプレーヤーに自動的に割り当てます。（ ``id_in_group`` "
-"による順番に従う。）これを使用して、各役割にさまざまなコンテンツを表示できます。例："
+"による順番に従う。）これを使用して、各役割にさまざまなコンテンツを表示できます。例: "
 
 #: ../../source/multiplayer/groups.rst:72
 msgid "In a template:"
-msgstr "テンプレートの場合："
+msgstr "テンプレートの場合: "
 
 #: ../../source/multiplayer/groups.rst:78
 msgid ""
@@ -407,7 +407,7 @@ msgid ""
 "the player who has that ``id_in_subsession``. For example:"
 msgstr ""
 "整数の行列を渡すこともできます。1からサブセッションのプレーヤー数までのすべての整数が含まれている必要があります。各整数は、プレイヤーの "
-"``id_in_subsession`` を表します。例えば："
+"``id_in_subsession`` を表します。例えば: "
 
 #: ../../source/multiplayer/groups.rst:243
 msgid ""
@@ -511,7 +511,7 @@ msgid ""
 " function that does the desired calculations. For example:"
 msgstr ""
 "``after_all_players_arrive`` "
-"はすべてのプレイヤーがWaitPageに到着したときに実行される関数です。プレーヤーの利得の設定や、勝者を決定したりするのに適した関数です。最初に、必要な計算を行うグループ関数を定義します。例えば："
+"はすべてのプレイヤーがWaitPageに到着したときに実行される関数です。プレーヤーの利得の設定や、勝者を決定したりするのに適した関数です。最初に、必要な計算を行うグループ関数を定義します。例えば: "
 
 #: ../../source/multiplayer/waitpages.rst:41
 msgid "Then trigger this function by doing:"
@@ -529,7 +529,7 @@ msgstr ""
 msgid ""
 "If you are using a text editor, ``after_all_players_arrive`` can also be "
 "defined directly in the WaitPage:"
-msgstr "テキストエディタを使用している場合、 ``after_all_players_arrive`` は、WaitPageで直接定義することもできます。："
+msgstr "テキストエディタを使用している場合、 ``after_all_players_arrive`` は、WaitPageで直接定義することもできます。: "
 
 #: ../../source/multiplayer/waitpages.rst:61
 msgid "It can also be a string:"
@@ -714,7 +714,7 @@ msgstr "次に、Player関数を定義します。"
 
 #: ../../source/multiplayer/waitpages.rst:188
 msgid "Now use this:"
-msgstr "そして、これを使用してください："
+msgstr "そして、これを使用してください: "
 
 #: ../../source/multiplayer/waitpages.rst:200
 msgid ""
@@ -840,7 +840,7 @@ msgid ""
 "``title_text`` and ``body_text`` attributes, e.g.:"
 msgstr ""
 "``title_text`` および ``body_text`` "
-"属性を設定することにより、WaitPageに表示されるテキストをカスタマイズできます。例："
+"属性を設定することにより、WaitPageに表示されるテキストをカスタマイズできます。例: "
 
 #: ../../source/multiplayer/waitpages.rst:292
 msgid "See also: :ref:`customize_wait_page`."
