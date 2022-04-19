@@ -86,11 +86,11 @@ msgstr "この調査では2ページを用意します。"
 
 #: ../../source/tutorial/part1_studio.rst:28
 msgid "Page 1: players enter their name and age"
-msgstr "1ページ目: プレイヤーが名前と年齢を入力します。"
+msgstr "1ページ目: プレーヤーが名前と年齢を入力します。"
 
 #: ../../source/tutorial/part1_studio.rst:29
 msgid "Page 2: players see the data they entered on the previous page"
-msgstr "2ページ目: プレイヤーが1ページ目に入力した内容を確認します。"
+msgstr "2ページ目: プレーヤーが1ページ目に入力した内容を確認します。"
 
 #: ../../source/tutorial/part1_studio.rst:31
 msgid "So, create 2 pages in your ``page_sequence``: ``Survey`` and ``Results``."
@@ -180,7 +180,7 @@ msgid ""
 "their points they want to contribute to the group. The combined "
 "contributions are multiplied by 2, and then divided evenly three ways and"
 " redistributed back to the players."
-msgstr "これは3人用のゲームで、各プレーヤーには最初に100ポイントが与えられます。各プレイヤーは、グループに貢献したいポイントの数を個別に決定します。合計された貢献は2倍され、次に3つの方法で均等に分割され、プレーヤーに再分配されます。"
+msgstr "これは3人用のゲームで、各プレイヤーには最初に100ポイントが与えられます。各プレイヤーは、グループに貢献したいポイントの数を個別に決定します。合計された貢献は2倍され、次に3つの方法で均等に分割され、プレイヤーに再分配されます。"
 
 #: ../../source/tutorial/part2.rst:15
 msgid ""
@@ -214,7 +214,7 @@ msgstr "アプリの定数に移動します。（詳細については、 :ref:
 msgid ""
 "Set ``PLAYERS_PER_GROUP`` to 3. oTree will then automatically divide "
 "players into groups of 3."
-msgstr "``PLAYERS_PER_GROUP`` を3に設定します。oTreeはプレーヤーを自動的に3つのグループに分割します。"
+msgstr "``PLAYERS_PER_GROUP`` を3に設定します。oTreeはプレイヤーを自動的に3つのグループに分割します。"
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 "player? It's important to record how much each person contributed. So, go"
 " to the Player model and define a ``contribution`` column:"
 msgstr ""
-"ゲームがプレイされた後、各プレーヤーについてそれぞれがどれだけ貢献したかを記録することが重要です。したがって、Playerモデルに移動し、 "
+"ゲームがプレイされた後、各プレイヤーについてそれぞれがどれだけ貢献したかを記録することが重要です。したがって、Playerモデルに移動し、 "
 "``contribution`` を定義します。"
 
 #: ../../source/tutorial/part2.rst:64
@@ -251,7 +251,7 @@ msgid ""
 "but we don't need to explicitly define a ``payoff`` field, because in "
 "oTree, the Player already contains a ``payoff`` column."
 msgstr ""
-"また、ゲームの終了時にユーザーが行う利得を記録する必要がありますが、oTreeではプレーヤーにすでに ``payoff`` "
+"また、ゲームの終了時にユーザーが行う利得を記録する必要がありますが、oTreeではプレイヤーにすでに ``payoff`` "
 "フィールドが定義されているため、フィールドを明示的に定義する必要はありません。"
 
 #: ../../source/tutorial/part2.rst:68
@@ -260,7 +260,7 @@ msgid ""
 "might be interested in knowing the total contributions to the group, and "
 "the individual share returned to each player. So, we define those 2 "
 "fields on the Group:"
-msgstr "各グループについて、グループへの貢献の合計と、各プレーヤーに返される個々のシェアを知りたい場合は、グループでこれら2つのフィールドを定義します。"
+msgstr "各グループについて、グループへの貢献の合計と、各プレイヤーに返される個々のシェアを知りたい場合は、グループでこれら2つのフィールドを定義します。"
 
 #: ../../source/tutorial/part2.rst:83
 msgid "This game has 3 pages:"
@@ -272,7 +272,7 @@ msgstr "ページ1: プレイヤーは寄付する金額を決定します"
 
 #: ../../source/tutorial/part2.rst:86
 msgid "Page 2: Wait page: players wait for others in their group"
-msgstr "ページ2: 待機ページ: プレーヤーはグループ内の他のユーザーの操作が終わるまで待機します"
+msgstr "ページ2: 待機ページ: プレイヤーはグループ内の他のユーザーの操作が終わるまで待機します"
 
 #: ../../source/tutorial/part2.rst:87
 msgid "Page 3: players are told the results"
@@ -324,7 +324,7 @@ msgid ""
 msgstr ""
 "プレイヤーが寄付した後、他のプレイヤーが寄付し終わるのを待つ必要があります。したがって、 ``WaitPage`` "
 "を追加する必要があります。それを ``ResultsWaitPage`` "
-"と呼びましょう。プレーヤーがWaitPageに到着すると、グループ内の他のすべてのプレーヤーが到着するまで待機する必要があります。（詳細については、"
+"と呼びましょう。プレイヤーがWaitPageに到着すると、グループ内の他のすべてのプレイヤーが到着するまで待機する必要があります。（詳細については、"
 " :ref:`wait_pages` を参照してください）。"
 
 #: ../../source/tutorial/part2.rst:148
@@ -461,7 +461,7 @@ msgid ""
 "1 can send some or all of his points to Player 2. Before P2 receives "
 "these points they will be tripled. Once P2 receives the tripled points he"
 " can decide to send some or all of his points to P1."
-msgstr "まず、プレーヤー1（P1）は10ポイントを獲得します。プレーヤー2（P2）は何も受け取りません。P1は、ポイントの一部またはすべてをP2に送信できます。P2がこれらのポイントを受け取る前に、ポイントは3倍になります。P2が3倍のポイントを受け取ると、ポイントの一部またはすべてをP1に送信することを決定できます。"
+msgstr "まず、プレイヤー1（P1）は10ポイントを獲得します。プレイヤー2（P2）は何も受け取りません。P1は、ポイントの一部またはすべてをP2に送信できます。P2がこれらのポイントを受け取る前に、ポイントは3倍になります。P2が3倍のポイントを受け取ると、ポイントの一部またはすべてをP1に送信することを決定できます。"
 
 #: ../../source/tutorial/part3.rst:12
 #, fuzzy
@@ -493,11 +493,11 @@ msgid ""
 "Then we add fields to player and group. There are 2 critical data points "
 "to record: the \"sent\" amount from P1, and the \"sent back\" amount from"
 " P2."
-msgstr "次に、プレーヤーとグループにフィールドを追加します。記録する2つの重要なデータポイントがあります。P1からの「送信」量とP2からの「返送」量です。"
+msgstr "次に、プレイヤーとグループにフィールドを追加します。記録する2つの重要なデータポイントがあります。P1からの「送信」量とP2からの「返送」量です。"
 
 #: ../../source/tutorial/part3.rst:46
 msgid "Your first instinct may be to define the fields on the Player like this:"
-msgstr "あなたは直観的に、次のようにプレーヤーのフィールドを定義してしまうかもしれません: "
+msgstr "あなたは直観的に、次のようにプレイヤーのフィールドを定義してしまうかもしれません: "
 
 #: ../../source/tutorial/part3.rst:56
 msgid ""

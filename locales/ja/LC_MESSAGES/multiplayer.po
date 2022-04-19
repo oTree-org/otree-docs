@@ -41,8 +41,8 @@ msgid ""
 "player's nickname is displayed as \"Player 1\", \"Player 2\", etc. (based"
 " on the player's ``id_in_group``)."
 msgstr ""
-"これにより、同じグループ内のプレーヤー間でチャットルームが作成されます。各プレーヤーのニックネームは \"プレーヤー1\" 、 "
-"\"プレーヤー2\" など ``id_in_group`` に基づいて表示されます。"
+"これにより、同じグループ内のプレイヤー間でチャットルームが作成されます。各プレイヤーのニックネームは \"プレイヤー1\" 、 "
+"\"プレイヤー2\" など ``id_in_group`` に基づいて表示されます。"
 
 #: ../../source/multiplayer/chat.rst:22
 msgid "Customizing the nickname and chat room members"
@@ -79,12 +79,12 @@ msgid ""
 "Regardless of the value of ``channel``, the chat will at least be scoped "
 "to players in the same session and the same app."
 msgstr ""
-"``channel`` は、チャットルームの名前です。2人のプレーヤーが同じ ``channel`` "
+"``channel`` は、チャットルームの名前です。2人のプレイヤーが同じ ``channel`` "
 "にいる場合に、お互いにチャットできます。また、  ``channel`` "
 "はユーザーインターフェイスには表示されず、内部で使用されるだけです。デフォルト値は ``group.id`` "
-"となっています。この場合、グループ内のすべてのプレーヤーが一緒にチャットすることができます。チャットを現在のページまたはグループのサブディビジョンなどにスコープする代わりに、"
+"となっています。この場合、グループ内のすべてのプレイヤーが一緒にチャットすることができます。チャットを現在のページまたはグループのサブディビジョンなどにスコープする代わりに、"
 " ``channel`` を使用できます（以下の例を参照）。 ``channel`` "
-"の値に関係なく、チャットは少なくとも同じセッションと同じアプリのプレーヤーにスコープされます。"
+"の値に関係なく、チャットは少なくとも同じセッションと同じアプリのプレイヤーにスコープされます。"
 
 #: ../../source/multiplayer/chat.rst:49
 msgid "Example: chat by role"
@@ -113,7 +113,7 @@ msgstr "例: ラウンドの違いに関係なくチャットする"
 msgid ""
 "If you need players to chat with players who are currently in a different"
 " round of the game, you can do:"
-msgstr "現在別のラウンドにいるプレーヤーとチャットする必要がある場合は、次のことができます。"
+msgstr "現在別のラウンドにいるプレイヤーとチャットする必要がある場合は、次のことができます。"
 
 #: ../../source/multiplayer/chat.rst:93
 msgid "Example: chat between all groups in all rounds"
@@ -163,7 +163,7 @@ msgstr "1ページに複数のチャット"
 msgid ""
 "You can have multiple ``{{ chat }}`` boxes on each page, so that a player"
 " can be in multiple channels simultaneously."
-msgstr "各ページに複数の ``{{ chat }}`` を配置することで、プレーヤーは複数のチャネルに同時に参加することができます。"
+msgstr "各ページに複数の ``{{ chat }}`` を配置することで、プレイヤーは複数のチャネルに同時に参加することができます。"
 
 #: ../../source/multiplayer/chat.rst:128
 msgid "Exporting CSV of chat logs"
@@ -204,13 +204,13 @@ msgstr ""
 msgid ""
 "If all players should be in the same group, or if it's a single-player "
 "game, set it to ``None``:"
-msgstr "すべてのプレーヤーを同じグループに含める必要がある場合、またはシングルプレーヤーのゲームの場合は、 ``None`` に設定します。"
+msgstr "すべてのプレイヤーを同じグループに含める必要がある場合、またはシングルプレイヤーのゲームの場合は、 ``None`` に設定します。"
 
 #: ../../source/multiplayer/groups.rst:18
 msgid ""
 "Each player has an attribute ``id_in_group``, which will tell you if it "
 "is player ``1``, player ``2``, etc."
-msgstr "各プレーヤーには属性 ``id_in_group`` を持っており、プレーヤー1であるか、プレーヤー2であるかなどを示します。"
+msgstr "各プレイヤーには属性 ``id_in_group`` を持っており、プレイヤー1であるか、プレイヤー2であるかなどを示します。"
 
 #: ../../source/multiplayer/groups.rst:22
 msgid "Getting players"
@@ -226,7 +226,7 @@ msgstr "get_players()"
 
 #: ../../source/multiplayer/groups.rst:29
 msgid "Returns a list of the players in the group (ordered by ``id_in_group``)."
-msgstr "グループ内のプレーヤーのリストを返します。（ ``id_in_group`` によって順序付けされます）"
+msgstr "グループ内のプレイヤーのリストを返します。（ ``id_in_group`` によって順序付けされます）"
 
 #: ../../source/multiplayer/groups.rst:32
 msgid "get_player_by_id(n)"
@@ -234,7 +234,7 @@ msgstr "get_player_by_id(n)"
 
 #: ../../source/multiplayer/groups.rst:34
 msgid "Returns the player in the group with the given ``id_in_group``."
-msgstr "``id_in_group`` で指定されたグループ内のプレーヤーを返します。"
+msgstr "``id_in_group`` で指定されたグループ内のプレイヤーを返します。"
 
 #: ../../source/multiplayer/groups.rst:38
 msgid "Getting other players"
@@ -246,8 +246,8 @@ msgid ""
 "``get_others_in_subsession()`` that return a list of the *other* players "
 "in the group and subsession."
 msgstr ""
-"プレーヤーオブジェクトは ``get_others_in_group()`` と ``get_others_in_subsession()`` "
-"メソッドを持ち、グループおよびサブセッション内の他のプレーヤーのリストを返します。"
+"プレイヤーオブジェクトは ``get_others_in_group()`` と ``get_others_in_subsession()`` "
+"メソッドを持ち、グループおよびサブセッション内の他のプレイヤーのリストを返します。"
 
 #: ../../source/multiplayer/groups.rst:47
 msgid "Roles"
@@ -268,7 +268,7 @@ msgid ""
 "(sequentially according to ``id_in_group``). You can use this to show "
 "each role different content, e.g.:"
 msgstr ""
-"次に、oTreeはそれぞれの ``role`` を異なるプレーヤーに自動的に割り当てます。（ ``id_in_group`` "
+"次に、oTreeはそれぞれの ``role`` を異なるプレイヤーに自動的に割り当てます。（ ``id_in_group`` "
 "による順番に従う。）これを使用して、各役割にさまざまなコンテンツを表示できます。例: "
 
 #: ../../source/multiplayer/groups.rst:72
@@ -305,8 +305,8 @@ msgid ""
 " and so would P3 and P4, and so on. ``id_in_group`` is also assigned "
 "sequentially within each group."
 msgstr ""
-"デフォルトでは、各ラウンドで、プレーヤーは ``C.PLAYERS_PER_GROUP`` "
-"人で構成されたグループに分割されます。それらは順番にグループ化されます。たとえば、グループごとに2人のプレーヤーがいる場合、P1とP2は一緒にグループ化され、P3とP4も同様にグループ化されます。"
+"デフォルトでは、各ラウンドで、プレイヤーは ``C.PLAYERS_PER_GROUP`` "
+"人で構成されたグループに分割されます。それらは順番にグループ化されます。たとえば、グループごとに2人のプレイヤーがいる場合、P1とP2は一緒にグループ化され、P3とP4も同様にグループ化されます。"
 " また、 ``id_in_group`` は、各グループ内で順番に割り当てられます。"
 
 #: ../../source/multiplayer/groups.rst:106
@@ -329,7 +329,7 @@ msgid ""
 "randomly, so they can end up in any group, and any position within the "
 "group."
 msgstr ""
-"サブセッションには、プレーヤーをランダムにシャッフルする ``group_randomly()`` "
+"サブセッションには、プレイヤーをランダムにシャッフルする ``group_randomly()`` "
 "メソッドがあり、プレイヤーは任意のグループ、およびグループ内の任意の位置に配置できます。"
 
 #: ../../source/multiplayer/groups.rst:117
@@ -337,12 +337,12 @@ msgid ""
 "If you would like to shuffle players between groups but keep players in "
 "fixed roles, use ``group_randomly(fixed_id_in_group=True)``."
 msgstr ""
-"グループ間でプレーヤーをシャッフルしたいが、プレーヤーの役割は固定したい場合は、 "
+"グループ間でプレイヤーをシャッフルしたいが、プレイヤーの役割は固定したい場合は、 "
 "``group_randomly(fixed_id_in_group=True)`` を使用します。"
 
 #: ../../source/multiplayer/groups.rst:120
 msgid "For example, this will group players randomly each round:"
-msgstr "たとえば、これにより、ラウンドごとにプレーヤーがランダムにグループ化されます。"
+msgstr "たとえば、これにより、ラウンドごとにプレイヤーがランダムにグループ化されます。"
 
 #: ../../source/multiplayer/groups.rst:127
 msgid ""
@@ -397,7 +397,7 @@ msgid ""
 "pass it to ``set_group_matrix()``:"
 msgstr ""
 "``set_group_matrix()`` は、グループ構造を任意の方法で変更できます。まず、 ``get_players()`` "
-"を使用して、プレーヤーのリストを取得するか、 ``get_group_matrix()`` "
+"を使用して、プレイヤーのリストを取得するか、 ``get_group_matrix()`` "
 "を使用して既存のグループ行列を取得します。行列を作成し、それを ``set_group_matrix()`` に渡します。"
 
 #: ../../source/multiplayer/groups.rst:224
@@ -406,7 +406,7 @@ msgid ""
 " 1 to the number of players in the subsession. Each integer represents "
 "the player who has that ``id_in_subsession``. For example:"
 msgstr ""
-"整数の行列を渡すこともできます。1からサブセッションのプレーヤー数までのすべての整数が含まれている必要があります。各整数は、プレイヤーの "
+"整数の行列を渡すこともできます。1からサブセッションのプレイヤー数までのすべての整数が含まれている必要があります。各整数は、プレイヤーの "
 "``id_in_subsession`` を表します。例えば: "
 
 #: ../../source/multiplayer/groups.rst:243
@@ -428,7 +428,7 @@ msgid ""
 "within a group, e.g. so that you can give them different roles."
 msgstr ""
 "これは ``set_group_matrix`` "
-"に似ていますが、グループ内のプレーヤーをシャッフルするだけです。たとえば、プレーヤーにさまざまな役割を与えることができます。"
+"に似ていますが、グループ内のプレイヤーをシャッフルするだけです。たとえば、プレイヤーにさまざまな役割を与えることができます。"
 
 #: ../../source/multiplayer/groups.rst:254
 msgid "Shuffling during the session"
@@ -443,7 +443,7 @@ msgid ""
 "shuffling in a wait page instead."
 msgstr ""
 "``creating_session`` は、通常はグループをシャッフルするのに適した場所ですが、 ``creating_session`` "
-"はセッションが作成され、プレーヤーがプレイを開始する前に実行されることを忘れないでください。そのため、シャッフルがセッションの開始後に発生する何かをもとに行いたい場合は、代わりにWaitPageでシャッフルを実行する必要があります。"
+"はセッションが作成され、プレイヤーがプレイを開始する前に実行されることを忘れないでください。そのため、シャッフルがセッションの開始後に発生する何かをもとに行いたい場合は、代わりにWaitPageでシャッフルを実行する必要があります。"
 
 #: ../../source/multiplayer/groups.rst:262
 msgid ""
@@ -474,7 +474,7 @@ msgid ""
 "Wait pages are necessary when one player needs to wait for others to take"
 " some action before they can proceed. For example, in an ultimatum game, "
 "player 2 cannot accept or reject before they have seen player 1's offer."
-msgstr "WaitPageは、1人のプレーヤーが先に進む前に、他のプレーヤーの実行を待つ必要がある場合に必要です。たとえば、最後通牒ゲームでは、プレーヤー2は、プレーヤー1のオファーを見る前に受け入れたり拒否したりすることはできません。"
+msgstr "WaitPageは、1人のプレイヤーが先に進む前に、他のプレイヤーの実行を待つ必要がある場合に必要です。たとえば、最後通牒ゲームでは、プレイヤー2は、プレイヤー1のオファーを見る前に受け入れたり拒否したりすることはできません。"
 
 #: ../../source/multiplayer/waitpages.rst:11
 msgid ""
@@ -482,7 +482,7 @@ msgid ""
 "until all players in the group have arrived at that point in the "
 "sequence, and then all players are allowed to proceed."
 msgstr ""
-"ページのシーケンスに ``WaitPage`` が含まれている場合、oTreeは、グループ内のすべてのプレーヤーが ``WaitPage`` "
+"ページのシーケンスに ``WaitPage`` が含まれている場合、oTreeは、グループ内のすべてのプレイヤーが ``WaitPage`` "
 "に到着するまで待機します。"
 
 #: ../../source/multiplayer/waitpages.rst:16
@@ -492,7 +492,7 @@ msgid ""
 " subsession), you can set the attribute ``wait_for_all_groups = True`` on"
 " the wait page."
 msgstr ""
-"サブセッションで複数のグループが同時に作業をしており、すべてのグループ（サブセッション内のすべてのプレーヤー）を待機させるWaitPageが必要な場合は、``wait_for_all_groups"
+"サブセッションで複数のグループが同時に作業をしており、すべてのグループ（サブセッション内のすべてのプレイヤー）を待機させるWaitPageが必要な場合は、``wait_for_all_groups"
 " = True`` にする必要があります。"
 
 #: ../../source/multiplayer/waitpages.rst:21
@@ -511,7 +511,7 @@ msgid ""
 " function that does the desired calculations. For example:"
 msgstr ""
 "``after_all_players_arrive`` "
-"はすべてのプレイヤーがWaitPageに到着したときに実行される関数です。プレーヤーの利得の設定や、勝者を決定したりするのに適した関数です。最初に、必要な計算を行うグループ関数を定義します。例えば: "
+"はすべてのプレイヤーがWaitPageに到着したときに実行される関数です。プレイヤーの利得の設定や、勝者を決定したりするのに適した関数です。最初に、必要な計算を行うグループ関数を定義します。例えば: "
 
 #: ../../source/multiplayer/waitpages.rst:41
 msgid "Then trigger this function by doing:"
@@ -553,7 +553,7 @@ msgid ""
 "be grouped in the order they arrive at that wait page:"
 msgstr ""
 "WaitPageで ``group_by_arrival_time = True`` "
-"に設定すると、プレーヤーはWaitPageに到着した順序でグループ化されます。"
+"に設定すると、プレイヤーはWaitPageに到着した順序でグループ化されます。"
 
 #: ../../source/multiplayer/waitpages.rst:87
 msgid ""
@@ -562,7 +562,7 @@ msgid ""
 "so on."
 msgstr ""
 "たとえば、 ``PLAYERS_PER_GROUP = 2`` "
-"の場合、待機ページに到着した最初の2人のプレーヤーがグループ化され、次に到着した2人のプレーヤーが別のグループに編成されます。"
+"の場合、待機ページに到着した最初の2人のプレイヤーがグループ化され、次に到着した2人のプレイヤーが別のグループに編成されます。"
 
 #: ../../source/multiplayer/waitpages.rst:90
 msgid ""
@@ -602,7 +602,7 @@ msgid ""
 "in each round. (``group_by_arrival_time`` copies the group structure to "
 "future rounds.)"
 msgstr ""
-"これを行うと、後続のラウンドはラウンド1と同じグループ構造を維持します。それ以外の場合、プレーヤーは各ラウンドの到着時間によって再びグループ化されます。（"
+"これを行うと、後続のラウンドはラウンド1と同じグループ構造を維持します。それ以外の場合、プレイヤーは各ラウンドの到着時間によって再びグループ化されます。（"
 " ``group_by_arrival_time`` は、グループ構造を将来のラウンドにコピーします。）"
 
 #: ../../source/multiplayer/waitpages.rst:121
@@ -631,7 +631,7 @@ msgid ""
 "show the page to some players but not others."
 msgstr ""
 "``group_by_arrival_time`` を持つページで ``is_displayed`` "
-"を使う場合、ラウンド数のみに基づく必要があります。一部のプレーヤーにだけページを表示するために使用しないでください。"
+"を使う場合、ラウンド数のみに基づく必要があります。一部のプレイヤーにだけページを表示するために使用しないでください。"
 
 #: ../../source/multiplayer/waitpages.rst:128
 msgid ""
@@ -640,7 +640,7 @@ msgid ""
 " the fly\" as players arrive at the wait page."
 msgstr ""
 "``group_by_arrival_time = True`` "
-"の場合、すべてのプレーヤーが最初は同じグループに属します。グループは、プレーヤーがWaitPageに到着したときに \"on the fly\" "
+"の場合、すべてのプレイヤーが最初は同じグループに属します。グループは、プレイヤーがWaitPageに到着したときに \"on the fly\" "
 "で作成されます。"
 
 #: ../../source/multiplayer/waitpages.rst:132
@@ -648,7 +648,7 @@ msgid ""
 "If you need further control on arranging players into groups, use "
 ":ref:`group_by_arrival_time_method`."
 msgstr ""
-"プレーヤーをグループに配置することをさらに制御する必要がある場合は、 :ref:`group_by_arrival_time_method` "
+"プレイヤーをグループに配置することをさらに制御する必要がある場合は、 :ref:`group_by_arrival_time_method` "
 "を使用します。"
 
 #: ../../source/multiplayer/waitpages.rst:138
@@ -661,7 +661,7 @@ msgid ""
 "which players are assigned together, you can also use "
 "``group_by_arrival_time_method()``."
 msgstr ""
-"``group_by_arrival_time`` を使用していて、どのプレーヤーを一緒に割り当てるかをより細かく制御したい場合は、 "
+"``group_by_arrival_time`` を使用していて、どのプレイヤーを一緒に割り当てるかをより細かく制御したい場合は、 "
 "``group_by_arrival_time_method()`` を使用することもできます。"
 
 #: ../../source/multiplayer/waitpages.rst:143
@@ -680,7 +680,7 @@ msgid ""
 " return anything, then no grouping occurs."
 msgstr ""
 "``group_by_arrival_time_method`` "
-"と呼ばれる関数を定義すると、新しいプレーヤーがWaitPageに到達するたびに呼び出されます。関数の2番目の引数は、WaitPageで現在待機しているプレーヤーのリストです。これらのプレーヤーの一部を選択してリストとして返すと、それらのプレーヤーはグループに割り当てられ、先に進みます。何も返さない場合、グループ化のための処理は発生しません。"
+"と呼ばれる関数を定義すると、新しいプレイヤーがWaitPageに到達するたびに呼び出されます。関数の2番目の引数は、WaitPageで現在待機しているプレイヤーのリストです。これらのプレイヤーの一部を選択してリストとして返すと、それらのプレイヤーはグループに割り当てられ、先に進みます。何も返さない場合、グループ化のための処理は発生しません。"
 
 #: ../../source/multiplayer/waitpages.rst:153
 msgid ""
@@ -733,7 +733,7 @@ msgid ""
 "A common problem especially with online experiments is players getting "
 "stuck waiting for another player in their group who dropped out or is too"
 " slow."
-msgstr "特にオンライン実験でよくある問題は、グループ内の別のプレーヤーが脱落したり、遅すぎたりするのを待っているプレーヤーが待機し続けることになることです。"
+msgstr "特にオンライン実験でよくある問題は、グループ内の別のプレイヤーが脱落したり、遅すぎたりするのを待っているプレイヤーが待機し続けることになることです。"
 
 #: ../../source/multiplayer/waitpages.rst:211
 msgid "Here are some things you can do to reduce this problem:"
@@ -749,7 +749,7 @@ msgid ""
 "players who are actively playing around the same time get grouped "
 "together."
 msgstr ""
-"上記のように、同じ時間にアクティブにプレイしているプレーヤーだけがグループ化されるように ``group_by_arrival_time`` "
+"上記のように、同じ時間にアクティブにプレイしているプレイヤーだけがグループ化されるように ``group_by_arrival_time`` "
 "を使用できます。"
 
 #: ../../source/multiplayer/waitpages.rst:219
@@ -794,11 +794,11 @@ msgstr ""
 "の前にそのページでの作業を完了する必要があり、そうしないと脱落してしまうことをユーザーに伝えるという方法もあります。また、 "
 "\"次のボタンをクリックして、まだプレイしていることを確認してください\" というページを作ることも考えられます。そして、 "
 ":ref:`timeout_happened` "
-"がTrueの場合、そのプレーヤー/グループに脱落を示すフィールドを設定したり、ラウンドの残りのページをスキップしたりするなど、さまざまな操作を実行できます。"
+"がTrueの場合、そのプレイヤー/グループに脱落を示すフィールドを設定したり、ラウンドの残りのページをスキップしたりするなど、さまざまな操作を実行できます。"
 
 #: ../../source/multiplayer/waitpages.rst:242
 msgid "Replacing dropped out player with a bot"
-msgstr "脱落したプレーヤーをボットに置き換える"
+msgstr "脱落したプレイヤーをボットに置き換える"
 
 #: ../../source/multiplayer/waitpages.rst:244
 msgid ""
@@ -809,7 +809,7 @@ msgid ""
 "``creating_session``. Then use ``get_timeout_seconds`` and "
 "``before_next_page`` on every page, like this:"
 msgstr ""
-"上記のテクニックのいくつかを組み合わせ、プレーヤーが脱落した場合でも、ボットのように自動再生が継続されるような処理の例を次に示します。まず、 "
+"上記のテクニックのいくつかを組み合わせ、プレイヤーが脱落した場合でも、ボットのように自動再生が継続されるような処理の例を次に示します。まず、 "
 "``is_dropout`` と呼ばれる :ref:`participant field <PARTICIPANT_FIELDS>` を定義し、 "
 "``creating_session`` で、その初期値を ``False`` に設定します。次に、すべてのページで "
 "``get_timeout_seconds`` と ``before_next_page`` を使用します。:"
@@ -818,7 +818,7 @@ msgstr ""
 msgid ""
 "If the player fails to submit the page on time, we set ``is_dropout`` to "
 "``True``."
-msgstr "プレーヤーが時間どおりにページを送信できない場合は、 ``is_dropout`` を ``True`` に設定します。"
+msgstr "プレイヤーが時間どおりにページを送信できない場合は、 ``is_dropout`` を ``True`` に設定します。"
 
 #: ../../source/multiplayer/waitpages.rst:276
 msgid "Once ``is_dropout`` is set, each page gets auto-submitted instantly."

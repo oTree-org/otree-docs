@@ -371,7 +371,7 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:100
 msgid "All players contribute half their endowment"
-msgstr "すべてのプレーヤーが財産の半分を寄付するケース"
+msgstr "すべてのプレイヤーが財産の半分を寄付するケース"
 
 #: ../../source/misc/bots_advanced.rst:101
 msgid "All players contribute nothing"
@@ -496,7 +496,7 @@ msgstr ""
 "ボットでライブページをテストするために、 ``tests.py`` で最上位関数として ``call_live_method`` "
 "を定義します。（oTree Studioでは使用できません。）この関数は ``live_method`` "
 "への呼び出しシーケンスをシミュレートします。引数 ``method`` は、Playerクラスのライブメソッドをシミュレートします。例えば、 "
-"``method(3, 'hello')`` プレーヤー3のliveメソッドを呼び出し、``data`` に ``'hello'`` "
+"``method(3, 'hello')`` プレイヤー3のliveメソッドを呼び出し、``data`` に ``'hello'`` "
 "を設定します。例: "
 
 #: ../../source/misc/bots_advanced.rst:269
@@ -1015,7 +1015,7 @@ msgstr ""
 msgid ""
 "For example, this code has a redundant query because it asks the database"
 " 5 times for the exact same player:"
-msgstr "たとえば、このコードはデータベースにまったく同じプレーヤーを5回要求するため、冗長なクエリが発生してしまいます。"
+msgstr "たとえば、このコードはデータベースにまったく同じプレイヤーを5回要求するため、冗長なクエリが発生してしまいます。"
 
 #: ../../source/misc/tips_and_tricks.rst:258
 msgid "It should be simplified to this:"

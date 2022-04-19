@@ -39,19 +39,19 @@ msgstr "テンプレートでは、以下の変数が使用できます:"
 
 #: ../../source/templates.rst:20
 msgid "``player``: the player currently viewing the page"
-msgstr "``player``: 現在ページを見ているプレーヤー"
+msgstr "``player``: 現在ページを見ているプレイヤー"
 
 #: ../../source/templates.rst:21
 msgid "``group``: the group the current player belongs to"
-msgstr "``group``: 現在のプレーヤーが所属しているグループ"
+msgstr "``group``: 現在のプレイヤーが所属しているグループ"
 
 #: ../../source/templates.rst:22
 msgid "``subsession``: the subsession the current player belongs to"
-msgstr "``subsession``: 現在のプレーヤーが所属しているサブセッション"
+msgstr "``subsession``: 現在のプレイヤーが所属しているサブセッション"
 
 #: ../../source/templates.rst:23
 msgid "``participant``: the participant the current player belongs to"
-msgstr "``participant``: 現在のプレーヤーが所属している参加者"
+msgstr "``participant``: 現在のプレイヤーが所属している参加者"
 
 #: ../../source/templates.rst:24
 msgid "``session``: the current session"

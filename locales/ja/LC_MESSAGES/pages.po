@@ -102,7 +102,7 @@ msgstr ""
 msgid ""
 "Here you define any code that should be executed after form validation, "
 "before the player proceeds to the next page."
-msgstr "ここでは、フォームの検証後、プレーヤーが次のページに進む前に実行されるコードを定義します。"
+msgstr "ここでは、フォームの検証後、プレイヤーが次のページに進む前に実行されるコードを定義します。"
 
 #: ../../source/pages.rst:78
 msgid ""
@@ -170,5 +170,5 @@ msgstr ""
 msgid ""
 "If this function doesn't return anything, the player proceeds to the next"
 " page as usual."
-msgstr "この関数が何も返さなかった場合、プレーヤーは通常通り次のページに進みます。"
+msgstr "この関数が何も返さなかった場合、プレイヤーは通常通り次のページに進みます。"
 
