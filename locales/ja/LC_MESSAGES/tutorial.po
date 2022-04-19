@@ -176,7 +176,7 @@ msgstr ""
 
 #: ../../source/tutorial/part2.rst:2
 msgid "Part 2: Public goods game"
-msgstr "その2: 公共財ゲーム"
+msgstr "Part 2: 公共財ゲーム"
 
 #: ../../source/tutorial/part2.rst:8
 msgid ""
@@ -184,7 +184,7 @@ msgid ""
 "<https://en.wikipedia.org/wiki/Public_goods_game>`__. The public goods "
 "game is a classic game in economics."
 msgstr ""
-"ここで、 `公共財ゲーム game <https://en.wikipedia.org/wiki/Public_goods_game>`__ "
+"ここで、 `公共財ゲーム <https://en.wikipedia.org/wiki/Public_goods_game>`__ "
 "を作成します。公共財ゲームは経済学の古典的なゲームです。"
 
 #: ../../source/tutorial/part2.rst:11
@@ -194,15 +194,18 @@ msgid ""
 "their points they want to contribute to the group. The combined "
 "contributions are multiplied by 2, and then divided evenly three ways and"
 " redistributed back to the players."
-msgstr "これは3人用のゲームで、各プレイヤーには最初に100ポイントが与えられます。各プレイヤーは、グループに貢献したいポイントの数を個別に決定します。合計された貢献は2倍され、次に3つの方法で均等に分割され、プレイヤーに再分配されます。"
+msgstr ""
+"3人1組でプレイされる公共財ゲームを考えましょう。"
+"各プレイヤーには初期保有として1000ポイントが与えられます。"
+"プレイヤーは、グループに貢献したいポイント数を個別に決定します。"
+"3人のプレイヤーによる貢献額の合計は2倍された後、3人に均等に分割され、プレイヤーに再分配されます。"
 
 #: ../../source/tutorial/part2.rst:15
 msgid ""
 "The full code for the app we will write is `here <https://github.com"
 "/oTree-org/oTree/tree/lite/public_goods_simple>`__."
 msgstr ""
-"私たちが書くアプリの完全なコードは `ここ <https://github.com/oTree-"
-"org/oTree/tree/lite/public_goods_simple>`__ にあります。"
+"以下で解説する公共財ゲームの完全なコードは `ここ <https://github.com/oTree-org/oTree/tree/lite/public_goods_simple>`__ にあります。"
 
 #: ../../source/tutorial/part2.rst:20 ../../source/tutorial/part3.rst:16
 msgid "Create the app"
@@ -212,7 +215,7 @@ msgstr "アプリの作成"
 msgid ""
 "Just as in the previous part of the tutorial, create another app, called "
 "``my_public_goods``."
-msgstr "チュートリアルの前の部分と同じように、 ``my_public_goods`` と呼ばれる別のアプリを作成します。"
+msgstr "新たにアプリを作成し、名前を ``my_public_goods`` とします。"
 
 #: ../../source/tutorial/part2.rst:26 ../../source/tutorial/part3.rst:21
 msgid "Constants"
@@ -222,33 +225,34 @@ msgstr "定数"
 msgid ""
 "Go to your app's constants class (``C``). (For more info, see "
 ":ref:`constants`.)"
-msgstr "アプリの定数に移動します。（詳細については、 :ref:`constants` を参照してください。）"
+msgstr "定数を定義するクラス ``class C`` に移動します。（詳細については、 :ref:`constants` を参照してください。）"
 
 #: ../../source/tutorial/part2.rst:31
 msgid ""
 "Set ``PLAYERS_PER_GROUP`` to 3. oTree will then automatically divide "
 "players into groups of 3."
-msgstr "``PLAYERS_PER_GROUP`` を3に設定します。oTreeはプレイヤーを自動的に3つのグループに分割します。"
+msgstr "埋め込み変数 ``PLAYERS_PER_GROUP`` を3に設定します。"
+"oTreeは自動的にプレイヤーを3人1組にグループ分けします。"
 
 #: ../../source/tutorial/part2.rst:33
 msgid ""
 "The endowment to each player is 1000 points. So, let's define "
 "``ENDOWMENT`` and set it to a currency value of ``1000``."
-msgstr "各プレイヤーへの寄付は1000ポイントです。それでは、 ``ENDOWMENT`` を定義してその値を `1000` に設定しましょう。"
+msgstr "各プレイヤーへの初期保有は1000ポイントです。新たに ``ENDOWMENT`` なる変数を定義してその値を ``1000`` に設定しましょう。"
 
 #: ../../source/tutorial/part2.rst:35
 msgid ""
 "Each contribution is multiplied by 2. So define an integer constant "
 "called ``MULTIPLIER = 2``:"
-msgstr "各寄与は2倍されます。したがって、 ``MULTIPLIER = 2`` と呼ばれる整数の定数を定義します。"
+msgstr "プレイヤーの貢献額は2倍されます。倍率として、新たに ``MULTIPLIER`` なる変数を定義してその値を ``2`` に設定しましょう。"
 
 #: ../../source/tutorial/part2.rst:38
 msgid "Now we have the following constants:"
-msgstr "定数は次のようになります。"
+msgstr "``class C`` の中身は以下のようになります。"
 
 #: ../../source/tutorial/part2.rst:48 ../../source/tutorial/part3.rst:40
 msgid "Models"
-msgstr "モデル"
+msgstr "モデル （保存すべき実験データの定義）"
 
 #: ../../source/tutorial/part2.rst:50
 msgid ""
@@ -256,8 +260,9 @@ msgid ""
 "player? It's important to record how much each person contributed. So, go"
 " to the Player model and define a ``contribution`` column:"
 msgstr ""
-"ゲームがプレイされた後、各プレイヤーについてそれぞれがどれだけ貢献したかを記録することが重要です。したがって、Playerモデルに移動し、 "
-"``contribution`` を定義します。"
+"実験参加者の行動を後々分析するために、各プレイヤーが貢献したポイント数を記録しなければなりません。"
+"データベースに保存する変数（フィールド）でプレイヤー一人ひとりについて定義されるものは ``class Player`` （プレイヤーモデルと呼ばれます）の中で定義します。"
+"``class Player`` に移動し、 ``contribution`` なるフィールドを以下のように定義します。"
 
 #: ../../source/tutorial/part2.rst:64
 msgid ""
@@ -265,8 +270,8 @@ msgid ""
 "but we don't need to explicitly define a ``payoff`` field, because in "
 "oTree, the Player already contains a ``payoff`` column."
 msgstr ""
-"また、ゲームの終了時にユーザーが行う利得を記録する必要がありますが、oTreeではプレイヤーにすでに ``payoff`` "
-"フィールドが定義されているため、フィールドを明示的に定義する必要はありません。"
+"実験参加者への謝金の支払いのためには、各プレイヤーの利得を記録する必要がありますが、"
+"oTreeではあらかじめプレイヤーモデルで ``payoff`` なるフィールドが定義されているため、改めてフィールドを明示的に定義する必要はありません。"
 
 #: ../../source/tutorial/part2.rst:68
 msgid ""
@@ -274,27 +279,29 @@ msgid ""
 "might be interested in knowing the total contributions to the group, and "
 "the individual share returned to each player. So, we define those 2 "
 "fields on the Group:"
-msgstr "各グループについて、グループへの貢献の合計と、各プレイヤーに返される個々のシェアを知りたい場合は、グループでこれら2つのフィールドを定義します。"
+msgstr ""
+"各プレイヤーの意思決定データだけでなく、各グループについて、グループへの貢献額の合計と、各プレイヤーに分配されるポイント数を保存したい場合は、"
+"グループモデル ``class Group`` でこれら2つのフィールドを定義します。"
 
 #: ../../source/tutorial/part2.rst:83
 msgid "This game has 3 pages:"
-msgstr "このゲームは3ページあります: "
+msgstr "このゲームでは3つのページを表示します。"
 
 #: ../../source/tutorial/part2.rst:85
 msgid "Page 1: players decide how much to contribute"
-msgstr "ページ1: プレイヤーは寄付する金額を決定します"
+msgstr "ページ1: プレイヤーはグループへの貢献額を決定し入力します。"
 
 #: ../../source/tutorial/part2.rst:86
 msgid "Page 2: Wait page: players wait for others in their group"
-msgstr "ページ2: 待機ページ: プレイヤーはグループ内の他のユーザーの操作が終わるまで待機します"
+msgstr "ページ2: 待機ページ。プレイヤーはグループ内の他の参加者の操作が終わるまで待機します。"
 
 #: ../../source/tutorial/part2.rst:87
 msgid "Page 3: players are told the results"
-msgstr "ページ3: プレイヤーに結果が通知されます"
+msgstr "ページ3: プレイヤーに結果が通知されます。"
 
 #: ../../source/tutorial/part2.rst:90
 msgid "Page 1: Contribute"
-msgstr "ページ1: 寄付"
+msgstr "ページ1: Contribute"
 
 #: ../../source/tutorial/part2.rst:92
 msgid ""
@@ -303,9 +310,12 @@ msgid ""
 "should let you set the ``contribution`` field on the player. (For more "
 "info, see :ref:`forms`.)"
 msgstr ""
-"まず、 ``Contribute`` を定義しましょう。このページにはフォームが含まれているため、 ``form_model`` と "
-"``form_fields`` を定義する必要があります。具体的には、このフォームで ``contribution`` "
-"を設定します。（詳細については、 :ref:`forms` を参照してください。）"
+"貢献額を入力するページの名前は ``Contribute`` としましょう。"
+"まず、 クラス ``class Contribute`` を定義します。"
+"``Contribute`` ページには貢献額の入力フォームが含まれているため、 ``form_model`` と ``form_fields`` を定義する必要があります。"
+"貢献額 ``contribution`` はプレイヤーモデルのフィールドなので、 ``form_model`` は ``player`` と設定します。"
+"``form_fields`` には具体的なフィールド（ ``contribution`` ）をリストで渡します。"
+"（詳細については、 :ref:`forms` を参照してください。）"
 
 #: ../../source/tutorial/part2.rst:104
 msgid "Now, we create the HTML template."
@@ -313,7 +323,7 @@ msgstr "次に、HTMLテンプレートを作成します。"
 
 #: ../../source/tutorial/part2.rst:106
 msgid "Set the ``title`` block to ``Contribute``, and the ``content`` block to:"
-msgstr "``title`` ブロックを ``Contribute`` に設定し、 ``content`` ブロックを次のように設定します。"
+msgstr "``{{ title block }}`` ブロック内にタイトルとして ``Contribute`` と入力し、 ``{{ content block }}`` ブロック内を以下のように設定します。"
 
 #: ../../source/tutorial/part2.rst:124
 msgid "Page 2: ResultsWaitPage"
@@ -324,8 +334,10 @@ msgid ""
 "When all players have completed the ``Contribute`` page, the players' "
 "payoffs can be calculated. Add a group function called ``set_payoffs``:"
 msgstr ""
-"すべてのプレイヤーが ``Contribute`` ページを完了すると、プレイヤーの利得を計算できます。 ``set_payoffs`` "
-"と呼ばれるグループ関数を追加します: "
+"すべてのプレイヤーが ``Contribute`` ページを完了した後、各プレイヤーの利得を計算します。"
+"利得の計算は、``set_payoffs`` なる関数を定義して、そこで実行することにしましょう。"
+"関数 ``set_payoffs`` はグループモデルの変数や関数を利用するため、引数として ``group`` なるオブジェクトを受け取ることにします。"
+"関数 ``set_payoffs`` は具体的に以下のように定義します。"
 
 #: ../../source/tutorial/part2.rst:140
 msgid ""
@@ -336,79 +348,81 @@ msgid ""
 " until all other players in the group have arrived. Then everyone can "
 "proceed to the next page. (For more info, see :ref:`wait_pages`)."
 msgstr ""
-"プレイヤーが寄付した後、他のプレイヤーが寄付し終わるのを待つ必要があります。したがって、 ``WaitPage`` "
-"を追加する必要があります。それを ``ResultsWaitPage`` "
-"と呼びましょう。プレイヤーがWaitPageに到着すると、グループ内の他のすべてのプレイヤーが到着するまで待機する必要があります。（詳細については、"
-" :ref:`wait_pages` を参照してください）。"
+"プレイヤーが貢献額を意思決定した後、他のプレイヤーが意思決定し終わるのを待ってから関数 ``set_payoffs`` を呼び出す必要があります。"
+"グループ内の他のプレイヤーが意思決定を完了するまで待機するページ ``WaitPage`` を追加します。"
+"ここでは ``WaitPage`` の名前を ``ResultsWaitPage`` としましょう（ ``class ResultsWaitPage (WaitPage):`` とクラスを定義する）。"
+"プレイヤーが ``ResultsWaitPage`` ページに到達すると、グループ内の他のすべてのプレイヤーが ``ResultsWaitPage`` ページに到達するまで待機します"
+"（詳細は、 :ref:`wait_pages` を参照してください）。"
 
 #: ../../source/tutorial/part2.rst:148
 msgid ""
 "Add ``after_all_players_arrive`` to ``ResultsWaitPage``, and set it to "
 "trigger ``set_payoffs``:"
 msgstr ""
-"``ResultsWaitPage`` に ``after_all_players_arrive`` を追加し、 ``set_payoffs`` "
-"にトリガーするように設定します。"
+"``class ResultsWaitPage`` 内で、動かしたい関数の名前（ ``set_payoffs`` ）を組み込み変数 ``after_all_players_arrive`` に渡します。"
+"この設定により、すべてのプレイヤーが ``ResultsWaitPage`` ページに到達したことをトリガーとして関数 ``set_payoffs`` が呼び出されます。"
 
 #: ../../source/tutorial/part2.rst:156
 msgid "Page 3: Results"
-msgstr "ページ3: 結果"
+msgstr "ページ3: Results"
 
 #: ../../source/tutorial/part2.rst:158
 msgid "Now we create a page called ``Results``. Set the template's content to:"
-msgstr "次に、 ``Results`` というページを作成します。テンプレートのコンテンツを次のように設定します。"
+msgstr "次に、 結果を表示する ``Results`` という名前のページを作成します（クラス ``class Results`` を定義する）。"
+"テンプレートの ``{{ content block }}`` ブロックを以下のように設定します。"
 
 #: ../../source/tutorial/part2.rst:174
 msgid "Page sequence"
-msgstr "ページシーケンス"
+msgstr "ページの順番の定義"
 
 #: ../../source/tutorial/part2.rst:176
 msgid "Make sure your page_sequence is correct:"
-msgstr "以下のように設定します。"
+msgstr "表示するページの順番を以下のようにして設定します。"
 
 #: ../../source/tutorial/part2.rst:190
 msgid ""
 "We add another session config with ``my_public_goods`` in the app "
 "sequence."
-msgstr "アプリシーケンスに ``my_public_goods`` のための別のセッション構成を追加します。"
+msgstr "settings.py の ``SESSION_CONFIGS`` に 新しいセッションを追加し、 ``app_sequence`` にアプリ名 ``my_public_goods`` をリストとして渡します。"
 
 #: ../../source/tutorial/part2.rst:194
 msgid "Run the code"
-msgstr "コードの実行"
+msgstr "プログラムの実行"
 
 #: ../../source/tutorial/part2.rst:196 ../../source/tutorial/part3.rst:252
 msgid ""
 "Load the project again then open your browser to "
 "``http://localhost:8000``."
-msgstr "プロジェクトを再度ロードしてから、ブラウザを開いて ``http://localhost:8000`` に接続してください。"
+msgstr "oTreeを（再）起動し、ブラウザを開いて ``http://localhost:8000`` に接続してください。"
 
 #: ../../source/tutorial/part2.rst:201
 msgid "Troubleshoot with print()"
-msgstr "print()のトラブルシューティング"
+msgstr "print()を利用したトラブルシューティング"
 
 #: ../../source/tutorial/part2.rst:203
 msgid ""
 "I often read messages on programming forums like, \"My program is not "
 "working. I can't find the mistake, even though I have spent hours looking"
 " at my code\"."
-msgstr "プログラミングフォーラムで、「プログラムが機能していません。コードを何時間も見ても、間違いを見つけることができません」などのメッセージをよく読んでいます。"
+msgstr "プログラミングフォーラムで、「プログラムが機能していません。コードを何時間も見ても、間違いを見つけることができません」などのメッセージがしばしば投稿されます。"
 
 #: ../../source/tutorial/part2.rst:207
 msgid ""
 "The solution is not to re-read the code until you find an error; it's to "
 "interactively **test** your program."
-msgstr "解決策は、エラーが見つかるまでコードを再読み込みしないことです。プログラムをインタラクティブにテストすることです。"
+msgstr "エラーが見つかるまでコードをじっくり目で追っていてはいけません。"
+"プログラムをインタラクティブにテストすることが肝心です。"
 
 #: ../../source/tutorial/part2.rst:210
 msgid ""
 "The simplest way is using ``print()`` statements. If you don't learn this"
 " technique, you won't be able to program games effectively."
 msgstr ""
-"最も簡単な方法は、 ``print()`` "
-"ステートメントを使用することです。このテクニックを学ばないと、ゲームを効果的にプログラムすることができません。"
+"最も簡単な方法は、 ``print()`` を使用することです。このテクニックを学ばないと、ゲームを効果的にプログラムすることができません。"
 
 #: ../../source/tutorial/part2.rst:213
 msgid "You just need to insert a line in your code like this:"
-msgstr "次のようにコードに行を挿入する必要があります。"
+msgstr "たとえば、利得を計算する関数 ``set_payoffs`` の中で、次のような ``print`` 文を挿入してみましょう。"
 
 #: ../../source/tutorial/part2.rst:219
 msgid ""
@@ -416,22 +430,25 @@ msgid ""
 "payoff function defined above. When you play the game in your browser and"
 " that code gets executed, your print statement will be displayed in your "
 "command prompt window (not in your web browser)."
-msgstr "上で定義したペイオフ関数など、機能していないコードの部分にこの行を配置します。ブラウザでゲームをプレイし、そのコードが実行されると、print命令による出力がコマンドプロンプトウィンドウに表示されます（Webブラウザでは表示されません）。"
+msgstr ""
+"機能していないコードの部分にこの ``print`` 文を配置します。"
+"ブラウザでゲームをプレイし、そのコードが実行されると、 ``print`` コマンドによる出力がコンソールログに表示されます（Webブラウザでは表示されません）。"
 
 #: ../../source/tutorial/part2.rst:225
 msgid "You can sprinkle lots of prints in your code"
-msgstr "コードにたくさんのprint命令をを追加できます"
+msgstr "``print`` 文はいくらでも挿入することができます。"
 
 #: ../../source/tutorial/part2.rst:245
 msgid "print statement not displayed in console/logs"
-msgstr "printによる出力がコンソール/ログに表示されない"
+msgstr "printによる出力がコンソールログに表示されない"
 
 #: ../../source/tutorial/part2.rst:247
 msgid ""
 "If you don't see the output of the print statement in your console "
 "window, that means that line is not getting executed! (Which is why it "
 "isn't working.)"
-msgstr "コンソールウィンドウにprintの出力が表示されない場合は、その行が実行されていないことを意味します。（これが機能しない理由です。）"
+msgstr "コンソールログに ``print`` の出力が表示されない場合は、その行が実行されていないことを意味します。"
+"その箇所に、プログラムが機能しない理由があります。"
 
 #: ../../source/tutorial/part2.rst:250
 msgid ""
@@ -440,8 +457,8 @@ msgid ""
 "``False``. Start putting print statements from the top of the function, "
 "then see where they stop getting displayed."
 msgstr ""
-"おそらく、コードが ``return`` の後などの到達できない場所にあるか、常に ``False`` "
-"である「if」文内にあることが考えられます。関数の先頭からprintを配置していくことで、表示されなくなる場所が分かります。"
+"コードが ``return`` の後などの到達できない場所にあるか、あるいは常に ``False`` である ``if`` 文の中にあるなどの原因が考えられます。"
+"関数の先頭から ``print`` 文を配置していくことで、問題の箇所を特定できます。"
 
 #: ../../source/tutorial/part2.rst:254
 msgid ""
@@ -451,9 +468,9 @@ msgid ""
 "custom function such as ``set_payoffs``, you need to remember to call "
 "that function from a built-in function."
 msgstr ""
-"または、コードが呼び出される（実行される）ことのない関数に含まれている可能性があります。 ``creating_session`` や "
-"``before_next_page`` のようなoTreeに組み込まれている関数は自動的に実行されますが、 ``set_payoffs`` "
-"のようなカスタム関数を定義する場合、その関数を呼び出さなければならないことを覚えておく必要があります。"
+"または、コードが呼び出されることのない関数に含まれている可能性があります。"
+" ``creating_session`` や ``before_next_page`` のようなoTreeに組み込まれている関数は自動的に実行されますが、"
+" ``set_payoffs`` のような独自に定義した関数は、その関数を明示的に呼び出さなければならないことを覚えておく必要があります。"
 
 #: ../../source/tutorial/part3.rst:2
 msgid "Part 3: Trust game"
