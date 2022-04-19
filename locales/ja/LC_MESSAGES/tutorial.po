@@ -38,6 +38,8 @@ msgid ""
 "apps <https://www.otreehub.com/projects/?featured=1>`__ section. Find an "
 "app that is similar to what you want to build, and learn by example."
 msgstr ""
+"チュートリアルを終えた後は、oTree Hubの `featured apps <https://www.otreehub.com/projects/?featured=1>`__ にアクセスしてみてください。"
+"あなたがこれから作ろうとしている実験課題の作例を見つけられるかもしれません。"
 
 #: ../../source/tutorial/part1_studio.rst:4
 #, fuzzy
