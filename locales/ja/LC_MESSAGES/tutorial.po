@@ -42,41 +42,45 @@ msgstr ""
 "あなたがこれから作ろうとしている実験課題の作例を見つけられるかもしれません。"
 
 #: ../../source/tutorial/part1_studio.rst:4
-#, fuzzy
 msgid "Part 1: Simple survey"
-msgstr "その1: 簡単なアンケート（PyCharmなどのエディタユーザに向けて）"
+msgstr "Part 1: 簡単なアンケート"
 
 #: ../../source/tutorial/part1_studio.rst:6 ../../source/tutorial/part2.rst:4
 msgid ""
 "(A video of this tutorial is on `YouTube "
 "<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ )"
 msgstr ""
-"（`YouTube "
+"`YouTube "
 "<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
-"でのビデオチュートリアルもあります(英語です)。）"
+"のビデオチュートリアル（英語）を見ながら以下を読み進めてください。"
 
 #: ../../source/tutorial/part1_studio.rst:10
 msgid ""
 "Let's create a simple survey -- on the first page, we ask the participant"
 " for their name and age, then on the next page, display this info back to"
 " them."
-msgstr "まずは簡単なアンケートを作りましょう。最初のページでは実験参加者に名前と年齢を尋ねます。次のページでその入力結果を表示しましょう。"
+msgstr ""
+"oTree Studioを使い、まずは簡単なアンケートを作りましょう。"
+"最初のページでは実験参加者に氏名と年齢を尋ねます。次のページでその入力結果を表示しましょう。"
+"まずはサイドバーから *Apps* に入り、 *+ App* を押してアプリを追加します。 アプリの名前は ``my_survey`` としましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:14
 msgid "Player model"
-msgstr "player model"
+msgstr "プレイヤー モデル （保存すべき実験データの定義）"
 
 #: ../../source/tutorial/part1_studio.rst:16
 msgid "In the sidebar, go to the Player model. Let's add 2 fields:"
-msgstr "サイドバーでPlayer modelを選択してください。2つのフィールドを追加しましょう。"
+msgstr "サイドバーから *Model Player* に入り、2つのフィールドを追加しましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:19
 msgid "``name`` (``StringField``, meaning text characters)"
-msgstr "``name`` (``StringField`` : テキストの文字列を意味します。)"
+msgstr ""
+"氏名データを保存するために、 *StringField* （文字列型のフィールドを意味します）を追加し、フィールドの名前を ``name`` としましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:20
 msgid "``age`` (``IntegerField``)"
-msgstr "``age`` (``IntegerField`` : 整数値)"
+msgstr ""
+"年齢データを保存するために、 *IntegerField* （整数型のフィールドを意味します）を追加し、フィールドの名前を ``age`` としましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:24 ../../source/tutorial/part2.rst:81
 msgid "Pages"
@@ -84,19 +88,20 @@ msgstr "ページ"
 
 #: ../../source/tutorial/part1_studio.rst:26
 msgid "This survey has 2 pages:"
-msgstr "この調査では2ページを用意します。"
+msgstr "このアンケートでは2つのページを用意します。"
 
 #: ../../source/tutorial/part1_studio.rst:28
 msgid "Page 1: players enter their name and age"
-msgstr "1ページ目: プレーヤーが名前と年齢を入力します。"
+msgstr "1ページ目: プレイヤーが名前と年齢を入力します。"
 
 #: ../../source/tutorial/part1_studio.rst:29
 msgid "Page 2: players see the data they entered on the previous page"
-msgstr "2ページ目: プレーヤーが1ページ目に入力した内容を確認します。"
+msgstr "2ページ目: プレイヤーが1ページ目に入力した内容を確認します。"
 
 #: ../../source/tutorial/part1_studio.rst:31
 msgid "So, create 2 pages in your ``page_sequence``: ``Survey`` and ``Results``."
-msgstr "したがって、 ``page_sequence`` に ``Survey`` と ``Results`` の2ページを作成します。"
+msgstr "サイドバーから *page_sequence* に入り、 *+ Page* を押してページを2つ追加しましょう。"
+"それぞれ ``Survey`` と ``Results`` と名前をつけましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:34
 msgid "Page 1"
@@ -108,14 +113,17 @@ msgid ""
 "``form_model`` to ``player`` and for ``form_fields``, select ``name`` and"
 " ``age``."
 msgstr ""
-"まず、 ``Survey`` を定義しましょう。このページにはフォームが含まれているため、 ``player`` に ``form_model``"
-" を設定し、 ``form_fields`` のために ``name`` と ``age`` を選択してください"
+"まず、 ``Survey`` ページの中身を設定をしましょう。"
+"このページには名前と年齢を入力するフォームが必要です。"
+"*+ form_fields* を押した後、*form_model* は *player* を選び、 *form_fields* の一覧から（先ほど *Player* の *Model* で定義した） ``name`` と ``age`` を選択してください。"
 
 #: ../../source/tutorial/part1_studio.rst:39
 msgid ""
 "Then, set the template's title to ``Enter your information``, and set the"
 " content to:"
-msgstr "次に、テンプレートのタイトルを ``Enter your information`` に設定し、コンテンツを次のように設定します。"
+msgstr ""
+"次に、 ``Survey`` ページ内で実際に表示するタイトルを設定します。 *{{ block title }}* に ``Enter your information`` と入力します。"
+"``Survey`` ページの本文は、 *{{ block content }}* において以下のように設定します。"
 
 #: ../../source/tutorial/part1_studio.rst:51
 msgid "Page 2"
@@ -123,13 +131,15 @@ msgstr "2ページ目"
 
 #: ../../source/tutorial/part1_studio.rst:53
 msgid "Now we define ``Results``."
-msgstr "続いて、 ``Results`` を定義します。"
+msgstr "続いて、 結果を表示する ``Results`` ページの中身を設定しましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:55
 msgid ""
 "Set the template's ``title`` block to ``Results`` and set the ``content``"
 " block to:"
-msgstr "テンプレートの ``title`` ブロックを ``Results`` にセットし、 ``content`` ブロックを次のように設定します。"
+msgstr ""
+"タイトルは、 *{{ block title }}* において ``Results`` と入力します。"
+"``Results`` ページの本文は、 *{{ block content }}* において以下のように設定します。"
 
 #: ../../source/tutorial/part1_studio.rst:65
 #: ../../source/tutorial/part2.rst:188
@@ -141,8 +151,9 @@ msgid ""
 "In the sidebar, go to \"Session Configs\", create a session config, and "
 "add your survey app to the ``app_sequence``."
 msgstr ""
-"サイドバーで \"Session Configs\" に移動し、セッション構成を作成して、 ``app_sequence`` "
-"にアンケートアプリを追加します。"
+"実験セッションで使うアプリを定義します。"
+"サイドバーから *Session configs* に入り、*+ Session config* を押します。"
+"*app_sequence* にアプリの候補の一覧が表示されるので、``my_survey`` アプリを選んで *app_sequence* に追加します。"
 
 #: ../../source/tutorial/part1_studio.rst:71
 msgid "Download and run"
@@ -152,7 +163,8 @@ msgstr "ダウンロードと実行"
 msgid ""
 "Download the otreezip file and follow the instructions on how to install "
 "oTree and run the otreezip file."
-msgstr "otreezipファイルをダウンロードし、指示に従ってoTreeをインストールした上で、otreezipファイルを解凍してください。"
+msgstr "サイドバーから *Download* に入り、 *.otreezip* ファイルをダウンロードします。"
+"その後、指示に従ってoTreeをインストールした上で、otreezipファイルを解凍し、プログラムを起動してください。"
 
 #: ../../source/tutorial/part1_studio.rst:76
 msgid ""
