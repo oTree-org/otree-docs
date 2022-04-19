@@ -37,13 +37,15 @@ Go to your app's constants class (``C``).
 
 Now we have the following constants:
 
-.. code-block:: Python
+.. code-block:: python
 
     PLAYERS_PER_GROUP = 3
     NUM_ROUNDS = 1
     ENDOWMENT = cu(1000)
     MULTIPLIER = 2
 
+Models
+------
 
 After the game is played,
 what data points will we need about each player?
