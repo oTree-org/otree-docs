@@ -5,19 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oTree\n"
+"Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2022-04-19 16:34+0900\n"
 "PO-Revision-Date: 2021-05-26 11:30+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 2.4.2\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/install-nostudio.rst:6
 msgid "oTree Setup (text editor)"
@@ -25,106 +24,85 @@ msgstr "安装oTree（文本编辑器）"
 
 #: ../../source/install-nostudio.rst:8
 msgid ""
-"Note: it's recommended to use `oTree Studio <https://www.otreehub.com/"
-"studio>`__ since it is specifically designed for building oTree apps. "
-"You can easily switch to using a text editor later, by downloading your "
-"code."
+"Note: it's recommended to use `oTree Studio "
+"<https://www.otreehub.com/studio>`__ since it is specifically designed "
+"for building oTree apps. You can easily switch to using a text editor "
+"later, by downloading your code."
 msgstr ""
-"注意：推荐使用 `oTree Studio <https://www.otreehub.com/studio>`__ ，这是"
-"为构建oTree应用而专门设计的。你可以方便地在之后换为使用文本编辑器，下载你"
-"的代码即可。"
+"注意：推荐使用 `oTree Studio <https://www.otreehub.com/studio>`__ "
+"，这是为构建oTree应用而专门设计的。你可以方便地在之后换为使用文本编辑器，下载你的代码即可。"
 
-#: ../../source/install-nostudio.rst:14
-msgid ""
-"You should first install oTree for :ref:`Windows <install-windows>` or :"
-"ref:`Mac <install-macos>`."
-msgstr ""
-"你应当首先在 :ref:`Windows <install-windows>` 或 :ref:`Mac <install-"
-"macos>` 上安装oTree。"
-
-#: ../../source/install-nostudio.rst:19
+#: ../../source/install-nostudio.rst:13
 msgid "Run oTree"
 msgstr "运行oTree"
 
-#: ../../source/install-nostudio.rst:21
+#: ../../source/install-nostudio.rst:15
 msgid "If you're on MacOS, run::"
 msgstr "如果你使用MacOS，运行下面的命令："
 
-#: ../../source/install-nostudio.rst:25
+#: ../../source/install-nostudio.rst:19
 msgid ""
 "(If you are not using version 3.9 of Python, edit the above command "
 "appropriately.)"
 msgstr "（如果使用的Python版本不是3.9，请适当修改上面的命令。）"
 
-#: ../../source/install-nostudio.rst:27
+#: ../../source/install-nostudio.rst:21
 msgid "From your command prompt, create your project folder::"
 msgstr "从命令行窗口创建你的项目文件夹："
 
-#: ../../source/install-nostudio.rst:31
+#: ../../source/install-nostudio.rst:25
 msgid "When it asks you \"Include sample games?\" choose yes."
 msgstr "当被询问\"Include sample games?\"时，选择是。"
 
-#: ../../source/install-nostudio.rst:33
+#: ../../source/install-nostudio.rst:27
 msgid "Move into the folder you just created::"
 msgstr "进入你刚刚创建的文件夹："
 
-#: ../../source/install-nostudio.rst:38
+#: ../../source/install-nostudio.rst:32
 msgid ""
 "**If you see a ``models.py`` in each folder, then switch to the "
-"documentation here:** `https://otree.readthedocs.io/en/self/ <https://"
-"otree.readthedocs.io/en/self/>`__"
+"documentation here:** `https://otree.readthedocs.io/en/self/ "
+"<https://otree.readthedocs.io/en/self/>`__"
 msgstr ""
 "**如果在每一个文件夹里都有 ``models.py`` ，请转为参考这里的文档:** "
-"`https://otree.readthedocs.io/en/self/ <https://otree.readthedocs.io/en/"
-"self/>`__"
+"`https://otree.readthedocs.io/en/self/ "
+"<https://otree.readthedocs.io/en/self/>`__"
 
-#: ../../source/install-nostudio.rst:41
+#: ../../source/install-nostudio.rst:35
 msgid ""
-"If you don't see a models.py in each folder, that means you are using "
-"the new no-self format."
-msgstr ""
-"如果每一个文件夹里都没有models.py，这意味着你正在使用新的no-self格式。"
+"If you don't see a models.py in each folder, that means you are using the"
+" new no-self format."
+msgstr "如果每一个文件夹里都没有models.py，这意味着你正在使用新的no-self格式。"
 
-#: ../../source/install-nostudio.rst:43
+#: ../../source/install-nostudio.rst:37
 msgid "Run the server::"
 msgstr "运行服务器："
 
-#: ../../source/install-nostudio.rst:47
+#: ../../source/install-nostudio.rst:41
 msgid ""
-"Open your browser to `http://localhost:8000/ <http://localhost:8000/"
-">`__. You should see the oTree demo site."
+"Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__."
+" You should see the oTree demo site."
 msgstr ""
-"打开浏览器并输入地址 `http://localhost:8000/ <http://localhost:8000/"
-">`__。你应当就能看到oTree演示页面。"
+"打开浏览器并输入地址 `http://localhost:8000/ "
+"<http://localhost:8000/>`__。你应当就能看到oTree演示页面。"
 
-#: ../../source/install-nostudio.rst:50
+#: ../../source/install-nostudio.rst:44
 msgid "To stop the server, press ``Control + C`` at your command line."
 msgstr "在命令行输入 ``Control + C`` 即可关闭服务器。"
 
-#: ../../source/install-nostudio.rst:55
-msgid "Install a text editor"
-msgstr "安装文本编辑器"
-
-#: ../../source/install-nostudio.rst:57
-msgid ""
-"Install a text editor like `PyCharm <https://www.jetbrains.com/pycharm/"
-"download/>`__ for editing your Python files. See the PyCharm "
-"documentation on how to configure your interpreter so that you get code "
-"completion."
+#: ../../source/install-nostudio.rst:46
+msgid "To create a new app, run ``otree startapp your_app_name``."
 msgstr ""
-"安装一个文本编辑器如 `PyCharm <https://www.jetbrains.com/pycharm/"
-"download/>`__ 以编辑Python文件。参考PyCharm的文档对解释器进行配置以获得代"
-"码补全。"
 
-#: ../../source/install-nostudio.rst:62
-msgid "Then launch the text editor and open your entire project folder."
-msgstr "启动文本编辑器并打开你的项目文件夹。"
+#: ../../source/install-nostudio.rst:48
+msgid "Session configs are defined in ``settings.py``."
+msgstr ""
 
-#: ../../source/install-nostudio.rst:68
+#: ../../source/install-nostudio.rst:51
 msgid "About @staticmethod, etc."
 msgstr "关于@staticmethod"
 
-#: ../../source/install-nostudio.rst:70
+#: ../../source/install-nostudio.rst:53
 msgid ""
 "If you are using a text editor to write your oTree code, remember to add "
 "``@staticmethod`` before all functions inside a page class, like "
@@ -132,36 +110,33 @@ msgid ""
 "are sometimes omitted from this documentation for brevity. They are not "
 "mandatory but will help your editor provide better autocompletion."
 msgstr ""
-"如果你用文本编辑器写oTree代码，记得在所有页面类内的函数前加上 "
-"``@staticmethod`` ，如 ``is_displayed``，``vars_for_template``，"
-"``before_next_page`` 等等函数之前。这一点在本文档中常常因简炼的原因而略"
-"去。这不是强制的，但会帮助文本编辑器提供更好的自动补全。"
+"如果你用文本编辑器写oTree代码，记得在所有页面类内的函数前加上 ``@staticmethod`` ，如 "
+"``is_displayed``，``vars_for_template``，``before_next_page`` "
+"等等函数之前。这一点在本文档中常常因简炼的原因而略去。这不是强制的，但会帮助文本编辑器提供更好的自动补全。"
 
-#: ../../source/install-nostudio.rst:75
+#: ../../source/install-nostudio.rst:58
 msgid ""
 "If you are using PyCharm, VS Code, or another IDE, you can also add type "
 "annotations on your functions."
-msgstr ""
-"如果你使用的是PyCharm，VS Code 或其他IDE，你还可以在你的函数上添加类型注"
-"解。"
+msgstr "如果你使用的是PyCharm，VS Code 或其他IDE，你还可以在你的函数上添加类型注解。"
 
-#: ../../source/install-nostudio.rst:77
+#: ../../source/install-nostudio.rst:60
 msgid "For example:"
 msgstr "例如："
 
-#: ../../source/install-nostudio.rst:85
+#: ../../source/install-nostudio.rst:68
 msgid "Or:"
 msgstr "或者："
 
-#: ../../source/install-nostudio.rst:94
+#: ../../source/install-nostudio.rst:77
 msgid "Upgrading/reinstalling oTree"
 msgstr "升级/重装oTree"
 
-#: ../../source/install-nostudio.rst:96
+#: ../../source/install-nostudio.rst:79
 msgid "We recommend upgrading every couple of weeks."
 msgstr "我们推荐每隔几周就升级一次。"
 
-#: ../../source/install-nostudio.rst:102
+#: ../../source/install-nostudio.rst:85
 msgid ""
 "The best way to ensure that your apps continue to work after you upgrade "
 "is to use only the functions described in this documentation. Some code "
@@ -170,8 +145,31 @@ msgid ""
 "these snippets can enable some innovative new functionality, be aware "
 "that they increase the chance of things breaking when you upgrade, "
 "because oTree's internal code layout changes from release to release."
-msgstr ""
-"确保你的应用在升级之后仍然可用的最好方法是仅使用文档中所述的函数。你可能"
-"在网上找到一些代码，这些代码通过获取oTree的内部函数并“hack”它们来做一些不"
-"同寻常的事情。尽管这些代码能够实现一些创新的功能，但请时刻注意它们增加了"
-"当你升级时出现问题的风险，因为oTree内部的代码布局在各个版本之间是不同的。"
+msgstr "确保你的应用在升级之后仍然可用的最好方法是仅使用文档中所述的函数。你可能在网上找到一些代码，这些代码通过获取oTree的内部函数并“hack”它们来做一些不同寻常的事情。尽管这些代码能够实现一些创新的功能，但请时刻注意它们增加了当你升级时出现问题的风险，因为oTree内部的代码布局在各个版本之间是不同的。"
+
+#~ msgid ""
+#~ "You should first install oTree for "
+#~ ":ref:`Windows <install-windows>` or :ref:`Mac"
+#~ " <install-macos>`."
+#~ msgstr ""
+#~ "你应当首先在 :ref:`Windows <install-windows>` 或 "
+#~ ":ref:`Mac <install-macos>` 上安装oTree。"
+
+#~ msgid "Install a text editor"
+#~ msgstr "安装文本编辑器"
+
+#~ msgid ""
+#~ "Install a text editor like `PyCharm "
+#~ "<https://www.jetbrains.com/pycharm/download/>`__ for "
+#~ "editing your Python files. See the "
+#~ "PyCharm documentation on how to "
+#~ "configure your interpreter so that you"
+#~ " get code completion."
+#~ msgstr ""
+#~ "安装一个文本编辑器如 `PyCharm "
+#~ "<https://www.jetbrains.com/pycharm/download/>`__ "
+#~ "以编辑Python文件。参考PyCharm的文档对解释器进行配置以获得代码补全。"
+
+#~ msgid "Then launch the text editor and open your entire project folder."
+#~ msgstr "启动文本编辑器并打开你的项目文件夹。"
+

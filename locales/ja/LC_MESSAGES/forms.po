@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 07:28-0500\n"
+"POT-Creation-Date: 2022-04-19 16:34+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/forms.rst:4
 msgid "Forms"
@@ -446,22 +446,37 @@ msgstr "フォームの送信以外の目的があるとき、 ``type=\"button\"
 msgid "Miscellaneous & advanced"
 msgstr "その他、高度な設定"
 
-#: ../../source/forms.rst:469
+#: ../../source/forms.rst:471
+msgid "JavaScript access to form inputs"
+msgstr ""
+
+#: ../../source/forms.rst:475
+msgid "New in oTree 5.6 (December 2021)"
+msgstr ""
+
+#: ../../source/forms.rst:477
+msgid ""
+"In your JavaScript code you can use ``formInputs.xyz`` to access the "
+"``<input>`` element of form field ``xyz``. For example, you can do:"
+msgstr ""
+
+#: ../../source/forms.rst:498
 msgid "Form fields with dynamic labels"
 msgstr "動的ラベル付きフォームフィールド"
 
-#: ../../source/forms.rst:471
+#: ../../source/forms.rst:500
 msgid ""
 "If the label should contain a variable, you can construct the string in "
 "your page:"
 msgstr "\"ラベルに変数が含まれる場合、ページに文字列を作成できます"
 
-#: ../../source/forms.rst:485
+#: ../../source/forms.rst:514
 msgid "Then, in the template:"
 msgstr "次に、テンプレートで："
 
-#: ../../source/forms.rst:491
+#: ../../source/forms.rst:520
 msgid ""
 "If you use this technique, you may also want to use "
 ":ref:`dynamic_validation`."
 msgstr "この手法を利用する場合は、 :ref:`dynamic_validation` の利用もおすすめします。"
+

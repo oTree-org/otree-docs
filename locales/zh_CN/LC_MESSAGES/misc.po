@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  oTree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 07:28-0500\n"
+"POT-Creation-Date: 2022-04-19 16:34+0900\n"
 "PO-Revision-Date: 2021-06-07 11:52+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/misc/advanced.rst:2
 msgid "Advanced features"
@@ -527,19 +527,15 @@ msgid ""
 "hr.herokuapp.com/>`__."
 msgstr "一个使用了很多REST API的项目是 `oTree HR <https://otree-hr.herokuapp.com/>`__。"
 
-#: ../../source/misc/rest_api.rst:16
-msgid "As of March 2021, there have been some breaking changes to the REST API."
-msgstr "在2021年3月，REST API有一些重大改动。"
-
-#: ../../source/misc/rest_api.rst:21
+#: ../../source/misc/rest_api.rst:17
 msgid "Setup"
 msgstr "开始"
 
-#: ../../source/misc/rest_api.rst:25
+#: ../../source/misc/rest_api.rst:21
 msgid "*\"Where should I put this code?\"*"
 msgstr "*\"这些代码应当放在哪里\"*"
 
-#: ../../source/misc/rest_api.rst:27
+#: ../../source/misc/rest_api.rst:23
 msgid ""
 "This code does not need to go inside your oTree project folder. Since the"
 " point of the REST API is to allow external programs and servers to "
@@ -552,101 +548,101 @@ msgstr ""
 "这些代码无需包含在你的oTree项目文件夹中。由于REST "
 "API的关键就在于使得外部程序和服务器可以与oTree通过网络通信，你应当将这些代码放在其他程序中。这意味着你可以使用在其他服务器上适用的任何语言来编写程序。本页面上的例子使用的是Python，但是使用其他编程语言进行HTTP请求也很简单，如webhooks工具或者cURL。"
 
-#: ../../source/misc/rest_api.rst:62
+#: ../../source/misc/rest_api.rst:58
 msgid "\"oTree version\" endpoint"
 msgstr "\"oTree version\" endpoint"
 
-#: ../../source/misc/rest_api.rst:66 ../../source/misc/rest_api.rst:83
-#: ../../source/misc/rest_api.rst:102
+#: ../../source/misc/rest_api.rst:62 ../../source/misc/rest_api.rst:79
+#: ../../source/misc/rest_api.rst:98
 msgid "New beta feature as of March 2021."
 msgstr "在2021年3月新引入的beta特性。"
 
-#: ../../source/misc/rest_api.rst:68
+#: ../../source/misc/rest_api.rst:64
 msgid "GET URL: ``/api/otree_version/``"
 msgstr "GET URL: ``/api/otree_version/``"
 
-#: ../../source/misc/rest_api.rst:71 ../../source/misc/rest_api.rst:90
-#: ../../source/misc/rest_api.rst:107 ../../source/misc/rest_api.rst:140
-#: ../../source/misc/rest_api.rst:179 ../../source/misc/rest_api.rst:204
-#: ../../source/misc/rest_api.rst:219 ../../source/misc/rest_api.rst:236
+#: ../../source/misc/rest_api.rst:67 ../../source/misc/rest_api.rst:86
+#: ../../source/misc/rest_api.rst:103 ../../source/misc/rest_api.rst:136
+#: ../../source/misc/rest_api.rst:175 ../../source/misc/rest_api.rst:200
+#: ../../source/misc/rest_api.rst:215 ../../source/misc/rest_api.rst:232
 msgid "Example"
 msgstr "例子"
 
-#: ../../source/misc/rest_api.rst:79
+#: ../../source/misc/rest_api.rst:75
 msgid "\"Session configs\" endpoint"
 msgstr "\"Session configs\" endpoint"
 
-#: ../../source/misc/rest_api.rst:85
+#: ../../source/misc/rest_api.rst:81
 msgid "GET URL: ``/api/session_configs/``"
 msgstr "GET URL: ``/api/session_configs/``"
 
-#: ../../source/misc/rest_api.rst:87
+#: ../../source/misc/rest_api.rst:83
 msgid ""
 "Returns the list of all your session configs, as dicts with all their "
 "properties."
 msgstr "返回所有session config组成的列表，使用字典存储它们的所有属性。"
 
-#: ../../source/misc/rest_api.rst:98
+#: ../../source/misc/rest_api.rst:94
 msgid "\"Rooms\" endpoint"
 msgstr "\"Rooms\" endpoint"
 
-#: ../../source/misc/rest_api.rst:104
+#: ../../source/misc/rest_api.rst:100
 msgid "GET URL: ``/api/rooms/``"
 msgstr "GET URL: ``/api/rooms/``"
 
-#: ../../source/misc/rest_api.rst:114
+#: ../../source/misc/rest_api.rst:110
 msgid ""
 "Example output (note it includes ``session_code`` if there is currently a"
 " session in the room):"
 msgstr "示例输出（注意它包含了 ``session_code``，如果房间中当前存在一个会话的话）："
 
-#: ../../source/misc/rest_api.rst:126
+#: ../../source/misc/rest_api.rst:122
 msgid "\"Create sessions\" endpoint"
 msgstr "\"Create sessions\" endpoint"
 
-#: ../../source/misc/rest_api.rst:128
+#: ../../source/misc/rest_api.rst:124
 msgid "POST URL: ``/api/sessions/``"
 msgstr "POST URL: ``/api/sessions/``"
 
-#: ../../source/misc/rest_api.rst:130
+#: ../../source/misc/rest_api.rst:126
 msgid ""
 "Here are some examples of how the \"create sessions\" endpoint can be "
 "used:"
 msgstr "下面是一些\"create sessions\"路径应当如何使用的例子："
 
-#: ../../source/misc/rest_api.rst:132
+#: ../../source/misc/rest_api.rst:128
 msgid "Other websites can create oTree sessions automatically"
 msgstr "其他网站可自动创建oTree会话"
 
-#: ../../source/misc/rest_api.rst:133
+#: ../../source/misc/rest_api.rst:129
 msgid ""
 "You can make a fancier alternative to oTree's :ref:`edit_config` "
 "interface (e.g. with sliders and visual widgets)"
 msgstr "你可以自己创造一个更好看的oTree :ref:`edit_config` 界面（例如加上侧边栏和控件）"
 
-#: ../../source/misc/rest_api.rst:135
+#: ../../source/misc/rest_api.rst:131
 msgid "Process that will create new oTree sessions on some fixed schedule"
 msgstr "在某些固定时刻创建oTree会话的进程"
 
-#: ../../source/misc/rest_api.rst:136
+#: ../../source/misc/rest_api.rst:132
 msgid ""
 "Command line script to create customized sessions (if ``otree "
 "create_session`` is not sufficient)"
 msgstr "创建自定义会话的命令行脚本（如果 ``otree create_session`` 不够用的话）"
 
-#: ../../source/misc/rest_api.rst:155 ../../source/misc/rest_api.rst:250
+#: ../../source/misc/rest_api.rst:151 ../../source/misc/rest_api.rst:246
 msgid "Parameters"
 msgstr "参数"
 
-#: ../../source/misc/rest_api.rst:157
+#: ../../source/misc/rest_api.rst:153
 msgid "``session_config_name`` (required)"
 msgstr "``session_config_name`` (必要)"
 
-#: ../../source/misc/rest_api.rst:158
+#: ../../source/misc/rest_api.rst:154
 msgid "``num_participants`` (required)"
 msgstr "``num_participants`` (必要)"
 
-#: ../../source/misc/rest_api.rst:159
+#: ../../source/misc/rest_api.rst:155
 msgid ""
 "``modified_session_config_fields``: an optional dict of session config "
 "parameters, as discussed in :ref:`edit_config`."
@@ -654,46 +650,46 @@ msgstr ""
 "``modified_session_config_fields``: 一个可选的包含session config参数的字典，详见 "
 ":ref:`edit_config`。"
 
-#: ../../source/misc/rest_api.rst:161
+#: ../../source/misc/rest_api.rst:157
 msgid "``room_name`` if you want to create the session in a room."
 msgstr "``room_name`` 如果你想在房间中创建session。"
 
-#: ../../source/misc/rest_api.rst:166
+#: ../../source/misc/rest_api.rst:162
 msgid "\"Get session data\" endpoint"
 msgstr "\"Get session data\" endpoint"
 
-#: ../../source/misc/rest_api.rst:170
+#: ../../source/misc/rest_api.rst:166
 msgid ""
 "New feature as of March 2021. In beta until we get sufficient user "
 "feedback."
 msgstr "2021年3月引入的新特性。将处于测试阶段直到获取足够的用户反馈。"
 
-#: ../../source/misc/rest_api.rst:173
+#: ../../source/misc/rest_api.rst:169
 msgid "GET URL: ``/api/sessions/{code}``"
 msgstr "GET URL: ``/api/sessions/{code}``"
 
-#: ../../source/misc/rest_api.rst:175
+#: ../../source/misc/rest_api.rst:171
 msgid ""
 "This API retrieves data about a session and its participants. If "
 "``participant_labels`` is omitted, it returns data for all participants."
 msgstr "此API将取回关于会话及其参与人的数据。如果略去 ``participant_labels``，那么将返回所有参与人的数据。"
 
-#: ../../source/misc/rest_api.rst:189
+#: ../../source/misc/rest_api.rst:185
 msgid "\"Session vars\" endpoint"
 msgstr "\"Session vars\" endpoint"
 
-#: ../../source/misc/rest_api.rst:193
+#: ../../source/misc/rest_api.rst:189
 msgid ""
 "As of April 2021, this endpoint requires you to pass a session code as a "
 "path parameter. If the session is in a room, you can get the session code"
 " with the ``rooms`` endpoint."
 msgstr "在2021年4月，这一路径要求你传入会话代码作为路径参数。如果会话在房间中的话，你可以通过 ``rooms`` 路径获得会话代码。"
 
-#: ../../source/misc/rest_api.rst:196
+#: ../../source/misc/rest_api.rst:192
 msgid "POST URL: ``/api/session_vars/{session_code}``"
 msgstr "POST URL: ``/api/session_vars/{session_code}``"
 
-#: ../../source/misc/rest_api.rst:198
+#: ../../source/misc/rest_api.rst:194
 msgid ""
 "This endpoint lets you set ``session.vars``. One use is experimenter "
 "input. For example, if the experimenter does a lottery drawing in the "
@@ -701,44 +697,44 @@ msgid ""
 "like the one below."
 msgstr "这一路径使你可以设置 ``session.vars``。一种用途是实验输入。举例来说，如果实验中有一次抽奖，就可以通过运行下面的脚本来输入结果。"
 
-#: ../../source/misc/rest_api.rst:212
+#: ../../source/misc/rest_api.rst:208
 msgid "\"Participant vars\" endpoint"
 msgstr "\"Participant vars\" endpoint"
 
-#: ../../source/misc/rest_api.rst:214
+#: ../../source/misc/rest_api.rst:210
 msgid "POST URL: ``/api/participant_vars/{participant_code}``"
 msgstr "POST URL: ``/api/participant_vars/{participant_code}``"
 
-#: ../../source/misc/rest_api.rst:216
+#: ../../source/misc/rest_api.rst:212
 msgid ""
 "Pass information about a participant to oTree, via web services / "
 "webhooks."
 msgstr "通过 web services / webhooks 将参与人的信息传递给oTree。"
 
-#: ../../source/misc/rest_api.rst:228
+#: ../../source/misc/rest_api.rst:224
 msgid "\"Participant vars for room\" endpoint"
 msgstr "\"Participant vars for room\" endpoint"
 
-#: ../../source/misc/rest_api.rst:230
+#: ../../source/misc/rest_api.rst:226
 msgid "POST URL: ``/api/participant_vars/``"
 msgstr "POST URL: ``/api/participant_vars/``"
 
-#: ../../source/misc/rest_api.rst:232
+#: ../../source/misc/rest_api.rst:228
 msgid ""
 "Similar to the other \"participant vars\" endpoint, but this one can be "
 "used when you don't have the participant's code. Instead, you identify "
 "the participant by the room name and their participant label."
 msgstr "类似于\"participant vars\"路径，但这一API可在你不知道参与人代码时使用。你可以通过房间的名字以及参与人标签来指定参与人。"
 
-#: ../../source/misc/rest_api.rst:252
+#: ../../source/misc/rest_api.rst:248
 msgid "``room_name`` (required)"
 msgstr "``room_name`` (必要)"
 
-#: ../../source/misc/rest_api.rst:253
+#: ../../source/misc/rest_api.rst:249
 msgid "``participant_label`` (required)"
 msgstr "``participant_label`` (必要)"
 
-#: ../../source/misc/rest_api.rst:254
+#: ../../source/misc/rest_api.rst:250
 msgid ""
 "``vars`` (required): a dict of participant vars to add. Values can be any"
 " JSON-serializable data type, even nested dicts/lists."
@@ -746,7 +742,7 @@ msgstr ""
 "``vars`` (必要): 用于加入participant vars的字典， 其中值必须是可被JSON序列化的数据类型, "
 "甚至可以是嵌套的字典/列表。"
 
-#: ../../source/misc/rest_api.rst:257
+#: ../../source/misc/rest_api.rst:253
 msgid ""
 "You will need to give participants a link with a ``participant_label``, "
 "although this does not need to come from a ``participant_label_file``."
@@ -754,23 +750,23 @@ msgstr ""
 "你需要给参与人一个带 ``participant_label`` 的链接，尽管它不必包含在 ``participant_label_file`` "
 "中。"
 
-#: ../../source/misc/rest_api.rst:261
+#: ../../source/misc/rest_api.rst:257
 msgid "Authentication"
 msgstr "认证"
 
-#: ../../source/misc/rest_api.rst:263
+#: ../../source/misc/rest_api.rst:259
 msgid ""
 "If you have set your auth level to DEMO or STUDY, you must authenticate "
 "your REST API requests."
 msgstr "如果你将你的验证等级从DEMO改为STUDY，你必须验证你的REST API请求。"
 
-#: ../../source/misc/rest_api.rst:266
+#: ../../source/misc/rest_api.rst:262
 msgid ""
 "Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the "
 "server. Set it to some secret value."
 msgstr "在服务器上创建一个环境变量（即 Heroku config var） ``OTREE_REST_KEY`` 。将其设置为某个秘密值。"
 
-#: ../../source/misc/rest_api.rst:269
+#: ../../source/misc/rest_api.rst:265
 msgid ""
 "When you make a request, add that key as an HTTP header called ``otree-"
 "rest-key``. If following the :ref:`setup example <rest-setup>` above, you"
@@ -779,17 +775,17 @@ msgstr ""
 "在发送请求时，在HTTP header里将其添加为 ``otree-rest-key``。如果按照上面的 :ref:`例子 <rest-"
 "setup>` ，你应当设置 ``REST_KEY`` 变量。"
 
-#: ../../source/misc/rest_api.rst:273
+#: ../../source/misc/rest_api.rst:269
 msgid "Demo & testing"
 msgstr "演示 & 测试"
 
-#: ../../source/misc/rest_api.rst:275
+#: ../../source/misc/rest_api.rst:271
 msgid ""
 "For convenience during development, you can generate fake vars to "
 "simulate data that, in a real session, will come from the REST API."
 msgstr "为在开发时更便利，你可以在一个真实的会话中生成假的vars来模拟从REST API获得的数据。"
 
-#: ../../source/misc/rest_api.rst:278
+#: ../../source/misc/rest_api.rst:274
 msgid ""
 "In your session config, add the parameter ``mock_exogenous_data=True`` "
 "(We call it **exogenous** data because it originates outside oTree.)"
@@ -797,22 +793,22 @@ msgstr ""
 "在你的session config中，添加参数 ``mock_exogenous_data=True`` (称其为 "
 "**exogenous(外源性)** 数据是因为其是在oTree外部生成的。)"
 
-#: ../../source/misc/rest_api.rst:281
+#: ../../source/misc/rest_api.rst:277
 msgid ""
 "Then define a function with the same name (``mock_exogenous_data``) in "
 "your project's shared_out.py (if you are using a text editor, you may "
 "need to create that file)."
 msgstr "然后在你的项目的shared_out.py中（如果你使用的是文本编辑器，你可能需要创建此文件）定义一个同名函数(``mock_exogenous_data``)。"
 
-#: ../../source/misc/rest_api.rst:285
+#: ../../source/misc/rest_api.rst:281
 msgid "Here's an example:"
 msgstr "下面是一个例子："
 
-#: ../../source/misc/rest_api.rst:294
+#: ../../source/misc/rest_api.rst:290
 msgid "You can also set participant labels here."
 msgstr "你也可以在此处设置参与人标签。"
 
-#: ../../source/misc/rest_api.rst:296
+#: ../../source/misc/rest_api.rst:292
 msgid ""
 "When you run a session in demo mode, or using bots, "
 "``mock_exogenous_data()`` will automatically be run after "
@@ -822,7 +818,7 @@ msgstr ""
 "当你的会话运行在demo模式下，或者使用bot， ``mock_exogenous_data()`` 会在 "
 "``creating_session`` 之后自动运行。然而，如果是在房间里创建的会话则不会运行。"
 
-#: ../../source/misc/rest_api.rst:300
+#: ../../source/misc/rest_api.rst:296
 msgid ""
 "If you have multiple session configs that require different exogenous "
 "data, you can branch like this:"
@@ -1057,3 +1053,10 @@ msgid ""
 "An alternative solution is to assign an initial value to the field so "
 "that its value is never ``None``:"
 msgstr ""
+
+#~ msgid ""
+#~ "As of March 2021, there have been"
+#~ " some breaking changes to the REST"
+#~ " API."
+#~ msgstr "在2021年3月，REST API有一些重大改动。"
+
