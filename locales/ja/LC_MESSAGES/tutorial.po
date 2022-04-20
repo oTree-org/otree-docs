@@ -474,7 +474,7 @@ msgstr ""
 
 #: ../../source/tutorial/part3.rst:2
 msgid "Part 3: Trust game"
-msgstr "パート3: 信頼ゲーム"
+msgstr "Part 3: 信頼ゲーム"
 
 #: ../../source/tutorial/part3.rst:4
 msgid ""
@@ -482,9 +482,8 @@ msgid ""
 "<https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__,"
 " and learn some more features of oTree."
 msgstr ""
-"それでは、2人用の `信頼ゲーム "
-"<https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__"
-" を作成し、oTreeのいくつかの機能を学びましょう。"
+"ここでは、2人でプレイされる `信頼ゲーム <https://en.wikibooks.org/wiki/Bestiary_of_Behavioral_Economics/Trust_Game>`__ "
+"を作成し、oTreeの機能をさらに学びましょう。"
 
 #: ../../source/tutorial/part3.rst:7
 msgid ""
@@ -492,43 +491,50 @@ msgid ""
 "1 can send some or all of his points to Player 2. Before P2 receives "
 "these points they will be tripled. Once P2 receives the tripled points he"
 " can decide to send some or all of his points to P1."
-msgstr "まず、プレイヤー1（P1）は10ポイントを獲得します。プレイヤー2（P2）は何も受け取りません。P1は、ポイントの一部またはすべてをP2に送信できます。P2がこれらのポイントを受け取る前に、ポイントは3倍になります。P2が3倍のポイントを受け取ると、ポイントの一部またはすべてをP1に送信することを決定できます。"
+msgstr ""
+"まず、プレイヤー1（P1）は10ポイントを獲得します。この時点でプレイヤー2（P2）は何も受け取りません。"
+"P1は、ポイントの一部またはすべてをP2に渡すことができます。"
+"P2は、P1が渡したポイントの3倍を受け取ります。"
+"P2がポイントを受け取った後、受け取ったポイントの一部またはすべてをP1に渡すことができます。"
 
 #: ../../source/tutorial/part3.rst:12
-#, fuzzy
 msgid ""
 "The completed app is `here <https://github.com/oTree-"
 "org/oTree/tree/lite/trust_simple>`__."
 msgstr ""
-"完成したアプリは `コチラ <https://github.com/oTree-"
-"org/oTree/tree/master/trust_simple>`__ です。"
+"以下で解説する信頼ゲームの完全なコードは `ここ <https://github.com/oTree-org/oTree/tree/lite/trust_simple>`__ にあります。"
 
 #: ../../source/tutorial/part3.rst:18
 msgid ""
 "Just as in the previous part of the tutorial, create another app, called "
 "``my_trust``."
-msgstr "チュートリアルの前の部分と同じように、 ``my_trust`` と呼ばれる別のアプリを作成します。"
+msgstr "新たにアプリを作成し、名前を ``my_trust`` とします。"
 
 #: ../../source/tutorial/part3.rst:23
 msgid "Go to your app's constants class (``C``)."
-msgstr "アプリのConstantsに移動します。"
+msgstr "定数を定義するクラス ``class C`` に移動します。"
 
 #: ../../source/tutorial/part3.rst:25
 msgid ""
 "First we define our app's constants. The endowment is 10 points and the "
 "donation gets tripled."
-msgstr "まず、アプリの定数を定義します。寄付金は10ポイントで、寄付金は3倍になります。"
+msgstr ""
+"初期保有は10ポイントです。 ``ENDOWMENT`` なる変数を定義してその値を ``10`` に設定しましょう。"
+"P1からP2へポイントを渡すときの倍増率は3です。 ``MULTIPLICATION_FACTOR`` なる変数を定義してその値を ``3`` に設定しましょう。"
+"``class C`` の中身は以下のようになります。"
 
 #: ../../source/tutorial/part3.rst:42
 msgid ""
 "Then we add fields to player and group. There are 2 critical data points "
 "to record: the \"sent\" amount from P1, and the \"sent back\" amount from"
 " P2."
-msgstr "次に、プレイヤーとグループにフィールドを追加します。記録する2つの重要なデータポイントがあります。P1からの「送信」量とP2からの「返送」量です。"
+msgstr "次に、プレイヤーとグループにフィールドを定義します。"
+"分析のために必要な意思決定データは、P1が渡したポイント数（ ``sent_amount`` ）とP2が返したポイント数（ ``sent_back_amount`` ）です。"
+"この2つのデータを記録するためにフィールドを定義しなければなりません。"
 
 #: ../../source/tutorial/part3.rst:46
 msgid "Your first instinct may be to define the fields on the Player like this:"
-msgstr "あなたは直観的に、次のようにプレイヤーのフィールドを定義してしまうかもしれません: "
+msgstr "あなたは直観的に、次のようにプレイヤーのフィールドを定義してしまうかもしれません。"
 
 #: ../../source/tutorial/part3.rst:56
 msgid ""
@@ -537,9 +543,10 @@ msgid ""
 "P1 should have a field called ``sent_back_amount``. How can we make our "
 "data model more accurate?"
 msgstr ""
-"このモデルの問題は ``sent_amount`` は、P1にのみ適用され、 ``sent_back_amount`` "
-"はP2にのみ適用されるということです。P1は、 ``sent_back_amount`` "
-"というフィールドが必要ありません。データモデルをより正確にするにはどうすればよいですか？"
+"上のコードは賢い実装ではありません。"
+"``sent_amount`` は、P1にのみ適用され、P2の場合には空白となります。"
+"``sent_back_amount`` はP2にのみ適用され、P1の場合には空白となります。"
+"データモデルをより正確に記述するためにはどうすればよいのでしょうか？"
 
 #: ../../source/tutorial/part3.rst:61
 msgid ""
@@ -547,8 +554,8 @@ msgid ""
 "sense because each group has exactly 1 ``sent_amount`` and exactly 1 "
 "``sent_back_amount``:"
 msgstr ""
-"これらのフィールドを ``Group`` レベルで定義することでそれを行うことができます。各グループには正確に1 ``sent_amount`` "
-"と正確に1 ``sent_back_amount`` があるため、これは理にかなっています。"
+"``sent_amount`` と ``sent_back_amount`` のフィールドはグループのレベルで定義すると良いでしょう。"
+"以下のように、グループモデル（ ``class Group`` ）でこれら2つのフィールドを定義します。"
 
 #: ../../source/tutorial/part3.rst:76
 msgid ""
@@ -557,40 +564,44 @@ msgid ""
 "``{field_name}_choices``, which is explained here: "
 ":ref:`dynamic_validation`."
 msgstr ""
-"``sent_back_amount_choices`` "
-"という、ドロップダウンメニューに動的にデータを入力するために呼び出される関数も定義します。これは ``{field_name}_choices``"
-" と呼ばれる機能であり、 :ref:`dynamic_validation` で説明されています。"
+"``sent_back_amount`` をドロップダウンメニューで選択する形式で回答させる実装を考えましょう。"
+"oTreeには、選択肢を動的に生成するための関数が用意されています。"
+"これは ``{field_name}_choices`` と呼ばれる機能であり、 :ref:`dynamic_validation` で説明されています。"
+"ここでは以下のように ``sent_back_amount_choices`` なる関数を定義します。"
+"使われている ``currency_range`` はポイント数の等差数列を返すoTreeの組み込み関数です。"
 
 #: ../../source/tutorial/part3.rst:90
 msgid "Define the templates and pages"
-msgstr "テンプレートとページを定義する"
+msgstr "ページ"
 
 #: ../../source/tutorial/part3.rst:92
 msgid "We need 3 pages:"
-msgstr "3ページ必要です: "
+msgstr "このゲームでは3つのページを表示します。"
 
 #: ../../source/tutorial/part3.rst:94
 msgid "P1's \"Send\" page"
-msgstr "P1の「送信」ページ"
+msgstr "ページ1: P1がP2に渡すポイント数（ ``sent_amount`` ）を回答します。"
 
 #: ../../source/tutorial/part3.rst:95
 msgid "P2's \"Send back\" page"
-msgstr "P2の「返送」ページ"
+msgstr "ページ2: P2がP1に返すポイント数（ ``sent_back_amount`` ）を回答します。"
 
 #: ../../source/tutorial/part3.rst:96
 msgid "\"Results\" page that both users see."
-msgstr "両方のユーザーに表示される「結果」ページ。"
+msgstr "ページ3: P1とP2の両方に結果が通知されます。"
 
 #: ../../source/tutorial/part3.rst:99
 msgid "Send page"
-msgstr "送信ページ"
+msgstr "ページ1: Send"
 
 #: ../../source/tutorial/part3.rst:112
 msgid ""
 "We use :ref:`is_displayed` to only show this to P1; P2 skips the page. "
 "For more info on ``id_in_group``, see :ref:`groups`."
 msgstr ""
-":ref:`is_displayed` を使用して、これをP1にのみこのページを表示します。P2はページをスキップします。 "
+"クラス ``class Send`` を定義します。 ``form_fields`` には ``sent_amount`` を指定します。"
+"``Send`` ページをP1にのみ表示するために、組み込みの :ref:`is_displayed` を使用します。"
+"P2は ``Send`` ページをスキップします。"
 "``id_in_group`` の詳細については :ref:`groups` を参照してください。"
 
 #: ../../source/tutorial/part3.rst:115
@@ -598,24 +609,29 @@ msgid ""
 "For the template, set the ``title`` to ``Trust Game: Your Choice``, and "
 "``content`` to:"
 msgstr ""
-"テンプレートの場合、 ``title`` を ``Trust Game: Your Choice`` に設定します。そして ``content``"
-" を次のようにします。"
+"HTMLテンプレートファイルを設定します。"
+"``{{ title block }}`` ブロック内にタイトルとして ``Trust Game: Your Choice`` と入力します。"
+"本文は ``{{ content block }}`` ブロック内を以下のように設定します。"
 
 #: ../../source/tutorial/part3.rst:130
 msgid "SendBack.html"
-msgstr "返送ページ"
+msgstr "ページ2: SendBack"
 
 #: ../../source/tutorial/part3.rst:132
 msgid ""
 "This is the page that P2 sees to send money back. Set the ``title`` block"
 " to ``Trust Game: Your Choice``, and the ``content`` block to:"
 msgstr ""
-"これは、P2が送金するために表示するページです。 ``title`` ブロックを ``Trust Game: Your Choice`` "
-"に設定し、 ``content`` ブロックを次のように設定します。"
+"HTMLテンプレートファイルを設定します。"
+"``{{ title block }}`` ブロック内にタイトルとして ``Trust Game: Your Choice`` と入力します。"
+"本文は ``{{ content block }}`` ブロック内を以下のように設定します。"
 
 #: ../../source/tutorial/part3.rst:148
 msgid "Here is the page code. Notes:"
-msgstr "注意: "
+msgstr ""
+"クラス ``class SendBack`` でこれまでと同様に ``form_fields`` や ``is_displayed`` などを設定します。"
+"テンプレートの中で、P2が受け取るポイント数（P1が渡したポイントの3倍）を ``{{tripled_amount}}`` として表示していることに注目してください。"
+"変数 ``tripled_amount`` は ``class SendBack`` の中で定義する必要があります。"
 
 #: ../../source/tutorial/part3.rst:150
 msgid ""
@@ -624,12 +640,12 @@ msgid ""
 " this number needs to be calculated in Python code and passed to the "
 "template."
 msgstr ""
-":ref:`vars_for_template` を使用して、変数 ``tripled_amount`` "
-"をテンプレートに渡します。HTMLコードで直接計算することはできないため、この数値はPythonコードで計算し、テンプレートに渡す必要があります。"
+"テンプレートに渡す変数 ``tripled_amount`` を :ref:`vars_for_template` を使用して設定します。"
+"HTMLコードでは、ポイント数を3倍する、というような計算を直接行えないため、Pythonコードで計算してからテンプレートに渡す必要があります。"
 
 #: ../../source/tutorial/part3.rst:175
 msgid "Results"
-msgstr "結果"
+msgstr "ページ3: Results"
 
 #: ../../source/tutorial/part3.rst:177
 msgid ""
@@ -638,13 +654,14 @@ msgid ""
 "``id_in_group``. Set the ``title`` block to ``Results``, and the content "
 "block to:"
 msgstr ""
-"結果ページは、P1とP2で少し異なって見える必要があります。したがって、``{{ if }}`` ステートメントを使用して、 "
-"``id_in_group`` による条件を付けます。 ``title`` ブロックを ``Results`` に設定し、 ``content``"
-" ブロックを次のように設定します。"
+"結果を表示する ``Results`` ページのHTMLテンプレートファイルを設定します。"
+"``{{ title block }}`` ブロック内にタイトルとして ``Results`` と入力します。"
+"本文は ``{{ content block }}`` ブロック内を設定します。"
+"P1とP2で表示する内容を変える必要があるため、 ``{{ if }}`` 文を使用して、 ``id_in_group`` による条件分岐を行います。"
 
 #: ../../source/tutorial/part3.rst:208
 msgid "Wait pages and page sequence"
-msgstr "WaitPageとページシーケンス"
+msgstr "WaitPageとページの順番"
 
 #: ../../source/tutorial/part3.rst:210
 msgid "Add 2 wait pages:"
@@ -652,27 +669,29 @@ msgstr "2つの待機ページを追加します。"
 
 #: ../../source/tutorial/part3.rst:212
 msgid "``WaitForP1`` (P2 needs to wait while P1 decides how much to send)"
-msgstr "``WaitForP1`` （P1が送信する量を決定する間、P2は待機する必要があります）"
+msgstr "``WaitForP1`` : P1が意思決定している間、P2は待機します。"
 
 #: ../../source/tutorial/part3.rst:213
 msgid ""
 "``ResultsWaitPage`` (P1 needs to wait while P2 decides how much to send "
 "back)"
-msgstr "``ResultsWaitPage`` （P2が返送する金額を決定する間、P1は待機する必要があります）"
+msgstr "``ResultsWaitPage`` : P2が意思決定している間、P1は待機します。"
 
 #: ../../source/tutorial/part3.rst:215
 msgid ""
 "After the second wait page, we should calculate the payoffs. So, we "
 "define a function called ``set_payoffs``:"
-msgstr "2番目のWaitPageの後、利得を計算する必要があります。したがって、次の関数 ``set_payoffs`` を定義します。"
+msgstr "2番目のWaitPage （ ``ResultsWaitPage`` ） の後 ``Results`` ページへ遷移する前に、利得を計算する必要があります。"
+"利得を計算する関数 ``set_payoffs`` を定義します。"
 
 #: ../../source/tutorial/part3.rst:226
 msgid "Then in ``ResultsWaitPage``, set ``after_all_players_arrive``:"
-msgstr "次に、 ``ResultsWaitPage`` で、 ``after_all_players_arrive`` を設定します。"
+msgstr ""
+"関数 ``set_payoffs`` をP2の意思決定が完了したタイミングで呼び出すために、 ``class ResultsWaitPage`` の中で、 ``after_all_players_arrive`` を設定します。"
 
 #: ../../source/tutorial/part3.rst:232
 msgid "Make sure they are ordered correctly in the page_sequence:"
-msgstr "ページシーケンスで正しく順序付けられていることを確認してください。"
+msgstr "ページの順番は ``page_sequence`` にページ名のリストを渡すことで設定してください。"
 
 #: ../../source/tutorial/part3.rst:245
 msgid "Add an entry to your ``SESSION_CONFIGS``"
@@ -680,11 +699,11 @@ msgstr "``SESSION_CONFIGS`` をエントリーに追加"
 
 #: ../../source/tutorial/part3.rst:247
 msgid "Create a session config with ``my_trust`` in the app sequence."
-msgstr "アプリシーケンスで ``my_trust`` セッション構成を作成します。"
+msgstr "settings.py の ``SESSION_CONFIGS`` に 新しいセッションを追加し、 ``app_sequence`` にアプリ名 ``my_trust`` をリストとして渡します。"
 
 #: ../../source/tutorial/part3.rst:250
 msgid "Run the server"
-msgstr "サーバーを実行します"
+msgstr "プログラムの実行"
 
 #~ msgid "Part 1: Simple survey (for oTree Studio users)"
 #~ msgstr "その1: 簡単なアンケート（oTree Studioユーザに向けて）"
