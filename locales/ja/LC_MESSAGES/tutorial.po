@@ -252,7 +252,7 @@ msgstr "``class C`` の中身は以下のようになります。"
 
 #: ../../source/tutorial/part2.rst:48 ../../source/tutorial/part3.rst:40
 msgid "Models"
-msgstr "モデル （保存すべき実験データの定義）"
+msgstr "モデル （記録すべき実験データの定義）"
 
 #: ../../source/tutorial/part2.rst:50
 msgid ""
@@ -261,7 +261,7 @@ msgid ""
 " to the Player model and define a ``contribution`` column:"
 msgstr ""
 "実験参加者の行動を後々分析するために、各プレイヤーが貢献したポイント数を記録しなければなりません。"
-"データベースに保存する変数（フィールド）でプレイヤー一人ひとりについて定義されるものは ``class Player`` （プレイヤーモデルと呼ばれます）の中で定義します。"
+"データベースに記録する変数（フィールド）でプレイヤー一人ひとりについて定義されるものは ``class Player`` （プレイヤーモデルと呼ばれます）の中で定義します。"
 "``class Player`` に移動し、 ``contribution`` なるフィールドを以下のように定義します。"
 
 #: ../../source/tutorial/part2.rst:64
@@ -280,7 +280,7 @@ msgid ""
 "the individual share returned to each player. So, we define those 2 "
 "fields on the Group:"
 msgstr ""
-"各プレイヤーの意思決定データだけでなく、各グループについて、グループへの貢献額の合計と、各プレイヤーに分配されるポイント数を保存したい場合は、"
+"各プレイヤーの意思決定データだけでなく、各グループについて、グループへの貢献額の合計と、各プレイヤーに分配されるポイント数を記録したい場合は、"
 "グループモデル ``class Group`` でこれら2つのフィールドを定義します。"
 
 #: ../../source/tutorial/part2.rst:83
