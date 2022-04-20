@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "`YouTube "
 "<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
-"のビデオチュートリアル（英語）を見ながら以下を読み進めてください。"
+"のビデオチュートリアル（英語）も参照してください。"
 
 #: ../../source/tutorial/part1_studio.rst:10
 msgid ""
@@ -163,7 +163,7 @@ msgstr "ダウンロードと実行"
 msgid ""
 "Download the otreezip file and follow the instructions on how to install "
 "oTree and run the otreezip file."
-msgstr "サイドバーから *Download* に入り、 *.otreezip* ファイルをダウンロードします。"
+msgstr "サイドバーから *Download* に入り、 otreezipファイルをダウンロードします。"
 "その後、指示に従ってoTreeをインストールした上で、otreezipファイルを解凍し、プログラムを起動してください。"
 
 #: ../../source/tutorial/part1_studio.rst:76
