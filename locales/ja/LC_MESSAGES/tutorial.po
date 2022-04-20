@@ -184,7 +184,7 @@ msgid ""
 "<https://en.wikipedia.org/wiki/Public_goods_game>`__. The public goods "
 "game is a classic game in economics."
 msgstr ""
-"ここで、 `公共財ゲーム <https://en.wikipedia.org/wiki/Public_goods_game>`__ "
+"ここでは、 `公共財ゲーム <https://en.wikipedia.org/wiki/Public_goods_game>`__ "
 "を作成します。公共財ゲームは経済学の古典的なゲームです。"
 
 #: ../../source/tutorial/part2.rst:11
