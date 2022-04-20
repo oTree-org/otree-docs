@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../../source/tutorial/part1_studio.rst:14
 msgid "Player model"
-msgstr "プレイヤー モデル （保存すべき実験データの定義）"
+msgstr "プレイヤー モデル （記録すべき実験データの定義）"
 
 #: ../../source/tutorial/part1_studio.rst:16
 msgid "In the sidebar, go to the Player model. Let's add 2 fields:"
@@ -75,12 +75,12 @@ msgstr "サイドバーから *Model Player* に入り、2つのフィールド�
 #: ../../source/tutorial/part1_studio.rst:19
 msgid "``name`` (``StringField``, meaning text characters)"
 msgstr ""
-"氏名データを保存するために、 *StringField* （文字列型のフィールドを意味します）を追加し、フィールドの名前を ``name`` としましょう。"
+"氏名データを記録するために、 *StringField* （文字列型のフィールドを意味します）を追加し、フィールドの名前を ``name`` としましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:20
 msgid "``age`` (``IntegerField``)"
 msgstr ""
-"年齢データを保存するために、 *IntegerField* （整数型のフィールドを意味します）を追加し、フィールドの名前を ``age`` としましょう。"
+"年齢データを記録するために、 *IntegerField* （整数型のフィールドを意味します）を追加し、フィールドの名前を ``age`` としましょう。"
 
 #: ../../source/tutorial/part1_studio.rst:24 ../../source/tutorial/part2.rst:81
 msgid "Pages"
