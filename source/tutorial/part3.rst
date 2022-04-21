@@ -10,7 +10,7 @@ these points they will be tripled. Once P2 receives the tripled points he
 can decide to send some or all of his points to P1.
 
 The completed app is
-`here <https://github.com/oTree-org/oTree/tree/master/trust_simple>`__.
+`here <https://github.com/oTree-org/oTree/tree/lite/trust_simple>`__.
 
 Create the app
 --------------

@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 07:28-0500\n"
+"POT-Creation-Date: 2022-04-19 16:34+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/misc/advanced.rst:2
 msgid "Advanced features"
@@ -95,7 +95,7 @@ msgid ""
 "``template_name``. Example:"
 msgstr ""
 "テンプレートの名前をページクラスとは異なるものにする必要がある場合（たとえば、複数のページで同じテンプレートを共有している場合）、 "
-"``template_name`` を設定します。例："
+"``template_name`` を設定します。例: "
 
 #: ../../source/misc/advanced.rst:84
 msgid "CSS/JS and base templates"
@@ -236,7 +236,7 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:4
 msgid "Bots: advanced features"
-msgstr "ボット：高度な機能"
+msgstr "ボット: 高度な機能"
 
 #: ../../source/misc/bots_advanced.rst:11
 msgid "Command line bots"
@@ -257,11 +257,11 @@ msgstr "これを実行します。"
 msgid ""
 "To test with a specific number of participants (otherwise it will default"
 " to ``num_demo_participants``)::"
-msgstr "特定の数の参加者でテストするには（それ以外の場合はデフォルトで ``num_demo_participants`` ）："
+msgstr "特定の数の参加者でテストするには（それ以外の場合はデフォルトで ``num_demo_participants`` ）: "
 
 #: ../../source/misc/bots_advanced.rst:25
 msgid "To run tests for all session configs::"
-msgstr "すべてのセッション構成のテストを実行するには："
+msgstr "すべてのセッション構成のテストを実行するには: "
 
 #: ../../source/misc/bots_advanced.rst:30
 msgid "Exporting data"
@@ -344,7 +344,7 @@ msgstr "次のコマンドを実行することですべてのセッション構
 
 #: ../../source/misc/bots_advanced.rst:85
 msgid "Browser bots: misc notes"
-msgstr "ブラウザボット：その他の注意"
+msgstr "ブラウザボット: その他の注意"
 
 #: ../../source/misc/bots_advanced.rst:87
 msgid ""
@@ -371,7 +371,7 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:100
 msgid "All players contribute half their endowment"
-msgstr "すべてのプレーヤーが財産の半分を寄付するケース"
+msgstr "すべてのプレイヤーが財産の半分を寄付するケース"
 
 #: ../../source/misc/bots_advanced.rst:101
 msgid "All players contribute nothing"
@@ -394,7 +394,7 @@ msgstr ""
 
 #: ../../source/misc/bots_advanced.rst:109
 msgid "For example:"
-msgstr "例："
+msgstr "例: "
 
 #: ../../source/misc/bots_advanced.rst:148
 msgid ""
@@ -439,7 +439,7 @@ msgid ""
 "``error_fields`` can resolve the ambiguity:"
 msgstr ""
 "ボットシステムは送信が失敗する理由を正確に教えてくれません。``weight`` と ``height`` "
-"のどちらが無効なのか、またはその両方が無効であるのか、 ``error_fields`` はそのあいまいさを解決できます："
+"のどちらが無効なのか、またはその両方が無効であるのか、 ``error_fields`` はそのあいまいさを解決できます: "
 
 #: ../../source/misc/bots_advanced.rst:223
 msgid ""
@@ -496,8 +496,8 @@ msgstr ""
 "ボットでライブページをテストするために、 ``tests.py`` で最上位関数として ``call_live_method`` "
 "を定義します。（oTree Studioでは使用できません。）この関数は ``live_method`` "
 "への呼び出しシーケンスをシミュレートします。引数 ``method`` は、Playerクラスのライブメソッドをシミュレートします。例えば、 "
-"``method(3, 'hello')`` プレーヤー3のliveメソッドを呼び出し、``data`` に ``'hello'`` "
-"を設定します。例："
+"``method(3, 'hello')`` プレイヤー3のliveメソッドを呼び出し、``data`` に ``'hello'`` "
+"を設定します。例: "
 
 #: ../../source/misc/bots_advanced.rst:269
 msgid "``kwargs`` contains at least the following parameters."
@@ -509,7 +509,7 @@ msgstr "``case`` :ref:`テストケース <cases>` を参照。"
 
 #: ../../source/misc/bots_advanced.rst:272
 msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
-msgstr "``page_class`` ：現在のページクラス。例えば、 ``pages.MyPage`` "
+msgstr "``page_class`` : 現在のページクラス。例えば、 ``pages.MyPage`` "
 
 #: ../../source/misc/bots_advanced.rst:273
 msgid "``round_number``"
@@ -554,19 +554,15 @@ msgstr ""
 "REST APIを頻繁に使用するプロジェクトの1つは、 `oTree HR <https://github.com/oTree-"
 "org/HR>`__ です。"
 
-#: ../../source/misc/rest_api.rst:16
-msgid "As of March 2021, there have been some breaking changes to the REST API."
-msgstr "2021年3月の時点で、RESTAPIにいくつかの重大な変更がありました。"
-
-#: ../../source/misc/rest_api.rst:21
+#: ../../source/misc/rest_api.rst:17
 msgid "Setup"
 msgstr "セットアップ"
 
-#: ../../source/misc/rest_api.rst:25
+#: ../../source/misc/rest_api.rst:21
 msgid "*\"Where should I put this code?\"*"
 msgstr "「このコードはどこに配置すればいいですか」"
 
-#: ../../source/misc/rest_api.rst:27
+#: ../../source/misc/rest_api.rst:23
 msgid ""
 "This code does not need to go inside your oTree project folder. Since the"
 " point of the REST API is to allow external programs and servers to "
@@ -579,103 +575,103 @@ msgstr ""
 "このコードは、oTreeプロジェクトフォルダー内に配置する必要はありません。REST "
 "APIのポイントは、外部プログラムとサーバーがインターネットを介してoTreeと通信できるようにすることであるため、このコードを他のプログラムに配置する必要があります。これは、他のサーバーが使用する言語を使用しなければならないことも意味します。このページの例ではPythonを使用していますが、WebhookやcURLなどのツールの利用や他の言語によってHTTPリクエストを作成するのも簡単です。"
 
-#: ../../source/misc/rest_api.rst:62
+#: ../../source/misc/rest_api.rst:58
 msgid "\"oTree version\" endpoint"
 msgstr "\"oTree version\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:66 ../../source/misc/rest_api.rst:83
-#: ../../source/misc/rest_api.rst:102
+#: ../../source/misc/rest_api.rst:62 ../../source/misc/rest_api.rst:79
+#: ../../source/misc/rest_api.rst:98
 msgid "New beta feature as of March 2021."
 msgstr "2021年3月現在の新しいベータ機能。"
 
-#: ../../source/misc/rest_api.rst:68
+#: ../../source/misc/rest_api.rst:64
 msgid "GET URL: ``/api/otree_version/``"
-msgstr "GET URL： ``/api/otree_version/`` "
+msgstr "GET URL:  ``/api/otree_version/`` "
 
-#: ../../source/misc/rest_api.rst:71 ../../source/misc/rest_api.rst:90
-#: ../../source/misc/rest_api.rst:107 ../../source/misc/rest_api.rst:140
-#: ../../source/misc/rest_api.rst:179 ../../source/misc/rest_api.rst:204
-#: ../../source/misc/rest_api.rst:219 ../../source/misc/rest_api.rst:236
+#: ../../source/misc/rest_api.rst:67 ../../source/misc/rest_api.rst:86
+#: ../../source/misc/rest_api.rst:103 ../../source/misc/rest_api.rst:136
+#: ../../source/misc/rest_api.rst:175 ../../source/misc/rest_api.rst:200
+#: ../../source/misc/rest_api.rst:215 ../../source/misc/rest_api.rst:232
 msgid "Example"
-msgstr "例："
+msgstr "例: "
 
-#: ../../source/misc/rest_api.rst:79
+#: ../../source/misc/rest_api.rst:75
 msgid "\"Session configs\" endpoint"
 msgstr "\"Session configs\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:85
+#: ../../source/misc/rest_api.rst:81
 msgid "GET URL: ``/api/session_configs/``"
-msgstr "GET URL： ``/api/session_configs/`` "
+msgstr "GET URL:  ``/api/session_configs/`` "
 
-#: ../../source/misc/rest_api.rst:87
+#: ../../source/misc/rest_api.rst:83
 msgid ""
 "Returns the list of all your session configs, as dicts with all their "
 "properties."
 msgstr "すべてのセッション構成のリストをすべてのプロパティを含む辞書型として返します。"
 
-#: ../../source/misc/rest_api.rst:98
+#: ../../source/misc/rest_api.rst:94
 msgid "\"Rooms\" endpoint"
 msgstr "\"Rooms\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:104
+#: ../../source/misc/rest_api.rst:100
 msgid "GET URL: ``/api/rooms/``"
-msgstr "GET URL： ``/api/rooms/`` "
+msgstr "GET URL:  ``/api/rooms/`` "
 
-#: ../../source/misc/rest_api.rst:114
+#: ../../source/misc/rest_api.rst:110
 msgid ""
 "Example output (note it includes ``session_code`` if there is currently a"
 " session in the room):"
-msgstr "出力例（現在、roomにセッションがある場合、 ``session_code`` が含まれているかについて注意してください）："
+msgstr "出力例（現在、roomにセッションがある場合、 ``session_code`` が含まれているかについて注意してください）: "
 
-#: ../../source/misc/rest_api.rst:126
+#: ../../source/misc/rest_api.rst:122
 msgid "\"Create sessions\" endpoint"
 msgstr "\"Create sessions\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:128
+#: ../../source/misc/rest_api.rst:124
 msgid "POST URL: ``/api/sessions/``"
-msgstr "POST URL： ``/api/sessions/``"
+msgstr "POST URL:  ``/api/sessions/``"
 
-#: ../../source/misc/rest_api.rst:130
+#: ../../source/misc/rest_api.rst:126
 msgid ""
 "Here are some examples of how the \"create sessions\" endpoint can be "
 "used:"
 msgstr "\"create sessions\" エンドポイントの使用例を次に示します。"
 
-#: ../../source/misc/rest_api.rst:132
+#: ../../source/misc/rest_api.rst:128
 msgid "Other websites can create oTree sessions automatically"
 msgstr "他のウェブサイトはoTreeセッションの自動生成"
 
-#: ../../source/misc/rest_api.rst:133
+#: ../../source/misc/rest_api.rst:129
 msgid ""
 "You can make a fancier alternative to oTree's :ref:`edit_config` "
 "interface (e.g. with sliders and visual widgets)"
 msgstr ""
 "oTreeの :ref:`セッションの構成 <edit_config>` "
-"インターフェイスの代替手段の作成（例：スライダーやビジュアルウィジェットなどの使用）"
+"インターフェイスの代替手段の作成（例: スライダーやビジュアルウィジェットなどの使用）"
 
-#: ../../source/misc/rest_api.rst:135
+#: ../../source/misc/rest_api.rst:131
 msgid "Process that will create new oTree sessions on some fixed schedule"
 msgstr "一定期間ごとの新しいoTreeセッションの作成"
 
-#: ../../source/misc/rest_api.rst:136
+#: ../../source/misc/rest_api.rst:132
 msgid ""
 "Command line script to create customized sessions (if ``otree "
 "create_session`` is not sufficient)"
 msgstr "カスタマイズされたセッションを作成するためのコマンドラインスクリプト（ ``otree create_session`` で十分でなければ）"
 
-#: ../../source/misc/rest_api.rst:155 ../../source/misc/rest_api.rst:250
+#: ../../source/misc/rest_api.rst:151 ../../source/misc/rest_api.rst:246
 msgid "Parameters"
 msgstr "パラメーター"
 
-#: ../../source/misc/rest_api.rst:157
+#: ../../source/misc/rest_api.rst:153
 msgid "``session_config_name`` (required)"
 msgstr "``session_config_name`` （必須）"
 
-#: ../../source/misc/rest_api.rst:158
+#: ../../source/misc/rest_api.rst:154
 msgid "``num_participants`` (required)"
 msgstr "``num_participants`` （必須）"
 
-#: ../../source/misc/rest_api.rst:159
+#: ../../source/misc/rest_api.rst:155
 msgid ""
 "``modified_session_config_fields``: an optional dict of session config "
 "parameters, as discussed in :ref:`edit_config`."
@@ -683,25 +679,25 @@ msgstr ""
 "``modified_session_config_fields``: :ref:`セッションの構成 <edit_config>` "
 "で説明されているように、セッション構成パラメーターのオプションの辞書型リスト 。"
 
-#: ../../source/misc/rest_api.rst:161
+#: ../../source/misc/rest_api.rst:157
 msgid "``room_name`` if you want to create the session in a room."
 msgstr "roomでセッションを作成する場合は、 ``room_name``"
 
-#: ../../source/misc/rest_api.rst:166
+#: ../../source/misc/rest_api.rst:162
 msgid "\"Get session data\" endpoint"
 msgstr "\"Get session data\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:170
+#: ../../source/misc/rest_api.rst:166
 msgid ""
 "New feature as of March 2021. In beta until we get sufficient user "
 "feedback."
 msgstr "2021年3月現在の新機能。十分なユーザーフィードバックが得られるまでベータ版です。"
 
-#: ../../source/misc/rest_api.rst:173
+#: ../../source/misc/rest_api.rst:169
 msgid "GET URL: ``/api/sessions/{code}``"
 msgstr "GET URL: ``/api/sessions/{code}``"
 
-#: ../../source/misc/rest_api.rst:175
+#: ../../source/misc/rest_api.rst:171
 msgid ""
 "This API retrieves data about a session and its participants. If "
 "``participant_labels`` is omitted, it returns data for all participants."
@@ -709,11 +705,11 @@ msgstr ""
 "このAPIは、セッションとその参加者に関するデータを取得します。 ``participant_labels`` "
 "を省略した場合、すべての参加者のデータを返します。"
 
-#: ../../source/misc/rest_api.rst:189
+#: ../../source/misc/rest_api.rst:185
 msgid "\"Session vars\" endpoint"
 msgstr "\"Session vars\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:193
+#: ../../source/misc/rest_api.rst:189
 msgid ""
 "As of April 2021, this endpoint requires you to pass a session code as a "
 "path parameter. If the session is in a room, you can get the session code"
@@ -722,11 +718,11 @@ msgstr ""
 "2021年4月の時点で、このエンドポイントでは、パスのパラメータとしてセッションコードを渡す必要があります。room内にセッションがある場合は、 "
 "``rooms`` エンドポイントでセッションコードを取得できます。"
 
-#: ../../source/misc/rest_api.rst:196
+#: ../../source/misc/rest_api.rst:192
 msgid "POST URL: ``/api/session_vars/{session_code}``"
 msgstr "POST URL: ``/api/session_vars/{session_code}``"
 
-#: ../../source/misc/rest_api.rst:198
+#: ../../source/misc/rest_api.rst:194
 msgid ""
 "This endpoint lets you set ``session.vars``. One use is experimenter "
 "input. For example, if the experimenter does a lottery drawing in the "
@@ -736,29 +732,29 @@ msgstr ""
 "このエンドポイントでは、 ``session.vars`` "
 "を設定できます。1つの用途は実験者の入力です。例えば、実験の途中で抽選を行った場合、以下のようなスクリプトを実行して結果を入力することができます。"
 
-#: ../../source/misc/rest_api.rst:212
+#: ../../source/misc/rest_api.rst:208
 msgid "\"Participant vars\" endpoint"
 msgstr "\"Participant vars\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:214
+#: ../../source/misc/rest_api.rst:210
 msgid "POST URL: ``/api/participant_vars/{participant_code}``"
 msgstr "POST URL: ``/api/participant_vars/{participant_code}``"
 
-#: ../../source/misc/rest_api.rst:216
+#: ../../source/misc/rest_api.rst:212
 msgid ""
 "Pass information about a participant to oTree, via web services / "
 "webhooks."
 msgstr "WebサービスやWebhookを介して、参加者に関する情報をoTreeに渡します。"
 
-#: ../../source/misc/rest_api.rst:228
+#: ../../source/misc/rest_api.rst:224
 msgid "\"Participant vars for room\" endpoint"
 msgstr "\"Participant vars for room\" エンドポイント"
 
-#: ../../source/misc/rest_api.rst:230
+#: ../../source/misc/rest_api.rst:226
 msgid "POST URL: ``/api/participant_vars/``"
 msgstr "POST URL: ``/api/participant_vars/``"
 
-#: ../../source/misc/rest_api.rst:232
+#: ../../source/misc/rest_api.rst:228
 msgid ""
 "Similar to the other \"participant vars\" endpoint, but this one can be "
 "used when you don't have the participant's code. Instead, you identify "
@@ -767,23 +763,23 @@ msgstr ""
 "他の \"participant vars\" "
 "エンドポイントと同様ですが、参加者のコードがない場合にも使用できます。参加者のコードの代わりに、room名と参加者ラベルで参加者を識別します。"
 
-#: ../../source/misc/rest_api.rst:252
+#: ../../source/misc/rest_api.rst:248
 msgid "``room_name`` (required)"
 msgstr "``room_name`` (必須)"
 
-#: ../../source/misc/rest_api.rst:253
+#: ../../source/misc/rest_api.rst:249
 msgid "``participant_label`` (required)"
 msgstr "``participant_label`` （必須）"
 
-#: ../../source/misc/rest_api.rst:254
+#: ../../source/misc/rest_api.rst:250
 msgid ""
 "``vars`` (required): a dict of participant vars to add. Values can be any"
 " JSON-serializable data type, even nested dicts/lists."
 msgstr ""
-"``vars`` （必須）：追加するparticipant "
+"``vars`` （必須）: 追加するparticipant "
 "varsの辞書型。値はネストされた辞書型やリストであっても、JSONでシリアル化可能な任意のデータ型にすることができます。"
 
-#: ../../source/misc/rest_api.rst:257
+#: ../../source/misc/rest_api.rst:253
 msgid ""
 "You will need to give participants a link with a ``participant_label``, "
 "although this does not need to come from a ``participant_label_file``."
@@ -791,17 +787,17 @@ msgstr ""
 "``participant_label_file`` から取得する必要はありませんが、参加者に ``participant_label`` "
 "とともにリンクを与える必要があります。"
 
-#: ../../source/misc/rest_api.rst:261
+#: ../../source/misc/rest_api.rst:257
 msgid "Authentication"
 msgstr "認証"
 
-#: ../../source/misc/rest_api.rst:263
+#: ../../source/misc/rest_api.rst:259
 msgid ""
 "If you have set your auth level to DEMO or STUDY, you must authenticate "
 "your REST API requests."
 msgstr "認証レベルをDEMOまたはSTUDYに設定している場合は、REST APIリクエストを認証する必要があります。"
 
-#: ../../source/misc/rest_api.rst:266
+#: ../../source/misc/rest_api.rst:262
 msgid ""
 "Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the "
 "server. Set it to some secret value."
@@ -809,7 +805,7 @@ msgstr ""
 "サーバー上に環境変数（つまり、Heroku config var） ``OTREE_REST_KEY`` "
 "を作成してください。値を秘密の値として設定して下さい。"
 
-#: ../../source/misc/rest_api.rst:269
+#: ../../source/misc/rest_api.rst:265
 msgid ""
 "When you make a request, add that key as an HTTP header called ``otree-"
 "rest-key``. If following the :ref:`setup example <rest-setup>` above, you"
@@ -818,17 +814,17 @@ msgstr ""
 "リクエストを行うときは、そのキーを ``otree-rest-key`` と呼ばれるHTTPヘッダーとして追加してください。上記の "
 ":ref:`設定例 <rest-setup>` に従う場合は、 ``REST_KEY`` 変数を設定します。"
 
-#: ../../source/misc/rest_api.rst:273
+#: ../../source/misc/rest_api.rst:269
 msgid "Demo & testing"
 msgstr "デモとテスト"
 
-#: ../../source/misc/rest_api.rst:275
+#: ../../source/misc/rest_api.rst:271
 msgid ""
 "For convenience during development, you can generate fake vars to "
 "simulate data that, in a real session, will come from the REST API."
 msgstr "開発を快適にするために、偽の変数を生成し、実際のセッションでREST APIから取得されるデータをシミュレートできます。"
 
-#: ../../source/misc/rest_api.rst:278
+#: ../../source/misc/rest_api.rst:274
 msgid ""
 "In your session config, add the parameter ``mock_exogenous_data=True`` "
 "(We call it **exogenous** data because it originates outside oTree.)"
@@ -836,7 +832,7 @@ msgstr ""
 "セッション構成で、パラメーター ``mock_exogenous_data=True`` "
 "を追加してください。（oTreeの外部で発生するため、「exogenous」データと呼んでいます。）"
 
-#: ../../source/misc/rest_api.rst:281
+#: ../../source/misc/rest_api.rst:277
 msgid ""
 "Then define a function with the same name (``mock_exogenous_data``) in "
 "your project's shared_out.py (if you are using a text editor, you may "
@@ -845,15 +841,15 @@ msgstr ""
 "次に、プロジェクトのshared_out.pyで 同じ名前（ ``mock_exogenous_data`` "
 "）の関数を定義します。（テキストエディターを使用している場合は、そのファイルを作成する必要があるかもしれません。）"
 
-#: ../../source/misc/rest_api.rst:285
+#: ../../source/misc/rest_api.rst:281
 msgid "Here's an example:"
-msgstr "例："
+msgstr "例: "
 
-#: ../../source/misc/rest_api.rst:294
+#: ../../source/misc/rest_api.rst:290
 msgid "You can also set participant labels here."
 msgstr "ここで参加者ラベルを設定することもできます。"
 
-#: ../../source/misc/rest_api.rst:296
+#: ../../source/misc/rest_api.rst:292
 msgid ""
 "When you run a session in demo mode, or using bots, "
 "``mock_exogenous_data()`` will automatically be run after "
@@ -863,7 +859,7 @@ msgstr ""
 "デモモードまたはボットを使用してセッションを実行すると、 ``mock_exogenous_data()`` は "
 "``creating_session`` の後、自動的に実行されます。ただし、セッションがroomで作成されている場合は実行されません。"
 
-#: ../../source/misc/rest_api.rst:300
+#: ../../source/misc/rest_api.rst:296
 msgid ""
 "If you have multiple session configs that require different exogenous "
 "data, you can branch like this:"
@@ -961,7 +957,7 @@ msgid ""
 msgstr ""
 "多くの繰り返される :ref:`FIELD_error_message <FOO_error_message>` "
 "メソッドがある場合は、それらを単一の :ref:`error_message <error_message>` "
-"関数に置き換えることができます。例："
+"関数に置き換えることができます。例: "
 
 #: ../../source/misc/tips_and_tricks.rst:158
 msgid "You can instead define this function on your page:"
@@ -983,7 +979,7 @@ msgid ""
 "level function. This is a handy way to share the same function across "
 "multiple pages. For example, let's say many pages need to have these 2 "
 "functions:"
-msgstr "すべてのページ関数は、ページクラスから最上位の関数に移動できます。これは、同じ関数を複数のページで共有するための便利な方法です。たとえば、多くのページに次の2つの関数が必要だとします。："
+msgstr "すべてのページ関数は、ページクラスから最上位の関数に移動できます。これは、同じ関数を複数のページで共有するための便利な方法です。たとえば、多くのページに次の2つの関数が必要だとします。: "
 
 #: ../../source/misc/tips_and_tricks.rst:205
 msgid ""
@@ -1019,7 +1015,7 @@ msgstr ""
 msgid ""
 "For example, this code has a redundant query because it asks the database"
 " 5 times for the exact same player:"
-msgstr "たとえば、このコードはデータベースにまったく同じプレーヤーを5回要求するため、冗長なクエリが発生してしまいます。"
+msgstr "たとえば、このコードはデータベースにまったく同じプレイヤーを5回要求するため、冗長なクエリが発生してしまいます。"
 
 #: ../../source/misc/tips_and_tricks.rst:258
 msgid "It should be simplified to this:"
@@ -1069,7 +1065,7 @@ msgstr "そのままの場合、ページでは次のように記述しなけれ
 
 #: ../../source/misc/tips_and_tricks.rst:310
 msgid "It would be much better to break this to 2 separate BooleanFields::"
-msgstr "そして、フィールドを2つの別々のBooleanFieldsに分割することを推奨します："
+msgstr "そして、フィールドを2つの別々のBooleanFieldsに分割することを推奨します: "
 
 #: ../../source/misc/tips_and_tricks.rst:315
 msgid "Then your pages could be simplified to:"
@@ -1103,4 +1099,10 @@ msgid ""
 "An alternative solution is to assign an initial value to the field so "
 "that its value is never ``None``:"
 msgstr ""
+
+#~ msgid ""
+#~ "As of March 2021, there have been"
+#~ " some breaking changes to the REST"
+#~ " API."
+#~ msgstr "2021年3月の時点で、RESTAPIにいくつかの重大な変更がありました。"
 

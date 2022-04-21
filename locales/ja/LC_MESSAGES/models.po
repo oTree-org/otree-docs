@@ -25,14 +25,14 @@ msgstr "モデル"
 msgid "An oTree app has 3 data models: Subsession, Group, and Player."
 msgstr ""
 "oTree アプリには 3 "
-"つのデータモデル「サブセッション(Subsession)、グループ(Group)、プレーヤー(Player)」があります。"
+"つのデータモデル「サブセッション(Subsession)、グループ(Group)、プレイヤー(Player)」があります。"
 
 #: ../../source/models.rst:6
 msgid ""
 "A player is part of a group, which is part of a subsession. See "
 ":ref:`conceptual_overview`."
 msgstr ""
-"プレーヤーはグループの一部であり、グループはサブセッションの一部です。詳しくは :ref:`conceptual_overview` "
+"プレイヤーはグループの一部であり、グループはサブセッションの一部です。詳しくは :ref:`conceptual_overview` "
 "を参照してください。"
 
 #: ../../source/models.rst:9
@@ -113,7 +113,7 @@ msgid ""
 "example, ``Player`` has fields called ``payoff`` and ``id_in_group``, as "
 "well as methods like ``in_all_rounds()`` and ``get_others_in_group()``."
 msgstr ""
-"プレーヤー、グループ、サブセッションには、いくつかの定義済みフィールドがあります。たとえば、 ``Player`` には ``payoff`` と"
+"プレイヤー、グループ、サブセッションには、いくつかの定義済みフィールドがあります。たとえば、 ``Player`` には ``payoff`` と"
 " ``id_in_group`` というフィールドがあり、 ``in_all_rounds()`` や "
 "``get_others_in_group()`` などのメソッドがあります。"
 
@@ -152,7 +152,7 @@ msgstr ""
 
 #: ../../source/models.rst:91
 msgid "Returns a list of all the players in the subsession."
-msgstr "サブセッション内のすべてのプレーヤーをリストで返します。"
+msgstr "サブセッション内のすべてのプレイヤーをリストで返します。"
 
 #: ../../source/models.rst:94
 msgid "Other subsession methods"
@@ -234,7 +234,7 @@ msgstr ""
 msgid ""
 "Automatically assigned integer starting from 1. In multiplayer games, "
 "indicates whether this is player 1, player 2, etc."
-msgstr "自動的に割り当てられる1から始まる整数。マルチプレーヤーゲームでは、このフィールドがプレーヤー1なのか、プレーヤー2なのか、などを示す。"
+msgstr "自動的に割り当てられる1から始まる整数。マルチプレイヤーゲームでは、このフィールドがプレイヤー1なのか、プレイヤー2なのか、などを示す。"
 
 #: ../../source/models.rst:135
 msgid "payoff"
@@ -246,7 +246,7 @@ msgstr "このラウンドでのプレイヤーの利得。詳しくは :ref:`pa
 
 #: ../../source/models.rst:144
 msgid "Other player methods"
-msgstr "その他のプレーヤーメソッド"
+msgstr "その他のプレイヤーメソッド"
 
 #: ../../source/models.rst:150
 msgid ":ref:`get_others_in_subsession() <groups>`"
@@ -296,7 +296,7 @@ msgstr ""
 msgid ""
 "The participant's ID in the session. This is the same as the player's "
 "``id_in_subsession``."
-msgstr "セッション内の参加者のID。このフィールドは、プレーヤーの ``id_in_subsession`` と同じです。"
+msgstr "セッション内の参加者のID。このフィールドは、プレイヤーの ``id_in_subsession`` と同じです。"
 
 #: ../../source/models.rst:181
 msgid "Other participant attributes and methods"
@@ -326,7 +326,7 @@ msgstr ""
 msgid ""
 "``C`` is the recommended place to put your app's parameters and constants"
 " that do not vary from player to player."
-msgstr "``C`` は、アプリのパラメータやプレーヤーごとに変化することがない定数を定義するために推奨される場所です。"
+msgstr "``C`` は、アプリのパラメータやプレイヤーごとに変化することがない定数を定義するために推奨される場所です。"
 
 #: ../../source/models.rst:197
 msgid "Here are the built-in constants:"

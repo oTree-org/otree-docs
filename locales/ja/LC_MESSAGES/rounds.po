@@ -160,7 +160,7 @@ msgstr "``player.in_round(m)`` はラウンド ``m`` のPlayerデータを返し
 msgid ""
 "These methods work the same way for subsessions (e.g. "
 "``subsession.in_all_rounds()``)."
-msgstr "これらの関数はsubsessionでも同じように機能します。（例： ``subsession.in_all_rounds()``）"
+msgstr "これらの関数はsubsessionでも同じように機能します。（例:  ``subsession.in_all_rounds()``）"
 
 #: ../../source/rounds.rst:85
 msgid ""
