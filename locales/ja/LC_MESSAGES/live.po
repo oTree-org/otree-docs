@@ -63,7 +63,7 @@ msgid ""
 "name starts with ``live_``. (Note, ``live_method`` on ``WaitPage`` is not"
 " yet supported.)"
 msgstr ""
-"oTree Studio を使用している場合は、名前が ``live_`` で始まるプレーヤー関数を定義する必要があります。"
+"oTree Studio を使用している場合は、名前が ``live_`` で始まるプレイヤー関数を定義する必要があります。"
 "(なお、 ``WaitPage`` の ``live_method`` はまだサポートされていません。)"
 
 #: ../../source/live.rst:43
@@ -76,7 +76,7 @@ msgid ""
 " receive a message. For example, here is a method that simply sends "
 "\"thanks\" to whoever sends a message."
 msgstr ""
-"データを送り返すには、メッセージを受け取るプレーヤーの ID をキーにした辞書型を返します。"
+"データを送り返すには、メッセージを受け取るプレイヤーの ID をキーにした辞書型を返します。"
 "例えば、メッセージを送ってきた人に \"thanks\" と送るメソッドは以下の通りです:"
 
 #: ../../source/live.rst:55
@@ -84,8 +84,8 @@ msgid ""
 "To send to multiple players, use their ``id_in_group``. For example, this"
 " forwards every message to players 2 and 3:"
 msgstr ""
-"複数のプレーヤーに送信するには、そのプレーヤーの ``id_in_group`` を使用します。"
-"例えば、このメソッドはすべてのメッセージをプレーヤー2とプレーヤー3に転送します:"
+"複数のプレイヤーに送信するには、そのプレイヤーの ``id_in_group`` を使用します。"
+"例えば、このメソッドはすべてのメッセージをプレイヤー2とプレイヤー3に転送します:"
 
 #: ../../source/live.rst:63
 msgid ""
@@ -149,7 +149,7 @@ msgstr ""
 "デフォルトでは、参加者がページに到着する前に送信されたメッセージは表示されません。"
 "(また、ページを更新してもデータは再送信されません。)"
 "履歴を保存したい場合は、データベースに保存する必要があります。"
-"プレーヤーがページを読み込んだときに、JavaScript で ``liveSend({})`` のように呼び出し、"
+"プレイヤーがページを読み込んだときに、JavaScript で ``liveSend({})`` のように呼び出し、"
 "データベースからゲームの履歴を取得するように live_method を設計することができます。"
 
 
@@ -199,7 +199,7 @@ msgid ""
 " all players have arrived."
 msgstr ""
 "また、同様のテクニックを使って、独自の待ち受けページを実装することができます。"
-"例えば、一定のタイムアウト後に、すべてのプレーヤーが到着していなくても、続行できるようなページです。"
+"例えば、一定のタイムアウト後に、すべてのプレイヤーが到着していなくても、続行できるようなページです。"
 
 #: ../../source/live.rst:234
 msgid "General advice about live pages"
@@ -250,7 +250,7 @@ msgstr ""
 
 #: ../../source/live.rst:253
 msgid "A user marks a square, so you need to notify the other player"
-msgstr "ユーザーがマスをマークしたときに、他のプレーヤーに通知する必要がある"
+msgstr "ユーザーがマスをマークしたときに、他のプレイヤーに通知する必要がある"
 
 #: ../../source/live.rst:254
 msgid ""
@@ -285,14 +285,14 @@ msgid ""
 "In situation 2 (the player loads the page), the client gets a message "
 "like:"
 msgstr ""
-"2\. (プレーヤーがページを読み込む状況) では、クライアントは次のようなメッセージを受け取ります:"
+"2\. (プレイヤーがページを読み込む状況) では、クライアントは次のようなメッセージを受け取ります:"
 
 #: ../../source/live.rst:305
 msgid ""
 "In situation 1, the player gets the update about the move that was just "
 "made, AND the current state."
 msgstr ""
-"1\. では、プレーヤーは先ほどの動きに関する更新情報と、現在の状態を取得します。"
+"1\. では、プレイヤーは先ほどの動きに関する更新情報と、現在の状態を取得します。"
 
 #: ../../source/live.rst:311
 msgid ""
@@ -311,7 +311,7 @@ msgid ""
 "in your live_method than in JavaScript code."
 msgstr ""
 "あなたのコードは、ユーザーの入力を検証する必要もあります。"
-"例えば、実際にはプレーヤー2の番なのにプレーヤー1が動こうとした場合、それをブロックする必要があります。"
+"例えば、実際にはプレイヤー2の番なのにプレイヤー1が動こうとした場合、それをブロックする必要があります。"
 "前のセクションで述べた理由から、 JavaScript のコードではなく、 live_method で実装するのが良いでしょう。"
 
 #: ../../source/live.rst:320

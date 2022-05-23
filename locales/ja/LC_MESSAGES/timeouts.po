@@ -31,7 +31,7 @@ msgstr "timeout_seconds"
 
 #: ../../source/timeouts.rst:14
 msgid "To set a time limit on your page, add ``timeout_seconds``:"
-msgstr "ページに時間制限を設定するには、次のように ``timeout_seconds`` を追加します。："
+msgstr "ページに時間制限を設定するには、次のように ``timeout_seconds`` を追加します。: "
 
 #: ../../source/timeouts.rst:21
 msgid "After the time runs out, the page auto-submits."
@@ -76,7 +76,7 @@ msgstr ""
 
 #: ../../source/timeouts.rst:56
 msgid "For example:"
-msgstr "例："
+msgstr "例: "
 
 #: ../../source/timeouts.rst:67
 msgid ""
@@ -177,7 +177,7 @@ msgid ""
 "But if your timeout spans multiple pages, you should word it more "
 "accurately, by setting ``timer_text``:"
 msgstr ""
-"タイマーのデフォルトのテキストには、「このページを完了するまでの残り時間：」と表示されます。ただし、タイムアウトが複数のページにまたがる場合は、 "
+"タイマーのデフォルトのテキストには、「このページを完了するまでの残り時間: 」と表示されます。ただし、タイムアウトが複数のページにまたがる場合は、 "
 "``timer_text`` を次のように設定して、より正確に表現する必要があります。"
 
 #: ../../source/timeouts.rst:176
@@ -236,7 +236,7 @@ msgid ""
 "page will still be submitted on the server side. So, instead you should "
 "use the technique described in :ref:`soft-timeout`."
 msgstr ""
-"注： ``finish.countdown`` "
+"注:  ``finish.countdown`` "
 "イベントハンドラーによるページの送信をオフにしても、timeoutworkerを実行している場合、ページはサーバー側で送信されます。したがって、代わりに、"
 " :ref:`soft-timeout` で説明されている手法を使用する必要があります。"
 

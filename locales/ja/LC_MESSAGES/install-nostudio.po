@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-19 17:05-0600\n"
+"POT-Creation-Date: 2022-04-19 16:34+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/install-nostudio.rst:6
 msgid "oTree Setup (text editor)"
@@ -28,104 +28,81 @@ msgid ""
 "for building oTree apps. You can easily switch to using a text editor "
 "later, by downloading your code."
 msgstr ""
-"注意：oTreeアプリケーションを構築するために特化した設計であるため、 `oTree Studio <https://www.otreehub.com/studio>`__ を使うことをお勧めします。"
-"コードをダウンロードし、簡単にテキストエディターに切り替えることができます。"
+"注意: oTreeアプリケーションを構築するために特化した設計であるため、 `oTree Studio "
+"<https://www.otreehub.com/studio>`__ "
+"を使うことをお勧めします。コードをダウンロードし、簡単にテキストエディターに切り替えることができます。"
 
-#: ../../source/install-nostudio.rst:14
-msgid ""
-"You should first install oTree for :ref:`Windows <install-windows>` or "
-":ref:`Mac <install-macos>`."
-msgstr ""
-"最初に :ref:`Windows <install-windows>` または、 :ref:`Mac <install-macos>` にoTreeをインストールしておく必要があります。"
-
-#: ../../source/install-nostudio.rst:19
+#: ../../source/install-nostudio.rst:13
 msgid "Run oTree"
 msgstr "oTreeの実行"
 
-#: ../../source/install-nostudio.rst:21
+#: ../../source/install-nostudio.rst:15
 msgid "If you're on MacOS, run::"
-msgstr "MacOSを利用している場合："
+msgstr "MacOSを利用している場合: "
 
-#: ../../source/install-nostudio.rst:25
+#: ../../source/install-nostudio.rst:19
 msgid ""
 "(If you are not using version 3.9 of Python, edit the above command "
 "appropriately.)"
-msgstr ""
-"(上記のコマンドはPython3.9の場合です。Pythonのバージョンに合わせて適宜編集してください)"
+msgstr "(上記のコマンドはPython3.9の場合です。Pythonのバージョンに合わせて適宜編集してください)"
+
+#: ../../source/install-nostudio.rst:21
+msgid "From your command prompt, create your project folder::"
+msgstr "コマンドプロンプトからプロジェクトフォルダを作成してください。"
+
+#: ../../source/install-nostudio.rst:25
+msgid "When it asks you \"Include sample games?\" choose yes."
+msgstr "\"Include sample games?\" と尋ねられたら、 \"yes\" を選択してください。"
 
 #: ../../source/install-nostudio.rst:27
-msgid "From your command prompt, create your project folder::"
-msgstr ""
-"コマンドプロンプトからプロジェクトフォルダを作成してください。"
-
-#: ../../source/install-nostudio.rst:31
-msgid "When it asks you \"Include sample games?\" choose yes."
-msgstr ""
-"\"Include sample games?\" と尋ねられたら、 \"yes\" を選択してください。"
-
-#: ../../source/install-nostudio.rst:33
 msgid "Move into the folder you just created::"
-msgstr ""
-"作成したフォルダに移動します。"
+msgstr "作成したフォルダに移動します。"
 
-#: ../../source/install-nostudio.rst:38
+#: ../../source/install-nostudio.rst:32
 msgid ""
 "**If you see a ``models.py`` in each folder, then switch to the "
 "documentation here:** `https://otree.readthedocs.io/en/self/ "
 "<https://otree.readthedocs.io/en/self/>`__"
 msgstr ""
-"各フォルダに ``models.py`` が存在するのであれば、oTreeバージョンが違うため、`https://otree.readthedocs.io/en/self/ "
+"各フォルダに ``models.py`` "
+"が存在するのであれば、oTreeバージョンが違うため、`https://otree.readthedocs.io/en/self/ "
 "<https://otree.readthedocs.io/en/self/>`__ のドキュメントに切り替えてください。"
 
-#: ../../source/install-nostudio.rst:41
+#: ../../source/install-nostudio.rst:35
 msgid ""
 "If you don't see a models.py in each folder, that means you are using the"
 " new no-self format."
-msgstr ""
-"各フォルダに``models.py``が存在しない場合は、新しいno-self形式を利用していることを意味します。"
+msgstr "各フォルダに``models.py``が存在しない場合は、新しいno-self形式を利用していることを意味します。"
 
-#: ../../source/install-nostudio.rst:43
+#: ../../source/install-nostudio.rst:37
 msgid "Run the server::"
 msgstr "サーバを実行します"
 
-
-#: ../../source/install-nostudio.rst:47
+#: ../../source/install-nostudio.rst:41
 msgid ""
 "Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__."
 " You should see the oTree demo site."
 msgstr ""
-"ブラウザを開いて、 `http://localhost:8000/ <http://localhost:8000/>`__ にアクセスします。"
-"oTreeデモサイトを開くことができます。"
+"ブラウザを開いて、 `http://localhost:8000/ <http://localhost:8000/>`__ "
+"にアクセスします。oTreeデモサイトを開くことができます。"
 
-#: ../../source/install-nostudio.rst:50
+#: ../../source/install-nostudio.rst:44
 msgid "To stop the server, press ``Control + C`` at your command line."
+msgstr "サーバを止めるためには、``Control + C`` をコマンドライン上で入力してください。"
+
+#: ../../source/install-nostudio.rst:46
+msgid "To create a new app, run ``otree startapp your_app_name``."
 msgstr ""
-"サーバを止めるためには、``Control + C`` をコマンドライン上で入力してください。"
 
-#: ../../source/install-nostudio.rst:55
-msgid "Install a text editor"
-msgstr "テキストエディタのインストール"
-
-#: ../../source/install-nostudio.rst:57
-msgid ""
-"Install a text editor like `PyCharm "
-"<https://www.jetbrains.com/pycharm/download/>`__ for editing your Python "
-"files. See the PyCharm documentation on how to configure your interpreter"
-" so that you get code completion."
+#: ../../source/install-nostudio.rst:48
+msgid "Session configs are defined in ``settings.py``."
 msgstr ""
-"`PyCharm <https://www.jetbrains.com/pycharm/download/>`__ のようなPythonファイルを編集するためのテキストエディタをインストールします。"
-"インタプリタ等の構成方法についてはPyCharmのドキュメントをご覧ください。"
 
-#: ../../source/install-nostudio.rst:62
-msgid "Then launch the text editor and open your entire project folder."
-msgstr ""
-"次に、テキストエディタを起動し、プロジェクトフォルダを開いてください。"
-
-#: ../../source/install-nostudio.rst:68
+#: ../../source/install-nostudio.rst:51
 msgid "About @staticmethod, etc."
 msgstr " @staticmethod 等について"
 
-#: ../../source/install-nostudio.rst:70
+#: ../../source/install-nostudio.rst:53
 msgid ""
 "If you are using a text editor to write your oTree code, remember to add "
 "``@staticmethod`` before all functions inside a page class, like "
@@ -133,37 +110,34 @@ msgid ""
 "are sometimes omitted from this documentation for brevity. They are not "
 "mandatory but will help your editor provide better autocompletion."
 msgstr ""
-"oTreeコードを書くためにテキストエディタを使用するのであれば、"
-"ページクラス内の全ての関数（``is_displayed`` 、 ``vars_for_template`` 、 ``before_next_page`` 等）の前に "
-"``@staticmethod`` を書くことを忘れないでください。"
-"このドキュメント内でも、簡単のため、 ``@staticmethod`` は省略されていることがあります。"
-"必須ではありませんが、エディタがより良い自動補完を提供できるようになります。"
+"oTreeコードを書くためにテキストエディタを使用するのであれば、ページクラス内の全ての関数（``is_displayed`` 、 "
+"``vars_for_template`` 、 ``before_next_page`` 等）の前に ``@staticmethod`` "
+"を書くことを忘れないでください。このドキュメント内でも、簡単のため、 ``@staticmethod`` "
+"は省略されていることがあります。必須ではありませんが、エディタがより良い自動補完を提供できるようになります。"
 
-#: ../../source/install-nostudio.rst:75
+#: ../../source/install-nostudio.rst:58
 msgid ""
 "If you are using PyCharm, VS Code, or another IDE, you can also add type "
 "annotations on your functions."
-msgstr ""
-"PyCharm、VS Code、またはほかのIDEを利用している場合は、関数に type annotation をつけることも可能です。"
+msgstr "PyCharm、VS Code、またはほかのIDEを利用している場合は、関数に type annotation をつけることも可能です。"
 
-#: ../../source/install-nostudio.rst:77
+#: ../../source/install-nostudio.rst:60
 msgid "For example:"
-msgstr "例："
+msgstr "例: "
 
-#: ../../source/install-nostudio.rst:85
+#: ../../source/install-nostudio.rst:68
 msgid "Or:"
 msgstr "または、"
 
-#: ../../source/install-nostudio.rst:94
+#: ../../source/install-nostudio.rst:77
 msgid "Upgrading/reinstalling oTree"
 msgstr "oTreeのアップグレード/再インストール"
 
-#: ../../source/install-nostudio.rst:96
+#: ../../source/install-nostudio.rst:79
 msgid "We recommend upgrading every couple of weeks."
-msgstr ""
-"数週間ごとにアップグレードすることをお勧めします。"
+msgstr "数週間ごとにアップグレードすることをお勧めします。"
 
-#: ../../source/install-nostudio.rst:102
+#: ../../source/install-nostudio.rst:85
 msgid ""
 "The best way to ensure that your apps continue to work after you upgrade "
 "is to use only the functions described in this documentation. Some code "
@@ -173,7 +147,32 @@ msgid ""
 "that they increase the chance of things breaking when you upgrade, "
 "because oTree's internal code layout changes from release to release."
 msgstr ""
-"アップグレード後もアプリが引き続き機能するようにする最善の方法は、このドキュメントで説明されている機能のみを使用することです。"
-"オンラインで見つかる可能性のあるコードの中には、oTreeの内部関数にアクセスし、それらを \"ハック\" して処理を行っているものもあります。"
-"これらのコードは革新的な機能を提供していることもありますが、oTreeの内部コードはリリースごとに変わるため、アップグレード時に問題が発生"
-"する可能性が高いことに注意してください。"
+"アップグレード後もアプリが引き続き機能するようにする最善の方法は、このドキュメントで説明されている機能のみを使用することです。オンラインで見つかる可能性のあるコードの中には、oTreeの内部関数にアクセスし、それらを"
+" \"ハック\" "
+"して処理を行っているものもあります。これらのコードは革新的な機能を提供していることもありますが、oTreeの内部コードはリリースごとに変わるため、アップグレード時に問題が発生する可能性が高いことに注意してください。"
+
+#~ msgid ""
+#~ "You should first install oTree for "
+#~ ":ref:`Windows <install-windows>` or :ref:`Mac"
+#~ " <install-macos>`."
+#~ msgstr ""
+#~ "最初に :ref:`Windows <install-windows>` または、 "
+#~ ":ref:`Mac <install-macos>` にoTreeをインストールしておく必要があります。"
+
+#~ msgid "Install a text editor"
+#~ msgstr "テキストエディタのインストール"
+
+#~ msgid ""
+#~ "Install a text editor like `PyCharm "
+#~ "<https://www.jetbrains.com/pycharm/download/>`__ for "
+#~ "editing your Python files. See the "
+#~ "PyCharm documentation on how to "
+#~ "configure your interpreter so that you"
+#~ " get code completion."
+#~ msgstr ""
+#~ "`PyCharm <https://www.jetbrains.com/pycharm/download/>`__ "
+#~ "のようなPythonファイルを編集するためのテキストエディタをインストールします。インタプリタ等の構成方法についてはPyCharmのドキュメントをご覧ください。"
+
+#~ msgid "Then launch the text editor and open your entire project folder."
+#~ msgstr "次に、テキストエディタを起動し、プロジェクトフォルダを開いてください。"
+

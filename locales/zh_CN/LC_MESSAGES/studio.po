@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oTree \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 20:05+0800\n"
+"POT-Creation-Date: 2022-04-19 16:34+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../source/studio.rst:6
 msgid "oTree Studio"
@@ -29,14 +29,30 @@ msgstr ""
 
 #: ../../source/studio.rst:12
 msgid ""
-"We recommend using oTree Studio instead of a text editor (like PyCharm), "
-"because it makes learning oTree much easier and prevents many common "
-"mistakes."
+"We recommend using oTree Studio instead of a text editor, because it "
+"makes learning oTree easier and prevents common mistakes."
 msgstr ""
 
 #: ../../source/studio.rst:16
+msgid ""
+"Even if you are able to follow a tutorial using a text editor, be aware "
+"that things get more challenging when you try to implement something on "
+"your own, and that is when oTree Studio helps by keeping you on the right"
+" path."
+msgstr ""
+
+#: ../../source/studio.rst:20
 msgid ""
 "Here are some `YouTube videos "
 "<https://www.youtube.com/channel/UCR9BIa4PqQJt1bjXoe7ffPg/videos>`__ "
 "about oTree Studio."
 msgstr ""
+
+#~ msgid ""
+#~ "We recommend using oTree Studio instead"
+#~ " of a text editor (like PyCharm), "
+#~ "because it makes learning oTree much "
+#~ "easier and prevents many common "
+#~ "mistakes."
+#~ msgstr ""
+

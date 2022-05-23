@@ -31,8 +31,8 @@ msgid ""
 "In oTree, a session is an event during which multiple participants take "
 "part in a series of tasks or games. An example of a session would be:"
 msgstr ""
-"oTreeにおけるセッションとは，複数の参加者が一連のタスクやゲームに参加するイ"
-"ベントのことです．セッションの例は以下の通りです．"
+"oTreeにおけるセッションとは、複数の参加者が一連のタスクやゲームに参加するイ"
+"ベントのことです。セッションの例は以下の通りです。"
 
 #: ../../source/conceptual_overview.rst:12
 msgid ""
@@ -40,8 +40,8 @@ msgid ""
 "game, followed by a questionnaire. Participants get paid EUR 10.00 for "
 "showing up, plus their earnings from the games.\""
 msgstr ""
-"“多数の参加者が研究室に来て，公共財ゲームを行った後、アンケートを行います。"
-"参加者には，実験参加費として10ユーロが支払われ，それに加えてゲームの結果に応"
+"“多数の参加者が研究室に来て、公共財ゲームを行った後、アンケートを行います。"
+"参加者には、実験参加費として10ユーロが支払われ、それに加えてゲームの結果に応"
 "じた収益が支払われます。”"
 
 #: ../../source/conceptual_overview.rst:17
@@ -57,18 +57,18 @@ msgid ""
 "turn, each subsession is a sequence of pages. For example, if you had a 4-"
 "page public goods game followed by a 2-page questionnaire:"
 msgstr ""
-"セッションは一連のサブセッションの集まりであり，サブセッションとはセッション"
-"を構成する「セクション」または「モジュール」のことです．例えば，セッションが"
-"公共財ゲームとアンケートで構成されている場合，公共財ゲームがサブセッション"
-"1，アンケートがサブセッション2となります．また，各サブセッションは，一連の"
-"ページで構成されています。例えば，4ページの公共財ゲームの後に2ページのアン"
-"ケートがあったとします．"
+"セッションは一連のサブセッションの集まりであり、サブセッションとはセッション"
+"を構成する「セクション」または「モジュール」のことです。例えば、セッションが"
+"公共財ゲームとアンケートで構成されている場合、公共財ゲームがサブセッション"
+"1、アンケートがサブセッション2となります。また、各サブセッションは、一連の"
+"ページで構成されています。例えば、4ページの公共財ゲームの後に2ページのアン"
+"ケートがあったとします。"
 
 #: ../../source/conceptual_overview.rst:29
 msgid "If a game is repeated for multiple rounds, each round is a subsession."
 msgstr ""
-"ゲームが複数ラウンドに渡る繰り返しゲームである場合，各ラウンドはサブセッショ"
-"ンとなります．"
+"ゲームが複数ラウンドに渡る繰り返しゲームである場合、各ラウンドはサブセッショ"
+"ンとなります。"
 
 #: ../../source/conceptual_overview.rst:32
 msgid "Groups"
@@ -80,9 +80,9 @@ msgid ""
 "you could have a subsession with 30 players, divided into 15 groups of 2 "
 "players each. (Note: groups can be shuffled between subsessions.)"
 msgstr ""
-"各サブセッションは，さらにプレーヤーのグループに分けることができます．例え"
-"ば，30人のプレーヤーがいるサブセッションを2人ずつの15のグループに分けること"
-"ができます．(注：サブセッション間でグループを入れ替えることができます)．"
+"各サブセッションは、さらにプレイヤーのグループに分けることができます。例え"
+"ば、30人のプレイヤーがいるサブセッションを2人ずつの15のグループに分けること"
+"ができます。(注: サブセッション間でグループを入れ替えることができます)。"
 
 #: ../../source/conceptual_overview.rst:41
 msgid "Object hierarchy"
@@ -94,23 +94,23 @@ msgstr "oTreeの構造は次のような階層に分けられます。"
 
 #: ../../source/conceptual_overview.rst:50
 msgid "A session is a series of subsessions"
-msgstr "セッションとは，一連のサブセッションのことです．"
+msgstr "セッションとは、一連のサブセッションのことです。"
 
 #: ../../source/conceptual_overview.rst:51
 msgid "A subsession contains multiple groups"
-msgstr "サブセッションには，複数のグループが含まれます．"
+msgstr "サブセッションには、複数のグループが含まれます。"
 
 #: ../../source/conceptual_overview.rst:52
 msgid "A group contains multiple players"
-msgstr "グループには，複数のプレイヤーが含まれます．"
+msgstr "グループには、複数のプレイヤーが含まれます。"
 
 #: ../../source/conceptual_overview.rst:53
 msgid "Each player proceeds through multiple pages"
-msgstr "各プレイヤーは複数のページを進めることになります．"
+msgstr "各プレイヤーは複数のページを進めることになります。"
 
 #: ../../source/conceptual_overview.rst:55
 msgid "You can access any higher-up object from a lower object:"
-msgstr "下位のオブジェクトから任意の上位のオブジェクトにアクセスできます．"
+msgstr "下位のオブジェクトから任意の上位のオブジェクトにアクセスできます。"
 
 #: ../../source/conceptual_overview.rst:70
 msgid "Participant"
@@ -122,7 +122,7 @@ msgid ""
 "The relationship between participant and player is the same as the "
 "relationship between session and subsession:"
 msgstr ""
-"oTreeでは，”player “と “participant “では異なる意味があります．”player “と "
+"oTreeでは、”player “と “participant “では異なる意味があります。”player “と "
 "“participant “の関係は、セッションとサブセッションの関係と同じです。"
 
 #: ../../source/conceptual_overview.rst:79
@@ -132,7 +132,7 @@ msgid ""
 "can be player 2 in the first subsession, player 1 in the next subsession, "
 "etc."
 msgstr ""
-"“player”とは，ある特定のサブセッションの”participant”のインスタンスのことあ"
-"り，”participant”が演じる一時的な「役割」のようなものです。”participant”は，"
-"初のサブセッションではプレーヤー2、次のサブセッションではプレーヤー1、といっ"
+"“player”とは、ある特定のサブセッションの”participant”のインスタンスのことあ"
+"り、”participant”が演じる一時的な「役割」のようなものです。”participant”は、"
+"初のサブセッションではプレイヤー2、次のサブセッションではプレイヤー1、といっ"
 "た具合です。"
