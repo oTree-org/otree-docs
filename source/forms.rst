@@ -479,20 +479,20 @@ element of form field ``xyz``. For example, you can do:
 
 .. code-block:: javascript
 
-    // dynamically set a field to read-only
-    formInputs.xyz.readonly = 'readonly'
-
     // set the value of a field. This even works with radio buttons.
-    formInputs.xyz.value = 'Female'
+    formInputs.xyz.value = 42
+
+    // dynamically set a field's properties -- readonly, size, step, pattern, etc.
+    formInputs.xyz.minlength = 10
 
     // do live calculations on inputs
     function calc() {
         let sum = parseInt(formInputs.aaa.value) + parseInt(formInputs.bbb.value);
-        alert(`Are you sure you want to donate ${sum}?`);
+        alert(`Your total is ${sum}`);
     }
 
     // set an event handler (for oninput/onchange/etc)
-    formInputs.aaa.oninput = function () { calc(); }
+    formInputs.aaa.oninput = calc;
 
 Form fields with dynamic labels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

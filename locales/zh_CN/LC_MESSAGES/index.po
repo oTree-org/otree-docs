@@ -73,9 +73,9 @@ msgstr "支持"
 #: ../../source/index.rst:43
 msgid ""
 "For help, post to our Google Groups `forum "
-"<https://groups.google.com/forum/#!forum/otree>`__."
+"<https://www.otreehub.com/forum/>`__."
 msgstr ""
-"可将问题发布到Google群组 `论坛 <https://groups.google.com/forum/#!forum/otree>`__ "
+"可将问题发布到Google群组 `论坛 <https://www.otreehub.com/forum/>`__ "
 "以获取帮助."
 
 #: ../../source/index.rst:46

@@ -75,4 +75,4 @@ oTree and run the otreezip file.
 
 If there are any problems,
 you can ask a question on the oTree
-`discussion group <https://groups.google.com/forum/#!forum/otree>`__.
+`discussion group <https://www.otreehub.com/forum/>`__.

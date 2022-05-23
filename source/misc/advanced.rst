@@ -63,6 +63,60 @@ which show how to generate ExtraModel data from each row of a CSV spreadsheet.
 
 To export your ExtraModel data to CSV/Excel, use :ref:`custom-export`.
 
+CSV
+---
+
+To read a CSV file (which can be produced by Excel or any other spreadsheet software),
+you can use ``read_csv()``. For example, if you have a CSV file like this::
+
+    my_str,my_int,my_bool
+    apple,3,TRUE
+    orange,5,FALSE
+
+``read_csv()`` will output a list of dicts, like:
+
+.. code-block:: python
+
+    [dict(my_str='apple', my_int=3, my_bool=True), 
+     dict(my_str='orange', my_int=5, my_bool=False)]
+
+You call the function like this:
+
+.. code-block:: python
+
+    rows = read_csv('my_app/my_data.csv', MyClass)
+
+The second argument is a class that specifies the datatype of each column:
+
+.. code-block:: python
+
+    class MyClass(ExtraModel):
+        my_str = models.StringField()
+        my_int = models.IntegerField()
+        my_bool = models.BooleanField()
+
+(Without this info, it would be ambiguous whether ``TRUE`` is supposed to be a bool,
+or the string ``'TRUE'``, etc.)
+
+``read_csv()`` does not actually create any instances of that class. 
+If you want that, you must use ``.create()`` additionally:
+
+.. code-block:: python
+
+    rows = read_csv('my_app/my_data.csv', MyClass)
+    for row in rows:
+        MyClass.create(
+            my_str=row['my_str'], 
+            my_int=row['my_int'], 
+            my_bool=row['my_bool'], 
+            # any other args:
+            player=player,
+        )
+
+The model can be an ``ExtraModel``, ``Player``, ``Group``, or ``Subsession``.
+It's fine if it also contains other fields; they will be ignored by ``read_csv()``.
+
+
 Templates
 ---------
 

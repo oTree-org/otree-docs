@@ -76,10 +76,10 @@ msgstr "サポート"
 #: ../../source/index.rst:43
 msgid ""
 "For help, post to our Google Groups `forum "
-"<https://groups.google.com/forum/#!forum/otree>`__."
+"<https://www.otreehub.com/forum/>`__."
 msgstr ""
 "質問がある場合は、oTree の Google Groups `forum "
-"<https://groups.google.com/forum/#!forum/otree>`__ に投稿してください。"
+"<https://www.otreehub.com/forum/>`__ に投稿してください。"
 
 #: ../../source/index.rst:46
 msgid "Contents:"

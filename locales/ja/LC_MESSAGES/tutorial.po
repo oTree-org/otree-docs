@@ -158,9 +158,9 @@ msgstr "otreezipファイルをダウンロードし，指示に従ってoTree�
 #: ../../source/tutorial/part1_studio.rst:76
 msgid ""
 "If there are any problems, you can ask a question on the oTree "
-"`discussion group <https://groups.google.com/forum/#!forum/otree>`__."
+"`discussion group <https://www.otreehub.com/forum/>`__."
 msgstr ""
-"問題がある場合は、 `oTreeのグループ <https://groups.google.com/forum/#!forum/otree>`__ "
+"問題がある場合は、 `oTreeのグループ <https://www.otreehub.com/forum/>`__ "
 "で質問できます。"
 
 #: ../../source/tutorial/part1_texteditor.rst:2

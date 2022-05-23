@@ -40,7 +40,7 @@ oTree is a framework based on Python that lets you build:
 Support
 ^^^^^^^
 
-For help, post to our Google Groups `forum <https://groups.google.com/forum/#!forum/otree>`__.
+For help, post to our `forum <https://www.otreehub.com/forum/>`__.
 
 Contents:
 ^^^^^^^^^

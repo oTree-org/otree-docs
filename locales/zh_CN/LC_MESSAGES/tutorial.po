@@ -157,10 +157,10 @@ msgstr "下载otreezip文件，并按照提示按照otree即可运行这个otree
 #: ../../source/tutorial/part1_studio.rst:76
 msgid ""
 "If there are any problems, you can ask a question on the oTree "
-"`discussion group <https://groups.google.com/forum/#!forum/otree>`__."
+"`discussion group <https://www.otreehub.com/forum/>`__."
 msgstr ""
 "如果遇到任何问题，你可以在oTree `讨论组 "
-"<https://groups.google.com/forum/#!forum/otree>`__ 中提问。"
+"<https://www.otreehub.com/forum/>`__ 中提问。"
 
 #: ../../source/tutorial/part1_texteditor.rst:2
 msgid "Part 1: Simple survey (for PyCharm users)"
