@@ -63,6 +63,8 @@ which show how to generate ExtraModel data from each row of a CSV spreadsheet.
 
 To export your ExtraModel data to CSV/Excel, use :ref:`custom-export`.
 
+.. _read_csv:
+
 Reading CSV files
 -----------------
 
