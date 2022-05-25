@@ -63,10 +63,14 @@ which show how to generate ExtraModel data from each row of a CSV spreadsheet.
 
 To export your ExtraModel data to CSV/Excel, use :ref:`custom-export`.
 
-CSV
----
+Reading CSV files
+-----------------
 
-To read a CSV file (which can be produced by Excel or any other spreadsheet software),
+.. note::
+
+    This feature is in beta (new in oTree 5.8.2)
+
+To read a CSV file (which can be produced by Excel or any other spreadsheet app),
 you can use ``read_csv()``. For example, if you have a CSV file like this::
 
     my_str,my_int,my_bool
