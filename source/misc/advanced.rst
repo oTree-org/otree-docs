@@ -75,31 +75,31 @@ Reading CSV files
 To read a CSV file (which can be produced by Excel or any other spreadsheet app),
 you can use ``read_csv()``. For example, if you have a CSV file like this::
 
-    my_str,my_int,my_bool
-    apple,3,TRUE
-    orange,5,FALSE
-
+    name,price,is_organic
+    Apple,0.99,FALSE
+    Mango,3.79,TRUE
+    
 ``read_csv()`` will output a list of dicts, like:
 
 .. code-block:: python
 
-    [dict(my_str='apple', my_int=3, my_bool=True), 
-     dict(my_str='orange', my_int=5, my_bool=False)]
+    [dict(name='Apple', price=0.99, is_organic=True), 
+     dict(name='Mango', price=3.79, is_organic=False)]
 
 You call the function like this:
 
 .. code-block:: python
 
-    rows = read_csv('my_app/my_data.csv', MyClass)
+    rows = read_csv('my_app/my_data.csv', Product)
 
 The second argument is a class that specifies the datatype of each column:
 
 .. code-block:: python
 
-    class MyClass(ExtraModel):
-        my_str = models.StringField()
-        my_int = models.IntegerField()
-        my_bool = models.BooleanField()
+    class Product(ExtraModel):
+        name = models.StringField()
+        price = models.FloatField()
+        is_organic = models.BooleanField()
 
 (Without this info, it would be ambiguous whether ``TRUE`` is supposed to be a bool,
 or the string ``'TRUE'``, etc.)
@@ -109,12 +109,12 @@ If you want that, you must use ``.create()`` additionally:
 
 .. code-block:: python
 
-    rows = read_csv('my_app/my_data.csv', MyClass)
+    rows = read_csv('my_app/my_data.csv', Product)
     for row in rows:
-        MyClass.create(
-            my_str=row['my_str'], 
-            my_int=row['my_int'], 
-            my_bool=row['my_bool'], 
+        Product.create(
+            name=row['name'], 
+            price=row['price'], 
+            is_organic=row['is_organic'], 
             # any other args:
             player=player,
         )
