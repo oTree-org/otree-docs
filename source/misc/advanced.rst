@@ -76,8 +76,8 @@ To read a CSV file (which can be produced by Excel or any other spreadsheet app)
 you can use ``read_csv()``. For example, if you have a CSV file like this::
 
     name,price,is_organic
-    Apple,0.99,FALSE
-    Mango,3.79,TRUE
+    Apple,0.99,TRUE
+    Mango,3.79,FALSE
     
 ``read_csv()`` will output a list of dicts, like:
 
