@@ -189,7 +189,7 @@ msgstr "Heroku のセットアップ"
 
 #: ../../source/server/heroku.rst:20
 msgid ""
-"The recommended way to deploy to Heroku is to use `oTree Hub "
+"To deploy to Heroku, you should use `oTree Hub "
 "<https://www.otreehub.com/>`__, which automates your Heroku setup. It's "
 "free for public projects."
 msgstr ""
@@ -197,7 +197,7 @@ msgstr ""
 "<https://www.otreehub.com/>`__ を使うことをお勧めします。パブリックプロジェクトであれば無料で利用できます。"
 
 #: ../../source/server/heroku.rst:25
-msgid "oTree Hub also offers error/performance monitoring and a Sentry service."
+msgid "oTree Hub also offers error/performance monitoring."
 msgstr "oTree Hub は、エラーやパフォーマンスの監視や Sentry サービスも提供しています。"
 
 #: ../../source/server/heroku.rst:30

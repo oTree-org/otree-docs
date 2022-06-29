@@ -17,12 +17,11 @@ Often this means you can run a study for just a few dollars.
 Heroku setup
 ------------
 
-The recommended way to deploy to Heroku is to use
-`oTree Hub <https://www.otreehub.com/>`__,
-which automates your Heroku setup.
-It's free for public projects.
+To deploy to Heroku, you should use
+`oTree Hub <https://www.otreehub.com/>`__, which automates your server setup
+and ensures your server is correctly configured.
 
-oTree Hub also offers error/performance monitoring and a Sentry service.
+oTree Hub also offers error/performance monitoring.
 
 .. _perf:
 
