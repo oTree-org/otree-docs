@@ -489,3 +489,36 @@ Then, in the template:
     {{ formfield 'contribution' label=contribution_label }}
 
 If you use this technique, you may also want to use :ref:`dynamic_validation`.
+
+.. _forminputs:
+
+JavaScript access to form inputs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    New in oTree 5.9 (July 2022)
+
+In your JavaScript code you can use ``forminputs.xyz`` to access the ``<input>``
+element of form field ``xyz``. For example, you can do:
+
+.. code-block:: javascript
+
+    // get the value of an input
+    forminputs.xyz.value;
+
+    // set the value of a field. This even works with radio buttons.
+    forminputs.xyz.value = 42;
+
+    // dynamically set a field's properties -- readonly, size, step, pattern, etc.
+    forminputs.xyz.minlength = 10;
+
+    // do live calculations on inputs
+    function calc() {
+        let sum = parseInt(forminputs.aaa.value) + parseInt(forminputs.bbb.value);
+        alert(`Your total is ${sum}`);
+    }
+
+    // set an event handler (for oninput/onchange/etc)
+    forminputs.aaa.oninput = calc;
+
