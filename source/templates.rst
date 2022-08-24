@@ -48,6 +48,18 @@ With an 'else':
         negative
     {{ endif }}
 
+Complex example:
+
+.. code-block:: django
+
+    {{ if a or b }}
+        .....
+    {{ elif c and d }}
+        .....
+    {{ else }}
+        .....
+    {{ endif }}
+
 Loops ("for")
 ~~~~~~~~~~~~~
 

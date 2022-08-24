@@ -533,7 +533,8 @@ Radio widgets work a bit differently:
 
 .. code-block:: javascript
 
-    // forminputs.my_radio is a RadioNodeList, not a single <input>, so you need to loop:
+    // forminputs.my_radio is a RadioNodeList, not a single <input>
+    // so you need to loop over all 3 options:
     for (let radio of forminputs.my_radio) {
         radio.required = '';
     }
