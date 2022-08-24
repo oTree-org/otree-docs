@@ -522,11 +522,14 @@ element of form field ``xyz``. For example, you can do:
     // set an event handler (for oninput/onchange/etc)
     forminputs.aaa.oninput = myFunction;
 
-``RadioSelect`` or ``RadioSelectHorizontal`` widgets work a bit differently:
+Radio widgets work a bit differently:
 
 .. code-block:: python
 
-    my_radio = models.IntegerField(choices=[1, 2, 3], widget=widgets.RadioSelect)
+    my_radio = models.IntegerField(
+        widget=widgets.RadioSelect,
+        choices=[1, 2, 3]
+    )
 
 .. code-block:: javascript
 
