@@ -120,6 +120,8 @@ in each round.
 
 Notes:
 
+-   If a participant arrives at the wait page but subsequently switches to a different window or browser tab,
+    they will be excluded from grouping after a short period of time.
 -   ``id_in_group`` is not necessarily assigned in the order players arrived at the page.
 -   ``group_by_arrival_time`` can only be used if the wait page is the first page in ``page_sequence``
 -   If you use ``is_displayed`` on a page with ``group_by_arrival_time``,
@@ -128,6 +130,7 @@ Notes:
 -   If ``group_by_arrival_time = True``, then in ``creating_session``,
     all players will initially be in the same group. Groups are only created
     "on the fly" as players arrive at the wait page.
+
 
 If you need further control on arranging players into groups,
 use :ref:`group_by_arrival_time_method`.

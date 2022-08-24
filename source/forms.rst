@@ -497,7 +497,7 @@ JavaScript access to form inputs
 
 .. note::
 
-    New in oTree 5.9 (July 2022)
+    New beta feature as of oTree 5.9 (July 2022)
 
 In your JavaScript code you can use ``forminputs.xyz`` to access the ``<input>``
 element of form field ``xyz``. For example, you can do:
@@ -505,20 +505,39 @@ element of form field ``xyz``. For example, you can do:
 .. code-block:: javascript
 
     // get the value of an input
-    forminputs.xyz.value;
+    forminputs.xyz.value; // returns '42' or '' etc.
 
-    // set the value of a field. This even works with radio buttons.
-    forminputs.xyz.value = 42;
+    // set the value of a field.
+    forminputs.xyz.value = '42';
 
     // dynamically set a field's properties -- readonly, size, step, pattern, etc.
-    forminputs.xyz.minlength = 10;
+    forminputs.xyz.minlength = '10';
 
     // do live calculations on inputs
-    function calc() {
+    function myFunction() {
         let sum = parseInt(forminputs.aaa.value) + parseInt(forminputs.bbb.value);
         alert(`Your total is ${sum}`);
     }
 
     // set an event handler (for oninput/onchange/etc)
-    forminputs.aaa.oninput = calc;
+    forminputs.aaa.oninput = myFunction;
 
+``RadioSelect`` or ``RadioSelectHorizontal`` widgets work a bit differently:
+
+.. code-block:: python
+
+    my_radio = models.IntegerField(choices=[1, 2, 3], widget=widgets.RadioSelect)
+
+.. code-block:: javascript
+
+    // forminputs.my_radio is a RadioNodeList, not a single <input>, so you need to loop:
+    for (let radio of forminputs.my_radio) {
+        radio.required = '';
+    }
+
+    for (let radio of forminputs.my_radio) {
+        radio.onclick = function() { alert("radio button changed"); };
+    }
+
+    // but the 'value' attribute works the same way as non-radio widgets
+    forminputs.my_radio.value = 2;

@@ -179,6 +179,23 @@ Use a ``yield`` for each row of data.
             session = p.session
             yield [session.code, participant.code, p.round_number, p.id_in_group, p.payoff]
 
+Or, you can ignore the ``players`` argument and export some other data instead, e.g.:
+
+.. code-block:: python
+
+    def custom_export(players):
+        # Export an ExtraModel called "Trial"
+
+        yield ['session', 'participant', 'round_number', 'response', 'response_msec']
+
+        # 'filter' without any args returns everything
+        trials = Trial.filter()
+        for trial in trials:
+            player = trial.player
+            participant = player.participant
+            session = player.session
+            yield [session.code, participant.code, player.round_number, trial.response, trial.response_msec]
+
 Once this function is defined, your custom data export will be available in the
 regular data export page.
 

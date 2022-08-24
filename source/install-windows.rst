@@ -44,8 +44,6 @@ Next steps
 ----------
 
 If you will use oTree Studio (easiest option), go to `otreehub.com <https://www.otreehub.com>`__.
-Your department may have an existing subscription, so you should check with them
-(or they can get one at `otreehub.com/subscription <https://www.otreehub.com/subscription>`__).
 
 Read: `why you should use oTree Studio <https://www.otree.org/blog/why-use-studio.html>`__.
 

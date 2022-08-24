@@ -1,9 +1,10 @@
 Version history
 ```````````````
 
-Version 5.8
+Version 5.9
 ===========
 
+-   Improved dropout detection
 -   Renamed ``formInputs`` (JavaScript variable) to ``forminputs``
 
 Version 5.8
