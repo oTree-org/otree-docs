@@ -34,13 +34,13 @@ Conditions ("if")
     Starting in oTree 5, however, you can forget about ``{% %}`` and just use ``{{ }}`` everywhere if you want.
     The old format still works.
 
-.. code-block:: django
+.. code-block::
 
     {{ if player.is_winner }} you won! {{ endif }}
 
 With an 'else':
 
-.. code-block:: django
+.. code-block::
 
     {{ if some_number >= 0 }}
         positive
@@ -50,7 +50,7 @@ With an 'else':
 
 Complex example:
 
-.. code-block:: django
+.. code-block::
 
     {{ if a or b }}
         .....

@@ -522,6 +522,11 @@ element of form field ``xyz``. For example, you can do:
     // set an event handler (for oninput/onchange/etc)
     forminputs.aaa.oninput = myFunction;
 
+    // call methods on an input
+    forminputs.xyz.focus();
+    forminputs.xyz.reportValidity();
+
+
 Radio widgets work a bit differently:
 
 .. code-block:: python
@@ -536,7 +541,7 @@ Radio widgets work a bit differently:
     // forminputs.my_radio is a RadioNodeList, not a single <input>
     // so you need to loop over all 3 options:
     for (let radio of forminputs.my_radio) {
-        radio.required = '';
+        radio.required = false;
     }
 
     for (let radio of forminputs.my_radio) {

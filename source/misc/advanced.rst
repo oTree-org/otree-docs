@@ -197,7 +197,7 @@ Custom wait page template
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can make a custom wait page template.
-For example, save this to ``your_app_name/templates/your_app_name/MyWaitPage.html``:
+For example, save this to ``your_app_name/MyWaitPage.html``:
 
 .. code-block:: html
 
