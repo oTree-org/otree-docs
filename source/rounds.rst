@@ -113,10 +113,6 @@ Then in your code, you can get and set any type of data on these fields:
 Session fields
 ~~~~~~~~~~~~~~
 
-.. note::
-
-    This is a new feature; see the note above about ``PARTICIPANT_FIELDS``.
-
 For global variables that are the same for all participants in the session,
 add them to the ``SESSION_FIELDS``, which works the same as ``PARTICIPANT_FIELDS``.
 Internally, all session fields are stored in ``session.vars``.
