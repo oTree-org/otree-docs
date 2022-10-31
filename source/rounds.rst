@@ -90,14 +90,6 @@ They also work the same way for groups, but it does not make sense to use them i
 Participant fields
 ~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-    As of March 2021, this is a new **optional** syntax for ``participant.vars``.
-    Instead of setting ``participant.vars['my_field'] = 1``,
-    you can now set ``participant.my_field = 1`` directly.
-    Just make sure to define ``PARTICIPANT_FIELDS`` first.
-    See `here <https://groups.google.com/g/otree/c/lbJg_ND5QkY>`__ for more info.
-
 If you want to access a participant's data from a previous app,
 you should store this data on the participant object,
 which persists across apps (see :ref:`participants_and_players`).
@@ -115,11 +107,6 @@ Then in your code, you can get and set any type of data on these fields:
 
 (Internally, all participant fields are stored in a dict called ``participant.vars``.
 ``participant.xyz`` is equivalent to ``participant.vars['xyz']``.)
-
-Participant fields are not included in the Excel/CSV data export,
-or in the "Data" tab in the session admin. If you want that, you should either
-use :ref:`custom-export` or save ``str(participant.vars)`` into a ``LongStringField``.
-(The same concept applies for session fields.)
 
 .. _session_vars:
 

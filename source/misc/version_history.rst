@@ -6,6 +6,7 @@ Version 5.9
 
 -   Improved dropout detection
 -   Renamed ``formInputs`` (JavaScript variable) to ``forminputs``
+-   5.9.5: fix bug that points inputs allow decimal numbers when they should be whole numbers.
 
 Version 5.8
 ===========

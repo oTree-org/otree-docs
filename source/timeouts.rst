@@ -37,12 +37,16 @@ You can check if the page was submitted by timeout:
 .. code-block:: python
 
     class Page1(Page):
+        form_model = 'player'
+        form_fields = ['xyz']
         timeout_seconds = 60
 
         @staticmethod
         def before_next_page(player, timeout_happened):
             if timeout_happened:
-                player.xyz = True
+                # you may want to fill a default value for any form fields,
+                # because otherwise they may be left null.
+                player.xyz = False
 
 
 .. _get_timeout_seconds:
