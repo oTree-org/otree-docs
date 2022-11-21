@@ -359,6 +359,12 @@ Mobile devices
 Bootstrap tries to show a "mobile friendly" version
 when viewed on a smartphone or tablet.
 
+..
+
+    Best way to test on mobile is to use Heroku.
+    ``otree zipserver`` doesn't accept a 'port' argument.
+    Also, devserver/zipserver seem to have issues with shutdown/reloading
+    and freeing up the port.
 
 Charts
 ------

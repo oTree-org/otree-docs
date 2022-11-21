@@ -1,6 +1,26 @@
 Version history
 ```````````````
 
+Version 5.10
+============
+
+For IntegerField/FloatField/CurrencyField, if ``min`` is not specified, it will be assumed to be 0.
+If you need a form field to accept negative values, set ``min=`` to a negative value (or ``None``).
+
+Benefits of this change:
+
+-   Most numeric inputs on mobile can now use the numeric keypad
+-   Prevents unintended negative inputs from users.
+    For example, if you forgot to specify ``min=0`` for your "contribution" field,
+    then a user could 'hack' the game by entering a negative contribution.
+
+Other changes:
+
+-   MTurk integration works even on Python >= 3.10 (removed dependency on the boto3 library)
+-   Python 3.11 support
+-   bots: better error message when bot is on the wrong page
+
+
 Version 5.9
 ===========
 
