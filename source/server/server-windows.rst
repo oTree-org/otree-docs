@@ -45,8 +45,3 @@ Set environment variables
 -------------------------
 
 You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and ``OTREE_AUTH_LEVEL``.
-
-Allow other computers to connect
---------------------------------
-
-See instructions :ref:`here <server-adhoc>`.

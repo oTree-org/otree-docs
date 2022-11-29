@@ -213,38 +213,3 @@ instead of defining a Constant called ``my_dict``, do this:
     def my_dict(subsession):
         return dict(a=[1,2], b=[3,4])
 
-Miscellaneous topics
-====================
-
-.. _how_otree_executes_code:
-
-About using random()
---------------------
-
-Never generate random values outside of a function.
-For example, don't do this:
-
-.. code-block:: python
-
-    class C(BaseConstants):
-        P = random.randint(1, 10) # wrong
-
-If it changes randomly, it isn't a constant.
-
-Or this:
-
-.. code-block:: python
-
-    class Player(BasePlayer):
-
-        p = models.FloatField(
-            # wrong
-            initial=random.randint(1, 10)
-        )
-
-These won't work because they will change every time
-the server launches a new process.
-It may appear to work during testing but will eventually break.
-Instead, you should generate the random variables inside a function,
-such as :ref:`creating_session` (and preferably not ``vars_for_template``,
-which gets re-executed if the user refreshes the page).

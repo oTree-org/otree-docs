@@ -19,15 +19,6 @@ Use :ref:`Heroku <heroku>`.
 
 Again, we recommend :ref:`Heroku <heroku>`.
 
-**You want to use your own computer as a server on your local network**
-
-e.g. running a lab study or field study.
-Follow these steps:
-
-1.   :ref:`Conventional installation <server-windows>`
-2.   Set up your PC as an :ref:`ad-hoc server <server-adhoc>`
-
-
 **You want to set up a dedicated Linux server**
 
 :ref:`Ubuntu Linux <server-ubuntu>` instructions.
@@ -43,4 +34,3 @@ Follow these steps:
     heroku.rst
     ubuntu.rst
     server-windows.rst
-    adhoc.rst

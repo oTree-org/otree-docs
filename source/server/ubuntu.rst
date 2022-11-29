@@ -4,8 +4,7 @@ Ubuntu Linux Server
 ===================
 
 We typically recommend newcomers to oTree to deploy to Heroku
-(see instructions :ref:`here <heroku>`),
-or to use their own personal computer as a temporary server (see :ref:`here <server-adhoc>`).
+(see instructions :ref:`here <heroku>`).
 
 However, you may prefer to run oTree on a proper Linux server. Reasons may include:
 
