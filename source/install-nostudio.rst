@@ -8,7 +8,7 @@ oTree Setup (text editor)
 .. warning::
 
     Using oTree with a text editor is not recommended unless you
-    are comfortable troubleshooting problems on your own.
+    are comfortable resolving your own programming errors.
     **If someone advised you to use a text editor,
     please direct any oTree questions to them.**
 
