@@ -22,5 +22,5 @@ If you will use oTree Studio (easiest option), go to `otreehub.com <https://www.
 
 Read: `why you should use oTree Studio <https://www.otree.org/blog/why-use-studio.html>`__.
 
-If you are an experienced programmer and are comfortable with resolving programming errors on your own,
+If you are an advanced programmer,
 you can use oTree with a :ref:`text editor <install-nostudio>`.

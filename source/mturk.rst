@@ -88,10 +88,7 @@ Local Sandbox testing
 Before launching a study, you must create an employer account with MTurk,
 to get your ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``.
 
-You can obtain these credentials `here <https://console.aws.amazon.com/iam/home?#security_credential>`__:
-
-.. figure:: _static/mturk/dNhkOiA.png
-   :alt: AWS key
+You can obtain these credentials in your AWS Management Console.
 
 To test in the MTurk Sandbox locally,
 and see how it will appear to workers,
