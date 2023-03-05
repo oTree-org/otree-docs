@@ -178,7 +178,7 @@ Just assign those participant labels in ``creating_session``:
     def creating_session(subsession):
         labels = ['alice', 'bob', 'charlie']
         for player, label in zip(subsession.get_players(), labels):
-            p.participant.label = label
+            player.participant.label = label
 
 If someone opens a start link with ``participant_label=alice``,
 oTree checks if any participant in the session already has that label.
