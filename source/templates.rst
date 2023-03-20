@@ -244,9 +244,15 @@ for example:
         </div>
     </div>
 
-If you are using oTree Studio, click the button to include a template.
-Otherwise, create the file in your ``templates`` folder,
-and see the sample games for examples of how to include the template (e.g. ``instructions_template``).
+Then use ``{{ include_sibling 'instructions.html' }}`` to insert it anywhere you want.
+
+
+.. note::
+
+    ``{{ include_sibling }}`` is a new alternative to ``{{ include }}``.
+    The advantage is that you can omit the name of the app: ``{{ include_sibling 'xyz.html' }}``
+    instead of ``{{ include 'my_app/xyz.html' }}``.
+    However, if the includable template is in a different folder, you must use ``{{ include }}``.
 
 
 JavaScript and CSS
