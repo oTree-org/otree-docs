@@ -276,11 +276,11 @@ msgstr ""
 msgid ""
 "Tip: if you are displaying the same chart in the admin report and "
 "participant pages, you can reuse ``admin_report.html`` in the "
-"participant template with an ``{{ include }}``, and pass the variables "
+"participant template with an ``{{ include_sibling }}``, and pass the variables "
 "like this:"
 msgstr ""
 "Tip: 管理レポートと参加者ページに同じグラフを表示している場合は、"
-" ``{{ include }}`` を用いることで、参加者ページ用のテンプレートで ``admin_report.html`` を再利用できます。"
+" ``{{ include_sibling }}`` を用いることで、参加者ページ用のテンプレートで ``admin_report.html`` を再利用できます。"
 "そして、変数については以下の例のように渡すことができます。"
 
 

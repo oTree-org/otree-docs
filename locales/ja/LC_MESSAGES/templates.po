@@ -259,10 +259,10 @@ msgstr "インクルード可能なテンプレート"
 #: ../../source/templates.rst:213
 msgid ""
 "If you are copy-pasting the same content across many templates, it's "
-"better to create an includable template and reuse it with ``{{ include "
+"better to create an includable template and reuse it with ``{{ include_sibling "
 "}}``."
 msgstr ""
-"多くのテンプレートに同じ内容をコピーペーストする場合は、インクルード可能なテンプレートを作成し、 ``{{ include }}`` "
+"多くのテンプレートに同じ内容をコピーペーストする場合は、インクルード可能なテンプレートを作成し、 ``{{ include_sibling }}`` "
 "で再利用するのがよいでしょう。"
 
 #: ../../source/templates.rst:217

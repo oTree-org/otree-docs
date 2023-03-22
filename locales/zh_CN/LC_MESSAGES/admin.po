@@ -246,9 +246,9 @@ msgstr ""
 msgid ""
 "Tip: if you are displaying the same chart in the admin report and "
 "participant pages, you can reuse ``admin_report.html`` in the participant"
-" template with an ``{{ include }}``, and pass the variables like this:"
+" template with an ``{{ include_sibling }}``, and pass the variables like this:"
 msgstr ""
-"提示：如果你想在管理员报告与参与人页面中展示相同的图表，你可以在参与人模板中通过 ``{{ include }}`` 复用 "
+"提示：如果你想在管理员报告与参与人页面中展示相同的图表，你可以在参与人模板中通过 ``{{ include_sibling }}`` 复用 "
 "``admin_report.html`` ，并像下面这样传递参数："
 
 #: ../../source/admin.rst:165
