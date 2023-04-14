@@ -224,7 +224,7 @@ Includable templates
 
 If you are copy-pasting the same content across many templates,
 it's better to create an includable template and reuse it with
-``{{ include }}``.
+``{{ include_sibling }}``.
 
 For example, if your game has instructions that need to be repeated on every page,
 make a template called ``instructions.html``, and put the instructions there,

@@ -251,9 +251,9 @@ msgstr "可包含的模板"
 #: ../../source/templates.rst:213
 msgid ""
 "If you are copy-pasting the same content across many templates, it's "
-"better to create an includable template and reuse it with ``{{ include "
+"better to create an includable template and reuse it with ``{{ include_sibling "
 "}}``."
-msgstr "如果你将相同的内容在多个模板之间复制粘贴，更好的方案是创建一个可包含的模板并使用 ``{{ include }}`` 复用模板。"
+msgstr "如果你将相同的内容在多个模板之间复制粘贴，更好的方案是创建一个可包含的模板并使用 ``{{ include_sibling }}`` 复用模板。"
 
 #: ../../source/templates.rst:217
 msgid ""
