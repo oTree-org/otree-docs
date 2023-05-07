@@ -4,7 +4,9 @@ Multiplayer games
 .. toctree::
     :maxdepth: 2
 
-    trials.rst
-    lifecycle.rst
+    main.rst
     serverside.rst
+    lifecycle.rst
     timing.rst
+    styling.rst
+
