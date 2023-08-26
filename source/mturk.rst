@@ -203,11 +203,6 @@ If you want to do anything beyond this,
 send custom bonuses, etc), you will need to install the
 `MTurk command-line tools <https://aws.amazon.com/cli/>`__.
 
-However, there is a new project called `oTree HR <https://otree-hr.herokuapp.com/>`__
-that provides a friendlier visual interface to manage your HITs.
-Currently, it supports microbatching and a few other features, but we welcome contributions
-of new functionality.
-
 Misc notes
 ----------
 
@@ -217,9 +212,5 @@ you may not need to follow the steps on this page.
 Prolific
 ========
 
-If you're using Prolific, we recommend setting up `oTree HR <https://otree-hr.herokuapp.com/>`__,
+If you're using Prolific, we recommend setting up `oTree HR <https://hr.otreehub.com>`__,
 which will automatically handle start links, completion URLs, and payments.
-
-A more limited solution is to add ``participant_label={{%PROLIFIC_PID%}}``
-to your study URL. When the user clicks the link,
-Prolific will replace that with the participant's actual Prolific ID.
