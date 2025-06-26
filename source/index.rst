@@ -13,7 +13,6 @@
         :align: center
 
 
-
 `中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 <https://otree.readthedocs.io/ja/latest/index.html>`__ | `Español <https://otree.readthedocs.io/es/latest/index.html>`__
 
 
