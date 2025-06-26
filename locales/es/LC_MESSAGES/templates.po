@@ -1,0 +1,661 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/templates.rst:4
+msgid "Templates"
+msgstr "Plantillas"
+
+#: ../../source/templates.rst:7
+msgid "Template syntax"
+msgstr "Sintaxis de plantillas"
+
+#: ../../source/templates.rst:10
+msgid "Variables"
+msgstr "Variables"
+
+#: ../../source/templates.rst:12
+msgid "You can display a variable like this:"
+msgstr "Puedes mostrar una variable así:"
+
+#: ../../source/templates.rst:18
+msgid "The following variables are available in templates:"
+msgstr "Las siguientes variables están disponibles en las plantillas:"
+
+#: ../../source/templates.rst:20
+msgid "``player``: the player currently viewing the page"
+msgstr "`player`: el jugador que actualmente está viendo la página"
+
+#: ../../source/templates.rst:21
+msgid "``group``: the group the current player belongs to"
+msgstr "`group`: el grupo al que pertenece el jugador actual"
+
+#: ../../source/templates.rst:22
+msgid "``subsession``: the subsession the current player belongs to"
+msgstr "`subsession`: la subsesión a la que pertenece el jugador actual"
+
+#: ../../source/templates.rst:23
+msgid "``participant``: the participant the current player belongs to"
+msgstr "`participant`: el participante al que pertenece el jugador actual"
+
+#: ../../source/templates.rst:24
+msgid "``session``: the current session"
+msgstr "`session`: la sesión actual"
+
+#: ../../source/templates.rst:25
+msgid "``C``"
+msgstr "``C``"
+
+#: ../../source/templates.rst:26
+msgid "Any variables you passed with :ref:`vars_for_template`."
+msgstr "Cualquier variable que hayas pasado con :ref:`vars_for_template`."
+
+#: ../../source/templates.rst:29
+msgid "Conditions (\"if\")"
+msgstr "Condiciones (\"if\")"
+
+#: ../../source/templates.rst:33
+msgid ""
+"oTree 3.x used two types of tags in templates: ``{{ }}`` and ``{% %}``. "
+"Starting in oTree 5, however, you can forget about ``{% %}`` and just use "
+"``{{ }}`` everywhere if you want. The old format still works."
+msgstr ""
+"oTree 3.x utilizaba dos tipos de etiquetas en las plantillas: ``{{ }}`` y "
+"``{% %}``. Sin embargo, a partir de oTree 5, puedes olvidarte de ``{% %}`` y"
+" usar solo ``{{ }}`` en cualquier lugar si lo deseas. El formato antiguo aún"
+" funciona."
+
+#: ../../source/templates.rst:41
+msgid "With an 'else':"
+msgstr "Con un 'else':"
+
+#: ../../source/templates.rst:51
+msgid "Complex example:"
+msgstr "Ejemplo complejo:"
+
+#: ../../source/templates.rst:64
+msgid "Loops (\"for\")"
+msgstr "Bucles (\"for\")"
+
+#: ../../source/templates.rst:73
+msgid "Accessing items in a dict"
+msgstr "Accediendo a elementos en un dict"
+
+#: ../../source/templates.rst:75
+msgid ""
+"Whereas in Python code you do ``my_dict['foo']``, in a template you would do"
+" ``{{ my_dict.foo }}``."
+msgstr ""
+"Mientras que en el código de Python haces ``my_dict['foo']``, en una "
+"plantilla harías ``{{ my_dict.foo }}``."
+
+#: ../../source/templates.rst:79
+msgid "Comments"
+msgstr "Comentarios"
+
+#: ../../source/templates.rst:93
+msgid "Things you can't do"
+msgstr "Cosas que no puedes hacer"
+
+#: ../../source/templates.rst:95
+msgid ""
+"The template language is just for displaying values. You can't do math "
+"(``+``, ``*``, ``/``, ``-``) or otherwise modify numbers, lists, strings, "
+"etc. For that, you should use :ref:`vars_for_template`."
+msgstr ""
+"El lenguaje de plantillas es solo para mostrar valores. No puedes hacer "
+"matemáticas (``+``, ``*``, ``/``, ``-``) ni modificar números, listas, "
+"cadenas, etc. Para eso, debes usar :ref:`vars_for_template`."
+
+#: ../../source/templates.rst:101
+msgid "How templates work: an example"
+msgstr "Cómo funcionan las plantillas: un ejemplo"
+
+#: ../../source/templates.rst:103
+msgid "oTree templates are a mix of 2 languages:"
+msgstr "Las plantillas de oTree son una mezcla de 2 lenguajes:"
+
+#: ../../source/templates.rst:105
+msgid "*HTML* (which uses angle brackets like ``<this>`` and ``</this>``)."
+msgstr ""
+"*HTML* (que utiliza corchetes angulares como ``<this>`` y ``</this>``)."
+
+#: ../../source/templates.rst:106
+msgid "*Template tags* (which use curly braces like ``{{ this }}``)"
+msgstr "*Etiquetas de plantilla* (que utilizan llaves como ``{{ this }}``)"
+
+#: ../../source/templates.rst:109
+msgid "In this example, let's say your template looks like this:"
+msgstr "En este ejemplo, supongamos que tu plantilla se ve así:"
+
+#: ../../source/templates.rst:125
+msgid "Step 1: oTree scans template tags, produces HTML (a.k.a. \"server side\")"
+msgstr ""
+"Paso 1: oTree escanea las etiquetas de plantilla, produce HTML (también "
+"conocido como \"lado del servidor\")"
+
+#: ../../source/templates.rst:127
+msgid ""
+"oTree uses the current values of the variables to convert the above template"
+" tags to plain HTML, like this:"
+msgstr ""
+"oTree utiliza los valores actuales de las variables para convertir las "
+"etiquetas de plantilla anteriores en HTML simple, así:"
+
+#: ../../source/templates.rst:143
+msgid ""
+"Step 2: Browser scans HTML tags, produces a webpage (a.k.a. \"client side\")"
+msgstr ""
+"Paso 2: El navegador escanea las etiquetas HTML, produce una página web "
+"(también conocido como \"lado del cliente\")"
+
+#: ../../source/templates.rst:145
+msgid ""
+"The oTree server then sends this HTML to the user's computer, where their "
+"web browser can read the code and display it as a formatted web page:"
+msgstr ""
+"El servidor de oTree envía este HTML a la computadora del usuario, donde su "
+"navegador web puede leer el código y mostrarlo como una página web "
+"formateada:"
+
+#: ../../source/templates.rst:151
+msgid "Note that the browser never sees the template tags."
+msgstr "Tenga en cuenta que el navegador nunca ve las etiquetas de plantilla."
+
+#: ../../source/templates.rst:154
+msgid "The key point"
+msgstr "El punto clave"
+
+#: ../../source/templates.rst:156
+msgid ""
+"If one of your pages doesn't look the way you want, you can isolate which of"
+" the above steps went wrong. In your browser, right-click and \"view "
+"source\". (Note: \"view source\" may not work in split-screen mode.)"
+msgstr ""
+"Si una de tus páginas no se ve como deseas, puedes aislar cuál de los pasos "
+"anteriores salió mal. En tu navegador, haz clic derecho y selecciona 'ver "
+"fuente'. (Nota: 'ver fuente' puede no funcionar en modo de pantalla "
+"dividida.)"
+
+#: ../../source/templates.rst:161
+msgid ""
+"You can then see the pure HTML that was generated (along with any JavaScript"
+" or CSS)."
+msgstr ""
+"Entonces podrás ver el HTML puro que se generó (junto con cualquier "
+"JavaScript o CSS)."
+
+#: ../../source/templates.rst:164
+msgid ""
+"If the HTML code doesn't look the way you expect, then something went wrong "
+"on the server side. Look for mistakes in your ``vars_for_template`` or your "
+"template tags."
+msgstr ""
+"Si el código HTML no se ve como esperabas, entonces algo salió mal en el "
+"lado del servidor. Busca errores en tu ``vars_for_template`` o en tus "
+"etiquetas de plantilla."
+
+#: ../../source/templates.rst:167
+msgid ""
+"If there was no error in generating the HTML code, then it is probably an "
+"issue with how you are using HTML (or JavaScript) syntax. Try pasting the "
+"problematic part of the HTML back into a template, without the template "
+"tags, and edit it until it produces the right output. Then put the template "
+"tags back in, to make it dynamic again."
+msgstr ""
+"Si no hubo error al generar el código HTML, entonces probablemente sea un "
+"problema con la forma en que estás utilizando la sintaxis de HTML (o "
+"JavaScript). Intenta pegar la parte problemática del HTML de nuevo en una "
+"plantilla, sin las etiquetas de plantilla, y edítala hasta que produzca la "
+"salida correcta. Luego, vuelve a poner las etiquetas de plantilla para que "
+"sea dinámica de nuevo."
+
+#: ../../source/templates.rst:176
+msgid "Images (static files)"
+msgstr "Imágenes (archivos estáticos)"
+
+#: ../../source/templates.rst:178
+msgid ""
+"The simplest way to include images, video, 3rd party JS/CSS libraries, and "
+"other static files in your project is to host them online, for example on "
+"Dropbox, Imgur, YouTube, etc."
+msgstr ""
+"La forma más sencilla de incluir imágenes, videos, bibliotecas de JS/CSS de "
+"terceros y otros archivos estáticos en tu proyecto es alojarlos en línea, "
+"por ejemplo, en Dropbox, Imgur, YouTube, etc."
+
+#: ../../source/templates.rst:181
+msgid ""
+"Then, put its URL in an <img> or <video> tag in your template, for example:"
+msgstr ""
+"Luego, coloca su URL en una etiqueta <img> o <video> en tu plantilla, por "
+"ejemplo:"
+
+#: ../../source/templates.rst:187
+msgid ""
+"You can also store images directly in your project. (but note that large "
+"file sizes can affect performance). oTree Studio has an image upload tool. "
+"(If you are using a text editor, see :ref:`here <staticfiles>`.) Once you "
+"have stored the image, you can display it like this:"
+msgstr ""
+"También puedes almacenar imágenes directamente en tu proyecto. (pero ten en "
+"cuenta que los tamaños de archivo grandes pueden afectar el rendimiento). "
+"oTree Studio tiene una herramienta de carga de imágenes. (Si estás "
+"utilizando un editor de texto, consulta :ref:`aquí <staticfiles>`.) Una vez "
+"que hayas almacenado la imagen, puedes mostrarla así:"
+
+#: ../../source/templates.rst:199
+msgid "Dynamic images"
+msgstr "Imágenes dinámicas"
+
+#: ../../source/templates.rst:201
+msgid ""
+"If you need to show different images depending on the context (like showing "
+"a different image each round), you can construct it in ``vars_for_template``"
+" and pass it to the template, e.g.:"
+msgstr ""
+"Si necesitas mostrar diferentes imágenes dependiendo del contexto (como "
+"mostrar una imagen diferente en cada ronda), puedes construirla en "
+"``vars_for_template`` y pasarla a la plantilla, por ejemplo:"
+
+#: ../../source/templates.rst:213
+msgid "Then in the template:"
+msgstr "Entonces en la plantilla:"
+
+#: ../../source/templates.rst:223
+msgid "Includable templates"
+msgstr "Plantillas incluibles"
+
+#: ../../source/templates.rst:225
+msgid ""
+"If you are copy-pasting the same content across many templates, it's better "
+"to create an includable template and reuse it with ``{{ include_sibling "
+"}}``."
+msgstr ""
+"Si estás copiando y pegando el mismo contenido en muchas plantillas, es "
+"mejor crear una plantilla incluyible y reutilizarla con ``{{ include_sibling"
+" }}``."
+
+#: ../../source/templates.rst:229
+msgid ""
+"For example, if your game has instructions that need to be repeated on every"
+" page, make a template called ``instructions.html``, and put the "
+"instructions there, for example:"
+msgstr ""
+"Por ejemplo, si tu juego tiene instrucciones que necesitan repetirse en cada"
+" página, crea una plantilla llamada ``instructions.html`` y coloca las "
+"instrucciones allí, por ejemplo:"
+
+#: ../../source/templates.rst:247
+msgid ""
+"Then use ``{{ include_sibling 'instructions.html' }}`` to insert it anywhere"
+" you want."
+msgstr ""
+"Luego usa ``{{ include_sibling 'instructions.html' }}`` para insertarlo en "
+"cualquier lugar que desees."
+
+#: ../../source/templates.rst:252
+msgid ""
+"``{{ include_sibling }}`` is a new alternative to ``{{ include }}``. The "
+"advantage is that you can omit the name of the app: ``{{ include_sibling "
+"'xyz.html' }}`` instead of ``{{ include 'my_app/xyz.html' }}``. However, if "
+"the includable template is in a different folder, you must use ``{{ include "
+"}}``."
+msgstr ""
+"``{{ include_sibling }}`` es una nueva alternativa a ``{{ include }}``. La "
+"ventaja es que puedes omitir el nombre de la aplicación: ``{{ "
+"include_sibling 'xyz.html' }}`` en lugar de ``{{ include 'my_app/xyz.html' "
+"}}``. Sin embargo, si la plantilla incluyible está en una carpeta diferente,"
+" debes usar ``{{ include }}``."
+
+#: ../../source/templates.rst:259
+msgid "JavaScript and CSS"
+msgstr "JavaScript y CSS"
+
+#: ../../source/templates.rst:262
+msgid "Where to put JavaScript/CSS code"
+msgstr "Dónde colocar el código JavaScript/CSS"
+
+#: ../../source/templates.rst:264
+msgid ""
+"You can put JavaScript and CSS anywhere just by using the usual "
+"``<script></script>`` or ``<style></style>``, anywhere in your template."
+msgstr ""
+"Puedes colocar JavaScript y CSS en cualquier lugar simplemente utilizando "
+"los habituales ``<script></script>`` o ``<style></style>``, en cualquier "
+"parte de tu plantilla."
+
+#: ../../source/templates.rst:267
+msgid ""
+"If you have a lot of scripts/styles, you can put them in separate blocks "
+"outside of ``content``: ``scripts`` and ``styles``. It's not mandatory to do"
+" this, but: it keeps your code organized and ensures that things are loaded "
+"in the correct order (CSS, then your page content, then JavaScript)."
+msgstr ""
+"Si tienes muchos scripts/estilos, puedes ponerlos en bloques separados fuera"
+" de ``content``: ``scripts`` y ``styles``. No es obligatorio hacerlo, pero: "
+"mantiene tu código organizado y asegura que las cosas se carguen en el orden"
+" correcto (CSS, luego el contenido de tu página, luego JavaScript)."
+
+#: ../../source/templates.rst:276
+msgid "Passing data from Python to JavaScript (js_vars)"
+msgstr "Pasando datos de Python a JavaScript (js_vars)"
+
+#: ../../source/templates.rst:278
+msgid ""
+"To pass data to JavaScript code in your template, define a function "
+"``js_vars`` on your Page, for example:"
+msgstr ""
+"Para pasar datos al código JavaScript en tu plantilla, define una función "
+"``js_vars`` en tu Página, por ejemplo:"
+
+#: ../../source/templates.rst:289
+msgid "Then, in your template, you can refer to these variables:"
+msgstr "Entonces, en tu plantilla, puedes referirte a estas variables:"
+
+#: ../../source/templates.rst:299 ../../source/templates.rst:353
+msgid "Customizing the theme"
+msgstr "Personalización del tema"
+
+#: ../../source/templates.rst:302
+msgid "Bootstrap"
+msgstr "Bootstrap"
+
+#: ../../source/templates.rst:304
+msgid ""
+"oTree comes with `Bootstrap "
+"<https://getbootstrap.com/docs/5.0/components/alerts/>`__, a popular library"
+" for customizing a website's user interface."
+msgstr ""
+"oTree viene con `Bootstrap "
+"<https://getbootstrap.com/docs/5.0/components/alerts/>`__, una biblioteca "
+"popular para personalizar la interfaz de usuario de un sitio web."
+
+#: ../../source/templates.rst:307
+msgid ""
+"You can use it if you want a `custom style "
+"<http://getbootstrap.com/css/>`__, or a `specific component "
+"<http://getbootstrap.com/components/>`__ like a table, alert, progress bar, "
+"label, etc. You can even make your page dynamic with elements like `popovers"
+" <https://getbootstrap.com/docs/5.0/components/popovers/>`__, `modals "
+"<https://getbootstrap.com/docs/5.0/components/modal/>`__, and `collapsible "
+"text <https://getbootstrap.com/docs/5.0/components/collapse/>`__."
+msgstr ""
+"Puedes usarlo si deseas un `estilo personalizado "
+"<http://getbootstrap.com/css/>`__, o un `componente específico "
+"<http://getbootstrap.com/components/>`__ como una tabla, alerta, barra de "
+"progreso, etiqueta, etc. Incluso puedes hacer que tu página sea dinámica con"
+" elementos como `popovers "
+"<https://getbootstrap.com/docs/5.0/components/popovers/>`__, `modals "
+"<https://getbootstrap.com/docs/5.0/components/modal/>`__, y `texto "
+"colapsable <https://getbootstrap.com/docs/5.0/components/collapse/>`__."
+
+#: ../../source/templates.rst:314
+msgid ""
+"To use Bootstrap, usually you add a ``class=`` attribute to your HTML "
+"element."
+msgstr ""
+"Para usar Bootstrap, generalmente agregas un atributo ``class=`` a tu "
+"elemento HTML."
+
+#: ../../source/templates.rst:317
+msgid "For example, the following HTML will create a \"Success\" alert:"
+msgstr "Por ejemplo, el siguiente HTML creará una alerta de \"Success\":"
+
+#: ../../source/templates.rst:324
+msgid "use_blank_layout"
+msgstr "use_blank_layout"
+
+#: ../../source/templates.rst:328
+msgid "New in oTree 6"
+msgstr "Nuevo en oTree 6"
+
+#: ../../source/templates.rst:330
+msgid ""
+"By default, oTree templates have a standard \"document\" layout with a "
+"section for a title, a maximum width, and some spacing on the top margin."
+msgstr ""
+"Por defecto, las plantillas de oTree tienen un diseño estándar de "
+"\"documento\" con una sección para un título, un ancho máximo y un espacio "
+"en el margen superior."
+
+#: ../../source/templates.rst:333
+msgid ""
+"You can disable this default layout by setting ``use_blank_layout = True`` "
+"on the page class. This makes it easier to create other layouts, such as "
+"full-screen games, dashboards, etc. On pages with `trials <trials-layout>`, "
+"``use_blank_layout = True`` is set automatically."
+msgstr ""
+"Puedes desactivar este diseño predeterminado configurando ``use_blank_layout"
+" = True`` en la clase de la página. Esto facilita la creación de otros "
+"diseños, como juegos a pantalla completa, paneles de control, etc. En las "
+"páginas con `trials <trials-layout>`, ``use_blank_layout = True`` se "
+"establece automáticamente."
+
+#: ../../source/templates.rst:338
+msgid "Mobile devices"
+msgstr "Dispositivos móviles"
+
+#: ../../source/templates.rst:340
+msgid ""
+"Bootstrap tries to show a \"mobile friendly\" version when viewed on a "
+"smartphone or tablet."
+msgstr ""
+"Bootstrap intenta mostrar una versión \"amigable para móviles\" cuando se "
+"visualiza en un teléfono inteligente o tableta."
+
+#: ../../source/templates.rst:345
+msgid ""
+"Best way to test on mobile is to use Heroku. ``otree zipserver`` doesn't "
+"accept a 'port' argument. Also, devserver/zipserver seem to have issues with"
+" shutdown/reloading and freeing up the port."
+msgstr ""
+"La mejor manera de probar en móviles es usar Heroku. ``otree zipserver`` no "
+"acepta un argumento 'port'. Además, devserver/zipserver parecen tener "
+"problemas con el apagado/reinicio y la liberación del puerto."
+
+#: ../../source/templates.rst:355
+msgid ""
+"If you want to customize the appearance of an oTree element, here is the "
+"list of CSS selectors:"
+msgstr ""
+"Si deseas personalizar la apariencia de un elemento de oTree, aquí está la "
+"lista de selectores CSS:"
+
+#: ../../source/templates.rst:359
+msgid "Element"
+msgstr "Elemento"
+
+#: ../../source/templates.rst:359
+msgid "CSS/jQuery selector"
+msgstr "Selector CSS/jQuery"
+
+#: ../../source/templates.rst:361
+msgid "Page body"
+msgstr "Cuerpo de la página"
+
+#: ../../source/templates.rst:361
+msgid "``.otree-body``"
+msgstr "``.otree-body``"
+
+#: ../../source/templates.rst:362
+msgid "Page title"
+msgstr "Título de la página"
+
+#: ../../source/templates.rst:362
+msgid "``.otree-title``"
+msgstr "``.otree-title``"
+
+#: ../../source/templates.rst:363
+msgid "Wait page (entire dialog)"
+msgstr "Página de espera (diálogo completo)"
+
+#: ../../source/templates.rst:363
+msgid "``.otree-wait-page``"
+msgstr "``.otree-wait-page``"
+
+#: ../../source/templates.rst:364
+msgid "Wait page dialog title"
+msgstr "Título del diálogo de la página de espera"
+
+#: ../../source/templates.rst:364
+msgid "``.otree-wait-page__title`` (note: ``__``, not ``_``)"
+msgstr "``.otree-wait-page__title`` (nota: ``__``, no ``_``)"
+
+#: ../../source/templates.rst:365
+msgid "Wait page dialog body"
+msgstr "Cuerpo del diálogo de la página de espera"
+
+#: ../../source/templates.rst:365
+msgid "``.otree-wait-page__body``"
+msgstr "``.otree-wait-page__body``"
+
+#: ../../source/templates.rst:366
+msgid "Timer"
+msgstr "Temporizador"
+
+#: ../../source/templates.rst:366
+msgid "``.otree-timer``"
+msgstr "``.otree-timer``"
+
+#: ../../source/templates.rst:367
+msgid "Next button"
+msgstr "Botón Siguiente"
+
+#: ../../source/templates.rst:367
+msgid "``.otree-btn-next``"
+msgstr ".otree-btn-next"
+
+#: ../../source/templates.rst:368
+msgid "Form errors alert"
+msgstr "Advertencia de errores en el formulario"
+
+#: ../../source/templates.rst:368
+msgid "``.otree-form-errors``"
+msgstr ".otree-form-errors"
+
+#: ../../source/templates.rst:371
+msgid ""
+"For example, to change the page width, put CSS in your base template like "
+"this:"
+msgstr ""
+"Por ejemplo, para cambiar el ancho de la página, coloca CSS en tu plantilla "
+"base así:"
+
+#: ../../source/templates.rst:381
+msgid ""
+"To get more info, in your browser, right-click the element you want to "
+"modify and select \"Inspect\". Then you can navigate to see the different "
+"elements and try modifying their styles:"
+msgstr ""
+"Para obtener más información, en tu navegador, haz clic derecho en el "
+"elemento que deseas modificar y selecciona \"Inspeccionar\". Luego puedes "
+"navegar para ver los diferentes elementos y probar a modificar sus estilos:"
+
+#: ../../source/templates.rst:387
+msgid ""
+"When possible, use one of the official selectors above. Don't use any "
+"selector that starts with ``_otree``, and don't select based on Bootstrap "
+"classes like ``btn-primary`` or ``card``, because those are unstable."
+msgstr ""
+"Cuando sea posible, utiliza uno de los selectores oficiales anteriores. No "
+"utilices ningún selector que comience con ``_otree`` y no selecciones "
+"basándote en clases de Bootstrap como ``btn-primary`` o ``card``, porque son"
+" inestables."
+
+#: ../../source/templates.rst:394
+msgid "Charts"
+msgstr "Gráficos"
+
+#: ../../source/templates.rst:396
+msgid ""
+"You can use any HTML/JavaScript library for adding charts to your app. A "
+"good option is `HighCharts <http://www.highcharts.com/demo>`__, to draw pie "
+"charts, line graphs, bar charts, time series, etc."
+msgstr ""
+"Puedes usar cualquier biblioteca HTML/JavaScript para agregar gráficos a tu "
+"aplicación. Una buena opción es `HighCharts "
+"<http://www.highcharts.com/demo>`__, para dibujar gráficos de pastel, "
+"gráficos de líneas, gráficos de barras, series temporales, etc."
+
+#: ../../source/templates.rst:400
+msgid "First, include the HighCharts JavaScript::"
+msgstr "Primero, incluye el JavaScript de HighCharts::"
+
+#: ../../source/templates.rst:405
+msgid ""
+"Go to the HighCharts `demo site <http://www.highcharts.com/demo>`__ and find"
+" the chart type that you want to make. Then click \"edit in JSFiddle\" to "
+"edit it to your liking, using hardcoded data."
+msgstr ""
+"Ve al `sitio de demostración de HighCharts "
+"<http://www.highcharts.com/demo>`__ y encuentra el tipo de gráfico que "
+"deseas crear. Luego haz clic en \"editar en JSFiddle\" para editarlo a tu "
+"gusto, utilizando datos codificados de forma rígida."
+
+#: ../../source/templates.rst:410
+msgid ""
+"Then, copy-paste the JS and HTML into your template, and load the page. If "
+"you don't see your chart, it may be because your HTML is missing the "
+"``<div>`` that your JS code is trying to insert the chart into."
+msgstr ""
+"Luego, copia y pega el JS y el HTML en tu plantilla, y carga la página. Si "
+"no ves tu gráfico, puede ser porque tu HTML no tiene el ``<div>`` en el que "
+"tu código JS está intentando insertar el gráfico."
+
+#: ../../source/templates.rst:415
+msgid ""
+"Once your chart is loading properly, you can replace the hardcoded data like"
+" ``series`` and ``categories`` with dynamically generated variables."
+msgstr ""
+"Una vez que tu gráfico se esté cargando correctamente, puedes reemplazar los"
+" datos codificados como ``series`` y ``categories`` con variables generadas "
+"dinámicamente."
+
+#: ../../source/templates.rst:418
+msgid "For example, change this::"
+msgstr "Por ejemplo, cambia esto::"
+
+#: ../../source/templates.rst:428
+msgid "To this::"
+msgstr "A esto::"
+
+#: ../../source/templates.rst:433
+msgid ""
+"...where ``highcharts_series`` is a variable you defined in :ref:`js_vars "
+"<js_vars>`."
+msgstr ""
+"...donde ``highcharts_series`` es una variable que definiste en "
+":ref:`js_vars <js_vars>`."
+
+#: ../../source/templates.rst:435
+msgid ""
+"If your chart is not loading, click \"View Source\" in your browser and "
+"check if there is something wrong with the data you dynamically generated."
+msgstr ""
+"Si tu gráfico no se carga, haz clic en \"Ver fuente\" en tu navegador y "
+"verifica si hay algo mal con los datos que generaste dinámicamente."
+
+#: ../../source/templates.rst:441
+msgid "Miscellaneous"
+msgstr "Varios"
+
+#: ../../source/templates.rst:443
+msgid ""
+"You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For "
+"example:: ``{{ 0.1234|to2}}`` outputs 0.12."
+msgstr ""
+"Puedes redondear números usando los filtros ``to2``, ``to1`` o ``to0``. Por "
+"ejemplo:: ``{{ 0.1234|to2}}`` produce 0.12."

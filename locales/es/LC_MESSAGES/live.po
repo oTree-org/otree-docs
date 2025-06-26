@@ -1,0 +1,385 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/live.rst:4
+msgid "Live pages"
+msgstr "Páginas en vivo"
+
+#: ../../source/live.rst:6
+msgid ""
+"Live pages communicate with the server continuously and update in real time,"
+" enabling continuous time games. Live pages are a great fit for games with "
+"lots of back-and-forth interaction between users."
+msgstr ""
+"Las páginas en vivo se comunican con el servidor de manera continua y se "
+"actualizan en tiempo real, lo que permite juegos de tiempo continuo. Las "
+"páginas en vivo son ideales para juegos con mucha interacción entre los "
+"usuarios."
+
+#: ../../source/live.rst:11
+msgid ""
+"There are a bunch of examples `here "
+"<https://www.otreehub.com/projects/otree-more-demos/>`__."
+msgstr ""
+"Hay un montón de ejemplos `aquí <https://www.otreehub.com/projects/otree-"
+"more-demos/>`__."
+
+#: ../../source/live.rst:14
+msgid "Sending data to the server"
+msgstr "Envío de datos al servidor"
+
+#: ../../source/live.rst:16
+msgid ""
+"In your template's JavaScript code, call the function ``liveSend()`` "
+"whenever you want to send data to the server. For example, to submit a bid "
+"of 99 on behalf of the user, call:"
+msgstr ""
+"En el código JavaScript de tu plantilla, llama a la función ``liveSend()`` "
+"siempre que quieras enviar datos al servidor. Por ejemplo, para presentar "
+"una oferta de 99 en nombre del usuario, llama:"
+
+#: ../../source/live.rst:25
+msgid ""
+"Define a function that will receive this message. Its argument is whatever "
+"data was sent."
+msgstr ""
+"Define una función que recibirá este mensaje. Su argumento es cualquier dato"
+" que se haya enviado."
+
+#: ../../source/live.rst:38
+msgid ""
+"If you are using oTree Studio, you must define a player function whose name "
+"starts with ``live_``. (Note, ``live_method`` on ``WaitPage`` is not yet "
+"supported.)"
+msgstr ""
+"Si estás utilizando oTree Studio, debes definir una función de jugador cuyo "
+"nombre comience con ``live_``. (Nota: ``live_method`` en ``WaitPage`` aún no"
+" es compatible.)"
+
+#: ../../source/live.rst:43
+msgid "Sending data to the page"
+msgstr "Enviando datos a la página"
+
+#: ../../source/live.rst:45
+msgid ""
+"To send data back, return a dict whose keys are the IDs of the players to "
+"receive a message. For example, here is a method that simply sends "
+"\"thanks\" to whoever sends a message."
+msgstr ""
+"Para enviar datos de vuelta, devuelve un diccionario cuyos claves son los "
+"IDs de los jugadores que recibirán un mensaje. Por ejemplo, aquí hay un "
+"método que simplemente envía \"thanks\" a quien envíe un mensaje."
+
+#: ../../source/live.rst:55
+msgid ""
+"To send to multiple players, use their ``id_in_group``. For example, this "
+"forwards every message to players 2 and 3:"
+msgstr ""
+"Para enviar a múltiples jugadores, utiliza su ``id_in_group``. Por ejemplo, "
+"este método reenvía todos los mensajes a los jugadores 2 y 3:"
+
+#: ../../source/live.rst:63
+msgid ""
+"To broadcast it to the whole group, use ``0`` (special case since it is not "
+"an actual ``id_in_group``)."
+msgstr ""
+"Para transmitirlo a todo el grupo, utiliza ``0`` (caso especial ya que no es"
+" un ``id_in_group`` real)."
+
+#: ../../source/live.rst:71
+msgid ""
+"In your JavaScript, define a function ``liveRecv``. This will be "
+"automatically called each time a message is received from the server."
+msgstr ""
+"En tu JavaScript, define una función ``liveRecv``. Esta se llamará "
+"automáticamente cada vez que se reciba un mensaje del servidor."
+
+#: ../../source/live.rst:82
+msgid "Example: auction"
+msgstr "Ejemplo: subasta"
+
+#: ../../source/live.rst:131
+msgid "(Note, in JavaScript ``data.id_in_group == data['id_in_group']``.)"
+msgstr "(Nota, en JavaScript ``data.id_in_group == data['id_in_group']``.)"
+
+#: ../../source/live.rst:134
+msgid "Data"
+msgstr "Datos"
+
+#: ../../source/live.rst:136
+msgid ""
+"The data you send and receive can be any data type (as long as it is JSON "
+"serializable). For example these are all valid:"
+msgstr ""
+"Los datos que envías y recibes pueden ser de cualquier tipo de dato (siempre"
+" que sean serializables en JSON). Por ejemplo, estos son todos válidos:"
+
+#: ../../source/live.rst:146
+msgid ""
+"The most versatile type of data is a dict, since it allows you to include "
+"multiple pieces of metadata, in particular what type of message it is:"
+msgstr ""
+"El tipo de dato más versátil es un dict, ya que te permite incluir múltiples"
+" piezas de metadatos, en particular qué tipo de mensaje es:"
+
+#: ../../source/live.rst:155
+msgid ""
+"Then you can use ``if`` statements to process different types of messages:"
+msgstr ""
+"Luego puedes usar declaraciones ``if`` para procesar diferentes tipos de "
+"mensajes:"
+
+#: ../../source/live.rst:175
+msgid "History"
+msgstr "Historia"
+
+#: ../../source/live.rst:177
+msgid ""
+"By default, participants will not see messages that were sent before they "
+"arrived at the page. (And data will not be re-sent if they refresh the "
+"page.) If you want to save history, you should store it in the database. "
+"When a player loads the page, your JavaScript can call something like "
+"``liveSend({})``, and you can configure your live_method to retrieve the "
+"history of the game from the database."
+msgstr ""
+"Por defecto, los participantes no verán los mensajes que se enviaron antes "
+"de que llegaran a la página. (Y los datos no se volverán a enviar si "
+"actualizan la página.) Si deseas guardar el historial, debes almacenarlo en "
+"la base de datos. Cuando un jugador carga la página, tu JavaScript puede "
+"llamar algo como ``liveSend({})``, y puedes configurar tu método live_method"
+" para recuperar el historial del juego de la base de datos."
+
+#: ../../source/live.rst:184
+msgid "ExtraModel"
+msgstr "ExtraModel"
+
+#: ../../source/live.rst:186
+msgid ""
+"Live pages are often used together with an :ref:`ExtraModel <ExtraModel>`, "
+"which allows you to store each individual message or action in the database."
+msgstr ""
+"Las páginas en vivo a menudo se utilizan junto con un :ref:`ExtraModel "
+"<ExtraModel>`, que permite almacenar cada mensaje o acción individual en la "
+"base de datos."
+
+#: ../../source/live.rst:190
+msgid "Keeping users on the page"
+msgstr "Manteniendo a los usuarios en la página"
+
+#: ../../source/live.rst:192
+msgid ""
+"Let's say you require 10 messages to be sent before the users can proceed to"
+" the next page."
+msgstr ""
+"Supongamos que necesitas enviar 10 mensajes antes de que los usuarios puedan"
+" proceder a la siguiente página."
+
+#: ../../source/live.rst:195
+msgid ""
+"First, you should omit the ``{{ next_button }}``. (Or use JS to hide it "
+"until the task is complete.)"
+msgstr ""
+"Primero, debes omitir el ``{{ next_button }}``. (O usa JS para ocultarlo "
+"hasta que la tarea esté completa.)"
+
+#: ../../source/live.rst:198
+msgid "When the task is completed, you send a message:"
+msgstr "Cuando la tarea esté completa, envías un mensaje:"
+
+#: ../../source/live.rst:216
+msgid "Then in the template, automatically submit the page via JavaScript:"
+msgstr ""
+"Entonces, en la plantilla, envía automáticamente la página a través de "
+"JavaScript:"
+
+#: ../../source/live.rst:229
+msgid ""
+"By the way, using a similar technique, you could implement a custom wait "
+"page, e.g. one that lets you proceed after a certain timeout, even if not "
+"all players have arrived."
+msgstr ""
+"Por cierto, utilizando una técnica similar, podrías implementar una página "
+"de espera personalizada, por ejemplo, una que te permita continuar después "
+"de un cierto tiempo de espera, incluso si no todos los jugadores han "
+"llegado."
+
+#: ../../source/live.rst:234
+msgid "General advice about live pages"
+msgstr "Consejos generales sobre páginas en vivo"
+
+#: ../../source/live.rst:236
+msgid ""
+"Here is some general advice (does not apply to all situations). We recommend"
+" implementing most of your logic in Python, and just using JavaScript to "
+"update the page's HTML, because:"
+msgstr ""
+"Aquí hay algunos consejos generales (no aplican a todas las situaciones). "
+"Recomendamos implementar la mayor parte de tu lógica en Python, y solo usar "
+"JavaScript para actualizar el HTML de la página, porque:"
+
+#: ../../source/live.rst:240
+msgid "The JavaScript language can be quite tricky to use properly"
+msgstr ""
+"El lenguaje JavaScript puede ser bastante complicado de usar correctamente."
+
+#: ../../source/live.rst:241
+msgid ""
+"Your Python code runs on the server, which is centralized and reliable. "
+"JavaScript runs on the clients, which can get out of sync with each other, "
+"and data can get lost when the page is closed or reloaded."
+msgstr ""
+"Tu código de Python se ejecuta en el servidor, que es centralizado y "
+"confiable. JavaScript se ejecuta en los clientes, que pueden desincronizarse"
+" entre sí, y los datos pueden perderse cuando se cierra o recarga la página."
+
+#: ../../source/live.rst:244
+msgid ""
+"Because Python code runs on the server, it is more secure and cannot be "
+"viewed or modified by participants."
+msgstr ""
+"Debido a que el código de Python se ejecuta en el servidor, es más seguro y "
+"no puede ser visto ni modificado por los participantes."
+
+#: ../../source/live.rst:248
+msgid "Example: tic-tac-toe"
+msgstr "Ejemplo: tres en raya"
+
+#: ../../source/live.rst:250
+msgid ""
+"Let's say you are implementing a game of tic-tac-toe. There are 2 types of "
+"messages your live_method can receive:"
+msgstr ""
+"Supongamos que estás implementando un juego de tres en raya. Hay 2 tipos de "
+"mensajes que tu live_method puede recibir:"
+
+#: ../../source/live.rst:253
+msgid "A user marks a square, so you need to notify the other player"
+msgstr ""
+"Un usuario marca un cuadrado, por lo que necesitas notificar al otro "
+"jugador."
+
+#: ../../source/live.rst:254
+msgid ""
+"A user loads (or reloads) the page, so you need to send them the current "
+"board layout."
+msgstr ""
+"Un usuario carga (o recarga) la página, por lo que necesitas enviarle el "
+"diseño actual del tablero."
+
+#: ../../source/live.rst:256
+msgid ""
+"For situation 1, you should use a JavaScript event handler like ``onclick``,"
+" e.g. so when the user clicks on square 3, that move gets sent to the "
+"server:"
+msgstr ""
+"Para la situación 1, deberías usar un controlador de eventos de JavaScript "
+"como ``onclick``, por ejemplo, para que cuando el usuario haga clic en el "
+"cuadrado 3, ese movimiento se envíe al servidor:"
+
+#: ../../source/live.rst:263
+msgid ""
+"For situation 2, it's good to put some code like this in your template, "
+"which sends an empty message to the server when the page loads:"
+msgstr ""
+"Para la situación 2, es bueno poner un código como este en tu plantilla, que"
+" envía un mensaje vacío al servidor cuando se carga la página:"
+
+#: ../../source/live.rst:272
+msgid "The server handles these 2 situations with an \"if\" statement:"
+msgstr "El servidor maneja estas 2 situaciones con una declaración \"if\":"
+
+#: ../../source/live.rst:299
+msgid ""
+"In situation 2 (the player loads the page), the client gets a message like:"
+msgstr ""
+"En la situación 2 (el jugador carga la página), el cliente recibe un mensaje"
+" como:"
+
+#: ../../source/live.rst:305
+msgid ""
+"In situation 1, the player gets the update about the move that was just "
+"made, AND the current state."
+msgstr ""
+"En la situación 1, el jugador recibe la actualización sobre el movimiento "
+"que se acaba de realizar, Y el estado actual."
+
+#: ../../source/live.rst:311
+msgid ""
+"The JavaScript code can be \"dumb\". It doesn't need to keep track of whose "
+"move it is; it just trusts the info it receives from the server. It can even"
+" redraw the board each time it receives a message."
+msgstr ""
+"El código de JavaScript puede ser \"tonto\". No necesita hacer un "
+"seguimiento de de quién es el turno; simplemente confía en la información "
+"que recibe del servidor. Incluso puede redibujar el tablero cada vez que "
+"recibe un mensaje."
+
+#: ../../source/live.rst:315
+msgid ""
+"Your code will also need to validate user input. For example, if player 1 "
+"tries to move when it is actually player 2's turn, you need to block that. "
+"For reasons listed in the previous section, it's better to do this in your "
+"live_method than in JavaScript code."
+msgstr ""
+"Tu código también necesitará validar la entrada del usuario. Por ejemplo, si"
+" el jugador 1 intenta moverse cuando en realidad es el turno del jugador 2, "
+"necesitas bloquear eso. Por las razones mencionadas en la sección anterior, "
+"es mejor hacerlo en tu live_method que en el código de JavaScript."
+
+#: ../../source/live.rst:320
+msgid "Summary"
+msgstr "Resumen"
+
+#: ../../source/live.rst:322
+msgid ""
+"As illustrated above, the typical pattern for a live_method is like this::"
+msgstr "Como se ilustra arriba, el patrón típico para un live_method es así::"
+
+#: ../../source/live.rst:336
+msgid ""
+"Note that we get the game's state twice. That's because the state changes "
+"when we update our models, so we need to refresh it."
+msgstr ""
+"Tenga en cuenta que obtenemos el estado del juego dos veces. Eso es porque "
+"el estado cambia cuando actualizamos nuestros modelos, por lo que "
+"necesitamos refrescarlo."
+
+#: ../../source/live.rst:340
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../source/live.rst:341
+msgid ""
+"If you call ``liveSend`` before the page has finished loading, you will get "
+"an error like ``liveSend is not defined``. So, wait for ``DOMContentLoaded``"
+" (or jQuery document.ready, etc):"
+msgstr ""
+"Si llamas a ``liveSend`` antes de que la página haya terminado de cargarse, "
+"obtendrás un error como ``liveSend is not defined``. Así que, espera a "
+"``DOMContentLoaded`` (o jQuery document.ready, etc.):"
+
+#: ../../source/live.rst:351
+msgid ""
+"Don't trigger ``liveSend`` when the user clicks the \"next\" button, since "
+"leaving the page might interrupt the ``liveSend``. Instead, have the user "
+"click a regular button that triggers a ``liveSend``, and then doing "
+"``document.getElementById(\"form\").submit();`` in your ``liveRecv``."
+msgstr ""
+"No dispares ``liveSend`` cuando el usuario haga clic en el botón "
+"\"siguiente\", ya que abandonar la página podría interrumpir el "
+"``liveSend``. En su lugar, haz que el usuario haga clic en un botón normal "
+"que dispare un ``liveSend``, y luego ejecuta "
+"``document.getElementById(\"form\").submit();`` en tu ``liveRecv``."

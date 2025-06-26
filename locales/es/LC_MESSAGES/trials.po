@@ -1,0 +1,1881 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/trials/input.rst:4
+msgid "Trials: Receiving user input"
+msgstr "Pruebas: Recibiendo entrada del usuario"
+
+#: ../../source/trials/input.rst:6
+msgid ""
+"To capture user input, use regular HTML input tags like ``<input>`` or "
+"``<button>``:"
+msgstr ""
+"Para capturar la entrada del usuario, utiliza etiquetas HTML regulares como "
+"``<input>`` o ``<button>``:"
+
+#: ../../source/trials/input.rst:14
+msgid "You can listen for changes to the input with :ref:`onInput`."
+msgstr "Puedes escuchar los cambios en la entrada con :ref:`onInput`."
+
+#: ../../source/trials/input.rst:17
+msgid "Input types"
+msgstr "Tipos de entrada"
+
+#: ../../source/trials/input.rst:20
+msgid "Text/number input"
+msgstr "Entrada de texto/número"
+
+#: ../../source/trials/input.rst:22
+msgid "Text input:"
+msgstr "Entrada de texto:"
+
+#: ../../source/trials/input.rst:28
+msgid "Number input:"
+msgstr "Entrada numérica:"
+
+#: ../../source/trials/input.rst:36
+msgid ""
+"In the current beta, ``onInput`` only runs when the user clicks away from "
+"the input. This behavior might change in an upcoming release."
+msgstr ""
+"En la beta actual, ``onInput`` solo se ejecuta cuando el usuario hace clic "
+"fuera de la entrada. Este comportamiento podría cambiar en una próxima "
+"versión."
+
+#: ../../source/trials/input.rst:43
+msgid ""
+"You can also use the `autofocus` attribute to immediately place the cursor "
+"on this field."
+msgstr ""
+"También puedes usar el atributo `autofocus` para colocar inmediatamente el "
+"cursor en este campo."
+
+#: ../../source/trials/input.rst:46
+msgid "Button"
+msgstr "Botón"
+
+#: ../../source/trials/input.rst:52
+msgid ""
+"You can also trigger the button on pressing Enter, by adding ``ot-key-"
+"input=\"Enter\"``."
+msgstr ""
+"También puedes activar el botón al presionar Enter, añadiendo ``ot-key-"
+"input=\"Enter\"``."
+
+#: ../../source/trials/input.rst:55
+msgid "Keyboard input"
+msgstr "Entrada de teclado"
+
+#: ../../source/trials/input.rst:57
+msgid ""
+"Many experiments require the user to rapidly react by pressing a key on "
+"their keyboard, e.g. ``f``/``j`` to indicate left/right."
+msgstr ""
+"Muchos experimentos requieren que el usuario reaccione rápidamente "
+"presionando una tecla en su teclado, por ejemplo, ``f``/``j`` para indicar "
+"izquierda/derecha."
+
+#: ../../source/trials/input.rst:60
+msgid "This can be implemented with ``ot-key-input``:"
+msgstr "Esto se puede implementar con ``ot-key-input``:"
+
+#: ../../source/trials/input.rst:71
+msgid ""
+"The ``ot-key-input`` value can be either a character or a standard name from"
+" the `keyboard code values <https://developer.mozilla.org/en-"
+"US/docs/Web/API/UI_Events/Keyboard_event_code_values>`__."
+msgstr ""
+"El valor de ``ot-key-input`` puede ser un carácter o un nombre estándar de "
+"los `valores de código de teclado <https://developer.mozilla.org/en-"
+"US/docs/Web/API/UI_Events/Keyboard_event_code_values>`__."
+
+#: ../../source/trials/input.rst:74
+msgid "Notes:"
+msgstr "Notas:"
+
+#: ../../source/trials/input.rst:76
+msgid ""
+"Keyboard input will not work if another window is currently focused. For "
+"example if you were just using your browser's developer tools pane, you "
+"might need to click on the page to move focus back onto the page."
+msgstr ""
+"La entrada del teclado no funcionará si otra ventana está actualmente "
+"enfocada. Por ejemplo, si acabas de usar el panel de herramientas de "
+"desarrollador de tu navegador, es posible que necesites hacer clic en la "
+"página para volver a enfocar en ella."
+
+#: ../../source/trials/input.rst:79
+msgid ""
+"There are 2 formats for ``ot-key-input``: you can either do ``ot-key-"
+"input=\"KeyA\"`` or ``ot-key-input=\"a\"``. The difference is how they work "
+"on non-English QWERTY keyboards, which have letters in different positions. "
+"For example, ``ot-key-input=\"KeyA\"`` refers to the key at the left end of "
+"middle row, even if that key represents a different character in the user's "
+"language. (This is desirable when the physical position of the key is more "
+"important than the letter it represents, such as pressing ``KeyF``/``KeyJ``,"
+" which are at the usual position of the user's index fingers). If you want "
+"to instruct users to press whichever key produces \"a\" on their own "
+"keyboard, instead use ``ot-key-input=\"a\"``"
+msgstr ""
+"Hay 2 formatos para ``ot-key-input``: puedes usar ``ot-key-input=\"KeyA\"`` "
+"o ``ot-key-input=\"a\"``. La diferencia radica en cómo funcionan en teclados"
+" QWERTY no ingleses, que tienen letras en diferentes posiciones. Por "
+"ejemplo, ``ot-key-input=\"KeyA\"`` se refiere a la tecla en el extremo "
+"izquierdo de la fila del medio, incluso si esa tecla representa un carácter "
+"diferente en el idioma del usuario. (Esto es deseable cuando la posición "
+"física de la tecla es más importante que la letra que representa, como "
+"presionar ``KeyF``/``KeyJ``, que están en la posición habitual de los dedos "
+"índice del usuario). Si deseas instruir a los usuarios a presionar la tecla "
+"que produce \"a\" en su propio teclado, utiliza en su lugar ``ot-key-"
+"input=\"a\"``."
+
+#: ../../source/trials/input.rst:92
+msgid "Radio buttons"
+msgstr "Botones de opción"
+
+#: ../../source/trials/input.rst:94 ../../source/trials/output.rst:117
+msgid "Example:"
+msgstr "Ejemplo:"
+
+#: ../../source/trials/input.rst:108
+msgid "Checkbox"
+msgstr "Casilla de verificación"
+
+#: ../../source/trials/input.rst:118
+msgid "Clickable images / text / etc."
+msgstr "Imágenes / texto / etc. clicables."
+
+#: ../../source/trials/input.rst:120
+msgid ""
+"You can make any element clickable by placing it inside a ``<button>``."
+msgstr ""
+"Puedes hacer que cualquier elemento sea clicable colocándolo dentro de un "
+"``<button>``."
+
+#: ../../source/trials/input.rst:122
+msgid ""
+"For example, if you want the user to choose an image by clicking on it, you "
+"can use this code:"
+msgstr ""
+"Por ejemplo, si deseas que el usuario elija una imagen al hacer clic en "
+"ella, puedes usar este código:"
+
+#: ../../source/trials/input.rst:131
+msgid ""
+"If you don't want the image to look like it's surrounded by a gray button, "
+"use CSS to style the button."
+msgstr ""
+"Si no quieres que la imagen parezca estar rodeada por un botón gris, utiliza"
+" CSS para estilizar el botón."
+
+#: ../../source/trials/input.rst:136
+msgid "Handling input"
+msgstr "Manejo de entrada"
+
+#: ../../source/trials/input.rst:141
+msgid "onInput()"
+msgstr "onInput()"
+
+#: ../../source/trials/input.rst:143
+msgid ""
+"Use ``onInput`` to trigger some action when a user's input is submitted."
+msgstr ""
+"Utiliza ``onInput`` para activar alguna acción cuando se envía la entrada de"
+" un usuario."
+
+#: ../../source/trials/input.rst:145 ../../source/trials/output.rst:179
+#: ../../source/trials/serverside.rst:97
+msgid "For example:"
+msgstr "Por ejemplo:"
+
+#: ../../source/trials/input.rst:159
+msgid ""
+"Most often, this will be to submit the user's response to the server. This "
+"is also where you can check if the user's response was correct (and set "
+"feedback), calculate their response time, etc."
+msgstr ""
+"Lo más común es que esto sea para enviar la respuesta del usuario al "
+"servidor. También es donde puedes verificar si la respuesta del usuario fue "
+"correcta (y establecer retroalimentación), calcular su tiempo de respuesta, "
+"etc."
+
+#: ../../source/trials/input.rst:164
+msgid "onCommitInput()"
+msgstr "onCommitInput()"
+
+#: ../../source/trials/input.rst:166
+msgid "Text boxes trigger ``onInput`` immediately on every keypress."
+msgstr ""
+"Las cajas de texto activan ``onInput`` inmediatamente en cada pulsación de "
+"tecla."
+
+#: ../../source/trials/input.rst:168
+msgid ""
+"You may prefer to wait until they finish their input, e.g. by clicking on "
+"another input. In this case, you can use ``onCommitInput``:"
+msgstr ""
+"Puede que prefiera esperar hasta que terminen su entrada, por ejemplo, "
+"haciendo clic en otro campo de entrada. En este caso, puede usar "
+"``onCommitInput``:"
+
+#: ../../source/trials/input.rst:184
+msgid "Multiple inputs"
+msgstr "Múltiples entradas"
+
+#: ../../source/trials/input.rst:186
+msgid ""
+"You may have multiple inputs, e.g. a text box and a submit button. You can "
+"use ``forminputs`` to access the value of another field. Note that "
+"``forminputs.foo.value``"
+msgstr ""
+"Puede tener múltiples entradas, por ejemplo, una caja de texto y un botón de"
+" envío. Puede usar ``forminputs`` para acceder al valor de otro campo. Tenga"
+" en cuenta que ``forminputs.foo.value``"
+
+#: ../../source/trials/input.rst:211
+msgid "Disabling inputs"
+msgstr "Deshabilitar entradas"
+
+#: ../../source/trials/input.rst:213
+msgid "To disable/enable inputs, do:"
+msgstr "Para deshabilitar/habilitar entradas, haz lo siguiente:"
+
+#: ../../source/trials/input.rst:223
+msgid "Inputs are automatically enabled/disabled as follows:"
+msgstr ""
+"Las entradas se habilitan/deshabilitan automáticamente de la siguiente "
+"manera:"
+
+#: ../../source/trials/input.rst:225
+msgid ""
+"When your code calls ``ot.submitTrialResponse()``, inputs are automatically "
+"disabled, to prevent duplicated input."
+msgstr ""
+"Cuando tu código llama a ``ot.submitTrialResponse()``, las entradas se "
+"deshabilitan automáticamente para evitar entradas duplicadas."
+
+#: ../../source/trials/input.rst:227
+msgid ""
+"On each trial start, inputs are automatically re-enabled (unless you set "
+"``ot.auto.enableInputsOnStartTrial = false``)"
+msgstr ""
+"Al inicio de cada prueba, las entradas se vuelven a habilitar "
+"automáticamente (a menos que configures ``ot.auto.enableInputsOnStartTrial ="
+" false``)"
+
+#: ../../source/trials/input.rst:228
+msgid ""
+"When the page loads, inputs are automatically disabled (you can override by "
+"using ``ot.enableInputs()`` inside ``onStartPage``)"
+msgstr ""
+"Cuando se carga la página, las entradas se deshabilitan automáticamente "
+"(puedes anular esto usando ``ot.enableInputs()`` dentro de ``onStartPage``)"
+
+#: ../../source/trials/input.rst:231
+msgid "Resetting inputs"
+msgstr "Restableciendo entradas"
+
+#: ../../source/trials/input.rst:233
+msgid ""
+"Use ``ot.resetInputs()`` to reset all inputs. This is automatically done "
+"when each trial starts (unless you set ``ot.auto.resetInputsOnStartTrial = "
+"false``)."
+msgstr ""
+"Utiliza ``ot.resetInputs()`` para restablecer todas las entradas. Esto se "
+"realiza automáticamente cuando comienza cada prueba (a menos que configures "
+"``ot.auto.resetInputsOnStartTrial = false``)."
+
+#: ../../source/trials/input.rst:237
+msgid "Form validation"
+msgstr "Validación de formularios"
+
+#: ../../source/trials/input.rst:239
+msgid ""
+"You can set validation attributes on your ``<input>`` elements like "
+"``required``, ``min``, ``max``, ``pattern``, ``step``, ``minlength``, "
+"``maxlength``, etc. For example:"
+msgstr ""
+"Puedes establecer atributos de validación en tus elementos ``<input>`` como "
+"``required``, ``min``, ``max``, ``pattern``, ``step``, ``minlength``, "
+"``maxlength``, etc. Por ejemplo:"
+
+#: ../../source/trials/input.rst:248
+msgid ""
+"Then trigger validation somewhere such as an ``onInput`` handler. The "
+"``return`` statement ensures that if the form is not valid, then you don't "
+"submit the trial."
+msgstr ""
+"Luego activa la validación en algún lugar, como un controlador ``onInput``. "
+"La declaración ``return`` asegura que si el formulario no es válido, "
+"entonces no envías la prueba."
+
+#: ../../source/trials/input.rst:259
+msgid ""
+"Another reason to run validation is to ensure fields contain valid values "
+"before you use them in calculations. In the below example, you can ensure "
+"that fields ``a`` and ``b`` both contain numbers and that ``b`` is not zero:"
+msgstr ""
+"Otra razón para ejecutar la validación es asegurarse de que los campos "
+"contengan valores válidos antes de usarlos en cálculos. En el ejemplo a "
+"continuación, puedes asegurarte de que los campos ``a`` y ``b`` contengan "
+"números y que ``b`` no sea cero:"
+
+#: ../../source/trials/input.rst:273
+msgid "Advanced form validation"
+msgstr "Validación de formularios avanzada"
+
+#: ../../source/trials/input.rst:275
+msgid ""
+"For finer control over form validation, you can directly call the browser's "
+"native validation functions as described `here "
+"<https://developer.mozilla.org/en-"
+"US/docs/Web/API/HTMLFormElement/reportValidity>`__. Here are some examples:"
+msgstr ""
+"Para un control más fino sobre la validación de formularios, puedes llamar "
+"directamente a las funciones de validación nativas del navegador como se "
+"describe `aquí <https://developer.mozilla.org/en-"
+"US/docs/Web/API/HTMLFormElement/reportValidity>`__. Aquí hay algunos "
+"ejemplos:"
+
+#: ../../source/trials/input.rst:290
+msgid ""
+"If the form is invalid, ``reportValidity()`` will display a message next to "
+"the input such as \"this field is required\". If you don't want to show the "
+"user these messages, replace ``reportValidity()`` with ``checkValidity()`` "
+"and handle displaying feedback yourself."
+msgstr ""
+"Si el formulario es inválido, ``reportValidity()`` mostrará un mensaje junto"
+" al campo de entrada como \"este campo es obligatorio\". Si no deseas "
+"mostrar estos mensajes al usuario, reemplaza ``reportValidity()`` con "
+"``checkValidity()`` y maneja la visualización de la retroalimentación tú "
+"mismo."
+
+#: ../../source/trials/input.rst:295
+msgid ""
+"If you just want to validate an individual field, use "
+"``forminputs.yourfield.reportValidity()``"
+msgstr ""
+"Si solo deseas validar un campo individual, utiliza "
+"``forminputs.yourfield.reportValidity()``"
+
+#: ../../source/trials/input.rst:298
+msgid "You can also display a custom validation message like this:"
+msgstr "También puedes mostrar un mensaje de validación personalizado así:"
+
+#: ../../source/trials/input.rst:305
+msgid "Feedback"
+msgstr "Retroalimentación"
+
+#: ../../source/trials/input.rst:307
+msgid "After each trial, you may want to display feedback to users."
+msgstr ""
+"Después de cada prueba, es posible que desees mostrar retroalimentación a "
+"los usuarios."
+
+#: ../../source/trials/input.rst:309
+msgid ""
+"Usually you calculate it in ``onInput`` or ``onTrialCompleted`` and store it"
+" into ``vars.feedback``."
+msgstr ""
+"Por lo general, lo calculas en ``onInput`` o ``onTrialCompleted`` y lo "
+"almacenas en ``vars.feedback``."
+
+#: ../../source/trials/input.rst:323
+msgid "Then have some code to display this feedback:"
+msgstr "Luego, ten algún código para mostrar esta retroalimentación:"
+
+#: ../../source/trials/input.rst:329
+msgid ""
+"``vars.feedback`` is automatically deleted when the next iteration begins."
+msgstr ""
+"``vars.feedback`` se elimina automáticamente cuando comienza la siguiente "
+"iteración."
+
+#: ../../source/trials/input.rst:331
+msgid ""
+"You can control the duration of feedback by setting "
+"``ot.auto.postSubmitDelay`` to the number of milliseconds."
+msgstr ""
+"Puedes controlar la duración de la retroalimentación configurando "
+"``ot.auto.postSubmitDelay`` al número de milisegundos."
+
+#: ../../source/trials/input.rst:335 ../../source/trials/main.rst:192
+msgid "Styling"
+msgstr "Estilo"
+
+#: ../../source/trials/input.rst:337
+msgid ""
+"Consult the Bootstrap documentation's "
+"`https://getbootstrap.com/docs/5.0/forms/overview/ <forms section>`__ for "
+"information on how to write the raw HTML to style your form inputs."
+msgstr ""
+"Consulta la documentación de Bootstrap en "
+"`https://getbootstrap.com/docs/5.0/forms/overview/ <sección de "
+"formularios>`__ para obtener información sobre cómo escribir el HTML en "
+"bruto para estilizar tus entradas de formulario."
+
+#: ../../source/trials/intro.rst:2
+msgid "Trials"
+msgstr "Pruebas"
+
+#: ../../source/trials/layout.rst:4
+msgid "Trials: Layout"
+msgstr "Pruebas: Diseño"
+
+#: ../../source/trials/layout.rst:6 ../../source/trials/main.rst:194
+msgid ""
+"Trial templates don't use the standard oTree visual layout. Rather, you "
+"define your layout from scratch."
+msgstr ""
+"Las plantillas de prueba no utilizan el diseño visual estándar de oTree. En "
+"su lugar, defines tu diseño desde cero."
+
+#: ../../source/trials/layout.rst:9
+msgid ""
+"Here is a suggested full-screen layout. This is based on CSS flexbox. You "
+"can find further information on how to customize it `here <https://css-"
+"tricks.com/snippets/css/a-guide-to-flexbox/>`__."
+msgstr ""
+"Aquí hay un diseño sugerido de pantalla completa. Esto se basa en CSS "
+"flexbox. Puedes encontrar más información sobre cómo personalizarlo `aquí "
+"<https://css-tricks.com/snippets/css/a-guide-to-flexbox/>`__."
+
+#: ../../source/trials/layout.rst:15
+msgid "Page layouts"
+msgstr "Diseños de página"
+
+#: ../../source/trials/layout.rst:18
+msgid "Minimal centered layout"
+msgstr "Diseño centrado mínimo"
+
+#: ../../source/trials/layout.rst:20
+msgid ""
+"If you only have 1 piece of content you want to put in the center of the "
+"screen, you can use the below layout."
+msgstr ""
+"Si solo tienes 1 pieza de contenido que deseas colocar en el centro de la "
+"pantalla, puedes usar el diseño de abajo."
+
+#: ../../source/trials/layout.rst:49
+msgid "Tiled layout"
+msgstr "Diseño en mosaico"
+
+#: ../../source/trials/layout.rst:51
+msgid ""
+"This layout lets you place main content in the center of the screen, and to "
+"put peripheral content at any of the 4 corners or 4 edges of the screen."
+msgstr ""
+"Este diseño te permite colocar el contenido principal en el centro de la "
+"pantalla y poner contenido periférico en cualquiera de las 4 esquinas o 4 "
+"bordes de la pantalla."
+
+#: ../../source/trials/layout.rst:54
+msgid ""
+"Just put your content in one of the ``<div>`` elements. ``h-stack`` and "
+"``v-stack`` elements can be nested."
+msgstr ""
+"Simplemente coloca tu contenido en uno de los elementos ``<div>``. Los "
+"elementos ``h-stack`` y ``v-stack`` pueden anidarse."
+
+#: ../../source/trials/layout.rst:111
+msgid "Avoiding re-layout"
+msgstr "Evitando el re-diseño"
+
+#: ../../source/trials/layout.rst:113
+msgid ""
+"When you show & hide elements, the browser may move your existing elements, "
+"which may look bad."
+msgstr ""
+"Cuando muestras y ocultas elementos, el navegador puede mover tus elementos "
+"existentes, lo que puede verse mal."
+
+#: ../../source/trials/layout.rst:116
+msgid ""
+"Let's say you have a text box in the middle of the screen. and you want to "
+"conditionally display an error message below the text box (if the input is "
+"invalid):"
+msgstr ""
+"Supongamos que tienes un cuadro de texto en el medio de la pantalla y "
+"quieres mostrar condicionalmente un mensaje de error debajo del cuadro de "
+"texto (si la entrada es inválida):"
+
+#: ../../source/trials/layout.rst:125
+msgid ""
+"The problem is that when the error gets shown, the text box will jump "
+"upward."
+msgstr ""
+"El problema es que cuando se muestra el error, el cuadro de texto saltará "
+"hacia arriba."
+
+#: ../../source/trials/layout.rst:128
+msgid "Solution 1"
+msgstr "Solución 1"
+
+#: ../../source/trials/layout.rst:130
+msgid ""
+"One way to avoid this is to set a fixed height on the dynamic element that "
+"is bigger than the max possible height of its contents, so that it doesn't "
+"need to expand:"
+msgstr ""
+"Una forma de evitar esto es establecer una altura fija en el elemento "
+"dinámico que sea mayor que la altura máxima posible de su contenido, para "
+"que no necesite expandirse:"
+
+#: ../../source/trials/layout.rst:140
+msgid "Solution 2"
+msgstr "Solución 2"
+
+#: ../../source/trials/layout.rst:142
+msgid ""
+"Another way is to duplicate the feedback ``<div>``. Show it both above and "
+"below the text box. That way, it will keep the elements balanced. Put "
+"``style=\"visibility: hidden\"`` on the top one. This means it won't "
+"actually be visible, but it will still take up space in the layout:"
+msgstr ""
+"Otra forma es duplicar el feedback ``<div>``. Muéstralo tanto arriba como "
+"abajo del cuadro de texto. De esa manera, mantendrá los elementos "
+"equilibrados. Pon ``style=\"visibility: hidden\"`` en el de arriba. Esto "
+"significa que no será visible, pero aún ocupará espacio en el diseño:"
+
+#: ../../source/trials/lifecycle.rst:4
+msgid "Trials: Lifecycle"
+msgstr "Ensayos: Ciclo de vida"
+
+#: ../../source/trials/lifecycle.rst:7
+msgid "Overview"
+msgstr "Resumen"
+
+#: ../../source/trials/lifecycle.rst:10
+msgid "Simple version"
+msgstr "Versión simple"
+
+#: ../../source/trials/lifecycle.rst:12 ../../source/trials/main.rst:162
+msgid "Here is a summary of how oTree automatically cycles through trials:"
+msgstr ""
+"Aquí hay un resumen de cómo oTree cicla automáticamente a través de los "
+"ensayos:"
+
+#: ../../source/trials/lifecycle.rst:14 ../../source/trials/main.rst:164
+msgid "Page is loaded."
+msgstr "La página se carga."
+
+#: ../../source/trials/lifecycle.rst:15 ../../source/trials/main.rst:165
+msgid "First trial is displayed."
+msgstr "Se muestra el primer ensayo."
+
+#: ../../source/trials/lifecycle.rst:16 ../../source/trials/main.rst:166
+msgid ""
+"Player submits their response. Once your code calls "
+"``submitTrialResponse()``, the data is sent to the server."
+msgstr ""
+"El jugador envía su respuesta. Una vez que tu código llama a "
+"``submitTrialResponse()``, los datos se envían al servidor."
+
+#: ../../source/trials/lifecycle.rst:19 ../../source/trials/main.rst:169
+msgid "Feedback is displayed to the participant"
+msgstr "Se muestra retroalimentación al participante."
+
+#: ../../source/trials/lifecycle.rst:20 ../../source/trials/main.rst:170
+msgid "The next trial is displayed, repeating steps 2-4."
+msgstr "La siguiente prueba se muestra, repitiendo los pasos 2-4."
+
+#: ../../source/trials/lifecycle.rst:21 ../../source/trials/main.rst:171
+msgid ""
+"Once all trials have been completed, the page is automatically submitted."
+msgstr ""
+"Una vez que se han completado todas las pruebas, la página se envía "
+"automáticamente."
+
+#: ../../source/trials/lifecycle.rst:24
+msgid "Detailed version"
+msgstr "Versión detallada"
+
+#: ../../source/trials/lifecycle.rst:26
+msgid ""
+"Here is a detailed version of the above list. It describes what oTree "
+"automatically does when a trial page is loaded:"
+msgstr ""
+"Aquí hay una versión detallada de la lista anterior. Describe lo que oTree "
+"hace automáticamente cuando se carga una página de prueba:"
+
+#: ../../source/trials/lifecycle.rst:29 ../../source/trials/lifecycle.rst:56
+msgid ""
+"Run your :ref:`trial_page_vars <trial_page_vars>` function, merge the return"
+" value into ``vars``."
+msgstr ""
+"Ejecuta tu función :ref:`trial_page_vars <trial_page_vars>`, fusiona el "
+"valor de retorno en ``vars``."
+
+#: ../../source/trials/lifecycle.rst:30 ../../source/trials/lifecycle.rst:43
+msgid "Disable inputs"
+msgstr "Deshabilitar entradas"
+
+#: ../../source/trials/lifecycle.rst:31
+msgid "Call your ``onStartPage`` function."
+msgstr "Llama a tu función ``onStartPage``."
+
+#: ../../source/trials/lifecycle.rst:32
+msgid "Repeat the following cycle until all trials are completed."
+msgstr "Repite el siguiente ciclo hasta que se completen todos los ensayos."
+
+#: ../../source/trials/lifecycle.rst:34
+msgid "Set ``vars.trial`` and ``vars.feedback`` to ``null``."
+msgstr "Establece ``vars.trial`` y ``vars.feedback`` a ``null``."
+
+#: ../../source/trials/lifecycle.rst:35
+msgid ""
+"Get the next available trial and save it to ``vars.trial`` (unless "
+"``ot.auto.startTurn = false``)."
+msgstr ""
+"Obtén el siguiente ensayo disponible y guárdalo en ``vars.trial`` (a menos "
+"que ``ot.auto.startTurn = false``)."
+
+#: ../../source/trials/lifecycle.rst:36
+msgid "Enable inputs (unless ``ot.auto.enableInputsOnStartTrial = false``)"
+msgstr ""
+"Habilitar entradas (a menos que ``ot.auto.enableInputsOnStartTrial = "
+"false``)"
+
+#: ../../source/trials/lifecycle.rst:37
+msgid "Call your ``onStartTrial`` function."
+msgstr "Llama a tu función ``onStartTrial``."
+
+#: ../../source/trials/lifecycle.rst:38
+msgid "Wait for your code to call ``ot.submitTrialResponse()``. Then:"
+msgstr "Espera a que tu código llame a ``ot.submitTrialResponse()``. Luego:"
+
+#: ../../source/trials/lifecycle.rst:40
+msgid "Send the participant's response to the server."
+msgstr "Envía la respuesta del participante al servidor."
+
+#: ../../source/trials/lifecycle.rst:41
+msgid ""
+"Cancel ongoing :ref:`timelines <moments>` (unless "
+"``ot.auto.cancelTimelinesOnSubmitTrialResponse = false``)"
+msgstr ""
+"Cancela las :ref:`líneas de tiempo <moments>` en curso (a menos que "
+"``ot.auto.cancelTimelinesOnSubmitTrialResponse = false``)"
+
+#: ../../source/trials/lifecycle.rst:45
+msgid "If using client-side evaluation (default):"
+msgstr "Si se utiliza la evaluación del lado del cliente (por defecto):"
+
+#: ../../source/trials/lifecycle.rst:47
+msgid ""
+"In the server database, save the data submitted by ``submitTrialResponse()``"
+" into the corresponding fields of the trial."
+msgstr ""
+"En la base de datos del servidor, guarda los datos enviados por "
+"``submitTrialResponse()`` en los campos correspondientes del ensayo."
+
+#: ../../source/trials/lifecycle.rst:49
+msgid "Mark the trial as completed by setting ``queue_position = None``."
+msgstr ""
+"Marca el ensayo como completado estableciendo ``queue_position = None``."
+
+#: ../../source/trials/lifecycle.rst:51
+msgid "If using :ref:`server-side evaluation <trials-sse>`:"
+msgstr "Si se utiliza :ref:`evaluación del lado del servidor <trials-sse>`:"
+
+#: ../../source/trials/lifecycle.rst:53
+msgid ""
+"Run your :ref:`evaluate_trial <trials-sse>` function (which is supposed to "
+"update the trial in the database manually) Save the return value into "
+"``vars.feedback``."
+msgstr ""
+"Ejecuta tu función :ref:`evaluate_trial <trials-sse>` (que se supone que "
+"actualiza el ensayo en la base de datos manualmente). Guarda el valor de "
+"retorno en ``vars.feedback``."
+
+#: ../../source/trials/lifecycle.rst:58
+msgid "Call your ``onCompleteTrial`` function."
+msgstr "Llama a tu función ``onCompleteTrial``."
+
+#: ../../source/trials/lifecycle.rst:59
+msgid ""
+"Pause the page for a duration of ``ot.auto.postSubmitDelay``, allowing "
+"feedback to be shown"
+msgstr ""
+"Pausa la página durante una duración de ``ot.auto.postSubmitDelay``, "
+"permitiendo que se muestre la retroalimentación."
+
+#: ../../source/trials/lifecycle.rst:60
+msgid "Reset inputs (unless ``ot.auto.resetInputsOnStartTrial = false``)."
+msgstr ""
+"Restablece las entradas (a menos que ``ot.auto.resetInputsOnStartTrial = "
+"false``)."
+
+#: ../../source/trials/lifecycle.rst:62
+msgid "Proceed to the next page"
+msgstr "Procede a la siguiente página."
+
+#: ../../source/trials/lifecycle.rst:65
+msgid "Starting the next trial"
+msgstr "Iniciando el siguiente ensayo."
+
+#: ../../source/trials/lifecycle.rst:67
+msgid ""
+"oTree automatically proceeds to the next trial when the page is first "
+"loaded, and then after each trial is completed."
+msgstr ""
+"oTree procede automáticamente al siguiente ensayo cuando la página se carga "
+"por primera vez, y luego después de que se complete cada ensayo."
+
+#: ../../source/trials/lifecycle.rst:70
+msgid ""
+"If you want to disable this behavior, set ``ot.auto.startTurn = false``."
+msgstr ""
+"Si deseas desactivar este comportamiento, establece ``ot.auto.startTurn = "
+"false``."
+
+#: ../../source/trials/lifecycle.rst:72
+msgid ""
+"For example, you may require the player to press a button before proceeding "
+"to the next trial."
+msgstr ""
+"Por ejemplo, puedes requerir que el jugador presione un botón antes de "
+"continuar al siguiente ensayo."
+
+#: ../../source/trials/lifecycle.rst:101
+msgid "Practice sections & multiple blocks"
+msgstr "Secciones de práctica y múltiples bloques"
+
+#: ../../source/trials/lifecycle.rst:103
+msgid ""
+"If your task has multiple blocks/phases with a break in between trials, such"
+" as a practice block followed by an experimental block (with some feedback "
+"being shown after the practice block), you should split them between "
+"multiple pages."
+msgstr ""
+"Si tu tarea tiene múltiples bloques/fases con un descanso entre ensayos, "
+"como un bloque de práctica seguido de un bloque experimental (con algunos "
+"comentarios mostrados después del bloque de práctica), debes dividirlos "
+"entre múltiples páginas."
+
+#: ../../source/trials/lifecycle.rst:108
+msgid ""
+"In the below example, the practice block is almost identical to the real "
+"block, so we set its ``template_name`` to use the same template, and set the"
+" ``trial_*`` attributes the same. You can use ``vars_for_template`` so that "
+"the template code can show slightly different content in practice mode."
+msgstr ""
+"En el siguiente ejemplo, el bloque de práctica es casi idéntico al bloque "
+"real, por lo que establecemos su ``template_name`` para usar la misma "
+"plantilla y configuramos los atributos ``trial_*`` de la misma manera. "
+"Puedes usar ``vars_for_template`` para que el código de la plantilla pueda "
+"mostrar contenido ligeramente diferente en modo de práctica."
+
+#: ../../source/trials/lifecycle.rst:114
+msgid ""
+"When you use ``Trial.create()``, you should set the built-in attribute "
+"``page_name`` to tell oTree on which page to display that trial."
+msgstr ""
+"Cuando usas ``Trial.create()``, debes establecer el atributo incorporado "
+"``page_name`` para indicar a oTree en qué página mostrar ese ensayo."
+
+#: ../../source/trials/lifecycle.rst:173
+msgid ""
+"If you have many blocks, consider setting ``C.NUM_ROUNDS`` to the number of "
+"blocks, so that you can have 1 trial page that loops repeatedly."
+msgstr ""
+"Si tienes muchos bloques, considera establecer ``C.NUM_ROUNDS`` al número de"
+" bloques, para que puedas tener 1 página de ensayo que se repita "
+"continuamente."
+
+#: ../../source/trials/lifecycle.rst:178
+msgid "Feedback & inter-trial interval"
+msgstr "Retroalimentación e intervalo inter-ensayo"
+
+#: ../../source/trials/lifecycle.rst:180
+msgid ""
+"To set the inter-trial interval, set ``ot.auto.interTrialInterval = 500;`` "
+"(for e.g. 500 msec)."
+msgstr ""
+"Para establecer el intervalo inter-ensayo, configura "
+"``ot.auto.interTrialInterval = 500;`` (por ejemplo, 500 msec)."
+
+#: ../../source/trials/lifecycle.rst:182
+msgid ""
+"If you set ``ot.auto.startTurn = false``, then you must manually write the "
+"code to trigger the next trial:"
+msgstr ""
+"Si estableces ``ot.auto.startTurn = false``, entonces debes escribir "
+"manualmente el código para activar el siguiente ensayo:"
+
+#: ../../source/trials/lifecycle.rst:192
+msgid "Handling page reloads"
+msgstr "Manejo de recargas de página"
+
+#: ../../source/trials/lifecycle.rst:194
+msgid ""
+"If the user reloads the page, the current trial will be re-displayed. This "
+"means a participant will see the same stimulus twice, which could be a "
+"problem for certain experiments, such as measuring reaction time."
+msgstr ""
+"Si el usuario recarga la página, el ensayo actual se volverá a mostrar. Esto"
+" significa que un participante verá el mismo estímulo dos veces, lo que "
+"podría ser un problema para ciertos experimentos, como medir el tiempo de "
+"reacción."
+
+#: ../../source/trials/lifecycle.rst:198
+msgid ""
+"A simple workaround to this problem is to tell users that reloading the page"
+" is forbidden, and record how many times the page was loaded, by defining a "
+"Player field like ``num_page_loads`` and incrementing it in "
+"``vars_for_template``. If ``num_page_loads`` is greater than 1, you can "
+"exclude them from the study, send them to the next round, etc."
+msgstr ""
+"Una solución simple a este problema es informar a los usuarios que recargar "
+"la página está prohibido y registrar cuántas veces se cargó la página, "
+"definiendo un campo de Player como ``num_page_loads`` y aumentándolo en "
+"``vars_for_template``. Si ``num_page_loads`` es mayor que 1, puedes "
+"excluirlos del estudio, enviarlos a la siguiente ronda, etc."
+
+#: ../../source/trials/lifecycle.rst:203
+msgid ""
+"Another possibility is to automatically skip to the next trial if the player"
+" reloads the page. This can be done in ``vars_for_template`` by querying the"
+" Trial with the lowest ``queue_position`` and taking it out of the queue by "
+"setting ``queue_position = None``. See :ref:`server-side evalution <trials-"
+"sse>` for more details on managing the queue."
+msgstr ""
+"Otra posibilidad es saltar automáticamente al siguiente ensayo si el jugador"
+" recarga la página. Esto se puede hacer en ``vars_for_template`` consultando"
+" el ensayo con la ``queue_position`` más baja y sacándolo de la cola "
+"estableciendo ``queue_position = None``. Consulta :ref:`evaluación del lado "
+"del servidor <trials-sse>` para más detalles sobre la gestión de la cola."
+
+#: ../../source/trials/main.rst:4
+msgid "Trials: General information"
+msgstr "Ensayos: Información general"
+
+#: ../../source/trials/main.rst:8
+msgid ""
+"This feature is new in oTree 6. Trials are not yet supported in oTree "
+"Studio."
+msgstr ""
+"Esta función es nueva en oTree 6. Los ensayos aún no son compatibles con "
+"oTree Studio."
+
+#: ../../source/trials/main.rst:11
+msgid ""
+"The Trials feature is designed for experiments with repeated "
+"stimulus/response, such as:"
+msgstr ""
+"La función de ensayos está diseñada para experimentos con "
+"estímulos/respuestas repetidos, tales como:"
+
+#: ../../source/trials/main.rst:13
+msgid "Psychology experiments (Stroop, IAT, priming, etc)"
+msgstr "Experimentos de psicología (Stroop, IAT, priming, etc.)"
+
+#: ../../source/trials/main.rst:14
+msgid "Data entry, image labeling, content reviewing, etc."
+msgstr "Entrada de datos, etiquetado de imágenes, revisión de contenido, etc."
+
+#: ../../source/trials/main.rst:16
+msgid ""
+"You show the user a sequence of stimuli (text, images, etc.), and for each "
+"stimulus to prompt some response from the user (e.g. click a button, select "
+"an image, type some text). The task may be timing sensitive, e.g. measuring "
+"the user's reaction time, or showing stimuli at specific timing intervals."
+msgstr ""
+"Muestras al usuario una secuencia de estímulos (texto, imágenes, etc.), y "
+"para cada estímulo se solicita alguna respuesta del usuario (por ejemplo, "
+"hacer clic en un botón, seleccionar una imagen, escribir algún texto). La "
+"tarea puede ser sensible al tiempo, por ejemplo, midiendo el tiempo de "
+"reacción del usuario, o mostrando estímulos en intervalos de tiempo "
+"específicos."
+
+#: ../../source/trials/main.rst:21
+msgid "Getting started"
+msgstr "Introducción"
+
+#: ../../source/trials/main.rst:23
+msgid "Create a Trials app with::"
+msgstr "Crea una aplicación Trials con::"
+
+#: ../../source/trials/main.rst:28
+msgid ""
+"Trial apps are implemented with HTML and JavaScript code. In the templates, "
+"you will see the prefix ``ot``, which stands for \"oTree Trials\"."
+msgstr ""
+"Las aplicaciones Trial se implementan con código HTML y JavaScript. En las "
+"plantillas, verás el prefijo ``ot``, que significa \"oTree Trials\"."
+
+#: ../../source/trials/main.rst:31
+msgid ""
+"This is different from oTree's regular template system, which uses ``{{ "
+"}}``, for example:"
+msgstr ""
+"Esto es diferente del sistema de plantillas regular de oTree, que utiliza "
+"``{{ }}``, por ejemplo:"
+
+#: ../../source/trials/main.rst:37
+msgid "oTree template syntax"
+msgstr "sintaxis de plantillas de oTree"
+
+#: ../../source/trials/main.rst:38
+msgid "oTree Trials syntax"
+msgstr "sintaxis de oTree Trials"
+
+#: ../../source/trials/main.rst:39
+msgid "``<p>{{ question }}</p>``"
+msgstr "<p>{{ question }}</p>"
+
+#: ../../source/trials/main.rst:40
+msgid "``<p ot-text=\"vars.question\"></p>``"
+msgstr "<p ot-text=\"vars.question\"></p>"
+
+#: ../../source/trials/main.rst:42
+msgid ""
+"The difference is that oTree Trials variables are more **dynamic**; they can"
+" change as the user interacts with the page."
+msgstr ""
+"La diferencia es que las variables de oTree Trials son más **dinámicas**; "
+"pueden cambiar a medida que el usuario interactúa con la página."
+
+#: ../../source/trials/main.rst:45
+msgid ""
+"oTree template variables and are calculated only once when the page is "
+"loaded, in ``vars_for_template``, and are static after that."
+msgstr ""
+"Las variables de plantilla de oTree se calculan solo una vez cuando se carga"
+" la página, en ``vars_for_template``, y son estáticas después de eso."
+
+#: ../../source/trials/main.rst:48
+msgid ""
+"oTree Trials variables are defined in the JavaScript ``vars`` variable, and "
+"can be updated continuously."
+msgstr ""
+"Las variables de Trials de oTree se definen en la variable JavaScript "
+"``vars`` y pueden actualizarse continuamente."
+
+#: ../../source/trials/main.rst:52
+msgid "About JavaScript"
+msgstr "Acerca de JavaScript"
+
+#: ../../source/trials/main.rst:54
+msgid ""
+"oTree trials require you to write some JavaScript code in your templates. "
+"JavaScript code is placed inside a ``<script>`` tag."
+msgstr ""
+"Los ensayos de oTree requieren que escribas algo de código JavaScript en tus"
+" plantillas. El código JavaScript se coloca dentro de una etiqueta "
+"``<script>``."
+
+#: ../../source/trials/main.rst:57
+msgid ""
+"While developing, you should keep your browser's JavaScript console open. In"
+" most browsers you can open the developer console by pressing ``F12`` or "
+"``Fn+F12``. This is where most errors will be reported, and where you can "
+"see the output of your ``console.log()`` statements (which are the "
+"equivalent of Python's ``print()`` statements)."
+msgstr ""
+"Mientras desarrollas, debes mantener abierta la consola de JavaScript de tu "
+"navegador. En la mayoría de los navegadores, puedes abrir la consola de "
+"desarrollador presionando ``F12`` o ``Fn+F12``. Aquí es donde se informarán "
+"la mayoría de los errores y donde podrás ver la salida de tus declaraciones "
+"``console.log()`` (que son el equivalente de las declaraciones ``print()`` "
+"de Python)."
+
+#: ../../source/trials/main.rst:64
+msgid "Basic example"
+msgstr "Ejemplo básico"
+
+#: ../../source/trials/main.rst:66
+msgid ""
+"Let's say you want to show the user a sequence of 20 random numbers, then "
+"for each number ask them whether the number is even or odd."
+msgstr ""
+"Supongamos que quieres mostrar al usuario una secuencia de 20 números "
+"aleatorios, y luego para cada número preguntarles si el número es par o "
+"impar."
+
+#: ../../source/trials/main.rst:69
+msgid "In your Python code, define a Trial:"
+msgstr "En tu código Python, define un Trial:"
+
+#: ../../source/trials/main.rst:78
+msgid "In ``creating_session``, create instances of this model:"
+msgstr "En ``creating_session``, crea instancias de este modelo:"
+
+#: ../../source/trials/main.rst:89
+msgid "Then define a page with these 3 attributes:"
+msgstr "Luego define una página con estos 3 atributos:"
+
+#: ../../source/trials/main.rst:98
+msgid ""
+"oTree will now automatically define a variable ``vars.trial`` in your "
+"JavaScript code with the current trial's stimulus data. For example it might"
+" contain ``{'number': 12}``."
+msgstr ""
+"oTree ahora definirá automáticamente una variable ``vars.trial`` en tu "
+"código JavaScript con los datos del estímulo del ensayo actual. Por ejemplo,"
+" podría contener ``{'number': 12}``."
+
+#: ../../source/trials/main.rst:101
+msgid ""
+"In your template, display the stimulus to the user, and 2 buttons for the "
+"user's response:"
+msgstr ""
+"En tu plantilla, muestra el estímulo al usuario y 2 botones para la "
+"respuesta del usuario:"
+
+#: ../../source/trials/main.rst:112
+msgid "Also in your template, there should be the following JavaScript code:"
+msgstr ""
+"También en tu plantilla, debería haber el siguiente código JavaScript:"
+
+#: ../../source/trials/main.rst:120
+msgid "Add the following code inside this class:"
+msgstr "Agrega el siguiente código dentro de esta clase:"
+
+#: ../../source/trials/main.rst:128
+msgid ""
+"This means that whenever the ``response`` button is clicked, we send the "
+"user's response to the server and save it into the trial model. oTree "
+"automatically handles proceeding to the next trial."
+msgstr ""
+"Esto significa que cada vez que se haga clic en el botón ``response``, "
+"enviamos la respuesta del usuario al servidor y la guardamos en el modelo "
+"del ensayo. oTree maneja automáticamente el paso al siguiente ensayo."
+
+#: ../../source/trials/main.rst:132
+msgid "Display"
+msgstr "Mostrar"
+
+#: ../../source/trials/main.rst:134
+msgid "See :ref:`trials-display` for details on how to:"
+msgstr "Consulta :ref:`trials-display` para detalles sobre cómo:"
+
+#: ../../source/trials/main.rst:136
+msgid "Display stimulus data"
+msgstr "Mostrar datos del estímulo"
+
+#: ../../source/trials/main.rst:137
+msgid "Show/hide content"
+msgstr "Mostrar/ocultar contenido"
+
+#: ../../source/trials/main.rst:138
+msgid "Provide updates to the user"
+msgstr "Proporcionar actualizaciones al usuario"
+
+#: ../../source/trials/main.rst:139
+msgid "Display images"
+msgstr "Mostrar imágenes"
+
+#: ../../source/trials/main.rst:142
+msgid "Inputs"
+msgstr "Entradas"
+
+#: ../../source/trials/main.rst:144
+msgid "See :ref:`trial-input` for details on how to:"
+msgstr "Vea :ref:`trial-input` para más detalles sobre cómo:"
+
+#: ../../source/trials/main.rst:146
+msgid "Create various input types (buttons, keyboard, text, radio)"
+msgstr "Crear varios tipos de entrada (botones, teclado, texto, radio)"
+
+#: ../../source/trials/main.rst:147
+msgid "Validate user input"
+msgstr "Validar la entrada del usuario"
+
+#: ../../source/trials/main.rst:148
+msgid "Display feedback"
+msgstr "Mostrar retroalimentación"
+
+#: ../../source/trials/main.rst:149
+msgid "Disable/enable inputs"
+msgstr "Deshabilitar/habilitar entradas"
+
+#: ../../source/trials/main.rst:152
+msgid "Timing"
+msgstr "Temporización"
+
+#: ../../source/trials/main.rst:154
+msgid ""
+"See :ref:`trials-timing` for details on timing-related functionality, such "
+"as:"
+msgstr ""
+"Vea :ref:`trials-timing` para obtener detalles sobre la funcionalidad "
+"relacionada con la temporización, como:"
+
+#: ../../source/trials/main.rst:156
+msgid ""
+"Defining timing intervals a trial (stimulus for X milliseconds, response for"
+" Y milliseconds, etc..)"
+msgstr ""
+"Definir intervalos de temporización en un ensayo (estímulo durante X "
+"milisegundos, respuesta durante Y milisegundos, etc.)"
+
+#: ../../source/trials/main.rst:157
+msgid "Measuring the user's reaction time"
+msgstr "Medición del tiempo de reacción del usuario"
+
+#: ../../source/trials/main.rst:160
+msgid "Lifecycle"
+msgstr "Ciclo de vida"
+
+#: ../../source/trials/main.rst:173
+msgid "For more details, see :ref:`trials-lifecycle`."
+msgstr "Para más detalles, consulta :ref:`trials-lifecycle`."
+
+#: ../../source/trials/main.rst:177
+msgid "Server-side evaluation"
+msgstr "Evaluación del lado del servidor"
+
+#: ../../source/trials/main.rst:179
+msgid ""
+"If you use server-side evaluation, the server evaluates & approves each "
+"trial submission and decides what trial to show next. This is more secure "
+"and enables flexible and dynamic designs."
+msgstr ""
+"Si utilizas la evaluación del lado del servidor, el servidor evalúa y "
+"aprueba cada envío de prueba y decide qué prueba mostrar a continuación. "
+"Esto es más seguro y permite diseños flexibles y dinámicos."
+
+#: ../../source/trials/main.rst:183
+msgid "See :ref:`trials-sse`."
+msgstr "Consulta :ref:`trials-sse`."
+
+#: ../../source/trials/main.rst:186
+msgid "Reading CSV/Excel files"
+msgstr "Lectura de archivos CSV/Excel"
+
+#: ../../source/trials/main.rst:188
+msgid "See :ref:`read_csv`."
+msgstr "Consulta :ref:`read_csv`."
+
+#: ../../source/trials/main.rst:197
+msgid "See :ref:`trials-layout`."
+msgstr "Consulta :ref:`trials-layout`."
+
+#: ../../source/trials/main.rst:200
+msgid "JavaScript code structure"
+msgstr "Estructura del código JavaScript"
+
+#: ../../source/trials/main.rst:202
+msgid ""
+"All your handlers (``onInput``, ``onStartPage``, etc) should go inside the "
+"class ``Cycle``. Each handler can only be defined once. You are free to "
+"define your own functions and global variables outside this class."
+msgstr ""
+"Todos tus manejadores (``onInput``, ``onStartPage``, etc.) deben ir dentro "
+"de la clase ``Cycle``. Cada manejador solo puede definirse una vez. Eres "
+"libre de definir tus propias funciones y variables globales fuera de esta "
+"clase."
+
+#: ../../source/trials/output.rst:4
+msgid "Trials: Displaying content"
+msgstr "Pruebas: Mostrando contenido"
+
+#: ../../source/trials/output.rst:7
+msgid "Showing & hiding content"
+msgstr "Mostrando y ocultando contenido"
+
+#: ../../source/trials/output.rst:9
+msgid "To show/hide an element, first give it an ``id``:"
+msgstr "Para mostrar/ocultar un elemento, primero asígnale un ``id``:"
+
+#: ../../source/trials/output.rst:15
+msgid "Then to show/hide this element, use:"
+msgstr "Luego, para mostrar/ocultar este elemento, usa:"
+
+#: ../../source/trials/output.rst:22
+msgid ""
+"If you want an element to initially be hidden, add the ``hidden`` attribute:"
+msgstr ""
+"Si deseas que un elemento esté oculto inicialmente, añade el atributo "
+"``hidden``:"
+
+#: ../../source/trials/output.rst:29
+msgid ""
+"You can hide multiple elements at once using a wildcard. For example, if you"
+" have ``id=\"feedbackCorrect\"`` and ``id=\"feedbackIncorrect\"``, you can "
+"hide them both with:"
+msgstr ""
+"Puedes ocultar múltiples elementos a la vez usando un comodín. Por ejemplo, "
+"si tienes ``id=\"feedbackCorrect\"`` y ``id=\"feedbackIncorrect\"``, puedes "
+"ocultarlos ambos con:"
+
+#: ../../source/trials/output.rst:37
+msgid ""
+"Note: In order for an element to be visible, all its ancestors must be "
+"visible. In the below example, element ``b`` will be hidden even if you set "
+"``vis.b = true``."
+msgstr ""
+"Nota: Para que un elemento sea visible, todos sus ancestros deben ser "
+"visibles. En el ejemplo a continuación, el elemento ``b`` estará oculto "
+"incluso si estableces ``vis.b = true``."
+
+#: ../../source/trials/output.rst:49
+msgid "vars"
+msgstr "vars"
+
+#: ../../source/trials/output.rst:51
+msgid ""
+"``vars`` is a JavaScript global variable. It's the oTree Trials equivalent "
+"of ``vars_for_template``."
+msgstr ""
+"``vars`` es una variable global de JavaScript. Es el equivalente de oTree "
+"Trials de ``vars_for_template``."
+
+#: ../../source/trials/output.rst:54
+msgid ""
+"For example, if you do ``vars.numPoints = 10``, then you can display this "
+"with:"
+msgstr ""
+"Por ejemplo, si haces ``vars.numPoints = 10``, entonces puedes mostrar esto "
+"con:"
+
+#: ../../source/trials/output.rst:64
+msgid "``vars`` contains the following built-in attributes:"
+msgstr "``vars`` contiene los siguientes atributos incorporados:"
+
+#: ../../source/trials/output.rst:66
+msgid "``vars.trial``: the current trial object."
+msgstr "``vars.trial``: el objeto de prueba actual."
+
+#: ../../source/trials/output.rst:67
+msgid "``vars.numTrials``: the total number of trials"
+msgstr "``vars.numTrials``: el número total de pruebas"
+
+#: ../../source/trials/output.rst:68
+msgid "``vars.numTrialsCompleted``: the number of trials completed so far"
+msgstr ""
+"``vars.numTrialsCompleted``: el número de pruebas completadas hasta ahora"
+
+#: ../../source/trials/output.rst:69
+msgid "``vars.numTrialsRemaining``: the number of trials remaining"
+msgstr "``vars.numTrialsRemaining``: el número de ensayos restantes"
+
+#: ../../source/trials/output.rst:70
+msgid "``vars.feedback`` (only when using :ref:`trials-sse`)."
+msgstr "``vars.feedback`` (solo al usar :ref:`trials-sse`)."
+
+#: ../../source/trials/output.rst:72
+msgid "All custom vars must be first defined in  ``onStartPage``:"
+msgstr ""
+"Todas las vars personalizadas deben definirse primero en ``onStartPage``:"
+
+#: ../../source/trials/output.rst:85
+msgid ""
+"It's only necessary to use ``vars`` if your variable needs to be accessed "
+"from ``ot-*`` attributes in your HTML code. Otherwise, you are free to "
+"define your own global variables."
+msgstr ""
+"Solo es necesario usar ``vars`` si tu variable necesita ser accedida desde "
+"los atributos ``ot-*`` en tu código HTML. De lo contrario, eres libre de "
+"definir tus propias variables globales."
+
+#: ../../source/trials/output.rst:89
+msgid "ot-* attributes"
+msgstr "atributos ot-*"
+
+#: ../../source/trials/output.rst:92
+msgid "ot-text"
+msgstr "ot-text"
+
+#: ../../source/trials/output.rst:94
+msgid "Set the text of an element dynamically."
+msgstr "Establece el texto de un elemento dinámicamente."
+
+#: ../../source/trials/output.rst:96 ../../source/trials/output.rst:137
+#: ../../source/trials/output.rst:155
+msgid "Example code:"
+msgstr "Código de ejemplo:"
+
+#: ../../source/trials/output.rst:102
+msgid ""
+"You can use ``ot-text`` on various elements such as ``<p>``, ``<div>``, "
+"``<h1>``, ``<b>``, etc. If you just want to make part of a sentence dynamic,"
+" you can use a ``<span>``. For example:"
+msgstr ""
+"Puedes usar ``ot-text`` en varios elementos como ``<p>``, ``<div>``, "
+"``<h1>``, ``<b>``, etc. Si solo deseas hacer parte de una oración dinámica, "
+"puedes usar un ``<span>``. Por ejemplo:"
+
+#: ../../source/trials/output.rst:113
+msgid "ot-html"
+msgstr "ot-html"
+
+#: ../../source/trials/output.rst:115
+msgid ""
+"Sets the inner HTML of an element (like ``ot-text``, but supports values "
+"with HTML tags)."
+msgstr ""
+"Establece el HTML interno de un elemento (como ``ot-text``, pero admite "
+"valores con etiquetas HTML)."
+
+#: ../../source/trials/output.rst:132
+msgid "ot-class"
+msgstr "ot-class"
+
+#: ../../source/trials/output.rst:134
+msgid ""
+"Purpose: Dynamically add/remove a class to an element. This is useful for "
+"CSS styling."
+msgstr ""
+"Propósito: Agregar/quitar dinámicamente una clase a un elemento. Esto es "
+"útil para el estilo CSS."
+
+#: ../../source/trials/output.rst:147 ../../source/trials/output.rst:161
+msgid "Example output:"
+msgstr "Ejemplo de salida:"
+
+#: ../../source/trials/output.rst:153
+msgid "``ot-class`` can be combined with a hardcoded ``class=`` attribute."
+msgstr ""
+"``ot-class`` se puede combinar con un atributo ``class=`` codificado de "
+"forma estática."
+
+#: ../../source/trials/output.rst:168
+msgid "Misc attributes"
+msgstr "Atributos misceláneos"
+
+#: ../../source/trials/output.rst:170
+msgid "You can dynamically set various HTML element attributes:"
+msgstr "Puedes establecer dinámicamente varios atributos de elementos HTML:"
+
+#: ../../source/trials/output.rst:172
+msgid "``ot-value``"
+msgstr "`ot-value`"
+
+#: ../../source/trials/output.rst:173
+msgid "``ot-src``"
+msgstr "`ot-src`"
+
+#: ../../source/trials/output.rst:174
+msgid "``ot-min``"
+msgstr "`ot-min`"
+
+#: ../../source/trials/output.rst:175
+msgid "``ot-max``"
+msgstr "`ot-max`"
+
+#: ../../source/trials/output.rst:176
+msgid "``ot-width``"
+msgstr "`ot-width`"
+
+#: ../../source/trials/output.rst:177
+msgid "``ot-height``"
+msgstr "`ot-height`"
+
+#: ../../source/trials/output.rst:185
+msgid "Outputs something like this:"
+msgstr "Produce algo como esto:"
+
+#: ../../source/trials/output.rst:192
+msgid "Handlers"
+msgstr "Manejadores"
+
+#: ../../source/trials/output.rst:194
+msgid ""
+"The following handlers are often used when controlling how elements are "
+"displayed."
+msgstr ""
+"Los siguientes controladores se utilizan a menudo para controlar cómo se "
+"muestran los elementos."
+
+#: ../../source/trials/output.rst:197
+msgid "onUpdate"
+msgstr "onUpdate"
+
+#: ../../source/trials/output.rst:199
+msgid ""
+"This handler gets called whenever the specified variable is changed "
+"somewhere."
+msgstr ""
+"Este controlador se llama cada vez que se cambia la variable especificada en"
+" algún lugar."
+
+#: ../../source/trials/output.rst:201
+msgid ""
+"For example, let's say you want to change an element from green to red, "
+"depending on whether the user's answer was correct (boolean):"
+msgstr ""
+"Por ejemplo, supongamos que deseas cambiar un elemento de verde a rojo, "
+"dependiendo de si la respuesta del usuario fue correcta (booleano):"
+
+#: ../../source/trials/output.rst:212
+msgid ""
+"Then in the HTML you can have ``<div ot-"
+"class=\"vars.feedback_style\">...</div>``."
+msgstr ""
+"Entonces en el HTML puedes tener ``<div ot-"
+"class=\"vars.feedback_style\">...</div>``."
+
+#: ../../source/trials/output.rst:215
+msgid "onDelete"
+msgstr "onDelete"
+
+#: ../../source/trials/output.rst:217
+msgid ""
+"``onDelete`` gets called if a variable is set to ``null`` / ``NaN``. For "
+"example, if you do ``vars.feedback = null``, then this handler would be "
+"called:"
+msgstr ""
+"``onDelete`` se llama si una variable se establece en ``null`` / ``NaN``. "
+"Por ejemplo, si haces ``vars.feedback = null``, entonces este manejador "
+"sería llamado:"
+
+#: ../../source/trials/output.rst:229
+msgid "Image/audio/video stimuli"
+msgstr "Estímulos de imagen/audio/video"
+
+#: ../../source/trials/output.rst:231
+msgid ""
+"Images and other media stimuli should be stored in your ``_static`` folder, "
+"e.g. in ``_static/your_app``. See :ref:`staticfiles` for info on how to "
+"store images."
+msgstr ""
+"Las imágenes y otros estímulos multimedia deben almacenarse en tu carpeta "
+"``_static``, por ejemplo, en ``_static/tu_app``. Consulta :ref:`staticfiles`"
+" para obtener información sobre cómo almacenar imágenes."
+
+#: ../../source/trials/output.rst:235
+msgid ""
+"To display an image during each trial, create a ``StringField`` on your "
+"Trial model:"
+msgstr ""
+"Para mostrar una imagen durante cada prueba, crea un ``StringField`` en tu "
+"modelo Trial:"
+
+#: ../../source/trials/output.rst:243
+msgid ""
+"Use the ``url_of_static_file()`` function. It works the same way as the ``{{"
+" static }}`` tag in templates, e.g. "
+"``url_of_static_file('your_app/1.png')``."
+msgstr ""
+"Utiliza la función ``url_of_static_file()``. Funciona de la misma manera que"
+" la etiqueta ``{{ static }}`` en las plantillas, por ejemplo, "
+"``url_of_static_file('your_app/1.png')``."
+
+#: ../../source/trials/output.rst:247
+msgid "If you have a list of image names, you can load them like this:"
+msgstr "Si tienes una lista de nombres de imágenes, puedes cargarlas así:"
+
+#: ../../source/trials/output.rst:260
+msgid "If you want to scan a folder for images and load all of them, do this:"
+msgstr ""
+"Si deseas escanear una carpeta en busca de imágenes y cargar todas ellas, "
+"haz esto:"
+
+#: ../../source/trials/output.rst:273
+msgid ""
+"Put ``image_url`` in your ``trial_stimulus_fields``, then in your template, "
+"do ``<img ot-src=\"vars.trial.image_url\">``."
+msgstr ""
+"Coloca ``image_url`` en tus ``trial_stimulus_fields``, luego en tu "
+"plantilla, haz ``<img ot-src=\"vars.trial.image_url\">``."
+
+#: ../../source/trials/output.rst:277
+msgid "Pre-loading images"
+msgstr "Carga previa de imágenes"
+
+#: ../../source/trials/output.rst:279
+msgid ""
+"If your experiment is timing-sensitive, it's good to pre-load images, to "
+"ensure that when each trial begins, its image can be displayed immediately. "
+"If your image field is called ``image_url``, set "
+"``ot.auto.preloadImageUrlFields = ['image_url'];`` This will load all images"
+" when the page is loaded."
+msgstr ""
+"Si tu experimento es sensible al tiempo, es bueno pre-cargar imágenes, para "
+"asegurar que cuando cada prueba comience, su imagen pueda mostrarse "
+"inmediatamente. Si tu campo de imagen se llama ``image_url``, establece "
+"``ot.auto.preloadImageUrlFields = ['image_url'];`` Esto cargará todas las "
+"imágenes cuando se cargue la página."
+
+#: ../../source/trials/output.rst:286
+msgid ""
+"If you are using :ref:`server-side evaluation <trials-sse>`, each trial's "
+"image will be loaded when the feedback message is received from the server, "
+"before the trial starts."
+msgstr ""
+"Si estás utilizando :ref:`evaluación del lado del servidor <trials-sse>`, la"
+" imagen de cada prueba se cargará cuando se reciba el mensaje de "
+"retroalimentación del servidor, antes de que comience la prueba."
+
+#: ../../source/trials/serverside.rst:4
+msgid "Trials: Server-side evaluation"
+msgstr "Pruebas: Evaluación del lado del servidor"
+
+#: ../../source/trials/serverside.rst:6
+msgid "Server-side evaluation is an optional Trials feature."
+msgstr ""
+"La evaluación del lado del servidor es una característica opcional de las "
+"Pruebas."
+
+#: ../../source/trials/serverside.rst:8
+msgid ""
+"With server-side evaluation, each response is sent to the server for "
+"evaluation, before deciding what to do next."
+msgstr ""
+"Con la evaluación del lado del servidor, cada respuesta se envía al servidor"
+" para su evaluación, antes de decidir qué hacer a continuación."
+
+#: ../../source/trials/serverside.rst:11
+msgid "Advantages:"
+msgstr "Ventajas:"
+
+#: ../../source/trials/serverside.rst:13
+msgid ""
+"Better safeguarding of sensitive data (such as the correct answers to test "
+"questions)"
+msgstr ""
+"Mejor protección de datos sensibles (como las respuestas correctas a las "
+"preguntas del test)"
+
+#: ../../source/trials/serverside.rst:14
+msgid ""
+"You can make tasks where trials don't proceed linearly, but rather get "
+"dynamically skipped, reordered, or repeated (e.g. retries until you get the "
+"correct answer)."
+msgstr ""
+"Puedes crear tareas donde los ensayos no proceden de manera lineal, sino que"
+" se omiten, reordenan o repiten dinámicamente (por ejemplo, reintentos hasta"
+" obtener la respuesta correcta)."
+
+#: ../../source/trials/serverside.rst:16
+msgid ""
+"You can generate new trials on the fly, allowing you to implement infinitely"
+" repeating tasks."
+msgstr ""
+"Puedes generar nuevos ensayos sobre la marcha, lo que te permite implementar"
+" tareas que se repiten infinitamente."
+
+#: ../../source/trials/serverside.rst:18
+msgid "Disadvantages:"
+msgstr "Desventajas:"
+
+#: ../../source/trials/serverside.rst:20
+msgid ""
+"Communicating with the server adds a small delay between trials (in "
+"milliseconds)"
+msgstr ""
+"La comunicación con el servidor añade un pequeño retraso entre ensayos (en "
+"milisegundos)"
+
+#: ../../source/trials/serverside.rst:21
+msgid "The code is a bit more complex."
+msgstr "El código es un poco más complejo."
+
+#: ../../source/trials/serverside.rst:24
+msgid "Synopsis"
+msgstr "Sinopsis"
+
+#: ../../source/trials/serverside.rst:27
+msgid "How to enable"
+msgstr "Cómo habilitar"
+
+#: ../../source/trials/serverside.rst:29
+msgid ""
+"On your page, instead of defining ``trial_response_fields``, define a "
+"function ``evaluate_trial()``, as in the following examples."
+msgstr ""
+"En tu página, en lugar de definir ``trial_response_fields``, define una "
+"función ``evaluate_trial()``, como en los siguientes ejemplos."
+
+#: ../../source/trials/serverside.rst:33
+msgid "Example"
+msgstr "Ejemplo"
+
+#: ../../source/trials/serverside.rst:35
+msgid ""
+"Let's say you have a task where users need to solve some puzzles. After each"
+" response you tell the user whether they gave the correct answer."
+msgstr ""
+"Supongamos que tienes una tarea donde los usuarios necesitan resolver "
+"algunos rompecabezas. Después de cada respuesta, le dices al usuario si dio "
+"la respuesta correcta."
+
+#: ../../source/trials/serverside.rst:38
+msgid ""
+"With client-side evaluation, you need to store the solutions in the browser,"
+" they may be found in the page's source code by tech-savvy users."
+msgstr ""
+"Con la evaluación del lado del cliente, necesitas almacenar las soluciones "
+"en el navegador, pueden ser encontradas en el código fuente de la página por"
+" usuarios con conocimientos técnicos."
+
+#: ../../source/trials/serverside.rst:41
+msgid "In contrast, with server-side evaluation, the solution is not exposed."
+msgstr ""
+"En contraste, con la evaluación del lado del servidor, la solución no está "
+"expuesta."
+
+#: ../../source/trials/serverside.rst:43
+msgid ""
+"Instead, the user's response is sent to the Python server, where "
+"``evaluate_trial`` is run:"
+msgstr ""
+"En su lugar, la respuesta del usuario se envía al servidor de Python, donde "
+"se ejecuta ``evaluate_trial``:"
+
+#: ../../source/trials/serverside.rst:54
+msgid ""
+"The arguments to ``evaluate_trial`` are the trial (your Trial instance) and "
+"the ``response`` dict that you sent from ``submitTrialResponse()``. The "
+"return value is the feedback you want to send back to the page, which will "
+"be stored in ``vars.feedback``. It can be any data type (dict, string, bool,"
+" etc). To proceed to the next trial, you need to take the current trial out "
+"of the queue by setting ``queue_position = None``. (If you forget to do "
+"this, it will keep showing the current trial again and again.)"
+msgstr ""
+"Los argumentos de ``evaluate_trial`` son el trial (tu instancia de Trial) y "
+"el diccionario ``response`` que enviaste desde ``submitTrialResponse()``. El"
+" valor de retorno es la retroalimentación que deseas enviar de vuelta a la "
+"página, que se almacenará en ``vars.feedback``. Puede ser cualquier tipo de "
+"dato (dict, string, bool, etc). Para proceder al siguiente trial, necesitas "
+"sacar el trial actual de la cola configurando ``queue_position = None``. (Si"
+" olvidas hacer esto, seguirá mostrando el trial actual una y otra vez.)"
+
+#: ../../source/trials/serverside.rst:64
+msgid "Example: retries"
+msgstr "Ejemplo: reintentos"
+
+#: ../../source/trials/serverside.rst:66
+msgid ""
+"Let's say you want the player to have 3 chances to answer each question "
+"correctly. This can be done as follows:"
+msgstr ""
+"Supongamos que deseas que el jugador tenga 3 oportunidades para responder "
+"correctamente a cada pregunta. Esto se puede hacer de la siguiente manera:"
+
+#: ../../source/trials/serverside.rst:81
+msgid "Notes"
+msgstr "Notas"
+
+#: ../../source/trials/serverside.rst:83
+msgid ""
+"You can put any code you want in ``evaluate_trial``, such as recording each "
+"wrong attempt (maybe stored in an ``ExtraModel``)."
+msgstr ""
+"Puedes poner cualquier código que desees en ``evaluate_trial``, como "
+"registrar cada intento fallido (quizás almacenado en un ``ExtraModel``)."
+
+#: ../../source/trials/serverside.rst:86
+msgid ""
+"Note also that the ``player`` instance can be accessed with "
+"``trial.player``."
+msgstr ""
+"Nota también que la instancia ``player`` se puede acceder con "
+"``trial.player``."
+
+#: ../../source/trials/serverside.rst:91
+msgid "Tracking progress"
+msgstr "Seguimiento del progreso"
+
+#: ../../source/trials/serverside.rst:93
+msgid ""
+"You can define the function ``trial_page_vars`` to keep track of the user's "
+"progress. With each trial, this function will be run and its values will be "
+"stored into the JavaScript ``vars`` variable."
+msgstr ""
+"Puedes definir la función ``trial_page_vars`` para hacer un seguimiento del "
+"progreso del usuario. Con cada prueba, esta función se ejecutará y sus "
+"valores se almacenarán en la variable de JavaScript ``vars``."
+
+#: ../../source/trials/serverside.rst:108
+msgid "Then in your JavaScript code you can do ``vars.num_correct``."
+msgstr "Luego, en tu código JavaScript, puedes hacer ``vars.num_correct``."
+
+#: ../../source/trials/serverside.rst:110
+msgid ""
+"The alternative is to keep track of it in JavaScript code, e.g. setting "
+"``vars.num_correct += 1`` in your ``onCompleteTrial`` handler, but if the "
+"page is refreshed, all of ``vars`` gets reset to its initial state. So "
+"keeping track of it on the server side is more reliable."
+msgstr ""
+"La alternativa es hacer un seguimiento en el código JavaScript, por ejemplo,"
+" estableciendo ``vars.num_correct += 1`` en tu manejador "
+"``onCompleteTrial``, pero si la página se actualiza, todo ``vars`` se "
+"restablece a su estado inicial. Por lo tanto, hacer un seguimiento en el "
+"lado del servidor es más confiable."
+
+#: ../../source/trials/serverside.rst:115
+msgid "queue_position"
+msgstr "posición_en_cola"
+
+#: ../../source/trials/serverside.rst:117
+msgid ""
+"When you create a ``Trial``, oTree will automatically assign a consecutive "
+"``queue_position``. oTree iterates through trials from lowest to highest "
+"``queue_position``. You can also explicitly set a queue position, either "
+"when creating the trial (e.g. ``Trial.create(queue_position=i, ...)``), or "
+"you can move an existing trial in the queue by setting "
+"``trial.queue_position = i``. To move an item to the front of the queue, you"
+" can assign ``queue_position = 0`` (oTree's automatic numbering starts at "
+"1)."
+msgstr ""
+"Cuando creas un ``Trial``, oTree asignará automáticamente una "
+"``posición_en_cola`` consecutiva. oTree itera a través de los trials desde "
+"la ``posición_en_cola`` más baja hasta la más alta. También puedes "
+"establecer explícitamente una posición en la cola, ya sea al crear el trial "
+"(por ejemplo, ``Trial.create(queue_position=i, ...)``), o puedes mover un "
+"trial existente en la cola estableciendo ``trial.queue_position = i``. Para "
+"mover un elemento al frente de la cola, puedes asignar ``queue_position = "
+"0`` (la numeración automática de oTree comienza en 1)."
+
+#: ../../source/trials/timing.rst:4
+msgid "Trials: Timing"
+msgstr "Trials: Temporización"
+
+#: ../../source/trials/timing.rst:6
+msgid ""
+"Here are the different functionalities related to time measurement and timed"
+" execution. Note: with Trials, all time-related functionality is expressed "
+"in milliseconds."
+msgstr ""
+"Aquí están las diferentes funcionalidades relacionadas con la medición del "
+"tiempo y la ejecución cronometrada. Nota: con los Trials, toda la "
+"funcionalidad relacionada con el tiempo se expresa en milisegundos."
+
+#: ../../source/trials/timing.rst:10
+msgid "Time measurement"
+msgstr "Medición del tiempo"
+
+#: ../../source/trials/timing.rst:12
+msgid ""
+"To measure a user's reaction time, use ``ot.startTimeMeasurement()`` and "
+"``ot.getTimeMeasurement()``. Usually, you start the clock when the trial "
+"starts, so you put ``startTimeMeasurement`` in ``onStartTrial`` (or "
+"``onTimeline``):"
+msgstr ""
+"Para medir el tiempo de reacción de un usuario, utiliza "
+"``ot.startTimeMeasurement()`` y ``ot.getTimeMeasurement()``. Normalmente, "
+"comienzas el reloj cuando comienza el ensayo, así que colocas "
+"``startTimeMeasurement`` en ``onStartTrial`` (o ``onTimeline``):"
+
+#: ../../source/trials/timing.rst:22
+msgid "And ``getTimeMeasurement`` usually goes in an ``onInput`` handler:"
+msgstr "Y ``getTimeMeasurement`` generalmente va en un manejador ``onInput``:"
+
+#: ../../source/trials/timing.rst:33
+msgid ""
+"Also, it is possible to measure several intervals in parallel, for instance "
+"total page time and each individual trials. Use "
+"``ot.startTimeMeasurement(\"unique_label\")`` and "
+"``ot.getTimeMeasurement(\"unique_label\")``."
+msgstr ""
+"Además, es posible medir varios intervalos en paralelo, por ejemplo, el "
+"tiempo total de la página y cada ensayo individual. Utiliza "
+"``ot.startTimeMeasurement(\"unique_label\")`` y "
+"``ot.getTimeMeasurement(\"unique_label\")``."
+
+#: ../../source/trials/timing.rst:36
+msgid ""
+"Note: these functions have not yet been optimized for precision. We estimate"
+" the current time precision to be ± a few milliseconds."
+msgstr ""
+"Nota: estas funciones aún no han sido optimizadas para precisión. Estimamos "
+"que la precisión del tiempo actual es de ± unos pocos milisegundos."
+
+#: ../../source/trials/timing.rst:42
+msgid "Timelines"
+msgstr "Líneas de tiempo"
+
+#: ../../source/trials/timing.rst:44
+msgid "Timelines allow you to schedule a rapid sequence of events."
+msgstr ""
+"Las líneas de tiempo te permiten programar una rápida secuencia de eventos."
+
+#: ../../source/trials/timing.rst:46
+msgid ""
+"Let's say each trial involves showing a fixation cross for 1000ms, then "
+"showing a stimulus for 500ms, and giving the user 2000ms to make a response."
+" You can program it like this:"
+msgstr ""
+"Supongamos que cada ensayo implica mostrar una cruz de fijación durante 1000"
+" ms, luego mostrar un estímulo durante 500 ms y dar al usuario 2000 ms para "
+"hacer una respuesta. Puedes programarlo así:"
+
+#: ../../source/trials/timing.rst:59
+msgid "Usually this code will go inside your ``onStartTrial`` handler."
+msgstr "Normalmente, este código irá dentro de tu manejador ``onStartTrial``."
+
+#: ../../source/trials/timing.rst:61
+msgid "Then you can define ``onTimeline`` handlers."
+msgstr "Luego puedes definir manejadores ``onTimeline``."
+
+#: ../../source/trials/timing.rst:75
+msgid "To stay fixed on a segment, set its duration to ``null``."
+msgstr ""
+"Para permanecer fijo en un segmento, establece su duración en ``null``."
+
+#: ../../source/trials/timing.rst:85
+msgid ""
+"As soon as ``submitTrialResponse`` is called, timelines abort execution, "
+"unless you set ``ot.auto.cancelTimelinesOnSubmitTrialResponse = false``."
+msgstr ""
+"Tan pronto como se llama a ``submitTrialResponse``, las líneas de tiempo "
+"abortan la ejecución, a menos que establezcas "
+"``ot.auto.cancelTimelinesOnSubmitTrialResponse = false``."
+
+#: ../../source/trials/timing.rst:89
+msgid "Metronome"
+msgstr "Metrónomo"
+
+#: ../../source/trials/timing.rst:91
+msgid ""
+"A metronome generates an event every N milliseconds. For example, let's say "
+"you want to animate a loading progress bar whose value increases every "
+"200ms. First define a variable whose value increases every 200ms:"
+msgstr ""
+"Un metrónomo genera un evento cada N milisegundos. Por ejemplo, digamos que "
+"quieres animar una barra de progreso de carga cuyo valor aumenta cada 200 "
+"ms. Primero define una variable cuyo valor aumenta cada 200 ms:"
+
+#: ../../source/trials/timing.rst:110
+msgid "Then define an HTML element that uses this variable:"
+msgstr "Luego define un elemento HTML que use esta variable:"
+
+#: ../../source/trials/timing.rst:116
+msgid ""
+"Metronomes can be canceled (e.g. if the user takes some specific action):"
+msgstr ""
+"Los metrónomos se pueden cancelar (por ejemplo, si el usuario realiza alguna"
+" acción específica):"
+
+#: ../../source/trials/timing.rst:128
+msgid "Delays & Timeouts"
+msgstr "Retrasos y tiempos de espera"
+
+#: ../../source/trials/timing.rst:130
+msgid ""
+"The simplest way to delay some event is to use ``await ot.delay(timeout)``. "
+"For example:"
+msgstr ""
+"La forma más sencilla de retrasar algún evento es usar ``await "
+"ot.delay(timeout)``. Por ejemplo:"
+
+#: ../../source/trials/timing.rst:140
+msgid ""
+"Note that we added the word ``async`` before the function definition. That "
+"is necessary in order to use ``await``."
+msgstr ""
+"Nota que añadimos la palabra ``async`` antes de la definición de la función."
+" Eso es necesario para usar ``await``."
+
+#: ../../source/trials/timing.rst:144
+msgid "Inter-trial interval"
+msgstr "Intervalo entre ensayos"
+
+#: ../../source/trials/timing.rst:146
+msgid "Configurable through ``ot.auto.postSubmitDelay``."
+msgstr "Configurable a través de ``ot.auto.postSubmitDelay``."

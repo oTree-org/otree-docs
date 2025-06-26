@@ -1,0 +1,359 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/admin.rst:2
+msgid "Admin"
+msgstr "Administrador"
+
+#: ../../source/admin.rst:4
+msgid ""
+"oTree's admin interface lets you create, monitor, and export data from "
+"sessions."
+msgstr ""
+"La interfaz de administración de oTree te permite crear, monitorear y "
+"exportar datos de las sesiones."
+
+#: ../../source/admin.rst:7
+msgid ""
+"Open your browser to ``localhost:8000`` or whatever you server's URL is."
+msgstr "Abre tu navegador en ``localhost:8000`` o en la URL de tu servidor."
+
+#: ../../source/admin.rst:12
+msgid "Password protection"
+msgstr "Protección por contraseña"
+
+#: ../../source/admin.rst:14
+msgid ""
+"When you first install oTree, The entire admin interface is accessible "
+"without a password. However, when you are ready to deploy to your audience, "
+"you should password protect the admin."
+msgstr ""
+"Cuando instalas oTree por primera vez, toda la interfaz de administración es"
+" accesible sin una contraseña. Sin embargo, cuando estés listo para "
+"desplegar a tu audiencia, deberías proteger la administración con una "
+"contraseña."
+
+#: ../../source/admin.rst:37
+msgid "There are multiple types of start links you can use."
+msgstr "Hay múltiples tipos de enlaces de inicio que puedes usar."
+
+#: ../../source/admin.rst:40
+msgid "Rooms"
+msgstr "Salas"
+
+#: ../../source/admin.rst:42
+msgid ""
+"In most cases where you are doing a study, the best way to set up URLs is to"
+" make a :ref:`room <rooms>`."
+msgstr ""
+"En la mayoría de los casos en los que estás realizando un estudio, la mejor "
+"manera de configurar las URL es crear una :ref:`room <rooms>`."
+
+#: ../../source/admin.rst:48
+msgid "Single-use links"
+msgstr "Enlaces de un solo uso"
+
+#: ../../source/admin.rst:50
+msgid ""
+"If a room is not suited for your needs, you can use oTree's single-use "
+"links. Every time you create a session, you will need to re-distribute URLs "
+"to each participant."
+msgstr ""
+"Si una sala no se adapta a tus necesidades, puedes utilizar los enlaces de "
+"un solo uso de oTree. Cada vez que creas una sesión, necesitarás "
+"redistribuir las URL a cada participante."
+
+#: ../../source/admin.rst:56
+msgid "Session-wide link"
+msgstr "Enlace de sesión"
+
+#: ../../source/admin.rst:58
+msgid ""
+"The session-wide link lets you provide the same start link to all "
+"participants in the session. Note: this may result in the same participant "
+"playing twice, unless you use the ``participant_label`` parameter in the URL"
+" (see :ref:`participant_label`)."
+msgstr ""
+"El enlace de sesión permite proporcionar el mismo enlace de inicio a todos "
+"los participantes en la sesión. Nota: esto puede resultar en que el mismo "
+"participante juegue dos veces, a menos que uses el parámetro "
+"``participant_label`` en la URL (ver :ref:`participant_label`)."
+
+#: ../../source/admin.rst:63
+msgid ""
+"Before using the session-wide link, consider using a :ref:`room <rooms>`, "
+"because you can also use a room without a participant label file to allow "
+"everyone to play with the same URL. The advantage of using a room is that "
+"the URL is simpler to type (doesn't contain a randomly generated code), and "
+"you can reuse it across sessions."
+msgstr ""
+"Antes de usar el enlace de sesión, considera usar un :ref:`room <rooms>`, "
+"porque también puedes usar una sala sin un archivo de etiquetas de "
+"participantes para permitir que todos jueguen con la misma URL. La ventaja "
+"de usar una sala es que la URL es más fácil de escribir (no contiene un "
+"código generado aleatoriamente) y puedes reutilizarla entre sesiones."
+
+#: ../../source/admin.rst:73
+msgid "Participant labels"
+msgstr "Etiquetas de participantes"
+
+#: ../../source/admin.rst:75
+msgid ""
+"Whether or not you're using a :ref:`room <rooms>`, you can append a "
+"``participant_label`` parameter to each participant's start URL to identify "
+"them, e.g. by name, ID number, or computer workstation. For example::"
+msgstr ""
+"Ya sea que estés usando un :ref:`room <rooms>` o no, puedes agregar un "
+"parámetro ``participant_label`` a la URL de inicio de cada participante para"
+" identificarlos, por ejemplo, por nombre, número de ID o estación de "
+"trabajo. Por ejemplo:"
+
+#: ../../source/admin.rst:82
+msgid ""
+"oTree will record this participant label. It will be used to identify that "
+"participant in the oTree admin interface and the payments page, etc. You can"
+" also access it from your code as ``participant.label``."
+msgstr ""
+"oTree registrará esta etiqueta de participante. Se utilizará para "
+"identificar a ese participante en la interfaz de administración de oTree y "
+"en la página de pagos, etc. También puedes acceder a ella desde tu código "
+"como ``participant.label``."
+
+#: ../../source/admin.rst:87
+msgid ""
+"Another benefit of participant labels is that if the participant opens their"
+" start link twice, they will be assigned back to the same participant (if "
+"you are using a room-wide or session-wide URL). This reduces duplicate "
+"participation."
+msgstr ""
+"Otro beneficio de las etiquetas de participante es que si el participante "
+"abre su enlace de inicio dos veces, se le asignará de nuevo al mismo "
+"participante (si estás utilizando un enlace de sala o de sesión). Esto "
+"reduce la participación duplicada."
+
+#: ../../source/admin.rst:92
+msgid "Arrival order"
+msgstr "Orden de llegada"
+
+#: ../../source/admin.rst:94
+msgid ""
+"oTree will assign the first person who arrives to be P1, the second to be "
+"P2, etc., unless you are using single-use links."
+msgstr ""
+"oTree asignará a la primera persona que llegue como P1, a la segunda como "
+"P2, etc., a menos que estés utilizando enlaces de un solo uso."
+
+#: ../../source/admin.rst:100
+msgid "Customizing the admin interface (admin reports)"
+msgstr ""
+"Personalización de la interfaz de administración (informes de "
+"administración)"
+
+#: ../../source/admin.rst:102
+msgid ""
+"You can add a custom tab to a session's admin page with any content you "
+"want; for example:"
+msgstr ""
+"Puedes agregar una pestaña personalizada a la página de administración de "
+"una sesión con cualquier contenido que desees; por ejemplo:"
+
+#: ../../source/admin.rst:105
+msgid "A chart/graph with the game's results"
+msgstr "Un gráfico/tabla con los resultados del juego"
+
+#: ../../source/admin.rst:106
+msgid "A custom payments page that is different from oTree's built-in one"
+msgstr ""
+"Una página de pagos personalizada que es diferente de la incorporada en "
+"oTree"
+
+#: ../../source/admin.rst:108
+msgid "Here is a screenshot:"
+msgstr "Aquí hay una captura de pantalla:"
+
+#: ../../source/admin.rst:113
+msgid ""
+"Here is a trivial example, where we add an admin report that displays a "
+"sorted list of payoffs for a given round."
+msgstr ""
+"Aquí hay un ejemplo trivial, donde agregamos un informe de administración "
+"que muestra una lista ordenada de pagos para una ronda dada."
+
+#: ../../source/admin.rst:116
+msgid ""
+"First, define a function ``vars_for_admin_report``. This works the same way "
+"as :ref:`vars_for_template`. For example:"
+msgstr ""
+"Primero, define una función ``vars_for_admin_report``. Esto funciona de la "
+"misma manera que :ref:`vars_for_template`. Por ejemplo:"
+
+#: ../../source/admin.rst:126
+msgid ""
+"Then create an includable template ``admin_report.html`` in your app, and "
+"display whatever variables were passed in ``vars_for_admin_report``:"
+msgstr ""
+"Luego crea una plantilla incluible ``admin_report.html`` en tu aplicación, y"
+" muestra cualquier variable que se haya pasado en ``vars_for_admin_report``:"
+
+#: ../../source/admin.rst:139
+msgid "Notes:"
+msgstr "Notas:"
+
+#: ../../source/admin.rst:141
+msgid ""
+"``subsession``, ``session``, and ``C`` are passed to the template "
+"automatically."
+msgstr ""
+"``subsession``, ``session`` y ``C`` se pasan a la plantilla automáticamente."
+
+#: ../../source/admin.rst:143
+msgid ""
+"``admin_report.html`` does not need to use ``{{ block }}``. The above "
+"example is valid as the full contents of ``admin_report.html``."
+msgstr ""
+"``admin_report.html`` no necesita usar ``{{ block }}``. El ejemplo anterior "
+"es válido como el contenido completo de ``admin_report.html``."
+
+#: ../../source/admin.rst:146
+msgid ""
+"If one or more apps in your session have an ``admin_report.html``, your "
+"admin page will have a \"Reports\" tab. Use the menu to select the app and "
+"the round number, to see the report for that subsession."
+msgstr ""
+"Si una o más aplicaciones en tu sesión tienen un ``admin_report.html``, tu "
+"página de administración tendrá una pestaña de \"Informes\". Usa el menú "
+"para seleccionar la aplicación y el número de ronda, para ver el informe de "
+"esa subsesión."
+
+#: ../../source/admin.rst:151
+msgid "Export Data"
+msgstr "Exportar Datos"
+
+#: ../../source/admin.rst:153
+msgid ""
+"In the admin interface, click on \"Data\" to download your data as CSV or "
+"Excel."
+msgstr ""
+"En la interfaz de administración, haz clic en \"Datos\" para descargar tus "
+"datos en formato CSV o Excel."
+
+#: ../../source/admin.rst:156
+msgid ""
+"There is also a data export for \"page times\", which shows the exact time "
+"when users completed every page. :download:`Here <_static/pagetimes.py>` is "
+"a Python script you can run that tabulates how much time is spent on each "
+"page. You can modify this script to calculate similar things, such as how "
+"much time each participant spends on wait pages in total."
+msgstr ""
+"También hay una exportación de datos para \"tiempos de página\", que muestra"
+" el tiempo exacto en que los usuarios completaron cada página. "
+":download:`Aquí <_static/pagetimes.py>` hay un script de Python que puedes "
+"ejecutar que tabula cuánto tiempo se pasa en cada página. Puedes modificar "
+"este script para calcular cosas similares, como cuánto tiempo pasa cada "
+"participante en las páginas de espera en total."
+
+#: ../../source/admin.rst:164
+msgid "Custom data exports"
+msgstr "Exportaciones de datos personalizadas"
+
+#: ../../source/admin.rst:166
+msgid ""
+"You can make your own custom data export for an app. In oTree Studio, go to "
+"the \"Player\" model and click on \"custom_export\" at the bottom. (If using"
+" a text editor, define the below function.) The argument ``players`` is a "
+"queryset of all the players in the database. Use a ``yield`` for each row of"
+" data."
+msgstr ""
+"Puedes crear tu propia exportación de datos personalizada para una "
+"aplicación. En oTree Studio, ve al modelo \"Player\" y haz clic en "
+"\"custom_export\" en la parte inferior. (Si usas un editor de texto, define "
+"la función a continuación). El argumento ``players`` es un queryset de todos"
+" los jugadores en la base de datos. Usa un ``yield`` para cada fila de "
+"datos."
+
+#: ../../source/admin.rst:182
+msgid ""
+"Or, you can ignore the ``players`` argument and export some other data "
+"instead, e.g.:"
+msgstr ""
+"O puedes ignorar el argumento ``players`` y exportar otros datos en su "
+"lugar, por ejemplo:"
+
+#: ../../source/admin.rst:199
+msgid ""
+"Once this function is defined, your custom data export will be available in "
+"the regular data export page."
+msgstr ""
+"Una vez que esta función esté definida, tu exportación de datos "
+"personalizada estará disponible en la página de exportación de datos "
+"regular."
+
+#: ../../source/admin.rst:203
+msgid "Debug Info"
+msgstr "Información de depuración"
+
+#: ../../source/admin.rst:205
+msgid ""
+"When oTree runs in ``DEBUG`` mode (i.e. when the environment variable "
+"``OTREE_PRODUCTION`` is not set), debug information is displayed on the "
+"bottom of all screens."
+msgstr ""
+"Cuando oTree se ejecuta en modo ``DEBUG`` (es decir, cuando la variable de "
+"entorno ``OTREE_PRODUCTION`` no está configurada), la información de "
+"depuración se muestra en la parte inferior de todas las pantallas."
+
+#: ../../source/admin.rst:210
+msgid "Payments"
+msgstr "Pagos"
+
+#: ../../source/admin.rst:212
+msgid ""
+"If you define a :ref:`participant field <PARTICIPANT_FIELDS>` called "
+"`finished`, then you can set ``participant.finished = True`` when a "
+"participant finishes the session, and this will be displayed in various "
+"places such as the payments page."
+msgstr ""
+"Si defines un :ref:`participant field <PARTICIPANT_FIELDS>` llamado "
+"`finished`, entonces puedes establecer ``participant.finished = True`` "
+"cuando un participante termina la sesión, y esto se mostrará en varios "
+"lugares como la página de pagos."
+
+#: ../../source/admin.rst:219
+msgid "Chat between participants and experimenter"
+msgstr "Chat entre participantes y experimentador"
+
+#: ../../source/admin.rst:221
+msgid ""
+"To enable your participants to send you chat messages, consider using a "
+"software like `Papercups <https://github.com/papercups-"
+"io/papercups/blob/master/README.md>`__. Click on the \"Deploy to Heroku\" "
+"button for 1-click setup of your Papercups server. Fill out the required "
+"config vars and leave the others empty. ``BACKEND_URL`` and "
+"``REACT_APP_URL`` refer to your Papercups site, not your oTree site. Login "
+"to your site and copy the HTML embedding code to an includable template "
+"called ``papercups.html``. There is an example called \"chat with "
+"experimenter\" `here <https://www.otreehub.com/projects/otree-snippets/>`__."
+msgstr ""
+"Para permitir que tus participantes te envíen mensajes de chat, considera "
+"usar un software como `Papercups <https://github.com/papercups-"
+"io/papercups/blob/master/README.md>`__. Haz clic en el botón \"Deploy to "
+"Heroku\" para una configuración de un clic de tu servidor Papercups. "
+"Completa las variables de configuración requeridas y deja las otras vacías. "
+"``BACKEND_URL`` y ``REACT_APP_URL`` se refieren a tu sitio de Papercups, no "
+"a tu sitio de oTree. Inicia sesión en tu sitio y copia el código HTML de "
+"incrustación en una plantilla incluyible llamada ``papercups.html``. Hay un "
+"ejemplo llamado \"chat with experimenter\" `aquí "
+"<https://www.otreehub.com/projects/otree-snippets/>`__."

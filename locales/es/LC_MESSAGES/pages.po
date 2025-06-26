@@ -1,0 +1,185 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/pages.rst:4
+msgid "Pages"
+msgstr "Páginas"
+
+#: ../../source/pages.rst:6
+msgid "Each page that your participants see is defined by a ``Page``."
+msgstr "Cada página que ven tus participantes está definida por un ``Page``."
+
+#: ../../source/pages.rst:8
+msgid "Your ``page_sequence`` gives the order of the pages."
+msgstr "Tu ``page_sequence`` da el orden de las páginas."
+
+#: ../../source/pages.rst:10
+msgid ""
+"If your game has multiple rounds, this sequence will be repeated (see "
+":ref:`rounds`)."
+msgstr ""
+"Si tu juego tiene múltiples rondas, esta secuencia se repetirá (ver "
+":ref:`rounds`)."
+
+#: ../../source/pages.rst:12
+msgid "A ``Page`` can have any of the following methods and attributes."
+msgstr ""
+"Un ``Page`` puede tener cualquiera de los siguientes métodos y atributos."
+
+#: ../../source/pages.rst:17
+msgid "is_displayed()"
+msgstr "is_displayed()"
+
+#: ../../source/pages.rst:19
+msgid ""
+"You can define this function to return ``True`` if the page should be shown,"
+" and False if the page should be skipped. If omitted, the page will be "
+"shown."
+msgstr ""
+"Puedes definir esta función para que devuelva ``True`` si la página debe ser"
+" mostrada, y ``False`` si la página debe ser omitida. Si se omite, la página"
+" se mostrará."
+
+#: ../../source/pages.rst:23
+msgid "For example, to only show the page to P2 in each group:"
+msgstr "Por ejemplo, para mostrar la página solo a P2 en cada grupo:"
+
+#: ../../source/pages.rst:31
+msgid "Or only show the page in round 1:"
+msgstr "O solo muestra la página en la ronda 1:"
+
+#: ../../source/pages.rst:39
+msgid ""
+"If you need to repeat the same rule for many pages, use "
+":ref:`app_after_this_page`."
+msgstr ""
+"Si necesitas repetir la misma regla para muchas páginas, utiliza "
+":ref:`app_after_this_page`."
+
+#: ../../source/pages.rst:44
+msgid "vars_for_template()"
+msgstr "vars_for_template()"
+
+#: ../../source/pages.rst:46
+msgid "Use this to pass variables to the template. Example:"
+msgstr "Utiliza esto para pasar variables al template. Ejemplo:"
+
+#: ../../source/pages.rst:58
+msgid "Then in the template you can access ``a`` and ``b`` like this:"
+msgstr "Entonces en el template puedes acceder a ``a`` y ``b`` así:"
+
+#: ../../source/pages.rst:64
+msgid ""
+"oTree automatically passes the following objects to the template: "
+"``player``, ``group``, ``subsession``, ``participant``, ``session``, and "
+"``C``. You can access them in the template like this: ``{{ C.BLAH }}`` or "
+"``{{ player.blah }}``."
+msgstr ""
+"oTree pasa automáticamente los siguientes objetos a la plantilla: "
+"``player``, ``group``, ``subsession``, ``participant``, ``session`` y ``C``."
+" Puedes acceder a ellos en la plantilla así: ``{{ C.BLAH }}`` o ``{{ "
+"player.blah }}``."
+
+#: ../../source/pages.rst:68
+msgid ""
+"If the user refreshes the page, ``vars_for_template`` gets re-executed."
+msgstr ""
+"Si el usuario actualiza la página, ``vars_for_template`` se vuelve a "
+"ejecutar."
+
+#: ../../source/pages.rst:73
+msgid "before_next_page()"
+msgstr "before_next_page()"
+
+#: ../../source/pages.rst:75
+msgid ""
+"Here you define any code that should be executed after form validation, "
+"before the player proceeds to the next page."
+msgstr ""
+"Aquí defines cualquier código que debe ejecutarse después de la validación "
+"del formulario, antes de que el jugador proceda a la siguiente página."
+
+#: ../../source/pages.rst:78
+msgid ""
+"If the page is skipped with ``is_displayed``, then ``before_next_page`` will"
+" be skipped as well."
+msgstr ""
+"Si la página se omite con ``is_displayed``, entonces ``before_next_page`` "
+"también se omitirá."
+
+#: ../../source/pages.rst:81
+msgid "Example:"
+msgstr "Ejemplo:"
+
+#: ../../source/pages.rst:91
+msgid "timeout_seconds"
+msgstr "timeout_seconds"
+
+#: ../../source/pages.rst:93
+msgid "See :ref:`timeouts`"
+msgstr "Ver :ref:`timeouts`"
+
+#: ../../source/pages.rst:96
+msgid "Wait pages"
+msgstr "Páginas de espera"
+
+#: ../../source/pages.rst:98
+msgid "See :ref:`wait_pages`"
+msgstr "Ver :ref:`wait_pages`"
+
+#: ../../source/pages.rst:101
+msgid "Randomizing page sequence"
+msgstr "Aleatorizando la secuencia de páginas"
+
+#: ../../source/pages.rst:103
+msgid ""
+"You can randomize the order of pages using rounds. An example is `here "
+"<https://www.otreehub.com/projects/otree-snippets/>`__."
+msgstr ""
+"Puedes aleatorizar el orden de las páginas utilizando rondas. Un ejemplo "
+"está `aquí <https://www.otreehub.com/projects/otree-snippets/>`__."
+
+#: ../../source/pages.rst:109
+msgid "app_after_this_page"
+msgstr "app_after_this_page"
+
+#: ../../source/pages.rst:111
+msgid ""
+"To skip entire apps, you can define ``app_after_this_page``. For example, to"
+" skip to the next app, you would do:"
+msgstr ""
+"Para saltar aplicaciones enteras, puedes definir ``app_after_this_page``. "
+"Por ejemplo, para saltar a la siguiente aplicación, harías lo siguiente:"
+
+#: ../../source/pages.rst:121
+msgid ""
+"``upcoming_apps`` is the remainder of the ``app_sequence`` (a list of "
+"strings). Therefore, to skip to the last app, you would return "
+"``upcoming_apps[-1]``. Or you could just return a hardcoded string (as long "
+"as that string is in ``upcoming_apps``):"
+msgstr ""
+"``upcoming_apps`` es el resto de la ``app_sequence`` (una lista de cadenas)."
+" Por lo tanto, para saltar a la última aplicación, devolverías "
+"``upcoming_apps[-1]``. O podrías simplemente devolver una cadena codificada "
+"(siempre que esa cadena esté en ``upcoming_apps``):"
+
+#: ../../source/pages.rst:134
+msgid ""
+"If this function doesn't return anything, the player proceeds to the next "
+"page as usual."
+msgstr ""
+"Si esta función no devuelve nada, el jugador procede a la siguiente página "
+"como de costumbre."

@@ -1,0 +1,165 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/currency.rst:4
+msgid "Currency"
+msgstr "Moneda"
+
+#: ../../source/currency.rst:6
+msgid ""
+"In many experiments, participants play for currency: either real money, or "
+"points. oTree supports both; you can switch from points to real money by "
+"setting ``USE_POINTS = False`` in your settings."
+msgstr ""
+"En muchos experimentos, los participantes juegan por moneda: ya sea dinero "
+"real o puntos. oTree admite ambas opciones; puedes cambiar de puntos a "
+"dinero real configurando ``USE_POINTS = False`` en tus ajustes."
+
+#: ../../source/currency.rst:11
+msgid ""
+"You can write ``cu(42)`` to represent \"42 currency units\". It works just "
+"like a number (e.g. ``cu(0.1) + cu(0.2) == cu(0.3)``). The advantage is that"
+" when it's displayed to users, it will automatically be formatted as "
+"``$0.30`` or ``0,30 €``, etc., depending on your "
+"``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings."
+msgstr ""
+"Puedes escribir ``cu(42)`` para representar \"42 unidades de moneda\". "
+"Funciona igual que un número (por ejemplo, ``cu(0.1) + cu(0.2) == "
+"cu(0.3)``). La ventaja es que cuando se muestra a los usuarios, se "
+"formateará automáticamente como ``$0.30`` o ``0,30 €``, etc., dependiendo de"
+" tus ajustes de ``REAL_WORLD_CURRENCY_CODE`` y ``LANGUAGE_CODE``."
+
+#: ../../source/currency.rst:20
+msgid ""
+"``cu()`` is new in oTree 5. Previously, ``c()`` was used to denote "
+"currencies. Code that already uses ``c()`` will continue to work. More info "
+"`here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__."
+msgstr ""
+"``cu()`` es nuevo en oTree 5. Anteriormente, se usaba ``c()`` para denotar "
+"monedas. El código que ya utiliza ``c()`` seguirá funcionando. Más "
+"información `aquí <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__."
+
+#: ../../source/currency.rst:24
+msgid ""
+"Use ``CurrencyField`` to store currencies in the database. For example:"
+msgstr ""
+"Usa ``CurrencyField`` para almacenar monedas en la base de datos. Por "
+"ejemplo:"
+
+#: ../../source/currency.rst:32
+msgid "To make a list of currency amounts, use ``currency_range``:"
+msgstr "Para hacer una lista de montos de moneda, usa ``currency_range``:"
+
+#: ../../source/currency.rst:40
+msgid ""
+"In templates, instead of using the ``cu()`` function, you should use the "
+"``|cu`` filter. For example, ``{{ 20|cu }}`` displays as ``20 points``."
+msgstr ""
+"En las plantillas, en lugar de usar la función ``cu()``, debes usar el "
+"filtro ``|cu``. Por ejemplo, ``{{ 20|cu }}`` se muestra como ``20 puntos``."
+
+#: ../../source/currency.rst:48
+msgid "payoffs"
+msgstr "payoffs"
+
+#: ../../source/currency.rst:50
+msgid ""
+"Each player has a ``payoff`` field. If your player makes money, you should "
+"store it in this field. ``participant.payoff`` automatically stores the sum "
+"of payoffs from all subsessions. You can modify ``participant.payoff`` "
+"directly, e.g. to round the final payoff to a whole number."
+msgstr ""
+"Cada jugador tiene un campo ``payoff``. Si tu jugador gana dinero, debes "
+"almacenarlo en este campo. ``participant.payoff`` almacena automáticamente "
+"la suma de los payoffs de todas las subsesiones. Puedes modificar "
+"``participant.payoff`` directamente, por ejemplo, para redondear el payoff "
+"final a un número entero."
+
+#: ../../source/currency.rst:56
+msgid ""
+"At the end of the experiment, a participant's total profit can be accessed "
+"by ``participant.payoff_plus_participation_fee()``; it is calculated by "
+"converting ``participant.payoff`` to real-world currency (if ``USE_POINTS`` "
+"is ``True``), and then adding ``session.config['participation_fee']``."
+msgstr ""
+"Al final del experimento, el beneficio total de un participante se puede "
+"acceder mediante ``participant.payoff_plus_participation_fee()``; se calcula"
+" convirtiendo ``participant.payoff`` a moneda del mundo real (si "
+"``USE_POINTS`` es ``True``), y luego sumando "
+"``session.config['participation_fee']``."
+
+#: ../../source/currency.rst:65
+msgid "Points (i.e. \"experimental currency\")"
+msgstr "Puntos (es decir, \"moneda experimental\")"
+
+#: ../../source/currency.rst:67
+msgid ""
+"If you set ``USE_POINTS = True``, then currency amounts will be points "
+"instead of dollars/euros/etc. For example, ``cu(10)`` is displayed as ``10 "
+"points`` (or ``10 puntos``, etc.)"
+msgstr ""
+"Si configuras ``USE_POINTS = True``, entonces las cantidades de moneda serán"
+" puntos en lugar de dólares/euros/etc. Por ejemplo, ``cu(10)`` se muestra "
+"como ``10 puntos`` (o ``10 points``, etc.)"
+
+#: ../../source/currency.rst:70
+msgid ""
+"You can decide the conversion rate to real money by adding a "
+"``real_world_currency_per_point`` entry to your session config."
+msgstr ""
+"Puedes decidir la tasa de conversión a dinero real añadiendo una entrada "
+"``real_world_currency_per_point`` a la configuración de tu sesión."
+
+#: ../../source/currency.rst:74
+msgid "Converting points to real world currency"
+msgstr "Conversión de puntos a moneda del mundo real"
+
+#: ../../source/currency.rst:76
+msgid ""
+"You can convert a points amount to money using the method "
+"``.to_real_world_currency``. For example:"
+msgstr ""
+"Puedes convertir una cantidad de puntos a dinero usando el método "
+"``.to_real_world_currency``. Por ejemplo:"
+
+#: ../../source/currency.rst:83
+msgid ""
+"(The ``session`` is necessary because different sessions can have different "
+"conversion rates)."
+msgstr ""
+"(El ``session`` es necesario porque diferentes sesiones pueden tener "
+"diferentes tasas de conversión)."
+
+#: ../../source/currency.rst:87
+msgid "Decimal places"
+msgstr "Decimales"
+
+#: ../../source/currency.rst:89
+msgid "Money amounts are displayed with 2 decimal places."
+msgstr "Las cantidades de dinero se muestran con 2 decimales."
+
+#: ../../source/currency.rst:91
+msgid ""
+"On the other hand, points are integers. This means amounts will get rounded "
+"to whole numbers, like ``10`` divided by ``3`` is ``3``. So, we recommend "
+"using point magnitudes high enough that you don't care about rounding error."
+" For example, set the endowment of a game to 1000 points, rather than 100."
+msgstr ""
+"Por otro lado, los puntos son enteros. Esto significa que las cantidades se "
+"redondearán a números enteros, como que ``10`` dividido por ``3`` es ``3``. "
+"Por lo tanto, recomendamos usar magnitudes de puntos lo suficientemente "
+"altas como para que no te preocupes por el error de redondeo. Por ejemplo, "
+"establece la dotación de un juego en 1000 puntos, en lugar de 100."

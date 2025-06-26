@@ -1,0 +1,50 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install-nostudio.rst:6
+msgid "oTree Setup (text editor)"
+msgstr "Configuración de oTree (editor de texto)"
+
+#: ../../source/install-nostudio.rst:10
+msgid ""
+"Using oTree with a text editor is not recommended for most users. **If "
+"someone advised you to use a text editor, please direct any oTree questions "
+"to them.**"
+msgstr ""
+"No se recomienda utilizar oTree con un editor de texto para la mayoría de "
+"los usuarios. **Si alguien te aconsejó usar un editor de texto, por favor "
+"dirígete a ellos con cualquier pregunta sobre oTree.**"
+
+#: ../../source/install-nostudio.rst:14
+msgid "Setup commands::"
+msgstr "Comandos de configuración::"
+
+#: ../../source/install-nostudio.rst:21
+msgid ""
+"Open your browser to `http://localhost:8000/ <http://localhost:8000/>`__. "
+"You should see the oTree demo site."
+msgstr ""
+"Abre tu navegador en `http://localhost:8000/ <http://localhost:8000/>`__. "
+"Deberías ver el sitio de demostración de oTree."
+
+#: ../../source/install-nostudio.rst:24
+msgid "To create a new app, run ``otree startapp your_app_name``."
+msgstr ""
+"Para crear una nueva aplicación, ejecuta ``otree startapp your_app_name``."
+
+#: ../../source/install-nostudio.rst:26
+msgid "Session configs are defined in ``settings.py``."
+msgstr "Las configuraciones de sesión se definen en ``settings.py``."

@@ -1,0 +1,558 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/server/heroku.rst:4
+msgid "Basic Server Setup (Heroku)"
+msgstr "Configuración básica del servidor (Heroku)"
+
+#: ../../source/server/heroku.rst:6
+msgid ""
+"`Heroku <https://www.heroku.com/>`__ is a commercial cloud hosting provider."
+" It is the simplest way to deploy oTree."
+msgstr ""
+"`Heroku <https://www.heroku.com/>`__ es un proveedor comercial de "
+"alojamiento en la nube. Es la forma más sencilla de desplegar oTree."
+
+#: ../../source/server/heroku.rst:9
+msgid ""
+"The Heroku free plan is sufficient for testing your app, but once you are "
+"ready to launch a study, you should upgrade to a paid server, which can "
+"handle more traffic. However, Heroku is quite inexpensive, because you only "
+"pay for the time you actually use it. If you run a study for only 1 day, you"
+" can turn off your dynos and addons, and then you only pay 1/30 of the "
+"monthly cost. Often this means you can run a study for just a few dollars."
+msgstr ""
+"El plan gratuito de Heroku es suficiente para probar tu aplicación, pero una"
+" vez que estés listo para lanzar un estudio, deberías actualizar a un "
+"servidor de pago, que puede manejar más tráfico. Sin embargo, Heroku es "
+"bastante económico, porque solo pagas por el tiempo que realmente lo usas. "
+"Si realizas un estudio durante solo 1 día, puedes apagar tus dynos y "
+"complementos, y entonces solo pagas 1/30 del costo mensual. A menudo, esto "
+"significa que puedes realizar un estudio por solo unos pocos dólares."
+
+#: ../../source/server/heroku.rst:18
+msgid "Heroku setup"
+msgstr "Configuración de Heroku"
+
+#: ../../source/server/heroku.rst:20
+msgid ""
+"To deploy to Heroku, you should use `oTree Hub "
+"<https://www.otreehub.com/>`__, which automates your server setup and "
+"ensures your server is correctly configured."
+msgstr ""
+"Para desplegar en Heroku, debes usar `oTree Hub "
+"<https://www.otreehub.com/>`__, que automatiza la configuración de tu "
+"servidor y asegura que tu servidor esté correctamente configurado."
+
+#: ../../source/server/heroku.rst:24
+msgid "oTree Hub also offers error/performance monitoring."
+msgstr "oTree Hub también ofrece monitoreo de errores/rendimiento."
+
+#: ../../source/server/heroku.rst:29
+msgid "Server performance"
+msgstr "Rendimiento del servidor"
+
+#: ../../source/server/heroku.rst:31
+msgid ""
+"Heroku offers different performance tiers for resources such as your dyno "
+"and database. What tier you need depends on how much traffic your app will "
+"get, and how it is coded."
+msgstr ""
+"Heroku ofrece diferentes niveles de rendimiento para recursos como tu dyno y"
+" base de datos. El nivel que necesitas depende de cuántos tráfico recibirá "
+"tu aplicación y cómo está codificada."
+
+#: ../../source/server/heroku.rst:34
+msgid ""
+"Performance is a complicated subject since there are many factors that "
+"affect performance. oTree Hub's Pro plan has a \"monitor\" section that will"
+" analyze your logs to identify performance issues."
+msgstr ""
+"El rendimiento es un tema complicado ya que hay muchos factores que afectan "
+"el rendimiento. El plan Pro de oTree Hub tiene una sección de \"monitor\" "
+"que analizará tus registros para identificar problemas de rendimiento."
+
+#: ../../source/server/heroku.rst:38
+msgid "General tips:"
+msgstr "Consejos generales:"
+
+#: ../../source/server/heroku.rst:40
+msgid "Upgrade oTree to the latest version"
+msgstr "Actualiza oTree a la última versión"
+
+#: ../../source/server/heroku.rst:41
+msgid "Use browser bots to stress-test your app."
+msgstr ""
+"Utiliza bots de navegador para realizar pruebas de estrés en tu aplicación."
+
+#: ../../source/server/heroku.rst:42
+msgid ""
+"With the higher dyno tiers, Heroku provides a \"Metrics\" tab. Look at "
+"\"Dyno load\". If users are experiencing slow page load times and your your "
+"dyno load stays above 1, then you should get a faster dyno. (But don't run "
+"more than 1 web dyno.)"
+msgstr ""
+"Con los niveles de dyno más altos, Heroku proporciona una pestaña de "
+"\"Metrics\". Observa \"Dyno load\". Si los usuarios están experimentando "
+"tiempos de carga de página lentos y tu dyno load se mantiene por encima de "
+"1, entonces deberías obtener un dyno más rápido. (Pero no ejecutes más de 1 "
+"dyno web.)"
+
+#: ../../source/server/heroku.rst:45
+msgid ""
+"If your dyno load stays under 1 but page load times are still slow, the "
+"bottleneck might be something else like your Postgres database."
+msgstr ""
+"Si tu carga de dyno se mantiene por debajo de 1 pero los tiempos de carga de"
+" la página siguen siendo lentos, el cuello de botella podría ser algo más, "
+"como tu base de datos Postgres."
+
+#: ../../source/server/heroku.rst:49
+msgid ""
+"The most demanding sessions are the ones with a combination of (1) many "
+"rounds, (2) players spending just a few seconds on each page, and (3) many "
+"players playing concurrently, because these sessions have a high number of "
+"page requests per second, which can overload the server. Consider adapting "
+"these games to use :ref:`live`, which will result in much faster "
+"performance."
+msgstr ""
+"Las sesiones más exigentes son aquellas que combinan (1) muchas rondas, (2) "
+"jugadores que pasan solo unos pocos segundos en cada página y (3) muchos "
+"jugadores jugando simultáneamente, porque estas sesiones tienen un alto "
+"número de solicitudes de página por segundo, lo que puede sobrecargar el "
+"servidor. Considera adaptar estos juegos para usar :ref:`live`, lo que "
+"resultará en un rendimiento mucho más rápido."
+
+#: ../../source/server/intro.rst:4
+msgid "Server setup"
+msgstr "Configuración del servidor"
+
+#: ../../source/server/intro.rst:6
+msgid ""
+"If you are just testing your app on your personal computer, you can use "
+"``otree devserver``. You don't need a full server setup."
+msgstr ""
+"Si solo estás probando tu aplicación en tu computadora personal, puedes usar"
+" ``otree devserver``. No necesitas una configuración de servidor completa."
+
+#: ../../source/server/intro.rst:9
+msgid ""
+"However, when you want to share your app with an audience, you must use a "
+"web server."
+msgstr ""
+"Sin embargo, cuando quieras compartir tu aplicación con una audiencia, debes"
+" usar un servidor web."
+
+#: ../../source/server/intro.rst:12
+msgid "Choose which option you need:"
+msgstr "Elija la opción que necesita:"
+
+#: ../../source/server/intro.rst:14
+msgid "**You want to launch your app to users on the internet**"
+msgstr "**Desea lanzar su aplicación a los usuarios en internet**"
+
+#: ../../source/server/intro.rst:16
+msgid "Use :ref:`Heroku <heroku>`."
+msgstr "Utilice :ref:`Heroku <heroku>`."
+
+#: ../../source/server/intro.rst:18
+msgid "**You want the easiest setup**"
+msgstr "**Desea la configuración más sencilla**"
+
+#: ../../source/server/intro.rst:20
+msgid "Again, we recommend :ref:`Heroku <heroku>`."
+msgstr "Nuevamente, recomendamos :ref:`Heroku <heroku>`."
+
+#: ../../source/server/intro.rst:22
+msgid "**You want to set up a dedicated Linux server**"
+msgstr "**Quieres configurar un servidor Linux dedicado**"
+
+#: ../../source/server/intro.rst:24
+msgid ":ref:`Ubuntu Linux <server-ubuntu>` instructions."
+msgstr ":ref:`Instrucciones de Ubuntu Linux <server-ubuntu>`."
+
+#: ../../source/server/server-windows.rst:4
+msgid "Windows Server (advanced)"
+msgstr "Windows Server (avanzado)"
+
+#: ../../source/server/server-windows.rst:6
+msgid ""
+"If you are just testing your app on your personal computer, you can use "
+"``otree zipserver`` or ``otree devserver``. You don't need a full server "
+"setup as described below, which is necessary for sharing your app with an "
+"audience."
+msgstr ""
+"Si solo estás probando tu aplicación en tu computadora personal, puedes usar"
+" ``otree zipserver`` o ``otree devserver``. No necesitas una configuración "
+"de servidor completa como la que se describe a continuación, que es "
+"necesaria para compartir tu aplicación con una audiencia."
+
+#: ../../source/server/server-windows.rst:10
+msgid ""
+"This section is for people who are experienced with setting up web servers. "
+"If you would like an easier and quicker way, we recommend using :ref:`Heroku"
+" <heroku>`."
+msgstr ""
+"Esta sección es para personas que tienen experiencia en la configuración de "
+"servidores web. Si deseas una forma más fácil y rápida, te recomendamos usar"
+" :ref:`Heroku <heroku>`."
+
+#: ../../source/server/server-windows.rst:17
+msgid "Why do I need to install server software?"
+msgstr "¿Por qué necesito instalar software de servidor?"
+
+#: ../../source/server/server-windows.rst:19
+msgid ""
+"oTree's development setup (``devserver``) is not designed for running actual"
+" studies."
+msgstr ""
+"La configuración de desarrollo de oTree (``devserver``) no está diseñada "
+"para ejecutar estudios reales."
+
+#: ../../source/server/server-windows.rst:24 ../../source/server/ubuntu.rst:39
+msgid "Database (Postgres)"
+msgstr "Base de datos (Postgres)"
+
+#: ../../source/server/server-windows.rst:26 ../../source/server/ubuntu.rst:41
+msgid ""
+"Install Postgres and psycopg2, create a new database and set the "
+"``DATABASE_URL`` env var, for example: to "
+"``postgres://postgres@localhost/django_db``"
+msgstr ""
+"Instala Postgres y psycopg2, crea una nueva base de datos y establece la "
+"variable de entorno ``DATABASE_URL``, por ejemplo: "
+"``postgres://postgres@localhost/django_db``"
+
+#: ../../source/server/server-windows.rst:30
+msgid "resetdb"
+msgstr "resetdb"
+
+#: ../../source/server/server-windows.rst:32
+msgid ""
+"If all the above steps went well, you should be able to run ``otree "
+"resetdb``."
+msgstr ""
+"Si todos los pasos anteriores se realizaron correctamente, deberías poder "
+"ejecutar ``otree resetdb``."
+
+#: ../../source/server/server-windows.rst:35
+msgid "Run the production server"
+msgstr "Ejecutar el servidor de producción"
+
+#: ../../source/server/server-windows.rst:37 ../../source/server/ubuntu.rst:18
+msgid "Run::"
+msgstr "Ejecutar::"
+
+#: ../../source/server/server-windows.rst:41
+msgid ""
+"See :ref:`here <prodserver>` for full instructions. The steps are "
+"essentially the same as on Linux."
+msgstr ""
+"Consulta :ref:`aquí <prodserver>` para obtener instrucciones completas. Los "
+"pasos son esencialmente los mismos que en Linux."
+
+#: ../../source/server/server-windows.rst:45
+msgid "Set environment variables"
+msgstr "Configurar variables de entorno"
+
+#: ../../source/server/server-windows.rst:47
+msgid ""
+"You should set ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION``, and "
+"``OTREE_AUTH_LEVEL``."
+msgstr ""
+"Deberías establecer ``OTREE_ADMIN_PASSWORD``, ``OTREE_PRODUCTION`` y "
+"``OTREE_AUTH_LEVEL``."
+
+#: ../../source/server/ubuntu.rst:4
+msgid "Ubuntu Linux Server"
+msgstr "Servidor Ubuntu Linux"
+
+#: ../../source/server/ubuntu.rst:6
+msgid ""
+"We typically recommend newcomers to oTree to deploy to Heroku (see "
+"instructions :ref:`here <heroku>`)."
+msgstr ""
+"Normalmente recomendamos a los recién llegados a oTree que desplieguen en "
+"Heroku (ver instrucciones :ref:`aquí <heroku>`)."
+
+#: ../../source/server/ubuntu.rst:9
+msgid ""
+"However, you may prefer to run oTree on a proper Linux server. Reasons may "
+"include:"
+msgstr ""
+"Sin embargo, puedes preferir ejecutar oTree en un servidor Linux adecuado. "
+"Las razones pueden incluir:"
+
+#: ../../source/server/ubuntu.rst:11
+msgid "Your lab doesn't have internet"
+msgstr "Tu laboratorio no tiene internet."
+
+#: ../../source/server/ubuntu.rst:12
+msgid "You want full control over server configuration"
+msgstr "Quieres tener control total sobre la configuración del servidor"
+
+#: ../../source/server/ubuntu.rst:13
+msgid "You want better performance (local servers have less latency)"
+msgstr ""
+"Quieres un mejor rendimiento (los servidores locales tienen menos latencia)"
+
+#: ../../source/server/ubuntu.rst:16
+msgid "Install apt-get packages"
+msgstr "Instalar paquetes de apt-get"
+
+#: ../../source/server/ubuntu.rst:23
+msgid "Create a virtualenv"
+msgstr "Crear un virtualenv"
+
+#: ../../source/server/ubuntu.rst:25
+msgid "It's a best practice to use a virtualenv::"
+msgstr "Es una buena práctica usar un virtualenv::"
+
+#: ../../source/server/ubuntu.rst:29
+msgid ""
+"To activate this venv every time you start your shell, put this in your "
+"``.bashrc`` or ``.profile``::"
+msgstr ""
+"Para activar este venv cada vez que inicies tu shell, pon esto en tu "
+"``.bashrc`` o ``.profile``::"
+
+#: ../../source/server/ubuntu.rst:33
+msgid ""
+"Once your virtualenv is active, you will see ``(venv_otree)`` at the "
+"beginning of your prompt."
+msgstr ""
+"Una vez que tu virtualenv esté activo, verás ``(venv_otree)`` al principio "
+"de tu prompt."
+
+#: ../../source/server/ubuntu.rst:45
+msgid "Reset the database on the server"
+msgstr "Restablecer la base de datos en el servidor"
+
+#: ../../source/server/ubuntu.rst:47
+msgid ""
+"``cd`` to the folder containing your oTree project. Install the requirements"
+" and reset the database::"
+msgstr ""
+"Usa ``cd`` para ir a la carpeta que contiene tu proyecto oTree. Instala los "
+"requisitos y restablece la base de datos::"
+
+#: ../../source/server/ubuntu.rst:57
+msgid "Running the server"
+msgstr "Ejecutando el servidor"
+
+#: ../../source/server/ubuntu.rst:60
+msgid "Testing the production server"
+msgstr "Prueba del servidor de producción"
+
+#: ../../source/server/ubuntu.rst:62
+msgid "From your project folder, run::"
+msgstr "Desde tu carpeta de proyecto, ejecuta::"
+
+#: ../../source/server/ubuntu.rst:66
+msgid ""
+"Then navigate in your browser to your server's IP/hostname followed by "
+"``:8000``."
+msgstr ""
+"Luego navega en tu navegador a la IP/nombre de host de tu servidor seguido "
+"de ``:8000``."
+
+#: ../../source/server/ubuntu.rst:69
+msgid ""
+"If you're not using a reverse proxy like Nginx or Apache, you probably want "
+"to run oTree directly on port 80. This requires superuser permission, so "
+"let's use sudo, but add some extra args to preserve environment variables "
+"like ``PATH``, ``DATABASE_URL``, etc::"
+msgstr ""
+"Si no estás utilizando un proxy inverso como Nginx o Apache, probablemente "
+"quieras ejecutar oTree directamente en el puerto 80. Esto requiere permisos "
+"de superusuario, así que usemos sudo, pero añadamos algunos argumentos "
+"adicionales para preservar variables de entorno como ``PATH``, "
+"``DATABASE_URL``, etc::"
+
+#: ../../source/server/ubuntu.rst:77
+msgid ""
+"Try again to open your browser; this time, you don't need to append :80 to "
+"the URL, because that is the default HTTP port."
+msgstr ""
+"Intenta abrir tu navegador de nuevo; esta vez, no necesitas añadir :80 a la "
+"URL, porque ese es el puerto HTTP por defecto."
+
+#: ../../source/server/ubuntu.rst:80
+msgid ""
+"Unlike ``devserver``, ``prodserver`` does not restart automatically when "
+"your files are changed."
+msgstr ""
+"A diferencia de ``devserver``, ``prodserver`` no se reinicia automáticamente"
+" cuando se cambian tus archivos."
+
+#: ../../source/server/ubuntu.rst:84
+msgid "Set remaining environment variables"
+msgstr "Configurar las variables de entorno restantes"
+
+#: ../../source/server/ubuntu.rst:86
+msgid "Add these in the same place where you set ``DATABASE_URL``::"
+msgstr "Agrega estos en el mismo lugar donde configuraste ``DATABASE_URL``::"
+
+#: ../../source/server/ubuntu.rst:93
+msgid "(Optional) Process control system"
+msgstr "(Opcional) Sistema de control de procesos"
+
+#: ../../source/server/ubuntu.rst:95
+msgid ""
+"Once the server is working as described above, it's a good practice to use a"
+" process control system like Supervisord or Circus. This will restart your "
+"processes in case they crash, keep it running if you log out, etc."
+msgstr ""
+"Una vez que el servidor esté funcionando como se describe arriba, es una "
+"buena práctica utilizar un sistema de control de procesos como Supervisord o"
+" Circus. Esto reiniciará tus procesos en caso de que se bloqueen, los "
+"mantendrá en funcionamiento si cierras sesión, etc."
+
+#: ../../source/server/ubuntu.rst:102
+msgid "Circus"
+msgstr "Circus"
+
+#: ../../source/server/ubuntu.rst:104
+msgid ""
+"Install Circus, then create a ``circus.ini`` in your project folder, with "
+"the following content::"
+msgstr ""
+"Instala Circus, luego crea un ``circus.ini`` en tu carpeta de proyecto, con "
+"el siguiente contenido::"
+
+#: ../../source/server/ubuntu.rst:113
+msgid "Then run::"
+msgstr "Luego ejecuta::"
+
+#: ../../source/server/ubuntu.rst:117
+msgid "If this is working properly, you can start it as a daemon::"
+msgstr ""
+"Si esto está funcionando correctamente, puedes iniciarlo como un daemon::"
+
+#: ../../source/server/ubuntu.rst:122
+msgid "To stop circus, run::"
+msgstr "Para detener circus, ejecuta::"
+
+#: ../../source/server/ubuntu.rst:127
+msgid "(Optional) Apache, Nginx, etc."
+msgstr "(Opcional) Apache, Nginx, etc."
+
+#: ../../source/server/ubuntu.rst:129
+msgid ""
+"You cannot use Apache or Nginx as your primary web server, because oTree "
+"must be run with an ASGI server. However, you still might want to use "
+"Apache/Nginx as a reverse proxy, for the following reasons:"
+msgstr ""
+"No puedes usar Apache o Nginx como tu servidor web principal, porque oTree "
+"debe ejecutarse con un servidor ASGI. Sin embargo, aún podrías querer usar "
+"Apache/Nginx como un proxy inverso, por las siguientes razones:"
+
+#: ../../source/server/ubuntu.rst:133
+msgid ""
+"You are trying to optimize serving of static files (though oTree uses "
+"Whitenoise, which is already fairly efficient)"
+msgstr ""
+"Estás tratando de optimizar la entrega de archivos estáticos (aunque oTree "
+"utiliza Whitenoise, que ya es bastante eficiente)"
+
+#: ../../source/server/ubuntu.rst:135
+msgid "You need to host other websites on the same server"
+msgstr "Necesitas alojar otros sitios web en el mismo servidor"
+
+#: ../../source/server/ubuntu.rst:136
+msgid "You need features like SSL or proxy buffering"
+msgstr "Necesitas características como SSL o proxy buffering"
+
+#: ../../source/server/ubuntu.rst:138
+msgid ""
+"If you set up a reverse proxy, make sure to enable not only HTTP traffic but"
+" also websockets."
+msgstr ""
+"Si configuras un proxy inverso, asegúrate de habilitar no solo el tráfico "
+"HTTP, sino también los websockets."
+
+#: ../../source/server/ubuntu.rst:142
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../source/server/ubuntu.rst:144
+msgid ""
+"If you get strange behavior, such as random changes each time the page "
+"reloads, it might be caused by another oTree instance that didn't shut down."
+" Try stopping oTree and reload again."
+msgstr ""
+"Si experimentas un comportamiento extraño, como cambios aleatorios cada vez "
+"que se recarga la página, podría ser causado por otra instancia de oTree que"
+" no se apagó. Intenta detener oTree y recargar de nuevo."
+
+#: ../../source/server/ubuntu.rst:150
+msgid "Sharing a server with other oTree users"
+msgstr "Compartiendo un servidor con otros usuarios de oTree"
+
+#: ../../source/server/ubuntu.rst:152
+msgid ""
+"You can share a server with other oTree users; you just have to make sure "
+"that the code and databases are kept separate, so they don't conflict with "
+"each other."
+msgstr ""
+"Puedes compartir un servidor con otros usuarios de oTree; solo tienes que "
+"asegurarte de que el código y las bases de datos se mantengan separadas, "
+"para que no entren en conflicto entre sí."
+
+#: ../../source/server/ubuntu.rst:156
+msgid ""
+"On the server you should create a different Unix user for each person using "
+"oTree. Then each person should follow the same steps described above, but in"
+" some cases name things differently to avoid clashes:"
+msgstr ""
+"En el servidor, debes crear un usuario Unix diferente para cada persona que "
+"use oTree. Luego, cada persona debe seguir los mismos pasos descritos "
+"anteriormente, pero en algunos casos nombrar las cosas de manera diferente "
+"para evitar conflictos:"
+
+#: ../../source/server/ubuntu.rst:160
+msgid "Create a virtualenv in their home directory"
+msgstr "Crea un virtualenv en su directorio personal"
+
+#: ../../source/server/ubuntu.rst:161
+msgid ""
+"Create a different Postgres database, as described earlier, and set this in "
+"the DATABASE_URL env var."
+msgstr ""
+"Crea una base de datos Postgres diferente, como se describió anteriormente, "
+"y establece esto en la variable de entorno DATABASE_URL."
+
+#: ../../source/server/ubuntu.rst:164
+msgid ""
+"Once these steps are done, the second user can push code to the server, then"
+" run ``otree resetdb``."
+msgstr ""
+"Una vez que estos pasos estén completos, el segundo usuario puede subir el "
+"código al servidor y luego ejecutar ``otree resetdb``."
+
+#: ../../source/server/ubuntu.rst:167
+msgid ""
+"If you don't need multiple people to run experiments simultaneously, then "
+"each user can take turns running the server on port 80 with ``otree "
+"prodserver 80``. However, if multiple people need to run experiments at the "
+"same time, then you would need to run the server on multiple ports, e.g. "
+"``8000``, ``8001``, etc."
+msgstr ""
+"Si no necesitas que varias personas realicen experimentos simultáneamente, "
+"entonces cada usuario puede turnarse para ejecutar el servidor en el puerto "
+"80 con ``otree prodserver 80``. Sin embargo, si varias personas necesitan "
+"realizar experimentos al mismo tiempo, entonces necesitarías ejecutar el "
+"servidor en múltiples puertos, por ejemplo, ``8000``, ``8001``, etc."

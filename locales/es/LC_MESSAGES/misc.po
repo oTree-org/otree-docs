@@ -1,0 +1,1287 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/misc/advanced.rst:2
+msgid "Advanced features"
+msgstr "Funciones avanzadas"
+
+#: ../../source/misc/advanced.rst:4 ../../source/misc/bots_advanced.rst:6
+msgid ""
+"These are advanced features that are mostly unsupported in oTree Studio."
+msgstr ""
+"Estas son características avanzadas que en su mayoría no están soportadas en"
+" oTree Studio."
+
+#: ../../source/misc/advanced.rst:9
+msgid "ExtraModel"
+msgstr "ExtraModel"
+
+#: ../../source/misc/advanced.rst:11
+msgid ""
+"An ExtraModel is useful when you need to store dozens or hundreds of data "
+"points about a single player. For example, a list of bids, or a list of "
+"stimuli and reaction times. They are frequently used together with "
+":ref:`live`."
+msgstr ""
+"Un ExtraModel es útil cuando necesitas almacenar decenas o cientos de puntos"
+" de datos sobre un solo jugador. Por ejemplo, una lista de ofertas o una "
+"lista de estímulos y tiempos de reacción. Se utilizan frecuentemente junto "
+"con :ref:`live`."
+
+#: ../../source/misc/advanced.rst:15
+msgid ""
+"There are a bunch of examples `here "
+"<https://www.otreehub.com/projects/otree-more-demos/>`__."
+msgstr ""
+"`Aquí hay un montón de ejemplos <https://www.otreehub.com/projects/otree-"
+"more-demos/>`__."
+
+#: ../../source/misc/advanced.rst:17
+msgid "An ExtraModel should link to another model:"
+msgstr "Un ExtraModel debe enlazar a otro modelo:"
+
+#: ../../source/misc/advanced.rst:25
+msgid "Each time the user makes a bid, you store it in the database:"
+msgstr ""
+"Cada vez que el usuario hace una oferta, la almacenas en la base de datos:"
+
+#: ../../source/misc/advanced.rst:31
+msgid "Later, you can retrieve the list of a player's bids:"
+msgstr "Luego, puedes recuperar la lista de las ofertas de un jugador:"
+
+#: ../../source/misc/advanced.rst:37
+msgid "An ExtraModel can have multiple links:"
+msgstr "Un ExtraModel puede tener múltiples enlaces:"
+
+#: ../../source/misc/advanced.rst:48
+msgid "Then you can query it in various ways:"
+msgstr "Entonces puedes consultarlo de varias maneras:"
+
+#: ../../source/misc/advanced.rst:55
+msgid "For more complex filters and sorting, you should use list operations:"
+msgstr ""
+"Para filtros y ordenamientos más complejos, debes usar operaciones de lista:"
+
+#: ../../source/misc/advanced.rst:61
+msgid ""
+"See the example psychology games such as the Stroop task, which show how to "
+"generate ExtraModel data from each row of a CSV spreadsheet."
+msgstr ""
+"Vea los ejemplos de juegos de psicología, como la tarea de Stroop, que "
+"muestran cómo generar datos de ExtraModel a partir de cada fila de una hoja "
+"de cálculo CSV."
+
+#: ../../source/misc/advanced.rst:64
+msgid "To export your ExtraModel data to CSV/Excel, use :ref:`custom-export`."
+msgstr ""
+"Para exportar sus datos de ExtraModel a CSV/Excel, use :ref:`custom-export`."
+
+#: ../../source/misc/advanced.rst:69
+msgid "Reading CSV files"
+msgstr "Lectura de archivos CSV"
+
+#: ../../source/misc/advanced.rst:73
+msgid "This feature is in beta (new in oTree 5.8.2)"
+msgstr "Esta función está en beta (nueva en oTree 5.8.2)"
+
+#: ../../source/misc/advanced.rst:75
+msgid ""
+"To read a CSV file (which can be produced by Excel or any other spreadsheet "
+"app), you can use ``read_csv()``. For example, if you have a CSV file like "
+"this::"
+msgstr ""
+"Para leer un archivo CSV (que puede ser producido por Excel o cualquier otra"
+" aplicación de hojas de cálculo), puede usar ``read_csv()``. Por ejemplo, si"
+" tiene un archivo CSV como este::"
+
+#: ../../source/misc/advanced.rst:82
+msgid "``read_csv()`` will output a list of dicts, like:"
+msgstr "``read_csv()`` generará una lista de diccionarios, como:"
+
+#: ../../source/misc/advanced.rst:89
+msgid "You call the function like this:"
+msgstr "Llamas a la función así:"
+
+#: ../../source/misc/advanced.rst:95
+msgid ""
+"The second argument is a class that specifies the datatype of each column:"
+msgstr ""
+"El segundo argumento es una clase que especifica el tipo de dato de cada "
+"columna:"
+
+#: ../../source/misc/advanced.rst:104
+msgid ""
+"(Without this info, it would be ambiguous whether ``TRUE`` is supposed to be"
+" a bool, or the string ``'TRUE'``, etc.)"
+msgstr ""
+"(Sin esta información, sería ambiguo si ``TRUE`` se supone que es un bool, o"
+" la cadena ``'TRUE'``, etc.)"
+
+#: ../../source/misc/advanced.rst:107
+msgid ""
+"``read_csv()`` does not actually create any instances of that class. If you "
+"want that, you must use ``.create()`` additionally:"
+msgstr ""
+"``read_csv()`` no crea realmente ninguna instancia de esa clase. Si deseas "
+"eso, debes usar ``.create()`` adicionalmente:"
+
+#: ../../source/misc/advanced.rst:122
+msgid ""
+"The model can be an ``ExtraModel``, ``Player``, ``Group``, or "
+"``Subsession``. It's fine if it also contains other fields; they will be "
+"ignored by ``read_csv()``."
+msgstr ""
+"El modelo puede ser un ``ExtraModel``, ``Player``, ``Group`` o "
+"``Subsession``. Está bien si también contiene otros campos; serán ignorados "
+"por ``read_csv()``."
+
+#: ../../source/misc/advanced.rst:127
+msgid "Templates"
+msgstr "Plantillas"
+
+#: ../../source/misc/advanced.rst:130
+msgid "template_name"
+msgstr "template_name"
+
+#: ../../source/misc/advanced.rst:132
+msgid ""
+"If the template needs to have a different name from your page class (e.g. "
+"you are sharing the same template for multiple pages), set "
+"``template_name``. Example:"
+msgstr ""
+"Si la plantilla necesita tener un nombre diferente al de tu clase de página "
+"(por ejemplo, si estás compartiendo la misma plantilla para múltiples "
+"páginas), establece ``template_name``. Ejemplo:"
+
+#: ../../source/misc/advanced.rst:144
+msgid "CSS/JS and base templates"
+msgstr "CSS/JS y plantillas base"
+
+#: ../../source/misc/advanced.rst:146
+msgid ""
+"To include the same JS/CSS in all pages of an app, either put it in a "
+":ref:`static file <staticfiles>` or put it in an includable template."
+msgstr ""
+"Para incluir el mismo JS/CSS en todas las páginas de una aplicación, "
+"colócalo en un :ref:`archivo estático <staticfiles>` o ponlo en una "
+"plantilla incluyente."
+
+#: ../../source/misc/advanced.rst:152
+msgid "Static files"
+msgstr "Archivos estáticos"
+
+#: ../../source/misc/advanced.rst:154
+msgid ""
+"Here is how to include images (or any other static file like .css, .js, "
+"etc.) in your pages."
+msgstr ""
+"Aquí se explica cómo incluir imágenes (o cualquier otro archivo estático "
+"como .css, .js, etc.) en tus páginas."
+
+#: ../../source/misc/advanced.rst:156
+msgid ""
+"At the root of your oTree project, there is a ``_static/`` folder. Put a "
+"file there, for example ``puppy.jpg``. Then, in your template, you can get "
+"the URL to that file with ``{{ static 'puppy.jpg' }}``."
+msgstr ""
+"En la raíz de tu proyecto oTree, hay una carpeta ``_static/``. Coloca un "
+"archivo allí, por ejemplo ``puppy.jpg``. Luego, en tu plantilla, puedes "
+"obtener la URL de ese archivo con ``{{ static 'puppy.jpg' }}``."
+
+#: ../../source/misc/advanced.rst:161
+msgid "To display an image, use the ``<img>`` tag, like this:"
+msgstr "Para mostrar una imagen, utiliza la etiqueta ``<img>``, así:"
+
+#: ../../source/misc/advanced.rst:167
+msgid ""
+"Above we saved our image in ``_static/puppy.jpg``, But actually it's better "
+"to make a subfolder with the name of your app, and save it as "
+"``_static/your_app_name/puppy.jpg``, to keep files organized and prevent "
+"name conflicts."
+msgstr ""
+"Arriba guardamos nuestra imagen en ``_static/puppy.jpg``. Pero en realidad, "
+"es mejor crear una subcarpeta con el nombre de tu aplicación y guardarla "
+"como ``_static/your_app_name/puppy.jpg`` para mantener los archivos "
+"organizados y prevenir conflictos de nombres."
+
+#: ../../source/misc/advanced.rst:172
+msgid "Then your HTML code becomes:"
+msgstr "Entonces tu código HTML se convierte en:"
+
+#: ../../source/misc/advanced.rst:178
+msgid ""
+"(If you prefer, you can also put static files inside your app folder, in a "
+"subfolder called ``static/your_app_name``.)"
+msgstr ""
+"(Si lo prefieres, también puedes poner archivos estáticos dentro de la "
+"carpeta de tu aplicación, en una subcarpeta llamada "
+"``static/your_app_name``.)"
+
+#: ../../source/misc/advanced.rst:181
+msgid ""
+"If a static file is not updating even after you changed it, this is because "
+"your browser cached the file. Do a full page reload (usually Ctrl+F5)"
+msgstr ""
+"Si un archivo estático no se actualiza incluso después de que lo cambiaste, "
+"es porque tu navegador ha almacenado en caché el archivo. Haz una recarga "
+"completa de la página (normalmente Ctrl+F5)."
+
+#: ../../source/misc/advanced.rst:185
+msgid ""
+"If you have videos or high-resolution images, it's preferable to store them "
+"somewhere online and reference them by URL because the large file size can "
+"make uploading your .otreezip file much slower."
+msgstr ""
+"Si tienes videos o imágenes de alta resolución, es preferible almacenarlos "
+"en algún lugar en línea y referenciarlos por URL, ya que el gran tamaño del "
+"archivo puede hacer que la carga de tu archivo .otreezip sea mucho más "
+"lenta."
+
+#: ../../source/misc/advanced.rst:192
+msgid "Wait pages"
+msgstr "Páginas de espera"
+
+#: ../../source/misc/advanced.rst:197
+msgid "Custom wait page template"
+msgstr "Plantilla de página de espera personalizada"
+
+#: ../../source/misc/advanced.rst:199
+msgid ""
+"You can make a custom wait page template. For example, save this to "
+"``your_app_name/MyWaitPage.html``:"
+msgstr ""
+"Puedes crear una plantilla de página de espera personalizada. Por ejemplo, "
+"guarda esto en ``your_app_name/MyWaitPage.html``:"
+
+#: ../../source/misc/advanced.rst:213
+msgid "Then tell your wait page to use this template:"
+msgstr "Luego, indica a tu página de espera que use esta plantilla:"
+
+#: ../../source/misc/advanced.rst:220
+msgid ""
+"Then you can use ``vars_for_template`` in the usual way. Actually, the "
+"``body_text`` and ``title_text`` attributes are just shorthand for setting "
+"``vars_for_template``; the following 2 code snippets are equivalent:"
+msgstr ""
+"Entonces puedes usar ``vars_for_template`` de la manera habitual. De hecho, "
+"los atributos ``body_text`` y ``title_text`` son solo una forma abreviada de"
+" establecer ``vars_for_template``; los siguientes 2 fragmentos de código son"
+" equivalentes:"
+
+#: ../../source/misc/advanced.rst:238
+msgid ""
+"If you want to apply your custom wait page template globally, save it to "
+"``_templates/global/WaitPage.html``. oTree will then automatically use it "
+"everywhere instead of the built-in wait page."
+msgstr ""
+"Si deseas aplicar tu plantilla de página de espera personalizada "
+"globalmente, guárdala en ``_templates/global/WaitPage.html``. oTree la usará"
+" automáticamente en todas partes en lugar de la página de espera "
+"incorporada."
+
+#: ../../source/misc/advanced.rst:244
+msgid "Currency"
+msgstr "Moneda"
+
+#: ../../source/misc/advanced.rst:246
+msgid ""
+"To customize the name \"points\" to something else like \"tokens\" or "
+"\"credits\", set ``POINTS_CUSTOM_NAME``, e.g. ``POINTS_CUSTOM_NAME = "
+"'tokens'``."
+msgstr ""
+"Para personalizar el nombre \"points\" a algo diferente como \"tokens\" o "
+"\"credits\", establece ``POINTS_CUSTOM_NAME``, por ejemplo, "
+"``POINTS_CUSTOM_NAME = 'tokens'``."
+
+#: ../../source/misc/advanced.rst:249
+msgid ""
+"You can change the number of decimal places in real world currency amounts "
+"with the setting ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. If the extra "
+"decimal places show up but are always 0, then you should reset the database."
+msgstr ""
+"Puedes cambiar el número de decimales en las cantidades de moneda del mundo "
+"real con la configuración ``REAL_WORLD_CURRENCY_DECIMAL_PLACES``. Si los "
+"decimales adicionales aparecen pero siempre son 0, entonces deberías "
+"restablecer la base de datos."
+
+#: ../../source/misc/bots_advanced.rst:4
+msgid "Bots: advanced features"
+msgstr "Bots: características avanzadas"
+
+#: ../../source/misc/bots_advanced.rst:11
+msgid "Command line bots"
+msgstr "Bots de línea de comandos"
+
+#: ../../source/misc/bots_advanced.rst:13
+msgid ""
+"An alternative to running bots in your web browser is to run them in the "
+"command line. Command line bots run faster and require less setup."
+msgstr ""
+"Una alternativa a ejecutar bots en tu navegador web es ejecutarlos en la "
+"línea de comandos. Los bots de línea de comandos se ejecutan más rápido y "
+"requieren menos configuración."
+
+#: ../../source/misc/bots_advanced.rst:16
+#: ../../source/misc/bots_advanced.rst:51
+msgid "Run this::"
+msgstr "Ejecuta esto::"
+
+#: ../../source/misc/bots_advanced.rst:20
+msgid ""
+"To test with a specific number of participants (otherwise it will default to"
+" ``num_demo_participants``)::"
+msgstr ""
+"Para probar con un número específico de participantes (de lo contrario, se "
+"utilizará por defecto ``num_demo_participants``)::"
+
+#: ../../source/misc/bots_advanced.rst:25
+msgid "To run tests for all session configs::"
+msgstr "Para ejecutar pruebas para todas las configuraciones de sesión::"
+
+#: ../../source/misc/bots_advanced.rst:30
+msgid "Exporting data"
+msgstr "Exportando datos"
+
+#: ../../source/misc/bots_advanced.rst:32
+msgid "Use the ``--export`` flag to export the results to a CSV file::"
+msgstr ""
+"Utiliza el ``--export`` para exportar los resultados a un archivo CSV::"
+
+#: ../../source/misc/bots_advanced.rst:36
+msgid "To specify the folder where the data is saved, do::"
+msgstr ""
+"Para especificar la carpeta donde se guardan los datos, haz lo siguiente::"
+
+#: ../../source/misc/bots_advanced.rst:42
+msgid "Command-line browser bots"
+msgstr "Bots de navegador de línea de comandos"
+
+#: ../../source/misc/bots_advanced.rst:44
+msgid ""
+"You can launch browser bots from the command line, using ``otree "
+"browser_bots``."
+msgstr ""
+"Puedes lanzar bots de navegador desde la línea de comandos, utilizando "
+"``otree browser_bots``."
+
+#: ../../source/misc/bots_advanced.rst:46
+msgid ""
+"Make sure Google Chrome is installed, or set ``BROWSER_COMMAND`` in "
+"``settings.py`` (more info below)."
+msgstr ""
+"Asegúrate de que Google Chrome esté instalado, o configura "
+"``BROWSER_COMMAND`` en ``settings.py`` (más información a continuación)."
+
+#: ../../source/misc/bots_advanced.rst:48
+msgid "Set ``OTREE_REST_KEY`` env var as described in :ref:`rest`."
+msgstr ""
+"Configura la variable de entorno ``OTREE_REST_KEY`` como se describe en "
+":ref:`rest`."
+
+#: ../../source/misc/bots_advanced.rst:49
+msgid "Run your server"
+msgstr "Ejecuta tu servidor."
+
+#: ../../source/misc/bots_advanced.rst:50
+msgid "Close all Chrome windows."
+msgstr "Cierra todas las ventanas de Chrome."
+
+#: ../../source/misc/bots_advanced.rst:55
+msgid ""
+"This will launch several Chrome tabs and run the bots. When finished, the "
+"tabs will close, and you will see a report in your terminal window."
+msgstr ""
+"Esto abrirá varias pestañas de Chrome y ejecutará los bots. Cuando termine, "
+"las pestañas se cerrarán y verás un informe en tu ventana de terminal."
+
+#: ../../source/misc/bots_advanced.rst:59
+msgid ""
+"If Chrome doesn't close windows properly, make sure you closed all Chrome "
+"windows prior to launching the command."
+msgstr ""
+"Si Chrome no cierra las ventanas correctamente, asegúrate de haber cerrado "
+"todas las ventanas de Chrome antes de lanzar el comando."
+
+#: ../../source/misc/bots_advanced.rst:63
+msgid "Command-line browser bots on a remote server (e.g. Heroku)"
+msgstr ""
+"Bots de navegador en línea de comandos en un servidor remoto (por ejemplo, "
+"Heroku)"
+
+#: ../../source/misc/bots_advanced.rst:65
+msgid ""
+"If the server is running on a host/port other than the usual "
+"``http://localhost:8000``, you need to pass ``--server-url``. For example, "
+"if it's on Heroku, you would do like this::"
+msgstr ""
+"Si el servidor se está ejecutando en un host/puerto diferente al habitual "
+"``http://localhost:8000``, necesitas pasar ``--server-url``. Por ejemplo, si"
+" está en Heroku, lo harías así::"
+
+#: ../../source/misc/bots_advanced.rst:73
+msgid "Choosing session configs and sizes"
+msgstr "Eligiendo configuraciones y tamaños de sesión"
+
+#: ../../source/misc/bots_advanced.rst:75
+msgid "You can specify the number of participants::"
+msgstr "Puedes especificar el número de participantes::"
+
+#: ../../source/misc/bots_advanced.rst:79
+msgid "To test all session configs, just run this::"
+msgstr ""
+"Para probar todas las configuraciones de sesión, simplemente ejecuta esto::"
+
+#: ../../source/misc/bots_advanced.rst:85
+msgid "Browser bots: misc notes"
+msgstr "Bots de navegador: notas varias"
+
+#: ../../source/misc/bots_advanced.rst:87
+msgid ""
+"You can use a browser other than Chrome by setting ``BROWSER_COMMAND`` in "
+"``settings.py``. Then, oTree will open the browser by doing something like "
+"``subprocess.Popen(settings.BROWSER_COMMAND)``."
+msgstr ""
+"Puedes usar un navegador diferente a Chrome configurando ``BROWSER_COMMAND``"
+" en ``settings.py``. Luego, oTree abrirá el navegador ejecutando algo como "
+"``subprocess.Popen(settings.BROWSER_COMMAND)``."
+
+#: ../../source/misc/bots_advanced.rst:94
+msgid "Test cases"
+msgstr "Casos de prueba"
+
+#: ../../source/misc/bots_advanced.rst:96
+msgid ""
+"You can define an attribute ``cases`` on your PlayerBot class that lists "
+"different test cases. For example, in a public goods game, you may want to "
+"test 3 scenarios:"
+msgstr ""
+"Puedes definir un atributo ``cases`` en tu clase PlayerBot que liste "
+"diferentes casos de prueba. Por ejemplo, en un juego de bienes públicos, "
+"puede que desees probar 3 escenarios:"
+
+#: ../../source/misc/bots_advanced.rst:100
+msgid "All players contribute half their endowment"
+msgstr "Todos los jugadores contribuyen con la mitad de su dotación."
+
+#: ../../source/misc/bots_advanced.rst:101
+msgid "All players contribute nothing"
+msgstr "Todos los jugadores no contribuyen en absoluto."
+
+#: ../../source/misc/bots_advanced.rst:102
+msgid "All players contribute their entire endowment (100 points)"
+msgstr ""
+"Todos los jugadores contribuyen con su dotación completa (100 puntos)."
+
+#: ../../source/misc/bots_advanced.rst:104
+msgid ""
+"We can call these 3 test cases \"basic\", \"min\", and \"max\", "
+"respectively, and put them in ``cases``. Then, oTree will execute the bot 3 "
+"times, once for each test case. Each time, a different value from ``cases`` "
+"will be assigned to ``self.case`` in the bot."
+msgstr ""
+"Podemos llamar a estos 3 casos de prueba \"basic\", \"min\" y \"max\", "
+"respectivamente, y ponerlos en ``cases``. Luego, oTree ejecutará el bot 3 "
+"veces, una para cada caso de prueba. Cada vez, un valor diferente de "
+"``cases`` se asignará a ``self.case`` en el bot."
+
+#: ../../source/misc/bots_advanced.rst:109
+msgid "For example:"
+msgstr "Por ejemplo:"
+
+#: ../../source/misc/bots_advanced.rst:148
+msgid ""
+"If you use cases, it's better to use :ref:`cli-bots` since browser bots will"
+" only execute a single case."
+msgstr ""
+"Si utilizas casos, es mejor usar :ref:`cli-bots` ya que los bots de "
+"navegador solo ejecutarán un solo caso."
+
+#: ../../source/misc/bots_advanced.rst:150
+msgid ""
+"``cases`` needs to be a list, but it can contain any data type, such as "
+"strings, integers, or even dictionaries. Here is a trust game bot that uses "
+"dictionaries as cases."
+msgstr ""
+"``cases`` debe ser una lista, pero puede contener cualquier tipo de dato, "
+"como cadenas, enteros o incluso diccionarios. Aquí hay un bot de juego de "
+"confianza que utiliza diccionarios como casos."
+
+#: ../../source/misc/bots_advanced.rst:188
+msgid "error_fields"
+msgstr "error_fields"
+
+#: ../../source/misc/bots_advanced.rst:190
+msgid ""
+"When using ``SubmissionMustFail`` on forms with multiple fields, you can use"
+" ``error_fields`` for extra thoroughness."
+msgstr ""
+"Al usar ``SubmissionMustFail`` en formularios con múltiples campos, puedes "
+"usar ``error_fields`` para mayor exhaustividad."
+
+#: ../../source/misc/bots_advanced.rst:193
+msgid ""
+"For example, let's say we a submit a valid ``age``, but an invalid "
+"``weight`` and ``height``:"
+msgstr ""
+"Por ejemplo, supongamos que enviamos un ``age`` válido, pero un ``weight`` y"
+" ``height`` inválidos:"
+
+#: ../../source/misc/bots_advanced.rst:207
+msgid ""
+"What's missing is that the bot system doesn't tell us exactly *why* the "
+"submission fails. Is it an invalid ``weight``, ``height``, or both? "
+"``error_fields`` can resolve the ambiguity:"
+msgstr ""
+"Lo que falta es que el sistema de bots no nos dice exactamente *por qué* "
+"falla la presentación. ¿Es un ``weight``, ``height`` inválido, o ambos? "
+"``error_fields`` puede resolver la ambigüedad:"
+
+#: ../../source/misc/bots_advanced.rst:223
+msgid ""
+"This will verify that ``weight`` and ``height`` contained errors, but "
+"``age`` did not."
+msgstr ""
+"Esto verificará que ``weight`` y ``height`` contenían errores, pero ``age`` "
+"no."
+
+#: ../../source/misc/bots_advanced.rst:226
+msgid ""
+"If :ref:`error_message <error_message>` returns an error, then "
+"``error_fields`` will be ``['__all__']``."
+msgstr ""
+"Si :ref:`error_message <error_message>` devuelve un error, entonces "
+"``error_fields`` será ``['__all__']``."
+
+#: ../../source/misc/bots_advanced.rst:230
+msgid "Misc note"
+msgstr "Nota miscelánea"
+
+#: ../../source/misc/bots_advanced.rst:232
+msgid ""
+"In bots, it is risky to assign ``player = self.player`` (or ``participant = "
+"self.participant``, etc), even though that kind of code is encouraged "
+"elsewhere."
+msgstr ""
+"En los bots, es arriesgado asignar ``player = self.player`` (o ``participant"
+" = self.participant``, etc.), aunque ese tipo de código se fomente en otros "
+"lugares."
+
+#: ../../source/misc/bots_advanced.rst:236
+msgid "Because if there is a ``yield`` in between, the data can be stale:"
+msgstr ""
+"Porque si hay un ``yield`` en medio, los datos pueden estar desactualizados:"
+
+#: ../../source/misc/bots_advanced.rst:247
+msgid ""
+"It's safer to use ``self.player.money_left`` directly, because doing "
+"``self.player`` gets the most recent data from the database."
+msgstr ""
+"Es más seguro usar ``self.player.money_left`` directamente, porque hacer "
+"``self.player`` obtiene los datos más recientes de la base de datos."
+
+#: ../../source/misc/bots_advanced.rst:251
+msgid "Live pages"
+msgstr "Páginas en vivo"
+
+#: ../../source/misc/bots_advanced.rst:253
+msgid ""
+"To test live methods with bots, define ``call_live_method`` as a top-level "
+"function in ``tests.py``. (Not available in oTree Studio.) This function "
+"should simulate the sequence of calls to your ``live_method``. The argument "
+"``method`` simulates the live method on your Player model. For example, "
+"``method(3, 'hello')`` calls the live method on Player 3 with ``data`` set "
+"to ``'hello'``. For example:"
+msgstr ""
+"Para probar métodos en vivo con bots, define ``call_live_method`` como una "
+"función de nivel superior en ``tests.py``. (No disponible en oTree Studio.) "
+"Esta función debe simular la secuencia de llamadas a tu ``live_method``. El "
+"argumento ``method`` simula el método en vivo en tu modelo de Player. Por "
+"ejemplo, ``method(3, 'hello')`` llama al método en vivo en el Jugador 3 con "
+"``data`` establecido en ``'hello'``. Por ejemplo:"
+
+#: ../../source/misc/bots_advanced.rst:269
+msgid "``kwargs`` contains at least the following parameters."
+msgstr "``kwargs`` contiene al menos los siguientes parámetros."
+
+#: ../../source/misc/bots_advanced.rst:271
+msgid "``case`` as described in :ref:`cases`."
+msgstr "``case`` como se describe en :ref:`cases`."
+
+#: ../../source/misc/bots_advanced.rst:272
+msgid "``page_class``: the current page class, e.g. ``pages.MyPage``."
+msgstr ""
+"``page_class``: la clase de página actual, por ejemplo, ``pages.MyPage``."
+
+#: ../../source/misc/bots_advanced.rst:273
+msgid "``round_number``"
+msgstr "``round_number``"
+
+#: ../../source/misc/bots_advanced.rst:275
+msgid ""
+"``call_live_method`` will be automatically executed when the fastest bot in "
+"the group arrives on a page with ``live_method``. (Other bots may be on "
+"previous pages at that point, unless you restrict this with a WaitPage.)"
+msgstr ""
+"``call_live_method`` se ejecutará automáticamente cuando el bot más rápido "
+"del grupo llegue a una página con ``live_method``. (Otros bots pueden estar "
+"en páginas anteriores en ese momento, a menos que restrinjas esto con un "
+"WaitPage.)"
+
+#: ../../source/misc/intro.rst:2
+msgid "Miscellaneous"
+msgstr "Varios"
+
+#: ../../source/misc/rest_api.rst:4
+msgid "REST"
+msgstr "REST"
+
+#: ../../source/misc/rest_api.rst:6
+msgid ""
+"oTree has a REST API that enables external programs (such as other websites)"
+" to communicate with oTree."
+msgstr ""
+"oTree tiene una API REST que permite a programas externos (como otros sitios"
+" web) comunicarse con oTree."
+
+#: ../../source/misc/rest_api.rst:9
+msgid ""
+"A REST API is just a URL on your server that is designed to be accessed by "
+"programs, rather than being opened manually in a web browser."
+msgstr ""
+"Una API REST es simplemente una URL en tu servidor que está diseñada para "
+"ser accedida por programas, en lugar de ser abierta manualmente en un "
+"navegador web."
+
+#: ../../source/misc/rest_api.rst:15
+msgid "Setup"
+msgstr "Configuración"
+
+#: ../../source/misc/rest_api.rst:19
+msgid "*\"Where should I put this code?\"*"
+msgstr "*\"¿Dónde debo poner este código?\"*"
+
+#: ../../source/misc/rest_api.rst:21
+msgid ""
+"This code does not need to go inside your oTree project folder. Since the "
+"point of the REST API is to allow external programs and servers to "
+"communicate with oTree across the internet, you should put this code in that"
+" other program. That also means you should use whatever language that other "
+"server uses. The examples on this page use Python, but it's simple to make "
+"HTTP requests using any programming language, or tools like webhooks or "
+"cURL."
+msgstr ""
+"Este código no necesita estar dentro de tu carpeta del proyecto oTree. Dado "
+"que el objetivo de la API REST es permitir que programas y servidores "
+"externos se comuniquen con oTree a través de Internet, debes colocar este "
+"código en ese otro programa. Esto también significa que debes usar el "
+"lenguaje que utilice ese otro servidor. Los ejemplos en esta página utilizan"
+" Python, pero es sencillo realizar solicitudes HTTP utilizando cualquier "
+"lenguaje de programación, o herramientas como webhooks o cURL."
+
+#: ../../source/misc/rest_api.rst:56
+msgid "\"oTree version\" endpoint"
+msgstr "\"oTree version\" endpoint"
+
+#: ../../source/misc/rest_api.rst:60 ../../source/misc/rest_api.rst:77
+#: ../../source/misc/rest_api.rst:96
+msgid "New beta feature as of March 2021."
+msgstr "Nueva función beta desde marzo de 2021."
+
+#: ../../source/misc/rest_api.rst:62
+msgid "GET URL: ``/api/otree_version/``"
+msgstr "GET URL: ``/api/otree_version/``"
+
+#: ../../source/misc/rest_api.rst:65 ../../source/misc/rest_api.rst:84
+#: ../../source/misc/rest_api.rst:101 ../../source/misc/rest_api.rst:134
+#: ../../source/misc/rest_api.rst:173 ../../source/misc/rest_api.rst:198
+#: ../../source/misc/rest_api.rst:213 ../../source/misc/rest_api.rst:230
+msgid "Example"
+msgstr "Ejemplo"
+
+#: ../../source/misc/rest_api.rst:73
+msgid "\"Session configs\" endpoint"
+msgstr "\"Session configs\" endpoint"
+
+#: ../../source/misc/rest_api.rst:79
+msgid "GET URL: ``/api/session_configs/``"
+msgstr "GET URL: ``/api/session_configs/``"
+
+#: ../../source/misc/rest_api.rst:81
+msgid ""
+"Returns the list of all your session configs, as dicts with all their "
+"properties."
+msgstr ""
+"Devuelve la lista de todas tus session configs, como diccionarios con todas "
+"sus propiedades."
+
+#: ../../source/misc/rest_api.rst:92
+msgid "\"Rooms\" endpoint"
+msgstr "\"Rooms\" endpoint"
+
+#: ../../source/misc/rest_api.rst:98
+msgid "GET URL: ``/api/rooms/``"
+msgstr "GET URL: ``/api/rooms/``"
+
+#: ../../source/misc/rest_api.rst:108
+msgid ""
+"Example output (note it includes ``session_code`` if there is currently a "
+"session in the room):"
+msgstr ""
+"Ejemplo de salida (tenga en cuenta que incluye ``session_code`` si "
+"actualmente hay una sesión en la sala):"
+
+#: ../../source/misc/rest_api.rst:120
+msgid "\"Create sessions\" endpoint"
+msgstr "Endpoint de \"Crear sesiones\""
+
+#: ../../source/misc/rest_api.rst:122
+msgid "POST URL: ``/api/sessions/``"
+msgstr "URL POST: ``/api/sessions/``"
+
+#: ../../source/misc/rest_api.rst:124
+msgid ""
+"Here are some examples of how the \"create sessions\" endpoint can be used:"
+msgstr ""
+"Aquí hay algunos ejemplos de cómo se puede utilizar el endpoint de \"crear "
+"sesiones\":"
+
+#: ../../source/misc/rest_api.rst:126
+msgid "Other websites can create oTree sessions automatically"
+msgstr "Otros sitios web pueden crear sesiones de oTree automáticamente"
+
+#: ../../source/misc/rest_api.rst:127
+msgid ""
+"You can make a fancier alternative to oTree's :ref:`edit_config` interface "
+"(e.g. with sliders and visual widgets)"
+msgstr ""
+"Puedes crear una alternativa más elaborada a la interfaz de "
+":ref:`edit_config` de oTree (por ejemplo, con deslizadores y widgets "
+"visuales)"
+
+#: ../../source/misc/rest_api.rst:129
+msgid "Process that will create new oTree sessions on some fixed schedule"
+msgstr "Proceso que creará nuevas sesiones de oTree en un horario fijo"
+
+#: ../../source/misc/rest_api.rst:130
+msgid ""
+"Command line script to create customized sessions (if ``otree "
+"create_session`` is not sufficient)"
+msgstr ""
+"Script de línea de comandos para crear sesiones personalizadas (si ``otree "
+"create_session`` no es suficiente)"
+
+#: ../../source/misc/rest_api.rst:149 ../../source/misc/rest_api.rst:244
+msgid "Parameters"
+msgstr "Parámetros"
+
+#: ../../source/misc/rest_api.rst:151
+msgid "``session_config_name`` (required)"
+msgstr "``session_config_name`` (requerido)"
+
+#: ../../source/misc/rest_api.rst:152
+msgid "``num_participants`` (required)"
+msgstr "`num_participants` (requerido)"
+
+#: ../../source/misc/rest_api.rst:153
+msgid ""
+"``modified_session_config_fields``: an optional dict of session config "
+"parameters, as discussed in :ref:`edit_config`."
+msgstr ""
+"`modified_session_config_fields`: un diccionario opcional de parámetros de "
+"configuración de sesión, como se discutió en :ref:`edit_config`."
+
+#: ../../source/misc/rest_api.rst:155
+msgid "``room_name`` if you want to create the session in a room."
+msgstr "`room_name` si deseas crear la sesión en una sala."
+
+#: ../../source/misc/rest_api.rst:160
+msgid "\"Get session data\" endpoint"
+msgstr "endpoint de \"Get session data\""
+
+#: ../../source/misc/rest_api.rst:164
+msgid ""
+"New feature as of March 2021. In beta until we get sufficient user feedback."
+msgstr ""
+"Nueva función desde marzo de 2021. En beta hasta que obtengamos suficiente "
+"retroalimentación de los usuarios."
+
+#: ../../source/misc/rest_api.rst:167
+msgid "GET URL: ``/api/sessions/{code}``"
+msgstr "GET URL: ``/api/sessions/{code}``"
+
+#: ../../source/misc/rest_api.rst:169
+msgid ""
+"This API retrieves data about a session and its participants. If "
+"``participant_labels`` is omitted, it returns data for all participants."
+msgstr ""
+"Esta API recupera datos sobre una sesión y sus participantes. Si se omite "
+"``participant_labels``, devuelve datos para todos los participantes."
+
+#: ../../source/misc/rest_api.rst:183
+msgid "\"Session vars\" endpoint"
+msgstr "\"Session vars\" endpoint"
+
+#: ../../source/misc/rest_api.rst:187
+msgid ""
+"As of April 2021, this endpoint requires you to pass a session code as a "
+"path parameter. If the session is in a room, you can get the session code "
+"with the ``rooms`` endpoint."
+msgstr ""
+"A partir de abril de 2021, este endpoint requiere que pases un código de "
+"sesión como parámetro de ruta. Si la sesión está en una sala, puedes obtener"
+" el código de sesión con el endpoint ``rooms``."
+
+#: ../../source/misc/rest_api.rst:190
+msgid "POST URL: ``/api/session_vars/{session_code}``"
+msgstr "POST URL: ``/api/session_vars/{session_code}``"
+
+#: ../../source/misc/rest_api.rst:192
+msgid ""
+"This endpoint lets you set ``session.vars``. One use is experimenter input. "
+"For example, if the experimenter does a lottery drawing in the middle of the"
+" experiment, they can input the result by running a script like the one "
+"below."
+msgstr ""
+"Este endpoint te permite establecer ``session.vars``. Un uso es la entrada "
+"del experimentador. Por ejemplo, si el experimentador realiza un sorteo en "
+"medio del experimento, puede introducir el resultado ejecutando un script "
+"como el siguiente."
+
+#: ../../source/misc/rest_api.rst:206
+msgid "\"Participant vars\" endpoint"
+msgstr "\"Participant vars\" endpoint"
+
+#: ../../source/misc/rest_api.rst:208
+msgid "POST URL: ``/api/participant_vars/{participant_code}``"
+msgstr "POST URL: ``/api/participant_vars/{participant_code}``"
+
+#: ../../source/misc/rest_api.rst:210
+msgid ""
+"Pass information about a participant to oTree, via web services / webhooks."
+msgstr ""
+"Pasa información sobre un participante a oTree, a través de servicios web / "
+"webhooks."
+
+#: ../../source/misc/rest_api.rst:222
+msgid "\"Participant vars for room\" endpoint"
+msgstr "\"Participant vars for room\" endpoint"
+
+#: ../../source/misc/rest_api.rst:224
+msgid "POST URL: ``/api/participant_vars/``"
+msgstr "POST URL: ``/api/participant_vars/``"
+
+#: ../../source/misc/rest_api.rst:226
+msgid ""
+"Similar to the other \"participant vars\" endpoint, but this one can be used"
+" when you don't have the participant's code. Instead, you identify the "
+"participant by the room name and their participant label."
+msgstr ""
+"Similar al otro endpoint de \"participant vars\", pero este se puede "
+"utilizar cuando no tienes el código del participante. En su lugar, "
+"identificas al participante por el nombre de la sala y su etiqueta de "
+"participante."
+
+#: ../../source/misc/rest_api.rst:246
+msgid "``room_name`` (required)"
+msgstr "``room_name`` (requerido)"
+
+#: ../../source/misc/rest_api.rst:247
+msgid "``participant_label`` (required)"
+msgstr "``participant_label`` (requerido)"
+
+#: ../../source/misc/rest_api.rst:248
+msgid ""
+"``vars`` (required): a dict of participant vars to add. Values can be any "
+"JSON-serializable data type, even nested dicts/lists."
+msgstr ""
+"``vars`` (requerido): un diccionario de participant vars para agregar. Los "
+"valores pueden ser cualquier tipo de dato que se pueda serializar en JSON, "
+"incluso diccionarios/listas anidados."
+
+#: ../../source/misc/rest_api.rst:251
+msgid ""
+"You will need to give participants a link with a ``participant_label``, "
+"although this does not need to come from a ``participant_label_file``."
+msgstr ""
+"Necesitarás proporcionar a los participantes un enlace con un "
+"``participant_label``, aunque no es necesario que provenga de un "
+"``participant_label_file``."
+
+#: ../../source/misc/rest_api.rst:255
+msgid "Authentication"
+msgstr "Autenticación"
+
+#: ../../source/misc/rest_api.rst:257
+msgid ""
+"If you have set your auth level to DEMO or STUDY, you must authenticate your"
+" REST API requests."
+msgstr ""
+"Si has configurado tu nivel de autenticación en DEMO o STUDY, debes "
+"autenticar tus solicitudes de la API REST."
+
+#: ../../source/misc/rest_api.rst:260
+msgid ""
+"Create an env var (i.e. Heroku config var) ``OTREE_REST_KEY`` on the server."
+" Set it to some secret value."
+msgstr ""
+"Crea una variable de entorno (es decir, una variable de configuración de "
+"Heroku) ``OTREE_REST_KEY`` en el servidor. Establece un valor secreto."
+
+#: ../../source/misc/rest_api.rst:263
+msgid ""
+"When you make a request, add that key as an HTTP header called ``otree-rest-"
+"key``. If following the :ref:`setup example <rest-setup>` above, you would "
+"set the ``REST_KEY`` variable."
+msgstr ""
+"Cuando realices una solicitud, añade esa clave como un encabezado HTTP "
+"llamado ``otree-rest-key``. Si sigues el :ref:`ejemplo de configuración "
+"<rest-setup>` anterior, deberías establecer la variable ``REST_KEY``."
+
+#: ../../source/misc/rest_api.rst:269
+msgid "Demo & testing"
+msgstr "Demostración y pruebas"
+
+#: ../../source/misc/rest_api.rst:271
+msgid ""
+"For convenience during development, you can generate fake vars to simulate "
+"data that, in a real session, will come from the REST API."
+msgstr ""
+"Para mayor comodidad durante el desarrollo, puedes generar vars falsas para "
+"simular datos que, en una sesión real, provendrán de la REST API."
+
+#: ../../source/misc/rest_api.rst:274
+msgid ""
+"In your session config, add the parameter ``mock_exogenous_data=True`` (We "
+"call it **exogenous** data because it originates outside oTree.)"
+msgstr ""
+"En la configuración de tu sesión, añade el parámetro "
+"``mock_exogenous_data=True`` (Lo llamamos datos **exógenos** porque "
+"provienen de fuera de oTree)."
+
+#: ../../source/misc/rest_api.rst:277
+msgid ""
+"Then define a function with the same name (``mock_exogenous_data``) in your "
+"project's shared_out.py (if you are using a text editor, you may need to "
+"create that file)."
+msgstr ""
+"Luego define una función con el mismo nombre (``mock_exogenous_data``) en el"
+" archivo shared_out.py de tu proyecto (si estás utilizando un editor de "
+"texto, es posible que necesites crear ese archivo)."
+
+#: ../../source/misc/rest_api.rst:281
+msgid "Here's an example:"
+msgstr "Aquí hay un ejemplo:"
+
+#: ../../source/misc/rest_api.rst:291
+msgid "You can also set participant labels here."
+msgstr "También puedes establecer etiquetas de participante aquí."
+
+#: ../../source/misc/rest_api.rst:293
+msgid ""
+"When you run a session in demo mode, or using bots, "
+"``mock_exogenous_data()`` will automatically be run after "
+"``creating_session``. However, it will not be run if the session is created "
+"in a room."
+msgstr ""
+"Cuando ejecutas una sesión en modo de demostración, o utilizando bots, "
+"``mock_exogenous_data()`` se ejecutará automáticamente después de "
+"``creating_session``. Sin embargo, no se ejecutará si la sesión se crea en "
+"una sala."
+
+#: ../../source/misc/rest_api.rst:297
+msgid ""
+"If you have multiple session configs that require different exogenous data, "
+"you can branch like this:"
+msgstr ""
+"Si tienes múltiples configuraciones de sesión que requieren diferentes datos"
+" exógenos, puedes ramificarte así:"
+
+#: ../../source/misc/tips_and_tricks.rst:2
+msgid "Tips and tricks"
+msgstr "Consejos y trucos"
+
+#: ../../source/misc/tips_and_tricks.rst:5
+msgid "Preventing code duplication"
+msgstr "Prevención de la duplicación de código"
+
+#: ../../source/misc/tips_and_tricks.rst:7
+msgid ""
+"As much as possible, it's good to avoid copy-pasting the same code in "
+"multiple places. Although it sometimes takes a bit of thinking to figure out"
+" how to avoid copy-pasting code, you will see that having your code in only "
+"one place usually saves you a lot of effort later when you need to change "
+"the design of your code or fix bugs."
+msgstr ""
+"En la medida de lo posible, es bueno evitar copiar y pegar el mismo código "
+"en múltiples lugares. Aunque a veces requiere un poco de reflexión para "
+"averiguar cómo evitar copiar y pegar código, verás que tener tu código en un"
+" solo lugar generalmente te ahorra mucho esfuerzo más adelante cuando "
+"necesites cambiar el diseño de tu código o corregir errores."
+
+#: ../../source/misc/tips_and_tricks.rst:14
+msgid "Below are some techniques to achieve code reuse."
+msgstr ""
+"A continuación se presentan algunas técnicas para lograr la reutilización de"
+" código."
+
+#: ../../source/misc/tips_and_tricks.rst:17
+msgid "Don't make multiple copies of your app"
+msgstr "No hagas múltiples copias de tu aplicación."
+
+#: ../../source/misc/tips_and_tricks.rst:19
+msgid ""
+"If possible, you should avoid copying an app's folder to make a slightly "
+"different version, because then you have duplicated code that is harder to "
+"maintain."
+msgstr ""
+"Si es posible, deberías evitar copiar la carpeta de una aplicación para "
+"hacer una versión ligeramente diferente, porque así habrás duplicado código "
+"que es más difícil de mantener."
+
+#: ../../source/misc/tips_and_tricks.rst:22
+msgid ""
+"If you need multiple rounds, set ``NUM_ROUNDS``. If you need slightly "
+"different versions (e.g. different treatments), then you should use the "
+"techniques described in :ref:`treatments`, such as making 2 session configs "
+"that have a different ``'treatment'`` parameter, and then checking for "
+"``session.config['treatment']`` in your app's code."
+msgstr ""
+"Si necesitas múltiples rondas, establece ``NUM_ROUNDS``. Si necesitas "
+"versiones ligeramente diferentes (por ejemplo, tratamientos diferentes), "
+"entonces deberías usar las técnicas descritas en :ref:`treatments`, como "
+"crear 2 configuraciones de sesión que tengan un parámetro ``'treatment'`` "
+"diferente y luego verificar ``session.config['treatment']`` en el código de "
+"tu aplicación."
+
+#: ../../source/misc/tips_and_tricks.rst:33
+msgid "How to make many fields"
+msgstr "Cómo crear muchos campos"
+
+#: ../../source/misc/tips_and_tricks.rst:35
+msgid "Let's say your app has many fields that are almost the same, such as:"
+msgstr ""
+"Supongamos que tu aplicación tiene muchos campos que son casi iguales, como:"
+
+#: ../../source/misc/tips_and_tricks.rst:84
+msgid "This is quite complex; you should look for a way to simplify."
+msgstr "Esto es bastante complejo; deberías buscar una manera de simplificar."
+
+#: ../../source/misc/tips_and_tricks.rst:86
+msgid ""
+"Are the fields all displayed on separate pages? If so, consider converting "
+"this to a 10-round game with just one field."
+msgstr ""
+"¿Se muestran todos los campos en páginas separadas? Si es así, considera "
+"convertir esto en un juego de 10 rondas con solo un campo."
+
+#: ../../source/misc/tips_and_tricks.rst:89
+msgid ""
+"If that's not possible, then you can reduce the amount of repeated code by "
+"defining a function that returns a field:"
+msgstr ""
+"Si eso no es posible, puedes reducir la cantidad de código repetido "
+"definiendo una función que devuelva un campo:"
+
+#: ../../source/misc/tips_and_tricks.rst:110
+msgid "Prevent duplicate pages by using multiple rounds"
+msgstr "Evita páginas duplicadas utilizando múltiples rondas"
+
+#: ../../source/misc/tips_and_tricks.rst:112
+msgid ""
+"If you have many many pages that are almost the same, consider just having 1"
+" page and looping it for multiple rounds. One sign that your code can be "
+"simplified is if it looks something like this:"
+msgstr ""
+"Si tienes muchas páginas que son casi iguales, considera tener solo 1 página"
+" y hacer un bucle para múltiples rondas. Una señal de que tu código puede "
+"simplificarse es si se ve algo así:"
+
+#: ../../source/misc/tips_and_tricks.rst:134
+msgid "Avoid duplicated validation methods"
+msgstr "Evita métodos de validación duplicados"
+
+#: ../../source/misc/tips_and_tricks.rst:136
+msgid ""
+"If you have many repetitive :ref:`FIELD_error_message <FOO_error_message>` "
+"methods, you can replace them with a single :ref:`error_message "
+"<error_message>` function. For example:"
+msgstr ""
+"Si tienes muchos métodos repetitivos de :ref:`FIELD_error_message "
+"<FOO_error_message>`, puedes reemplazarlos con una única función "
+":ref:`error_message <error_message>`. Por ejemplo:"
+
+#: ../../source/misc/tips_and_tricks.rst:158
+msgid "You can instead define this function on your page:"
+msgstr "En su lugar, puedes definir esta función en tu página:"
+
+#: ../../source/misc/tips_and_tricks.rst:179
+msgid ""
+"(Usually ``error_message`` is used to return a single error message as a "
+"string, but you can also return a dict.)"
+msgstr ""
+"(Normalmente ``error_message`` se utiliza para devolver un único mensaje de "
+"error como una cadena, pero también puedes devolver un diccionario.)"
+
+#: ../../source/misc/tips_and_tricks.rst:184
+msgid "Avoid duplicated page functions"
+msgstr "Evitar funciones de página duplicadas"
+
+#: ../../source/misc/tips_and_tricks.rst:186
+msgid ""
+"Any page function can be moved out of the page class, and into a top-level "
+"function. This is a handy way to share the same function across multiple "
+"pages. For example, let's say many pages need to have these 2 functions:"
+msgstr ""
+"Cualquier función de página puede ser movida fuera de la clase de página y "
+"convertirse en una función de nivel superior. Esta es una forma práctica de "
+"compartir la misma función entre múltiples páginas. Por ejemplo, supongamos "
+"que muchas páginas necesitan tener estas 2 funciones:"
+
+#: ../../source/misc/tips_and_tricks.rst:205
+msgid ""
+"You can move those functions before all the pages (remove the "
+"``@staticmethod``), and then reference them wherever they need to be used:"
+msgstr ""
+"Puedes mover esas funciones antes de todas las páginas (eliminar el "
+"``@staticmethod``), y luego referenciarlas donde sea necesario:"
+
+#: ../../source/misc/tips_and_tricks.rst:232
+msgid ""
+"(In the sample games, ``after_all_players_arrive`` and ``live_method`` are "
+"frequently defined in this manner.)"
+msgstr ""
+"(En los juegos de muestra, ``after_all_players_arrive`` y ``live_method`` se"
+" definen frecuentemente de esta manera.)"
+
+#: ../../source/misc/tips_and_tricks.rst:235
+msgid "Improving code performance"
+msgstr "Mejorando el rendimiento del código"
+
+#: ../../source/misc/tips_and_tricks.rst:237
+msgid ""
+"You should avoid redundant use of ``get_players()``, ``get_player_by_id()``,"
+" ``in_*_rounds()``, ``get_others_in_group()``, or any other methods that "
+"return a player or list of players. These methods all require a database "
+"query, which can be slow."
+msgstr ""
+"Debes evitar el uso redundante de ``get_players()``, ``get_player_by_id()``,"
+" ``in_*_rounds()``, ``get_others_in_group()`` o cualquier otro método que "
+"devuelva un jugador o una lista de jugadores. Todos estos métodos requieren "
+"una consulta a la base de datos, lo que puede ser lento."
+
+#: ../../source/misc/tips_and_tricks.rst:242
+msgid ""
+"For example, this code has a redundant query because it asks the database 5 "
+"times for the exact same player:"
+msgstr ""
+"Por ejemplo, este código tiene una consulta redundante porque le pide a la "
+"base de datos 5 veces el mismo jugador:"
+
+#: ../../source/misc/tips_and_tricks.rst:258
+msgid "It should be simplified to this:"
+msgstr "Debería simplificarse a esto:"
+
+#: ../../source/misc/tips_and_tricks.rst:274
+msgid "As an added benefit, this usually makes the code more readable."
+msgstr ""
+"Como beneficio adicional, esto generalmente hace que el código sea más "
+"legible."
+
+#: ../../source/misc/tips_and_tricks.rst:277
+msgid "Use BooleanField instead of StringField, where possible"
+msgstr "Utiliza BooleanField en lugar de StringField, cuando sea posible"
+
+#: ../../source/misc/tips_and_tricks.rst:279
+msgid ""
+"Many ``StringFields`` should be broken down into ``BooleanFields``, "
+"especially if they only have 2 distinct values."
+msgstr ""
+"Muchos ``StringFields`` deberían descomponerse en ``BooleanFields``, "
+"especialmente si solo tienen 2 valores distintos."
+
+#: ../../source/misc/tips_and_tricks.rst:282
+msgid "Suppose you have a field called ``treatment``:"
+msgstr "Supongamos que tienes un campo llamado ``treatment``:"
+
+#: ../../source/misc/tips_and_tricks.rst:288
+msgid "And let's say ``treatment`` it can only have 4 different values:"
+msgstr "Y digamos que ``treatment`` solo puede tener 4 valores diferentes:"
+
+#: ../../source/misc/tips_and_tricks.rst:290
+msgid "``high_income_high_tax``"
+msgstr "``high_income_high_tax``"
+
+#: ../../source/misc/tips_and_tricks.rst:291
+msgid "``high_income_low_tax``"
+msgstr "``high_income_low_tax``"
+
+#: ../../source/misc/tips_and_tricks.rst:292
+msgid "``low_income_high_tax``"
+msgstr "``low_income_high_tax``"
+
+#: ../../source/misc/tips_and_tricks.rst:293
+msgid "``low_income_low_tax``"
+msgstr "``low_income_low_tax``"
+
+#: ../../source/misc/tips_and_tricks.rst:295
+msgid "In your pages, you might use it like this:"
+msgstr "En tus páginas, podrías usarlo así:"
+
+#: ../../source/misc/tips_and_tricks.rst:310
+msgid "It would be much better to break this to 2 separate BooleanFields::"
+msgstr "Sería mucho mejor dividir esto en 2 BooleanFields separados:"
+
+#: ../../source/misc/tips_and_tricks.rst:315
+msgid "Then your pages could be simplified to:"
+msgstr "Entonces tus páginas podrían simplificarse a:"
+
+#: ../../source/misc/tips_and_tricks.rst:333
+msgid "field_maybe_none"
+msgstr "field_maybe_none"
+
+#: ../../source/misc/tips_and_tricks.rst:335
+msgid ""
+"If you access a Player/Group/Subsession field whose value is ``None``, oTree"
+" will raise a ``TypeError``. This is designed to catch situations where a "
+"user forgot to assign a value to that field, or forgot to include it in "
+"``form_fields``."
+msgstr ""
+"Si accedes a un campo de Player/Group/Subsession cuyo valor es ``None``, "
+"oTree generará un ``TypeError``. Esto está diseñado para detectar "
+"situaciones en las que un usuario olvidó asignar un valor a ese campo, o "
+"olvidó incluirlo en ``form_fields``."
+
+#: ../../source/misc/tips_and_tricks.rst:339
+msgid ""
+"However, sometimes you need to intentionally access a field whose value may "
+"be ``None``. To do this, use ``field_maybe_none``, which will suppress the "
+"error:"
+msgstr ""
+"Sin embargo, a veces necesitas acceder intencionadamente a un campo cuyo "
+"valor puede ser ``None``. Para hacer esto, utiliza ``field_maybe_none``, que"
+" suprimirá el error:"
+
+#: ../../source/misc/tips_and_tricks.rst:350
+msgid "``field_maybe_none`` is new in oTree 5.4 (August 2021)."
+msgstr "``field_maybe_none`` es nuevo en oTree 5.4 (agosto de 2021)."
+
+#: ../../source/misc/tips_and_tricks.rst:352
+msgid ""
+"An alternative solution is to assign an initial value to the field so that "
+"its value is never ``None``:"
+msgstr ""
+"Una solución alternativa es asignar un valor inicial al campo para que su "
+"valor nunca sea ``None``:"

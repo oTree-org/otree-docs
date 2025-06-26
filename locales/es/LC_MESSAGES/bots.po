@@ -1,0 +1,280 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/bots.rst:4
+msgid "Bots"
+msgstr "Bots"
+
+#: ../../source/bots.rst:6
+msgid ""
+"Bots simulate participants playing your app. They click through each page, "
+"fill out forms, and make sure that everything works properly."
+msgstr ""
+"Los bots simulan a los participantes jugando tu aplicación. Hacen clic en "
+"cada página, completan formularios y se aseguran de que todo funcione "
+"correctamente."
+
+#: ../../source/bots.rst:9
+msgid ""
+"This feature is designed for lazy people who would prefer for oTree to "
+"automatically test their apps for them. And oTree Studio can even design "
+"your bot code for you, so the whole process (writing and running bots) "
+"involves barely any effort."
+msgstr ""
+"Esta función está diseñada para personas perezosas que preferirían que oTree"
+" probara automáticamente sus aplicaciones. Y oTree Studio incluso puede "
+"diseñar el código de tu bot, por lo que todo el proceso (escribir y ejecutar"
+" bots) requiere casi ningún esfuerzo."
+
+#: ../../source/bots.rst:17
+msgid "Running bots"
+msgstr "Ejecutando bots"
+
+#: ../../source/bots.rst:19
+msgid "Add bots to your app (see instructions below)"
+msgstr ""
+"Agrega bots a tu aplicación (consulta las instrucciones a continuación)"
+
+#: ../../source/bots.rst:20
+msgid "In your session config, set ``use_browser_bots=True``."
+msgstr ""
+"En la configuración de tu sesión, establece ``use_browser_bots=True``."
+
+#: ../../source/bots.rst:21
+msgid ""
+"Run your server and create a session. The pages will auto-play with browser "
+"bots, once the start links are opened."
+msgstr ""
+"Ejecuta tu servidor y crea una sesión. Las páginas se reproducirán "
+"automáticamente con bots de navegador, una vez que se abran los enlaces de "
+"inicio."
+
+#: ../../source/bots.rst:25
+msgid "Writing tests"
+msgstr "Escribiendo pruebas"
+
+#: ../../source/bots.rst:27
+msgid ""
+"In oTree Studio, go to the \"Tests\" section of your app. Click the button "
+"to auto-write bots code. If you want to refine the code that was generated "
+"(such as adding ``expect()`` statements), read the below sections."
+msgstr ""
+"En oTree Studio, ve a la sección \"Pruebas\" de tu aplicación. Haz clic en "
+"el botón para autoescribir el código de bots. Si deseas refinar el código "
+"que se generó (como agregar declaraciones ``expect()``), lee las secciones a"
+" continuación."
+
+#: ../../source/bots.rst:33
+msgid ""
+"If you are using a text editor, go to ``tests.py``. See examples of how to "
+"define ``tests.py`` `here <https://github.com/oTree-org/otree>`__."
+msgstr ""
+"Si estás utilizando un editor de texto, ve a ``tests.py``. Consulta ejemplos"
+" de cómo definir ``tests.py`` `aquí <https://github.com/oTree-org/otree>`__."
+
+#: ../../source/bots.rst:37
+msgid "Submitting pages"
+msgstr "Enviando páginas"
+
+#: ../../source/bots.rst:39
+msgid "You should make one ``yield`` per page submission. For example:"
+msgstr "Debes hacer un ``yield`` por cada envío de página. Por ejemplo:"
+
+#: ../../source/bots.rst:46
+msgid ""
+"Here, we first submit the ``Start`` page, which does not contain a form. The"
+" following page has 2 form fields, so we submit a dict."
+msgstr ""
+"Aquí, primero enviamos la página ``Start``, que no contiene un formulario. "
+"La siguiente página tiene 2 campos de formulario, así que enviamos un dict."
+
+#: ../../source/bots.rst:49
+msgid ""
+"The test system will raise an error if the bot submits invalid input for a "
+"page, or if it submits pages in the wrong order."
+msgstr ""
+"El sistema de pruebas generará un error si el bot envía una entrada no "
+"válida para una página, o si envía las páginas en el orden incorrecto."
+
+#: ../../source/bots.rst:52
+msgid ""
+"You use ``if`` statements to play any player or round number. For example:"
+msgstr ""
+"Usas declaraciones ``if`` para jugar cualquier número de jugador o ronda. "
+"Por ejemplo:"
+
+#: ../../source/bots.rst:64
+msgid ""
+"Your ``if`` statements can depend on ``self.player``, ``self.group``, "
+"``self.round_number``, etc."
+msgstr ""
+"Tus declaraciones ``if`` pueden depender de ``self.player``, ``self.group``,"
+" ``self.round_number``, etc."
+
+#: ../../source/bots.rst:67
+msgid "Ignore wait pages when writing bots."
+msgstr "Ignora las páginas de espera al escribir bots."
+
+#: ../../source/bots.rst:70
+msgid "Rounds"
+msgstr "Rondas"
+
+#: ../../source/bots.rst:72
+msgid ""
+"Your bot code should just play 1 round at a time. oTree will automatically "
+"execute it ``NUM_ROUNDS`` times."
+msgstr ""
+"Tu código de bot debe ejecutar solo 1 ronda a la vez. oTree lo ejecutará "
+"automáticamente ``NUM_ROUNDS`` veces."
+
+#: ../../source/bots.rst:78
+msgid "expect()"
+msgstr "expect()"
+
+#: ../../source/bots.rst:80
+msgid ""
+"You can use ``expect`` statements to ensure that your code is working as you"
+" expect."
+msgstr ""
+"Puedes usar declaraciones ``expect`` para asegurarte de que tu código está "
+"funcionando como esperas."
+
+#: ../../source/bots.rst:82
+msgid "For example:"
+msgstr "Por ejemplo:"
+
+#: ../../source/bots.rst:91
+msgid ""
+"If ``self.player.num_apples`` is not 99, then you will be alerted with an "
+"error."
+msgstr "Si ``self.player.num_apples`` no es 99, se te alertará con un error."
+
+#: ../../source/bots.rst:93
+msgid ""
+"You can also use expect with 3 arguments, like ``expect(self.player.budget, "
+"'<', 100)``. This will verify that ``self.player.budget`` is less than 100. "
+"You can use the following operators: ``'<'``, ``'<='``, ``'=='``, ``'>='``, "
+"``'>'``, ``'!='``, ``'in'``, ``'not in'``."
+msgstr ""
+"También puedes usar expect con 3 argumentos, como "
+"``expect(self.player.budget, '<', 100)``. Esto verificará que "
+"``self.player.budget`` sea menor que 100. Puedes usar los siguientes "
+"operadores: ``'<'``, ``'<='``, ``'=='``, ``'>='``, ``'>'``, ``'!='``, "
+"``'in'``, ``'not in'``."
+
+#: ../../source/bots.rst:106
+msgid "Testing form validation"
+msgstr "Prueba de validación de formularios"
+
+#: ../../source/bots.rst:108
+msgid ""
+"If you use :ref:`form validation <form-validation>`, you should test that "
+"your app is correctly rejecting invalid input from the user, by using "
+"``SubmissionMustFail()``."
+msgstr ""
+"Si usas :ref:`form validation <form-validation>`, debes probar que tu "
+"aplicación está rechazando correctamente la entrada inválida del usuario, "
+"utilizando ``SubmissionMustFail()``."
+
+#: ../../source/bots.rst:112
+msgid "For example, let's say you have this page:"
+msgstr "Por ejemplo, digamos que tienes esta página:"
+
+#: ../../source/bots.rst:126
+msgid "Here is how to test that it is working properly:"
+msgstr "Aquí se explica cómo probar que está funcionando correctamente:"
+
+#: ../../source/bots.rst:133
+msgid ""
+"The bot will submit ``MyPage`` twice. If the first submission **succeeds**, "
+"an error will be raised, because it is not supposed to succeed."
+msgstr ""
+"El bot enviará ``MyPage`` dos veces. Si la primera presentación **tiene "
+"éxito**, se generará un error, porque no se supone que deba tener éxito."
+
+#: ../../source/bots.rst:138
+msgid "Checking the HTML"
+msgstr "Comprobando el HTML"
+
+#: ../../source/bots.rst:140
+msgid ""
+"``self.html`` contains the HTML of the page you are about to submit. You can"
+" use this together with ``expect()``:"
+msgstr ""
+"``self.html`` contiene el HTML de la página que estás a punto de enviar. "
+"Puedes usar esto junto con ``expect()``:"
+
+#: ../../source/bots.rst:155
+msgid ""
+"``self.html`` is updated with the next page's HTML, after every ``yield`` "
+"statement. Linebreaks and extra spaces are ignored."
+msgstr ""
+"`self.html` se actualiza con el HTML de la siguiente página, después de cada"
+" declaración `yield`. Se ignoran los saltos de línea y los espacios extra."
+
+#: ../../source/bots.rst:159
+msgid "Automatic HTML checks"
+msgstr "Comprobaciones automáticas de HTML"
+
+#: ../../source/bots.rst:161
+msgid ""
+"An error will be raised if the bot is trying to submit form fields that are "
+"not actually found in the page's HTML, or if the page's HTML is missing a "
+"submit button."
+msgstr ""
+"Se generará un error si el bot intenta enviar campos de formulario que no se"
+" encuentran realmente en el HTML de la página, o si el HTML de la página "
+"carece de un botón de envío."
+
+#: ../../source/bots.rst:164
+msgid ""
+"However, the bot system is not able to see fields and buttons that are added"
+" dynamically with JavaScript. In these cases, you should disable the HTML "
+"check by using ``Submission`` with ``check_html=False``. For example, change"
+" this:"
+msgstr ""
+"Sin embargo, el sistema de bots no puede ver campos y botones que se añaden "
+"dinámicamente con JavaScript. En estos casos, debes desactivar la "
+"comprobación de HTML utilizando `Submission` con `check_html=False`. Por "
+"ejemplo, cambia esto:"
+
+#: ../../source/bots.rst:172
+msgid "to this:"
+msgstr "a esto:"
+
+#: ../../source/bots.rst:178
+msgid ""
+"(If you used ``Submission`` without ``check_html=False``, the two code "
+"samples would be equivalent.)"
+msgstr ""
+"(Si usaste ``Submission`` sin ``check_html=False``, los dos ejemplos de "
+"código serían equivalentes.)"
+
+#: ../../source/bots.rst:184
+msgid "Simulate a page timeout"
+msgstr "Simular un tiempo de espera de página"
+
+#: ../../source/bots.rst:186
+msgid "You can use ``Submission`` with ``timeout_happened=True``:"
+msgstr "Puedes usar ``Submission`` con ``timeout_happened=True``:"
+
+#: ../../source/bots.rst:193
+msgid "Advanced features"
+msgstr "Funciones avanzadas"
+
+#: ../../source/bots.rst:195
+msgid "See :ref:`bots_advanced`"
+msgstr "Consulta :ref:`bots_advanced`"

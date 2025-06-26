@@ -1,0 +1,65 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install.rst:6
+msgid "Installing oTree"
+msgstr "Instalando oTree"
+
+#: ../../source/install.rst:9
+msgid "Important note"
+msgstr "Nota importante"
+
+#: ../../source/install.rst:11
+msgid ""
+"If you publish research done with oTree, you are required to cite `this "
+"paper <http://dx.doi.org/10.1016/j.jbef.2015.12.001>`__. (Citation: Chen, "
+"D.L., Schonger, M., Wickens, C., 2016. oTree - An open-source platform for "
+"laboratory, online and field experiments. Journal of Behavioral and "
+"Experimental Finance, vol 9: 88-97)"
+msgstr ""
+"Si publicas investigaciones realizadas con oTree, debes citar `este artículo"
+" <http://dx.doi.org/10.1016/j.jbef.2015.12.001>`__. (Cita: Chen, D.L., "
+"Schonger, M., Wickens, C., 2016. oTree - Una plataforma de código abierto "
+"para experimentos de laboratorio, en línea y de campo. Journal of Behavioral"
+" and Experimental Finance, vol 9: 88-97)"
+
+#: ../../source/install.rst:19
+msgid "Installation"
+msgstr "Instalación"
+
+#: ../../source/install.rst:21
+msgid ""
+"If you will use oTree Studio (easiest option), go to `otreehub.com "
+"<https://www.otreehub.com>`__."
+msgstr ""
+"Si vas a utilizar oTree Studio (la opción más fácil), ve a `otreehub.com "
+"<https://www.otreehub.com>`__."
+
+#: ../../source/install.rst:23
+msgid ""
+"Read: `why you should use oTree Studio <https://www.otree.org/blog/why-use-"
+"studio.html>`__."
+msgstr ""
+"Lee: `por qué deberías usar oTree Studio <https://www.otree.org/blog/why-"
+"use-studio.html>`__."
+
+#: ../../source/install.rst:25
+msgid ""
+"If you are an advanced programmer, you can use oTree with a :ref:`text "
+"editor <install-nostudio>`."
+msgstr ""
+"Si eres un programador avanzado, puedes usar oTree con un :ref:`editor de "
+"texto <install-nostudio>`."

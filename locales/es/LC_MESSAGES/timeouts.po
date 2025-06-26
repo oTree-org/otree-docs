@@ -1,0 +1,278 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/timeouts.rst:4
+msgid "Timeouts"
+msgstr "Timeouts"
+
+#: ../../source/timeouts.rst:7
+msgid "Basics"
+msgstr "Conceptos básicos"
+
+#: ../../source/timeouts.rst:12
+msgid "timeout_seconds"
+msgstr "timeout_seconds"
+
+#: ../../source/timeouts.rst:14
+msgid "To set a time limit on your page, add ``timeout_seconds``:"
+msgstr ""
+"Para establecer un límite de tiempo en tu página, añade ``timeout_seconds``:"
+
+#: ../../source/timeouts.rst:21
+msgid "After the time runs out, the page auto-submits."
+msgstr ""
+"Después de que se acabe el tiempo, la página se enviará automáticamente."
+
+#: ../../source/timeouts.rst:23
+msgid ""
+"If you are running the production server (``prodserver``), the page will "
+"always submit, even if the user closes their browser window. However, this "
+"does not occur if you are running the development server (``zipserver`` or "
+"``devserver``)."
+msgstr ""
+"Si estás ejecutando el servidor de producción (``prodserver``), la página "
+"siempre se enviará, incluso si el usuario cierra su ventana del navegador. "
+"Sin embargo, esto no ocurre si estás ejecutando el servidor de desarrollo "
+"(``zipserver`` o ``devserver``)."
+
+#: ../../source/timeouts.rst:28
+msgid ""
+"If you need the timeout to be dynamically determined, use "
+":ref:`get_timeout_seconds`."
+msgstr ""
+"Si necesitas que el tiempo de espera se determine dinámicamente, utiliza "
+":ref:`get_timeout_seconds`."
+
+#: ../../source/timeouts.rst:33
+msgid "timeout_happened"
+msgstr "timeout_happened"
+
+#: ../../source/timeouts.rst:35
+msgid "You can check if the page was submitted by timeout:"
+msgstr "Puedes comprobar si la página fue enviada por timeout:"
+
+#: ../../source/timeouts.rst:55
+msgid "get_timeout_seconds"
+msgstr "get_timeout_seconds"
+
+#: ../../source/timeouts.rst:57
+msgid ""
+"This is a more flexible alternative to ``timeout_seconds``, so that you can "
+"make the timeout depend on ``player``, ``player.session``, etc."
+msgstr ""
+"Esta es una alternativa más flexible a ``timeout_seconds``, para que puedas "
+"hacer que el timeout dependa de ``player``, ``player.session``, etc."
+
+#: ../../source/timeouts.rst:60
+msgid "For example:"
+msgstr "Por ejemplo:"
+
+#: ../../source/timeouts.rst:71
+msgid ""
+"Or, using a custom session config parameter (see "
+":ref:`session_config_treatments`)."
+msgstr ""
+"O, utilizando un parámetro de configuración de sesión personalizado (ver "
+":ref:`session_config_treatments`)."
+
+#: ../../source/timeouts.rst:82
+msgid "Advanced techniques"
+msgstr "Técnicas avanzadas"
+
+#: ../../source/timeouts.rst:87
+msgid "Forms submitted by timeout"
+msgstr "Formularios enviados por tiempo de espera"
+
+#: ../../source/timeouts.rst:89
+msgid ""
+"If a form is auto-submitted because of a timeout, oTree will try to save "
+"whichever fields were filled out at the time of submission. If a field in "
+"the form has an error because it is missing or invalid, it will be set to "
+"``0`` for numeric fields, ``False`` for boolean fields, and the empty string"
+" ``''`` for string fields."
+msgstr ""
+"Si un formulario se envía automáticamente debido a un tiempo de espera, "
+"oTree intentará guardar los campos que se completaron en el momento de la "
+"presentación. Si un campo en el formulario tiene un error porque falta o es "
+"inválido, se establecerá en ``0`` para campos numéricos, ``False`` para "
+"campos booleanos y la cadena vacía ``''`` para campos de texto."
+
+#: ../../source/timeouts.rst:95
+msgid ""
+"If you want to discard the auto-submitted values, you can just check if "
+"``timeout_happened``, and if so, overwrite the values."
+msgstr ""
+"Si deseas descartar los valores enviados automáticamente, puedes simplemente"
+" verificar si ``timeout_happened`` y, si es así, sobrescribir los valores."
+
+#: ../../source/timeouts.rst:98
+msgid ""
+"If the ``error_message()`` function fails, then the whole form might be "
+"invalid, so the whole form will be discarded."
+msgstr ""
+"Si la función ``error_message()`` falla, entonces todo el formulario podría "
+"ser inválido, por lo que se descartará todo el formulario."
+
+#: ../../source/timeouts.rst:102
+msgid "Timeouts that span multiple pages"
+msgstr "Timeouts que abarcan múltiples páginas"
+
+#: ../../source/timeouts.rst:104
+msgid ""
+"You can use ``get_timeout_seconds`` to create timeouts that span multiple "
+"pages, or even the entire session. The trick is to define a fixed "
+"\"expiration time\", and then on each page, make ``get_timeout_seconds`` "
+"return the number of seconds until that expiration time."
+msgstr ""
+"Puedes usar ``get_timeout_seconds`` para crear timeouts que abarquen "
+"múltiples páginas o incluso toda la sesión. El truco es definir un \"tiempo "
+"de expiración\" fijo y luego, en cada página, hacer que "
+"``get_timeout_seconds`` devuelva el número de segundos hasta ese tiempo de "
+"expiración."
+
+#: ../../source/timeouts.rst:109
+msgid ""
+"First, choose a place to start the timer. This could be a page called "
+"\"Start\" that displays text like \"Press the button when you're ready to "
+"start\". When the user clicks the \"next\" button, ``before_next_page`` will"
+" be executed:"
+msgstr ""
+"Primero, elige un lugar para iniciar el temporizador. Esto podría ser una "
+"página llamada \"Inicio\" que muestre un texto como \"Presiona el botón "
+"cuando estés listo para comenzar\". Cuando el usuario haga clic en el botón "
+"\"siguiente\", se ejecutará ``before_next_page``:"
+
+#: ../../source/timeouts.rst:125
+msgid ""
+"(You could also start the timer in ``after_all_players_arrive`` or "
+"``creating_session``, and it could be stored in a session field if it's the "
+"same for everyone in the session.)"
+msgstr ""
+"(También podrías iniciar el temporizador en ``after_all_players_arrive`` o "
+"``creating_session``, y podría almacenarse en un campo de sesión si es el "
+"mismo para todos en la sesión.)"
+
+#: ../../source/timeouts.rst:128
+msgid ""
+"Then, each page's ``get_timeout_seconds`` should be the number of seconds "
+"until that expiration time:"
+msgstr ""
+"Luego, el ``get_timeout_seconds`` de cada página debe ser el número de "
+"segundos hasta ese tiempo de expiración:"
+
+#: ../../source/timeouts.rst:141
+msgid ""
+"When time runs out, ``get_timeout_seconds`` will return 0 or a negative "
+"value, which will result in the page loading and being auto-submitted right "
+"away. This means all the remaining pages will quickly flash on the "
+"participant's screen, which is usually undesired. So, you should use "
+"``is_displayed`` to skip the page if there's not enough time for the "
+"participant to realistically read the whole page."
+msgstr ""
+"Cuando se agote el tiempo, ``get_timeout_seconds`` devolverá 0 o un valor "
+"negativo, lo que resultará en que la página se cargue y se envíe "
+"automáticamente de inmediato. Esto significa que todas las páginas restantes"
+" parpadearán rápidamente en la pantalla del participante, lo cual "
+"generalmente no es deseado. Por lo tanto, deberías usar ``is_displayed`` "
+"para omitir la página si no hay suficiente tiempo para que el participante "
+"lea realmente toda la página."
+
+#: ../../source/timeouts.rst:164
+msgid ""
+"The default text on the timer says \"Time left to complete this page:\". But"
+" if your timeout spans multiple pages, you should word it more accurately, "
+"by setting ``timer_text``:"
+msgstr ""
+"El texto predeterminado en el temporizador dice \"Tiempo restante para "
+"completar esta página:\". Pero si tu tiempo de espera abarca múltiples "
+"páginas, deberías expresarlo de manera más precisa, configurando "
+"``timer_text``:"
+
+#: ../../source/timeouts.rst:180
+msgid "Customizing the timer"
+msgstr "Personalizando el temporizador"
+
+#: ../../source/timeouts.rst:183
+msgid "Hiding the timer"
+msgstr "Ocultando el temporizador"
+
+#: ../../source/timeouts.rst:185
+msgid "If you want to hide the timer, use this CSS:"
+msgstr "Si deseas ocultar el temporizador, utiliza este CSS:"
+
+#: ../../source/timeouts.rst:196
+msgid "Changing the timer's behavior"
+msgstr "Cambiar el comportamiento del temporizador"
+
+#: ../../source/timeouts.rst:198
+msgid ""
+"The timer's functionality is provided by `jQuery Countdown "
+"<http://hilios.github.io/jQuery.countdown/documentation.html>`__. You can "
+"change its behavior by attaching and removing event handlers with jQuery's "
+"``.on()`` and ``off()``."
+msgstr ""
+"La funcionalidad del temporizador es proporcionada por `jQuery Countdown "
+"<http://hilios.github.io/jQuery.countdown/documentation.html>`__. Puedes "
+"cambiar su comportamiento adjuntando y eliminando controladores de eventos "
+"con ``.on()`` y ``off()`` de jQuery."
+
+#: ../../source/timeouts.rst:203
+msgid ""
+"oTree sets handlers for the events ``update.countdown`` and "
+"``finish.countdown``, so if you want to modify those, you can detach them "
+"with ``off()``, and/or add your own handler with ``on()``. The countdown "
+"element is ``.otree-timer__time-left``."
+msgstr ""
+"oTree establece controladores para los eventos ``update.countdown`` y "
+"``finish.countdown``, así que si deseas modificarlos, puedes desadjuntarlos "
+"con ``off()``, y/o agregar tu propio controlador con ``on()``. El elemento "
+"de cuenta regresiva es ``.otree-timer__time-left``."
+
+#: ../../source/timeouts.rst:208
+msgid "For example, to hide the timer until there is only 10 seconds left,"
+msgstr ""
+"Por ejemplo, para ocultar el temporizador hasta que queden solo 10 segundos,"
+
+#: ../../source/timeouts.rst:228
+msgid ""
+"To avoid copy-pasting this code on every page, put it in an includable "
+"template."
+msgstr ""
+"Para evitar copiar y pegar este código en cada página, colócalo en una "
+"plantilla incluyente."
+
+#: ../../source/timeouts.rst:230
+msgid ""
+"Note: even if you turn off the ``finish.countdown`` event handler, the page "
+"will still be submitted on the server side. So, instead you should use the "
+"technique described in :ref:`soft-timeout`."
+msgstr ""
+"Nota: incluso si desactivas el controlador de eventos ``finish.countdown``, "
+"la página aún se enviará en el lado del servidor. Por lo tanto, en su lugar,"
+" deberías usar la técnica descrita en :ref:`soft-timeout`."
+
+#: ../../source/timeouts.rst:237
+msgid "Timeout that doesn't submit the page"
+msgstr "Tiempo de espera que no envía la página"
+
+#: ../../source/timeouts.rst:239
+msgid ""
+"If you just want a soft timeout, you don't need to use the built-in timer at"
+" all. Instead, make your own with JavaScript, for example:"
+msgstr ""
+"Si solo deseas un tiempo de espera suave, no necesitas usar el temporizador "
+"incorporado en absoluto. En su lugar, crea el tuyo propio con JavaScript, "
+"por ejemplo:"

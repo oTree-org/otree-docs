@@ -1,0 +1,65 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: oTree\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: OpenAI\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/python.rst:4
+msgid "About Python"
+msgstr "Acerca de Python"
+
+#: ../../source/python.rst:6
+msgid ""
+"Below is a tutorial with the basics of Python you need to know to use oTree."
+msgstr ""
+"A continuación se presenta un tutorial con los conceptos básicos de Python "
+"que necesitas saber para usar oTree."
+
+#: ../../source/python.rst:8
+msgid ""
+"The easiest way to run this file is in IDLE (which is usually bundled in the"
+" Python installation)."
+msgstr ""
+"La forma más fácil de ejecutar este archivo es en IDLE (que generalmente se "
+"incluye en la instalación de Python)."
+
+#: ../../source/python.rst:10
+msgid ""
+"There are many other good python tutorials online, but note that some of the"
+" material covered in those tutorials is not necessary for oTree programming "
+"specifically."
+msgstr ""
+"Hay muchos otros buenos tutoriales de Python en línea, pero ten en cuenta "
+"que parte del material cubierto en esos tutoriales no es necesario para la "
+"programación en oTree específicamente."
+
+#: ../../source/python.rst:15
+msgid "Tutorial file"
+msgstr "Archivo de tutorial"
+
+#: ../../source/python.rst:17
+msgid "A downloadable version is :download:`here <_static/otree_python.py>`."
+msgstr ""
+"Una versión descargable está :download:`aquí <_static/otree_python.py>`."
+
+#: ../../source/python.rst:22
+msgid ""
+"**Credits**: This page's tutorial is adapted from `Learn Python in Y Minutes"
+" <https://learnxinyminutes.com/docs/python/>`__, and is released under the "
+"same `license <https://creativecommons.org/licenses/by-"
+"sa/3.0/deed.en_US>`__."
+msgstr ""
+"**Créditos**: El tutorial de esta página está adaptado de `Learn Python in Y"
+" Minutes <https://learnxinyminutes.com/docs/python/>`__, y se publica bajo "
+"la misma `licencia <https://creativecommons.org/licenses/by-"
+"sa/3.0/deed.en_US>`__."
