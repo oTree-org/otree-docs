@@ -5,11 +5,12 @@
 oTree Setup (text editor)
 =========================
 
-.. warning::
+.. note::
 
-    Using oTree with a text editor is not recommended for most users.
-    **If someone advised you to use a text editor,
-    please direct any oTree questions to them.**
+    As of July 2025, we have released an AI model that can write oTree code
+    directly in your text editor.
+    You can use it in the `Cursor IDE <https://www.cursor.com/>`__.
+    Instructions `here <https://www.otreehub.com/code_assistant/>`__.
 
 Setup commands::
 
