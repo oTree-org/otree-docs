@@ -7,7 +7,6 @@ oTree Setup (text editor)
 
 Suggestion: We have released an **AI model** that can write oTree code
 directly in your text editor.
-You can use it in the `Cursor IDE <https://www.cursor.com/>`__.
 Instructions `here <https://www.otreehub.com/code_assistant/>`__.
 
 Setup commands::
