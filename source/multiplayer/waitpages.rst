@@ -101,6 +101,20 @@ where ``my_game`` uses ``group_by_arrival_time``.
 This means that if someone opts out in ``consent``,
 they will be excluded from the grouping in ``my_game``.
 
+Presence detection
+~~~~~~~~~~~~~~~~~~
+
+oTree detects and excludes participants who switched away to another tab or window.
+In order to be grouped, a user must be active on the wait page.
+There is a colored dot in the tab of their web page (maybe not visible on mobile).
+'🟢' means they are considered active. '🟡' means they are considered inactive.
+We recommend you put some text in your wait page's ``body_text`` 
+to tell participants to be aware of this and stay active on the page.
+
+
+Notes
+~~~~~
+
 If a game has multiple rounds,
 you may want to only group by arrival time in round 1:
 
@@ -120,8 +134,6 @@ in each round.
 
 Notes:
 
--   If a participant arrives at the wait page but subsequently switches to a different window or browser tab,
-    they will be excluded from grouping after a short period of time.
 -   ``id_in_group`` is not necessarily assigned in the order players arrived at the page.
 -   ``group_by_arrival_time`` can only be used if the wait page is the first page in ``page_sequence``
 -   If you use ``is_displayed`` on a page with ``group_by_arrival_time``,
