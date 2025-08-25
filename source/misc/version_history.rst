@@ -3,6 +3,13 @@ Version history
 Version 5.12 Beta (September 2025)
 ==================================
 
+You can install this beta release with:
+
+.. code-block:: bash
+
+    pip install otree==5.12 --pre
+
+
 Welcome page
 ~~~~~~~~~~~~
 
