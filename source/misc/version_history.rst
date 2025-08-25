@@ -1,5 +1,36 @@
 Version history
 ```````````````
+Version 5.12 (beta)
+===================
+
+Welcome page
+~~~~~~~~~~~~
+
+When you use a Room, oTree will always show a Welcome page
+that asks the user to confirm to start.
+
+This solves the problem where start links were being opened
+by various platforms like WhatsApp that scan messages and open hyperlinks automatically,
+making oTree count those participants as having begun the experiment.
+
+Furthermore, this page is **customizable**.
+You can set ``welcome_page="MyWelcomePage.html`` in your room definition in ``settings.py``.
+This means you can put a consent form or questionnaire or any other content.
+See :ref:`welcome-page`.
+
+Previously, this was only shown in certain conditions
+(if the room has a ``participant_label_file`` and the ``participant_label``
+was not in the URL).
+
+group_by_arrival_time
+~~~~~~~~~~~~~~~~~~~~~
+
+We changed how ``group_by_arrival_time`` excludes participants based on inactivity.
+Previously, inactivity was automatically determined based on whether the tab is open and active.
+Now, after a couple of minutes we display a message like "Are you still there?"
+If the user clicks it within the allotted time, they continue waiting.
+If not, they are sent to an "Inactive" page where they have to click back to the wait page.
+
 
 Version 5.10
 ============
