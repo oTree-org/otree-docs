@@ -1,7 +1,7 @@
 Version history
 ```````````````
-Version 5.12 (beta)
-===================
+Version 5.12 Beta (September 2025)
+==================================
 
 Welcome page
 ~~~~~~~~~~~~
@@ -15,12 +15,9 @@ making oTree count those participants as having begun the experiment.
 
 Furthermore, this page is **customizable**.
 You can set ``welcome_page="MyWelcomePage.html`` in your room definition in ``settings.py``.
-This means you can put a consent form or questionnaire or any other content.
+This means you can put a consent form or questionnaire or any other content,
+and filter people before they are officially allocated as a participant in the experiment.
 See :ref:`welcome-page`.
-
-Previously, this was only shown in certain conditions
-(if the room has a ``participant_label_file`` and the ``participant_label``
-was not in the URL).
 
 group_by_arrival_time
 ~~~~~~~~~~~~~~~~~~~~~
