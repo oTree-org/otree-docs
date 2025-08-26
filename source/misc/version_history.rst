@@ -7,7 +7,7 @@ You can install this beta release with:
 
 .. code-block:: bash
 
-    pip install otree==5.12 --pre
+    pip install otree==5.12 --upgrade --pre
 
 
 Welcome page
@@ -26,14 +26,39 @@ This means you can put a consent form or questionnaire or any other content,
 and filter people before they are officially allocated as a participant in the experiment.
 See :ref:`welcome-page`.
 
-group_by_arrival_time
-~~~~~~~~~~~~~~~~~~~~~
+group_by_arrival_time presence detection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We changed how ``group_by_arrival_time`` excludes participants based on inactivity.
 Previously, inactivity was automatically determined based on whether the tab is open and active.
-Now, after a couple of minutes we display a message like "Are you still there?"
-If the user clicks it within the allotted time, they continue waiting.
-If not, they are sent to an "Inactive" page where they have to click back to the wait page.
+
+Now, if a participant has not shown any signs of activity within **2 minutes**
+(e.g. not moved their mouse), they are asked if they are still there.
+Note the live countdown is also shown in the page tab title:
+
+.. image::
+    ../_static/gbat/countdown.png
+    :width: 500px
+    
+This starts a countdown. If they don't respond within **15 seconds** 
+(by clicking the button or at least moving their mouse), 
+they are sent to an "inactive" page with a big button they can click to return to the wait page:
+
+.. image::
+    ../_static/gbat/inactive_page.png
+    :width: 500px
+
+.. note::
+
+    The text displayed to users is preliminary and has not been translated
+    to languages other than English.
+
+The timing parameters are configurable in ``settings.py``:
+
+.. code-block:: python
+
+    GBAT_INACTIVE_INITIAL_TIMEOUT = 2 * 60
+    GBAT_INACTIVE_CONFIRMATION_TIMEOUT = 15
 
 
 Version 5.10
