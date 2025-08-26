@@ -288,8 +288,8 @@ The job of your welcome page is
 (1) to optionally validate the user (have them enter any info, check their response),
 and (2) when they submit, send them to the room by adding ``welcome_page_ok=1`` to the URL.
 
-Simple case: no participant label
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Simple case: button only, no form fields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you only need the participant to click to start the experiment
 (without any form fields),
@@ -324,6 +324,78 @@ then reload the page.
         </script>
     </body>
     </html>
+
+
+Consent form / quiz, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can add any form fields you want (dropdowns, checkboxes, etc.)
+and check the user's inputs using JavaScript and HTML attributes such as
+``required``, ``min``, ``max``, etc.
+
+.. code-block:: html+django
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Welcome</title>
+    </head>
+    <body>
+        <h2>Consent Form</h2>
+                
+        <form>
+            <p>This is a research study by the University of Antarctica...</p>
+            <label>
+                My age: <input type="number" id="age" min="1" max="120" required>
+            </label>
+            <br><br>
+
+            <label>
+                <input type="checkbox" id="consent" required>
+                I consent to participate in this study
+            </label>
+            <br><br>
+            <button type="submit">Continue</button>
+        </form>
+        
+        <div id="not-eligible" style="display: none;">
+            <p>You are not eligible to participate in this study. Participants must be 18 or older.</p>
+        </div>
+
+
+        <script>
+            let urlParams = new URLSearchParams(window.location.search);
+            let ageInput = document.getElementById('age');
+            let notEligibleDiv = document.getElementById('not-eligible');
+            let form = document.querySelector('form');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let age = parseInt(ageInput.value);
+                
+                if (age < 18) {
+                    notEligibleDiv.style.display = 'block';
+                    form.style.display = 'none';
+                    return;
+                }
+                
+                urlParams.set('welcome_page_ok', '1');
+                window.location.href = window.location.pathname + '?' + urlParams.toString();
+            });
+        </script>
+    </body>
+    </html>
+
+Any parameters in the start link (e.g. ``?participant_label=Alice``)
+can be accessed from your JS code like this:
+
+.. code-block:: javascript
+
+    urlParams = new URLSearchParams(window.location.search);
+
+This means you can send participants start links with custom parameters,
+then use that to customize the content of your welcome page.
 
 Manual entry of participant label
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -393,74 +465,3 @@ in that case, you should append ``welcome_page_ok=1`` to the URL and reload.
         </script>
     </body>
     </html>
-
-Other use cases: consent form / quiz, etc.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can add any form fields you want (dropdowns, checkboxes, etc.)
-and check the user's inputs using JavaScript and HTML attributes such as
-``required``, ``min``, ``max``, etc.
-
-.. code-block:: html+django
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Welcome</title>
-    </head>
-    <body>
-        <h2>Consent Form</h2>
-                
-        <form>
-            <p>This is a research study by the University of Antarctica...</p>
-            <label>
-                My age: <input type="number" id="age" min="1" max="120" required>
-            </label>
-            <br><br>
-
-            <label>
-                <input type="checkbox" id="consent" required>
-                I consent to participate in this study
-            </label>
-            <br><br>
-            <button type="submit">Continue</button>
-        </form>
-        
-        <div id="not-eligible" style="display: none;">
-            <p>You are not eligible to participate in this study. Participants must be 18 or older.</p>
-        </div>
-
-
-        <script>
-            let urlParams = new URLSearchParams(window.location.search);
-            let ageInput = document.getElementById('age');
-            let notEligibleDiv = document.getElementById('not-eligible');
-            let form = document.querySelector('form');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                let age = parseInt(ageInput.value);
-                
-                if (age < 18) {
-                    notEligibleDiv.style.display = 'block';
-                    form.style.display = 'none';
-                    return;
-                }
-                
-                urlParams.set('welcome_page_ok', '1');
-                window.location.href = window.location.pathname + '?' + urlParams.toString();
-            });
-        </script>
-    </body>
-    </html>
-
-Any parameters in the start link (e.g. ``?participant_label=Alice``)
-can be accessed from your JS code like this:
-
-.. code-block:: javascript
-
-    urlParams = new URLSearchParams(window.location.search);
-
-This means you can send participants start links with custom parameters,
-then use that to customize the content of your welcome page.
