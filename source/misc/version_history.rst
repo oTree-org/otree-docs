@@ -1,5 +1,6 @@
 Version history
 ```````````````
+
 Version 5.12 Beta (September 2025)
 ==================================
 
@@ -11,10 +12,23 @@ You can install this beta release with:
 
 
 Welcome page
-~~~~~~~~~~~~
+------------
 
 When you use a Room, oTree will always show a Welcome page
 that asks the user to confirm to start.
+
+Room without participant label file:
+
+.. image::
+    ../_static/rooms/welcome-page-nolabel.png
+    :width: 350px
+
+
+Room with participant label file:
+
+.. image::
+    ../_static/rooms/welcome-page-label.png
+    :width: 500px
 
 This solves the problem where start links were being opened
 by various platforms like WhatsApp that scan messages and open hyperlinks automatically,
@@ -27,7 +41,7 @@ and filter people before they are officially allocated as a participant in the e
 See :ref:`welcome-page`.
 
 group_by_arrival_time presence detection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------
 
 We changed how ``group_by_arrival_time`` excludes participants based on inactivity.
 Previously, inactivity was automatically determined based on whether the tab is open and active.
