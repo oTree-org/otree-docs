@@ -69,6 +69,10 @@ they are sent to an "inactive" page with a big button they can click to return t
 
 The timing parameters are configurable in ``settings.py``:
 
+.. warning::
+
+    These settings are experimental and may be removed or changed.
+
 .. code-block:: python
 
     GBAT_INACTIVE_INITIAL_TIMEOUT = 2 * 60
