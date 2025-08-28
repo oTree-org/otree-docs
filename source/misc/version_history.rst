@@ -8,7 +8,7 @@ You can install this beta release with:
 
 .. code-block:: bash
 
-    pip install otree==5.12 --upgrade --pre
+    pip install otree==5.12.* --upgrade --pre
 
 
 Welcome page
