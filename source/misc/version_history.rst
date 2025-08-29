@@ -75,8 +75,8 @@ The timing parameters are configurable in ``settings.py``:
 
 .. code-block:: python
 
-    GBAT_INACTIVE_INITIAL_TIMEOUT = 2 * 60
-    GBAT_INACTIVE_CONFIRMATION_TIMEOUT = 15
+    GBAT_INACTIVE_SECONDS_UNTIL_PROMPT = 2 * 60
+    GBAT_INACTIVE_SECONDS_TO_CONFIRM = 15
 
 
 Version 5.10
