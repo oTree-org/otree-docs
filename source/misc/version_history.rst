@@ -78,6 +78,24 @@ The timing parameters are configurable in ``settings.py``:
     GBAT_INACTIVE_SECONDS_UNTIL_PROMPT = 2 * 60
     GBAT_INACTIVE_SECONDS_TO_CONFIRM = 15
 
+Rooms interface improvements
+----------------------------
+
+Made navigation between room and active session more intuitive and clear.
+
+Session-wide links
+------------------
+
+Previously, if a participant opened a session-wide start link twice in the same browser, 
+it would use up 2 participants.
+Now, we check if the start link was already clicked, using a cookie.
+If yes, we continue where they left off.
+
+Caveats:
+-   This new behavior only applies with non-demo sessions. 
+-   You generally shouldn't be using session-wide links anyway, room links are much more stable.
+
+
 
 Version 5.10
 ============
