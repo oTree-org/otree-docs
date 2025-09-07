@@ -1,15 +1,71 @@
 Version history
 ```````````````
 
-Version 5.12 Beta (September 2025)
+Version 6.0 Beta (September 2025)
 ==================================
 
 You can install this beta release with:
 
 .. code-block:: bash
 
-    pip install otree==5.12.* --upgrade --pre
+    pip install otree --upgrade --pre
 
+Support for web APIs (ChatGPT etc)
+----------------------------------
+
+Previously, calling external APIs like OpenAI during experiments
+was not practical, because a request can take 10+ seconds,
+which can cause the server to freeze if multiple participants
+are trying to load pages at the same time.
+
+Now, you can call web APIs in a non-blocking way.
+
+Define your ``live_method`` as ``async`` and use ``yield`` instead of ``return``.
+This means you must use ``async``/``await`` throughout the function.
+
+.. code-block:: python
+
+    # IMPORTANT: make sure whatever API you are using has an async version,
+    # and use that.
+    # If they don't, consider making raw requests with httpx.
+    OPENAI_CLIENT = AsyncOpenAI(api_key=OPENAI_KEY)
+
+    class MyPage(Page):
+
+        @staticmethod
+        async def live_method(player: Player, data):
+            completion = await OPENAI_CLIENT.chat.completions.create(
+                model="chatgpt-4o-latest",
+                messages=[{"role": "user", "content": data}],
+                stream=False,
+            )
+            yield {player.id_in_group: completion.choices[0].message.content}
+
+You can also stream content, rather than waiting for the full reply
+(useful for chat interfaces etc).
+Use the API provider's streaming option and multiple ``yield`` statements.
+
+.. code-block:: python
+
+    class MyPageWithStreaming(Page):
+
+        @staticmethod
+        async def live_method(player: Player, data):
+            completion = await OPENAI_CLIENT.chat.completions.create(
+                model="chatgpt-4o-latest",
+                messages=[{"role": "user", "content": data}],
+                stream=True,
+            )
+            async for chunk in completion:
+                content = chunk.choices[0].delta.content
+                yield {player.id_in_group: content}
+
+.. warning::
+
+    Async live method is safe to use if you are only modifying the current player,
+    but you can get irregular behavior if you are doing group-level logic.
+    That's because this function executes in parallel,
+    meaning there is a risk of race conditions.
 
 Welcome page
 ------------
@@ -78,10 +134,6 @@ The timing parameters are configurable in ``settings.py``:
     GBAT_INACTIVE_SECONDS_UNTIL_PROMPT = 2 * 60
     GBAT_INACTIVE_SECONDS_TO_CONFIRM = 15
 
-Rooms interface improvements
-----------------------------
-
-Made navigation between room and active session more intuitive and clear.
 
 Session-wide links
 ------------------
@@ -92,9 +144,27 @@ Now, we check if the start link was already clicked, using a cookie.
 If yes, we continue where they left off.
 
 Caveats:
+
 -   This new behavior only applies with non-demo sessions. 
 -   You generally shouldn't be using session-wide links anyway, room links are much more stable.
 
+Misc
+~~~~
+
+-   If you set ``THOUSAND_SEPARATOR = ","`` in ``settings.py``,
+    big numbers will be formatted like "1,234,567.00".
+    You can set it to ".", " ", etc.
+-   Bots do ``custom_export``
+-   Easier debugging of live pages. JS console shows when there is a server error,
+    and server tracebacks are shorter.
+-   ``to3`` and ``to4`` filter in templates
+-   green/gray presence icons in the "Monitor" page when participants are on waitpages
+-   ``read_csv()`` supports semicolon delimited files
+-   In ``DEBUG`` mode, at the bottom of the page there is a link to start as a new participant.
+-   Made navigation between room and active session more intuitive and clear.
+-   ``live_method`` cannot be a string anymore.
+-   chat widget now uses a ``<textarea>`` instead of ``<input>``.
+-   Async ``live_method`` does not work with bots and ``call_live_method`` yet.
 
 
 Version 5.10
