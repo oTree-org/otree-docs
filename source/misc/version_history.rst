@@ -60,13 +60,12 @@ Use the API provider's streaming option and multiple ``yield`` statements.
                 content = chunk.choices[0].delta.content
                 yield {player.id_in_group: content}
 
-.. warning::
 
-    Async live method is safe to use if you are only modifying the current player,
-    but you can get irregular behavior if multiple players are modifying the same object
-    (e.g. the group).
-    That's because this function executes in parallel,
-    meaning there is a risk of race conditions.
+Async live method is safe to use if you are only modifying the current player,
+but you can get irregular behavior if multiple players are modifying the same object
+(e.g. the group).
+That's because this function executes in parallel,
+meaning there is a risk of race conditions.
 
 Welcome page
 ------------
