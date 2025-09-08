@@ -14,7 +14,11 @@
 
 `中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 <https://otree.readthedocs.io/ja/latest/index.html>`__ | `Español <https://otree.readthedocs.io/es/latest/index.html>`__
 
+.. note::
 
+   **September 2025 update**: oTree 6.0 beta is :ref:`available <version-history>`
+   with AI integration, better wait pages, custom welcome pages and consent forms,
+   and many other features.
 
 Live demos
 ^^^^^^^^^^
