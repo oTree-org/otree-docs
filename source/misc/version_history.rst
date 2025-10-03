@@ -12,6 +12,88 @@ You can install this beta release with:
 
     pip install otree --upgrade --pre
 
+Back button
+-----------
+
+You can now allow participants to click a "Back" button to go to the previous page.
+
+On the ``Page`` class, add this attribute:
+
+.. code-block:: python
+
+    class MyPage(Page):
+        allow_back_button = True
+
+Then in the template, use ``{{ back_button }}`` just as you would use ``{{ next_button }}``.
+
+Notes
+~~~~~
+
+If you use ``{{ back_button }}`` on a page with a form,
+it's recommended to also set ``preserve_unsubmitted_form = True``
+so that the form will not be lost if the user clicks "back".
+
+This is not the same as the browser's back button.
+As was the case previously,
+the user should not click the browser's back button.
+
+Advanced usage
+~~~~~~~~~~~~~~
+
+If you don't want to use the built-in ``{{ back_button }}``,
+you can call the ``back_button()`` function using JavaScript,
+e.g. ``<button type="button" onclick="back_button()">...</button>``.
+
+Restrictions of back button
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-   Cannot go back through a wait page
+-   Cannot go to a previous app
+
+(These restrictions may be relaxed in future versions of oTree.)
+
+Preserving unsubmitted forms
+----------------------------
+
+New option on ``Page`` classes:
+
+.. code-block:: python
+
+    class MyPage(Page):
+        preserve_unsubmitted_form = True
+
+When set, any info the user entered in unsubmitted forms will be auto-saved (locally in their browser),
+so that if the page is reloaded, the values will still be there.
+This is useful in the following situations:
+
+-   If your forms are using :ref:`raw HTML inputs <raw_html>`,
+    and the user submits the form but it fails validation
+    (without ``preserve_unsubmitted_form = True``, the user would have to restart the form from scratch)
+-   If the user fills out a form, but instead of clicking "next" clicks the "back" button
+    (new in this release), then later returns to this page, their progress will be saved.
+-   If the user is filling out a form, then reloads the page, or closes the page and starts again later.
+
+Note that these values are stored locally in the browser, not on the oTree server.
+
+Filtering fields in admin data view
+-----------------------------------
+
+You can choose what fields are shown in the admin's "Session Data" view.
+This will help you focus on the important fields and ignore the rest.
+Define ``ADMIN_VIEW_FIELDS`` in your constants class.
+It can have ``'player'``, ``'group'``, and ``'subsession'`` keys.
+
+.. code-block:: python
+
+    class C(BaseConstants):
+        ...
+        ADMIN_VIEW_FIELDS = {
+            'player': ['guess', 'is_winner', 'payoff'],
+            'group': ['best_guess'],
+            # 'subsession': [...],
+        }
+
+
 Support for web APIs (ChatGPT etc)
 ----------------------------------
 
