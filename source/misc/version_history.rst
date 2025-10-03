@@ -26,8 +26,8 @@ On the ``Page`` class, add this attribute:
 
 Then in the template, use ``{{ back_button }}`` just as you would use ``{{ next_button }}``.
 
-Notes
-~~~~~
+Back button notes
+~~~~~~~~~~~~~~~~~
 
 If you use ``{{ back_button }}`` on a page with a form,
 it's recommended to also set ``preserve_unsubmitted_form = True``
