@@ -230,6 +230,69 @@ By the way, using a similar technique, you could implement a custom
 wait page, e.g. one that lets you proceed after a certain timeout,
 even if not all players have arrived.
 
+.. _async_live_method:
+
+Asynchronous live methods (AI, web APIs, etc)
+---------------------------------------------
+
+.. note::
+
+    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+
+If you want to call external APIs like OpenAI/ChatGPT during experiments,
+you should use an asynchronous live method as described below.
+(If you use a regular live method together with web requests,
+it can cause the server to freeze if multiple participants
+are trying to load pages at the same time.)
+
+Define your ``live_method`` as ``async`` and use ``yield`` instead of ``return``.
+This means you must use ``async``/``await`` throughout the function.
+
+.. code-block:: python
+
+    # IMPORTANT: make sure whatever API you are using has an async version,
+    # and use that.
+    # If they don't, consider making raw requests with httpx.
+    OPENAI_CLIENT = AsyncOpenAI(api_key=OPENAI_KEY)
+
+    class MyPage(Page):
+
+        @staticmethod
+        async def live_method(player: Player, data):
+            completion = await OPENAI_CLIENT.chat.completions.create(
+                model="chatgpt-4o-latest",
+                messages=[{"role": "user", "content": data}],
+                stream=False,
+            )
+            yield {player.id_in_group: completion.choices[0].message.content}
+
+You can also stream content, rather than waiting for the full reply
+(useful for chat interfaces etc).
+Use the API provider's streaming option and multiple ``yield`` statements.
+
+.. code-block:: python
+
+    class MyPageWithStreaming(Page):
+
+        @staticmethod
+        async def live_method(player: Player, data):
+            completion = await OPENAI_CLIENT.chat.completions.create(
+                model="chatgpt-4o-latest",
+                messages=[{"role": "user", "content": data}],
+                stream=True,
+            )
+            async for chunk in completion:
+                content = chunk.choices[0].delta.content
+                yield {player.id_in_group: content}
+
+
+Async live method is safe to use if you are only modifying the current player,
+but you can get irregular behavior if multiple players are modifying the same object
+(e.g. the group).
+That's because this function executes in parallel,
+meaning there is a risk of race conditions.
+
+
 General advice about live pages
 -------------------------------
 

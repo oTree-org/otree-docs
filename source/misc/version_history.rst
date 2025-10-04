@@ -3,8 +3,10 @@
 Version history
 ```````````````
 
-Version 6.0 Beta (September 2025)
-==================================
+.. _v60:
+
+Version 6.0 Beta (October 2025)
+===============================
 
 You can install this beta release with:
 
@@ -15,144 +17,26 @@ You can install this beta release with:
 Back button
 -----------
 
-You can now allow participants to click a "Back" button to go to the previous page.
-
-On the ``Page`` class, add this attribute:
-
-.. code-block:: python
-
-    class MyPage(Page):
-        allow_back_button = True
-
-Then in the template, use ``{{ back_button }}`` just as you would use ``{{ next_button }}``.
-
-Back button notes
-~~~~~~~~~~~~~~~~~
-
-If you use ``{{ back_button }}`` on a page with a form,
-it's recommended to also set ``preserve_unsubmitted_form = True``
-so that the form will not be lost if the user clicks "back".
-
-This is not the same as the browser's back button.
-As was the case previously,
-the user should not click the browser's back button.
-
-Advanced usage
-~~~~~~~~~~~~~~
-
-If you don't want to use the built-in ``{{ back_button }}``,
-you can call the ``back_button()`` function using JavaScript,
-e.g. ``<button type="button" onclick="back_button()">...</button>``.
-
-Restrictions of back button
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--   Cannot go back through a wait page
--   Cannot go to a previous app
-
-(These restrictions may be relaxed in future versions of oTree.)
+See :ref:`back_button`.
 
 Preserving unsubmitted forms
 ----------------------------
 
-New option on ``Page`` classes:
-
-.. code-block:: python
-
-    class MyPage(Page):
-        preserve_unsubmitted_form = True
-
-When set, any info the user entered in unsubmitted forms will be auto-saved (locally in their browser),
-so that if the page is reloaded, the values will still be there.
-This is useful in the following situations:
-
--   If your forms are using :ref:`raw HTML inputs <raw_html>`,
-    and the user submits the form but it fails validation
-    (without ``preserve_unsubmitted_form = True``, the user would have to restart the form from scratch)
--   If the user fills out a form, but instead of clicking "next" clicks the "back" button
-    (new in this release), then later returns to this page, their progress will be saved.
--   If the user is filling out a form, then reloads the page, or closes the page and starts again later.
-
-Note that these values are stored locally in the browser, not on the oTree server.
+See :ref:`preserve_unsubmitted_form`.
 
 Filtering fields in admin data view
 -----------------------------------
 
-You can choose what fields are shown in the admin's "Session Data" view.
-This will help you focus on the important fields and ignore the rest.
-Define ``ADMIN_VIEW_FIELDS`` in your constants class.
-It can have ``'player'``, ``'group'``, and ``'subsession'`` keys.
-
-.. code-block:: python
-
-    class C(BaseConstants):
-        ...
-        ADMIN_VIEW_FIELDS = {
-            'player': ['guess', 'is_winner', 'payoff'],
-            'group': ['best_guess'],
-            # 'subsession': [...],
-        }
+See :ref:`ADMIN_VIEW_FIELDS`.
 
 
 Support for web APIs (ChatGPT etc)
 ----------------------------------
 
-Previously, calling external APIs like OpenAI during experiments
-was not practical, because a request can take 10+ seconds,
-which can cause the server to freeze if multiple participants
-are trying to load pages at the same time.
+See :ref:`async_live_method`.
 
-Now, you can call web APIs in a non-blocking way.
-
-Define your ``live_method`` as ``async`` and use ``yield`` instead of ``return``.
-This means you must use ``async``/``await`` throughout the function.
-
-.. code-block:: python
-
-    # IMPORTANT: make sure whatever API you are using has an async version,
-    # and use that.
-    # If they don't, consider making raw requests with httpx.
-    OPENAI_CLIENT = AsyncOpenAI(api_key=OPENAI_KEY)
-
-    class MyPage(Page):
-
-        @staticmethod
-        async def live_method(player: Player, data):
-            completion = await OPENAI_CLIENT.chat.completions.create(
-                model="chatgpt-4o-latest",
-                messages=[{"role": "user", "content": data}],
-                stream=False,
-            )
-            yield {player.id_in_group: completion.choices[0].message.content}
-
-You can also stream content, rather than waiting for the full reply
-(useful for chat interfaces etc).
-Use the API provider's streaming option and multiple ``yield`` statements.
-
-.. code-block:: python
-
-    class MyPageWithStreaming(Page):
-
-        @staticmethod
-        async def live_method(player: Player, data):
-            completion = await OPENAI_CLIENT.chat.completions.create(
-                model="chatgpt-4o-latest",
-                messages=[{"role": "user", "content": data}],
-                stream=True,
-            )
-            async for chunk in completion:
-                content = chunk.choices[0].delta.content
-                yield {player.id_in_group: content}
-
-
-Async live method is safe to use if you are only modifying the current player,
-but you can get irregular behavior if multiple players are modifying the same object
-(e.g. the group).
-That's because this function executes in parallel,
-meaning there is a risk of race conditions.
-
-Welcome page
-------------
+Welcome pages for rooms
+-----------------------
 
 When you use a Room, oTree will always show a Welcome page
 that asks the user to confirm to start.
@@ -174,11 +58,10 @@ This solves the problem where start links were being opened
 by various platforms like WhatsApp that scan messages and open hyperlinks automatically,
 making oTree count those participants as having begun the experiment.
 
-Furthermore, this page is **customizable**.
-You can set ``welcome_page="MyWelcomePage.html`` in your room definition in ``settings.py``.
-This means you can put a consent form or questionnaire or any other content,
-and filter people before they are officially allocated as a participant in the experiment.
+Furthemore, these welcome pages are customizable.
+
 See :ref:`welcome-page`.
+
 
 group_by_arrival_time presence detection
 ----------------------------------------

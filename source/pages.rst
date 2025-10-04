@@ -14,7 +14,7 @@ A ``Page`` can have any of the following methods and attributes.
 .. _is_displayed:
 
 is_displayed()
-~~~~~~~~~~~~~~
+--------------
 
 You can define this function to return ``True`` if the page should be shown,
 and False if the page should be skipped.
@@ -41,7 +41,7 @@ If you need to repeat the same rule for many pages, use :ref:`app_after_this_pag
 .. _vars_for_template:
 
 vars_for_template()
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Use this to pass variables to the template. Example:
 
@@ -70,7 +70,7 @@ If the user refreshes the page, ``vars_for_template`` gets re-executed.
 .. _before_next_page:
 
 before_next_page()
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Here you define any code that should be executed
 after form validation, before the player proceeds to the next page.
@@ -88,17 +88,17 @@ Example:
 
 
 timeout_seconds
-~~~~~~~~~~~~~~~
+---------------
 
 See :ref:`timeouts`
 
 Wait pages
-~~~~~~~~~~
+----------
 
 See :ref:`wait_pages`
 
 Randomizing page sequence
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 You can randomize the order of pages using rounds.
 An example is `here <https://www.otreehub.com/projects/otree-snippets/>`__.
@@ -106,7 +106,7 @@ An example is `here <https://www.otreehub.com/projects/otree-snippets/>`__.
 .. _app_after_this_page:
 
 app_after_this_page
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 To skip entire apps, you can define ``app_after_this_page``.
 For example, to skip to the next app, you would do:
@@ -133,3 +133,50 @@ Or you could just return a hardcoded string
 
 If this function doesn't return anything,
 the player proceeds to the next page as usual.
+
+.. _back_button:
+
+
+Back button
+-----------
+
+.. note::
+
+    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+
+You can now allow participants to click a "Back" button to go to the previous page.
+
+On the ``Page`` class, add this attribute:
+
+.. code-block:: python
+
+    class MyPage(Page):
+        allow_back_button = True
+
+Then in the template, use ``{{ back_button }}`` just as you would use ``{{ next_button }}``.
+
+Back button notes
+~~~~~~~~~~~~~~~~~
+
+-   ``{{ back_button }}`` is not the same as the browser's back button.
+    As was the case previously,
+    the user should not click the browser's back button.
+-   If you use ``{{ back_button }}`` on a page with a form,
+    it's recommended to also use 
+    :ref:`preserve_unsubmitted_form = True <preserve_unsubmitted_form>`
+    so that the form will not be lost if the user clicks "back".
+
+Advanced usage
+~~~~~~~~~~~~~~
+
+If you don't want to use the built-in ``{{ back_button }}``,
+you can call the ``back_button()`` function using JavaScript,
+e.g. ``<button type="button" onclick="back_button()">...</button>``.
+
+Restrictions of back button
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-   Cannot go back through a wait page
+-   Cannot go to a previous app
+
+(These restrictions may be relaxed in future versions of oTree.)

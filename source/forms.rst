@@ -369,9 +369,6 @@ Raw HTML widgets
 If ``{{ formfields }}`` and :ref:`manual field rendering <manual-forms>`
 don't give you the appearance you want,
 you can write your own widget in raw HTML.
-However, you will lose the convenient features handled
-automatically by oTree. For example, if the form has an error and the page
-re-loads, all entries by the user may be wiped out.
 
 First, add an ``<input>`` element.
 For example, if your ``form_fields`` includes ``my_field``,
@@ -381,6 +378,10 @@ you can do ``<input name="my_field" type="checkbox" />``
 Second, you should usually include ``{{ formfield_errors 'xyz' }}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
+
+If you use raw HTML inputs, it's recommended to also use :ref:`preserve_unsubmitted_form`.
+Otherwise, if the user submits the form but it fails validation,
+they will have to restart the form from scratch.
 
 
 Raw HTML example: custom user interface with JavaScript
@@ -415,6 +416,37 @@ in oTree like any other form field.
 If this isn't working, open your browser's JavaScript console,
 see if there are any errors, and use ``console.log()`` (JavaScript's equivalent of ``print()``)
 to trace the execution of your code line by line.
+
+.. _preserve_unsubmitted_form:
+
+
+Preserving unsubmitted forms
+----------------------------
+
+.. note::
+
+    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+
+You can set the following attribute on your ``Page`` class to preserve unsubmitted forms:
+
+.. code-block:: python
+
+    class MyPage(Page):
+        preserve_unsubmitted_form = True
+
+When set, any info the user entered in unsubmitted forms will be preserved between page loads,
+so that if the page is reloaded, the values will still be there.
+This is useful in the following situations:
+
+-   If your forms are using :ref:`raw HTML inputs <raw_html>`,
+    and the user submits the form but it fails validation
+    (without ``preserve_unsubmitted_form = True``, the user would have to restart the form from scratch)
+-   If the user fills out a form, but instead of clicking "next" clicks the "back" button
+    (new in this release), then later returns to this page, their progress will be saved.
+-   If the user is filling out a form, then reloads the page, or closes the page and starts again later.
+
+Note that these values are stored locally in the browser, not on the oTree server.
+
 
 Buttons
 -------

@@ -94,10 +94,40 @@ Arrival order
 oTree will assign the first person who arrives to be P1, the second to be P2, etc.,
 unless you are using single-use links.
 
+Customizing the admin interface
+-------------------------------
+
+You can customize what data is shown in the admin interface.
+For basic customization, you can define ``ADMIN_VIEW_FIELDS`` in your constants class.
+For advanced customization, you can create a custom "admin report" tab.
+
+.. _ADMIN_VIEW_FIELDS:
+
+ADMIN_VIEW_FIELDS
+~~~~~~~~~~~~~~~~~
+
+.. note::
+    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+
+You can choose what fields are shown in the admin's "Session Data" view,
+to focus on the important fields and ignore the rest.
+Define ``ADMIN_VIEW_FIELDS`` in your constants class.
+It can have ``'player'``, ``'group'``, and ``'subsession'`` keys.
+
+.. code-block:: python
+
+    class C(BaseConstants):
+        ...
+        ADMIN_VIEW_FIELDS = {
+            'player': ['guess', 'is_winner', 'payoff'],
+            # 'group': [...],
+            # 'subsession': [...],
+        }
+
 .. _admin_report:
 
-Customizing the admin interface (admin reports)
------------------------------------------------
+Admin reports
+~~~~~~~~~~~~~
 
 You can add a custom tab to a session's admin page with any content you want;
 for example:
@@ -213,15 +243,3 @@ If you define a :ref:`participant field <PARTICIPANT_FIELDS>` called `finished`,
 then you can set ``participant.finished = True`` when a participant finishes the session,
 and this will be displayed in various places such as the payments page.
 
-.. _experimenter-chat:
-
-Chat between participants and experimenter
-------------------------------------------
-
-To enable your participants to send you chat messages,
-consider using a software like `Papercups <https://github.com/papercups-io/papercups/blob/master/README.md>`__.
-Click on the "Deploy to Heroku" button for 1-click setup of your Papercups server.
-Fill out the required config vars and leave the others empty.
-``BACKEND_URL`` and ``REACT_APP_URL`` refer to your Papercups site, not your oTree site.
-Login to your site and copy the HTML embedding code to an includable template called ``papercups.html``.
-There is an example called "chat with experimenter" `here <https://www.otreehub.com/projects/otree-snippets/>`__.

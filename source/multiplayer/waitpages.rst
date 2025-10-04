@@ -104,6 +104,14 @@ they will be excluded from the grouping in ``my_game``.
 Presence detection
 ~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+    In :ref:`v60`, this behavior has changed.
+    If a participant has not shown any signs of activity within a certain period of time,
+    they are asked if they are still there.
+    If they don't respond quickly enough, 
+    they are sent to an "inactive" page and need to click a button to rejoin.
+
 oTree detects and excludes participants who switched away to another tab or window.
 In order to be grouped, a user must be active on the wait page.
 There is a colored dot in the tab of their web page (maybe not visible on mobile).
