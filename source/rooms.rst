@@ -196,7 +196,7 @@ Room welcome pages (consent forms, etc)
 
 .. note::
 
-    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
 
 When you use a Room, oTree will show a Welcome page
 that asks the user to confirm to start.

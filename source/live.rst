@@ -237,7 +237,7 @@ Asynchronous live methods (AI, web APIs, etc)
 
 .. note::
 
-    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
 
 If you want to call external APIs like OpenAI/ChatGPT during experiments,
 you should use an asynchronous live method as described below.

@@ -93,3 +93,4 @@ This means amounts will get rounded to whole numbers,
 like ``10`` divided by ``3`` is ``3``.
 So, we recommend using point magnitudes high enough that you don't care about rounding error.
 For example, set the endowment of a game to 1000 points, rather than 100.
+

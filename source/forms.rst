@@ -425,16 +425,16 @@ Preserving unsubmitted forms
 
 .. note::
 
-    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
 
-You can set the following attribute on your ``Page`` class to preserve unsubmitted forms:
+To preserve unsubmitted forms, you can set the following attribute on a page:
 
 .. code-block:: python
 
     class MyPage(Page):
         preserve_unsubmitted_form = True
 
-When set, any info the user entered in unsubmitted forms will be preserved between page loads,
+Then, any info the user entered in unsubmitted forms will be preserved
 so that if the page is reloaded, the values will still be there.
 This is useful in the following situations:
 

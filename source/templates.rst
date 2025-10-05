@@ -417,9 +417,18 @@ To this::
 If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
 
-Miscellaneous
--------------
+Number formatting
+-----------------
 
 You can round numbers using the ``to2``, ``to1``, or ``to0`` filters. For example::
-``{{ 0.1234|to2}}`` outputs 0.12.
+``{{ 0.1234|to2 }}`` outputs 0.12.
 
+.. note::
+
+    As of :ref:`v60` (``pip install otree --upgrade --pre``),
+    there is also ``to3`` and ``to4`` filters.
+
+As of :ref:`v60` (``pip install otree --upgrade --pre``),
+if you set ``THOUSAND_SEPARATOR = ","`` in ``settings.py``,
+big numbers will be formatted like "1,234,567.00".
+You can set it to ".", " ", etc.

@@ -107,7 +107,7 @@ ADMIN_VIEW_FIELDS
 ~~~~~~~~~~~~~~~~~
 
 .. note::
-    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
 
 You can choose what fields are shown in the admin's "Session Data" view,
 to focus on the important fields and ignore the rest.

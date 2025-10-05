@@ -142,7 +142,7 @@ Back button
 
 .. note::
 
-    New in :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
 
 You can now allow participants to click a "Back" button to go to the previous page.
 
