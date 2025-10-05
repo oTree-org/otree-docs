@@ -115,12 +115,17 @@ Caveats:
 -   This new behavior only applies with non-demo sessions. 
 -   You generally shouldn't be using session-wide links anyway, room links are much more stable.
 
+Number formatting
+-----------------
+
+-   ``THOUSAND_SEPARATOR`` setting (to display numbers like "1,234,567.00")
+-   ``to3`` and ``to4`` filters in templates
+
+See :ref:`number_formatting` for details.
+
 Misc
 ~~~~
 
--   If you set ``THOUSAND_SEPARATOR = ","`` in ``settings.py``,
-    big numbers will be formatted like "1,234,567.00".
-    You can set it to ".", " ", etc.
 -   Bots do ``custom_export``
 -   Easier debugging of live pages. JS console shows when there is a server error,
     and server tracebacks are shorter.

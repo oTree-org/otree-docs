@@ -417,6 +417,9 @@ To this::
 If your chart is not loading, click "View Source" in your browser
 and check if there is something wrong with the data you dynamically generated.
 
+
+.. _number_formatting:
+
 Number formatting
 -----------------
 
