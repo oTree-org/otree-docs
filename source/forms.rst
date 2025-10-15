@@ -427,22 +427,20 @@ Preserving unsubmitted forms
 
     To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
 
-To preserve unsubmitted forms, you can set the following attribute on a page:
+You can set the following attribute to preserve forms that were partially filled out 
+before the page was reloaded:
 
 .. code-block:: python
 
     class MyPage(Page):
         preserve_unsubmitted_form = True
 
-Then, any info the user entered in unsubmitted forms will be preserved
-so that if the page is reloaded, the values will still be there.
 This is useful in the following situations:
 
 -   If your forms are using :ref:`raw HTML inputs <raw_html>`,
     and the user submits the form but it fails validation
     (without ``preserve_unsubmitted_form = True``, the user would have to restart the form from scratch)
--   If the user fills out a form, but instead of clicking "next" clicks the "back" button
-    (new in this release), then later returns to this page, their progress will be saved.
+-   If the user fills out a form, but instead of clicking "next" clicks the "back" button, then later returns to this page.
 -   If the user is filling out a form, then reloads the page, or closes the page and starts again later.
 
 Note that these values are stored locally in the browser, not on the oTree server.

@@ -19,4 +19,4 @@ Installation
 ------------
 
 - If you will use oTree Studio (easiest option), go to `otreehub.com <https://www.otreehub.com>`__.
-- If you have more programming experience, you can use oTree with a :ref:`text editor <install-nostudio>`.
+- If you have more programming experience, you can use oTree with Visual Studio code and the oTree extension :ref:`text editor <install-nostudio>`.

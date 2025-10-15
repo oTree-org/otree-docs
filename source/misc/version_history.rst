@@ -14,6 +14,12 @@ You can install this beta release with:
 
     pip install otree --upgrade --pre
 
+.. note::
+
+    In addition to installing this beta,
+    you should try out the official oTree `extension <https://marketplace.visualstudio.com/items?itemName=oTree.otree>`__ for Visual Studio Code
+    (from VS Code extensions pane, you can also search "oTree").
+
 Back button
 -----------
 
@@ -85,17 +91,8 @@ they are sent to an "inactive" page with a big button they can click to return t
     ../_static/gbat/inactive_page.png
     :width: 500px
 
-.. note::
-
-    The text displayed to users is preliminary and has not been translated
-    to languages other than English.
-
-The timing parameters are configurable in ``settings.py``:
-
-.. warning::
-
-    These settings are experimental and may be removed or changed.
-
+The timing parameters are configurable in ``settings.py`` (these settings are experimental and may be removed or changed):
+    
 .. code-block:: python
 
     GBAT_INACTIVE_SECONDS_UNTIL_PROMPT = 2 * 60
