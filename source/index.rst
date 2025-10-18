@@ -16,9 +16,9 @@
 
 .. note::
 
-   **September 2025 update**: oTree 6.0 beta is :ref:`available <version-history>`
+   **October 2025 update**: :ref:`oTree 6.0 beta <version-history>` is available
    with AI integration, better wait pages, custom welcome pages and consent forms,
-   back button, and many other features.
+   back button, better admin interface, and many other features.
 
 Live demos
 ^^^^^^^^^^

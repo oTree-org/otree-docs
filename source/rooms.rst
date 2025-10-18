@@ -61,15 +61,15 @@ Participant labels
 This is the "guest list" for the room.
 It should contain one participant label per line. For example::
 
-        LAB1
-        LAB2
-        LAB3
-        LAB4
-        LAB5
-        LAB6
-        LAB7
-        LAB8
-        LAB9
+        LAB01
+        LAB02
+        LAB03
+        LAB04
+        LAB05
+        LAB06
+        LAB07
+        LAB08
+        LAB09
         LAB10
 
 If you don't specify participant labels, then anyone can join
@@ -215,7 +215,7 @@ In ``settings.py``, add ``welcome_page`` in your room definition:
         dict(
             name='my_room',
             display_name="My Room",
-            welcome_page="_templates/RoomWelcomePage.html",
+            welcome_page="_welcome_pages/RoomWelcomePage.html",
         ),
     ]
 

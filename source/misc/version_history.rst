@@ -35,7 +35,6 @@ Filtering fields in admin data view
 
 See :ref:`ADMIN_VIEW_FIELDS`.
 
-
 Support for web APIs (ChatGPT etc)
 ----------------------------------
 
@@ -98,6 +97,10 @@ The timing parameters are configurable in ``settings.py`` (these settings are ex
     GBAT_INACTIVE_SECONDS_UNTIL_PROMPT = 2 * 60
     GBAT_INACTIVE_SECONDS_TO_CONFIRM = 15
 
+Improvements to admin interface
+-------------------------------
+
+Many improvements to the admin UI.
 
 Session-wide links
 ------------------
@@ -120,6 +123,12 @@ Number formatting
 
 See :ref:`number_formatting` for details.
 
+Data export
+-----------
+
+Automated data export added to REST API.
+Improved data export performance.
+
 Misc
 ~~~~
 
@@ -134,6 +143,7 @@ Misc
 -   ``live_method`` cannot be a string anymore.
 -   chat widget now uses a ``<textarea>`` instead of ``<input>``.
 -   Async ``live_method`` does not work with bots and ``call_live_method`` yet.
+
 
 
 Version 5.10
