@@ -14,11 +14,18 @@ You can install this beta release with:
 
     pip install otree --upgrade --pre
 
+We will continue to add more features to the beta, so keep running this upgrade command regularly.
+
 .. note::
 
     In addition to installing this beta,
     you should try out the official oTree `extension <https://marketplace.visualstudio.com/items?itemName=oTree.otree>`__ for Visual Studio Code
     (from VS Code extensions pane, you can also search "oTree").
+
+Multiple custom_export functions
+--------------------------------
+
+See :ref:`multiple_custom_export`
 
 Back button
 -----------

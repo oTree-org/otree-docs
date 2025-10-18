@@ -229,6 +229,19 @@ Or, you can ignore the ``players`` argument and export some other data instead, 
 Once this function is defined, your custom data export will be available in the
 regular data export page.
 
+.. _multiple_custom_export:
+
+Multiple custom_export functions
+````````````````````````````````
+
+.. note::
+
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+
+You can define multiple custom export functions; just make sure they all start with ``custom_export``;
+e.g. ``def custom_export_xyz(players):``.
+
+
 Debug Info
 ----------
 
