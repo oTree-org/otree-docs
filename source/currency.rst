@@ -111,17 +111,17 @@ which can represent base-10 numbers exactly and therefore avoids annoying arithm
 (You can find lots of info online about this subject.)
 ``DecimalField`` is a more flexible generalization of oTree's currency datatype.
 
-When defining a ``DecimalField``, you specify a ``config_name`` that indicates what entity it represents:
+When defining a ``DecimalField``, you specify ``units`` that indicates what entity it represents:
 
 .. code-block:: python
 
-    gold = models.DecimalField(config_name='grams')
+    gold = models.DecimalField(units='grams')
 
-Define your configs in ``settings.py``:
+Define your units in ``settings.py``:
 
 .. code-block:: python
 
-    DECIMAL_CONFIGS = [
+    DECIMAL_UNITS = [
         dict(
             name='grams',
             places=6,
@@ -139,7 +139,7 @@ Define your configs in ``settings.py``:
 -   The ``display`` dict can also have an entry called ``function``
     that should be a function with 2 args: the formatted value as a string, and the original
     decimal value. If defined, it will be called to generate the display value.
-    You can append currency symbols, units, or even wrap the number in an HTML tag.
+    You can append currency symbols, unit names, or even wrap the number in an HTML tag.
 -   The ``form`` properties are relevant if the field is included in a form.
     If you set ``places=0``, then the user must input a whole number.
     ``units_label`` sets the label on the right edge of the number input.
