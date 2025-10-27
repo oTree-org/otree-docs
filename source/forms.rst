@@ -379,7 +379,7 @@ Second, you should usually include ``{{ formfield_errors 'xyz' }}``,
 so that if the participant submits an incorrect or missing value),
 they can see the error message.
 
-If you use raw HTML inputs, it's recommended to also use :ref:`preserve_unsubmitted_form`.
+If you use raw HTML inputs, it's recommended to also use :ref:`preserve_unsubmitted_inputs`.
 Otherwise, if the user submits the form but it fails validation,
 they will have to restart the form from scratch.
 
@@ -417,15 +417,20 @@ If this isn't working, open your browser's JavaScript console,
 see if there are any errors, and use ``console.log()`` (JavaScript's equivalent of ``print()``)
 to trace the execution of your code line by line.
 
-.. _preserve_unsubmitted_form:
+.. _preserve_unsubmitted_inputs:
 
+Preserving unsubmitted inputs
+-----------------------------
 
-Preserving unsubmitted forms
-----------------------------
+.. note::
+
+    This was renamed from preserve_unsubmitted_inputs to preserve_unsubmitted_form
 
 .. note::
 
     To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+
+
 
 You can set the following attribute to preserve forms that were partially filled out 
 before the page was reloaded:
@@ -433,17 +438,20 @@ before the page was reloaded:
 .. code-block:: python
 
     class MyPage(Page):
-        preserve_unsubmitted_form = True
+        preserve_unsubmitted_inputs = True
 
 This is useful in the following situations:
 
 -   If your forms are using :ref:`raw HTML inputs <raw_html>`,
     and the user submits the form but it fails validation
-    (without ``preserve_unsubmitted_form = True``, the user would have to restart the form from scratch)
+    (without ``preserve_unsubmitted_inputs = True``, the user would have to restart the form from scratch)
 -   If the user fills out a form, but instead of clicking "next" clicks the "back" button, then later returns to this page.
 -   If the user is filling out a form, then reloads the page, or closes the page and starts again later.
 
 Note that these values are stored locally in the browser, not on the oTree server.
+
+If you are writing the raw HTML of the inputs,
+make sure they all have a ``name=`` attribute.
 
 
 Buttons

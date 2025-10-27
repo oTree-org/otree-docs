@@ -22,6 +22,29 @@ We will continue to add more features to the beta, so keep running this upgrade 
     you should try out the official oTree `extension <https://marketplace.visualstudio.com/items?itemName=oTree.otree>`__ for Visual Studio Code
     (from VS Code extensions pane, you can also search "oTree").
 
+DecimalField
+------------
+
+oTree now has a versatile ``DecimalField``, useful for enabling multiple currencies
+as well as various other data types (percentages, durations, resources, etc).
+
+See :ref:`DecimalField`.
+
+live_method on WaitPage
+-----------------------
+
+You can now define ``live_method`` on a WaitPage.
+
+participant.status
+------------------
+
+There is a new field ``participant.status`` that you can set to anything you want,
+e.g. ``finished``, ``dropout``, etc.
+In the admin monitor page, there will be a dropdown that lets you filter based on this field.
+(In the initial view, only participants whose ``status`` is blank will be shown.)
+This is useful for things like hiding participants who are no longer doing the study,
+or organizing participants into segments.
+
 Multiple custom_export functions
 --------------------------------
 
@@ -32,10 +55,10 @@ Back button
 
 See :ref:`back_button`.
 
-Preserving unsubmitted forms
-----------------------------
+Preserving unsubmitted inputs
+-----------------------------
 
-See :ref:`preserve_unsubmitted_form`.
+See :ref:`preserve_unsubmitted_inputs`.
 
 Filtering fields in admin data view
 -----------------------------------
@@ -150,8 +173,10 @@ Misc
 -   ``live_method`` cannot be a string anymore.
 -   chat widget now uses a ``<textarea>`` instead of ``<input>``.
 -   Async ``live_method`` does not work with bots and ``call_live_method`` yet.
-
-
+-   Easier to define custom wait page templates.
+    You don't need to set ``template_name`` on the page class anymore.
+    Just like with regular pages, define a template with the same name,
+    and oTree will automatically detect it.
 
 Version 5.10
 ============

@@ -1,7 +1,10 @@
 .. _currency:
 
+Currency and Decimal
+====================
+
 Currency
-========
+--------
 
 In many experiments, participants play for currency:
 either real money, or points. oTree supports both;
@@ -94,3 +97,56 @@ like ``10`` divided by ``3`` is ``3``.
 So, we recommend using point magnitudes high enough that you don't care about rounding error.
 For example, set the endowment of a game to 1000 points, rather than 100.
 
+.. _DecimalField:
+
+DecimalField
+============
+
+.. note::
+
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+
+``DecimalField`` is based on the Python ``Decimal`` datatype,
+which can represent base-10 numbers exactly and therefore avoids annoying arithmetic errors that occur with ``float``.
+(You can find lots of info online about this subject.)
+``DecimalField`` is a more flexible generalization of oTree's currency datatype.
+
+When defining a ``DecimalField``, you specify a ``config_name`` that indicates what entity it represents:
+
+.. code-block:: python
+
+    gold = models.DecimalField(config_name='grams')
+
+Define your configs in ``settings.py``:
+
+.. code-block:: python
+
+    DECIMAL_CONFIGS = [
+        dict(
+            name='grams',
+            places=6,
+            display=dict(max_places=4, min_places=0),
+            form=dict(places=2, units_label='grams'),
+        ),
+    ]
+
+
+-   ``places`` is the number of decimal places used internally (for database storage and calculations).
+    If you set ``places=6``, then ``1/3`` will be stored as ``0.333333``.
+-   The ``display`` properties apply when displaying the content in a template.
+    If you set ``max_places=2`` and ``min_places=0``, then ``9.876`` will display as ``9.87``.
+    but ``9.000`` will display as ``9`` (remove trailing zeros).
+-   The ``display`` dict can also have an entry called ``function``
+    that should be a function with 2 args: the formatted value as a string, and the original
+    decimal value. If defined, it will be called to generate the display value.
+    You can append currency symbols, units, or even wrap the number in an HTML tag.
+-   The ``form`` properties are relevant if the field is included in a form.
+    If you set ``places=0``, then the user must input a whole number.
+    ``units_label`` sets the label on the right edge of the number input.
+
+Decimal datatype
+----------------
+
+Apart from database fields,
+you can define decimal values throughout your code wih ``dec()``.
+For example ``my_weight = dec(1.23, 'grams')``.

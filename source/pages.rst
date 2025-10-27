@@ -163,7 +163,7 @@ Back button notes
     the user should not click the browser's back button.
 -   If you use ``{{ back_button }}`` on a page with a form,
     it's recommended to also use 
-    :ref:`preserve_unsubmitted_form = True <preserve_unsubmitted_form>`
+    :ref:`preserve_unsubmitted_inputs = True <preserve_unsubmitted_inputs>`
     so that the form will not be lost if the user clicks "back".
 
 Advanced usage

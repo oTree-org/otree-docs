@@ -37,7 +37,12 @@ was sent.
 
 If you are using oTree Studio, you must define a player function whose name
 starts with ``live_``.
-(Note, ``live_method`` on ``WaitPage`` is not yet supported.)
+
+.. note::
+
+    If you want to use live methods on a WaitPage,
+    you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+
 
 Sending data to the page
 ------------------------

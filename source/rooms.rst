@@ -270,136 +270,19 @@ Consent form / quiz, etc.
 You can add any form fields you want (dropdowns, checkboxes, etc.)
 and check the user's inputs using JavaScript and HTML attributes such as
 ``required``, ``min``, ``max``, etc.
+When it's validated, then add ``welcome_page_ok`` as above.
 
-.. code-block:: html+django
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Welcome</title>
-    </head>
-    <body>
-        <h2>Consent Form</h2>
-                
-        <form>
-            <p>This is a research study by the University of Antarctica...</p>
-            <label>
-                My age: <input type="number" id="age" min="1" max="120" required>
-            </label>
-            <br><br>
-
-            <label>
-                <input type="checkbox" id="consent" required>
-                I consent to participate in this study
-            </label>
-            <br><br>
-            <button type="submit">Continue</button>
-        </form>
-        
-        <div id="not-eligible" style="display: none;">
-            <p>You are not eligible to participate in this study. Participants must be 18 or older.</p>
-        </div>
-
-
-        <script>
-            let urlParams = new URLSearchParams(window.location.search);
-            let ageInput = document.getElementById('age');
-            let notEligibleDiv = document.getElementById('not-eligible');
-            let form = document.querySelector('form');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                let age = parseInt(ageInput.value);
-                
-                if (age < 18) {
-                    notEligibleDiv.style.display = 'block';
-                    form.style.display = 'none';
-                    return;
-                }
-                
-                urlParams.set('welcome_page_ok', '1');
-                window.location.href = window.location.pathname + '?' + urlParams.toString();
-            });
-        </script>
-    </body>
-    </html>
-
-Any parameters in the start link (e.g. ``?participant_label=Alice``)
-can be accessed from your JS code like this:
-
-.. code-block:: javascript
-
-    urlParams = new URLSearchParams(window.location.search);
-
-This means you can send participants start links with custom parameters,
-then use that to customize the content of your welcome page.
 
 Custom welcome page + manual entry of participant label
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your app has a ``participant_label_file`` and you want users to enter their labels manually,
 then you need to validate that it's correct.
-This can be done with an AJAX POST request as below.
+This can be done with an AJAX POST request to the page's URL,
+passing JSON like ``{"participant_label": "JohnSmith"}``.
 If the validation fails, the server will send back JSON like
 ``{"errors": {"participant_label": "Invalid participant label"}}``.
 Display a message to your user and ask them to re-enter.
 
 Once it succeeds, the server will return ``{"status": "ok"}``.
 in that case, you should append ``welcome_page_ok=1`` to the URL and reload.
-
-.. code-block:: html+django
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Welcome</title>
-    </head>
-    <body>
-        <h2>
-            Welcome
-        </h2>
-        <div>
-            <p>Click the button to start.</p>
-            <form style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-                <p id="label_error" style="display: none; color: red;">This participant label was not found</p>
-                <label for="participant_label">Participant label:</label>
-                <input type="text" name="participant_label" id="participant_label"/>
-                <button type="submit">Start</button>
-            </form>
-        </div>
-
-        <script>
-
-            let labelErrorEle = document.getElementById('label_error');
-
-            document.querySelector('form').addEventListener('submit', async function(e) {
-                e.preventDefault();
-
-                // Add form data to query parameters
-                const form = document.querySelector('form');
-                const formData = new FormData(form);
-                const jsonData = Object.fromEntries(formData.entries());
-
-                const response = await fetch(window.location.pathname, {
-                    method: 'POST',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(jsonData)
-                });
-
-                const data = await response.json();
-                if (data.status === 'ok') {
-                    // Validation passed, add welcome_page_ok=1 and reload page
-                    const urlParams = new URLSearchParams(formData);
-                    urlParams.set('welcome_page_ok', '1');
-                    window.location.href = window.location.pathname + '?' + urlParams.toString();
-                } else if (data.errors.participant_label) {
-                    labelErrorEle.style.display = 'block';
-                }
-            });
-        </script>
-    </body>
-    </html>
