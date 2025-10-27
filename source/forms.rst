@@ -424,7 +424,8 @@ Preserving unsubmitted inputs
 
 .. note::
 
-    This was renamed from preserve_unsubmitted_inputs to preserve_unsubmitted_form
+    In an earlier version of the beta, this was called ``preserve_unsubmitted_form``.
+    It has been renamed to ``preserve_unsubmitted_inputs``.
 
 .. note::
 
