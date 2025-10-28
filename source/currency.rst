@@ -100,7 +100,7 @@ For example, set the endowment of a game to 1000 points, rather than 100.
 .. _DecimalField:
 
 DecimalField
-============
+------------
 
 .. note::
 
@@ -145,7 +145,7 @@ Define your units in ``settings.py``:
     ``units_label`` sets the label on the right edge of the number input.
 
 Decimal datatype
-----------------
+~~~~~~~~~~~~~~~~
 
 Apart from database fields,
 you can define decimal values throughout your code wih ``dec()``.
