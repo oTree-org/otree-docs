@@ -22,14 +22,6 @@ We will continue to add more features to the beta, so keep running this upgrade 
     you should try out the official oTree `extension <https://marketplace.visualstudio.com/items?itemName=oTree.otree>`__ for Visual Studio Code
     (from VS Code extensions pane, you can also search "oTree").
 
-DecimalField
-------------
-
-oTree now has a versatile ``DecimalField``, useful for enabling multiple currencies
-as well as various other data types (percentages, durations, resources, etc).
-
-See :ref:`DecimalField`.
-
 live_method on WaitPage
 -----------------------
 
