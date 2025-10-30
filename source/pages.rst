@@ -171,7 +171,7 @@ Advanced usage
 
 If you don't want to use the built-in ``{{ back_button }}``,
 you can call the ``back_button()`` function using JavaScript,
-e.g. ``<button type="button" onclick="back_button()">...</button>``.
+e.g. ``<button type="button" onclick="back_button(1)">...</button>``.
 
 Restrictions of back button
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
