@@ -57,10 +57,6 @@ Setup
 "oTree version" endpoint
 ------------------------
 
-.. note::
-
-    New beta feature as of March 2021.
-
 GET URL: ``/api/otree_version/``
 
 Example
@@ -73,10 +69,6 @@ Example
 
 "Session configs" endpoint
 --------------------------
-
-.. note::
-
-    New beta feature as of March 2021.
 
 GET URL: ``/api/session_configs/``
 
@@ -92,10 +84,6 @@ Example
 
 "Rooms" endpoint
 ----------------
-
-.. note::
-
-    New beta feature as of March 2021.
 
 GET URL: ``/api/rooms/``
 
@@ -160,11 +148,6 @@ Parameters
 
 "Get session data" endpoint
 ---------------------------
-
-.. note::
-
-    New feature as of March 2021.
-    In beta until we get sufficient user feedback.
 
 GET URL: ``/api/sessions/{code}``
 

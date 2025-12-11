@@ -107,7 +107,7 @@ ADMIN_VIEW_FIELDS
 ~~~~~~~~~~~~~~~~~
 
 .. note::
-    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60`
 
 You can choose what fields are shown in the admin's "Session Data" view,
 to focus on the important fields and ignore the rest.
@@ -236,7 +236,7 @@ Multiple custom_export functions
 
 .. note::
 
-    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60`
 
 You can define multiple custom export functions; just make sure they all start with ``custom_export``;
 e.g. ``def custom_export_xyz(players):``.

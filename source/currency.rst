@@ -90,7 +90,7 @@ DecimalField
 
 .. note::
 
-    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60`
 
 ``DecimalField`` is based on the Python ``Decimal`` datatype,
 which can represent base-10 numbers exactly and therefore avoids annoying arithmetic errors that occur with ``float``.

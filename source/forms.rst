@@ -424,14 +424,7 @@ Preserving unsubmitted inputs
 
 .. note::
 
-    In an earlier version of the beta, this was called ``preserve_unsubmitted_form``.
-    It has been renamed to ``preserve_unsubmitted_inputs``.
-
-.. note::
-
-    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
-
-
+    To use this, you must install :ref:`v60` (``pip install otree --upgrade``)
 
 You can set the following attribute to preserve forms that were partially filled out 
 before the page was reloaded:
@@ -533,10 +526,6 @@ If you use this technique, you may also want to use :ref:`dynamic_validation`.
 
 JavaScript access to form inputs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    New beta feature as of oTree 5.9 (July 2022)
 
 In your JavaScript code you can use ``forminputs.xyz`` to access the ``<input>``
 element of form field ``xyz``. For example, you can do:

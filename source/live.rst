@@ -41,7 +41,7 @@ starts with ``live_``.
 .. note::
 
     If you want to use live methods on a WaitPage,
-    you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+    you must install :ref:`v60`
 
 
 Sending data to the page
@@ -242,7 +242,7 @@ Asynchronous live methods (AI, web APIs, etc)
 
 .. note::
 
-    To use this, you must install :ref:`v60` (``pip install otree --upgrade --pre``)
+    To use this, you must install :ref:`v60`
 
 If you want to call external APIs like OpenAI/ChatGPT during experiments,
 you should use an asynchronous live method as described below.
