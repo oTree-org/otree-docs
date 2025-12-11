@@ -7,9 +7,39 @@ Currency
 --------
 
 In many experiments, participants play for currency:
-either real money, or points. oTree supports both;
-you can switch from points to real money by setting ``USE_POINTS = False``
-in your settings.
+either real money, or points.
+
+Configuring currency
+~~~~~~~~~~~~~~~~~~~~
+
+Here is how to configure what currency you use (points, dollars, euros, etc.).
+
+If you are using oTree 6+ it's recommended to define a ``DecimalUnit`` class in ``units.py``,
+(see the section on ``DecimalUnit`` for more info):
+
+.. code-block:: python
+
+    class USD(DecimalUnit):
+        storage_places = 4
+        input_places = 0
+        input_unit_label = '$'
+        output_min_places = 0
+        output_max_places = 2
+
+        @staticmethod
+        def output(formatted, raw):
+            return f"${formatted}"
+
+Then in ``settings.py`` put the path to this class:
+
+.. code-block:: python
+
+    CURRENCY_UNIT = 'units.USD'
+
+If you are using oTree 5, then you should set the ``REAL_WORLD_CURRENCY_CODE`` and ``USE_POINTS`` settings.
+
+Using currencies
+~~~~~~~~~~~~~~~~
 
 You can write ``cu(42)`` to represent "42 currency units".
 It works just like a number
@@ -17,12 +47,6 @@ It works just like a number
 The advantage is that when it's displayed to users, it will automatically
 be formatted as ``$0.30`` or ``0,30 €``, etc., depending on your
 ``REAL_WORLD_CURRENCY_CODE`` and ``LANGUAGE_CODE`` settings.
-
-.. note::
-
-    ``cu()`` is new in oTree 5. Previously, ``c()`` was used to denote currencies.
-    Code that already uses ``c()`` will continue to work.
-    More info `here <https://groups.google.com/g/otree/c/Bwv67asPIlo>`__.
 
 Use ``CurrencyField`` to store currencies in the database.
 For example:
@@ -57,45 +81,7 @@ from all subsessions. You can modify ``participant.payoff`` directly,
 e.g. to round the final payoff to a whole number.
 
 At the end of the experiment, a participant's
-total profit can be accessed by ``participant.payoff_plus_participation_fee()``;
-it is calculated by converting ``participant.payoff`` to real-world currency
-(if ``USE_POINTS`` is ``True``), and then adding
-``session.config['participation_fee']``.
-
-.. _points:
-
-Points (i.e. "experimental currency")
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you set ``USE_POINTS = True``, then currency amounts will be points instead of dollars/euros/etc.
-For example, ``cu(10)`` is displayed as ``10 points`` (or ``10 puntos``, etc.)
-
-You can decide the conversion rate to real money
-by adding a ``real_world_currency_per_point`` entry to your session config.
-
-Converting points to real world currency
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can convert a points amount to money using the method
-``.to_real_world_currency``. For example:
-
-.. code-block:: python
-
-    cu(10).to_real_world_currency(session)
-
-(The ``session`` is necessary because
-different sessions can have different conversion rates).
-
-Decimal places
-~~~~~~~~~~~~~~
-
-Money amounts are displayed with 2 decimal places.
-
-On the other hand, points are integers.
-This means amounts will get rounded to whole numbers,
-like ``10`` divided by ``3`` is ``3``.
-So, we recommend using point magnitudes high enough that you don't care about rounding error.
-For example, set the endowment of a game to 1000 points, rather than 100.
+total profit can be accessed by ``participant.payoff_plus_participation_fee()``.
 
 .. _DecimalField:
 
@@ -109,14 +95,13 @@ DecimalField
 ``DecimalField`` is based on the Python ``Decimal`` datatype,
 which can represent base-10 numbers exactly and therefore avoids annoying arithmetic errors that occur with ``float``.
 (You can find lots of info online about this subject.)
-``DecimalField`` is a more flexible generalization of oTree's currency datatype.
 
-When defining a ``DecimalField``, you specify ``units=`` to indicate what entity it represents,
+When defining a ``DecimalField``, you specify ``unit=`` to indicate what entity it represents,
 e.g.:
 
 .. code-block:: python
 
-    xyz = models.DecimalField(units=units.Celsius)
+    xyz = models.DecimalField(unit=units.Celsius)
 
 And create ``units.py`` in your project root folder and import that into your app.
 ``units.py`` should have content like this:
@@ -130,7 +115,7 @@ And create ``units.py`` in your project root folder and import that into your ap
         output_max_places = 2
         output_min_places = 0
         input_places = 0
-        input_units_label = '°C'
+        input_unit_label = '°C'
 
 This lets you separately configure the precision used for **input** (participant filling a form),
 **storage** (internal calculations and database),
@@ -143,7 +128,7 @@ and **output** (displaying in a template).
     but ``9.000`` will display as ``9`` (remove trailing zeros).
 -   The ``input_`` properties are relevant if the field is included in a form.
     If you set ``input_places=0``, then the user must input a whole number.
-    ``input_units_label`` sets the label on the right edge of the number input.
+    ``input_unit_label`` sets the label on the right edge of the number input.
 
 You can also define a function that will generate the display value.
 It takes 2 arguments: the formatted value (e.g. ``"1,234.5"``) and the raw numeric value:
