@@ -16,7 +16,7 @@
 
 .. note::
 
-   **October 2025 update**: :ref:`oTree 6.0 <version-history>` is available
+   **December 2025 update**: :ref:`oTree 6.0 <version-history>` is available
    with AI integration, better wait pages, custom welcome pages and consent forms,
    back button, better admin interface, and many other features.
 

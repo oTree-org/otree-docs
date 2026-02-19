@@ -18,7 +18,7 @@ Journal of Behavioral and Experimental Finance, vol 9: 88-97)
 Choose your editor
 ------------------
 
-If you will build your apps with oTree Studio or OTAI (easiest option), go to `otreehub.com <https://www.otreehub.com>`__.
+If you will build your apps with OTAI (easiest option), go to `otreehub.com <https://www.otreehub.com>`__.
 More info about using OTAI :ref:`here <otai>`.
 
 If you have more programming experience, you can use oTree with a text editor.
@@ -42,6 +42,12 @@ Then open PowerShell (on Windows) or Terminal (on Mac) to that folder.
 Enter this command at the prompt::
 
     pip3 install otree --upgrade
+
+Step 3: Program your apps
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The fastest way to build your games is to use `OTAI <https://www.otreehub.com>`__,
+the oTree AI Builder. You build your games through an AI chat, no coding required.
 
 Running the server
 ^^^^^^^^^^^^^^^^^^

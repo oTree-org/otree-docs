@@ -14,80 +14,10 @@ You can install this release with:
 
     pip install otree --upgrade
 
-DecimalField
-------------
-
-oTree now has a versatile ``DecimalField``, useful for enabling multiple currencies
-as well as various other data types (percentages, durations, resources, etc).
-
-See :ref:`DecimalField`.
-
-live_method on WaitPage
------------------------
-
-You can now define ``live_method`` on a WaitPage.
-
-participant.status
-------------------
-
-There is a new field ``participant.status`` that you can set to anything you want,
-e.g. ``finished``, ``dropout``, etc.
-In the admin monitor page, there will be a dropdown that lets you filter based on this field.
-(In the initial view, only participants whose ``status`` is blank will be shown.)
-This is useful for things like hiding participants who are no longer doing the study,
-or organizing participants into segments.
-
-Multiple custom_export functions
---------------------------------
-
-See :ref:`multiple_custom_export`
-
-Back button
------------
-
-See :ref:`back_button`.
-
-Preserving unsubmitted inputs
------------------------------
-
-See :ref:`preserve_unsubmitted_inputs`.
-
-Filtering fields in admin data view
------------------------------------
-
-See :ref:`ADMIN_VIEW_FIELDS`.
-
-Support for web APIs (ChatGPT etc)
-----------------------------------
+Support for AI and web APIs (ChatGPT etc)
+-----------------------------------------
 
 See :ref:`async_live_method`.
-
-Welcome pages for rooms
------------------------
-
-When you use a Room, oTree will always show a Welcome page
-that asks the user to confirm to start.
-
-Room without participant label file:
-
-.. image::
-    ../_static/rooms/welcome-page-nolabel.png
-    :width: 350px
-
-
-Room with participant label file:
-
-.. image::
-    ../_static/rooms/welcome-page-label.png
-    :width: 500px
-
-This solves the problem where start links were being opened
-by various platforms like WhatsApp that scan messages and open hyperlinks automatically,
-making oTree count those participants as having begun the experiment.
-
-Furthemore, these welcome pages are customizable.
-
-See :ref:`welcome-page`.
 
 
 group_by_arrival_time presence detection
@@ -118,6 +48,78 @@ The timing parameters are configurable in ``settings.py`` (these settings are ex
 
     GBAT_INACTIVE_SECONDS_UNTIL_PROMPT = 2 * 60
     GBAT_INACTIVE_SECONDS_TO_CONFIRM = 15
+
+
+Back button
+-----------
+
+See :ref:`back_button`.
+
+Welcome pages for rooms
+-----------------------
+
+When you use a Room, oTree will always show a Welcome page
+that asks the user to confirm to start.
+
+Room without participant label file:
+
+.. image::
+    ../_static/rooms/welcome-page-nolabel.png
+    :width: 350px
+
+
+Room with participant label file:
+
+.. image::
+    ../_static/rooms/welcome-page-label.png
+    :width: 500px
+
+This solves the problem where start links were being opened
+by various platforms like WhatsApp that scan messages and open hyperlinks automatically,
+making oTree count those participants as having begun the experiment.
+
+Furthemore, these welcome pages are customizable.
+
+See :ref:`welcome-page`.
+
+
+live_method on WaitPage
+-----------------------
+
+You can now define ``live_method`` on a WaitPage.
+
+participant.status
+------------------
+
+There is a new field ``participant.status`` that you can set to anything you want,
+e.g. ``finished``, ``dropout``, etc.
+In the admin monitor page, there will be a dropdown that lets you filter based on this field.
+(In the initial view, only participants whose ``status`` is blank will be shown.)
+This is useful for things like hiding participants who are no longer doing the study,
+or organizing participants into segments.
+
+Multiple custom_export functions
+--------------------------------
+
+See :ref:`multiple_custom_export`
+
+Preserving unsubmitted inputs
+-----------------------------
+
+See :ref:`preserve_unsubmitted_inputs`.
+
+DecimalField
+------------
+
+oTree now has a versatile ``DecimalField``, useful for enabling multiple currencies
+as well as various other data types (percentages, durations, resources, etc).
+
+See :ref:`DecimalField`.
+
+Filtering fields in admin data view
+-----------------------------------
+
+See :ref:`ADMIN_VIEW_FIELDS`.
 
 Improvements to admin interface
 -------------------------------
