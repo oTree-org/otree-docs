@@ -19,8 +19,6 @@ Choose your editor
 ------------------
 
 If you will build your apps with OTAI (easiest option), go to `otreehub.com <https://www.otreehub.com>`__.
-More info about using OTAI :ref:`here <otai>`.
-
 If you have more programming experience, you can use oTree with a text editor.
 
 oTree installation

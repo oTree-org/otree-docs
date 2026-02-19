@@ -56,6 +56,7 @@ Contents:
     python.rst
     tutorial/intro.rst
     conceptual_overview.rst
+    OTAI <https://www.otreehub.com>
     models.rst
     pages.rst
     templates.rst
