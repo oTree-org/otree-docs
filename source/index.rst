@@ -12,13 +12,20 @@
     .. image:: _static/splash.png
         :align: center
 
+    .. raw:: html
+
+       <div style="margin-top: 1.5em;"></div>
+
 `中文 <https://otree.readthedocs.io/zh_CN/latest/index.html>`__ | `日本語 <https://otree.readthedocs.io/ja/latest/index.html>`__ | `Español <https://otree.readthedocs.io/es/latest/index.html>`__
+
+.. |otai-icon| image:: _static/otai-toucan.png
+   :width: 48px
+   :align: middle
 
 .. note::
 
-   **December 2025 update**: :ref:`oTree 6.0 <version-history>` is available
-   with AI integration, better wait pages, custom welcome pages and consent forms,
-   back button, better admin interface, and many other features.
+   |otai-icon| **February 2026 update**: `OTAI <https://www.otreehub.com/>`__ allows you to build oTree apps through a chat interface, without coding.
+   It's highly trained on oTree experiments.
 
 Live demos
 ^^^^^^^^^^
