@@ -24,6 +24,10 @@ If you have more programming experience, you can use oTree with a text editor.
 oTree installation
 ------------------
 
+.. note::
+
+    If you want help installing or using oTree, ask our chat assistant `Otai <https://www.otreehub.com/otai/jr/>`__!
+
 Step 1: Install Python
 ^^^^^^^^^^^^^^^^^^^^^^^
 
