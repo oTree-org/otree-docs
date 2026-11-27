@@ -1,0 +1,9 @@
+# Redirect stub: the oTree docs moved to https://www.otree.org/docs/en/latest/
+# Every page (and every language / version) redirects to the same page there.
+version: 2
+build:
+  os: ubuntu-24.04
+  tools:
+    python: "3.12"
+  commands:
+    - python make_redirects.py "$READTHEDOCS_OUTPUT/html"
